@@ -1,5 +1,22 @@
 // Dota Heroes File
 "DOTAAbilities"
 {
-	
+	"fountain_attack"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"		
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"                    "fountain/fountain_attack"
+		"AbilityTextureName"			"invoker_sun_strike_lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"BonusPercentDamage"		"0.2"
+			}
+		}
+	}
+
 }

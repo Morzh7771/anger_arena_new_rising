@@ -14,14 +14,25 @@ function Precache( context )
 	]]
 end
 local Constants = require('consts')
-
+local killToWin = 10
+local cheat = false
+RESPAWN_MODIFER = 0.135
 function Activate()
 	GameRules.AddonTemplate = AngelArena()
 	GameRules.AddonTemplate:InitGameMode()
+	local fountains = Entities:FindAllByClassname('ent_dota_fountain')
+    for _, fountain in pairs(fountains) do 
+    if ability then
+        ability:SetLevel(100)
+    end
+    end
 end
 
 function AngelArena:InitGameMode()
 	local GameMode = GameRules:GetGameModeEntity()
+	if GameRules:IsCheatMode()then
+		cheat = true
+	end
 	GameMode:SetCustomXPRequiredToReachNextLevel(Constants.XP_PER_LEVEL_TABLE)
 	GameMode:SetUseCustomHeroLevels(true)
 
@@ -45,6 +56,9 @@ function AngelArena:InitGameMode()
 	
 	GameRules:SetUseUniversalShopMode(true)
 
+	ListenToGameEvent( "dota_team_kill_credit", Dynamic_Wrap( AngelArena, 'OnTeamKillCredit' ), self )
+	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( AngelArena, "OnNPCSpawned" ), self )
+	ListenToGameEvent("entity_killed", Dynamic_Wrap(AngelArena, "OnEntityKilled"), self)
 	-- AttributeDerivedStats
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT, 0)
@@ -64,4 +78,61 @@ function AngelArena:OnThink()
 		return nil
 	end
 	return 1
+end
+function AngelArena:EndGame( victoryTeam )
+	GameRules:SetGameWinner( victoryTeam )
+	GameRules:SetCustomVictoryMessage('Мамут Рахал')
+end
+
+function AngelArena:OnTeamKillCredit(event)
+	DeepPrintTable(event)
+	print(killToWin)
+	print(GetTeamHeroKills(DOTA_TEAM_GOODGUYS))
+	print(GetTeamHeroKills(DOTA_TEAM_BADGUYS))
+	if killToWin <= GetTeamHeroKills(DOTA_TEAM_GOODGUYS) then 
+		AngelArena:EndGame( DOTA_TEAM_GOODGUYS )
+	else
+
+	end
+	if killToWin <= GetTeamHeroKills(DOTA_TEAM_BADGUYS) then
+		AngelArena:EndGame( DOTA_TEAM_BADGUYS )
+	end
+end
+function AngelArena:OnNPCSpawned(keys)
+	local npc = EntIndexToHScript(keys.entindex)
+	if npc.bFirstSpawned == nil then
+		npc.bFirstSpawned = true
+		if cheat == true then
+			if npc:IsRealHero() then
+				
+				npc:AddExperience(999999, 0, false, true)
+				npc:SetGold(99999999,true)
+			end
+		end
+	end
+end
+function AngelArena:OnLevelUp(keys)
+	local hero = EntIndexToHScript(keys.hero_entindex)
+    local level = keys.level
+
+    if level >= 19 then
+        hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
+    end
+end
+function AngelArena:OnEntityKilled(event)
+	local killedUnit = EntIndexToHScript(event.entindex_killed)
+	local killedTeam = killedUnit:GetTeam()
+	local hero = EntIndexToHScript(event.entindex_attacker)
+	local heroTeam = hero:GetTeam()
+	if IsValidEntity(killedUnit) and not killedUnit:IsAlive() and killedUnit:IsRealHero() then
+		local timeLeft = killedUnit:GetLevel() * 3.8 + 5
+		timeLeft = timeLeft * RESPAWN_MODIFER
+		if timeLeft < 5.0 then
+			timeLeft = 5.0
+		end
+		if killedUnit:IsReincarnating() == false then
+			print(timeLeft)
+			killedUnit:SetTimeUntilRespawn(timeLeft)
+		end
+	end
 end
