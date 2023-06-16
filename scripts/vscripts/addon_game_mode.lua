@@ -111,13 +111,26 @@ function AngelArena:OnNPCSpawned(keys)
 		end
 	end
 end
+local no_points_levels = {
+	[17] = 1,
+	[19] = 1,
+	[21] = 1,
+	[22] = 1,
+	[23] = 1,
+	[24] = 1,
+	[25] = 1,
+	[26] = 1,
+	[27] = 1,
+	[28] = 1,
+	[29] = 1,
+}
 function AngelArena:OnLevelUp(keys)
 	local hero = EntIndexToHScript(keys.hero_entindex)
     local level = keys.level
 
-    if level >= 19 then
-        hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
-    end
+    if no_points_levels[level] and hero:GetUnitName() ~= "npc_dota_hero_invoker" or level >= 30 then
+		hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
+	end
 end
 function AngelArena:OnEntityKilled(event)
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
