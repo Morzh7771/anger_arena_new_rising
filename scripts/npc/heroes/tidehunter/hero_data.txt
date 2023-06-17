@@ -1,2 +1,49 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_tidehunter"
+	{
+		"override_hero"		"npc_dota_hero_tidehunter"
+		"Ability1"		"tidehunter_gush"
+		"Ability2"		"tidehunter_kraken_shell"
+		"Ability3"		"tidehunter_anchor_smash"
+		"Ability4"		"tidehunter_arm_of_the_deep"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"tidehunter_ravage"
+		"Ability10"		"special_bonus_unique_tidehunter_9"
+		"Ability11"		"special_bonus_unique_tidehunter_5"
+		"Ability12"		"special_bonus_unique_tidehunter_2"
+		"Ability13"		"special_bonus_unique_tidehunter_3"
+		"Ability14"		"special_bonus_unique_tidehunter_10"
+		"Ability15"		"special_bonus_unique_tidehunter_4"
+		"Ability16"		"special_bonus_unique_tidehunter_7"
+		"Ability17"		"special_bonus_unique_tidehunter_8"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"25"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.600000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"27"
+		"AttributeStrengthGain"		"3.500000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.700000"
+		"StatusManaRegen"	"0.5"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.500000"
+		"MovementSpeed"		"300"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_tidehunter"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_tidehunter.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_tidehunter/tide_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

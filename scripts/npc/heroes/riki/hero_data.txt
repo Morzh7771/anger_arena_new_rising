@@ -1,2 +1,47 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_riki"
+	{
+		"override_hero"		"npc_dota_hero_riki"
+		"Ability1"		"riki_smoke_screen"
+		"Ability2"		"riki_blink_strike"
+		"Ability3"		"riki_tricks_of_the_trade"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"riki_backstab"
+		"Ability10"		"special_bonus_unique_riki_7"
+		"Ability11"		"special_bonus_unique_riki_8"
+		"Ability12"		"special_bonus_unique_riki_2"
+		"Ability13"		"special_bonus_unique_riki_3"
+		"Ability14"		"special_bonus_unique_riki_1"
+		"Ability15"		"special_bonus_unique_riki_9"
+		"Ability16"		"special_bonus_unique_riki_6"
+		"Ability17"		"special_bonus_unique_riki_5"
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"41"
+		"AttackDamageMax"		"45"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"100"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"2.600000"
+		"AttributeBaseIntelligence"		"14"
+		"AttributeIntelligenceGain"		"1.300000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.40000"
+		"StatusHealthRegen"		"2.5"
+		"MovementSpeed"		"315"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_riki/riki_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

@@ -1,2 +1,57 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_shadow_shaman"
+	{
+		"override_hero"		"npc_dota_hero_shadow_shaman"
+		"Ability1"		"shadow_shaman_ether_shock"
+		"Ability2"		"shadow_shaman_voodoo"
+		"Ability3"		"shadow_shaman_shackles"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"shadow_shaman_mass_serpent_ward"
+		"Ability10"		"special_bonus_unique_shadow_shaman_6"
+		"Ability11"		"special_bonus_unique_shadow_shaman_5"
+		"Ability12"		"special_bonus_unique_shadow_shaman_8"
+		"Ability13"		"special_bonus_unique_shadow_shaman_2"
+		"Ability14"		"special_bonus_unique_shadow_shaman_7"
+		"Ability15"		"special_bonus_unique_shadow_shaman_1"
+		"Ability16"		"special_bonus_unique_shadow_shaman_3"
+		"Ability17"		"special_bonus_unique_shadow_shaman_4"
+		"ArmorPhysical"		"2"
+		"StatusHealthRegen"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"40"
+		"AttackDamageMax"		"47"
+		"BaseAttackSpeed"		"90"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"400"
+		"ProjectileModel"		"particles/units/heroes/hero_shadowshaman/shadowshaman_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.300000"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.500000"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.600000"
+		"MovementSpeed"		"285"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"precache"
+		{
+			"model"		"models/props_gameplay/chicken.vmdl"
+			"model"		"models/heroes/shadowshaman/shadowshaman_totem.vmdl"
+		}
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_shadowshaman.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_shadowshaman"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_shadowshaman/shadowshaman_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

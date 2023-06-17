@@ -1,2 +1,49 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_omniknight"
+	{
+		"override_hero"		"npc_dota_hero_omniknight"
+		"Ability1"		"omniknight_purification"
+		"Ability2"		"omniknight_martyr"
+		"Ability3"		"omniknight_hammer_of_purity"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"omniknight_guardian_angel"
+		"Ability10"		"special_bonus_unique_omniknight_5"
+		"Ability11"		"special_bonus_attack_base_damage_50"
+		"Ability12"		"special_bonus_unique_omniknight_6"
+		"Ability13"		"special_bonus_unique_omniknight_7"
+		"Ability14"		"special_bonus_unique_omniknight_2"
+		"Ability15"		"special_bonus_unique_omniknight_3"
+		"Ability16"		"special_bonus_unique_omniknight_1"
+		"Ability17"		"special_bonus_unique_omniknight_4"
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.433000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttackRangeBuffer"			"550"		
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.10000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"2.0000"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"2.100000"
+		"MovementSpeed"		"315"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_omniknight.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_omniknight"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_omniknight/omniknight_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

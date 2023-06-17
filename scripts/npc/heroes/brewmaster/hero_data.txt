@@ -1,2 +1,49 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_brewmaster"
+	{
+		"override_hero"		"npc_dota_hero_brewmaster"
+		"Ability1"		"brewmaster_thunder_clap"
+		"Ability2"		"brewmaster_cinder_brew"
+		"Ability3"		"brewmaster_drunken_brawler"
+		"Ability4"		"brewmaster_primal_companion"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"brewmaster_primal_split"
+		"Ability10"		"special_bonus_unique_brewmaster_2"
+		"Ability11"		"special_bonus_unique_brewmaster_7"
+		"Ability12"		"special_bonus_unique_brewmaster_5"
+		"Ability13"		"special_bonus_unique_brewmaster_8"
+		"Ability14"		"special_bonus_unique_brewmaster"
+		"Ability15"		"special_bonus_attack_speed_80"
+		"Ability16"		"special_bonus_unique_brewmaster_6"
+		"Ability17"		"special_bonus_unique_brewmaster_4"
+		"ArmorPhysical"		"-1.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"9"
+		"AttackDamageMax"		"16"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.700000"
+		"AttributeBaseAgility"		"19"
+		"AttributeAgilityGain"		"2.0000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.60000"
+		"StatusHealthRegen"		"0.5"
+		"MovementSpeed"		"310"
+		"HasAggressiveStance"		"1"
+		"particle_folder"		"particles/units/heroes/hero_brewmaster"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_brewmaster.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_brewmaster/brewmaster_spawn.vpcf"		"loadout"
+			}
+		}
+	}
+}

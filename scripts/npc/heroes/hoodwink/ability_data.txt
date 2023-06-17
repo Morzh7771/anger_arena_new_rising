@@ -1,0 +1,427 @@
+DOTAAbilities
+{
+	"hoodwink_hunters_boomerang"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"hoodwink_hunters_boomerang"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_VengefulSpirit.MagicMissile"
+
+		"MaxLevel"						"1"
+		"IsGrantedByShard"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mark_duration"			"7.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"status_resistance"		"0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spread"				"400"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_throw_duration"			"0.5"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_throw_duration"			"1.2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"hoodwink_decoy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"hoodwink_decoy"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"IsGrantedByScepter"			"1"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					"6.0"
+			"decoy_detonate_radius"		"250"
+			"decoy_stun_duration"				"1.6"
+			"images_do_damage_percent"	"100"
+			"images_take_damage_percent"	"100"
+			"projectile_speed"	"1200"
+			"movement_speed"				"15"
+			"sharpshooter_damage_pct"			"60"
+
+		}
+	}
+	"hoodwink_acorn_shot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"hoodwink_acorn_shot"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCastRange"				"575"
+		"AbilityCastPoint"				"0.2"
+		"AbilityManaCost"				"70 75 80 85"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{		
+			"01"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"125 200 275 350"
+			}
+			"02"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"acorn_shot_damage"		"50 80 110 140"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"base_damage_pct"		"75"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"04"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"bounce_count"			"2 3 4 5"
+				"LinkedSpecialBonus"		"special_bonus_unique_hoodwink_acorn_shot_bounces"
+			}
+			"05"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"bounce_range"			"525"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.45"
+			}
+			"07"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bounce_delay"			"0.1"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"projectile_speed"			"2200"
+			}
+			
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"hoodwink_bushwhack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"hoodwink_bushwhack"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 100 110 120"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"trap_radius"		
+			{
+				"value"		"265"
+				"special_bonus_unique_hoodwink_bushwhack_radius"	"+135"
+			}
+			"debuff_duration"		"1.25 1.5 1.75 2.0"
+			"projectile_speed"	"1300"
+			"total_damage"
+			{
+				"value"							"90 160 230 300"
+				"CalculateSpellDamageTooltip"	"1"
+				"LinkedSpecialBonus"			"special_bonus_unique_hoodwink_bushwhack_damage"
+			}
+			"animation_rate"	"0.3"
+			"visual_height"		"50"
+		}
+	}
+	"hoodwink_scurry"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"hoodwink_scurry"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"275"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+		"AbilityCharges"				"2"
+		"AbilityChargeRestoreTime"		"30 24 18 12"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"35"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"						"275"
+			"movement_speed_pct"			"20 25 30 35"
+			"duration"						"4.0"
+			"evasion"						"15 20 25 30"
+			"bonus_active_evasion"
+			{
+				"value"			"0"
+				"special_bonus_unique_hoodwink_scurry_evasion"			"+40"
+			}
+			"decoy_duration"					"6.0"
+			"decoy_detonate_radius"				"250"
+			"decoy_stun_duration"				"1.6"
+			"images_do_damage_percent"			"0"
+			"images_take_damage_percent"		"100"
+			"projectile_speed"					"1200"
+			"movement_speed"					"15"
+
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"hoodwink_sharpshooter"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"hoodwink_sharpshooter"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Mirana.ArrowCast"
+		"AbilityDraftUltScepterAbility"	"hoodwink_hunters_boomerang"
+		"AbilityDraftUltShardAbility"	"hoodwink_decoy"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3000"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 175 225"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"arrow_speed"		"2200"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_width"		"125"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_range"		"3000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_vision"		"350"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"max_charge_time"			"3.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_hoodwink_sharpshooter_speed"
+			}			
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_damage"				"550 900 1250"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"recoil_distance"			"350"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"recoil_height"				"75"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"recoil_duration"			"0.4"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"max_slow_debuff_duration"	"5.0"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"misfire_time"				"5.0"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_move_pct"				"30 40 50"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"turn_rate"					"60"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"base_power"				"0.2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_6"
+	}
+	"hoodwink_sharpshooter_release"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"hoodwink_sharpshooter_release"	
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"999999"
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
+ 		"MaxLevel"						"3"
+	}
+}

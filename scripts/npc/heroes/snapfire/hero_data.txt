@@ -1,2 +1,65 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_snapfire"
+	{
+		"override_hero"		"npc_dota_hero_snapfire"
+		"Ability1"				"snapfire_scatterblast"
+		"Ability2"				"snapfire_firesnap_cookie"
+		"Ability3"				"snapfire_lil_shredder"
+		"Ability4"				"snapfire_gobble_up"
+		"Ability5"				"snapfire_spit_creep"
+		"Ability6"				"snapfire_mortimer_kisses"
+		"Ability10"				"special_bonus_unique_snapfire_7"
+		"Ability11"				"special_bonus_unique_snapfire_5"
+		"Ability12"				"special_bonus_unique_snapfire_2"
+		"Ability13"				"special_bonus_unique_snapfire_3"
+		"Ability14"				"special_bonus_unique_snapfire_6"
+		"Ability15"				"special_bonus_unique_snapfire_mortimer_kisses_impact_damage"
+		"Ability16"				"special_bonus_unique_snapfire_8"
+		"Ability17"				"special_bonus_unique_snapfire_1"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"				"snapfire_scatterblast"
+			"Ability2"				"snapfire_firesnap_cookie"
+			"Ability3"				"snapfire_lil_shredder"
+			"Ability4"				"snapfire_mortimer_kisses"
+		}		
+		"ArmorPhysical"				"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"4"
+		"AttackDamageMax"			"10"
+		"AttackRate"				"1.600000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"320"
+		}
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"500"
+		"ProjectileModel"			"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+		"ProjectileSpeed"			"1800"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"3.2"
+		"AttributeBaseIntelligence"	"21"
+		"AttributeIntelligenceGain"	"2.1"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.2"
+		"MovementSpeed"				"300"
+		"StatusHealthRegen"			"0.75"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"350"
+			"run_fast"	"440"
+			"run_haste"	"540"
+		}
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"220"
+
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_snapfire.vsndevts"
+	
+	}
+}

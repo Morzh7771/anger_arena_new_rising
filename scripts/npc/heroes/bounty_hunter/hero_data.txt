@@ -1,2 +1,52 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_bounty_hunter"
+	{
+		"override_hero"		"npc_dota_hero_bounty_hunter"
+		"Ability1"		"bounty_hunter_shuriken_toss"
+		"Ability2"		"bounty_hunter_jinada"
+		"Ability3"		"bounty_hunter_wind_walk"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"bounty_hunter_track"
+		"Ability10"		"special_bonus_unique_bounty_hunter_5"
+		"Ability11"		"special_bonus_unique_bounty_hunter_4"
+		"Ability12"		"special_bonus_unique_bounty_hunter_9"
+		"Ability13"		"special_bonus_unique_bounty_hunter_6"
+		"Ability14"		"special_bonus_unique_bounty_hunter_8"
+		"Ability15"		"special_bonus_unique_bounty_hunter"
+		"Ability16"		"special_bonus_unique_bounty_hunter_7"
+		"Ability17"		"special_bonus_unique_bounty_hunter_3"
+		"ArmorPhysical"		"5"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"33"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.590000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.500000"
+		"AttributeBaseAgility"		"21"
+		"AttributeAgilityGain"		"2.600000"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"1.900000"
+		"MovementSpeed"		"325"
+		"StatusHealthRegen"		"0.75"
+		"StatusManaRegen"	"0.5"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"1000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_bounty_hunter.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_bounty_hunter"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_bounty_hunter/bounty_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

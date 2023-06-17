@@ -1,0 +1,69 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_marci"
+	{
+		"override_hero"		"npc_dota_hero_marci"
+		"Ability1"		"marci_grapple"
+		"Ability2"		"marci_companion_run"
+		"Ability3"		"marci_guardian"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"marci_unleash"
+		
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"marci_grapple"
+			"Ability2"		"marci_companion_run"
+			"Ability3"		"marci_guardian"
+			"Ability6"		"marci_unleash"
+		}	
+
+		"Ability10"		"special_bonus_unique_marci_lunge_range"
+		"Ability11"		"special_bonus_unique_marci_guardian_lifesteal"
+		"Ability12"		"special_bonus_unique_marci_grapple_damage"
+		"Ability13"		"special_bonus_unique_marci_lunge_cooldown"
+		"Ability14"		"special_bonus_unique_marci_grapple_stun_duration"
+		"Ability15"		"special_bonus_unique_marci_unleash_speed"
+		"Ability16"		"special_bonus_unique_marci_dispose_range"
+		"Ability17"		"special_bonus_unique_marci_guardian_magic_immune"
+		"ArmorPhysical"				"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"7"
+		"AttackDamageMax"			"13"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.0"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"1.8"
+		"AttributeBaseIntelligence"	"19"
+		"AttributeIntelligenceGain"	"1.5"
+		"StatusManaRegen"			"0.0"
+		"MovementSpeed"			"315"
+		"MovementTurnRate"		"0.900000"
+		"animation_transitions"
+		{
+		//	"ACT_DOTA_RUN"
+		//	{
+		//		"regular"		"0.300000"
+		//	}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.5000"
+				"unleash"		"0.3000"
+				"injured"		"0.2000"
+			}
+		}	
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"180"
+			"faster"	"250"
+		}
+		"HealthBarOffset"		"200"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+	}
+}

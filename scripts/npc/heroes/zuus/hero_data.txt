@@ -1,2 +1,58 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_zuus"
+	{
+		"override_hero"		"npc_dota_hero_zuus"
+		"Ability1"		"zuus_arc_lightning"
+		"Ability2"		"zuus_lightning_bolt"
+		"Ability3"		"zuus_heavenly_jump"
+		"Ability4"		"zuus_cloud"
+		"Ability5"		"zuus_lightning_hands"
+		"Ability6"		"zuus_thundergods_wrath"		
+		"Ability10"		"special_bonus_unique_zeus_jump_cooldown"
+		"Ability11"		"special_bonus_hp_250"
+		"Ability12"		"special_bonus_unique_zeus_jump_postjump_movespeed"
+		"Ability13"		"special_bonus_unique_zeus"
+		"Ability14"		"special_bonus_unique_zeus_2"
+		"Ability15"		"special_bonus_unique_zeus_3"
+		"Ability16"		"special_bonus_unique_zeus_5"
+		"Ability17"		"special_bonus_unique_zeus_4"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"zuus_arc_lightning"
+			"Ability2"		"zuus_lightning_bolt"
+			"Ability3"		"zuus_heavenly_jump"
+			"Ability4"		"zuus_thundergods_wrath"
+		}
+
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"33"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.3500"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"380"
+		"ProjectileModel"		"particles/units/heroes/hero_zuus/zuus_base_attack.vpcf"
+		"ProjectileSpeed"		"1100"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.100000"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"3.300000"
+		"AttributeBaseAgility"		"11"
+		"AttributeAgilityGain"		"1.200000"
+		"MovementSpeed"		"315"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_zuus,particles/units/heroes/hero_zeus"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_zuus.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_zuus/zeus_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

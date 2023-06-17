@@ -1,2 +1,50 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_alchemist"
+	{
+		"override_hero"		"npc_dota_hero_alchemist"
+		"Ability1"		"alchemist_acid_spray"
+		"Ability2"		"alchemist_unstable_concoction"
+		"Ability3"		"alchemist_corrosive_weaponry"
+		"Ability4"		"alchemist_berserk_potion"
+		"Ability5"		"alchemist_goblins_greed"
+		"Ability6"		"alchemist_chemical_rage"
+		"Ability7"		"alchemist_unstable_concoction_throw"
+		"Ability10"		"special_bonus_unique_alchemist_5"
+		"Ability11"		"special_bonus_unique_alchemist"
+		"Ability12"		"special_bonus_unique_alchemist_3"
+		"Ability13"		"special_bonus_unique_alchemist_7"
+		"Ability14"		"special_bonus_unique_alchemist_8"
+		"Ability15"		"special_bonus_unique_alchemist_2"
+		"Ability16"		"special_bonus_unique_alchemist_6"
+		"Ability17"		"special_bonus_unique_alchemist_4"
+		"AbilityDraftIgnoreCount"		"7"
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.7"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"1.500000"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"1.800000"
+		"MovementSpeed"		"295"
+		"HasAggressiveStance"		"1"
+		"particle_folder"		"particles/units/heroes/hero_alchemist"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_alchemist.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_alchemist/alchemist_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

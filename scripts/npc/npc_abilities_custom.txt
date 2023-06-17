@@ -1,10 +1,131 @@
 // Dota Heroes File
+#base heroes/abaddon/ability_data.txt
+#base heroes/alchemist/ability_data.txt
+#base heroes/ancient_apparition/ability_data.txt
 #base heroes/antimage/ability_data.txt
+#base heroes/arc_warden/ability_data.txt
+#base heroes/snapfire/ability_data.txt
+#base heroes/axe/ability_data.txt
+#base heroes/bane/ability_data.txt
+#base heroes/batrider/ability_data.txt
+#base heroes/beastmaster/ability_data.txt
+#base heroes/bloodseeker/ability_data.txt
+#base heroes/bounty_hunter/ability_data.txt
+#base heroes/brewmaster/ability_data.txt
+#base heroes/bristleback/ability_data.txt
+#base heroes/broodmother/ability_data.txt
+#base heroes/centaur/ability_data.txt
+#base heroes/chaos_knight/ability_data.txt
+#base heroes/chen/ability_data.txt
+#base heroes/clinkz/ability_data.txt
+#base heroes/rattletrap/ability_data.txt
+#base heroes/crystal_maiden/ability_data.txt
+#base heroes/dark_seer/ability_data.txt
+#base heroes/dark_willow/ability_data.txt
+#base heroes/dazzle/ability_data.txt
+#base heroes/death_prophet/ability_data.txt
+#base heroes/disruptor/ability_data.txt
+#base heroes/doom_bringer/ability_data.txt
+#base heroes/dragon_knight/ability_data.txt
+#base heroes/drow_ranger/ability_data.txt
+#base heroes/earth_spirit/ability_data.txt
+#base heroes/earthshaker/ability_data.txt
+#base heroes/elder_titan/ability_data.txt
+#base heroes/ember_spirit/ability_data.txt
+#base heroes/enchantress/ability_data.txt
+#base heroes/enigma/ability_data.txt
+#base heroes/faceless_void/ability_data.txt
+#base heroes/grimstroke/ability_data.txt
+#base heroes/gyrocopter/ability_data.txt
+#base heroes/hoodwink/ability_data.txt
+#base heroes/huskar/ability_data.txt
+#base heroes/invoker/ability_data.txt
+#base heroes/wisp/ability_data.txt
+#base heroes/jakiro/ability_data.txt
+#base heroes/juggernaut/ability_data.txt
+#base heroes/keeper_of_the_light/ability_data.txt
+#base heroes/kunkka/ability_data.txt
+#base heroes/legion_commander/ability_data.txt
+#base heroes/leshrac/ability_data.txt
+#base heroes/lich/ability_data.txt
+#base heroes/life_stealer/ability_data.txt
+#base heroes/lina/ability_data.txt
+#base heroes/lion/ability_data.txt
+#base heroes/lone_druid/ability_data.txt
+#base heroes/luna/ability_data.txt
+#base heroes/lycan/ability_data.txt
+#base heroes/marci/ability_data.txt
+#base heroes/mars/ability_data.txt
+#base heroes/magnataur/ability_data.txt
+#base heroes/medusa/ability_data.txt
+#base heroes/meepo/ability_data.txt
+#base heroes/mirana/ability_data.txt
+#base heroes/muerta/ability_data.txt
+#base heroes/dawnbreaker/ability_data.txt
+#base heroes/morphling/ability_data.txt
+#base heroes/monkey_king/ability_data.txt
+#base heroes/naga_siren/ability_data.txt
+#base heroes/furion/ability_data.txt
+#base heroes/necrolyte/ability_data.txt
+#base heroes/night_stalker/ability_data.txt
+#base heroes/nyx_assassin/ability_data.txt
+#base heroes/ogre_magi/ability_data.txt
+#base heroes/omniknight/ability_data.txt
+#base heroes/oracle/ability_data.txt
+#base heroes/obsidian_destroyer/ability_data.txt
+#base heroes/primal_beast/ability_data.txt
+#base heroes/phantom_assassin/ability_data.txt
+#base heroes/phantom_lancer/ability_data.txt
+#base heroes/pangolier/ability_data.txt
+#base heroes/phoenix/ability_data.txt
+#base heroes/puck/ability_data.txt
+#base heroes/pudge/ability_data.txt
+#base heroes/pugna/ability_data.txt
+#base heroes/queenofpain/ability_data.txt
+#base heroes/razor/ability_data.txt
+#base heroes/riki/ability_data.txt
+#base heroes/rubick/ability_data.txt
+#base heroes/sand_king/ability_data.txt
+#base heroes/shadow_demon/ability_data.txt
+#base heroes/nevermore/ability_data.txt
+#base heroes/shadow_shaman/ability_data.txt
+#base heroes/silencer/ability_data.txt
+#base heroes/skywrath_mage/ability_data.txt
+#base heroes/slardar/ability_data.txt
+#base heroes/slark/ability_data.txt
+#base heroes/sniper/ability_data.txt
+#base heroes/spectre/ability_data.txt
+#base heroes/spirit_breaker/ability_data.txt
+#base heroes/storm_spirit/ability_data.txt
+#base heroes/sven/ability_data.txt
+#base heroes/techies/ability_data.txt
+#base heroes/templar_assassin/ability_data.txt
+#base heroes/terrorblade/ability_data.txt
+#base heroes/tidehunter/ability_data.txt
+#base heroes/shredder/ability_data.txt
+#base heroes/tinker/ability_data.txt
+#base heroes/tiny/ability_data.txt
+#base heroes/treant/ability_data.txt
+#base heroes/troll_warlord/ability_data.txt
+#base heroes/tusk/ability_data.txt
+#base heroes/abyssal_underlord/ability_data.txt
+#base heroes/undying/ability_data.txt
+#base heroes/ursa/ability_data.txt
+#base heroes/vengefulspirit/ability_data.txt
+#base heroes/venomancer/ability_data.txt
+#base heroes/viper/ability_data.txt
+#base heroes/visage/ability_data.txt
+#base heroes/void_spirit/ability_data.txt
+#base heroes/warlock/ability_data.txt
+#base heroes/weaver/ability_data.txt
+#base heroes/windrunner/ability_data.txt
+#base heroes/winter_wyvern/ability_data.txt
+#base heroes/witch_doctor/ability_data.txt
+#base heroes/skeleton_king/ability_data.txt
+#base heroes/zuus/ability_data.txt
+
 "DOTAAbilities"
 {
-	
-
-
 	"fountain_attack"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -22,5 +143,4 @@
 			}
 		}
 	}
-
 }

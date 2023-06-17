@@ -1,20 +1,29 @@
-"DOTAAbilities"
+DOTAAbilities
 {
-    "antimage_mana_break"
+	"antimage_mana_break"
 	{
-        "MaxLevel"                      "7"
-        "BaseClass"                     "antimage_mana_break"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"antimage_mana_break"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"		
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Antimage.ManaBreak"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"percent_damage_per_burn"		"50"
-			"mana_per_hit"			"25 30 35 40 45 50 55"
+			"mana_per_hit"			"25 30 35 40"
 			"mana_per_hit_pct"		
 			{
-				"value"		"1.3 1.6 1.9 2.1 2.4 2.8 3.1"
+				"value"		"1.6 2.4 3.2 4"
 				"special_bonus_unique_antimage_7"	"+0.6"
 			}
 			"illusion_percentage"		"50"
-			"move_slow"				"25 27 30 33 36 39 42"
+			"move_slow"				"25 30 35 40"
 			"slow_duration"			"0.75"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -23,10 +32,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5004"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"			"antimage_blink"
+		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
-        "MaxLevel"                      "7"
-        "BaseClass"                     "antimage_blink"
+
         "HasScepterUpgrade"             "0"
 
 		// Casting
@@ -50,12 +59,12 @@
 		{
 				"AbilityCooldown"				
 				{
-					"value"			"14 12.5 11 9.5 8 7.5 6.5"
+					"value"			"13.5 11 8.5 6"
 					"special_bonus_unique_antimage"	"-1"
 				}
 				"AbilityCastRange"			
 				{
-					"value"					"750 800 850 900 1000 1100 1200"
+					"value"					"750 900 1050 1200"
 					"special_bonus_unique_antimage_3"	"+200"
 				}
 				"min_blink_range"		"200"
@@ -66,10 +75,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5005"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"			"antimage_spell_shield"
+		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "MaxLevel"                      "7"
-        "BaseClass"                     "antimage_spell_shield"
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -77,7 +86,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spell_shield_resistance"		"10 15 20 25 30 35 40"
+				"spell_shield_resistance"		"20 30 40 50"
 			}
 			"02"
 			{
@@ -91,13 +100,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"7314"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"			"antimage_counterspell"
+		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"HasShardUpgrade"				"1"
-        "MaxLevel"                      "7"
-        "BaseClass"                     "antimage_counterspell"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
@@ -105,7 +114,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17 15 13 11 9 7 5 3"
+		"AbilityCooldown"				"15 11 7 3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -117,7 +126,7 @@
 		{
 			"magic_resistance"			
 			{
-				"value"			"10 15 20 25 30 35 40"
+				"value"			"15 25 35 45"
 				"special_bonus_unique_antimage_4"	"+20"
 			}
 			"duration"					"1.2"
@@ -147,7 +156,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5006"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"			"antimage_mana_void"
+		"MaxLevel"		"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -157,8 +167,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Antimage.ManaVoid"
 		"AbilityDraftUltScepterAbility"		"antimage_mana_overload"
-        "MaxLevel"                      "7"
-        "BaseClass"                     "antimage_mana_void"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
@@ -183,11 +192,11 @@
 			"AbilityCooldown"				
 			{
 				"value"			"70"
-				"special_bonus_unique_antimage_2"	"-30"
+				"special_bonus_unique_antimage_2"	"-50"
 			}
 			"mana_void_damage_per_mana"		
 			{
-				"value"				"0.7 0.8 0.9 1 1.2 1.3 1.4"
+				"value"				"0.8 0.95 1.1"
 				"special_bonus_unique_antimage_6"	"+0.1"
 			}			
 			"mana_void_ministun"			
@@ -206,7 +215,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"543"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"			"antimage_mana_overload"
+		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -215,7 +225,7 @@
 		"MaxLevel"						"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
-        "BaseClass"                     "antimage_mana_overload"
+		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"

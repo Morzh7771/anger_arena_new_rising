@@ -1,2 +1,66 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_naga_siren"
+	{
+		"override_hero"		"npc_dota_hero_naga_siren"
+		"Ability1"		"naga_siren_mirror_image"
+		"Ability2"		"naga_siren_ensnare"
+		"Ability3"		"naga_siren_rip_tide"
+		"Ability4"		"naga_siren_reel_in"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"naga_siren_song_of_the_siren"
+		"Ability7"		"naga_siren_song_of_the_siren_cancel"
+		"Ability10"		"special_bonus_unique_naga_siren_net_cooldown"
+		"Ability11"		"special_bonus_unique_naga_siren_2"
+		"Ability12"		"special_bonus_unique_naga_siren_4"
+		"Ability13"		"special_bonus_strength_15"
+		"Ability14"		"special_bonus_unique_naga_siren_5"
+		"Ability15"		"special_bonus_unique_naga_siren"
+		"Ability16"		"special_bonus_unique_naga_siren_6"
+		"Ability17"		"special_bonus_unique_naga_siren_3"
+		"AbilityDraftIgnoreCount" "7"
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"25"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"110"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.600000"
+		"AttributeBaseAgility"		"21"
+		"AttributeAgilityGain"		"3.3"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"2.0000"
+		"MovementSpeed"		"330"
+		"StatusHealthRegen"		"1.25"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"particle_folder"		"particles/units/heroes/hero_siren"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_naga_siren.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_siren/naga_siren_riptide.vpcf"		"loadout"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_SEMI_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"1"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"0"
+				"RequiresSetup"		"2"
+			}
+		}
+	}
+}

@@ -1,2 +1,61 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_life_stealer"
+	{
+		"override_hero"		"npc_dota_hero_life_stealer"
+		"Ability1"		"life_stealer_rage"
+		"Ability2"		"life_stealer_feast"
+		"Ability3"		"life_stealer_ghoul_frenzy"
+		"Ability4"		"life_stealer_open_wounds"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"life_stealer_infest"
+		"Ability7"		"life_stealer_consume"
+		"Ability10"		"special_bonus_unique_lifestealer_infest_damage"
+		"Ability11"		"special_bonus_unique_lifestealer_2"
+		"Ability12"		"special_bonus_hp_325"
+		"Ability13"		"special_bonus_attack_damage_25"
+		"Ability14"		"special_bonus_unique_lifestealer_infest_target_bonus"
+		"Ability15"		"special_bonus_unique_lifestealer_6"
+		"Ability16"		"special_bonus_unique_lifestealer_3"
+		"Ability17"		"special_bonus_unique_lifestealer"
+		"AbilityDraftIgnoreCount" "9"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"life_stealer_rage"
+			"Ability2"		"life_stealer_feast"
+			"Ability3"		"life_stealer_ghoul_frenzy"
+			"Ability4"		"life_stealer_infest"
+		}
+
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"28"
+		"AttackRate"		"1.7000"
+		"BaseAttackSpeed"		"120"
+		"AttackAnimationPoint"		"0.390000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.8000"
+		"AttributeBaseAgility"		"19"
+		"AttributeAgilityGain"		"2.600000"
+		"MovementSpeed"		"320" 
+		"MovementTurnRate"		"0.900000"
+		"HasAggressiveStance"		"1"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_life_stealer.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_life_stealer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_life_stealer/life_stealer_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

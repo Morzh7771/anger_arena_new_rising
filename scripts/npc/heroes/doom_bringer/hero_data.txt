@@ -1,2 +1,56 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_doom_bringer"
+	{
+		"override_hero"		"npc_dota_hero_doom_bringer"
+		"Ability1"		"doom_bringer_devour"
+		"Ability2"		"doom_bringer_scorched_earth"
+		"Ability3"		"doom_bringer_infernal_blade"
+		"Ability4"		"doom_bringer_empty1"
+		"Ability5"		"doom_bringer_empty2"
+		"Ability6"		"doom_bringer_doom"
+		"Ability10"		"special_bonus_unique_doom_3"
+		"Ability11"		"special_bonus_unique_doom_4"
+		"Ability12"		"special_bonus_unique_doom_6"
+		"Ability13"		"special_bonus_unique_doom_2"
+		"Ability14"		"special_bonus_unique_doom_9"
+		"Ability15"		"special_bonus_unique_doom_10"
+		"Ability16"		"special_bonus_unique_doom_1"
+		"Ability17"		"special_bonus_unique_doom_11"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"doom_bringer_devour"
+			"Ability2"		"doom_bringer_scorched_earth"
+			"Ability3"		"doom_bringer_infernal_blade"
+			"Ability4"		"doom_bringer_doom"
+		}
+
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"34"
+		"AttackDamageMax"		"44"
+		"AttackRate"		"1.90000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"3.7"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.5"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.7"
+		"MovementSpeed"		"285"
+		"particle_folder"		"particles/units/heroes/hero_doom_bringer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_doom_bringer/doom_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

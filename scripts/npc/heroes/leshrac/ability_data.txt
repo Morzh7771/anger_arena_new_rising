@@ -1,2 +1,326 @@
-"DOTAAbilities"
-{}
+DOTAAbilities
+{
+	"leshrac_split_earth"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"leshrac_split_earth"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Leshrac.Split_Earth"
+
+        "HasShardUpgrade"               "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.7 0.7 0.7 0.7"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9 9 9 9"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 100 120 140"
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"120 180 240 300"
+		"AbilityDuration"				"1.6"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.35"
+			}
+			
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"150 180 210 240"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_5"
+			}
+			
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.7"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shard_radius_increase"			"55"
+				"RequiresShard"					"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shard_max_count"			"3"
+				"RequiresShard"					"1"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"shard_secondary_delay"			"5"
+				"RequiresShard"					"1"
+			}						
+
+
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"leshrac_diabolic_edict"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"leshrac_diabolic_edict"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Leshrac.Diabolic_Edict"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"22 21 20 19"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"95 120 135 155"
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"7 14 21 28"
+		"AbilityDuration"				"10"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_explosions"		"40"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_1"
+			}
+			
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tower_bonus"			"0"
+
+			}
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"leshrac_lightning_storm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"leshrac_lightning_storm"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Leshrac.Lightning_Storm"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 100 120 140"
+		
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"90 140 190 240"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_6"
+			}			
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"jump_count"			"5 7 9 11"
+			}			
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"475"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_delay"			"0.25 0.25 0.25 0.25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_movement_speed"	"-75"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"0.4 0.6 0.8 1.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_2"
+			}	
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval_scepter"			"1.5"
+				"RequiresScepter"		"1"
+			}		
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_scepter"	"750"
+				"RequiresScepter"		"1"
+			}	
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"leshrac_greater_lightning_storm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"leshrac_greater_lightning_storm"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE| DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"1"
+		"IsGrantedByScepter"			"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"		"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_amp"		"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"		"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"		"500"
+			}
+		}
+	}
+	"leshrac_pulse_nova"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"leshrac_pulse_nova"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+
+		"AbilityDraftUltScepterAbility" "leshrac_greater_lightning_storm"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCooldown"				"1.0 1.0 1.0 1.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"mana_cost_per_second"	"25 45 65"
+				"radius"				"525"
+				"damage"
+				{
+					"value"			"80 135 180"
+					"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
+				}
+				"damage_resistance"
+				{
+					"value"			"0"
+					"special_bonus_unique_leshrac_4"	"+20"
+				}
+				"bonus_movespeed"
+				{
+					"value"			"0"
+					"special_bonus_unique_leshrac_7"	"+10"
+				}
+		}
+	}
+}

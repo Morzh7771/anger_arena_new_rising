@@ -1,2 +1,49 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_spirit_breaker"
+	{
+		"override_hero"		"npc_dota_hero_spirit_breaker"
+		"Ability1"		"spirit_breaker_charge_of_darkness"
+		"Ability2"		"spirit_breaker_bulldoze"
+		"Ability3"		"spirit_breaker_greater_bash"
+		"Ability4"		"spirit_breaker_planar_pocket"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"spirit_breaker_nether_strike"
+		"Ability10"		"special_bonus_night_vision_500"
+		"Ability11"		"special_bonus_armor_4"
+		"Ability12"		"special_bonus_unique_spirit_breaker_2"
+		"Ability13"		"special_bonus_attack_damage_40"
+		"Ability14"		"special_bonus_unique_spirit_breaker_1"
+		"Ability15"		"special_bonus_unique_spirit_breaker_4"
+		"Ability16"		"special_bonus_unique_spirit_breaker_3"
+		"Ability17"		"special_bonus_unique_spirit_breaker_shield"
+		"ArmorPhysical"		"1.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.900000"
+		"AttackAnimationPoint"		"0.600000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"28"
+		"AttributeStrengthGain"		"3.300000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"1.700000"
+		"AttributeBaseIntelligence"		"14"
+		"AttributeIntelligenceGain"		"1.800000"
+		"StatusHealthRegen"		"1.25"
+		"StatusManaRegen"		"0.5"
+		"MovementSpeed"		"295"
+		"particle_folder"		"particles/units/heroes/hero_spirit_breaker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_spirit_breaker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_spirit_breaker/spirit_breaker_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

@@ -1,2 +1,48 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_bloodseeker"
+	{
+		"override_hero"		"npc_dota_hero_bloodseeker"
+		"Ability1"		"bloodseeker_bloodrage"
+		"Ability2"		"bloodseeker_blood_bath"
+		"Ability3"		"bloodseeker_thirst"
+		"Ability4"		"bloodseeker_blood_mist"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"bloodseeker_rupture"
+		"Ability10"		"special_bonus_unique_bloodseeker_5"
+		"Ability11"		"special_bonus_unique_bloodseeker_6"
+		"Ability12"		"special_bonus_unique_bloodseeker_7"
+		"Ability13"		"special_bonus_unique_bloodseeker_2"
+		"Ability14"		"special_bonus_unique_bloodseeker_3"
+		"Ability15"		"special_bonus_spell_lifesteal_15"
+		"Ability16"		"special_bonus_unique_bloodseeker_rupture_charges"
+		"Ability17"		"special_bonus_unique_bloodseeker_4"
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.430000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"2.700000"
+		"AttributeBaseIntelligence"		"17"
+		"AttributeIntelligenceGain"		"2.0"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"3.100000"
+		"MovementSpeed"		"300"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_bloodseeker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_bloodseeker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_bloodseeker/bloodseeker_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

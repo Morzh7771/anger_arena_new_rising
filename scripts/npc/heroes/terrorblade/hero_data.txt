@@ -1,2 +1,66 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_terrorblade"
+	{
+		"override_hero"		"npc_dota_hero_terrorblade"
+		"Ability1"		"terrorblade_reflection"
+		"Ability2"		"terrorblade_conjure_image"
+		"Ability3"		"terrorblade_metamorphosis"
+		"Ability4"		"terrorblade_demon_zeal"
+		"Ability5"		"terrorblade_terror_wave"
+		"Ability6"		"terrorblade_sunder"
+		"Ability10"		"special_bonus_unique_terrorblade_2"
+		"Ability11"		"special_bonus_unique_terrorblade_4"
+		"Ability12"		"special_bonus_hp_300"
+		"Ability13"		"special_bonus_unique_terrorblade_6"
+		"Ability14"		"special_bonus_all_stats_10"
+		"Ability15"		"special_bonus_unique_terrorblade_5"
+		"Ability16"		"special_bonus_unique_terrorblade"
+		"Ability17"		"special_bonus_unique_terrorblade_3"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"terrorblade_reflection"
+			"Ability2"		"terrorblade_conjure_image"
+			"Ability3"		"terrorblade_metamorphosis"
+			"Ability4"		"terrorblade_sunder"
+		}
+
+
+		"ArmorPhysical"		"5"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"36"
+		"AttackRate"		"1.500000"
+		"BaseAttackSpeed"		"110"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"MovementTurnRate"		"0.800000"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"16"
+		"AttributeStrengthGain"		"2.0"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.60000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"4.000000"
+		"StatusHealthRegen"		"1.5"
+		"MovementSpeed"		"315"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_terrorblade"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_terrorblade.vsndevts"
+		"HealthBarOffset"		"300"
+		"precache"
+		{
+			"model"		"models/heroes/terrorblade/demon.vmdl"
+		}
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_terrorblade/terrorblade_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

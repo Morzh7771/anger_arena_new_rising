@@ -1,2 +1,50 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_leshrac"
+	{
+		"override_hero"		"npc_dota_hero_leshrac"
+		"Ability1"		"leshrac_split_earth"
+		"Ability2"		"leshrac_diabolic_edict"
+		"Ability3"		"leshrac_lightning_storm"
+		"Ability4"		"leshrac_greater_lightning_storm"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"leshrac_pulse_nova"
+		"Ability10"		"special_bonus_mp_regen_150"
+		"Ability11"		"special_bonus_unique_leshrac_5"
+		"Ability12"		"special_bonus_unique_leshrac_6"
+		"Ability13"		"special_bonus_unique_leshrac_7"
+		"Ability14"		"special_bonus_unique_leshrac_4"
+		"Ability15"		"special_bonus_unique_leshrac_3"
+		"Ability16"		"special_bonus_unique_leshrac_2"
+		"Ability17"		"special_bonus_unique_leshrac_1"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"575"
+		"ProjectileModel"		"particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.8"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"3.5"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"2.800000"
+		"MovementSpeed"		"325"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_leshrac.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_leshrac"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_leshrac/leshrac_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

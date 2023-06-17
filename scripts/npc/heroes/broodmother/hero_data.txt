@@ -1,2 +1,54 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_broodmother"
+	{
+		"override_hero"		"npc_dota_hero_broodmother"
+		"Ability1"		"broodmother_insatiable_hunger"
+		"Ability2"		"broodmother_spin_web"
+		"Ability3"		"broodmother_silken_bola"
+		"Ability4"		"broodmother_sticky_snare"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"broodmother_spawn_spiderlings"
+		"Ability10"		"special_bonus_unique_broodmother_3"
+		"Ability11"		"special_bonus_unique_broodmother_6"
+		"Ability12"		"special_bonus_unique_broodmother_5"
+		"Ability13"		"special_bonus_unique_broodmother_7"
+		"Ability14"		"special_bonus_unique_broodmother_2"
+		"Ability15"		"special_bonus_attack_speed_35"
+		"Ability16"		"special_bonus_unique_broodmother_1"
+		"Ability17"		"special_bonus_unique_broodmother_4"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"9"
+		"AttackDamageMax"		"15"
+		"BaseAttackSpeed"		"125"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"175"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"2.300000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"2.40000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.400000"
+		"MovementSpeed"		"285"
+		"VisionDaytimeRange"		"1800"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"precache"
+		{
+			"model"		"models/heroes/broodmother/spiderling.vmdl"
+		}
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_broodmother.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_broodmother"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_broodmother/broodmother_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

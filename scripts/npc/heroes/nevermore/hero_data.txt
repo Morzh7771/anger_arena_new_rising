@@ -1,2 +1,70 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_nevermore"
+	{
+		"override_hero"		"npc_dota_hero_nevermore"
+		"Ability1"		"nevermore_shadowraze1"
+		"Ability2"		"nevermore_shadowraze2"
+		"Ability3"		"nevermore_shadowraze3"
+		"Ability4"		"nevermore_necromastery"
+		"Ability5"		"nevermore_dark_lord"
+		"Ability6"		"nevermore_requiem"
+		"Ability10"		"special_bonus_unique_nevermore_7"
+		"Ability11"		"special_bonus_attack_speed_25"
+		"Ability12"		"special_bonus_unique_nevermore_3"
+		"Ability13"		"special_bonus_unique_nevermore_2"
+		"Ability14"		"special_bonus_unique_nevermore_1"
+		"Ability15"		"special_bonus_unique_nevermore_6"
+		"Ability16"		"special_bonus_unique_nevermore_shadowraze_cooldown"
+		"Ability17"		"special_bonus_unique_nevermore_raze_procsattacks"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"nevermore_shadowraze2"
+			"Ability2"		"nevermore_dark_lord"
+			"Ability3"		"nevermore_necromastery"
+			"Ability6"		"nevermore_requiem"
+		}		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"21"
+		"AttackDamageMax"		"27"
+		"AttackRate"		"1.6"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"175"
+			"faster"	"275"
+			"fastest"	"360"
+		}
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"500"
+		"ProjectileModel"		"particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.700000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"2.200000"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"3.500000"
+		"StatusHealthRegen"		"0.25"
+		"StatusManaRegen"	"0.3"
+		"MovementSpeed"		"305"
+		"MovementTurnRate"		"0.900000"
+		"MovementSpeedActivityModifiers"
+		{
+			"fast_run"		"385"
+		}
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_nevermore"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_nevermore/nevermore_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

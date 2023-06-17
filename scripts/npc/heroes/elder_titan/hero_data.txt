@@ -1,2 +1,58 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_elder_titan"
+	{
+		"override_hero"		"npc_dota_hero_elder_titan"
+		"Ability1"		"elder_titan_echo_stomp"
+		"Ability2"		"elder_titan_ancestral_spirit"
+		"Ability3"		"elder_titan_natural_order"
+		"Ability4"		"elder_titan_move_spirit"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"elder_titan_earth_splitter"
+		"Ability7"		"elder_titan_return_spirit"
+		"Ability10"		"special_bonus_unique_elder_titan_bonus_spirit_speed"
+		"Ability11"		"special_bonus_attack_speed_25"
+		"Ability12"		"special_bonus_unique_elder_titan_2"
+		"Ability13"		"special_bonus_unique_elder_titan"
+		"Ability14"		"special_bonus_cleave_100"
+		"Ability15"		"special_bonus_unique_elder_titan_5"
+		"Ability16"		"special_bonus_unique_elder_titan_3"
+		"Ability17"		"special_bonus_unique_elder_titan_4"
+		"AbilityDraftIgnoreCount" "7"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"elder_titan_echo_stomp"
+			"Ability2"		"elder_titan_ancestral_spirit"
+			"Ability3"		"elder_titan_natural_order"
+			"Ability4"		"elder_titan_earth_splitter"
+		}
+		"ArmorPhysical"		"0.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"26"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.800000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"1.600000"
+				"StatusHealthRegen"		"0.75"
+		"StatusManaRegen"	"0.25"
+		"MovementSpeed"		"310"
+		"particle_folder"		"particles/units/heroes/hero_elder_titan"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_elder_titan.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_elder_titan/elder_titan_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

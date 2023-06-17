@@ -1,2 +1,80 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_phantom_assassin"
+	{
+		"override_hero"		"npc_dota_hero_phantom_assassin"
+		"Ability1"		"phantom_assassin_stifling_dagger"
+		"Ability2"		"phantom_assassin_phantom_strike"
+		"Ability3"		"phantom_assassin_blur"
+		"Ability4"		"phantom_assassin_fan_of_knives"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"phantom_assassin_coup_de_grace"
+		"Ability10"		"special_bonus_unique_phantom_assassin_4"
+		"Ability11"		"special_bonus_unique_phantom_assassin_7"
+		"Ability12"		"special_bonus_unique_phantom_assassin_3"
+		"Ability13"		"special_bonus_unique_phantom_assassin_6"
+		"Ability14"		"special_bonus_unique_phantom_assassin_5"
+		"Ability15"		"special_bonus_unique_phantom_assassin_strike_aspd"
+		"Ability16"		"special_bonus_unique_phantom_assassin_2"
+		"Ability17"		"special_bonus_unique_phantom_assassin"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"StatusHealthRegen"		"1.0"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170" //"249"
+			"faster"	"275" //"350"
+			"fastest"	"350" //"450"
+		}
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.0000"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"3.20000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.400000"
+		"MovementSpeed"		"305"
+		"HasAggressiveStance"		"1"
+		"MovementTurnRate"		"0.800000"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_phantom_assassin/phantom_assassin_loadout.vpcf"		"loadout"
+			}
+		}
+		"Persona"
+			{
+				"1"
+				{
+					"name"					"npc_dota_hero_phantom_assassin_persona1"
+					"Model"					"models/heroes/phantom_assassin_persona/phantom_assassin_persona.vmdl"	// For tools only
+				}
+			}
+		"animation_transitions"
+		{
+			"ACT_DOTA_IDLE"
+			{
+		 		"regular"	"0.9"
+				"aggressive"	"0.9"	
+			}
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"1"
+				"aggressive"		"1"
+			}
+		}
+		"MovementSpeedActivityModifiers"
+		{
+			"run"		"345"
+			"run_fast"	"400"
+		}
+
+	}
+}

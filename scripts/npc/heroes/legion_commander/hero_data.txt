@@ -1,2 +1,47 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_legion_commander"
+	{
+		"override_hero"		"npc_dota_hero_legion_commander"
+		"Ability1"		"legion_commander_overwhelming_odds"
+		"Ability2"		"legion_commander_press_the_attack"
+		"Ability3"		"legion_commander_moment_of_courage"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"legion_commander_duel"
+		"Ability10"		"special_bonus_unique_legion_commander_9"
+		"Ability11"		"special_bonus_unique_legion_commander"
+		"Ability12"		"special_bonus_unique_legion_commander_6"
+		"Ability13"		"special_bonus_unique_legion_commander_4"
+		"Ability14"		"special_bonus_unique_legion_commander_5"
+		"Ability15"		"special_bonus_unique_legion_commander_3"
+		"Ability16"		"special_bonus_unique_legion_commander_7"
+		"Ability17"		"special_bonus_unique_legion_commander_8"
+		"ArmorPhysical"		"0.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"33"
+		"AttackDamageMax"		"37"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.100000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.700000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"2.200000"
+		"MovementSpeed"		"330"
+		"particle_folder"		"particles/units/heroes/hero_legion_commander"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_legion_commander.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_legion_commander/legion_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

@@ -1,2 +1,59 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_mars"
+	{
+		"override_hero"		"npc_dota_hero_mars"
+		"Ability1"		"mars_spear"
+		"Ability2"		"mars_gods_rebuke"
+		"Ability3"		"mars_bulwark"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"mars_arena_of_blood"
+		"Ability10"		"special_bonus_unique_mars_rebuke_radius"
+		"Ability11"		"special_bonus_unique_mars_bulwark_redirect_chance"
+		"Ability12"		"special_bonus_unique_mars_rebuke_cooldown"
+		"Ability13"		"special_bonus_unique_mars_spear_bonus_damage"
+		"Ability14"		"special_bonus_unique_mars_bulwark_damage_reduction"
+		"Ability15"		"special_bonus_unique_mars_spear_stun_duration"
+		"Ability16"		"special_bonus_unique_mars_gods_rebuke_extra_crit"
+		"Ability17"		"special_bonus_unique_mars_arena_of_blood_hp_regen"
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"34"
+		"AttackRate"		"1.800000"
+		"AttackAnimationPoint"		"0.40000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"140"
+			"faster"	"180"
+			"fastest"	"230"
+			"super_fast"	"300"
+		}
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"250"
+		"AttackRangeActivityModifiers"
+		{
+			"attack_closest_range"	"0"
+			"attack_close_range"	"90"
+			"attack_medium_range"	"150"
+			"attack_long_range"		"250"
+		}
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.700000"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"1.7"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"2.2"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"310"
+		"MovementTurnRate"		"0.800000"
+		"HasAggressiveStance"		"1"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_mars.vsndevts"
+		"RenderablePortrait"
+		{
+		}
+	}
+}

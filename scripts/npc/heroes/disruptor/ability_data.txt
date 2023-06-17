@@ -1,2 +1,242 @@
-"DOTAAbilities"
-{}
+DOTAAbilities
+{
+	"disruptor_thunder_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"disruptor_thunder_strike"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Disruptor.ThunderStrike.Target"
+
+        "HasShardUpgrade"               "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_THUNDER_STRIKE"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18 15 12 9"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 130 135 140"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCastRange"
+			{
+				"value"						"800"
+				"special_bonus_shard"		"+800"
+			}
+
+			"radius"						
+			{
+				"value" 					"240"
+				"special_bonus_unique_disruptor_3" "+100"
+			}
+
+			"strikes"
+			{
+				"value"						"4"
+				"special_bonus_shard"		"+2"
+			}
+
+			"strike_interval"				"2.0"
+			"strike_damage"					"25 55 85 115"
+
+			"slow_duration"
+			{
+				"value"						"0.1 0.2 0.3 0.4"
+				"special_bonus_unique_disruptor" ".4"
+			}
+
+			"slow_amount"					"100"
+			"shard_ground_delay"			"5"
+		}
+	}
+	"disruptor_glimpse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"disruptor_glimpse"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Disruptor.Glimpse.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------	
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 85 100 115"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600 1000 1400 1800"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"backtrack_time"			"4.0 4.0 4.0 4.0"
+			"cast_range"				"600 1000 1400 1800"
+			"silence_duration"			"0"
+			"AbilityCooldown"
+			{
+				"value"									"24 22 20 18"
+				"special_bonus_unique_disruptor_4"		"-12"
+			}
+			"min_damage"				"25"
+			"max_damage"				
+			{
+				"value"											"125 175 225 275"
+				"special_bonus_unique_disruptor_9"				"250"
+			}
+			"max_distance"					"1400"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}	
+	"disruptor_kinetic_field"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"disruptor_kinetic_field"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Disruptor.KineticField"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_KINETIC_FIELD"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20 17 14 11"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900 900 900 900"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"350"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"formation_time"			"1"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"2.6 3.2 3.8 4.4"
+				"LinkedSpecialBonus"		"special_bonus_unique_disruptor_5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_second"			"0"
+			}
+		}
+	}	
+	"disruptor_static_storm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"disruptor_static_storm"
+		"MaxLevel"		"7"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Disruptor.StaticStorm.Cast"
+
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_STATIC_STORM"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90 80 70"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 175 225"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800 800 800 800"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"500"
+				"LinkedSpecialBonus"		"special_bonus_unique_disruptor_8"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"pulses"					"20"
+				"LinkedSpecialBonus"			"special_bonus_unique_disruptor_7"
+				"LinkedSpecialBonusField"		"value2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_max"				"200 275 350"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"6.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_disruptor_7"
+			}
+		}
+	}
+}

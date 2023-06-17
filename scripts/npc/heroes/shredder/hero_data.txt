@@ -1,2 +1,59 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_shredder"
+	{
+		"override_hero"		"npc_dota_hero_shredder"
+		"Ability1"		"shredder_whirling_death"
+		"Ability2"		"shredder_timber_chain"
+		"Ability3"		"shredder_reactive_armor"
+		"Ability4"		"shredder_chakram_2"
+		"Ability5"		"shredder_flamethrower"
+		"Ability6"		"shredder_chakram"
+		"Ability7"		"shredder_return_chakram"
+		"Ability8"		"shredder_return_chakram_2"
+		"Ability10"		"special_bonus_hp_200"
+		"Ability11"		"special_bonus_mp_regen_150"
+		"Ability12"		"special_bonus_spell_amplify_7"
+		"Ability13"		"special_bonus_unique_timbersaw_2"
+		"Ability14"		"special_bonus_magic_resistance_20"
+		"Ability15"		"special_bonus_unique_timbersaw_4"
+		"Ability16"		"special_bonus_unique_timbersaw"
+		"Ability17"		"special_bonus_unique_timbersaw_3"
+		"AbilityDraftIgnoreCount" "8"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"shredder_whirling_death"
+			"Ability2"		"shredder_timber_chain"
+			"Ability3"		"shredder_reactive_armor"
+			"Ability4"		"shredder_chakram"
+		}
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"7"
+		"AttackDamageMax"		"11"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.360000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.20000"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.300000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"2.700000"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"290"
+		"particle_folder"		"particles/units/heroes/hero_shredder"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_shredder.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_shredder/shredder_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

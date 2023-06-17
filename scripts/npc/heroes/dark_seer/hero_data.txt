@@ -1,2 +1,49 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_dark_seer"
+	{
+		"override_hero"		"npc_dota_hero_dark_seer"
+		"Ability1"		"dark_seer_vacuum"
+		"Ability2"		"dark_seer_ion_shell"
+		"Ability3"		"dark_seer_surge"
+		"Ability4"		"dark_seer_normal_punch"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"dark_seer_wall_of_replica"
+		"Ability10"		"special_bonus_unique_dark_seer_7"
+		"Ability11"		"special_bonus_unique_dark_seer_5"
+		"Ability12"		"special_bonus_unique_dark_seer_2"
+		"Ability13"		"special_bonus_unique_dark_seer_6"
+		"Ability14"		"special_bonus_unique_dark_seer_13"
+		"Ability15"		"special_bonus_unique_dark_seer"
+		"Ability16"		"special_bonus_unique_dark_seer_14"
+		"Ability17"		"special_bonus_unique_dark_seer_3"
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"7"
+		"AttackDamageMax"		"13"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.590000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.600000"
+		"AttributeBaseAgility"		"19"
+		"AttributeAgilityGain"		"1.800000"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"2.700000"
+		"StatusHealthRegen"		"1.0"
+		"MovementSpeed"		"295"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_dark_seer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_dark_seer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_dark_seer/dark_seer_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

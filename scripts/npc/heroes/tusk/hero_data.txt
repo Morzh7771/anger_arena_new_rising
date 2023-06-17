@@ -1,2 +1,60 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_tusk"
+	{
+		"override_hero"		"npc_dota_hero_tusk"
+		"Ability1"		"tusk_ice_shards"
+		"Ability2"		"tusk_snowball"
+		"Ability3"		"tusk_tag_team"
+		"Ability4"		"tusk_walrus_kick"
+		"Ability5"		"tusk_frozen_sigil"
+		"Ability6"		"tusk_walrus_punch"
+		"Ability7"		"tusk_launch_snowball"
+		"Ability10"		"special_bonus_unique_tusk_3"
+		"Ability11"		"special_bonus_unique_tusk_7"
+		"Ability12"		"special_bonus_hp_325"
+		"Ability13"		"special_bonus_unique_tusk_2"
+		"Ability14"		"special_bonus_unique_tusk_5"
+		"Ability15"		"special_bonus_unique_tusk"
+		"Ability16"		"special_bonus_unique_tusk_4"
+		"Ability17"		"special_bonus_unique_tusk_6"
+		"AbilityDraftIgnoreCount" "7"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"tusk_ice_shards"
+			"Ability2"		"tusk_snowball"
+			"Ability3"		"tusk_tag_team"
+			"Ability4"		"tusk_walrus_punch"
+		}
+
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.360000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.900"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"2.100000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.700000"
+		"MovementSpeed"		"310"
+		"MovementTurnRate"		"0.700000"
+		"StatusHealthRegen"		"1"
+		"StatusManaRegen"	"0.5"
+		"particle_folder"		"particles/units/heroes/hero_tusk"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_tusk.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_tusk/tusk_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

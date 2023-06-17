@@ -1,2 +1,49 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_jakiro"
+	{
+		"override_hero"		"npc_dota_hero_jakiro"
+		"Ability1"		"jakiro_dual_breath"
+		"Ability2"		"jakiro_ice_path"
+		"Ability3"		"jakiro_liquid_fire"
+		"Ability4"		"jakiro_liquid_ice"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"jakiro_macropyre"
+		"Ability10"		"special_bonus_attack_range_275"
+		"Ability11"		"special_bonus_unique_jakiro_dualbreath_slow"
+		"Ability12"		"special_bonus_unique_jakiro_4"
+		"Ability13"		"special_bonus_hp_325"
+		"Ability14"		"special_bonus_unique_jakiro"
+		"Ability15"		"special_bonus_unique_jakiro_7"
+		"Ability16"		"special_bonus_unique_jakiro_2"
+		"Ability17"		"special_bonus_unique_jakiro_6"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"35"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"950"
+		"AttackRange"		"400"
+		"ProjectileModel"		"particles/units/heroes/hero_jakiro/jakiro_base_attack.vpcf"
+		"ProjectileSpeed"		"1100"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"2.5"
+		"AttributeBaseIntelligence"		"26"
+		"AttributeIntelligenceGain"		"3.000000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.200000"
+		"MovementSpeed"		"290"
+		"particle_folder"		"particles/units/heroes/hero_jakiro"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_jakiro.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_jakiro/jakiro_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

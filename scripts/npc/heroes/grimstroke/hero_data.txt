@@ -1,2 +1,71 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_grimstroke"
+	{
+		"override_hero"		"npc_dota_hero_grimstroke"
+		"Ability1"				"grimstroke_dark_artistry"
+		"Ability2"				"grimstroke_ink_creature"
+		"Ability3"				"grimstroke_spirit_walk"
+		"Ability4"				"grimstroke_dark_portrait"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"grimstroke_soul_chain"
+		"Ability10"				"special_bonus_unique_grimstroke_8"
+		"Ability11"				"special_bonus_unique_grimstroke_7"
+		"Ability12"				"special_bonus_unique_grimstroke_soul_chain_reflect_damage"
+		"Ability13"				"special_bonus_unique_grimstroke_6"
+		"Ability14"				"special_bonus_unique_grimstroke_3"
+		"Ability15"				"special_bonus_unique_grimstroke_4"
+		"Ability16"				"special_bonus_unique_grimstroke_1"
+		"Ability17"				"special_bonus_unique_grimstroke_2"
+
+
+		"ArmorPhysical"				"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"21"
+		"AttackDamageMax"			"25"
+		"BaseAttackSpeed"		"100"
+		"AttackRate"				"1.700000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"150"
+			"faster"	"240"
+			"fastest"	"330"
+		}
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"600"
+		"ProjectileModel"			"particles/units/heroes/hero_grimstroke/grimstroke_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"1.900000"
+		"AttributeBaseIntelligence"	"25"
+		"AttributeIntelligenceGain"	"3.800000"
+		"MovementSpeed"				"290"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"particle_folder"			"particles/units/heroes/hero_grimstroke"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_grimstroke.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_grimstroke.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_grimstroke/grimstroke_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_attachment"
+						"location"	"attach_hitloc"
+					}
+					"1"
+					{
+						"type"		"follow_origin"
+						"position"	"0 0 0"
+					}
+				}
+			}
+		}
+	}
+}

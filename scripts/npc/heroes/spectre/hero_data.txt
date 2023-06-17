@@ -1,2 +1,59 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_spectre"
+	{
+		"override_hero"		"npc_dota_hero_spectre"
+		"Ability1"		"spectre_spectral_dagger"
+		"Ability2"		"spectre_desolate"
+		"Ability3"		"spectre_dispersion"
+		"Ability4"		"spectre_reality"
+		"Ability5"		"spectre_haunt_single"
+		"Ability6"		"spectre_haunt"
+		"Ability10"		"special_bonus_unique_spectre"
+		"Ability11"		"special_bonus_all_stats_5"
+		"Ability12"		"special_bonus_unique_spectre_2"
+		"Ability13"		"special_bonus_unique_spectre_6"
+		"Ability14"		"special_bonus_hp_350"
+		"Ability15"		"special_bonus_unique_spectre_3"
+		"Ability16"		"special_bonus_unique_spectre_4"
+		"Ability17"		"special_bonus_unique_spectre_5"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"spectre_spectral_dagger"
+			"Ability2"		"spectre_desolate"
+			"Ability3"		"spectre_dispersion"
+			"Ability4"		"spectre_haunt"
+		}
+
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"BaseAttackSpeed"		"90"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"27"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"130"
+			"faster"	"200"
+		}
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.500000"
+		"AttributeBaseAgility"		"25"
+		"AttributeAgilityGain"		"2.100000"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"1.7"
+		"StatusHealthRegen"		"2"
+		"MovementSpeed"		"290"
+		"particle_folder"		"particles/units/heroes/hero_spectre"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_spectre.vsndevts"
+		"RenderablePortrait"
+		{
+		}
+	}
+}

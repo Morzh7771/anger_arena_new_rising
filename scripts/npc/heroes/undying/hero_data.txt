@@ -1,2 +1,52 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_undying"
+	{
+		"override_hero"		"npc_dota_hero_undying"
+		"Ability1"		"undying_decay"
+		"Ability2"		"undying_soul_rip"
+		"Ability3"		"undying_tombstone"
+		"Ability4"		"undying_tombstone_grab"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"undying_flesh_golem"
+		"Ability10"		"special_bonus_unique_undying_8"
+		"Ability11"		"special_bonus_unique_undying_7"
+		"Ability12"		"special_bonus_unique_undying"
+		"Ability13"		"special_bonus_unique_undying_6"
+		"Ability14"		"special_bonus_unique_undying_3"
+		"Ability15"		"special_bonus_unique_undying_2"
+		"Ability16"		"special_bonus_unique_undying_4"
+		"Ability17"		"special_bonus_unique_undying_5"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"43"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseAgility"		"10"
+		"AttributeAgilityGain"		"1.200000"
+		"AttributeBaseIntelligence"		"27"
+		"AttributeIntelligenceGain"		"2.800000"
+		"StatusManaRegen"	"0.25"
+		"MovementSpeed"		"300"
+		"particle_folder"		"particles/units/heroes/hero_undying"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_undying.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_undying/undying_loadout.vpcf"		"loadout"
+			}
+		}
+		"precache"
+		{
+			"model"		"models/heroes/undying/undying_flesh_golem.vmdl"
+		}
+	}
+}

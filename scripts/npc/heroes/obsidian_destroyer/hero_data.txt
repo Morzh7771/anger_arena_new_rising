@@ -1,2 +1,51 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_obsidian_destroyer"
+	{
+		"override_hero"		"npc_dota_hero_obsidian_destroyer"
+		"Ability1"		"obsidian_destroyer_arcane_orb"
+		"Ability2"		"obsidian_destroyer_astral_imprisonment"
+		"Ability3"		"obsidian_destroyer_equilibrium"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"obsidian_destroyer_sanity_eclipse"
+		"Ability10"		"special_bonus_hp_200"
+		"Ability11"		"special_bonus_attack_speed_20"
+		"Ability12"		"special_bonus_unique_outworld_devourer_astral_castrange"
+		"Ability13"		"special_bonus_movement_speed_30"
+		"Ability14"		"special_bonus_strength_20"
+		"Ability15"		"special_bonus_unique_outworld_devourer_4"
+		"Ability16"		"special_bonus_unique_outworld_devourer"
+		"Ability17"		"special_bonus_unique_outworld_devourer_5"
+		"ArmorPhysical"		"2.5"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"19"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.900000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"450"
+		"ProjectileModel"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.90000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"1.60000"
+		"AttributeBaseIntelligence"		"30"
+		"AttributeIntelligenceGain"		"4.200000"
+		"MovementSpeed"		"320"
+		"StatusHealthRegen"		"1"
+		"HealthBarOffset"		"300"
+		"particle_folder"		"particles/units/heroes/hero_obsidian_destroyer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_outworld_destroyer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

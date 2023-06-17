@@ -1,2 +1,86 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_arc_warden"
+	{
+		"override_hero"		"npc_dota_hero_arc_warden"
+		"Ability1"		"arc_warden_flux"
+		"Ability2"		"arc_warden_magnetic_field"
+		"Ability3"		"arc_warden_spark_wraith"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"arc_warden_tempest_double"
+		"Ability10"		"special_bonus_unique_arc_warden_5"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability12"		"special_bonus_unique_arc_warden_4"
+		"Ability13"		"special_bonus_unique_arc_warden_3"
+		"Ability14"		"special_bonus_unique_arc_warden"
+		"Ability15"		"special_bonus_unique_arc_warden_9"
+		"Ability16"		"special_bonus_unique_arc_warden_8"
+		"Ability17"		"special_bonus_unique_arc_warden_6"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"arc_warden_flux"
+			"Ability2"		"arc_warden_magnetic_field"
+			"Ability3"		"arc_warden_spark_wraith"
+		}
+
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"		"-1"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"37"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.3"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"625"
+		"ProjectileModel"		"particles/units/heroes/hero_arc_warden/arc_warden_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.6"
+		"AttributeBaseIntelligence"		"24"
+		"AttributeIntelligenceGain"		"2.6"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"3.0"
+		"StatusHealthRegen"		"0.25"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"		"285"
+		"MovementTurnRate"		"0.7"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"325"
+		}
+
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_arc_warden"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_arc_warden.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_arc_warden/arc_warden_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

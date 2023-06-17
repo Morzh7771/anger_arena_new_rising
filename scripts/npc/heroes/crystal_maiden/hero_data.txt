@@ -1,2 +1,92 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_crystal_maiden"
+	{
+		"override_hero"		"npc_dota_hero_crystal_maiden"
+		"Ability1"		"crystal_maiden_crystal_nova"
+		"Ability2"		"crystal_maiden_frostbite"
+		"Ability3"		"crystal_maiden_brilliance_aura"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"crystal_maiden_freezing_field"
+		"Ability7"		"crystal_maiden_freezing_field_stop"
+		"Ability10"		"special_bonus_hp_250"
+		"Ability11"		"special_bonus_unique_crystal_maiden_6"
+		"Ability12"		"special_bonus_unique_crystal_maiden_frostbite_castrange"
+		"Ability13"		"special_bonus_unique_crystal_maiden_5"
+		"Ability14"		"special_bonus_attack_speed_225"
+		"Ability15"		"special_bonus_unique_crystal_maiden_3"
+		"Ability16"		"special_bonus_unique_crystal_maiden_1"
+		"Ability17"		"special_bonus_unique_crystal_maiden_2"
+ 
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"		"-1"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"36"
+		"BaseAttackSpeed"		"100"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.450000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_crystalmaiden/maiden_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"17"
+		"AttributeStrengthGain"		"2.200000"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"3.300000"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.600000"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"280"
+		"HasAggressiveStance"		"1"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_crystalmaiden.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_crystalmaiden"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_crystalmaiden/maiden_loadout.vpcf"		"loadout"
+			}
+		}
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"320"
+			"run_fast"	"345"
+		}
+		"animation_transitions"
+		{
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"0.600000"
+				"aggressive"		"0.6"
+			}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.80000"
+				"aggressive"		"0.8"
+			}
+		}
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+		}
+
+		"Persona"
+		{
+			"1"
+			{
+				"name"					"npc_dota_hero_crystal_maiden_persona1"
+				"Model"					"models/heroes/crystal_maiden_persona/crystal_maiden_persona.vmdl"	// For tools only
+			}
+		}
+	}
+}

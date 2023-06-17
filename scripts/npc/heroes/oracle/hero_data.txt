@@ -1,2 +1,58 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_oracle"
+	{
+		"override_hero"		"npc_dota_hero_oracle"
+		"Ability1"		"oracle_fortunes_end"
+		"Ability2"		"oracle_fates_edict"
+		"Ability3"		"oracle_purifying_flames"
+		"Ability4"		"oracle_rain_of_destiny"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"oracle_false_promise"
+		"Ability10"		"special_bonus_unique_oracle_2"
+		"Ability11"		"special_bonus_unique_oracle_9"
+		"Ability12"		"special_bonus_unique_oracle_fortunes_end_damage"
+		"Ability13"		"special_bonus_unique_oracle_5"
+		"Ability14"		"special_bonus_unique_oracle_6"
+		"Ability15"		"special_bonus_unique_oracle_8"
+		"Ability16"		"special_bonus_unique_oracle_7"
+		"Ability17"		"special_bonus_unique_oracle"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"13"
+		"AttackDamageMax"		"19"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"145"
+			"faster"	"195"
+			"fastest"	"350"
+		}
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"620"
+		"ProjectileModel"		"particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseIntelligence"		"26"
+		"AttributeIntelligenceGain"		"3.800000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.700000"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"295"
+		"MovementTurnRate"		"0.700000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_oracle"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_oracle.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_oracle/oracle_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

@@ -1,2 +1,70 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_queenofpain"
+	{
+		"override_hero"		"npc_dota_hero_queenofpain"
+		"Ability1"		"queenofpain_shadow_strike"
+		"Ability2"		"queenofpain_blink"
+		"Ability3"		"queenofpain_scream_of_pain"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"queenofpain_sonic_wave"
+		"Ability10"		"special_bonus_attack_damage_15"
+		"Ability11"		"special_bonus_strength_8"
+		"Ability12"		"special_bonus_unique_queen_of_pain_4"
+		"Ability13"		"special_bonus_attack_speed_30"
+		"Ability14"		"special_bonus_unique_queen_of_pain_2"
+		"Ability15"		"special_bonus_unique_queen_of_pain_3"
+		"Ability16"		"special_bonus_unique_queen_of_pain_6"
+		"Ability17"		"special_bonus_unique_queen_of_pain_7"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.560000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"550"
+		"AttackSpeedActivityModifiers"
+			{
+				"fast"		"190"
+				"faster"	"300"
+			}
+		"AttackRangeActivityModifiers"
+		{
+			"close"		"0"
+			"far"		"350"
+		}
+		"animation_transitions"
+		{
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"0.300000"
+			}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.50000"
+			}
+		}
+		"ProjectileModel"		"particles/units/heroes/hero_queenofpain/queen_base_attack.vpcf"
+		"ProjectileSpeed"		"1500"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"2.4"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.400000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"2.5"
+		"MovementSpeed"		"290"
+		"particle_folder"		"particles/units/heroes/hero_queenofpain"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_queenofpain.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_queenofpain/queenofpain_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

@@ -1,2 +1,220 @@
-"DOTAAbilities"
-{}
+DOTAAbilities
+{
+	"vengefulspirit_magic_missile"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"vengefulspirit_magic_missile"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_VengefulSpirit.MagicMissile"
+        "HasShardUpgrade"               "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12 11 10 9"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 95 100 105"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"magic_missile_speed"	"1350"
+			"magic_missile_stun"	"1.1 1.2 1.3 1.4"
+			"magic_missile_damage"
+			{
+				"value"	"90 180 270 360"
+				"special_bonus_unique_vengeful_spirit_1"	"+200"
+			}
+			"AbilityCastRange"
+			{
+				"value"						"650"
+				"special_bonus_unique_vengeful_spirit_missile_castrange"				"+125"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"vengefulspirit_command_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"vengefulspirit_command_aura"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		
+		"HasScepterUpgrade"			"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_base_damage"	"10 16 22 28"
+				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"1200"
+			}			
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_illusion_damage_out_pct"	"100"
+				"RequiresScepter"			"1"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_illusion_damage_in_pct"	"100"
+				"RequiresScepter"			"1"
+			}	
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_illusion_ms_bonus_pct"	"12"
+				"RequiresScepter"			"1"
+			}	
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"vengefulspirit_wave_of_terror"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"vengefulspirit_wave_of_terror"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_VengefulSpirit.WaveOfTerror"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10"
+		"AbilityDuration"				"8"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"85 100 115 130"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25 30 35 40"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"wave_speed"		"2000.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wave_width"		"325"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_reduction"	"-3 -4 -5 -6"
+				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_4"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_aoe"		"350"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"	"4"
+			}
+			
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"vengefulspirit_nether_swap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"vengefulspirit_nether_swap"
+		"MaxLevel"		"7"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_VengefulSpirit.NetherSwap"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800 950 1100"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 40 30"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage_reduction"
+			{
+				"value"					"30 40 50"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+				"special_bonus_unique_vengeful_spirit_swap_damage_reduction"		"+40"
+			}
+			"damage_reduction_duration"	
+			{
+				"value"					"3"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+			}
+			"damage"
+			{	
+				"value"							"50"
+				"special_bonus_unique_vengeful_spirit_swap_damage"			"+150"
+			}
+		}
+	}
+}

@@ -1,2 +1,56 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_night_stalker"
+	{
+		"override_hero"		"npc_dota_hero_night_stalker"
+		"Ability1"		"night_stalker_void"
+		"Ability2"		"night_stalker_crippling_fear"
+		"Ability3"		"night_stalker_hunter_in_the_night"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"night_stalker_darkness"
+		"Ability10"		"special_bonus_unique_night_stalker_4"
+		"Ability11"		"special_bonus_unique_night_stalker_7"
+		"Ability12"		"special_bonus_unique_night_stalker_3"
+		"Ability13"		"special_bonus_unique_night_stalker_hunter_status_resist"
+		"Ability14"		"special_bonus_unique_night_stalker_6"
+		"Ability15"		"special_bonus_strength_20"
+		"Ability16"		"special_bonus_unique_night_stalker_2"
+		"Ability17"		"special_bonus_unique_night_stalker"
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"40"
+		"AttackDamageMax"		"44"
+		"BaseAttackSpeed"		"100"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.550000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"1.600000"
+		"AttributeBaseAgility"		"18"
+		"AttributeAgilityGain"		"2.20000"
+		"StatusHealthRegen"		"2.0"
+		"MovementSpeed"		"295"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"1800"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"precache"
+		{
+			"model"		"models/heroes/nightstalker/nightstalker_night.vmdl"
+		}
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_night_stalker.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_night_stalker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_night_stalker/nightstalker_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

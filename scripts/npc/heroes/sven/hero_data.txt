@@ -1,2 +1,48 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_sven"
+	{
+		"override_hero"		"npc_dota_hero_sven"
+		"Ability1"		"sven_storm_bolt"
+		"Ability2"		"sven_great_cleave"
+		"Ability3"		"sven_warcry"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"sven_gods_strength"
+		"Ability10"		"special_bonus_unique_sven_5"
+		"Ability11"		"special_bonus_attack_speed_15"
+		"Ability12"		"special_bonus_unique_sven_3"
+		"Ability13"		"special_bonus_unique_sven_8"
+		"Ability14"		"special_bonus_unique_sven_6"
+		"Ability15"		"special_bonus_unique_sven_7"
+		"Ability16"		"special_bonus_unique_sven_2"
+		"Ability17"		"special_bonus_unique_sven_4"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"41"
+		"AttackDamageMax"		"43"
+		"AttackRate"		"1.900000"
+		"BaseAttackSpeed"		"110"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"3.200000"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"1.300000"
+		"AttributeBaseAgility"		"21"
+		"AttributeAgilityGain"		"2.20000"
+		"StatusHealthRegen"		"0.75"
+		"MovementSpeed"		"325"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_sven/sven_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

@@ -1,2 +1,70 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_puck"
+	{
+		"override_hero"		"npc_dota_hero_puck"
+		"Ability1"		"puck_illusory_orb"
+		"Ability2"		"puck_waning_rift"
+		"Ability3"		"puck_phase_shift"
+		"Ability4"		"puck_ethereal_jaunt"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"puck_dream_coil"
+		"Ability10"		"special_bonus_unique_puck_orb_damage"
+		"Ability11"		"special_bonus_unique_puck_7"
+		"Ability12"		"special_bonus_unique_puck"
+		"Ability13"		"special_bonus_unique_puck_6"
+		"Ability14"		"special_bonus_unique_puck_2"
+		"Ability15"		"special_bonus_unique_puck_coil_damage"
+		"Ability16"		"special_bonus_unique_puck_5"
+		"Ability17"		"special_bonus_unique_puck_rift_radius"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	  "puck_illusory_orb"
+			"Ability2"		"puck_waning_rift"
+			"Ability3"		"puck_phase_shift"
+			"Ability4"		"puck_dream_coil"
+		}		
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"30"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"550"
+		"ProjectileModel"		"particles/units/heroes/hero_puck/puck_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"17"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseIntelligence"		"23"
+		"AttributeIntelligenceGain"		"3.800000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"2.5"
+		"StatusHealthRegen"		"0.5"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"290"
+		"MovementTurnRate"		"0.900000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_puck"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_puck.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_puck.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_puck/puck_loadout.vpcf"		"loadout"
+			}
+		}
+		"AbilityPreview"
+		{
+			"resource"		"resource/UI/Heroes/default.res"
+			"movie"		"media/heroes/default"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+			"resource"		"resource/UI/Heroes/default.res"
+		}
+	}
+}

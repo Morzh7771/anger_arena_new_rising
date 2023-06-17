@@ -1,2 +1,665 @@
-"DOTAAbilities"
-{}
+DOTAAbilities
+{
+	"axe_berserkers_call"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"axe_berserkers_call"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Axe.Berserkers_Call"
+
+		"HasScepterUpgrade"               "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+ 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17 15 13 11"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"0 0 0 0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110"	
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"
+			{
+				"value"							"300"
+				"special_bonus_unique_axe_2"	"+100"
+			}
+			"bonus_armor"	
+			{
+				"value"							"25"
+				"special_bonus_unique_axe_7"	"+8"
+			}
+			"duration"				"1.8 2.2 2.6 3.0"
+			"scepter_cooldown_reduction"
+			{
+				"special_bonus_scepter" "+3.0"
+			}
+			"applies_battle_hunger"
+			{
+				"special_bonus_scepter" "+1"
+			}
+		}
+	}
+	"axe_battle_hunger"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"axe_battle_hunger"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Axe.Battle_Hunger"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20 15 10 5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 60 70 80"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 775 850 925"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+
+		"HasScepterUpgrade" 			"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"duration"					"12.0"
+				"slow"
+				{
+					"value"			"-11 -19 -27 -35"
+					"special_bonus_unique_axe_6"	"-12"
+				}
+				"damage_per_second"	
+				{
+					"value"			"10 15 20 25"
+					"CalculateSpellDamageTooltip" "1"
+				}
+				"armor_multiplier"			
+				{
+					"value"			"1"
+					"special_bonus_unique_axe"	"x2"
+				}
+				"scepter_armor_change"
+				{
+					"special_bonus_scepter"				"+7"
+				}
+				"speed_bonus"
+				{
+					"value"			"0"
+					"special_bonus_unique_axe_8"	"+12"
+				}
+		}		
+	}
+	"axe_counter_helix"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"axe_counter_helix"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Hero_Axe.CounterHelix"
+
+        "HasShardUpgrade"               "1"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"
+			{
+				"value"				"80 110 140 170"
+				"special_bonus_unique_axe_4" "+30"
+			}
+			"radius"					"300"
+			"trigger_attacks"			"7 6 5 4"
+
+			"AbilityCooldown"
+			{
+				"value"					"0.3"
+				"special_bonus_shard"	"-0.3"
+			}
+			
+			"shard_debuff_duration"
+			{
+				"special_bonus_shard"		"+6.0"
+			}
+			"shard_damage_reduction"
+			{
+				"special_bonus_shard"		"+15"
+			}
+			"shard_max_stacks"
+			{
+				"special_bonus_shard"		"+6"	
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"axe_culling_blade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"axe_culling_blade"
+		"MaxLevel"		"7"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+
+
+		"AbilitySound"					"Hero_Axe.Culling_Blade_Success"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100 85 70"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 125 150"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"175"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"					
+			{	
+				"value"			"250 350 450"
+				"special_bonus_unique_axe_5"	"+150"
+			}
+			"speed_bonus"				"20 25 30"
+			"atk_speed_bonus"				"20 30 40"
+			"speed_duration"			"6"
+			"speed_aoe"					"900"
+			"charge_speed"				"1200"
+			"armor_per_stack"			
+			{
+				"value"					"1 1.5 2"
+				"special_bonus_unique_axe_3"	"+1"
+			}
+		}
+	}	
+	"beastmaster_wild_axes"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"beastmaster_wild_axes"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Beastmaster.Wild_Axes"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"					"175"
+			"spread"					"450"
+			"range"						"1500"
+			"axe_damage"
+			{
+				"value"					"35 65 95 125"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"duration"						"12"
+			"damage_amp"
+			{
+				"value"				"6 8 10 12"
+				"special_bonus_unique_beastmaster_9"		"+2.5"
+			}
+			"AbilityCooldown"				
+			{
+				"value"			"8"
+				"special_bonus_unique_beastmaster_wild_axe_cooldown"						"-5"
+			}			
+			"min_throw_duration"						"0.4"
+			"max_throw_duration"						"1.0"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+			"axe_damage"
+			{
+				"value"					"35 65 95 125"
+				"CalculateSpellDamageTooltip"	"1"
+		"BaseClass"					"axe_damage"
+		"MaxLevel"		"7"
+			"duration"						"12"
+			"damage_amp"
+			{
+				"value"				"6 8 10 12"
+				"special_bonus_unique_beastmaster_9"		"+2.5"
+			}
+			"AbilityCooldown"				
+			{
+				"value"			"8"
+				"special_bonus_unique_beastmaster_wild_axe_cooldown"						"-5"
+			}			
+			"min_throw_duration"						"0.4"
+			"max_throw_duration"						"1.0"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"troll_warlord_whirling_axes_ranged"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"troll_warlord_whirling_axes_ranged"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_TrollWarlord.WhirlingAxes.Ranged"
+		"HasScepterUpgrade"             "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_WHIRLING_AXES_RANGED"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"950"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"axe_width"					"100"
+			"axe_speed"					"1500.0"
+			"axe_range"					"950.0"
+			"axe_damage"				
+			{ 
+				"value"						"90"
+				"special_bonus_unique_troll_warlord_3"		"+90"
+			}
+			"axe_slow_duration"			
+			{
+				"value"						"2.5 3 3.5 4"
+				"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"				"+2"
+			}
+			"movement_speed"			"40"
+			"axe_spread"				"25"
+			"axe_count"					"5"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+				"special_bonus_scepter"			"-5"
+				"RequiresScepter"				"1"
+			}
+			"AbilityManacost"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-30"
+				"RequiresScepter"				"1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+			"axe_width"					"100"
+			"axe_speed"					"1500.0"
+			"axe_range"					"950.0"
+			"axe_damage"				
+		"BaseClass"					"axe_width"					"100"
+		"MaxLevel"		"7"
+				"value"						"90"
+				"special_bonus_unique_troll_warlord_3"		"+90"
+			}
+			"axe_slow_duration"			
+			{
+				"value"						"2.5 3 3.5 4"
+				"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"				"+2"
+			}
+			"movement_speed"			"40"
+			"axe_spread"				"25"
+			"axe_count"					"5"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+				"special_bonus_scepter"			"-5"
+				"RequiresScepter"				"1"
+			}
+			"AbilityManacost"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-30"
+				"RequiresScepter"				"1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+			"axe_speed"					"1500.0"
+			"axe_range"					"950.0"
+			"axe_damage"				
+			{ 
+		"BaseClass"					"axe_speed"					"1500.0"
+		"MaxLevel"		"7"
+				"special_bonus_unique_troll_warlord_3"		"+90"
+			}
+			"axe_slow_duration"			
+			{
+				"value"						"2.5 3 3.5 4"
+				"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"				"+2"
+			}
+			"movement_speed"			"40"
+			"axe_spread"				"25"
+			"axe_count"					"5"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+				"special_bonus_scepter"			"-5"
+				"RequiresScepter"				"1"
+			}
+			"AbilityManacost"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-30"
+				"RequiresScepter"				"1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+			"axe_range"					"950.0"
+			"axe_damage"				
+			{ 
+				"value"						"90"
+		"BaseClass"					"axe_range"					"950.0"
+		"MaxLevel"		"7"
+			}
+			"axe_slow_duration"			
+			{
+				"value"						"2.5 3 3.5 4"
+				"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"				"+2"
+			}
+			"movement_speed"			"40"
+			"axe_spread"				"25"
+			"axe_count"					"5"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+				"special_bonus_scepter"			"-5"
+				"RequiresScepter"				"1"
+			}
+			"AbilityManacost"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-30"
+				"RequiresScepter"				"1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+			"axe_damage"				
+			{ 
+				"value"						"90"
+				"special_bonus_unique_troll_warlord_3"		"+90"
+		"BaseClass"					"axe_damage"				
+		"MaxLevel"		"7"
+			"axe_slow_duration"			
+			{
+				"value"						"2.5 3 3.5 4"
+				"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"				"+2"
+			}
+			"movement_speed"			"40"
+			"axe_spread"				"25"
+			"axe_count"					"5"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+				"special_bonus_scepter"			"-5"
+				"RequiresScepter"				"1"
+			}
+			"AbilityManacost"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-30"
+				"RequiresScepter"				"1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+			"axe_slow_duration"			
+			{
+				"value"						"2.5 3 3.5 4"
+				"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"				"+2"
+		"BaseClass"					"axe_slow_duration"			
+		"MaxLevel"		"7"
+			"movement_speed"			"40"
+			"axe_spread"				"25"
+			"axe_count"					"5"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+				"special_bonus_scepter"			"-5"
+				"RequiresScepter"				"1"
+			}
+			"AbilityManacost"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-30"
+				"RequiresScepter"				"1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+			"axe_spread"				"25"
+			"axe_count"					"5"
+			"AbilityCooldown"
+			{
+		"BaseClass"					"axe_spread"				"25"
+		"MaxLevel"		"7"
+				"special_bonus_scepter"			"-5"
+				"RequiresScepter"				"1"
+			}
+			"AbilityManacost"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-30"
+				"RequiresScepter"				"1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+			"axe_count"					"5"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+		"BaseClass"					"axe_count"					"5"
+		"MaxLevel"		"7"
+				"RequiresScepter"				"1"
+			}
+			"AbilityManacost"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-30"
+				"RequiresScepter"				"1"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+	"troll_warlord_whirling_axes_melee"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"troll_warlord_whirling_axes_melee"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_TrollWarlord.WhirlingAxes.Melee"
+
+		"HasScepterUpgrade"             "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"
+			{
+				"value"					"50 100 150 200"
+				"special_bonus_unique_troll_warlord_3"		"+90"
+			}
+			"hit_radius"				"100"
+			"max_range"					"450.0"
+			"axe_movement_speed"		"1250"
+			"blind_duration"			
+			{
+				"value"						"5"
+				"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"				"+2"
+			}
+			"blind_pct"					"60"
+			"whirl_duration"			"3.0"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+				"special_bonus_scepter"			"-5"
+			}
+			"AbilityManacost"
+			{
+				"value"							"50"
+				"special_bonus_scepter"			"-25"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+			"axe_movement_speed"		"1250"
+			"blind_duration"			
+			{
+				"value"						"5"
+		"BaseClass"					"axe_movement_speed"		"1250"
+		"MaxLevel"		"7"
+			}
+			"blind_pct"					"60"
+			"whirl_duration"			"3.0"
+			"AbilityCooldown"
+			{
+				"value"							"9"
+				"special_bonus_scepter"			"-5"
+			}
+			"AbilityManacost"
+			{
+				"value"							"50"
+				"special_bonus_scepter"			"-25"
+			}
+			"pierces_magic_immunity"
+			{
+				"value"											"0"
+				"special_bonus_unique_troll_warlord_6"			"+1"
+			}
+		}
+	}
+}

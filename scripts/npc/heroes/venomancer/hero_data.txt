@@ -1,2 +1,54 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_venomancer"
+	{
+		"override_hero"		"npc_dota_hero_venomancer"
+		"Ability1"		"venomancer_venomous_gale"
+		"Ability2"		"venomancer_poison_sting"
+		"Ability3"		"venomancer_plague_ward"
+		"Ability4"		"venomancer_latent_poison"
+		"Ability5"		"venomancer_poison_nova"
+		"Ability6"		"venomancer_noxious_plague"
+		"Ability10"		"special_bonus_unique_venomancer_3"
+		"Ability11"		"special_bonus_unique_venomancer_poisonsting_regen_reduction"
+		"Ability12"		"special_bonus_unique_venomancer_8"
+		"Ability13"		"special_bonus_unique_venomancer_2"
+		"Ability14"		"special_bonus_unique_venomancer_4"
+		"Ability15"		"special_bonus_unique_venomancer_gale_plagueward"
+		"Ability16"		"special_bonus_unique_venomancer_5"
+		"Ability17"		"special_bonus_unique_venomancer"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"-1"
+		"AttackDamageMax"		"2"
+		"AttackRate"		"1.700000"
+		"BaseAttackSpeed"		"115"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"450"
+		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.0"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.4"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"2.0"
+		"MovementSpeed"		"280"
+		"precache"
+		{
+			"model"		"models/heroes/venomancer/venomancer_ward.vmdl"
+		}
+		"particle_folder"		"particles/units/heroes/hero_venomancer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_venomancer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_venomancer/venomancer_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

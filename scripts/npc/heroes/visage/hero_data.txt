@@ -1,2 +1,56 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_visage"
+	{
+		"override_hero"		"npc_dota_hero_visage"
+		"Ability1"		"visage_grave_chill"
+		"Ability2"		"visage_soul_assumption"
+		"Ability3"		"visage_gravekeepers_cloak"
+		"Ability4"		"visage_stone_form_self_cast"
+		"Ability5"		"visage_silent_as_the_grave"
+		"Ability6"		"visage_summon_familiars"
+		"Ability7"		"visage_summon_familiars_stone_form"
+		"AbilityDraftIgnoreCount" "7"
+		"Ability10"		"special_bonus_unique_visage_8"
+		"Ability11"		"special_bonus_unique_visage_7"
+		"Ability12"		"special_bonus_unique_visage_1"
+		"Ability13"		"special_bonus_unique_visage_3"
+		"Ability14"		"special_bonus_unique_visage_4"
+		"Ability15"		"special_bonus_unique_visage_2"
+		"Ability16"		"special_bonus_unique_visage_5"
+		"Ability17"		"special_bonus_unique_visage_6"
+		"ArmorPhysical"		"-1.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"4"
+		"AttackDamageMax"		"14"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"		"800"
+		"BaseAttackSpeed"		"110"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
+		"ProjectileSpeed"		"1400"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.40000"
+		"AttributeBaseAgility"		"11"
+		"AttributeAgilityGain"		"1.000000"
+		"AttributeBaseIntelligence"		"22"
+		"AttributeIntelligenceGain"		"2.4"
+		"MovementSpeed"		"285"
+		"particle_folder"		"particles/units/heroes/hero_visage"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_visage.vsndevts"
+		"precache"
+		{
+			"model"		"models/heroes/visage/visage_familiar.vmdl"
+		}
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_visage/visage_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

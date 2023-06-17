@@ -1,2 +1,64 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_gyrocopter"
+	{
+		"override_hero"		"npc_dota_hero_gyrocopter"
+		"Ability1"		"gyrocopter_rocket_barrage"
+		"Ability2"		"gyrocopter_homing_missile"
+		"Ability3"		"gyrocopter_flak_cannon"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"gyrocopter_call_down"
+		"Ability10"		"special_bonus_unique_gyrocopter_4"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability12"		"special_bonus_unique_gyrocopter_6"
+		"Ability13"		"special_bonus_unique_gyrocopter_2"
+		"Ability14"		"special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"
+		"Ability15"		"special_bonus_unique_gyrocopter_3"
+		"Ability16"		"special_bonus_unique_gyrocopter_1"
+		"Ability17"		"special_bonus_unique_gyrocopter_5"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"gyrocopter_rocket_barrage"
+			"Ability2"		"gyrocopter_homing_missile"
+			"Ability3"		"gyrocopter_flak_cannon"
+			"Ability4"		"gyrocopter_call_down"
+		}
+
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"BaseAttackSpeed"		"125"
+		"AttackDamageMin"		"16"
+		"AttackDamageMax"		"22"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.200000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"365"
+		"ProjectileSpeed"		"3000"
+		"ProjectileModel"		"particles/units/heroes/hero_gyrocopter/gyro_base_attack.vpcf"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.500000"
+		"AttributeBaseAgility"		"26"
+		"AttributeAgilityGain"		"3.300000"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"2.400000"
+		"MovementSpeed"		"320"
+		"HasAggressiveStance"		"1"
+		"precache"
+		{
+			"model"		"models/heroes/gyro/gyro_missile.vmdl"
+		}
+		"particle_folder"		"particles/units/heroes/hero_gyrocopter"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_gyrocopter.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_gyrocopter/gyrocopter_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

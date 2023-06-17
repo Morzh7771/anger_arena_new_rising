@@ -1,2 +1,58 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_treant"
+	{
+		"override_hero"		"npc_dota_hero_treant"
+		"Ability1"		"treant_natures_grasp"
+		"Ability2"		"treant_leech_seed"
+		"Ability3"		"treant_living_armor"
+		"Ability4"		"treant_eyes_in_the_forest"
+		"Ability5"		"treant_natures_guise"
+		"Ability6"		"treant_overgrowth"
+		"Ability10"		"special_bonus_unique_treant_8"
+		"Ability11"		"special_bonus_unique_treant_12"
+		"Ability12"		"special_bonus_unique_treant_3"
+		"Ability13"		"special_bonus_unique_treant_9"
+		"Ability14"		"special_bonus_unique_treant_13"
+		"Ability15"		"special_bonus_unique_treant_2"
+		"Ability16"		"special_bonus_unique_treant_14"
+		"Ability17"		"special_bonus_unique_treant_7"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"treant_natures_grasp"
+			"Ability2"		"treant_leech_seed"
+			"Ability3"		"treant_living_armor"
+			"Ability4"		"treant_overgrowth"
+		}
+
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"62"
+		"AttackDamageMax"		"70"
+		"AttackRate"		"1.900000"
+		"AttackAnimationPoint"		"0.600000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.400000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.8000000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"1.800000"
+		"StatusManaRegen"	"0.5"
+		"VisionDaytimeRange"		"1800"
+		"MovementSpeed"		"285"
+		"particle_folder"		"particles/units/heroes/hero_treant"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_treant.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_treant/treant_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

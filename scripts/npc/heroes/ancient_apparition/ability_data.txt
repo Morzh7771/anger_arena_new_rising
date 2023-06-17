@@ -1,2 +1,293 @@
-"DOTAAbilities"
-{}
+DOTAAbilities
+{
+	"ancient_apparition_cold_feet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"ancient_apparition_cold_feet"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ancient_Apparition.ColdFeetCast"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_COLD_FEET"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 13 11 9"
+		"AbilityDuration"				"4.0 4.0 4.0 4.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Does two modifiers 
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"				
+			{
+				"value"		"30 50 70 90"
+				"special_bonus_unique_ancient_apparition_8"	"+40"
+				"CalculateSpellDamageTooltip" "1"
+			}
+			"break_distance"
+			{
+				"value"		"715"
+				"special_bonus_unique_ancient_apparition_1"	"+300"
+			}
+			"stun_duration"			"1.6 2.0 2.4 2.8"
+			"area_of_effect"
+			{
+				"value"			"0"
+				"special_bonus_unique_ancient_apparition_6"			"+450"
+			}			
+		}
+	}
+	"ancient_apparition_ice_vortex"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"ancient_apparition_ice_vortex"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Ancient_Apparition.IceVortexCast"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_ICE_VORTEX"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"1500 1500 1500 1500"
+		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDuration"				"6 9 12 15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40 50 60 70"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"					"10 8 6 4"
+				"special_bonus_unique_ancient_apparition_3"			"-2"
+			}
+			"radius"				"300"
+			"drag_speed"	"40 50 60 70"
+			"movement_speed_pct"
+			{
+				"value"	"-16 -19 -22 -25"
+				"special_bonus_unique_ancient_apparition_4"	"-5"
+			}
+			"spell_resist_pct"
+			{
+				"value"		"-16 -19 -22 -25"
+				"special_bonus_unique_ancient_apparition_4"	"-5"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+			"vision_aoe"		"200 200 200 200"
+			"vortex_duration"		"6 9 12 15"
+			"shard_dps"
+			{
+				"value"		"12 20 28 36"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+		}
+	}
+	"ancient_apparition_chilling_touch"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"ancient_apparition_chilling_touch"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Ancient_Apparition.ChillingTouchCast"
+
+		"HasScepterUpgrade"			"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"
+			{
+				"value"				"40 80 120 160"
+				"special_bonus_unique_ancient_apparition_2"		"+80"
+			}
+			"slow"					"100"
+			"duration"				"0.7 0.8 0.9 1"
+			"attack_range_bonus"
+			{
+				"value"				"60 120 180 240"
+				"special_bonus_unique_ancient_apparition_7"		"+300"
+			}
+			"AbilityManaCost"
+			{
+				"value"										"30 40 50 60"
+				"special_bonus_scepter"						"-50%"
+			}
+			"AbilityCooldown"				
+			{
+				"value"			"12 9 6 3"
+				"special_bonus_scepter"						"-100%"
+			}
+		}
+	}
+	"ancient_apparition_ice_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"ancient_apparition_ice_blast"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"HasShardUpgrade"				"1"
+		"AbilitySound"					"Hero_Ancient_Apparition.IceBlast.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.01 0.01 0.01"
+		"AbilityCastRange"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0 50.0 40.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175"
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"250 325 400"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius_min"			"275"
+			"radius_grow"			"50.0"
+			"radius_max"			"1000"
+			"path_radius"			"275"
+			"frostbite_duration"	"10 11 12"
+			"dot_damage"				
+			{
+				"value"					"12.5 20.0 32.0"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"speed"					"1500 1500 1500 1500"
+			"kill_pct"
+			{	
+				"value"				"12 13 14"
+				"special_bonus_unique_ancient_apparition_5"	"+4"
+			}
+			"cold_feet_stun_duration_pct"
+			{
+				"value"					"0"
+				"special_bonus_shard"		"+60"
+			}
+			"target_sight_radius"	"500 500 500"
+		}
+	}
+	"ancient_apparition_ice_blast_release"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"ancient_apparition_ice_blast_release"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0"
+ 		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.0 1.0 1.0"
+	}
+	"ancient_apparition_ice_age"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"ancient_apparition_ice_age"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT "
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ancient_Apparition.ColdFeetCast"
+		"MaxLevel"						"1"
+	
+		"IsGrantedByShard"				"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
+		"AbilityCastRange"				"800"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityDuration"				"4.0 4.0 4.0 4.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"			"25"
+			"duration"			"5"
+			"health_degen"		"100"
+			"radius"			"800"
+		}
+	}
+}

@@ -1,2 +1,69 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_ember_spirit"
+	{
+		"override_hero"		"npc_dota_hero_ember_spirit"
+			"Ability1"		"ember_spirit_searing_chains"
+			"Ability2"		"ember_spirit_sleight_of_fist"
+			"Ability3"		"ember_spirit_flame_guard"
+			"Ability4"		"ember_spirit_fire_remnant"
+		}
+		"Ability1"		"ember_spirit_searing_chains"
+		"Ability2"		"ember_spirit_sleight_of_fist"
+		"Ability3"		"ember_spirit_flame_guard"
+		"Ability4"		"ember_spirit_activate_fire_remnant"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"ember_spirit_fire_remnant"
+		"Ability10"		"special_bonus_attack_damage_12"
+		"Ability11"		"special_bonus_unique_ember_spirit_1"
+		"Ability12"		"special_bonus_unique_ember_spirit_3"
+		"Ability13"		"special_bonus_unique_ember_spirit_2"
+		"Ability14"		"special_bonus_unique_ember_spirit_7"
+		"Ability15"		"special_bonus_unique_ember_spirit_6"
+		"Ability16"		"special_bonus_unique_ember_spirit_4"
+		"Ability17"		"special_bonus_unique_ember_spirit_5"
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"33"
+		"AttackDamageMax"		"37"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.600000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"3.200000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"2.200000"
+		"MovementTurnRate"		"0.800000"
+		"MovementSpeed"		"300"
+		"HasAggressiveStance"		"1"
+		"particle_folder"		"particles/units/heroes/hero_ember_spirit"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_ember_spirit.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_ember_spirit/ember_spirit_loadout.vpcf"		"loadout"
+			}
+		}
+		"animation_transitions"
+		{
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"0.500000"
+				"aggressive"		"0.500000"
+			}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.250000"
+				"aggressive"		"0.250000"
+			}
+		}
+		"StatusHealthRegen"		"1.25"
+		"VisionDaytimeRange"		"1800"
+	}
+}

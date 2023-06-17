@@ -1,2 +1,65 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_templar_assassin"
+	{
+		"override_hero"		"npc_dota_hero_templar_assassin"
+		"Ability1"		"templar_assassin_refraction"
+		"Ability2"		"templar_assassin_meld"
+		"Ability3"		"templar_assassin_psi_blades"
+		"Ability4"		"templar_assassin_trap"
+		"Ability5"		"templar_assassin_trap_teleport"
+		"Ability6"		"templar_assassin_psionic_trap"
+		"Ability10"		"special_bonus_unique_templar_assassin_refraction_damage"
+		"Ability11"		"special_bonus_unique_templar_assassin_3"
+		"Ability12"		"special_bonus_unique_templar_assassin_refraction_disable_cast"
+		"Ability13"		"special_bonus_unique_templar_assassin_8"
+		"Ability14"		"special_bonus_unique_templar_assassin_4"
+		"Ability15"		"special_bonus_unique_templar_assassin_2"
+		"Ability16"		"special_bonus_unique_templar_assassin_7"
+		"Ability17"		"special_bonus_unique_templar_assassin"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"templar_assassin_refraction"
+			"Ability2"		"templar_assassin_meld"
+			"Ability3"		"templar_assassin_psi_blades"
+			"Ability4"		"templar_assassin_psionic_trap"
+		}
+
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"36"
+		"BaseAttackSpeed"		"100"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"200"
+		"ProjectileModel"		"particles/units/heroes/hero_templar_assassin/templar_assassin_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"3.200000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"2.000000"
+		"StatusHealthRegen"		"0.25"
+		"MovementSpeed"		"310"
+		"MovementTurnRate"		"0.700000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"precache"
+		{
+			"model"		"models/heroes/witchdoctor/witchdoctor_ward.vmdl"
+		}
+		"particle_folder"		"particles/units/heroes/hero_templar_assassin"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_templar_assassin.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_templar_assassin/templar_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

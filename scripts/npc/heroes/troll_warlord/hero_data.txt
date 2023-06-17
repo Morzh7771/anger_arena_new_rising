@@ -1,2 +1,72 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_troll_warlord"
+	{
+		"override_hero"		"npc_dota_hero_troll_warlord"
+		"Ability1"		"troll_warlord_berserkers_rage"
+		"Ability2"		"troll_warlord_whirling_axes_ranged"
+		"Ability3"		"troll_warlord_whirling_axes_melee"
+		"Ability4"		"troll_warlord_fervor"
+		"Ability5"		"troll_warlord_rampage"
+		"Ability6"		"troll_warlord_battle_trance"
+		"Ability10"		"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"
+		"Ability11"		"special_bonus_unique_troll_warlord_2"
+		"Ability12"		"special_bonus_unique_troll_warlord_5"
+		"Ability13"		"special_bonus_unique_troll_warlord_3"
+		"Ability14"		"special_bonus_unique_troll_warlord_battle_trance_movespeed"
+		"Ability15"		"special_bonus_unique_troll_warlord"
+		"Ability16"		"special_bonus_unique_troll_warlord_6"
+		"Ability17"		"special_bonus_unique_troll_warlord_4"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"troll_warlord_fervor"
+			"Ability2"		"troll_warlord_whirling_axes_ranged"
+			"Ability3"		"troll_warlord_whirling_axes_melee"
+			"Ability4"		"troll_warlord_battle_trance"
+		}
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"27"
+		"AttackDamageMax"		"35"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+			"faster"	"320"
+			"fastest"	"430"
+		}
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"500"
+		"ProjectileModel"		"particles/units/heroes/hero_troll_warlord/troll_warlord_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.500000"
+		"AttributeBaseIntelligence"		"13"
+		"AttributeIntelligenceGain"		"1.000000"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"3.30000"
+		"StatusHealthRegen"		"0.25"
+		"VisionDaytimeRange"		"1800"
+		"MovementSpeed"		"290"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"350"
+			"run_fast"	"400"
+		}
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_troll_warlord"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_troll_warlord.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_troll_warlord/troll_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

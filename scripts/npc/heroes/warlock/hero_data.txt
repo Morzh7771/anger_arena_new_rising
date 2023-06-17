@@ -1,2 +1,55 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_warlock"
+	{
+		"override_hero"		"npc_dota_hero_warlock"
+		"Ability1"		"warlock_fatal_bonds"
+		"Ability2"		"warlock_shadow_word"
+		"Ability3"		"warlock_upheaval"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"warlock_rain_of_chaos"
+		"Ability10"		"special_bonus_unique_warlock_5"
+		"Ability11"		"special_bonus_unique_warlock_upheaval_aoe"
+		"Ability12"		"special_bonus_unique_warlock_10"
+		"Ability13"		"special_bonus_unique_warlock_7"
+		"Ability14"		"special_bonus_unique_warlock_4"
+		"Ability15"		"special_bonus_unique_warlock_3"
+		"Ability16"		"special_bonus_unique_warlock_2"
+		"Ability17"		"special_bonus_unique_warlock_1"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"34"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.100000"
+		"AttributeBaseAgility"		"10"
+		"AttributeAgilityGain"		"1.000000"
+		"MovementSpeed"		"300"
+		"HasAggressiveStance"		"1"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"precache"
+		{
+			"model"		"models/heroes/warlock/warlock_demon.vmdl"
+		}
+		"particle_folder"		"particles/units/heroes/hero_warlock"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_warlock.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_warlock/warlock_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

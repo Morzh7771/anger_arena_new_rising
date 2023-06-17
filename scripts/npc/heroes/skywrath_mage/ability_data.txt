@@ -1,2 +1,303 @@
-"DOTAAbilities"
-{}
+DOTAAbilities
+{
+	"skywrath_mage_arcane_bolt"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"skywrath_mage_arcane_bolt"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_SkywrathMage.ArcaneBolt.Cast"
+		"HasScepterUpgrade"			"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"875"
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5.0 4.0 3.0 2.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"95"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bolt_speed"			"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bolt_vision"			"325"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bolt_damage"			"75 95 115 135"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"int_multiplier"		"1.5"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"vision_duration"		"3.34"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_radius"		"700"
+				"RequiresScepter"	"1"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal_duration"	"5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal_amt"			"20 30 40 50"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"skywrath_mage_concussive_shot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"skywrath_mage_concussive_shot"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_SkywrathMage.ConcussiveShot.Cast"
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastRange"				"1600"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 14 13 12"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 85 90 95" 
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"launch_radius"		"1600"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_radius"		"250"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"800 800 800 800"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"120 180 240 300"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_duration"		"4.0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movement_speed_pct"	"40"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shot_vision"		"300"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"vision_duration"		"3.34"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_radius"		"700"
+				"RequiresScepter"	"1"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_damage_pct"		"75"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"skywrath_mage_ancient_seal"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"skywrath_mage_ancient_seal"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_SkywrathMage.AncientSeal.Target"
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 750 800 850"
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"resist_debuff"			"-20 -25 -30 -35"
+				"LinkedSpecialBonus"	"special_bonus_unique_skywrath_3"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"seal_duration"			"3.0 4.0 5.0 6.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_radius"		"700"
+				"RequiresScepter"	"1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"skywrath_mage_mystic_flare"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"skywrath_mage_mystic_flare"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
+
+		"HasScepterUpgrade"			"1"
+		"HasShardUpgrade"			"1"
+
+		"AbilityDraftUltShardAbility" "skywrath_mage_shield_of_the_scion"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0 40.0 20.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300 550 800"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"170"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"800 1200 1600"
+				"LinkedSpecialBonus"	"special_bonus_unique_skywrath_5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_radius"		"700"
+				"RequiresScepter"	"1"
+			}
+		}
+	}
+	"skywrath_mage_shield_of_the_scion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"skywrath_mage_shield_of_the_scion"
+		"MaxLevel"		"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"IsGrantedByShard"				"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"stack_duration"			"35"
+			"bonus_intelligence"		"2"
+			"bonus_armor"				"0.5"
+		}
+	}
+}

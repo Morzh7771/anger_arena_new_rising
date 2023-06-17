@@ -1,2 +1,62 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_morphling"
+	{
+		"override_hero"		"npc_dota_hero_morphling"
+		"Ability1"		"morphling_waveform"
+		"Ability2"		"morphling_adaptive_strike_agi"
+		"Ability3"		"morphling_adaptive_strike_str"
+		"Ability4"		"morphling_morph_agi"
+		"Ability5"		"morphling_morph_str"
+		"Ability6"		"morphling_replicate"
+		"Ability7"		"morphling_morph_replicate"
+		"Ability8"		"morphling_morph"
+		"Ability15"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_unique_morphling_1"
+		"Ability17"		"special_bonus_unique_morphling_8"
+		"Ability18"		"special_bonus_agility_15"
+		"Ability19"		"special_bonus_unique_morphling_4"
+		"Ability20"		"special_bonus_unique_morphling_10"
+		"Ability21"		"special_bonus_unique_morphling_waveform_cooldown"
+		"Ability22"		"special_bonus_strength_35"
+		"AbilityTalentStart"		"15"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"morphling_waveform"
+			"Ability2"		"morphling_adaptive_strike_agi"
+			"Ability3"		"morphling_adaptive_strike_str"
+		}
+		"AbilityDraftIgnoreCount"	"8"
+		"ArmorPhysical"		"-2"
+		"StatusHealthRegen"		"0.5"
+		"StatusManaRegen"		"0.5"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"9"
+		"AttackDamageMax"		"18"
+		"AttackRate"		"1.5000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"350"
+		"MovementTurnRate"		"0.700000"
+		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+		"ProjectileSpeed"		"1300"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.800000"
+		"AttributeBaseAgility"		"24"
+		"AttributeAgilityGain"		"3.900000"
+		"MovementSpeed"		"285"
+		"particle_folder"		"particles/units/heroes/hero_morphling"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_morphling/morphling_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

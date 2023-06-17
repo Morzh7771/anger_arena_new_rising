@@ -1,2 +1,59 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_chen"
+	{
+		"override_hero"		"npc_dota_hero_chen"
+		"Ability1"		"chen_penitence"
+		"Ability2"		"chen_holy_persuasion"
+		"Ability3"		"chen_divine_favor"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"chen_hand_of_god"
+		"Ability10"		"special_bonus_unique_chen_11"
+		"Ability11"		"special_bonus_unique_chen_3"
+		"Ability12"		"special_bonus_unique_chen_5"
+		"Ability13"		"special_bonus_unique_chen_8"
+		"Ability14"		"special_bonus_unique_chen_7"
+		"Ability15"		"special_bonus_unique_chen_4"
+		"Ability16"		"special_bonus_unique_chen_12"
+		"Ability17"		"special_bonus_unique_chen_2"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"chen_penitence"
+			"Ability2"		"chen_divine_favor"
+			"Ability3"		"chen_holy_persuasion"
+			"Ability4"		"chen_hand_of_god"
+		}
+
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"9"
+		"AttackDamageMax"		"16"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"650"
+		"ProjectileModel"		"particles/units/heroes/hero_chen/chen_base_attack.vpcf"
+		"ProjectileSpeed"		"1100"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.00000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"2.100000"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"3.200000"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"305"
+		"particle_folder"		"particles/units/heroes/hero_chen"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_chen.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_chen/chen_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

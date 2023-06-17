@@ -1,2 +1,58 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_meepo"
+	{
+		"override_hero"		"npc_dota_hero_meepo"
+		"Ability1"		"meepo_earthbind"
+		"Ability2"		"meepo_poof"
+		"Ability3"		"meepo_ransack"
+		"Ability4"		"meepo_petrify"
+		"Ability5"		"meepo_megameepo"
+		"Ability6"		"meepo_divided_we_stand"
+		"Ability7"		"meepo_megameepo_fling"
+		"Ability10"		"special_bonus_strength_6"
+		"Ability11"		"special_bonus_unique_meepo_2"
+		"Ability12"		"special_bonus_evasion_15"
+		"Ability13"		"special_bonus_unique_meepo_4"
+		"Ability14"		"special_bonus_unique_meepo_3"
+		"Ability15"		"special_bonus_unique_meepo_6"
+		"Ability16"		"special_bonus_unique_meepo_7"
+		"Ability17"		"special_bonus_unique_meepo_5"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"meepo_earthbind"
+			"Ability2"		"meepo_poof"
+			"Ability3"		"meepo_ransack"
+		}
+		"ArmorPhysical"		"4"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"29"
+		"AttackDamageMax"		"35"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.380000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"2.500000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"2.200000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"1.900000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"StatusHealthRegen"		"0.25"
+		"VisionDaytimeRange"		"1800"
+		"MovementSpeed"		"330"
+		"MovementTurnRate"		"0.70000"
+		"particle_folder"		"particles/units/heroes/hero_meepo"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_meepo.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_meepo/meepo_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

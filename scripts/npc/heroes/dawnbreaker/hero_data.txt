@@ -1,2 +1,86 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_dawnbreaker"
+	{
+		"override_hero"		"npc_dota_hero_dawnbreaker"
+		"Ability1"		"dawnbreaker_fire_wreath"
+		"Ability2"		"dawnbreaker_celestial_hammer"
+		"Ability3"		"dawnbreaker_luminosity"
+		"Ability4"		"dawnbreaker_converge"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"dawnbreaker_solar_guardian"
+		"Ability7"		"dawnbreaker_land"
+		"Ability10"		"special_bonus_unique_dawnbreaker_fire_wreath_swipe"
+		"Ability11"		"special_bonus_unique_dawnbreaker_celestial_hammer_slow"
+		"Ability12"		"special_bonus_unique_dawnbreaker_luminosity_crit"
+		"Ability13"		"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"
+		"Ability14"		"special_bonus_unique_dawnbreaker_solar_guardian_radius"
+		"Ability15"		"special_bonus_unique_dawnbreaker_luminosity_attack_count"
+		"Ability16"		"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"
+		"Ability17"		"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"
+		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"29"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"AttackRangeActivityModifiers"
+		{
+			"attack_short_range"	"0"
+			"attack_long_range"		"80"
+		}
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"27"
+		"AttributeStrengthGain"		"3.40000"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1.700000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"2.200000"
+		"HasAggressiveStance"		"1"
+		"MovementSpeed"		"310"
+		"MovementTurnRate"		"0.600000"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"350"
+			"run_fast"	"440"
+		//	"run_haste"	"540"
+		}
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"180"
+		//	"faster"	"300"
+		}
+		"animation_transitions"
+		{
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"0.300000"
+			}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.40000"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_dawnbreaker"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_dawnbreaker.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_dawnbreaker.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_dawnbreaker/dawnbreaker_loadout.vpcf"
+				{
+					"0"
+					{
+						"type"		"follow_origin"
+						"location"		"attach_hitloc"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,2 +1,56 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_weaver"
+	{
+		"override_hero"		"npc_dota_hero_weaver"
+		"Ability1"		"weaver_the_swarm"
+		"Ability2"		"weaver_shukuchi"
+		"Ability3"		"weaver_geminate_attack"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"weaver_time_lapse"
+		"Ability10"		"special_bonus_unique_weaver_1"
+		"Ability11"		"special_bonus_strength_9"
+		"Ability12"		"special_bonus_mana_break_20"
+		"Ability13"		"special_bonus_unique_weaver_4"
+		"Ability14"		"special_bonus_unique_weaver_2"
+		"Ability15"		"special_bonus_unique_weaver_3"
+		"Ability16"		"special_bonus_unique_weaver_6"
+		"Ability17"		"special_bonus_unique_weaver_5"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"37"
+		"AttackDamageMax"		"43"
+		"AttackRate"		"1.800000"
+		"BaseAttackSpeed"		"120"
+		"AttackAnimationPoint"		"0.550000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"425"
+		"ProjectileModel"		"particles/units/heroes/hero_weaver/weaver_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"16"
+		"AttributeStrengthGain"		"2.0000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"2.00000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"3.100000"
+		"StatusHealthRegen"		"1.25"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"275"
+		"precache"
+		{
+			"model"		"models/heroes/weaver/weaver_bug.vmdl"
+		}
+		"particle_folder"		"particles/units/heroes/hero_weaver"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_weaver.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_weaver/weaver_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

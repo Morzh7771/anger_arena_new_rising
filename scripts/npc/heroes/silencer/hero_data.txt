@@ -1,2 +1,50 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_silencer"
+	{
+		"override_hero"		"npc_dota_hero_silencer"
+		"Ability1"		"silencer_curse_of_the_silent"
+		"Ability2"		"silencer_glaives_of_wisdom"
+		"Ability3"		"silencer_last_word"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"silencer_global_silence"
+		"Ability10"		"special_bonus_unique_silencer"
+		"Ability11"		"special_bonus_attack_speed_20"
+		"Ability12"		"special_bonus_unique_silencer_7"
+		"Ability13"		"special_bonus_unique_silencer_4"
+		"Ability14"		"special_bonus_unique_silencer_3"
+		"Ability15"		"special_bonus_unique_silencer_arcane_curse_undispellable"
+		"Ability16"		"special_bonus_unique_silencer_glaives_bounces"
+		"Ability17"		"special_bonus_unique_silencer_2"
+		"ArmorPhysical"		"0"
+		"BaseAttackSpeed"		"100"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"18"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.600000"
+		"AttackAnimationPoint"		"0.500000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_silencer/silencer_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"2.200000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"2.400000"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"2.900000"
+		"MovementSpeed"		"290"
+		"particle_folder"		"particles/units/heroes/hero_silencer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_silencer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_silencer/silencer_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+}

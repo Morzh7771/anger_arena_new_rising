@@ -1,9 +1,8 @@
 "DOTAHeroes"
 {
-    "npc_dota_hero_antimage"
+	"npc_dota_hero_antimage"
 	{
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
+		"override_hero"		"npc_dota_hero_antimage"
 		"Ability1"		"antimage_mana_break"
 		"Ability2"		"antimage_blink"
 		"Ability3"		"antimage_counterspell"
@@ -57,5 +56,17 @@
 		"particle_folder"		"particles/units/heroes/hero_antimage"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_antimage.vsndevts"
-    }
+
+		// Additional data needed to render the out of game portrait
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_antimage/antimage_loadout.vpcf"		"loadout"
+			}
+		}
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+	}
 }

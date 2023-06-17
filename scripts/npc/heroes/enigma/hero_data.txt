@@ -1,2 +1,52 @@
 "DOTAHeroes"
-{}
+{
+	"npc_dota_hero_enigma"
+	{
+		"override_hero"		"npc_dota_hero_enigma"
+		"Ability1"		"enigma_malefice"
+		"Ability2"		"enigma_demonic_conversion"
+		"Ability3"		"enigma_midnight_pulse"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"enigma_black_hole"
+		"Ability10"		"special_bonus_unique_enigma_4"
+		"Ability11"		"special_bonus_unique_enigma_6"
+		"Ability12"		"special_bonus_hp_250"
+		"Ability13"		"special_bonus_unique_enigma_5"
+		"Ability14"		"special_bonus_unique_enigma_9"
+		"Ability15"		"special_bonus_unique_enigma_3"
+		"Ability16"		"special_bonus_unique_enigma_2"
+		"Ability17"		"special_bonus_unique_enigma"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"7"
+		"AttackDamageMax"		"13"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"500"
+		"ProjectileModel"		"particles/units/heroes/hero_enigma/enigma_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.500000"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"3.600000"
+		"AttributeBaseAgility"		"14"
+		"AttributeAgilityGain"		"1.0"
+		"StatusManaRegen"	"0.5"
+		"MovementSpeed"		"290"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"RingRadius"		"90"
+		"precache"
+		{
+			"model"		"models/heroes/enigma/eidelon.vmdl"
+		}
+		"particle_folder"		"particles/units/heroes/hero_enigma"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_enigma.vsndevts"
+		"RenderablePortrait"
+		{
+		}
+	}
+}
