@@ -17,39 +17,39 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"800 900 1000 1100"
+		"AbilityCastRange"				"800 850 900 950 1000 1050 1100"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28 21 14 7"
+		"AbilityCooldown"				"28 24 20 16 12 8 4"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 135 150 165"
+		"AbilityManaCost"				"120 135 150 165 180 205 220"
 
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_reduction"						"55 60 65 70"
+			"damage_reduction"						"55 55 60 60 65 65 70"
 			"heal_reduction"
 			{
-				"value" 							"0"
+				"value" 							"20"
 				"special_bonus_unique_bane_6" 		"+50"
 			}
 			"cast_reduction"
 			{
-				"value"								"30"
-				"special_bonus_unique_bane_11"		"+20"
+				"value"								"20"
+				"special_bonus_unique_bane_11"		"+30"
 			}
-			"duration"	"9"
+			"duration"	"8"
 			"enfeeble_tick_damage"
 			{
-				"value"			"12 18 24 30"
-				"special_bonus_unique_bane_10"				"+13"
+				"value"			"12 18 24 30 36 42 48"
+				"special_bonus_unique_bane_10"				"+152"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"enfeeble_heal_pct"
@@ -77,32 +77,32 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"625"
+		"AbilityCastRange"				"700"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 120 140 160"
+		"AbilityManaCost"				"100 120 140 160 180 200 220"
 		"AbilityValues"
 		{
 			"brain_sap_damage"				
 			{
-				"value"									"75 150 225 300"
-				"special_bonus_unique_bane_2"			"+200"
+				"value"									"100 150 200 250 300 350 400"
+				"special_bonus_unique_bane_2"			"+350"
 			}
 			"AbilityCooldown"
 			{	
-				"value"	"17 15 13 11"
-				"special_bonus_unique_bane_8"			"-2"
+				"value"	"17 16 15 14 13 12 11"
+				"special_bonus_unique_bane_8"			"-3"
 			}
 			"shard_radius"
 			{
-				"special_bonus_shard"				"+550"
+				"special_bonus_shard"				"+400"
 			}
 			"shard_secondary_target_heal_pct"
 			{
-				"special_bonus_shard"				"+30"
+				"special_bonus_shard"				"+25"
 			}			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -129,36 +129,36 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"625"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.3 0.3 0.25 0.25 0.2 0.2 0.1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 300 400"		
+		"AbilityManaCost"				"200 300 400 500 600 700"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"fiend_grip_tick_interval"		"0.5"
+			"fiend_grip_tick_interval"		"0.25"
 			"fiend_grip_mana_drain"	
 			{
-				"value"						"5"
-				"special_bonus_unique_bane_9"			"+5"
+				"value"						"10"
+				"special_bonus_unique_bane_9"			"+15"
 			}
 			"AbilityChannelTime"
 			{
-				"value"					"4.75 5.25 5.75"
-				"special_bonus_unique_bane_3"		"+3"
+				"value"					"3 3.5 4 4.5 5 5.5 6"
+				"special_bonus_unique_bane_3"		"+2.5"
 			}
 			"fiend_grip_damage"
 			{
-				"value"			"70 110 150"
+				"value"			"50"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"AbilityCooldown"				
 			{
-				"value"	"120 110 100"
+				"value"	"115 110 105 100 95 90"
 				"special_bonus_scepter"	"-45"
 			}
 			"illusion_count"
@@ -188,15 +188,15 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"425 500 575 650"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.4 0.4 0.3 0.3 0.2 0.2 0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"3.5 5 6.5 8"
+		"AbilityDuration"				"3 4 5 6 7 8 9"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 130 140 150"	
+		"AbilityManaCost"				"120 130 140 150 160 170 180"	
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -208,12 +208,12 @@ DOTAAbilities
 		{
 
 			"nightmare_invuln_time"		"1.0"
-			"duration"					"3.5 4.5 5.5 6.5"
-			"animation_rate"			"0.2 0.2 0.2 0.2"
+			"duration"					"3 4 5 6 7 8 9"
+			"animation_rate"			"0"
 			"AbilityCooldown"
 			{
-				"value"	"24 21 18 15"
-				"special_bonus_unique_bane_5" "-3"
+				"value"	"24 23 22 21 20 19 18"
+				"special_bonus_unique_bane_5" "-4"
 			}
 
 		}
