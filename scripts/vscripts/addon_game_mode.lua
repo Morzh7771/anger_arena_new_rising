@@ -14,7 +14,7 @@ function Precache( context )
 	]]
 end
 local Constants = require('consts')
-local killToWin = 10
+local killToWin = 100
 local cheat = false
 RESPAWN_MODIFER = 0.135
 function Activate()
@@ -31,6 +31,7 @@ end
 function AngelArena:InitGameMode()
 	local GameMode = GameRules:GetGameModeEntity()
 	if GameRules:IsCheatMode()then
+		killToWin = 10000000
 		cheat = true
 	end
 	GameMode:SetCustomXPRequiredToReachNextLevel(Constants.XP_PER_LEVEL_TABLE)
