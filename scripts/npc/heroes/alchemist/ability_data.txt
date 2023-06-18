@@ -5,7 +5,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"alchemist_berserk_potion"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -18,28 +17,28 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
+		"AbilityManaCost"				"50"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"		"10"
-			"attack_speed"		"50"
-			"hp_regen"		"40"
-			"projectile_speed"			"900"
-			"move_speed"			"30"
+			"duration"		"15"
+			"attack_speed"		"100"
+			"hp_regen"		"50"
+			"projectile_speed"			"1000"
+			"move_speed"			"50"
 
 		}
 	}
@@ -56,31 +55,31 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.1"
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"1000"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 21 20 19"
+		"AbilityCooldown"				"20.0 19.5 19.0 18.5 18.0 17.5 17.0"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120"
+		"AbilityManaCost"				"100"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"				"400 475 550 625"
+			"radius"				"400 450 500 550 600 650 700"
 			"duration"				"15"
 			"damage"
 			{
-				"value"			"25 30 35 40"
+				"value"			"30 50 70 90 110 130 150"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"armor_reduction"		
 			{
-				"value"						"3 4 5 6"
-				"special_bonus_unique_alchemist_5"		"+1"
+				"value"						"10 12 15 17 20 22 25"
+				"special_bonus_unique_alchemist_5"		"+5"
 			}
 			"armor_allies"	
 			{
@@ -106,7 +105,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"775" // for visualization on hover
+		"AbilityCastRange"				"800" // for visualization on hover
 		"AbilityCastPoint"				"0.0"
 
 		// Time		
