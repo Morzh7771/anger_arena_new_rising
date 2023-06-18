@@ -20,9 +20,9 @@ DOTAAbilities
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"375 425 475 525"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.2 0.2 0.1 0.1 0.1"
 		"AbilityCooldown"				"5"
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityManaCost"				"60"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -36,15 +36,15 @@ DOTAAbilities
 		{
 			"bonus_damage"			
 			{
-				"value"					"80 120 160 200"
-				"special_bonus_unique_bounty_hunter_2"	"+50"
+				"value"					"80 120 160 200 240 280 320"
+				"special_bonus_unique_bounty_hunter_2"	"+80"
 			}
 			"speed"					"1000 1000 1000 1000"
-			"bounce_aoe"			"1200"
+			"bounce_aoe"			"1800"
 			"slow_duration"			
 			{
-				"value"				"0.35"
-				"special_bonus_unique_bounty_hunter_5"		"+0.65"
+				"value"				"0.5"
+				"special_bonus_unique_bounty_hunter_5"		"+0.75"
 			}
 			"scepter_cast_range"
 			{
@@ -57,7 +57,7 @@ DOTAAbilities
 				"value"				"6"
 				"RequiresScepter"	"1"
 			}
-			"cast_range"			"375 425 475 525"
+			"cast_range"			"550"
 			"slow"					"100"		
 			"attack_slow"			"100"
 		}
@@ -85,7 +85,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9 7 5 3"
+		"AbilityCooldown"				"3"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -93,13 +93,13 @@ DOTAAbilities
 		{
 			"bonus_damage"
 			{
-				"value"			"60 100 140 180"
-				"special_bonus_unique_bounty_hunter_4"	"+30"
+				"value"			"30 60 90 120 150 180 210"
+				"special_bonus_unique_bounty_hunter_4"	"+90"
 			}
 			"gold_steal"
 			{
-				"value"			"12 20 28 36"
-				"special_bonus_unique_bounty_hunter"		"+50"
+				"value"			"15 30 45 60 75 90 115"
+				"special_bonus_unique_bounty_hunter"		"+85"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -132,25 +132,25 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"					"20.0 25.0 30.0 35.0"
-				"fade_time"					"1.0 0.75 0.5 0.25"
+				"duration"					"15"
+				"fade_time"					"0.3"
 				"stun_duration"				
 				{
-					"value"										"0.8 1.0 1.2 1.4"
+					"value"										"0.6 0.8 1.0 1.2 1.4 1.6 1.8"
 				}
 				"AbilityCooldown"				
 				{
-					"value"		"18 17 16 15"
-					"special_bonus_shard" "-5"
+					"value"		"15"
+					"special_bonus_shard" "-10"
 				}
 				"AbilityChargeRestoreTime"		
 				{
-					"value"	"15 14 13 12"
+					"value"	"5"
 					"RequiresShard"		"1"
 				}
 				"ally_fade_time"
 				{
-					"value"			"1.0"
+					"value"			"0.3"
 					"RequiresShard"		"1"
 				}
 				"damage_reduction_pct"
@@ -185,11 +185,11 @@ DOTAAbilities
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.2 0.2 0.1 0.1 0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"6 5 4"
-		"AbilityManaCost"				"60"
+		"AbilityCooldown"				"6.0 5.5 5.0 4.5 4.0 3.5 3.0"
+		"AbilityManaCost"				"150"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -198,23 +198,23 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"target_crit_multiplier"	"140 170 200"
+				"target_crit_multiplier"	"140 170 200 230 260 290"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold_radius"		"1200"
+				"bonus_gold_radius"		"1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold_self"		"130 225 320"
+				"bonus_gold_self"		"75 150 225 300 375 450 525"
 				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_3"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"40 80 120"
+				"bonus_gold"			"40 80 120 160 200 240 280"
 				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_3"
 			}
 			"05"
@@ -230,12 +230,12 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_move_speed_pct"	"16 20 24"
+				"bonus_move_speed_pct"	"16 20 24 28 32 36 40"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"toss_crit_multiplier"	"140 170 200"
+				"toss_crit_multiplier"	"140 170 200 230 260 290"
 			}
 		}
 	}
