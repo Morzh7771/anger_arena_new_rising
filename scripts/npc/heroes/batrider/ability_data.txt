@@ -37,26 +37,26 @@ DOTAAbilities
 		{
 			"damage"
 			{
-				"value"	"4 8 12 16"
-				"special_bonus_unique_batrider_4"	"+10"
+				"value"	"10 15 20 25 30 35 40"
+				"special_bonus_unique_batrider_4"	"+20"
 				"CalculateSpellDamageTooltip"		"1"
 			}
 			"radius"
 			{
-				"value"								"375"
-				"special_bonus_unique_batrider_7"	"+50"
+				"value"								"400"
+				"special_bonus_unique_batrider_7"	"+75"
 			}
 			"duration" "6"
-			"movement_speed_pct" "-1.5 -3 -4.5 -6"			
-			"turn_rate_pct"			"-10 -30 -50 -70"
-			"max_stacks"			"10 10 10 10"
+			"movement_speed_pct" "-1.5 -2.25 -3.0 -3.75 -4.5 -5.25 -6.0"			
+			"turn_rate_pct"			"-10 -20 -30 -40 -50 -60 -70"
+			"max_stacks"			"6 7 8 9 10 11 12"
 			"creep_damage_pct"			"50"
 			"shard_napalm_on_attack_chance_pct"		
 			{
 				"value"			"50"
 				"RequiresShard"			"1"
 			}
-			"application_damage"	"5 10 15 20"
+			"application_damage"	"10 20 30 40 50 60 70"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -93,11 +93,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 19 16 13"
+		"AbilityCooldown"				"22 20 18 16 14 12 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 115 120 125"
+		"AbilityManaCost"				"110 115 120 125 130 135 140"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -112,42 +112,42 @@ DOTAAbilities
 
 			"damage_impact"		
 			{
-				"value"			"25 50 75 100"
+				"value"			"50 100 150 200 250 300 350"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"damage_per_second"		
 			{
-				"value"			"10 20 30 40"
+				"value"			"25 50 75 100 125 150 175 200"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"damage_duration"		
 			{
-				"value"		"5"
+				"value"		"7"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 				"CalculateSpellDamageTooltip" "0"
 			}
-			"explosion_radius"		"500"
-			"collision_radius"		"100 100 100 100"
-			"stun_duration"			"0.5 0.5 0.5 0.5"
-			"speed"					"1200"
+			"explosion_radius"		"550"
+			"collision_radius"		"100 100 100 100 100 100 100"
+			"stun_duration"			"0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+			"speed"					"1500"
 			"knockback_distance"	
 			{
 				"value"				"250"
 				"special_bonus_unique_batrider_3"	"+50"
 			}
-			"knockback_height"		"100 100 100 100"
+			"knockback_height"		"100 100 100 100 100 100 100"
 			"knockback_duration"	"0.35"
 			"napalm_stacks"
 			{
 				"value"				"0"
-				"special_bonus_unique_batrider_2"	"+2"
+				"special_bonus_unique_batrider_2"	"+3"
 			}
 			"AbilityCharges"		
 			{
 				"value"	"0"
 				"special_bonus_unique_batrider_5"	"+2"
 			}
-			"slow"	"10 15 20 25"			
+			"slow"	"10 13 16 19 22 25 27"			
 						
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -171,7 +171,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"52 46 40 34"
+		"AbilityCooldown"				"37"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -183,17 +183,17 @@ DOTAAbilities
 		{
 			"damage_per_second"
 			{
-				"value"			"30 60 90 120"
+				"value"			"30 60 90 120 150 180 210"
 				"CalculateSpellDamageTooltip" "1"
 			}
-			"radius"				"200"
+			"radius"				"225"
 			"duration"				
 			{
-				"value"					"15"
-				"special_bonus_unique_batrider_1"	"+4.5"
+				"value"					"20"
+				"special_bonus_unique_batrider_1"	"+5"
 			}
 			"tick_interval"			"0.5"
-			"tree_radius"			"100"
+			"tree_radius"			"150"
 		}
 	}
 	"batrider_flaming_lasso"
@@ -217,7 +217,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.3 0.3 0.2 0.2 0.1 0.1 0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -227,18 +227,18 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 150 175"
+		"AbilityManaCost"				"125 150 175 200 225 250 275"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"2.25 2.75 3.25"
-			"drag_distance"			"300 300 300"
+			"duration"				"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
+			"drag_distance"			"300 300 300 300 300 300 300"
 			"break_distance"		"425"
 			"damage"
 			{
-				"value"			"100 200 300"
+				"value"			"100 200 300 400 500 600 700"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"grab_radius_scepter"
@@ -248,8 +248,8 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"				"90 75 60"
-				"special_bonus_unique_batrider_6"			"-10"
+				"value"				"120 110 100 90 80 70 60"
+				"special_bonus_unique_batrider_6"			"-15"
 			}
 			"tick_rate"			"0.5"
 
