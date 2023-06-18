@@ -18,7 +18,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 12 10 8"
+		"AbilityCooldown"				"14 13 12 11 10 9 8"
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -48,25 +48,25 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed"				"60 90 120 150"
+				"attack_speed"				"60 80 100 120 140 160 180"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_5"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"spell_amp"				"15 20 25 30"
+				"spell_amp"				"15 20 25 30 35 40 45 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_6"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_pct"				"1.8"
+				"damage_pct"				"2"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"shard_max_health_dmg_pct"	"1.8"
+				"shard_max_health_dmg_pct"	"2"
 				"RequiresShard"				"1"
 			}
 		}
@@ -88,7 +88,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 12 10 8"
+		"AbilityCooldown"				"14 13 12 11 10 9 8"
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -110,25 +110,25 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed"				"60 90 120 150"
+				"attack_speed"				"60 80 100 120 140 160 180"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_5"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"spell_amp"				"15 20 25 30"
+				"spell_amp"				"15 20 25 30 35 40 45 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_6"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_pct"				"1.8"
+				"damage_pct"				"2"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"shard_max_health_dmg_pct"	"1.8"
+				"shard_max_health_dmg_pct"	"2"
 				"RequiresShard"				"1"
 			}
 		}
@@ -154,11 +154,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 14 13 12"
+		"AbilityCooldown"				"15 14 13 12 11 10 9"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 100 110 120"
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
 
 
 		// Special
@@ -168,28 +168,28 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"						"600"
+				"radius"						"625"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"3 4 5 6"
+				"silence_duration"			"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"90 140 190 240"
+				"damage"					"90 140 190 240 290 340 390"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_2"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"delay"						"2.6"
+				"delay"						"2.3"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"delay_plus_castpoint_tooltip"						"2.9"
+				"delay_plus_castpoint_tooltip"						"2.6"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -204,11 +204,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 14 13 12"
+		"AbilityCooldown"				"15 14 13 12 11 10 9"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 100 110 120"
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
 
 
 		// Special
@@ -223,23 +223,23 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"3 4 5 6"
+				"silence_duration"			"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"90 140 190 240"
+				"damage"					"90 140 190 240 290 340 390"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_2"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"delay"						"2.6"
+				"delay"						"2.3"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"delay_plus_castpoint_tooltip"						"2.9"
+				"delay_plus_castpoint_tooltip"						"2.6"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -260,48 +260,48 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"min_bonus_pct"				"80"
+				"min_bonus_pct"				"100"
 			}			
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"16 24 32 40"
+				"bonus_movement_speed"		"16 24 32 40 48 56 64"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_kill_heal"		"10 15 20 25"
+				"hero_kill_heal"		"3 6 9 12 15 18 21 24"
 			}		
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"creep_kill_heal"		"11 14 17 20"
+				"creep_kill_heal"		"20"
 			}		
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"half_bonus_aoe"		"300"
+				"half_bonus_aoe"		"250"
 			}		
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_bonus_pct"				"25"
+				"max_bonus_pct"				"10"
 			}	
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"visibility_threshold_pct"	"25"
+				"visibility_threshold_pct"	"20"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"invis_threshold_pct"	"25"
+				"invis_threshold_pct"	"20"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"linger_duration"			"4.0"
+				"linger_duration"			"6.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -333,11 +333,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"75 70 65"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 150 200"
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
 			
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -347,17 +347,17 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"10 11 12"
+			"duration"					"10 10 11 11 12 12 13"
 			"movement_damage_pct"		
 			{
-				"value"	"35 45 55"
+				"value"	"35 45 55 65 75 85 95"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"hp_pct"
 			{
-				"value"	"10"
+				"value"	"10 11 12 13 14 15 16"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_unique_bloodseeker_7"		"+8"		
+				"special_bonus_unique_bloodseeker_7"		"+14	"		
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PURE"		
 			}
 			"damage_cap_amount"			
@@ -390,11 +390,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"75 70 65"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 150 200"
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
 			
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -404,17 +404,17 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"10 11 12"
+			"duration"					"10 10 11 11 12 12 13"
 			"movement_damage_pct"		
 			{
-				"value"	"35 45 55"
+				"value"	"35 45 55 65 75 85 95"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"hp_pct"
 			{
-				"value"	"10"
+				"value"	"10 11 12 13 14 15 16"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_unique_bloodseeker_7"		"+8"		
+				"special_bonus_unique_bloodseeker_7"		"+14"		
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PURE"		
 			}
 			"damage_cap_amount"			
@@ -467,11 +467,11 @@ DOTAAbilities
 		{
 			"hp_cost_per_second"	
 			{
-				"value"				"7"
+				"value"				"9.5"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
 			"radius"				"450"
-			"movement_slow"			"30"
+			"movement_slow"			"20"
 			"thirst_bonus_pct"		"50"
 		}
 	}
