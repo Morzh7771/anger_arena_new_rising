@@ -13,13 +13,13 @@ DOTAAbilities
 
         "HasShardUpgrade"               "1"
 
-		"AbilityCastRange"				"600 625 650 675"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"550 600 650 700 750 800 850"
+		"AbilityCastPoint"				"0.5 0.48 0.46 0.44 0.42 0.41 0.40"
 		"FightRecapLevel"				"1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 125 140 155"
+		"AbilityManaCost"				"100 125 150 175 200 225 250"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -27,13 +27,13 @@ DOTAAbilities
 		{
 				"AbilityCooldown"
 				{
-					"value"	"15 14 13 12"
-					"special_bonus_unique_underlord_5"	"-3"
+					"value"	"15 14.5 14 13.5 13 12.5 12"
+					"special_bonus_unique_underlord_5"	"-4"
 				}
 				"radius"					
 				{
-					"value"					"425"
-					"special_bonus_unique_underlord_8"	"+75"
+					"value"					"450"
+					"special_bonus_unique_underlord_8"	"+100"
 				}
 				"wave_duration"					
 				{
@@ -43,13 +43,13 @@ DOTAAbilities
 				"wave_count"					"6"
 				"wave_damage"								
 				{
-					"value"					"30 50 70 90"
-					"CalculateSpellDamageTooltip"	"1"
+					"value"					"30 60 90 120 150 180 210"
+					"CalculateSpellDamageTooltip"		"1"
 				}
 				"wave_interval"					"1.0"
 				"burn_damage"					
 				{
-					"value"					"1.5 2 2.5 3"
+					"value"					"1.5 2 2.5 3 3.5 4 4.5"
 					"special_bonus_unique_underlord_4"	"+1"
 				}
 				"burn_interval"					"1.0"
@@ -81,19 +81,19 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_AbyssalUnderlord.PitOfMalice"
 
-		"AbilityCastRange"				"675"
-		"AbilityCastPoint"				"0.45"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.46 0.45 0.44 0.43 0.42 0.41 0.40"
 		"FightRecapLevel"				"1"
 
 		"HasScepterUpgrade"				"1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"21 19 17 15"
+		"AbilityCooldown"				"20 18.5 17 15.5 14 12.5 11"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 100 120 140"
+		"AbilityManaCost"				"80 100 120 140 160 180 200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -102,16 +102,16 @@ DOTAAbilities
 			"radius"
 			{
 				"value"					"400"
-				"special_bonus_unique_underlord_6"	"+75"
+				"special_bonus_unique_underlord_6"	"+100"
 			}
 
-			"pit_duration"					"12.0"
-			"pit_interval"					"3.6"
+			"pit_duration"					"10"
+			"pit_interval"					"4.0"
 			"pit_damage"					"0"
 			"ensnare_duration"
 			{
-				"value"	"1.2 1.4 1.6 1.8"
-				"special_bonus_unique_underlord" "+0.65"
+				"value"	"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
+				"special_bonus_unique_underlord" "+0.5"
 			}
 			"speed_bonus"
 			{
