@@ -21,13 +21,15 @@ function modifier_fountain_attack:DeclareFunctions()
 	}
 end
 function modifier_fountain_attack:OnAttack(event)
-    print(event.target:GetMaxHealth()/100*self.bonusDmg)
-    local damageTable = {
-        victim = event.target,
-        attacker = self:GetCaster(),
-        damage = event.target:GetMaxHealth()/100*self.bonusDmg,
-        damage_type = DAMAGE_TYPE_PURE,
-        ability = self:GetAbility(), --Optional.
-    }
-    ApplyDamage(damageTable)
+    if event.attacker == self:GetParent() then
+        print(event.target:GetMaxHealth()/100*self.bonusDmg)
+        local damageTable = {
+            victim = event.target,
+            attacker = self:GetCaster(),
+            damage = event.target:GetMaxHealth()/100*self.bonusDmg,
+            damage_type = DAMAGE_TYPE_PURE,
+            ability = self:GetAbility(), --Optional.
+        }
+        ApplyDamage(damageTable)
+    end
 end

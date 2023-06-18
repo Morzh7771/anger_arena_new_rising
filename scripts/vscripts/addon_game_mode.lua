@@ -13,9 +13,20 @@ function Precache( context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
 end
+require('lib/boss/boss_spawner')
+require('lib/timers')
+require('lib/team_helper')
+require('lib/spawners/creep_spawner')
+require('lib/spawners/creep_leveling')
+local postRequireList = {
+	'lib/base/player',
+	'lib/base/base_npc'
+}
+local armor_table = require('creeps/armor_table_summon') -- armor to units
 local Constants = require('consts')
 local killToWin = 100
 local cheat = false
+local first = true
 RESPAWN_MODIFER = 0.135
 function Activate()
 	GameRules.AddonTemplate = AngelArena()
@@ -29,7 +40,15 @@ function Activate()
 end
 
 function AngelArena:InitGameMode()
+	for _, moduleName in pairs(postRequireList) do
+		require(moduleName)
+	end
 	local GameMode = GameRules:GetGameModeEntity()
+	BossSpawner:Init()
+	CreepSpawner:Init()
+
+	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepLeveling:OnSpawnCallback(arg); end)
+	CreepSpawner:RegisterOnDeathCallback(function(arg) CreepLeveling:OnDeathCallback(arg); end)
 	if GameRules:IsCheatMode()then
 		killToWin = 10000000
 		cheat = true
@@ -51,6 +70,7 @@ function AngelArena:InitGameMode()
 	GameRules:SetPostGameTime(30)
 	GameRules:SetStrategyTime(15.0)
 	GameRules:SetHeroSelectionTime(90)
+	GameRules:SetCreepSpawningEnabled( false )
 
 	GameMode:SetCustomBackpackSwapCooldown(4.0)
 	GameRules:SetStartingGold(750)
@@ -64,7 +84,7 @@ function AngelArena:InitGameMode()
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN, 0)
-	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_MOVE_SPEED_PERCENT, 0)
+	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_MOVE_SPEED_PERCENT, 0.2)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESISTANCE_PERCENT, 0)
 
@@ -74,8 +94,14 @@ end
 -- Evaluate the state of the game
 function AngelArena:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		--print( "Template addon script is running." )
-	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
+		if first == true then
+			BossSpawner:OnGameStart()
+			CreepSpawner:StartSpawning()
+			first = false
+			print('boss game start')
+		end
+	end
+	if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
 	return 1
@@ -87,9 +113,6 @@ end
 
 function AngelArena:OnTeamKillCredit(event)
 	DeepPrintTable(event)
-	print(killToWin)
-	print(GetTeamHeroKills(DOTA_TEAM_GOODGUYS))
-	print(GetTeamHeroKills(DOTA_TEAM_BADGUYS))
 	if killToWin <= GetTeamHeroKills(DOTA_TEAM_GOODGUYS) then 
 		AngelArena:EndGame( DOTA_TEAM_GOODGUYS )
 	else
@@ -105,7 +128,6 @@ function AngelArena:OnNPCSpawned(keys)
 		npc.bFirstSpawned = true
 		if cheat == true then
 			if npc:IsRealHero() then
-				
 				npc:AddExperience(999999, 0, false, true)
 				npc:SetGold(99999999,true)
 			end
@@ -138,6 +160,10 @@ function AngelArena:OnEntityKilled(event)
 	local killedTeam = killedUnit:GetTeam()
 	local hero = EntIndexToHScript(event.entindex_attacker)
 	local heroTeam = hero:GetTeam()
+
+	if BossSpawner:HandleUnitKill( killedUnit, hero ) then
+		return
+	end
 	if IsValidEntity(killedUnit) and not killedUnit:IsAlive() and killedUnit:IsRealHero() then
 		local timeLeft = killedUnit:GetLevel() * 3.8 + 5
 		timeLeft = timeLeft * RESPAWN_MODIFER
