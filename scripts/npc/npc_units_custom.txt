@@ -23,10 +23,10 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.15"		// Speed of attack.
 		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
-		"AttackRange"				"1200"		// Range within a target can be attacked. (was 690)
+		"AttackAcquisitionRange"	"1400"		// Range within a target can be acquired.
+		"AttackRange"				"1400"		// Range within a target can be attacked. (was 690)
 		"ProjectileModel"			"particles/base_attacks/fountain_attack.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			"1400"		// Speed of projectile.
+		"ProjectileSpeed"			"2000"		// Speed of projectile.
 
 		"StatusHealth"				"99999999"		// Base health.
 		"StatusHealthRegen"			"99999999"			// Health regeneration rate.
@@ -42,8 +42,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"2200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"2200"		// Range of vision at night time.
 	}	
 	
 }
