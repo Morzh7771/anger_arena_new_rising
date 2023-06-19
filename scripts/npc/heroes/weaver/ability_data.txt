@@ -13,9 +13,9 @@ DOTAAbilities
 		"AbilitySound"					"Hero_Weaver.Swarm.Cast"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"3000"
-		"AbilityCooldown"				"44 36 28 20"
+		"AbilityCooldown"				"44.0 40.0 36.0 32.0 28.0 24.0 20.0"
 		"AbilityManaCost"				"110"
 
 		// Stats
@@ -29,22 +29,22 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"18 20 22 24"
+				"damage"			"20.0 28.0 36.0 44.0 52.0 60.0 68.0"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"attack_rate"		"1.15 1.0 0.85 0.7"
+				"attack_rate"		"1.15 1.0 0.85 0.7 0.55 0.4 0.25"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"count"				"12 12 12 12"
+				"count"				"12"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"armor_reduction"	"1 1 1 1"
+				"armor_reduction"	"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_weaver_3"
 			}
 			"05"
@@ -55,23 +55,23 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"destroy_attacks"	"6 6 8 8"
+				"destroy_attacks"	"6 6 8 8 10 10 12"
 				"LinkedSpecialBonus"	"special_bonus_unique_weaver_4"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"100 100 100 100"
+				"radius"			"100"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"speed"				"750 750 750 750"
+				"speed"				"750"
 			}
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"spawn_radius"		"300 300 300 300"
+				"spawn_radius"		"300"
 			}
 			"10"
 			{
@@ -96,7 +96,7 @@ DOTAAbilities
 		"HasShardUpgrade"				"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -111,27 +111,27 @@ DOTAAbilities
 		{
 			"damage"				
 			{
-				"value"										"100 125 150 175"
-				"special_bonus_unique_weaver_1"				"+50"
+				"value"										"100.0 150.0 200.0 250.0 300.0 350.0 400.0"
+				"special_bonus_unique_weaver_1"				"+100"
 			}
-			"speed"					"200 230 260 290"
-			"radius"				"175 175 175 175"
+			"speed"					"200.0 220.0 240.0 260.0 280.0 300.0 320.0"
+			"radius"				"175"
 			"fade_time"				"0.25"
-			"duration"				"4.0 4.0 4.0 4.0"
+			"duration"				"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
 			"AbilityCooldown"
 			{
-				"value"								"15 12 9 6"
+				"value"								"6.5"
 				"special_bonus_unique_weaver_6"		"-2.5"
 			}
 			"geminate_attack_mark_duration"
 			{
 				"value"									"0"
-				"special_bonus_shard"					"+12.0"
+				"special_bonus_shard"					"+10.0"
 			}
 			"shukuchi_attack_mark_radius"
 			{
 				"value"									"0"
-				"special_bonus_shard"					"+1200"
+				"special_bonus_shard"					"+2000"
 			}
 		
 		}
@@ -148,7 +148,7 @@ DOTAAbilities
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityCooldown"				"7 5.5 4 2.5"
+		"AbilityCooldown"				"7 6 5 4 3 2 1"
 
 		"AbilityCastRange"				"425"
 		// Special	
@@ -158,30 +158,30 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"			"0.25"
+				"delay"			"0.2"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_attack"			"1"
+				"tooltip_attack"			"1 1 1 1 1 1 2"
 				"LinkedSpecialBonus"	"special_bonus_unique_weaver_5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15 30 45 60"
+				"bonus_damage"			"20.0 40.0 60.0 80.0 100.0 120.0 140.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_weaver_2"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"shard_beetle_search_range"			"1200"
+				"shard_beetle_search_range"			"2000"
 				"RequiresShard"			"1"
 			}
 			"05"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"shukuchi_attack_mark_radius"				"1200"
+				"shukuchi_attack_mark_radius"				"2000"
 
 			}				
 		}		
@@ -198,18 +198,18 @@ DOTAAbilities
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"700"
 		"AbilitySound"					"Hero_Weaver.TimeLapse"
 
 		"FightRecapLevel"				"2"
 
 		"HasScepterUpgrade"			"1"
 
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"70 55 40"
-		"AbilityManaCost"				"150 75 0"	
+		"AbilityCooldown"				"60.0 55.0 50.0 45.0 40.0 35.0 30.0"
+		"AbilityManaCost"				"180.0 150.0 120.0 90.0 60.0 30.0 0.0"	
 		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -217,7 +217,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cooldown_scepter"		"40"
+				"cooldown_scepter"		"30"
 				"RequiresScepter"		"1"
 			}					
 		}
