@@ -316,3 +316,5 @@ function creep_spawner_on_end_touch( trigger, data )
 
 	CreepSpawner:_OnLeaveTrigger( spawnName , activator )
 end
+
+

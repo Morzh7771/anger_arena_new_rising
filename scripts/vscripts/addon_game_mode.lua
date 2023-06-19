@@ -3,7 +3,19 @@
 if AngelArena == nil then
 	_G.AngelArena = class({})
 end
-
+require('lib/teleport')
+require('lib/boss/boss_spawner')
+require('lib/timers')
+require('lib/team_helper')
+require('lib/spawners/creep_spawner')
+require('lib/spawners/creep_leveling')
+require('lib/spawners/bear_spawner')
+require('lib/duel/duel_controller')
+require('lib/attentions')
+require('lib/gpm_lib')
+require('lib/game_ender')
+require('lib/move_limiter')
+require('lib/comeback_system')
 function Precache( context )
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
@@ -15,18 +27,7 @@ function Precache( context )
 	DuelController:Precache(context)
 	--ItemPrecache:Precache(context)
 end
-require('lib/teleport')
-require('lib/boss/boss_spawner')
-require('lib/timers')
-require('lib/team_helper')
-require('lib/spawners/creep_spawner')
-require('lib/spawners/creep_leveling')
-require('lib/duel/duel_controller')
-require('lib/attentions')
-require('lib/gpm_lib')
-require('lib/game_ender')
-require('lib/move_limiter')
-require('lib/comeback_system')
+
 local postRequireList = {
 	'lib/base/player',
 	'lib/base/base_npc'
@@ -140,7 +141,7 @@ function AngelArena:InitGameMode()
 	GameRules:SetPreGameTime(60) -- old 9
 	BossSpawner:Init()
 	CreepSpawner:Init()
-
+	
 	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepLeveling:OnSpawnCallback(arg); end)
 	CreepSpawner:RegisterOnDeathCallback(function(arg) CreepLeveling:OnDeathCallback(arg); end)
 	if GameRules:IsCheatMode()then
@@ -273,7 +274,8 @@ function AngelArena:OnGameStateChange()
 		if not is_game_start then
 			CreepSpawner:StartSpawning()
 			BossSpawner:OnGameStart()
-
+			BearSpawner:SpawnBear()
+			
 			Timers:CreateTimer(0.1, function()
 				GPM_Init()
 			end)
@@ -306,7 +308,7 @@ function AngelArena:OnNPCSpawned(keys)
 		if cheat == true then
 			if npc:IsRealHero() then
 				--npc:AddExperience(999999, 0, false, true)
-				npc:SetGold(99999999,true)
+				--npc:SetGold(99999999,true)
 			end
 		end
 	end
@@ -341,10 +343,16 @@ function AngelArena:OnEntityKilled(event)
 	_G.Kills[heroTeam] = _G.Kills[heroTeam] or 0
 	_G.Kills[DOTA_TEAM_BADGUYS] = _G.Kills[DOTA_TEAM_BADGUYS] or 0
 	_G.Kills[DOTA_TEAM_GOODGUYS] = _G.Kills[DOTA_TEAM_GOODGUYS] or 0
-
 	local GameMode = GameRules:GetGameModeEntity()
 
 	if not killedUnit or not IsValidEntity(killedUnit) then return end
+
+	if killedUnit:GetUnitName() == 'npc_aa_creep_centaur_big'then
+		Timers:CreateTimer(1.5, function()
+			BearSpawner:ReSpawnBear()
+		end)
+		
+	end
 
 	if BossSpawner:HandleUnitKill( killedUnit, hero ) then
 		return
