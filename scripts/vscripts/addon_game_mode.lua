@@ -174,7 +174,7 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( AngelArena, "OnNPCSpawned" ), self )
 	ListenToGameEvent('game_rules_state_change', Safe_Wrap(AngelArena, 'OnGameStateChange'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AngelArena, "OnEntityKilled"), self)
-
+	ListenToGameEvent('dota_player_gained_level', Safe_Wrap(AngelArena, 'OnLevelUp'), self)
 
 	LinkLuaModifier("modifier_godmode", 'modifiers/modifier_godmode', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
@@ -305,7 +305,7 @@ function AngelArena:OnNPCSpawned(keys)
 		npc.bFirstSpawned = true
 		if cheat == true then
 			if npc:IsRealHero() then
-				npc:AddExperience(999999, 0, false, true)
+				--npc:AddExperience(999999, 0, false, true)
 				npc:SetGold(99999999,true)
 			end
 		end
@@ -327,7 +327,6 @@ local no_points_levels = {
 function AngelArena:OnLevelUp(keys)
 	local hero = EntIndexToHScript(keys.hero_entindex)
     local level = keys.level
-
     if no_points_levels[level] and hero:GetUnitName() ~= "npc_dota_hero_invoker" or level >= 30 then
 		hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
 	end

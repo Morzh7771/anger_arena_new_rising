@@ -7,6 +7,12 @@ local END_MESSAGE 		  = "#game_ends_on_30_sec"
 local END_MINIMAP_MESSAGE = "#game_ends_on_time"
 
 function GameEnder:_OnEnd(team)
+	if team == DOTA_TEAM_GOODGUYS then
+	GameRules:SetCustomVictoryMessage("#aa_on_win_radiant_message")
+	end 
+	if team == DOTA_TEAM_BADGUYS then
+		GameRules:SetCustomVictoryMessage("#aa_on_win_dire_message")
+	end
 	GameRules:SetGameWinner(team)
 end
 

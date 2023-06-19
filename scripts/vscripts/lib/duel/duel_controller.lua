@@ -3,8 +3,8 @@ require('lib/attentions')
 require('lib/team_helper')
 require('lib/message_formatters')
 
-local DUEL_INTERVAL = 300
-local DUEL_NOBODY_WINS = 90
+local DUEL_INTERVAL = 360
+local DUEL_NOBODY_WINS = 150
 
 local DUEL_FIRST_BONUS_GOLD = 350
 local DUEL_FIRST_BONUS_EXP  = 350
