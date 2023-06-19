@@ -15,7 +15,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"1500"
+		"AbilityCastRange"				"3000"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -29,9 +29,9 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"			"3"
-			"wind_strength"		"240"
-			"radius"			"1000"
+			"duration"			"5"
+			"wind_strength"		"250"
+			"radius"			"1200"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -56,15 +56,15 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
+		"AbilityDamage"					"0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"70 80 90 100 110 120 130"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -78,13 +78,13 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.6 2.1 2.6 3.1"
+				"stun_duration"			"1.5 1.83 2.17 2.5 2.83 3.17 3.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_windranger_6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"shackle_distance"		"575"
+				"shackle_distance"		"600"
 			}
 			"04"
 			{
@@ -119,18 +119,18 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"2600"
+		"AbilityCastRange"				"3000"
 		"AbilityCastPoint"				"0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 11 10 9"
+		"AbilityCooldown"				"15.0 14.0 13.0 12.0 11.0 10.0 9.0"
 		"AbilityChannelTime"			"1.0"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 100 110 120"
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -138,13 +138,13 @@ DOTAAbilities
 		{
 				"powershot_damage"			
 				{
-					"value"					"170 270 370 470"
+					"value"					"100.0 250.0 400.0 550.0 700.0 850.0 1000.0"
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"damage_reduction"		
 				{
-					"value"				"20"
-					"special_bonus_unique_windranger_3"		"-15"
+					"value"				"30"
+					"special_bonus_unique_windranger_3"		"-30"
 					"CalculateSpellDamageTooltip"	"0"
 					"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
 				}
@@ -152,8 +152,8 @@ DOTAAbilities
 				"arrow_range"			"3000"
 				"arrow_speed"			"3000.0 3000.0 3000.0 3000.0"
 				"tree_width"			"75 75 75 75"
-				"vision_radius"			"400"
-				"vision_duration"		"3.34 3.34 3.34 3.34"
+				"vision_radius"			"600"
+				"vision_duration"		"3.5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -171,16 +171,16 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 14 13 12"
-		"AbilityDuration"				"3 4 5 6"
+		"AbilityCooldown"				"21.0 20.0 19.0 18.0 17.0 16.0 15.0"
+		"AbilityDuration"				"3.0 4.0 5.0 6.0 7.0 8.0 9.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"50 70 90 110 130 150 170"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -194,22 +194,22 @@ DOTAAbilities
 			"evasion_pct_tooltip"	"100"
 			"enemy_movespeed_bonus_pct"	
 			{
-				"value"		"-15 -20 -25 -30"
+				"value"		"-10.0 -15.0 -20.0 -25.0 -30.0 -35.0 -40.0"
 			}
 			"radius"					
 			{	
-				"value"			"325"
-				"special_bonus_unique_windranger"	"+225"
+				"value"			"350"
+				"special_bonus_unique_windranger"	"+150"
 			}
 			"scepter_movespeed_bonus_pct"			
 			{
 				"RequiresScepter" "1"
-				"value"			"-35 -40 -45 -50"
+				"value"			"-20.0 -25.0 -30.0 -35.0 -40.0 -45.0 -50.0"
 			}
 			"physical_damage_pct"
 			{
 				"value"				"0"
-				"special_bonus_scepter"		"-35"
+				"special_bonus_scepter"		"-25"
 			}
 			"cannot_be_dispelled"
 			{
@@ -217,7 +217,7 @@ DOTAAbilities
 				"special_bonus_unique_windranger_windrun_undispellable"			"+1"
 			}
 			
-			"duration"					"3 4 5 6"
+			"duration"					"3.0 4.0 5.0 6.0 7.0 8.0 9.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -246,18 +246,18 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 50 30"
+		"AbilityCooldown"				"80.0 70.0 60.0 50.0 40.0 30.0 20.0"
 		"AbilityDuration"				"20.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 100 125"
+		"AbilityManaCost"				"100.0 125.0 150.0 175.0 200.0 225.0 250.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"			"350 425 500"
+				"bonus_attack_speed"			"300.0 400.0 500.0 600.0 700.0 800.0 900.0"
 				"focusfire_damage_reduction"	
 				{
 					"value"						"-30"
@@ -272,7 +272,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"windrunner_focusfire_cancel"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 
 		// Casting

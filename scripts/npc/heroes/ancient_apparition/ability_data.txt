@@ -19,13 +19,13 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_COLD_FEET"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"700 800 900 1000"
-		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
+		"AbilityCastRange"				"700 750 800 850 900 950 1000"
+		"AbilityCastPoint"				"0.01 0.01 0.01 0.01 0.01 0.01 0.01"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 13 11 9"
-		"AbilityDuration"				"4.0 4.0 4.0 4.0"
+		"AbilityCooldown"				"15 14 13 12 11 10 9"
+		"AbilityDuration"				"4.0 4.0 4.0 4.0 4.0 4.0 4.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -41,16 +41,16 @@ DOTAAbilities
 		{
 			"damage"				
 			{
-				"value"		"30 50 70 90"
-				"special_bonus_unique_ancient_apparition_8"	"+40"
+				"value"		"30 50 70 90 100 110 120"
+				"special_bonus_unique_ancient_apparition_8"	"+60"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"break_distance"
 			{
-				"value"		"715"
-				"special_bonus_unique_ancient_apparition_1"	"+300"
+				"value"		"800"
+				"special_bonus_unique_ancient_apparition_1"	"+325"
 			}
-			"stun_duration"			"1.6 2.0 2.4 2.8"
+			"stun_duration"			"1.6 1.9 2.2 2.5 2.8 3.1 3.4"
 			"area_of_effect"
 			{
 				"value"			"0"
@@ -75,15 +75,15 @@ DOTAAbilities
 		"AbilityCastAnimation"			"ACT_DOTA_ICE_VORTEX"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"1500 1500 1500 1500"
-		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
+		"AbilityCastPoint"				"0.01 0.01 0.01 0.01 0.01 0.01 0.01"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"6 9 12 15"
+		"AbilityDuration"				"6 8 10 12 14 16 18"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70"
+		"AbilityManaCost"				"40 50 60 70 80 90 100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -91,27 +91,27 @@ DOTAAbilities
 		{
 			"AbilityCooldown"
 			{
-				"value"					"10 8 6 4"
-				"special_bonus_unique_ancient_apparition_3"			"-2"
+				"value"					"10 9 8 7 6 5 4"
+				"special_bonus_unique_ancient_apparition_3"			"-2.5"
 			}
 			"radius"				"300"
-			"drag_speed"	"40 50 60 70"
+			"drag_speed"	"40 45 50 55 60 65 70"
 			"movement_speed_pct"
 			{
-				"value"	"-16 -19 -22 -25"
-				"special_bonus_unique_ancient_apparition_4"	"-5"
+				"value"	"-16 -18 -20 -22 -24 -26 -28"
+				"special_bonus_unique_ancient_apparition_4"	"-9"
 			}
 			"spell_resist_pct"
 			{
-				"value"		"-16 -19 -22 -25"
-				"special_bonus_unique_ancient_apparition_4"	"-5"
+				"value"		"-16 -18 -20 -22 -24 -26 -28"
+				"special_bonus_unique_ancient_apparition_4"	"-9"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
-			"vision_aoe"		"200 200 200 200"
-			"vortex_duration"		"6 9 12 15"
+			"vision_aoe"		"210 220 230 240 250 260 270"
+			"vortex_duration"		"6 8 10 12 14 16 18"
 			"shard_dps"
 			{
-				"value"		"12 20 28 36"
+				"value"		"12 20 28 36 44 52 60"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 				"CalculateSpellDamageTooltip"	"1"
 			}
@@ -147,24 +147,24 @@ DOTAAbilities
 		{
 			"damage"
 			{
-				"value"				"40 80 120 160"
-				"special_bonus_unique_ancient_apparition_2"		"+80"
+				"value"				"40 80 120 160 200 240 280"
+				"special_bonus_unique_ancient_apparition_2"		"+120"
 			}
 			"slow"					"100"
-			"duration"				"0.7 0.8 0.9 1"
+			"duration"				"0.4 0.5 0.6 0.7 0.8 0.9 1"
 			"attack_range_bonus"
 			{
-				"value"				"60 120 180 240"
-				"special_bonus_unique_ancient_apparition_7"		"+300"
+				"value"				"60 120 180 240 300 360 420"
+				"special_bonus_unique_ancient_apparition_7"		"+350"
 			}
 			"AbilityManaCost"
 			{
-				"value"										"30 40 50 60"
-				"special_bonus_scepter"						"-50%"
+				"value"										"30 40 50 60 70 80 90"
+				"special_bonus_scepter"						"-30%"
 			}
 			"AbilityCooldown"				
 			{
-				"value"			"12 9 6 3"
+				"value"			"10 9 8 7 6 5 4 3"
 				"special_bonus_scepter"						"-100%"
 			}
 		}
@@ -186,48 +186,48 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.01 0.01 0.01"
+		"AbilityCastPoint"				"0.01 0.01 0.01 0.01 0.01 0.01"
 		"AbilityCastRange"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0 50.0 40.0"
+		"AbilityCooldown"				"70 65 60 55 50 45 40"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"175"
+		"AbilityManaCost"				"200"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"250 325 400"
+		"AbilityDamage"					"250 325 400 475 550 625"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius_min"			"275"
-			"radius_grow"			"50.0"
-			"radius_max"			"1000"
-			"path_radius"			"275"
-			"frostbite_duration"	"10 11 12"
+			"radius_min"			"325"
+			"radius_grow"			"65.0"
+			"radius_max"			"1500"
+			"path_radius"			"325"
+			"frostbite_duration"	"10 11 12 13 14 15"
 			"dot_damage"				
 			{
-				"value"					"12.5 20.0 32.0"
+				"value"					"12.5 20.0 32.0 40.0 48.0 56.0"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"speed"					"1500 1500 1500 1500"
 			"kill_pct"
 			{	
-				"value"				"12 13 14"
-				"special_bonus_unique_ancient_apparition_5"	"+4"
+				"value"				"9 10 11 12 13 14 15"
+				"special_bonus_unique_ancient_apparition_5"	"+5"
 			}
 			"cold_feet_stun_duration_pct"
 			{
 				"value"					"0"
 				"special_bonus_shard"		"+60"
 			}
-			"target_sight_radius"	"500 500 500"
+			"target_sight_radius"	"500 525 550 575 600 625"
 		}
 	}
 	"ancient_apparition_ice_blast_release"
@@ -247,7 +247,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1.0 1.0 1.0"
+		"AbilityCooldown"				"1.0 1.0 1.0 1.0 1.0 1.0"
 	}
 	"ancient_apparition_ice_age"
 	{

@@ -18,7 +18,7 @@ DOTAAbilities
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"AbilityCooldown"				"6 4 2 0"
+		"AbilityCooldown"				"6 5 4 3 2 1 0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -26,10 +26,10 @@ DOTAAbilities
 		{
 			"mana_pool_damage_pct"	
 			{
-				"value"										"13 14 15 16"
-				"special_bonus_unique_outworld_devourer"	"+2"
+				"value"										"0.5 1 2 4 8 16 32"
+				"special_bonus_unique_outworld_devourer"	"+16"
 			}
-			"mana_cost_percentage"							"20"
+			"mana_cost_percentage"							"0.5 1 2 4 8 16 32"
 			"bounce_radius"
 			{
 				"value"										"0"			
@@ -55,15 +55,15 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
+		"AbilityCooldown"				"12"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.2"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150"
+		"AbilityManaCost"				"10 20 40 80 160 320 640"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -74,15 +74,15 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"prison_duration"		"1.75 2.5 3.25 4"
-			"damage"				"120 200 280 360"
+			"prison_duration"		"1 1.5 2 2.5 3 3.5 4"
+			"damage"				"120 200 280 360 440 520 600"
 			"mana_capacity_steal"	
 			{
-				"value"							"16 18 20 22"
-				"special_bonus_shard"			"+5"
+				"value"							"10 15 20 25 30 35 40"
+				"special_bonus_shard"			"+10"
 			}
 			
-			"mana_capacity_duration"	"30 40 50 60"
+			"mana_capacity_duration"	"10 20 30 40 50 60 70"
 			"allied_movement_speed_pct"
 			{
 				"value"					"0"
@@ -91,7 +91,7 @@ DOTAAbilities
 			"damage_radius"				"0"
 			"AbilityCastRange"
 			{
-				"value"						"650"
+				"value"						"100 200 300 400 500 600 700"
 				"special_bonus_unique_outworld_devourer_astral_castrange"	"+100"
 			}
 		}
@@ -163,17 +163,17 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"proc_chance"	"30"
-			"mana_restore"	"25 35 45 55"
+			"proc_chance"	"25"
+			"mana_restore"	"10 20 30 40 50 60 70"
 			"mana_capacity_steal" 	"5"
-			"mana_capacity_duration"	"30 40 50 60"
+			"mana_capacity_duration"	"10 20 30 40 50 60 70"
 			"shard_bonus_mana"			"300"
 			"shard_mana_duration"		"10"
 
-			"scepter_barrier_threshold"	"20"
+			"scepter_barrier_threshold"	"10"
 			"scepter_barrier_duration"	"15"
 			"scepter_barrier_cooldown"	"60"
-			"scepter_max_mana_barrier_pct"	"50"
+			"scepter_max_mana_barrier_pct"	"100"
 		}
 	}
 	"obsidian_destroyer_sanity_eclipse"
@@ -194,11 +194,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160 145 130"
+		"AbilityCooldown"				"120 110 100 90 80 70 60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 325 450"
+		"AbilityManaCost"				"100 200 400 800 1600 3200 6400"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -207,12 +207,12 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"base_damage"				"200 300 400"
+				"base_damage"				"100 200 300 400 500 600 700"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"400 500 600"
+				"radius"					"400 450 500 550 600 650 700"
 			}
 			"03"
 			{
@@ -222,7 +222,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_multiplier"	"0.4"
+				"damage_multiplier"	"1"
 				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer_4"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}

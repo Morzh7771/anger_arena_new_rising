@@ -13,13 +13,13 @@ DOTAAbilities
 
         "HasShardUpgrade"               "1"
 
-		"AbilityCastRange"				"600 625 650 675"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"550 600 650 700 750 800 850"
+		"AbilityCastPoint"				"0.5 0.48 0.46 0.44 0.42 0.41 0.40"
 		"FightRecapLevel"				"1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 125 140 155"
+		"AbilityManaCost"				"100 125 150 175 200 225 250"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -27,13 +27,13 @@ DOTAAbilities
 		{
 				"AbilityCooldown"
 				{
-					"value"	"15 14 13 12"
-					"special_bonus_unique_underlord_5"	"-3"
+					"value"	"15 14.5 14 13.5 13 12.5 12"
+					"special_bonus_unique_underlord_5"	"-4"
 				}
 				"radius"					
 				{
-					"value"					"425"
-					"special_bonus_unique_underlord_8"	"+75"
+					"value"					"450"
+					"special_bonus_unique_underlord_8"	"+100"
 				}
 				"wave_duration"					
 				{
@@ -43,13 +43,13 @@ DOTAAbilities
 				"wave_count"					"6"
 				"wave_damage"								
 				{
-					"value"					"30 50 70 90"
-					"CalculateSpellDamageTooltip"	"1"
+					"value"					"30 60 90 120 150 180 210"
+					"CalculateSpellDamageTooltip"		"1"
 				}
 				"wave_interval"					"1.0"
 				"burn_damage"					
 				{
-					"value"					"1.5 2 2.5 3"
+					"value"					"1.5 2 2.5 3 3.5 4 4.5"
 					"special_bonus_unique_underlord_4"	"+1"
 				}
 				"burn_interval"					"1.0"
@@ -81,19 +81,19 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_AbyssalUnderlord.PitOfMalice"
 
-		"AbilityCastRange"				"675"
-		"AbilityCastPoint"				"0.45"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.46 0.45 0.44 0.43 0.42 0.41 0.40"
 		"FightRecapLevel"				"1"
 
 		"HasScepterUpgrade"				"1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"21 19 17 15"
+		"AbilityCooldown"				"20 18.5 17 15.5 14 12.5 11"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 100 120 140"
+		"AbilityManaCost"				"80 100 120 140 160 180 200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -102,16 +102,16 @@ DOTAAbilities
 			"radius"
 			{
 				"value"					"400"
-				"special_bonus_unique_underlord_6"	"+75"
+				"special_bonus_unique_underlord_6"	"+100"
 			}
 
-			"pit_duration"					"12.0"
-			"pit_interval"					"3.6"
+			"pit_duration"					"10"
+			"pit_interval"					"4.0"
 			"pit_damage"					"0"
 			"ensnare_duration"
 			{
-				"value"	"1.2 1.4 1.6 1.8"
-				"special_bonus_unique_underlord" "+0.65"
+				"value"	"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
+				"special_bonus_unique_underlord" "+0.5"
 			}
 			"speed_bonus"
 			{
@@ -137,30 +137,30 @@ DOTAAbilities
 			"radius"						"900"
 			"damage_reduction_pct"
 			{
-				"value"		"6 14 22 30"
+				"value"		"5 10 15 20 25 30 35"
 				"special_bonus_unique_underlord_3"	"+15"
 				"CalculateSpellDamageTooltip"		"0"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
 			}
 			"bonus_damage_from_creep"
 			{
-				"value"							"2 4 6 8"
+				"value"							"5 10 15 20 25 30 35"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"bonus_damage_from_hero"
 			{
-				"value"							"30 35 40 45"
+				"value"							"40 50 60 70 80 90 100"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"bonus_damage_duration"
 			{
-				"value"							"35 45 55 65"
+				"value"							"20 30 40 50 60 70 80"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
 			"bonus_shared_by_allies_pct"
 			{
-				"special_bonus_unique_underlord_9"	"+50"
+				"special_bonus_unique_underlord_9"	"+75"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -232,38 +232,37 @@ DOTAAbilities
 		"FightRecapLevel"				"1"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Undying.Tombstone"
-		"MaxLevel"						"3"
 		"HasScepterUpgrade"				"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.45 0.45 0.45"
+		"AbilityCastPoint"				"0.45"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"110 100 90"
+		"AbilityCooldown"				"90 80 70 60 50 40 30"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"
+		"AbilityManaCost"				"350"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"				"20.0"
-				"damage_reduction"		"14 22 30"
-				"bonus_ms"				"10 20 30"
-				"buff_duration"			"5.0 6.0 7.0"
+				"duration"				"15"
+				"damage_reduction"		"30"
+				"bonus_ms"				"10 15 20 25 30 35 40"
+				"buff_duration"			"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
 				"minimum_distance"		"2000"
 				"spawn_pit_on_cast"
 				{
 					"special_bonus_scepter"	"+1"
 				}
-				"warp_channel_duration"			"3.5"
-				"distance_from_fountain"		"1425"
+				"warp_channel_duration"			"2.0"
+				"distance_from_fountain"		"1200"
 		}
 	}
 	"abyssal_underlord_portal_warp"
@@ -271,13 +270,12 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"abyssal_underlord_portal_warp"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOASSIST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"IsCastableWhileHidden"			"1"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
-		"AbilityChannelTime"			"3.5"
+		"AbilityChannelTime"			"2.0"
 		"MaxLevel"						"1"
 
 		// Casting

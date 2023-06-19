@@ -57,7 +57,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -75,14 +75,14 @@ DOTAAbilities
 			"range"						"1500"
 			"axe_damage"
 			{
-				"value"					"35 65 95 125"
+				"value"					"35 65 95 125 155 185 215"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"duration"						"12"
 			"damage_amp"
 			{
-				"value"				"6 8 10 12"
-				"special_bonus_unique_beastmaster_9"		"+2.5"
+				"value"				"6 8 10 12 14 16 18"
+				"special_bonus_unique_beastmaster_9"		"+4"
 			}
 			"AbilityCooldown"				
 			{
@@ -120,7 +120,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"42 38 34 30"
+		"AbilityCooldown"				"42 40 38 30 34 32 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -132,23 +132,23 @@ DOTAAbilities
 		{
 			
 			"duration"							"60"
-			"boar_base_max_health"				"300 450 600 750"
-			"boar_base_damage"					"20 35 50 65"
+			"boar_base_max_health"				"300 450 600 750 900 1050 1200"
+			"boar_base_damage"					"20 40 60 80 100 120 140"
 			"boar_total_damage_tooltip"
 			{
-				"value"										"20 35 50 65"
-				"special_bonus_unique_beastmaster_2"		"+35"
+				"value"										"20 40 60 80 100 120 140"
+				"special_bonus_unique_beastmaster_2"		"+60"
 				"CalculateSpellDamageTooltip"				"0"
 			}
 			"boar_bonus_damage"
 			{
 				"value"										"0"
-				"special_bonus_unique_beastmaster_2"		"+35"
+				"special_bonus_unique_beastmaster_2"		"+60"
 			}
-			"boar_base_xp_bounty"				"60 70 80 90"
-			"boar_base_movespeed"				"320 330 340 350"
-			"boar_moveslow_tooltip"				"10 18 26 34"
-			"boar_poison_duration_tooltip"		"3.0"
+			"boar_base_xp_bounty"				"100"
+			"boar_base_movespeed"				"320 330 340 350 360 370 380"
+			"boar_moveslow_tooltip"				"12 16 20 24 28 32 36"
+			"boar_poison_duration_tooltip"		"4.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -187,8 +187,8 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"		"250"
-			"stun_duration"		"2"
+			"damage"		"500"
+			"stun_duration"		"3"
 		}
 	}
 	"beastmaster_call_of_the_wild_hawk"
@@ -220,14 +220,14 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"						"60"
-			"hawk_base_max_health"			"150 200 250 300"
-			"hawk_base_movespeed"			"300 340 380 420"
-			"hawk_base_gold_bounty"			"30 40 50 60"
-			"hawk_base_vision_range"		"600 650 700 750"
+			"hawk_base_max_health"			"250"
+			"hawk_base_movespeed"			"300 340 380 420 460 500 540"
+			"hawk_base_gold_bounty"			"50"
+			"hawk_base_vision_range"		"600 650 700 750 800 850 900"
 			"AbilityCooldown"
 			{
-				"value"						"60 50 40 30"	
-				"special_bonus_shard"		"-10"
+				"value"						"60 55 50 45 40 35 30"	
+				"special_bonus_shard"		"-15"
 
 			}				
 		}
@@ -250,14 +250,14 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"						"60"
-			"hawk_base_max_health"			"150 200 250 300"
-			"hawk_base_movespeed"			"300 340 380 420"
-			"hawk_base_gold_bounty"			"30 40 50 60"
-			"hawk_base_vision_range"		"600 650 700 750"
+			"hawk_base_max_health"			"250"
+			"hawk_base_movespeed"			"300 340 380 420 460 500 540"
+			"hawk_base_gold_bounty"			"50"
+			"hawk_base_vision_range"		"600 650 700 750 800 850 900"
 			"AbilityCooldown"
 			{
-				"value"						"60 50 40 30"	
-				"special_bonus_shard"		"-10"
+				"value"						"60 55 50 45 40 35 30"	
+				"special_bonus_shard"		"-15"
 
 			}				
 		}
@@ -277,7 +277,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"fade_time"				"1.0"
-			"idle_invis_delay"		"3"		// This plus the fade time equal the total time before the hawk goes invis.
+			"idle_invis_delay"		"1"		// This plus the fade time equal the total time before the hawk goes invis.
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -296,9 +296,9 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"attack_speed"			"-10 -18 -26 -34"
-			"movement_speed"		"-10 -18 -26 -34"
-			"duration"				"3.0"
+			"attack_speed"			"-12 -16 -20 -24 -28 -32 -36"
+			"movement_speed"		"-12 -16 -20 -24 -28 -32 -36"
+			"duration"				"4.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -340,11 +340,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"				"1200"
+			"radius"				"99999"
 			"bonus_attack_speed"
 			{
-				"value"									"10 20 30 40"
-				"special_bonus_unique_beastmaster_4"		"+10"
+				"value"									"20 40 60 80 100 120 140 160"
+				"special_bonus_unique_beastmaster_4"		"+20"
 			}
 		}
 	}
@@ -378,7 +378,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"		
+		"AbilityManaCost"				"100 125 150 175 200 225 250"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -393,15 +393,15 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"2.75 3.25 3.75"
+			"duration"					"2 2.25 2.5 2.75 3.0 3.25 3.5"
 			"damage"					
 			{
-				"value"			"150 225 300"
+				"value"			"150 225 300 375 450 525 600"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"side_damage"				
 			{
-				"value"			"150 225 300"
+				"value"			"150 225 300 375 450 525 600"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"damage_radius"				
@@ -414,12 +414,12 @@ DOTAAbilities
 			"slow_attack_speed_pct"		"-60"
 			"push_distance"				"450"
 			"push_duration"				"1.0"
-			"slow_duration"				"3 3.5 4"
+			"slow_duration"				"3 3.5 4 4.5 5 5.5 6"
 			"movement_speed"			"40"
-			"movement_speed_duration"			"3.0 3.5 4"
+			"movement_speed_duration"			"3 3.5 4 4.5 5 5.5 6"
 			"AbilityCooldown"
 			{ 
-				"value"				"100.0 80.0 60.0"
+				"value"				"60"
 				"special_bonus_unique_beastmaster_7"		"-30"
 			}
 
@@ -448,19 +448,19 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"						"600"
-			"max_stacks"					"20"
+			"radius"						"700"
+			"max_stacks"					"30"
 			"stack_decay_time"				"1.0"
-			"min_drum_hit_interval"			"0.4"
-			"max_drum_hit_interval"			"3"
+			"min_drum_hit_interval"			"0.25"
+			"max_drum_hit_interval"			"4"
 
 			"base_damage"						
 			{
-				"value"			"90"
+				"value"			"110"
 				"CalculateSpellDamageTooltip" "1"
 			}
-			"heal_pct"						"25"
-			"creep_heal_pct"				"5"
+			"heal_pct"						"15"
+			"creep_heal_pct"				"7"
 			"aura_radius"					"1200"
 		}
 	}	

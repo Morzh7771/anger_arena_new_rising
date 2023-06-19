@@ -20,7 +20,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"38 32 26 20"
+		"AbilityCooldown"				"38 34 30 26 22 18 14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,17 +33,17 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"7 8 9 10"
+				"duration"				"7 8 9 10 11 12 13"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_range_bonus"	"350 400 450 500"
+				"attack_range_bonus"	"350 400 450 500 550 600 650"
 			}			
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"percent_damage"		"4 6 8 10"
+				"percent_damage"		"4 6 8 10 12 14 16"
 			}
 			"04"
 			{
@@ -62,7 +62,7 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_slow"				"16 24 32 40"
+				"move_slow"				"16 20 24 28 32 36 40"
 				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_1"
 			}
 			"07"
@@ -93,7 +93,7 @@ DOTAAbilities
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_scepter"		"20"
+				"mana_cost_scepter"		"100"
 				"RequiresScepter"			"1"
 			}
 			"13"
@@ -122,7 +122,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -130,7 +130,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"105 120 135 150"
+		"AbilityManaCost"				"105 120 135 150 165 180 195"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -175,7 +175,7 @@ DOTAAbilities
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 180 260 340"
+				"damage"				"100 170 240 410 580 650 720"
 				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_7"
 			}
 		}
@@ -199,16 +199,16 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"850 900 950 1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"800 850 900 950 1000 1050 1100"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 21 18 15"
+		"AbilityCooldown"				"25 22 19 16 12 9 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityManaCost"				"50 60 70 80 90 100 110"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -222,18 +222,18 @@ DOTAAbilities
 			"02"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"heal_additive"		"30 35 40 45"
+				"heal_additive"		"30 35 40 45 50 55 60"
 				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_5"
 			}
 			"03"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"heal_percentage"	"1.75 2.5 3.25 4"
+				"heal_percentage"	"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"shard_cooldown_reduction"			"4.0"	
+				"shard_cooldown_reduction"			"2.0"	
 				"RequiresShard"				"1"
 			}
 			"05"
@@ -262,13 +262,13 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 750 800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"700.0 750.0 800.0 850.0 900.0 950.0 1000.0"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90 85 80"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -281,7 +281,7 @@ DOTAAbilities
 			"01"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"525"
+				"radius"			"700"
 			}
 			"02"
 			{
@@ -296,18 +296,18 @@ DOTAAbilities
 			"04"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"	"65"
+				"bonus_attack_speed"	"150"
 			}
 			"05"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"4.25 4.75 5.25"
+				"duration"			"4.0 4.25 4.5 4.75 5.0 5.25 5.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_3"
 			}
 			"06"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"early_out_timer"	"2.5"
+				"early_out_timer"	"3.5"
 			}
 		}
 	}

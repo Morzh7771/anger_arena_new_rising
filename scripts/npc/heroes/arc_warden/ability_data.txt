@@ -59,7 +59,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -81,22 +81,22 @@ DOTAAbilities
 				
 				"damage_per_second"				
 				{
-					"value"		"15 30 45 60"
-					"special_bonus_unique_arc_warden_2"		"+40"
+					"value"		"15 30 45 60 75 90 105"
+					"special_bonus_unique_arc_warden_2"		"+55"
 				}
 				"tempest_damage_per_second"				
 				{
-					"value"		"20 45 70 95"
-					"special_bonus_unique_arc_warden_2"		"+40"
+					"value"		"20 45 70 95 120 145 170"
+					"special_bonus_unique_arc_warden_2"		"+80"
 				}
 				"search_radius"					"225"
 				"think_interval"				"0.5"
-				"move_speed_slow_pct"				"14 21 28 35"
-				"tempest_move_speed_slow_pct"		"6 10 14 18"
+				"move_speed_slow_pct"				"14 21 28 35 42 48 55"
+				"tempest_move_speed_slow_pct"		"6 10 14 18 20 22 24"
 				"AbilityCastRange"			
 				{
 					"value"				"500 600 700 800"
-					"special_bonus_unique_arc_warden_5"	"+175"
+					"special_bonus_unique_arc_warden_5"	"+200"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -118,13 +118,13 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_AW_MAGNETIC_FIELD"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 70 90 110"
+		"AbilityManaCost"				"50 70 90 110 140 170 200"
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -135,12 +135,12 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"radius"					"300"
-			"duration"					"3.5 4.5 5.5 6.5"
-			"tempest_duration"			"5 6 7 8"
+			"duration"					"3.5 4.5 5.5 6.5 7.0 7.5 8.0"
+			"tempest_duration"			"5 6 7 8 9 10 11"
 			"attack_speed_bonus"		
 			{
-				"value" 				"50 60 70 80"
-				"special_bonus_unique_arc_warden_3" 		"+30"
+				"value" 				"50 70 90 110 130 150 170"
+				"special_bonus_unique_arc_warden_3" 		"+80"
 			}
 			"evasion_chance"			"100"
 			"shard_magic_resist"
@@ -154,16 +154,16 @@ DOTAAbilities
 				"value"						"30"
 				"RequiresShard"				"1"
 			}
-			"attack_range_bonus"				"150"
+			"attack_range_bonus"				"250"
 			"attack_magic_damage"				
 			{
-				value	"20 40 60 80"
-				"special_bonus_unique_arc_warden_3" 		"+30"
+				value	"40 80 120 160 200 240 280"
+				"special_bonus_unique_arc_warden_3" 		"+80"
 			}
 			"AbilityCooldown"
 			{
 				"value"						"20"
-				"special_bonus_unique_arc_warden_9"		"-9"
+				"special_bonus_unique_arc_warden_9"		"-7"
 			}
 		}
 	}
@@ -186,7 +186,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"4.0 4.0 4.0 4.0"
+		"AbilityCooldown"				"4.0 3.8 3.6 3.4 3.2 3.0 2.8"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -196,29 +196,29 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"									"375"
+			"radius"									"400"
 			"spark_damage_base"
 			{
 			
-				"value"									"100 180 260 340"
-				"special_bonus_unique_arc_warden"		"+35%"
+				"value"									"100 180 260 340 420 500 580"
+				"special_bonus_unique_arc_warden"		"+40%"
 			}
 			"base_activation_delay"							"2.0"
-			"wraith_speed_base"							"400"
-			"duration"									"45"
+			"wraith_speed_base"							"500"
+			"duration"									"60"
 			"spark_damage_tempest"
 			{
 			
-				"value"									"75 135 195 255"
-				"special_bonus_unique_arc_warden"		"+35%"
+				"value"									"75 135 195 255 315 375 435"
+				"special_bonus_unique_arc_warden"		"+40%"
 			}			
 			"tempest_activation_delay"							"1.0"
-			"wraith_speed_tempest"						"725"
+			"wraith_speed_tempest"						"1000"
 			"think_interval"							"0.2"
-			"wraith_vision_radius"						"300"
-			"wraith_vision_duration"					"3.34"
-			"ministun_duration"							"0.4 0.5 0.6 0.7"
-			"ministun_duration_tempest"					"0.6 0.8 1.0 1.2"
+			"wraith_vision_radius"						"400"
+			"wraith_vision_duration"					"3.5"
+			"ministun_duration"							"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
+			"ministun_duration_tempest"					"0.6 0.8 1.0 1.2 1.4 1.6 1.8"
 			"move_speed_slow_pct"						"100"
 			"scepter_activation_delay"
 			{
@@ -258,7 +258,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 60 50"
+		"AbilityCooldown"				"70 65 60 55 50 45 40"
 
 
 		// Special	
@@ -267,17 +267,17 @@ DOTAAbilities
 		{
 			"duration"
 			{
-				"value"				"18 22 26"
-				"special_bonus_unique_arc_warden_6"		"+12"
+				"value"				"12 15 18 21 24 27 30"
+				"special_bonus_unique_arc_warden_6"		"+10"
 			}
-			"bounty"				"180 240 300"
+			"bounty"				"200 300 400 500 600 700 800"
 			"penalty_distance"			"2000"
 			"ignore_penalty_distance"		
 			{
 				"value"						"0"
 				"special_bonus_unique_arc_warden_8"		"+1"
 			}
-			"attack_damage_penalty"				"50"
+			"attack_damage_penalty"				"0"
 			"tempest_double_cooldown_reduction"
 			{
 				"value"							"0"
