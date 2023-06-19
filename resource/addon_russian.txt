@@ -1,0 +1,36 @@
+"lang"
+{
+	"Language"		"Russian"
+	"Tokens"
+	{		
+        "aa_on_win_message" 									"ПОБЕДА. ВО СЛАВУ БОГОВ"
+        "increaseon_game_name"									"Angel Arena New Rising"
+        "addon_game_name"										"Angel Arena New Rising"
+        "addon_name_t"											"Angel Arena"
+        "DOTA_GAMEMODE_15"										"Angel Arena"
+        "DOTA_GoodGuys"											"Angels"
+        "DOTA_BadGuys"											"Demons"
+
+        "ANGEL_ARENA_ON_KILL"									"%s1 получает <font color='#FFFF00'>%s2</font> дополнительного золота за убийство!"
+        "ANGEL_ARENA_ON_ASSIST"									"%s1 получает <font color='#FFFF00'>%s2</font> дополнительного золота за помощь в убийстве!"
+
+        "game_ends_on_time"										"Конец игры: {s:time}"
+
+        "duel_nobody_wins" 										"Конец дуэли: {s:time}"
+        "duel_next_duel" 										"Дуэль через: {s:time}"
+        "duel_start"											"Дуэль началась"
+        "duel_end"												"Дуэль окончена."
+        "duel_error"											"<font color='#FF1111'>[ДУЭЛЬ]</font> Недостаточно игроков."
+        "duel_nobody" 											"Никто не победил на дуэли"
+        "duel_end_win_radiant"									"Ангелы сокрушили демонов"
+        "duel_end_win_demons"									"Демоны сокрушили ангелов"
+
+        "game_ends_on_30_sec"									"Игра завершится через 30 секунд!"
+
+        "aa_last_duel_coming"									"Следующая дуэль определит исход игры!"
+
+        "angel_arena_kill_limit_click"							"Нам осталось %s убийств для победы, а врагам %s убийств для победы!"
+
+        "on_boss_die_miniboss"												"<font color='#58ACFA'>Tormentor</font> был убит."
+	}
+}
