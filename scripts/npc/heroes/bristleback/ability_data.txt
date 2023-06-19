@@ -24,11 +24,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"100"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"quill_stacks"		"2"
+				"quill_stacks"		"3"
 			}
 		}
 	}
@@ -77,7 +77,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"12 16 20 24"
+		"AbilityManaCost"				"12 14 16 18 20 22 24"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -88,15 +88,15 @@ DOTAAbilities
 			"base_armor"			"2"
 			"armor_per_stack"
 			{
-				"value"		"1.5 2.0 2.5 3.0"
+				"value"		"1.5 2.0 2.5 3.0 3.5 4.0 4.5"
 				"special_bonus_unique_bristleback_4"	"+0.75"
 			}
 			"base_move_slow"		"15"
-			"move_slow_per_stack"	"3 6 9 12"
+			"move_slow_per_stack"	"3 5 7 9 12 15 18"
 			"stack_limit"
 			{
 				"value"			"4"
-				"special_bonus_scepter"	"+3"
+				"special_bonus_scepter"	"+4"
 			}
 			"goo_duration_creep"			"10.0"
 			"AbilityCastRange"
@@ -132,7 +132,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 35 35 35"
+		"AbilityManaCost"				"25 30 35 40 45 50 55"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -146,23 +146,23 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"quill_base_damage"		"25 45 65 85"
+				"quill_base_damage"		"25 45 65 85 105 125 145"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"quill_stack_damage"	"28 30 32 34"
+				"quill_stack_damage"	"25 30 35 40 45 50 55"
 				"LinkedSpecialBonus"	"special_bonus_unique_bristleback_2"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"quill_stack_duration"	"14.0"
+				"quill_stack_duration"	"15.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"max_damage"			"550.0"
+				"max_damage"			"1500.0"
 			}
 			"06"
 			{
@@ -186,17 +186,17 @@ DOTAAbilities
 		{
 			"side_damage_reduction"
 			{
-				"value"													"8 12 16 20"
-				"special_bonus_unique_bristleback_6"					"+4"
+				"value"													"8 10 12 14 16 18 20"
+				"special_bonus_unique_bristleback_6"					"+5"
 			}
 			"back_damage_reduction"
 			{
-				"value"			"16 24 32 40"
-				"special_bonus_unique_bristleback_6"						"+8"
+				"value"			"16 20 24 28 32 36 40"
+				"special_bonus_unique_bristleback_6"						"+10"
 			}
 			"side_angle"							"110"
 			"back_angle"							"70"
-			"quill_release_threshold"				"225"
+			"quill_release_threshold"				"300"
 			"quill_release_interval"				".1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -215,7 +215,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"10.0 10.0 10.0"
+		"AbilityDuration"				"10 11 12 13 14 15 16"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -224,23 +224,23 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_stack"					"15 20 25"
+				"damage_per_stack"					"15 20 25 30 35 40 45"
 				"LinkedSpecialBonus"	"special_bonus_unique_bristleback_3"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"move_speed_per_stack"				"2 3 4"
+				"move_speed_per_stack"				"2 3 4 5 6 7 8"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"stack_duration"				"16.0 18.0 20.0"
+				"stack_duration"				"16.0 18.0 20.0 24.0 28.0 32.0 36.0"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"max_stacks"					"8 10 12"
+				"max_stacks"					"8 9 10 11 12 13 14"
 			}
 		}
 	}
