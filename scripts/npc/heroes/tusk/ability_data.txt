@@ -22,7 +22,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"23 20 17 14"
+		"AbilityCooldown"				"23.0 21.5 20.0 18.5 17.0 15.5 14.0"
 
 
 		// Cost
@@ -36,12 +36,12 @@ DOTAAbilities
 				"shard_width"				"200"
 				"shard_damage"
 				{
-					"value"					"75 150 225 300"
+					"value"					"75.0 150.0 225.0 300.0 375.0 450.0 525.0"
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"shard_count"				"7"
 				"shard_speed"				"1200.0"
-				"shard_duration"			"4 5 6 7"
+				"shard_duration"			"4.0 4.75 5.5 6.25 7.0 7.75 8.5"
 				"shard_angle_step"			"40.0"
 				"shard_distance"			"200"
 				"turn_rate_slow"			"0"
@@ -52,7 +52,7 @@ DOTAAbilities
 				}
 				"aghs_shard_damage"			
 				{
-					"value"					"60"
+					"value"					"135"
 					"RequiresShard"			"1"
 				}
 				"aghs_shard_depth"			
@@ -68,7 +68,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"tusk_ice_shards_stop"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Casting
@@ -92,17 +91,17 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1150"
+		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"21 19 17 15"
+		"AbilityCooldown"				"22.0 20.5 19.0 17.5 16.0 14.5 13.0"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 75 75 75"
+		"AbilityManaCost"				"95"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -111,23 +110,23 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"snowball_damage"			"80 140 200 260"
+				"snowball_damage"			"80.0 160.0 240.0 320.0 400.0 480.0 560.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_tusk_2"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"snowball_speed"			"575 600 625 650"
+				"snowball_speed"			"700"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"snowball_damage_bonus"		"40 65 90 115"
+				"snowball_damage_bonus"		"50.0 85.0 120.0 155.0 190.0 225.0 260.0"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.6 0.8 1.0 1.2"
+				"stun_duration"				"0.5 0.65 0.8 0.95 1.1 1.25 1.4"
 			}
 			"05"
 			{
@@ -137,7 +136,7 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"snowball_duration"			"3.0"
+				"snowball_duration"			"6.0"
 			}
 			"07"
 			{
@@ -152,12 +151,12 @@ DOTAAbilities
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"snowball_windup"			"3.0"
+				"snowball_windup"			"6.0"
 			}
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"snowball_grab_radius"		"350"
+				"snowball_grab_radius"		"450"
 			}
 			"11"
 			{
@@ -172,7 +171,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"tusk_launch_snowball"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityTextureName"		"tusk_snowball"
 
@@ -181,20 +179,12 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 	}
-		"AbilityTextureName"		"tusk_snowball"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"AbilityTextureName"		"tusk_snowball"
-		"MaxLevel"		"7"
-		"AbilityCastAnimation"			"ACT_INVALID"
-	}
+		
 	"tusk_frozen_sigil"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"tusk_frozen_sigil"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Tusk.FrozenSigil"
@@ -213,7 +203,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70"
+		"AbilityManaCost"				"95"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -222,7 +212,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"sigil_radius"				"650"
+				"sigil_radius"				"700"
 			}
 			"02"
 			{
@@ -265,11 +255,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 21 18 15"
+		"AbilityCooldown"				"30.0 27.0 24.0 21.0 18.0 15.0 12.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70"
+		"AbilityManaCost"				"95"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -277,8 +267,8 @@ DOTAAbilities
 		{
 			"bonus_damage"
 			{
-				"value"						"20 45 70 95"		
-				"special_bonus_unique_tusk_3"		"+25"
+				"value"						"20.0 40.0 60.0 80.0 100.0 120.0 140.0"		
+				"special_bonus_unique_tusk_3"		"+60"
 			}
 			"movement_slow"				"75"
 			"slow_duration"				"0.5"
@@ -312,11 +302,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 15 10"
+		"AbilityCooldown"				"50.0 43.0 36.0 29.0 22.0 15.0 8.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -325,19 +315,19 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier"			"250 325 400"
+				"crit_multiplier"			"525"
 				"LinkedSpecialBonus"		"special_bonus_unique_tusk"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"air_time"					"1.0"
+				"air_time"					"0.75"
 				"LinkedSpecialBonus"		"special_bonus_unique_tusk_7"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 3.0 4.0"
+				"slow_duration"				"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
 			}
 			"04"
 			{
@@ -356,7 +346,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"tusk_walrus_kick"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -394,7 +383,7 @@ DOTAAbilities
 				"slow_duration"				"4"
 				"damage"					
 				{
-					"value"					"350"
+					"value"					"475"
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"search_radius"					"250"
