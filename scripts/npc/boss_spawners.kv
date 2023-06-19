@@ -1,9 +1,38 @@
 "root"
 {
-	"miniboss"
+	"miniboss_radiant"
 	{
 		"unit_name" 			"npc_dota_miniboss"
-		"point_name"			"tormentor_radiant_side"
+		"point_name"			"tormentor_radiant"
+		
+		"spawn_delay"			"1"
+		"spawn_interval"		"20"
+		"spawn_interval_random"	"30"
+		
+		"stats"
+		{
+			"base_health"		"100"
+			"base_armor"		"15"
+			"base_damage"		"350"
+			"health_per_death"	"1000"
+			"armor_per_death"	"15"
+			"damage_per_death"	"200"
+		}
+		
+		"on_death"
+		{
+			"message"			"#on_boss_die_miniboss"
+			"base_gold"			"1000"
+			"base_exp"			"1000"
+			"gold_per_death"	"500"
+			"exp_per_death"		"500"
+			"dropbox"			"box_boss_miniboss"
+		}
+	}
+	"miniboss_dire"
+	{
+		"unit_name" 			"npc_dota_miniboss"
+		"point_name"			"tormentor_dire"
 		
 		"spawn_delay"			"1"
 		"spawn_interval"		"20"
