@@ -26,7 +26,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"90"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -34,20 +34,20 @@ DOTAAbilities
 		{
 			"attack_speed_bonus"			
 			{
-				"value"									"100 140 180 220"
+				"value"									"100 140 180 220 260 300 360"
 				"special_bonus_unique_clinkz_7"			"+40"
 			}
 	
 			"duration"						"3.5"
-			"attack_range_bonus"			"200"
+			"attack_range_bonus"			"250"
 			"AbilityCooldown"				
 			{
-				"value"								"30 25 20 15"
+				"value"								"22 20 18 16 14 12 10"
 				"special_bonus_unique_clinkz_4"		"-7"
 
 			}
-			"strafe_skeleton_radius"					"1200"
-			"archer_attack_speed_pct"					"50"
+			"strafe_skeleton_radius"					"1500"
+			"archer_attack_speed_pct"					"100"
 
 			
 		}
@@ -150,22 +150,22 @@ DOTAAbilities
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 105 130"
+		"AbilityManaCost"				"100"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"35 40 45"
-			"fade_time"					"0.6 0.6 0.6"
-			"move_speed_bonus_pct"		"25 40 55"
+			"duration"					"25"
+			"fade_time"					"1 0.9 0.8 0.7 0.6 0.5 0.4"
+			"move_speed_bonus_pct"		"10 15 20 25 30 35 40"
 			"skeleton_count"			
 			{
-				"value"								"2 3 4"
+				"value"								"1 1 2 2 3 3 4"
 			}
 			"AbilityCooldown"
 			{
-				"value"									"18"
+				"value"									"15"
 				"special_bonus_unique_clinkz_10"		"-3"
 			}
 			"skeleton_offset"				"250"
@@ -197,7 +197,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80"
+		"AbilityCooldown"				"60"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -208,8 +208,8 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"range"			"1300"
-			"count"			"5"
-			"spawn_interval"			"0.5"
+			"count"			"12"
+			"spawn_interval"			"0.15"
 		}
 	}	
 	"clinkz_scepter"
@@ -261,15 +261,15 @@ DOTAAbilities
 		"AbilityValues"
 		{
 						
-			"duration"				"45"
+			"duration"				"60"
 			"AbilityCharges"				
 			{
-				"value"				"1 1 2 2"
+				"value"				"1 1 1 2 2 2 3"
 				"special_bonus_unique_clinkz_9"		"+1"
 			}
 			"health_gain"			
 			{
-				"value"				"175 250 325 400"
+				"value"				"175 250 325 400 475 550 625"
 				"special_bonus_unique_clinkz_8"		"+200"
 			}
 			"skeleton_duration"					"45"
@@ -284,9 +284,9 @@ DOTAAbilities
 				
 			}
 			"skeleton_building_damage_reduction"			"25"
-			"attack_rate"			"1.6"
-			"damage_percent"		"20"
-			"creep_level"			"4 5 6 6"
+			"attack_rate"			"1.0"
+			"damage_percent"		"30"
+			"creep_level"			"6"
 		}
 	}
 	"clinkz_tar_bomb"
@@ -310,11 +310,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7 6 5 4"
+		"AbilityCooldown"				"7.0 6.5 6.0 5.5 5.0 4.5 4.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"45 50 55 60"
+		"AbilityManaCost"				"60"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -325,15 +325,15 @@ DOTAAbilities
 		"AbilityValues"
 		{
 
-			"radius"		"325"
+			"radius"		"400"
 			"projectile_speed"					"2000"
 			"damage_bonus"					
 			{
-				"value"					"15 25 35 45"		
+				"value"					"15 25 35 45 55 65 75"		
 				"special_bonus_unique_clinkz_1"			"+20"
 			}
-			"ground_duration"				"5"				
-			"slow_movement_speed"			"-16 -19 -22 -25"
+			"ground_duration"				"7"				
+			"slow_movement_speed"			"-25"
 			"slow_duration"					"2.5"
 			"has_multishot"	
 			{
@@ -342,7 +342,7 @@ DOTAAbilities
 			}
 			"impact_damage"					
 			{
-				"value"				"40 60 80 100"
+				"value"				"40 60 80 100 120 149 160"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
 			}
 			
