@@ -16,6 +16,7 @@ require('lib/gpm_lib')
 require('lib/game_ender')
 require('lib/move_limiter')
 require('lib/comeback_system')
+require('lib/percent_damage')
 function Precache( context )
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
@@ -41,7 +42,7 @@ local game_start_for_courier = false
 
 GOLD_PER_TICK = 4
 
-KILL_LIMIT = 1
+KILL_LIMIT = 100
 
 GOLD_FOR_COUR = 350
 
@@ -179,6 +180,8 @@ function AngelArena:InitGameMode()
 
 	LinkLuaModifier("modifier_godmode", 'modifiers/modifier_godmode', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
+
+	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
 	-- AttributeDerivedStats
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT, 0)
@@ -420,4 +423,67 @@ function AngelArena:OnHeroDeath(dead_hero, killer)
 	if not killer or killer:IsNull() or not IsValidEntity(killer) then return end
 
 	ComebackSystem:OnKill( killer:GetPlayerOwnerID(), killer:GetTeamNumber(), dead_hero:GetPlayerOwnerID(), dead_hero:GetTeamNumber() )
+end
+function AngelArena:DamageFilter(event)
+	local damage = event.damage
+	local entindex_inflictor_const = event.entindex_inflictor_const
+	local entindex_victim_const = event.entindex_victim_const
+	local entindex_attacker_const = event.entindex_attacker_const
+	local damagetype_const = event.damagetype_const
+	local skill_name = ""
+	local victim
+	local attacker
+
+	if (entindex_inflictor_const) then skill_name = EntIndexToHScript(entindex_inflictor_const):GetName() end
+	if (entindex_victim_const) then victim = EntIndexToHScript(entindex_victim_const) end
+	if (entindex_attacker_const) then attacker = EntIndexToHScript(entindex_attacker_const) end
+
+	-----------------------------------------------------------------------------------------------------
+	------------------------------ Костыль для ланаи ----------------------------------------------------
+	-----------------------------------------------------------------------------------------------------
+	
+	if attacker and victim:HasModifier("modifier_templar_assassin_refraction_absorb") then
+		if skill_name ~= "item_helm_of_the_undying" and skill_name ~= "skeleton_king_reincarnation" then
+			return
+		end
+	end
+
+	-----------------------------------------------------------------------------------------------------
+	--------------------------------- Procent damage enable for some skills -----------------------------
+	-----------------------------------------------------------------------------------------------------
+
+	if skill_name and _G.skill_callback and _G.skill_callback[skill_name] then
+		if victim and (victim:IsHero() or victim:IsCreep() or victim:IsAncient()) then
+
+			for callback_id, callback in pairs(_G.skill_callback[skill_name]) do
+				local ability = attacker:FindAbilityByName(skill_name)
+
+				if not ability then
+					ability = attacker:FindItemInInventory(skill_name)
+				end
+
+				if attacker and (skill_name == "batrider_sticky_napalm") then
+					return
+				end
+
+				local callback_data = {
+					caster = attacker,
+					target = victim,
+					skill_name = skill_name,
+					ability = ability,
+					damage = damage,
+					damage_type = damagetype_const,
+				}
+
+				local status, res = pcall(callback, callback_data)
+				if victim ~= attacker then
+					if status and res then
+						ApplyDamage({ victim = victim, attacker = attacker, damage = res, damage_type = damagetype_const })
+					end
+				end
+			end
+		end
+	end
+
+	return true
 end
