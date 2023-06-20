@@ -32,27 +32,27 @@ DOTAAbilities
 			
 			"AbilityCooldown"				
 			{
-				"value"					"17 15 13 11"
-				"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"			"-6"
+				"value"					"17 16 15 14 13 12 11"
+				"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"			"-5"
 			}
 			"duration"					"1.1"
 			"swipe_radius"				"300"					
 			"swipe_damage"
 			{
-				"value"											"25 40 55 70"
-				"special_bonus_unique_dawnbreaker_fire_wreath_swipe"		"+18"
+				"value"											"25 35 45 55 65 75 85"
+				"special_bonus_unique_dawnbreaker_fire_wreath_swipe"		"+25"
 
 			}
 			"smash_radius"				"300"
 			"smash_damage"
 			{
-				"value"				"25 40 55 70"
-				"special_bonus_unique_dawnbreaker_fire_wreath_swipe"			"+18"
+				"value"				"25 35 45 55 65 75 85"
+				"special_bonus_unique_dawnbreaker_fire_wreath_swipe"			"+25"
 			}
 			"movement_speed"				"215"
 			"total_attacks"				"3"
-			"smash_stun_duration"			"0.6 0.8 1.0 1.2"
-			"sweep_stun_duration"			"0.12"
+			"smash_stun_duration"			"0.6 0.7 0.8 0.9 1.0 1.1 1.2"
+			"sweep_stun_duration"			"0.2"
 			"self_stun_duration"			"0.2"
 			"swipe_slow"			"-100"
 			"smash_distance_from_hero"				"120"
@@ -89,31 +89,31 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
+		"AbilityCooldown"				"18 17 16 15 14 13 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 120 130 140"
+		"AbilityManaCost"				"100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"hammer_damage"			"50 80 110 140"
+			"hammer_damage"			"50 80 110 140 170 200 230"
 			"projectile_radius"			"200"
 			"projectile_speed"				
 			{
 				"value"					"1500"
-				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+80%"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+100%"
 			}
 			"flare_debuff_duration"				"2.5"
 			"flare_radius"					"200"
 			"move_slow"
 			{
-				"value"							"24 28 32 36"
+				"value"							"24 26 28 30 32 34 36"
 				"special_bonus_unique_dawnbreaker_celestial_hammer_slow"		"+14"
 			}	
-			"burn_damage"						"20 30 40 50"
+			"burn_damage"						"20 30 40 50 60 70 80"
 			"burn_interval"						"0.5"
 			"pause_duration"						"2"
 			"hammer_aoe_radius"						"200"
@@ -122,7 +122,7 @@ DOTAAbilities
 			"range"	
 			{
 				"value"								"700 900 1100 1300"
-				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+80%"
+				"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"				"+100%"
 			}
 		
 		}
@@ -199,17 +199,17 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"heal_pct"					"35 40 45 50"
+				"heal_pct"					"35 40 45 50 55 60 65"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"heal_from_creeps"			"40"
+				"heal_from_creeps"			"75"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"125 150 175 200"
+				"bonus_damage"				"125 150 175 200 225 250 275"
 				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_crit"
 			}	
 			"06"
@@ -249,11 +249,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 105 90"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 200 250"
+		"AbilityManaCost"				"200"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -271,21 +271,21 @@ DOTAAbilities
 			}
 			"base_damage"
 			{
-				"value"			"30 50 70"
+				"value"			"30 50 70 90 110 130 150"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"base_heal"				
 			{
-				"value"				"45 70 95"
-				"special_bonus_scepter"	"+15 20 25"
+				"value"				"45 70 95 105 120 135 150"
+				"special_bonus_scepter"	"+15 20 25 30 35 40 45"
 			}
 			"pulse_interval"				"0.5"
 			"land_damage"
 			{
-				"value"			"130 160 190"
+				"value"			"130 160 190 220 250 280 310"
 				"CalculateSpellDamageTooltip" "1"
 			}
-			"land_stun_duration"			"1.4 1.6 1.8"
+			"land_stun_duration"			"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
 			"max_offset_distance"			"350"
 			"scepter_channel_time"				
 			{
@@ -319,11 +319,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 105 90"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 200 250"
+		"AbilityManaCost"				"200"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -341,21 +341,21 @@ DOTAAbilities
 			}
 			"base_damage"
 			{
-				"value"			"30 50 70"
+				"value"			"30 50 70 90 110 130 150"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"base_heal"				
 			{
-				"value"				"45 70 95"
+				"value"				"45 70 95 105 120 135 150"
 				"special_bonus_scepter"	"+15 20 25"
 			}
 			"pulse_interval"				"0.5"
 			"land_damage"
 			{
-				"value"			"130 160 190"
+				"value"			"130 160 190 220 250 280 310"
 				"CalculateSpellDamageTooltip" "1"
 			}
-			"land_stun_duration"			"1.4 1.6 1.8"
+			"land_stun_duration"			"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
 			"max_offset_distance"			"350"
 			"scepter_channel_time"				
 			{
