@@ -51,23 +51,23 @@ DOTAAbilities
 			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 			"AbilityCooldown"
 			{
-				"value"										"11 10 9 8"
-				"special_bonus_unique_crystal_maiden_5"		"-3"
+				"value"										"12 11 10 9 8 7 6"
+				"special_bonus_unique_crystal_maiden_5"		"-2"
 			}
-			"AbilityManaCost"				"115 135 155 175"
+			"AbilityManaCost"				"75 85 95 105 115 125 135"
 			"radius"
 			{
 				"value"										"425"
-				"special_bonus_unique_crystal_maiden_6"		"+125"
+				"special_bonus_unique_crystal_maiden_6"		"+175"
 			}
-			"movespeed_slow"				"-20 -30 -40 -50"
-			"attackspeed_slow"				"-30 -45 -60 -75"
+			"movespeed_slow"				"-20 -25 -30 -35 -40 -45 -50"
+			"attackspeed_slow"				"-30 -45 -60 -75 -90 -105 -120"
 			"duration"						"5"
 			"vision_duration"				"6.0"
 			"nova_damage"
 			{
-				"value"										"110 160 210 260"
-				"special_bonus_unique_crystal_maiden_2"		"+240"
+				"value"										"200 275 350 425 500 575 650"
+				"special_bonus_unique_crystal_maiden_2"		"+350"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -102,23 +102,23 @@ DOTAAbilities
 				"special_bonus_unique_crystal_maiden_frostbite_castrange" 		"+125"
 			}
 			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-			"AbilityCooldown"				"9 8 7 6"
-			"AbilityManaCost"				"125 135 145 155"
+			"AbilityCooldown"				"9 8.5 8 7.5 7 6.5 6"
+			"AbilityManaCost"				"75 85 95 105 115 125 135"
 			"damage_per_second"
 			{
 				"value"			"100"
 				"CalculateSpellDamageTooltip" "1"
 			}
-			"creep_damage_per_second"		"100"
+			"creep_damage_per_second"		"200"
 			"duration"
 			{
-				"value"										"1.5 2 2.5 3"
-				"special_bonus_unique_crystal_maiden_1"		"+1.25"
+				"value"										"1.0 1.4 1.8 2.2 2.6 3.0 3.4"
+				"special_bonus_unique_crystal_maiden_1"		"+1.6"
 			}
 			"creep_duration"
 			{
 				"value"										"10"
-				"special_bonus_unique_crystal_maiden_1"		"+1.25"
+				"special_bonus_unique_crystal_maiden_1"		"+1.6"
 			}
 			"tick_interval"					"0.20"
 			
@@ -139,18 +139,18 @@ DOTAAbilities
 		{
 			"base_mana_regen"					
 			{
-				"value"										"0.4 0.6 0.8 1.0"
-				"special_bonus_unique_crystal_maiden_4" 	"+0.5"
+				"value"										"2 4 6 8 10 12 14"
+				"special_bonus_unique_crystal_maiden_4" 	"+1.5"
 			}
 			"proximity_mana_regen_tooltip"					
 			{
-				"value"										"1.2 1.8 2.4 3.0"
-				"special_bonus_unique_crystal_maiden_4" 	"+1.5"
+				"value"										"6 12 18 24 30 36 42"
+				"special_bonus_unique_crystal_maiden_4" 	"+4.5"
 			}
 			"self_mana_regen_tooltip"					
 			{
-				"value"										"2.4 3.6 4.8 6.0"
-				"special_bonus_unique_crystal_maiden_4" 	"+3.0"
+				"value"										"12 24 36 48 60 72 84"
+				"special_bonus_unique_crystal_maiden_4" 	"+13.5"
 			}
 			"self_factor"					"6"
 			"proximity_bonus_factor"		"3"
@@ -188,39 +188,39 @@ DOTAAbilities
 		{
 			"AbilityChannelTime"			"10"
 			"AbilityCastPoint"				"0"
-			"AbilityCooldown"				"100 95 90"
+			"AbilityCooldown"				"60"
 			"AbilityDuration"				"10.0"
-			"AbilityManaCost"				"200 400 600"
+			"AbilityManaCost"				"200 300 400 500 600 700"
 			"radius"						"810"
-			"explosion_radius"				"320"
+			"explosion_radius"				"350"
 			"bonus_armor"					"20"
 			"explosion_interval"			"0.1"
 			"movespeed_slow"				"-40"
-			"attack_slow"					"-60"
+			"attack_slow"					"-100"
 			"slow_duration"					"1.0"
 			"explosion_min_dist"			"195"
 			"explosion_max_dist"			"785"
 			"damage"
 			{
-				"value"										"105 170 250"
-				"special_bonus_unique_crystal_maiden_3"		"+50"
+				"value"										"105 170 250 330 410 490 570"
+				"special_bonus_unique_crystal_maiden_3"		"+130"
 			}
 			"frostbite_delay" // negative means don't apply.
 			{
 				"value"						"-1"
-				"special_bonus_scepter"		"+2.75"
+				"special_bonus_scepter"		"+2.0"
 				"RequiresScepter"			"1"
 			}
 			"shard_bonus_explosion"
 			{
 				"shard_bonus_explosion"		"0"
-				"special_bonus_shard"		"+20"
+				"special_bonus_shard"		"+25"
 				"RequiresShard"				"1"
 			}
 			"shard_self_movement_speed_slow_pct"
 			{
 				"value"						"0"
-				"special_bonus_shard"		"-75"
+				"special_bonus_shard"		"-50"
 				"RequiresShard"				"1"
 			}
 			"can_move"
