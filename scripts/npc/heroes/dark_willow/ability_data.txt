@@ -26,7 +26,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 120 140 160"
+		"AbilityManaCost"				"120"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"latch_duration"		"1.0 1.5 2.0 2.5"
+				"latch_duration"		"0.75 1.0 1.25 1.5 1.75 2.0 2.75"
 			}
 			"05"
 			{
@@ -60,7 +60,7 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_tick"		"50 55 60 65"
+				"damage_per_tick"		"50 55 60 65 70 75 80"
 			}
 			"07"
 			{
@@ -105,7 +105,7 @@ DOTAAbilities
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 150 200"
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -113,7 +113,7 @@ DOTAAbilities
 		{
 			"attack_damage"			
 			{
-				"value"						"70 120 170"
+				"value"						"100 175 250 320 400 475 550"
 				"LinkedSpecialBonus"		"special_bonus_unique_dark_willow_4"
 			}
 			"attack_interval"		"0.25"
@@ -142,11 +142,11 @@ DOTAAbilities
 		"MaxLevel"		"7"
 		"AbilityCastGestureSlot"		"ABSOLUTE"
 
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"20"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 150 200"
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ DOTAAbilities
 		{
 			"attack_damage"			
 			{
-				"value"						"70 120 170"
+				"value"						"100 175 250 320 400 475 550"
 				"LinkedSpecialBonus"		"special_bonus_unique_dark_willow_4"
 			}
 			"attack_interval"		"0.25"
@@ -194,7 +194,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"1.0"
-		"AbilityCooldown"				"100 90 80"
+		"AbilityCooldown"				"60"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		
 		// Cost
@@ -218,7 +218,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"destination_status_duration"	"2.8 3.0 3.2"
+				"destination_status_duration"	"2.0 2.2 2.4 2.6 2.8 3.0 3.2"
 			}	
 			"04"
 			{
@@ -245,7 +245,7 @@ DOTAAbilities
 		"MaxLevel"		"7"
 		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"1.0"
-		"AbilityCooldown"				"100 90 80"
+		"AbilityCooldown"				"60"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		
 		// Cost
@@ -269,7 +269,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"destination_status_duration"	"2.8 3.0 3.2"
+				"destination_status_duration"	"2.0 2.2 2.4 2.6 2.8 3.0 3.2"
 			}	
 			"04"
 			{
@@ -305,12 +305,12 @@ DOTAAbilities
 	
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16 14"
-		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"14"
+		"AbilityCastPoint"				"0.4"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"100"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -325,7 +325,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage"						"120 200 280 360"
+				"damage"						"120 200 280 360 440 520 600"
 			}
 			"03"
 			{
@@ -335,7 +335,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"max_damage_duration"			"3.5"
+				"max_damage_duration"			"2.0"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
@@ -363,16 +363,16 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 625 650 675"
+		"AbilityCastRange"				"600 625 650 675 700 725 750"
 		"AbilityCastPoint"				"0.2"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 90 100 110"
+		"AbilityManaCost"				"100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -386,7 +386,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.2 1.6 2.0 2.4"
+				"stun_duration"			"1.2 1.4 1.6 1.8 2.0 2.2 2.4"
 				"LinkedSpecialBonus"			"special_bonus_unique_dark_willow_6"
 			}
 			"03"
