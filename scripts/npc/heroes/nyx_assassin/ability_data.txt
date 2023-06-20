@@ -18,15 +18,15 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"750"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.2"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17 16 15 14"
+		"AbilityCooldown"				"17 16 15 14 13 12 11"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"100 110 120 130 140 150 160"
 		
 		
 		// Special
@@ -36,12 +36,12 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"width"				"140"
+				"width"				"150"
 			}
 			"02"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.1 1.4 1.7 2.0"
+				"duration"			"1.1 1.4 1.7 2.0 2.3 2.6 2.9"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx_4"
 			}
 			"03"
@@ -57,7 +57,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"impale_damage"			"100 160 220 280"
+				"impale_damage"			"100 160 220 280 340 400 460"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx_2"
 			}
 		}
@@ -130,11 +130,11 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.2"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 10 7 4"
+		"AbilityCooldown"				"15 13 11 9 7 5 3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -146,16 +146,16 @@ DOTAAbilities
 		{
 			"float_multiplier"		
 			{
-				"value"		"2 3 4 5"
-				"special_bonus_unique_nyx_5"			"+0.75"
+				"value"		"2 2.5 3 3.5 4 4.5 5"
+				"special_bonus_unique_nyx_5"			"+1"
 			}
 			"aoe"
 			{
 				"value"		"0"
-				"special_bonus_unique_nyx"		"+300"
+				"special_bonus_unique_nyx"		"+350"
 			}
-			"damage_echo_duration"		"15"
-			"damage_echo_pct"			"25"
+			"damage_echo_duration"		"20"
+			"damage_echo_pct"			"30"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -174,12 +174,12 @@ DOTAAbilities
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25 20 15 10"
+		"AbilityCooldown"				"22 20 18 16 14 12 10"
 		"AbilityCastPoint"				"0 0 0 0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 40 40 40"
+		"AbilityManaCost"				"40"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -192,8 +192,8 @@ DOTAAbilities
 			}
 			"stun_duration"
 			{
-				"value"					"0.4 0.8 1.2 1.6"
-				"special_bonus_unique_nyx_6"	"+0.45"
+				"value"					"0.4 0.8 1.2 1.6 2.0 2.4 2.8"
+				"special_bonus_unique_nyx_6"	"+0.7"
 			}
 			"damage_reflect_pct"				"100"
 		}
@@ -221,36 +221,36 @@ DOTAAbilities
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80 70 60"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"180 240 300"
+		"AbilityManaCost"				"200"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			
-			"duration"				"40 50 60"
+			"duration"				"45"
 			"fade_time"				"0.0"
-			"movement_speed"		"16 18 20"
+			"movement_speed"		"20"
 			"bonus_damage"					
 			{
-				"value"					"300 450 600"
+				"value"					"300 450 600 750 900 1050"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"health_regen_rate_scepter"		"3"
 			"mana_regen_rate_scepter"		"3"
-			"break_duration"		"4.0"
+			"break_duration"		"6.0"
 			"shard_debuff_duration"	
 			{
-				"value" 			"4.0"
+				"value" 			"6.0"
 				"RequiresShard"		"1"
 			}
 			"shard_magic_resist_reduction"	
 			{
-				"value" 			"17"
+				"value" 			"25"
 				"RequiresShard"		"1"
 			}
 			"shard_movement_speed_bonus"	
@@ -258,7 +258,7 @@ DOTAAbilities
 				"value" 			"25"
 				"RequiresShard"		"1"
 			}
-			"mana_removal_pct"		"50"
+			"mana_removal_pct"		"75"
 		}
 	}
 	"nyx_assassin_burrow"
@@ -287,10 +287,10 @@ DOTAAbilities
 		{
 			"health_regen_rate"		"1"
 			"mana_regen_rate"		"1"
-			"damage_reduction"			"40"
-			"impale_bonus_cast_range"			"525"
-			"jolt_bonus_cast_range"			"400"
-			"impale_cooldown_reduction"			"7.0"
+			"damage_reduction"			"45"
+			"impale_bonus_cast_range"			"600"
+			"jolt_bonus_cast_range"			"600"
+			"impale_cooldown_reduction"			"6.0"
 			"carapace_radius"			"300"
 		}
 	}
@@ -309,10 +309,10 @@ DOTAAbilities
 		{
 			"health_regen_rate"		"1"
 			"mana_regen_rate"		"1"
-			"damage_reduction"			"40"
-			"impale_bonus_cast_range"			"525"
-			"jolt_bonus_cast_range"			"400"
-			"impale_cooldown_reduction"			"7.0"
+			"damage_reduction"			"45"
+			"impale_bonus_cast_range"			"600"
+			"jolt_bonus_cast_range"			"600"
+			"impale_cooldown_reduction"			"6.0"
 			"carapace_radius"			"300"
 		}
 	}
