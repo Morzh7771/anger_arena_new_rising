@@ -20,7 +20,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"
+		"AbilityManaCost"				"40 50 60 70 80 90 100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ DOTAAbilities
 		{
 				"AbilityCooldown"				
 				{
-					"value"		"25 22 19 16"
+					"value"		"25.0 23.5 22.0 20.5 19.0 17.5 16.0"
 					"special_bonus_unique_terrorblade_2" "-3"
 				}
 				"illusion_duration"			
@@ -37,23 +37,23 @@ DOTAAbilities
 				}
 				"illusion_outgoing_damage"	
 				{
-					"value"					"-45 -30 -15 0"
+					"value"					"-45.0 -37.5 -30.0 -22.5 -15.0 -7.5 0.0"
 					"special_bonus_unique_terrorblade_6"		"+10"
 				}
 				"illusion_outgoing_tooltip"	
 				{
-					"value"					"55 70 85 100"
+					"value"					"55.0 62.5 70.0 77.5 85.0 92.5 100.0"
 					"special_bonus_unique_terrorblade_6"		"+10"
 				}
 				
 				"move_slow"
 				{
-					"value"					"15 20 25 30"
+					"value"					"10 15 20 25 30 35 40"
 					"special_bonus_unique_terrorblade_6"				"+10"
 				}
 				"attack_slow"
 				{
-					"value"					"15 20 25 30"
+					"value"					"30 40 50 60 70 80 90 100"
 					"special_bonus_unique_terrorblade_6"				"+10"
 				}				
 				"range"						"500"
@@ -79,7 +79,7 @@ DOTAAbilities
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"55 65 75 85"
+		"AbilityManaCost"				"95"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -92,13 +92,13 @@ DOTAAbilities
 			}
 			"illusion_outgoing_damage"	
 			{
-				"value"		"-70 -60 -50 -40"		 
+				"value"		"-70.0 -65.0 -60.0 -55.0 -50.0 -45.0 -40.0"		 
 				"special_bonus_unique_terrorblade_4"	"+10"
 			}
 					
 			"illusion_outgoing_tooltip"			
 			{
-				"value"				"30 40 50 60"
+				"value"				"30.0 35.0 40.0 45.0 50.0 55.0 60.0"
 				"special_bonus_unique_terrorblade_4"	"+10"
 			}
 			"illusion_incoming_damage"			"200.0"
@@ -118,6 +118,7 @@ DOTAAbilities
 		"AbilitySound"					"Hero_Terrorblade.Metamorphosis"
         "HasScepterUpgrade"			"1"
 		"AbilityDraftScepterAbility"    "terrorblade_terror_wave"
+		"LinkedAbility"					"terrorblade_demon_zeal"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -125,7 +126,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"150.0"
+		"AbilityCooldown"				"80.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -138,7 +139,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"35 40 45 50"
+				"duration"				"35.0 37.5 40.0 42.5 45.0 47.5 50.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_terrorblade_3"
 			}
 			"02"
@@ -154,17 +155,17 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"340 360 380 400"
+				"bonus_range"			"340.0 350.0 360.0 370.0 380.0 390.0 400.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_attack_range"			"490 510 530 550"
+				"tooltip_attack_range"			"490.0 500.0 510.0 520.0 530.0 540.0 550.0"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"30 40 50 60"
+				"bonus_damage"			"40.0 75.0 110.0 145.0 180.0 215.0 250.0"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"
@@ -185,7 +186,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"terrorblade_terror_wave"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -199,11 +199,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90"
+		"AbilityCooldown"				"80"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"125"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -232,7 +232,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"scepter_meta_duration"		"10"
+				"scepter_meta_duration"		"15"
 			}
 		}
 	}
@@ -241,13 +241,13 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"terrorblade_demon_zeal"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"1"
+		"MaxLevel"						"7"
 		"FightRecapLevel"				"1"
-		"IsGrantedByShard"			"1"
+		"IsGrantedByShard"				"1"
+		"LinkedAbility"					"terrorblade_metamorphosis"
 
 
 		// Casting
@@ -269,13 +269,13 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"berserk_bonus_attack_speed"		"65"
+			"berserk_bonus_attack_speed"		"65.0 75.0 85.0 95.0 105.0 115.0 125.0"
 			"berserk_bonus_movement_speed"				"65"
 			"melee_bonus"				"100"
 			"duration"		"7"
 			"health_cost_pct"
 			{
-				"value"					"20"
+				"value"					"30"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
 			}
 		}
@@ -299,7 +299,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120.0 80.0 40.0"
+		"AbilityCooldown"				"115.0 102.5 90.0 77.5 65.0 52.5 40.0"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -309,13 +309,13 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 75 50"
+		"AbilityManaCost"				"120.0 100.0 80.0 60.0 40.0 20.0 0.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"hit_point_minimum_pct"		"35 30 25"
+				"hit_point_minimum_pct"		"25"
 		}
 	}
 }

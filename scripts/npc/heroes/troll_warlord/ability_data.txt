@@ -5,7 +5,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"troll_warlord_rampage"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -22,11 +21,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80"
+		"AbilityCooldown"				"60"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"90"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -35,7 +34,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed"				"70"
+				"attack_speed"				"110"
 			}
 			"02"
 			{
@@ -75,14 +74,14 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_move_speed"		"15 25 35 45"
+				"bonus_move_speed"		"10 15 20 25 30 35 40"
 				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord_2"
 
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"4 5 6 7"
+				"bonus_armor"			"1.0 2.5 4.0 5.5 7.0 8.5 10.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord"
 
 			}
@@ -99,12 +98,12 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ensnare_chance"			"14 16 18 20"
+				"ensnare_chance"			"14.0 15.0 16.0 17.0 18.0 19.0 20.0"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ensnare_duration"			"0.8 1.2 1.6 2.0"
+				"ensnare_duration"			"0.8 1.0 1.2 1.4 1.6 1.8 2.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -146,12 +145,12 @@ DOTAAbilities
 			}
 			"axe_slow_duration"			
 			{
-				"value"						"2.5 3 3.5 4"
+				"value"						"2.5 2.75 3.0 3.25 3.5 3.75 4.0"
 				"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"				"+2"
 			}
 			"movement_speed"			"40"
 			"axe_spread"				"25"
-			"axe_count"					"5"
+			"axe_count"					"10"
 			"AbilityCooldown"
 			{
 				"value"							"9"
@@ -199,8 +198,8 @@ DOTAAbilities
 		{
 			"damage"
 			{
-				"value"					"50 100 150 200"
-				"special_bonus_unique_troll_warlord_3"		"+90"
+				"value"					"50.0 125.0 200.0 275.0 350.0 425.0 500.0"
+				"special_bonus_unique_troll_warlord_3"		"+100"
 			}
 			"hit_radius"				"100"
 			"max_range"					"450.0"
@@ -219,8 +218,8 @@ DOTAAbilities
 			}
 			"AbilityManacost"
 			{
-				"value"							"50"
-				"special_bonus_scepter"			"-25"
+				"value"							"80"
+				"special_bonus_scepter"			"-40"
 			}
 			"pierces_magic_immunity"
 			{
@@ -234,7 +233,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"troll_warlord_scepter"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -292,7 +290,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 20 25 30"
+				"attack_speed"			"10.0 15.0 20.0 25.0 30.0 35.0 40.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord_5"
 			}
 			"02"
@@ -314,7 +312,6 @@ DOTAAbilities
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_TrollWarlord.BattleTrance.Cast"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel"						"3"
 
 		"AbilityDraftUltShardAbility" "troll_warlord_rampage"
 
@@ -336,84 +333,17 @@ DOTAAbilities
 			"trance_duration"		"6.5"	
 			"AbilityCooldown"
 			{
-				"value"			"90 80 70"
+				"value"			"55"
 				"special_bonus_unique_troll_warlord_7"		"-15"
 			}
-			"lifesteal"			"40 60 80"
-			"attack_speed"			"140 170 200"
+			"lifesteal"			"20.0 30.0 40.0 50.0 60.0 70.0 80.0"
+			"attack_speed"			"100.0 140.0 180.0 220.0 260.0 300.0 340.0"
 			"movement_speed"
 			{
-				"value"		"25 30 35"
+				"value"		"30"
 				"special_bonus_unique_troll_warlord_battle_trance_movespeed"		"+20"
 			}
 			"range"				"900"
 		}
-	}
-	"dark_troll_warlord_ensnare"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"dark_troll_warlord_ensnare"
-		"MaxLevel"		"7"
-		"MaxLevel"						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
-		// Unit Targeting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"550 625 700 825"
-		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"15.0"
-		"AbilityManaCost"				"75"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.75"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"net_speed"					"1500"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
-	"dark_troll_warlord_raise_dead"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"dark_troll_warlord_raise_dead"
-		"MaxLevel"		"7"
-		"MaxLevel"						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"20.0"
-		"AbilityManaCost"				"50"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"duration"				"35.0"
-			"skeletons_created"		"3"
-			"skeletons_health"		"250 275 300 375"
-			"skeletons_damage"		"12 15 18 21"
-
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 }
