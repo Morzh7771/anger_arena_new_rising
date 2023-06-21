@@ -19,7 +19,7 @@ DOTAAbilities
  		"AbilityCastAnimation"			"ACT_INVALID"
 		"AbilityCastPoint"				"0.4"
  		"AbilityCastRange"				"500"
-		"AbilityChannelTime"			"1.3"
+		"AbilityChannelTime"			"1.0"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -29,28 +29,28 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"cast_time"						"1.7"
+			"cast_time"						"1.4"
 			"radius"						"500"
-			"sleep_duration"				"2 2.8 3.6 4.4"
+			"sleep_duration"				"2 2.4 2.8 3.2 3.6 4.0 4.4"
 			"stomp_damage"
 			{
-				"value"					"70 100 130 160"
-				"special_bonus_unique_elder_titan_2"			"+75"
+				"value"					"70 100 130 160 190 220 250"
+				"special_bonus_unique_elder_titan_2"			"+150"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
-			"initial_stun_duration"					"0.2"
+			"initial_stun_duration"					"0.5"
 			"animation_rate"					"0.0"
 			"wake_damage_limit"
 			{
-				"value"				"55 120 185 250"
-				"special_bonus_unique_elder_titan_4"			"+450"
+				"value"				"150 275 400 525 650 775 900"
+				"special_bonus_unique_elder_titan_4"			"+600"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 				"CalculateSpellDamageTooltip"				"0"
 			}
 			"AbilityCooldown"				
 			{
-				"value"				"14 13 12 11"
-				"special_bonus_shard"				"-2"
+				"value"				"14 13.5 13 12.5 12 11.5 11"
+				"special_bonus_shard"				"-3"
 			}
 		}
 	}
@@ -72,7 +72,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"AbilityCastPoint"				"0.0"
-		"AbilityChannelTime"			"1.3"
+		"AbilityChannelTime"			"1.0"
 		"AbilityManaCost"				"0 0 0 0"
 		"AbilityCastRange"				"500"
 		
@@ -80,26 +80,26 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"cast_time"						"1.7"
+			"cast_time"						"1.4"
 			"radius"						"500"
-			"sleep_duration"				"2 3 4 5"
+			"sleep_duration"				"2 2.4 2.8 3.2 3.6 4.0 4.4"
 			"stomp_damage"
 			{
-				"value"					"75 100 125 150"
-				"special_bonus_unique_elder_titan_2"			"+75"
+				"value"					"70 100 130 160 190 220 250"
+				"special_bonus_unique_elder_titan_2"			"+150"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
 			"wake_damage_limit"
 			{
-				"value"				"50 100 150 200"
-				"special_bonus_unique_elder_titan_4"			"+450"
+				"value"				"150 275 400 525 650 775 900"
+				"special_bonus_unique_elder_titan_4"			"+600"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
 			"animation_rate"					"0.0"
 			"AbilityCooldown"				
 			{
-				"value"				"14 13 12 11"
-				"special_bonus_shard"				"-2"
+				"value"				"14 13.5 13 12.5 12 11.5 11"
+				"special_bonus_shard"				"-3"
 			}
 		}
 	}
@@ -126,17 +126,17 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"23 21 19 17"
+		"AbilityCooldown"				"13"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 90 100 110"
+		"AbilityManaCost"				"100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"						"275"
+			"radius"						"300"
 			"pass_damage"								
 			{
 				"value"	"50"
@@ -148,7 +148,7 @@ DOTAAbilities
 			"move_pct_creeps"				"1.5"
 			"move_pct_heroes"				
 			{
-				"value"		"5 6 7 8"
+				"value"		"5 5.5 6 6.5 7 7.5 8"
 				"special_bonus_unique_elder_titan_bonus_spirit_speed"	"+2"
 			}
 			"damage_creeps"					
@@ -159,14 +159,14 @@ DOTAAbilities
 			}
 			"damage_heroes"
 			{
-				"value"		"17 38 59 80"
-				"special_bonus_unique_elder_titan"	"+25"
+				"value"		"25 50 75 100 125 150 175"
+				"special_bonus_unique_elder_titan"	"+75"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
-			"armor_creeps"					"0.5"
-			"armor_heroes"					"1.5 3 4.5 6"
-			"move_pct_cap"					"40"
+			"armor_creeps"					"1.0"
+			"armor_heroes"					"1.0 2.0 3.0 4.0 5.0 6.0 7.0"
+			"move_pct_cap"					"100"
 			"scepter_magic_immune_per_hero"	
 			{
 				"value"				"2"
@@ -228,11 +228,11 @@ DOTAAbilities
 		{
 				"radius"					
 				{
-					"value"		"350"
-					"special_bonus_unique_elder_titan_5"	"+100"
+					"value"		"400"
+					"special_bonus_unique_elder_titan_5"	"+200"
 				}
-				"armor_reduction_pct"	    "40 60 80 100"
-				"magic_resistance_pct"		"40 60 80 100"
+				"armor_reduction_pct"	    "30 45 60 75 90 105 120"
+				"magic_resistance_pct"		"40 50 60 70 80 90 100"
 		}
 	}
 	"elder_titan_natural_order_spirit"
@@ -254,17 +254,17 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"350"
+				"radius"					"400"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_reduction_pct"	    "40 60 80 100"
+				"armor_reduction_pct"	    "30 45 60 75 90 105 120"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magic_resistance_pct"		"40 60 80 100"
+				"magic_resistance_pct"		"40 50 60 70 80 90 100"
 			}
 		}
 	}
@@ -292,7 +292,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100"
+		"AbilityCooldown"				"80"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -320,12 +320,12 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_pct"					"30 40 50"
+				"slow_pct"					"30 35 40 45 50 55 60"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"3.0 4.0 5.0"
+				"slow_duration"				"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}
 			"06"
 			{
@@ -335,7 +335,7 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_pct"				"30 40 50"
+				"damage_pct"				"30 35 40 45 50 55 60"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}
 			"08"
@@ -366,7 +366,7 @@ DOTAAbilities
 			"13"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_duration_scepter"		"4.0 5.0 6.0"
+				"slow_duration_scepter"		"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}
 		}
 	}
