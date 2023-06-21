@@ -51,8 +51,8 @@ function BearSpawner:ReSpawnBear()
     end
     print(death)
     creep:SetDeathXP( death * 2 )
-	creep:SetMinimumGoldBounty( death * 0.2 )
-	creep:SetMaximumGoldBounty( death * 0.3 )
+	creep:SetMinimumGoldBounty( death * 0.4 )
+	creep:SetMaximumGoldBounty( death * 0.5 )
 
 	creep:SetBaseMaxHealth( creep:GetMaxHealth() + death * 25 )
 	creep:SetMaxHealth( creep:GetMaxHealth() + death * 25 )
