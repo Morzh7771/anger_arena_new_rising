@@ -143,4 +143,13 @@
 			}
 		}
 	}
+	"mid_teleport"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"	
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/mid_teleport"
+		"AbilityTextureName"			"filler_ability"
+		"MaxLevel" 						"1"
+		"IsOnCastBar"					"0"
+	}
 }

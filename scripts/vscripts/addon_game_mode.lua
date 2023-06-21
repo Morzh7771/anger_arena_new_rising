@@ -46,6 +46,8 @@ KILL_LIMIT = 100
 
 GOLD_FOR_COUR = 350
 
+local teleport_range = 350
+
 _G.Kills = {}
 _G.KILL_LIMIT  = KILL_LIMIT
 
@@ -140,6 +142,7 @@ function AngelArena:InitGameMode()
 	GameRules:SetCustomVictoryMessage("#aa_on_win_message")
 
 	GameRules:SetPreGameTime(60) -- old 9
+	
 	BossSpawner:Init()
 	CreepSpawner:Init()
 	
@@ -177,9 +180,11 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent('game_rules_state_change', Safe_Wrap(AngelArena, 'OnGameStateChange'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AngelArena, "OnEntityKilled"), self)
 	ListenToGameEvent('dota_player_gained_level', Safe_Wrap(AngelArena, 'OnLevelUp'), self)
+	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
 
 	LinkLuaModifier("modifier_godmode", 'modifiers/modifier_godmode', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_mid_teleport", "modifiers/modifier_mid_teleport", LUA_MODIFIER_MOTION_NONE)
 
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
 	-- AttributeDerivedStats
@@ -262,10 +267,22 @@ function AngelArena:OnGameStateChange()
 	end
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local portals = {
+			"teleport_radiant_top",
+			"teleport_radiant_bot",
+			"teleport_dire_top",
+			"teleport_dire_bot",
+		}
+		for _,name in pairs(portals) do
+			local spawnpoint = Entities:FindByName( nil, name )
+			local creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS)
+			creep:AddNewModifier(creep, nil,'modifier_mid_teleport', {duration = -1} )
+		end
+		
+
 		PauseGame(true)
 		CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
 
-		
 		local spawners = Entities:FindAllByClassname("npc_dota_neutral_spawner")
 
 		for _, spawner in pairs(spawners) do
@@ -316,6 +333,7 @@ function AngelArena:OnNPCSpawned(keys)
 		end
 	end
 end
+
 local no_points_levels = {
 	[17] = 1,
 	[19] = 1,
@@ -485,5 +503,52 @@ function AngelArena:DamageFilter(event)
 		end
 	end
 
+	return true
+end
+
+function AngelArena:ExecuteOrderFilterCustom( ord )
+
+	local target = ord.entindex_target ~= 0 and EntIndexToHScript(ord.entindex_target) or nil
+	local player = PlayerResource:GetPlayer(ord["issuer_player_id_const"])
+
+	local unit
+
+	if ord.units and ord.units["0"] then
+        unit = EntIndexToHScript(ord.units["0"])
+    end
+
+	
+	if not player then return false end
+
+    local hero = player:GetAssignedHero()
+
+
+    if not hero then return end
+
+	if ord.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or ord.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET  then
+		
+		if target and not target:IsNull() and  target:IsBaseNPC() and target:GetUnitName() == "npc_teleport" and unit:IsRealHero() then
+			if teleport_range >= ( hero:GetOrigin() - target:GetOrigin() ):Length2D() then 
+				if not hero:HasModifier("modifier_mid_teleport_cd") then
+					hero:Interrupt() 
+					hero:Stop()
+				   	hero:AddAbility("mid_teleport")
+					local ability = hero:FindAbilityByName("mid_teleport")
+					ability:SetLevel(1)
+				  	hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID())
+				end
+				return false
+			else 
+				return true
+			end
+			
+		  end
+		end
+	
+		if ord.order_type == DOTA_UNIT_ORDER_CAST_TARGET  then
+			if target:GetUnitName() == "npc_teleport" then 
+				return false
+			end
+		end
 	return true
 end
