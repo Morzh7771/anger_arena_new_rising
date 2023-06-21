@@ -20,12 +20,12 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0 6.5 6 5.5"
+		"AbilityCooldown"				"6 5.7 5.4 5.1 4.8 4.5 4.2"
 		"AbilityDuration"				"3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"30 40 50 60 70 80 90"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ DOTAAbilities
 				"rockets_per_second"		"10"
 				"rocket_damage"				
 				{
-					"value"				"6 12 18 24"
+					"value"				"10 15 20 25 30 35 40"
 					"LinkedSpecialBonus"		"special_bonus_unique_gyrocopter_3"
 				}
 				"bonus_movement_speed"
@@ -68,15 +68,15 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 24 18 12"
+		"AbilityCooldown"				"24 22 20 18 16 14 12"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 130 140 150"
+		"AbilityManaCost"				"120 130 140 150 160 170 180"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"90 180 270 360"
+		"AbilityDamage"					"90 180 270 360 450 540 630"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -95,7 +95,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.55 1.9 2.25 2.6"
+				"stun_duration"				"1.25 1.45 1.65 1.85 2.05 2.25 2.45"
 				"LinkedSpecialBonus"		"special_bonus_unique_gyrocopter_6"
 			}
 			"04"
@@ -116,7 +116,7 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"pre_flight_time"			"2.5"
+				"pre_flight_time"			"1.5"
 			}
 			"08"
 			{
@@ -126,7 +126,7 @@ DOTAAbilities
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"speed"						"500"
+				"speed"						"700"
 			}
 			"10"
 			{
@@ -147,7 +147,7 @@ DOTAAbilities
 			"13"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"shard_delay"						"1.0"
+				"shard_delay"						"0"
 				"RequiresShard"				"1"
 			}
 			"14"
@@ -177,15 +177,15 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18"
+		"AbilityCooldown"				"10"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70"
+		"AbilityManaCost"				"50"
 
 		//Duration
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"12"
+		"AbilityDuration"				"10"
 						
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -197,18 +197,18 @@ DOTAAbilities
 			}
 			"max_attacks"
 			{
-				"value"					"4 5 6 7"
-				"special_bonus_unique_gyrocopter_2"			"+3"
+				"value"					"4 5 6 7 8 9 10"
+				"special_bonus_unique_gyrocopter_2"			"+5"
 			}
-			"projectile_speed"				"800"
+			"projectile_speed"				"1000"
 			"bonus_damage"
 			{
 				"value"							"0"
-				"special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"			"+40"
+				"special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"			"+200"
 			}
 			"fire_rate"  
 			{
-				"value"								"1.2"
+				"value"								"0.8"
 				"RequiresScepter"					"1"
 			}
 			"scepter_radius"
@@ -243,11 +243,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90 75 60"
+		"AbilityCooldown"				"60"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 125 125"
+		"AbilityManaCost"				"125"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -266,12 +266,12 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_first"				"150 250 350"
+				"damage_first"				"150 250 350 450 550 650 750"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_second"				"250 325 400"
+				"damage_second"				"250 325 400 475 550 625 700"
 			}
 			"05"
 			{
