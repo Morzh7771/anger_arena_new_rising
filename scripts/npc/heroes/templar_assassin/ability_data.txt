@@ -14,11 +14,11 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17.0 17.0 17.0 17.0"
+		"AbilityCooldown"				"17.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -30,16 +30,16 @@ DOTAAbilities
 		{
 			"instances"
 			{
-				"value"						"3 4 5 6"
+				"value"						"3 3 4 4 5 5 6"
 				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin"
 			}
 			"bonus_damage"				
 			{
-				"value"						"25 45 65 85"
-				"special_bonus_unique_templar_assassin_refraction_damage"		"+25"
+				"value"						"30 60 90 120 150 180 210"
+				"special_bonus_unique_templar_assassin_refraction_damage"		"+40"
 			}
 			"damage_threshold"			"5"
-			"duration"					"17.0 17.0 17.0 17.0"
+			"duration"					"17.0"
 			"cast_while_disabled"
 			{
 				"value"					"0"
@@ -62,16 +62,16 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11 9 7 5"
+		"AbilityCooldown"				"11 10 9 8 7 6 5"
 		"AbilityDuration"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"
+		"AbilityManaCost"				"65"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -80,12 +80,12 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"80 130 180 230"
+				"bonus_damage"				"90.0 150.0 210.0 270.0 330.0 390.0 450.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"-5 -6 -7 -8"
+				"bonus_armor"				"-3.0 -5.0 -7.0 -9.0 -11.0 -13.0 -15.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_2"
 			}
 		}
@@ -107,12 +107,12 @@ DOTAAbilities
 		{
 				"bonus_attack_range"		
 				{
-					"value"		"80 130 180 230"
+					"value"		"80.0 105.0 130.0 155.0 180.0 205.0 230.0"
 					"special_bonus_unique_templar_assassin_8"	"+120"
 				}
 				"attack_spill_range"		
 				{
-					"value"							"550 600 650 700"
+					"value"							"550.0 575.0 600.0 625.0 650.0 675.0 700.0"
 					"special_bonus_unique_templar_assassin_8"	"+120"
 				}
 				"attack_spill_width"		"90"
@@ -142,16 +142,16 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11.0 8.0 5.0"
+		"AbilityCooldown"				"11.0 10.0 9.0 8.0 7.0 6.0 5.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"15 15 15"
+		"AbilityManaCost"				"35"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -160,13 +160,13 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_traps"					"5 8 11"
+				"max_traps"					"5 6 7 8 9 10 11"
 				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_6"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"trap_fade_time"			"2.0 2.0 2.0"
+				"trap_fade_time"			"2.0"
 			}
 			"03"
 			{
@@ -186,7 +186,7 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350"
+				"trap_bonus_damage"			"250 300 350 400 450 500 550"
 				"LinkedSpecialBonus"	"special_bonus_unique_templar_assassin_3"
 			}
 			"07"
@@ -229,7 +229,6 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"3"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -265,7 +264,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350"
+				"trap_bonus_damage"			"250 300 350 400 450 500 550"
 			}
 			"04"
 			{
@@ -315,10 +314,8 @@ DOTAAbilities
 		"BaseClass"			"templar_assassin_trap_teleport"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"3"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
-
 		"HasScepterUpgrade"			"1"
 		"AbilityDraftPreAbility"		"templar_assassin_trap"
 
@@ -334,7 +331,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"95"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -355,7 +352,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350"
+				"trap_bonus_damage"			"250 300 350 400 450 500 550"
 				"RequiresScepter"		"1"
 			}
 			"04"
@@ -400,7 +397,6 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"3"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -431,7 +427,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350"
+				"trap_bonus_damage"			"250 300 350 400 450 500 550"
 			}
 			"04"
 			{

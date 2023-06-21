@@ -4,8 +4,7 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"slark_fish_bait"
-		"MaxLevel"		"7"
+		"BaseClass"						"slark_fish_bait"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -29,7 +28,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"95"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -43,12 +42,12 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movement_speed"				"30"
+				"movement_speed"	"30"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_speed"				"75"
+				"attack_speed"		"90"
 			}
 		}
 	}
@@ -56,10 +55,9 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"slark_depth_shroud"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"BaseClass"						"slark_depth_shroud"
 		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"FightRecapLevel"				"1"
 		"IsGrantedByShard"              "1"
 
@@ -72,11 +70,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"75"
+		"AbilityCooldown"				"40"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"175"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -85,12 +83,12 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"		"3"
+				"duration"			"3"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"		"250"
+				"radius"			"250"
 			}
 		}
 	}
@@ -98,8 +96,8 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"slark_dark_pact"
-		"MaxLevel"		"7"
+		"BaseClass"						"slark_dark_pact"
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -109,15 +107,15 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_INVALID"
-		"AbilityCastPoint"				"0.001 0.001 0.001 0.001"
+		"AbilityCastPoint"				"0.001"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9.0 8.0 7.0 6.0"
+		"AbilityCooldown"				"12.0 11.0 10.0 9.0 8.0 7.0 6.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"65"	
+		"AbilityManaCost"				"80"	
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -141,7 +139,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"total_damage"			"75 150 225 300"
+				"total_damage"			"80.0 160.0 240.0 320.0 400.0 480.0 560.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark_2"
 			}
 			"05"
@@ -177,11 +175,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 18.0 14.0 10.0"
+		"AbilityCooldown"				"22.0 20.0 18.0 16.0 14.0 12.0 10.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 75 75 75"
+		"AbilityManaCost"				"75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -194,7 +192,7 @@ DOTAAbilities
 			"pounce_radius"			"120"
 			"leash_duration"		
 			{
-				"value"			"2.5 2.75 3 3.25"
+				"value"			"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark"
 			}
 			"leash_radius"			"400"
@@ -246,7 +244,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"20 40 60 80"
+				"duration"				"10 20 30 40 50 60 70"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark_4"
 			}
 		}
@@ -256,8 +254,8 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"slark_shadow_dance"
-		"MaxLevel"		"7"
+		"BaseClass"						"slark_shadow_dance"
+		"MaxLevel"						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
@@ -269,11 +267,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"75 60 45"
+		"AbilityCooldown"				"40"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 120 120"		
+		"AbilityManaCost"				"150"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -282,18 +280,18 @@ DOTAAbilities
 			
 			"duration"					
 			{	
-				"value"			"4 4.25 4.5"
+				"value"			"3.0 3.25 3.5 3.75 4.0 4.25 4.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark_3"
 			}
-			"fade_time"					"0.0 0.0 0.0"
-			"bonus_movement_speed"		"24 36 48"
+			"fade_time"					"0.0"
+			"bonus_movement_speed"		"20.0 25.0 30.0 35.0 40.0 45.0 50.0"
 			"bonus_regen"			
 			{
-				"value"				"60 90 120"
-				"special_bonus_unique_slark_8"	"+40"
+				"value"				"45.0 90.0 135.0 180.0 225.0 270.0 315.0"
+				"special_bonus_unique_slark_8"	"+85"
 			}
-			"activation_delay"			"0.5 0.5 0.5"
-			"neutral_disable"			"2.0 2.0 2.0"
+			"activation_delay"			"0.5"
+			"neutral_disable"			"2.0"
 		}
 	}
 }
