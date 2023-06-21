@@ -20,11 +20,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 12 11 10"
+		"AbilityCooldown"				"10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 90 100 110"
+		"AbilityManaCost"				"100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"1.5 2.0 2.5 3.0"
+				"duration"						"1.5 1.75 2.0 2.25 2.5 2.75 3.0"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_2"
 			}			
 			"02"
@@ -44,7 +44,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"				"50 70 90 110"
+				"damage_per_second"				"50 70 90 110 130 150 170"
 			}
 			"04"
 			{
@@ -81,7 +81,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 12 9 6"
+		"AbilityCooldown"				"10 9 8 7 6 5 4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -94,13 +94,13 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"250 350 450 550"
+				"radius"					"300 350 400 450 500 550 600"
 			}
 			
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_hero_damage"			"45 80 115 150"
+				"bonus_hero_damage"			"75 150 225 300 375 450 525"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_6"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -150,23 +150,23 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"65 80 95 110"
+		"AbilityManaCost"				"65 80 95 110 125 140 155"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"						"11 14 17 20"
+				"duration"						"11 13 15 17 19 21 23"
 				"radius"						"400"
 				"absorb_amount"					
 				{
-					"value"					"65 145 225 305"
+					"value"					"100 150 200 250 300 350 400"
 					"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_1"
 				}				
 				"tick_interval"					"0.2"
 				"damage_per_second"				
 				{
-					"value"			"25 35 45 55"
+					"value"			"25 35 45 55 65 75 85"
 					"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_3"
 				}
 				"blind_pct"				"50"
@@ -213,12 +213,12 @@ DOTAAbilities
 				"speed_multiplier"				"250"
 				"AbilityChargeRestoreTime"		
 				{
-					"value"			"38.0"
-					"special_bonus_unique_ember_spirit_5"	"-12"
+					"value"			"25.0"
+					"special_bonus_unique_ember_spirit_5"	"-10"
 				}
 				"damage"
 				{
-					"value"			"100 200 300"
+					"value"			"100 200 300 400 500 600 700"
 					"CalculateSpellDamageTooltip" "1"
 				}
 				"radius"				"450"
@@ -245,7 +245,7 @@ DOTAAbilities
 				}
                 "shard_damage_per_second"	
 				{
-					"value"		"45"
+					"value"		"100"
 					"RequiresShard"				"1"
 				}
                 "shard_charge_radius"				
@@ -280,7 +280,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"
+		"AbilityManaCost"				"100 125 150 175 200 225 250"
 
 
 		// Special
@@ -300,12 +300,12 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"charge_restore_time"			"35.0"
+				"charge_restore_time"			"22.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 300"
+				"damage"				"100 200 300 400 500 600 700"
 			}
 			"05"
 			{
