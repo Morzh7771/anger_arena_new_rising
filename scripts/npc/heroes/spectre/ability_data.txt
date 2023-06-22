@@ -4,8 +4,8 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"spectre_spectral_dagger"
-		"MaxLevel"		"7"
+		"BaseClass"						"spectre_spectral_dagger"
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -17,15 +17,15 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16"
+		"AbilityCooldown"				"22.0 21.0 20.0 19.0 18.0 17.0 16.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"130 140 150 160"
+		"AbilityManaCost"				"130 140 150 160 170 180 190"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,39 +38,39 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"70 120 170 220"
+				"damage"				"70 120 170 220 270 320 370"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"		"10 14 18 22"
+				"bonus_movespeed"		"10 14 18 22 26 30 34"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dagger_path_duration"	"12.0 12.0 12.0 12.0"
+				"dagger_path_duration"	"12.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hero_path_duration"	"7.0 7.0 7.0 7.0"
+				"hero_path_duration"	"7.0"
 			}
 			"05"	
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_persistence"		"4.0 4.0 4.0 4.0"
+				"buff_persistence"		"4.0"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dagger_radius"			"125 125 125 125"
+				"dagger_radius"			"125"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"path_radius"			"175 175 175 175"
+				"path_radius"			"175"
 			}
 			"10"
 			{
@@ -80,7 +80,7 @@ DOTAAbilities
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"800"
+				"speed"					"1000"
 			}
 			"12"
 			{
@@ -94,8 +94,8 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"spectre_desolate"
-		"MaxLevel"		"7"
+		"BaseClass"						"spectre_desolate"
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -108,7 +108,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"21 34 47 60"
+				"bonus_damage"			"20.0 35.0 50.0 65.0 80.0 95.0 110.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_2"
 			}
 			"02"
@@ -136,20 +136,20 @@ DOTAAbilities
 		{
 			"damage_reflection_pct"
 			{
-				"value"		"8 12 16 20"
-				"special_bonus_unique_spectre_5"		"+5"
+				"value"		"7.0 10.0 13.0 16.0 19.0 22.0 25.0"
+				"special_bonus_unique_spectre_5"		"+10"
 			}
 			"min_radius"			"400"
 			"max_radius"			"800"
 			"activation_cooldown"
 			{
 				"value"				"0"
-				"special_bonus_shard"				"+25"
+				"special_bonus_shard"				"+20"
 			}
 			"activation_manacost"
 			{
 				"value"				"0"
-				"special_bonus_shard"				"+50"
+				"special_bonus_shard"				"+100"
 			}
 			"activation_bonus_pct"
 			{
@@ -181,16 +181,16 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"180 160 140"
+		"AbilityCooldown"				"180 160 140 120 100 80"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 175 200"
+		"AbilityManaCost"				"150 175 200 225 250 275 300"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -199,28 +199,28 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5.0 6.0 7.0"
+				"duration"					"6.5"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_outgoing"	"-60 -40 -20"
+				"illusion_damage_outgoing"	"-60 -50 -40 -30 -20 -10 0"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_outgoing"	"40 60 80"
+				"tooltip_outgoing"			"40 50 60 70 80 90 100"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_4"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_incoming"	"100 100 100"
+				"illusion_damage_incoming"	"0"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_total_damage_incoming"	"200 200 200"
+				"tooltip_illusion_total_damage_incoming"	"100"
 			}			
 			"06"
 			{
@@ -233,29 +233,28 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"spectre_haunt_single"
-		"MaxLevel"		"7"
+		"BaseClass"						"spectre_haunt_single"
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
-		"MaxLevel"						"3"
 		"AbilitySound"					"Hero_Spectre.Haunt"
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"				"1"
 
 		"IsGrantedByScepter"			"1"
 		"AbilityDraftPreAbility"		"spectre_reality"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.25"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -268,32 +267,32 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5.0 6.0 7.0"
+				"duration"					"6.5"
 				"RequiresScepter"			"1"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_outgoing"	"-60 -40 -20"
+				"illusion_damage_outgoing"	"-60 -50 -40 -30 -20 -10 0"
 				"RequiresScepter"			"1"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_outgoing"	"40 60 80"
+				"tooltip_outgoing"			"40 50 60 70 80 90 100"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_4"
 				"RequiresScepter"			"1"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_incoming"	"100 100 100"
+				"illusion_damage_incoming"	"0"
 				"RequiresScepter"			"1"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_total_damage_incoming"	"200 200 200"
+				"tooltip_illusion_total_damage_incoming"	"100"
 				"RequiresScepter"			"1"
 			}			
 			"06"
@@ -308,8 +307,7 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"spectre_reality"
-		"MaxLevel"		"7"
+		"BaseClass"						"spectre_reality"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
@@ -321,6 +319,6 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"0.25"
 	}
 }

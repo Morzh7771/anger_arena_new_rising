@@ -138,7 +138,7 @@ DOTAAbilities
 		{
 				"powershot_damage"			
 				{
-					"value"					"100.0 250.0 400.0 550.0 700.0 850.0 1000.0"
+					"value"					"100 200 300 400 500 600 700"
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"damage_reduction"		
@@ -148,7 +148,7 @@ DOTAAbilities
 					"CalculateSpellDamageTooltip"	"0"
 					"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
 				}
-				"arrow_width"			"125 125 125 125"
+				"arrow_width"			"125"
 				"arrow_range"			"3000"
 				"arrow_speed"			"3000.0 3000.0 3000.0 3000.0"
 				"tree_width"			"75 75 75 75"

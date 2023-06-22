@@ -5,7 +5,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"storm_spirit_electric_rave"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
@@ -41,7 +40,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"charges"				"3"
+				"charges"				"5"
 			}
 			"03"
 			{
@@ -64,7 +63,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -73,7 +72,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"70 80 90 100 110 120 130"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -98,7 +97,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"static_remnant_damage"			"120 180 240 300"
+				"static_remnant_damage"			"120 180 240 300 360 420 480"
 				"LinkedSpecialBonus"	"special_bonus_unique_storm_spirit_5"
 			}
 		}
@@ -121,28 +120,28 @@ DOTAAbilities
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"300"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16 14"
+		"AbilityCooldown"				"20 19 18 17 16 15 14"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 70 80 90"
+		"AbilityManaCost"				"60 70 80 90 100 110 120"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"electric_vortex_pull_distance"		"180 220 260 300"		
+				"electric_vortex_pull_distance"		"180.0 200.0 220.0 240.0 260.0 280.0 300.0"		
 				"electric_vortex_pull_tether_range"			"1200.0"		
 				"electric_vortex_self_slow"	"-50"
 				"electric_vortex_self_slow_duration"	"3.0"
 				"AbilityDuration"				
 				{
-					"value"				"1.2 1.5 1.8 2.1"
+					"value"				"1.2 1.35 1.5 1.65 1.8 1.95 2.1"
 					"special_bonus_unique_storm_spirit"	"+0.3"
 				}
 				"radius_scepter"	
@@ -189,12 +188,12 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"overload_attack_slow"			"-80"
+				"overload_attack_slow"			"-125"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"overload_damage"			"25 50 75 100"
+				"overload_damage"			"25 50 75 100 125 250 275"
 				"LinkedSpecialBonus"	"special_bonus_unique_storm_spirit_6"
 			}
 			"05"
@@ -206,7 +205,7 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"shard_activation_charges"					"3"
+				"shard_activation_charges"					"5"
 				"RequiresShard"						"1"
 			}	
 			"07"
@@ -250,7 +249,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Cost
@@ -259,7 +258,7 @@ DOTAAbilities
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"8 12 16"
+		"AbilityDamage"					"8 12 16 20 24 28"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -268,17 +267,17 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"ball_lightning_initial_mana_percentage"		"7.5"		
+				"ball_lightning_initial_mana_percentage"		"8"
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"ball_lightning_initial_mana_base"				"25"		
+				"ball_lightning_initial_mana_base"				"35"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_move_speed"			"1400 1850 2300"		
+				"ball_lightning_move_speed"			"1400.0 1550.0 1700.0 1850.0 2000.0 2150.0 2300.0"		
 			}
 			"04"
 			{
@@ -288,12 +287,12 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_travel_cost_base"	"10"		
+				"ball_lightning_travel_cost_base"	"20"		
 			}
 			"06"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"ball_lightning_travel_cost_percent"	"0.65"		
+				"ball_lightning_travel_cost_percent"	"0.7"		
 			}
 			"07"
 			{
