@@ -110,6 +110,11 @@ DOTAAbilities
 				"radius"				"275"
 				"LinkedSpecialBonus"	"special_bonus_unique_omniknight_4"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"				"125"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
