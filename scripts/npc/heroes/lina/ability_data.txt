@@ -26,21 +26,22 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 115 130 145"
+		"AbilityManaCost"				"100 115 130 145 160 175 190"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 
-			"dragon_slave_damage"		"85 165 245 325"
+			"dragon_slave_damage"		"85 165 245 325 405 485 565"
 			"dragon_slave_speed"		"1200"
 			"dragon_slave_width_initial"	"275"
 			"dragon_slave_width_end"		"200"
 			"dragon_slave_distance"			"1075"
+			"damage_pct"			"100"
 
 			"AbilityCooldown"				
 			{ 
-				"value"						"11 10 9 8"
+				"value"						"11 10.5 10 9.5 9 8.5 8"
 				"special_bonus_unique_lina_1"		"-3.5"
 			}
 		}
@@ -89,13 +90,18 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"light_strike_array_stun_duration"	"1.3 1.6 1.9 2.2"
+				"light_strike_array_stun_duration"	"1.3 1.6 1.9 2.2 2.5 2.8 3.1"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"light_strike_array_damage"	"110 160 210 260"
+				"light_strike_array_damage"	"110 160 210 260 310 360 410"
 				"LinkedSpecialBonus"		"special_bonus_unique_lina_3"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+                		"damage_pct"        "100"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -116,20 +122,20 @@ DOTAAbilities
 		{
 			"fiery_soul_attack_speed_bonus"	
 			{
-				"value"								"8 16 24 32"
-				"special_bonus_unique_lina_2"		"+10"
+				"value"								"8 16 24 32 40 48 56"
+				"special_bonus_unique_lina_2"		"+14"
 			}
 			"fiery_soul_move_speed_bonus"	
 			{
-				"value"							"1 1.5 2 2.5"
+				"value"							"1 1.5 2 2.5 3.0 3.5 4.0"
 				"special_bonus_unique_lina_2"			"+1"
 			}
 			"fiery_soul_max_stacks"		"7"
-			"fiery_soul_stack_duration"			"18"		
+			"fiery_soul_stack_duration"			"25"		
 			"bonus_spell_damage"
 			{
 				"value"								"0"
-				"special_bonus_shard"		"+20"
+				"special_bonus_shard"		"+30"
 			}
 												
 		}
@@ -196,7 +202,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 300 450"
+		"AbilityManaCost"				"150 200 250 300 350 400 450"
 			
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -206,11 +212,12 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"					"500 700 900"
-			"damage_delay"				"0.25"
+			"damage"			"500 600 700 800 900 1000 1100"
+			"damage_pct"			"100"
+			"damage_delay"			"0.25"
 			"AbilityCooldown"
 			{
-				"value"								"70 60 50"
+				"value"								"70 65 60 55 50 45 40"
 				"special_bonus_unique_lina_6"		"-25"
 			}
 			"pierce_immunity"
