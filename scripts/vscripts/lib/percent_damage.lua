@@ -16,7 +16,7 @@ function PercentDamage:_init()
 		"oracle_fortunes_end", "oracle_purifying_flames", "oracle_rain_of_destiny"
 	}
 	local MagicalDamageFromAll = {
-		"mirana_arrow", "mirana_starfall"
+		"mirana_arrow", "mirana_starfall", "pangolier_swashbuckle", "pangolier_gyroshell"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
