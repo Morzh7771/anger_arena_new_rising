@@ -12,12 +12,12 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"blade_dance_crit_chance"	"20 25 30 35"
-				"blade_dance_crit_mult"		"190"
+				"blade_dance_crit_chance"	"20 25 30 35 40 45 50"
+				"blade_dance_crit_mult"		"195 200 205 210 215 220 225"
 				"blade_dance_lifesteal"
 				{
 					"value"	"0"
-					"special_bonus_unique_juggernaut_blade_dance_lifesteal"	"+50"
+					"special_bonus_unique_juggernaut_blade_dance_lifesteal"	"+75"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -43,11 +43,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"42 34 26 18"
+		"AbilityCooldown"				"18"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 110 100 90"		
+		"AbilityManaCost"				"90"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ DOTAAbilities
 			}
 			"blade_fury_damage"			
 			{
-				"value"				"90 115 140 165"
+				"value"				"90 115 140 165 190 215 240"
 				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_3"
 			}
 			"duration"					
@@ -81,12 +81,12 @@ DOTAAbilities
 			}
 			"shard_attack_rate"			
 			{	
-				"value"				"1.4"
+				"value"				"0.8"
 				"RequiresShard"					"1"
 			}
 			"shard_damage_pct"			
 			{	
-				"value"				"75"
+				"value"				"100"
 				"RequiresShard"					"1"
 			}
 		
@@ -111,18 +111,18 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0 60.0 60.0 60.0"
+		"AbilityCooldown"				"35"
 		"AbilityDuration"				"25.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140 130 120 110"
+		"AbilityManaCost"				"100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"healing_ward_heal_amount"	"2 3 4 5"
+				"healing_ward_heal_amount"	"2 2.5 3 3.5 4 4.5 5"
 				"healing_ward_aura_radius"	"400"
 				"healing_ward_movespeed_tooltip"	
 				{
@@ -172,7 +172,7 @@ DOTAAbilities
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 275 350"
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -183,12 +183,12 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"attack_rate_multiplier"	"1.5"
-			"bonus_damage"				"30 40 50"
-			"bonus_attack_speed"				"40"
+			"bonus_damage"				"30 50 70 90 110 130 150"
+			"bonus_attack_speed"				"80"
 			"duration"
 			{
-				"value"					"3 3.25 3.5"
-				"special_bonus_unique_juggernaut_omnislash_duration"			"+1"
+				"value"					"3.0 3.25 3.5 3.75 4.0 4.25 4.5"
+				"special_bonus_unique_juggernaut_omnislash_duration"			"+1.5"
 			}
 			"omni_slash_radius"			"425"
 			"AbilityCastRange"				
