@@ -10,7 +10,7 @@ function PercentDamage:_init()
 	local MagicalDamageFromAgi = {
 	}
 	local MagicalDamageFromInt = {
-		"lich_chain_frost", "lina_dragon_slave", "lina_light_strike_array", "lina_laguna_blade"
+		"lich_chain_frost", "lina_dragon_slave", "lina_light_strike_array", "lina_laguna_blade", "lion_finger_of_death", "lion_impale"
 	}
 	local MagicalDamageFromAll = {
 	}
