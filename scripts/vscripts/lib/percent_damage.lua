@@ -6,6 +6,7 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("item_radiance_2", 						Radiance )
 	PercentDamage:ListenAbilityCallback("item_radiance_3", 						Radiance )
 	local MagicalDamageFromStr = {
+		"ogre_magi_fireblast", "ogre_magi_unrefined_fireblast", "ogre_magi_ignite"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam"
