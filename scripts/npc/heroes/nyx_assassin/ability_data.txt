@@ -60,6 +60,11 @@ DOTAAbilities
 				"impale_damage"			"100 160 220 280 340 400 460"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx_2"
 			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"			"100"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -240,6 +245,7 @@ DOTAAbilities
 				"value"					"300 450 600 750 900 1050"
 				"CalculateSpellDamageTooltip"	"1"
 			}
+			"damage_pct"				"200"
 			"health_regen_rate_scepter"		"3"
 			"mana_regen_rate_scepter"		"3"
 			"break_duration"		"6.0"
