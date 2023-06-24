@@ -3,6 +3,7 @@
 if AngelArena == nil then
 	_G.AngelArena = class({})
 end
+require('lib/utils')
 require('lib/teleport')
 require('lib/boss/boss_spawner')
 require('lib/timers')
@@ -183,6 +184,7 @@ function AngelArena:InitGameMode()
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
 
 	LinkLuaModifier("modifier_godmode", 'modifiers/modifier_godmode', LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_intelect", 'modifiers/modifier_intelect', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_mid_teleport", "modifiers/modifier_mid_teleport", LUA_MODIFIER_MOTION_NONE)
 
@@ -193,7 +195,7 @@ function AngelArena:InitGameMode()
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_MOVE_SPEED_PERCENT, 0.2)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN, 0)
-	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESISTANCE_PERCENT, 0)
+	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESIST, 0)
 
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 
@@ -325,11 +327,12 @@ function AngelArena:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
-		if cheat == true then
-			if npc:IsRealHero() then
+		if npc:IsRealHero() then
+			if cheat == true then
 				--npc:AddExperience(999999, 0, false, true)
 				--npc:SetGold(99999999,true)
 			end
+			npc:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
 		end
 	end
 end

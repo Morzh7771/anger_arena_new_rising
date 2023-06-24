@@ -2,7 +2,9 @@ PercentDamage = PercentDamage or class({})
 
 function PercentDamage:_init()
 	_G.skill_callback = {}
-
+	PercentDamage:ListenAbilityCallback("item_radiance", 						Radiance )
+	PercentDamage:ListenAbilityCallback("item_radiance_2", 						Radiance )
+	PercentDamage:ListenAbilityCallback("item_radiance_3", 						Radiance )
 	local MagicalDamageFromStr = {
 	}
 	local MagicalDamageFromAgi = {
@@ -79,7 +81,33 @@ function DamageFromInt(keys)
 	return percent_damage * caster:GetIntellect()
 end 
 
+function Radiance( keys )
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
 
+	if not ability then 
+		print("null ability for radiance ")
+		return 
+	end
+	
+	local pct 				= ability:GetSpecialValueFor("aura_damage_stats")
+
+	print("radiance damage 1")
+
+	if not ability or not caster or not target or not damage or not pct then return end
+
+	if not caster:IsRealHero() and not caster:IsIllusion() then
+		caster = caster:GetPlayerOwner()
+		if not IsValidEntity(caster) then return end
+		caster = caster:GetAssignedHero() 
+	end
+
+	print("radiance damage 2")
+
+	Util:DealDamageFromStats(target, caster, DAMAGE_TYPE_MAGICAL, pct, pct, pct, false)
+end
 
 function PercentDamage:ListenAbilityCallback(ability_name, func) -- return callback id
 	if type(ability_name) ~= "string" or type(func) ~= "function" then 
