@@ -4,8 +4,8 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"silencer_curse_of_the_silent"
-		"MaxLevel"		"7"
+		"BaseClass"						"silencer_curse_of_the_silent"
+		"MaxLevel"						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -17,15 +17,15 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16"
+		"AbilityCooldown"				"22.0 21.0 20.0 19.0 18.0 17.0 16.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"130 135 140 145"
+		"AbilityManaCost"				"130 135 140 145 150 155 160"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,16 +37,16 @@ DOTAAbilities
 		{
 			"damage"
 			{
-				"value"							"16 24 32 40"
-				"special_bonus_unique_silencer"		"+10"
+				"value"							"16 24 32 40 48 56 64"
+				"special_bonus_unique_silencer"		"+36"
 			}
-			"application_damage"				"20 40 60 80"
+			"application_damage"				"30 60 90 120 150 180 210"
 
-			"radius"			"350"
-			"duration"			"6"
-			"penalty_duration"			"2"
-			"movespeed"			"-10 -15 -20 -25"
-			"penalty_multiplier"			"1.5"
+			"radius"							"350"
+			"duration"							"6"
+			"penalty_duration"					"2"
+			"movespeed"							"-5 -10 -15 -20 -25 -30 -35"
+			"penalty_multiplier"				"1.5"
 			"undispellable"
 			{
 				"value"					"0"
@@ -90,15 +90,15 @@ DOTAAbilities
 		{
 			"intellect_damage_pct"
 			{
-				"value"					"15 35 55 75"
-				"special_bonus_unique_silencer_3"	"+10"
+				"value"					"35"
+				"special_bonus_unique_silencer_3"	"+15"
 			}
 			"int_steal"		
 			{
-				"value"		"1 1 2 3"
-				"special_bonus_shard"		"+2"
+				"value"		"1 1 2 2 3 3 4"
+				"special_bonus_shard"		"+1"
 			}
-			"int_steal_duration"		"20 25 30 35"
+			"int_steal_duration"		"10.0 15.0 20.0 25.0 30.0 35.0 40.0"
 			"bounce_range"
 			{
 				"value"					"0"
@@ -109,7 +109,7 @@ DOTAAbilities
 				"value"															"0"
 				"special_bonus_unique_silencer_glaives_bounces"					"+2"
 			}
-			"permanent_int_steal_range"		"925"
+			"permanent_int_steal_range"		"1000"
 			"permanent_int_steal_amount"
 			{
 				"value"						"2"
@@ -153,8 +153,8 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 18 14 10"
-		"AbilityManaCost"				"100 105 110 115"
+		"AbilityCooldown"				"22.0 20.0 18.0 16.0 14.0 12.0 10.0"
+		"AbilityManaCost"				"100 105 110 115 120 125 130"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -168,12 +168,12 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"120 160 200 240"
+				"damage"			"120 160 200 240 280 320 360"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"	"1 1.5 2 2.5"
+				"int_multiplier"	"1 1.5 2 2.5 3 3.5 4"
 				"LinkedSpecialBonus"	"special_bonus_unique_silencer_4"
 			}
 			"03"
@@ -185,7 +185,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"	"3 4 5 6"
+				"duration"	"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			}
 			"05"
 			{
@@ -217,18 +217,18 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"130 115 100"
-		"AbilityDuration"				"4.5 5.25 6.0"
+		"AbilityDuration"				"4.5 4.75 5.0 5.25 5.5 5.75 6.0"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"300 450 600"
+		"AbilityManaCost"				"300 450 600 750 900 1050 1200"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
