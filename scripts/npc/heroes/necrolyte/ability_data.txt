@@ -18,14 +18,14 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"750"
+		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -73,15 +73,15 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8 7 6 5"
+		"AbilityCooldown"				"8 7.5 7 6.5 6 5.5 5"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 160 220 280"
+		"AbilityDamage"					"100 160 220 280 340 400 460"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 120 140 160"
+		"AbilityManaCost"				"100 110 120 130 140 150 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -95,13 +95,18 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal"					"55 80 105 130"
+				"heal"					"55 80 105 130 155 180 205"
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"400"
+				"projectile_speed"		"600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"		"100"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -126,13 +131,13 @@ DOTAAbilities
 			"aura_radius"			"800"		
 			"aura_damage"
 			{
-				"value"		"0.6 1.2 1.8 2.4" 
-				"special_bonus_unique_necrophos_2"		"+0.5"
+				"value"		"0.6 0.9 1.2 1.5 1.8 2.1 2.4" 
+				"special_bonus_unique_necrophos_2"		"+0.6"
 				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
 				"CalculateSpellDamageTooltip"	"0"
 			} 	
-			"health_regen"	"4 5 6 7"
-			"mana_regen"	"4 5 6 7"
+			"health_regen"	"4 5 6 7 8 9 10"
+			"mana_regen"	"4 5 6 7 8 9 10"
 			"hero_multiplier" "6"
 			"regen_duration"		
 			{
@@ -184,20 +189,20 @@ DOTAAbilities
 			"duration"		"3 3.5 4 4.5"
 			"heal_bonus"
 			{	
-				"value"			"45 55 65 75"
+				"value"			"45 50 55 60 65 70 75"
 				"special_bonus_unique_necrophos_sadist_heal_bonus"		"+15"
 			}			
 			"movement_speed"
 			{
-				"value"			"10 15 20 25"
+				"value"			"15.0 17.5 20.0 22.5 25.0 27.5 30.0"
 				"special_bonus_unique_necrophos_3"		"+20"
 			}			
 			"slow_aoe"		"750"
 			"bonus_damage" "-25"
 			"AbilityCooldown"
 			{
-				"value"						"28 24 20 16"
-				"special_bonus_scepter"		"-6" 
+				"value"						"12"
+				"special_bonus_scepter"		"-4" 
 			} 	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -241,7 +246,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250 375 500"		
+		"AbilityManaCost"				"200 275 350 425 500 575 650"		
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -251,10 +256,10 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_per_health"			"0.7 0.8 0.9"
+			"damage_per_health"			"0.7 0.75 0.8 0.85 0.9 0.95 1.0"
 			"stun_duration"				"1.5 1.5 1.5"
-			"hp_per_kill"				"2 4 6"
-			"mana_per_kill"				"1 2 3"
+			"hp_per_kill"				"2 4 6 8 10 12 14"
+			"mana_per_kill"				"1 2 3 4 5 6 7"
 			"AbilityCastRange"
 			{
 				"value"						"600"
