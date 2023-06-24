@@ -11,7 +11,7 @@ function PercentDamage:_init()
 		"luna_lucent_beam"
 	}
 	local MagicalDamageFromInt = {
-		"lich_chain_frost", "lina_dragon_slave", "lina_light_strike_array", "lina_laguna_blade", "lion_finger_of_death", "lion_impale", "necrolyte_death_pulse"
+		"lich_chain_frost", "lina_dragon_slave", "lina_light_strike_array", "lina_laguna_blade", "lion_finger_of_death", "lion_impale", "necrolyte_death_pulse", "nyx_assassin_impale", "nyx_assassin_vendetta"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow", "mirana_starfall"
