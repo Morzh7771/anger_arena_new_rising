@@ -84,7 +84,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"16 15 14 13 12 11 10"
 
 	
 		// Cost
@@ -105,7 +105,7 @@ DOTAAbilities
 				"special_bonus_unique_kunkka"		"+80"
 			}
 			"movespeed_bonus"			"-40"
-			"slow_duration"				"1 2 3 4"
+			"slow_duration"				"1 1.5 2 2.5 3 3.5 4"
 			"stun_duration"
 			{
 				"value"								"1.6"
@@ -114,7 +114,7 @@ DOTAAbilities
 			"delay"						"1.6 1.6 1.6 1.6"
 			"torrent_damage"
 			{
-				"value"			"80 160 240 320"
+				"value"			"80 160 240 320 400 480 560"
 				"special_bonus_unique_kunkka_7"		"+30%"
 			}
 			"damage_tick_interval"				"0.2"
@@ -144,7 +144,7 @@ DOTAAbilities
 		"AbilityCastRange"				"900"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70"
+		"AbilityCooldown"				"50"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -156,7 +156,7 @@ DOTAAbilities
 		{
 				"torrent_interval"		
 				{
-					"value"				"0.25"
+					"value"				"0.2"
 					"RequiresScepter"	"1"
 				}
 				"torrent_duration"
@@ -201,11 +201,11 @@ DOTAAbilities
 			"cleave_starting_width"			"150"
 			"cleave_ending_width"			"500 550 600 650"
 			"cleave_distance"			"650 800 950 1100"
-			"damage_bonus"				"30 60 90 120"
+			"damage_bonus"				"30 60 90 120 150 180 210"
 			"cleave_damage"				
 			{
 				"value"								"150"
-				"special_bonus_unique_kunkka_4"		"+70"
+				"special_bonus_unique_kunkka_4"		"+75"
 			}
 			"movespeed_slow"
 			{
@@ -219,7 +219,7 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"					"13.0 10.0 7.0 4.0"
+				"value"					"9 8 7 6 5 4 3"
 				"special_bonus_unique_kunkka_5"			"-2"
 			}
 		}
@@ -241,12 +241,12 @@ DOTAAbilities
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"550 700 850 1000"
+		"AbilityCastRange"				"700 750 800 850 900 950 1000"
 		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 24 18 12"
+		"AbilityCooldown"				"24 22 20 18 16 14 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -320,11 +320,11 @@ DOTAAbilities
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"400 500 600"
+		"AbilityDamage"					"500 600 700 800 900 1000 1100"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 175 225"
+		"AbilityManaCost"				"125 175 225 275 325 375 425"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -340,7 +340,7 @@ DOTAAbilities
 			"ghostship_absorb"			"45"
 			"AbilityCooldown"				
 			{
-				"value"					"80 70 60"
+				"value"					"60"
 				"special_bonus_unique_kunkka_ghostship_cooldown"	"-15"
 			}
 
