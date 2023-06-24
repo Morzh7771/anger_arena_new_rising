@@ -8,6 +8,7 @@ function PercentDamage:_init()
 	local MagicalDamageFromAgi = {
 	}
 	local MagicalDamageFromInt = {
+		"lich_chain_frost"
 	}
 	local MagicalDamageFromAll = {
 	}
