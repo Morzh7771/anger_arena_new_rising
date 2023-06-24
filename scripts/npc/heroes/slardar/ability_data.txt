@@ -14,11 +14,11 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"25"
+		"AbilityManaCost"				"40"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -26,25 +26,25 @@ DOTAAbilities
 		
 			"AbilityValues"
 		{			
-				"bonus_speed"					"25 30 35 40"
+				"bonus_speed"					"24.0 22.0 20.0 18.0 16.0 14.0 12.0"
 				"duration"						"10"
-				"river_speed"					"18"
+				"river_speed"					"25"
 				"puddle_regen"				
 				{
-					"value"						"2 4 6 8"
-					"special_bonus_scepter"		"+22"
+					"value"						"4 8 12 16 20 24 28"
+					"special_bonus_scepter"		"+42"
 				}
 				"puddle_armor"				
 				{
-					"value"						"1 2 3 4"
-					"special_bonus_scepter"		"+11"
+					"value"						"2 4 6 8 10 12 14"
+					"special_bonus_scepter"		"+16"
 				}
 				"puddle_status_resistance"			
 				{
 					"value"						"40"
 					"RequiresScepter"			"1"
 				}
-                "river_speed_tooltip"			"18"
+                "river_speed_tooltip"			"25"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -52,8 +52,7 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"slardar_scepter"
-		"MaxLevel"		"7"
+		"BaseClass"						"slardar_scepter"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
@@ -61,7 +60,7 @@ DOTAAbilities
 		"HasScepterUpgrade"				"1"
 
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -99,7 +98,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -122,12 +121,12 @@ DOTAAbilities
 				"crush_radius"				"350"
 				"crush_extra_slow"				
 				{
-					"value"	"-20 -25 -30 -35"
+					"value"	"-20.0 -22.5 -25.0 -27.5 -30.0 -32.5 -35.0"
 					"LinkedSpecialBonus"	"special_bonus_unique_slardar_8"
 					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
 				}
-				"crush_attack_slow_tooltip"		"-20 -25 -30 -35"
-				"crush_extra_slow_duration"		"3 4 5 6"
+				"crush_attack_slow_tooltip"		"-30 -40 -50 -60 -70 -80 -90"
+				"crush_extra_slow_duration"		"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 				"stun_duration"					
 				{
 					"value"															"0.8"
@@ -135,8 +134,8 @@ DOTAAbilities
 				}
 				"puddle_duration"		
 				{
-					"value"					"3 4 5 6"
-					"special_bonus_scepter"	"+19"
+					"value"					"3 4 5 6 7 8 9"
+					"special_bonus_scepter"	"+16"
 				}
 				"puddle_radius"		
 				{
@@ -145,7 +144,7 @@ DOTAAbilities
 				}
 				"crush_damage"			
 				{
-					"value"					"75 150 225 300"
+					"value"					"100.0 175.0 250.0 325.0 400.0 475.0 550.0"
 					"LinkedSpecialBonus"	"special_bonus_unique_slardar"
 				}
 				"shard_amp_duration"			
@@ -169,7 +168,7 @@ DOTAAbilities
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilitySound"					"Hero_Slardar.Bash"
 
@@ -184,13 +183,13 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50 100 150 200"
+				"bonus_damage"			"50 100 150 200 250 300 350"
 				"LinkedSpecialBonus"	"special_bonus_unique_slardar_2"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.1"
+				"duration"				"0.8"
 			}
 			"03"
 			{
@@ -204,8 +203,8 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"slardar_amplify_damage"
-		"MaxLevel"		"7"
+		"BaseClass"						"slardar_amplify_damage"
+		"MaxLevel"						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -239,8 +238,8 @@ DOTAAbilities
 		{
 			"armor_reduction"		
 			{ 
-				"value"				"-10 -15 -20"
-				"special_bonus_unique_slardar_5"	"-3"
+				"value"				"-10 -15 -20 -25 -30 -35"
+				"special_bonus_unique_slardar_5"	"-15"
 			}
 			"duration"
 			{
