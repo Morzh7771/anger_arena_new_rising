@@ -6,14 +6,17 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("item_radiance_2", 						Radiance )
 	PercentDamage:ListenAbilityCallback("item_radiance_3", 						Radiance )
 	local MagicalDamageFromStr = {
+		"ogre_magi_fireblast", "ogre_magi_unrefined_fireblast", "ogre_magi_ignite", "omniknight_purification"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam"
 	}
 	local MagicalDamageFromInt = {
-		"lich_chain_frost", "lina_dragon_slave", "lina_light_strike_array", "lina_laguna_blade", "lion_finger_of_death", "lion_impale"
+		"lich_chain_frost", "lina_dragon_slave", "lina_light_strike_array", "lina_laguna_blade", "lion_finger_of_death", "lion_impale", "necrolyte_death_pulse", "nyx_assassin_impale", "nyx_assassin_vendetta",
+		"oracle_fortunes_end", "oracle_purifying_flames", "oracle_rain_of_destiny"
 	}
 	local MagicalDamageFromAll = {
+		"mirana_arrow", "mirana_starfall", "pangolier_swashbuckle", "pangolier_gyroshell"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 

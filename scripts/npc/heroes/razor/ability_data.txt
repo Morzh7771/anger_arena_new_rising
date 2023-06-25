@@ -22,7 +22,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 12 11 10"
+		"AbilityCooldown"				"13 12.5 12 11.5 11 10.5 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -34,18 +34,19 @@ DOTAAbilities
 		{
 			"damage_min"
 			{
-				"value"				"35 40 45 50"
-				"special_bonus_unique_razor_4"	"+30"								
+				"value"				"35 40 45 50 60 70 80"
+				"special_bonus_unique_razor_4"	"+50"								
 			}
 			"damage_max"
 			{
-				"value"				"80 115 150 185"
-				"special_bonus_unique_razor_4"	"+30"														
+				"value"				"80 115 150 185 220 255 290"
+				"special_bonus_unique_razor_4"	"+60"														
 			}
+			"damage_pct"				"100"
 			"radius"					"700"
 			"speed"						"636"  // 1.2 second to reach radius
 			"slow_min"				"5"
-			"slow_max"				"25 30 35 40"
+			"slow_max"				"25 27.5 30 32.5 35 37.5 40"
 			"slow_duration"				"1.5"
 			"second_ring_delay"
 			{
@@ -80,7 +81,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"50 40 30 20"
+		"AbilityCooldown"				"20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -92,14 +93,14 @@ DOTAAbilities
 		{
 			"drain_length"
 			{
-				"value"			"5 6 7 8"
+				"value"			"5 5.5 6 6.5 7 7.5 8"
 				"special_bonus_unique_razor_3"	"+6"				
 			}
-			"drain_duration"		"12 14 16 18"
+			"drain_duration"		"12 13 14 15 16 17 18"
 			"drain_rate"
 			{
-				"value"			"7 12 17 22"
-				"special_bonus_unique_razor"	"+5"
+				"value"			"7 12 17 22 27 32 37"
+				"special_bonus_unique_razor"	"+8"
 			}
 			"drain_range_buffer"	"250"
 			"radius"				"200 200 200 200"
@@ -178,6 +179,11 @@ DOTAAbilities
 				"shard_internal_cd"		"1.0"
 				"RequiresShard"			"1"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"			"15"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -204,11 +210,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80 70 60"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 150 200"
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -231,7 +237,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"strike_interval"		"0.7 0.6 0.5"	
+				"strike_interval"		"0.7 0.7 0.6 0.6 0.5 0.5 0.4"	
 				"LinkedSpecialBonus"	"special_bonus_unique_razor_2"
 			}
 			"04"
@@ -242,7 +248,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"60 75 90"		
+				"damage"			"60 75 90 115 140 165"		
 			}
 		}
 	}

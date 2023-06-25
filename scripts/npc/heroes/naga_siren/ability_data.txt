@@ -15,11 +15,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40 35 30 25"
+		"AbilityCooldown"				"25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 85 100 115"
+		"AbilityManaCost"				"70 85 100 115 130 145 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,29 +33,29 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage"			"-75 -70 -65 -60"
+				"outgoing_damage"			"-74 -70 -66 -62 -58 -54 -50"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_4"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage_tooltip"	"25 30 35 40"
+				"outgoing_damage_tooltip"	"26 30 34 38 42 46 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_4"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"250"
+				"incoming_damage"			"200"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_incoming_damage_total_pct"			"350"
+				"tooltip_incoming_damage_total_pct"			"300"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"images_count"				"3 3 3 3"
+				"images_count"				"3 3 4 4 5 5 6"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren"
 			}
 			"07"
@@ -94,14 +94,14 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"70 80 90 100 110 120 130"
 		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"2.75 3.5 4.25 5.0"
+			"duration"					"3.5 3.75 4.0 4.25 4.5 4.75 5.0"
 			"net_speed"					
 			{
 				"value"						"1500"
@@ -110,12 +110,12 @@ DOTAAbilities
 			"fake_ensnare_distance"		"900 900 900 900"	
 			"AbilityCooldown"				
 			{
-				"value"								"21 18 15 12"
+				"value"								"12"
 				"special_bonus_unique_naga_siren_net_cooldown"				"-2"
 			}
 			"AbilityCastRange"
 			{
-				"value"					"500 525 550 575"
+				"value"					"500 525 550 575 600 625 650"
 				"special_bonus_scepter"		"+50%"
 			}
 			"can_target_magic_immune"
@@ -150,16 +150,16 @@ DOTAAbilities
 		{
 			"hits"						
 			{
-				"value"											"6"
+				"value"											"6 6 6 5 5 5 4"
 				"special_bonus_unique_naga_siren_3"				"-1"
 			}
 			"armor_reduction"			
 			{	
-				"value"						"-2 -4 -6 -8"
+				"value"						"-2 -4 -6 -8 -10 -12 -14"
 			}
 			"damage"	
 			{
-				"value"			"34 41 48 55"
+				"value"			"55 85 115 145 175 205 235"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_2"
 			}
 			
@@ -225,12 +225,12 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"1.0"
-		"AbilityCastRange"				"1000 1200 1400"
+		"AbilityCastRange"				"900 1000 1100 1200 1300 1400 1500"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 175 200"
+		"AbilityManaCost"				"150 175 200 225 250 275 300"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -238,7 +238,7 @@ DOTAAbilities
 		{
 			"radius"					
 			{
-				"value"			"1000 1200 1400"
+				"value"			"900 1000 1100 1200 1300 1400 1500"
 			}
 			"duration"					
 			{
@@ -249,12 +249,12 @@ DOTAAbilities
 			"heal_pct"
 			{
 				"value"									"0"
-				"special_bonus_shard"					"+5"
+				"special_bonus_shard"					"+12"
 			}
 			"AbilityCooldown"
 			{
-				"value"									"180 130 80"
-				"special_bonus_unique_naga_siren_5" 	"-20"
+				"value"									"60"
+				"special_bonus_unique_naga_siren_5" 	"-15"
 			}
 		}
 	}

@@ -13,11 +13,11 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		"AbilityCastRange"				"400 550 700 850"
+		"AbilityCastRange"				"550 600 650 700 750 800 850"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 16 12 8"
+		"AbilityCooldown"				"20 18 16 14 12 10 8"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dash_range"			"400 550 700 850"
+				"dash_range"			"600 650 700 750 800 850 900"
 			}
 			"02"
 			{
@@ -41,7 +41,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"25 45 65 85"
+				"damage"				"25 45 65 85 105 125 145"
 				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_3"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -71,6 +71,11 @@ DOTAAbilities
 				"strikes"				"4"
 				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_7"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"				"100"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -94,11 +99,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
+		"AbilityCooldown"				"18 17 16 15 14 13 12"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"70 80 90 100 110 120 130"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -106,27 +111,27 @@ DOTAAbilities
 		{
 			"damage"
 			{
-				"value"					"70 140 210 280"
+				"value"					"70 140 210 280 350 420 490"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"hero_stacks"			
 			{
-				"value"					"20"
-				"special_bonus_unique_pangolier_shield_crash_herostacks"		"+5"
+				"value"					"12"
+				"special_bonus_unique_pangolier_shield_crash_herostacks"		"+3"
 			}
 			"duration"				"5"
 			"radius"				"500"
 			"jump_duration"			"0.4"
 			"jump_duration_gyroshell"	"0.75"
 			"jump_height"			"250"
-			"jump_height_gyroshell"	"350"
+			"jump_height_gyroshell"		"350"
 			"jump_horizontal_distance"	"225"
 			"rolling_thunder_cooldown"
 			{
 				"value"						"0"
 				"special_bonus_unique_pangolier_2"	"+3.0"
 			}
-			"slow"	"20 25 30 35"
+			"slow"	"22 24 26 28 30 32 34"
 			"slow_duration"	"3"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -183,12 +188,12 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"chance_pct"			"17"
-			"duration"				"2.5 3 3.5 4"
+			"duration"				"2.5 2.75 3 3.25 3.5 3.75 4"
 			"slow"			"0"
 			"armor"			
 			{
-				"value"					"2 4 6 8"
-				"special_bonus_unique_pangolier_luckyshot_armor"			"+3"
+				"value"					"2 4 6 8 10 12 14"
+				"special_bonus_unique_pangolier_luckyshot_armor"			"+6"
 			}
 		}
 		
@@ -217,15 +222,15 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90 85 80"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"
+		"AbilityManaCost"				"100 125 150 175 200 225 250"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"180 260 340"
+		"AbilityDamage"					"180 260 340 420 500 580 660"
 
         "precache"
 		{
@@ -297,7 +302,12 @@ DOTAAbilities
 			{
 				"var_type"				"FIELD_FLOAT"
 				"jump_recover_time"		"0.25"
-			}			
+			}	
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"		"100"
+			}
 		}
 	}
 			"model" "models/heroes/pangolier/pangolier_gyroshell.vmdl"
@@ -369,7 +379,12 @@ DOTAAbilities
 			{
 				"var_type"				"FIELD_FLOAT"
 				"jump_recover_time"		"0.25"
-			}			
+			}	
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"		"100"
+			}
 		}
 	}
 			"model" "models/heroes/pangolier/pangolier_gyroshell2.vmdl"
@@ -441,6 +456,11 @@ DOTAAbilities
 				"var_type"				"FIELD_FLOAT"
 				"jump_recover_time"		"0.25"
 			}			
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"		"100"
+			}
 		}
 	}
 	"pangolier_gyroshell_stop"
@@ -561,6 +581,11 @@ DOTAAbilities
 				"var_type"				"FIELD_FLOAT"
 				"rollup_bounce_duration"				"0.75"
 			}		
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"		"100"
+			}
 		}
 	}
 			"model" "models/heroes/pangolier/pangolier_gyroshell.vmdl"
@@ -637,6 +662,11 @@ DOTAAbilities
 				"var_type"				"FIELD_FLOAT"
 				"rollup_bounce_duration"				"0.75"
 			}		
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"		"100"
+			}
 		}
 	}
 			"model" "models/heroes/pangolier/pangolier_gyroshell2.vmdl"
@@ -711,7 +741,12 @@ DOTAAbilities
 			{
 				"var_type"				"FIELD_FLOAT"
 				"rollup_bounce_duration"				"0.75"
-			}		
+			}	
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"		"100"
+			}
 		}
 	}
 	"pangolier_rollup_stop"

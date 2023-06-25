@@ -21,7 +21,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pct_health_damage_initial"			"16"
+				"pct_health_damage_initial"			"20"
 			}
 			"02"
 			{
@@ -83,7 +83,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"550 750 950 1150"
+		"AbilityCastRange"				"600 650 700 750 800 850 900"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		
 		// Time		
@@ -100,17 +100,17 @@ DOTAAbilities
 		{
 				"move_slow"					"-50"
 				"dagger_speed"			"1200"
-				"duration"			"2.2 2.8 3.4 4"
-				"base_damage"			"65 70 75 80"
+				"duration"			"2.2 2.5 2.8 3.1 3.4 3.7 4"
+				"base_damage"			"65 70 75 80 85 90 95"
 				"attack_factor"
 				{
-					"value"				"-75 -60 -45 -30"
-					"special_bonus_unique_phantom_assassin_5"	"+20"
+					"value"				"-75 -60 -45 -30 -15 -0 15"
+					"special_bonus_unique_phantom_assassin_5"	"+15"
 				}
 				"attack_factor_tooltip"	
 				{
-					"value"				"25 40 55 70"
-					"special_bonus_unique_phantom_assassin_5"	"+20"
+					"value"				"25 40 55 70 85 100 115"
+					"special_bonus_unique_phantom_assassin_5"	"+15"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
 				}
 
@@ -136,11 +136,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11 9 7 5"
+		"AbilityCooldown"				"11 10 9 8 7 6 5"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"
+		"AbilityManaCost"				"35 40 45 50 55 60 65"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -148,21 +148,21 @@ DOTAAbilities
 		{
 			"bonus_attack_speed"	
 			{
-				"value"													"80 110 140 170"
-				"special_bonus_unique_phantom_assassin_strike_aspd"		"+60"
+				"value"													"80 110 140 170 200 230 260"
+				"special_bonus_unique_phantom_assassin_strike_aspd"		"+90"
 			}
 
 			"duration"				
 			{
-				"value"						"2"
-				"special_bonus_unique_phantom_assassin_4"		"+0.5"
+				"value"						"4"
+				"special_bonus_unique_phantom_assassin_4"		"+1"
 			}
 			"AbilityCastRange"
 			{
 				"value"											"1000"
 				"special_bonus_unique_phantom_assassin_6"		"+250"				
 			}
-			"lifesteal_pct"						"10 15 20 25"
+			"lifesteal_pct"						"10 15 20 25 30 35 40"
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -181,7 +181,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 55 50 45"
+		"AbilityCooldown"				"60 55 50 45 40 35 30"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -202,7 +202,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_evasion"				"20 30 40 50"
+				"bonus_evasion"				"20 25 30 35 40 45 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_3"
 			}
 			"02"
@@ -263,7 +263,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"200 325 450"
+				"crit_bonus"				"200 275 350 425 500 575 650"
 			}
 		}
 	}
