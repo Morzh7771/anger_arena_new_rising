@@ -6,17 +6,19 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("item_radiance_2", 						Radiance )
 	PercentDamage:ListenAbilityCallback("item_radiance_3", 						Radiance )
 	local MagicalDamageFromStr = {
-		"ogre_magi_fireblast", "ogre_magi_unrefined_fireblast", "ogre_magi_ignite", "omniknight_purification"
+		"ogre_magi_fireblast", "ogre_magi_unrefined_fireblast", "ogre_magi_ignite", "omniknight_purification", "pudge_meat_hook", "pudge_rot", "sandking_epicenter", "sandking_sand_storm",
+		"rattletrap_battery_assault", "rattletrap_rocket_flare", "rattletrap_hookshot"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost", "lina_dragon_slave", "lina_light_strike_array", "lina_laguna_blade", "lion_finger_of_death", "lion_impale", "necrolyte_death_pulse", "nyx_assassin_impale", "nyx_assassin_vendetta",
-		"oracle_fortunes_end", "oracle_purifying_flames", "oracle_rain_of_destiny"
+		"oracle_fortunes_end", "oracle_purifying_flames", "oracle_rain_of_destiny", "phoenix_icarus_dive", "phoenix_fire_spirits", "phoenix_sun_ray", "phoenix_supernova", "phoenix_launch_fire_spirit",
+		"pugna_nether_blast", "pugna_life_drain", "queenofpain_shadow_strike", "queenofpain_scream_of_pain"
 	}
 	local MagicalDamageFromAll = {
-		"mirana_arrow", "mirana_starfall", "pangolier_swashbuckle", "pangolier_gyroshell"
+		"mirana_arrow", "mirana_starfall", "pangolier_swashbuckle", "pangolier_gyroshell", "razor_plasma_field", "razor_unstable_current", "doom_bringer_scorched_earth", "dragon_knight_fireball"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
