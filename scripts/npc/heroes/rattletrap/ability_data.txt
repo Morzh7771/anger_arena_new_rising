@@ -112,7 +112,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 22 20 18"
+		"AbilityCooldown"				"18"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -120,7 +120,7 @@ DOTAAbilities
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		//"AbilityDamage"					"20 45 70 95"
+		//"AbilityDamage"					"20 45 70 95 120 145 170"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -134,15 +134,16 @@ DOTAAbilities
 			"duration"					"10.5 10.5 10.5 10.5"
 			"interval"
 			{	
-				"value"								"0.7 0.7 0.7 0.7"
-				"special_bonus_unique_clockwerk"		"-0.25"
+				"value"								"0.7 0.65 0.6 0.55 0.5 0.45 0.4"
+				"special_bonus_unique_clockwerk"		"-0.15"
 			}
 			"damage"
 			{	
-				"value"									"20 45 70 95"
-				"special_bonus_unique_clockwerk_3"		"+24"
+				"value"									"20 45 70 95 120 145 170"
+				"special_bonus_unique_clockwerk_3"		"+30"
 			}
 			"creep_damage_multiplier"					"2"
+			"damage_pct"							"35"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -173,20 +174,20 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"			"5.0 6.0 7.0 8.0"
+			"duration"			"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
 			"damage"
 			{
-				"value"			"50 125 200 275"
+				"value"			"50 125 200 275 350 425 500"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"mana_burn"		
 			{
-				"value"				"50 80 110 140"
-				"special_bonus_unique_clockwerk_8"		"+60"
+				"value"				"50 80 110 140 170 200 230"
+				"special_bonus_unique_clockwerk_8"		"+70"
 			}
 			"magic_barrier"
 			{
-				"value"				"50 100 150 200"
+				"value"				"50 100 150 200 250 300 350"
 			}
 			"attacks_to_destroy"	
 			{
@@ -238,7 +239,7 @@ DOTAAbilities
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"
+		"AbilityManaCost"				"35 40 45 50 55 60 65"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -253,18 +254,19 @@ DOTAAbilities
 			"speed"				"2250"
 			"damage"
 			{
-				"value"			"80 120 160 200"
-				"special_bonus_unique_clockwerk_flare_damage"	"+75"
+				"value"			"80 120 160 200 240 280 320"
+				"special_bonus_unique_clockwerk_flare_damage"	"+80"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"AbilityCooldown"				
 			{
-				"value"				"20.0 18.0 16.0 14.0"
-				"special_bonus_unique_clockwerk_7" "-2"
+				"value"				"20.0 18.0 16.0 14.0 12.0 10.0 8.0"
+				"special_bonus_unique_clockwerk_7" "-1"
 			}
 
 			"slow_pct"		"100"
 			"slow_duration"	"0.4"
+			"damage_pct"		"100"
 		}	
 	}
 	"rattletrap_hookshot"
@@ -287,16 +289,16 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCastRange"				"2000 2500 3000"
+		"AbilityCastRange"				"1250 1500 1750 2000 2250 2500 2750"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0 45.0 30.0"
+		"AbilityCooldown"				"60.0 55.0 50.0 45.0 40.0 35.0 30.0"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"
+		"AbilityManaCost"				"100 125 150 175 200 225 250"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -315,18 +317,23 @@ DOTAAbilities
 			"03"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.2 1.4 1.6"
+				"duration"			"1.0 1.2 1.4 1.6 1.8 2.0 2.2"
 			}
 			
 			"04"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"speed"				"4000 5000 6000"
+				"speed"				"6000"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"75 175 275"
+				"damage"			"75 175 275 375 475 575 675"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_pct"			"200"
 			}
 		}
 	}
