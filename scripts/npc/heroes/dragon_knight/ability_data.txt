@@ -33,6 +33,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"radius"			"350"
+			"danage_pct"			"50"
 			"damage"			
 			{
 				"value"			"75"
@@ -68,12 +69,12 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 13 12 11"
+		"AbilityCooldown"				"14 13.5 13 12.5 12 11.5 11"
 		
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 95 100 105"
+		"AbilityManaCost"				"90 95 100 105 110 115 120"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -86,7 +87,7 @@ DOTAAbilities
 			"speed"					"1050"		
 			"damage"			
 			{
-				"value"			"80 160 240 320"
+				"value"			"80 160 240 320 400 480 560"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"reduction"
@@ -125,15 +126,15 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"16 15 14 13 12 11 10"
 	
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"70 100 130 160"
+		"AbilityDamage"					"70 100 130 160 190 220 250"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"70 80 90 100 110 120 130"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -142,7 +143,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.8 2.0 2.2 2.4"
+				"stun_duration"			"1.6 1.8 2.0 2.2 2.4 2.6 2.8"
 				"LinkedSpecialBonus"		"special_bonus_unique_dragon_knight_2"
 			}
 			"02"
@@ -173,13 +174,13 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"4 7 10 13"
+				"bonus_health_regen"			"5 10 15 20 25 30 35"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"4 7 10 13"
+				"bonus_armor"					"5 10 15 20 25 30 35"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 			}
 		}
@@ -230,7 +231,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"25 30 35"
+				"bonus_movement_speed"		"22.5 25 27.5 30 32.5 35 37.5"
 			}
 			"03"
 			{
@@ -246,7 +247,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corrosive_breath_damage"	"20 20 20 30"
+				"corrosive_breath_damage"	"20 20 20 30 30 30 40"
 			}
 			"06"
 			{
@@ -261,19 +262,19 @@ DOTAAbilities
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"splash_damage_percent"		"75 75 75 100"
+				"splash_damage_percent"		"75 75 75 100 100 100 125"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_6"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"frost_bonus_movement_speed"	"-40 -40 -40 -60"
+				"frost_bonus_movement_speed"	"-40 -40 -40 -60 -60 -60 -80"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_5"
 			}
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"frost_bonus_attack_speed"		"-40 -40 -40 -60"
+				"frost_bonus_attack_speed"		"-40 -40 -40 -60 -60 -60 -80"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_5"
 			}
 			"11"
@@ -289,12 +290,12 @@ DOTAAbilities
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magic_resistance"			"0 0 0 25"
+				"magic_resistance"			"0 0 0 25 25 25 25"
 			}
 			"14"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"model_scale"				"0 0 0 30"
+				"model_scale"				"0 0 0 30 30 30 30"
 			}
 			
 		}

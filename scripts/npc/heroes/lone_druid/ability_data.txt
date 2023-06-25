@@ -31,24 +31,24 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bear_hp"					"1100 1400 1700 2000"
+				"bear_hp"					"1100 1400 1700 2000 2300 2600 2900"
 				"LinkedSpecialBonus"		"special_bonus_unique_lone_druid_7"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bear_regen_tooltip"	"5 6 7 8"
+				"bear_regen_tooltip"	"5 6 7 8 9 10 11"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bear_bat"					"1.75 1.65 1.55 1.45"
+				"bear_bat"					"1.75 1.7 1.65 1.6 1.55 1.5 1.45"
 				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_10"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bear_armor"				"3 4 5 6"
+				"bear_armor"				"3 4 5 6 7 8 9"
 				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_2"
 			}
 			"05"
@@ -65,7 +65,7 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movespeed_tooltip"			"340 360 380 400"
+				"movespeed_tooltip"			"340 360 380 400 420 440 460"
 				"LinkedSpecialBonus"		"special_bonus_unique_lone_druid_11"
 			}
 		}
@@ -139,11 +139,11 @@ DOTAAbilities
 		{
 				"bonus_attack_speed"		
 				{
-					"value"			"16 32 48 64"		
+					"value"			"16 32 48 64 72 84 96"		
 					"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_6"
 				}
-				"lifesteal_percent"			"20 35 50 65"
-				"armor_sharing"				"8 12 16 20"
+				"lifesteal_percent"			"20 25 30 35 40 45 50"
+				"armor_sharing"				"8 10 12 14 16 18 20"
 		}
 	}
 	"lone_druid_savage_roar"
@@ -166,7 +166,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"38 32 26 20"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -178,7 +178,7 @@ DOTAAbilities
 		{
 				"radius"				"375"
 				"bonus_speed"			"20"
-				"duration"				"0.8 1.2 1.6 2.0"
+				"duration"				"0.8 1.0 1.2 1.4 1.6 1.8 2.0"
 				"only_affects_player_units"	"1"
 				"shard_radius"
 				{
@@ -218,7 +218,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"38 32 26 20"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -241,7 +241,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.1 1.6 2.1 2.6"
+				"duration"				"1.1 1.35 1.6 1.85 2.1 2.35 2.6"
 			}
 			"04"
 			{
@@ -264,7 +264,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100"
+		"AbilityCooldown"				"600"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -283,12 +283,12 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"8 10 12"
+				"bonus_armor"				"8 10 12 14 16 18 20"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_hp"					"500 1000 1500"
+				"bonus_hp"					"500 1000 1500 2000 2500 300 3500"
 				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_7"
 			}
 			"03"
@@ -299,7 +299,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"40"
+				"duration"					"25"
 			}
 			"06"
 			{
@@ -403,7 +403,7 @@ DOTAAbilities
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30.0"
+		"AbilityCooldown"				"10.0"
 		"AbilityCastPoint"				"0"
 		"AbilityChannelTime"			"3.0"
 	
@@ -543,12 +543,12 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_building_damage"		"10 20 30 40"
+				"bonus_building_damage"		"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"true_form_bonus_building_damage"		"15 30 45 60"
+				"true_form_bonus_building_damage"		"60"
 			}
 		}
 	}

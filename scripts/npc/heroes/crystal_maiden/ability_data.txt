@@ -47,6 +47,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"damage_pct"					"100"
 			"AbilityCastRange"				"700"
 			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 			"AbilityCooldown"
@@ -96,6 +97,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"damage_pct"					"25"
 			"AbilityCastRange"				
 			{
 				"value"								"600"
@@ -186,6 +188,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"damage_pct"					"150"
 			"AbilityChannelTime"			"10"
 			"AbilityCastPoint"				"0"
 			"AbilityCooldown"				"60"
