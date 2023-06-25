@@ -27,7 +27,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ DOTAAbilities
 		{
 				"shadowraze_damage"	
 				{
-					"value"				"90 160 230 300"	
+					"value"				"90 160 230 300 370 440 510"	
 					"LinkedSpecialBonus"	"special_bonus_unique_nevermore_2"	
 				}
 				"shadowraze_radius"	"250"		
@@ -43,9 +43,9 @@ DOTAAbilities
 				"shadowraze_cooldown"	"3"
 				"stack_bonus_damage" 
 				{
-					"value"				"50 60 70 80"
+					"value"				"50 60 70 80 90 100 110"
 					"CalculateSpellDamageTooltip"	"0"
-					"special_bonus_unique_nevermore_7"	"+25"
+					"special_bonus_unique_nevermore_7"	"+40"
 				}
 				"duration"	
 				{
@@ -56,12 +56,12 @@ DOTAAbilities
 					"value"					"0"
 					"special_bonus_unique_nevermore_raze_procsattacks"		"+1"
 				}
-				"movement_speed_pct"						"-12 -13 -14 -15"
+				"movement_speed_pct"						"-12 -12.5 -13 -13.5 -14 -14.5 -15"
 				"turn_rate_pct"								"0"
 				"AbilityCooldown"				
 				{	
-					"value"									"10"	
-					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-5"
+					"value"									"8"	
+					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 				}
 		}
 	}
@@ -81,7 +81,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ DOTAAbilities
 		{
 				"shadowraze_damage"	
 				{
-					"value"				"90 160 230 300"	
+					"value"				"90 160 230 300 370 440 510"	
 					"LinkedSpecialBonus"	"special_bonus_unique_nevermore_2"	
 				}
 				"shadowraze_radius"	"250"		
@@ -97,9 +97,9 @@ DOTAAbilities
 				"shadowraze_cooldown"	"3"
 				"stack_bonus_damage" 
 				{
-					"value"				"50 60 70 80"
+					"value"				"50 60 70 80 90 100 110"
 					"CalculateSpellDamageTooltip"	"0"
-					"special_bonus_unique_nevermore_7"	"+25"
+					"special_bonus_unique_nevermore_7"	"+40"
 				}
 				"duration"	
 				{
@@ -110,12 +110,12 @@ DOTAAbilities
 					"value"					"0"
 					"special_bonus_unique_nevermore_raze_procsattacks"		"+1"
 				}
-				"movement_speed_pct"						"-12 -13 -14 -15"
+				"movement_speed_pct"						"-12 -12.5 -13 -13.5 -14 -14.5 -15"
 				"turn_rate_pct"								"0"
 				"AbilityCooldown"				
 				{	
-					"value"									"10"	
-					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-5"
+					"value"									"8"	
+					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 				}
 		}
 	}
@@ -141,7 +141,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -149,7 +149,7 @@ DOTAAbilities
 		{
 				"shadowraze_damage"	
 				{
-					"value"				"90 160 230 300"	
+					"value"				"90 160 230 300 370 440 510"	
 					"LinkedSpecialBonus"	"special_bonus_unique_nevermore_2"	
 				}
 				"shadowraze_radius"	"250"		
@@ -157,9 +157,9 @@ DOTAAbilities
 				"shadowraze_cooldown"	"3"
 				"stack_bonus_damage" 
 				{
-					"value"				"50 60 70 80"
+					"value"				"50 60 70 80 90 100 110"
 					"CalculateSpellDamageTooltip"	"0"
-					"special_bonus_unique_nevermore_7"	"+25"
+					"special_bonus_unique_nevermore_7"	"+40"
 				}
 				"duration"	
 				{
@@ -170,12 +170,12 @@ DOTAAbilities
 					"value"					"0"
 					"special_bonus_unique_nevermore_raze_procsattacks"		"+1"
 				}
-				"movement_speed_pct"						"-12 -13 -14 -15"
+				"movement_speed_pct"						"-12 -12.5 -13 -13.5 -14 -14.5 -15"
 				"turn_rate_pct"								"0"
 				"AbilityCooldown"				
 				{	
-					"value"									"10"	
-					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-5"
+					"value"									"8"	
+					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 				}
 		}
 	}
@@ -190,7 +190,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -198,7 +198,7 @@ DOTAAbilities
 		{
 				"shadowraze_damage"	
 				{
-					"value"				"90 160 230 300"	
+					"value"				"90 160 230 300 370 440 510"	
 					"LinkedSpecialBonus"	"special_bonus_unique_nevermore_2"	
 				}
 				"shadowraze_radius"	"250"		
@@ -206,9 +206,9 @@ DOTAAbilities
 				"shadowraze_cooldown"	"3"
 				"stack_bonus_damage" 
 				{
-					"value"				"50 60 70 80"
+					"value"				"50 60 70 80 90 100 110"
 					"CalculateSpellDamageTooltip"	"0"
-					"special_bonus_unique_nevermore_7"	"+25"
+					"special_bonus_unique_nevermore_7"	"+40"
 				}
 				"duration"	
 				{
@@ -219,12 +219,12 @@ DOTAAbilities
 					"value"					"0"
 					"special_bonus_unique_nevermore_raze_procsattacks"		"+1"
 				}
-				"movement_speed_pct"						"-12 -13 -14 -15"
+				"movement_speed_pct"						"-12 -12.5 -13 -13.5 -14 -14.5 -15"
 				"turn_rate_pct"								"0"
 				"AbilityCooldown"				
 				{	
-					"value"									"10"	
-					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-5"
+					"value"									"8"	
+					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 				}
 		}
 	}
@@ -251,7 +251,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -259,7 +259,7 @@ DOTAAbilities
 		{
 			"shadowraze_damage"	
 			{
-				"value"				"90 160 230 300"	
+				"value"				"90 160 230 300 370 440 510"	
 				"LinkedSpecialBonus"	"special_bonus_unique_nevermore_2"	
 			}
 			"shadowraze_radius"	"250"		
@@ -267,9 +267,9 @@ DOTAAbilities
 			"shadowraze_cooldown"	"3"
 			"stack_bonus_damage" 
 			{
-				"value"				"50 60 70 80"
+				"value"				"50 60 70 80 90 100 110"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_unique_nevermore_7"	"+25"
+				"special_bonus_unique_nevermore_7"	"+40"
 			}
 			"duration"	
 			{
@@ -280,12 +280,12 @@ DOTAAbilities
 				"value"					"0"
 				"special_bonus_unique_nevermore_raze_procsattacks"		"+1"
 			}	
-			"movement_speed_pct"						"-12 -13 -14 -15"
+			"movement_speed_pct"						"-12 -12.5 -13 -13.5 -14 -14.5 -15"
 			"turn_rate_pct"								"0"
 			"AbilityCooldown"				
 			{	
-				"value"									"10"	
-				"special_bonus_unique_nevermore_shadowraze_cooldown"		"-5"
+				"value"									"8"	
+				"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 			}					
 		}
 	}
@@ -301,7 +301,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 80 85 90"
+		"AbilityManaCost"				"75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -309,7 +309,7 @@ DOTAAbilities
 		{
 			"shadowraze_damage"	
 			{
-				"value"				"90 160 230 300"	
+				"value"				"90 160 230 300 370 440 510"	
 				"LinkedSpecialBonus"	"special_bonus_unique_nevermore_2"	
 			}
 			"shadowraze_radius"	"250"		
@@ -317,9 +317,9 @@ DOTAAbilities
 			"shadowraze_cooldown"	"3"
 			"stack_bonus_damage" 
 			{
-				"value"				"50 60 70 80"
+				"value"				"50 60 70 80 90 100 110"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_unique_nevermore_7"	"+25"
+				"special_bonus_unique_nevermore_7"	"+40"
 			}
 			"duration"	
 			{
@@ -330,12 +330,12 @@ DOTAAbilities
 				"value"					"0"
 				"special_bonus_unique_nevermore_raze_procsattacks"		"+1"
 			}	
-			"movement_speed_pct"						"-12 -13 -14 -15"
+			"movement_speed_pct"						"-12 -12.5 -13 -13.5 -14 -14.5 -15"
 			"turn_rate_pct"								"0"
 			"AbilityCooldown"				
 			{	
-				"value"									"10"	
-				"special_bonus_unique_nevermore_shadowraze_cooldown"		"-5"
+				"value"									"8"	
+				"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 			}					
 		}
 	}
@@ -379,14 +379,14 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_damage_per_soul"	"1 2 3 4"
+				"necromastery_damage_per_soul"	"1 1.5 2 2.5 3 3.5 4"
 				"CalculateSpellDamageTooltip"	"0"
 				"LinkedSpecialBonus"			"special_bonus_unique_nevermore_1"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls"	"11 14 17 20"
+				"necromastery_max_souls"	"13 16 19 22 25 27 30"
 			}
 			"03"
 			{
@@ -396,7 +396,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls_scepter" "25"
+				"necromastery_max_souls_scepter" "40"
 				"RequiresScepter"			"1"
 			}	
 			"05"
@@ -407,13 +407,13 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"shard_souls_per_kill" "2"
+				"shard_souls_per_kill" "3"
 				"RequiresShard"			"1"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"shard_crit_pct"		 "190"
+				"shard_crit_pct"		 "200"
 				"RequiresShard"			"1"
 			}	
 			"08"
@@ -452,12 +452,12 @@ DOTAAbilities
 		{
 			"presence_armor_reduction"
 			{
-				"value"		"-4 -5 -6 -7"
-				"special_bonus_unique_nevermore_5"			"-4"
+				"value"		"-4 -5 -6 -7 -8 -9 -10"
+				"special_bonus_unique_nevermore_5"			"-8"
 			}
 			"presence_radius"				"1200"
-			"bonus_armor_per_stack"			"2"
-			"kill_buff_duration"			"20"
+			"bonus_armor_per_stack"			"3"
+			"kill_buff_duration"			"25"
 
 
 		}
@@ -487,11 +487,11 @@ DOTAAbilities
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"80 120 160"
+		"AbilityDamage"					"80 120 160 200 240 280 320"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 175 200"
+		"AbilityManaCost"				"150 175 200 225 250 275 300"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -503,21 +503,21 @@ DOTAAbilities
 		{
 				"AbilityCooldown"				
 				{
-					"value"		"120 110 100"
-					"special_bonus_scepter"	"-30"
+					"value"		"60"
+					"special_bonus_scepter"	"-15"
 				}
 
 				"requiem_radius"	"1000"		
-				"requiem_reduction_ms"	"-20 -25 -30"
-				"requiem_reduction_mres"	"-5 -10 -15"
+				"requiem_reduction_ms"	"-17.5 -20 -22.5 -25 -27.5 -30 -32.5"
+				"requiem_reduction_mres"	"0 -5 -10 -15 -20 -25 -30"
 				"requiem_slow_duration"	
 				{
-					"value"		"0.7"
+					"value"		"0.25"
 					"LinkedSpecialBonus"		"special_bonus_unique_nevermore_6"
 				}
 				"requiem_slow_duration_max"	
 				{
-					"value"					"2.15"
+					"value"					"1.75"
 					"LinkedSpecialBonus"		"special_bonus_unique_nevermore_6"
 					"LinkedSpecialBonusField"		"value2"
 				}
