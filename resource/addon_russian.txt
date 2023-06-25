@@ -453,8 +453,6 @@
         "DOTA_Tooltip_modifier_silver_edge_3_debuff"		                "Атака Shadow Walk"
 	"DOTA_Tooltip_modifier_silver_edge_3_debuff_Description"		"Пассивные способности отключены."
 
-        "DOTA_Tooltip_ability_item_radiance_Description                         ""<h1>Переключаемое: Burn</h1> Если включена, каждую секунду наносит наносит противникам %aura_damage% магического урона + %aura_damage_stats%%% урона от статов и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев. На иллюзиях наносит %aura_damage_illusions% магического урона в секунду.<br><br>Радиус: %aura_radius%""
-       
         "DOTA_Tooltip_ability_item_radiance_2"                                  "RADIANCE 2"
         "DOTA_Tooltip_ability_item_radiance_2_Description"			"<h1>Переключаемое: Burn</h1> Если включена, каждую секунду наносит наносит противникам %aura_damage% магического урона + %aura_damage_stats%%% урона от статов и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев. На иллюзиях наносит %aura_damage_illusions% магического урона в секунду.<br><br>Радиус: %aura_radius%"	
 	"DOTA_Tooltip_ability_item_radiance_2_Lore"				"Божественный меч, окружающий владельца ярким сиянием, которое обращает в пепел всех врагов вокруг."
@@ -474,8 +472,55 @@
 	"DOTA_Tooltip_modifier_item_radiance_3_debuff_Description"	        "Получает 60 урона в секунду и промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% случаев."
 
         
-        
+        "DOTA_Tooltip_ability_item_mjollnir_2"                                  "MJOLLNIR 2"
+        "DOTA_Tooltip_ability_item_mjollnir_2_Description"			"<h1>Активное: Static Charge</h1> На %static_duration% сек. окружает выбранное существо заряженным щитом, который с вероятностью в %static_chance%%% может нанести %static_damage% магического урона атакующему врагу и %static_strikes% другим.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chain_chance%%% может создать разряд цепной молнии, которая %chain_strikes% раз перескочит между случайными врагами в радиусе %chain_radius%, нанося каждому по %chain_damage% магического урона. От атаки с цепной молнией нельзя уклониться."
+	"DOTA_Tooltip_ability_item_mjollnir_2_Lore"				"Магический молот Тора, выкованный для него гномами по имени Брок и Эйтри."
+	"DOTA_Tooltip_ability_item_mjollnir_2_Note0"				"Срабатывает не чаще, чем раз в секунду."
+	"DOTA_Tooltip_ability_item_mjollnir_2_Note1"				"Молнии от способности Static Charge наносят магический урон целям на расстоянии до %static_seconary_radius% вокруг существа, на котором находится щит."
+	"DOTA_Tooltip_ability_item_mjollnir_2_Note2"				"Молнии от Static Charge не срабатывают на невидимых или скрытых в тумане войны героев."
+	"DOTA_Tooltip_ability_item_mjollnir_2_bonus_damage"			"+$damage"
+	"DOTA_Tooltip_ability_item_mjollnir_2_bonus_attack_speed"		"+$attack"		
+		
+	"DOTA_Tooltip_modifier_item_mjollnir_2_static"				"Mjollnir Static Charge 2"
+	"DOTA_Tooltip_modifier_item_mjollnir_2_static_Description"	        "Когда это существо атакуют, есть шанс в %dMODIFIER_PROPERTY_TOOLTIP%%%, что атакующий и %dMODIFIER_PROPERTY_TOOLTIP% соседних с ним врага будут поражены молнией."
 
-        
+        "DOTA_Tooltip_ability_item_mjollnir_3"                                  "MJOLLNIR 3"
+        "DOTA_Tooltip_ability_item_mjollnir_3_Description"			"<h1>Активное: Static Charge</h1> На %static_duration% сек. окружает выбранное существо заряженным щитом, который с вероятностью в %static_chance%%% может нанести %static_damage% магического урона атакующему врагу и %static_strikes% другим.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chain_chance%%% может создать разряд цепной молнии, которая %chain_strikes% раз перескочит между случайными врагами в радиусе %chain_radius%, нанося каждому по %chain_damage% магического урона. От атаки с цепной молнией нельзя уклониться."
+	"DOTA_Tooltip_ability_item_mjollnir_3_Lore"				"Магический молот Тора, выкованный для него гномами по имени Брок и Эйтри."
+	"DOTA_Tooltip_ability_item_mjollnir_3_Note0"				"Срабатывает не чаще, чем раз в секунду."
+	"DOTA_Tooltip_ability_item_mjollnir_3_Note1"				"Молнии от способности Static Charge наносят магический урон целям на расстоянии до %static_seconary_radius% вокруг существа, на котором находится щит."
+	"DOTA_Tooltip_ability_item_mjollnir_3_Note2"				"Молнии от Static Charge не срабатывают на невидимых или скрытых в тумане войны героев."
+	"DOTA_Tooltip_ability_item_mjollnir_3_bonus_damage"			"+$damage"
+	"DOTA_Tooltip_ability_item_mjollnir_3_bonus_attack_speed"		"+$attack"		
+		
+	"DOTA_Tooltip_modifier_item_mjollnir_3_static"				"Mjollnir Static Charge 2"
+	"DOTA_Tooltip_modifier_item_mjollnir_3_static_Description"	        "Когда это существо атакуют, есть шанс в %dMODIFIER_PROPERTY_TOOLTIP%%%, что атакующий и %dMODIFIER_PROPERTY_TOOLTIP% соседних с ним врага будут поражены молнией."
+
+        "DOTA_Tooltip_ability_item_hand_of_midas_2"                             "HAND OF MIDAS 2"
+        "DOTA_Tooltip_ability_item_hand_of_midas_2_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта. При применении на нейтрального крипа гарантирует получение нейтрального предмета, если не все из них получены.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%"
+	"DOTA_Tooltip_ability_item_hand_of_midas_2_Lore"			"Эта перчатка, сохранившаяся благодаря неведомой магии, служит жадности владельца, наполняя его карманы золотом в обмен на жизни животных."
+	"DOTA_Tooltip_ability_item_hand_of_midas_2_Note0"			"Получаемое золото идет в надёжный запас (при этом стандартная награда за убийство крипа не даётся)."
+	"DOTA_Tooltip_ability_item_hand_of_midas_2_Note1"			"Опыт от убитого крипа не делится с другими героями."
+	"DOTA_Tooltip_ability_item_hand_of_midas_2_bonus_attack_speed"		"+$attack"
+
+        "DOTA_Tooltip_Ability_item_phylactery_2"                                "PHYLACTERY 2"
+        "DOTA_Tooltip_Ability_item_phylactery_2_Description"			"<h1>Пассивное: Empower Spell</h1> Следующая способность, направленная на врага, отдельно нанесёт ему ещё %bonus_spell_damage% урона и замедлит его на %slow%%%. Длительность: %slow_duration% сек."
+	"DOTA_Tooltip_Ability_item_phylactery_2_bonus_health"			"+$health"
+	"DOTA_Tooltip_Ability_item_phylactery_2_bonus_mana"			"+$mana"
+	"DOTA_Tooltip_ability_item_phylactery_2_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_phylactery_2_bonus_mana_regen"		"+$mana_regen"
+	"DOTA_Tooltip_modifier_item_phylactery_2_slow"				"Phylactery 2"
+	"DOTA_Tooltip_modifier_item_phylactery_2_slow_Description"		"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
+        "DOTA_Tooltip_Ability_item_manaflare_lens_custom"	"Manaflare Lens"
+        "DOTA_Tooltip_Ability_item_manaflare_lens_custom_Description"						"<h1>Пассивное: Empower Spell</h1>Если ваша способность наносит противнику минимум %min_damage_to_activate% урона, он дополнительно получает магический урон в размере %bonus_spell_damage% + <b><font color='#53ea48'>%bonus_spell_damage_mana%%% от вашей макс. маны</font></b> и замедляется на %slow%%%<br><br>Длительность: %slow_duration% сек."
+        "DOTA_Tooltip_Ability_item_manaflare_lens_custom_bonus_health"					"+$health"
+        "DOTA_Tooltip_Ability_item_manaflare_lens_custom_bonus_mana"						"+$mana"
+        "DOTA_Tooltip_Ability_item_manaflare_lens_custom_mana_regen"						"+$mana_regen"
+        "DOTA_Tooltip_ability_item_manaflare_lens_custom_bonus_all_stats"						"+$all"
+        "DOTA_Tooltip_ability_item_manaflare_lens_custom_cast_range_bonus"						"+$cast_range"
+
+        "DOTA_Tooltip_modifier_item_manaflare_lens_custom_debuff"						"Manaflare Lens"
+        "DOTA_Tooltip_modifier_item_manaflare_lens_custom_debuff_Description"			"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
         }
 }
