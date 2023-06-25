@@ -8,7 +8,7 @@ function item_manaflare_lens_custom:GetIntrinsicModifierName()
 end
 
 modifier_item_manaflare_lens_custom = class({})
-function modifier_item_manaflare_lens_custom:IsHidden() return false end
+function modifier_item_manaflare_lens_custom:IsHidden() return true end
 function modifier_item_manaflare_lens_custom:IsPurgable() return false end
 function modifier_item_manaflare_lens_custom:IsPurgeException() return false end
 function modifier_item_manaflare_lens_custom:IsPurgable() return false end
