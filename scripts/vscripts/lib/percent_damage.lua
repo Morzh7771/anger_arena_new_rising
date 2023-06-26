@@ -46,6 +46,7 @@ function PercentDamage:_init()
 		"pugna_nether_blast",
 		"queenofpain_shadow_strike",
 		"queenofpain_scream_of_pain",
+		"queenofpain_sonic_wave",
 		"crystal_maiden_crystal_nova",
 		"crystal_maiden_frostbite",
 		"crystal_maiden_freezing_field",
