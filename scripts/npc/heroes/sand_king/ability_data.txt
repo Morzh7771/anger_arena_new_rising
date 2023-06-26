@@ -71,6 +71,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5103"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -139,6 +140,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5104"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -189,6 +191,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5105"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
