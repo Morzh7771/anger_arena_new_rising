@@ -194,7 +194,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 110 100 90 80 70 60"
+		"AbilityCooldown"				"90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -221,10 +221,10 @@ DOTAAbilities
 			}			
 			"04"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_multiplier"	"1"
-				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer_4"
-				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+				"var_type"					"FIELD_FLOAT"
+				"damage_multiplier"			"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+				"LinkedSpecialBonus"		"special_bonus_unique_outworld_devourer_4"
+				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 			}
 			"05"
 			{
