@@ -233,36 +233,6 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
-        "LinkedShardAbility"			"beastmaster_hawk_dive"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"		        "LinkedShardAbility"			"beastmaster_hawk_dive"
-		"MaxLevel"		"7"
-		"AbilityCastPoint"				"0.3"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"30"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"duration"						"60"
-			"hawk_base_max_health"			"250"
-			"hawk_base_movespeed"			"300 340 380 420 460 500 540"
-			"hawk_base_gold_bounty"			"50"
-			"hawk_base_vision_range"		"600 650 700 750 800 850 900"
-			"AbilityCooldown"
-			{
-				"value"						"60 55 50 45 40 35 30"	
-				"special_bonus_shard"		"-15"
-
-			}				
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-	}
 	"beastmaster_hawk_invisibility"
 	{
 		// General
