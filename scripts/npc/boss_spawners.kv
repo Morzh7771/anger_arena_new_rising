@@ -5,18 +5,19 @@
 		"unit_name" 			"npc_dota_miniboss"
 		"point_name"			"tormentor_radiant"
 		
-		"spawn_delay"			"10"
-		"spawn_interval"		"30"
-		"spawn_interval_random"	"30"
+		"spawn_delay"			"300"
+		"spawn_interval"		"150"
+		"spawn_interval_random"	"50"
 		
 		"stats"
 		{
-			"base_health"		"100"
-			"base_armor"		"15"
+			"base_health"		"20000"
+			"base_armor"		"25"
 			"base_damage"		"350"
-			"health_per_death"	"1000"
-			"armor_per_death"	"15"
-			"damage_per_death"	"200"
+			
+			"health_per_death"	"2500"
+			"armor_per_death"	"5"
+			"damage_per_death"	"150"
 		}
 		
 		"on_death"
@@ -34,76 +35,19 @@
 		"unit_name" 			"npc_dota_miniboss"
 		"point_name"			"tormentor_dire"
 		
-		"spawn_delay"			"10"
-		"spawn_interval"		"30"
-		"spawn_interval_random"	"30"
+		"spawn_delay"			"300"
+		"spawn_interval"		"150"
+		"spawn_interval_random"	"50"
 		
 		"stats"
 		{
-			"base_health"		"100"
-			"base_armor"		"15"
+			"base_health"		"20000"
+			"base_armor"		"25"
 			"base_damage"		"350"
-			"health_per_death"	"1000"
-			"armor_per_death"	"15"
-			"damage_per_death"	"200"
-		}
-		
-		"on_death"
-		{
-			"message"			"#on_boss_die_miniboss"
-			"base_gold"			"1000"
-			"base_exp"			"1000"
-			"gold_per_death"	"500"
-			"exp_per_death"		"500"
-			"dropbox"			"box_boss_miniboss"
-		}
-	}
-	"boss_radiant_top"
-	{
-		"unit_name" 			"npc_dota_miniboss"
-		"point_name"			"boss_radiant_top"
-		
-		"spawn_delay"			"10"
-		"spawn_interval"		"30"
-		"spawn_interval_random"	"30"
-		
-		"stats"
-		{
-			"base_health"		"100"
-			"base_armor"		"15"
-			"base_damage"		"350"
-			"health_per_death"	"1000"
-			"armor_per_death"	"15"
-			"damage_per_death"	"200"
-		}
-		
-		"on_death"
-		{
-			"message"			"#on_boss_die_miniboss"
-			"base_gold"			"1000"
-			"base_exp"			"1000"
-			"gold_per_death"	"500"
-			"exp_per_death"		"500"
-			"dropbox"			"box_boss_miniboss"
-		}
-	}
-	"boss_dire_top"
-	{
-		"unit_name" 			"npc_dota_miniboss"
-		"point_name"			"boss_dire_top"
-		
-		"spawn_delay"			"10"
-		"spawn_interval"		"30"
-		"spawn_interval_random"	"30"
-		
-		"stats"
-		{
-			"base_health"		"100"
-			"base_armor"		"15"
-			"base_damage"		"350"
-			"health_per_death"	"1000"
-			"armor_per_death"	"15"
-			"damage_per_death"	"200"
+			
+			"health_per_death"	"2500"
+			"armor_per_death"	"5"
+			"damage_per_death"	"150"
 		}
 		
 		"on_death"
@@ -118,118 +62,202 @@
 	}
 	"boss_mid"
 	{
-		"unit_name" 			"npc_dota_miniboss"
+		"unit_name" 			"boss_possessed_demon"
 		"point_name"			"boss_mid"
 		
-		"spawn_delay"			"10"
-		"spawn_interval"		"30"
-		"spawn_interval_random"	"30"
+		"spawn_delay"			"300"
+		"spawn_interval"		"150"
+		"spawn_interval_random"	"50"
 		
 		"stats"
 		{
-			"base_health"		"100"
-			"base_armor"		"15"
+			"base_health"		"30000"
+			"base_armor"		"25"
 			"base_damage"		"350"
-			"health_per_death"	"1000"
+			
+			"health_per_death"	"10000"
 			"armor_per_death"	"15"
 			"damage_per_death"	"200"
 		}
 		
 		"on_death"
 		{
-			"message"			"#on_boss_die_miniboss"
+			"message"			"#on_boss_die_possessed"
+			
 			"base_gold"			"1000"
 			"base_exp"			"1000"
+			
 			"gold_per_death"	"500"
 			"exp_per_death"		"500"
-			"dropbox"			"box_boss_miniboss"
-		}
-	}
-	"boss_radiant_bott"
-	{
-		"unit_name" 			"npc_dota_miniboss"
-		"point_name"			"boss_radiant_bott"
-		
-		"spawn_delay"			"10"
-		"spawn_interval"		"30"
-		"spawn_interval_random"	"30"
-		
-		"stats"
-		{
-			"base_health"		"100"
-			"base_armor"		"15"
-			"base_damage"		"350"
-			"health_per_death"	"1000"
-			"armor_per_death"	"15"
-			"damage_per_death"	"200"
-		}
-		
-		"on_death"
-		{
-			"message"			"#on_boss_die_miniboss"
-			"base_gold"			"1000"
-			"base_exp"			"1000"
-			"gold_per_death"	"500"
-			"exp_per_death"		"500"
-			"dropbox"			"box_boss_miniboss"
-		}
-	}
-	"boss_dire_bott"
-	{
-		"unit_name" 			"npc_dota_miniboss"
-		"point_name"			"boss_dire_bott"
-		
-		"spawn_delay"			"10"
-		"spawn_interval"		"30"
-		"spawn_interval_random"	"30"
-		
-		"stats"
-		{
-			"base_health"		"100"
-			"base_armor"		"15"
-			"base_damage"		"350"
-			"health_per_death"	"1000"
-			"armor_per_death"	"15"
-			"damage_per_death"	"200"
-		}
-		
-		"on_death"
-		{
-			"message"			"#on_boss_die_miniboss"
-			"base_gold"			"1000"
-			"base_exp"			"1000"
-			"gold_per_death"	"500"
-			"exp_per_death"		"500"
-			"dropbox"			"box_boss_miniboss"
+			
+			"dropbox"			"box_boss_possessed"
 		}
 	}
 	"boss_mid_bott"
 	{
-		"unit_name" 			"npc_dota_miniboss"
+		"unit_name" 			"npc_aa_soul_guardian"
 		"point_name"			"boss_mid_bott"
 		
-		"spawn_delay"			"10"
-		"spawn_interval"		"30"
-		"spawn_interval_random"	"30"
+		"spawn_delay"			"0"
+		"spawn_interval"		"1"
+		"spawn_interval_random"	"100"
 		
 		"stats"
 		{
-			"base_health"		"100"
-			"base_armor"		"15"
+			"base_health"		"25000"
+			"base_armor"		"25"
 			"base_damage"		"350"
-			"health_per_death"	"1000"
+			
+			"health_per_death"	"10000"
 			"armor_per_death"	"15"
 			"damage_per_death"	"200"
 		}
 		
 		"on_death"
 		{
-			"message"			"#on_boss_die_miniboss"
+			"message"			"#on_boss_die_soul_guardian"
+			
 			"base_gold"			"1000"
 			"base_exp"			"1000"
+			
 			"gold_per_death"	"500"
 			"exp_per_death"		"500"
-			"dropbox"			"box_boss_miniboss"
+			
+			"dropbox"			"box_boss_soul_guradian"
+		}
+	}
+	"boss_radiant_bott"
+	{
+		"point_name"			"boss_radiant_bott"
+		"unit_name" 			"npc_aa_abyss_warrior"
+	
+		
+		"spawn_delay"			"300"
+		"spawn_interval"		"150"
+		"spawn_interval_random"	"50"
+		
+		"stats"
+		{
+			"base_health"		"20000"
+			"base_armor"		"25"
+			"base_damage"		"350"
+			
+			"health_per_death"	"10000"
+			"armor_per_death"	"15"
+			"damage_per_death"	"200"
+		}
+		
+		"on_death"
+		{
+			"message"			"#on_boss_die_abyss_warrior"
+			
+			"base_gold"			"1000"
+			"base_exp"			"1000"
+			
+			"gold_per_death"	"500"
+			"exp_per_death"		"500"
+			
+			"dropbox"			"box_boss_abyss_warrior"
+		}
+	}
+	"boss_dire_bott"
+	{
+		"point_name"			"boss_dire_bott"
+		"unit_name" 			"npc_aa_abyss_warrior"
+	
+		
+		"spawn_delay"			"300"
+		"spawn_interval"		"150"
+		"spawn_interval_random"	"50"
+		
+		"stats"
+		{
+			"base_health"		"20000"
+			"base_armor"		"25"
+			"base_damage"		"350"
+			
+			"health_per_death"	"10000"
+			"armor_per_death"	"15"
+			"damage_per_death"	"200"
+		}
+		
+		"on_death"
+		{
+			"message"			"#on_boss_die_abyss_warrior"
+			
+			"base_gold"			"1000"
+			"base_exp"			"1000"
+			
+			"gold_per_death"	"500"
+			"exp_per_death"		"500"
+			
+			"dropbox"			"box_boss_abyss_warrior"
+		}
+	}
+	"boss_radiant_top"
+	{
+		"point_name"			"boss_radiant_top"
+		"unit_name" 			"npc_aa_keymaster_radiant"
+		
+		"spawn_delay"			"300"
+		"spawn_interval"		"150"
+		"spawn_interval_random"	"50"
+		
+		"stats"
+		{
+			"base_health"		"20000"
+			"base_armor"		"25"
+			"base_damage"		"350"
+			
+			"health_per_death"	"2500"
+			"armor_per_death"	"5"
+			"damage_per_death"	"150"
+		}
+		
+		"on_death"
+		{
+			"message"			"#on_boss_die_keymaster"
+			
+			"base_gold"			"1000"
+			"base_exp"			"1000"
+			
+			"gold_per_death"	"500"
+			"exp_per_death"		"500"
+					
+			"dropbox"			"box_boss_keymaster"
+		}
+	}
+	"boss_dire_top"
+	{
+		"point_name"			"boss_dire_top"
+		"unit_name" 			"npc_aa_keymaster_dire"
+		
+		"spawn_delay"			"300"
+		"spawn_interval"		"150"
+		"spawn_interval_random"	"50"
+		
+		"stats"
+		{
+			"base_health"		"20000"
+			"base_armor"		"25"
+			"base_damage"		"350"
+			
+			"health_per_death"	"2500"
+			"armor_per_death"	"5"
+			"damage_per_death"	"150"
+		}
+		
+		"on_death"
+		{
+			"message"			"#on_boss_die_keymaster"
+			
+			"base_gold"			"1000"
+			"base_exp"			"1000"
+			
+			"gold_per_death"	"500"
+			"exp_per_death"		"500"
+					
+			"dropbox"			"box_boss_keymaster"
 		}
 	}
 }

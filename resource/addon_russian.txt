@@ -37,6 +37,191 @@
         "DOTA_Tooltip_modifier_stuck_count" 					"Стаки медведей" 
         "DOTA_Tooltip_modifier_stuck_count_Description"			        "Это АБСОЛЮТНО ТОЧНО медведи, а не какие-нибудь там кобольды"
 
+        "boss_possessed_demon"												"Possessed Demon"
+        "on_boss_die_possessed"												"<font color='#58ACFA'>Possessed Demon</font> был убит"
+
+        "npc_aa_abyss_warrior"													"Abyss Warrior"
+        "on_boss_die_abyss_warrior"												"<font color='#58ACFA'>Abyss Warrior</font> был убит."
+
+        "npc_aa_soul_guardian"						"Soul Guardian"
+        "on_boss_die_soul_guardian"					"<font color='#58ACFA'>Soul Guardian</font> был убит. Теперь любой может сменить героя на одного из богов."
+
+        "DOTA_Tooltip_Ability_soul_guardian_heroes_ring"							"Rallying Field"
+        "DOTA_Tooltip_Ability_soul_guardian_heroes_ring_Description"				"Soul Guardian создает поле в течении %circle_creation_time% сек. После этого с задержкой %detanation_delay% сек. наносит всем героям внутри поля урон. Чем меньше героев находится внутри поля - тем боле будет полученый урон."
+        "DOTA_Tooltip_Ability_soul_guardian_heroes_ring_circle_radius"				"РАДИУС:"
+        "DOTA_Tooltip_Ability_soul_guardian_heroes_ring_base_damage"				"БАЗОВЫЙ УРОН:"
+        "DOTA_Tooltip_Ability_soul_guardian_heroes_ring_damage_reduction_per_hero"	"СНИЖЕНИЕ УРОНА ЗА ГЕРОЯ:"
+
+        "DOTA_Tooltip_Ability_soul_guardian_heavy_strike"							"Heavy Strike"
+        "DOTA_Tooltip_Ability_soul_guardian_heavy_strike_Description"				"Оглушает основую цель атаки и отталкивает всех ее ближайших союзников, замедляя их."
+        "DOTA_Tooltip_Ability_soul_guardian_heavy_strike_circle_knockback_radius"	"РАДИУС ОТТАЛКИВАНИЯ:"
+        "DOTA_Tooltip_Ability_soul_guardian_heavy_strike_duration_stun"				"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+        "DOTA_Tooltip_Ability_soul_guardian_heavy_strike_duration_slow"				"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+        "DOTA_Tooltip_Ability_soul_guardian_heavy_strike_knockback_slow_pct"		"%ЗАМЕДЛЕНИЕ:"
+
+        "DOTA_Tooltip_modifier_soul_guardian_heavy_strike_stun"					"Оглушен"
+        "DOTA_Tooltip_modifier_soul_guardian_heavy_strike_slow"					"Замедлен"
+
+
+        "DOTA_Tooltip_Ability_soul_guardian_pure_heal"							"Pure Heal"
+        "DOTA_Tooltip_Ability_soul_guardian_pure_heal_Description"				"Излечивает часть своего здоровья и снимает с себя негативные эффекты."
+        "DOTA_Tooltip_Ability_soul_guardian_pure_heal_base_heal"				"БАЗОВОЕ ЛЕЧЕНИЕ:"
+        "DOTA_Tooltip_Ability_soul_guardian_pure_heal_heal_pct_from_max_hp"		"%ЛЕЧЕНИЕ ОТ МАКС.ЗДОРОВЬЯ:"
+
+        "DOTA_Tooltip_Ability_soul_guardian_damage_steal"						"Weakness of Heroes"
+        "DOTA_Tooltip_Ability_soul_guardian_damage_steal_Description"			"В течении %duration% секунд снижает урон всех ближайших врагов."
+        "DOTA_Tooltip_Ability_soul_guardian_damage_steal_radius"				"РАДИУС:"
+        "DOTA_Tooltip_Ability_soul_guardian_damage_steal_delay_for_start"		"ЗАДЕРЖКА ДО АКТИВАЦИИ УМЕНИЯ:"
+        "DOTA_Tooltip_Ability_soul_guardian_damage_steal_damage_per_second_tootip"		"СНИЖЕНИЕ УРОНА В СЕК:"
+        "DOTA_Tooltip_Ability_soul_guardian_damage_steal_debuff_duration"				"ДЛИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_modifier_soul_guardian_damage_steal"				"Weakness of Heroes"
+        "DOTA_Tooltip_modifier_soul_guardian_damage_steal_Description"	"Урон снижен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%"
+
+        "DOTA_Tooltip_Ability_soul_guardian_holy_rage"						"Holy Rage"
+        "DOTA_Tooltip_Ability_soul_guardian_holy_rage_Description"			"Soul Guardian впадает в святую ярость, увеличивая свои скорость атаки и сопротивление эффектам. Эффект спадет через %max_duration% сек. или при получении некоторого урона (%damage_for_purge_base% + %damage_for_purge_pct_from_max_hp%%  от максимального количества здоровья)"
+        "DOTA_Tooltip_Ability_soul_guardian_holy_status_resist_pct"			"СОПРОТИВЛЕНИЕ ЭФФЕКТАМ:"
+        "DOTA_Tooltip_Ability_soul_guardian_holy_rage_attack_speed"			"СКОРОСТЬ АТАКИ:"
+
+        "DOTA_Tooltip_modifier_soul_guardian_holy_rage"						"Holy Rage"
+        "DOTA_Tooltip_modifier_soul_guardian_holy_rage_Description"			"Скорость атаки и сопротивление эффектам увеличены. Необходимо нанести %dMODIFIER_PROPERTY_TOOLTIP% урона для сброса эффекта"
+
+
+        "DOTA_Tooltip_ability_abyss_warrior_death_link"							"Death Link"
+        "DOTA_Tooltip_ability_abyss_warrior_death_link_Description"				"Связывает цель и ближайшую к ней цель. Связанные цели разделяют входящий урон."
+        "DOTA_Tooltip_ability_abyss_warrior_death_link_link_radius"				"РАДИУС СВЯЗЫВАНИЯ:"
+        "DOTA_Tooltip_ability_abyss_warrior_death_link_link_duration"			"ДЛИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_abyss_warrior_death_link_damage_pct"				"%РАЗДЕЛЕНИЕ УРОНА:"
+
+        "DOTA_Tooltip_modifier_abyss_warrior_death_link"						"Death link"
+        "DOTA_Tooltip_modifier_abyss_warrior_death_link_Description"			"Разделяет урон."
+
+        "DOTA_Tooltip_ability_abyss_warrior_domination"							"Domnation"
+        "DOTA_Tooltip_ability_abyss_warrior_domination_Description"				"Притягивает к себе цель, и если ее здоровье меньше порога - убивает ее. В случае если цель останется в живых, на нее наложится безмолвие и обезоруживание."
+        "DOTA_Tooltip_ability_abyss_warrior_domination_pull_speed"				"СКОРОСТЬ ПРИТЯЖЕНИЯ:"
+        "DOTA_Tooltip_ability_abyss_warrior_domination_kill_limit_pct"			"%ЛИМИТ ЗДОРОВЬЯ ДЛЯ УБИЙСТВА:"
+        "DOTA_Tooltip_ability_abyss_warrior_domination_disable_duration" 		"ДЛИТЕЛЬНОСТЬ НЕГАТИВНОГО ЭФФЕКТА:"
+
+        "DOTA_Tooltip_modifier_abyss_warrior_domination"						"Domnation pull"
+        "DOTA_Tooltip_modifier_abyss_warrior_domination_debuff"					"Domnation debuff"
+
+        "DOTA_Tooltip_ability_abyss_warrior_charged_attack"						"Charged Attack"
+        "DOTA_Tooltip_ability_abyss_warrior_charged_attack_Description"			"Каждые несколько секунд Abyss Warrior заряжает свою атаку, которая наносит дополнительный урон врагу, а так же оглушает врагов в небольшом радиусе около цели. За каждого оглушенного противника Abyss Warrior получает один эффект блокировки направленных заклинаний."
+        "DOTA_Tooltip_ability_abyss_warrior_charged_attack_damage"				"ДОП. УРОН:"
+        "DOTA_Tooltip_ability_abyss_warrior_charged_attack_stun_duration"		"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+        "DOTA_Tooltip_ability_abyss_warrior_charged_attack_radius"				"РАДИУС ОГЛУШЕНИЯ"
+        "DOTA_Tooltip_ability_abyss_warrior_charged_attack_spellblock_duration" "ДЛИТЕЛЬНОСТЬ БЛОКИРОВКИ ЗАКЛИНАНИЙ:"
+        "DOTA_Tooltip_modifier_abyss_warrior_charged_attack_stun"				"Charged Attack Stun"
+        "DOTA_Tooltip_modifier_abyss_warrior_charged_attack_linken"				"Charged Attack Spellblock"
+
+        "DOTA_Tooltip_ability_abyss_warrior_fallen_hero"						"Fallen Hero"
+        "DOTA_Tooltip_ability_abyss_warrior_fallen_hero_Description"			"Снимает с Abyss Warrior все негативные эффекты каждые несколько секунд."
+
+        "DOTA_Tooltip_ability_abyss_warrior_immortal"							"Immortal"
+        "DOTA_Tooltip_ability_abyss_warrior_immortal_Description"				"За каждые потерянные %hp_loss_pct%%  здоровья Abyss Warrior получает дополнительную скорость атаки и регенерацию здоровья."
+        "DOTA_Tooltip_ability_abyss_warrior_immortal_attack_speed"				"ДОП. СКОРОСТЬ АТАКИ:"
+        "DOTA_Tooltip_ability_abyss_warrior_immortal_hp_reg"					"%ДОП. РЕГЕН ХП:"
+
+        "DOTA_Tooltip_ability_abyss_warrior_ethereal_charge"					"Ethernal Charge"
+        "DOTA_Tooltip_ability_abyss_warrior_ethereal_charge_Description"		"При активации Abyss Warrior начинает поглощать весь входящий урон, а так же регенерирует. По окончанию действия эффекта он излечивает себя на количество полученного урона, а так же ненадолго оглушает всех вокруг."
+        "DOTA_Tooltip_ability_abyss_warrior_ethereal_charge_hp_regen_pct"		"%РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_abyss_warrior_ethereal_charge_active_duration"	"ДЛИТЕЛЬНОСТЬ ЭФФЕКТА:"
+        "DOTA_Tooltip_ability_abyss_warrior_ethereal_charge_stun_aoe"			"РАДИУС ОГЛУШЕНИЯ:"
+        "DOTA_Tooltip_ability_abyss_warrior_ethereal_charge_stun_duration"		"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+        "DOTA_Tooltip_modifier_abyss_warrior_ethereal_charge"					"Ethernal Charge"
+        "DOTA_Tooltip_modifier_abyss_warrior_ethereal_charge_stun"				"Ethernal Charge Stun"
+        
+        "npc_aa_keymaster_radiant"											"Keymaster"
+        "npc_aa_keymaster_dire"												"Keymaster"
+        "on_boss_die_keymaster"												"<font color='#58ACFA'>Keymaster</font> был убит."
+
+        "DOTA_Tooltip_Ability_keymaster_howl"								"Master Howl"
+        "DOTA_Tooltip_Ability_keymaster_howl_Description"					"Оглушает и запрещает произносить заклинания всем окружающим врагам."
+        "DOTA_Tooltip_Ability_keymaster_howl_abilitycastrange"				"РАДИУС:"
+        "DOTA_Tooltip_Ability_keymaster_howl_stun_duration"					"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+        "DOTA_Tooltip_Ability_keymaster_howl_silence_duration"				"ДЛИТЕЛЬНОСТЬ БЕЗМОЛВИЯ:"
+
+        "DOTA_Tooltip_modifier_keymaster_howl_silence"						"Master Howl Silence"
+        "DOTA_Tooltip_modifier_keymaster_howl_stun"							"Master Howl Stun"
+
+        "DOTA_Tooltip_Ability_keymaster_bite"								"Master Bite"
+        "DOTA_Tooltip_Ability_keymaster_bite_Description"					"Разрывает выбранную цель, нанося ей огромный урон, и если здоровье цели упало ниже предела - убивает ее. Так же снижает броню и наносимый урон в случае если цель выжила."
+        "DOTA_Tooltip_Ability_keymaster_bite_damage"						"УРОН:"
+        "DOTA_Tooltip_Ability_keymaster_bite_kill_limit_pct"				"%ПОРОГ УБИЙСТВА:"
+        "DOTA_Tooltip_Ability_keymaster_bite_disarmor"						"СНИЖЕНИЕ БРОНИ:"
+        "DOTA_Tooltip_Ability_keymaster_bite_damage_reduction"				"%СНИЖЕНИЕ УРОНА:"
+        "DOTA_Tooltip_Ability_keymaster_bite_debuff_duration"				"ДЛИТЕЛЬНОСТЬ ОТРИЦАТЕЛЬНОГО ЭФФЕКТА:"
+
+        "DOTA_Tooltip_modifier_keymaster_bite"								"Master Wound"
+
+        "DOTA_Tooltip_Ability_keymaster_shadow_support"						"Master in Shadows"
+        "DOTA_Tooltip_Ability_keymaster_shadow_support_Description"			"Keymaster начинает возвращать часть полученного урона в виде чистого урона обратно врагу."
+        "DOTA_Tooltip_Ability_keymaster_shadow_support_return_damage"		"%ВОЗВРАЩЕНИЕ УРОНА:"
+        "DOTA_Tooltip_Ability_keymaster_shadow_support_duration"			"ДЛИТЕЛЬНОСТЬ:"
+
+        "DOTA_Tooltip_modifier_keymaster_shadow_support"					"Master damage return"
+
+        "DOTA_Tooltip_Ability_keymaster_damned_souls"						"Master Damned Souls"
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_Description"			"После произнесения заклинания Keymaster с небольшим интервалом начинает запускать сгустки энергии в ближайшего врага. При попадании сгусток наносит урон и снижает скорость атаки жертвы."
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_abilitycastrange"		"РАДИУС:"
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_interval"				"ИНТЕРВАЛ СНАРЯДОВ:"
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_soul_count"			"КОЛИЧЕСТВО СНАРЯДОВ:"
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_projectile_speed"		"СКОРОСТЬ СНАРЯДА:"
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_damage"				"УРОН:"
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_damage_from_lost_hp"	"УРОН ОТ НЕДОСТАЮЩЕГО ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_attack_speed_debuff"	"ЗАМЕДЛЕНИЕ СКОРОСТИ АТАКИ:"
+        "DOTA_Tooltip_Ability_keymaster_damned_souls_debuff_duration"		"ДЛИТЕЛЬНОСТЬ ОТРИЦАТЕЛЬНОГО ЭФФЕКТА:"
+
+        "DOTA_Tooltip_modifier_keymaster_damned_souls"						"Master Damned Souls"
+        "DOTA_Tooltip_modifier_keymaster_damned_souls_debuff"				"Masted Damned Souls Debuff"
+
+        "DOTA_Tooltip_Ability_keymaster_interception"						"Master Interception"
+        "DOTA_Tooltip_Ability_keymaster_interception_Description"			"После активации Keymaster начинает восстанавливать свое здоровье. Восстановление здоровья уменьшается от количества вражеских героев вокруг заклинателя."
+        "DOTA_Tooltip_Ability_keymaster_interception_abilitycastrange"		"РАДИУС:"
+        "DOTA_Tooltip_Ability_keymaster_interception_duration"				"ДЛИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_Ability_keymaster_interception_hp_regen_pct"			"%ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_Ability_keymaster_interception_hp_regen_decrease"		"%СНИЖЕНИЕ ВОССТАНОВЛЕНИЯ ЗДОРОВЬЯ ЗА ГЕРОЯ:"
+
+        "DOTA_Tooltip_modifier_keymaster_interception"						"Master Interception"
+        "DOTA_Tooltip_Ability_keymaster_dodge_mastery"						"Dodge Mastery"
+        "DOTA_Tooltip_Ability_keymaster_dodge_mastery_Description"			"Босс игнорирует весь урон который ему наносится с большого расстояния. Так же он увеличивает скорость своей атаки за каждый потерянный процент здоровья."
+        "DOTA_Tooltip_Ability_keymaster_dodge_mastery_abilitycastrange"		"РАДИУС ПОЛУЧЕНИЯ УРОНА:"
+        "DOTA_Tooltip_Ability_keymaster_dodge_mastery_aspeed_per_hp_pct"	"СКОРОСТЬ АТАКИ ЗА ПОТЕРЯННЫЙ ПРОЦЕНТ ЗДОРОВЬЯ:"
+
+        "DOTA_Tooltip_ability_possessed_magma_trails"						"Magma Trails"
+        "DOTA_Tooltip_ability_possessed_magma_trails_Description"			"Possessed Demon вызывает столпы адского огня из под земли. После небольшой задержки из под земли появится столп огня, который наносит большой урон всем врагам, которые в него попадут."
+        "DOTA_Tooltip_ability_possessed_magma_trails_abilitycastrange"		"РАДИУС:"
+        "DOTA_Tooltip_ability_possessed_magma_trails_damage"				"УРОН:"
+        "DOTA_Tooltip_ability_possessed_magma_trails_damage_from_attack"	"%УРОН ОТ ОСНОВНОЙ АТАКИ:"
+        "DOTA_Tooltip_ability_possessed_magma_trails_trail_prepare"			"ВРЕМЯ ПОЯВЛЕНИЯ СТОЛПА:"
+        "DOTA_Tooltip_ability_possessed_magma_trails_trail_radius"			"РАДИУС СТОЛПА:"
+
+        "DOTA_Tooltip_ability_possessed_fallen_sword"						"Sword of the Fallen"
+        "DOTA_Tooltip_ability_possessed_fallen_sword_Description"			"Possessed Demon наносит часть урона всем врагам возле цели которую он атакует.\nС шансом %chance%%  Possessed Demon нанесет дополнительный урон при атаке, цель умрет если ее здоровье будет меньше %kill_thresshold%% , иначе на цель наложится отрицательный эффект уменьшающий весь ее исходящий урон на %damage_reduction%%  на %debuff_duration%  секунды."
+        "DOTA_Tooltip_ability_possessed_fallen_sword_cleave"				"%ПРОРУБАЮЩИЙ УРОН:"
+        "DOTA_Tooltip_ability_possessed_fallen_sword_cleave_radius"			"РАДИУС ПРОРУБАЮЩЕГО УРОНА:"
+        "DOTA_Tooltip_modifier_possessed_fallen_sword_debuff"				"Sword of the Fallen debuff"
+
+        "DOTA_Tooltip_ability_possessed_rebel"								"Rebel"
+        "DOTA_Tooltip_ability_possessed_rebel_Description"					"Каждая атака снижает броню врага на %disarmor% .\nЗа каждый потеряный процент здоровья Possessed Demon получает %status_resist_per_hp%%  сопротивление эффектам."
+        "DOTA_Tooltip_modifier_possessed_rebel_debuff"						"Rebel disarmor"
+
+
+        "DOTA_Tooltip_ability_possessed_devil_stomp"						"Devil Stomp"
+        "DOTA_Tooltip_ability_possessed_devil_stomp_Description"			"Possessed Demon бъет о землю, оглушая противников на %stun_duration%  секунды и нанося им %damage%  урона."
+        "DOTA_Tooltip_ability_possessed_devil_stomp_abilitycastrange"		"РАДИУС:"
+
+        "DOTA_Tooltip_modifier_possessed_devil_stomp"						"Devil Stomp Stun"
+
+        "DOTA_Tooltip_ability_possessed_curse"								"Curse"
+        "DOTA_Tooltip_ability_possessed_curse_Description"					"Possessed Demon проклинает выбранную цель, и если она не отойдет от своей позиции в начале проклятия на %run_radius%  за %run_duration%  секунды, она получит %penalty_damage_pct%%  урона от своего максимального здоровья, излечит Possessed Demon'a на полученный урон, и получит оглушение на %penalty_stun%  секунды."
+        "DOTA_Tooltip_modifier_possessed_curse_penalty"						"Curse Penalty"
+
+        "DOTA_Tooltip_ability_possessed_hellshield"							"Hellshield"
+        "DOTA_Tooltip_ability_possessed_hellshield_Description"				"При активации накладывает эффект на %duration%  секунды, который отражает %return_damage%%  назад во атакующего, а так же блокирует %damage_reduction%%  этого урона."
+
+        "DOTA_Tooltip_modifier_possessed_hellshield"						"Hellshield Damage Return"
+
 	//Bane
 	"DOTA_Tooltip_Ability_bane_brain_sap_damage_pct"			"%УРОН ОТ ВСЕХ СТАТОВ"
 	//Batraider
@@ -934,5 +1119,319 @@
 		
 	"DOTA_Tooltip_modifier_sheepstick_hex"		                "Освинован"
 	"DOTA_Tooltip_modifier_sheepstick_hex_Description"	        "Вы — свинья. Вы не можете атаковать или использовать заклинания ваши пассивные способности отключены."
+
+        "DOTA_Tooltip_ability_item_spirit_vessel_2"                     "SPIRIT VESSEL 2"
+        "DOTA_Tooltip_ability_item_spirit_vessel_2_Description"		"<h1>Активное: Soul Release</h1>Эффект зависит от выбранной цели. Если применить на противника, то он будет терять %enemy_hp_drain%%% от своего текущего запаса здоровья, а также получать на %hp_regen_reduction_enemy%%% меньше здоровья от любого лечения, восстановления и вампиризма. Помимо этого, способность наносит %soul_damage_amount% урона в секунду. <br><br>Если применить на союзника, увеличивает его восстановление здоровья на %soul_heal_amount% в секунду. <br><br>Действует %duration% сек.<br><br>Получает заряды каждый раз, когда в радиусе %soul_radius% умирает вражеский герой. Заряд получит только один, ближайший к умершему герою предмет.<br><br>Дальность применения: %abilitycastrange%" 		
+	"DOTA_Tooltip_ability_item_spirit_vessel_2_lore"		"Сотворена богом, желавшим изловить души остальных." 		
+	"DOTA_Tooltip_ability_item_spirit_vessel_2_bonus_health"        "+$health"
+	"DOTA_Tooltip_ability_item_spirit_vessel_2_bonus_mana_regen"    "+$mana_regen"
+	"DOTA_Tooltip_ability_item_spirit_vessel_2_bonus_all_stats"     "+$all"
+	"DOTA_Tooltip_ability_item_spirit_vessel_2_bonus_armor"		"+$armor"
+	"DOTA_Tooltip_ability_item_spirit_vessel_2_mana_regen"		"+$mana_regen"
+				
+	"DOTA_Tooltip_modifier_item_spirit_vessel_2_heal"		"Лечение от Spirit Vessel 2"
+	"DOTA_Tooltip_modifier_item_spirit_vessel_2_heal_Description"	"Излечивается на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
+	"DOTA_Tooltip_modifier_item_spirit_vessel_2_damage"		"Урон от Spirit Vessel 2"
+	"DOTA_Tooltip_modifier_item_spirit_vessel_2_damage_Description"	"Каждую секунду теряет %dMODIFIER_PROPERTY_TOOLTIP% здоровья + %dMODIFIER_PROPERTY_TOOLTIP%%% от текущего здоровья. Лечение уменьшено на %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%."
+		
+	"DOTA_Tooltip_modifier_item_spirit_vessel_2_aura"		"Spirit Vessel 2 Degen Aura"
+	"DOTA_Tooltip_modifier_item_spirit_vessel_2_aura_Description"	"Лечение снижено на %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%."
+
+        "DOTA_Tooltip_ability_item_spirit_vessel_3"                     "SPIRIT VESSEL 3"
+        "DOTA_Tooltip_ability_item_spirit_vessel_3_Description"		"<h1>Активное: Soul Release</h1>Эффект зависит от выбранной цели. Если применить на противника, то он будет терять %enemy_hp_drain%%% от своего текущего запаса здоровья, а также получать на %hp_regen_reduction_enemy%%% меньше здоровья от любого лечения, восстановления и вампиризма. Помимо этого, способность наносит %soul_damage_amount% урона в секунду. <br><br>Если применить на союзника, увеличивает его восстановление здоровья на %soul_heal_amount% в секунду. <br><br>Действует %duration% сек.<br><br>Получает заряды каждый раз, когда в радиусе %soul_radius% умирает вражеский герой. Заряд получит только один, ближайший к умершему герою предмет.<br><br>Дальность применения: %abilitycastrange%" 		
+	"DOTA_Tooltip_ability_item_spirit_vessel_3_lore"		"Сотворена богом, желавшим изловить души остальных." 		
+	"DOTA_Tooltip_ability_item_spirit_vessel_3_bonus_health"        "+$health"
+	"DOTA_Tooltip_ability_item_spirit_vessel_3_bonus_mana_regen"    "+$mana_regen"
+	"DOTA_Tooltip_ability_item_spirit_vessel_3_bonus_all_stats"     "+$all"
+	"DOTA_Tooltip_ability_item_spirit_vessel_3_bonus_armor"		"+$armor"
+	"DOTA_Tooltip_ability_item_spirit_vessel_3_mana_regen"		"+$mana_regen"
+				
+	"DOTA_Tooltip_modifier_item_spirit_vessel_3_heal"		"Лечение от Spirit Vessel 3"
+	"DOTA_Tooltip_modifier_item_spirit_vessel_3_heal_Description"	"Излечивается на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
+	"DOTA_Tooltip_modifier_item_spirit_vessel_3_damage"		"Урон от Spirit Vessel 3"
+	"DOTA_Tooltip_modifier_item_spirit_vessel_3_damage_Description"	"Каждую секунду теряет %dMODIFIER_PROPERTY_TOOLTIP% здоровья + %dMODIFIER_PROPERTY_TOOLTIP%%% от текущего здоровья. Лечение уменьшено на %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%."
+		
+	"DOTA_Tooltip_modifier_item_spirit_vessel_3_aura"		"Spirit Vessel 3 Degen Aura"
+	"DOTA_Tooltip_modifier_item_spirit_vessel_3_aura_Description"	"Лечение снижено на %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%."
+
+        "DOTA_Tooltip_Ability_item_hurricane_pike_2"                    "HURRICANE PIKE 2"
+        "DOTA_Tooltip_Ability_item_hurricane_pike_2_Description"        "<h1>Активное: Hurricane Thrust</h1> Отталкивает вражескую цель и владельца друг от друга на расстояние в %enemy_length%. Если владелец сражается в дальнем бою, то после этого он следующие %range_duration% секунд может совершить до %max_attacks% атак по цели без ограничения на расстояние. Скорость таких атак увеличена на %bonus_attack_speed%. <br><br>При использовании на себя или союзников толкает цель на расстояние в %push_length%.<br>Дальность применения на врагов: %cast_range_enemy%\n\n<h1>Пассивное: Dragon's Reach</h1> Увеличивает дальность атаки героев дальнего боя."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_Lore"               "Легендарная пика, в далеком прошлом служившая монаршим символом наездников на вивернах."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_Note0"              "Можно применить на себя."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_Note1"              "Не прерывает действия цели."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_Note2"              "Не работает на существ под воздействием способностей Chronosphere, Duel или Black Hole."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_bonus_intellect"    "+$int"
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_bonus_agility"      "+$agi"
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_bonus_strength"     "+$str"
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_bonus_health"	"+$health"
+	"DOTA_Tooltip_Ability_item_hurricane_pike_2_base_attack_range"  "+$attack_range"
+		
+
+	"DOTA_Tooltip_modifier_item_hurricane_pike_2_active"		"Толчок Hurricane Pike 2"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_2_active_Description"        "Под воздействием толчка Hurricane Pike 2"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_2_active_alternate"  "Толчок Hurricane Pike 2"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_2_active_alternate_Description"      "Под воздействием толчка Hurricane Pike 2"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_2_range"		"Доп. радиус от Hurricane Pike 2"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_2_range_Description"	"Может атаковать цель без ограничений дальности."
+
+        "DOTA_Tooltip_Ability_item_hurricane_pike_2"                    "HURRICANE PIKE 3"
+        "DOTA_Tooltip_Ability_item_hurricane_pike_3_Description"        "<h1>Активное: Hurricane Thrust</h1> Отталкивает вражескую цель и владельца друг от друга на расстояние в %enemy_length%. Если владелец сражается в дальнем бою, то после этого он следующие %range_duration% секунд может совершить до %max_attacks% атак по цели без ограничения на расстояние. Скорость таких атак увеличена на %bonus_attack_speed%. <br><br>При использовании на себя или союзников толкает цель на расстояние в %push_length%.<br>Дальность применения на врагов: %cast_range_enemy%\n\n<h1>Пассивное: Dragon's Reach</h1> Увеличивает дальность атаки героев дальнего боя."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_Lore"               "Легендарная пика, в далеком прошлом служившая монаршим символом наездников на вивернах."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_Note0"              "Можно применить на себя."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_Note1"              "Не прерывает действия цели."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_Note2"              "Не работает на существ под воздействием способностей Chronosphere, Duel или Black Hole."
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_bonus_intellect"    "+$int"
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_bonus_agility"      "+$agi"
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_bonus_strength"     "+$str"
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_bonus_health"	"+$health"
+	"DOTA_Tooltip_Ability_item_hurricane_pike_3_base_attack_range"   "+$attack_range"
+		
+
+	"DOTA_Tooltip_modifier_item_hurricane_pike_3_active"		"Толчок Hurricane Pike 3"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_3_active_Description"        "Под воздействием толчка Hurricane Pike 3"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_3_active_alternate"  "Толчок Hurricane Pike 3"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_3_active_alternate_Description"      "Под воздействием толчка Hurricane Pike 3"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_3_range"             "Доп. радиус от Hurricane Pike 3"
+	"DOTA_Tooltip_modifier_item_hurricane_pike_3_range_Description"	"Может атаковать цель без ограничений дальности."
+
+        "DOTA_Tooltip_ability_item_bloodthorn_2"                        "BLOODTHORN 2"
+        "DOTA_Tooltip_ability_item_bloodthorn_2_Description"            "<h1>Активное: Soul Rend</h1> Запрещает выбранной цели использовать способности на %silence_duration% сек. По окончании эффекта жертве наносится магический урон в размере %silence_damage_percent%%% от урона, полученного за время действия.<br><br>По цели невозможно промахнуться.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Mage Slayer</h1>Атакуемые враги наносят на %spell_amp_debuff%%% меньше урона заклинаниями. Действует %duration% сек."
+        "DOTA_Tooltip_ability_item_bloodthorn_2_Lore"                   "Этот ненавистный клинок впивается в тело извивающейся жертвы сильнее с каждым её предсмертным движением."
+        "DOTA_Tooltip_ability_item_bloodthorn_2_bonus_intellect"        "+$int"
+        "DOTA_Tooltip_ability_item_bloodthorn_2_bonus_attack_speed"     "+$attack"
+        "DOTA_Tooltip_ability_item_bloodthorn_2_bonus_damage"           "+$damage"
+        "DOTA_Tooltip_ability_item_bloodthorn_2_bonus_mana_regen"       "+$mana_regen"
+        "DOTA_Tooltip_ability_item_bloodthorn_2_bonus_magic_resist"     "%+$spell_resist"
+        "DOTA_Tooltip_ability_item_bloodthorn_2_spell_amp"		"%+к урону от заклинаний"
+        "DOTA_Tooltip_ability_item_bloodthorn_2_mana_regen_multiplier"	"%+к усилению восстановления маны"
+        "DOTA_Tooltip_ability_item_bloodthorn_2_bonus_health_regen"	"+$hp_regen"
+
+        "DOTA_Tooltip_modifier_bloodthorn_2_debuff"                     "Bloodthorn 2"
+        "DOTA_Tooltip_modifier_bloodthorn_2_debuff_Description"         "Это существо не может применять способности, а в конце действия ему нанесется магический урон в размере 30%% от полученного урона.\nВсе атаки по этому существу наносят 130%% критического урона."
+
+        "DOTA_Tooltip_ability_item_bloodthorn_3"                        "BLOODTHORN 3"
+        "DOTA_Tooltip_ability_item_bloodthorn_3_Description"            "<h1>Активное: Soul Rend</h1> Запрещает выбранной цели использовать способности на %silence_duration% сек. По окончании эффекта жертве наносится магический урон в размере %silence_damage_percent%%% от урона, полученного за время действия.<br><br>По цели невозможно промахнуться.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Mage Slayer</h1>Атакуемые враги наносят на %spell_amp_debuff%%% меньше урона заклинаниями. Действует %duration% сек."
+        "DOTA_Tooltip_ability_item_bloodthorn_3_Lore"                   "Этот ненавистный клинок впивается в тело извивающейся жертвы сильнее с каждым её предсмертным движением."
+        "DOTA_Tooltip_ability_item_bloodthorn_3_bonus_intellect"        "+$int"
+        "DOTA_Tooltip_ability_item_bloodthorn_3_bonus_attack_speed"     "+$attack"
+        "DOTA_Tooltip_ability_item_bloodthorn_3_bonus_damage"           "+$damage"
+        "DOTA_Tooltip_ability_item_bloodthorn_3_bonus_mana_regen"       "+$mana_regen"
+        "DOTA_Tooltip_ability_item_bloodthorn_3_bonus_magic_resist"     "%+$spell_resist"
+        "DOTA_Tooltip_ability_item_bloodthorn_3_spell_amp"		"%+к урону от заклинаний"
+        "DOTA_Tooltip_ability_item_bloodthorn_3_mana_regen_multiplier"	"%+к усилению восстановления маны"
+        "DOTA_Tooltip_ability_item_bloodthorn_3_bonus_health_regen"	"+$hp_regen"
+
+        "DOTA_Tooltip_modifier_bloodthorn_3_debuff"                     "Bloodthorn 3"
+        "DOTA_Tooltip_modifier_bloodthorn_3_debuff_Description"         "Это существо не может применять способности, а в конце действия ему нанесется магический урон в размере 30%% от полученного урона.\nВсе атаки по этому существу наносят 130%% критического урона."
+
+        "DOTA_Tooltip_ability_item_disperser_2"                         "DISPERSER 2"
+        "DOTA_Tooltip_ability_item_disperser_2_Description"		"<h1>Активное: Suppress</h1> Если использовать на врага, замедлит его на %enemy_effect_duration% сек. <br><br>Если использовать на союзника, ускорит его передвижение и наложит на него развеивание. Этого союзника нельзя будет замедлить в течение %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны.<br><br>Иллюзии героев ближнего боя сжигают по %feedback_mana_burn_illusion_melee% маны за атаку, а дальнего боя — %feedback_mana_burn_illusion_ranged%."
+	"DOTA_Tooltip_ability_item_disperser_2_bonus_agility"		"+$agi"
+	"DOTA_Tooltip_ability_item_disperser_2_bonus_intellect"		"+$int"
+	"DOTA_Tooltip_ability_item_disperser_2_bonus_damage"		"+$damage"
+
+	"DOTA_Tooltip_modifier_disperser_2_movespeed_buff"		"Disperser 2"
+	"DOTA_Tooltip_modifier_disperser_2_movespeed_buff_Description"	"Существо нельзя замедлить, его скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		
+        "DOTA_Tooltip_ability_item_disperser_3"                         "DISPERSER 3"
+        "DOTA_Tooltip_ability_item_disperser_3_Description"		"<h1>Активное: Suppress</h1> Если использовать на врага, замедлит его на %enemy_effect_duration% сек. <br><br>Если использовать на союзника, ускорит его передвижение и наложит на него развеивание. Этого союзника нельзя будет замедлить в течение %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны.<br><br>Иллюзии героев ближнего боя сжигают по %feedback_mana_burn_illusion_melee% маны за атаку, а дальнего боя — %feedback_mana_burn_illusion_ranged%."
+	"DOTA_Tooltip_ability_item_disperser_3_bonus_agility"		"+$agi"
+	"DOTA_Tooltip_ability_item_disperser_3_bonus_intellect"		"+$int"
+	"DOTA_Tooltip_ability_item_disperser_3_bonus_damage"		"+$damage"
+
+	"DOTA_Tooltip_modifier_disperser_3_movespeed_buff"		"Disperser 3"
+	"DOTA_Tooltip_modifier_disperser_3_movespeed_buff_Description"	"Существо нельзя замедлить, его скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+        
+        "DOTA_Tooltip_ability_item_nullifier_2"                         "NULLIFIER 2"
+        "DOTA_Tooltip_ability_item_nullifier_2_Description"             "<h1>Активное: Nullify</h1> Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"		
+	"DOTA_Tooltip_ability_item_nullifier_2_lore"                    "Опасное оружие, выкраденное из обратного измерения."		
+	"DOTA_Tooltip_ability_item_nullifier_2_bonus_damage"		"+$damage"
+	"DOTA_Tooltip_ability_item_nullifier_2_bonus_armor"		"+$armor"
+	"DOTA_Tooltip_ability_item_nullifier_2_bonus_regen"		"+$hp_regen"
+		
+	"DOTA_Tooltip_ability_item_nullifier_2_Note0"			"Можно применять на неуязвимых существ."
+	"DOTA_Tooltip_ability_item_nullifier_2_Note1"			"Проходит сквозь невосприимчивость к магии."
+
+	"DOTA_Tooltip_modifier_item_nullifier_2_mute" 			"Nullifier 2"
+	"DOTA_Tooltip_modifier_item_nullifier_2_mute_Description" 	"С этого существа постоянно развеиваются положительные эффекты."
+	"DOTA_Tooltip_modifier_item_nullifier_2_slow"			"Замедление от Nullifier 2"
+	"DOTA_Tooltip_modifier_item_nullifier_2_slow_Description"	"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
+        "DOTA_Tooltip_ability_item_heavens_halberd_2"                   "HEAVENS HALBERD 2"
+        "DOTA_Tooltip_ability_item_heavens_halberd_2_Description"		"<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.<br><br>Дальность: %abilitycastrange%"
+	"DOTA_Tooltip_ability_item_heavens_halberd_2_Lore"		"Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы."
+	"DOTA_Tooltip_ability_item_heavens_halberd_2_bonus_evasion"	"%+$evasion"
+	"DOTA_Tooltip_ability_item_heavens_halberd_2_bonus_strength"	"+$str"
+	"DOTA_Tooltip_ability_item_heavens_halberd_2_status_resistance"	"%+к сопротивлению эффектам"
+	"DOTA_Tooltip_ability_item_heavens_halberd_2_hp_regen_amp"	"%+к здоровью от восстановления и вампиризма"
+
+	"DOTA_Tooltip_modifier_heavens_halberd_2_buff"			"Maim"
+	"DOTA_Tooltip_modifier_heavens_halberd_2_buff_Description"	"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_modifier_heavens_halberd_2_debuff"			"Обезоружен"
+	"DOTA_Tooltip_modifier_heavens_halberd_2_debuff_Description"	"Обезоружен артефактом Heaven's Halberd, не может атаковать."
+
+        "DOTA_Tooltip_ability_item_heavens_halberd_3"                   "HEAVENS HALBERD 3"
+        "DOTA_Tooltip_ability_item_heavens_halberd_3_Description"	"<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.<br><br>Дальность: %abilitycastrange%"
+	"DOTA_Tooltip_ability_item_heavens_halberd_3_Lore"		"Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы."
+	"DOTA_Tooltip_ability_item_heavens_halberd_3_bonus_evasion"	"%+$evasion"
+	"DOTA_Tooltip_ability_item_heavens_halberd_3_bonus_strength"	"+$str"
+	"DOTA_Tooltip_ability_item_heavens_halberd_3_status_resistance"	"%+к сопротивлению эффектам"
+	"DOTA_Tooltip_ability_item_heavens_halberd_3_hp_regen_amp"	"%+к здоровью от восстановления и вампиризма"
+
+	"DOTA_Tooltip_modifier_heavens_halberd_3_buff"			"Maim"
+	"DOTA_Tooltip_modifier_heavens_halberd_3_buff_Description"	"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_modifier_heavens_halberd_3_debuff"		"Обезоружен"
+	"DOTA_Tooltip_modifier_heavens_halberd_3_debuff_Description"	"Обезоружен артефактом Heaven's Halberd, не может атаковать."
+
+        "DOTA_Tooltip_ability_item_abyssal_blade_2"                     "ABYSSAL BLADE 2"
+        "DOTA_Tooltip_ability_item_abyssal_blade_2_Description"		"<h1>Активное: Overwhelm</h1> Оглушает выбранного противника на %stun_duration% сек. <br><br>Проходит сквозь невосприимчивость к магии.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Bash</h1> Каждая атака может оглушить цель на %bash_duration% сек. и нанести %bonus_chance_damage% физического урона. Вероятность зависит от типа атаки владельца: %bash_chance_melee%%% в ближнем бою, %bash_chance_ranged%%% — в дальнем.\n\n<h1>Пассивное: Damage Block</h1>С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона от атак, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
+	"DOTA_Tooltip_ability_item_abyssal_blade_2_Lore"		"Острие потерянного клинка Повелителя бездны впивается врагу прямо в душу."
+	"DOTA_Tooltip_ability_item_abyssal_blade_2_Note0"		"Оглушение наносится на дистанции ближнего боя."
+	"DOTA_Tooltip_ability_item_abyssal_blade_2_Note1"		"Способность Bash не работает у клонов героев и копии Arc Warden. Эффекты от нескольких таких способностей не складываются."
+	"DOTA_Tooltip_ability_item_abyssal_blade_2_Note2"		"Эффекты нескольких способностей, блокирующих урон, не сочетаются."
+	"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_damage"	"+$damage"
+	"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_health"	"+$health"
+	"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_health_regen"	"+$hp_regen"
+	"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_strength"	"+$str"
+
+        "DOTA_Tooltip_ability_item_glimmer_cape_2"                      "GLIMMER CAPE 2"
+        "DOTA_Tooltip_ability_item_glimmer_cape_2_Description"		"<h1>Активное: Glimmer</h1> После задержки в %initial_fade_delay% сек. даёт владельцу или выбранному союзнику невидимость, +%active_movement_speed% к скорости передвижения и барьер, поглощающий до %barrier_block% магического урона. Действует %duration% сек. <br><br>Дальность применения: %abilitycastrange%<br><br>Не останавливает прерываемые способности."
+	"DOTA_Tooltip_ability_item_glimmer_cape_2_movement_speed"	"+$move_speed"
+	"DOTA_Tooltip_ability_item_glimmer_cape_2_bonus_magical_armor"	"%+$spell_resist"
+	"DOTA_Tooltip_ability_item_glimmer_cape_2_Lore"			"Украденная накидка великого иллюзиониста."
+	"DOTA_Tooltip_modifier_item_glimmer_cape_2_fade"		"Glimmer Cape 2"
+	"DOTA_Tooltip_modifier_item_glimmer_cape_2_fade_Description"    "Поглощает магический урон. Передвижение ускорено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+
+        "DOTA_Tooltip_ability_item_glimmer_cape_2"                      "GLIMMER CAPE 3"
+        "DOTA_Tooltip_ability_item_glimmer_cape_3_Description"		"<h1>Активное: Glimmer</h1> После задержки в %initial_fade_delay% сек. даёт владельцу или выбранному союзнику невидимость, +%active_movement_speed% к скорости передвижения и барьер, поглощающий до %barrier_block% магического урона. Действует %duration% сек. <br><br>Дальность применения: %abilitycastrange%<br><br>Не останавливает прерываемые способности."
+	"DOTA_Tooltip_ability_item_glimmer_cape_3_movement_speed"	"+$move_speed"
+	"DOTA_Tooltip_ability_item_glimmer_cape_3_bonus_magical_armor"	"%+$spell_resist"
+	"DOTA_Tooltip_ability_item_glimmer_cape_3_Lore"			"Украденная накидка великого иллюзиониста."
+	"DOTA_Tooltip_modifier_item_glimmer_cape_3_fade"		"Glimmer Cape 3"
+	"DOTA_Tooltip_modifier_item_glimmer_cape_3_fade_Description"    "Поглощает магический урон. Передвижение ускорено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+
+        "DOTA_Tooltip_ability_item_eternal_shroud_2"                    "ETERNAL SHROUD 2"
+        "DOTA_Tooltip_ability_item_eternal_shroud_2_Description"    	"<h1>Пассивное: Shroud</h1> Восстанавливает ману в размере %mana_restore_pct%%% от урона, наносимого вражескими заклинаниями."
+	"DOTA_Tooltip_ability_item_eternal_shroud_2_Lore"		        "Этот безупречный капюшон поглощает раздор, чтобы наполнить владельца силами."
+	"DOTA_Tooltip_ability_item_eternal_shroud_2_bonus_spell_resist"	"%+$spell_resist"
+	"DOTA_Tooltip_ability_item_eternal_shroud_2_bonus_strength"	"+$str"
+	"DOTA_Tooltip_ability_item_eternal_shroud_2_bonus_armor"		"+$armor"
+	"DOTA_Tooltip_ability_item_eternal_shroud_2_bonus_health_regen"	"+$hp_regen"
+
+	"DOTA_Tooltip_modifier_item_eternal_shroud_2_aura"		"Аура Eternal Shroud 2"
+	"DOTA_Tooltip_modifier_item_eternal_shroud_2_aura_Description"	"Увеличивает восстановление маны и вампиризм заклинаниями"
+
+	"DOTA_Tooltip_modifier_item_eternal_shroud_2_barrier"		"Shroud 2"
+	"DOTA_Tooltip_modifier_item_eternal_shroud_2_barrier_Description"	"Волшебный щит, который может заблокировать и превратить в ману до %dMODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT% полученного магического урона."
+
+        "DOTA_Tooltip_ability_item_eternal_shroud_3"                    "ETERNAL SHROUD 3"
+        "DOTA_Tooltip_ability_item_eternal_shroud_3_Description"    	"<h1>Пассивное: Shroud</h1> Восстанавливает ману в размере %mana_restore_pct%%% от урона, наносимого вражескими заклинаниями."
+	"DOTA_Tooltip_ability_item_eternal_shroud_3_Lore"		"Этот безупречный капюшон поглощает раздор, чтобы наполнить владельца силами."
+	"DOTA_Tooltip_ability_item_eternal_shroud_3_bonus_spell_resist"	"%+$spell_resist"
+	"DOTA_Tooltip_ability_item_eternal_shroud_3_bonus_strength"	"+$str"
+	"DOTA_Tooltip_ability_item_eternal_shroud_3_bonus_armor"	"+$armor"
+	"DOTA_Tooltip_ability_item_eternal_shroud_3_bonus_health_regen"	"+$hp_regen"
+
+	"DOTA_Tooltip_modifier_item_eternal_shroud_3_aura"		"Аура Eternal Shroud 3"
+	"DOTA_Tooltip_modifier_item_eternal_shroud_3_aura_Description"	"Увеличивает восстановление маны и вампиризм заклинаниями"
+
+	"DOTA_Tooltip_modifier_item_eternal_shroud_3_barrier"		"Shroud 3"
+	"DOTA_Tooltip_modifier_item_eternal_shroud_3_barrier_Description"       "Волшебный щит, который может заблокировать и превратить в ману до %dMODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT% полученного магического урона."
+
+        "DOTA_Tooltip_ability_item_holy_locket_2"                       "HOLY LOCKET 3"
+        "DOTA_Tooltip_ability_item_holy_locket_2_Description"		"<h1>Активное: Energy Charge</h1>Мгновенно восстанавливает выбранному союзному существу %restore_per_charge% здоровья и маны за каждый имеющийся заряд.<br><br>Может иметь до %max_charges% зарядов. Получает один заряд каждые %charge_gain_timer% сек. и каждый раз, когда видимый враг в радиусе %charge_radius% использует способность.\n\n<h1>Пассивное: Holy Blessing</h1>Все лечащие заклинания владельца восстанавливают на %heal_increase%%% больше здоровья.\n\n<h1>Пассивное: Regeneration Aura</h1>Увеличивает восстановление здоровья на %aura_health_regen% всем союзникам в радиусе %aura_radius%."
+	"DOTA_Tooltip_ability_item_holy_locket_2_bonus_all_stats"	"+$all"
+	"DOTA_Tooltip_ability_item_holy_locket_2_Lore"		        "Заветная реликвия, которая долгое время считалась утерянной в неудавшемся походе."
+
+	"DOTA_Tooltip_modifier_item_holy_locket_2_aura"			"Аура от Holy Locket"
+	"DOTA_Tooltip_modifier_item_holy_locket_2_aura_Description"	"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
+
+        "DOTA_Tooltip_ability_item_holy_locket_3"                       "HOLY LOCKET 3"
+        "DOTA_Tooltip_ability_item_holy_locket_3_Description"		"<h1>Активное: Energy Charge</h1>Мгновенно восстанавливает выбранному союзному существу %restore_per_charge% здоровья и маны за каждый имеющийся заряд.<br><br>Может иметь до %max_charges% зарядов. Получает один заряд каждые %charge_gain_timer% сек. и каждый раз, когда видимый враг в радиусе %charge_radius% использует способность.\n\n<h1>Пассивное: Holy Blessing</h1>Все лечащие заклинания владельца восстанавливают на %heal_increase%%% больше здоровья.\n\n<h1>Пассивное: Regeneration Aura</h1>Увеличивает восстановление здоровья на %aura_health_regen% всем союзникам в радиусе %aura_radius%."
+	"DOTA_Tooltip_ability_item_holy_locket_3_bonus_all_stats"	"+$all"
+	"DOTA_Tooltip_ability_item_holy_locket_3_Lore"		        "Заветная реликвия, которая долгое время считалась утерянной в неудавшемся походе."
+
+	"DOTA_Tooltip_modifier_item_holy_locket_3_aura"			"Аура от Holy Locket"
+	"DOTA_Tooltip_modifier_item_holy_locket_3_aura_Description"	"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
+
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2"                "OVERWHELMING BLINK 2"
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"	"<h1>Активное: Overwhelming Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения наносит урон, равный 100 + %damage_pct%%% от силы владельца, всем врагам в радиусе %radius% и замедляет их передвижение на %movement_slow%%%, а атаку — на %attack_slow%. Замедление действует %duration% сек.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Lore"           "Редкий смертный удержит в руках этот ужасающий книжал, выкованный в чреве хаоса."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note0"          "Если применить на себя, переместит в сторону союзного фонтана."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note1"		"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_bonus_strength"	"+$str"
+
+        "DOTA_Tooltip_modifier_item_overwhelming_blink_2_debuff"	"Overwhelming Blink 2"
+        "DOTA_Tooltip_modifier_item_overwhelming_blink_2_debuff_Description"      "Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+
+        "DOTA_Tooltip_ability_item_swift_blink_2"                       "SWIFT BLINK 2"
+	"DOTA_Tooltip_ability_item_swift_blink_2_Description"           "<h1>Активное: Swift Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения владелец на %duration% сек. получает +%bonus_movement%%% к скорости передвижения, +%bonus_agi_active% к ловкости и может проходить сквозь существ.<br><br>Предмет нельзя использовать, если последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
+        "DOTA_Tooltip_ability_item_swift_blink_2_Lore"                  "Лезвие искусной работы, способное предсказывать движения владельца и помогать ему."
+        "DOTA_Tooltip_ability_item_swift_blink_2_Note0"                 "Если применить на себя, переместит в сторону союзного фонтана."
+        "DOTA_Tooltip_ability_item_swift_blink_2_Note1"			"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
+        "DOTA_Tooltip_ability_item_swift_blink_2_bonus_agility"		"+$agi"
+
+	"DOTA_Tooltip_modifier_item_swift_blink_2_buff"         	"Swift Blink 2"
+	"DOTA_Tooltip_modifier_item_swift_blink_2_buff_Description"     "Ловкость увеличена на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%. Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Проходит сквозь других существ."
+
+        "DOTA_Tooltip_ability_item_arcane_blink_2"                      "ARCANE BLINK 2"
+	"DOTA_Tooltip_ability_item_arcane_blink_2_Description"         	"<h1>Активное: Arcane Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
+        "DOTA_Tooltip_ability_item_arcane_blink_2_Lore"                 "Живительный инструмент, который поможет вытерпеть затраты магической мощи."
+        "DOTA_Tooltip_ability_item_arcane_blink_2_Note0"                "Если применить на себя, переместит в сторону союзного фонтана."
+        "DOTA_Tooltip_ability_item_arcane_blink_2_Note1"      		"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
+        "DOTA_Tooltip_ability_item_arcane_blink_2_bonus_intellect"      "+$int"
+
+	"DOTA_Tooltip_modifier_item_arcane_blink_2_buff"         	"Arcane Blink 2"
+        "DOTA_Tooltip_modifier_item_arcane_blink_2_buff_Description"    "Расход маны уменьшен на %dMODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING%%%. Длительность отрицательных эффектов увеличена на %dMODIFIER_PROPERTY_STATUS_RESISTANCE_CASTER%%%. Скорость использования способностей уменьшена на %dMODIFIER_PROPERTY_CASTTIME_PERCENTAGE%%%."
+
+        "DOTA_Tooltip_Ability_item_trident_aa"                          "TRIDENT"
+        "DOTA_Tooltip_Ability_item_trident_aa_Description"	        "Сочетает предметы Sange, Yasha и Kaya в один."
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_int"		"+$int"
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_str"		"+$str"
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_agi"		"+$agi"
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_spell_amp"		"%+к урону от заклинаний"
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_mana_regen_amp"	"%+к усилению восстановления маны"
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_attack_speed"	"+$attack"
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_ms"	                "%+$move_speed"		
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_status_res"		"%+к сопротивлению эффектам"
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_heal_amp_pct"	"%+к здоровью от восстановления и вампиризма"
+	"DOTA_Tooltip_Ability_item_trident_aa_bonus_spell_lifesteal_amp_pct"	"%+к усилению вампиризма от заклинаний"
+
+        "DOTA_Tooltip_modifier_item_wraith_band_custom_speed"		"Wraith Band"
+        "DOTA_Tooltip_modifier_item_wraith_band_custom_speed_Description"       "Скорость атаки увеличена на <b><font color='#53ea48'>%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%</font></b>"
+
+        "DOTA_Tooltip_Ability_item_wraith_band_custom"			"Wraith Band"
+        "DOTA_Tooltip_ability_item_wraith_band_custom_Description"	"<h1>Активное: Zeal</h1>Увеличивает вашу скорость атаки на %speed_buf% за каждый Wraith Band<br><br>Длительность: %duration% секунд"
+
+        "DOTA_Tooltip_ability_item_wraith_band_custom_Lore"		"Тиара, от которой доносится лёгкий шёпот."
+        "DOTA_Tooltip_ability_item_wraith_band_custom_agi"		"+$agi"
+        "DOTA_Tooltip_ability_item_wraith_band_custom_str"		"+$str"
+        "DOTA_Tooltip_ability_item_wraith_band_custom_int"		"+$int"
+        "DOTA_Tooltip_ability_item_wraith_band_custom_speed"		"+$attack"
+        "DOTA_Tooltip_ability_item_wraith_band_custom_armor"		"+$armor"
+
+        "DOTA_Tooltip_modifier_item_null_talisman_custom_mana"		"Null Talisman"
+        "DOTA_Tooltip_modifier_item_null_talisman_custom_mana_Description"	"Восстанавливает <b><font color='#53ea48'>%dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%</font></b> маны в секунду"
+
+        "DOTA_Tooltip_Ability_item_null_talisman_custom"		"Null Talisman"
+        "DOTA_Tooltip_ability_item_null_talisman_custom_Description"	"<h1>Активное: Regen</h1>Восстанавливает %mana% маны за %duration% секунд за каждый Null Talisman"
+        "DOTA_Tooltip_ability_item_null_talisman_custom_Lore"		"Небольшой драгоценный камень на нескольких цепочках."
+        "DOTA_Tooltip_ability_item_null_talisman_custom_int"		"+$int"
+        "DOTA_Tooltip_ability_item_null_talisman_custom_str"		"+$str"
+        "DOTA_Tooltip_ability_item_null_talisman_custom_agi"		"+$agi"
+        "DOTA_Tooltip_ability_item_null_talisman_custom_spell"		"%+$spell_amp"
+        "DOTA_Tooltip_ability_item_null_talisman_custom_regen"		"+$mana_regen"
+
+        "DOTA_Tooltip_modifier_item_bracer_custom_heal"			"Bracer"
+        "DOTA_Tooltip_modifier_item_bracer_custom_heal_Description"	"Восстанавливает <b><font color='#53ea48'>%dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%</font></b> здоровья в секунду"
+
+        "DOTA_Tooltip_Ability_item_bracer_custom"			"Bracer"
+        "DOTA_Tooltip_ability_item_bracer_custom_Description"		"<h1>Активное: Regen</h1>Восстанавливает %heal% здоровья за %duration% секунд за каждый Bracer"
+        "DOTA_Tooltip_ability_item_bracer_custom_Lore"			"Наручи подойдут в том случае, если нужно укрепить защиту и повысить живучесть."
+        "DOTA_Tooltip_ability_item_bracer_custom_str"			"+$str"
+        "DOTA_Tooltip_ability_item_bracer_custom_int"			"+$int"
+        "DOTA_Tooltip_ability_item_bracer_custom_agi"			"+$agi"
+        "DOTA_Tooltip_ability_item_bracer_custom_damage"		"+$damage"
+        "DOTA_Tooltip_ability_item_bracer_custom_regen"			"+$hp_regen"
         }
 }

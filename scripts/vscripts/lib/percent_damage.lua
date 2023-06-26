@@ -5,21 +5,63 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("item_radiance", 						Radiance )
 	PercentDamage:ListenAbilityCallback("item_radiance_2", 						Radiance )
 	PercentDamage:ListenAbilityCallback("item_radiance_3", 						Radiance )
+	PercentDamage:ListenAbilityCallback("pudge_rot", 							PudgeRot)
+	PercentDamage:ListenAbilityCallback("bane_brain_sap",						BaneBrainSap)
+	PercentDamage:ListenAbilityCallback("bristleback_quill_spray",				QuillSpray)
+	PercentDamage:ListenAbilityCallback("pugna_life_drain",						LifeDrain )
+	
 	local MagicalDamageFromStr = {
-		"ogre_magi_fireblast", "ogre_magi_unrefined_fireblast", "ogre_magi_ignite", "omniknight_purification", "pudge_meat_hook", "pudge_rot", "sandking_epicenter", "sandking_sand_storm",
-		"rattletrap_battery_assault", "rattletrap_rocket_flare", "rattletrap_hookshot", "bristleback_quill_spray"
+		"ogre_magi_fireblast",
+		"ogre_magi_unrefined_fireblast",
+		"ogre_magi_ignite",
+		"omniknight_purification",
+		"pudge_meat_hook",
+		"sandking_epicenter",
+		"sandking_sand_storm",
+		"rattletrap_battery_assault",
+		"rattletrap_rocket_flare",
+		"rattletrap_hookshot",
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam"
 	}
 	local MagicalDamageFromInt = {
-		"lich_chain_frost", "lina_dragon_slave", "lina_light_strike_array", "lina_laguna_blade", "lion_finger_of_death", "lion_impale", "necrolyte_death_pulse", "nyx_assassin_impale", "nyx_assassin_vendetta",
-		"oracle_fortunes_end", "oracle_purifying_flames", "oracle_rain_of_destiny", "phoenix_icarus_dive", "phoenix_fire_spirits", "phoenix_sun_ray", "phoenix_supernova", "phoenix_launch_fire_spirit",
-		"pugna_nether_blast", "pugna_life_drain", "queenofpain_shadow_strike", "queenofpain_scream_of_pain", "crystal_maiden_crystal_nova", "crystal_maiden_frostbite", "crystal_maiden_freezing_field"
+		"lich_chain_frost",
+		"lina_dragon_slave",
+		"lina_light_strike_array",
+		"lina_laguna_blade",
+		"lion_finger_of_death",
+		"lion_impale",
+		"necrolyte_death_pulse",
+		"nyx_assassin_impale",
+		"nyx_assassin_vendetta",
+		"oracle_fortunes_end",
+		"oracle_purifying_flames",
+		"oracle_rain_of_destiny",
+		"phoenix_icarus_dive",
+		"phoenix_fire_spirits",
+		"phoenix_sun_ray",
+		"phoenix_supernova",
+		"phoenix_launch_fire_spirit",
+		"pugna_nether_blast",
+		"queenofpain_shadow_strike",
+		"queenofpain_scream_of_pain",
+		"crystal_maiden_crystal_nova",
+		"crystal_maiden_frostbite",
+		"crystal_maiden_freezing_field",
+		"bane_brain_sap"
 	}
 	local MagicalDamageFromAll = {
-		"mirana_arrow", "mirana_starfall", "pangolier_swashbuckle", "pangolier_gyroshell", "razor_plasma_field", "razor_unstable_current", "doom_bringer_scorched_earth", "dragon_knight_fireball",
-		"bane_brain_sap", "batrider_flamebreak", "batrider_firefly"
+		"mirana_arrow",
+		"mirana_starfall",
+		"pangolier_swashbuckle",
+		"pangolier_gyroshell",
+		"razor_plasma_field",
+		"razor_unstable_current",
+		"doom_bringer_scorched_earth",
+		"dragon_knight_fireball",
+		"batrider_flamebreak",
+		"batrider_firefly"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
@@ -38,6 +80,24 @@ function PercentDamage:_init()
 		PercentDamage:ListenAbilityCallback(skillname, DamageFromAll)
 	end 
 end	
+function LifeDrain( keys )
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+	if not ability then print("Pugna 4 skill nil ability for percent damage"); return end
+	
+	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
+	
+	if target:IsMagicImmune() then return end 
+	
+	Util:DealPercentDamageOfMaxHealth(target, caster, DAMAGE_TYPE_MAGICAL, caster:GetIntellect() * percent_damage, 0)
+
+	local heal = caster:GetIntellect() * percent_damage
+	
+	caster:Heal(heal, caster) 
+end
+
 function DamageFromAll(keys)
 	local ability 			= keys.ability
 	local caster 			= keys.caster
@@ -130,4 +190,50 @@ function PercentDamage:ListenAbilityCallback(ability_name, func) -- return callb
 	return #_G.skill_callback[ability_name];
 end
 
+function QuillSpray( keys )
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local ability 			= keys.ability
+	local multipler 		= ability:GetSpecialValueFor("damage_pct") or 0
+
+	local damage 			 
+	damage = caster:GetStrength() * multipler
+
+
+	Util:DealPercentDamageOfMaxHealth(target, caster, DAMAGE_TYPE_PHYSICAL, damage , 0)
+end
+
+function BaneBrainSap( keys )
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+	local ability 			= keys.ability
+	local multipler 		= (ability:GetSpecialValueFor("damage_pct") or 0) /100
+
+	local int = caster:GetIntellect() * multipler
+	caster:Heal(int, ability)
+end
+function PudgeRot(keys)
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+
+	if not ability then return end
+	
+	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
+	
+	local damage = percent_damage * caster:GetPrimaryStatValue() 
+
+	if caster == target then return end
+	
+	ApplyDamage({ 	victim = target, 
+					attacker = caster,
+					damage = damage, 
+					damage_type = ability:GetAbilityDamageType(),
+					damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL 
+				})
+
+
+end
 PercentDamage:_init();

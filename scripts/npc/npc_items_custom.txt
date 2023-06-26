@@ -81,7 +81,7 @@
         }
     }
 
-    
+
     "item_butterfly"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1343,7 +1343,7 @@
 		"FightRecapLevel"				"2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
         "ItemBaseLevel"                 "2"
-
+        "AbilitySharedCooldown"			"item_sheepstick"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
@@ -1371,6 +1371,276 @@
 			"bonus_mana_regen"		"8.5 20"
 			"sheep_duration"		"2.8 3.5"
 			"sheep_movement_speed"	"140 120"
+		}
+	}
+
+    "item_recipe_trident_aa"
+	{
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+	    "ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_trident_aa"
+		"ItemRequirements"
+		{
+			"01"						"item_yasha_and_kaya;item_kaya_and_sange;item_sange_and_yasha;item_boss_soul"
+		}
+	}
+    "item_trident_aa"
+	{
+		"BaseClass"             "item_lua"
+        "ScriptFile"                    "items/item_trident_aa"
+        "AbilityTextureName"            "trident1"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+		{
+			"bonus_str"		                    "50"
+			"bonus_agi"		                    "50"
+			"bonus_int"		                    "50"
+            "bonus_attack_speed"                "50"
+            "bonus_status_res"                  "25"
+            "bonus_mana_regen_amp"              "75"
+            "bonus_ms"                          "20"
+            "bonus_spell_amp"                   "25"
+            "bonus_spell_lifesteal_amp_pct"     "50"
+            "bonus_heal_amp_pct"                "50"
+			
+		}
+	}
+
+    "item_recipe_bracer_custom"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe_bracer"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"100"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bracer_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_circlet;item_gauntlets"
+		}
+	}
+	"item_bracer_custom"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_bracer_custom"	
+		"AbilityTextureName"			"item_bracer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"505"
+		"ItemShopTags"					"bracer"
+		"ItemAliases"					"bracer"
+		"AbilityCooldown"				"25.0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"180"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str"					"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int"					"2"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi"					"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"regen"					"0.75"
+			}
+		}
+	}
+
+	"item_recipe_wraith_band_custom"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe_wraith_band"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"100"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_wraith_band_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_slippers;item_circlet"
+		}
+	}
+	"item_wraith_band_custom"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_wraith_band_custom"	
+		"AbilityTextureName"			"item_wraith_band"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"505"
+		"ItemShopTags"					"wraith_band"
+		"ItemAliases"					"wraith_band"
+		"AbilityCooldown"				"25.0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_buf"					"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi"					"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str"					"2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int"					"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"2"
+			}
+		}
+	}
+
+	"item_recipe_null_talisman_custom"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe_null_talisman"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"100"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_null_talisman_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_mantle;item_circlet"
+		}
+	}
+    "item_null_talisman_custom"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_null_talisman_custom"	
+		"AbilityTextureName"			"item_null_talisman"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"505"
+		"ItemShopTags"					"null_talisman"
+		"ItemAliases"					"null_talisman"
+		"AbilityCooldown"				"25.0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana"					"60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int"					"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str"					"2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi"					"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell"					"3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"regen"					"0.75"
+			}
 		}
 	}
 }
