@@ -42,7 +42,7 @@ DOTAAbilities
 				"value"				"80 115 150 185 220 255 290"
 				"special_bonus_unique_razor_4"	"+60"														
 			}
-			"damage_pct"				"100"
+			"damage_pct"				"35"
 			"radius"					"700"
 			"speed"						"636"  // 1.2 second to reach radius
 			"slow_min"				"5"
@@ -64,8 +64,8 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"razor_static_link"
-		"MaxLevel"		"7"
+		"BaseClass"						"razor_static_link"
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -99,8 +99,8 @@ DOTAAbilities
 			"drain_duration"		"12 13 14 15 16 17 18"
 			"drain_rate"
 			{
-				"value"			"7 12 17 22 27 32 37"
-				"special_bonus_unique_razor"	"+8"
+				"value"			"10.0 17.5 25.0 32.5 40.0 47.5 55.0"
+				"special_bonus_unique_razor"	"+25"
 			}
 			"drain_range_buffer"	"250"
 			"radius"				"200 200 200 200"
@@ -132,7 +132,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"self_movement_speed_pct"	"10 15 20 25"
+				"self_movement_speed_pct"	"9.0 12.5 16.0 19.5 23.0 26.5 30.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_razor_5"
 			}
 			"02"
@@ -150,7 +150,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"shard_damage"			"175"
+				"shard_damage"			"250"
 				"RequiresShard"			"1"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 				"CalculateSpellDamageTooltip"	"1"
@@ -191,15 +191,15 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"razor_eye_of_the_storm"
-		"MaxLevel"		"7"
+		"BaseClass"						"razor_eye_of_the_storm"
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Razor.Storm.Cast"
 
 		// Casting
@@ -243,12 +243,16 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_reduction"	"1 1 1"		
+				"armor_reduction"	"1 1 1 1.5 1.5 1.5 2"		
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"damage"			"60 75 90 115 140 165"		
+			}
+			"06"
+			{
+				"damage_pct"		"10"
 			}
 		}
 	}

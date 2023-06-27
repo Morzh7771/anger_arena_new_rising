@@ -307,76 +307,6 @@ DOTAAbilities
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		//"AbilityChannelAnimation"	"ACT_DOTA_CAST_ABILITY_4"
 	}
-		"LinkedAbility"					"dawnbreaker_land"
-		"HasScepterUpgrade"				"1"
-
-		// Casting
-		"BaseClass"				"LinkedAbility"					"dawnbreaker_land"
-		"MaxLevel"		"7"
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
-		"AbilityChannelTime"			"1.7"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.25"	// generally used for damage only
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"airtime_duration"				"0.8"
-			"radius"				
-			{
-				"value"	"500"
-				"LinkedSpecialBonus"	"special_bonus_unique_dawnbreaker_solar_guardian_radius"
-			}
-			"base_damage"
-			{
-				"value"			"30 50 70 90 110 130 150"
-				"CalculateSpellDamageTooltip" "1"
-			}
-			"base_heal"				
-			{
-				"value"				"45 70 95 105 120 135 150"
-				"special_bonus_scepter"	"+15 20 25"
-			}
-			"pulse_interval"				"0.5"
-			"land_damage"
-			{
-				"value"			"130 160 190 220 250 280 310"
-				"CalculateSpellDamageTooltip" "1"
-			}
-			"land_stun_duration"			"1.4 1.5 1.6 1.7 1.8 1.9 2.0"
-			"max_offset_distance"			"350"
-			"scepter_channel_time"				
-			{
-				"value"	"1.0"
-				"RequiresScepter"			"1"
-			}
-			"airtime_scepter_bonus"	
-			{
-				"value"				"3.5"
-				"RequiresScepter"			"1"
-			}
-			"miss_rate"				
-			{
-				"value"			"60"
-				"RequiresScepter"			"1"
-			}
-			"airtime_scepter_movement_speed"				"200"
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
-		//"AbilityChannelAnimation"	"ACT_DOTA_CAST_ABILITY_4"
-	}
 	"dawnbreaker_land"
 	{
 		// General
@@ -389,20 +319,6 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"2"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			
-		}
-	}
-		"LinkedAbility"					"dawnbreaker_solar_guardian"
-		"MaxLevel"						"1"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"LinkedAbility"					"dawnbreaker_solar_guardian"
-		"MaxLevel"		"7"
 		"AbilityCooldown"				"2"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
