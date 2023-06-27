@@ -190,8 +190,7 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"dragon_knight_elder_dragon_form"
-		"MaxLevel"		"7"
+		"BaseClass"						"dragon_knight_elder_dragon_form"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
@@ -200,6 +199,9 @@ DOTAAbilities
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_DragonKnight.ElderDragonForm"
         "HasScepterUpgrade"             "1"
+		"LevelsBetweenUpgrades"			"18"
+		"RequiredLevel"					"6"
+
 
 		"AbilityDraftUltShardAbility"		"dragon_knight_fireball"
 
@@ -213,7 +215,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 50 50"		
+		"AbilityManaCost"				"50"		
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -231,12 +233,12 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"22.5 25 27.5 30 32.5 35 37.5"
+				"bonus_movement_speed"		"25 30 35 40"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"350 350 350 350"
+				"bonus_attack_range"		"350"
 				"LinkedSpecialBonus"		"special_bonus_unique_dragon_knight_7"
 			}
 			"04"
@@ -247,12 +249,12 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corrosive_breath_damage"	"20 20 20 30 30 30 40"
+				"corrosive_breath_damage"	"50 200 350 500"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"corrosive_breath_duration"	"5.0 5.0 5.0"
+				"corrosive_breath_duration"	"5.0"
 			}
 			"07"
 			{
@@ -262,25 +264,25 @@ DOTAAbilities
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"splash_damage_percent"		"75 75 75 100 100 100 125"
+				"splash_damage_percent"		"0 100 150 200"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_6"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"frost_bonus_movement_speed"	"-40 -40 -40 -60 -60 -60 -80"
+				"frost_bonus_movement_speed"	"0 0 -40 -80"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_5"
 			}
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"frost_bonus_attack_speed"		"-40 -40 -40 -60 -60 -60 -80"
+				"frost_bonus_attack_speed"		"0 0 -80 -160"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_5"
 			}
 			"11"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"frost_duration"				"3.0 3.0 3.0"
+				"frost_duration"				"3.0"
 			}
 			"12"
 			{
@@ -290,12 +292,12 @@ DOTAAbilities
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magic_resistance"			"0 0 0 25 25 25 25"
+				"magic_resistance"			"0 0 0 40"
 			}
 			"14"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"model_scale"				"0 0 0 30 30 30 30"
+				"model_scale"				"0 0 0 30"
 			}
 			
 		}
@@ -327,54 +329,6 @@ DOTAAbilities
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"					"3.0"
-			}
-		}
-	}	
-		"AbilityTextureName"            "dragon_knight_breathe_fire"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"AbilityTextureName"            "dragon_knight_breathe_fire"
-		"MaxLevel"		"7"
-		"AbilityChannelTime"			"2.5"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"1.5"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"200.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"1000.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"rotation_angle"			"90.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_count"			"20"
 			}
 		}
 	}

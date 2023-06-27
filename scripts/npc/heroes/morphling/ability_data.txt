@@ -114,57 +114,6 @@ DOTAAbilities
 				}
 		}
 	}
-		"LinkedAbility"					"morphling_adaptive_strike_str"
-		"HasShardUpgrade"               "1"
-
-
-		"BaseClass"				"LinkedAbility"					"morphling_adaptive_strike_str"
-		"MaxLevel"		"7"
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.25"
- 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70 80 90 100"		
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-				"damage_base"								
-				{
-					"value"					"55 65 75 85 95 105 115"
-					"CalculateSpellDamageTooltip"	"1"
-				}
-				"damage_min"					
-				{
-					"value"					"0.75"
-					"CalculateSpellDamageTooltip"	"0"
-				}
-				"damage_max"					
-				{
-					"value"				"1.25 1.75 2.25 2.75 3.25 3.75 4.25"
-					"CalculateSpellDamageTooltip"	"0"
-				}
-				"projectile_speed"					"1150"
-				"shared_cooldown"					"0"
-				"bonus_attributes"		
-				{
-					"value"					"10 20 30 40 50 60 70"
-					"special_bonus_shard"					"+30"
-				}
-		}
-	}
 	"morphling_adaptive_strike_str"
 	{
 		// General
@@ -183,54 +132,6 @@ DOTAAbilities
 
 
 		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.25"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70 80 90 100"		
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-				"stun_min"						
-				{
-					"value" "0.5"
-					"special_bonus_unique_morphling_10" "+0.8"
-				}
-				"stun_max"						
-				{
-					"value"	"1.2 1.4 1.6 1.8 2.0 2.2 2.4"
-					"special_bonus_unique_morphling_10"	"+0.8"
-				}
-				"knockback_min"					"100"
-				"knockback_max"					"500"
-				"projectile_speed"					"1150"
-				"shared_cooldown"					"0"
-				"bonus_attributes"		
-				{
-					"value"					"10 20 30 40 50 60 70"
-					"special_bonus_shard"					"+30"
-				}
-		}
-	}
-		"LinkedAbility"					"morphling_adaptive_strike_agi"
-		"HasShardUpgrade"               "1"
-
-
-		"BaseClass"				"LinkedAbility"					"morphling_adaptive_strike_agi"
-		"MaxLevel"		"7"
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.25"
@@ -326,34 +227,6 @@ DOTAAbilities
 			}
 		}
 	}
-		"LinkedAbility"					"morphling_morph_str"
-		"AbilityCastAnimation"			"ACT_INVALID"
-		"HasShardUpgrade"               "1"
-
-		"BaseClass"				"LinkedAbility"					"morphling_morph_str"
-		"MaxLevel"		"7"
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"points_per_tick"		"1"
-			"morph_cooldown"		"0.2 0.1 0.06 0.05"
-			"morph_rate_tooltip"	"5 10 15 30 60 90 120"
-			"mana_cost"				
-			{
-				"value"						"5 10 15 30 60 90 120"
-				"special_bonus_unique_morphling_morph_no_manacost"		"-100%"
-			}
-			"castable_while_stunned"
-			{
-				"value"	"0"
-				"special_bonus_shard"	"+1"
-			}
-		}
-	}
 	"morphling_morph_str"
 	{
 		// General
@@ -366,34 +239,6 @@ DOTAAbilities
 		"HasShardUpgrade"               "1"
 
 		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"points_per_tick"		"1"
-			"morph_cooldown"		"0.2 0.1 0.06 0.05"
-			"morph_rate_tooltip"	"5 10 15 30 60 90 120"
-			"mana_cost"				
-			{
-				"value"						"5 10 15 30 60 90 120"
-				"special_bonus_unique_morphling_morph_no_manacost"		"-100%"
-			}
-			"castable_while_stunned"
-			{
-				"value"	"0"
-				"special_bonus_shard"	"+1"
-			}
-		}
-	}
-		"LinkedAbility"					"morphling_morph_agi"
- 		"AbilityCastAnimation"			"ACT_INVALID"
-		"HasShardUpgrade"               "1"
-
-		"BaseClass"				"LinkedAbility"					"morphling_morph_agi"
-		"MaxLevel"		"7"
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0.0"
 
