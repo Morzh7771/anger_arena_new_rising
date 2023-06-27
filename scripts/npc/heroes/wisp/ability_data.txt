@@ -112,7 +112,7 @@ DOTAAbilities
 			"hit_radius"				"150"
 			"spirit_movement_rate"		"300"
 			"spirit_duration"			"20"
-			"spirit_amount"				"5 5 5 6 6 6 7"
+			"spirit_amount"				"5 5 5 5 5 5"
 			"scepter_slow_pct"
 			{
 				"value"			"0"
@@ -291,5 +291,120 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0 0"
  		"AbilityCastAnimation"			"ACT_INVALID"
+	}
+	"wisp_spirit_inout"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/wisp_spirit_inout"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityTextureName"			"wisp_spirits_out"
+		"MaxLevel"						"1"
+		"InnateAbility"					"1"
+	}
+	"wisp_spirits_aa"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/wisp_spirits_aa"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"wisp_spirits"
+		"MaxLevel"						"7"
+		
+		// Talents		
+		//-------------------------------------------------------------------------------------------------------------
+		"LinkedTalents"
+		{
+			"special_bonus_unique_wisp_spirits_bh_1"	"1"
+			"special_bonus_unique_wisp_spirits_bh_2"	"1"
+		}
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40 36 32 28 24 20 16"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_wisp/wisp_guardian_explosion_small.vpcf"
+			"particle"  				"particles/units/heroes/hero_wisp/wisp_guardian_explosion.vpcf"
+			"particle"  				"particles/units/heroes/hero_wisp/wisp_guardian_.vpcf"
+			"particle"  				"particles/econ/items/wisp/wisp_guardian_ti7.vpcf"
+			"particle"  				"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+			"particle"  				"particles/econ/items/wisp/wisp_ambient_ti7_trace.vpcf"
+
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_end"				"20 40 60 80 100 120 140"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_collide"			"10 18 26 34 42 50 58"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"0.5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"explode_radius"			"360"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hit_radius"				"75"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spirit_movement_rate"		"250"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_wisps"					"5"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_radius"				"100"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wisp_regen_rate"			"1"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wisp_regen_cost"			"5 10 15 20 25 30 35"
+			}
+		}
 	}
 }

@@ -542,7 +542,7 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 				end
 				return false
 			else 
-				return true
+				return false
 			end
 			
 		  end
