@@ -74,7 +74,7 @@ DOTAAbilities
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pct"				"100"
+				"damage_pct"				"70"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -285,7 +285,7 @@ DOTAAbilities
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.8 1.0 1.2"
+				"stun_duration"			"0.6 0.7 0.8 0.9 1.0 1.1 1.2"
 			}			
 			"10"
 			{
