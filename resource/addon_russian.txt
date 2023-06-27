@@ -20,7 +20,9 @@
         "duel_nobody_wins" 							"Конец дуэли: {s:time}"
         "duel_next_duel" 							"Дуэль через: {s:time}"
         "duel_start"								"Дуэль началась"
-        "duel_end"								"Дуэль окончена."
+        "duel_end"									"Дуэль окончена."
+		"duel_min"									"Дуэль начнется через минуту"
+		"duel_20"									"Дуэль начнется через 20 секунд"
         "duel_error"								"<font color='#FF1111'>[ДУЭЛЬ]</font> Недостаточно игроков."
         "duel_nobody" 								"В этот раз дуэль окончилась ничьей"
         "duel_end_win_radiant"							"Ангелы сокрушили падших"
@@ -45,6 +47,45 @@
 
         "npc_aa_soul_guardian"						"Soul Guardian"
         "on_boss_die_soul_guardian"					"<font color='#58ACFA'>Soul Guardian</font> был убит. Теперь любой может сменить героя на одного из богов."
+
+
+		"DOTA_Tooltip_ability_item_edible_gem"             	"Edible Gem of True Sight"
+		"DOTA_Tooltip_ability_item_edible_gem_Description"  "При использовании дает владельцу True Sight, до его смерти."
+
+		"DOTA_Tooltip_modifier_modifier_edible_gem_aura"	"True Sight"
+		"Dota_tooltip_modifier_edible_gem_aura"		        "Edible Gem"
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6"				"Книга интеллекта (+6)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6_Description"	"Навсегда увеличивает 6 интеллекта вашему герою."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6"				"Книга ловкости(+6)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6_Description"	"Навсегда увеличивает 6 ловкости вашему герою."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6"				"Книга силы (+6)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6_Description"	"Навсегда увеличивает 6 силы вашему герою."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6"				"Книга богов (+6)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"	"Навсегда добавляет 6 силы 6 ловкости 6 интеллекта вашему герою."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED"				"Медицинский трактат"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"	"Навсегда увеличивает здоровье вашего персонажа на 500 и ману на 250"
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP"				"Книга героев"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP_Description"	"Повышает ваш уровень."
+
+		"npc_aa_bulding_shrine_radiant"										"Shrine"
+		"npc_aa_bulding_shrine_dire"										"Shrine"
+
+		"DOTA_Tooltip_ability_ability_shrine_restore"						"Restoration"
+		"DOTA_Tooltip_ability_ability_shrine_restore_Description"			"Восстанавливает здоровье и ману всех окружающих союзников"
+		"DOTA_Tooltip_ability_ability_shrine_restore_aura_radius"			"РАДИУС:"
+		"DOTA_Tooltip_ability_ability_shrine_restore_health_regen_const"	"ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
+		"DOTA_Tooltip_ability_ability_shrine_restore_mana_regen_const"		"ВОССТАНОВЛЕНИЕ МАНЫ:"
+		"DOTA_Tooltip_ability_ability_shrine_restore_health_regen_pct"		"%ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
+		"DOTA_Tooltip_ability_ability_shrine_restore_mana_regen_pct"		"%ВОССТАНОВЛЕНИЕ МАНЫ:"
+
+		"DOTA_Tooltip_modifier_ability_shrine_restore_effect"				"Restoration"
+		"DOTA_Tooltip_modifier_ability_shrine_restore_effect_Description"	"Здоровье и мана восстанавливаются"
 
         "DOTA_Tooltip_Ability_soul_guardian_heroes_ring"							"Rallying Field"
         "DOTA_Tooltip_Ability_soul_guardian_heroes_ring_Description"				"Soul Guardian создает поле в течении %circle_creation_time% сек. После этого с задержкой %detanation_delay% сек. наносит всем героям внутри поля урон. Чем меньше героев находится внутри поля - тем боле будет полученый урон."

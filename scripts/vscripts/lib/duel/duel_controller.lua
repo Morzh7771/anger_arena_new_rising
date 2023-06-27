@@ -217,7 +217,12 @@ function DuelController:_OnTick( isEnd )
 	if self.freeze then
 		nCountdown = nCountdown + 1
 	end
-
+	if nCountdown == 60 then
+		Attentions:SendChatMessage("#duel_min") 
+	end
+	if nCountdown == 20 then
+		Attentions:SendChatMessage("#duel_20") 
+	end
 	if nCountdown == -1 then
 		if DuelLibrary:IsDuelActive() or isEnd then
 			self:_CancelDuels()
