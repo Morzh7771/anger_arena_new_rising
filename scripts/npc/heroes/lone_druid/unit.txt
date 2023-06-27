@@ -10,7 +10,7 @@
 		"Level"						"1"
 		"ModelScale" 				".65"
 		"ConsideredHero"			"1"
-		"UnitLabel"			"spirit_bear"
+		"UnitLabel"					"spirit_bear"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -21,14 +21,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"3"			// Physical protection.
+		"ArmorPhysical"				"5"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"28"		// Damage range min.
-		"AttackDamageMax"			"28"		// Damage range max.	
-		"AttackRate"				"1.75"		// Speed of attack.
+		"AttackDamageMin"			"40"		// Damage range min.
+		"AttackDamageMax"			"40"		// Damage range max.	
+		"AttackRate"				"1.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
@@ -55,7 +55,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1100"		// Base health.
-		"StatusHealthRegen"			"5"			// Health regeneration rate.
+		"StatusHealthRegen"			"9"			// Health regeneration rate.
 		"StatusMana"				"300"		// Base mana.
 		"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 
 		
@@ -78,8 +78,8 @@
 		"include_keys_from" "npc_dota_lone_druid_bear1"
 
 		"ModelScale" 					".72"
-		"ArmorPhysical"				"4"			// Physical protection.
-		"AttackRate"				"1.65"		// Speed of attack.
+		"ArmorPhysical"				"7"			// Physical protection.
+		"AttackRate"				"1.45"		// Speed of attack.
 
 		"MovementSpeed"				"360"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
@@ -87,7 +87,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1400"		// Base health.
-		"StatusHealthRegen"			"6"			// Health regeneration rate.
+		"StatusHealthRegen"			"12"			// Health regeneration rate.
 		"StatusMana"				"300"		// Base mana.
 		"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 	
 	}	
@@ -98,14 +98,14 @@
 		
 		"ModelScale" 					".78"
 		"ArmorPhysical"				"5"			// Physical protection.
-		"AttackRate"				"1.55"		// Speed of attack.
+		"AttackRate"				"1.40"		// Speed of attack.
 		"MovementSpeed"				"380"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1700"		// Base health.
-		"StatusHealthRegen"			"7"			// Health regeneration rate.
+		"StatusHealthRegen"			"15"			// Health regeneration rate.
 		"StatusMana"				"300"			// Base mana.
 		"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 	
 	}	
@@ -115,14 +115,14 @@
 						
 		"ModelScale" 					".85"
 		"ArmorPhysical"				"6"			// Physical protection.
-		"AttackRate"				"1.45"		// Speed of attack.
+		"AttackRate"				"1.35"		// Speed of attack.
 		"MovementSpeed"				"400"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"8"			// Health regeneration rate.
+		"StatusHealthRegen"			"18"			// Health regeneration rate.
 		"StatusMana"				"300"		// Base mana.
 		"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 	
 	}
@@ -131,15 +131,15 @@
 		"include_keys_from" "npc_dota_lone_druid_bear1"
 						
 		"ModelScale" 					".85"
-		"ArmorPhysical"				"6"			// Physical protection.
-		"AttackRate"				"1.45"		// Speed of attack.
-		"MovementSpeed"				"400"		// Speed.
+		"ArmorPhysical"				"11"			// Physical protection.
+		"AttackRate"				"1.30"		// Speed of attack.
+		"MovementSpeed"				"420"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"8"			// Health regeneration rate.
+		"StatusHealth"				"2300"		// Base health.
+		"StatusHealthRegen"			"21"			// Health regeneration rate.
 		"StatusMana"				"300"		// Base mana.
 		"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 	
 	}
@@ -149,14 +149,14 @@
 						
 		"ModelScale" 					".85"
 		"ArmorPhysical"				"6"			// Physical protection.
-		"AttackRate"				"1.45"		// Speed of attack.
-		"MovementSpeed"				"400"		// Speed.
+		"AttackRate"				"1.25"		// Speed of attack.
+		"MovementSpeed"				"440"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"8"			// Health regeneration rate.
+		"StatusHealth"				"2600"		// Base health.
+		"StatusHealthRegen"			"24"			// Health regeneration rate.
 		"StatusMana"				"300"		// Base mana.
 		"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 	
 	}
@@ -165,15 +165,15 @@
 		"include_keys_from" "npc_dota_lone_druid_bear1"
 						
 		"ModelScale" 					".85"
-		"ArmorPhysical"				"6"			// Physical protection.
-		"AttackRate"				"1.45"		// Speed of attack.
-		"MovementSpeed"				"400"		// Speed.
+		"ArmorPhysical"				"30"			// Physical protection.
+		"AttackRate"				"1.20"		// Speed of attack.
+		"MovementSpeed"				"460"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"8"			// Health regeneration rate.
+		"StatusHealth"				"2900"		// Base health.
+		"StatusHealthRegen"			"28"			// Health regeneration rate.
 		"StatusMana"				"300"		// Base mana.
 		"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 	
 	}

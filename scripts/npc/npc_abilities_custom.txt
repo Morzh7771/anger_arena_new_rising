@@ -152,6 +152,15 @@
 		"MaxLevel" 						"1"
 		"IsOnCastBar"					"0"
 	}
+	"ability_hidden_from_map"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"ability_lua"
+		"AbilityTextureName" 				"you_shall_never_see_it"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ScriptFile"						"creeps/minimap/main_ability.lua"
+	}
 	"ability_shrine_restore"
 	{
 		// General

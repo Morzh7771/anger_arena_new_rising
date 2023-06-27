@@ -223,6 +223,21 @@ function DuelController:_OnTick( isEnd )
 	if nCountdown == 20 then
 		Attentions:SendChatMessage("#duel_20") 
 	end
+	if nCountdown == 5 then
+		Attentions:SendChatMessage("#duel_5") 
+	end
+	if nCountdown == 4 then
+		Attentions:SendChatMessage("#duel_4") 
+	end
+	if nCountdown == 3 then
+		Attentions:SendChatMessage("#duel_3") 
+	end
+	if nCountdown == 2 then
+		Attentions:SendChatMessage("#duel_2") 
+	end
+	if nCountdown == 1 then
+		Attentions:SendChatMessage("#duel_1") 
+	end
 	if nCountdown == -1 then
 		if DuelLibrary:IsDuelActive() or isEnd then
 			self:_CancelDuels()

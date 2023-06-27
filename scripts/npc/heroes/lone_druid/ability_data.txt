@@ -18,7 +18,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120.0"
+		"AbilityCooldown"				"80.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,19 +37,19 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bear_regen_tooltip"	"5 6 7 8 9 10 11"
+				"bear_regen_tooltip"		"9 12 15 18 21 24 28"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bear_bat"					"1.75 1.7 1.65 1.6 1.55 1.5 1.45"
-				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_10"
+				"bear_bat"					"1.5 1.45 1.4 1.35 1.30 1.25 1.20"
+				"LinkedSpecialBonus"		"special_bonus_unique_lone_druid_10"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bear_armor"				"3 4 5 6 7 8 9"
-				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_2"
+				"bear_armor"				"5 7 9 11 13 15 30"
+				"LinkedSpecialBonus"		"special_bonus_unique_lone_druid_2"
 			}
 			"05"
 			{
@@ -59,7 +59,7 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"120.0"
+				"cooldown_scepter"			"80.0"
 				"RequiresScepter"			"1"
 			}
 			"07"
