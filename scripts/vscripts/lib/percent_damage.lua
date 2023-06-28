@@ -7,7 +7,6 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("item_radiance_3", 						Radiance )
 	PercentDamage:ListenAbilityCallback("pudge_rot", 							PudgeRot)
 	PercentDamage:ListenAbilityCallback("bane_brain_sap",						BaneBrainSap)
-	PercentDamage:ListenAbilityCallback("bristleback_quill_spray",				QuillSpray)
 	PercentDamage:ListenAbilityCallback("pugna_life_drain",						LifeDrain )
 	
 	local MagicalDamageFromStr = {
@@ -21,6 +20,7 @@ function PercentDamage:_init()
 		"rattletrap_battery_assault",
 		"rattletrap_rocket_flare",
 		"rattletrap_hookshot",
+		"bristleback_quill_spray",
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam"
@@ -190,19 +190,6 @@ function PercentDamage:ListenAbilityCallback(ability_name, func) -- return callb
 	table.insert(_G.skill_callback[ability_name], func)
 
 	return #_G.skill_callback[ability_name];
-end
-
-function QuillSpray( keys )
-	local caster 			= keys.caster
-	local target 			= keys.target
-	local ability 			= keys.ability
-	local multipler 		= ability:GetSpecialValueFor("damage_pct") or 0
-
-	local damage 			 
-	damage = caster:GetStrength() * multipler
-
-
-	Util:DealPercentDamageOfMaxHealth(target, caster, DAMAGE_TYPE_PHYSICAL, damage , 0)
 end
 
 function BaneBrainSap( keys )

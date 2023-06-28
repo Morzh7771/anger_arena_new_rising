@@ -165,6 +165,7 @@ function AngelArena:InitGameMode()
 	GameMode:SetLoseGoldOnDeath(true)
 
 	GameMode:SetDraftingHeroPickSelectTimeOverride(60)
+	GameRules:SetCustomGameBansPerTeam( 5 )
 	GameMode:SetDraftingBanningTimeOverride(20)
 	GameRules:SetPostGameTime(30)
 	GameRules:SetStrategyTime(15.0)
@@ -187,6 +188,7 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier("modifier_intelect", 'modifiers/modifier_intelect', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_mid_teleport", "modifiers/modifier_mid_teleport", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
 
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
 	-- AttributeDerivedStats
@@ -542,7 +544,7 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 				end
 				return false
 			else 
-				return true
+				return false
 			end
 			
 		  end

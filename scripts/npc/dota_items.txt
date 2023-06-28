@@ -2218,12 +2218,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"passive_reflection_pct"			"20 25 30"
+				"passive_reflection_pct"			"15 20 25"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_reflection_pct"			"80 130 160"
+				"active_reflection_pct"			"85 100 125"
 			}
 		}
 	}
@@ -2301,12 +2301,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"passive_reflection_pct"			"20 25 30"
+				"passive_reflection_pct"			"15 20 25"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_reflection_pct"			"80 130 160"
+				"active_reflection_pct"			"85 100 125"
 			}
 		}
 	}
@@ -2384,12 +2384,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"passive_reflection_pct"			"20 25 30"
+				"passive_reflection_pct"			"15 20 25"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_reflection_pct"			"80 130 160"
+				"active_reflection_pct"			"85 100 125"
 			}
 		}
 	}
@@ -3347,7 +3347,7 @@
 			"aura_damage"			"50 125 225"
 				"aura_damage_illusions"	"40 60 100"
 				"upgrade_day_vision"	"250 250 250"
-				"evasion"				"0 0 0"
+				"evasion"				"15 15 15"
 				"blind_pct"				"17 18 20"
 				"aura_damage_stats" 	"0.1 0.2 0.3"
 				"aura_radius"			"700 700 700"
@@ -3395,7 +3395,7 @@
 				"aura_damage"			"50 125 225"
 				"aura_damage_illusions"	"40 60 100"
 				"upgrade_day_vision"	"250 250 250"
-				"evasion"				"0 0 0"
+				"evasion"				"15 15 15"
 				"blind_pct"				"17 18 20"
 				"aura_damage_stats" 	"0.1 0.2 0.3"
 				"aura_radius"			"700 700 700"
@@ -3440,7 +3440,7 @@
 				"aura_damage"			"50 125 225"
 				"aura_damage_illusions"	"40 60 100"
 				"upgrade_day_vision"	"250 250 250"
-				"evasion"				"0 0 0"
+				"evasion"				"15 15 15"
 				"blind_pct"				"17 18 20"
 				"aura_damage_stats" 	"0.1 0.2 0.3"
 				"aura_radius"			"700 700 700"
@@ -4515,6 +4515,51 @@
 		}
 	}
 
+	"item_gem"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"30"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastRange"				"300"
+		"Model"							"models/props_gameplay/gem01.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
+		
+		"AbilityCooldown"				"12"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"900"
+		"ItemShopTags"					"see_invis"
+		"ItemQuality"					"component"
+		"ItemAliases"					"gem of true sight"
+		"ItemSellable"					"0"
+		"ItemInitiallySellable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemStockMax"					"5"
+		"ItemStockTime"					"150.0"
+		"ItemSupport"					"1"
+		"ItemKillable"					"0"
+		"ItemContributesToNetWorthWhenDropped"	"0"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"				"900"
+			"active_radius"			"300"
+			"duration"			"4"
+		}
+	}
 
 	"item_recipe_crimson_guard"
 	{
@@ -4533,7 +4578,7 @@
 		"ItemResult"					"item_crimson_guard"
 		"ItemRequirements"
 		{
-			"01"						"item_vanguard;item_pavise_2"
+			"01"						"item_vanguard;item_helm_of_iron_will"
 		}
 	}
 	"item_crimson_guard"
@@ -6428,7 +6473,7 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_hurricane_pike_2"
+		"ItemResult"					"item_hurricane_pike_3"
 		"ItemRequirements"
 		{
 			"01"						"item_hurricane_pike_2;item_hurricane_pike_2;item_boss_soul"
@@ -7420,7 +7465,7 @@
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
-
+		"BaseClass"						"item_recipe_arcane_boots"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
