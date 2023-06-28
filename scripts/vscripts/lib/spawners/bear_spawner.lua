@@ -46,10 +46,9 @@ function BearSpawner:ReSpawnBear()
     local spawner_pos = spawner.pos + offset
     local creep = CreateUnitByName("npc_aa_creep_centaur_big", spawner_pos, true, nil, nil, DOTA_TEAM_NEUTRALS)
     creep:AddNewModifier(creep, nil,'modifier_stuck_count', {duration = -1} ):SetStackCount(death)
-    if death < math.floor(GameRules:GetDOTATime( false, false ) / 60 * 5) then
+    if death < math.floor(GameRules:GetDOTATime( false, false ) / 60 * 7) then
         death = death + 1
     end
-    print(death)
     creep:SetDeathXP( death * 2 )
 	creep:SetMinimumGoldBounty( death * 1.1 )
 	creep:SetMaximumGoldBounty( death * 1.3 )

@@ -988,7 +988,7 @@
 	"boss_possessed_demon" 
 	{
 		"BaseClass" 				"npc_dota_creature"
-		
+		"ConsideredHero"			"1"
 		"Model" 					"models/heroes/doom/doom.vmdl"
 		"SoundSet"					"Hero_DoomBringer"
 		"GameSoundsFile"  			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
@@ -1082,7 +1082,7 @@
 		"vscripts"								"creeps/boss/keymaster/keymaster_ai.lua"
 		"IdleSoundLoop"							""
 
-		
+		"ConsideredHero"			"1"
 		"ModelScale" 							"1.5"
 		"Level" 								"100"
 		"IsNeutralUnitType"						"0"
@@ -1159,7 +1159,7 @@
 		"vscripts"								"creeps/boss/keymaster/keymaster_ai.lua"
 		"IdleSoundLoop"							""
 
-		
+		"ConsideredHero"			"1"
 		"ModelScale" 							"1.5"
 		"Level" 								"100"
 		"IsNeutralUnitType"						"0"
@@ -1231,7 +1231,7 @@
 		"SoundSet"						"Hero_Omniknight"
 		"GameSoundsFile"  				"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
 		"vscripts"						"creeps/boss/soul_guardian/soul_guardian_ai.lua"
-		
+		"ConsideredHero"			"1"
 		"ModelScale" 					"2.0"
 		"Level" 						"100"
 		"IsNeutralUnitType"            	"0"
@@ -1316,7 +1316,7 @@
 		"GameSoundsFile"  						"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
 		"vscripts"								"creeps/boss/abyss_warrior/abyss_warrior_ai.lua"
 		"IdleSoundLoop"							""
-
+		"ConsideredHero"						"1"
 		
 		"ModelScale" 							"2.0"
 		"Level" 								"100"

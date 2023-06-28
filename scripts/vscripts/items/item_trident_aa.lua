@@ -12,7 +12,7 @@ if modifier_item_trident_aa == nil then
 	modifier_item_trident_aa = class({})
 end
 function modifier_item_trident_aa:IsDebuff() return false end
-function modifier_item_trident_aa:IsHidden() return false end
+function modifier_item_trident_aa:IsHidden() return true end
 function modifier_item_trident_aa:IsPurgable() return false end
 
 function modifier_item_trident_aa:OnCreated(params)

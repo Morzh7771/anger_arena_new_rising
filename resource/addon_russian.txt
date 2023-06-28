@@ -23,11 +23,11 @@
         "duel_end"									"Дуэль окончена."
 		"duel_min"									"Дуэль начнется через минуту"
 		"duel_20"									"Дуэль начнется через 20 секунд"
-		"duel_5"									"Дуэль начнется через 5 секунд"
-		"duel_4"									"Дуэль начнется через 4 секунды"
-		"duel_3"									"Дуэль начнется через 3 секунды"
-		"duel_2"									"Дуэль начнется через 2 секунды"
-		"duel_1"									"Дуэль начнется через 1 секунду"
+		"duel_5"									"Дуэль начнется через 5 "
+		"duel_4"									"Дуэль начнется через 4"
+		"duel_3"									"Дуэль начнется через 3"
+		"duel_2"									"Дуэль начнется через 2"
+		"duel_1"									"Дуэль начнется через 1"
         "duel_error"								"<font color='#FF1111'>[ДУЭЛЬ]</font> Недостаточно игроков."
         "duel_nobody" 								"В этот раз дуэль окончилась ничьей"
         "duel_end_win_radiant"							"Ангелы сокрушили падших"
@@ -51,8 +51,9 @@
         "on_boss_die_abyss_warrior"												"<font color='#58ACFA'>Abyss Warrior</font> был убит."
 
         "npc_aa_soul_guardian"						"Soul Guardian"
-        "on_boss_die_soul_guardian"					"<font color='#58ACFA'>Soul Guardian</font> был убит. Теперь любой может сменить героя на одного из богов."
+        "on_boss_die_soul_guardian"					"<font color='#58ACFA'>Soul Guardian</font> был убит."
 
+		"DOTA_Tooltip_ability_bane_fiends_grip_scepter_description"					"Fiends Grip -45 секунд перезарядки"
 
 		"DOTA_Tooltip_ability_item_edible_gem"             	"Edible Gem of True Sight"
 		"DOTA_Tooltip_ability_item_edible_gem_Description"  "При использовании дает владельцу True Sight, до его смерти."
@@ -73,7 +74,7 @@
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"	"Навсегда добавляет 10 силы 10 ловкости 10 интеллекта вашему герою."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED"				"Медицинский трактат"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"	"Навсегда увеличивает здоровье вашего персонажа на 500 и ману на 250"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"	"Навсегда увеличивает здоровье вашего персонажа на 400 и ману на 200"
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP"				"Книга героев"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP_Description"	"Повышает ваш уровень."
@@ -784,7 +785,7 @@
 	"DOTA_Tooltip_modifier_item_phylactery_2_slow_Description"		"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
         "DOTA_Tooltip_Ability_item_manaflare_lens_custom"	                "Manaflare Lens"
-        "DOTA_Tooltip_Ability_item_manaflare_lens_custom_Description"		"<h1>Пассивное: Empower Spell</h1>Если ваша способность наносит противнику минимум %min_damage_to_activate% урона, он дополнительно получает магический урон в размере %bonus_spell_damage% + <b><font color='#53ea48'>%bonus_spell_damage_mana%%% от вашей макс. маны</font></b> и замедляется на %slow%%%<br><br>Длительность: %slow_duration% сек."
+        "DOTA_Tooltip_Ability_item_manaflare_lens_custom_Description"		"<h1>Пассивное: Empower Spell</h1>Следующая способность направленная на врага или наносящая урон нанесет дополнтильный урон в размере %bonus_spell_damage% + <b><font color='#53ea48'>%bonus_spell_damage_mana%%% от вашей текущей маны</font></b> и замедляется на %slow%%%<br><br>Длительность: %slow_duration% сек."
         "DOTA_Tooltip_Ability_item_manaflare_lens_custom_bonus_health"		"+$health"
         "DOTA_Tooltip_Ability_item_manaflare_lens_custom_bonus_mana"		"+$mana"
         "DOTA_Tooltip_Ability_item_manaflare_lens_custom_mana_regen"		"+$mana_regen"
@@ -937,7 +938,7 @@
 	"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description""Способность Guard 2 не действует на существ, на которых ее недавно применяли."
 
         "DOTA_Tooltip_ability_item_solar_crest_2"                       "SOLAR CREST 2"
-        "DOTA_Tooltip_ability_item_solar_crest_Description"		"<h1>Активное: Shine</h1>Если использовать на союзника, увеличит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%. Если использовать на врага, уменьшит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%.<br><br>Лишает владельца %target_armor% брони. <br><br>Дальность применения: %abilitycastrange%<br><br>Длительность: %duration% сек."	
+        "DOTA_Tooltip_ability_item_solar_crest_2_Description"		"<h1>Активное: Shine</h1>Если использовать на союзника, увеличит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%. Если использовать на врага, уменьшит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%.<br><br>Лишает владельца %target_armor% брони. <br><br>Дальность применения: %abilitycastrange%<br><br>Длительность: %duration% сек."	
 	"DOTA_Tooltip_ability_item_solar_crest_2_bonus_armor"		"+$armor"
 	"DOTA_Tooltip_ability_item_solar_crest_2_bonus_all_stats"	"+$all"
 	"DOTA_Tooltip_ability_item_solar_crest_2_self_movement_speed"	"+$move_speed"
@@ -950,8 +951,8 @@
 	"DOTA_Tooltip_modifier_item_solar_crest_2_armor_addition"	"Solar Crest 2"
 	"DOTA_Tooltip_modifier_item_solar_crest_2_armor_addition_Description"	"Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%, передвижение ускорено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% и атака ускорена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
-        "DOTA_Tooltip_ability_item_solar_crest_3"                       "SOLAR CREST 3"
-        "DOTA_Tooltip_ability_item_solar_crest_3_Description"		"<h1>Активное: Shine</h1>Если использовать на союзника, увеличит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%. Если использовать на врага, уменьшит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%.<br><br>Лишает владельца %target_armor% брони. <br><br>Дальность применения: %abilitycastrange%<br><br>Длительность: %duration% сек."	
+    "DOTA_Tooltip_ability_item_solar_crest_3"                       "SOLAR CREST 3"
+    "DOTA_Tooltip_ability_item_solar_crest_3_Description"		"<h1>Активное: Shine</h1>Если использовать на союзника, увеличит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%. Если использовать на врага, уменьшит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%.<br><br>Лишает владельца %target_armor% брони. <br><br>Дальность применения: %abilitycastrange%<br><br>Длительность: %duration% сек."	
 	"DOTA_Tooltip_ability_item_solar_crest_3_bonus_armor"		"+$armor"
 	"DOTA_Tooltip_ability_item_solar_crest_3_bonus_all_stats"	"+$all"
 	"DOTA_Tooltip_ability_item_solar_crest_3_self_movement_speed"	"+$move_speed"
@@ -1103,7 +1104,7 @@
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_agi"		"+$agi"
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_str"		"+$str"
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_manaregen"	"+$mana_regen"
-
+		
         "DOTA_Tooltip_modifier_center_of_peace_active_channel"		"Center Of Peace"
         "DOTA_Tooltip_modifier_center_of_peace_active_channel_Description""Восстанавливает ману"
         "DOTA_Tooltip_modifier_center_of_peace_active_finish"		"Center Of Peace"
@@ -1479,5 +1480,91 @@
         "DOTA_Tooltip_ability_item_bracer_custom_agi"			"+$agi"
         "DOTA_Tooltip_ability_item_bracer_custom_damage"		"+$damage"
         "DOTA_Tooltip_ability_item_bracer_custom_regen"			"+$hp_regen"
+
+		"DOTA_Tooltip_ability_item_ranged_cleave" 																							"Holy book"
+		"DOTA_Tooltip_ability_item_ranged_cleave_Description"																				"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."
+		"DOTA_Tooltip_ability_item_ranged_cleave_max_target"																				"+ цели"
+		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_range"																				"+ к дальности атаки"
+		"DOTA_Tooltip_ability_item_ranged_cleave_split_shot_damage" 																		"%Урон дополнительных стрел"  
+		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_str" 																					"+$str"
+		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_agi" 																				"+$agi"
+		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_dmg"																					"+$damage"
+		"DOTA_Tooltip_ability_item_ranged_cleave_radius"                             															"Радиус поиска цели: "
+		
+		"DOTA_Tooltip_ability_item_ranged_cleave2_radius"                             															"Радиус поиска цели: "
+		"DOTA_Tooltip_ability_item_ranged_cleave3_radius"                             															"Радиус поиска цели: "
+		
+		"DOTA_Tooltip_ability_item_ranged_cleave2" 																							"Holy book 2"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_Description"																				"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."
+		"DOTA_Tooltip_ability_item_ranged_cleave2_max_target"																				"+ цели"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_range"																				"+ к дальности атаки"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_split_shot_damage" 																		"%Урон дополнительных стрел"  
+		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_str" 																					"+$str"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_agi" 																				"+$agi"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_dmg"																					"+$damage"
+		
+		"DOTA_Tooltip_ability_item_ranged_cleave3" 																							"Holy book 3"
+		"DOTA_Tooltip_ability_item_ranged_cleave3_Description"																				"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."
+		"DOTA_Tooltip_ability_item_ranged_cleave3_max_target"																				"+ цели"
+		"DOTA_Tooltip_ability_item_ranged_cleave3_bonus_range"																				"+ к дальности атаки"
+		"DOTA_Tooltip_ability_item_ranged_cleave3_split_shot_damage" 																		"%Урон дополнительных стрел"  
+		"DOTA_Tooltip_ability_item_ranged_cleave3_bonus_str" 																					"+$str"
+		"DOTA_Tooltip_ability_item_ranged_cleave3_bonus_agi" 																				"+$agi"
+		"DOTA_Tooltip_ability_item_ranged_cleave3_bonus_dmg"																					"+$damage"
+
+		"DOTA_Tooltip_ability_item_talisman_of_ambition"							"Talisman of Ambition"
+		"DOTA_Tooltip_ability_item_talisman_of_ambition_Description"				"<h1>Активируемая: Shadow movements</h1> Союзный юнит получает дополнительно %evasion%% уклонения на %duration% секунд"
+		"DOTA_Tooltip_ability_item_talisman_of_ambition_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_talisman_of_ambition_bonus_agility"				"+$agi"
+		"DOTA_Tooltip_ability_item_talisman_of_ambition_bonus_movespeed"			"+$move_speed"
+		
+		"DOTA_Tooltip_ability_item_talisman_of_mastery"							"Talisman of Mastery"
+		"DOTA_Tooltip_ability_item_talisman_of_mastery_Description"				"<h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
+
+		"DOTA_Tooltip_ability_item_talisman_of_mastery_bonus_attack"			"+$damage"
+		"DOTA_Tooltip_ability_item_talisman_of_mastery_bonus_str"				"+$str"
+		"DOTA_Tooltip_ability_item_talisman_of_mastery_bonus_hp_regen"			"+$hp_regen"
+		
+		"DOTA_Tooltip_ability_item_fury_shield"									"Fury Shield"
+		"DOTA_Tooltip_ability_item_fury_shield_Description"						"<h1>Активируемая: Protection</h1> Владелец получает %active_bonus_aspeed% дополнительной скорость атаки и %block_damage% едениц блокирования входящих физического урона на %shield_duration% секунды."
+		"DOTA_Tooltip_ability_item_fury_shield_bonus_stats"						"+$all"
+		"DOTA_Tooltip_ability_item_fury_shield_active_bonus_aspeed"				"СКОРОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_item_fury_shield_shield_duration"					"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_item_fury_shield_block_damage"					"БЛОКИРОВАНИЯ ФИЗ. АТАК:"
+
+		"DOTA_Tooltip_ability_item_piercing_blade"								"Piercing Blade"
+		"DOTA_Tooltip_ability_item_piercing_blade_Description"					"<h1>Пассивная: Pierce</h1>Уменьшает исходящий урон героя на %pure_dmg%%, но любой урон героя наносит дополнительно %pure_dmg%%  чистого урона. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
+		"DOTA_Tooltip_ability_item_piercing_blade_bonus_hp"					"+$health"
+		"DOTA_Tooltip_ability_item_piercing_blade_bonus_mp"					"+$mana"
+		"DOTA_Tooltip_ability_item_piercing_blade_bonus_all_stats"				"+$all"
+		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg"					"%ЧИСТЫЙ УРОН:"
+		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
+		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
+
+		"DOTA_Tooltip_ability_item_piercing_blade2"								"Piercing Blade 2"
+		"DOTA_Tooltip_ability_item_piercing_blade2_Description"					"<h1>Пассивная: Pierce</h1>Уменьшает исходящий урон героя на %pure_dmg%%, но любой урон героя наносит дополнительно %pure_dmg%%  чистого урона. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
+		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_hp"					"+$health"
+		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_mp"					"+$mana"
+		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_all_stats"				"+$all"
+		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg"					"%ЧИСТЫЙ УРОН:"
+		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
+		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
+
+		"DOTA_Tooltip_ability_item_piercing_blade3"								"Piercing Blade 3"
+		"DOTA_Tooltip_ability_item_piercing_blade3_Description"					"<h1>Пассивная: Pierce</h1>Уменьшает исходящий урон героя на %pure_dmg%%, но любой урон героя наносит дополнительно %pure_dmg%%  чистого урона. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
+		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_hp"					"+$health"
+		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_mp"					"+$mana"
+		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_all_stats"				"+$all"
+		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg"					"%ЧИСТЫЙ УРОН:"
+		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
+		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
+
+		"DOTA_Tooltip_modifier_item_piercing_blade_debuf"						"Piercing Blade"
+		"DOTA_Tooltip_modifier_item_piercing_blade_debuf_Description"			"Каждый стак увеличивает чистый урон входящий по вам"
+
+		"DOTA_Tooltip_ability_item_chest_of_midas"								"Chest Of Midas"
+		"DOTA_Tooltip_ability_item_chest_of_midas_Description"					"<h1>Пассивная: Chest Of Midas</h1>Владелец получает %xp% опыта и %gold% золота за каждый удар вражеских героев по себе."
+		"DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor"					"+$armor"
+		
         }
 }
