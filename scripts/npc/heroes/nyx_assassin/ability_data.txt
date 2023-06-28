@@ -41,7 +41,7 @@ DOTAAbilities
 			"02"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.1 1.4 1.7 2.0 2.3 2.6 2.9"
+				"duration"			"1.1 1.25 1.4 1.55 1.7 1.85 2.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx_4"
 			}
 			"03"
@@ -139,7 +139,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 13 11 9 7 5 3"
+		"AbilityCooldown"				"16 14 12 10 8 6 4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -152,7 +152,7 @@ DOTAAbilities
 			"float_multiplier"		
 			{
 				"value"		"2 2.5 3 3.5 4 4.5 5"
-				"special_bonus_unique_nyx_5"			"+1"
+				"special_bonus_unique_nyx_5"			"+0.75"
 			}
 			"aoe"
 			{
