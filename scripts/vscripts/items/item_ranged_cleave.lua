@@ -81,14 +81,21 @@ function modifier_item_ranged_cleave:OnAttack(keys)
 	if keys.attacker == self:GetParent() and self:GetParent():IsRangedAttacker() and keys.target and keys.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and not keys.no_attack_cooldown then	
 		
 		if not self:GetParent():IsIllusion() then
-			local enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), keys.target:GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, FIND_ANY_ORDER, false)		
+			local enemies = FindUnitsInRadius(
+			self:GetParent():GetTeamNumber(),
+			keys.target:GetAbsOrigin(), 
+			keys.target, 
+			self:GetAbility():GetSpecialValueFor("radius"), 
+			DOTA_UNIT_TARGET_TEAM_ENEMY, 
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 
+			DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, 
+			0,
+			false)
 			local nTargetNumber = 0		
 			for _, hEnemy in pairs(enemies) do
 				if hEnemy ~= keys.target then
-
 					self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_ranged_cleave_reduced_damage", {})				
-					self:GetParent():PerformAttack (        hEnemy,true,true,true,false,true,false,false)	
-					
+					self:GetParent():PerformAttack (hEnemy,true,false,true,false,true,false,false)	
 					
 					nTargetNumber = nTargetNumber + 1
 					
@@ -131,6 +138,6 @@ end
 
 function modifier_item_ranged_cleave_reduced_damage:GetModifierDamageOutgoing_Percentage()
 
-	return -1*(100-self:GetAbility():GetSpecialValueFor("split_shot_damage"))
+	return -1*(100 - self:GetAbility():GetSpecialValueFor("split_shot_damage"))
 
 end

@@ -311,7 +311,7 @@ DOTAAbilities
 			"sight_duration"		"5"
 			"damage"
 			{
-				"value"							"100 350 500 650 800 950 1100"
+				"value"							"400 600 800 1000 1200 1400 1600"
 				"special_bonus_unique_zeus_4"		"+400"
 			}
 			"second_strike_delay"				"0.75"
@@ -350,8 +350,8 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"attack_range_bonus"				"100"
-			"arc_lightning_damage_pct"		"50"
+			"attack_range_bonus"					"100"
+			"arc_lightning_damage_pct"				"30"
 			"arc_lightning_damage_illusion_pct"		"10"
 
 		}

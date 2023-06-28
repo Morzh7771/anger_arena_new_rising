@@ -43,7 +43,7 @@ local game_start_for_courier = false
 
 GOLD_PER_TICK = 4
 
-KILL_LIMIT = 100
+KILL_LIMIT = 60
 
 GOLD_FOR_COUR = 350
 
@@ -164,14 +164,33 @@ function AngelArena:InitGameMode()
 	GameMode:SetStashPurchasingDisabled(false)
 	GameMode:SetLoseGoldOnDeath(true)
 
-	GameMode:SetDraftingHeroPickSelectTimeOverride(60)
-	GameRules:SetCustomGameBansPerTeam( 5 )
-	GameMode:SetDraftingBanningTimeOverride(20)
+	if GameRules:IsCheatMode() then
+		GameRules:SetHeroSelectionTime(25)
+		GameRules:SetStrategyTime(1)
+		GameMode:SetDraftingHeroPickSelectTimeOverride(25)
+		GameMode:SetDraftingBanningTimeOverride(0)
+	else
+		GameRules:SetCustomGameBansPerTeam( 5 )
+		GameMode:SetDraftingBanningTimeOverride(20)
+		GameRules:SetHeroSelectionTime(90)
+		GameMode:SetDraftingHeroPickSelectTimeOverride(60)
+	end
+	
+	GameRules:SetGoldPerTick(GOLD_PER_TICK)
+	GameRules:SetHeroRespawnEnabled(true)
 	GameRules:SetPostGameTime(30)
 	GameRules:SetStrategyTime(15.0)
-	GameRules:SetHeroSelectionTime(90)
+	
 	GameRules:SetCreepSpawningEnabled( false )
 
+	GameRules:SetGoldTickTime(1)
+	GameRules:SetTreeRegrowTime(180)
+	GameRules:SetUseBaseGoldBountyOnHeroes(true)
+	GameMode:SetBountyRuneSpawnInterval(120.0)
+	GameRules:SetRuneSpawnTime(120)
+	for i = 0, 11 do
+		GameMode:SetRuneEnabled(i, true)
+	end
 	GameMode:SetCustomBackpackSwapCooldown(4.0)
 	GameRules:SetStartingGold(750)
 	
@@ -182,15 +201,19 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent('game_rules_state_change', Safe_Wrap(AngelArena, 'OnGameStateChange'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AngelArena, "OnEntityKilled"), self)
 	ListenToGameEvent('dota_player_gained_level', Safe_Wrap(AngelArena, 'OnLevelUp'), self)
+	ListenToGameEvent('dota_rune_activated_server', Safe_Wrap(AngelArena, 'OnRuneActivate'), self)
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
-
+	PlayerResource:ClearOnAbandonedCallbacks()
+	PlayerResource:RegisterOnAbandonedCallback(function(arg) AngelArena:OnAbandoned(arg) end)
 	LinkLuaModifier("modifier_godmode", 'modifiers/modifier_godmode', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_intelect", 'modifiers/modifier_intelect', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_mid_teleport", "modifiers/modifier_mid_teleport", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_duel_vision", 'modifiers/modifier_duel_vision', LUA_MODIFIER_MOTION_NONE)
 
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
+	--GameMode:SetRuneSpawnFilter(Safe_Wrap(AngelArena, "ModifierRuneSpawn"), self)
 	-- AttributeDerivedStats
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT, 0)
@@ -210,7 +233,114 @@ function AngelArena:InitGameMode()
 	Attentions:SetKillLimit( KILL_LIMIT )
 
 end
+function AngelArena:ModifierRuneSpawn(keys)
+	function Almostequal(value1, value2, epsilon)
+		return math.abs(value1 - value2) < epsilon
+	end
+	local rune_type = keys.rune_type
+	
+	if rune_type == 5 then return true end
 
+	local runes = { 0, 1, 2, 3, 4, 6 }
+
+	local Dotatime = GameRules:GetDOTATime(false, false)
+	if Almostequal(120, Dotatime, 1) or Almostequal(240, Dotatime, 1) then 
+		keys.rune_type = 7
+	else
+		keys.rune_type = runes[RandomInt(1, #runes)]	
+	end
+	print (Dotatime)
+	return true
+end
+function AngelArena:OnRuneActivate(event)
+	local runeid = event.rune
+	local playerid = event.PlayerID
+	local hero = PlayerResource:GetPlayer(playerid):GetAssignedHero()
+
+	if not hero then return end
+
+	if runeid == DOTA_RUNE_BOUNTY then
+		local cur_min = GameRules:GetGameTime() / 60
+
+		local item_mod_table = {
+			{},
+			{},
+		}
+
+		local hero_mod_table = {
+			["npc_dota_hero_alchemist"] = 2,
+		}
+	
+		local gold_without_mods = 100 + 20 * cur_min
+
+		function CalcBountyGold( hero )
+			local hero_mult = hero_mod_table[ hero:GetUnitName() ] or 1
+
+			local item_gold = 0
+			for _, data in pairs(item_mod_table) do
+				local item = data[1]
+				local gold = data[2]
+
+				if hero:HasItemInInventory(item) and gold > item_gold then
+					item_gold = gold
+				end
+			end
+
+			return hero_mult * ( gold_without_mods + item_gold )
+		end
+
+		local team = hero:GetTeamNumber()
+
+		TeamHelper:ApplyForHeroes(team, function(playerid, unit)
+			unit:ModifyGold(CalcBountyGold( unit ), false, 0)
+		end)
+	end
+end
+function AngelArena:OnPlayerDisconnect(event)
+	local name = event.name
+	local networkid = event.networkid
+	local reason = event.reason
+	local userid = event.userid
+end
+function AngelArena:OnAbandoned(arg)
+	local playerid = arg.playerid
+
+	local abaddonTeam = PlayerResource:GetTeam(playerid)
+	local heroTeam = nil
+
+	if abaddonTeam == DOTA_TEAM_GOODGUYS then
+		heroTeam = DOTA_TEAM_BADGUYS
+	elseif abaddonTeam == DOTA_TEAM_BADGUYS then
+		heroTeam = DOTA_TEAM_GOODGUYS
+	else
+		return
+	end
+
+	local kills = _G.Kills[heroTeam] or 0
+	local diff = (KILL_LIMIT - kills)
+
+	local heroes = PlayerResource:GetHeroes(abaddonTeam)
+
+	local connectedHeroes = 0
+
+	for pid, hero in pairs(heroes) do
+		if not (PlayerResource:IsAbandoned(pid) and hero:GetTeamNumber() == abaddonTeam) then
+			connectedHeroes = connectedHeroes + 1
+		end
+	end
+	if connectedHeroes == 0 then return end
+
+	kills = kills + math.ceil(diff / (connectedHeroes + 1))
+
+	if kills > KILL_LIMIT then return end
+
+	_G.Kills[heroTeam] = kills
+
+	local GameMode = GameRules:GetGameModeEntity()
+
+	GameMode:SetCustomDireScore( _G.Kills[DOTA_TEAM_BADGUYS] )
+	GameMode:SetCustomRadiantScore( _G.Kills[DOTA_TEAM_GOODGUYS] )
+end
 -- Evaluate the state of the game
 function AngelArena:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -527,6 +657,25 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 
     local hero = player:GetAssignedHero()
 
+	if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
+		local ability = EntIndexToHScript(event.entindex_ability)
+		local target = EntIndexToHScript(event.entindex_target)
+		local target_id = target:GetPlayerOwnerID()
+
+		if PlayerResource:IsDisableHelpSetForPlayerID(target_id, player_id) then
+			return UF_FAIL_DISABLE_HELP
+		end
+
+		if forbidden_ability_boss[ability:GetName()] and BossSpawner:IsBoss(target) then
+			return UF_FAIL_DISABLE_HELP
+		end
+
+		if target:HasAbility("wisp_tether") and ability:GetName() == "wisp_tether" then return end
+		
+		if unit and target == unit and ability:GetName() == "rubick_spell_steal" then
+			return UF_FAIL_DISABLE_HELP
+		end
+	end
 
     if not hero then return end
 

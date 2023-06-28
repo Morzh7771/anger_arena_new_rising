@@ -21,12 +21,7 @@
         "duel_next_duel" 							"Дуэль через: {s:time}"
         "duel_start"								"Дуэль началась"
         "duel_end"									"Дуэль окончена."
-		"duel_min"									"Дуэль начнется через минуту"
-		"duel_20"									"Дуэль начнется через 20 секунд"
-		"duel_5"									"Дуэль начнется через 5 "
-		"duel_4"									"Дуэль начнется через 4"
-		"duel_3"									"Дуэль начнется через 3"
-		"duel_2"									"Дуэль начнется через 2"
+	
 		"duel_1"									"Дуэль начнется через 1"
         "duel_error"								"<font color='#FF1111'>[ДУЭЛЬ]</font> Недостаточно игроков."
         "duel_nobody" 								"В этот раз дуэль окончилась ничьей"
@@ -287,9 +282,9 @@
 	//Lich
         "DOTA_Tooltip_Ability_lich_chain_frost_damage_pct"                      "%УРОН ОТ ИНТЕЛЕКТА"
 	//Lina
-	"DOTA_Tooltip_Ability_lina_dragon_slave_frost_damage_pct"		"%УРОН ОТ ИНТЕЛЕКТА"
-	"DOTA_Tooltip_Ability_lina_light_strike_array_frost_damage_pct"		"%УРОН ОТ ИНТЕЛЕКТА"
-	"DOTA_Tooltip_Ability_lina_laguna_blade_frost_damage_pct"		"%УРОН ОТ ИНТЕЛЕКТА"
+	"DOTA_Tooltip_Ability_lina_dragon_slave_damage_pct"		"%УРОН ОТ ИНТЕЛЕКТА"
+	"DOTA_Tooltip_Ability_lina_light_strike_array_damage_pct"		"%УРОН ОТ ИНТЕЛЕКТА"
+	"DOTA_Tooltip_Ability_lina_laguna_blade_damage_pct"		"%УРОН ОТ ИНТЕЛЕКТА"
 	"DOTA_Tooltip_Ability_lion_impale_damage_pct"				"%УРОН ОТ ИНТЕЛЕКТА"
 	//Lion
 	"DOTA_Tooltip_Ability_lion_finger_of_death_damage_pct"			"%УРОН ОТ ИНТЕЛЕКТА"

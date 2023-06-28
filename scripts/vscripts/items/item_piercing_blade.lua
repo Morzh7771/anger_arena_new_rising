@@ -49,17 +49,25 @@ function mod:GetModifierTotalDamageOutgoing_Percentage()
 end
 function mod:OnTakeDamage(params)
     if not IsServer() then return end
+    print(BossSpawner:IsBoss(params.unit))
 	if params.attacker ~= self:GetParent() then return end
 	if params.unit:GetTeamNumber() == params.attacker:GetTeamNumber() then return end
 	if params.unit == self:GetParent() then return end
 	if not self:GetParent():IsRealHero() then return end
+    if BossSpawner:IsBoss(params.unit) == nil then 
+        if not params.unit:IsRealHero() then
+            return 
+        end
+    end 
 	if params.inflictor == self:GetAbility() then return end
     local modifier = params.unit:FindModifierByNameAndCaster("modifier_item_piercing_blade_debuf", self:GetAbility():GetCaster())
     local stack = 0
     if self:GetAbility():IsCooldownReady() then
         if modifier == nil then
-            params.unit:AddNewModifier(self:GetCaster(),self:GetAbility(),"modifier_item_piercing_blade_debuf",{duration = self.pure_dmg_duration})
-            stack = 1
+            if BossSpawner:IsBoss(params.unit) == nil then
+                params.unit:AddNewModifier(self:GetCaster(),self:GetAbility(),"modifier_item_piercing_blade_debuf",{duration = self.pure_dmg_duration})
+                stack = 1
+            end
         else
             modifier:IncrementStackCount()
             stack = modifier:GetStackCount()
