@@ -2,15 +2,17 @@ require('lib/duel/duel_lib')
 require('lib/attentions')
 require('lib/team_helper')
 require('lib/message_formatters')
-
+LinkLuaModifier("modifier_duel_vision", 'modifiers/modifier_duel_vision', LUA_MODIFIER_MOTION_NONE)
 local DUEL_INTERVAL = 360
+local DUEL_INTERVAL_AFTER = 240
 local DUEL_NOBODY_WINS = 150
 
-local DUEL_FIRST_BONUS_GOLD = 350
-local DUEL_FIRST_BONUS_EXP  = 350
+local DUEL_FIRST_BONUS_GOLD = 450
+local DUEL_FIRST_BONUS_EXP  = 450
 local DUEL_WINNER_GOLD_MULTIPLER = 150
-local DUEL_WINNER_EXP_MULTIPLER = 50
+local DUEL_WINNER_EXP_MULTIPLER = 75
 local DUEL_GOLD_PER_MINUTE = 30
+local DUEL_GIVE_VISION_TIME = 30
 
 DuelController = DuelController or class({})
 
@@ -93,16 +95,33 @@ function DuelController:_StartDuel()
 	local radiantHeroes = TeamHelper:GetHeroes(DOTA_TEAM_GOODGUYS)
 	local direHeroes 	= TeamHelper:GetHeroes(DOTA_TEAM_BADGUYS)
 
-	if self:IsLastDuelTeam(DOTA_TEAM_GOODGUYS) or self:IsLastDuelTeam(DOTA_TEAM_BADGUYS) then
+	local no_refresh_skill = {
+		["faceless_void_chronosphere"] = true,
+	}
+	local refresher_shared = {
+		["item_refresher"] = true, 
+		}
 		function RespawnHeroes(tbl)
 			for _, hero in pairs(tbl) do
 				hero:RespawnHero(false, false)
+				for i = 0, hero:GetAbilityCount() - 1 do
+					local ability = hero:GetAbilityByIndex( i )
+					if ability and not no_refresh_skill[ ability:GetAbilityName() ] then
+						ability:EndCooldown()
+					end
+				end
+				for i = 0, 5 do
+					local item = hero:GetItemInSlot( i )
+					if item and not refresher_shared[item:GetName()] then
+						item:EndCooldown()
+					end
+				end
 			end
+			
 		end
 
 		RespawnHeroes(radiantHeroes)
 		RespawnHeroes(direHeroes)
-	end
 
 	local nRadiants, nTotalRadiants, nDires, nTotalDires = DuelLibrary:GetMaximumHeroes( radiantHeroes, direHeroes, false )
 
@@ -192,9 +211,13 @@ end
 
 function DuelController:_StartDuelTimer(toDuel)
 	local interval
-
+	local duelCount = DuelLibrary:GetDuelCount()
 	if toDuel then
-		interval = DUEL_INTERVAL
+		if duelCount > 4 then
+			interval = DUEL_INTERVAL_AFTER
+		else
+			interval = DUEL_INTERVAL
+		end
 	else
 		interval = DUEL_NOBODY_WINS + 1
 	end
@@ -217,12 +240,21 @@ function DuelController:_OnTick( isEnd )
 	if self.freeze then
 		nCountdown = nCountdown + 1
 	end
-	if nCountdown == 60 then
-		Attentions:SendChatMessage("#duel_min") 
+	if nCountdown == DUEL_GIVE_VISION_TIME then
+		if DuelLibrary:IsDuelActive() then 
+			local radiantHeroes = TeamHelper:GetHeroes(DOTA_TEAM_GOODGUYS)
+			local direHeroes 	= TeamHelper:GetHeroes(DOTA_TEAM_BADGUYS)
+
+			function VisionHero(tbl)
+				for _, hero in pairs(tbl) do
+					hero:AddNewModifier(nil,nil,"modifier_duel_vision", {duration = DUEL_GIVE_VISION_TIME })
+				end
+			end
+			VisionHero(radiantHeroes)
+			VisionHero(direHeroes)
+		end
 	end
-	if nCountdown == 20 then
-		Attentions:SendChatMessage("#duel_20") 
-	end
+
 	if nCountdown == -1 then
 		if DuelLibrary:IsDuelActive() or isEnd then
 			self:_CancelDuels()
@@ -230,6 +262,17 @@ function DuelController:_OnTick( isEnd )
 		else
 			self:_StartDuelTimer( not self:_StartDuel() )
 		end
+			local radiantHeroes = TeamHelper:GetHeroes(DOTA_TEAM_GOODGUYS)
+			local direHeroes 	= TeamHelper:GetHeroes(DOTA_TEAM_BADGUYS)
+
+			function RemoveVision(tbl)
+				for _, hero in pairs(tbl) do
+					hero:RemoveAllModifiersByName("modifier_duel_vision")
+					hero:RemoveAllModifiersByName("modifier_edible_gem")
+				end
+			end
+			RemoveVision(radiantHeroes)
+			RemoveVision(direHeroes)
 	else
 		self.nCountdown = nCountdown
 	end

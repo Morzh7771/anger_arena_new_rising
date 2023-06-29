@@ -21,6 +21,7 @@ function PercentDamage:_init()
 		"rattletrap_rocket_flare",
 		"rattletrap_hookshot",
 		"bristleback_quill_spray",
+		"centaur_hoof_stomp"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam"
@@ -49,7 +50,7 @@ function PercentDamage:_init()
 		"queenofpain_sonic_wave",
 		"crystal_maiden_crystal_nova",
 		"crystal_maiden_frostbite",
-		"crystal_maiden_freezing_field"
+		"crystal_maiden_freezing_field"		
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
@@ -63,6 +64,7 @@ function PercentDamage:_init()
 		"dragon_knight_fireball",
 		"batrider_flamebreak",
 		"batrider_firefly",
+		"snapfire_scatterblast",
 		"bane_brain_sap"
 	}
 

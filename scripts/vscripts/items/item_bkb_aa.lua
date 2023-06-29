@@ -12,6 +12,7 @@ function item_bkb_aa_1:OnSpellStart()
 	self.caster = self:GetCaster()
 	self.duration = self:GetSpecialValueFor("duration")
 	self.caster:AddNewModifier(self.caster, self, "modifier_generic_debuff_immune", {effect = 1 , duration = self.duration})
+	self.caster:Purge( false, true, false, false, false )
 end
 
 

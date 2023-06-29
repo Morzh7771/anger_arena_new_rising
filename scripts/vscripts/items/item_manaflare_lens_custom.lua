@@ -6,6 +6,9 @@ item_manaflare_lens_custom = class({})
 function item_manaflare_lens_custom:GetIntrinsicModifierName()
 	return "modifier_item_manaflare_lens_custom"
 end
+function item_manaflare_lens_custom:GetManaCost()
+	return self:GetCaster():GetMana()*self:GetSpecialValueFor("bonus_spell_damage_mana")/100
+end
 
 modifier_item_manaflare_lens_custom = class({})
 function modifier_item_manaflare_lens_custom:IsHidden() return true end
@@ -47,11 +50,10 @@ function modifier_item_manaflare_lens_custom:OnSpellTargetReady(params)
 	if not self:GetParent():IsRealHero() then return end
 	if self:GetParent():HasModifier("modifier_item_phylactery_lens_custom") then return end
 
-	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMaxMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana")/100
-
+	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana")/100
 	SendOverheadEventMessage(params.target, 4, params.target, damage, nil)
 
-	self:GetAbility():UseResources(false, false, false, true)
+	self:GetAbility():UseResources(true, false, false, true)
 	ApplyDamage({attacker = self:GetCaster(), victim = params.target, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
 	params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_manaflare_lens_custom_debuff", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
 	
@@ -73,6 +75,7 @@ end
 function modifier_item_manaflare_lens_custom:OnTakeDamage(params)
 	if not IsServer() then return end
 	if params.attacker ~= self:GetParent() then return end
+	if params.unit:GetTeamNumber() == params.attacker:GetTeamNumber() then return end
 	if params.unit == self:GetParent() then return end
 	if not self:GetParent():IsRealHero() then return end
 	if params.inflictor == nil then return end
@@ -80,12 +83,11 @@ function modifier_item_manaflare_lens_custom:OnTakeDamage(params)
 	if params.inflictor:IsItem() then return end
 	if not self:GetAbility():IsFullyCastable() then return end
 	if self:GetParent():HasModifier("modifier_item_phylactery_lens_custom") then return end
-
-	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMaxMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana")/100
+	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana")/100
 
 	SendOverheadEventMessage(params.unit, 4, params.unit, damage, nil)
 
-	self:GetAbility():UseResources(false, false, false, true)
+	self:GetAbility():UseResources(true, false, false, true)
 	ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
 	params.unit:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_manaflare_lens_custom_debuff", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
 	

@@ -139,7 +139,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10 8 6 4"
+		"AbilityCooldown"				"18 16 14 12 10 8 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -237,7 +237,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			
-			"duration"				"45"
+			"duration"				"30"
 			"fade_time"				"0.0"
 			"movement_speed"		"20"
 			"bonus_damage"					
@@ -264,7 +264,7 @@ DOTAAbilities
 				"value" 			"25"
 				"RequiresShard"		"1"
 			}
-			"mana_removal_pct"		"75"
+			"mana_removal_pct"		"50"
 		}
 	}
 	"nyx_assassin_burrow"

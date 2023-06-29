@@ -27,6 +27,9 @@ end
 function modifier_medical_tractate:IsPurgable()
 	return false
 end
+function modifier_medical_tractate:RemoveOnDeath()
+    return false
+end
 
 function modifier_medical_tractate:GetModifierHealthBonus(params)
 	if not self:GetCaster() then return 0 end
@@ -36,8 +39,8 @@ function modifier_medical_tractate:GetModifierHealthBonus(params)
 end
 
 function modifier_medical_tractate:OnCreated(event)
-	self.health_bonus = 500;
-	self.mana_bonus = 300;
+	self.health_bonus = 400;
+	self.mana_bonus = 200;
 	self.armor_bonus = 5;
 end
 

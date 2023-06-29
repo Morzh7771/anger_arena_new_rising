@@ -136,7 +136,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"3000"	
+        "ItemCost"						"0"	
         "ItemShopTags"					"artifacts"
         
         // Recipe
@@ -145,7 +145,7 @@
         "ItemResult"					"item_burning_butterfly"
         "ItemRequirements"
         {
-            "01"						"item_sacred_butterfly;item_boss_soul"
+            "01"						"item_sacred_butterfly;item_sacred_butterfly;item_boss_soul"
         }
     }
     "item_burning_butterfly"
@@ -264,7 +264,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1200"	
+        "ItemCost"						"0"	
         "ItemShopTags"					"artifacts"
         
         // Recipe
@@ -809,32 +809,27 @@
             }
             "08"
             {
-                "var_type"				"FIELD_INTEGER"
-                "cooldown_reduction"	"0"
-            }
-            "09"
-            {
                 "var_type"				"FIELD_FLOAT"
                 "astral_duration"		"2.5"
             }
-            "10"
+            "09"
             {
                 "var_type"				"FIELD_FLOAT"
                 "astral_regen"			"7"
             }
 
             // After cast bonus
-            "11"
+            "10"
             {
                 "var_type"				     "FIELD_INTEGER"
                 "after_cast_bonus_duration"	 "14"
             }
-            "12"
+            "11"
             {
                 "var_type"				     "FIELD_INTEGER"
                 "after_cast_mana_regen"	     "15"
             }
-            "13"
+            "12"
             {
                 "var_type"					      "FIELD_INTEGER"
                 "after_cast_reduce_manacost_pct"  "10"
@@ -1190,6 +1185,7 @@
         "AbilityTextureName"            "manaflare"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityCooldown"               "5.0"
+        "AbilityManaCost"				"10"
         "ItemCost"                      "2400"
         "ItemShopTags"                  "hard_to_tag"
         "ItemQuality"                   "common"
@@ -1369,7 +1365,7 @@
 			"bonus_agility"			"10 40"
 			"bonus_intellect"		"35 100"
 			"bonus_mana_regen"		"8.5 20"
-			"sheep_duration"		"2.8 3.5"
+			"sheep_duration"		"2.5 3.0"
 			"sheep_movement_speed"	"140 120"
 		}
 	}
@@ -1725,7 +1721,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1800"
+        "ItemCost"						"3000"
         "ItemQuality"					"component"
         "ItemStackable"					"1"
         "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -1737,9 +1733,6 @@
         "ItemDroppable"                 "1"
         "ItemPurchasable"				"1"
 
-        "ItemStockMax"					"20"
-        "ItemStockInitial"				"5"
-        "ItemStockTime"					"120.0"
 
         "OnSpellStart"
         {
@@ -1748,7 +1741,7 @@
                 "Target"			"CASTER"
                 "ScriptFile"		"tome.lua"
                 "Function"			"UpgradeStats"
-                "Agi"				"6"
+                "Agi"				"10"
             }
             "SpendCharge"
             {
@@ -1776,7 +1769,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1800"
+        "ItemCost"						"3000"
         "ItemQuality"					"component"
         "ItemStackable"					"1"
         "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -1788,9 +1781,6 @@
         "ItemDroppable"                 "1"
         "ItemPurchasable"				"1"
 
-        "ItemStockMax"					"20"
-        "ItemStockInitial"				"5"
-        "ItemStockTime"					"120.0"
         
         "OnSpellStart"
         {
@@ -1826,7 +1816,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1250"
+        "ItemCost"						"1300"
         "ItemQuality"					"component"
         "ItemAliases"					"lvl;book;tome;книга;уровень;героев"
         "ItemStackable"					"1"
@@ -1871,7 +1861,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"2000"
+        "ItemCost"						"4000"
         "ItemAliases"					"medical;book;tome;health;mana;med;книга;жизней;медецинский"
         "ItemQuality"					"component"
         "ItemStackable"					"1"
@@ -1918,7 +1908,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1800"
+        "ItemCost"						"3000"
         "ItemQuality"					"component"
         "ItemStackable"					"1"
         "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -1967,7 +1957,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"4000"
+        "ItemCost"						"7000"
         "ItemQuality"					"component"
         "ItemStackable"					"1"
         "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -1994,5 +1984,610 @@
             {
             }        
         }
+    }
+    "item_recipe_ranged_cleave"
+	{
+		"AbilityTextureName" 				"recipe"				
+		"Model"								"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     	"item_datadriven"
+		
+		"ItemCost"							"0"	
+		"ItemShopTags"						"artifacts"
+		
+		"ItemRecipe"						"1"
+		"ItemResult"						"item_ranged_cleave"
+		"ItemRequirements"
+		{
+			"01"							"item_ultimate_orb;item_relic"
+
+		}
+	}
+    "item_ranged_cleave"
+	{
+		
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_ranged_cleave"
+		"AbilityTextureName"			"holy_book"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"ItemCost"						"5000"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"cleave;bfury;shotgun"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"20 40 80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"20 40 80"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"40 80 160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"100 125 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"		     	"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_target"			"1 2 3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"split_shot_damage"		"60 80 100"
+			}
+		}
+	}
+	"item_recipe_ranged_cleave2"
+	{
+		"AbilityTextureName" 				"recipe"				
+		"Model"								"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     	"item_datadriven"
+		
+		"ItemCost"							"0"	
+		"ItemShopTags"						"artifacts"
+		
+		"ItemRecipe"						"1"
+		"ItemResult"						"item_ranged_cleave2"
+		"ItemRequirements"
+		{
+			"01"							"item_ranged_cleave;item_ranged_cleave"
+
+		}
+	}
+    "item_ranged_cleave2"
+	{
+		
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_ranged_cleave"
+		"AbilityTextureName"			"holy_book_2"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		 
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"cleave;bfury;shotgun"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemBaseLevel"                 "2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"20 40 80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"20 40 80"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"40 80 160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"100 125 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"		     	"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_target"			"1 2 3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"split_shot_damage"		"60 80 100"
+			}
+		}
+	}
+	"item_recipe_ranged_cleave3"
+	{
+		"AbilityTextureName" 				"recipe"				
+		"Model"								"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     	"item_datadriven"
+		
+		"ItemCost"							"0"	
+		"ItemShopTags"						"artifacts"
+		
+		"ItemRecipe"						"1"
+		"ItemResult"						"item_ranged_cleave3"
+		"ItemRequirements"
+		{
+			"01"							"item_ranged_cleave2;item_ranged_cleave2;item_boss_soul"
+
+		}
+	}
+    "item_ranged_cleave3"
+	{
+		
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_ranged_cleave"
+		"AbilityTextureName"			"holy_book_3"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		 
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"cleave;bfury;shotgun"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemBaseLevel"                 "3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"20 40 80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"20 40 80"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"40 80 160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"100 125 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"		     	"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_target"			"1 2 3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"split_shot_damage"		"60 80 100"
+			}
+		}
+	}
+    "item_fury_shield"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_lua"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "ScriptFile"					"items/fury_shield/item_fury_shield.lua"
+        "AbilityTextureName"	        "fury_shield"
+        
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"		"particles/status_fx/status_effect_forcestaff.vpcf"		
+        }
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"900"
+        "ItemStackable"					"0"
+        
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        "AbilityCastPoint"				"0.0"
+        "AbilityCooldown"				"8"
+        "AbilityManaCost"				"25"
+        
+        //special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_stats"			"10"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "active_bonus_aspeed"	"50"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "block_damage"			"20"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "shield_duration"		"3"
+            }
+        }
+    }
+    "item_talisman_of_mastery"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"							"item_lua"
+        "AbilityTextureName" 				"talisman_of_mastery"
+        "AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES"
+        "ScriptFile"						"items/talisman_of_mastery/talisman_of_mastery.lua"
+        
+        "ItemQuality"						"common"
+        "ItemDroppable" 					"1"
+        "ItemCastOnPickup"					"0"
+        "ItemKillable"						"1"
+        "ItemPurchasable"					"1"
+        "ItemSellable"						"1"
+        "ItemCost"							"375"
+        "ItemStackable"						"0"
+        "AbilityCooldown"					"2.5"
+        "ShouldBeInitiallySuggested"		"1"
+        
+        // Special	
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_attack"			"2"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_str"				"2"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FlOAT"
+                "bonus_hp_regen"		"0.5"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "damage_to_exp_ranged"	"12"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_FlOAT"
+                "damage_to_exp_melee" 	"15"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "min_exp_ranged"		"22"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_FlOAT"
+                "min_exp_melee"			"32"
+            }
+        }
+    }
+    "item_recipe_talisman_of_ambition"
+    {
+        "AbilityTextureName" 				"item_recipe_talisman_of_ambition"
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"100"	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_talisman_of_ambition"
+        "ItemRequirements"
+        {
+            "01"						"item_wraith_band_custom;item_ring_of_protection;item_wind_lace"
+        }
+    }
+
+    "item_talisman_of_ambition"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_lua"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+        "AbilityTextureName"	        "talisman_of_ambition"
+        "ScriptFile"					"items/talisman_of_ambition/talisman_of_ambition.lua"
+        
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"8.0"
+        "AbilityCastRange"				"1200"
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"925"
+        "ItemStackable"					"0"
+        "ItemBaseLevel"					"1"
+        
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_armor"			"4"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_agility"			"13"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_movespeed"		"25"
+            }
+            
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration"				"3.0"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "evasion"				"50"
+            }
+        }
+    }
+    "item_recipe_piercing_blade"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"425"	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_piercing_blade"
+        "ItemRequirements"
+        {
+            "01"						"item_ultimate_orb;item_point_booster;item_talisman_of_mastery"
+        }
+    }
+    "item_piercing_blade"
+    {
+        "BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_piercing_blade"
+		"AbilityTextureName"			"blaze_rod"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCooldown"				"1.2"
+        "ItemBaseLevel"                 "1"
+        "AbilityValues"
+		{
+            "pure_dmg"		        "5 10 15"
+            "pure_dmg_stack"		"2 3 5"
+			"pure_dmg_duration"		"3 4 5"
+			"pure_dmg_cd"			"1.2"
+            "bonus_hp"			    "200 500 1300"
+            "bonus_mp"			    "200 500 1300"
+            "bonus_all_stats"		"15 30 80"
+
+            "damage_to_exp_ranged"	"17 22 27"
+            "damage_to_exp_melee" 	"20 25 30"
+
+            "min_exp_ranged"		"32 42 52"
+            "min_exp_melee"			"40 50 60"
+		}
+    }
+    "item_recipe_piercing_blade2"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_piercing_blade2"
+        "ItemRequirements"
+        {
+            "01"						"item_piercing_blade;item_piercing_blade"
+        }
+    }
+    "item_piercing_blade2"
+    {
+        "BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_piercing_blade"
+		"AbilityTextureName"			"blaze_rod2"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCooldown"				"1.2"
+        "ItemBaseLevel"                 "2"
+        "AbilityValues"
+		{
+            "pure_dmg"		        "5 10 15"
+            "pure_dmg_stack"		"2 3 5"
+			"pure_dmg_duration"		"3 4 5"
+			"pure_dmg_cd"			"1.2"
+            "bonus_hp"			    "200 500 1300"
+            "bonus_mp"			    "200 500 1300"
+            "bonus_all_stats"		"15 30 80"
+
+            "damage_to_exp_ranged"	"17 22 27"
+            "damage_to_exp_melee" 	"20 25 30"
+
+            "min_exp_ranged"		"32 42 52"
+            "min_exp_melee"			"40 50 60"
+		}
+    }
+    "item_recipe_piercing_blade3"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_piercing_blade3"
+        "ItemRequirements"
+        {
+            "01"						"item_piercing_blade2;item_piercing_blade2;item_boss_soul"
+        }
+    }
+    "item_piercing_blade3"
+    {
+        "BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_piercing_blade"
+		"AbilityTextureName"			"blaze_rod3"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCooldown"				"1.2"
+        "ItemBaseLevel"                 "3"
+        "AbilityValues"
+		{
+            "pure_dmg"		        "5 10 15"
+            "pure_dmg_stack"		"2 3 5"
+			"pure_dmg_duration"		"3 4 5"
+			"pure_dmg_cd"			"1.2"
+            "bonus_hp"			    "200 500 1300"
+            "bonus_mp"			    "200 500 1300"
+            "bonus_all_stats"		"15 30 80"
+
+            "damage_to_exp_ranged"	"17 22 27"
+            "damage_to_exp_melee" 	"20 25 30"
+
+            "min_exp_ranged"		"32 42 52"
+            "min_exp_melee"			"40 50 60"
+		}
+    }
+    "item_recipe_chest_of_midas"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"550"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chest_of_midas"
+		"ItemRequirements"
+		{
+			"01"						"item_chainmail"
+		}
+	}
+
+	"item_chest_of_midas"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"chest_of_midas"
+        "ScriptFile"					"items/item_chest_of_midas"
+        "AbilityCooldown"				"1"
+		"ItemQuality"					"common"
+		"ItemAliases"					"chest of midas"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"xp"					"27"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold"					"23"
+			}
+		}
     }
 }

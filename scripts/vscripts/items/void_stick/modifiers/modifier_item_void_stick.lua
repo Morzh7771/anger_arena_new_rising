@@ -46,6 +46,7 @@ function modifier_item_void_stick:OnCreated()
 	self.bonus_hpregen 				= ability:GetSpecialValueFor("bonus_hpregen") or 0
 	self.bonus_castrange 			= ability:GetSpecialValueFor("bonus_castrange") or 0
 	self.bonus_speed 				= ability:GetSpecialValueFor("bonus_speed") or 0
+	self.bonus_spell_lifesteal 		= ability:GetSpecialValueFor("bonus_spell_lifesteal") or 0
 
 	self:ReloadCooldownBuff()
 end

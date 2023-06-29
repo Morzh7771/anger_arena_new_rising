@@ -312,12 +312,12 @@ DOTAAbilities
 		{
 			"damage"
 			{
-				"value"		"100 150 200 250 300 350 400"
+				"value"		"100 125 150 175 200 250 300"
 				"special_bonus_unique_lich_7" "+100"
 			}
 			"bonus_jump_damage"		
 			{
-				"value"			"50.0 75.0 100.0 125.0 150.0 175.0 200.0"
+				"value"			"30 50 70 90 110 130 150"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"jumps"					"10 12 14 16 18 20 22"
@@ -332,7 +332,7 @@ DOTAAbilities
 			{
 				"special_bonus_unique_lich_5"	"+1"
 			}
-			"damage_pct"			"150"
+			"damage_pct"			"75"
 		}			
 	}
 	"lich_ice_spire"

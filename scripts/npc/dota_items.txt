@@ -6,6 +6,7 @@
 	"item_bracer" "REMOVE"
 	"item_wraith_band" "REMOVE"
 	"item_null_talisman" "REMOVE"
+	"item_ultimate_scepter_2" "REMOVE"
     "item_recipe_manta"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -264,7 +265,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -273,7 +274,7 @@
 		"ItemResult"					"item_manta_3"
 		"ItemRequirements"
 		{
-			"01"						"item_manta_2;item_boss_soul"
+			"01"						"item_manta_2;item_manta_2;item_boss_soul"
 		}
 	}
 	"item_manta_3"
@@ -577,7 +578,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1179,7 +1180,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"675"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1236,7 +1237,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"675"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1363,7 +1364,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"550"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1434,7 +1435,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"550"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1557,7 +1558,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"625"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1611,7 +1612,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"625"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1951,7 +1952,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2109,7 +2110,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2235,7 +2236,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"550"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2318,7 +2319,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"550"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4750,7 +4751,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"275"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4811,7 +4812,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"275"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4829,7 +4830,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"1"
-		"ItemBaseLevel"					"32"
+		"ItemBaseLevel"					"3"
 		"BaseClass"						"item_solar_crest"
 		"AbilityTextureName"			"item_solar_crest3"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -5465,8 +5466,8 @@
 				"mana_cost"				"100 100 100"
 				"damage_penalty"		"0 0 0"
 				"passive_cooldown"		"9 8 7"
-				"number_of_attacks"		"5 7 9"
-				"active_duration"		"15 15 15"
+				"number_of_attacks"		"999 999 999"
+				"active_duration"		"3 4 5"
 				"active_attack_speed"	"60 80 100"
 		}
 	}
@@ -5526,8 +5527,8 @@
 				"mana_cost"				"100 100 100"
 				"damage_penalty"		"0 0 0"
 				"passive_cooldown"		"9 8 7"
-				"number_of_attacks"		"5 7 9"
-				"active_duration"		"15 15 15"
+				"number_of_attacks"		"999 999 999"
+				"active_duration"		"3 4 5"
 				"active_attack_speed"	"60 80 100"
 		}
 	}
@@ -5587,8 +5588,8 @@
 				"mana_cost"				"100 100 100"
 				"damage_penalty"		"0 0 0"
 				"passive_cooldown"		"9 8 7"
-				"number_of_attacks"		"5 7 9"
-				"active_duration"		"15 15 15"
+				"number_of_attacks"		"999 999 999"
+				"active_duration"		"3 4 5"
 				"active_attack_speed"	"60 80 100"
 		}
 	}
@@ -5971,7 +5972,7 @@
 			"bonus_agility"			"10 40"
 			"bonus_intellect"		"35 100"
 			"bonus_mana_regen"		"8.5 20"
-			"sheep_duration"		"2.8 3.5"
+			"sheep_duration"		"2.5 3.0"
 			"sheep_movement_speed"	"140 120"
 		}
 	}
@@ -6877,7 +6878,7 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_disperser_2"
+		"ItemResult"					"item_disperser_3"
 		"ItemRequirements"
 		{
 			"01"						"item_disperser_2;item_disperser_2;item_boss_soul"
@@ -7487,7 +7488,7 @@
 		"AbilitySharedCooldown"			"abyssal_blade"
 		"ItemBaseLevel"					"2"
 		"AbilityTextureName"			"abyssal_blade3"
-		"BaseClass"						"abyssal_blade"
+		"BaseClass"						"item_abyssal_blade"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35"
@@ -8414,7 +8415,116 @@
 			"01"						"item_overwhelming_blink;item_overwhelming_blink;item_boss_soul"
 		}
 	}
+	"item_ward_observer"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"Model"							"models/props_gameplay/observer_ward_bundle.vmdl"
+		
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"50"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"observer ward"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"10"
+		"ItemStockInitial"				"4"
+		"ItemStockTime"					"30.0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+		"ItemSupport"					"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
 
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"lifetime"				"360"
+			"vision_range_tooltip"	"1600"
+			"health"				"200"
+			"duration_minutes_tooltip"				"6"
+		}
+	}
+	"item_ward_sentry"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"Model"							"models/props_gameplay/sentry_ward_bundle.vmdl"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"75"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"sentry ward"
+		"ItemStackable"					"1"
+		"ItemPurchasable"				"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"20"
+		"ItemStockInitial"				"4"
+		"ItemStockTime"					"30"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+		"ItemSupport"					"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"lifetime"								"420"
+			"vision_range"							"0"
+			"true_sight_range"						"1000"
+			"health"								"200"
+			"duration_minutes_tooltip"				"7"
+		}
+	}
+	"item_aghanims_shard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"609"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3200"
+		"ItemShopTags"					"int;str;agi;mana_pool;health_pool;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"ags;shard;aghanim's shard;aghs"
+		
+		"ItemPermanent"					"0"
+		"ItemStockTime"					"1"			  
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"480.0"
+		"ItemInitialStockTimeTurbo"		"480.0"
+
+		"ShouldBeSuggested"				"1"
+	}
 	
 }	
 
