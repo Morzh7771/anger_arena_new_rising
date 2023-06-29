@@ -49,8 +49,7 @@ function PercentDamage:_init()
 		"queenofpain_sonic_wave",
 		"crystal_maiden_crystal_nova",
 		"crystal_maiden_frostbite",
-		"crystal_maiden_freezing_field",
-		"bane_brain_sap"
+		"crystal_maiden_freezing_field"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
@@ -59,11 +58,12 @@ function PercentDamage:_init()
 		"pangolier_gyroshell",
 		"razor_plasma_field",
 		"razor_unstable_current",
+		"razor_eye_of_the_storm",
 		"doom_bringer_scorched_earth",
 		"dragon_knight_fireball",
 		"batrider_flamebreak",
 		"batrider_firefly",
-		"razor_eye_of_the_storm"
+		"bane_brain_sap"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
