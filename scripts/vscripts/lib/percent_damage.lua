@@ -63,7 +63,8 @@ function PercentDamage:_init()
 		"dragon_knight_fireball",
 		"batrider_flamebreak",
 		"batrider_firefly",
-		"razor_eye_of_the_storm"
+		"razor_eye_of_the_storm",
+		"snapfire_scatterblast"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
