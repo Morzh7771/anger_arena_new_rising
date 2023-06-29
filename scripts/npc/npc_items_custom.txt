@@ -136,7 +136,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"3000"	
+        "ItemCost"						"0"	
         "ItemShopTags"					"artifacts"
         
         // Recipe
@@ -145,7 +145,7 @@
         "ItemResult"					"item_burning_butterfly"
         "ItemRequirements"
         {
-            "01"						"item_sacred_butterfly;item_boss_soul"
+            "01"						"item_sacred_butterfly;item_sacred_butterfly;item_boss_soul"
         }
     }
     "item_burning_butterfly"
@@ -264,7 +264,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1200"	
+        "ItemCost"						"0"	
         "ItemShopTags"					"artifacts"
         
         // Recipe
