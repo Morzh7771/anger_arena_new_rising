@@ -194,7 +194,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"75"
+		"AbilityCooldown"				"90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -228,14 +228,14 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"50"
+				"incoming_damage"			"150"
 				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_7"
 
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage_tooltip"			"150"
+				"incoming_damage_tooltip"			"250"
 				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_7"
 
 			}		
