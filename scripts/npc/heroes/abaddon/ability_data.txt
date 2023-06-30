@@ -22,7 +22,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"7"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ DOTAAbilities
 			"damage_absorb"
 			{
 				"value"			"100 200 300 400 500 600 700"
-				"special_bonus_unique_abaddon"		"+200"
+				"special_bonus_unique_abaddon"		"+150"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}
 		}
@@ -175,7 +175,7 @@ DOTAAbilities
 		{
 			"AbilityCooldown"				
 			{
-				"value"								"70 65 60 55 50 45 40"
+				"value"								"60"
 			}
 			"hp_threshold"								"400 500 600 700 800 900 1000"
 			"duration"								"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
@@ -186,7 +186,7 @@ DOTAAbilities
 			}
 			"ally_threshold_scepter"
 			{
-				"value"								"650"
+				"value"								"900"
 				"RequiresScepter"						"1"
 			}
 			"redirect_range_scepter"
