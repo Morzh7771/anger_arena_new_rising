@@ -153,7 +153,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 20.0 18.0 16.0 14.0 12.0 10.0"
+		"AbilityCooldown"				"18"
 		"AbilityManaCost"				"100 105 110 115 120 125 130"
 
 		// Stats
@@ -185,7 +185,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"	"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+				"duration"	"4.0"
 			}
 			"05"
 			{
