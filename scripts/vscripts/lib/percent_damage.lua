@@ -65,7 +65,8 @@ function PercentDamage:_init()
 		"batrider_flamebreak",
 		"batrider_firefly",
 		"snapfire_scatterblast",
-		"bane_brain_sap"
+		"bane_brain_sap",
+		"dark_seer_ion_shell"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
