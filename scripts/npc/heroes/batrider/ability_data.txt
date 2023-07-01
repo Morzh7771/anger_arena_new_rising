@@ -37,8 +37,8 @@ DOTAAbilities
 		{
 			"damage"
 			{
-				"value"	"10 15 20 25 30 35 40"
-				"special_bonus_unique_batrider_4"	"+20"
+				"value"	"7 10 13 16 19 22 25"
+				"special_bonus_unique_batrider_4"	"+5"
 				"CalculateSpellDamageTooltip"		"1"
 			}
 			"radius"
@@ -56,7 +56,7 @@ DOTAAbilities
 				"value"			"50"
 				"RequiresShard"			"1"
 			}
-			"application_damage"	"10 20 30 40 50 60 70"
+			"application_damage"	"7 10 13 16 19 22 25"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -110,20 +110,20 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			
-			"damage_pct"			"35"
+			"damage_pct"			"20"
 			"damage_impact"		
 			{
-				"value"			"50 100 150 200 250 300 350"
+				"value"			"50 70 90 110 130 150 170"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"damage_per_second"		
 			{
-				"value"			"25 50 75 100 125 150 175 200"
+				"value"			"20 30 40 50 60 70 80"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"damage_duration"		
 			{
-				"value"		"7"
+				"value"		"5"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 				"CalculateSpellDamageTooltip" "0"
 			}
@@ -182,7 +182,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_pct"			"50"
+			"damage_pct"			"20"
 			"damage_per_second"
 			{
 				"value"			"30 60 90 120 150 180 210"

@@ -100,10 +100,13 @@ function DuelController:_StartDuel()
 	}
 	local refresher_shared = {
 		["item_refresher"] = true, 
+		["item_aeon_disk"] = true
 		}
 		function RespawnHeroes(tbl)
 			for _, hero in pairs(tbl) do
-				hero:RespawnHero(false, false)
+				--if not hero:IsAlive() then
+					hero:RespawnHero(false, false)
+				--end
 				for i = 0, hero:GetAbilityCount() - 1 do
 					local ability = hero:GetAbilityByIndex( i )
 					if ability and not no_refresh_skill[ ability:GetAbilityName() ] then

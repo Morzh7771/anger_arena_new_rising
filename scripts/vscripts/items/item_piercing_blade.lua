@@ -53,6 +53,7 @@ function mod:OnTakeDamage(params)
 	if params.attacker ~= self:GetParent() then return end
 	if params.unit:GetTeamNumber() == params.attacker:GetTeamNumber() then return end
 	if params.unit == self:GetParent() then return end
+    if params.inflictor:GetAbilityName() == "batrider_sticky_napalm" then return end
 	if not self:GetParent():IsRealHero() then return end
     if BossSpawner:IsBoss(params.unit) == nil then 
         if not params.unit:IsRealHero() then
