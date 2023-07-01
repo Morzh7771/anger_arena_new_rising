@@ -337,46 +337,4 @@ DOTAAbilities
 			
 		}	
 	}
-		"AbilityTextureName"            "jakiro_liquid_fire"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"AbilityTextureName"            "jakiro_liquid_fire"
-		"MaxLevel"		"7"
-		"AbilityCastPoint"				"3.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"area_of_effect"		"1200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300 300 300 300"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_percent"			"50 50 50 50"
-			}
-		}
-	}
 }

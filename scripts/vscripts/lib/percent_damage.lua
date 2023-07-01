@@ -24,7 +24,8 @@ function PercentDamage:_init()
 		"centaur_hoof_stomp"
 	}
 	local MagicalDamageFromAgi = {
-		"luna_lucent_beam"
+		"luna_lucent_beam",
+		"slark_dark_pact"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
