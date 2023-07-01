@@ -24,7 +24,8 @@ function PercentDamage:_init()
 		"centaur_hoof_stomp"
 	}
 	local MagicalDamageFromAgi = {
-		"luna_lucent_beam"
+		"luna_lucent_beam",
+		"slark_dark_pact"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
@@ -65,7 +66,8 @@ function PercentDamage:_init()
 		"batrider_flamebreak",
 		"batrider_firefly",
 		"snapfire_scatterblast",
-		"bane_brain_sap"
+		"bane_brain_sap",
+		"dark_seer_ion_shell"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
