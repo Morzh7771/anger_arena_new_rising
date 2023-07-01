@@ -110,7 +110,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			
-			"damage_pct"			"15"
+			"damage_pct"			"35"
 			"damage_impact"		
 			{
 				"value"			"50 70 90 110 130 150 170"
@@ -118,7 +118,7 @@ DOTAAbilities
 			}
 			"damage_per_second"		
 			{
-				"value"			"25 45 65 85 105 125 145"
+				"value"			"25 35 45 55 65 75 85"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"damage_duration"		
