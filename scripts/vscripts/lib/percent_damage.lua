@@ -26,7 +26,8 @@ function PercentDamage:_init()
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
-		"slark_dark_pact"
+		"slark_dark_pact",
+		"naga_siren_rip_tide"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
