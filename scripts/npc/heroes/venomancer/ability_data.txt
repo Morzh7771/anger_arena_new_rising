@@ -68,21 +68,22 @@ DOTAAbilities
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"95 105 115 125"
+		"AbilityManaCost"				"95 105 115 125 135 145 155"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"15.0 15.0 15.0 15.0"
+			"damage_pct"				"30"
+			"duration"				"9.0"
 			"strike_damage"			
 			{
-				"value"					"50 75 100 125"
+				"value"					"50 75 100 125 150 175 200"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"tick_damage"			
 			{
-				"value"					"15 45 75 105"
+				"value"					"15 45 75 105 135 165 195"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"tick_interval"			"3.0 3.0 3.0 3.0"
@@ -96,7 +97,7 @@ DOTAAbilities
 			}	
 			"AbilityCooldown"
 			{
-				"value"												"21 20 19 18"
+				"value"												"21 20 19 18 17 16 15"
 				"special_bonus_unique_venomancer_3"					"-5"
 			}
 		}
@@ -117,15 +118,16 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"6 9 12 15"
+			"duration"				"6 7.5 9 10.5 12 13.5 15"
+			"damage_pct"				"10"
 			"damage"
 			{
-				"value"					"8 16 24 32"
+				"value"					"8 16 24 32 40 48 56"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"movement_speed"
 			{
-				"value"			"-8 -10 -12 -14"
+				"value"			"-8 -9 -10 -11 -12 -13 -14"
 				"special_bonus_unique_venomancer_2"		"-8"
 			}	
 			"hp_regen_reduction"
@@ -158,7 +160,7 @@ DOTAAbilities
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"21 24 27 30"
+		"AbilityManaCost"				"21 24 27 30 33 36 39"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -173,26 +175,26 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ward_hp_tooltip"		"120 230 340 450"
+				"ward_hp_tooltip"		"120 230 340 450 560 670 780"
 				"LinkedSpecialBonus"	"special_bonus_unique_venomancer"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ward_damage_tooltip"	"13 22 31 40"
+				"ward_damage_tooltip"	"13 22 31 40 49 58 67"
 				"LinkedSpecialBonus"	"special_bonus_unique_venomancer"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"04" // For special bonus at level 25
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ward_hp"		"240 460 680 900"
+				"ward_hp"		"240 460 680 900 1120 1340 1560"
 			}
 			"05" // For special bonus at level 25
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ward_damage"	"26 44 62 80"
+				"ward_damage"	"26 44 62 80 98 116 134"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -213,7 +215,7 @@ DOTAAbilities
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 100 80"
+		"AbilityCooldown"				"120 110 100 90 80 70 60"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -223,15 +225,15 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 300 400"
+		"AbilityManaCost"				"200 300 400 500 600 700 800"
 
 		"AbilityValues"
 		{
 			"debuff_duration"			"5"
-			"impact_damage"				"150 250 350"
+			"impact_damage"				"150 250 350 450 550 650 750"
 			"health_damage"
 			{
-				"value"							"4 5 6"
+				"value"							"4 4.5 5 5.5 6 6.5 7"
 				"special_bonus_unique_venomancer_4" "1.5"
 			}
 			"debuff_radius"				"800"
@@ -309,6 +311,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"damage_pct"			"35"
 				"duration_damage"				
 				{
 					"value"					"20"
@@ -318,7 +321,7 @@ DOTAAbilities
 				"projectile_speed"		"1800"
 				"damage_interval"		"1.0"
 				"duration"				"7"
-				"explosion_damage"		"300"
+				"explosion_damage"		"500"
 				"explosion_stun_duration"	"1.6"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
