@@ -21,7 +21,8 @@ function PercentDamage:_init()
 		"rattletrap_rocket_flare",
 		"rattletrap_hookshot",
 		"bristleback_quill_spray",
-		"centaur_hoof_stomp"
+		"centaur_hoof_stomp",
+		"undying_decay"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
@@ -68,7 +69,11 @@ function PercentDamage:_init()
 		"snapfire_scatterblast",
 		"bane_brain_sap",
 		"dark_seer_ion_shell",
-		"muerta_dead_shot"
+		"muerta_dead_shot",
+		"vengefulspirit_magic_missile",
+		"venomancer_venomous_gale",
+		"venomancer_poison_sting",
+		"venomancer_latent_poison"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
