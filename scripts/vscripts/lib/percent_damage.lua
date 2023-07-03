@@ -22,7 +22,10 @@ function PercentDamage:_init()
 		"rattletrap_hookshot",
 		"bristleback_quill_spray",
 		"centaur_hoof_stomp",
-		"undying_decay"
+		"undying_decay",
+		"earthshaker_fissure",
+		"earthshaker_aftershock",
+		"earthshaker_echo_slam"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
