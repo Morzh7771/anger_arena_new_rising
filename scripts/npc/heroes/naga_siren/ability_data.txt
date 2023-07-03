@@ -33,13 +33,13 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage"			"-74 -70 -66 -62 -58 -54 -50"
+				"outgoing_damage"			"-72 -70 -68 -66 -64 -62 -60"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_4"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage_tooltip"	"26 30 34 38 42 46 50"
+				"outgoing_damage_tooltip"	"28 30 32 34 36 38 40"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_4"
 			}
 			"04"
@@ -55,7 +55,7 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"images_count"				"3 3 4 4 5 5 6"
+				"images_count"				"4"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren"
 			}
 			"07"
@@ -148,18 +148,19 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"damage_pct"						"20"
 			"hits"						
 			{
-				"value"											"6 6 6 5 5 5 4"
+				"value"											"6"
 				"special_bonus_unique_naga_siren_3"				"-1"
 			}
 			"armor_reduction"			
 			{	
-				"value"						"-2 -4 -6 -8 -10 -12 -14"
+				"value"						"-2 -3 -4 -5 -6 -7 -8"
 			}
 			"damage"	
 			{
-				"value"			"55 85 115 145 175 205 235"
+				"value"			"55 65 75 85 95 105 115"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_2"
 			}
 			

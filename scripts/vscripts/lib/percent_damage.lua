@@ -21,11 +21,16 @@ function PercentDamage:_init()
 		"rattletrap_rocket_flare",
 		"rattletrap_hookshot",
 		"bristleback_quill_spray",
-		"centaur_hoof_stomp"
+		"centaur_hoof_stomp",
+		"undying_decay",
+		"earthshaker_fissure",
+		"earthshaker_aftershock",
+		"earthshaker_echo_slam"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
-		"slark_dark_pact"
+		"slark_dark_pact",
+		"naga_siren_rip_tide"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
@@ -67,7 +72,12 @@ function PercentDamage:_init()
 		"batrider_firefly",
 		"snapfire_scatterblast",
 		"bane_brain_sap",
-		"dark_seer_ion_shell"
+		"dark_seer_ion_shell",
+		"muerta_dead_shot",
+		"vengefulspirit_magic_missile",
+		"venomancer_venomous_gale",
+		"venomancer_poison_sting",
+		"venomancer_latent_poison"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
