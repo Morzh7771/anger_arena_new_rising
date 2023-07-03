@@ -23,12 +23,10 @@ function mid_teleport:OnSpellStart()
 		end
 	end
 	for _,unit in pairs(self.portals)do
-		if 450 >= ( hero:GetOrigin() - unit:GetOrigin() ):Length2D() then 
+		if 550 >= ( hero:GetOrigin() - unit:GetOrigin() ):Length2D() then 
 			self.portal = unit
 		end
 	end
-	local spawnpoint = Entities:FindByName( nil, "teleport_radiant_top" )
-	local teleport = Entities:FindAllInSphere(hero:GetOrigin(),800)
 	hero:AddNewModifier(hero, self, "modifier_mid_teleport_cast", {target = self.portal:entindex()})
 end
 function mid_teleport:OnChannelFinish(bInterrupted)
