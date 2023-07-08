@@ -104,9 +104,9 @@ function DuelController:_StartDuel()
 		}
 		function RespawnHeroes(tbl)
 			for _, hero in pairs(tbl) do
-				--if not hero:IsAlive() then
+				if not hero:IsAlive() then
 					hero:RespawnHero(false, false)
-				--end
+				end
 				for i = 0, hero:GetAbilityCount() - 1 do
 					local ability = hero:GetAbilityByIndex( i )
 					if ability and not no_refresh_skill[ ability:GetAbilityName() ] then
@@ -216,7 +216,9 @@ function DuelController:_StartDuelTimer(toDuel)
 	local interval
 	local duelCount = DuelLibrary:GetDuelCount()
 	if toDuel then
-		if duelCount > 4 then
+		if duelCount == 0 then
+			interval = 5
+	    elseif duelCount > 5 then
 			interval = DUEL_INTERVAL_AFTER
 		else
 			interval = DUEL_INTERVAL

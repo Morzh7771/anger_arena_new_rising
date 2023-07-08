@@ -21,11 +21,11 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 21.0 20.0 19.0 18.0 17.0 16.0"
+		"AbilityCooldown"				"19.0 18.5 18.0 17.5 17.0 16.5 16.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"130 140 150 160 170 180 190"
+		"AbilityManaCost"				"75 85 95 105 115 125 135"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"70 120 170 220 270 320 370"
+				"damage"				"120 170 220 270 320 370 420"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_6"
 			}
 			"02"
@@ -108,7 +108,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20.0 35.0 50.0 65.0 80.0 95.0 110.0"
+				"bonus_damage"			"50.0 65.0 80.0 95.0 110.0 135.0 160.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_spectre_2"
 			}
 			"02"
@@ -136,7 +136,7 @@ DOTAAbilities
 		{
 			"damage_reflection_pct"
 			{
-				"value"		"7.0 10.0 13.0 16.0 19.0 22.0 25.0"
+				"value"		"13 15 17 19 21 23 25"
 				"special_bonus_unique_spectre_5"		"+10"
 			}
 			"min_radius"			"400"
@@ -144,7 +144,7 @@ DOTAAbilities
 			"activation_cooldown"
 			{
 				"value"				"0"
-				"special_bonus_shard"				"+20"
+				"special_bonus_shard"				"+15"
 			}
 			"activation_manacost"
 			{
@@ -154,12 +154,12 @@ DOTAAbilities
 			"activation_bonus_pct"
 			{
 				"value"				"0"
-				"special_bonus_shard"				"+100"
+				"special_bonus_shard"				"+125"
 			}
 			"activation_duration"
 			{
 				"value"				"0"
-				"special_bonus_shard"				"+5"
+				"special_bonus_shard"				"+7.5"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

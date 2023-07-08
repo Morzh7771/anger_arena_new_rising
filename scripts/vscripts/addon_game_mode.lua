@@ -460,12 +460,14 @@ function AngelArena:OnNPCSpawned(keys)
 	if npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
 		if npc:IsRealHero() then
-			if cheat == true then
-				--npc:AddExperience(999999, 0, false, true)
-				--npc:SetGold(99999999,true)
-			end
 			npc:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
 		end
+	end
+	if npc:IsRealHero() then
+		Timers:CreateTimer(10, function()
+			print('remove')
+			npc:RemoveAllModifiersByName("modifier_fountain_invulnerability")
+		end)
 	end
 end
 
@@ -652,56 +654,38 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
         unit = EntIndexToHScript(ord.units["0"])
     end
 
-	
-	if not player then return false end
+	if not player then return true end
 
     local hero = player:GetAssignedHero()
 
-	if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
-		local ability = EntIndexToHScript(event.entindex_ability)
-		local target = EntIndexToHScript(event.entindex_target)
-		local target_id = target:GetPlayerOwnerID()
+    if not hero then return true end
 
-		if PlayerResource:IsDisableHelpSetForPlayerID(target_id, player_id) then
-			return UF_FAIL_DISABLE_HELP
-		end
-
-		if forbidden_ability_boss[ability:GetName()] and BossSpawner:IsBoss(target) then
-			return UF_FAIL_DISABLE_HELP
-		end
-
-		if target:HasAbility("wisp_tether") and ability:GetName() == "wisp_tether" then return end
-		
-		if unit and target == unit and ability:GetName() == "rubick_spell_steal" then
-			return UF_FAIL_DISABLE_HELP
-		end
-	end
-
-    if not hero then return end
-
-	if ord.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or ord.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET  then
-		
-		if target and not target:IsNull() and  target:IsBaseNPC() and target:GetUnitName() == "npc_teleport" and unit:IsRealHero() then
-			if teleport_range >= ( hero:GetOrigin() - target:GetOrigin() ):Length2D() then 
-				if not hero:HasModifier("modifier_mid_teleport_cd") then
-					hero:Interrupt() 
-					hero:Stop()
-				   	hero:AddAbility("mid_teleport")
-					local ability = hero:FindAbilityByName("mid_teleport")
-					ability:SetLevel(1)
-				  	hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID())
+		if ord.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or ord.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET  then
+			if target and not target:IsNull() and  target:IsBaseNPC() and target:GetUnitName() == "npc_teleport" and unit:IsRealHero() then
+				if teleport_range >= ( hero:GetOrigin() - target:GetOrigin() ):Length2D() then 
+					if not hero:HasModifier("modifier_mid_teleport_cd") then
+						hero:Interrupt() 
+						hero:Stop()
+						hero:AddAbility("mid_teleport")
+						local ability = hero:FindAbilityByName("mid_teleport")
+						ability:SetLevel(1)
+						hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID()) 
+					else
+						print('cd')
+						CustomGameEventManager:Send_ServerToPlayer(player, "CreateIngameErrorMessage", {message = "#midteleport_cd"})
+					end
+				else
+					print("range")
+					CustomGameEventManager:Send_ServerToPlayer(player, "CreateIngameErrorMessage", {message = "#midteleport_distance"})
 				end
 				return false
-			else 
-				return false
 			end
-			
-		  end
-		end
-	
-		if ord.order_type == DOTA_UNIT_ORDER_CAST_TARGET  then
-			if target:GetUnitName() == "npc_teleport" then 
-				return false
+		
+			if ord.order_type == DOTA_UNIT_ORDER_CAST_TARGET  then
+				if target:GetUnitName() == "npc_teleport" then 
+					print('error2')
+					return false
+				end
 			end
 		end
 	return true
