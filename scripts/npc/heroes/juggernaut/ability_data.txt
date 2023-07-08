@@ -182,13 +182,13 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"attack_rate_multiplier"	"2.5"
+			"attack_rate_multiplier"	"2.0"
 			"bonus_damage"				"30 50 70 90 110 130 150"
 			"bonus_attack_speed"				"80"
 			"duration"
 			{
-				"value"					"2 2.25 2.5 2.75 3 3.25 3.5"
-				"special_bonus_unique_juggernaut_omnislash_duration"			"+1.0"
+				"value"					"1.5 1.7 1.9 2.1 2.3 2.5 2.7"
+				"special_bonus_unique_juggernaut_omnislash_duration"			"+0.7"
 			}
 			"omni_slash_radius"			"425"
 			"AbilityCastRange"				
