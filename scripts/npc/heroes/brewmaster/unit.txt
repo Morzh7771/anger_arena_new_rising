@@ -54,7 +54,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1400"		// Base health.
+		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"2"			// Health regeneration rate.
 		"StatusMana"				"400"		// Base mana.
 		"StatusManaRegen"			"2"			// Mana regeneration rate.
@@ -96,7 +96,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2300"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"4"		// Health regeneration rate.
 		
 	}	
@@ -128,7 +128,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3200"		// Base health.
+		"StatusHealth"				"3000"		// Base health.
 		"StatusHealthRegen"			"6"		// Health regeneration rate.
 		
 	}	
@@ -141,26 +141,26 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"7"			// Physical protection.
+		"ArmorPhysical"				"9"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"75"		// Damage range min.
-		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackDamageMin"			"105"		// Damage range min.
+		"AttackDamageMax"			"115"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
-		"HealthBarOffset"			"175"
+		"HealthBarOffset"			"185"
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"370"		// Speed.
+		"MovementSpeed"				"390"		// Speed.
 
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3200"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"4000"		// Base health.
+		"StatusHealthRegen"			"8"		// Health regeneration rate.
 		
 	}	
 "npc_dota_brewmaster_earth_5"
@@ -172,26 +172,26 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"7"			// Physical protection.
+		"ArmorPhysical"				"11"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"75"		// Damage range min.
-		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackDamageMin"			"135"		// Damage range min.
+		"AttackDamageMax"			"145"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
-		"HealthBarOffset"			"175"
+		"HealthBarOffset"			"195"
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"370"		// Speed.
+		"MovementSpeed"				"410"		// Speed.
 
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3200"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"5000"		// Base health.
+		"StatusHealthRegen"			"10"		// Health regeneration rate.
 		
 	}	
 "npc_dota_brewmaster_earth_6"
@@ -203,26 +203,26 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"7"			// Physical protection.
+		"ArmorPhysical"				"13"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"75"		// Damage range min.
-		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackDamageMin"			"165"		// Damage range min.
+		"AttackDamageMax"			"175"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
-		"HealthBarOffset"			"175"
+		"HealthBarOffset"			"205"
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"370"		// Speed.
+		"MovementSpeed"				"430"		// Speed.
 
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3200"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"6000"		// Base health.
+		"StatusHealthRegen"			"12"		// Health regeneration rate.
 		
 	}	
 "npc_dota_brewmaster_earth_7"
@@ -234,26 +234,26 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"7"			// Physical protection.
+		"ArmorPhysical"				"15"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"75"		// Damage range min.
-		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackDamageMin"			"195"		// Damage range min.
+		"AttackDamageMax"			"205"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
-		"HealthBarOffset"			"175"
+		"HealthBarOffset"			"215"
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"370"		// Speed.
+		"MovementSpeed"				"450"		// Speed.
 
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3200"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"7000"		// Base health.
+		"StatusHealthRegen"			"14"		// Health regeneration rate.
 		
 	}	
 
@@ -350,7 +350,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"4"			// Health regeneration rate.
 
 	}	
@@ -375,7 +375,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
+		"StatusHealth"				"3000"		// Base health.
 		"StatusHealthRegen"			"6"			// Health regeneration rate.
 
 		// Vision
@@ -399,8 +399,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"55"		// Damage range min.
-		"AttackDamageMax"			"65"		// Damage range max.	
+		"AttackDamageMin"			"75"		// Damage range min.
+		"AttackDamageMax"			"85"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -408,8 +408,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"6"			// Health regeneration rate.
+		"StatusHealth"				"4000"		// Base health.
+		"StatusHealthRegen"			"8"			// Health regeneration rate.
 
 		// Vision
 		//----------------------------------------------------------------
@@ -432,8 +432,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"55"		// Damage range min.
-		"AttackDamageMax"			"65"		// Damage range max.	
+		"AttackDamageMin"			"95"		// Damage range min.
+		"AttackDamageMax"			"105"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -441,8 +441,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"6"			// Health regeneration rate.
+		"StatusHealth"				"5000"		// Base health.
+		"StatusHealthRegen"			"10"			// Health regeneration rate.
 
 		// Vision
 		//----------------------------------------------------------------
@@ -465,8 +465,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"55"		// Damage range min.
-		"AttackDamageMax"			"65"		// Damage range max.	
+		"AttackDamageMin"			"115"		// Damage range min.
+		"AttackDamageMax"			"125"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -474,8 +474,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"6"			// Health regeneration rate.
+		"StatusHealth"				"6000"		// Base health.
+		"StatusHealthRegen"			"12"			// Health regeneration rate.
 
 		// Vision
 		//----------------------------------------------------------------
@@ -498,8 +498,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"55"		// Damage range min.
-		"AttackDamageMax"			"65"		// Damage range max.	
+		"AttackDamageMin"			"145"		// Damage range min.
+		"AttackDamageMax"			"155"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -507,7 +507,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
+		"StatusHealth"				"7000"		// Base health.
 		"StatusHealthRegen"			"6"			// Health regeneration rate.
 
 		// Vision
@@ -575,7 +575,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1300"		// Base health.
+		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"2"		// Health regeneration rate.
 		"StatusMana"				"750"		// Base mana.
 		"StatusManaRegen"			"1.5"		// Mana regeneration rate.
@@ -615,7 +615,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1450"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"4"		// Health regeneration rate.
 	}	
 
@@ -643,7 +643,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1600"		// Base health.
+		"StatusHealth"				"3000"		// Base health.
 		"StatusHealthRegen"			"6"		// Health regeneration rate.
 	}	
 	"npc_dota_brewmaster_fire_4"
@@ -656,12 +656,12 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"16"			// Physical protection.
+		"ArmorPhysical"				"24"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"165"		// Damage range min.
-		"AttackDamageMax"			"175"		// Damage range max.	
+		"AttackDamageMin"			"215"		// Damage range min.
+		"AttackDamageMax"			"225"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -670,8 +670,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1600"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"4000"		// Base health.
+		"StatusHealthRegen"			"8"		// Health regeneration rate.
 	}	
 	"npc_dota_brewmaster_fire_5"
 	{										
@@ -683,12 +683,12 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"16"			// Physical protection.
+		"ArmorPhysical"				"32"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"165"		// Damage range min.
-		"AttackDamageMax"			"175"		// Damage range max.	
+		"AttackDamageMin"			"265"		// Damage range min.
+		"AttackDamageMax"			"275"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -697,8 +697,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1600"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"5000"		// Base health.
+		"StatusHealthRegen"			"10"		// Health regeneration rate.
 	}	
 	"npc_dota_brewmaster_fire_6"
 	{										
@@ -710,12 +710,12 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"16"			// Physical protection.
+		"ArmorPhysical"				"40"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"165"		// Damage range min.
-		"AttackDamageMax"			"175"		// Damage range max.	
+		"AttackDamageMin"			"315"		// Damage range min.
+		"AttackDamageMax"			"325"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -724,8 +724,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1600"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"6000"		// Base health.
+		"StatusHealthRegen"			"12"		// Health regeneration rate.
 	}	
 	"npc_dota_brewmaster_fire_7"
 	{										
@@ -737,12 +737,12 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"16"			// Physical protection.
+		"ArmorPhysical"				"48"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"165"		// Damage range min.
-		"AttackDamageMax"			"175"		// Damage range max.	
+		"AttackDamageMin"			"365"		// Damage range min.
+		"AttackDamageMax"			"375"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -751,8 +751,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1600"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"7000"		// Base health.
+		"StatusHealthRegen"			"14"		// Health regeneration rate.
 	}	
 	
 	"npc_dota_brewmaster_void_1"
@@ -810,7 +810,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		// Base health.
+		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"2"		// Health regeneration rate.
 		"StatusMana"				"750"		// Base mana.
 		"StatusManaRegen"			"1.5"		// Mana regeneration rate.
@@ -852,7 +852,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"4"		// Health regeneration rate.
 		
 	}	
@@ -884,7 +884,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"		// Base health.
+		"StatusHealth"				"3000"		// Base health.
 		"StatusHealthRegen"			"6"		// Health regeneration rate.
 	}	
 	"npc_dota_brewmaster_void_4"
@@ -898,12 +898,12 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
+		"ArmorPhysical"				"6"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"65"		// Damage range min.
-		"AttackDamageMax"			"75"		// Damage range max.	
+		"AttackDamageMin"			"75"		// Damage range min.
+		"AttackDamageMax"			"85"		// Damage range max.	
 		"AttackRate"				"0.8"		// Speed of attack.
 
 		// Bounds
@@ -914,8 +914,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"4000"		// Base health.
+		"StatusHealthRegen"			"8"		// Health regeneration rate.
 	}	
 	"npc_dota_brewmaster_void_5"
 	{			
@@ -928,12 +928,12 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
+		"ArmorPhysical"				"7"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"65"		// Damage range min.
-		"AttackDamageMax"			"75"		// Damage range max.	
+		"AttackDamageMin"			"85"		// Damage range min.
+		"AttackDamageMax"			"95"		// Damage range max.	
 		"AttackRate"				"0.8"		// Speed of attack.
 
 		// Bounds
@@ -944,8 +944,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"5000"		// Base health.
+		"StatusHealthRegen"			"10"		// Health regeneration rate.
 	}	
 	"npc_dota_brewmaster_void_6"
 	{			
@@ -958,12 +958,12 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
+		"ArmorPhysical"				"8"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"65"		// Damage range min.
-		"AttackDamageMax"			"75"		// Damage range max.	
+		"AttackDamageMin"			"95"		// Damage range min.
+		"AttackDamageMax"			"105"		// Damage range max.	
 		"AttackRate"				"0.8"		// Speed of attack.
 
 		// Bounds
@@ -974,8 +974,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"6000"		// Base health.
+		"StatusHealthRegen"			"12"		// Health regeneration rate.
 	}	
 	"npc_dota_brewmaster_void_7"
 	{			
@@ -988,12 +988,12 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
+		"ArmorPhysical"				"9"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"65"		// Damage range min.
-		"AttackDamageMax"			"75"		// Damage range max.	
+		"AttackDamageMin"			"105"		// Damage range min.
+		"AttackDamageMax"			"115"		// Damage range max.	
 		"AttackRate"				"0.8"		// Speed of attack.
 
 		// Bounds
@@ -1004,7 +1004,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"		// Base health.
-		"StatusHealthRegen"			"6"		// Health regeneration rate.
+		"StatusHealth"				"7000"		// Base health.
+		"StatusHealthRegen"			"14"		// Health regeneration rate.
 	}	
 
