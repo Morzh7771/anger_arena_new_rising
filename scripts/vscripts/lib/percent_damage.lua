@@ -59,7 +59,8 @@ function PercentDamage:_init()
 		"crystal_maiden_freezing_field",
 		"venomancer_venomous_gale",
 		"venomancer_poison_sting",
-		"venomancer_latent_poison"
+		"venomancer_latent_poison",
+		"shadow_demon_demonic_purge"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
