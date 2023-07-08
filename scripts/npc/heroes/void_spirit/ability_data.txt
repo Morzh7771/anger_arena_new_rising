@@ -94,7 +94,7 @@ DOTAAbilities
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100.0 140.0 180.0 220.0 260.0 300.0 340.0"
+		"AbilityDamage"					"100.0 150.0 200.0 250.0 300.0 350.0 400.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -104,6 +104,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"damage_pct"			"35"
 			"phase_duration"		"1.0"
 			"destination_fx_radius"	"183" // proportional to distance_offset
 			"portals_per_ring"		"6"
@@ -226,7 +227,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60.0 90.0 120.0 150.0 180.0 210.0 240.0"
+				"damage"				"120.0 160.0 200.0 240.0 280.0 320.0 360.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_4"
 			}
 			"04"
@@ -237,7 +238,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_absorb_amount"	"80.0 110.0 140.0 170.0 200.0 230.0 260.0"
+				"base_absorb_amount"	"80.0 120.0 160.0 200.0 240.0 280.0 320.0"
 			}
 			"06"
 			{
@@ -267,6 +268,10 @@ DOTAAbilities
 				"silence_duration_scepter"			"1.5"
 				"RequiresScepter"			"1"
 			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"			"35"
 		}
 	}
 }

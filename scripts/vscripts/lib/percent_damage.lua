@@ -56,7 +56,12 @@ function PercentDamage:_init()
 		"queenofpain_sonic_wave",
 		"crystal_maiden_crystal_nova",
 		"crystal_maiden_frostbite",
-		"crystal_maiden_freezing_field"		
+		"crystal_maiden_freezing_field",
+		"venomancer_venomous_gale",
+		"venomancer_poison_sting",
+		"venomancer_latent_poison",
+		"shadow_demon_demonic_purge",
+		"shadow_demon_shadow_poison"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
@@ -75,9 +80,9 @@ function PercentDamage:_init()
 		"dark_seer_ion_shell",
 		"muerta_dead_shot",
 		"vengefulspirit_magic_missile",
-		"venomancer_venomous_gale",
-		"venomancer_poison_sting",
-		"venomancer_latent_poison"
+		"void_spirit_dissimilate",
+		"void_spirit_resonant_pulse"
+		
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 

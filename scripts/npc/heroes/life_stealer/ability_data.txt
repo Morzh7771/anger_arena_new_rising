@@ -17,11 +17,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 19 18 17"
+		"AbilityCooldown"				"20 19 18 17 16 15 14"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 100 125 150"
+		"AbilityManaCost"				"50 75 100 125 150 175 200"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -29,13 +29,13 @@ DOTAAbilities
 		{
 			"movement_speed_bonus"
 			{
-				"value"						"15 16 17 18"
-				"special_bonus_unique_lifestealer_2"	"+12"
+				"value"						"14 15 16 17 18 19 20"
+				"special_bonus_unique_lifestealer_2"	"+10"
 			}
 			"duration"
 			{
-				"value"				"3.0 4.0 5.0 6.0"
-				"special_bonus_unique_lifestealer"	"+1.5"
+				"value"				"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+				"special_bonus_unique_lifestealer"	"+1.0"
 			}
 			"bonus_armor"
 			{
@@ -62,13 +62,13 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_leech_percent"		"1.6 2.2 2.8 3.4"
+				"hp_leech_percent"		"1.0 1.3 1.6 1.9 2.2 2.5 2.7"
 				"LinkedSpecialBonus"	"special_bonus_unique_lifestealer_3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_damage_percent"		"0.8 1.1 1.4 1.7"
+				"hp_damage_percent"		"0.5 0.65 0.8 0.95 1.1 1.25 1.4"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -142,13 +142,13 @@ DOTAAbilities
 		{
 			"movement_slow"
 			{
-				"value"				"15 20 25 30"
-				"special_bonus_unique_lifestealer_6"	"+15"
+				"value"				"5 10 15 20 25 30 35"
+				"special_bonus_unique_lifestealer_6"	"+10"
 			}
 			"duration"				"1.5"
 			"attack_speed_bonus"
 			{
-				"value"	"25 40 55 70"
+				"value"	"25 40 55 70 95 120 145"
 				"special_bonus_unique_lifestealer_7"	"+50"
 			}
 			"miss_pct"
@@ -187,7 +187,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"		
+		"AbilityManaCost"				"100 125 150 175 200 225 250"		
 		
 		
 		// Special
@@ -197,23 +197,23 @@ DOTAAbilities
 			"radius"				"700 700 700"
 			"damage"				
 			{
-				"value"					"150 275 400"
+				"value"					"150 250 350 450 550 650 750"
 				"special_bonus_unique_lifestealer_infest_damage"			"+150"
 			}
 			
 			"bonus_movement_speed"		 
 			{
-				"value"				 "15 20 25"
+				"value"				 "5 10 15 20 25 30 35"
 				"special_bonus_unique_lifestealer_infest_target_bonus"			"+15"
 			}
 			"bonus_health"	
 			{
-				"value"								"400 800 1200"
+				"value"								"400 800 1200 1600 200 2400 2800"
 				"special_bonus_unique_lifestealer_infest_target_bonus"			"+15%"	
 			}
 			"self_regen"	
 			{
-				"value"							"3 4 5"
+				"value"							"1 2 3 4 5 6 7"
 				"special_bonus_scepter"			"+100%"
 			}			
 			"infest_duration_enemy"
@@ -229,11 +229,11 @@ DOTAAbilities
 			"attack_rate_enemy"
 			{
 				"value"				"0"
-				"special_bonus_scepter"		"+1.25"
+				"special_bonus_scepter"		"+0.5"
 			}
 			"AbilityCooldown"
 			{
-				"value"				"80 65 50"
+				"value"				"80 75 70 65 60 55 50"
 				"special_bonus_scepter"	"=20"
 			}
 		}
