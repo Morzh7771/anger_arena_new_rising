@@ -77,7 +77,9 @@ function PercentDamage:_init()
 		"bane_brain_sap",
 		"dark_seer_ion_shell",
 		"muerta_dead_shot",
-		"vengefulspirit_magic_missile"
+		"vengefulspirit_magic_missile",
+		"void_spirit_dissimilate",
+		"void_spirit_resonant_pulse"
 		
 	}
 
