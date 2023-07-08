@@ -2692,188 +2692,6 @@
 	}
 
 
-	"item_recipe_pipe"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1450"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_pipe"
-		"ItemRequirements"
-		{
-			"01"						"item_cloak*;item_headdress;item_ring_of_health"
-		}
-	}
-	"item_pipe"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"FightRecapLevel"				"2"
-		"ItemBaseLevel"					"1"
-		"AbilitySharedCooldown"			"pipe"
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0"
-		"AbilityManaCost"				"150"
-		"AbilityCastRange"				"1200"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3375"
-		"ItemShopTags"					"regen_health;boost_magic_resist"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"pipe of insight"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemAlertable"					"1"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"health_regen"				"6.0 12.0 30.0"
-			"magic_resistance"			"0 0 0"
-			"barrier_debuff_duration"	"50.0"
-			"tooltip_resist"			"0 0 0"
-			"aura_health_regen"			"2.5 5 15"
-			"magic_resistance_aura"		"20 30 40"
-			"aura_radius"				"1200 1200 1200"
-			"barrier_block"				"500 1000 1500"
-			"barrier_duration"			"8.0 8.0 8.0"
-			"barrier_radius"			"1200 1200 1200"
-			"bonus_all_stats"			"0"
-			"barrier_block_creep"		"500 1000 1500"
-		}
-	}
-
-	"item_recipe_pipe_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_pipe_2"
-		"ItemRequirements"
-		{
-			"01"						"item_pipe;item_pipe;"
-		}
-	}
-	"item_pipe_2"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"FightRecapLevel"				"2"
-		"ItemBaseLevel"					"2"
-		"BaseClass"						"item_pipe"
-		"AbilityTextureName"			"pipe_2"
-		"AbilitySharedCooldown"			"pipe"
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0"
-		"AbilityManaCost"				"150"
-		"AbilityCastRange"				"1200"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3375"
-		"ItemShopTags"					"regen_health;boost_magic_resist"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"pipe of insight"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemAlertable"					"1"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"health_regen"				"6.0 12.0 30.0"
-			"magic_resistance"			"0 0 0"
-			"barrier_debuff_duration"	"50.0"
-			"tooltip_resist"			"0 0 0"
-			"aura_health_regen"			"2.5 5 15"
-			"magic_resistance_aura"		"20 30 40"
-			"aura_radius"				"1200 1200 1200"
-			"barrier_block"				"500 1000 1500"
-			"barrier_duration"			"8.0 8.0 8.0"
-			"barrier_radius"			"1200 1200 1200"
-			"bonus_all_stats"			"0"
-			"barrier_block_creep"		"500 1000 1500"
-		}
-	}
-
-	"item_recipe_pipe_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_pipe_3"
-		"ItemRequirements"
-		{
-			"01"						"item_pipe_2;item_pipe_2;item_boss_soul"
-		}
-	}
-	"item_pipe_3"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"FightRecapLevel"				"2"
-		"ItemBaseLevel"					"3"
-		"BaseClass"						"item_pipe"
-		"AbilityTextureName"			"pipe_3"
-		"AbilitySharedCooldown"			"pipe"
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0"
-		"AbilityManaCost"				"150"
-		"AbilityCastRange"				"1200"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3375"
-		"ItemShopTags"					"regen_health;boost_magic_resist"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"pipe of insight"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemAlertable"					"1"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"health_regen"				"6.0 12.0 30.0"
-			"magic_resistance"			"0 0 0"
-			"barrier_debuff_duration"	"50.0"
-			"tooltip_resist"			"0 0 0"
-			"aura_health_regen"			"2.5 5 15"
-			"magic_resistance_aura"		"20 30 40"
-			"aura_radius"				"1200 1200 1200"
-			"barrier_block"				"500 1000 1500"
-			"barrier_duration"			"8.0 8.0 8.0"
-			"barrier_radius"			"1200 1200 1200"
-			"bonus_all_stats"			"0"
-			"barrier_block_creep"		"500 1000 1500"
-		}
-	}
-
-
 	"item_recipe_phase_boots"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -3125,7 +2943,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"FightRecapLevel"				"1"
 		"ItemBaseLevel"					"2"
-		"BaseClass"						"guardian_greaves"
+		"BaseClass"						"item_guardian_greaves"
 		"AbilityTextureName"			"guardian_greaves_2"
 		"AbilitySharedCooldown"			"greaves"
 		// Stats		
@@ -4098,7 +3916,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"FightRecapLevel"				"1"
 		"ItemBaseLevel"					"2"
-		"BaseClass"						"item_sphere"
+		"BaseClass"						"item_lotus_orb"
 		"AbilityTextureName"			"lotus_3"
 		"AbilityCooldown"				"15.0"
 		"AbilityCastRange"				"900"

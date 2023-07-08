@@ -11,6 +11,7 @@ require('lib/team_helper')
 require('lib/spawners/creep_spawner')
 require('lib/spawners/creep_leveling')
 require('lib/spawners/bear_spawner')
+require('lib/chat_listener')
 require('lib/duel/duel_controller')
 require('lib/attentions')
 require('lib/gpm_lib')
@@ -43,7 +44,7 @@ local game_start_for_courier = false
 
 GOLD_PER_TICK = 4
 
-KILL_LIMIT = 60
+KILL_LIMIT = 80
 
 GOLD_FOR_COUR = 350
 
@@ -139,7 +140,7 @@ function AngelArena:InitGameMode()
 		require(moduleName)
 	end
 	local GameMode = GameRules:GetGameModeEntity()
-
+	Convars:SetInt("dota_max_physical_items_purchase_limit", 100)
 	GameRules:SetCustomVictoryMessage("#aa_on_win_message")
 
 	GameRules:SetPreGameTime(60) -- old 9
@@ -188,9 +189,6 @@ function AngelArena:InitGameMode()
 	GameRules:SetUseBaseGoldBountyOnHeroes(true)
 	GameMode:SetBountyRuneSpawnInterval(120.0)
 	GameRules:SetRuneSpawnTime(120)
-	for i = 0, 11 do
-		GameMode:SetRuneEnabled(i, true)
-	end
 	GameMode:SetCustomBackpackSwapCooldown(4.0)
 	GameRules:SetStartingGold(750)
 	
@@ -202,6 +200,9 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AngelArena, "OnEntityKilled"), self)
 	ListenToGameEvent('dota_player_gained_level', Safe_Wrap(AngelArena, 'OnLevelUp'), self)
 	ListenToGameEvent('dota_rune_activated_server', Safe_Wrap(AngelArena, 'OnRuneActivate'), self)
+
+	ListenToGameEvent("player_chat", Safe_Wrap(ChatListener, 'OnPlayerChat'), ChatListener)
+	
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
 	PlayerResource:ClearOnAbandonedCallbacks()
 	PlayerResource:RegisterOnAbandonedCallback(function(arg) AngelArena:OnAbandoned(arg) end)
@@ -212,8 +213,10 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_duel_vision", 'modifiers/modifier_duel_vision', LUA_MODIFIER_MOTION_NONE)
 
+
+	
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
-	--GameMode:SetRuneSpawnFilter(Safe_Wrap(AngelArena, "ModifierRuneSpawn"), self)
+	GameMode:SetRuneSpawnFilter(Safe_Wrap(AngelArena, "ModifierRuneSpawn"), self)
 	-- AttributeDerivedStats
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT, 0)
@@ -239,16 +242,10 @@ function AngelArena:ModifierRuneSpawn(keys)
 	end
 	local rune_type = keys.rune_type
 	
-	if rune_type == 5 then return true end
-
-	local runes = { 0, 1, 2, 3, 4, 6 }
+	local runes = { 0, 1, 2, 3, 4, 5, 6, 8, 9}
 
 	local Dotatime = GameRules:GetDOTATime(false, false)
-	if Almostequal(120, Dotatime, 1) or Almostequal(240, Dotatime, 1) then 
-		keys.rune_type = 7
-	else
 		keys.rune_type = runes[RandomInt(1, #runes)]	
-	end
 	print (Dotatime)
 	return true
 end
@@ -426,6 +423,7 @@ function AngelArena:OnGameStateChange()
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		if not is_game_start then
+			GameRules:SetTimeOfDay( 0.251 )
 			CreepSpawner:StartSpawning()
 			BossSpawner:OnGameStart()
 			BearSpawner:SpawnBear()
@@ -457,6 +455,11 @@ function AngelArena:OnGameStateChange()
 end
 function AngelArena:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
+	local spawnedUnit = EntIndexToHScript(keys.entindex)
+	if not npc then return end
+
+	local unitname = npc:GetUnitName()
+	local unit_owner = npc:GetOwnerEntity()
 	if npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
 		if npc:IsRealHero() then
@@ -467,6 +470,108 @@ function AngelArena:OnNPCSpawned(keys)
 		Timers:CreateTimer(10, function()
 			print('remove')
 			npc:RemoveAllModifiersByName("modifier_fountain_invulnerability")
+		end)
+	end
+	if spawnedUnit:IsIllusion() and spawnedUnit:IsHero() then
+		local playerid = spawnedUnit:GetPlayerOwnerID()
+
+		if playerid ~= nil and playerid ~= -1 then
+			local original_hero = PlayerResource:GetSelectedHeroEntity( playerid )
+
+			if original_hero and not original_hero:IsNull() then
+				if not illusion_bug_crash[spawnedUnit:GetUnitName()] then
+					local ability
+					for i = 0, spawnedUnit:GetAbilityCount() - 1 do
+						ability = spawnedUnit:GetAbilityByIndex(i)
+						if ability then spawnedUnit:RemoveAbility(ability:GetAbilityName()) end
+					end
+
+					for i = 0, original_hero:GetAbilityCount() - 1 do
+						ability = original_hero:GetAbilityByIndex(i)
+						if ability then spawnedUnit:AddAbility(ability:GetAbilityName()) end
+					end
+				end
+
+				local str = original_hero:GetBaseStrength() - (original_hero:GetLevel() - 1) * original_hero:GetStrengthGain()
+				local agi = original_hero:GetBaseAgility() - (original_hero:GetLevel() - 1) * original_hero:GetAgilityGain()
+				local int = original_hero:GetBaseIntellect() - (original_hero:GetLevel() - 1) * original_hero:GetIntellectGain()
+
+				spawnedUnit:SetBaseStrength(str)
+				spawnedUnit:SetBaseIntellect(int)
+				spawnedUnit:SetBaseAgility(agi)
+
+				if original_hero.medical_tractates then
+					spawnedUnit.medical_tractates = original_hero.medical_tractates
+					spawnedUnit:AddNewModifier(spawnedUnit, nil, "modifier_medical_tractate", { duration = -1})
+				end
+
+				Timers:CreateTimer(0.1, function() 
+					if not original_hero or original_hero:IsNull() or not IsValidEntity(original_hero) then return end
+					if not spawnedUnit or spawnedUnit:IsNull() or not IsValidEntity(spawnedUnit) then return end
+
+					local slot = NeutralSlot:GetSlotIndex()
+					local item = original_hero:GetItemInSlot( slot )
+
+					if item then
+						local baseItemName = item:GetName()
+						for i = 0, 171 do
+							local illusionItem = spawnedUnit:GetItemInSlot(i)
+
+							if illusionItem and illusionItem:GetName() == baseItemName and slot ~= i then
+								spawnedUnit:SwapItems(i, slot)
+								break
+							end
+						end
+					end
+				end)
+			end
+		end
+	end
+
+	if spawnedUnit:IsRealHero() then --print(spawnedUnit:GetUnitName())
+		Timers:CreateTimer(0.15, function()
+			if not spawnedUnit or spawnedUnit:IsNull() or not IsValidEntity(spawnedUnit) or not spawnedUnit:IsRealHero() then return nil end
+			if spawnedUnit:GetUnitName() == "npc_dota_hero_arc_warden" then
+				if spawnedUnit:HasModifier("modifier_arc_warden_tempest_double") then
+
+					if not spawnedUnit:HasModifier("modifier_kill") then
+						UTIL_Remove(spawnedUnit)
+					else
+
+						local real_hero = spawnedUnit:GetPlayerOwner():GetAssignedHero()
+
+						if not spawnedUnit:HasModifier("modifier_kill") then
+							UTIL_Remove(spawnedUnit)
+						end
+
+						if real_hero then
+							local att = real_hero:GetBaseStrength()
+							spawnedUnit:SetBaseStrength(att)
+							att = real_hero:GetBaseAgility()
+							spawnedUnit:SetBaseAgility(att)
+							att = real_hero:GetBaseIntellect()
+							spawnedUnit:SetBaseIntellect(att)
+
+							local owner_team = real_hero:GetTeamNumber()
+
+							if owner_team then spawnedUnit:SetTeam(owner_team) end
+
+							for i = 0, 5 do
+								if spawnedUnit:GetItemInSlot(i) and forbidden_items_for_clones[spawnedUnit:GetItemInSlot(i):GetName()] then
+									spawnedUnit:RemoveItem(spawnedUnit:GetItemInSlot(i))
+								end
+							end
+
+							if real_hero.medical_tractates then
+								spawnedUnit.medical_tractates = real_hero.medical_tractates
+								spawnedUnit:RemoveModifierByName("modifier_medical_tractate")
+								spawnedUnit:AddNewModifier(spawnedUnit, nil, "modifier_medical_tractate", { duration = -1 })
+							end
+						end
+					end
+				end
+			end
+			return nil
 		end)
 	end
 end

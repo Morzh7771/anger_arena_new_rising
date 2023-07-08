@@ -3,6 +3,96 @@
 #base heroes/pugna/unit.txt
 "DOTAUnits"
 {
+	"npc_dota_watch_tower"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_watch_tower"	// Class of entity of link to.
+		"Model"						"models/props_structures/outpost.vmdl"	// Model.
+		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
+		"MinimapIcon"				"minimap_miscbuilding"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"				"0"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0"			// Speed of attack.
+		"AttackAnimationPoint"		"0"			// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.
+
+		// Attributes
+		//----------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"			// Base strength
+		"AttributeStrengthGain"		"0"			// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"			// Base intelligence
+		"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"			// Base agility
+		"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_FILLER"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"100"
+		"HealthBarOffset"			"475"
+		"MinimapIconSize"			"500"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0"			// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"450"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"0"		// Range of vision during day light.
+		"VisionNighttimeRange"		"0"		// Range of vision at night time.
+
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"750"
+		}
+	}	
 	"dota_fountain"
 	{
 		"Ability1"					"fountain_attack"			// Ability 1.
@@ -122,10 +212,7 @@
 		"Model"						"models/props_gameplay/team_portal/team_portal.vmdl"
 		"SoundSet"                   "Creep_Good_Melee"                    
         "MinimapIcon"                "minimap_miscbuilding"
-		"MinimapIconSize"			"120"
 		"Level"						"1"
-		"ModelScale"     			"1.05"
-		
 		
 		"Ability1"					""
 		
@@ -214,9 +301,8 @@
 	"npc_aa_minimap_ancient_stack"
 	{
 		"MinimapIcon"				"minimap_creepcamp_ancient"
-
-		// General
-		//
+		"MinimapIconSize"			"240"
+		"MinimapDisableTint"        "1"
 		"BaseClass"					"npc_dota_building"											// Class of entity of link to.
 		"Model"						"models/development/invisiblebox.vmdl"						// Model.
 		"SoundSet"					"Creep_Good_Melee"											// Name of sound set.
@@ -266,11 +352,6 @@
 		"BountyGoldMin"				"0"		// Gold earned min.
 		"BountyGoldMax"				"0"		// Gold earned max.
 
-		// Bounds
-		//----------------------------------------------------------------
-		"RingRadius"				"0"
-		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"200"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -300,7 +381,7 @@
 	"npc_aa_minimap_big_stack"
 	{
 		"MinimapIcon"				"minimap_creepcamp_mid"
-
+		"MinimapIconSize"			"240"
 		// General
 		//
 		"BaseClass"					"npc_dota_building"											// Class of entity of link to.
@@ -356,7 +437,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"200"
+		
 
 		// Movement
 		//----------------------------------------------------------------
@@ -442,7 +523,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"200"
+		"MinimapIconSize"			"240"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -527,7 +608,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"200"
+		"MinimapIconSize"			"270"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -557,10 +638,11 @@
 	"npc_aa_minimap_boss"
 	{
 		"MinimapIcon"				"minimap_roshancamp"
-
+	
+		"MinimapDisableTint"        "1"
 		// General
 		//
-		"BaseClass"					"npc_dota_building"											// Class of entity of link to.
+		"BaseClass"					"npc_dota_creatures"											// Class of entity of link to.
 		"Model"						"models/development/invisiblebox.vmdl"						// Model.
 		"SoundSet"					"Creep_Good_Melee"											// Name of sound set.
 				
@@ -613,7 +695,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"200"
+		"MinimapIconSize"			"250"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -872,7 +954,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"200"
+		"MinimapIconSize"			"300"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -958,7 +1040,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"200"
+		"MinimapIconSize"			"240"
 
 		// Movement
 		//----------------------------------------------------------------

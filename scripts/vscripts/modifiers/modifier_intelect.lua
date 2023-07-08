@@ -37,7 +37,7 @@ function modifier_intelect:GetModifierMoveSpeed_Limit( params )
 		--print('сикер')
 		return 99999999
 	end
-	print('все')
+	--print('все')
 	return 700
 end
 function modifier_intelect:GetModifierMoveSpeedBonus_Percentage()
