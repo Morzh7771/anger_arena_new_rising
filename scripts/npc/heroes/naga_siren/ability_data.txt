@@ -45,17 +45,17 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"200"
+				"incoming_damage"			"250"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_incoming_damage_total_pct"			"300"
+				"tooltip_incoming_damage_total_pct"			"350"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"images_count"				"4"
+				"images_count"				"1 1 2 2 3 3 4"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren"
 			}
 			"07"
@@ -101,7 +101,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"3.5 3.75 4.0 4.25 4.5 4.75 5.0"
+			"duration"					"1.5 1.7 1.9 2.2 2.5 2.7 3.0"
 			"net_speed"					
 			{
 				"value"						"1500"
