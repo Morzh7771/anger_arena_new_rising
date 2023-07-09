@@ -41,7 +41,7 @@ local cheat = false
 local is_game_start = false
 local is_game_end = false
 local game_start_for_courier = false
-
+KILL_LIMIT_CONST = 120
 GOLD_PER_TICK = 4
 
 KILL_LIMIT = 80
@@ -51,7 +51,7 @@ GOLD_FOR_COUR = 350
 local teleport_range = 350
 
 _G.Kills = {}
-_G.KILL_LIMIT  = KILL_LIMIT
+_G.KILL_LIMIT = KILL_LIMIT
 
 RESPAWN_MODIFER = 0.135
 function Activate()
@@ -201,8 +201,10 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent('dota_player_gained_level', Safe_Wrap(AngelArena, 'OnLevelUp'), self)
 	ListenToGameEvent('dota_rune_activated_server', Safe_Wrap(AngelArena, 'OnRuneActivate'), self)
 
+	ListenToGameEvent('player_connect_full', Safe_Wrap(AngelArena, 'OnConnectFull'), self)
+	ListenToGameEvent('player_disconnect', Safe_Wrap(AngelArena, 'OnPlayerDisconnect'), self)
 	ListenToGameEvent("player_chat", Safe_Wrap(ChatListener, 'OnPlayerChat'), ChatListener)
-	
+
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
 	PlayerResource:ClearOnAbandonedCallbacks()
 	PlayerResource:RegisterOnAbandonedCallback(function(arg) AngelArena:OnAbandoned(arg) end)
@@ -233,7 +235,7 @@ function AngelArena:InitGameMode()
 	_G.Kills[DOTA_TEAM_BADGUYS] = _G.Kills[DOTA_TEAM_BADGUYS] or 0
 
 	AngelArena:OnGameStateChange()
-	Attentions:SetKillLimit( KILL_LIMIT )
+	
 
 end
 function AngelArena:ModifierRuneSpawn(keys)
@@ -347,6 +349,15 @@ function AngelArena:OnThink()
 	end
 	return 1
 end
+
+function AngelArena:OnConnectFull(event)
+	local entIndex = event.index + 1
+	local player = EntIndexToHScript(entIndex)
+	local playerID = player:GetPlayerID()
+
+	PlayerResource:OnPlayerConnected(playerID, event.userid)
+end
+
 function AngelArena:ShareGold()
 	local teamGolds = {}
 
@@ -398,6 +409,12 @@ function AngelArena:OnGameStateChange()
 	end
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local player = PlayerResource:GetPlayerCount()
+		local needkill = KILL_LIMIT_CONST / 10 * player
+		KILL_LIMIT = needkill
+		_G.KILL_LIMIT = needkill
+		Attentions:SetKillLimit( KILL_LIMIT )
+		print(KILL_LIMIT)
 		local portals = {
 			"teleport_radiant_top",
 			"teleport_radiant_bot",
@@ -412,7 +429,6 @@ function AngelArena:OnGameStateChange()
 		
 
 		PauseGame(true)
-		CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
 
 		local spawners = Entities:FindAllByClassname("npc_dota_neutral_spawner")
 
@@ -504,26 +520,6 @@ function AngelArena:OnNPCSpawned(keys)
 					spawnedUnit.medical_tractates = original_hero.medical_tractates
 					spawnedUnit:AddNewModifier(spawnedUnit, nil, "modifier_medical_tractate", { duration = -1})
 				end
-
-				Timers:CreateTimer(0.1, function() 
-					if not original_hero or original_hero:IsNull() or not IsValidEntity(original_hero) then return end
-					if not spawnedUnit or spawnedUnit:IsNull() or not IsValidEntity(spawnedUnit) then return end
-
-					local slot = NeutralSlot:GetSlotIndex()
-					local item = original_hero:GetItemInSlot( slot )
-
-					if item then
-						local baseItemName = item:GetName()
-						for i = 0, 171 do
-							local illusionItem = spawnedUnit:GetItemInSlot(i)
-
-							if illusionItem and illusionItem:GetName() == baseItemName and slot ~= i then
-								spawnedUnit:SwapItems(i, slot)
-								break
-							end
-						end
-					end
-				end)
 			end
 		end
 	end

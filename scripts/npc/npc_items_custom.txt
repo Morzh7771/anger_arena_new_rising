@@ -1,6 +1,6 @@
 #base dota_items.txt
 "DOTAAbilities"
-{
+{    
     "item_recipe_boss_soul"
     {
         "AbilityTextureName" 				"item_recipe_boss_soul"
@@ -3029,7 +3029,7 @@
 			"01"						"item_custom_seer_stone_2;item_custom_seer_stone_2;item_boss_soul"
 		}
 	}
-    "item_seer_stone"       "REMOVE"
+    
 	"item_custom_seer_stone"
     {
 		"BaseClass"				"item_lua"

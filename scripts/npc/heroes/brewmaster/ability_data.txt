@@ -197,15 +197,15 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"dodge_chance"		"10 14 18 22 26 30 34"
-			"crit_chance"				"30"
+			"crit_chance"				"20"
 			"active_multiplier"			
 			{
 				"value"						"3"
 				"special_bonus_unique_brewmaster_8"		"+1"
 			}
-			"crit_multiplier"			"150 200 250 300 350 400 450"
+			"crit_multiplier"			"150 175 200 225 250 275 300"
 			"magic_resist"	"5 10 15 20 25 30 35"
-			"armor"		"5 7 11 13 17 19 23"
+			"armor"						"5 7 11 13 17 19 23"
 			"movespeed"				"10 15 20 25"
 			"slow_duration"				"2"
 			"bonus_move_speed"		"5 7 11 13 17 19 23"
