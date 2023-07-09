@@ -47,13 +47,13 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bolt_stun_duration"	"1.0 1.15 1.3 1.45 1.6 1.75 1.9"
+				"bolt_stun_duration"	"0.7 0.85 1.0 1.15 1.3 1.45 1.6"
 				"LinkedSpecialBonus"		"special_bonus_unique_sven_4"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bolt_aoe"			"255"
+				"bolt_aoe"			"235"
 			}
 			"04"
 			{
@@ -100,13 +100,13 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"great_cleave_damage"	"40.0 50.0 60.0 70.0 80.0 90.0 100.0"
+				"great_cleave_damage"	"25 32 39 46 53 60 67"
 				"LinkedSpecialBonus"		"special_bonus_unique_sven_8"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strength_bonus"		"3 6 9 12 15 18 21"
+				"strength_bonus"		"15 25 35 45 55 65 75"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -212,7 +212,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gods_strength_damage"		"120 160 200 240 280 320 360"	
+				"gods_strength_damage"		"50 75 100 125 150 175 200"	
 				"LinkedSpecialBonus"		"special_bonus_unique_sven_2"	
 			}
 		}	
