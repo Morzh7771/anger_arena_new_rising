@@ -196,20 +196,20 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"dodge_chance"		"10 14 18 22 26 30 34"
-			"crit_chance"				"30"
+			"dodge_chance"		"18 20 22 24 26 28 30"
+			"crit_chance"				"24"
 			"active_multiplier"			
 			{
 				"value"						"3"
 				"special_bonus_unique_brewmaster_8"		"+1"
 			}
-			"crit_multiplier"			"150 200 250 300 350 400 450"
-			"magic_resist"	"5 10 15 20 25 30 35"
+			"crit_multiplier"			"125 145 165 185 205 225 245"
+			"magic_resist"	"5 7.5 10 12.5 15 17.5 20"
 			"armor"		"5 7 11 13 17 19 23"
-			"movespeed"				"10 15 20 25"
+			"movespeed"				"7 9 11 13 15 17 19"
 			"slow_duration"				"2"
 			"bonus_move_speed"		"5 7 11 13 17 19 23"
-			"bonus_status_resist"	"5 10 15 20 25 30 35 40"
+			"bonus_status_resist"	"5 7.5 10 12.5 15 17.5 20"
 			
 		}
 	}
@@ -384,12 +384,12 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"50 100 150"
+				"damage"					"50 100 150 200 250 300 350"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.6 1.6 1.6 1.6"
+				"duration"					"1.2 1.5 1.8 2.1 2.4 2.7 3.0"
 			}
 			"03"
 			{
@@ -472,7 +472,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_building_damage"		"90 180 270"
+				"bonus_building_damage"		"90 180 270 360 450 540 630"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -581,7 +581,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"140 200 260"
+				"bonus_damage"				"140 200 260 320 380 440 500"
 			}
 			"02"
 			{
@@ -619,12 +619,12 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"25 50 75"
+				"damage"					"25 50 75 100 125 150 175"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"220 220 220"
+				"radius"					"325"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -681,8 +681,8 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"AbilityCastRange"			"150"
-			"damage"					"50 100 150"
-			"pull_distance"				"300 500 700"
+			"damage"					"50"
+			"pull_distance"				"300 400 500 600 700 800 900"
 			"pull_duration"				"0.5"
 		}
 	}
