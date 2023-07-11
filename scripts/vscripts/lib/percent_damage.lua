@@ -25,7 +25,9 @@ function PercentDamage:_init()
 		"undying_decay",
 		"earthshaker_fissure",
 		"earthshaker_aftershock",
-		"earthshaker_echo_slam"
+		"earthshaker_echo_slam",
+		"tiny_avalanche",
+		"tiny_toss"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
