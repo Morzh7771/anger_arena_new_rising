@@ -28,15 +28,18 @@ function PercentDamage:_init()
 		"earthshaker_echo_slam",
 <<<<<<< Updated upstream
 		"tiny_avalanche",
-		"tiny_toss"
+		"tiny_toss",
+		
 =======
-		"treant_overgrowth"
+		"treant_overgrowth", 
+		"kunkka_ghostship"
 >>>>>>> Stashed changes
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
 		"slark_dark_pact",
-		"naga_siren_rip_tide"
+		"naga_siren_rip_tide",
+		"gyrocopter_rocket_barrage"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
