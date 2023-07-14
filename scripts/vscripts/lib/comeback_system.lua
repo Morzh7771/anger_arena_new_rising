@@ -3,11 +3,11 @@ require('lib/team_helper')
 
 ComebackSystem = ComebackSystem or class({})
 
-local BASE_ADDITIONAL_GOLD_PER_KILL = 100
-local BASE_ADDITIONAL_GOLD_PER_MINUTE = 10
-local BASE_GOLD_PER_STREAK = 180
-local BASE_GOLD_PER_STREAK_PER_MIN = 30
-local KILLS_TO_GOLD_COMEBACK = 7
+local BASE_ADDITIONAL_GOLD_PER_KILL = 50
+local BASE_ADDITIONAL_GOLD_PER_MINUTE = 5
+local BASE_GOLD_PER_STREAK = 100
+local BASE_GOLD_PER_STREAK_PER_MIN = 15
+local KILLS_TO_GOLD_COMEBACK = 1
 local GOLD_TO_TEAMMATES = 40
 local TEAM_MATE_AOE = 1200
 
@@ -54,7 +54,7 @@ function ComebackSystem:_FindGoldDifferenceStamp( time )
 			break
 		end
 	end
-
+	
 	return result or 0
 end
 
