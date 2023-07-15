@@ -70,7 +70,9 @@ function PercentDamage:_init()
 		"venomancer_poison_sting",
 		"venomancer_latent_poison",
 		"shadow_demon_demonic_purge",
-		"shadow_demon_shadow_poison"
+		"shadow_demon_shadow_poison",
+		"keeper_of_the_light_illuminate",
+		"keeper_of_the_light_spirit_form_illuminate"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
