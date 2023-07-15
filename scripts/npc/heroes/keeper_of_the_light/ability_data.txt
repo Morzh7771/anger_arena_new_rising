@@ -25,7 +25,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150 175"
+		"AbilityManaCost"				"100 115 130 145 160 175 190"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,13 +33,13 @@ DOTAAbilities
 		{
 			"total_damage"
 			{
-				"value"				"185 290 395 500"
-				"special_bonus_unique_keeper_of_the_light"		"+180"
+				"value"				"185 290 395 500 605 710 815"
+				"special_bonus_unique_keeper_of_the_light"		"+285"
 			}
 			"max_channel_time"		"3"
 			"radius"				"400"
 			"range"					"1550"
-			"speed"					"900.0"
+			"speed"					"1100.0"
 			"vision_radius"			"800 800 800 800"
 			"vision_duration"		"3.34 3.34 3.34 3.34"
 			"AbilityCooldown"				
@@ -73,7 +73,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"16 15 14 13 12 11 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -81,7 +81,7 @@ DOTAAbilities
 
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"400 500 600 700"
+		"AbilityCastRange"				"400 450 500 550 600 650 700"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"4.0 5.0 6.0 7.0"
+				"duration"					"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
 			}
 			"02"
 			{
@@ -100,7 +100,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.5 2.0 2.5 3.0"
+				"stun_duration"				"1.5 1.8 2.1 2.4 2.7 3.0 3.3"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -257,7 +257,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
+		"AbilityCooldown"				"16 15 14 13 12 11 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -275,13 +275,13 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"80 160 240 320"
+				"mana_restore"			"80 160 240 320 400 480 560"
 				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light_2"
 			}						
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cooldown_reduction"	"3 4 5 6"
+				"cooldown_reduction"	"3 3 4 4 5 5 6"
 			}
 			"03"
 			{
@@ -337,7 +337,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 125 175"		
+		"AbilityManaCost"				"75 125 175 225 275 325 375"		
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -350,23 +350,23 @@ DOTAAbilities
 			"01"
 			{ 
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"40.0 40.0 40.0"
+				"duration"					"40.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light_11"
 			}
 			"02"
 			{ 
 				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"15 20 25" 
+				"movement_speed"			"15 17.5 20 22.5 25 27.5 30.0" 
 			}
 			"03"
 			{ 
 				"var_type"					"FIELD_INTEGER"
-				"cast_range"			"125 250 375" 
+				"cast_range"			"75 125 175 225 275 325 375" 
 			}
 			"04"
 			{ 
 				"var_type"					"FIELD_INTEGER"
-				"illuminate_heal"			"50 60 70" 
+				"illuminate_heal"			"40 50 60 70 80 90 100" 
 			}
 		}
 	}
@@ -395,7 +395,7 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -408,7 +408,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"teleport_delay"		"4"
+				"teleport_delay"		"3"
 			}
 		}
 	}
@@ -428,17 +428,17 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"400 500 600 700"
+		"AbilityCastRange"				"400 450 500 550 600 650 700"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25 22 19 16"
+		"AbilityCooldown"				"26 24 22 20 18 16 14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 130 140 150"
+		"AbilityManaCost"				"120 130 140 150 160 170 180"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -454,10 +454,10 @@ DOTAAbilities
 					"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light_8"
 				}
 				"duration"				"4"
-				"radius"				"425 450 475 500"
+				"radius"				"400 425 450 475 500 525 550"
 				"knockback_duration"	"0.6"
 				"knockback_distance"	"400"
-				"damage"				"85 130 175 220"
+				"damage"				"85 130 175 220 265 310 355"
 			
 		}
 	}
@@ -493,7 +493,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150 175"
+		"AbilityManaCost"				"100 115 130 145 160 175 190"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -501,13 +501,13 @@ DOTAAbilities
 		{
 			"total_damage"
 			{
-				"value"				"185 290 395 500"
-				"special_bonus_unique_keeper_of_the_light"		"+180"
+				"value"				"185 290 395 500 605 710 815"
+				"special_bonus_unique_keeper_of_the_light"		"+285"
 			}
 			"max_channel_time"		"3"
 			"radius"				"400"
 			"range"					"1550"
-			"speed"					"900.0"
+			"speed"					"1100.0"
 			"vision_radius"			"800 800 800 800"
 			"vision_duration"		"3.34 3.34 3.34 3.34"
 			"channel_vision_radius"	"400"
