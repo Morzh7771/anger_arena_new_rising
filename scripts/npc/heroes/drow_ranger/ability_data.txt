@@ -324,14 +324,14 @@ DOTAAbilities
 		{
 			"chance"
 			{
-				"value"										"15 17.5 20 22.5 25 27.5 30"
-				"special_bonus_unique_drow_ranger_3"		"+10"
+				"value"										"12"
+				"special_bonus_unique_drow_ranger_3"		"+5"
 			}
 			"bonus_damage"									
 			{
 				"value"										"20 40 60 80 100 120 140"
 			}
-			"agility_multiplier"							"20 25 30 35 40 45 50"
+			"agility_multiplier"							"12 15 18 21 24 27 30"
 			"agility_range"									"1200"
 			"agility_multiplier_ally"						"50"
 			"split_count"
@@ -341,7 +341,7 @@ DOTAAbilities
 			}
 			"split_range"									"375"
 			"split_damage_reduction"						"50"
-			"disable_range"									"400"
+			"disable_range"									"500"
 		
 		}
 	}

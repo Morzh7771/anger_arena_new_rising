@@ -167,7 +167,7 @@ DOTAAbilities
 				"special_bonus_unique_mars_rebuke_slow"		"+0"
 			}
 			"activity_duration"			"2"
-			"bonus_damage_vs_heroes"	"10 15 20 25"
+			"bonus_damage_vs_heroes"	"25 50 75 100 125 150 175"
 			"AbilityCooldown"
 			{
 				"value"					"16 15 14 13 12 11 10"
@@ -292,7 +292,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"spear_damage"		"75 150 225"
+				"spear_damage"		"75 150 225 300 375 450 525"
 			}
 			"05"
 			{

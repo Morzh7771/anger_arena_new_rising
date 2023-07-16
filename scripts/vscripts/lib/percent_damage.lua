@@ -25,12 +25,23 @@ function PercentDamage:_init()
 		"undying_decay",
 		"earthshaker_fissure",
 		"earthshaker_aftershock",
-		"earthshaker_echo_slam"
+		"earthshaker_echo_slam",
+<<<<<<< Updated upstream
+		"tiny_avalanche",
+		"tiny_toss",
+		
+=======
+		"treant_overgrowth", 
+		"kunkka_ghostship"
+>>>>>>> Stashed changes
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
 		"slark_dark_pact",
-		"naga_siren_rip_tide"
+		"naga_siren_rip_tide",
+		"gyrocopter_rocket_barrage",
+		"sniper_shrapnel",
+		"sniper_assassinate"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
@@ -61,7 +72,9 @@ function PercentDamage:_init()
 		"venomancer_poison_sting",
 		"venomancer_latent_poison",
 		"shadow_demon_demonic_purge",
-		"shadow_demon_shadow_poison"
+		"shadow_demon_shadow_poison",
+		"keeper_of_the_light_illuminate",
+		"keeper_of_the_light_spirit_form_illuminate"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",

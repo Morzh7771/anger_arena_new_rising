@@ -32,7 +32,8 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"radius"					"400"
+				"damage_pct"				"25"
+				"radius"				"400"
 				"tick_interval"				"0.3"
 				"total_duration"			"1.4"
 				"tick_count"				"5"
@@ -81,13 +82,14 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"damage_pct"			"100"
 				"duration"				"1.4"
 				"grab_radius"			"300"
 				"radius"				"275"
 				"bonus_damage_pct"		"0"
 				"toss_damage"	
 				{
-					"value"					"100.0 175.0 250.0 325.0 400.0 475.0 550.0"
+					"value"					"100.0 180.0 260.0 340.0 420.0 500.0 580.0"
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"AbilityCharges"		
@@ -166,7 +168,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0 22.5 20.0 17.5 15.0 12.5 10.0"
+		"AbilityCooldown"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -183,13 +185,13 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_count"				"5"
+				"attack_count"				"7"
 				"LinkedSpecialBonus"	"special_bonus_unique_tiny_6"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"		"20 40 60 80 100 120 140"				
+				"bonus_damage"		"60 90 120 150 180 210 240"				
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
@@ -217,12 +219,12 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"splash_pct"				"40 50 60 70 80 90 100"
+				"splash_pct"				"70 75 80 85 90 95 100"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bat_increase"				"0.0"
+				"bat_increase"				"-0.5"
 			}
 			"09"
 			{
@@ -326,7 +328,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"interval"		"0.5"
+				"interval"		"0.4"
 			}
 			"06"
 			{
@@ -352,7 +354,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_armor"				"10.0 15.0 20.0 25.0 30.0 35.0 40.0"
+				"bonus_armor"				"10.0 17.5 25.0 32.5 40.0 47.5 55.0"
 				"bonus_damage"			
 				{
 					"value"					"80.0 150.0 220.0 290.0 360.0 430.0 500.0"
@@ -361,16 +363,38 @@ DOTAAbilities
 				"tree_bonus_damage_pct"			
 				{
 					"value"				"0"
-					"special_bonus_unique_tiny_7"	"+40"
+					"special_bonus_unique_tiny_7"	"+60"
 					"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 					"CalculateSpellDamageTooltip"	"0"
 				}
 				"attack_speed_reduction"	"-30"
 				"toss_bonus_damage"
 				{
-					"value"					"100 150 200 250 300 350 400"
+					"value"					"100 175 250 325 400 475 550"
 					"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 				}
 		}
 	}
+		"special_bonus_unique_tiny_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6933"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"4"
+				"ad_linked_abilities"			"tiny_avalanche"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
 }
+

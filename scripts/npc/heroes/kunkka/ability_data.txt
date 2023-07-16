@@ -108,7 +108,7 @@ DOTAAbilities
 			"slow_duration"				"1 1.5 2 2.5 3 3.5 4"
 			"stun_duration"
 			{
-				"value"								"1.6"
+				"value"								"1.4"
 				"special_bonus_unique_kunkka_7"		"+30%"
 			}
 			"delay"						"1.6 1.6 1.6 1.6"
@@ -156,7 +156,7 @@ DOTAAbilities
 		{
 				"torrent_interval"		
 				{
-					"value"				"0.2"
+					"value"				"0.25"
 					"RequiresScepter"	"1"
 				}
 				"torrent_duration"
@@ -321,6 +321,7 @@ DOTAAbilities
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"500 600 700 800 900 1000 1100"
+		"damage_pct"					"300"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
