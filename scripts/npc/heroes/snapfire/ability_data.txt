@@ -111,8 +111,8 @@ DOTAAbilities
 				"var_type"					"FIELD_FLOAT"
 				"damage_pct"			"50"
 				"RequiresShard"				"1"
-				
 			}
+			"damage_pct"						"50"
 		}
 	}
 	"snapfire_mortimer_kisses"
@@ -190,6 +190,7 @@ DOTAAbilities
 			"max_lob_travel_time"	"2.0"
 			"delay_after_last_projectile"	"0.5"
 			"burn_linger_duration"	"1.0"
+			"damage_pct"						"20"
 		}
 	}
 	"snapfire_gobble_up"
@@ -332,12 +333,12 @@ DOTAAbilities
 				"pre_hop_duration"		"0.0"
 				"jump_duration"			
 				{
-					"value"	"0.484" //"0.431 0.484 0.538 0.592" // proportional to horizontal distance
+					"value"					"0.484" 					//"0.431 0.484 0.538 0.592" // proportional to horizontal distance
 					"special_bonus_shard"	"+0.2"
 				}
 				"jump_height"			
 				{
-					"value"						"257" //"228 257 285 314" // proportional to horizontal distance
+					"value"						"257" 	//"228 257 285 314" // proportional to horizontal distance
 					"special_bonus_shard"		"+105"
 				}
 				"jump_horizontal_distance"	
@@ -350,18 +351,18 @@ DOTAAbilities
 				"impact_radius"			"300"
 				"impact_damage"			
 				{
-					"value"					"70 140 210 280"
+					"value"					"70 140 210 280 350 420 490"
 					"CalculateSpellDamageTooltip"	"1"
 				}
-				"impact_stun_duration"	"1.0 1.4 1.8 2.2"
+				"impact_stun_duration"	"1.0 1.2 1.4 1.6 1.8 2"
 				"self_cast_delay"		"0.3"
 				"target_heal"			
 				{
 					"value"			"0"
 					"special_bonus_unique_snapfire_5"	"+125"
 				}
-
 				"shard_damage_multiplier_tooltip" "50"
+				"damage_pct"						"50"
 		}
 	}
 	"snapfire_lil_shredder"
@@ -398,13 +399,13 @@ DOTAAbilities
 				"buffed_attacks"			
 				{
 					"value"		"6"
-					"special_bonus_unique_snapfire_2"	"+3"
+					"special_bonus_unique_snapfire_2"	"+4"
 				}
 				"attack_speed_bonus"		"300"
 				"attack_range_bonus"		"50 100 150 200 250 300 350"
 				"buff_duration_tooltip"		"6"
-				"base_attack_time"			"1.0"
-				"armor_reduction_per_attack"	"0.5"
+				"base_attack_time"			"0.4"
+				"armor_reduction_per_attack"	"1"
 				"armor_duration"				"5.0"
 		}
 	}

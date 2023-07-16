@@ -168,7 +168,7 @@ function DuelController:_OnDuelEnd(winnerTeam)
 
 	if duelCount == 1 then
 		goldBonus = DUEL_FIRST_BONUS_GOLD
-		expBonus = DUEL_NOBODY_WINS
+		expBonus = DUEL_FIRST_BONUS_EXP
 	else
 		local minute = GameRules:GetGameTime() / 60
 

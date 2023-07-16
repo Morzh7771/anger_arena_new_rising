@@ -10,7 +10,6 @@ return
   [MODIFIER_STATE_NO_HEALTH_BAR] = true,
   [MODIFIER_STATE_MAGIC_IMMUNE] = true,
   [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
-  
 }
 end
 
@@ -33,8 +32,6 @@ function modifier_mid_teleport:GetAbsoluteNoDamagePure() return 1 end
 
 
 function modifier_mid_teleport:OnCreated(table)
-local number = tonumber(self:GetParent():GetName())
-local cp = 0
 local effect_cast = ParticleManager:CreateParticle("particles/portal_ring.vpcf" , PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 ParticleManager:SetParticleControl( effect_cast, 12, self:GetParent():GetAbsOrigin() )
 
@@ -42,11 +39,3 @@ self:AddParticle(effect_cast, false, false, -1, false, false)
 
 
 end
-
-
-
-
-
-
-
-

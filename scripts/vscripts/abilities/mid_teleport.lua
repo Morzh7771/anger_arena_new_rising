@@ -48,14 +48,14 @@ function mid_teleport:OnChannelFinish(bInterrupted)
 	if bInterrupted then 
         return 
     end   
-	hero:AddNewModifier(hero, nil, "modifier_mid_teleport_speed", {duration = 10} )
+	hero:AddNewModifier(hero, nil, "modifier_mid_teleport_speed", {duration = 15} )
 	hero:AddNewModifier(hero, nil, "modifier_mid_teleport_cd", {duration = 10} )
 
 	local targets = {
-		"teleport_radiant_top_target",
-		"teleport_dire_top_target",
-		"teleport_radiant_bot_target",
 		"teleport_dire_bot_target",
+		"teleport_radiant_bot_target",
+		"teleport_dire_top_target",
+		"teleport_radiant_top_target",
 	}
 	local teleports = {
 		"teleport_dire_top",
@@ -122,7 +122,7 @@ function modifier_mid_teleport_speed:IsHidden() return false end
 function modifier_mid_teleport_speed:IsPurgable() return false end
 function modifier_mid_teleport_speed:GetTexture() return "rune_haste" end
 function modifier_mid_teleport_speed:OnCreated(table)
-	self.move_speed = 15
+	self.move_speed = 25
 	if not IsServer() then return end
 end
 

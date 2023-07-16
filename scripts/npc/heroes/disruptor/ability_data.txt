@@ -165,7 +165,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"2.6 2.9 3.2 3.5 3.8 4.1 4.4"
+				"duration"					"2.2 2.4 2.6 2.8 3.0 3.2 3.4"
 				"LinkedSpecialBonus"		"special_bonus_unique_disruptor_5"
 			}
 			"04"
@@ -261,7 +261,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value2"				"4"
+				"value2"				"5"
 				"ad_linked_abilities"			"disruptor_static_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}

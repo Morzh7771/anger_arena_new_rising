@@ -8,6 +8,7 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("pudge_rot", 							PudgeRot)
 	PercentDamage:ListenAbilityCallback("bane_brain_sap",						BaneBrainSap)
 	PercentDamage:ListenAbilityCallback("pugna_life_drain",						LifeDrain )
+	PercentDamage:ListenAbilityCallback("axe_counter_helix",						axe_counter_helix )
 	
 	local MagicalDamageFromStr = {
 		"ogre_magi_fireblast",
@@ -26,14 +27,13 @@ function PercentDamage:_init()
 		"earthshaker_fissure",
 		"earthshaker_aftershock",
 		"earthshaker_echo_slam",
-<<<<<<< Updated upstream
 		"tiny_avalanche",
 		"tiny_toss",
-		
-=======
 		"treant_overgrowth", 
-		"kunkka_ghostship"
->>>>>>> Stashed changes
+		"kunkka_ghostship",
+		"earth_spirit_boulder_smash",
+		"earth_spirit_geomagnetic_grip",
+		"earth_spirit_petrify",
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
@@ -41,7 +41,8 @@ function PercentDamage:_init()
 		"naga_siren_rip_tide",
 		"gyrocopter_rocket_barrage",
 		"sniper_shrapnel",
-		"sniper_assassinate"
+		"sniper_assassinate",
+		"faceless_void_time_lock",
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
@@ -88,14 +89,15 @@ function PercentDamage:_init()
 		"dragon_knight_fireball",
 		"batrider_flamebreak",
 		"batrider_firefly",
-		"snapfire_scatterblast",
 		"bane_brain_sap",
 		"dark_seer_ion_shell",
 		"muerta_dead_shot",
 		"vengefulspirit_magic_missile",
 		"void_spirit_dissimilate",
-		"void_spirit_resonant_pulse"
-		
+		"void_spirit_resonant_pulse",
+		"snapfire_scatterblast",
+		"snapfire_mortimer_kisses",
+		"snapfire_firesnap_cookie",
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
@@ -131,7 +133,18 @@ function LifeDrain( keys )
 	
 	caster:Heal(heal, caster) 
 end
+function axe_counter_helix(keys)
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
 
+	if not ability then return end
+	
+	local percent_damage = ability:GetSpecialValueFor("damage_pct")
+	print(caster:GetPhysicalArmorValue(false))
+	return (percent_damage * caster:GetPhysicalArmorValue(false))
+end
 function DamageFromAll(keys)
 	local ability 			= keys.ability
 	local caster 			= keys.caster
@@ -153,7 +166,7 @@ function DamageFromAgi(keys)
 	if not ability then return end
 	
 	local percent_damage = ability:GetSpecialValueFor("damage_pct") / 100
-	
+	print(percent_damage * caster:GetAgility())
 	return percent_damage * caster:GetAgility()
 end 
 

@@ -35,6 +35,17 @@ local postRequireList = {
 	'lib/base/player',
 	'lib/base/base_npc'
 }
+local illusion_bug_crash =
+{
+	["npc_dota_hero_dawnbreaker"] = 1,
+	["npc_dota_hero_visage"] = 1,
+	["npc_dota_hero_weaver"] = 1,
+}
+local forbidden_items_for_clones = {
+	["item_refresher"] = 1,
+	["item_recovery_orb"] = 1,
+	["item_devour_helm"] = 1,
+}
 local armor_table = require('creeps/armor_table_summon') -- armor to units
 local Constants = require('consts')
 local cheat = false
@@ -195,7 +206,7 @@ function AngelArena:InitGameMode()
 	GameRules:SetUseUniversalShopMode(true)
 
 
-	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( AngelArena, "OnNPCSpawned" ), self )
+	ListenToGameEvent("npc_spawned", Dynamic_Wrap( AngelArena, "OnNPCSpawned" ), self )
 	ListenToGameEvent('game_rules_state_change', Safe_Wrap(AngelArena, 'OnGameStateChange'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AngelArena, "OnEntityKilled"), self)
 	ListenToGameEvent('dota_player_gained_level', Safe_Wrap(AngelArena, 'OnLevelUp'), self)
@@ -421,10 +432,20 @@ function AngelArena:OnGameStateChange()
 			"teleport_dire_top",
 			"teleport_dire_bot",
 		}
-		for _,name in pairs(portals) do
+		for number,name in pairs(portals) do
 			local spawnpoint = Entities:FindByName( nil, name )
-			local creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS)
-			creep:AddNewModifier(creep, nil,'modifier_mid_teleport', {duration = -1} )
+			self.creep = nil
+			if number <= 2 then
+				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS)
+				self.creep:SetMaterialGroup("0")
+			end 
+			if number >= 3 then
+				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+				self.creep:SetMaterialGroup("1")
+			end 
+			AddFOWViewer(DOTA_TEAM_GOODGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
+			AddFOWViewer(DOTA_TEAM_BADGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
+			self.creep:AddNewModifier(self.creep, nil,'modifier_mid_teleport', {duration = -1} )
 		end
 		
 
@@ -515,7 +536,7 @@ function AngelArena:OnNPCSpawned(keys)
 				spawnedUnit:SetBaseStrength(str)
 				spawnedUnit:SetBaseIntellect(int)
 				spawnedUnit:SetBaseAgility(agi)
-
+				print(agi)
 				if original_hero.medical_tractates then
 					spawnedUnit.medical_tractates = original_hero.medical_tractates
 					spawnedUnit:AddNewModifier(spawnedUnit, nil, "modifier_medical_tractate", { duration = -1})
@@ -760,7 +781,6 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
     local hero = player:GetAssignedHero()
 
     if not hero then return true end
-
 		if ord.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or ord.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET  then
 			if target and not target:IsNull() and  target:IsBaseNPC() and target:GetUnitName() == "npc_teleport" and unit:IsRealHero() then
 				if teleport_range >= ( hero:GetOrigin() - target:GetOrigin() ):Length2D() then 

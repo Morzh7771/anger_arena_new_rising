@@ -263,7 +263,12 @@
         "DOTA_Tooltip_ability_possessed_hellshield_Description"				"При активации накладывает эффект на %duration%  секунды, который отражает %return_damage%%  назад во атакующего, а так же блокирует %damage_reduction%%  этого урона."
 
         "DOTA_Tooltip_modifier_possessed_hellshield"						"Hellshield Damage Return"
-
+		//axe
+		"DOTA_Tooltip_Ability_axe_counter_helix_damage_pct"					"МНОЖИТЕЛЬ БРОНИ"
+		//zemelya
+		"DOTA_Tooltip_Ability_earth_spirit_boulder_smash_damage_pct"		"%УРОН ОТ СИЛЫ"
+		"DOTA_Tooltip_Ability_earth_spirit_geomagnetic_grip_damage_pct"		"%УРОН ОТ СИЛЫ"
+		"DOTA_Tooltip_Ability_earth_spirit_petrify_damage_pct"				"%УРОН ОТ СИЛЫ"
 		//Bane
 		"DOTA_Tooltip_Ability_bane_brain_sap_damage_pct"					"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		//Batrider
@@ -291,6 +296,7 @@
 		//Luna
 		"DOTA_Tooltip_Ability_luna_lucent_beam_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
 		"DOTA_Tooltip_Ability_slark_dark_pact_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
+		"DOTA_Tooltip_Ability_faceless_void_time_lock_damage_pct"			"%УРОН ОТ ЛОВКОСТИ"
 		//Mirana
 		"DOTA_Tooltip_Ability_mirana_arrow_damage_pct"						"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_mirana_starfall_damage_pct"					"%УРОН ОТ ВСЕХ АТРИБУТОВ"
@@ -330,6 +336,7 @@
 		//Razor
 		"DOTA_Tooltip_Ability_razor_plasma_field_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_razor_unstable_current_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+		"DOTA_Tooltip_Ability_razor_eye_of_the_storm_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		//Sand King
 		"DOTA_Tooltip_Ability_sandking_epicenter_damage_pct"				"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_sandking_sand_storm_damage_pct"				"%УРОН ОТ СИЛЫ"
@@ -339,6 +346,8 @@
 		"DOTA_Tooltip_Ability_rattletrap_hookshot_damage_pct"				"%УРОН ОТ СИЛЫ"
 		//Snapfire
 		"DOTA_Tooltip_Ability_snapfire_scatterblast_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+		"DOTA_Tooltip_Ability_snapfire_mortimer_kisses_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+		"DOTA_Tooltip_Ability_snapfire_firesnap_cookie_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		//Centaur
 		"DOTA_Tooltip_Ability_centaur_hoof_stomp_damage_pct"				"%УРОН ОТ СИЛЫ"
 		//Dark Seer
@@ -362,6 +371,8 @@
 		//Void Spirit
 		"DOTA_Tooltip_Ability_void_spirit_dissimilate_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_void_spirit_resonant_pulse_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+
+		
 		//shadow Demon
 		"DOTA_Tooltip_Ability_shadow_demon_demonic_purge_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_shadow_demon_shadow_poison_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"

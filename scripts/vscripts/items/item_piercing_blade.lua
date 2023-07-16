@@ -53,7 +53,13 @@ function mod:OnTakeDamage(params)
 	if params.attacker ~= self:GetParent() then return end
 	if params.unit:GetTeamNumber() == params.attacker:GetTeamNumber() then return end
 	if params.unit == self:GetParent() then return end
-    if params.inflictor and params.inflictor:GetAbilityName() ~= "batrider_sticky_napalm" then return end
+    if params.inflictor ~= nil then
+        print(params.inflictor:GetAbilityName())
+        if params.inflictor:GetAbilityName() == "batrider_sticky_napalm" then 
+            print(params.inflictor:GetAbilityName())
+            return 
+        end
+    end
 	if not self:GetParent():IsRealHero() then return end
     if BossSpawner:IsBoss(params.unit) == nil then 
         if not params.unit:IsRealHero() then
@@ -82,6 +88,7 @@ function mod:OnTakeDamage(params)
     end
     
     local damage = params.original_damage/100*(self.pure_dmg + self.pure_dmg_stack*stack)
+    print(damage)
     ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,})
 end
 

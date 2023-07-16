@@ -57,6 +57,7 @@ DOTAAbilities
 				}			
 				"remnant_smash_radius_tooltip"			"200"
 				"creep_multiplier"		"2"
+				"damage_pct"			"150"
 		}
 	}
 	"earth_spirit_rolling_boulder"
@@ -123,7 +124,7 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 330 360 390 420 450 480"
+				"damage"				"150 200 250 350 400 450 500"
 				"LinkedSpecialBonus"	"special_bonus_unique_earth_spirit"
 			}
 			"08"
@@ -190,6 +191,7 @@ DOTAAbilities
 					"value"		"10"
 					"special_bonus_unique_earth_spirit_5"	"-2"
 				}
+				"damage_pct"			"150"
 		}
 	}
 	"earth_spirit_stone_caller"
@@ -290,6 +292,7 @@ DOTAAbilities
 				}
 				"aoe"		"450"
 				"ally_cast_range"	"500"
+				"damage_pct"		"20"
 		}
 	}
 	"earth_spirit_magnetize"

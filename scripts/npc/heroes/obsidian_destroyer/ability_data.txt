@@ -26,10 +26,10 @@ DOTAAbilities
 		{
 			"mana_pool_damage_pct"	
 			{
-				"value"										"0.5 1 2 4 8 16 32"
-				"special_bonus_unique_outworld_devourer"	"+16"
+				"value"										"1 2 3 4 5 6 7"
+				"special_bonus_unique_outworld_devourer"	"+5"
 			}
-			"mana_cost_percentage"							"0.5 1 2 4 8 16 32"
+			"mana_cost_percentage"							"30"
 			"bounce_radius"
 			{
 				"value"										"0"			
@@ -173,7 +173,7 @@ DOTAAbilities
 			"scepter_barrier_threshold"	"10"
 			"scepter_barrier_duration"	"15"
 			"scepter_barrier_cooldown"	"60"
-			"scepter_max_mana_barrier_pct"	"100"
+			"scepter_max_mana_barrier_pct"	"20"
 		}
 	}
 	"obsidian_destroyer_sanity_eclipse"
