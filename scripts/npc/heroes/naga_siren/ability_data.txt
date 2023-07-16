@@ -45,12 +45,12 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"200"
+				"incoming_damage"			"250"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_incoming_damage_total_pct"			"300"
+				"tooltip_incoming_damage_total_pct"			"350"
 			}
 			"06"
 			{
@@ -101,7 +101,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"3.5 3.75 4.0 4.25 4.5 4.75 5.0"
+			"duration"					"1.5 1.7 1.9 2.2 2.5 2.7 3.0"
 			"net_speed"					
 			{
 				"value"						"1500"
@@ -148,7 +148,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_pct"						"20"
+			"damage_pct"						"25"
 			"hits"						
 			{
 				"value"											"6"

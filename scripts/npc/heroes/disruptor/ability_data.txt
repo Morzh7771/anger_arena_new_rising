@@ -234,8 +234,35 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"6.0"
+				"duration"					"4.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_disruptor_7"
+			}
+		}
+	}
+	"special_bonus_unique_disruptor_7"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"					"517"														// unique ID number for this ability. 	 Do not change this once established or it will invalidate collected stats.
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"                        "special_bonus_unique_earth_spirit"
+		
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1.0"
+				"ad_linked_abilities"			"disruptor_static_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value2"				"4"
+				"ad_linked_abilities"			"disruptor_static_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
