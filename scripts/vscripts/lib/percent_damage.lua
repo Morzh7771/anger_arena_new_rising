@@ -26,14 +26,10 @@ function PercentDamage:_init()
 		"earthshaker_fissure",
 		"earthshaker_aftershock",
 		"earthshaker_echo_slam",
-<<<<<<< Updated upstream
 		"tiny_avalanche",
 		"tiny_toss",
-		
-=======
 		"treant_overgrowth", 
 		"kunkka_ghostship"
->>>>>>> Stashed changes
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
