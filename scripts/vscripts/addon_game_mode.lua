@@ -3,6 +3,7 @@
 if AngelArena == nil then
 	_G.AngelArena = class({})
 end
+require('tp_s')
 require('lib/utils')
 require('lib/teleport')
 require('lib/boss/boss_spawner')
@@ -19,6 +20,7 @@ require('lib/game_ender')
 require('lib/move_limiter')
 require('lib/comeback_system')
 require('lib/percent_damage')
+require('lib/repick_menu')
 function Precache( context )
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
@@ -225,7 +227,8 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier("modifier_mid_teleport", "modifiers/modifier_mid_teleport", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_duel_vision", 'modifiers/modifier_duel_vision', LUA_MODIFIER_MOTION_NONE)
-
+	LinkLuaModifier("modifier_repick", 'modifiers/modifier_repick', LUA_MODIFIER_MOTION_NONE)
+	
 
 	
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)

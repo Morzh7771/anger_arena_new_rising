@@ -8250,7 +8250,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"50"
+		"ItemCost"						"0"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"observer ward"
@@ -8260,7 +8260,7 @@
 		"ItemInitialCharges"			"1"
 		"ItemStockMax"					"10"
 		"ItemStockInitial"				"4"
-		"ItemStockTime"					"30.0"
+		"ItemStockTime"					"60.0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"
@@ -8303,7 +8303,7 @@
 		"ItemInitialCharges"			"1"
 		"ItemStockMax"					"20"
 		"ItemStockInitial"				"4"
-		"ItemStockTime"					"30"
+		"ItemStockTime"					"60"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"

@@ -2,7 +2,7 @@ require('lib/random/generators')
 
 local CONFIG_PATH = "scripts/npc/dropbox.kv"
 local POS_RANDOM_TYPE = "uniform"
-local ITEM_DESTROY_TIME = 60
+local ITEM_DESTROY_TIME = 120
 
 -- Internals
 local POS_RAND_GEN = RandomGeneratorFactory:GetGenerator(POS_RANDOM_TYPE)
@@ -142,7 +142,8 @@ function DropBox:DropAtPos(pos, radius, manualLifetime)
 
 	for _, itemData in pairs(items) do
 		local function MakeItem(itemName)
-			local itemPos = pos + Vector( POS_RAND_GEN() * radius, POS_RAND_GEN() * radius, 0)
+			local randomOffset = RandomVector(radius)
+			local itemPos = randomOffset + pos
 			
 			local item = CreateItem(itemName, nil, nil)
 
@@ -152,7 +153,7 @@ function DropBox:DropAtPos(pos, radius, manualLifetime)
 
 			item:SetPurchaseTime(0)
 
-			local drop = CreateItemOnPositionSync( pos, item )
+			local drop = CreateItemOnPositionSync( itemPos, item )
 
 			if not drop then return end
 

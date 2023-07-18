@@ -217,8 +217,8 @@ function DuelController:_StartDuelTimer(toDuel)
 	local duelCount = DuelLibrary:GetDuelCount()
 	if toDuel then
 		if duelCount == 0 then
-			interval = 5
-	    elseif duelCount > 5 then
+			interval = 3000
+	    elseif duelCount > 3000 then
 			interval = DUEL_INTERVAL_AFTER
 		else
 			interval = DUEL_INTERVAL

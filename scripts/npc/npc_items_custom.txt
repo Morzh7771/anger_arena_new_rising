@@ -1013,7 +1013,7 @@
 		"ItemBaseLevel"					"1"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90"
+		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"50"
 
 		// Item Info
@@ -1048,7 +1048,7 @@
 		"ItemBaseLevel"					"2"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90"
+		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"50"
 
 		// Item Info
@@ -1083,7 +1083,7 @@
 		"ItemBaseLevel"					"3"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90"
+		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"50"
 
 		// Item Info
@@ -3470,4 +3470,5 @@
             "bonus_block_per_int"       "5 7 10"
 		}
 	}
+    
 }

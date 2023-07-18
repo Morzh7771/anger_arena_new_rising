@@ -3,7 +3,7 @@ require('lib/dropbox')
 BossClass = BossClass or class({})
 
 local BOUNTY_AOE = 1200
-local LOOT_RADIUS = 50
+local LOOT_RADIUS = 75
 
 function BossClass:Create( name, description, allTables )
 	local masterName = description["master"]
