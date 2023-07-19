@@ -2285,7 +2285,7 @@
         "ItemSellable"						"1"
         "ItemCost"							"375"
         "ItemStackable"						"0"
-        "AbilityCooldown"					"2.5"
+        "AbilityCooldown"					"1.0"
         "ShouldBeInitiallySuggested"		"1"
         
         // Special	
@@ -2310,22 +2310,22 @@
             "04"
             {
                 "var_type"				"FIELD_FLOAT"
-                "damage_to_exp_ranged"	"17"
+                "damage_to_exp_ranged"	"20"
             }
             "05"
             {
                 "var_type"				"FIELD_FlOAT"
-                "damage_to_exp_melee" 	"20"
+                "damage_to_exp_melee" 	"25"
             }
             "06"
             {
                 "var_type"				"FIELD_INTEGER"
-                "min_exp_ranged"		"40"
+                "min_exp_ranged"		"12"
             }
             "07"
             {
                 "var_type"				"FIELD_FlOAT"
-                "min_exp_melee"			"50"
+                "min_exp_melee"			"15"
             }
         }
     }
