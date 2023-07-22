@@ -21,11 +21,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 12 10 8"
+		"AbilityCooldown"				"8"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 115 130 145"
+		"AbilityManaCost"				"100 115 130 145 160 175 190"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -49,14 +49,19 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"targets"					"3 5 7 9"
+				"targets"					"3 4 5 6 7 8 9"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_7"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"140 200 260 320"
+				"damage"					"140 200 260 320 380 440 500"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_3"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_pct"					"250"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -86,7 +91,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 100 150 200"
+		"AbilityManaCost"				"50 75 100 125 150 175 200"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -100,7 +105,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.3 1.8 2.3 2.8"
+				"duration"					"1.2 1.5 1.8 2.1 2.4 2.7 3.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -128,12 +133,12 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"2.4 3.0 3.6 4.2"
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityChannelTime"			"2.4 2.7 3.0 3.3 3.6 3.9 4.2"
+		"AbilityCooldown"				"10"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 140 155 170"
+		"AbilityManaCost"				"80 85 90 95 100 105 110"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -147,19 +152,19 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"total_damage"		"60 130 200 270"
+				"total_damage"		"60 130 200 270 340 410 480"
 				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_6"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"2.4 3.0 3.6 4.2"
+				"channel_time"		"2.4 2.7 3.0 3.3 3.6 3.9 4.2"
 				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_2"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"shard_bonus_cast_range"		"75"
+				"shard_bonus_cast_range"		"125"
 				"RequiresShard"			"1"
 			}
 			"05"
@@ -179,7 +184,12 @@ DOTAAbilities
 				"var_type"			"FIELD_INTEGER"
 				"shard_ward_spawn_distance"		"100"
 				"RequiresShard"			"1"
-			}											
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_pct"		"15"
+			}
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -207,11 +217,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130 120 110"
+		"AbilityCooldown"				"75"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 350 550"
+		"AbilityManaCost"				"150 210 270 330 390 450 510"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -225,7 +235,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_tooltip"			"50 85 120"
+				"damage_tooltip"			"50 90 130 170 210 250 290"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_4"
 				"CalculateSpellDamageTooltip"	"0"				
 			}
@@ -310,6 +320,54 @@ DOTAAbilities
 			{
 				"var_type"				"FIELD_INTEGER"
 				"length"		"925"
+			}
+		}
+	}
+	"special_bonus_unique_shadow_shaman_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6521"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"60"
+				"ad_linked_abilities"			"shadow_shaman_mass_serpent_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	"special_bonus_unique_shadow_shaman_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6052"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"4"
+				"ad_linked_abilities"			"shadow_shaman_mass_serpent_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value2"				"2"
+				"ad_linked_abilities"			"shadow_shaman_mass_serpent_ward"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
