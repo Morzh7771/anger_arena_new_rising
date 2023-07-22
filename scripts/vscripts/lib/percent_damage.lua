@@ -72,7 +72,9 @@ function PercentDamage:_init()
 		"shadow_demon_demonic_purge",
 		"shadow_demon_shadow_poison",
 		"keeper_of_the_light_illuminate",
-		"keeper_of_the_light_spirit_form_illuminate"
+		"keeper_of_the_light_spirit_form_illuminate",
+		"puck_illusory_orb",
+		"puck_waning_rift"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
