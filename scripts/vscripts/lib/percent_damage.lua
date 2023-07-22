@@ -74,7 +74,9 @@ function PercentDamage:_init()
 		"keeper_of_the_light_illuminate",
 		"keeper_of_the_light_spirit_form_illuminate",
 		"puck_illusory_orb",
-		"puck_waning_rift"
+		"puck_waning_rift",
+		"techies_sticky_bomb",
+		"techies_land_mines"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
