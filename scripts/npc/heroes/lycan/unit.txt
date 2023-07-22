@@ -26,8 +26,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"20"		// Damage range min.
-		"AttackDamageMax"			"23"		// Damage range max.	
+		"AttackDamageMin"			"23"		// Damage range min.
+		"AttackDamageMax"			"27"		// Damage range max.	
 		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -54,7 +54,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"325"		// Base health.
+		"StatusHealth"				"300"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -81,8 +81,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"26"		// Damage range min.
-		"AttackDamageMax"			"29"		// Damage range max.	
+		"AttackDamageMin"			"33"		// Damage range min.
+		"AttackDamageMax"			"37"		// Damage range max.	
 		"AttackRate"				"1.1"		// Speed of attack.
 
 		// Bounty
@@ -92,7 +92,7 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"420"		// Speed.
+		"MovementSpeed"				"410"		// Speed.
 		"MagicalResistance"				"50"		// Magical protection.
 
 		// Status
@@ -122,16 +122,16 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"				"36"		// Gold earned min.
-		"BountyGoldMax"				"36"		// Gold earned max.
+		"BountyGoldMin"				"44"		// Gold earned min.
+		"BountyGoldMax"				"48"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"440"		// Speed.
+		"MovementSpeed"				"420"		// Speed.
 		"MagicalResistance"				"60"		// Magical protection.
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"425"		// Base health.
+		"StatusHealth"				"450"		// Base health.
 		
 	}	
 
@@ -151,9 +151,111 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"38"		// Damage range min.
-		"AttackDamageMax"			"40"		// Damage range max.	
+		"AttackDamageMin"			"56"		// Damage range min.
+		"AttackDamageMax"			"60"		// Damage range max.	
 		"AttackRate"				"0.9"		// Speed of attack.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"41"		// Gold earned min.
+		"BountyGoldMax"				"41"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementSpeed"				"430"		// Speed.
+		"MagicalResistance"				"70"		// Magical protection.
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"525"		// Base health.
+		
+	}	
+"npc_dota_lycan_wolf5"
+	{		
+		"include_keys_from" "npc_dota_lycan_wolf1"
+	
+		// General
+		//----------------------------------------------------------------
+		"Level"						"5"
+		"ModelScale" 					"1.05"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"lycan_summon_wolves_invisibility"			// Ability 1
+		"Ability2"					"lycan_summon_wolves_critical_strike"			// Ability 2
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"68"		// Damage range min.
+		"AttackDamageMax"			"72"		// Damage range max.	
+		"AttackRate"				"0.8"		// Speed of attack.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"41"		// Gold earned min.
+		"BountyGoldMax"				"41"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementSpeed"				"440"		// Speed.
+		"MagicalResistance"				"70"		// Magical protection.
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"600"		// Base health.
+		
+	}	
+"npc_dota_lycan_wolf6"
+	{		
+		"include_keys_from" "npc_dota_lycan_wolf1"
+	
+		// General
+		//----------------------------------------------------------------
+		"Level"						"6"
+		"ModelScale" 					"1.1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"lycan_summon_wolves_invisibility"			// Ability 1
+		"Ability2"					"lycan_summon_wolves_critical_strike"			// Ability 2
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"81"		// Damage range min.
+		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackRate"				"0.7"		// Speed of attack.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"41"		// Gold earned min.
+		"BountyGoldMax"				"41"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementSpeed"				"450"		// Speed.
+		"MagicalResistance"				"70"		// Magical protection.
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"675"		// Base health.
+		
+	}	
+"npc_dota_lycan_wolf7"
+	{		
+		"include_keys_from" "npc_dota_lycan_wolf1"
+	
+		// General
+		//----------------------------------------------------------------
+		"Level"						"7"
+		"ModelScale" 					"1.15"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"lycan_summon_wolves_invisibility"			// Ability 1
+		"Ability2"					"lycan_summon_wolves_critical_strike"			// Ability 2
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"95"		// Damage range min.
+		"AttackDamageMax"			"99"		// Damage range max.	
+		"AttackRate"				"0.6"		// Speed of attack.
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -166,6 +268,6 @@
 		"MagicalResistance"				"70"		// Magical protection.
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"475"		// Base health.
+		"StatusHealth"				"750"		// Base health.
 		
 	}	
