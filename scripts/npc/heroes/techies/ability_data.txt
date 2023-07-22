@@ -36,10 +36,6 @@ DOTAAbilities
 				{
 					"value"			"400 550 700 850 1000 1150 1300"
 				}
-				"damage_pct"
-				{
-					"value"			"200"
-				}
 				"building_damage_pct"		"100"
 				"activation_delay"			
 				{
@@ -56,8 +52,8 @@ DOTAAbilities
 					"value"		"19 18 17 16 15 14 13"
 					"special_bonus_unique_techies_3"	"-3"
 				}
-				"outer_damage"				"50"
-				"min_distance"				"150"
+				"outer_damage"				"100"
+				"min_distance"				"500"
 				"placement_radius"			"350"
 				"mres_reduction"			"12.5 15 17.5 20 22.5 25 27.5"
 				"burn_duration"				"5"
@@ -156,7 +152,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"45 42.5 40 37.5 35 32.5 30"
+		"AbilityCooldown"				"25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
