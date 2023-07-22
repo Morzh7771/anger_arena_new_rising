@@ -79,7 +79,9 @@ function PercentDamage:_init()
 		"techies_sticky_bomb",
 		"techies_land_mines",
 		"invoker_sun_strike",
-		"invoker_chaos_meteor"
+		"invoker_chaos_meteor",
+		"shadow_shaman_ether_shock",
+		"shadow_shaman_shackles"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
