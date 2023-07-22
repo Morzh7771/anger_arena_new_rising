@@ -29,7 +29,9 @@ function PercentDamage:_init()
 		"tiny_avalanche",
 		"tiny_toss",
 		"treant_overgrowth", 
-		"kunkka_ghostship"
+		"kunkka_ghostship",
+		"tusk_ice_shards",
+		"tusk_snowball"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
