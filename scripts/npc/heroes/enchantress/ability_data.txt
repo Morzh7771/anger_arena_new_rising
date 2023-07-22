@@ -20,7 +20,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_attack_speed"		"-120 -160 -200"
+				"slow_attack_speed"		"-120 -160 -200 -240 -280 -320 -360"
 				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_3"
 			}
 			"02"
@@ -36,7 +36,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"enchantress_bunny_hop"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"						"1"
@@ -84,7 +83,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"200"
+				"bonus_attack_range"		"300"
 			}					
 		}
 	}
@@ -123,7 +122,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"					"6"
-			"bonus_attack_speed"		"100"
+			"bonus_attack_speed"		"150"
 			"bonus_move_speed"			"100"
 			"radius"					"1200"
 		}
@@ -151,30 +150,30 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 24 18 12"
+		"AbilityCooldown"				"30 27 24 21 18 15 12"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70"
+		"AbilityManaCost"				"40 50 60 70 80 90 100"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"dominate_duration"			"30 60 90 120"
+			"dominate_duration"			"30 45 60 75 90 105 120"
 			"enchant_health"			
 			{
-				"value" 				"200 300 400 500"
+				"value" 				"200 300 500 800 1200 1700 2300"
 				"special_bonus_unique_enchantress_enchant_health_damage"		"+30%"
 			}
 			
-			"enchant_armor"				"2 4 6 8"
+			"enchant_armor"				"2 4 6 8 10 12 14"
 			"enchant_damage"			
 			{
-				"value" 				"10 30 50 70"
+				"value" 				"10 30 50 70 90 110 130"
 				"special_bonus_unique_enchantress_enchant_health_damage"		"+30%"
 			}
-			"slow_movement_speed"		"-30 -40 -50 -60"
+			"slow_movement_speed"		"-30 -35 -40 -45 -50 -55 -60"
 			"slow_duration"				"5"
 			"level_req"					"4 5 6 6"
 			"max_creeps"
@@ -205,7 +204,7 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35"
-		"AbilityDuration"				"9 10 11 12"
+		"AbilityDuration"				"12"
 
 		
 		// Cost
@@ -219,7 +218,7 @@ DOTAAbilities
 			"heal_interval"			"0.5"
 			"heal"					
 			{
-				"value"				"4 8 12 16"
+				"value"				"4 8 12 16 20 24 28"
 				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_5"
 			}
 			"radius"				"275 275 275 275"
@@ -258,12 +257,12 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"6 4 2 0"
+		"AbilityCooldown"				"0"
 		"AbilityDuration"				"1.5 1.5 1.5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"25 45 65 85 105 125 145"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -271,10 +270,10 @@ DOTAAbilities
 		{
 			"distance_damage_pct"	
 			{
-				"value"			"8 12 16 20"
-				"special_bonus_unique_enchantress_4"	"+6.5"	
+				"value"			"6 9 12 15 18 21 24"
+				"special_bonus_unique_enchantress_4"	"+6"	
 			}
-			"distance_cap"			"1750"
+			"distance_cap"			"99999"
 			"creep_multiplier"		"2"
 		}
 	}
