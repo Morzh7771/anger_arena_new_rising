@@ -23,7 +23,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10 9 8 7"
+		"AbilityCooldown"				"8"
 
 
 		// Cost
@@ -32,7 +32,7 @@ DOTAAbilities
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 650 700 750"
+		"AbilityCastRange"				"600 625 650 675 700 725 750"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,21 +40,21 @@ DOTAAbilities
 		{
 			"lance_damage"
 			{
-				"value"				"70 140 210 280"
+				"value"				"70 140 210 280 350 420 490"
 				"special_bonus_unique_phantom_lancer_lance_damage"		"+50"
 			}
 			"lance_speed"				"1000 1000 1000 1000"
 			"duration"					"3.75"
 			"movement_speed_pct"
 			{
-				"value"				"-14 -21 -28 -35"
+				"value"				"-14 -17.5 -21 -24.5 -28 -32.5 -35"
 				"special_bonus_scepter" "-10"
 			}
-			"illusion_duration"			"2.0 4.0 6.0 8.0"
+			"illusion_duration"			"5"
 			"illusion_damage_out_pct"	"-80"
 			"tooltip_illusion_damage"	"20"
-			"illusion_damage_in_pct"	"300 300 300 300"
-			"tooltip_illusion_total_damage_in_pct"	"400 400 400 400"
+			"illusion_damage_in_pct"	"300"
+			"tooltip_illusion_total_damage_in_pct"	"400"
 			"fake_lance_distance"		"675"
 			"scepter_bounce_radius"
 			{
@@ -91,7 +91,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 18 14 10"
+		"AbilityCooldown"				"22 20 18 16 14 12 10"
 			
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -146,18 +146,18 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_illusions"			"6 8 10"
+				"max_illusions"			"6"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"proc_chance_pct"		"40 45 50"
+				"proc_chance_pct"		"30 35 40 45 50 55 60"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"illusion_proc_chance_pct"		"8"
+				"illusion_proc_chance_pct"		"10"
 			}			
 			"04"
 			{
@@ -167,32 +167,32 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_out_pct"	"-82 -80 -78"
+				"illusion_damage_out_pct"	"-82 -80 -78 -76 -74 -72 -70"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_damage"	"18 20 22"
+				"tooltip_illusion_damage"	"18 20 22 24 26 28 30"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_6"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_in_pct"	"550"
+				"illusion_damage_in_pct"	"325"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_total_illusion_damage_in_pct"	"650"
+				"tooltip_total_illusion_damage_in_pct"	"425"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_from_illusion_duration"	"4"
+				"illusion_from_illusion_duration"	"8"
 			}
 			"10"
 			{
@@ -227,7 +227,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 10 7 4"
+		"AbilityCooldown"				"15 13 11 9 7 5 3"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -236,14 +236,14 @@ DOTAAbilities
 				"min_distance"		"275"
 				"max_distance"				
 				{
-					"value"				"600 675 750 825"
+					"value"				"825"
 					"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer"
 				}
-				"bonus_speed"		"800"
-				"bonus_agility"		"10 20 30 40"
+				"bonus_speed"		"1000"
+				"bonus_agility"		"25 35 45 55 65 75 85"
 				"agility_duration"		
 				{
-					"value"			"1.5"
+					"value"			"2.5"
 					"special_bonus_unique_phantom_lancer_2"		"+2.5"
 				}
 		}
