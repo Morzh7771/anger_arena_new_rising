@@ -39,7 +39,8 @@ function PercentDamage:_init()
 		"naga_siren_rip_tide",
 		"gyrocopter_rocket_barrage",
 		"sniper_shrapnel",
-		"sniper_assassinate"
+		"sniper_assassinate",
+		"phantom_lancer_spirit_lance"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
