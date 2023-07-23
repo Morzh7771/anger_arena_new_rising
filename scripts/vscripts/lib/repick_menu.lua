@@ -100,11 +100,13 @@ function RepickMenu:_init()
 	end
 
 	CustomGameEventManager:RegisterListener("aa_repick_menu_retrive_data", Dynamic_Wrap(self, '_retriveHeroData'))
+	print("aa_repick_menu_retrive_data")
 	CustomGameEventManager:RegisterListener("aa_repick_menu_start_repick", Dynamic_Wrap(self, '_repickHero'))
+	print("aa_repick_menu_start_repick")
 end
 
 function RepickMenu:CanPickNow()
-	return DuelController:GetTimeToDuel() > DUEL_CANT_PICK_PERIOD and BossSpawner:GetDeathCount(BOSS_FOR_REPICK) ~= 0 and not BossSpawner:IsBossAlive(BOSS_FOR_REPICK)
+	return true --DuelController:GetTimeToDuel() > DUEL_CANT_PICK_PERIOD and BossSpawner:GetDeathCount(BOSS_FOR_REPICK) ~= 0 and not BossSpawner:IsBossAlive(BOSS_FOR_REPICK)
 end
 
 function RepickMenu:PickHero(player, newHeroName)
@@ -137,6 +139,7 @@ function RepickMenu:PickHero(player, newHeroName)
 		["hero_name"] = newHeroName, 
 		["picked"]    = 1, 
 	})
+	print("1")
 
 	-- and close menu for player that request repick
 	self:Close(player)
@@ -150,6 +153,7 @@ function RepickMenu:PickHero(player, newHeroName)
 				["hero_name"] = oldHeroName, 
 				["picked"]    = 0,
 			})
+			print("2")
 		end
 	end
 
@@ -161,6 +165,7 @@ function RepickMenu:PickHero(player, newHeroName)
 			["hero_name"] = newHeroName, 
 			["picked"]    = 0,
 		})
+		print("3")
 	end
 
 	-- and finally start real repicking
@@ -175,14 +180,16 @@ end
 
 function RepickMenu:Open(player)
 	CustomGameEventManager:Send_ServerToPlayer(player, "aa_repick_menu_open", {} )
+	print('aa_repick_menu_open')
 end
 
 function RepickMenu:Close(player)
 	CustomGameEventManager:Send_ServerToPlayer(player, "aa_repick_menu_close", {} )
+	print('aa_repick_menu_close')
 end
 
 function RepickMenu:_repickHero(data)
-	print('_repickHero')
+	
 	local player_id = data['PlayerID']
 
 	if not player_id then return end
@@ -207,8 +214,9 @@ function RepickMenu:_retriveHeroData(data)
 
 	local data = RepickMenu:GetData()
 
-	DeepPrintTable(RepickMenu:sortTableAlphabetically(data))
+	
 	CustomGameEventManager:Send_ServerToPlayer(player, "aa_repick_menu_set_data", data )
+	print('aa_repick_menu_set_data')
 end
 function RepickMenu:sortTableAlphabetically(tables)
     -- Создаем временную таблицу для хранения отсортированных значений

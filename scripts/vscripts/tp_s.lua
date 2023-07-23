@@ -1,4 +1,4 @@
-require('lib/repick_menu')
+--require('lib/repick_menu')
 
 function hc_menu_open(trigger)
 	if not IsServer() then return end
