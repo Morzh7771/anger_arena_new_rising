@@ -31,6 +31,8 @@ function PercentDamage:_init()
 		"tiny_toss",
 		"treant_overgrowth", 
 		"kunkka_ghostship",
+		"tusk_ice_shards",
+		"tusk_snowball",
 		"earth_spirit_boulder_smash",
 		"earth_spirit_geomagnetic_grip",
 		"earth_spirit_petrify",
@@ -43,6 +45,7 @@ function PercentDamage:_init()
 		"sniper_shrapnel",
 		"sniper_assassinate",
 		"faceless_void_time_lock",
+		"phantom_lancer_spirit_lance",
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
@@ -75,7 +78,15 @@ function PercentDamage:_init()
 		"shadow_demon_demonic_purge",
 		"shadow_demon_shadow_poison",
 		"keeper_of_the_light_illuminate",
-		"keeper_of_the_light_spirit_form_illuminate"
+		"keeper_of_the_light_spirit_form_illuminate",
+		"puck_illusory_orb",
+		"puck_waning_rift",
+		"techies_sticky_bomb",
+		"techies_land_mines",
+		"invoker_sun_strike",
+		"invoker_chaos_meteor",
+		"shadow_shaman_ether_shock",
+		"shadow_shaman_shackles"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",

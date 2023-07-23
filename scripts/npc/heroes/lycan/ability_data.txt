@@ -21,24 +21,24 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"115 120 125 130"
+		"AbilityManaCost"				"115 120 125 130 135 140 145"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"wolf_index"				"1 2 3 4"
+			"wolf_index"				"1 2 3 4 5 6 7"
 			"wolf_duration"				"50"
-			"wolf_bat"					"1.2 1.1 1.0 0.9"
+			"wolf_bat"					"1.2 1.1 1.0 0.9 0.8 0.7 0.6"
 			"wolf_damage"
 			{
-				"value"							"21 27 33 39"
-				"special_bonus_unique_lycan_3"	"+10"
+				"value"							"25 35 46 58 70 83 97"
+				"special_bonus_unique_lycan_3"	"+14"
 
 			}
 			"wolf_hp"					
 			{
-				"value"	"325 375 425 475"
+				"value"	"300 375 450 525 600 675 750"
 				"special_bonus_unique_lycan_7"	"+250"
 			}
 			"bonus_health"
@@ -49,7 +49,7 @@ DOTAAbilities
 			"bonus_damage"
 			{
 				"value"			"0"
-				"special_bonus_unique_lycan_3"	"+10"
+				"special_bonus_unique_lycan_3"	"+23"
 			}
 			"bash_chance"				"15"
 			"bash_duration"				"1.0"
@@ -85,7 +85,7 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCooldown"				"125 110 95"
+		"AbilityCooldown"				"75"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -120,7 +120,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16"
+		"AbilityCooldown"				"22 21 20 19 18 17 16"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ DOTAAbilities
 			"howl_duration"		"8"		
 			"attack_damage_reduction"		
 			{
-				"value"		"25 30 35 40"
+				"value"		"16 20 24 28 32 36 40"
 				"special_bonus_unique_lycan_6"	"+20"
 			}
 			"total_attack_damage_reduction"		
@@ -145,9 +145,9 @@ DOTAAbilities
 				"value"		"0"
 				"special_bonus_unique_lycan_5"	"+1"
 			}
-			"armor"			"4 5 6 7"
+			"armor"			"4 5 6 7 8 9 10"
 			"radius"			"2000"
-			"fear_duration"		"1 1.5 2 2.5"
+			"fear_duration"		"0.6 1.0 1.4 1.8 2.2 2.6 3.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastGestureSlot"	"DEFAULT" 
@@ -165,12 +165,12 @@ DOTAAbilities
 		{
 			"bonus_damage"			
 			{
-				"value"			"10 20 30 40"
-				"special_bonus_unique_lycan_4"	"+25"
+				"value"			"10 15 20 25 30 35 40"
+				"special_bonus_unique_lycan_4"	"+35"
 			}
 			"bonus_hp_regen"		
 			{
-				"value"			"1 3 5 7"
+				"value"			"3 7 11 15 19 23 27"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -192,7 +192,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"110 100 90"
+		"AbilityCooldown"				"90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -214,8 +214,8 @@ DOTAAbilities
 			{
 				"value"			"40"
 			}
-			"crit_multiplier"		"160 190 220"
-			"health_bonus"		"200 300 400"
+			"crit_multiplier"		"160 190 220 250 270 300 330"
+			"health_bonus"		"300 350 450 600 800 1050 1350"
 		}
 	}
 	"lycan_summon_wolves_critical_strike"
@@ -267,7 +267,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"fade_delay"				"2"
+				"fade_delay"				"1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"

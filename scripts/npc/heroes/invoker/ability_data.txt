@@ -22,7 +22,7 @@ DOTAAbilities
 		{
 			"health_regen_per_instance"
 			{
-				"value"					"1 2 3 4 5 6 7"
+				"value"					"3 6 9 12 15 18 21"
 				"special_bonus_unique_invoker_13"	"x3"
 			}
 		}
@@ -48,12 +48,12 @@ DOTAAbilities
 		{
 			"attack_speed_per_instance"
 			{
-				"value"					"1 2 3 4 5 6 7"
+				"value"					"7 14 21 28 35 42 49"
 				"special_bonus_unique_invoker_13"	"x3"
 			}
 			"move_speed_per_instance"
 			{
-				"value"					"0.8 1.6 2.4 3.2 4 4.8 5.6"
+				"value"					"2.4 4.8 7.2 9.6 12.0 14.4 16.8"
 				"special_bonus_unique_invoker_13"	"x3"
 			}
 		}
@@ -80,7 +80,7 @@ DOTAAbilities
 		{
 			"bonus_damage_per_instance"
 			{
-				"value"					"2 4 6 8 10 12 14"
+				"value"					"12 20 29 39 50 62 75"
 				"special_bonus_unique_invoker_13"	"x3"
 			}
 		}
@@ -204,7 +204,7 @@ DOTAAbilities
 			}
 			"freeze_damage"
 			{
-				"value"					"8 16 24 32 40 48 56 64"
+				"value"					"21 26 32 46 56 72 76 82"
 				"levelkey"				"quaslevel"	
 			}
 			"damage_trigger"			"10.0"
@@ -300,7 +300,7 @@ DOTAAbilities
 			}
 			"base_damage"			
 			{
-				"value"							"70"			
+				"value"							"100"			
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"quas_damage"
@@ -310,7 +310,7 @@ DOTAAbilities
 			}
 			"wex_damage"
 			{
-				"value"				"45 90 135 180 225 270 315 360"
+				"value"				"100 160 225 275 300 325 350 395"
 				"levelkey"			"wexlevel"
 			}
 		}
@@ -336,7 +336,7 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.05"
 		"AbilityCastAnimation"			"ACT_INVALID"
 
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"21"
 		"AbilityManaCost"				"125"
 			
 		// Special
@@ -351,19 +351,19 @@ DOTAAbilities
 			"area_of_effect"		"675"
 			"mana_burned"
 			{
-				"value"			"100 175 250 325 400 475 550 625"
+				"value"			"200 300 400 600 800 1000 1200 1400"
 				"levelkey"				"wexlevel"
 				
 			}
 			"damage_per_mana_pct"					
 			{
-				"value"			"60"
-				"special_bonus_shard"	"+50%"
+				"value"			"100"
+				"special_bonus_shard"	"+90%"
 			}
 			
 			"shard_drag_speed"
 			{
-				"value"					"175"
+				"value"					"225"
 				"RequiresShard"			"1"
 			}
 		}
@@ -393,7 +393,7 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.05"
 		"AbilityCastAnimation"			"ACT_INVALID"
 
-		"AbilityCooldown"				"17"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"100"
 			
 		// Special
@@ -408,7 +408,7 @@ DOTAAbilities
 			}
 			"bonus_damage"
 			{
-				"value"					"10 22 34 46 58 70 82 94"
+				"value"					"29 34 50 67 85 104 124 145"
 				"levelkey"				"exortlevel"
 				"special_bonus_unique_invoker_5"	"+30"
 				"CalculateSpellDamageTooltip"	"0"
@@ -468,19 +468,20 @@ DOTAAbilities
 			"end_vision_duration"		"3.0"
 			"main_damage"
 			{
-				"value"					"55 80 105 130 155 180 205 220"
+				"value"					"60 80 107.5 122 152 185.5 245.1 292.5"
 				"levelkey"				"exortlevel"
 				"special_bonus_unique_invoker_6"	"+80%"
 			}
 			"burn_duration"				"3.0"
 			"burn_dps"
 			{
-				"value"					"10 15 20 25 30 35 40 45"
+				"value"					"21.5 32 36.5 42 45.5 55 62 75"
 				"levelkey"				"exortlevel"
 				"CalculateSpellDamageTooltip"	"1"
 				"special_bonus_unique_invoker_6"	"+80%"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
+			"damage_pct"				"35"
 			"meteor_count"
 			{
 				"value"					"1"
@@ -521,9 +522,10 @@ DOTAAbilities
 			"area_of_effect"			"175"
 			"damage"
 			{
-				"value"					"120 180 240 300 360 420 480 540"
+				"value"					"100 180 260 340 420 500 580 660"
 				"levelkey"				"exortlevel"
 			}
+			"damage_pct"				"100"
 			"vision_distance"			"400"
 			"vision_duration"			"4.0"
 			"cataclysm_count"
@@ -534,17 +536,17 @@ DOTAAbilities
 			}
 			"cataclysm_cooldown"
 			{
-				"value"					"100"
+				"value"					"60"
 				"RequiresScepter"		"1"
 			}
 			"cataclysm_min_range"
 			{
-				"value"					"160"
+				"value"					"120"
 				"RequiresScepter"		"1"
 			}
 			"cataclysm_max_range"
 			{
-				"value"					"200"
+				"value"					"160"
 				"RequiresScepter"		"1"
 			}
 		}
@@ -573,26 +575,26 @@ DOTAAbilities
 		{
 			"spirit_damage"			
 			{
-				"value"			"22 32 42 52 62 72 82 92"
+				"value"			"38 47 52 62 90 105 110 125"
 				"levelkey"		"exortlevel"
 			}
 			"spirit_mana"			
 			{	
-				"value"			"100 150 200 250 300 350 400 450"
+				"value"			"500 600 800 1200 1400 1800 2200 4000"
 				"levelkey"		"exortlevel"
 			}
 			"spirit_armor"
 			{
-				"value"			"0 1 2 3 4 5 6 7"
+				"value"			"1 2 4 6 8 12 16 25"
 				"levelkey"		"exortlevel"
 			}
 			"spirit_attack_range"	
 			{
-				"value"			"300 365 430 495 560 625 690 755"
+				"value"			"690"
 				"levelkey"		"quaslevel"
 			}
 			"spirit_hp"				
-			{	"value"			"300 400 500 600 700 800 900 1000"
+			{	"value"			"600 700 800 900 1000 1100 1200 1300"
 				"levelkey"		"quaslevel"
 			}
 			"spirit_duration"
@@ -614,8 +616,8 @@ DOTAAbilities
 			{
 				"special_bonus_unique_invoker_11" "+50"
 			}
-			"extra_spirit_count_quas"	"0 0 0 1 1 1 1 1"
-			"extra_spirit_count_exort"	"0 0 0 1 1 1 1 1"
+			"extra_spirit_count_quas"	"0 0 0 1 1 1 1 2"
+			"extra_spirit_count_exort"	"0 0 0 1 1 1 1 2"
 		}
 			
 	}
@@ -636,7 +638,7 @@ DOTAAbilities
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"125"
 		"AbilityCastPoint"				"0.05"
 		"AbilityCastAnimation"			"ACT_INVALID"
@@ -658,7 +660,7 @@ DOTAAbilities
 			"slow_duration"			"2.0"
 			"damage_per_second"
 			{
-				"value"				"6 12 18 24 30 36 42 48"
+				"value"				"24 36 42 48 54 65 78 90"
 				"levelkey"			"exortlevel"
 				"special_bonus_unique_invoker_ice_wall_dps" "+50"
 			}
@@ -710,7 +712,7 @@ DOTAAbilities
 			"end_vision_duration"		"1.75"
 			"damage"
 			{
-				"value"					"60 100 140 180 220 260 300 340"
+				"value"					"120 160 240 300 320 380 420 450"
 				"levelkey"				"exortlevel"
 			}
 			"knockback_duration"
@@ -720,7 +722,7 @@ DOTAAbilities
 			}
 			"disarm_duration"
 			{
-				"value"					"1.25 2.0 2.75 3.5 4.25 5.0 5.75 6.5"
+				"value"					"1.0 1.25 1.5 1.75 2.0 2.25 2.5 2.75"
 				"levelkey"				"wexlevel"
 			}
 			"radial_count"

@@ -20,17 +20,17 @@ DOTAAbilities
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"625 700 775 850"
+		"AbilityCastRange"				"625 675 725 775 825 875 925"
 		"AbilityCastPoint"				"0.35"
-		"AbilityCooldown"				"12 11 10 9"
-		"AbilityManaCost"				"70 90 110 130"
+		"AbilityCooldown"				"12 11.5 11 10.5 10 9.5 9"
+		"AbilityManaCost"				"70 80 90 100 110 120 130"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"vision_range"					"250"
-			"duration"						"3 4 5 6"
+			"duration"						"3 3.5 4 4.5 5 5.5 6"
 			"blind_pct"
 			{
 				"value" 			"0"
@@ -108,9 +108,9 @@ DOTAAbilities
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"3 3 3 3"
-		"AbilityCooldown"				"60 50 40 30"
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityCastPoint"				"3 2.9 2.8 2.7 2.6 2.5 2.4"
+		"AbilityCooldown"				"60 55 50 45 40 35 30"
+		"AbilityManaCost"				"50 60 70 80 90 100 110"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------		
@@ -118,14 +118,14 @@ DOTAAbilities
 		{
 			"max_stacks"				
 			{
-				"value"				"6 8 10 12"
-				"special_bonus_unique_furion_teleportation_max_stacks"		"+4"
+				"value"				"6 8 10 12 14 16 18"
+				"special_bonus_unique_furion_teleportation_max_stacks"		"+12"
 
 			}
 			
 			"buff_duration"				"15"
-			"damage_per_stack"		"6"
-			"armor_per_stack"		"1"	
+			"damage_per_stack"		"10"
+			"armor_per_stack"		"1.5"	
 		}
 	}
 	"furion_force_of_nature"
@@ -148,32 +148,32 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"area_of_effect"		"150 225 300 375"
+			"area_of_effect"		"150 200 250 300 350 400 450"
 			"max_treants"
 			{
-				"value"							"2 3 4 5"
-				"special_bonus_unique_furion_2"	"+5"
+				"value"							"3 3 4 4 5 5 6"
+				"special_bonus_unique_furion_2"	"+4"
 			}
 			"treant_duration"				"50"
 			"treant_health"
 			{
-				"value"								"550"
+				"value"					"650"
 				"special_bonus_unique_furion"			"x2.5"
 			}
 			"treant_damage_min"
 			{
-				"value"					"11 19 27 35"
+				"value"					"18 27 37 48 60 73 87"
 				"special_bonus_unique_furion"			"x2.5"
 			}
 			"treant_damage_max"
 			{
-				"value"					"15 23 31 39"
+				"value"					"20 29 39 50 62 75 89"
 				"special_bonus_unique_furion"			"x2.5"
 			}
 			"AbilityCooldown"				
 			{
-				"value"				"37 35 33 31"
-				"special_bonus_unique_furion_6"		"-8"
+				"value"				"30"
+				"special_bonus_unique_furion_6"		"-10"
 			}
 			
 		}
@@ -207,7 +207,7 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.5 0.5 0.5"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
-		"AbilityManaCost"				"130 160 190"
+		"AbilityManaCost"				"130 160 190 220 250 280 310"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -216,8 +216,8 @@ DOTAAbilities
 			"max_targets"			"18"
 			"damage"
 			{
-				"value"				"120 155 190"
-				"special_bonus_unique_furion_5"			"+30"
+				"value"				"120 160 200 240 280 320 360"
+				"special_bonus_unique_furion_5"			"+40"
 			}
 			"damage_percent_add"
 			{
@@ -288,7 +288,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"		"7"
-			"damage_per_tree"		"20"
+			"damage_per_tree"		"50"
 			"slow_per_tree"			"7"
 			"radius"				"250"
 			"range"					"1200"

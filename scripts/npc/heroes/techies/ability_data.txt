@@ -20,27 +20,27 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-		"AbilityCharges"				"3"
+		"AbilityCharges"				"5"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 200 275 350 425 500 575"
+		"AbilityManaCost"				"100 200 300 400 500 600 700"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 				"radius"				"500"
-				"proximity_threshold"				"1.0"
+				"proximity_threshold"				"1.0 0.95 0.9 0.85 0.8 0.75 0.7"
 				"damage"					
 				{
-					"value"			"300 375 450 525 600 675 750"
+					"value"			"400 550 700 850 1000 1150 1300"
 				}
-				"building_damage_pct"		"30"
+				"building_damage_pct"		"100"
 				"activation_delay"			
 				{
 					"value"		"1"
-					"special_bonus_unique_techies_4"	"-0.8"
+					"special_bonus_unique_techies_4"	"-1"
 				}
 				"cast_range_scepter_bonus"		
 				{
@@ -52,8 +52,8 @@ DOTAAbilities
 					"value"		"19 18 17 16 15 14 13"
 					"special_bonus_unique_techies_3"	"-3"
 				}
-				"outer_damage"				"50"
-				"min_distance"				"150"
+				"outer_damage"				"100"
+				"min_distance"				"500"
 				"placement_radius"			"350"
 				"mres_reduction"			"12.5 15 17.5 20 22.5 25 27.5"
 				"burn_duration"				"5"
@@ -148,11 +148,11 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"1.0"
+		"AbilityCastPoint"				"0.5"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"45 42.5 40 37.5 35 32.5 30"
+		"AbilityCooldown"				"25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -165,7 +165,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"				"400"
+				"radius"					"400"
 			}
 			"02"
 			{
@@ -235,6 +235,10 @@ DOTAAbilities
 				"damage"				
 				{
 					"value"	"80 160 240 320 400 480 560"
+				}
+				"damage_pct"
+				{
+					"value" "75"
 				}
 				"slow"					"25 30 35 40 45 50 55"
 				"secondary_slow"		"15 20 25 30 35 40 45"

@@ -1,0 +1,197 @@
+"DOTAUnits"
+{
+"npc_dota_lesser_eidolon"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
+		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
+		"ModelScale"				"0.75"
+		"Level"						"1"
+		"IsSummoned"				"1"
+		"SelectionGroup"			"Eidolons"
+		"UnitLabel"			"eidolons"
+		"wearable"				"8638"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"				"30"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"16"		// Damage range min.
+		"AttackDamageMax"			"24"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.5"			// Speed of attack.
+		"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"425"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"900"		// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"10"		// Experience earn.
+		"BountyGoldMin"				"18"		// Gold earned min.
+		"BountyGoldMax"				"24"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"130"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"280"		// Speed
+		"MovementTurnRate"			"0.9"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"200"		// Base health.
+		"StatusHealthRegen"			"4"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+	}	
+
+	"npc_dota_eidolon"
+	{
+		"include_keys_from" "npc_dota_lesser_eidolon"
+		"ModelScale"				"0.8"
+		
+		"ArmorPhysical"				"3"			// Physical protection.
+		"MagicalResistance"			"35"		// Magical protection.
+
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"33"		// Damage range max.
+
+		"HealthBarOffset"			"135"
+
+		"MovementSpeed"				"310"		// Speed
+
+		"StatusHealth"				"275"		// Base health.
+		"AttackRange"				"450"		// Range within a target can be attacked.
+
+	}	
+
+	"npc_dota_greater_eidolon"
+	{
+		"include_keys_from" "npc_dota_lesser_eidolon"
+		"ModelScale"				"0.85"
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"			"40"		// Magical protection.
+
+		"AttackDamageMin"			"35"		// Damage range min.
+		"AttackDamageMax"			"43"		// Damage range max.
+		
+		"HealthBarOffset"			"140"
+
+		"MovementSpeed"				"340"		// Speed
+
+		"StatusHealth"				"350"		// Base health.
+		"AttackRange"				"475"		// Range within a target can be attacked.
+
+	}	
+
+	"npc_dota_dire_eidolon"
+	{
+		"include_keys_from" "npc_dota_lesser_eidolon"
+		
+		"ModelScale"				".9"
+		
+		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"			"45"		// Magical protection.
+		
+		"AttackDamageMin"			"46"		// Damage range min.
+		"AttackDamageMax"			"54"		// Damage range max.
+
+		"HealthBarOffset"			"145"
+
+		"MovementSpeed"				"370"		// Speed
+		
+		"StatusHealth"				"425"		// Base health.
+		"AttackRange"				"500"		// Range within a target can be attacked.
+	}
+	"npc_dota_dire_eidolon1"
+	{
+		"include_keys_from" "npc_dota_lesser_eidolon"
+		
+		"ModelScale"				".95"
+		
+		"ArmorPhysical"				"6"			// Physical protection.
+		"MagicalResistance"			"50"		// Magical protection.
+		
+		"AttackDamageMin"			"58"		// Damage range min.
+		"AttackDamageMax"			"66"		// Damage range max.
+
+		"HealthBarOffset"			"145"
+
+		"MovementSpeed"				"390"		// Speed
+		
+		"StatusHealth"				"500"		// Base health.
+		"AttackRange"				"525"		// Range within a target can be attacked.
+	}
+	"npc_dota_dire_eidolon2"
+	{
+		"include_keys_from" "npc_dota_lesser_eidolon"
+		
+		"ModelScale"				"1.0"
+		
+		"ArmorPhysical"				"7"			// Physical protection.
+		"MagicalResistance"			"55"		// Magical protection.
+		
+		"AttackDamageMin"			"71"		// Damage range min.
+		"AttackDamageMax"			"79"		// Damage range max.
+
+		"HealthBarOffset"			"145"
+
+		"MovementSpeed"				"410"		// Speed
+		
+		"StatusHealth"				"575"		// Base health.
+		"AttackRange"				"550"		// Range within a target can be attacked.
+	}
+	"npc_dota_dire_eidolon3"
+	{
+		"include_keys_from" "npc_dota_lesser_eidolon"
+		
+		"ModelScale"				"1.05"
+		
+		"ArmorPhysical"				"8"			// Physical protection.
+		"MagicalResistance"			"60"		// Magical protection.
+		
+		"AttackDamageMin"			"85"		// Damage range min.
+		"AttackDamageMax"			"93"		// Damage range max.
+
+		"HealthBarOffset"			"145"
+
+		"MovementSpeed"				"430"		// Speed
+		
+		"StatusHealth"				"650"		// Base health.
+		"AttackRange"				"575"		// Range within a target can be attacked.
+	}
+}
