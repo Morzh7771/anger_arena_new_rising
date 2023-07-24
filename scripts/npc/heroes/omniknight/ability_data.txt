@@ -38,7 +38,7 @@ DOTAAbilities
 		{
 			"AbilityCooldown"				
 			{
-				"value"				"16 15 14 13 12 11 10"
+				"value"				"10"
 				"special_bonus_unique_omniknight_3"		"-6"
 			}
 			"base_damage"	
@@ -46,7 +46,7 @@ DOTAAbilities
 				"value"		"90 100 110 120 130 140 150"
 				"special_bonus_unique_omniknight_4"	"+50"
 			}
-			"bonus_damage"	"50 75 100 125 150 175 200"
+			"bonus_damage"	"50 90 130 170 210 250 290"
 			"duration"	"5"
 			"movement_slow"				"14 18 22 26 30 34 38"
 
@@ -281,7 +281,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"base_strength"				"10 17 24 31 38 45 52"
+				"base_strength"				"15 25 37 51 67 85 105"
 				"base_hpregen"				"8 12 16 20 24 28 32"
 				"strength_bonus"		
 				{
