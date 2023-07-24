@@ -424,9 +424,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_movement_speed_ranged"   "50 60 70"
-				"bonus_movement_speed_melee"    "60 70 80"
-				"bonus_stat"			        "10 20 40"
+				"bonus_movement_speed_ranged"   "50 60 80"
+				"bonus_movement_speed_melee"    "60 70 90"
+				"bonus_stat"			        "10 20 60"
 				"bonus_attack_speed"			"25 50 100"
 				"bonus_damage"			        "0"
 		}
@@ -468,9 +468,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_movement_speed_ranged"   "50 60 70"
-				"bonus_movement_speed_melee"    "60 70 80"
-				"bonus_stat"			        "10 20 40"
+				"bonus_movement_speed_ranged"   "50 60 80"
+				"bonus_movement_speed_melee"    "60 70 90"
+				"bonus_stat"			        "10 20 60"
 				"bonus_attack_speed"			"25 50 100"
 				"bonus_damage"			        "0"
 		}
@@ -482,7 +482,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"	
+		"ItemCost"						"1000"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -512,9 +512,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_movement_speed_ranged"   "50 60 70"
-				"bonus_movement_speed_melee"    "60 70 80"
-				"bonus_stat"			        "10 20 40"
+				"bonus_movement_speed_ranged"   "50 60 80"
+				"bonus_movement_speed_melee"    "60 70 90"
+				"bonus_stat"			        "10 20 60"
 				"bonus_attack_speed"			"25 50 100"
 				"bonus_damage"			        "0"
 		}
@@ -3478,7 +3478,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1750"	
+		"ItemCost"						"1250"	
 		"ItemShopTags"					""
 		"ItemAliases"					"hom"
 		
@@ -3537,60 +3537,54 @@
 		}
 	}
 
-	"item_recipe_hand_of_midas_2"
+	"item_recipe_advanced_midas"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"555"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		"ItemAliases"					"hom"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_hand_of_midas_2"
+		"ItemResult"					"item_advanced_midas"
 		"ItemRequirements"
 		{
 			"01"						"item_hand_of_midas;item_hand_of_midas"		
 		}
 	}
-	"item_hand_of_midas_2"
+	"item_advanced_midas"
 	{
-		"ItemBaseLevel"					"2"
-		"BaseClass"						"item_hand_of_midas"
-		"AbilityTextureName"			"midas_2"
-		"AbilitySharedCooldown"			"midas"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityTextureName"	        "midas_2"
+		"AbilitySharedCooldown"			"midas"
+		"AbilityCastAnimation" 			"ACT_RESET"
+		
+		"ItemBaseLevel"					"2"
+		
+		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"90.0"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"ItemCost"						"2200"
-		"ItemShopTags"					"attack_speed;hard_to_tag"
-		"ItemQuality"					"common"
-		"ItemAliases"					"hand of midas"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
+		"IsRefreshable"					"0"
+		"ItemCost"						"4100"
+		"ItemStackable"					"0"
 		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+		"ItemPermanent"					"0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemPurchasable"				"1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40 80"
+				"bonus_attack_speed"		"40 80"
 			}
 			"02"
 			{
@@ -3603,9 +3597,33 @@
 				"bonus_gold"			"160 320"
 			}
 		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/advanced_midas.lua"
+				"Function"				"UseAdvancedMidas"
+				"BonusGold"				"%bonus_gold"
+				"XPMultiplier"			"%xp_multiplier"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_advanced_midas_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes" 		        "MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 		"%bonus_attack_speed"		
+				}
+			}
+		}
 	}
-
-
 	"item_recipe_phylactery"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -8399,6 +8417,168 @@
 			}
 		}
 	}
-	
+	"item_recipe_bloodstone"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"700"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloodstone"
+		"ItemRequirements"
+		{
+			"01"						"item_voodoo_mask;item_soul_booster"
+		}
+	}
+	"item_bloodstone"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilitySharedCooldown"			"bloodstone"
+		"ItemBaseLevel"					"1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"35.0"
+		"AbilityManaCost"				"0"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4400"
+		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bs;bloodstone"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AllowedInBackpack"				"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_health"			"500 1000 3000"
+				"bonus_mana"			"500 1000 3000"
+				"spell_lifesteal"		"30 40 50"
+				"buff_duration"			"6 8 10"
+				"lifesteal_multiplier"	"2.5 3.5 4.5"
+				"hp_cost"				"0"
+		}
+	}
+	"item_recipe_bloodstone_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloodstone_2"
+		"ItemRequirements"
+		{
+			"01"						"item_bloodstone;item_bloodstone"
+		}
+	}
+	"item_bloodstone_2"
+	{
+		"BaseClass"						"item_bloodstone"
+		"AbilityTextureName"			"bloodstone2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilitySharedCooldown"			"bloodstone"
+		"ItemBaseLevel"					"2"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"35.0"
+		"AbilityManaCost"				"0"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4400"
+		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bs;bloodstone"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AllowedInBackpack"				"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_health"			"500 1000 3000"
+				"bonus_mana"			"500 1000 3000"
+				"spell_lifesteal"		"30 40 50"
+				"buff_duration"			"6 8 10"
+				"lifesteal_multiplier"	"2.5 3.5 4.5"
+				"hp_cost"				"0"
+		}
+	}
+	"item_recipe_bloodstone_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloodstone_3"
+		"ItemRequirements"
+		{
+			"01"						"item_bloodstone_2;item_bloodstone_2;item_boss_soul"
+		}
+	}
+	"item_bloodstone_3"
+	{
+		"BaseClass"						"item_bloodstone"
+		"AbilityTextureName"			"bloodstone3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilitySharedCooldown"			"bloodstone"
+		"ItemBaseLevel"					"3"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"35.0"
+		"AbilityManaCost"				"0"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4400"
+		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bs;bloodstone"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AllowedInBackpack"				"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_health"			"500 1000 3000"
+				"bonus_mana"			"500 1000 3000"
+				"spell_lifesteal"		"30 40 50"
+				"buff_duration"			"6 8 10"
+				"lifesteal_multiplier"	"2.5 3.5 4.5"
+				"hp_cost"				"0"
+		}
+	}
 }	
 

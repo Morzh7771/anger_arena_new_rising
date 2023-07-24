@@ -3,12 +3,13 @@
 if AngelArena == nil then
 	_G.AngelArena = class({})
 end
---require('tp_s')
+--srequire('tp_s')
 require('lib/utils')
 require('lib/teleport')
 require('lib/boss/boss_spawner')
 require('lib/timers')
 require('lib/team_helper')
+require('lib/panorama_pings')
 require('lib/spawners/creep_spawner')
 require('lib/spawners/creep_leveling')
 require('lib/spawners/bear_spawner')
@@ -156,7 +157,6 @@ function AngelArena:InitGameMode()
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 100)
 	GameRules:SetCustomVictoryMessage("#aa_on_win_message")
 
-	GameRules:SetPreGameTime(60) -- old 9
 	
 	BossSpawner:Init()
 	CreepSpawner:Init()
@@ -183,11 +183,13 @@ function AngelArena:InitGameMode()
 		GameRules:SetStrategyTime(1)
 		GameMode:SetDraftingHeroPickSelectTimeOverride(25)
 		GameMode:SetDraftingBanningTimeOverride(0)
+		GameRules:SetPreGameTime(5)
 	else
 		GameRules:SetCustomGameBansPerTeam( 5 )
 		GameMode:SetDraftingBanningTimeOverride(20)
 		GameRules:SetHeroSelectionTime(90)
 		GameMode:SetDraftingHeroPickSelectTimeOverride(60)
+		GameRules:SetPreGameTime(60)
 	end
 	
 	GameRules:SetGoldPerTick(GOLD_PER_TICK)
@@ -253,16 +255,19 @@ function AngelArena:InitGameMode()
 
 end
 function AngelArena:ModifierRuneSpawn(keys)
+	--print(EntIndexToHScript(keys.spawner_entindex_const):GetName())
+	--print(keys.rune_type)
 	function Almostequal(value1, value2, epsilon)
 		return math.abs(value1 - value2) < epsilon
 	end
 	local rune_type = keys.rune_type
-	
-	local runes = { 0, 1, 2, 3, 4, 5, 6, 8, 9}
+
+	if rune_type == 5 then return true end
+
+	local runes = { 0, 1, 2, 3, 4, 6, 9}
 
 	local Dotatime = GameRules:GetDOTATime(false, false)
 		keys.rune_type = runes[RandomInt(1, #runes)]	
-	print (Dotatime)
 	return true
 end
 function AngelArena:OnRuneActivate(event)
@@ -276,8 +281,8 @@ function AngelArena:OnRuneActivate(event)
 		local cur_min = GameRules:GetGameTime() / 60
 
 		local item_mod_table = {
-			{},
-			{},
+			{ "item_hand_of_midas",  150 + 7.7 * cur_min },
+			{ "item_advanced_midas", 200 + 15.4 * cur_min }
 		}
 
 		local hero_mod_table = {
