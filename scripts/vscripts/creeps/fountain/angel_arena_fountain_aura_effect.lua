@@ -3,7 +3,7 @@ angel_arena_fountain_aura_effect = class({})
 --------------------------------------------------------------------------------
 
 function angel_arena_fountain_aura_effect:IsHidden()
-	return true
+	return false
 end
 
 --------------------------------------------------------------------------------

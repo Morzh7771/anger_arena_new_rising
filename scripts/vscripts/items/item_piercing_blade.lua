@@ -49,14 +49,14 @@ function mod:GetModifierTotalDamageOutgoing_Percentage()
 end
 function mod:OnTakeDamage(params)
     if not IsServer() then return end
-    print(BossSpawner:IsBoss(params.unit))
+    --print(BossSpawner:IsBoss(params.unit))
 	if params.attacker ~= self:GetParent() then return end
 	if params.unit:GetTeamNumber() == params.attacker:GetTeamNumber() then return end
 	if params.unit == self:GetParent() then return end
     if params.inflictor ~= nil then
-        print(params.inflictor:GetAbilityName())
+        --print(params.inflictor:GetAbilityName())
         if params.inflictor:GetAbilityName() == "batrider_sticky_napalm" then 
-            print(params.inflictor:GetAbilityName())
+            --print(params.inflictor:GetAbilityName())
             return 
         end
     end
@@ -68,12 +68,12 @@ function mod:OnTakeDamage(params)
     end 
 	if params.inflictor == self:GetAbility() then return end
 
-    local modifier = params.unit:FindModifierByNameAndCaster("modifier_item_piercing_blade_debuf", self:GetAbility():GetCaster())
+    local modifier = params.unit:FindModifierByName("modifier_item_piercing_blade_debuf")
     local stack = 0
     if self:GetAbility():IsCooldownReady() then
         if modifier == nil then
             if BossSpawner:IsBoss(params.unit) == nil then
-                params.unit:AddNewModifier(self:GetCaster(),self:GetAbility(),"modifier_item_piercing_blade_debuf",{duration = self.pure_dmg_duration})
+                params.unit:AddNewModifier(self:GetCaster(),self:GetAbility(),"modifier_item_piercing_blade_debuf",{duration = self.pure_dmg_duration}):IncrementStackCount()
                 stack = 1
             end
         else
@@ -130,5 +130,5 @@ function modifier_item_piercing_blade_debuf:IsHidden() return false end
 function modifier_item_piercing_blade_debuf:IsPurgable() return false end
 
 function modifier_item_piercing_blade_debuf:OnCreated( kv )
-	self:SetStackCount(1)
+	
 end

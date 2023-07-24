@@ -100,9 +100,8 @@ function RepickMenu:_init()
 	end
 
 	CustomGameEventManager:RegisterListener("aa_repick_menu_retrive_data", Dynamic_Wrap(self, '_retriveHeroData'))
-	print("aa_repick_menu_retrive_data")
 	CustomGameEventManager:RegisterListener("aa_repick_menu_start_repick", Dynamic_Wrap(self, '_repickHero'))
-	print("aa_repick_menu_start_repick")
+	--print("aa_repick_menu_start_repick")
 end
 
 function RepickMenu:CanPickNow()
@@ -216,7 +215,6 @@ function RepickMenu:_retriveHeroData(data)
 
 	
 	CustomGameEventManager:Send_ServerToPlayer(player, "aa_repick_menu_set_data", data )
-	print('aa_repick_menu_set_data')
 end
 function RepickMenu:sortTableAlphabetically(tables)
     -- Создаем временную таблицу для хранения отсортированных значений

@@ -49,9 +49,9 @@ function BearSpawner:ReSpawnBear()
     if death < math.floor(GameRules:GetDOTATime( false, false ) / 60 * 10) then
         death = death + 1
     end
-    creep:SetDeathXP( death * 3.5 )
-	creep:SetMinimumGoldBounty( death * 1.5 )
-	creep:SetMaximumGoldBounty( death * 1.6 )
+    creep:SetDeathXP( 3+0,0200*death^2 )
+	creep:SetMinimumGoldBounty( 3+0,0050*death^2 )
+	creep:SetMaximumGoldBounty( 3+0,0045*death^2 )
 
 	creep:SetBaseMaxHealth( creep:GetMaxHealth() + death * 25 )
 	creep:SetMaxHealth( creep:GetMaxHealth() + death * 25 )

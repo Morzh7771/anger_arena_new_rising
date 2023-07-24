@@ -114,6 +114,8 @@
         "DOTA_Tooltip_modifier_soul_guardian_heavy_strike_stun"					"Оглушен"
         "DOTA_Tooltip_modifier_soul_guardian_heavy_strike_slow"					"Замедлен"
 
+		"DOTA_Tooltip_angel_arena_fountain_aura_effect"							"Аура Фонтана"
+		"DOTA_Tooltip_angel_arena_fountain_aura_effect_Description"				"Снижает входящий по вам урон на 50%% пока вы возле фонтана"
 
         "DOTA_Tooltip_Ability_soul_guardian_pure_heal"							"Pure Heal"
         "DOTA_Tooltip_Ability_soul_guardian_pure_heal_Description"				"Излечивает часть своего здоровья и снимает с себя негативные эффекты."
@@ -851,12 +853,12 @@
 		"DOTA_Tooltip_modifier_item_mjollnir_3_static"				"Mjollnir Static Charge 2"
 		"DOTA_Tooltip_modifier_item_mjollnir_3_static_Description"	        "Когда это существо атакуют, есть шанс в %dMODIFIER_PROPERTY_TOOLTIP%%%, что атакующий и %dMODIFIER_PROPERTY_TOOLTIP% соседних с ним врага будут поражены молнией."
 
-        "DOTA_Tooltip_ability_item_hand_of_midas_2"                             "Hand of Midas 2"
-        "DOTA_Tooltip_ability_item_hand_of_midas_2_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта. При применении на нейтрального крипа гарантирует получение нейтрального предмета, если не все из них получены.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%"
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_Lore"			"Эта перчатка, сохранившаяся благодаря неведомой магии, служит жадности владельца, наполняя его карманы золотом в обмен на жизни животных."
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_Note0"			"Получаемое золото идет в надёжный запас (при этом стандартная награда за убийство крипа не даётся)."
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_Note1"			"Опыт от убитого крипа не делится с другими героями."
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_bonus_attack_speed"		"+$attack"
+        "DOTA_Tooltip_ability_item_advanced_midas"                             "HAND OF MIDAS 2"
+        "DOTA_Tooltip_ability_item_advanced_midas_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта. При применении на нейтрального крипа гарантирует получение нейтрального предмета, если не все из них получены.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%"
+		"DOTA_Tooltip_ability_item_advanced_midas_Lore"			"Эта перчатка, сохранившаяся благодаря неведомой магии, служит жадности владельца, наполняя его карманы золотом в обмен на жизни животных."
+		"DOTA_Tooltip_ability_advanced_midas_Note0"			"Получаемое золото идет в надёжный запас (при этом стандартная награда за убийство крипа не даётся)."
+		"DOTA_Tooltip_ability_advanced_midas_Note1"			"Опыт от убитого крипа не делится с другими героями."
+		"DOTA_Tooltip_ability_advanced_midas_bonus_attack_speed"		"+$attack"
 
         "DOTA_Tooltip_Ability_item_phylactery_2"                                "PHYLACTERY 2"
         "DOTA_Tooltip_Ability_item_phylactery_2_Description"			"<h1>Пассивное: Empower Spell</h1> Следующая способность, направленная на врага, отдельно нанесёт ему ещё %bonus_spell_damage% урона и замедлит его на %slow%%%. Длительность: %slow_duration% сек."
@@ -1724,5 +1726,21 @@
 
 		"DOTA_Tooltip_modifier_rebels_sword_disarmor" 						"Rebel Disarmor" 
 		"DOTA_Tooltip_modifier_rebels_sword_disarmor_Description"			"Броня снижена от Rebels Sword"
+
+		"DOTA_Tooltip_ability_item_bloodstone_2"									"BLOODSTONE 2"
+		"DOTA_Tooltip_ability_item_bloodstone_2_Description"						"<h1>Активное: Bloodpact</h1> Увеличивает вампиризм заклинаниями от этого предмета в %lifesteal_multiplier% раза. По окончании эффекта превращает ту же долю нанесённого урона в ману. Длительность: %buff_duration% сек."
+		"DOTA_Tooltip_ability_item_bloodstone_2_Lore"								"Багрянец этого камня легко приметить даже в разгаре битвы: он будто бы наделяет владельца безграничными жизненными и духовными силами."
+		"DOTA_Tooltip_ability_item_bloodstone_2_Note0"							"40 секунд после применения владелец утомлён, из-за чего он не получает эффекта от повторного применения этого предмета."
+		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_health"						"+$health"
+		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_mana"						"+$mana"
+		"DOTA_Tooltip_ability_item_bloodstone_2_spell_lifesteal"					"%+$spell_lifesteal"
+
+		"DOTA_Tooltip_ability_item_bloodstone_3"									"BLOODSTONE 3"
+		"DOTA_Tooltip_ability_item_bloodstone_3_Description"						"<h1>Активное: Bloodpact</h1> Увеличивает вампиризм заклинаниями от этого предмета в %lifesteal_multiplier% раза. По окончании эффекта превращает ту же долю нанесённого урона в ману. Длительность: %buff_duration% сек."
+		"DOTA_Tooltip_ability_item_bloodstone_3_Lore"								"Багрянец этого камня легко приметить даже в разгаре битвы: он будто бы наделяет владельца безграничными жизненными и духовными силами."
+		"DOTA_Tooltip_ability_item_bloodstone_3_Note0"							"40 секунд после применения владелец утомлён, из-за чего он не получает эффекта от повторного применения этого предмета."
+		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"						"+$health"
+		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"						"+$mana"
+		"DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"					"%+$spell_lifesteal"
         }
 }

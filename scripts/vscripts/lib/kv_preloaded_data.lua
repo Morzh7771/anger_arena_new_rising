@@ -23,18 +23,13 @@ function PreloadCache:_init()
 	end
 
 	if not self.hero_data then
-		self.hero_data = load_kv_data('scripts/npc/npc_heroes_custom.txt','scripts/npc/npc_heroes_custom.txt')
-
-		local for_delete = {}
-		-- If we has a 'override_hero' in hero block, lets replace data in original hero and delete that overrider from 
-
-		for _, hero_name in pairs(for_delete) do
-			self.hero_data[hero_name] = nil
-		end
+		self.hero_data = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
 	end
 
 	self.ability_data = self.ability_data or load_kv_data('scripts/npc/npc_abilities.txt', 'scripts/npc/npc_abilities_custom.txt')
 end
+
+
 
 function PreloadCache:GetHeroData()
 	return self.hero_data
