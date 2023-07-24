@@ -185,7 +185,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"burn_damage"					"10 15 20 25 30 35 40"
+				"burn_damage"					"10 20 32 46 62 80 100"
 				"LinkedSpecialBonus"			"special_bonus_unique_huskar_2"
 			}		
 			"03"
@@ -332,6 +332,26 @@ DOTAAbilities
 				"var_type"					"FIELD_INTEGER"
 				"cast_range_bonus"		"250"
 				"RequiresScepter"		"1"
+			}
+		}
+	}
+	"special_bonus_unique_huskar_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6380"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"20"
+				"ad_linked_abilities"			"huskar_burning_spear"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}

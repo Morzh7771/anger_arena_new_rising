@@ -22,7 +22,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17 16 15 14 13 12 11"
+		"AbilityCooldown"				"17 16.5 16 15.5 15 14.5 14"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -146,7 +146,7 @@ DOTAAbilities
 		{
 			"damage"
 			{
-				"value"				"80 110 140 170 200 230 260"
+				"value"				"80 100 120 140 160 180 200"
 				"special_bonus_unique_axe_4" "+40"
 			}
 			"radius"					"300"
@@ -170,7 +170,7 @@ DOTAAbilities
 			{
 				"special_bonus_shard"		"+6"	
 			}
-			"damage_pct"					"4"
+			"damage_pct"					"3"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
