@@ -82,7 +82,6 @@ function PercentDamage:_init()
 		"puck_illusory_orb",
 		"puck_waning_rift",
 		"techies_sticky_bomb",
-		"techies_land_mines",
 		"invoker_sun_strike",
 		"invoker_chaos_meteor",
 		"shadow_shaman_ether_shock",
