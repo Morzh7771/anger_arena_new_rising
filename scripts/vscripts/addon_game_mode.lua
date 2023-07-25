@@ -38,6 +38,24 @@ local postRequireList = {
 	'lib/base/player',
 	'lib/base/base_npc'
 }
+local forbidden_ability_boss = {
+	["life_stealer_infest"] = 1,
+	["chen_holy_persuasion"] = 1,
+	["enchantress_enchant"] = 1,
+	["item_devour_helm"] = 1,
+	["item_iron_talon"] = 1,
+	["night_stalker_hunter_in_the_night"] = 1,
+	["snapfire_spit_creep"] = 1,
+	["juggernaut_omni_slash"] = 1,
+	["snapfire_gobble_up"] = 1,
+}
+local crash_abilities = {
+	["shadow_demon_disruption"] = 1,
+	["obsidian_destroyer_astral_imprisonment"] = 1,
+	["rubick_telekinesis"] = 1,
+	["disruptor_thunder_strike"] = 1,
+}
+
 local illusion_bug_crash =
 {
 	["npc_dota_hero_dawnbreaker"] = 1,
@@ -215,7 +233,7 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AngelArena, "OnEntityKilled"), self)
 	ListenToGameEvent('dota_player_gained_level', Safe_Wrap(AngelArena, 'OnLevelUp'), self)
 	ListenToGameEvent('dota_rune_activated_server', Safe_Wrap(AngelArena, 'OnRuneActivate'), self)
-
+	ListenToGameEvent('dota_player_used_ability', Safe_Wrap(AngelArena, 'OnPlayerUsedAbility'), self)
 	ListenToGameEvent('player_connect_full', Safe_Wrap(AngelArena, 'OnConnectFull'), self)
 	ListenToGameEvent('player_disconnect', Safe_Wrap(AngelArena, 'OnPlayerDisconnect'), self)
 	ListenToGameEvent("player_chat", Safe_Wrap(ChatListener, 'OnPlayerChat'), ChatListener)
@@ -252,6 +270,10 @@ function AngelArena:InitGameMode()
 
 	AngelArena:OnGameStateChange()
 	
+	if GameRules:IsCheatMode() then
+		require('lib/debug/keyexec')
+		KeyExec:Init()
+	end
 
 end
 function AngelArena:ModifierRuneSpawn(keys)
@@ -498,6 +520,19 @@ function AngelArena:OnGameStateChange()
 		end
 	end
 end
+function AngelArena:IsUnitBear(unit)
+	if not unit or not IsValidEntity(unit) then return false end
+	local unit_name = unit:GetUnitName()
+	print(unit:GetUnitName())
+	if unit_name == "npc_dota_lone_druid_bear1" or unit_name == "npc_dota_lone_druid_bear2"
+			or unit_name == "npc_dota_lone_druid_bear3" or unit_name == "npc_dota_lone_druid_bear4"
+			 or unit_name == "npc_dota_lone_druid_bear5" or unit_name == "npc_dota_lone_druid_bear6"
+			 or unit_name == "npc_dota_lone_druid_bear7" then
+		return true
+	end
+
+	return false
+end
 function AngelArena:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	local spawnedUnit = EntIndexToHScript(keys.entindex)
@@ -551,6 +586,44 @@ function AngelArena:OnNPCSpawned(keys)
 				end
 			end
 		end
+	end
+
+	for i = 1, 7 do
+		local f_name = "npc_dota_venomancer_plague_ward_" .. tostring(i)
+		if unitname == f_name then
+			local poison_ability_venom = spawnedUnit:GetOwner():FindAbilityByName("venomancer_poison_sting")
+			if poison_ability_venom:GetLevel() > 0 then
+				local poison_ability = spawnedUnit:FindAbilityByName("venomancer_poison_sting")
+				if poison_ability then
+					poison_ability:SetLevel(poison_ability_venom:GetLevel())
+				end
+			end
+		end
+	end
+
+	if AngelArena:IsUnitBear(spawnedUnit) then
+		local ability
+		
+		local bear_abilities =
+		{
+			["separation_of_souls_bear"] = 1,
+			["lone_druid_spirit_bear_defender"] = 1,
+		}
+
+		for i = 0, spawnedUnit:GetAbilityCount() - 1 do
+			ability = spawnedUnit:GetAbilityByIndex(i)
+
+			if ability and bear_abilities[ability:GetName()] then
+				ability:SetLevel(1)
+			end
+		end
+	end
+
+	if armor_table[unitname] then -- see file creeps/armor_table_summon.lua for details
+		spawnedUnit:AddNewModifier(spawnedUnit, nil, armor_table[unitname], {})
+		spawnedUnit:AddAbility("summon_cleave")
+		local ability = spawnedUnit:FindAbilityByName("summon_cleave")
+		ability:SetLevel(1)
 	end
 
 	if spawnedUnit:IsRealHero() then --print(spawnedUnit:GetUnitName())
@@ -777,7 +850,7 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 
 	local target = ord.entindex_target ~= 0 and EntIndexToHScript(ord.entindex_target) or nil
 	local player = PlayerResource:GetPlayer(ord["issuer_player_id_const"])
-
+	local player_id = ord.issuer_player_id_const
 	local unit
 
 	if ord.units and ord.units["0"] then
@@ -817,5 +890,48 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 				end
 			end
 		end
+
+		if ord.order_type == DOTA_UNIT_ORDER_CAST_TARGET then
+			local ability = EntIndexToHScript(ord.entindex_ability)
+			local target = EntIndexToHScript(ord.entindex_target)
+			local target_id = target:GetPlayerOwnerID()
+	
+			if PlayerResource:IsDisableHelpSetForPlayerID(target_id, player_id) then
+				return UF_FAIL_DISABLE_HELP
+			end
+	
+			if forbidden_ability_boss[ability:GetName()] and BossSpawner:IsBoss(target) then
+				return UF_FAIL_DISABLE_HELP
+			end
+	
+			if target:HasAbility("wisp_tether") and ability:GetName() == "wisp_tether" then return end
+			
+			if unit and target == unit and ability:GetName() == "rubick_spell_steal" then
+				return UF_FAIL_DISABLE_HELP
+			end
+		end
 	return true
+end
+
+function AngelArena:OnPlayerUsedAbility(event)
+	local player = PlayerResource:GetPlayer(event.PlayerID)
+	local ability_name = event.abilityname
+	if not player or not ability_name or not IsValidEntity(player) then return end
+	local hero = PlayerResource:GetSelectedHeroEntity(event.PlayerID)
+
+	if not hero then return end
+
+	if crash_abilities[ability_name] then
+		player.crash_timer = 6.0
+		Timers:CreateTimer(1.0, function()
+
+			if player.crash_timer == nil or player.crash_timer <= 0 then
+				player.crash_timer = nil;
+				return nil;
+			end
+			player.crash_timer = player.crash_timer - 1
+
+			return 1.0
+		end)
+	end
 end

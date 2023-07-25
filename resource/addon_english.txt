@@ -10,11 +10,11 @@
 		"midteleport_distance" "Too far"
 		"midteleport_cd" "Reload..."
 
-		"PN_KillLimit"										"Победившая команда определится на последней дуели которая начнется тогда когда одна из команд достигнет нужного количества убийств которое пишется под таймером"
-		"PN_HowToPlay"										"Как играть"
-		"PN_farm_text"										"Места появления нейтралов отмечены на карте такими же значками как и доте поэтому сначал бей слабых нейтаралов а потом и более сильных"
-		"PN_Boss_header"									"Боссы"
-		"PN_boss_text"										"Боссы на карте отмеченны иконками рошана за убийство боссов вы получаете boss soul опыт и золото"
+		"PN_KillLimit"										"The victory will be credited to the team that first collects a sufficient number of kills (indicated under the timer), and then wins the duel."
+		"PN_HowToPlay"										"How to play"
+		"PN_farm_text"										"The spawn locations of neutral creeps are marked on the minimap. The difficulty of the creeps varies, you can find it by paying attention to the icons on the minimap. Some creeps can be too strong, farm carefully!"
+		"PN_Boss_header"									"Boss"
+		"PN_boss_text"										"There are several bosses on the map, which can be found by the Roshan icon. For killing them, you can get gold, experience and Boss Soul needed to upgrade items."
 		
 		"aa_on_win_dire_message" 								"VICTORY! IN THE NAME OF THE SATAN!"
         "aa_on_win_radiant_message"                             "VICTORY! FOR THE GLORY OF THE LIGHT"
@@ -298,7 +298,7 @@
 		"DOTA_Tooltip_Ability_dragon_knight_fireball_damage_pct"			"%ALL STATS TO DMG"
 
 		//Lich
-       		"DOTA_Tooltip_Ability_lich_chain_frost_damage_pct"                  "%INT TO DMG"
+        "DOTA_Tooltip_Ability_lich_chain_frost_damage_pct"                  "%INT TO DMG"
 
 		//Lina
 		"DOTA_Tooltip_Ability_lina_dragon_slave_frost_damage_pct"			"%INT TO DMG"
@@ -373,88 +373,6 @@
 		"DOTA_Tooltip_Ability_rattletrap_battery_assault_damage_pct"		"%STR TO DMG"
 		"DOTA_Tooltip_Ability_rattletrap_rocket_flare_damage_pct"			"%STR TO DMG"
 		"DOTA_Tooltip_Ability_rattletrap_hookshot_damage_pct"				"%STR TO DMG"
-
-		//Snapfire
-		"DOTA_Tooltip_Ability_snapfire_scatterblast_damage_pct"				"%ALL STATS TO DMG"
-		
-		//Centaur
-		"DOTA_Tooltip_Ability_centaur_hoof_stomp_damage_pct"				"%STR TO DMG"
-		
-		//Dark Seer
-		"DOTA_Tooltip_Ability_dark_seer_ion_shell_damage_pct"				"%ALL STATS TO DMG"
-		
-		//Muerta
-		"DOTA_Tooltip_Ability_muerta_dead_shot_damage_pct"					"%ALL STATS TO DMG"
-		
-		//Undying
-		"DOTA_Tooltip_Ability_undying_decay_damage_pct"						"%STR TO DMG"
-		
-		//Vengeful Spirit
-		"DOTA_Tooltip_Ability_vengefulspirit_magic_missile_damage_pct"		"%ALL STATS TO DMG"
-		
-		//Venomancer
-		"DOTA_Tooltip_Ability_venomancer_venomous_gale_damage_pct"			"%INT TO DMG"
-		"DOTA_Tooltip_Ability_venomancer_poison_sting_damage_pct"			"%INT TO DMG"
-		"DOTA_Tooltip_Ability_venomancer_latent_poison_damage_pct"			"%INT TO DMG"
-		
-		//Naga Siren
-		"DOTA_Tooltip_Ability_naga_siren_rip_tide_damage_pct"				%AGI TO DMG"
-		
-		//Earthshaker
-		"DOTA_Tooltip_Ability_earthshaker_fissure_damage_pct"				"%STR TO DMG"
-		"DOTA_Tooltip_Ability_earthshaker_aftershock_damage_pct"			"%STR TO DMG"
-		"DOTA_Tooltip_Ability_earthshaker_echo_slam_damage_pct"				"%STR TO DMG"
-		
-		//Void Spirit
-		"DOTA_Tooltip_Ability_void_spirit_dissimilate_damage_pct"			"%ALL STATS TO DMG"
-		"DOTA_Tooltip_Ability_void_spirit_resonant_pulse_damage_pct"			"%ALL STATS TO DMG"
-		
-		//shadow Demon
-		"DOTA_Tooltip_Ability_shadow_demon_demonic_purge_damage_pct"			"%INT TO DMG"
-		"DOTA_Tooltip_Ability_shadow_demon_shadow_poison_damage_pct"			"%INT TO DMG"
-		
-		//Tiny
-		"DOTA_Tooltip_Ability_tiny_avalanche_damage_pct"				"%STR TO DMG"
-		"DOTA_Tooltip_Ability_tiny_toss_damage_pct"					"%STR TO DMG"
-		
-		//Techies
-		"DOTA_Tooptip_Ability_techies_sticky_bomb_damage_pct"				"%INT TO DMG"
-		
-		//Kunkka
-		"DOTA_Tooltip_Ability_kunkka_ghostship_damage_pct"				"%STR TO DMG"
-		
-		//Gyrocopter
-		"DOTA_Tooltip_Ability_gyrocopter_rocket_barrage_damage_pct"			%AGI TO DMG"
-		
-		//KotL
-		"DOTA_Tooltip_Ability_keeper_of_the_light_illuminate_damage_pct"		"%INT TO DMG"
-		"DOTA_Tooltip_Ability_keeper_of_the_light_spirit_form_illuminate_damage_pct"	"%INT TO DMG"
-		
-		//Sniper
-		"DOTA_Tooltip_Ability_sniper_shrapnel_damage_pct"				%AGI TO DMG"
-		"DOTA_Tooltip_Ability_sniper_assassinate_damage_pct"				%AGI TO DMG"
-		
-		//Tusk
-		"DOTA_Tooltip_Ability_tusk_ice_shards_damage_pct"				"%STR TO DMG"
-		"DOTA_Tooltip_Ability_tusk_snowball_damage_pct"					"%STR TO DMG"
-		
-		//Puck
-		"DOTA_Tooltip_Ability_puck_illusory_orb_damage_pct"				"%INT TO DMG"
-		"DOTA_Tooltip_Ability_puck_waning_rift_damage_pct"				"%INT TO DMG"
-		
-		//Treant
-		"DOTA_Tooltip_Ability_treant_overgrowth_damage_pct"				"%STR TO DMG"
-		
-		//Invoker
-		"DOTA_Tooltip_Ability_invoker_sun_strike_damage_pct"				"%INT TO DMG"
-		"DOTA_Tooltip_Ability_invoker_chaos_meteor_damage_pct"				"%INT TO DMG"
-		
-		//Phantom Lancer
-		"DOTA_Tooltip_Ability_phantom_lancer_spirit_lance_damage_pct"			%AGI TO DMG"
-		
-		//Shadow Shaman
-		"DOTA_Tooltip_Ability_shadow_shaman_ether_shock_damage_pct"			"%INT TO DMG"
-		"DOTA_Tooltip_Ability_sshadow_shaman_shackles_damage_pct"			"%INT TO DMG"
 
         "DOTA_Tooltip_Ability_item_sacred_butterfly"	"Sacred Butterfly"
 		"DOTA_Tooltip_Ability_item_sacred_butterfly_Lore"	"Sword, once owned by Krydes, the Violator of Universal Equilibrium. Only the most agile heroes can steal something like this from him and escape unharmed."
@@ -862,12 +780,12 @@
 		"DOTA_Tooltip_modifier_item_mjollnir_3_static"	"Mjollnir Static Charge 2"
 		"DOTA_Tooltip_modifier_item_mjollnir_3_static_Description"	"When this creature is attacked, there is a %dMODIFIER_PROPERTY_TOOLTIP%%% chance that the attacker and %dMODIFIER_PROPERTY_TOOLTIP% adjacent enemy will be struck by lightning."
 		
-		"DOTA_Tooltip_ability_item_hand_of_midas_2"	"HAND OF MIDAS 2"
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_Description"	"<h1>Active: Transmute</h1> Kills the selected target (but not a hero), giving %bonus_gold% gold and %xp_multiplier% times more experience. When used on a neutral creep, guarantees the acquisition of a neutral item if not all of them have been obtained.<br><br>Does not work on ancient creeps.<br><br>Cast Range: %abilitycastrange%"
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_Lore"	"This glove, preserved by unknown magic, serves the greed of its owner, filling his pockets with gold in exchange for the lives of animals."
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_Note0"	"The obtained gold goes into a secure reserve (however, the standard reward for killing a creep is not given)."
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_Note1"	"Experience from a killed creep is not shared with other heroes."
-		"DOTA_Tooltip_ability_item_hand_of_midas_2_bonus_attack_speed"	"+$attack"
+		"DOTA_Tooltip_ability_item_advanced_midas"	"HAND OF MIDAS 2"
+		"DOTA_Tooltip_ability_item_advanced_midas_Description"	"<h1>Active: Transmute</h1> Kills the selected target (but not a hero), giving %bonus_gold% gold and %xp_multiplier% times more experience. When used on a neutral creep, guarantees the acquisition of a neutral item if not all of them have been obtained.<br><br>Does not work on ancient creeps.<br><br>Cast Range: %abilitycastrange%"
+		"DOTA_Tooltip_ability_item_advanced_midas_Lore"	"This glove, preserved by unknown magic, serves the greed of its owner, filling his pockets with gold in exchange for the lives of animals."
+		"DOTA_Tooltip_ability_item_advanced_midas_Note0"	"The obtained gold goes into a secure reserve (however, the standard reward for killing a creep is not given)."
+		"DOTA_Tooltip_ability_item_advanced_midas_Note1"	"Experience from a killed creep is not shared with other heroes."
+		"DOTA_Tooltip_ability_item_advanced_midas_bonus_attack_speed"	"+$attack"
 		
 		"DOTA_Tooltip_Ability_item_phylactery_2"	"PHYLACTERY 2"
 		"DOTA_Tooltip_Ability_item_phylactery_2_Description"	"<h1>Passive: Empower Spell</h1> The next ability directed at an enemy will deal an additional %bonus_spell_damage% damage to them and slow them by %slow%%. Duration: %slow_duration% sec."
@@ -1704,5 +1622,16 @@
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"					"%+$spell_lifesteal"
+
+		"DOTA_Tooltip_ability_separation_of_souls_bear"						"Merging Of Souls"
+		"DOTA_Tooltip_ability_separation_of_souls_bear_Description"			"The souls of the bear and druid merge, which gives the bear a part of the attack, armor and attack speed of the druid."
+		"DOTA_Tooltip_ability_separation_of_souls_bear_bonus_attack"		"%DAMAGE INCREASE:"
+		"DOTA_Tooltip_ability_separation_of_souls_bear_bonus_armor"			"%ARMOR INCREASE:"
+		"DOTA_Tooltip_ability_separation_of_souls_bear_bonus_aspeed"		"%ATTACK SPEED INCREASE:"
+
+		"DOTA_Tooltip_ability_summon_cleave"						"Plague Cleave"
+		"DOTA_Tooltip_ability_summon_cleave_Description"			"Deal cleave attack"
+		"DOTA_Tooltip_ability_summon_cleave_radius"				"RADIUS:"
+		"DOTA_Tooltip_ability_summon_cleave_cleave_percent"		"%DAMAGE:"
 	}
 }
