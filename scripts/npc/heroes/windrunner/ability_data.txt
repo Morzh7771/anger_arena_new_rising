@@ -78,7 +78,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.5 1.83 2.17 2.5 2.83 3.17 3.5"
+				"stun_duration"			"1.5 1.75 2.0 2.25 2.5 2.75 3.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_windranger_6"
 			}
 			"03"
@@ -138,9 +138,10 @@ DOTAAbilities
 		{
 				"powershot_damage"			
 				{
-					"value"					"100 200 300 400 500 600 700"
+					"value"					"175 250 325 400 475 550 625"
 					"CalculateSpellDamageTooltip"	"1"
 				}
+				"damage_pct"				"35"
 				"damage_reduction"		
 				{
 					"value"				"30"
@@ -278,5 +279,26 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
+	}
+	"special_bonus_unique_windranger_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"7062"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"0.5"
+				"ad_linked_abilities"			"windrunner_shackleshot"
+			}
+		}
 	}
 }
