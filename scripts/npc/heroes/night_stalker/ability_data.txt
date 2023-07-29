@@ -164,7 +164,7 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"90"
+		"AbilityCooldown"				"75"
 		"AbilityManaCost"				"125 175 225 275 325 375 425"
 			
 		// Special
@@ -178,9 +178,30 @@ DOTAAbilities
 			}
 			"bonus_damage"			
 			{
-				"value"			"50 100 150 200 250 300 350"
+				"value"			"75 130 190 255 325 400 480"
 				"special_bonus_unique_night_stalker_3"	"+50"
 				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+	"special_bonus_unique_night_stalker"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6129"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"25"
+				"ad_linked_abilities"			"night_stalker_darkness"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
