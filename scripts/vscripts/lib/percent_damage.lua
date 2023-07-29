@@ -108,6 +108,7 @@ function PercentDamage:_init()
 		"snapfire_scatterblast",
 		"snapfire_mortimer_kisses",
 		"snapfire_firesnap_cookie",
+		"windrunner_powershot"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
