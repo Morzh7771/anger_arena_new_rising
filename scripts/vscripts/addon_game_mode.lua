@@ -21,6 +21,7 @@ require('lib/game_ender')
 require('lib/move_limiter')
 require('lib/comeback_system')
 require('lib/percent_damage')
+require('lib/bounty')
 --require('lib/repick_menu')
 function Precache( context )
 	--[[
@@ -74,7 +75,7 @@ local is_game_start = false
 local is_game_end = false
 local game_start_for_courier = false
 KILL_LIMIT_CONST = 120
-GOLD_PER_TICK = 4
+GOLD_PER_TICK = 2
 
 KILL_LIMIT = 80
 
@@ -237,6 +238,7 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent('player_connect_full', Safe_Wrap(AngelArena, 'OnConnectFull'), self)
 	ListenToGameEvent('player_disconnect', Safe_Wrap(AngelArena, 'OnPlayerDisconnect'), self)
 	ListenToGameEvent("player_chat", Safe_Wrap(ChatListener, 'OnPlayerChat'), ChatListener)
+	ListenToGameEvent('dota_item_purchased', Safe_Wrap(AngelArena, 'OnPlayerBuyItem'), self)
 
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
 	PlayerResource:ClearOnAbandonedCallbacks()
@@ -248,11 +250,11 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_duel_vision", 'modifiers/modifier_duel_vision', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_repick", 'modifiers/modifier_repick', LUA_MODIFIER_MOTION_NONE)
-	
 
 	
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
 	GameMode:SetRuneSpawnFilter(Safe_Wrap(AngelArena, "ModifierRuneSpawn"), self)
+	GameMode:SetModifyGoldFilter(Safe_Wrap(AngelArena, "GoldFilter"), self)
 	-- AttributeDerivedStats
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT, 0)
@@ -284,8 +286,6 @@ function AngelArena:ModifierRuneSpawn(keys)
 	end
 	local rune_type = keys.rune_type
 
-	if rune_type == 5 then return true end
-
 	local runes = { 0, 1, 2, 3, 4, 6, 9}
 
 	local Dotatime = GameRules:GetDOTATime(false, false)
@@ -303,15 +303,15 @@ function AngelArena:OnRuneActivate(event)
 		local cur_min = GameRules:GetGameTime() / 60
 
 		local item_mod_table = {
-			{ "item_hand_of_midas",  150 + 7.7 * cur_min },
-			{ "item_advanced_midas", 200 + 15.4 * cur_min }
+			{ "item_hand_of_midas",  150 + 7 * cur_min },
+			{ "item_advanced_midas", 200 + 14 * cur_min }
 		}
 
 		local hero_mod_table = {
 			["npc_dota_hero_alchemist"] = 2,
 		}
 	
-		local gold_without_mods = 100 + 20 * cur_min
+		local gold_without_mods = 100 + 15 * cur_min
 
 		function CalcBountyGold( hero )
 			local hero_mult = hero_mod_table[ hero:GetUnitName() ] or 1
@@ -333,6 +333,34 @@ function AngelArena:OnRuneActivate(event)
 
 		TeamHelper:ApplyForHeroes(team, function(playerid, unit)
 			unit:ModifyGold(CalcBountyGold( unit ), false, 0)
+		end)
+	end
+	if runeid == DOTA_RUNE_XP then
+		local cur_min = GameRules:GetGameTime() / 60
+
+		local item_mod_table = {
+			{"item_talisman_of_mastery", 50 * cur_min },
+		}
+		local xp_without_mods = 200 + 100 * cur_min
+
+		function CalcWisdomXp(hero )
+			local item_xp = 0
+			for _, data in pairs(item_mod_table) do
+				local item = data[1]
+				local xp = data[2]
+
+				if hero:HasItemInInventory(item) and xp > item_xp then
+					item_xp = xp
+				end
+			end
+
+			return 1 * ( xp_without_mods + item_xp )
+		end
+
+		local team = hero:GetTeamNumber()
+
+		TeamHelper:ApplyForHeroes(team, function(playerid, unit)
+			unit:AddExperience(CalcWisdomXp( unit ), 0, true,true)
 		end)
 	end
 end
@@ -398,7 +426,60 @@ function AngelArena:OnConnectFull(event)
 
 	PlayerResource:OnPlayerConnected(playerID, event.userid)
 end
+function AngelArena:GoldFilter(event)
+	ComebackSystem:OnGiveGold( event.player_id_const, event.gold, event.reliable, event.reason_const )
 
+	return true
+end
+function AngelArena:OnPlayerBuyItem(event)
+	local playerid = event.PlayerID
+
+	AngelArena:SaveGoldForPlayerId(playerid)
+end
+function AngelArena:SaveGold()
+	TeamHelper:ApplyForPlayers( nil, function(pid)
+		AngelArena:SaveGoldForPlayerId(pid)
+	end)
+end
+function AngelArena:SaveGoldForPlayerId(playerid)
+	if not PlayerResource:IsValidPlayerID(playerid) then return end
+
+	local player_gold = PlayerResource:GetGold(playerid)
+
+	local tPlayers = self.tPlayers
+
+	if not tPlayers then
+		tPlayers = {}
+		self.tPlayers = tPlayers
+	end
+
+	if not IsAbadonedPlayerID(playerid) then
+		tPlayers[playerid] = tPlayers[playerid] or {} -- nil error exception
+		tPlayers[playerid].gold = tPlayers[playerid].gold or 0 -- nil error exception
+
+		if player_gold > 80000 then
+			local gold_to_save = player_gold - 80000
+			tPlayers[playerid].gold = tPlayers[playerid].gold + gold_to_save
+			PlayerResource:SpendGold(playerid, gold_to_save, 0)
+		end
+
+		if player_gold < 80000 then
+			local free_gold = 80000 - player_gold
+			local total_saved_gold = tPlayers[playerid].gold
+			if total_saved_gold > free_gold then
+				tPlayers[playerid].gold = tPlayers[playerid].gold - free_gold
+				PlayerResource:ModifyGold(playerid, free_gold, true, 0)
+			else
+				PlayerResource:ModifyGold(playerid, total_saved_gold, true, 0)
+				tPlayers[playerid].gold = 0
+			end
+		end
+
+		local total_gold = PlayerResource:GetGold(playerid) + tPlayers[playerid].gold -- почему не player_gold? потому что золото игрока изменилось, а эта переменная нет :c
+
+		CustomNetTables:SetTableValue("gold", "player_id_" .. playerid, { gold = total_gold })
+	end
+end
 function AngelArena:ShareGold()
 	local teamGolds = {}
 
@@ -455,7 +536,7 @@ function AngelArena:OnGameStateChange()
 		KILL_LIMIT = needkill
 		_G.KILL_LIMIT = needkill
 		Attentions:SetKillLimit( KILL_LIMIT )
-		print(KILL_LIMIT)
+		Bounty:Init()
 		local portals = {
 			"teleport_radiant_top",
 			"teleport_radiant_bot",
@@ -494,7 +575,10 @@ function AngelArena:OnGameStateChange()
 			CreepSpawner:StartSpawning()
 			BossSpawner:OnGameStart()
 			BearSpawner:SpawnBear()
-			
+			Timers:CreateTimer(0.5, function()
+				AngelArena:SaveGold()
+				return 0.5
+			end)
 			Timers:CreateTimer(0.1, function()
 				GPM_Init()
 			end)
@@ -523,7 +607,6 @@ end
 function AngelArena:IsUnitBear(unit)
 	if not unit or not IsValidEntity(unit) then return false end
 	local unit_name = unit:GetUnitName()
-	print(unit:GetUnitName())
 	if unit_name == "npc_dota_lone_druid_bear1" or unit_name == "npc_dota_lone_druid_bear2"
 			or unit_name == "npc_dota_lone_druid_bear3" or unit_name == "npc_dota_lone_druid_bear4"
 			 or unit_name == "npc_dota_lone_druid_bear5" or unit_name == "npc_dota_lone_druid_bear6"
@@ -579,7 +662,6 @@ function AngelArena:OnNPCSpawned(keys)
 				spawnedUnit:SetBaseStrength(str)
 				spawnedUnit:SetBaseIntellect(int)
 				spawnedUnit:SetBaseAgility(agi)
-				print(agi)
 				if original_hero.medical_tractates then
 					spawnedUnit.medical_tractates = original_hero.medical_tractates
 					spawnedUnit:AddNewModifier(spawnedUnit, nil, "modifier_medical_tractate", { duration = -1})
