@@ -48,6 +48,8 @@ function PercentDamage:_init()
 		"sniper_assassinate",
 		"faceless_void_time_lock",
 		"phantom_lancer_spirit_lance",
+		"ember_spirit_searing_chains",
+		"ember_spirit_flame_guard"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
