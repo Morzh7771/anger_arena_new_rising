@@ -23,6 +23,7 @@ local admin_ids = {
     [960329385] = 1, -- morzh
     [155859922] = 1, -- gogi
     [185669472] = 1, -- big
+    [209996958] = 1, -- huesos
 }
 
 function IsAdmin(player)

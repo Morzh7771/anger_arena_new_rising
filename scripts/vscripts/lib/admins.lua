@@ -15,6 +15,7 @@ function AngelArenaAdmins:Init()
 		960329385, -- morzh
     	155859922, -- gogi
 		185669472, -- big
+		209996958, -- huesos
 	})
 end
 
