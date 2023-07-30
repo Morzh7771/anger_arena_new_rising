@@ -1409,6 +1409,48 @@
 		}
 	}
 
+	"item_recipe_trisula"
+    	{
+    		"BaseClass"                     "item_datadriven"
+            "AbilityTextureName"            "item_recipe"
+            "Model"                         "models/props_gameplay/recipe.vmdl"
+    	    "ItemCost"						"0"
+    		"ItemShopTags"					""
+
+    		// Recipe
+    		//-------------------------------------------------------------------------------------------------------------
+    		"ItemRecipe"					"1"
+    		"ItemResult"					"item_trisula"
+    		"ItemRequirements"
+    		{
+    			"01"						"item_bfury;item_trident_aa;item_boss_soul"
+    		}
+    	}
+        "item_trisula"
+    	{
+    		"BaseClass"             "item_lua"
+            "ScriptFile"                    "items/item_trisula"
+            "AbilityTextureName"            "trisula"
+            "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+            "AbilityValues"
+    		{
+    		    "bonus_damage"                      "100"
+    			"bonus_str"		                    "80"
+    			"bonus_agi"		                    "80"
+    			"bonus_int"		                    "80"
+                "bonus_attack_speed"                "80"
+                "bonus_status_res"                  "25"
+                "bonus_mana_regen_amp"              "75"
+                "bonus_ms"                          "35"
+                "bonus_spell_amp"                   "30"
+                "bonus_spell_lifesteal_amp_pct"     "60"
+                "bonus_heal_amp_pct"                "60"
+                "cleave_range"                      "650"
+                "cleave_damage_hero"                "50"
+                "cleave_damage_creep"               "80"
+    		}
+    	}
+
     "item_recipe_bracer_custom"
 	{
 		"BaseClass"						"item_datadriven"
