@@ -36,6 +36,8 @@ function PercentDamage:_init()
 		"earth_spirit_boulder_smash",
 		"earth_spirit_geomagnetic_grip",
 		"earth_spirit_petrify",
+		"spirit_breaker_greater_bash",
+		"spirit_breaker_nether_strike"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
