@@ -46,7 +46,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.8 0.9 1.0 1.1 1.2 1.3 1.4"
+				"stun_duration"			"0.9 1.0 1.1 1.2 1.3 1.4 1.5"
 			}
 			"03"
 			{
@@ -66,7 +66,7 @@ DOTAAbilities
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"scepter_cooldown"		"9"
+				"scepter_cooldown"		"8"
 				"RequiresScepter"			"1"
 			}
 			"07"
@@ -100,11 +100,11 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 21.0 20.0 19.0 18.0 17.0 16.0"
+		"AbilityCooldown"				"16.0"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"30.0 50.0 70.0 90.0 110.0 130.0 150.0"
+		"AbilityManaCost"				"70.0"
 
 		
 		"AbilityValues"
@@ -115,7 +115,7 @@ DOTAAbilities
 			"damage_barrier"
 			{
 				"value"						"0"
-				"special_bonus_unique_spirit_breaker_shield" "+750"
+				"special_bonus_unique_spirit_breaker_shield" "+1250"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -154,7 +154,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"25 28 31 34 37 40 43"
+				"damage"				"26 30 34 38 42 46 50"
 				"LinkedSpecialBonus"	"special_bonus_unique_spirit_breaker_3"
 			}
 			"03"
@@ -186,6 +186,11 @@ DOTAAbilities
 			{
 				"var_type"				"FIELD_FLOAT"
 				"movespeed_duration"	"3.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_pct"	"50"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -219,11 +224,11 @@ DOTAAbilities
 
 		// Time			
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90 80 70 60 50 40 30"
+		"AbilityCooldown"				"60 55 50 45 40 35 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 150 175 200 225 250"
+		"AbilityManaCost"				"125 150 175 200 225 250 275"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -231,9 +236,10 @@ DOTAAbilities
 		{
 			"damage"				
 			{
-				"value"					"150.0 235.0 320.0 405.0 490.0 575.0 660.0"
+				"value"					"200 280 380 500 640 800 980"
 				"CalculateSpellDamageTooltip"	"1"
 			}
+			"damage_pct"				"200"
 			"fade_time"				"1.0 1.0 1.0"
 			"shard_bonus_damage"	
 			{

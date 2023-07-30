@@ -36,6 +36,8 @@ function PercentDamage:_init()
 		"earth_spirit_boulder_smash",
 		"earth_spirit_geomagnetic_grip",
 		"earth_spirit_petrify",
+		"spirit_breaker_greater_bash",
+		"spirit_breaker_nether_strike"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
@@ -46,6 +48,8 @@ function PercentDamage:_init()
 		"sniper_assassinate",
 		"faceless_void_time_lock",
 		"phantom_lancer_spirit_lance",
+		"ember_spirit_searing_chains",
+		"ember_spirit_flame_guard"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
@@ -108,6 +112,7 @@ function PercentDamage:_init()
 		"snapfire_scatterblast",
 		"snapfire_mortimer_kisses",
 		"snapfire_firesnap_cookie",
+		"windrunner_powershot"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
