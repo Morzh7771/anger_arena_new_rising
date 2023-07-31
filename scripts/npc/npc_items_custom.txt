@@ -3470,4 +3470,43 @@
             "bonus_block_per_int"       "5 7 10"
 		}
 	}
+    "item_recipe_giant_ring_aa"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						""	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_giant_ring_aa"
+        "ItemRequirements"
+        {
+            "01"						"item_power_treads_2;item_power_treads_2;item_boss_soul"
+        }
+    }
+    "item_giant_ring_aa"
+    {
+        "BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_giant_ring_aa"
+		"AbilityTextureName"			"giant_ring_aa"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityCooldown"				"20"
+        "ItemBaseLevel"                 "1"
+        "AbilityValues"
+		{
+            "bonus_all_stats"		"80"
+            "movement_speed"		"120"
+			"attack_speed"		    "150"
+			"bonus_all_stats_pct"	"20"
+            "duration"			    "5"
+            "radius"			    "200"
+            "stat_damage_per_sec"	"60"
+		}
+    }
 }

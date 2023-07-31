@@ -1759,5 +1759,11 @@
 		"DOTA_Tooltip_ability_summon_cleave_Description"			"Наносит часть урона окружающим врагам"
 		"DOTA_Tooltip_ability_summon_cleave_radius"				"РАДИУС:"
 		"DOTA_Tooltip_ability_summon_cleave_cleave_percent"		"%УРОН:"
+
+		"DOTA_Tooltip_ability_item_giant_ring_aa"						"GIANT RING"
+		"DOTA_Tooltip_ability_item_giant_ring_aa_Description"			"<h1>Активное: Giant Step</h1> Увеличивает все атрибуты на %bonus_all_stats_pct%%. Наносит урон в радиусе %radius% вокруг героя, равный %stat_damage_per_sec%%  суммы всех атрибутов. Позволяет проходить сквозь существ. Длительность: %duration% сек."
+		"DOTA_Tooltip_ability_item_giant_ring_aa_bonus_all_stats"		"+$all"
+		"DOTA_Tooltip_ability_item_giant_ring_aa_movement_speed"		"+$move_speed"
+		"DOTA_Tooltip_ability_item_giant_ring_aa_attack_speed"			"+$attack"
         }
 }
