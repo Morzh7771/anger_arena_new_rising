@@ -16,9 +16,7 @@ function modifier_item_trident_aa:IsHidden() return true end
 function modifier_item_trident_aa:IsPurgable() return false end
 
 function modifier_item_trident_aa:OnCreated(params)
-	self.bonus_str = self:GetAbility():GetSpecialValueFor("bonus_str")
-	self.bonus_agi = self:GetAbility():GetSpecialValueFor("bonus_agi") 
-	self.bonus_int = self:GetAbility():GetSpecialValueFor("bonus_int")
+	self.bonus_all_stats = self:GetAbility():GetSpecialValueFor("bonus_all_stats")
 	self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
 	self.bonus_status_res = self:GetAbility():GetSpecialValueFor("bonus_status_res") 
 	self.bonus_mana_regen_amp = self:GetAbility():GetSpecialValueFor("bonus_mana_regen_amp")
@@ -56,13 +54,13 @@ function modifier_item_trident_aa:GetModifierStatusResistance()
 	return self.bonus_status_res
 end
 function modifier_item_trident_aa:GetModifierBonusStats_Strength()
-	return self.bonus_str
+	return self.bonus_all_stats
 end
 function modifier_item_trident_aa:GetModifierBonusStats_Agility()
-	return self.bonus_agi
+	return self.bonus_all_stats
 end
 function modifier_item_trident_aa:GetModifierBonusStats_Intellect()
-	return self.bonus_int
+	return self.bonus_all_stats
 end
 function modifier_item_trident_aa:GetModifierAttackSpeedBonus_Constant()
 	return self.bonus_attack_speed
