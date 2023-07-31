@@ -1587,6 +1587,9 @@
         "DOTA_Tooltip_ability_item_bracer_custom_damage"		"+$damage"
         "DOTA_Tooltip_ability_item_bracer_custom_regen"			"+$hp_regen"
 
+        "DOTA_Tooltip_Ability_item_bfury_2"                     "War Fury"
+        "DOTA_Tooltip_Ability_item_bfury_2_Description"         "<h1>Активное: ChopTree</h1>Срубает выбранное дерево.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Quell</h1>Увеличивает урон от атак по существам, не являющимся героями, на %quelling_bonus% для героев ближнего боя.\n\n<h1>Пассивное: Cleave</h1>Атаки героя прорубают жертву, нанося врагам в радиусе %cleave_distance% вокруг неё физический урон (только в ближнем бою).<br><br>• Урон героям: %cleave_damage_percent%%%<br>• Урон крипам: %cleave_damage_percent_creep%%%"
+
 		"DOTA_Tooltip_ability_item_ranged_cleave" 																							"Holy book"
 		"DOTA_Tooltip_ability_item_ranged_cleave_Description"																				"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."
 		"DOTA_Tooltip_ability_item_ranged_cleave_max_target"																				"+ цели"

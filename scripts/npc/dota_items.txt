@@ -7,6 +7,198 @@
 	"item_wraith_band" "REMOVE"
 	"item_null_talisman" "REMOVE"
 	"item_ultimate_scepter_2" "REMOVE"
+
+	"item_recipe_bfury"
+          {
+
+            "Model"                                               "models/props_gameplay/recipe.vmdl"
+
+            "ItemCost"                                            "0"
+            "ItemShopTags"                                        ""
+
+            "ItemRecipe"                                          "1"
+            "ItemResult"                                          "item_bfury"
+            "ItemRequirements"
+            {
+              "01"                                                "item_broadsword;item_claymore;item_cornucopia;item_quelling_blade"
+            }
+          }
+          "item_bfury"
+          {
+            // General
+            //-------------------------------------------------------------------------------------------------------------
+
+            "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+            "AbilityUnitTargetType"                               "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+            "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+            "AbilityCastRange"                                    "350"
+            "AbilityCastPoint"                                    "0.0"
+            "AbilityCooldown"                                     "4.0"
+            "AbilityTextureName"                                  "battle_fury"
+
+            //Spicy Parameters
+            //-------------------------------------------------------------------------------------------------------------
+
+            "ItemBaseLevel"                                       "1"
+
+
+            // Item Info
+            //-------------------------------------------------------------------------------------------------------------
+            "ItemCost"                                            "3650"
+            "ItemShopTags"                                        "damage;health_regen;mana_regen;hard_to_tag"
+            "ItemQuality"                                         "epic"
+            "ItemAliases"                                         "bf;battle fury;cleaver"
+            "ItemDeclarations"                                    "DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+            // Special
+            //-------------------------------------------------------------------------------------------------------------
+            "AbilitySpecial"
+            {
+              "01"
+              {
+                "var_type"                                        "FIELD_INTEGER"
+                "bonus_damage"                                    "60 80"
+              }
+              "02"
+              {
+                "var_type"                                        "FIELD_FLOAT"
+                "bonus_health_regen"                              "7.5 11"
+              }
+              "03"
+              {
+                "var_type"                                        "FIELD_FLOAT"
+                "bonus_mana_regen"                                "2.75 3.0"
+              }
+              "04" // Cleave against heroes
+              {
+                "var_type"                                        "FIELD_INTEGER"
+                "cleave_damage_percent"                           "70 90"
+              }
+              "05"
+              {
+                "var_type"                                        "FIELD_INTEGER"
+                "cleave_damage_percent_creep"                     "40 60"
+              }
+              "06"
+              {
+                "var_type"                                        "FIELD_INTEGER"
+                "quelling_bonus"                                  "15 30"
+              }
+              "08"
+              {
+                "var_type"                                        "FIELD_INTEGER"
+                "cleave_starting_width"                           "150"
+              }
+              "09"
+              {
+                "var_type"                                        "FIELD_INTEGER"
+                "cleave_ending_width"                             "360"
+              }
+              "10"
+              {
+                "var_type"                                        "FIELD_INTEGER"
+                "cleave_distance"                                 "650"
+              }
+            }
+          }
+          "item_recipe_bfury_2"
+              {
+
+                "Model"                                               "models/props_gameplay/recipe.vmdl"
+                "BaseClass"                     "item_recipe_arcane_boots"
+
+                "ItemCost"                                            "0"
+                "ItemShopTags"                                        ""
+
+                "ItemRecipe"                                          "1"
+                "ItemResult"                                          "item_bfury_2"
+                "ItemRequirements"
+                {
+                  "01"                                                "item_bfury;item_bfury"
+                }
+              }
+          "item_bfury_2"
+              {
+                // General
+                //-------------------------------------------------------------------------------------------------------------
+                "BaseClass"                                           "item_bfury"
+
+                "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+                "AbilityUnitTargetType"                               "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+                "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+                "AbilityCastRange"                                    "350"
+                "AbilityCastPoint"                                    "0.0"
+                "AbilityCooldown"                                     "4.0"
+                "AbilityTextureName"                                  "battle_fury_2"
+
+                //Spicy Parameters
+                //-------------------------------------------------------------------------------------------------------------
+
+                "ItemBaseLevel"                                       "2"
+
+
+                // Item Info
+                //-------------------------------------------------------------------------------------------------------------
+                "ItemCost"                                            "7300"
+                "ItemShopTags"                                        "damage;health_regen;mana_regen;hard_to_tag"
+                "ItemQuality"                                         "epic"
+                "ItemAliases"                                         "bf;battle fury;cleaver"
+                "ItemDeclarations"                                    "DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+                // Special
+                //-------------------------------------------------------------------------------------------------------------
+                "AbilitySpecial"
+                {
+                  "01"
+                  {
+                    "var_type"                                        "FIELD_INTEGER"
+                    "bonus_damage"                                    "60 80"
+                  }
+                  "02"
+                  {
+                    "var_type"                                        "FIELD_FLOAT"
+                    "bonus_health_regen"                              "7.5 11"
+                  }
+                  "03"
+                  {
+                    "var_type"                                        "FIELD_FLOAT"
+                    "bonus_mana_regen"                                "2.75 3.0"
+                  }
+                  "04" // Cleave against heroes
+                  {
+                    "var_type"                                        "FIELD_INTEGER"
+                    "cleave_damage_percent"                           "70 90"
+                  }
+                  "05"
+                  {
+                    "var_type"                                        "FIELD_INTEGER"
+                    "cleave_damage_percent_creep"                     "40 60"
+                  }
+                  "06"
+                  {
+                    "var_type"                                        "FIELD_INTEGER"
+                    "quelling_bonus"                                  "15"
+                  }
+                  "08"
+                  {
+                    "var_type"                                        "FIELD_INTEGER"
+                    "cleave_starting_width"                           "150"
+                  }
+                  "09"
+                  {
+                    "var_type"                                        "FIELD_INTEGER"
+                    "cleave_ending_width"                             "360"
+                  }
+                  "10"
+                  {
+                    "var_type"                                        "FIELD_INTEGER"
+                    "cleave_distance"                                 "650"
+                  }
+                }
+              }
+
     "item_recipe_manta"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"

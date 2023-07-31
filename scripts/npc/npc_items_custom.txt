@@ -1423,10 +1423,11 @@
     		"ItemResult"					"item_trisula"
     		"ItemRequirements"
     		{
-    			"01"						"item_bfury;item_trident_aa;item_boss_soul"
+    			"01"						"item_bfury_2;item_trident_aa;item_boss_soul"
+    			"02"						"item_ranged_cleave2;item_trident_aa;item_boss_soul"
     		}
     	}
-        "item_trisula"
+    "item_trisula"
     	{
     		"BaseClass"             "item_lua"
             "ScriptFile"                    "items/item_trisula"
@@ -2178,82 +2179,82 @@
 			}
 		}
 	}
-	"item_recipe_ranged_cleave3"
-	{
-		"AbilityTextureName" 				"recipe"				
-		"Model"								"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     	"item_datadriven"
-		
-		"ItemCost"							"0"	
-		"ItemShopTags"						"artifacts"
-		
-		"ItemRecipe"						"1"
-		"ItemResult"						"item_ranged_cleave3"
-		"ItemRequirements"
-		{
-			"01"							"item_ranged_cleave2;item_ranged_cleave2;item_boss_soul"
-
-		}
-	}
-    "item_ranged_cleave3"
-	{
-		
-		"BaseClass"						"item_lua"
-		"ScriptFile"					"items/item_ranged_cleave"
-		"AbilityTextureName"			"holy_book_3"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-
-		 
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"cleave;bfury;shotgun"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		"ItemPurchasable"				"1"
-		"ItemSellable"					"1"
-		"ItemBaseLevel"                 "3"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"20 40 80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"20 40 80"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"40 80 160"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"150 175 200"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"		     	"300"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_target"			"1 2 3"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"split_shot_damage"		"60 80 100"
-			}
-		}
-	}
+//	"item_recipe_ranged_cleave3"
+//	{
+//		"AbilityTextureName" 				"recipe"
+//		"Model"								"models/props_gameplay/recipe.vmdl"
+//		"BaseClass"                     	"item_datadriven"
+//
+//		"ItemCost"							"0"
+//		"ItemShopTags"						"artifacts"
+//
+//		"ItemRecipe"						"1"
+//		"ItemResult"						"item_ranged_cleave3"
+//		"ItemRequirements"
+//		{
+//			"01"							"item_ranged_cleave2;item_ranged_cleave2;item_boss_soul"
+//
+//		}
+//	}
+//  "item_ranged_cleave3"
+//	{
+//
+//		"BaseClass"						"item_lua"
+//		"ScriptFile"					"items/item_ranged_cleave"
+//		"AbilityTextureName"			"holy_book_3"
+//
+//		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+//		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+//		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+//
+//
+//		"ItemQuality"					"artifact"
+//		"ItemAliases"					"cleave;bfury;shotgun"
+//		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+//		"ShouldBeSuggested"				"1"
+//		"ItemPurchasable"				"1"
+//		"ItemSellable"					"1"
+//		"ItemBaseLevel"                 "3"
+//
+//		"AbilitySpecial"
+//		{
+//			"01"
+//			{
+//				"var_type"				"FIELD_INTEGER"
+//				"bonus_str"				"20 40 80"
+//			}
+//			"02"
+//			{
+//				"var_type"				"FIELD_INTEGER"
+//				"bonus_agi"				"20 40 80"
+//			}
+//			"03"
+//			{
+//				"var_type"				"FIELD_INTEGER"
+//				"bonus_dmg"				"40 80 160"
+//			}
+//			"04"
+//			{
+//				"var_type"				"FIELD_INTEGER"
+//				"bonus_range"			"150 175 200"
+//			}
+//			"05"
+//			{
+//				"var_type"				"FIELD_INTEGER"
+//				"radius"		     	"300"
+//			}
+//			"06"
+//			{
+//				"var_type"				"FIELD_INTEGER"
+//				"max_target"			"1 2 3"
+//			}
+//			"07"
+//			{
+//				"var_type"				"FIELD_INTEGER"
+//				"split_shot_damage"		"60 80 100"
+//			}
+//		}
+//	}
     "item_fury_shield"
     {       
         // General

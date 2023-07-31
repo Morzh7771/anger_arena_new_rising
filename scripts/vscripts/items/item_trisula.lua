@@ -1,3 +1,5 @@
+require('items.funcs.cleave')
+
 LinkLuaModifier( "modifier_item_trisula", "items/item_trisula.lua", LUA_MODIFIER_MOTION_NONE )
 --Abilities
 if item_trisula == nil then
@@ -44,25 +46,33 @@ function modifier_item_trisula:OnDestroy()
 end
 
 function modifier_item_trisula:OnAttackLanded(params)
-	if params.attacker == self.caster then return end
-	if params.ranged_attack then return end
+	if params.target == self:GetParent() then return end
+	if not IsServer() then return end
+
+	local cleave_pct = 0;
 
 	if params.target:IsCreep() then
-		cleave_damage = params.damage / 100 * self.cleave_damage_creep
-	else
-		cleave_damage = params.damage / 100 * self.cleave_damage_hero
+		cleave_pct = self.cleave_damage_creep
+	end
+	if params.target:IsIllusion() then
+		cleave_pct = 50
+	end
+	if params.target:IsHero() then
+		cleave_pct = self.cleave_damage_hero
 	end
 
-	DoCleaveAttack(
-			params.attacker,
-			params.target,
-			nil,
-			cleave_damage,
-			150,
-			360,
-			self.cleave_range,
-			'particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf'
-	)
+	local cleave = {};
+
+	cleave.caster = params.attacker
+	cleave.target = params.target
+	cleave.damage = params.damage
+	cleave.dmg_pct = self.cleave_damage_hero
+	cleave.radius = self.cleave_range
+	cleave.range_flag = params.ranged_attack
+
+	CleaveDD(cleave);
+
+	--'particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf'
 end
 
 function modifier_item_trisula:DeclareFunctions()
