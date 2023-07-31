@@ -52,7 +52,7 @@ function CleaveDD(event)
 				dmg = damage*damage_pct/illusion_damage_decrease
 			end
 
-			ApplyDamage({ victim = x, attacker = caster, damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR, ability = event.ability}) --deal damage	
+			ApplyDamage({ victim = x, attacker = caster, damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR, ability = event.ability}) --deal damage
 		end
 	end
 end

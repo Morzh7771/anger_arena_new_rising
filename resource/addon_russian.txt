@@ -1524,9 +1524,7 @@
 
         "DOTA_Tooltip_Ability_item_trident_aa"                          "TRIDENT"
         "DOTA_Tooltip_Ability_item_trident_aa_Description"	        "Сочетает предметы Sange, Yasha и Kaya в один."
-		"DOTA_Tooltip_Ability_item_trident_aa_bonus_int"		"+$int"
-		"DOTA_Tooltip_Ability_item_trident_aa_bonus_str"		"+$str"
-		"DOTA_Tooltip_Ability_item_trident_aa_bonus_agi"		"+$agi"
+		"DOTA_Tooltip_Ability_item_trident_aa_bonus_all_stats"		"+$all"
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_spell_amp"		"%+к урону от заклинаний"
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_mana_regen_amp"	"%+к усилению восстановления маны"
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_attack_speed"	"+$attack"
@@ -1536,12 +1534,11 @@
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_spell_lifesteal_amp_pct"	"%+к усилению вампиризма от заклинаний"
 
 		"DOTA_Tooltip_Ability_item_trisula"                          "Trisula Shakti"
-        "DOTA_Tooltip_Ability_item_trisula_Description"	        "<h1>Пассивное: Cleave</h1>Атаки героя прорубают жертву, нанося врагам в радиусе %cleave_range% вокруг неё физический урон (только в ближнем бою).<br><br>• Урон героям: %cleave_damage_hero%%%<br>• Урон крипам: %cleave_damage_creep%%%"
+        "DOTA_Tooltip_Ability_item_trisula_Description"	        "<h1>Активное: Chop Forest</h1>Срубает деревья в радиусе %chop_tree_radius%.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Cleave</h1>Атаки героя наносят урон всем врагам в радиусе %cleave_range% вокруг основной цели. Наносит иллюзям %cleave_illusion_pure%%% чистого урона.<br><br>• Урон героям: %cleave_damage_hero%%%<br>• Урон крипам: %cleave_damage_creep%%%<br>• Урон иллюзиям: %cleave_damage_illusion%%%"
         "DOTA_Tooltip_Ability_item_trisula_Lore"	        "Магическое оружие великого бога Шивы. Каждая из частей его содержит полную силу бога создания и разрушения."
         "DOTA_Tooltip_Ability_item_trisula_bonus_damage"		"+$damage"
-        "DOTA_Tooltip_Ability_item_trisula_bonus_int"		"+$int"
-        "DOTA_Tooltip_Ability_item_trisula_bonus_str"		"+$str"
-        "DOTA_Tooltip_Ability_item_trisula_bonus_agi"		"+$agi"
+        "DOTA_Tooltip_ability_item_trisula_bonus_range"			"+ к дальности атаки (дальний бой)"
+        "DOTA_Tooltip_Ability_item_trisula_bonus_all_stats"		"+$all"
         "DOTA_Tooltip_Ability_item_trisula_bonus_spell_amp"		"%+к урону от заклинаний"
         "DOTA_Tooltip_Ability_item_trisula_bonus_mana_regen_amp"	"%+к усилению восстановления маны"
         "DOTA_Tooltip_Ability_item_trisula_bonus_attack_speed"	"+$attack"
@@ -1588,7 +1585,12 @@
         "DOTA_Tooltip_ability_item_bracer_custom_regen"			"+$hp_regen"
 
         "DOTA_Tooltip_Ability_item_bfury_2"                     "War Fury"
-        "DOTA_Tooltip_Ability_item_bfury_2_Description"         "<h1>Активное: ChopTree</h1>Срубает выбранное дерево.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Quell</h1>Увеличивает урон от атак по существам, не являющимся героями, на %quelling_bonus% для героев ближнего боя.\n\n<h1>Пассивное: Cleave</h1>Атаки героя прорубают жертву, нанося врагам в радиусе %cleave_distance% вокруг неё физический урон (только в ближнем бою).<br><br>• Урон героям: %cleave_damage_percent%%%<br>• Урон крипам: %cleave_damage_percent_creep%%%"
+        "DOTA_Tooltip_Ability_item_bfury_2_Description"         "<h1>Активное: Chop Tree</h1>Срубает выбранное дерево.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Quell</h1>Увеличивает урон от атак по существам, не являющимся героями, на %quelling_bonus% для героев ближнего боя.\n\n<h1>Пассивное: Cleave</h1>Атаки героя прорубают жертву, нанося врагам в радиусе %cleave_distance% вокруг неё физический урон (только в ближнем бою).<br><br>• Урон героям: %cleave_damage_percent%%%<br>• Урон крипам: %cleave_damage_percent_creep%%%"
+        "DOTA_Tooltip_Ability_item_bfury_2_Lore"                "Убей тысячи."
+        "DOTA_Tooltip_Ability_item_bfury_2_bonus_damage" "+$damage"
+        "DOTA_Tooltip_Ability_item_bfury_2_bonus_health_regen" "+$hp_regen"
+        "DOTA_Tooltip_Ability_item_bfury_2_bonus_mana_regen" "+$mana_regen"
+
 
 		"DOTA_Tooltip_ability_item_ranged_cleave" 																							"Holy book"
 		"DOTA_Tooltip_ability_item_ranged_cleave_Description"																				"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."

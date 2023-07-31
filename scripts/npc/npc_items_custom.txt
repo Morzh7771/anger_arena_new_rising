@@ -1395,9 +1395,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityValues"
 		{
-			"bonus_str"		                    "70"
-			"bonus_agi"		                    "70"
-			"bonus_int"		                    "70"
+			"bonus_all_stats"		            "70"
             "bonus_attack_speed"                "70"
             "bonus_status_res"                  "25"
             "bonus_mana_regen_amp"              "75"
@@ -1432,13 +1430,16 @@
     		"BaseClass"             "item_lua"
             "ScriptFile"                    "items/item_trisula"
             "AbilityTextureName"            "trisula"
-            "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+            "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+            //"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
+            "AbilityCastRange"				"350"
+            "AbilityCastPoint"				"0.0"
+            "AbilityManaCost"				"0"
+            "AbilityCooldown"				"10.0"
             "AbilityValues"
     		{
     		    "bonus_damage"                      "100"
-    			"bonus_str"		                    "80"
-    			"bonus_agi"		                    "80"
-    			"bonus_int"		                    "80"
+    			"bonus_all_stats"		            "80"
                 "bonus_attack_speed"                "80"
                 "bonus_status_res"                  "25"
                 "bonus_mana_regen_amp"              "75"
@@ -1449,6 +1450,10 @@
                 "cleave_range"                      "650"
                 "cleave_damage_hero"                "50"
                 "cleave_damage_creep"               "80"
+                "cleave_damage_illusion"            "50"
+                "cleave_illusion_pure"              "10"
+                "bonus_range"                       "200"
+                "chop_tree_radius"                  "150"
     		}
     	}
 
