@@ -1435,10 +1435,10 @@
         "DOTA_Tooltip_Ability_item_bfury_2_bonus_mana_regen" "+$mana_regen"
 
 		"DOTA_Tooltip_modifier_item_wraith_band_custom_speed"	"Wraith Band"
-		"DOTA_Tooltip_modifier_item_wraith_band_custom_speed_Description"	"Attack speed increased by <b><font color='#53ea48'>%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%</font></b>""
+		"DOTA_Tooltip_modifier_item_wraith_band_custom_speed_Description"	"Attack speed increased by <b><font color='#53ea48'>%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%</font></b>"
 		
-		"DOTA_Tooltip_Ability_item_wraith_band_custom"	"Wraith Band"
-		"DOTA_Tooltip_ability_item_wraith_band_custom_Description"	"<h1>Active: Zeal</h1>Increases your attack speed by %speed_buf% for each Wraith Band<br><br>Duration: %duration% seconds"
+		"DOTA_Tooltip_Ability_item_wraith_band_custom"				"Wraith Band"
+		"DOTA_Tooltip_ability_item_wraith_band_custom_Description"		"<h1>Active: Zeal</h1>Increases your attack speed by %speed_buf% for each Wraith Band<br><br>Duration: %duration% seconds"
 		"DOTA_Tooltip_ability_item_wraith_band_custom_Lore"	"Tiara, from which a gentle whisper can be heard."
 		"DOTA_Tooltip_ability_item_wraith_band_custom_agi"	"+$agi"
 		"DOTA_Tooltip_ability_item_wraith_band_custom_str"	"+$str"
@@ -1490,15 +1490,6 @@
 		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_str"	"+$str"
 		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_agi"	"+$agi"
 		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_dmg"	"+$damage"
-
-		"DOTA_Tooltip_ability_item_ranged_cleave3"	"Holy book 3"
-		"DOTA_Tooltip_ability_item_ranged_cleave3_Description"	"<h1> Passive: Splitfire </h1> RANGED ATTACKS ONLY: your attacks gain an additional target."
-		"DOTA_Tooltip_ability_item_ranged_cleave3_max_target"	"+ goals"
-		"DOTA_Tooltip_ability_item_ranged_cleave3_bonus_range"	"+ Attack range increase"
-		"DOTA_Tooltip_ability_item_ranged_cleave3_split_shot_damage"	"%Additional arrow damage"
-		"DOTA_Tooltip_ability_item_ranged_cleave3_bonus_str"	"+$str"
-		"DOTA_Tooltip_ability_item_ranged_cleave3_bonus_agi"	"+$agi"
-		"DOTA_Tooltip_ability_item_ranged_cleave3_bonus_dmg"	"+$damage"
 
 		"DOTA_Tooltip_ability_item_talisman_of_ambition"	"Talisman of Ambition"
 		"DOTA_Tooltip_ability_item_talisman_of_ambition_Description"	"<h1>Activatable: Shadow movements</h1> Allied unit gains an additional %evasion%% evasion for %duration% seconds"
@@ -1626,22 +1617,6 @@
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_Description"	 "<h1>Active: Reveal</h1>  Reveals a target %active_radius% area of the map for %active_duration% seconds."
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_Description"	 "<h1>Active: Reveal</h1>  Reveals a target %active_radius% area of the map for %active_duration% seconds."
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_Description"	 "<h1>Active: Reveal</h1>  Reveals a target %active_radius% area of the map for %active_duration% seconds."
-
-		"DOTA_Tooltip_ability_item_bloodstone_2"									"BLOODSTONE 2"
-		"DOTA_Tooltip_ability_item_bloodstone_2_Description"						"<h1>Active: Bloodpact</h1> Increases Bloodstone's Spell Lifesteal by %lifesteal_multiplier%x and also converts the same percentage of damage dealt to mana. Lasts %buff_duration% seconds."
-		"DOTA_Tooltip_ability_item_bloodstone_2_Lore"								"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
-		"DOTA_Tooltip_ability_item_bloodstone_2_Note0"							"Using Bloodpact leaves you drained for 40 seconds and can't benefit from Bloodpact again during that time."
-		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_health"						"+$health"
-		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_mana"						"+$mana"
-		"DOTA_Tooltip_ability_item_bloodstone_2_spell_lifesteal"					"%+$spell_lifesteal"
-
-		"DOTA_Tooltip_ability_item_bloodstone_3"									"BLOODSTONE 3"
-		"DOTA_Tooltip_ability_item_bloodstone_3_Description"						"<h1>Active: Bloodpact</h1> Increases Bloodstone's Spell Lifesteal by %lifesteal_multiplier%x and also converts the same percentage of damage dealt to mana. Lasts %buff_duration% seconds."
-		"DOTA_Tooltip_ability_item_bloodstone_3_Lore"								"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
-		"DOTA_Tooltip_ability_item_bloodstone_3_Note0"							"Using Bloodpact leaves you drained for 40 seconds and can't benefit from Bloodpact again during that time."
-		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"						"+$health"
-		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"						"+$mana"
-		"DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"					"%+$spell_lifesteal"
 
 		"DOTA_Tooltip_ability_separation_of_souls_bear"						"Merging Of Souls"
 		"DOTA_Tooltip_ability_separation_of_souls_bear_Description"			"The souls of the bear and druid merge, which gives the bear a part of the attack, armor and attack speed of the druid."
