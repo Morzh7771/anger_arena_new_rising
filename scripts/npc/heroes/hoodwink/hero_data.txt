@@ -3,7 +3,7 @@
 	"npc_dota_hero_hoodwink"
 	{
 		"override_hero"				"npc_dota_hero_hoodwink"
-		"Ability1"					"hoodwink_acorn_shot"
+		"Ability1"					"hoodwink_acorn_shot_lua"
 		"Ability2"					"hoodwink_bushwhack"
 		"Ability3"					"hoodwink_scurry"
 		"Ability4"					"hoodwink_decoy"
@@ -13,10 +13,10 @@
 		"Ability10"					"special_bonus_unique_hoodwink_scurry_evasion"
 		"Ability11"					"special_bonus_unique_hoodwink_bushwhack_cooldown"
 		"Ability12"					"special_bonus_unique_hoodwink_bushwhack_damage"
-		"Ability13"					"special_bonus_unique_hoodwink_acorn_shot_bounces"
+		"Ability13"					"special_bonus_unique_hoodwink_acorn_shot_bounces_custom"
 		"Ability14"					"special_bonus_unique_hoodwink_sharpshooter_speed"
 		"Ability15"					"special_bonus_corruption_4"
-		"Ability16"					"special_bonus_unique_hoodwink_acorn_shot_charges"
+		"Ability16"					"special_bonus_unique_hoodwink_acorn_shot_charges_custom"
 		"Ability17"					"special_bonus_unique_hoodwink_bushwhack_radius"
 		
 		"AbilityDraftIgnoreCount"   "7"

@@ -489,6 +489,24 @@
 
 		"DOTA_Tooltip_Ability_bristleback_quill_spray_damage_pct"			"%УРОН ОТ СИЛЫ"
 
+		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"
+		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"					"2 заряда Acorn Shot"
+
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua"						"Acorn Shot"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Description"			"Герой совершает атаку увеличенной дальности, зарядив особый жёлудь, который отскакивает во врагов неподалёку. Если врагов нет, то отскочит в ближайшее дерево, а также замедляет всех жертв и наносит им базовый урон, к которому прибавляется атака героя .\nМожно применить на точку, чтобы создать дерево, после чего жёлудь отскочит в ближайших врагов. Если включить автоматическое применение, способность всегда будет применяться на точку."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Lore"					"Прохвостка совсем не привередливая, но из желудей дубового и железного дерева получаются самые эффективные снаряды — их она и припасла больше всего."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_bonus_range"			"ДОП. ДАЛЬНОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_bounce_count"			"ОТСКОКОВ:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_debuff_duration"		"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_slow"					"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_acorn_shot_damage"	"БАЗОВЫЙ УРОН:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Note0"				"Жёлудь может отскочить в одну и ту же цель несколько раз."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Note1"				"Жёлудь не может отскочить в невидимое существо, но может отскочить во врага в радиусе 525, скрытого туманом войны."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Note2"				"Дерево существует 20 секунд."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Note3"				"Дальность применения увеличивается вместе с дальностью атаки."
+
+		"DOTA_Tooltip_modifier_hoodwink_acorn_shot_lua_debuff"				"Acorn Shot"
+		"DOTA_Tooltip_modifier_hoodwink_acorn_shot_lua_debuff_Description"	"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
         "DOTA_Tooltip_Ability_item_sacred_butterfly"						"Sacred Butterfly"
         "DOTA_Tooltip_Ability_item_sacred_butterfly_Lore"	        		"Меч, некогда принадлежавший Крайдесу, Нарушителю Вселенского Равновесия. Только самые ловкие герои смогут выкрасть нечто подобное у него и уйти невредимыми."
         "DOTA_Tooltip_Ability_item_sacred_butterfly_bonus_agi"				"+$agi"

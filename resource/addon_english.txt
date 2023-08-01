@@ -416,6 +416,25 @@
 		"DOTA_Tooltip_modifier_fervor_aa_effect_Description"		"Increase damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%% and attack speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%."
 
 
+		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 Acorn Shot Bounces"
+		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"			"2 Acorn Shot Charges"
+
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua"						"Acorn Shot"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Description"			"The hero makes an extended range attack, charging a special acorn that bounces at nearby enemies. If there are no enemies, it will bounce into the nearest tree, and also slow down all victims and deal base damage to them, to which the hero's attack is added.\nCan be cast on a point to create a tree, after which the acorn will bounce into nearby enemies. If you turn on auto-cast, the ability will always be applied to a point."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Lore"					"Though she'll make do with almost anything, Oak and Ironwood acorns make the most effective projectiles -- and the bulk of Hoodwink's stash."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_bonus_range"			"BONUS ATTACK RANGE:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_bounce_count"			"BOUNCE COUNT:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_debuff_duration"		"SLOW DURATION:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_slow"					"%MOVEMENT SLOW:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_acorn_shot_damage"	"BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Note0"				"The same target can be hit more than once."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Note1"				"Bounces will seek units in the fog of war in a 525 radius, but not invisible units."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Note2"				"The planted tree lasts for 20 seconds."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Note3"				"Acorn Shot benefits from attack range bonuses."
+
+		"DOTA_Tooltip_modifier_hoodwink_acorn_shot_lua_debuff"				"Acorn Shot"
+		"DOTA_Tooltip_modifier_hoodwink_acorn_shot_lua_debuff_Description"	"Move speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
 		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord"										"Presence of the Dark Lord"
 		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_Description"							"Shadow Fiend's presence reduces the armor of nearby enemies. Every enemy hero killed nearby further improves armor reduction by %bonus_armor_per_stack% for %kill_buff_duration%s."
         "DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_shard_description"					"Lowers nearby enemy magic resistance by 14%%."

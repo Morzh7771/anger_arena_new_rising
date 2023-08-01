@@ -1,5 +1,73 @@
 DOTAAbilities
 {
+	"hoodwink_acorn_shot_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hoodwink/hoodwink_acorn_shot_lua"
+		"AbilityTextureName"			"hoodwink_acorn_shot"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"7"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"575"
+		"AbilityCastPoint"				"0.2"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 75 80 85 90 95 100"
+		"AbilityValues"
+		{
+			"bonus_range"			"100 150 200 250 300 350 400"
+			"bonus_damage"			"50 80 110 140 170 200 230"
+			"projectile_speed"		"2000"
+			"bounce_count"
+			{
+				"value"		"2 3 4 5 6 7 8"
+				"special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"2" // хардкод в локализации
+			}
+			"AbilityCooldown"
+			{
+				"value"		"16 15 14 13 12 11 10"
+				"special_bonus_unique_hoodwink_acorn_shot_charges_custom"			"-1999999" // хардкод в локализации
+			}
+			"AbilityCharges"
+			{
+				"value"		"0"
+				"special_bonus_unique_hoodwink_acorn_shot_charges_custom"			"2" // хардкод в локализации
+			}
+			"AbilityChargeRestoreTime"		
+			{
+				"value"					"16 15 14 13 12 11 10"
+			}
+			"bounce_range"			"525"
+			"debuff_duration"		"0.25"
+			"slow"					"100"
+			"bounce_delay"			"0.1"
+		}
+	}
+	"special_bonus_unique_hoodwink_acorn_shot_bounces_custom"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_hoodwink_acorn_shot_charges_custom"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
 	"hoodwink_hunters_boomerang"
 	{
 		// General

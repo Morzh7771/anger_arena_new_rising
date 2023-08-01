@@ -143,6 +143,59 @@
 		"VisionDaytimeRange"		"2200"		// Range of vision during day light.
 		"VisionNighttimeRange"		"2200"		// Range of vision at night time.
 	}	
+	"npc_tree_thinker" 
+	{
+		"BaseClass"					"npc_dota_creature"							
+		"Model"						"models/development/invisiblebox.vmdl"
+		"ModelScale" 			"1.0"
+		"Level"				 	"1" 
+		"IsNeutralUnitType"		"1"
+		"CanBeDominated" 		"0" 
+
+		"Ability1" 				"ability_tree_thinker"
+		"Ability2"				""
+		"Ability3" 				""
+		"Ability4" 				""
+		"Ability5" 				"" 
+		"Ability6" 				"" 
+		"Ability7" 				"" 
+		"Ability8" 				"" 
+		
+		
+
+		"AttackDamageMin" 		"0" 
+		"AttackDamageMax" 		"0" 
+		"AttackRate" 			"0.8" 
+		"AttackAnimationPoint" 	"0.3" 
+		"AttackAcquisitionRange" 	"300" 
+		"AttackRange" 			"175" 
+
+		"BountyXP" 				"0" 
+		"BountyGoldMin"			"0" 
+		"BountyGoldMax" 		"0" 
+
+		"StatusHealth" 			"1" 
+		"StatusHealthRegen" 	"1.2" 
+		"StatusMana" 			"5000" 
+		"StatusManaRegen" 		"0" 
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0"	
+
+		"TeamName"				"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"VisionDaytimeRange" 	"800" 
+		"VisionNighttimeRange" 	"800" 
+		
+		"RingRadius"			"50"
+		"HealthBarOffset"		"200"
+
+		"HasInventory" 			"0" 
+	}
 	"npc_aa_creep_centaur_big" 
 	{
 		"BaseClass" 			"npc_dota_creep_neutral" 
@@ -1416,7 +1469,7 @@
 		
 		"AbilityLayout"							"6"
 		
-		"Ability1" 								"abyss_warrior_death_link"
+		"Ability1" 								""
 		"Ability2" 								"abyss_warrior_domination"
 		"Ability3" 								"abyss_warrior_charged_attack"
 		"Ability4" 								"abyss_warrior_fallen_hero"

@@ -260,6 +260,15 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ScriptFile"						"creeps/minimap/main_ability.lua"
 	}
+	"ability_tree_thinker"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"ability_lua"
+		"AbilityTextureName" 				"you_shall_never_see_it"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ScriptFile"						"creeps/ability_tree_thinker.lua"
+	}
 	"ability_shrine_restore"
 	{
 		// General
