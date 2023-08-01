@@ -106,6 +106,12 @@ function PercentDamage:_init()
 		"leshrac_diabolic_edict",
 		"leshrac_lightning_storm",
 		"leshrac_pulse_nova",
+		"jakiro_liquid_fire",
+		"jakiro_dual_breath",
+		"jakiro_macropyre",
+		"grimstroke_ink_creature",
+		"grimstroke_spirit_walk",
+		"grimstroke_dark_artistry",
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
@@ -134,6 +140,8 @@ function PercentDamage:_init()
 		"viper_corrosive_skin",
 		"viper_nethertoxin",
 		"viper_poison_attack",
+		"death_prophet_carrion_swarm",
+		"death_prophet_exorcism",
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 

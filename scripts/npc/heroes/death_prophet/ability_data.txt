@@ -55,6 +55,10 @@ DOTAAbilities
 				"var_type"					"FIELD_INTEGER"
 				"speed"						"1100"
 			}
+			"05"
+			{
+				"damage_pct"				"30"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -297,6 +301,7 @@ DOTAAbilities
 				}	
 				"movement_base"					"12 14 16 18 20 22 24"
 				"movement_bonus"				"8 10 12 14 16 18 20"
+				"damage_pct"			"20"
 		}
 	}	
 }

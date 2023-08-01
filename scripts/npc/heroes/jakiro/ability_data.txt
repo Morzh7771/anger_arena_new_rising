@@ -68,6 +68,7 @@ DOTAAbilities
 				"special_bonus_unique_jakiro_dualbreath_slow"		"-50"
 			}
 			"speed_fire"			"1050"
+			"damage_pct"			"20"
 
 		}		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -184,6 +185,11 @@ DOTAAbilities
 			{
 				"building_dmg_pct"		"75"
 			}
+			"04"
+			{
+				"damage_pct"			"20"
+			}
+			
 		}		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -333,6 +339,10 @@ DOTAAbilities
 				"var_type"					"FIELD_FLOAT"
 				"scepter_bonus_duration"			"15"
 				"RequiresScepter"		"1"
+			}
+			"08"
+			{
+				"damage_pct"			"30"
 			}
 			
 		}	

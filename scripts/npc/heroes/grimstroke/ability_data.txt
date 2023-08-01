@@ -78,6 +78,11 @@ DOTAAbilities
 				"abilitycastrange"				""
 				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_3"
 			}
+			"10"
+			{
+				"damage_pct"				"60"
+			}
+			
 		}
 	}
 	"grimstroke_ink_creature"
@@ -181,6 +186,10 @@ DOTAAbilities
 			{
 				"var_type"					"FIELD_INTEGER"
 				"latched_unit_offset_short"	"95"
+			}
+			"14"
+			{
+				"damage_pct"	"30"
 			}
 		}
 	}
@@ -407,6 +416,10 @@ DOTAAbilities
 				"var_type"				"FIELD_INTEGER"
 				"shard_heal_pct"		"40"
 				"RequiresShard"					"1"
+			}		
+			"12"
+			{
+				"damage_pct"		"20"
 			}						
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
