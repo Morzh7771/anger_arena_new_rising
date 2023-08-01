@@ -189,12 +189,14 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"alchemist_goblins_greed"
-		"MaxLevel"		"7"
+		"MaxLevel"		"8"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_SELF"
-		"MaxLevel"						"1"
+		"LevelsBetweenUpgrades"		"12"
+		"RequiredLevel"			"-1"
+		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
@@ -207,9 +209,9 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"				"40"
-			"bonus_gold"			"4"
-			"bonus_bonus_gold"		"6"
-			"bonus_gold_cap"		"34"
+			"bonus_gold"			"4 8 16 32 64 128 256 512"
+			"bonus_bonus_gold"		"6 12 24 48 96 192 384 768"
+			"bonus_gold_cap"		"34 68 138 272 544 1088 2178 4352"
 			"bounty_multiplier"		"2.5"
 			"damage"
 			{
