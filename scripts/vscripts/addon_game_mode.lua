@@ -22,7 +22,7 @@ require('lib/move_limiter')
 require('lib/comeback_system')
 require('lib/percent_damage')
 require('lib/bounty')
---require('lib/repick_menu')
+require('lib/repick_menu')
 function Precache( context )
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
