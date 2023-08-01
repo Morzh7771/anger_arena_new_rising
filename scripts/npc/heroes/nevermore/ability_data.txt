@@ -63,6 +63,7 @@ DOTAAbilities
 					"value"									"8"	
 					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 				}
+				"damage_pct"					"50"
 		}
 	}
 	"nevermore_shadowraze2"
@@ -123,6 +124,7 @@ DOTAAbilities
 					"value"									"8"	
 					"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 				}
+				"damage_pct"					"50"
 		}
 	}
 	"nevermore_shadowraze3"
@@ -184,6 +186,7 @@ DOTAAbilities
 				"value"									"8"	
 				"special_bonus_unique_nevermore_shadowraze_cooldown"		"-4"
 			}					
+			"damage_pct"					"50"
 		}
 	}
 	"nevermore_necromastery"
@@ -243,7 +246,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls_scepter" "40"
+				"necromastery_max_souls_scepter" "45"
 				"RequiresScepter"			"1"
 			}	
 			"05"
@@ -309,6 +312,43 @@ DOTAAbilities
 
 		}
 	}
+	"shadow_fiend_presence_of_the_dark_lord"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/shadow_fiend/shadow_fiend_presence_of_the_dark_lord"
+		"AbilityTextureName"			"nevermore_dark_lord"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"7"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		"AbilityValues"
+		{
+			"presence_armor_reduction"
+			{
+				"value"		"-4 -5 -6 -7 -8 -9 -10"
+			}
+			"presence_armor_reduction_pct"
+			{
+				"value"		"5 7 9 11 13 15 17"
+				"special_bonus_unique_nevermore_presence_of_the_dark_lord"			"3"
+			}
+			"presence_radius" 			"900"
+
+		}
+	}
+	"special_bonus_unique_nevermore_presence_of_the_dark_lord"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
 	"nevermore_requiem"
 	{
 		// General

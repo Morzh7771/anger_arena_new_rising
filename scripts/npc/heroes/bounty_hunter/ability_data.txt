@@ -60,6 +60,7 @@ DOTAAbilities
 			"cast_range"			"550"
 			"slow"					"100"		
 			"attack_slow"			"100"
+			"damage_pct"			"70"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -98,7 +99,7 @@ DOTAAbilities
 			}
 			"gold_steal"
 			{
-				"value"			"15 30 45 60 75 90 115"
+				"value"			"30 40 50 65 80 95 115"
 				"special_bonus_unique_bounty_hunter"		"+85"
 			}
 		}

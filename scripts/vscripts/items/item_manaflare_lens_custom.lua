@@ -16,7 +16,6 @@ function modifier_item_manaflare_lens_custom:IsPurgable() return false end
 function modifier_item_manaflare_lens_custom:IsPurgeException() return false end
 function modifier_item_manaflare_lens_custom:IsPurgable() return false end
 function modifier_item_manaflare_lens_custom:RemoveOnDeath() return false end
-
 function modifier_item_manaflare_lens_custom:DeclareFunctions()
 	return
 	{

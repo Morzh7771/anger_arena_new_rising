@@ -374,6 +374,28 @@
 		"DOTA_Tooltip_Ability_rattletrap_rocket_flare_damage_pct"			"%STR TO DMG"
 		"DOTA_Tooltip_Ability_rattletrap_hookshot_damage_pct"				"%STR TO DMG"
 
+
+		"DOTA_Tooltip_ability_fervor_aa"								"Fervor"
+		"DOTA_Tooltip_ability_fervor_aa_Description"					"Troll Warlord learns about the weakness of his target with each attack, increasing his damage and attack speed. \nIf Troll changes targets, the stacks drop to zero"
+		"DOTA_Tooltip_ability_fervor_aa_attack_speed"					"ATTACK SPEED:"
+		"DOTA_Tooltip_ability_fervor_aa_damage"						    "DAMAGE:"
+		"DOTA_Tooltip_ability_fervor_aa_duration"						"DURATION:"
+
+		"DOTA_Tooltip_modifier_fervor_aa_effect"					"Fervor Stack"
+		"DOTA_Tooltip_modifier_fervor_aa_effect_Description"		"Increase damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%% and attack speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%."
+
+
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord"										"Presence of the Dark Lord"
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_Description"							"Shadow Fiend's presence reduces the armor of nearby enemies. Every enemy hero killed nearby further improves armor reduction by %bonus_armor_per_stack% for %kill_buff_duration%s."
+        "DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_shard_description"					"Lowers nearby enemy magic resistance by 14%%."
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_Lore"									"Even being near Nevermore eats away at one's soul."
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_Note0"								"Stacks fully with other armor reduction abilities and aura."
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_presence_armor_reduction"				"BASE REDUCTION:"
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_presence_armor_reduction_pct"				"%REDUCTION:"
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_presence_radius"						"RADIUS:"
+		"DOTA_Tooltip_ability_special_bonus_unique_nevermore_presence_of_the_dark_lord"		"+{s:bonus_presence_armor_reduction_pct}% Presence armor reduction"
+		
+		
         "DOTA_Tooltip_Ability_item_sacred_butterfly"	"Sacred Butterfly"
 		"DOTA_Tooltip_Ability_item_sacred_butterfly_Lore"	"Sword, once owned by Krydes, the Violator of Universal Equilibrium. Only the most agile heroes can steal something like this from him and escape unharmed."
 		"DOTA_Tooltip_Ability_item_sacred_butterfly_bonus_agi"	"+$agi"
@@ -1414,6 +1436,7 @@
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_spell_lifesteal_amp_pct"	"%+To increase vampirism from spells"
 
 		"DOTA_Tooltip_Ability_item_trisula"	"TRISULA SHAKTI"
+		"DOTA_Tooltip_Ability_item_trisula_Note0"				"Trisula Shakti can be built using a War Fury or Holy Book 2"
         "DOTA_Tooltip_Ability_item_trisula_Description"	        "<h1>Active: Chop Forest</h1>Destroys trees around target point\n\n<h1>Passive: Cleave</h1>Deals %cleave_damage_hero%%% of attack damage as physical damage in a radius of %cleave_range% around the target. Deals %cleave_damage_creep%%% against creeps. Deals %cleave_damage_illusion%%% against illusions. %cleave_illusion_pure%%% of damage against illusions is pure."
         "DOTA_Tooltip_Ability_item_trisula_Lore"	        "Magical weapon of the great lord Shiva. Each piece of it wields full power of the God of Creation and Destruction."
         "DOTA_Tooltip_Ability_item_trisula_bonus_damage"	"+$damage"
@@ -1583,8 +1606,8 @@
 		"DOTA_Tooltip_Ability_item_static_amulet_old_bonus_stats"			"+$all"
 
 
-		"DOTA_Tooltip_modifier_static_mag_amplify"							"Magic Singularity Amplification"
-		"DOTA_Tooltip_modifier_static_mag_amplify_Description"				"Increase output spell amplification damage by %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_static_mag_amplify_count"							"Magic Singularity Amplification"
+		"DOTA_Tooltip_modifier_static_mag_amplify_count_Description"				"Increase output spell amplification damage"
 			
 		"DOTA_Tooltip_modifier_static_disarm"								"Disarmed"
 		"DOTA_Tooltip_modifier_static_disarm_Description"					"Disarmed"

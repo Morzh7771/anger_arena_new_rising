@@ -24,6 +24,7 @@ end
 function modifier_giant_ring_aa:IsBuff() return true end
 function modifier_giant_ring_aa:IsDebuff() return false end
 function modifier_giant_ring_aa:IsHidden() return true end
+function modifier_giant_ring_aa:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_giant_ring_aa:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end
 function modifier_giant_ring_aa:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end
 function modifier_giant_ring_aa:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end

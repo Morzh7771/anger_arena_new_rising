@@ -87,6 +87,15 @@
 		"npc_aa_bulding_shrine_radiant"										"Shrine"
 		"npc_aa_bulding_shrine_dire"										"Shrine"
 
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord"										"Presence of the Dark Lord"
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_Description"							"Присутствие героя снижает броню ближайших врагов. Каждая смерть вражеского героя поблизости усиливает снижение брони на %bonus_armor_per_stack% на %kill_buff_duration% сек."
+        "DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_shard_description"					"Уменьшает сопротивление магии у врагов неподалёку на 14%%."
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_Lore"									"Даже просто будучи рядом, Невермор разъедает душу."
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_Note0"								"Эффект складывается с другими способностями и аурами, снижающими броню."
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_presence_armor_reduction"				"БАЗОВОЕ СНИЖЕНИЕ БРОНИ:"
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_presence_armor_reduction_pct"				"%СНИЖЕНИЕ БРОНИ:"
+		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_presence_radius"						"РАДИУС:"
+		"DOTA_Tooltip_ability_special_bonus_unique_nevermore_presence_of_the_dark_lord"		"+{s:bonus_presence_armor_reduction_pct}% к снижения брони от Presence of the Dark Lord"
 		"DOTA_Tooltip_ability_ability_shrine_restore"						"Restoration"
 		"DOTA_Tooltip_ability_ability_shrine_restore_Description"			"Восстанавливает здоровье и ману всех окружающих союзников"
 		"DOTA_Tooltip_ability_ability_shrine_restore_aura_radius"			"РАДИУС:"
@@ -275,6 +284,17 @@
         "DOTA_Tooltip_ability_possessed_hellshield_Description"				"При активации накладывает эффект на %duration%  секунды, который отражает %return_damage%%  назад во атакующего, а так же блокирует %damage_reduction%%  этого урона."
 
         "DOTA_Tooltip_modifier_possessed_hellshield"						"Hellshield Damage Return"
+
+		"DOTA_Tooltip_ability_fervor_aa"							"Fervor"
+		"DOTA_Tooltip_ability_fervor_aa_Description"				"С каждой атакой Troll Warlord все больше узнает о защите врага, что позволяет ему наносить каждый следующий удар быстрее и с большим уроном. \nПри атаке другой цели вся накопленая скорость атаки и урон теряются."
+		"DOTA_Tooltip_ability_fervor_aa_attack_speed"				"СКОРОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_fervor_aa_damage"					    "УРОН:"
+		"DOTA_Tooltip_ability_fervor_aa_duration"					"ДЛИТЕЛЬНОСТЬ:"
+
+		"DOTA_Tooltip_modifier_fervor_aa_effect"				"Fervor Stack"
+		"DOTA_Tooltip_modifier_fervor_aa_effect_Description"	"Увеличивает урон на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% и скорость атаки на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%%."
+
+
 		//Axe
 		"DOTA_Tooltip_Ability_axe_counter_helix_damage_pct"					"МНОЖИТЕЛЬ БРОНИ"
 		//Earth Spirit
@@ -372,16 +392,22 @@
 		//Vengeful Spirit
 		"DOTA_Tooltip_Ability_vengefulspirit_magic_missile_damage_pct"		"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		//Venomancer
+		
+
 		"DOTA_Tooltip_Ability_venomancer_venomous_gale_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_venomancer_poison_sting_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_venomancer_latent_poison_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
 		//Naga Siren
 		"DOTA_Tooltip_Ability_naga_siren_rip_tide_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
+
+		
 		//Earthshaker
 		"DOTA_Tooltip_Ability_earthshaker_fissure_damage_pct"				"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_earthshaker_aftershock_damage_pct"			"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_earthshaker_echo_slam_damage_pct"				"%УРОН ОТ СИЛЫ"
 		//Void Spirit
+
+		"DOTA_Tooltip_Ability_bounty_hunter_shuriken_toss_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_void_spirit_dissimilate_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_void_spirit_resonant_pulse_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		//Spirit Breaker
@@ -425,9 +451,39 @@
 		"DOTA_Tooltip_Ability_windrunner_powershot_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		//Ember Spirit
 		"DOTA_Tooltip_Ability_ember_spirit_searing_chains_damage_pct"			"%УРОН ОТ ЛОВКОСТИ"
-		"DOTA_Tooltip_Ability_ember_spirit_flame_guard_damage_pct"			"%УРОН ОТ ЛОВКОСТИ"
+		"DOTA_Tooltip_Ability_ember_spirit_flame_guard_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
 		//Templar Assassin
 		"DOTA_Tooltip_Ability_special_bonus_unique_templar_assassin_8"			"+100% к дальности атаки и пробития от Psi Blades"
+
+		"DOTA_Tooltip_Ability_mars_spear_damage_pct"								"%УРОН ОТ СИЛЫ"
+		"DOTA_Tooltip_Ability_legion_commander_overwhelming_odds_damage_pct"			"%УРОН ОТ СИЛЫ"
+
+		"DOTA_Tooltip_Ability_zuus_heavenly_jump_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_Ability_zuus_thundergods_wrath_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_Ability_zuus_lightning_bolt_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_Ability_witch_doctor_voodoo_restoration_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_Ability_storm_spirit_static_remnant_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+
+		"DOTA_Tooltip_Ability_leshrac_split_earth_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_Ability_leshrac_diabolic_edict_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_Ability_leshrac_lightning_storm_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_Ability_leshrac_pulse_nova_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+
+
+
+		
+		"DOTA_Tooltip_Ability_nevermore_shadowraze1_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
+		"DOTA_Tooltip_Ability_nevermore_shadowraze2_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
+		"DOTA_Tooltip_Ability_nevermore_shadowraze3_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
+		"DOTA_Tooltip_Ability_juggernaut_blade_fury_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
+
+		"DOTA_Tooltip_Ability_viper_poison_attack_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+		"DOTA_Tooltip_Ability_viper_nethertoxin_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+		"DOTA_Tooltip_Ability_viper_corrosive_skin_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+		"DOTA_Tooltip_Ability_viper_viper_strike_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+
+		"DOTA_Tooltip_Ability_bristleback_quill_spray_damage_pct"			"%УРОН ОТ СИЛЫ"
 
         "DOTA_Tooltip_Ability_item_sacred_butterfly"						"Sacred Butterfly"
         "DOTA_Tooltip_Ability_item_sacred_butterfly_Lore"	        		"Меч, некогда принадлежавший Крайдесу, Нарушителю Вселенского Равновесия. Только самые ловкие герои смогут выкрасть нечто подобное у него и уйти невредимыми."
@@ -1536,7 +1592,8 @@
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_heal_amp_pct"	"%+к здоровью от восстановления и вампиризма"
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_spell_lifesteal_amp_pct"	"%+к усилению вампиризма от заклинаний"
 
-		"DOTA_Tooltip_Ability_item_trisula"                          "Trisula Shakti"
+		"DOTA_Tooltip_Ability_item_trisula"                      "Trisula Shakti"
+		"DOTA_Tooltip_Ability_item_trisula_Note0"				"Trisula Shakti можно собрать иcпользуя War Fury или Holy Book 2"
         "DOTA_Tooltip_Ability_item_trisula_Description"	        "<h1>Активное: Chop Forest</h1>Срубает деревья в радиусе %chop_tree_radius%.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Cleave</h1>Атаки героя наносят урон всем врагам в радиусе %cleave_range% вокруг основной цели. Наносит иллюзям %cleave_illusion_pure%%% чистого урона.<br><br>• Урон героям: %cleave_damage_hero%%%<br>• Урон крипам: %cleave_damage_creep%%%<br>• Урон иллюзиям: %cleave_damage_illusion%%%"
         "DOTA_Tooltip_Ability_item_trisula_Lore"	        "Магическое оружие великого бога Шивы. Каждая из частей его содержит полную силу бога создания и разрушения."
         "DOTA_Tooltip_Ability_item_trisula_bonus_damage"		"+$damage"
@@ -1707,8 +1764,8 @@
 		"DOTA_Tooltip_Ability_item_static_amulet_old_bonus_stats"			"+$all"
 
 
-		"DOTA_Tooltip_modifier_static_mag_amplify"							"Magic Singularity Amplification"
-		"DOTA_Tooltip_modifier_static_mag_amplify_Description"				"Увеличивает исходящий урон способностей на %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_static_mag_amplify_count"							"Magic Singularity Amplification"
+		"DOTA_Tooltip_modifier_static_mag_amplify_count_Description"				"Увеличивает исходящий урон способностей"
 			
 		"DOTA_Tooltip_modifier_static_disarm"								"Disarmed"
 		"DOTA_Tooltip_modifier_static_disarm_Description"					"Disarmed"

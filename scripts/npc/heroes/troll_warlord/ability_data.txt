@@ -300,6 +300,35 @@ DOTAAbilities
 			}
 		}
 	}
+	"fervor_aa"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"troll_warlord_fervor"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"ScriptFile"	                "heroes/troll_warlord/fervor/fervor_aa"
+		
+		"MaxLevel"						"7"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"6 8 10 12 14 16 18"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"1 1 2 2 3 4 5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
+			}
+		}
+	}
 	"troll_warlord_battle_trance"
 	{
 		// General

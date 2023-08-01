@@ -8,6 +8,7 @@ modifier_item_chest_of_midas = class({})
 function modifier_item_chest_of_midas:IsDebuff() return false end
 function modifier_item_chest_of_midas:IsHidden() return false end
 function modifier_item_chest_of_midas:IsPurgable() return false end
+function modifier_item_chest_of_midas:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_chest_of_midas:OnCreated()
     self.bonus_armor = self:GetAbility():GetSpecialValueFor("bonus_armor")
     self.xp = self:GetAbility():GetSpecialValueFor("xp")

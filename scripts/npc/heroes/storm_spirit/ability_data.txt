@@ -100,6 +100,10 @@ DOTAAbilities
 				"static_remnant_damage"			"120 180 240 300 360 420 480"
 				"LinkedSpecialBonus"	"special_bonus_unique_storm_spirit_5"
 			}
+			"05"
+			{
+				"damage_pct"						"60"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -193,7 +197,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"overload_damage"			"25 50 75 100 125 250 275"
+				"overload_damage"			"50 75 100 125 175 250 275"
 				"LinkedSpecialBonus"	"special_bonus_unique_storm_spirit_6"
 			}
 			"05"
@@ -231,7 +235,11 @@ DOTAAbilities
 				"var_type"						"FIELD_INTEGER"
 				"shard_attack_speed_bonus"					"40"
 				"RequiresShard"						"1"
-			}																	
+			}	
+			"11"
+			{
+				"damage_pct"						"60"
+			}																
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -267,7 +275,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"ball_lightning_initial_mana_percentage"		"8"
+				"ball_lightning_initial_mana_percentage"		"6"
 			}
 			"02"
 			{
@@ -287,12 +295,12 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_travel_cost_base"	"20"		
+				"ball_lightning_travel_cost_base"	"15"		
 			}
 			"06"
 			{
 				"var_type"								"FIELD_FLOAT"
-				"ball_lightning_travel_cost_percent"	"0.7"		
+				"ball_lightning_travel_cost_percent"	"0.5"		
 			}
 			"07"
 			{

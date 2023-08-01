@@ -65,7 +65,7 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"danage_pct"				"100"
+				"damage_pct"				"20"
 			}	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -174,7 +174,7 @@ DOTAAbilities
 					"value"			"25 35 50 70 85 115 150"
 					"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_3"
 				}
-				"danage_pct"			"100"
+				"damage_pct"			"20"
 				"blind_pct"				"50"
 				"shield_pct_absorb"		"70"
 		}

@@ -37,7 +37,9 @@ function PercentDamage:_init()
 		"earth_spirit_geomagnetic_grip",
 		"earth_spirit_petrify",
 		"spirit_breaker_greater_bash",
-		"spirit_breaker_nether_strike"
+		"spirit_breaker_nether_strike",
+		"legion_commander_overwhelming_odds",
+		"mars_spear",
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
@@ -49,7 +51,11 @@ function PercentDamage:_init()
 		"faceless_void_time_lock",
 		"phantom_lancer_spirit_lance",
 		"ember_spirit_searing_chains",
-		"ember_spirit_flame_guard"
+		"ember_spirit_flame_guard",
+		"nevermore_shadowraze1",
+		"nevermore_shadowraze2",
+		"nevermore_shadowraze3",
+		"juggernaut_blade_fury",
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
@@ -89,7 +95,17 @@ function PercentDamage:_init()
 		"invoker_sun_strike",
 		"invoker_chaos_meteor",
 		"shadow_shaman_ether_shock",
-		"shadow_shaman_shackles"
+		"shadow_shaman_shackles",
+		"zuus_heavenly_jump",
+		"zuus_thundergods_wrath",
+		"zuus_lightning_bolt",
+		"witch_doctor_voodoo_restoration",
+		"storm_spirit_overload",
+		"storm_spirit_static_remnant",
+		"leshrac_split_earth",
+		"leshrac_diabolic_edict",
+		"leshrac_lightning_storm",
+		"leshrac_pulse_nova",
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
@@ -112,7 +128,12 @@ function PercentDamage:_init()
 		"snapfire_scatterblast",
 		"snapfire_mortimer_kisses",
 		"snapfire_firesnap_cookie",
-		"windrunner_powershot"
+		"windrunner_powershot",
+		"bounty_hunter_shuriken_toss",
+		"viper_viper_strike",
+		"viper_corrosive_skin",
+		"viper_nethertoxin",
+		"viper_poison_attack",
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
