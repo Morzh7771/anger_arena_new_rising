@@ -9409,7 +9409,6 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"301"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 			
 		// Item Info
@@ -9439,7 +9438,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"block_cooldown"		"12.0"
+				"block_cooldown"		"18.0"
 			}
 		}
 	}
