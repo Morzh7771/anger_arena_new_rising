@@ -1707,5 +1707,27 @@
 		"DOTA_Tooltip_ability_item_giant_ring_aa_bonus_all_stats"		"+$all"
 		"DOTA_Tooltip_ability_item_giant_ring_aa_movement_speed"		"+$move_speed"
 		"DOTA_Tooltip_ability_item_giant_ring_aa_attack_speed"			"+$attack"
+
+        "DOTA_Tooltip_ability_item_bloodstone_2"									"BLOODSTONE 2"
+		"DOTA_Tooltip_ability_item_bloodstone_2_Description"                        "<h1>Active: Bloodpact</h1> Increases Bloodstone's Spell Lifesteal by %lifesteal_multiplier%x and also converts the same percentage of damage dealt to mana. Lasts %buff_duration% seconds."
+        "DOTA_Tooltip_ability_item_bloodstone_2_Lore"                                "The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
+        "DOTA_Tooltip_ability_item_bloodstone_2_Note0"                            "Using Bloodpact leaves you drained for 40 seconds and can't benefit from Bloodpact again during that time."
+        "DOTA_Tooltip_ability_item_bloodstone_2_bonus_health"                        "+$health"
+        "DOTA_Tooltip_ability_item_bloodstone_2_bonus_mana"                        "+$mana"
+        "DOTA_Tooltip_ability_item_bloodstone_2_spell_lifesteal"                    "%+$spell_lifesteal"
+
+        "DOTA_Tooltip_ability_item_bloodstone_3"									"BLOODSTONE 3"
+		"DOTA_Tooltip_ability_item_bloodstone_3_Description"                        "<h1>Active: Bloodpact</h1> Increases Bloodstone's Spell Lifesteal by %lifesteal_multiplier%x and also converts the same percentage of damage dealt to mana. Lasts %buff_duration% seconds."
+        "DOTA_Tooltip_ability_item_bloodstone_3_Lore"                                "The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
+        "DOTA_Tooltip_ability_item_bloodstone_3_Note0"                            "Using Bloodpact leaves you drained for 40 seconds and can't benefit from Bloodpact again during that time."
+        "DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"                        "+$health"
+        "DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"                        "+$mana"
+        "DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"                    "%+$spell_lifesteal"
+
+        "DOTA_Tooltip_modifier_bloodstone_active"                            "Bloodpact"
+        "DOTA_Tooltip_modifier_bloodstone_active_Description"                "Increases spell lifesteal and regens mana from dealt spell damage."
+
+        "DOTA_Tooltip_modifier_bloodstone_cooldown"                            "Drained"
+        "DOTA_Tooltip_modifier_bloodstone_cooldown_Description"                "Bloodpact's Bonuses will not apply to a unit that's drained."
 	}
 }
