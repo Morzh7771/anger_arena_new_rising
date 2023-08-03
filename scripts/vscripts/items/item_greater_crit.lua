@@ -13,7 +13,8 @@ modifier_greater_crit = class({
     DeclareFunctions = function (self) return {
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
         MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
-    } end
+    } end,
+    GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end
 })
 
 function modifier_greater_crit:GetModifierPreAttack_CriticalStrike(params)
