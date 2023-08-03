@@ -19,11 +19,13 @@ modifier_greater_crit = class({
 
 function modifier_greater_crit:GetModifierPreAttack_CriticalStrike(params)
     if self:LegitimateAttack(params) then
-        local chance = self:GetAbility():GetSpecialValueFor("crit_chance")
+        local chance = self:GetAbility():GetSpecialValueFor("crit_chance") / 100
 
-        local proc = RandomInt(1, 100)
+        local stacked_chance = 1 - math.pow((1 - chance), #self:GetParent():FindAllModifiersByName('modifier_greater_crit'))
 
-        if proc <= chance then
+        local proc = (RandomInt(1, 100) + math.random()) / 100
+
+        if proc <= stacked_chance then
             self.record = params.record
             return self:GetAbility():GetSpecialValueFor("crit_multiplier")
         end
