@@ -199,14 +199,14 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"shadow_shaman_mass_serpent_ward"
-		"MaxLevel"		"7"
+		"MaxLevel"		"3"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_ShadowShaman.SerpentWard"
-
+		"LevelsBetweenUpgrades"		"12"
 		"HasScepterUpgrade"			"1"
 
 		// Casting
@@ -235,7 +235,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_tooltip"			"50 90 130 170 210 250 290"
+				"damage_tooltip"			"50 130 210"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_4"
 				"CalculateSpellDamageTooltip"	"0"				
 			}
