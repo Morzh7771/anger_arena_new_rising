@@ -9,6 +9,7 @@ Cheat lobby commands
  -str 100					-- set base hero strength to 100
  -agi 100					-- set base hero agility to 100
  -int 100					-- set base hero intellect to 100 
+ -cb 
 ]]
 
 Commands = Commands or class({})
@@ -33,6 +34,9 @@ function Commands:duel_start(player, arg)
 	DuelController:StartDuel()
 end
 
+function Commands:de(player, arg)
+	DuelController:StopDuel()
+end
 function Commands:duel_end(player, arg)
 	DuelController:StopDuel()
 end
@@ -98,7 +102,7 @@ end
 
 function Commands:dev(player, arg)
 	local hero 			= player:GetAssignedHero()
-	hero:SetBaseIntellect( 1 ) -- :kekw:
+	hero:SetBaseIntellect( 10000 ) -- :kekw:
 	hero:SetBaseAgility( 10000 )
 	hero:SetBaseStrength( 10000 )
 	hero:CalculateStatBonus( true )
@@ -165,6 +169,9 @@ function Commands:nofog(player, arg)
 	GameMode:SetFogOfWarDisabled(true)
 end
 
+function Commands:sh(player, arg)
+	PlayerResource:ReplaceHeroWith( player:GetPlayerID(), "npc_dota_hero_" .. arg[1], player:GetAssignedHero():GetGold(), 0 )
+end
 function Commands:switchhero(player, arg)
 	PlayerResource:ReplaceHeroWith( player:GetPlayerID(), "npc_dota_hero_" .. arg[1], player:GetAssignedHero():GetGold(), 0 )
 end
@@ -182,4 +189,18 @@ function Commands:q(player, arg)
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
+end
+
+function Commands:cb(player, arg)
+	if not player then return end
+	MouseCursor:OnCursorPosition(player:GetPlayerID(), function(position)
+		-- double check cause call time is unknown, player might abandon
+		if not player then return end
+		local hero = player:GetAssignedHero()
+		hero:AddExperience(999999,0,true,true)
+		hero:SetGold(9999999,false)
+		local target = CreateUnitByName( "npc_dota_hero_axe", position, true, nil, nil, hero:GetOpposingTeamNumber() )
+		target:SetControllableByPlayer( hero:GetPlayerOwnerID(), false )
+		target:AddExperience(999999,0,true,true)
+	end) 	
 end
