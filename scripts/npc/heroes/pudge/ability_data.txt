@@ -239,12 +239,12 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"							"30 27.5 25 22.5 20 17.5 15.0"
-				"special_bonus_shard"			"-5"
+				"value"							"30 28 26 24 22 20 18"
+				"special_bonus_shard"			"-3"
 			}
 			"shard_regen_pct"			
 			{
-						"value"			"5"
+						"value"			"7.5"
 				"RequiresShard"			"1"
 			}
 			"order_lock_duration"		
@@ -259,7 +259,7 @@ DOTAAbilities
 			}
 			"shard_cooldown_reduction"		
 			{
-				"value"					"5.0"
+				"value"					"3.0"
 				"RequiresShard"			"1"
 			}
 		}

@@ -2459,6 +2459,142 @@
             }
         }
     }
+
+    "item_recipe_greater_crit"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"						"1000"
+        "ItemShopTags"					""
+
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_greater_crit"
+        "ItemRequirements"
+        {
+            "01"						"item_lesser_crit;item_demon_edge"
+        }
+    }
+    "item_greater_crit"
+    {
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemBaseLevel"					"1"
+        "BaseClass"						"item_lua"
+        "ScriptFile"					"items/item_greater_crit"
+        "AbilityTextureName"			"item_greater_crit"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"5150"
+        "ItemShopTags"					"damage;crit"
+        "ItemQuality"					"epic"
+        "ItemAliases"					"daedalus"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"				"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"90 200"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "crit_chance"			"30 40"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "crit_multiplier"		"225 350"
+            }
+        }
+    }
+    "item_recipe_greater_crit_2"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_greater_crit_2"
+        "ItemRequirements"
+        {
+            "01"						"item_greater_crit;item_greater_crit;item_boss_soul"
+        }
+    }
+    "item_greater_crit_2"
+    {
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "ItemBaseLevel"					"2"
+        "BaseClass"						"item_lua"
+        "ScriptFile"					"items/item_greater_crit"
+        "AbilityTextureName"			"crit_2"
+
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+        "AbilityCastRange"				"800"
+        "AbilityCastRangeBuffer"		"900"
+
+        "AbilitySharedCooldown"			"item_greater_crit"
+
+        "AbilityCastPoint"				"0.0"
+        "AbilityCooldown"				"30.0"
+        "AbilityManaCost"				"100"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "AbilityCastAnimation"  		"ACT_DOTA_CAST_ABILITY_1"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"5150"
+        "ItemShopTags"					"damage;crit"
+        "ItemQuality"					"epic"
+        "ItemAliases"					"daedalus"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"				"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"90 200"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "crit_chance"			"30 40"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "crit_multiplier"		"225 350"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "projectile_speed"      "4000"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "cripple_duration"      "3"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "cripple_ms"            "100"
+            }
+        }
+    }
+
     "item_recipe_bloodstone"
     {
         "Model"							"models/props_gameplay/recipe.vmdl"
@@ -3207,7 +3343,7 @@
             "04"
             {
                 "var_type"				"FIELD_FLOAT"
-                "spell_amplify_by_cast"	"18.0 35.0"
+                "spell_amplify_by_cast"	"12.0 27.0"
             }
             "05"
             {
@@ -3302,7 +3438,7 @@
             "04"
             {
                 "var_type"				"FIELD_FLOAT"
-                "spell_amplify_by_cast"	"18.0 35.0"
+                "spell_amplify_by_cast"	"12.0 27.0"
             }
             "05"
             {
