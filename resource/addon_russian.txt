@@ -1342,7 +1342,7 @@
 		"DOTA_Tooltip_modifier_gungnir_3_debuff_Description"		"Невозможно передвигаться во время оцепенения."
 
         "DOTA_Tooltip_ability_item_center_of_peace"			"Center Of Peace"
-        "DOTA_Tooltip_ability_item_center_of_peace_Description"		"<h1>Поддерживаемая: Meditation</h1> Владелец восстанавливает %mana_regen_total_pct%%  маны и получачет %bonus_magical_resist%%  дополнительного сопротивления магии в течение %channel_time_tooltip%  секунд. \nПри полном прочтении заклинания, владелец получает положительный эффект на %after_cast_bonus_duration%  секунд, увеличивая восстановление маны на  %after_cast_mana_regen% и уменьшая ее расход на %after_cast_reduce_manacost_pct%%."
+        "DOTA_Tooltip_ability_item_center_of_peace_Description"		"<h1>Поддерживаемая: Meditation</h1> Владелец восстанавливает %mana_regen_total_pct%%  маны, от максимального значения, в секунду и получачет %bonus_magical_resist%%  дополнительного сопротивления магии в течение %channel_time_tooltip%  секунд. \nПри полном прочтении заклинания, владелец получает положительный эффект на %after_cast_bonus_duration%  секунд, увеличивая восстановление маны на  %after_cast_mana_regen% и уменьшая ее расход на %after_cast_reduce_manacost_pct%%."
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_mana"		"+$mana"
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_int"		"+$int"
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_agi"		"+$agi"
@@ -1350,11 +1350,12 @@
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_manaregen"	"+$mana_regen"
 		
         "DOTA_Tooltip_modifier_center_of_peace_active_channel"		"Center Of Peace"
-        "DOTA_Tooltip_modifier_center_of_peace_active_channel_Description""Восстанавливает ману"
+        "DOTA_Tooltip_modifier_center_of_peace_active_channel_Description""Восстанавливает 10%% маны, от максимального значения, в секунду."
         "DOTA_Tooltip_modifier_center_of_peace_active_finish"		"Center Of Peace"
+        "DOTA_Tooltip_modifier_center_of_peace_active_finish_Description" "Увеличивает восстановление маны на 15 и уменьшает её расход на 15%%."
 
         "DOTA_Tooltip_ability_item_void_stick"				"Void Scepter"
-        "DOTA_Tooltip_ability_item_void_stick_Description"		"<h1>Активная: Void Astral</h1> ПРЕРЫВАЕМАЯ — При применении на себя скрывает вас с карты на %astral_duration% секунды постепенно восстанавливая %astral_regen%%  здоровья и маны в секунду. При полном прочтении заклинания, владелец получает положительный эффект на %after_cast_bonus_duration%  секунд, увеличивая восстановление маны на  %after_cast_mana_regen% и уменьшая ее расход на %after_cast_reduce_manacost_pct%%"
+        "DOTA_Tooltip_ability_item_void_stick_Description"		"<h1>Активная: Void Astral</h1> ПРЕРЫВАЕМАЯ — При применении на себя скрывает вас с карты на %astral_duration% секунды постепенно восстанавливая %astral_regen%%  здоровья и маны в секунду. При полном прочтении заклинания, владелец получает положительный эффект на %after_cast_bonus_duration%  секунд, увеличивая восстановление маны на  %after_cast_mana_regen% и уменьшая ее расход на %after_cast_reduce_manacost_pct%%.."
 
         "DOTA_Tooltip_Ability_item_void_stick_bonus_int"		"+$int"
         "DOTA_Tooltip_ability_item_void_stick_bonus_hp"			"+$health"
@@ -1365,12 +1366,13 @@
         "DOTA_Tooltip_ability_item_void_stick_bonus_speed"		"+$move_speed"
 
         "DOTA_Tooltip_modifier_item_void_stick_astral"			"Void Astral"
-        "DOTA_Tooltip_modifier_item_void_stick_astral_Description"	"Постепенно восстанавливает %astral_regen%% здоровья и маны"
+        "DOTA_Tooltip_modifier_item_void_stick_astral_Description"	"Постепенно восстанавливает 7%% здоровья и маны."
 
         "DOTA_Tooltip_modifier_item_void_stick_pull"			"Void Attractiing"
         "DOTA_Tooltip_modifier_item_void_stick_pull_Description"	"Притягивается при помощи Void Scepter"
 
         "DOTA_Tooltip_modifier_void_stick_active_finish"		"Void Scepter"
+        "DOTA_Tooltip_modifier_void_stick_active_finish_Description" "Увеличивает восстановление маны на 20 и уменьшает её расход на 20%%."
 
         "DOTA_Tooltip_Ability_item_charon"				"Charon's Scepter"
         "DOTA_Tooltip_Ability_item_charon_Description"			"<h1>Активируемая: Disappear</h1> Юнит уходит в астрал, где получает регенерацию жизней."

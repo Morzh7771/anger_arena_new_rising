@@ -36,7 +36,7 @@ end
 
 --------------------------------------------------------------------------------
 function modifier_center_of_peace_active_channel:OnCreated(kv)
-    self.mana_regen_total_pct = self:GetAbility():GetSpecialValueFor("mana_regen_total_pct") / 100
+    self.mana_regen_total_pct = self:GetAbility():GetSpecialValueFor("mana_regen_total_pct")
     self.bonus_magical_resist = self:GetAbility():GetSpecialValueFor("bonus_magical_resist")
 end
 
