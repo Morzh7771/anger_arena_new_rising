@@ -142,6 +142,11 @@ function PercentDamage:_init()
 		"viper_poison_attack",
 		"death_prophet_carrion_swarm",
 		"death_prophet_exorcism",
+		"shredder_flamethrower",
+		"shredder_whirling_death",
+		"shredder_timber_chain",
+		"shredder_chakram",
+		"shredder_chakram_2"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 

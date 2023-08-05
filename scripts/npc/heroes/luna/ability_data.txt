@@ -196,15 +196,15 @@ DOTAAbilities
 			}
 			"beam_interval"
 			{
-				"value"					"0.6 0.6 0.6"
-				"special_bonus_scepter"	"-0.3"
+				"value"					"0.5"
+				"special_bonus_scepter"	"-0.25"
 			}
 			"beam_interval_scepter"		"0.3" // purely for the tooltip Note, since the scepter tooltip doesn't show this.
 			"radius"					"675"
 			"hit_count"
 			{
-				"value"					"99"
-				"special_bonus_scepter"	"+0"
+				"value"					"5 7 9 11 13 15 17"
+				"special_bonus_scepter"	"+5"
 			}
 			"AbilityCastRange"
 			{
@@ -213,8 +213,8 @@ DOTAAbilities
 			}
 			"AbilityDuration"
 			{
-				"value"					"8"
-				"special_bonus_scepter"	"-0.6"
+				"value"					"0"
+				"special_bonus_scepter"	"0"
 			}
 			"night_duration"	
 			{
@@ -223,7 +223,7 @@ DOTAAbilities
 			"stun_duration"
 			{
 				"value"							"0.0"
-				"special_bonus_unique_luna_5"	"+0.15"
+				"special_bonus_unique_luna_5"	"+0.05"
 			}
 			"AbilityCooldown"
 			{
