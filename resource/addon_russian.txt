@@ -639,6 +639,8 @@
         "DOTA_Tooltip_ability_item_greater_crit_2_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_Ability_item_greater_crit_2_Lore"							"Этот арбалет долгое время стоял в Музее Бесполезных Вещей до тех пор, пока один авантюрист не притащил его на схватку Ангелов и Падших. Сейчас он пылится на складе лавочника"
         
+		"DOTA_Tooltip_modifier_greater_crit_crippled"					"Crippled"
+		"DOTA_Tooltip_modifier_greater_crit_crippled_Description"		"Ваша скорость передвижения равна %cripple_ms% и её нельзя изменить а так же вы не можете нажимать предметы"
         "DOTA_Tooltip_Ability_item_power_treads_2"								"Power Treads 2 "
         "DOTA_Tooltip_ability_item_power_treads_2_Description"					"<h1>Активируемая: Switch Attribute</h1> Меняет значение выбранного параметра между силой, ловкостью и интеллектом.\n\nPower Treads могут быть собраны с помощью Belt of Strength, Band of Elvenskin или Robe of the Magi. Основные бонусы к скорости передвижения от нескольких пар ботинок не складываются. Бонусы к скорости атаки от нескольких Power Treads не складываются."
         "DOTA_Tooltip_ability_item_power_treads_2_Lore"							"Ты повторяешься."
@@ -1015,7 +1017,8 @@
 		"DOTA_Tooltip_modifier_item_mjollnir_3_static_Description"	        "Когда это существо атакуют, есть шанс в %dMODIFIER_PROPERTY_TOOLTIP%%%, что атакующий и %dMODIFIER_PROPERTY_TOOLTIP% соседних с ним врага будут поражены молнией."
 
         "DOTA_Tooltip_ability_item_advanced_midas"                             "HAND OF MIDAS 2"
-        "DOTA_Tooltip_ability_item_advanced_midas_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта. При применении на нейтрального крипа гарантирует получение нейтрального предмета, если не все из них получены.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%"
+		"DOTA_Tooltip_ability_item_hand_of_midas_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта. При применении на нейтрального крипа гарантирует получение нейтрального предмета, если не все из них получены.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивная: Bounty</h1>Дает за руну богатства %base_gold_rune% золота +  %minute_gold_rune% золота за каждую игровую минуту."
+        "DOTA_Tooltip_ability_item_advanced_midas_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта. При применении на нейтрального крипа гарантирует получение нейтрального предмета, если не все из них получены.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивная: Bounty</h1>Дает за руну богатства %base_gold_rune% золота +  %minute_gold_rune% золота за каждую игровую минуту."
 		"DOTA_Tooltip_ability_item_advanced_midas_Lore"			"Эта перчатка, сохранившаяся благодаря неведомой магии, служит жадности владельца, наполняя его карманы золотом в обмен на жизни животных."
 		"DOTA_Tooltip_ability_advanced_midas_Note0"			"Получаемое золото идет в надёжный запас (при этом стандартная награда за убийство крипа не даётся)."
 		"DOTA_Tooltip_ability_advanced_midas_Note1"			"Опыт от убитого крипа не делится с другими героями."
@@ -1952,7 +1955,7 @@
 
 
 		"DOTA_Tooltip_ability_item_vision"								"THIRD EYE"
-		"DOTA_Tooltip_ability_item_vision_Description"					"<h1>Активное: Third Eye</h1> Вы получаете обзор на случайного вражеского героя на %duration% секунд радиус обзора равен радусу обзора героя<br><br><b><font color='#FF0000'>Если выложить предмет обзор пропадет</font></b><br><br><b><font color='#FF0000'>Если одного врага уже видно то при нажатии действие еффекта на цели обновится </font></b>"
+		"DOTA_Tooltip_ability_item_vision_Description"					"<h1>Активное: Third Eye</h1> Вы получаете обзор на случайного вражеского героя на %duration% секунд радиус обзора равен радусу обзора героя<br><br><b><font color='#FF0000'>Если выложить предмет обзор пропадет</font></b><br><br><b><font color='#FF0000'>Если одну цель уже видно то при нажатии действие еффекта на цели обновится </font></b><br><br><b><font color='#FF0000'>Если владелец предмета умрет обзор с цели пропадет </font></b>"
 		"DOTA_Tooltip_ability_item_vision_bonus_str"					"+$str"
 		"DOTA_Tooltip_ability_item_vision_bonus_int"					"+$int"
 		"DOTA_Tooltip_ability_item_vision_day_vision"					"+ к радиусу обзора днем"

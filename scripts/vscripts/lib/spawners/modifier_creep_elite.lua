@@ -1,7 +1,7 @@
 modifier_creep_elite = class({})
 
 function modifier_creep_elite:DeclareFunctions()
-	return {}
+	return {MODIFIER_PROPERTY_MODEL_SCALE}
 end
 
 function modifier_creep_elite:IsHidden()
@@ -15,6 +15,9 @@ function modifier_creep_elite:RemoveOnDeath()
 end
 function modifier_creep_elite:IsPurgable()
 	return false
+end
+function modifier_creep_elite:GetModifierModelScale()
+	return 30
 end
 --просто и со вкусом particles/items_fx/aura_assault.vpcf говно
 --просто и со вкусом particles/items_fx/aura_shivas.vpcf  говно

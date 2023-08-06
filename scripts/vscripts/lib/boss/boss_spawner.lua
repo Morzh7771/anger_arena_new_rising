@@ -150,7 +150,7 @@ function BossSpawner:HandleUnitKill(unit, killer)
 
 	self.bossCurrent[unit] = nil
 
-	boss:OnDeath( killer:GetTeamNumber() )
+	boss:OnDeath( killer:GetTeamNumber(),killer )
 
 	self:CheckSpawn(boss, false)
 

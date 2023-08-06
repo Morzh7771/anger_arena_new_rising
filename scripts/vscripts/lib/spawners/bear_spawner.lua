@@ -59,8 +59,8 @@ function BearSpawner:ReSpawnBear()
 
 	creep:SetPhysicalArmorBaseValue( death * 0.3 )
 	--creep:SetBaseAttackTime( death * 10 )
-	creep:SetBaseDamageMin( death * 2 )
-	creep:SetBaseDamageMax( death * 2.1 )
+	creep:SetBaseDamageMin( death * 2.5 )
+	creep:SetBaseDamageMax( death * 3 )
 
 	--creep:SetMana( creep:GetMaxMana() )
 	creep:SetHealth( creep:GetMaxHealth() )

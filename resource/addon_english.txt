@@ -498,7 +498,9 @@
 		"DOTA_Tooltip_Ability_item_greater_crit_2"	"Daedalus 2"
 		"DOTA_Tooltip_ability_item_greater_crit_2_Description"	"<h1>Active: Crippling Shot</h1>Shoots a projectile in enemy up to %abilitycastrange% units away. Deals critical damage and sets target\'s movement to %cripple_ms% for %cripple_duration% seconds.\n\n<h1>Passive: Critical Strike</h1> Each attack has a %crit_chance%%% chance to deal %crit_multiplier%%%"
 		"DOTA_Tooltip_ability_item_greater_crit_2_bonus_damage"	"+$damage"
-		
+
+		"DOTA_Tooltip_modifier_greater_crit_crippled"					"Crippled"
+		"DOTA_Tooltip_modifier_greater_crit_crippled_Description"		"Your movement speed is %cripple_ms%, and it cannot be changed. Additionally, you are unable to use items."
 		"DOTA_Tooltip_Ability_item_power_treads_2"	"Power Treads 2"
 		"DOTA_Tooltip_ability_item_power_treads_2_Description"	"<h1>Activatable: Switch Attribute</h1> Changes the value of the selected parameter between strength, agility, and intelligence.\n\nPower Treads can be assembled using Belt of Strength, Band of Elvenskin, or Robe of the Magi. The movement speed bonuses from multiple pairs of boots do not stack. The attack speed bonuses from multiple Power Treads do not stack."
 		"DOTA_Tooltip_ability_item_power_treads_2_Lore"	"A pair of boots made of tough leather that can change its properties at the owner's will."
@@ -854,8 +856,9 @@
 		"DOTA_Tooltip_modifier_item_mjollnir_3_static_Description"	"When this creature is attacked, there is a %dMODIFIER_PROPERTY_TOOLTIP%%% chance that the attacker and %dMODIFIER_PROPERTY_TOOLTIP% adjacent enemy will be struck by lightning."
 		
 		"DOTA_Tooltip_ability_item_advanced_midas"	"HAND OF MIDAS 2"
-		"DOTA_Tooltip_ability_item_advanced_midas_Description"	"<h1>Active: Transmute</h1> Kills the selected target (but not a hero), giving %bonus_gold% gold and %xp_multiplier% times more experience. When used on a neutral creep, guarantees the acquisition of a neutral item if not all of them have been obtained.<br><br>Does not work on ancient creeps.<br><br>Cast Range: %abilitycastrange%"
-		"DOTA_Tooltip_ability_item_advanced_midas_Lore"	"This glove, preserved by unknown magic, serves the greed of its owner, filling his pockets with gold in exchange for the lives of animals."
+		"DOTA_Tooltip_ability_item_advanced_midas_Description"	"<h1>Active: Transmute</h1> Kills the selected target (but not a hero), giving %bonus_gold% gold and %xp_multiplier% times more experience. When used on a neutral creep, guarantees the acquisition of a neutral item if not all of them have been obtained.<br><br>Does not work on ancient creeps.<br><br>Cast Range: %abilitycastrange%\n\n<h1><h1>Passive: Bounty</h1>Provides %base_gold_rune% gold for each bounty rune collected, and an additional %minute_gold_rune% gold for every in-game minute."
+		"DOTA_Tooltip_ability_item_hand_of_midas_Description"	"<h1>Active: Transmute</h1> Kills the selected target (but not a hero), giving %bonus_gold% gold and %xp_multiplier% times more experience. When used on a neutral creep, guarantees the acquisition of a neutral item if not all of them have been obtained.<br><br>Does not work on ancient creeps.<br><br>Cast Range: %abilitycastrange%\n\n<h1><h1>Passive: Bounty</h1>Provides %base_gold_rune% gold for each bounty rune collected, and an additional %minute_gold_rune% gold for every in-game minute."
+        "DOTA_Tooltip_ability_item_advanced_midas_Lore"	"This glove, preserved by unknown magic, serves the greed of its owner, filling his pockets with gold in exchange for the lives of animals."
 		"DOTA_Tooltip_ability_item_advanced_midas_Note0"	"The obtained gold goes into a secure reserve (however, the standard reward for killing a creep is not given)."
 		"DOTA_Tooltip_ability_item_advanced_midas_Note1"	"Experience from a killed creep is not shared with other heroes."
 		"DOTA_Tooltip_ability_item_advanced_midas_bonus_attack_speed"	"+$attack"
@@ -1730,5 +1733,12 @@
 
         "DOTA_Tooltip_modifier_bloodstone_cooldown"                            "Drained"
         "DOTA_Tooltip_modifier_bloodstone_cooldown_Description"                "Bloodpact's Bonuses will not apply to a unit that's drained."
+
+		"DOTA_Tooltip_ability_item_vision"								"THIRD EYE"
+		"DOTA_Tooltip_ability_item_vision_Description"					"<h1>Active: Third Eye</h1>Gain vision of a random enemy hero for %duration% seconds with a vision radius equal to the hero's vision radius.<br><br><b><font color='#FF0000'>if you lose an item, the vision on the target will disappear.</font > </b><br><br><b><font color='#FF0000'>If the target is already visible, activating the effect will update the target's duration.</ font> </b><br><br><b > <font color='#FF0000'>If the owner of the item dies, the target will lose their sight.</font></b>"
+		"DOTA_Tooltip_ability_item_vision_bonus_str"					"+$str"
+		"DOTA_Tooltip_ability_item_vision_bonus_int"					"+$int"
+		"DOTA_Tooltip_ability_item_vision_day_vision"					"+ к радиусу обзора днем"
+		"DOTA_Tooltip_ability_item_vision_night_vision"					"+ к радиусу обзора ночью"
 	}
 }

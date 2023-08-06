@@ -121,7 +121,7 @@ function BossClass:GetDeathCount()
 	return self.deathCount + 1
 end
 
-function BossClass:OnDeath(killerTeam)
+function BossClass:OnDeath(killerTeam,killer)
 	local unit = self.unit
 
 	self.unit = nil
@@ -156,8 +156,13 @@ function BossClass:OnDeath(killerTeam)
 	local bountyExp  = (bountyTable["base_exp"]  or 0) + (bountyTable["exp_per_death"]  or 0 ) * deathCount
 
 	TeamHelper:ApplyForHeroes(killerTeam, function(playerid, hero)
-		PlayerResource:ModifyGold(playerid, bountyGold, false, DOTA_ModifyGold_RoshanKill)
-		hero:AddExperience(bountyExp, DOTA_ModifyXP_RoshanKill, false, true)
+		if hero == killer then
+			PlayerResource:ModifyGold(playerid, bountyGold, false, DOTA_ModifyGold_RoshanKill)
+			hero:AddExperience(bountyExp, DOTA_ModifyXP_RoshanKill, false, true)
+		else
+			PlayerResource:ModifyGold(playerid, bountyGold/2, false, DOTA_ModifyGold_RoshanKill)
+			hero:AddExperience(bountyExp/2, DOTA_ModifyXP_RoshanKill, false, true)
+		end
 	end)
 
 	self:_DropItems( pos )

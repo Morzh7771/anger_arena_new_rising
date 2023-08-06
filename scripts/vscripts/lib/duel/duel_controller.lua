@@ -100,8 +100,9 @@ function DuelController:_StartDuel()
 	}
 	local refresher_shared = {
 		["item_refresher"] = true, 
-		["item_aeon_disk"] = true
-		}
+		["item_vision"] = true,
+		["item_aeon_disk"] = true,
+	}
 		function RespawnHeroes(tbl)
 			for _, hero in pairs(tbl) do
 				if not hero:IsAlive() then

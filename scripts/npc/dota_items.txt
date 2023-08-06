@@ -3616,6 +3616,16 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_gold"			"160 320"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_gold_rune"			"100 200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"minute_gold_rune"			"5 10"
+			}
 		}
 	}
 
@@ -3677,6 +3687,16 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_gold"			"160 320"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_gold_rune"			"100 200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"minute_gold_rune"			"5 10"
 			}
 		}
 		
@@ -6499,11 +6519,10 @@
 				"bonus_attack_speed"		"60 120 180"
 				"bonus_damage"				"40 80 160"
 				"bonus_mana_regen"			"5 10 15"
-				"bonus_magic_resist"		"25 30 35"	
+				"bonus_magic_resist"		"20 23 25"	
 				"bonus_health_regen"		"6 12 30"	
-				"silence_duration"			"5 5.5 6"
-				"silence_damage_percent"	"50 60 70"
-
+				"silence_duration"			"5"
+				"silence_damage_percent"	"30 35 40"
 				"duration"					"5 5.5 6"			
 				"spell_amp_debuff"			"35 40 45"
 		}
@@ -6563,11 +6582,10 @@
 				"bonus_attack_speed"		"60 120 180"
 				"bonus_damage"				"40 80 160"
 				"bonus_mana_regen"			"5 10 15"
-				"bonus_magic_resist"		"25 30 35"	
+				"bonus_magic_resist"		"20 23 25"	
 				"bonus_health_regen"		"6 12 30"	
-				"silence_duration"			"5 5.5 6"
-				"silence_damage_percent"	"50 60 70"
-
+				"silence_duration"			"5"
+				"silence_damage_percent"	"30 35 40"
 				"duration"					"5 5.5 6"			
 				"spell_amp_debuff"			"35 40 45"
 		}
@@ -6627,11 +6645,10 @@
 				"bonus_attack_speed"		"60 120 180"
 				"bonus_damage"				"40 80 160"
 				"bonus_mana_regen"			"5 10 15"
-				"bonus_magic_resist"		"25 30 35"	
+				"bonus_magic_resist"		"20 23 25"	
 				"bonus_health_regen"		"6 12 30"	
-				"silence_duration"			"5 5.5 6"
-				"silence_damage_percent"	"50 60 70"
-
+				"silence_duration"			"5"
+				"silence_damage_percent"	"30 35 40"
 				"duration"					"5 5.5 6"			
 				"spell_amp_debuff"			"35 40 45"
 		}

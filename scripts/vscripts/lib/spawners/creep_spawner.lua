@@ -27,7 +27,7 @@ require("lib/timers")
 local DEBUG = IsInToolsMode() 
 local FORCE_DEBUG = false
 local CONFIG_PATH = "scripts/npc/creep_spawners.kv"
-local CHANCE_ELITE = 50
+local CHANCE_ELITE = 10
 local CREEP_SPAWN_TIME 	= 60
 local CREEP_RANDOM_OFFSET = 50
 

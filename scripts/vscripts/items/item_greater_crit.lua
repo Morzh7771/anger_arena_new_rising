@@ -106,6 +106,7 @@ modifier_greater_crit_crippled = class({
     IsHidden = function (self) return false end,
     IsBuff = function (self) return false end,
     IsDebuff = function (self) return true end,
+    GetTexture = function (self) return ("../items/" .. (self:GetAbility():GetAbilityTextureName() or "")) end,
     DeclareFunctions = function (self) return {
         MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
     } end,
