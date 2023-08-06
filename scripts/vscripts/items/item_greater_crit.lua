@@ -45,7 +45,6 @@ function item_greater_crit:OnProjectileHit(target, location)
 
     EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "DOTA_Item.HeavensHalberd.Activate", self:GetCaster())
 
-    --local particle = ParticleManager:CreateParticle("particles/econ/events/ti9/high_five/high_five_impact_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
     local particle = ParticleManager:CreateParticle("particles/hw_fx/greevil_orange_lava_puddle_impact_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
     ParticleManager:SetParticleControl(particle, 3, target:GetAbsOrigin())
 
@@ -53,7 +52,7 @@ function item_greater_crit:OnProjectileHit(target, location)
 
     if target:IsMagicImmune() then return end
 
-    target:AddNewModifier(self:GetParent(), self, "modifier_greater_crit_crippled", { duration=self:GetSpecialValueFor("cripple_duration") })
+    target:AddNewModifier(self:GetParent(), self, "modifier_greater_crit_crippled", { duration=(self:GetSpecialValueFor("cripple_duration") * (1 - target:GetStatusResistance())) })
 end
 
 -------------------------------------------------------------------
