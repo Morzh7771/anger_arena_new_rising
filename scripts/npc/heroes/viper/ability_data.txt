@@ -71,7 +71,7 @@ DOTAAbilities
 					"value"				"5"
 					"RequiresShard"		"1"
 				}
-				"damage_pct"			"30"
+				"damage_pct"			"5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -140,7 +140,7 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pct"			"30"
+				"damage_pct"			"5"
 			}
 			
 		}
@@ -189,7 +189,7 @@ DOTAAbilities
 				"value"						"3"
 				"RequiresScepter"		"1"
 			}
-			"damage_pct"			"30"
+			"damage_pct"			"5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -253,7 +253,7 @@ DOTAAbilities
 			"projectile_speed"	"1200"
 			"max_charges"			"2"
 			"charge_restore_time"	"35.0"
-			"damage_pct"			"30"
+			"damage_pct"			"15"
 		}
 	}
 		

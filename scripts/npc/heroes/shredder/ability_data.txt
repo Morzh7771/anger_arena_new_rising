@@ -23,7 +23,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -68,6 +68,11 @@ DOTAAbilities
 				"var_type"			"FIELD_FLOAT"
 				"debuff_linger_duration"	"2.0"
 			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_pct"	"15"
+			}
 		}
 	}
 	"shredder_whirling_death"
@@ -89,7 +94,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.5 7 6.5 6"
+		"AbilityCooldown"				"7.5 7.25 7 6.75 6.5 6.25 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -100,12 +105,13 @@ DOTAAbilities
 		"AbilityValues"
 		{
 				"whirling_radius"			"325"
-				"whirling_damage"			"80 120 160 200"
-				"tree_damage_scale"			"11 18 25 32"
+				"whirling_damage"			"80 120 170 230 300 380 470"
+				"tree_damage_scale"			"11 20 30 41 53 66 81"
 				"whirling_tick"				"0.3"
+				"damage_pct"				"27 30 33 36 39 42 45"
 				"stat_loss_pct"				"10"
 				"stat_loss_univ"			"5"
-				"duration"					"12 13 14 15"
+				"duration"					"12"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -124,7 +130,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCastRange"				"750 900 1050 1200"
+		"AbilityCastRange"				"1000 1150 1300 1450 1600 1750 1900"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -132,7 +138,7 @@ DOTAAbilities
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 70 80 90"
+		"AbilityManaCost"				"75"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -146,7 +152,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"range"				"750 900 1050 1200"
+				"range"				"1000 1150 1300 1450 1600 1750 1900"
 				"LinkedSpecialBonus"	"special_bonus_unique_timbersaw_3"
 			}
 			"03"
@@ -157,12 +163,17 @@ DOTAAbilities
 			"04"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"speed"				"2200 2400 2600 2800"
+				"speed"				"2200 2400 2600 2800 3000 3200 3400"
 			}
 			"05"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"70 120 170 220"
+				"damage"			"100 150 210 280 360 450 550"
+			}
+			"06"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"damage_pct"			"23 25 27 29 31 33 35"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -182,16 +193,16 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_armor"						"0.5 0.6 0.7 0.8"
-			"bonus_hp_regen"					"0.4 0.5 0.6 0.7"
+			"bonus_armor"						"0.9 1.0 1.1 1.2 1.3 1.4 1.5"
+			"bonus_hp_regen"					"0.8 0.9 1.0 1.1 1.2 1.3 1.4"
 			"stack_limit"						
 			{
-				"value"			"10 20 30 40"
+				"value"			"10 15 20 25 30 35 40"
 				"LinkedSpecialBonus"			"special_bonus_unique_timbersaw_2"
 			}
 			"stack_duration"					
 			{
-				"value"				"10 12 14 16"
+				"value"				"10"
 				"LinkedSpecialBonus"				"special_bonus_unique_timbersaw_2"
 			}
 			"AbilityManaCost"				
@@ -201,27 +212,27 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"  		"45"
+				"value"  		"25"
 				"RequiresScepter"				"1"
 			}
 			"initial_shield"
 			{
-				"value"  		"200"
+				"value"  		"500"
 				"RequiresScepter"				"1"
 			}
 			"shield_per_sec"
 			{
-				"value"  		"100"
+				"value"  		"250"
 				"RequiresScepter"				"1"
 			}
 			"shield_per_sec_per_enemy"
 			{
-				"value"  		"75"
+				"value"  		"100"
 				"RequiresScepter"				"1"
 			}
 			"max_shield"
 			{
-				"value"		"800"
+				"value"		"1200"
 				"RequiresScepter"				"1"
 
 			}
@@ -242,7 +253,7 @@ DOTAAbilities
 			}
 			"base_explosion"
 			{
-				"value"	"200"
+				"value"	"350"
 				"RequiresScepter"				"1"
 			}
 		}
@@ -278,7 +289,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 125 175"		
+		"AbilityManaCost"				"50 75 100 125 150 175 200"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -286,8 +297,9 @@ DOTAAbilities
 		{
 				"speed"					"900.0"
 				"radius"				"200"
-				"pass_damage"			"110 155 200"
-				"damage_per_second"		"50 75 100"
+				"pass_damage"			"100 125 170 235 320 425 550"
+				"damage_per_second"		"50 75 100 120 150 175 200"
+				"damage_pct"			"6 7 8 9 10 11 12"
 				"slow"
 				{
 					"value"				"5"
@@ -295,7 +307,7 @@ DOTAAbilities
 				}
 				"damage_interval"		"0.5"
 				"break_distance"		"2000.0"
-				"mana_per_second"		"14 22 30"
+				"mana_per_second"		"10 16 22 28 34 40 46"
 				"pass_slow_duration"	"0.5"
 				"slow_health_percentage"	"5"
 				"castpoint_scepter"		
@@ -320,7 +332,6 @@ DOTAAbilities
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"3"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -334,7 +345,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 125 175"
+		"AbilityManaCost"				"50 75 100 125 150 175 200"
 
 
 		// Special
@@ -353,13 +364,17 @@ DOTAAbilities
 				}
 				"pass_damage"
 				{
-					"value"			"110 155 200"
+					"value"			"100 125 170 235 320 425 550"
 					"RequiresScepter"	"1"
 				}
 				"damage_per_second"		
 				{
-					"value"			"50 75 100"
+					"value"			"50 75 100 120 150 175 200"
 					"RequiresScepter"	"1"
+				}
+				"damage_pct"
+				{
+					"value"			"6 7 8 9 10 11 12"
 				}
 				"slow"					
 				{
@@ -379,7 +394,7 @@ DOTAAbilities
 				}
 				"mana_per_second"		
 				{
-					"value"		"14 22 30"
+					"value"		"10 16 22 28 34 40 46"
 					"RequiresScepter"	"1"
 				}
 				"pass_slow_duration"	
@@ -440,48 +455,25 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0.0 0.0 0.0"
 	}
-	"snapfire_lil_shredder"
+	"special_bonus_unique_timbersaw_2"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"snapfire_lil_shredder"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"FightRecapLevel"				"1"
-		"AbilitySound"					"Hero_Snapfire.ExplosiveShells.Cast"
+		"ID"					"6948"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCastRange"				"800"
-		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 20 16 12"
-		"AbilityDuration"				"6"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 65 80 95"
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
+		"AbilitySpecial"
 		{
-				"damage"					"20 45 70 95"
-				"buffed_attacks"			
-				{
-					"value"		"6"
-					"special_bonus_unique_snapfire_2"	"+2"
-				}
-				"attack_speed_bonus"		"300"
-				"attack_range_bonus"		"75 150 225 300"
-				"buff_duration_tooltip"		"6"
-				"base_attack_time"			"1.0"
-				"armor_reduction_per_attack"	"0.5"
-				"armor_duration"				"5.0"
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"10"
+				"ad_linked_abilities"			"shredder_reactive_armor"
+			}
 		}
 	}
 }

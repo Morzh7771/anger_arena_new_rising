@@ -222,4 +222,38 @@ DOTAAbilities
 			}					
 		}
 	}
+	"special_bonus_mana_break_20"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6987"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"burn_illusions_ranged"				"50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"burn_illusions_melee"				"50"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_burn"				"1"
+			}
+		}
+	}
 }

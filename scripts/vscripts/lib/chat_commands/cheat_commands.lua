@@ -30,6 +30,10 @@ require('lib/duel/duel_controller')
 require("lib/spawners/creep_spawner")
 require('lib/boss/boss_spawner')
 
+function Commands:ds(player, arg)
+	DuelController:StartDuel()
+end
+
 function Commands:duel_start(player, arg)
 	DuelController:StartDuel()
 end
@@ -41,8 +45,24 @@ function Commands:duel_end(player, arg)
 	DuelController:StopDuel()
 end
 
+function Commands:dt(player, arg)
+	DuelController:ToggleDuel()
+end
+
 function Commands:duel_toggle(player, arg)
 	DuelController:ToggleDuel()
+end
+
+function Commands:df( player, arg )
+	local val = arg[1]
+
+	if val == nil then
+		val = not DuelController:GetFreezeTimer()
+	else
+		val = val == "1"
+	end
+
+	DuelController:SetFreezeTimer( val )
 end
 
 function Commands:duel_freeze( player, arg )
@@ -55,6 +75,16 @@ function Commands:duel_freeze( player, arg )
 	end
 
 	DuelController:SetFreezeTimer( val )
+end
+
+function Commands:dtime( player, arg )
+	local time = arg[1]
+
+	if not time then
+		Attentions:SendChatMessage( "Time until duel event: " .. tostring(DuelController:GetTime()) )
+	else
+		DuelController:SetTime( tonumber(time) )
+	end
 end
 
 function Commands:duel_time( player, arg )
@@ -116,6 +146,21 @@ function Commands:remmod(player, arg)
 	local modifierName 	= arg[1]
 	hero:RemoveModifierByName(modifierName)
 end 
+
+function Commands:cd(player, arg)
+	if not player then return end
+	MouseCursor:OnCursorPosition(player:GetPlayerID(), function(position)
+		-- double check cause call time is unknown, player might abandon
+		if not player then return end
+		local hero = player:GetAssignedHero()
+		local target = CreateUnitByName( "npc_dota_hero_target_dummy", position, true, nil, nil, hero:GetOpposingTeamNumber() )
+		target:SetAbilityPoints( 0 )
+		target:SetControllableByPlayer( hero:GetPlayerOwnerID(), false )
+		target:Hold()
+		target:SetIdleAcquire( false )
+		target:SetAcquisitionRange( 0 )
+	end)
+end
 
 function Commands:create_dummy(player, arg)
 	if not player then return end

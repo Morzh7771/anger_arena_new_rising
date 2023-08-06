@@ -205,4 +205,25 @@ DOTAAbilities
 			}
 		}
 	}
+	"special_bonus_strength_20"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6080"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"55"
+			}
+		}
+	}
 }

@@ -754,7 +754,7 @@
         // Stats
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySharedCooldown"			"cyclone"
-        "AbilityCooldown"				"25.0"
+        "AbilityCooldown"				"21.0"
         "AbilityCastPoint"				"0.0"
         "AbilityManaCost"				"150"
         
@@ -827,12 +827,12 @@
             "11"
             {
                 "var_type"				     "FIELD_INTEGER"
-                "after_cast_mana_regen"	     "15"
+                "after_cast_mana_regen"	     "20"
             }
             "12"
             {
                 "var_type"					      "FIELD_INTEGER"
-                "after_cast_reduce_manacost_pct"  "10"
+                "after_cast_reduce_manacost_pct"  "20"
             }
         }
     }
@@ -923,7 +923,7 @@
             "06"
             {
                 "var_type"				"FIELD_INTEGER"
-                "mana_regen_total_pct"	"1000"
+                "mana_regen_total_pct"	"10"
             }
             "07"
             {
@@ -950,7 +950,7 @@
             "11"
             {
                 "var_type"					      "FIELD_INTEGER"
-                "after_cast_reduce_manacost_pct"  "20"
+                "after_cast_reduce_manacost_pct"  "15"
             }
 
         }
@@ -2278,7 +2278,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"900"
+        "ItemCost"						"600"
         "ItemStackable"					"0"
         
         "ItemKillable"                  "1"
@@ -2306,12 +2306,12 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "block_damage"			"20"
+                "block_damage"			"25"
             }
             "04"
             {
                 "var_type"				"FIELD_FLOAT"
-                "shield_duration"		"3"
+                "shield_duration"		"3.5"
             }
         }
     }
