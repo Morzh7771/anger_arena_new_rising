@@ -254,7 +254,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spell_amp"			"14 16 18 20 22 24 26"
+				"spell_amp"			"10 17 24 31 38 45 52 60"
 			}
 		}
 	}
@@ -311,7 +311,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter"			"1400"
+				"cast_range_scepter"			"99999"
 				"RequiresScepter"	"1"
 			}
 			"05"
