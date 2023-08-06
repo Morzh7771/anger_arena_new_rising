@@ -41,6 +41,7 @@ function PercentDamage:_init()
 		"legion_commander_overwhelming_odds",
 		"mars_spear",
 		"primal_beast_uproar",
+		"kunkka_torrent"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",

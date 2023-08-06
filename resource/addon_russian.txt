@@ -561,6 +561,9 @@
         "DOTA_Tooltip_Ability_shredder_timber_chain_damage_pct"             "%УРОН ОТ ВСЕХ АТРИБУТОВ"
         "DOTA_Tooltip_Ability_shredder_chakram_damage_pct"                  "%УРОН ОТ ВСЕХ АТРИБУТОВ"
 
+        //Kunkka
+        "DOTA_Tooltip_Ability_kunkka_torrent_damage_pct"                    "%УРОН ОТ СИЛЫ"
+
 
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"					"2 заряда Acorn Shot"
@@ -608,7 +611,7 @@
 
         "DOTA_Tooltip_Ability_item_snake_boots"									"Snake Boots"
         "DOTA_Tooltip_Ability_item_snake_boots_Description"						"<h1>Активируемая: Warp Jump</h1> Позволяет через 1.5сек. переместиться к союзнику/варду."
-        "DOTA_Tooltip_Ability_item_snake_boots_bonus_speed"						"%+$move_speed"
+        "DOTA_Tooltip_Ability_item_snake_boots_bonus_speed"						"+$move_speed"
         "DOTA_Tooltip_Ability_item_snake_boots_bonus_armor"						"+$armor"
         "DOTA_Tooltip_Ability_item_snake_boots_bonus_hp_regen"					"+$hp_regen"
         "DOTA_Tooltip_Ability_item_snake_boots_bonus_stats"						"+$all"
@@ -634,7 +637,7 @@
 		"DOTA_Tooltip_ability_item_manta_3_Lore"								"Топор великого Оксиминога, чья незавидная участь в виде триполярочки стала его сильнейшим оружием"
 
         "DOTA_Tooltip_Ability_item_greater_crit_2"								"Daedalus 2"
-        "DOTA_Tooltip_ability_item_greater_crit_2_Description"					"<h1>Активное: Crippling Shot</h1>Выстреливает снарядом во врага на расстоянии до %abilitycastrange%. Наносит критическую атаку и замедляет передвижение цели до %cripple_ms% на %cripple_duration% секунды.\n\n<h1>Пассивное: Critical Strike</h1> Каждая атака может с вероятностью в %crit_chance%%% нанести %crit_multiplier%%%"
+        "DOTA_Tooltip_ability_item_greater_crit_2_Description"					"<h1>Активное: Crippling Shot</h1>Выстреливает снарядом во врага на расстоянии до %abilitycastrange%. Наносит <b><font color='#53ea48'>критическую атаку</font></b> и замедляет передвижение цели до %cripple_ms% на %cripple_duration% секунды.\n\n<h1>Пассивное: Critical Strike</h1> Каждая атака может с вероятностью в %crit_chance%%% нанести %crit_multiplier%%%"
         "DOTA_Tooltip_ability_item_greater_crit_2_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_Ability_item_greater_crit_2_Lore"							"Этот арбалет долгое время стоял в Музее Бесполезных Вещей до тех пор, пока один авантюрист не притащил его на схватку Ангелов и Падших. Сейчас он пылится на складе лавочника"
         
@@ -1838,10 +1841,10 @@
 		"DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor"					"+$armor"
 		
 		"DOTA_Tooltip_ability_item_dagon_custom"									"Dagon"
-		"DOTA_Tooltip_ability_item_dagon_custom_Description"						"<h1>Активное: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и всем противникам в <b><font color='#53ea48'>радиусе %aoe_radius%</font></b>. Исцеляет на %active_heal%%% от нанесенного урона основной цели<br><br>Урон: %damage%<br>Урон от основного атрибута: %int_damage%%%<br>Дальность применения: %abilitycastrange%<br>Расход маны: %mana_cost_tooltip%"
+		"DOTA_Tooltip_ability_item_dagon_custom_Description"						"<h1>Активное: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и всем противникам в <b><font color='#53ea48'>радиусе %aoe_radius%</font></b>. Исцеляет на %active_heal%%% от нанесенного урона основной цели<br><br>Урон: %damage%<br>Урон от основного атрибута: %stat_primary_damage_pct%%%<br>Дальность применения: %abilitycastrange%<br>Расход маны: %mana_cost_tooltip%"
 		"DOTA_Tooltip_ability_item_dagon_custom_Lore"								"Волшебная палочка, которая со временем становится лишь сильнее, наделяет владельца магией на кончиках пальцев."
 		"DOTA_Tooltip_ability_item_dagon_custom_Note0"								"Мгновенно убивает иллюзии."
-		"DOTA_Tooltip_ability_item_dagon_custom_Note1"								"Урон от атрибутов для унивесралов сумма всех статов/3."
+		"DOTA_Tooltip_ability_item_dagon_custom_Note1"								"Урон от атрибутов для универсалов = Сумма всех статов / 3."
 		"DOTA_Tooltip_ability_item_dagon_custom_bonus_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_dagon_custom_spell_lifesteal"					"%+$spell_lifesteal"
 

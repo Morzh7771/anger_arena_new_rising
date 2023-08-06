@@ -392,7 +392,7 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"100"
+                "bonus_speed"			"130"
             }
             "02"
             {
@@ -1140,8 +1140,7 @@
         "AbilityTextureName"            "falcon_blade"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
         "AbilityCastRange"              "99999"
-        "AbilityCooldown"               "8"
-		"AbilityManaCost"				"50"
+        "AbilityCooldown"               "6"
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
         "ItemCost"                      "1125"
@@ -1157,9 +1156,9 @@
                 "bonus_health"          "200"
                 "bonus_mana_regen"      "2.2"
                 "bonus_damage"          "14"  
-                "range"                 "270"   
+                "range"                 "320"   
                 "duration"              "0.18" 
-                "damage_cd"             "2"                
+                "damage_cd"             "1.5"                
         }
     }
 
