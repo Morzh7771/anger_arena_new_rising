@@ -507,6 +507,8 @@
         //Legion Commander
 		"DOTA_Tooltip_Ability_legion_commander_overwhelming_odds_damage_pct"			"%УРОН ОТ СИЛЫ"
 
+		"DOTA_Tooltip_Ability_primal_beast_uproar_damage_pct"							"%УРОН ОТ СИЛЫ"
+
         //Zeus
 		"DOTA_Tooltip_Ability_zuus_heavenly_jump_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_zuus_thundergods_wrath_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -1947,5 +1949,13 @@
 		"DOTA_Tooltip_ability_item_giant_ring_aa_bonus_all_stats"		"+$all"
 		"DOTA_Tooltip_ability_item_giant_ring_aa_movement_speed"		"+$move_speed"
 		"DOTA_Tooltip_ability_item_giant_ring_aa_attack_speed"			"+$attack"
+
+
+		"DOTA_Tooltip_ability_item_vision"								"THIRD EYE"
+		"DOTA_Tooltip_ability_item_vision_Description"					"<h1>Активное: Third Eye</h1> Вы получаете обзор на случайного вражеского героя на %duration% секунд радиус обзора равен радусу обзора героя<br><br><b><font color='#FF0000'>Если выложить предмет обзор пропадет</font></b><br><br><b><font color='#FF0000'>Если одного врага уже видно то при нажатии действие еффекта на цели обновится </font></b>"
+		"DOTA_Tooltip_ability_item_vision_bonus_str"					"+$str"
+		"DOTA_Tooltip_ability_item_vision_bonus_int"					"+$int"
+		"DOTA_Tooltip_ability_item_vision_day_vision"					"+ к радиусу обзора днем"
+		"DOTA_Tooltip_ability_item_vision_night_vision"					"+ к радиусу обзора ночью"
         }
 }

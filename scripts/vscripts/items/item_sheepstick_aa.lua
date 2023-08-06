@@ -104,14 +104,14 @@ end
 -- Modifier Effects
 function modifier_sheepstick_hex:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
 		MODIFIER_PROPERTY_MODEL_CHANGE,
 	}
 
 	return funcs
 end
 
-function modifier_sheepstick_hex:GetModifierMoveSpeedOverride()
+function modifier_sheepstick_hex:GetModifierMoveSpeed_Absolute()
 	return self.base_speed
 end
 function modifier_sheepstick_hex:GetModifierModelChange()

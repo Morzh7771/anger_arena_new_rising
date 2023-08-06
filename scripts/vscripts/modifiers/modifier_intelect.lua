@@ -27,18 +27,14 @@ function modifier_intelect:GetModifierIgnoreMovespeedLimit()
     return 1
 end
 function modifier_intelect:GetModifierMoveSpeed_Limit( params )
-	--print(self:GetParent():FindModifierByName("modifier_spirit_breaker_charge_of_darkness"),'чарж')
-	--print(self:GetParent():FindModifierByName("modifier_bloodseeker_thirst_speed"),'сикер')
-	if self:GetParent():GetUnitName() == "npc_dota_hero_spirit_breaker" then
-		--print('чарж')
+	if self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness") 
+	or self:GetParent():HasModifier("modifier_bloodseeker_thirst_speed") 
+	or self:GetParent():HasModifier("modifier_primal_beast_trample")
+	or self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze") then
     	return 99999999
+	else 
+		return 700
 	end
-	if self:GetParent():GetUnitName() == "npc_dota_hero_bloodseeker" then
-		--print('сикер')
-		return 99999999
-	end
-	--print('все')
-	return 700
 end
 function modifier_intelect:GetModifierMoveSpeedBonus_Percentage()
 	return (0.05 * self:GetParent():GetAgility())

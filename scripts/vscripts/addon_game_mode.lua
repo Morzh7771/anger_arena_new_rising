@@ -333,6 +333,7 @@ function AngelArena:OnRuneActivate(event)
 
 		TeamHelper:ApplyForHeroes(team, function(playerid, unit)
 			unit:ModifyGold(CalcBountyGold( unit ), false, 0)
+			SendOverheadEventMessage(unit, OVERHEAD_ALERT_GOLD, unit, CalcBountyGold( unit ),nil)
 		end)
 	end
 	if runeid == DOTA_RUNE_XP then
@@ -361,6 +362,7 @@ function AngelArena:OnRuneActivate(event)
 
 		TeamHelper:ApplyForHeroes(team, function(playerid, unit)
 			unit:AddExperience(CalcWisdomXp( unit ), 0, true,true)
+			SendOverheadEventMessage(unit, OVERHEAD_ALERT_XP, unit, CalcWisdomXp( unit ),nil)
 		end)
 	end
 end

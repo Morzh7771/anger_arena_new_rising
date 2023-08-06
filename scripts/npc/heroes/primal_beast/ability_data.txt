@@ -157,9 +157,8 @@ DOTAAbilities
 			"stack_limit"				
 			{
 				"value"						"3 3 5 5 7 7 9"
-	
 			}
-			"damage_limit"				"0"
+			"damage_limit"				"10"
 			"stack_duration"			"20"
 			"move_slow_per_stack"		"4"
 			"slow_duration"				"3.0"
@@ -185,7 +184,7 @@ DOTAAbilities
 			}
             "projectile_distance"        
             {
-				"value"		"1400"
+				"value"		"900"
 				"RequiresScepter"		"1"
 			}
             "projectile_width"           
@@ -195,9 +194,15 @@ DOTAAbilities
 			}
             "projectile_damage"          
             {
-				"value"		"100"
+				"value"		"300"
 				"RequiresScepter"		"1"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"damage_pct"          
+            {
+				"value"		"10"
+				"RequiresScepter"		"1"
 				"CalculateSpellDamageTooltip"	"1"
 			}
             "projectile_speed"           
@@ -212,22 +217,22 @@ DOTAAbilities
 			}
             "max_split_amount"                  
             {
-				"value"		"2"
+				"value"		"3"
 				"RequiresScepter"		"1"
 			}
             "split_delay"                	  
             {
-				"value"		"1.25"
+				"value"		"0.8"
 				"RequiresScepter"		"1"
 			}
             "projectile_break_duration"			
             {
-				"value"		"2.5"
+				"value"		"1.5"
 				"RequiresScepter"		"1"
 			}
 			"projectile_waves"
 			{
-				"value"		"3"
+				"value"		"4"
 				"RequiresScepter"		"1"
 			}
 		}

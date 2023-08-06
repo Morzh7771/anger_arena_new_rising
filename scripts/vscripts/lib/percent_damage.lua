@@ -40,6 +40,7 @@ function PercentDamage:_init()
 		"spirit_breaker_nether_strike",
 		"legion_commander_overwhelming_odds",
 		"mars_spear",
+		"primal_beast_uproar",
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",

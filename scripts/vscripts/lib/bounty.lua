@@ -12,7 +12,7 @@ function Bounty:Init()
         local entity = Entities:FindByName( nil, name )
         table.insert(spot,entity)
     end
-    Timers:CreateTimer(1, function()
+    Timers:CreateTimer(0.1, function()
         local time = GameRules:GetDOTATime(false,false) / 60
         --print(time)
         if time > needTimeBounty then
@@ -23,7 +23,7 @@ function Bounty:Init()
             --print("Руну спавним")
             Bounty:SpawnWisdom()
         end
-        return 1
+        return 0.1
     end)
 end 
 function Bounty:SpawnBounty()

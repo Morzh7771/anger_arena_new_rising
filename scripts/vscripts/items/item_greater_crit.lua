@@ -48,8 +48,7 @@ function item_greater_crit:OnProjectileHit(target, location)
     local particle = ParticleManager:CreateParticle("particles/hw_fx/greevil_orange_lava_puddle_impact_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
     ParticleManager:SetParticleControl(particle, 3, target:GetAbsOrigin())
 
-    SendOverheadEventMessage(nil, OVERHEAD_ALERT_CRITICAL, target, dmg, self:GetParent())
-
+    SendOverheadEventMessage(target, OVERHEAD_ALERT_CRITICAL, target, dmg,nil)
     if target:IsMagicImmune() then return end
 
     target:AddNewModifier(self:GetParent(), self, "modifier_greater_crit_crippled", { duration=self:GetSpecialValueFor("cripple_duration") * (1-target:GetStatusResistance()) })

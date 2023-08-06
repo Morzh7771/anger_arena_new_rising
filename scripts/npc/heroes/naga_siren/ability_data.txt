@@ -45,12 +45,12 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"250"
+				"incoming_damage"			"200"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_incoming_damage_total_pct"			"350"
+				"tooltip_incoming_damage_total_pct"			"300"
 			}
 			"06"
 			{
@@ -148,7 +148,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_pct"						"25"
+			"damage_pct"						"20"
 			"hits"						
 			{
 				"value"											"6"
@@ -160,7 +160,7 @@ DOTAAbilities
 			}
 			"damage"	
 			{
-				"value"			"50 55 60 65 70 75 80"
+				"value"			"50 60 70 80 90 100 110"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_2"
 			}
 			"radius"					"300"
@@ -253,7 +253,7 @@ DOTAAbilities
 			}
 			"AbilityCooldown"
 			{
-				"value"									"60"
+				"value"									"75"
 				"special_bonus_unique_naga_siren_5" 	"-15"
 			}
 		}
