@@ -16,7 +16,7 @@ function _projectileHit(self, target, location)
     if target:TriggerSpellAbsorb(self) or target:TriggerSpellReflect(self) then return end
     
 
-    target:AddNewModifier(self:GetCaster(), self, "modifier_static_disarm", { duration=self:GetSpecialValueFor("debuff_duration") })
+    target:AddNewModifier(self:GetCaster(), self, "modifier_static_disarm", { duration=self:GetSpecialValueFor("debuff_duration") * (1-target:GetStatusResistance()) })
 
     EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "DOTA_Item.HeavensHalberd.Activate", self:GetCaster())
 end 

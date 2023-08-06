@@ -11,7 +11,9 @@ require('lib/connection_helpers')
 local CONFIG_PATH = "scripts/npc/creep_stats.kv"
 local RANDOM_GENERATOR_TYPE = "uniform"
 local LOOT_RADIUS = 80
-
+local AMPLIFY_STAT_ELITE = 1
+local AMPLIFY_BOUNTY_ELITE = 1
+LinkLuaModifier("modifier_creep_elite", 'lib/spawners/modifier_creep_elite', LUA_MODIFIER_MOTION_NONE)
 CreepLeveling = CreepLeveling or class({})
 
 function CreepLeveling:Init()
@@ -61,6 +63,7 @@ function CreepLeveling:Init()
 			spawner_info.hp 	  = tonumber( spawner_info.hp or "100" )
 			spawner_info.mp 	  = tonumber( spawner_info.mp or "100" )
 			spawner_info.bat 	  = tonumber( spawner_info.bat or "1.7" )
+			
 			spawner_info.armor 	  = tonumber( spawner_info.armor or "0" )
 			spawner_info.dmg_min  = tonumber( spawner_info.dmg_min or "0" )
 			spawner_info.dmg_max  = tonumber( spawner_info.dmg_max or "0" )
@@ -77,6 +80,8 @@ end
 function CreepLeveling:OnSpawnCallback( event )
 	local creep 		= event.creep 
 	local spawner_info 	= event.spawner_info
+	local elite = event.elite
+
 	local spawner_type 	= spawner_info.spawner_type 
 
 	local seek_spawn_info = nil
@@ -98,21 +103,27 @@ function CreepLeveling:OnSpawnCallback( event )
 		print("[CreepLeveling] No spawn information to this level, level = " .. tostring( level ))
 		return 
 	end 
-
+	
+	AMPLIFY_STAT_ELITE = 1
+	AMPLIFY_BOUNTY_ELITE = 1
 	creep._leveling_drop = seek_spawn_info['drops']
+	if elite then
+		AMPLIFY_STAT_ELITE = 2
+		AMPLIFY_BOUNTY_ELITE = 1.7
+		creep:AddNewModifier(nil,nil,"modifier_creep_elite",{duration = -1})
+	end
+	creep:SetDeathXP( seek_spawn_info.exp * AMPLIFY_BOUNTY_ELITE )
+	creep:SetMinimumGoldBounty( seek_spawn_info.gold_min * AMPLIFY_BOUNTY_ELITE )
+	creep:SetMaximumGoldBounty( seek_spawn_info.gold_max * AMPLIFY_BOUNTY_ELITE)
 
-	creep:SetDeathXP( seek_spawn_info.exp )
-	creep:SetMinimumGoldBounty( seek_spawn_info.gold_min )
-	creep:SetMaximumGoldBounty( seek_spawn_info.gold_max )
+	creep:SetBaseMaxHealth( seek_spawn_info.hp * AMPLIFY_STAT_ELITE)
+	creep:SetMaxHealth( seek_spawn_info.hp * AMPLIFY_STAT_ELITE)
+	creep:SetMaxMana( seek_spawn_info.mp * AMPLIFY_STAT_ELITE)
 
-	creep:SetBaseMaxHealth( seek_spawn_info.hp )
-	creep:SetMaxHealth( seek_spawn_info.hp )
-	creep:SetMaxMana( seek_spawn_info.mp )
-
-	creep:SetPhysicalArmorBaseValue( seek_spawn_info.armor )
-	creep:SetBaseAttackTime( seek_spawn_info.bat )
-	creep:SetBaseDamageMin( seek_spawn_info.dmg_min )
-	creep:SetBaseDamageMax( seek_spawn_info.dmg_max )
+	creep:SetPhysicalArmorBaseValue( seek_spawn_info.armor * AMPLIFY_STAT_ELITE)
+	creep:SetBaseAttackTime( seek_spawn_info.bat / AMPLIFY_STAT_ELITE)
+	creep:SetBaseDamageMin( seek_spawn_info.dmg_min * AMPLIFY_STAT_ELITE)
+	creep:SetBaseDamageMax( seek_spawn_info.dmg_max * AMPLIFY_STAT_ELITE)
 
 	creep:SetMana( creep:GetMaxMana() )
 	creep:SetHealth( creep:GetMaxHealth() )

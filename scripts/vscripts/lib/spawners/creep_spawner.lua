@@ -27,7 +27,7 @@ require("lib/timers")
 local DEBUG = IsInToolsMode() 
 local FORCE_DEBUG = false
 local CONFIG_PATH = "scripts/npc/creep_spawners.kv"
-
+local CHANCE_ELITE = 50
 local CREEP_SPAWN_TIME 	= 60
 local CREEP_RANDOM_OFFSET = 50
 
@@ -116,6 +116,13 @@ function CreepSpawner:SpawnCreeps()
 				end 
 
 				Timers:CreateTimer(spawnDelay, function()
+					local elite = false
+					if GameRules:GetDOTATime(false,false) / 60 > 0.10 then
+						if RandomInt(0, 100)<CHANCE_ELITE then
+							elite = true
+						end
+					end
+					
 					local creep = CreateUnitByName(creep_name, spawner_pos, true, nil, nil, DOTA_TEAM_NEUTRALS) 	
 
 					if not creep then
@@ -126,7 +133,7 @@ function CreepSpawner:SpawnCreeps()
 					creep:SetForwardVector(spawner_dir)
 					creep:Stop()
 
-					self:_CreateCreep(creep, spawner_info)
+					self:_CreateCreep(creep, spawner_info,elite)
 				end)
 			end 
 		end 
@@ -196,13 +203,13 @@ function CreepSpawner:_FreeCreep( unit )
 	unit.spawner_info = nil
 end
 
-function CreepSpawner:_CreateCreep( unit, spawner_info )
+function CreepSpawner:_CreateCreep( unit, spawner_info,elite )
 	
 	unit:AddNewModifier(unit, nil, "modifier_dominate_protection", { duration = -1 })
 
 	unit.spawner_info = spawner_info
 
-	self:_notifyCallbackList(self.onSpawnCallbacks, { creep = unit, spawner_info = spawner_info } )
+	self:_notifyCallbackList(self.onSpawnCallbacks, { creep = unit, spawner_info = spawner_info, elite = elite} )
 end
 
 function CreepSpawner:_OnDominated( unit )

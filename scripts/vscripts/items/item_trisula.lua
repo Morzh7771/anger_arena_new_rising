@@ -125,7 +125,9 @@ function modifier_item_trisula:OnAttackLanded(params)
 			if x:IsHero() then
 				dmg = params.damage / 100 * self.cleave_damage_hero
 			end
-
+			if x:GetUnitName() == "npc_tree_thinker" then
+				return
+			end
 			ApplyDamage({ victim = x,
 						  attacker = caster,
 						  damage = dmg,

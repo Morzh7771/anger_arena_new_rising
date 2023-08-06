@@ -2560,38 +2560,14 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"90 200"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "crit_chance"			"30 40"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "crit_multiplier"		"225 350"
-            }
-            "04"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "projectile_speed"      "4000"
-            }
-            "05"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "cripple_duration"      "3"
-            }
-            "06"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "cripple_ms"            "100"
-            }
+            "bonus_damage"			"90 200"
+            "crit_chance"			"30 40"
+            "crit_multiplier"		"225 350"
+            "projectile_speed"      "4000"
+            "cripple_duration"      "3"
+            "cripple_ms"            "100"
         }
     }
 
@@ -3115,7 +3091,7 @@
 			"damage"				"380 460 540 620 700 1000"
 			"damage_delay"			"0"
 			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "250"
+			"stat_primary_damage_pct"		    "250"
 			"aoe_radius"			"300"
             "active_heal"           "75"
 		}   
@@ -3865,6 +3841,20 @@
             "duration"			    "5"
             "radius"			    "200"
             "stat_damage_per_sec"	"60"
+		}
+    }
+    "item_vision"
+    {
+        "BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_vision"
+		"AbilityTextureName"			"giant_ring_aa"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityCooldown"				"20"
+        "ItemBaseLevel"                 "1"
+        "AbilityValues"
+		{
+            "duration" "60"
 		}
     }
 }

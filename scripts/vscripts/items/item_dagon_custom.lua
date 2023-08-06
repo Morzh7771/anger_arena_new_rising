@@ -12,16 +12,16 @@ end
 function item_dagon_custom:OnSpellStart()
     if not IsServer() then return end
     local point = self:GetCursorTarget():GetAbsOrigin()
-    local int = self:GetSpecialValueFor("int_damage")/100
+    local int = self:GetSpecialValueFor("stat_primary_damage_pct")/100
 
     self:GetCursorTarget():EmitSound("DOTA_Item.Dagon5.Target")
 
     if self:GetCursorTarget():TriggerSpellAbsorb(self) then return end
 
-
+    print(self:GetCaster():GetPrimaryStatValue())
     local radius = self:GetSpecialValueFor("aoe_radius")
     local damage_kv = self:GetSpecialValueFor("damage")
-    local damage = damage_kv + (self:GetCaster():GetIntellect() * int)
+    local damage = damage_kv + (self:GetCaster():GetPrimaryStatValue()/3 * int)
     self:GetCaster():EmitSound("DOTA_Item.Dagon.Activate")
     local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), point, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false )
     for _, enemy in pairs(enemies) do

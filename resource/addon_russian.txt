@@ -1759,12 +1759,12 @@
 		"DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor"					"+$armor"
 		
 		"DOTA_Tooltip_ability_item_dagon_custom"									"Dagon"
-		"DOTA_Tooltip_ability_item_dagon_custom_Description"						"<h1>Активное: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и всем противникам в <b><font color='#53ea48'>радиусе %aoe_radius%</font></b>. Исцеляет на %active_heal%%% от нанесенного урона основной цели<br><br>Урон: %damage%<br>Дальность применения: %abilitycastrange%<br>Расход маны: %mana_cost_tooltip%"
+		"DOTA_Tooltip_ability_item_dagon_custom_Description"						"<h1>Активное: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и всем противникам в <b><font color='#53ea48'>радиусе %aoe_radius%</font></b>. Исцеляет на %active_heal%%% от нанесенного урона основной цели<br><br>Урон: %damage%<br>Урон от основного атрибута: %int_damage%%%<br>Дальность применения: %abilitycastrange%<br>Расход маны: %mana_cost_tooltip%"
 		"DOTA_Tooltip_ability_item_dagon_custom_Lore"								"Волшебная палочка, которая со временем становится лишь сильнее, наделяет владельца магией на кончиках пальцев."
 		"DOTA_Tooltip_ability_item_dagon_custom_Note0"								"Мгновенно убивает иллюзии."
+		"DOTA_Tooltip_ability_item_dagon_custom_Note1"								"Урон от атрибутов для унивесралов сумма всех статов/3."
 		"DOTA_Tooltip_ability_item_dagon_custom_bonus_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_dagon_custom_spell_lifesteal"					"%+$spell_lifesteal"
-		"DOTA_Tooltip_ability_item_dagon_custom_int_damage"							"%УРОН ОТ ИНТЕЛЕКТА:"
 
 		"DOTA_Tooltip_ability_item_static_amulet"									"Static Amulet"
 		"DOTA_Tooltip_ability_item_static_amulet_Description"						"<h1>Пассивная: Static Amulet</h1>При касте наносит дополнительный урон в размере %damage% + %damage_pct%%  от их текущего здоровья всем врагам в радиусе %radius% от кастера"

@@ -303,15 +303,15 @@ function AngelArena:OnRuneActivate(event)
 		local cur_min = GameRules:GetGameTime() / 60
 
 		local item_mod_table = {
-			{ "item_hand_of_midas",  150 + 7 * cur_min },
-			{ "item_advanced_midas", 200 + 14 * cur_min }
+			{ "item_hand_of_midas",  100 + 5 * cur_min },
+			{ "item_advanced_midas", 200 + 10 * cur_min }
 		}
 
 		local hero_mod_table = {
-			["npc_dota_hero_alchemist"] = 2,
+			["npc_dota_hero_alchemist"] = 1.5,
 		}
 	
-		local gold_without_mods = 100 + 15 * cur_min
+		local gold_without_mods = 50 + 15 * cur_min
 
 		function CalcBountyGold( hero )
 			local hero_mult = hero_mod_table[ hero:GetUnitName() ] or 1
@@ -341,7 +341,7 @@ function AngelArena:OnRuneActivate(event)
 		local item_mod_table = {
 			{"item_talisman_of_mastery", 50 * cur_min },
 		}
-		local xp_without_mods = 200 + 100 * cur_min
+		local xp_without_mods = 200 + 50 * cur_min
 
 		function CalcWisdomXp(hero )
 			local item_xp = 0
@@ -791,7 +791,7 @@ function AngelArena:OnEntityKilled(event)
 	if not killedUnit or not IsValidEntity(killedUnit) then return end
 
 	if killedUnit:GetUnitName() == 'npc_aa_creep_centaur_big'then
-		Timers:CreateTimer(1.5, function()
+		Timers:CreateTimer(1, function()
 			BearSpawner:ReSpawnBear()
 		end)
 		

@@ -17,7 +17,7 @@ function item_greater_crit:OnSpellStart()
         Target = target,
         Source = caster,
         Ability = self,
-        EffectName = "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf",
+        EffectName = "particles/items/azrael_crossbow/azrael_crossbow_bolt.vpcf",
         bDodgeable = false,
         bProvidesVision = true,
         iMoveSpeed = self:GetSpecialValueFor('projectile_speed'),
@@ -53,7 +53,7 @@ function item_greater_crit:OnProjectileHit(target, location)
 
     if target:IsMagicImmune() then return end
 
-    target:AddNewModifier(self:GetParent(), self, "modifier_greater_crit_crippled", { duration=self:GetSpecialValueFor("cripple_duration") })
+    target:AddNewModifier(self:GetParent(), self, "modifier_greater_crit_crippled", { duration=self:GetSpecialValueFor("cripple_duration") * (1-target:GetStatusResistance()) })
 end
 
 -------------------------------------------------------------------
@@ -95,7 +95,6 @@ function modifier_greater_crit:LegitimateAttack(params)
             and (not target:IsBuilding())
             and (not target:IsOther())
             and ((params.inflictor == nil) or (params.inflictor:GetAbilityName() == "item_bfury"))
-    --and self.record and params.record == self.record
     then
         return true
     else
@@ -112,11 +111,8 @@ modifier_greater_crit_crippled = class({
     DeclareFunctions = function (self) return {
         MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
     } end,
+    CheckState = function (self) return {
+        [MODIFIER_STATE_MUTED ] = true
+    } end,
     GetModifierMoveSpeed_Absolute = function (self) return self:GetAbility():GetSpecialValueFor('cripple_ms') end
 })
-
-function modifier_greater_crit_crippled:CheckState()
-    return {
-        [MODIFIER_STATE_MUTED ] = true
-    }
-end

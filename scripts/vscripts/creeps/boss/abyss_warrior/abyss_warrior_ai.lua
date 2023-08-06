@@ -30,11 +30,9 @@ function AbyssWarriorAI:OnTick()
 		return false
 	end 
 
-	local abilityDeathLink = self.abilityDeathLink
 	local abilityDomnation = self.abilityDomnation
 	local abilityEthernal  = self.abilityEthernal
 
-	if abilityDeathLink:IsInAbilityPhase() then return true end
 	if abilityDomnation:IsInAbilityPhase() then return true end
 	if abilityEthernal :IsInAbilityPhase() then return true end
 
@@ -67,10 +65,6 @@ function AbyssWarriorAI:OnTick()
 	
 	local enemies = _GetEnemiesNear( spawnPos, unit:GetTeamNumber() )
 
-	local deathLinkAoe = ai.deathLinkAoe
-	local deathLinkTarget = nil
-	local wantDeathLink = abilityDeathLink:GetCooldownTimeRemaining() == 0
-
 	local wantDomnation = abilityDomnation:GetCooldownTimeRemaining() == 0
 
 	local domnationRange = ai.domnationCastRange
@@ -97,24 +91,7 @@ function AbyssWarriorAI:OnTick()
 				end
 			end
 
-			if wantDeathLink and not deathLinkTargets then
-				for _, hAnotherUnit in pairs(enemies) do
-					local distBetween = (hAnotherUnit:GetAbsOrigin() - unitPos):Length()
-
-					if hUnit ~= hAnotherUnit and distBetween < deathLinkAoe then
-						deathLinkTarget = hUnit
-						break
-					end
-				end
-			end
 		end
-	end
-
-	if deathLinkTarget then
-		unit:Stop()
-		unit:CastAbilityOnTarget(deathLinkTarget, abilityDeathLink, -1)
-
-		return true
 	end
 
 	if domnationTarget then
@@ -159,8 +136,6 @@ function Spawn( entityKeyValues )
 
 	ai.unit 			= unit
 	
-	ai.abilityDeathLink = unit:FindAbilityByName("abyss_warrior_death_link")
-	ai.deathLinkAoe 	= ai.abilityDeathLink:GetSpecialValueFor("link_radius")
 
 	ai.abilityDomnation = unit:FindAbilityByName("abyss_warrior_domination")
 	ai.domnationCastRange = ai.abilityDomnation:GetCastRange( unit:GetAbsOrigin(), nil )

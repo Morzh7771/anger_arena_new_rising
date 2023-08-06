@@ -30,6 +30,11 @@ function mod:DeclareFunctions() return
 	MODIFIER_EVENT_ON_TAKEDAMAGE,
 }
 end
+function mod:CheckState() return
+	{
+		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
+	}
+end
 
 function mod:GetMultiplier()
 	local parent = self:GetParent()

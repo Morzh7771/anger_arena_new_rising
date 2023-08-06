@@ -13,7 +13,7 @@ function item_sheepstick_aa:OnSpellStart()
 	self.duration = self:GetSpecialValueFor("sheep_duration")
 
     if self.target:TriggerSpellAbsorb( self ) then return end
-	self.target:AddNewModifier(self.caster, self, "modifier_sheepstick_hex", {duration = self.duration})
+	self.target:AddNewModifier(self.caster, self, "modifier_sheepstick_hex", {duration = self.duration * (1 - self.target:GetStatusResistance())})
 end
 
 ---------------------------------------------------------------------
