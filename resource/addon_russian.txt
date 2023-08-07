@@ -443,6 +443,8 @@
 		//Spirit Breaker
 		"DOTA_Tooltip_Ability_spirit_breaker_greater_bash_damage_pct"			"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_spirit_breaker_nether_strike_damage_pct"			"%УРОН ОТ СИЛЫ"
+        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_status_res"   "+14% к сопративлению эффектам от Bulldoze"
+        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_2"            "-3 сек. перезарядки Bulldoze"
 
 		//Shadow Demon
 		"DOTA_Tooltip_Ability_shadow_demon_demonic_purge_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -563,6 +565,13 @@
 
         //Kunkka
         "DOTA_Tooltip_Ability_kunkka_torrent_damage_pct"                    "%УРОН ОТ СИЛЫ"
+
+        //Sven
+        "DOTA_Tooltip_Ability_special_bonus_unique_sven_8"                  "+25% к урону и +45 к силе от  Greater Cleave"
+
+        //Huskar
+        "DOTA_Tooltip_Ability_special_bonus_unique_huskar_2"                "+12 к урону в секунду от Burning Spear"
+        "DOTA_Tooltip_Ability_special_bonus_unique_huskar_6"                "+25% к восстановлению и +5% к сопративлению магии от Berserker's Blood"
 
 
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"
@@ -1791,6 +1800,7 @@
 		"DOTA_Tooltip_ability_item_talisman_of_ambition_bonus_armor"				"+$armor"
 		"DOTA_Tooltip_ability_item_talisman_of_ambition_bonus_agility"				"+$agi"
 		"DOTA_Tooltip_ability_item_talisman_of_ambition_bonus_movespeed"			"+$move_speed"
+        "DOTA_Tooltip_ability_item_talisman_of_ambition_Lore"                       "Талисман крайне удачливого воина с крайне высокими амбициями."
 		
 		"DOTA_Tooltip_ability_item_talisman_of_mastery"							"Talisman of Mastery"
 		"DOTA_Tooltip_ability_item_talisman_of_mastery_Description"				"<h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
@@ -1954,13 +1964,14 @@
 		"DOTA_Tooltip_ability_item_giant_ring_aa_bonus_all_stats"		"+$all"
 		"DOTA_Tooltip_ability_item_giant_ring_aa_movement_speed"		"+$move_speed"
 		"DOTA_Tooltip_ability_item_giant_ring_aa_attack_speed"			"+$attack"
-
+        "DOTA_Tooltip_ability_item_giant_ring_aa_Lore"                  "Ты ещё здесь?"
 
 		"DOTA_Tooltip_ability_item_vision"								"THIRD EYE"
-		"DOTA_Tooltip_ability_item_vision_Description"					"<h1>Активное: Third Eye</h1> Вы получаете обзор на случайного вражеского героя на %duration% секунд радиус обзора равен радусу обзора героя<br><br><b><font color='#FF0000'>Если выложить предмет обзор пропадет</font></b><br><br><b><font color='#FF0000'>Если одну цель уже видно то при нажатии действие еффекта на цели обновится </font></b><br><br><b><font color='#FF0000'>Если владелец предмета умрет обзор с цели пропадет </font></b>"
+		"DOTA_Tooltip_ability_item_vision_Description"					"<h1>Активное: Third Eye</h1> Вы получаете обзор на случайного вражеского героя на %duration% секунд радиус обзора равен радусу обзора героя<br><br><b><font color='#FF0000'>Если выложить предмет обзор пропадет</font></b><br><br><b><font color='#FF0000'>Если одну цель уже видно то при нажатии действие эффекта на цели обновится </font></b><br><br><b><font color='#FF0000'>Если владелец предмета умрет обзор с цели пропадет </font></b>"
 		"DOTA_Tooltip_ability_item_vision_bonus_str"					"+$str"
 		"DOTA_Tooltip_ability_item_vision_bonus_int"					"+$int"
 		"DOTA_Tooltip_ability_item_vision_day_vision"					"+ к радиусу обзора днем"
 		"DOTA_Tooltip_ability_item_vision_night_vision"					"+ к радиусу обзора ночью"
+        "DOTA_Tooltip_ability_item_vision_Lore"                         "Я видел 14000000 вариантов будущего..."
         }
 }
