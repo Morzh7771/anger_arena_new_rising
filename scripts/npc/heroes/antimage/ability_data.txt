@@ -15,14 +15,14 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"percent_damage_per_burn"		"8.0 15.0 22.0 29.0 36.0 43.0 50.0"
-			"mana_per_hit"			"25 30 35 40 45 50 55"
+			"percent_damage_per_burn"		"50.0"
+			"mana_per_hit"			"25 35 45 55 65 75 85"
 			"mana_per_hit_pct"		
 			{
 				"value"		"1.2 1.6 2.0 2.4 2.8 3.2 3.6"
 				"special_bonus_unique_antimage_7"	"+0.4"
 			}
-			"illusion_percentage"		"8.0 15.0 22.0 29.0 36.0 43.0 50.0"
+			"illusion_percentage"		"20.0"
 			"move_slow"				"25 30 35 40 45 50 55"
 			"slow_duration"			"0.75"
 		}
