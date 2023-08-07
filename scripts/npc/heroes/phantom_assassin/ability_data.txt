@@ -136,7 +136,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11 10 9 8 7 6 5"
+		"AbilityCooldown"				"13 12 11 10 9 8 7"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -154,15 +154,15 @@ DOTAAbilities
 
 			"duration"				
 			{
-				"value"						"4"
-				"special_bonus_unique_phantom_assassin_4"		"+1"
+				"value"						"2"
+				"special_bonus_unique_phantom_assassin_4"		"+3"
 			}
 			"AbilityCastRange"
 			{
 				"value"											"1000"
 				"special_bonus_unique_phantom_assassin_6"		"+250"				
 			}
-			"lifesteal_pct"						"10 15 20 25 30 35 40"
+			"lifesteal_pct"						"10 12.5 15 17.5 20 22.5 25"
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"

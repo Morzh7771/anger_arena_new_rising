@@ -83,7 +83,7 @@
               "06"
               {
                 "var_type"                                        "FIELD_INTEGER"
-                "quelling_bonus"                                  "15 30"
+                "quelling_bonus"                                  "20 40"
               }
               "08"
               {
@@ -179,7 +179,7 @@
                   "06"
                   {
                     "var_type"                                        "FIELD_INTEGER"
-                    "quelling_bonus"                                  "15"
+                    "quelling_bonus"                                  "20 40"
                   }
                   "08"
                   {
@@ -10851,6 +10851,55 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"bullwhip_delay_time"	"0.3"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Quelling Blade
+	//=================================================================================================================
+	"item_quelling_blade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"4.0"
+		"Model"							"models/props_gameplay/quelling_blade.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"						"100"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"component"
+		"ItemAliases"					"qb;quelling blade"
+		//"SideShop"						"1"
+		"ShouldBeSuggested"				"1"
+		"ShouldBeInitiallySuggested"	"1"
+
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_bonus"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_bonus_ranged"	"12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_range_tooltip"			"350"
 			}
 		}
 	}
