@@ -463,6 +463,7 @@
 
 		//Gyrocopter
 		"DOTA_Tooltip_Ability_gyrocopter_rocket_barrage_damage_pct"			"%УРОН ОТ ЛОВКОСТИ"
+        "DOTA_Tooltip_Ability_special_bonus_unique_gyrocopter_barrage_agi_dmg_pct"  "+{s:bonus_damage_pct}% к урону от Ловкости для Rocket Barrage"
 
 		//Keeper of the Light
 		"DOTA_Tooltip_Ability_keeper_of_the_light_illuminate_damage_pct"		"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -471,6 +472,7 @@
 		//Sniper
 		"DOTA_Tooltip_Ability_sniper_shrapnel_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
 		"DOTA_Tooltip_Ability_sniper_assassinate_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
+        "DOTA_Tooltip_Ability_special_bonus_unique_sniper_headshot_damage"  "+{s:bonus_damage}% к урону от Headshot"
 
 		//Tusk
 		"DOTA_Tooltip_Ability_tusk_ice_shards_damage_pct"				"%УРОН ОТ СИЛЫ"
@@ -576,6 +578,9 @@
         //Huskar
         "DOTA_Tooltip_Ability_special_bonus_unique_huskar_2"                "+{s:bonus_burn_damage} к урону в секунду от Burning Spear"
         "DOTA_Tooltip_Ability_special_bonus_unique_huskar_6"                "+{s:bonus_maximum_health_regen}% к восстановлению и +{s:bonus_maximum_magic_resist}% к сопративлению магии от Berserker's Blood"
+
+        //Wraith King
+        "DOTA_Tooltip_Ability_special_bonus_unique_wraith_king_crit"        "+{s:bonus_crit_mult}% к урону и -{s:bonus_AbilityCooldown} секунды к перезарядке Mortal Strike"
 
 
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"

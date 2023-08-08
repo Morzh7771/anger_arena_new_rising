@@ -158,17 +158,22 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0 6.5 6.0 5.5 5.0 4.5 4.0"
+		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_mult"					"270 330 390 450 510 570 630"
+			"crit_mult"
+			{					
+				"value"	"250 280 310 340 370 400 430"
+				"special_bonus_unique_wraith_king_crit" "200"
 			}
+			"AbilityCooldown"
+			{
+				"value"		"7.0 6.5 6.0 5.5 5.0 4.5 4.0"
+				"special_bonus_unique_wraith_king_crit" "-2"
+			}	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -256,5 +261,29 @@ DOTAAbilities
 			}
 			"scepter_cooldown_tooltip"			"30"
 		}
+	}
+	"special_bonus_unique_wraith_king_10"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"0"
+				"ad_linked_abilities"			"skeleton_king_mortal_strike"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	"special_bonus_unique_wraith_king_crit"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
 	}
 }
