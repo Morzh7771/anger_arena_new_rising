@@ -323,6 +323,7 @@
 
 		//Dragon Knight
 		"DOTA_Tooltip_Ability_dragon_knight_fireball_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        "DOTA_Tooltip_Ability_special_bonus_unique_dragon_knight"           "+{s:bonus_bonus_health_regen}% к бонусам Dragon Blood"
 
 		//Lich
 		"DOTA_Tooltip_Ability_lich_chain_frost_damage_pct"          		"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -443,8 +444,8 @@
 		//Spirit Breaker
 		"DOTA_Tooltip_Ability_spirit_breaker_greater_bash_damage_pct"			"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_spirit_breaker_nether_strike_damage_pct"			"%УРОН ОТ СИЛЫ"
-        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_status_res"   "+14% к сопративлению эффектам от Bulldoze"
-        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_2"            "-3 сек. перезарядки Bulldoze"
+        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_status_res"   "+{s:bonus_status_resistance}% к сопративлению эффектам от Bulldoze"
+        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_2"            "-{s:bonus_AbilityCooldown} сек. перезарядки Bulldoze"
 
 		//Shadow Demon
 		"DOTA_Tooltip_Ability_shadow_demon_demonic_purge_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -501,7 +502,7 @@
 		"DOTA_Tooltip_Ability_ember_spirit_flame_guard_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
 
 		//Templar Assassin
-		"DOTA_Tooltip_Ability_special_bonus_unique_templar_assassin_8"			"+100% к дальности атаки и пробития от Psi Blades"
+		"DOTA_Tooltip_Ability_special_bonus_unique_templar_assassin_8"			"+{s:bonus_bonus_attack_range}% к дальности атаки и пробития от Psi Blades"
 
         //Mars
 		"DOTA_Tooltip_Ability_mars_spear_damage_pct"								"%УРОН ОТ СИЛЫ"
@@ -509,6 +510,7 @@
         //Legion Commander
 		"DOTA_Tooltip_Ability_legion_commander_overwhelming_odds_damage_pct"			"%УРОН ОТ СИЛЫ"
 
+        //Primal Beast
 		"DOTA_Tooltip_Ability_primal_beast_uproar_damage_pct"							"%УРОН ОТ СИЛЫ"
 
         //Zeus
@@ -522,6 +524,8 @@
         //Storm Spirit
 		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_storm_spirit_static_remnant_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+        "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_5"              "+{s:bonus_static_remnant_damage} к урону от Static Remnant"
+        "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_remnant_dmg_pct" "+{s:bonus_damage_pct}% к урону от интеллекта на Static Remnant"
 
         //Leshrac
 		"DOTA_Tooltip_Ability_leshrac_split_earth_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -567,11 +571,11 @@
         "DOTA_Tooltip_Ability_kunkka_torrent_damage_pct"                    "%УРОН ОТ СИЛЫ"
 
         //Sven
-        "DOTA_Tooltip_Ability_special_bonus_unique_sven_8"                  "+25% к урону и +45 к силе от  Greater Cleave"
+        "DOTA_Tooltip_Ability_special_bonus_unique_sven_8"                  "+{s:bonus_great_cleave_damage}% к урону и +{s:bonus_strength_bonus} к силе от  Greater Cleave"
 
         //Huskar
-        "DOTA_Tooltip_Ability_special_bonus_unique_huskar_2"                "+12 к урону в секунду от Burning Spear"
-        "DOTA_Tooltip_Ability_special_bonus_unique_huskar_6"                "+25% к восстановлению и +5% к сопративлению магии от Berserker's Blood"
+        "DOTA_Tooltip_Ability_special_bonus_unique_huskar_2"                "+{s:bonus_burn_damage} к урону в секунду от Burning Spear"
+        "DOTA_Tooltip_Ability_special_bonus_unique_huskar_6"                "+{s:bonus_maximum_health_regen}% к восстановлению и +{s:bonus_maximum_magic_resist}% к сопративлению магии от Berserker's Blood"
 
 
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"
