@@ -637,21 +637,39 @@
         "DOTA_Tooltip_modifier_snake_boots_teleport"							"Teleporting"
 
         "DOTA_Tooltip_Ability_item_manta_2"										"Manta Style 2"
-        "DOTA_Tooltip_ability_item_manta_2_Description"							"<h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальные копии вашего героя, которые существуют %tooltip_illusion_duration% сек. Время перезарядки способности зависит от типа атаки владельца: %cooldown_melee% сек. для героев ближнего боя и %cooldown_ranged_tooltip% сек. для героев дальнего боя.\n\nИллюзии героев ближнего боя наносят %tooltip_damage_outgoing_melee%%% урона и получают %tooltip_damage_incoming_melee_total_pct%%% урона, а иллюзии героев дальнего боя наносят %tooltip_damage_outgoing_ranged%%% урона и получают %tooltip_damage_incoming_ranged_total_pct%%% урона.\n\nБонусы к скорости передвижения от нескольких предметов на основе Yasha не складываются."
-        "DOTA_Tooltip_ability_item_manta_2_bonus_agility"						"+$agi"
-        "DOTA_Tooltip_ability_item_manta_2_bonus_strength"						"+$str"
-        "DOTA_Tooltip_ability_item_manta_2_bonus_intellect"						"+$int"
-        "DOTA_Tooltip_ability_item_manta_2_bonus_attack_speed"					"+$attack"
-        "DOTA_Tooltip_ability_item_manta_2_bonus_movement_speed"				"%+$move_speed"
+        "DOTA_Tooltip_ability_item_manta_2_Description"							"<h1>Активное: Mirror Image</h1> Создаёт %images_count% иллюзии вашего героя, которые существуют %tooltip_illusion_duration% сек.<br><br>Иллюзии получают %tooltip_damage_incoming_total_pct%%% урона, а наносимый ими урон зависит от типа атаки владельца: иллюзии ближнего боя наносят %tooltip_damage_outgoing_melee%%% урона, а иллюзии дальнего боя — %tooltip_damage_outgoing_ranged%%%. <br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+        "DOTA_Tooltip_ability_item_manta_Note0"                                 "Предмет используется %invuln_duration% сек., во время которой его владелец неуязвим."
+        "DOTA_Tooltip_ability_item_manta_Note1"                                 "Использование снимает многие эффекты."
+        "DOTA_Tooltip_ability_item_manta_Note2"                                 "Бонусы к скорости от нескольких предметов на основе Yasha не складываются."
+        "DOTA_Tooltip_ability_item_manta_bonus_agility"                         "+$agi"
+        "DOTA_Tooltip_ability_item_manta_bonus_strength"                        "+$str"
+        "DOTA_Tooltip_ability_item_manta_bonus_intellect"                       "+$int"
+        "DOTA_Tooltip_ability_item_manta_bonus_attack_speed"                    "+$attack"
+        "DOTA_Tooltip_ability_item_manta_bonus_movement_speed"                  "%+$move_speed"
+        //"DOTA_Tooltip_ability_item_manta_images_count"                            "NUMBER OF IMAGES:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_damage_incoming_melee_total_pct"     "%MELEE IMAGE DAMAGE TAKEN:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_damage_outgoing_melee"           "%MELEE IMAGE DAMAGE:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_damage_incoming_ranged_total_pct"        "%RANGED IMAGE DAMAGE TAKEN:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_damage_outgoing_ranged"      "%RANGED IMAGE DAMAGE:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_illusion_duration"               "IMAGE DURATION:"
 		"DOTA_Tooltip_ability_item_manta_2_Lore"								"Топор великого Оксиминога, чья незавидная участь в виде триполярочки стала его сильнейшим оружием"
 
         "DOTA_Tooltip_Ability_item_manta_3"										"Manta Style 3"
-        "DOTA_Tooltip_ability_item_manta_3_Description"							"<h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальные копии вашего героя, которые существуют %tooltip_illusion_duration% сек. Время перезарядки способности зависит от типа атаки владельца: %cooldown_melee% сек. для героев ближнего боя и %cooldown_ranged_tooltip% сек. для героев дальнего боя.\n\nИллюзии героев ближнего боя наносят %tooltip_damage_outgoing_melee%%% урона и получают %tooltip_damage_incoming_melee_total_pct%%% урона, а иллюзии героев дальнего боя наносят %tooltip_damage_outgoing_ranged%%% урона и получают %tooltip_damage_incoming_ranged_total_pct%%% урона.\n\nБонусы к скорости передвижения от нескольких предметов на основе Yasha не складываются."
-        "DOTA_Tooltip_ability_item_manta_3_bonus_agility"						"+$agi"
-        "DOTA_Tooltip_ability_item_manta_3_bonus_strength"						"+$str"
-        "DOTA_Tooltip_ability_item_manta_3_bonus_intellect"						"+$int"
-        "DOTA_Tooltip_ability_item_manta_3_bonus_attack_speed"					"+$attack"
-        "DOTA_Tooltip_ability_item_manta_3_bonus_movement_speed"				"%+$move_speed"
+        "DOTA_Tooltip_ability_item_manta_3_Description"							"<h1>Активное: Mirror Image</h1> Создаёт %images_count% иллюзии вашего героя, которые существуют %tooltip_illusion_duration% сек.<br><br>Иллюзии получают %tooltip_damage_incoming_total_pct%%% урона, а наносимый ими урон зависит от типа атаки владельца: иллюзии ближнего боя наносят %tooltip_damage_outgoing_melee%%% урона, а иллюзии дальнего боя — %tooltip_damage_outgoing_ranged%%%. <br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+        "DOTA_Tooltip_ability_item_manta_Note0"                                 "Предмет используется %invuln_duration% сек., во время которой его владелец неуязвим."
+        "DOTA_Tooltip_ability_item_manta_Note1"                                 "Использование снимает многие эффекты."
+        "DOTA_Tooltip_ability_item_manta_Note2"                                 "Бонусы к скорости от нескольких предметов на основе Yasha не складываются."
+        "DOTA_Tooltip_ability_item_manta_bonus_agility"                         "+$agi"
+        "DOTA_Tooltip_ability_item_manta_bonus_strength"                        "+$str"
+        "DOTA_Tooltip_ability_item_manta_bonus_intellect"                       "+$int"
+        "DOTA_Tooltip_ability_item_manta_bonus_attack_speed"                    "+$attack"
+        "DOTA_Tooltip_ability_item_manta_bonus_movement_speed"                  "%+$move_speed"
+        //"DOTA_Tooltip_ability_item_manta_images_count"                            "NUMBER OF IMAGES:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_damage_incoming_melee_total_pct"     "%MELEE IMAGE DAMAGE TAKEN:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_damage_outgoing_melee"           "%MELEE IMAGE DAMAGE:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_damage_incoming_ranged_total_pct"        "%RANGED IMAGE DAMAGE TAKEN:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_damage_outgoing_ranged"      "%RANGED IMAGE DAMAGE:"
+        //"DOTA_Tooltip_ability_item_manta_tooltip_illusion_duration"               "IMAGE DURATION:"
 		"DOTA_Tooltip_ability_item_manta_3_Lore"								"Топор великого Оксиминога, чья незавидная участь в виде триполярочки стала его сильнейшим оружием"
 
         "DOTA_Tooltip_Ability_item_greater_crit_2"								"Daedalus 2"
@@ -881,7 +899,7 @@
 		"DOTA_Tooltip_modifier_item_blade_mail_3_reflect_Description"		"Возвращает урон атакующим существам."
 
         "DOTA_Tooltip_ability_item_shivas_guard_2"                              "Shiva's Guard 2"
-        "DOTA_Tooltip_ability_item_shivas_guard_2_Description"			"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая наносит противникам %blast_damage% магического урона и на %blast_debuff_duration% сек. снижает их скорость передвижения на %blast_movement_speed%%%.<br><br>Радиус: %blast_radius%\n\n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их лечение, восстановление здоровья и вампиризм — на %hp_regen_degen_aura%%%.<br><br>Радиус: %aura_radius%"
+        "DOTA_Tooltip_ability_item_shivas_guard_2_Description"			"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая наносит противникам %blast_damage% магического урона и на %blast_debuff_duration% сек. снижает их скорость передвижения на %blast_movement_speed%%%. Наносит иллюзиям %illusion_multiplier_pct%%% урона.<br><br>Радиус: %blast_radius%\n\n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их лечение, восстановление здоровья и вампиризм — на %hp_regen_degen_aura%%%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Lore"				"Говорят, когда-то этот артефакт принадлежал богине, и он не теряет былого могущества по сей день."
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Note0"			"Волна распространяется со скоростью в %blast_speed% до максимального размера в %blast_radius%."
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Note1"			"Морозная волна следует за владельцем."
@@ -895,7 +913,7 @@
 		"DOTA_Tooltip_modifier_item_shivas_guard_2_blast_Description"	        "Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
         "DOTA_Tooltip_ability_item_shivas_guard_3"                              "Shiva's Guard 3"
-        "DOTA_Tooltip_ability_item_shivas_guard_3_Description"			"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая наносит противникам %blast_damage% магического урона и на %blast_debuff_duration% сек. снижает их скорость передвижения на %blast_movement_speed%%%.<br><br>Радиус: %blast_radius%\n\n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их лечение, восстановление здоровья и вампиризм — на %hp_regen_degen_aura%%%.<br><br>Радиус: %aura_radius%"
+        "DOTA_Tooltip_ability_item_shivas_guard_3_Description"			"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая наносит противникам %blast_damage% магического урона и на %blast_debuff_duration% сек. снижает их скорость передвижения на %blast_movement_speed%%%. Наносит иллюзиям %illusion_multiplier_pct%%% урона.<br><br>Радиус: %blast_radius%\n\n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их лечение, восстановление здоровья и вампиризм — на %hp_regen_degen_aura%%%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Lore"				"Говорят, когда-то этот артефакт принадлежал богине, и он не теряет былого могущества по сей день."
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Note0"			"Волна распространяется со скоростью в %blast_speed% до максимального размера в %blast_radius%."
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Note1"			"Морозная волна следует за владельцем."
@@ -993,8 +1011,20 @@
         "DOTA_Tooltip_modifier_silver_edge_3_debuff"		                "Атака Shadow Walk"
 		"DOTA_Tooltip_modifier_silver_edge_3_debuff_Description"		"Пассивные способности отключены."
 
+
+
+
+
+        "DOTA_Tooltip_ability_item_radiance_Description"                        "<h1>Переключаемое: Burn</h1> Если включена, каждую секунду наносит наносит противникам %aura_damage% магического урона + %aura_damage_stats%%% урона от статов и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев. На иллюзиях наносит %aura_damage_illusions% магического урона в секунду. Наносит иллюзиям %illusion_multiplier_pct%%% урона.<br><br>Радиус: %aura_radius%"  
+        "DOTA_Tooltip_ability_item_radiance_Lore"                               "Божественный меч, окружающий владельца ярким сиянием, которое обращает в пепел всех врагов вокруг."
+        "DOTA_Tooltip_ability_item_radiance_bonus_damage"                       "+$damage"        
+        "DOTA_Tooltip_ability_item_radiance_evasion"                            "%+$evasion"
+
+        "DOTA_Tooltip_modifier_item_radiance_debuff"                "Burn Damage"
+        "DOTA_Tooltip_modifier_item_radiance_debuff_Description"    "Получает 60 урона в секунду и промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% случаев."
+
         "DOTA_Tooltip_ability_item_radiance_2"                                  "Radiance 2"
-        "DOTA_Tooltip_ability_item_radiance_2_Description"			"<h1>Переключаемое: Burn</h1> Если включена, каждую секунду наносит наносит противникам %aura_damage% магического урона + %aura_damage_stats%%% урона от статов и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев. На иллюзиях наносит %aura_damage_illusions% магического урона в секунду.<br><br>Радиус: %aura_radius%"	
+        "DOTA_Tooltip_ability_item_radiance_2_Description"			"<h1>Переключаемое: Burn</h1> Если включена, каждую секунду наносит наносит противникам %aura_damage% магического урона + %aura_damage_stats%%% урона от статов и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев. На иллюзиях наносит %aura_damage_illusions% магического урона в секунду. Наносит иллюзиям %illusion_multiplier_pct%%% урона.<br><br>Радиус: %aura_radius%"	
 		"DOTA_Tooltip_ability_item_radiance_2_Lore"				"Божественный меч, окружающий владельца ярким сиянием, которое обращает в пепел всех врагов вокруг."
 		"DOTA_Tooltip_ability_item_radiance_2_bonus_damage"			"+$damage"			
 		"DOTA_Tooltip_ability_item_radiance_2_evasion"				"%+$evasion"
@@ -1003,7 +1033,7 @@
 		"DOTA_Tooltip_modifier_item_radiance_2_debuff_Description"	        "Получает 60 урона в секунду и промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% случаев."
 
         "DOTA_Tooltip_ability_item_radiance_3"                                  "Radiance 3"
-        "DOTA_Tooltip_ability_item_radiance_3_Description"			"<h1>Переключаемое: Burn</h1> Если включена, каждую секунду наносит наносит противникам %aura_damage% магического урона + %aura_damage_stats%%% урона от статов и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев. На иллюзиях наносит %aura_damage_illusions% магического урона в секунду.<br><br>Радиус: %aura_radius%"	
+        "DOTA_Tooltip_ability_item_radiance_3_Description"			"<h1>Переключаемое: Burn</h1> Если включена, каждую секунду наносит наносит противникам %aura_damage% магического урона + %aura_damage_stats%%% урона от статов и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев. На иллюзиях наносит %aura_damage_illusions% магического урона в секунду. Наносит иллюзиям %illusion_multiplier_pct%%% урона.<br><br>Радиус: %aura_radius%"	
 		"DOTA_Tooltip_ability_item_radiance_3_Lore"				"Божественный меч, окружающий владельца ярким сиянием, которое обращает в пепел всех врагов вокруг."
 		"DOTA_Tooltip_ability_item_radiance_3_bonus_damage"			"+$damage"			
 		"DOTA_Tooltip_ability_item_radiance_3_evasion"				"%+$evasion"
@@ -1255,7 +1285,7 @@
 		"DOTA_Tooltip_ability_item_helm_of_the_overlord_2_bonus_regen"	"+$hp_regen"
 
         "DOTA_Tooltip_ability_item_veil_of_discord_2"                   "VEIL OF DISCORD 2"
-        "DOTA_Tooltip_ability_item_veil_of_discord_2_Description"	"<h1>Активное: Magic Weakness</h1> Ослабляет вражеских героев в области радиусом %debuff_radius%, отчего они получают на %spell_amp%%% больше урона от заклинаний.<br><br>Дальность применения: %abilitycastrange%<br>Длительность: %resist_debuff_duration% сек. \n\n<h1>Пассивное: Basilius Aura</h1> Увеличивает восстановление маны союзников на %aura_mana_regen%.<br><br>Радиус: %aura_radius%"
+        "DOTA_Tooltip_ability_item_veil_of_discord_2_Description"	"<<h1>Активное: Magic Weakness</h1> Ослабляет вражеских героев в области радиусом %debuff_radius%, отчего они получают на %spell_amp%%% больше урона от заклинаний, и наносит %shield_damage% урона всем барьерам.<br><br>Дальность применения: %abilitycastrange%<br>Длительность: %resist_debuff_duration% сек. \n\n<h1>Пассивное: Basilius Aura</h1> Увеличивает восстановление маны союзников на %aura_mana_regen%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_veil_of_discord_2_Lore"		"Головной убор испорченных магов."
 		"DOTA_Tooltip_ability_item_veil_of_discord_2_bonus_all_stats"	"+$all"
 
@@ -1266,7 +1296,7 @@
 		"DOTA_Tooltip_modifier_item_veil_of_discord_2_debuff_Description""Весь получаемый урон от заклинаний увеличивается на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%."
 
         "DOTA_Tooltip_ability_item_veil_of_discord_3"                  "VEIL OF DISCORD 3"
-        "DOTA_Tooltip_ability_item_veil_of_discord_3_Description"	"<h1>Активное: Magic Weakness</h1> Ослабляет вражеских героев в области радиусом %debuff_radius%, отчего они получают на %spell_amp%%% больше урона от заклинаний.<br><br>Дальность применения: %abilitycastrange%<br>Длительность: %resist_debuff_duration% сек. \n\n<h1>Пассивное: Basilius Aura</h1> Увеличивает восстановление маны союзников на %aura_mana_regen%.<br><br>Радиус: %aura_radius%"
+        "DOTA_Tooltip_ability_item_veil_of_discord_3_Description"	"<h1>Активное: Magic Weakness</h1> Ослабляет вражеских героев в области радиусом %debuff_radius%, отчего они получают на %spell_amp%%% больше урона от заклинаний, и наносит %shield_damage% урона всем барьерам.<br><br>Дальность применения: %abilitycastrange%<br>Длительность: %resist_debuff_duration% сек. \n\n<h1>Пассивное: Basilius Aura</h1> Увеличивает восстановление маны союзников на %aura_mana_regen%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_veil_of_discord_3_Lore"		"Головной убор испорченных магов."
 		"DOTA_Tooltip_ability_item_veil_of_discord_3_bonus_all_stats"	"+$all"
 
@@ -1316,8 +1346,23 @@
 		"DOTA_Tooltip_modifier_item_ethereal_blade_3_slow"		"Замедление от Ethereal Blade 3"
 		"DOTA_Tooltip_modifier_item_ethereal_blade_3_slow_Description"	"Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
+        "DOTA_Tooltip_ability_item_revenants_brooch_Description"                "<h1>Активное: Phantom Province</h1>Следующие %number_of_attacks% атак владельца наносят магический урон, снижают сопротивлении магии жертв на %active_mres_reduction%%%, и ими нельзя промахнуться.<br><br> Позволяет атаковать бесплотных существ.\n\n<h1>Пассивное: Witch Blade</h1>Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Перезарядка: %passive_cooldown% сек."
+        "DOTA_Tooltip_ability_item_revenants_brooch_Lore"                       "Проклятая брошь павшего стража, блуждающего меж завесами жизни и смерти."
+        "DOTA_Tooltip_ability_item_revenants_brooch_bonus_armor"                "+$armor"
+        "DOTA_Tooltip_ability_item_revenants_brooch_bonus_intellect"            "+$int"
+        "DOTA_Tooltip_ability_item_revenants_brooch_projectile_speed"           "+$projectile_speed"
+        "DOTA_Tooltip_ability_item_revenants_brooch_bonus_attack_speed"       "+$attack"
+        "DOTA_Tooltip_modifier_item_revenants_brooch_internal_cd"               "Перезарядка Witch Blade"
+        "DOTA_Tooltip_modifier_item_revenants_brooch_internal_cd_Description"   "Задержка, после которой атака получит эффект Witch Blade."
+
+        "DOTA_Tooltip_modifier_item_revenants_brooch_counter"                   "Revenant's Brooch"
+        "DOTA_Tooltip_modifier_item_revenants_brooch_counter_Description"       "Атаками нельзя промахнуться, и они наносят магический урон."
+
+        "DOTA_Tooltip_modifier_misery_debuff"                                   "Revenant's Wail"
+        "DOTA_Tooltip_modifier_misery_debuff_Description"                       "Сопротивление магии уменьшено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%."
+
         "DOTA_Tooltip_ability_item_revenants_brooch_2"                  "REVENANTS BROOCH 2"
-        "DOTA_Tooltip_ability_item_revenants_brooch_2_Description"	"<h1>Активное: Phantom Province</h1>Увеличивает скорость атаки на %active_attack_speed%. Следующие %number_of_attacks% атак владельца наносят магический урон, и ими нельзя промахнуться. Длительность: %active_duration% сек.<br><br> Позволяет атаковать бесплотных существ, но атаки не наносят урона целям, невосприимчивым к магии.\n\n<h1>Пассивное: Witch Blade</h1>Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Перезарядка: %passive_cooldown% сек."
+        "DOTA_Tooltip_ability_item_revenants_brooch_2_Description"	"<h1>Активное: Phantom Province</h1>Следующие %number_of_attacks% атак владельца наносят магический урон, снижают сопротивлении магии жертв на %active_mres_reduction%%%, и ими нельзя промахнуться.<br><br> Позволяет атаковать бесплотных существ.\n\n<h1>Пассивное: Witch Blade</h1>Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Перезарядка: %passive_cooldown% сек."
 		"DOTA_Tooltip_ability_item_revenants_brooch_2_Lore"		"Проклятая брошь павшего стража, блуждающего меж завесами жизни и смерти."
 		"DOTA_Tooltip_ability_item_revenants_brooch_2_bonus_armor"	"+$armor"
 		"DOTA_Tooltip_ability_item_revenants_brooch_2_bonus_intellect"	"+$int"
@@ -1331,7 +1376,7 @@
 		"DOTA_Tooltip_modifier_item_revenants_brooch_2_counter_Description""Атаками нельзя промахнуться, и они наносят магический урон."
 
         "DOTA_Tooltip_ability_item_revenants_brooch_3"                  "REVENANTS BROOCH 3"
-        "DOTA_Tooltip_ability_item_revenants_brooch_3_Description"	"<h1>Активное: Phantom Province</h1>Увеличивает скорость атаки на %active_attack_speed%. Следующие %number_of_attacks% атак владельца наносят магический урон, и ими нельзя промахнуться. Длительность: %active_duration% сек.<br><br> Позволяет атаковать бесплотных существ, но атаки не наносят урона целям, невосприимчивым к магии.\n\n<h1>Пассивное: Witch Blade</h1>Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Перезарядка: %passive_cooldown% сек."
+        "DOTA_Tooltip_ability_item_revenants_brooch_3_Description"	"<h1>Активное: Phantom Province</h1>Следующие %number_of_attacks% атак владельца наносят магический урон, снижают сопротивлении магии жертв на %active_mres_reduction%%%, и ими нельзя промахнуться.<br><br> Позволяет атаковать бесплотных существ.\n\n<h1>Пассивное: Witch Blade</h1>Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Перезарядка: %passive_cooldown% сек."
 		"DOTA_Tooltip_ability_item_revenants_brooch_3_Lore"		"Проклятая брошь павшего стража, блуждающего меж завесами жизни и смерти."
 		"DOTA_Tooltip_ability_item_revenants_brooch_3_bonus_armor"	"+$armor"
 		"DOTA_Tooltip_ability_item_revenants_brooch_3_bonus_intellect"	"+$int"
@@ -1344,8 +1389,14 @@
 		"DOTA_Tooltip_modifier_item_revenants_brooch_3_counter"		"Revenant's Brooch 3"
 		"DOTA_Tooltip_modifier_item_revenants_brooch_3_counter_Description"		"Атаками нельзя промахнуться, и они наносят магический урон."
 
+        "DOTA_Tooltip_ability_item_gungir_bonus_damage"       "+$damage"
+        "DOTA_Tooltip_ability_item_gungir_bonus_intellect"        "+$int"
+        "DOTA_Tooltip_ability_item_gungir_bonus_strength"     "+$str"
+        "DOTA_Tooltip_ability_item_gungir_bonus_agility"      "+$agi"
+
+
         "DOTA_Tooltip_ability_item_gungir_2"                            "GLEIPNIR 2"
-        "DOTA_Tooltip_ability_item_gungir_2_Description"		"<h1>Активное: Eternal Chains</h1> Накладывает оцепенение на всех врагов в радиусе %radius% и наносит им %active_damage% урона. Длительность: %duration%.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chain_chance%%% может создать разряд цепной молнии, которая %chain_strikes% раз перескочит между случайными врагами в радиусе %chain_radius%, нанося каждому по %chain_damage% магического урона. От атаки с цепной молнией нельзя уклониться."
+        "DOTA_Tooltip_ability_item_gungir_2_Description"		"<h1>Активное: Eternal Chains</h1> Накладывает оцепенение на всех врагов в радиусе %radius% и наносит им %active_damage% урона. Длительность: %duration%.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chain_chance%%% может создать разряд цепной молнии, которая до %chain_strikes% раз перескакивает по случайным противникам в радиусе %chain_radius%, нанося каждому %chain_damage% магического урона. От атаки с цепной молнией нельзя уклониться. Наносит %illusion_multiplier_pct%%% урона иллюзиям."
 		"DOTA_Tooltip_ability_item_gungir_2_Lore"			"Оковы, созданные невозможным способом, чтобы сдержать древнее зло."
 		"DOTA_Tooltip_ability_item_gungir_2_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_gungir_2_bonus_intellect"		"+$int"
@@ -1356,7 +1407,7 @@
 		"DOTA_Tooltip_modifier_gungnir_2_debuff_Description"		"Невозможно передвигаться во время оцепенения."
 
         "DOTA_Tooltip_ability_item_gungir_3"                            "GLEIPNIR 3"
-        "DOTA_Tooltip_ability_item_gungir_3_Description"		"<h1>Активное: Eternal Chains</h1> Накладывает оцепенение на всех врагов в радиусе %radius% и наносит им %active_damage% урона. Длительность: %duration%.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chain_chance%%% может создать разряд цепной молнии, которая %chain_strikes% раз перескочит между случайными врагами в радиусе %chain_radius%, нанося каждому по %chain_damage% магического урона. От атаки с цепной молнией нельзя уклониться."
+        "DOTA_Tooltip_ability_item_gungir_3_Description"		"<h1>Активное: Eternal Chains</h1> Накладывает оцепенение на всех врагов в радиусе %radius% и наносит им %active_damage% урона. Длительность: %duration%.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chain_chance%%% может создать разряд цепной молнии, которая до %chain_strikes% раз перескакивает по случайным противникам в радиусе %chain_radius%, нанося каждому %chain_damage% магического урона. От атаки с цепной молнией нельзя уклониться. Наносит %illusion_multiplier_pct%%% урона иллюзиям."
 		"DOTA_Tooltip_ability_item_gungir_3_Lore"		        "Оковы, созданные невозможным способом, чтобы сдержать древнее зло."
 		"DOTA_Tooltip_ability_item_gungir_3_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_gungir_3_bonus_intellect"		"+$int"
@@ -1437,6 +1488,12 @@
 			
 		"DOTA_Tooltip_modifier_sheepstick_hex"		                "Освинован"
 		"DOTA_Tooltip_modifier_sheepstick_hex_Description"	        "Вы — свинья. Вы не можете атаковать или использовать заклинания ваши пассивные способности отключены."
+
+        "DOTA_Tooltip_ability_item_spirit_vessel_bonus_health"                     "+$health"
+        "DOTA_Tooltip_ability_item_spirit_vessel_bonus_mana_regen"                "+$mana_regen"
+        "DOTA_Tooltip_ability_item_spirit_vessel_bonus_all_stats"                "+$all"
+        "DOTA_Tooltip_ability_item_spirit_vessel_bonus_armor"                   "+$armor"
+        "DOTA_Tooltip_ability_item_spirit_vessel_mana_regen"                    "+$mana_regen"
 
         "DOTA_Tooltip_ability_item_spirit_vessel_2"                     "SPIRIT VESSEL 2"
         "DOTA_Tooltip_ability_item_spirit_vessel_2_Description"		"<h1>Активное: Soul Release</h1>Эффект зависит от выбранной цели. Если применить на противника, то он будет терять %enemy_hp_drain%%% от своего текущего запаса здоровья, а также получать на %hp_regen_reduction_enemy%%% меньше здоровья от любого лечения, восстановления и вампиризма. Помимо этого, способность наносит %soul_damage_amount% урона в секунду. <br><br>Если применить на союзника, увеличивает его восстановление здоровья на %soul_heal_amount% в секунду. <br><br>Действует %duration% сек.<br><br>Получает заряды каждый раз, когда в радиусе %soul_radius% умирает вражеский герой. Заряд получит только один, ближайший к умершему герою предмет.<br><br>Дальность применения: %abilitycastrange%" 		
@@ -1543,7 +1600,7 @@
         "DOTA_Tooltip_modifier_bloodthorn_3_debuff_Description"         "Это существо не может применять способности, а в конце действия ему нанесется магический урон в размере 30%% от полученного урона.\nВсе атаки по этому существу наносят 130%% критического урона."
 
         "DOTA_Tooltip_ability_item_disperser_2"                         "DISPERSER 2"
-        "DOTA_Tooltip_ability_item_disperser_2_Description"		"<h1>Активное: Suppress</h1> Если использовать на врага, замедлит его на %enemy_effect_duration% сек. <br><br>Если использовать на союзника, ускорит его передвижение и наложит на него развеивание. Этого союзника нельзя будет замедлить в течение %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны.<br><br>Иллюзии героев ближнего боя сжигают по %feedback_mana_burn_illusion_melee% маны за атаку, а дальнего боя — %feedback_mana_burn_illusion_ranged%."
+        "DOTA_Tooltip_ability_item_disperser_2_Description"		"<h1>Активное: Suppress</h1> Действует на всех существ в радиусе %radius% вокруг цели. Замедляет передвижение врагов на %enemy_effect_duration% сек. <br><br>Ускоряет передвижение союзников, накладывает на них развеивание, и запрещает замедлять их на %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны.<br><br>Иллюзии героев ближнего боя сжигают по %feedback_mana_burn_illusion_melee% маны за атаку, а дальнего боя — %feedback_mana_burn_illusion_ranged%."
 		"DOTA_Tooltip_ability_item_disperser_2_bonus_agility"		"+$agi"
 		"DOTA_Tooltip_ability_item_disperser_2_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_disperser_2_bonus_damage"		"+$damage"
@@ -1552,7 +1609,7 @@
 		"DOTA_Tooltip_modifier_disperser_2_movespeed_buff_Description"	"Существо нельзя замедлить, его скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		
         "DOTA_Tooltip_ability_item_disperser_3"                         "DISPERSER 3"
-        "DOTA_Tooltip_ability_item_disperser_3_Description"		"<h1>Активное: Suppress</h1> Если использовать на врага, замедлит его на %enemy_effect_duration% сек. <br><br>Если использовать на союзника, ускорит его передвижение и наложит на него развеивание. Этого союзника нельзя будет замедлить в течение %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны.<br><br>Иллюзии героев ближнего боя сжигают по %feedback_mana_burn_illusion_melee% маны за атаку, а дальнего боя — %feedback_mana_burn_illusion_ranged%."
+        "DOTA_Tooltip_ability_item_disperser_3_Description"		"<h1>Активное: Suppress</h1> Действует на всех существ в радиусе %radius% вокруг цели. Замедляет передвижение врагов на %enemy_effect_duration% сек. <br><br>Ускоряет передвижение союзников, накладывает на них развеивание, и запрещает замедлять их на %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны.<br><br>Иллюзии героев ближнего боя сжигают по %feedback_mana_burn_illusion_melee% маны за атаку, а дальнего боя — %feedback_mana_burn_illusion_ranged%."
 		"DOTA_Tooltip_ability_item_disperser_3_bonus_agility"		"+$agi"
 		"DOTA_Tooltip_ability_item_disperser_3_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_ability_item_disperser_3_bonus_damage"		"+$damage"
@@ -1673,7 +1730,7 @@
 		"DOTA_Tooltip_modifier_item_holy_locket_3_aura_Description"	"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
 
         "DOTA_Tooltip_ability_item_overwhelming_blink_2"                "OVERWHELMING BLINK 2"
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"	"<h1>Активное: Overwhelming Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения наносит урон, равный 100 + %damage_pct%%% от силы владельца, всем врагам в радиусе %radius% и замедляет их передвижение на %movement_slow%%%, а атаку — на %attack_slow%. Замедление действует %duration% сек.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"	"<h1>Активное: Overwhelming Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения мгновенно наносит всем врагам в радиусе %radius% урон, равный 100 + %damage_pct_instant%%% от силы владельца, и постепенно наносит им урон, равный %damage_pct_over_time%%% силы владельца. Также замедляет передвижение врагов на %movement_slow%%%, а атаку — на %attack_slow%. Замедление действует %duration% сек.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
         "DOTA_Tooltip_ability_item_overwhelming_blink_2_Lore"           "Редкий смертный удержит в руках этот ужасающий книжал, выкованный в чреве хаоса."
         "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note0"          "Если применить на себя, переместит в сторону союзного фонтана."
         "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note1"		"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."

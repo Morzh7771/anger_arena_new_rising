@@ -32,30 +32,19 @@ DOTAAbilities
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
+            "duration"				"6"
+            "speed"					"1400"
+            "bonus_movement_speed"
             {
-                "var_type"				"FIELD_FLOAT"
-                "duration"				"6"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "speed"					"1400"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_movement_speed"	"-12 -16 -20 -24 -28 -32 -36"
+                "value"	    "-12 -16 -20 -24 -28 -32 -36"
                 "LinkedSpecialBonus"	"special_bonus_unique_chen_8"
                 "LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_attack_speed"	"60 80 100 120 140 160 180"
-            }
+            }    
+            "bonus_attack_speed"	"60 80 100 120 140 160 180"
+            "self_attack_range_bonus"           "50 100 150 200 250 300 350"
+            
         }
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
     }
@@ -294,7 +283,7 @@ DOTAAbilities
 
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
         "FightRecapLevel"				"2"
         "AbilitySound"					"Hero_Chen.HandOfGodHealHero"
@@ -307,7 +296,7 @@ DOTAAbilities
         // Time
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"				"4"
-        "AbilityCastRange"				"99999"
+        "AbilityCastRange"				"2400"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------

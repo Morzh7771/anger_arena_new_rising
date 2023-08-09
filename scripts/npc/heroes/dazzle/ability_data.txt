@@ -217,46 +217,24 @@ DOTAAbilities
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bounce_radius"		"475"
-			}
-			"02"
+			"bounce_radius"		"475"
+			"damage_radius"
 			{	
-				"var_type"			"FIELD_INTEGER"
-				"damage_radius"		"200"
+				"value"		"200"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"03"
-			{	
-				"var_type"			"FIELD_INTEGER"
-				"max_targets"		"3 4 5 6 7 8 9"
-			}
-			"04"
-			{	
-				"var_type"			"FIELD_INTEGER"
-				"tooltip_max_targets_inc_dazzle"		"4 5 6 7 8 9 10"
-			}
-			"05"
+			"max_targets"		"3 4 5 6 7 8 9"
+			"tooltip_max_targets_inc_dazzle"		"4 5 6 7 8 9 10"
+			"damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"90 120 150 180 210 240 270"
+				"value"			"90 120 150 180 210 240 270"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_2"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_heal_pct"		"175"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_cd_increase"	"2"
-			}
+			"scepter_heal_pct"		"175"
+			"scepter_cd_increase"	"2"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}

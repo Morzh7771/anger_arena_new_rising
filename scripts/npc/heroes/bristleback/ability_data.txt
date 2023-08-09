@@ -32,23 +32,12 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"projectile_speed"		"1200"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"700"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"quill_stacks"		"3"
-			}
+			"projectile_speed"		"1200"
+			"radius"			"700"
+			"quill_stacks"		"2"
+			"goo_stacks"		"2"
 		}
 	}
 	"bristleback_viscous_nasal_goo"
@@ -65,7 +54,7 @@ DOTAAbilities
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Bristleback.ViscousGoo.Cast"
 
-		"HasScepterUpgrade"			"1"
+		"HasShardUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -96,7 +85,7 @@ DOTAAbilities
 			"stack_limit"
 			{
 				"value"			"4"
-				"special_bonus_scepter"	"+4"
+				"special_bonus_shard"	"+3"
 			}
 			"goo_duration_creep"			"10.0"
 			"AbilityCastRange"
@@ -136,44 +125,19 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"				"700"
+			"quill_base_damage"		"25 45 65 85 105 125 145"
+			"quill_stack_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"quill_base_damage"		"25 45 65 85 105 125 145"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"quill_stack_damage"	"25 30 35 40 45 50 55"
+				"value"				"25 30 35 40 45 50 55"
 				"LinkedSpecialBonus"	"special_bonus_unique_bristleback_2"
 			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"quill_stack_duration"	"15.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_damage"			"1500.0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"2400"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_pct"			"100"
-			}
+			"quill_stack_duration"	"15.0"
+			"max_damage"			"1500.0"
+			"projectile_speed"		"2400"
+			"damage_pct"			"100"
 		}
 	}
 	"bristleback_bristleback"
@@ -184,6 +148,7 @@ DOTAAbilities
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"					"Hero_Bristleback.Bristleback"
+		"HasScepterUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -203,6 +168,19 @@ DOTAAbilities
 			"back_angle"							"70"
 			"quill_release_threshold"				"300"
 			"quill_release_interval"				".1"
+
+			"activation_cooldown"					"20"
+			"activation_manacost"					"100"
+			"activation_delay"						"0.5"
+			"activation_num_quill_sprays"			"6"
+			"activation_spray_interval"				"0.35"
+			"activation_angle"						"45"
+			"cast_range_bonus"						"0"
+			"activation_movement_speed_pct"			"-40"
+			"activation_turn_rate_pct"				"-100"
+			"activation_disable_turning"			"1"
+			"activation_ignore_cast_angle"			"1"
+			"activation_turn_rate"					"500"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}

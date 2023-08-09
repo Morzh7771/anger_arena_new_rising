@@ -213,7 +213,7 @@ DOTAAbilities
 			"frostbite_duration"	"10 11 12 13 14 15"
 			"dot_damage"				
 			{
-				"value"					"12.5 20.0 32.0 40.0 48.0 56.0"
+				"value"					"12.5 20.0 32.0 40.0 48.0 56.0 62.0"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"speed"					"1500 1500 1500 1500"
@@ -227,7 +227,7 @@ DOTAAbilities
 				"value"					"0"
 				"special_bonus_shard"		"+60"
 			}
-			"target_sight_radius"	"500 525 550 575 600 625"
+			"target_sight_radius"	"500 525 550 575 600 625 650"
 		}
 	}
 	"ancient_apparition_ice_blast_release"

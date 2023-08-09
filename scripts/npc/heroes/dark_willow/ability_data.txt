@@ -86,8 +86,9 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"dark_willow_bedlam"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -99,7 +100,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------		
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"ABSOLUTE"
-
+		"AbilityCastRange"				"900"
 		"AbilityCooldown"				"30"
 		
 		// Cost
@@ -131,6 +132,7 @@ DOTAAbilities
 				"value"		"1"
 				"special_bonus_unique_dark_willow_bedlam_targets" "+2"	
 			}
+			"travel_speed"		"1800"
 		}
 	}
 	"dark_willow_terrorize"
