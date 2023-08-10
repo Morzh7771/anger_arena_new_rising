@@ -34,7 +34,7 @@ function Precache( context )
 	DuelController:Precache(context)
 	--ItemPrecache:Precache(context)
 end
-
+local hero_table = require('lib/hero_table')
 local postRequireList = {
 	'lib/base/player',
 	'lib/base/base_npc'
@@ -622,13 +622,19 @@ function AngelArena:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	local spawnedUnit = EntIndexToHScript(keys.entindex)
 	if not npc then return end
-
 	local unitname = npc:GetUnitName()
 	local unit_owner = npc:GetOwnerEntity()
 	if npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
+		if hero_table[unitname]then
+			print('heroheroheroherohero',hero_table[unitname])
+			npc:AddItemByName("item_repick")
+		end
 		if npc:IsRealHero() then
 			npc:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
+			if npc:GetUnitName() == "guardian_of_the_ancients" then
+				npc:FindAbilityByName("guardian_of_the_ancients_confident_stance"):SetLevel(1)
+			end
 		end
 	end
 	if npc:IsRealHero() then
@@ -664,6 +670,7 @@ function AngelArena:OnNPCSpawned(keys)
 				spawnedUnit:SetBaseStrength(str)
 				spawnedUnit:SetBaseIntellect(int)
 				spawnedUnit:SetBaseAgility(agi)
+				spawnedUnit:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
 				if original_hero.medical_tractates then
 					spawnedUnit.medical_tractates = original_hero.medical_tractates
 					spawnedUnit:AddNewModifier(spawnedUnit, nil, "modifier_medical_tractate", { duration = -1})
@@ -686,6 +693,7 @@ function AngelArena:OnNPCSpawned(keys)
 	end
 
 	if AngelArena:IsUnitBear(spawnedUnit) then
+		spawnedUnit:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
 		local ability
 		
 		local bear_abilities =
