@@ -76,33 +76,20 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"static_remnant_radius"		"235"		
+			"static_remnant_radius"		"235"		
+			"static_remnant_damage_radius"	"300"
+			"static_remnant_delay"		"1.0"
+			"static_remnant_damage"
+			{			
+				"value"			"120 180 240 300 360 420 480"
+				"special_bonus_unique_storm_spirit_5" 	 "50"
 			}
-			"02"
+			"damage_pct"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"static_remnant_damage_radius"	"300"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"static_remnant_delay"		"1.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"static_remnant_damage"			"120 180 240 300 360 420 480"
-				"LinkedSpecialBonus"	"special_bonus_unique_storm_spirit_5"
-			}
-			"05"
-			{
-				"damage_pct"						"60"
+				"value"		"40"
+				"special_bonus_unique_storm_spirit_remnant_dmg_pct" "20"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -318,5 +305,27 @@ DOTAAbilities
 				"scepter_remnant_interval"			"300"		
 			}
 		}
+	}
+	"special_bonus_unique_storm_spirit_5"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"0"
+			}
+		}
+	}
+	"special_bonus_unique_storm_spirit_remnant_dmg_pct"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
 	}
 }

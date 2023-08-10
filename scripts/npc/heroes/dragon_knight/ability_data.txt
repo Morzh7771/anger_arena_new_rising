@@ -169,19 +169,18 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"bonus_health_regen"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"7 14 23 34 47 62 79"
-				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
-			}
-			"02"
+				"value"									"7 14 23 34 47 62 79"
+				"special_bonus_unique_dragon_knight"	"+100%"
+			}			
+
+			"bonus_armor"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"4 8 12 16 20 24 28"
-				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
+				"value"									"4 8 12 16 20 24 28"
+				"special_bonus_unique_dragon_knight"	"+100%"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -347,7 +346,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"48"
+				"value"				"0"
 				"ad_linked_abilities"			"dragon_knight_dragon_blood"
 			}
 		}

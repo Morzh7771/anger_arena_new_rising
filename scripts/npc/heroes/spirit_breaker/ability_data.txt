@@ -94,14 +94,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Spirit_Breaker.EmpoweringHaste.Cast"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16.0"
-		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"70.0"
@@ -109,9 +101,18 @@ DOTAAbilities
 		
 		"AbilityValues"
 		{
-			"movement_speed"				"10 15 20 25 30 35 40"
-			"status_resistance"				"10.0 20.0 30.0 40.0 50.0 60.0 70.0"
-			"duration"						"8"
+			"AbilityCooldown"
+			{
+				"value"								"16.0"
+				"special_bonus_unique_spirit_breaker_2" "-3"
+			}		
+			"movement_speed"						"10 15 20 25 30 35 40"
+			"status_resistance"
+			{
+				"value"								"10 16 22 28 34 40 46"
+				"special_bonus_unique_spirit_breaker_status_res" 	"14"
+			}
+			"duration"								"8"
 			"damage_barrier"
 			{
 				"value"						"0"
@@ -293,5 +294,27 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+	"special_bonus_unique_spirit_breaker_status_res"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_spirit_breaker_2"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"0"
+			}
+		}
 	}
 }

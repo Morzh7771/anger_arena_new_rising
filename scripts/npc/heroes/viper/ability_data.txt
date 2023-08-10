@@ -18,7 +18,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600.0 620.0 640.0 660.0 680.0 700.0 720.0"
+		"AbilityCastRange"				"575"
 		"AbilityCastPoint"				"0"
 
 		// Time		
@@ -37,16 +37,16 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"						"4"
+				"duration"						"3"
 				"damage"					
 				{
-					"value"					"8.0 16.0 24.0 32.0 40.0 48.0 56.0"
+					"value"					"8.0 15.0 22.0 29.0 36.0 43.0 50.0"
 					"special_bonus_unique_viper_7"	"+25%"
 				}	
 
 				"movement_speed"			
 				{
-					"value"					"2.0 4.0 6.0 8.0 10.0 12.0 14.0"
+					"value"					"2.0 3.0 4.0 5.0 6.0 7.0 8.0"
 					"special_bonus_unique_viper_7"	"+25%"
 				}
 				"magic_resistance"			
@@ -55,7 +55,7 @@ DOTAAbilities
 					"special_bonus_unique_viper_4"	"+4"
 				}
 				"max_stacks"			"5"
-				"bonus_range"			"25.0 45.0 65.0 85.0 105.0 125.0 145.0"
+				"bonus_range"			"0"
 				"shard_armor_reduction"
 				{
 					"value"				"2"
@@ -68,7 +68,7 @@ DOTAAbilities
 				}
 				"shard_bonus_max_stacks"
 				{
-					"value"				"5"
+					"value"				"3"
 					"RequiresShard"		"1"
 				}
 				"damage_pct"			"5"
@@ -130,7 +130,7 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0 6.0 7.0 8.0 9.0 10.0 11.0"
+				"duration"				"5.0"
 			}
 			"06"
 			{
@@ -167,7 +167,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"					"4.0"
-			"bonus_attack_speed"		"15.0 30.0 45.0 60.0 75.0 90.0 105.0"
+			"bonus_attack_speed"		"15.0 25.0 35.0 45.0 55.0 65.0 75.0"
 			"bonus_magic_resistance"	
 			{
 				"value"								"12.0 15.0 18.0 21.0 24.0 27.0 30.0"
@@ -175,8 +175,8 @@ DOTAAbilities
 			}
 			"damage"
 			{
-				"value"					"15.0 30.0 45.0 60.0 75.0 90.0 105.0"
-				"special_bonus_unique_viper_1"	"+45"
+				"value"					"15.0 25.0 35.0 45.0 55.0 65.0 75.0"
+				"special_bonus_unique_viper_1"	"+25"
 			}
 			"max_range_tooltip"					"1400"
 			"effect_multiplier_distance"
@@ -186,7 +186,7 @@ DOTAAbilities
 			}
 			"effect_multiplier"
 			{
-				"value"						"3"
+				"value"						"2"
 				"RequiresScepter"		"1"
 			}
 			"damage_pct"			"5"
@@ -235,20 +235,20 @@ DOTAAbilities
 
 			"damage"
 			{
-				"value"				"80.0 160.0 240.0 320.0 400.0 480.0 560.0"
-				"special_bonus_unique_viper_2"	"+90"
+				"value"				"80.0 140.0 200.0 260.0 320.0 380.0 420.0"
+				"special_bonus_unique_viper_2"	"+100"
 			}
 			"bonus_movement_speed"	"-20.0 -30.0 -40.0 -50.0 -60.0 -70.0 -80.0"
 			"bonus_attack_speed"	"-40.0 -60.0 -80.0 -100.0 -120.0 -140.0 -160.0"
 			"AbilityCooldown"
 			{
 				"value"				"65.0 60.0 55.0 50.0 45.0 40.0 35.0"
-				"special_bonus_unique_viper_8"		"-50%"
+				"special_bonus_unique_viper_8"		"-25%"
 			}
 			"AbilityManaCost"
 			{
 				"value"				"120.0 150.0 180.0 210.0 240.0 270.0 300.0"
-				"special_bonus_unique_viper_8"		"-50%"
+				"special_bonus_unique_viper_8"		"-25%"
 			}
 			"projectile_speed"	"1200"
 			"max_charges"			"2"

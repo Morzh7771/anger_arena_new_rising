@@ -219,19 +219,68 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"						"60"
-			"hawk_base_max_health"			"250"
+			"duration"						"25"
+			"hawk_base_max_health"			"250 375 500 675 850 1025 1200"
 			"hawk_base_movespeed"			"300 340 380 420 460 500 540"
-			"hawk_base_gold_bounty"			"50"
+			"hawk_base_gold_bounty"			"50 60 70 80 90 100 110"
 			"hawk_base_vision_range"		"600 650 700 750 800 850 900"
+			"hawk_base_magic_resist"		"30 35 40 45 50 55 60"
 			"AbilityCooldown"
 			{
-				"value"						"60 55 50 45 40 35 30"	
-				"special_bonus_shard"		"-15"
+				"value"						"45 42.5 40 37.5 35 32.5 30"	
+				"special_bonus_shard"		"-10"
 
-			}				
+			}
+			"hawk_count"					
+			{
+				"value"					"1"
+				"special_bonus_shard"	"+1"
+			}
+			"dive_damage"				"60 90 120 150 180 210 240"
+			"dive_root_duration"		"1.0 1.1 1.2 1.3 1.4 1.5 1.6"
+			"roaming_radius"					"280"
+			"roaming_seconds_per_rotation"			"4"
+			"hawk_base_attack_interval"						"4"
+			"min_move_speed"			"455"
+			"max_move_speed"			"1100"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"beastmaster_call_of_the_wild_hawk_attack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+		}
 	}
 	"beastmaster_hawk_invisibility"
 	{

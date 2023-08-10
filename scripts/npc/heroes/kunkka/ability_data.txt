@@ -109,14 +109,15 @@ DOTAAbilities
 			"stun_duration"
 			{
 				"value"								"1.4"
-				"special_bonus_unique_kunkka_7"		"+30%"
+				"special_bonus_unique_kunkka_7"		"+25%"
 			}
 			"delay"						"1.6 1.6 1.6 1.6"
 			"torrent_damage"
 			{
 				"value"			"80 160 240 320 400 480 560"
-				"special_bonus_unique_kunkka_7"		"+30%"
+				"special_bonus_unique_kunkka_7"		"+25%"
 			}
+			"damage_pct"						"15"
 			"damage_tick_interval"				"0.2"
 		}		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
