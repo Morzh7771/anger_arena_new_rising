@@ -29,6 +29,7 @@ guardian_of_the_ancients_confident_stance_on = class({
         MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
 	}end,
     GetModifierFixedAttackRate = function(self) 
+        print(self:GetParent():GetIncreasedAttackSpeed())
         if self:GetAbility():GetSpecialValueFor("atack_rate") ~= 0 and self:GetParent():HasModifier("modifier_guardian_of_the_ancients_command_height") then
             return  self:GetAbility():GetSpecialValueFor("atack_rate_ult") 
         else

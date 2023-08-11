@@ -13,12 +13,8 @@ function PreloadCache:_init()
 		return data
 	end
 
-	function load_kv_data(path, custom_path)
+	function load_kv_data(path)
 		local data = load_base_kv(path)
-		local new_data = load_base_kv(custom_path)
-
-		merge_table(data, new_data)
-
 		return data
 	end
 
@@ -26,10 +22,8 @@ function PreloadCache:_init()
 		self.hero_data = LoadKeyValues('scripts/npc/npc_heroes_custom.txt')
 	end
 
-	self.ability_data = self.ability_data or load_kv_data('scripts/npc/npc_abilities.txt', 'scripts/npc/npc_abilities_custom.txt')
+	self.ability_data = LoadKeyValues('scripts/npc/npc_abilities_custom.txt')
 end
-
-
 
 function PreloadCache:GetHeroData()
 	return self.hero_data

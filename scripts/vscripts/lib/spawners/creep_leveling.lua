@@ -31,6 +31,7 @@ function CreepLeveling:Init()
 	self.inited = true
 
 	for spawner_type, spawners in pairs(stats) do
+		
 		merge_table(spawners, base_stats)
 
 		for spawner_level, spawner_info in pairs(spawners) do
