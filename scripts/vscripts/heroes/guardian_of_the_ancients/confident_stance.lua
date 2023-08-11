@@ -29,14 +29,19 @@ guardian_of_the_ancients_confident_stance_on = class({
         MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
 	}end,
     GetModifierFixedAttackRate = function(self) 
-        print(self:GetParent():GetIncreasedAttackSpeed())
-        if self:GetAbility():GetSpecialValueFor("atack_rate") ~= 0 and self:GetParent():HasModifier("modifier_guardian_of_the_ancients_command_height") then
-            return  self:GetAbility():GetSpecialValueFor("atack_rate_ult") 
-        else
-            return  self:GetAbility():GetSpecialValueFor("atack_rate_base")
+        if(self:GetParent():GetIncreasedAttackSpeed() > 0.67) then
+            if self:GetAbility():GetSpecialValueFor("atack_rate") ~= 0 and self:GetParent():HasModifier("modifier_guardian_of_the_ancients_command_height") then
+                return  self:GetAbility():GetSpecialValueFor("atack_rate_ult") 
+            else
+                return  self:GetAbility():GetSpecialValueFor("atack_rate_base")
+            end
         end
     end,
-    GetModifierBaseAttack_BonusDamage = function(self) return self:GetAbility():GetSpecialValueFor('damage_const_bonus') * (self:GetParent():GetIncreasedAttackSpeed()*100) end,
+    GetModifierBaseAttack_BonusDamage = function(self)
+        if(self:GetParent():GetIncreasedAttackSpeed() > 0.67) then
+            return self:GetAbility():GetSpecialValueFor('damage_const_bonus') * ((self:GetParent():GetIncreasedAttackSpeed()-0.67)*100) 
+        end
+    end,
     GetHeroEffectName = function (self) return "particles/units/heroes/hero_sven/sven_gods_strength_hero_effect.vpcf" end,
     GetStatusEffectName = function (self) return "particles/status_fx/status_effect_gods_strength.vpcf" end,
 })
@@ -50,9 +55,11 @@ function guardian_of_the_ancients_confident_stance_on:OnCreated()
 end
 function guardian_of_the_ancients_confident_stance_on:GetModifierBaseDamageOutgoing_Percentage() 
     if self:GetAbility():GetSpecialValueFor('damage_amp_bonus') > 0 then
-        local attackspeed = math.floor(self:GetParent():GetIncreasedAttackSpeed() * 100)
-        local pct = self:GetAbility():GetSpecialValueFor('damage_amp_bonus') / 100
-        local total = (attackspeed * pct) * 100
-        return math.max(total,0)
+        if(self:GetParent():GetIncreasedAttackSpeed() > 0.67) then
+            local attackspeed = math.floor((self:GetParent():GetIncreasedAttackSpeed()-0.67) * 100)
+            local pct = self:GetAbility():GetSpecialValueFor('damage_amp_bonus') / 100
+            local total = (attackspeed * pct) * 100
+            return math.max(total,0)
+        end
     end
 end
