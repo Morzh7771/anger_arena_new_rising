@@ -28,45 +28,23 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"1.5 1.75 2.0 2.25 2.5 2.75 3.0"
+				"value"					"1.5 1.75 2.0 2.25 2.5 2.75 3.0"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_2"
 			}			
-			"02"
+			"radius"						"400"
+			"damage_per_second"				"50 70 90 110 130 150 170"
+			"tick_interval"					"0.5"
+			"unit_count"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"400"
-			}	
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"				"50 70 90 110 130 150 170"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"tick_interval"					"0.5"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"unit_count"					"2"
+				"value"					"2"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_7"
 			}		
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius_scepter"				"500"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_pct"				"20"
-			}	
+			"radius_scepter"				"500"
+			"damage_pct"				"20"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -94,39 +72,25 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"					"300 350 400 450 500 550 600"
+			"bonus_hero_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"300 350 400 450 500 550 600"
-			}
-			
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hero_damage"			"75 150 225 300 375 450 525"
+				"value"			"75 150 225 300 375 450 525"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_6"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-						
-			"03"
+			"attack_interval"				"0.2"
+			"creep_damage_penalty"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"attack_interval"				"0.2"
-			}
-
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"creep_damage_penalty"			"200"
+				"value"			"200"
 				"CalculateSpellDamageTooltip"	"0"
 
 			}
-			"05"
+			"AbilityCharges"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"AbilityCharges"		""
+				"value"		""
 				"LinkedSpecialBonus"	"special_bonus_unique_ember_spirit_4"
 			}
 		}

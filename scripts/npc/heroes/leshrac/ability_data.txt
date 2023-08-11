@@ -175,56 +175,35 @@ DOTAAbilities
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"90 140 190 240 290 340 390"
+				"value"			"90 140 190 240 290 340 390"
 				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_6"
 			}			
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"jump_count"			"5 6 7 8 9 10 11"
+			"jump_count"			"5 6 7 8 9 10 11"
 			}			
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"475"
+			"radius"			"475"
+			"jump_delay"			"0.25 0.25 0.25 0.25"
 			}
-			"04"
+			"slow_movement_speed"	"-75"
+			"slow_duration"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"jump_delay"			"0.25 0.25 0.25 0.25"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_movement_speed"	"-75"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
+				"value"		"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_2"
 			}	
-			"07"
+			"bounce_twice"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"interval_scepter"			"1.5"
-				"RequiresScepter"		"1"
+				"value"								"0"
+				"special_bonus_unique_leshrac_2"	"+1"
+			}	
+			"pulse_nova_lightning_interval"			
+			{
+				"value"			"0"
+				"special_bonus_unique_leshrac_pulse_nova_lightning"		"+2"
 			}		
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_scepter"	"750"
-				"RequiresScepter"		"1"
-			}	
-			"09"
-			{
-				"damage_pct"			"50"
-			}	
+			"damage_pct"			"50"	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
