@@ -61,29 +61,16 @@ DOTAAbilities
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400 450 500 550 600 650 700"
+				"value"		"400 450 500 550 600 650 700"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_2"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"150 200 250 300 350 400 450"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_tree"				"150"
-			}
+			"duration"				"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
+			"damage"				"150 200 250 300 350 400 450"
+			"radius_tree"				"150"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -250,61 +237,33 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"				"30.0"
+			"replica_damage_outgoing"	"-20 -10 0 10 20 30 40"
+			"tooltip_outgoing"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"30.0"
-			}			
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"replica_damage_outgoing"	"-20 -10 0 10 20 30 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_outgoing"	"80 90 100 110 120 130 140"
+				"value"	"80 90 100 110 120 130 140"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_7"
 			}
-			"04"
+			"replica_damage_incoming"	"100"
+			"tooltip_replica_total_damage_incoming"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"replica_damage_incoming"	"100"
-			}	
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_replica_total_damage_incoming"	"200"
+				"value"	"200"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}				
-			"06"
+			"width"					"1300"
+			"replica_scale"	"0"
+			"movement_slow"					"50"
+			"slow_duration"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"1300"
-			}			
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"replica_scale"	"0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_slow"					"50"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"				"1"
+				"value"				"1"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_12"
 			}	
-			"10"
+			"scepter_length_multiplier"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_length_multiplier"				"2"
+				"value"			"2"
 				"RequiresScepter"		"1"
 			}
 		}

@@ -182,47 +182,24 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"attack_count"	
 			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_count"				"3"
+				"value"			"3"
 				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_attack_count"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"				  
 			}
-			"02"
+			"heal_radius"				"650"
+			"heal_pct"					"35 40 45 50 55 60 65"
+			"heal_from_creeps"			"0"
+			"bonus_damage"	
 			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_radius"				"650"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_pct"					"35 40 45 50 55 60 65"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_from_creeps"			"0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"125 150 175 200 225 250 275"
+				"value"			"125 150 175 200 225 250 275"
 				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_crit"
 			}	
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"proc_cooldown"				"0.00"
-			}	
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"allied_healing_pct"		"50"
-			}				
-		
+			"proc_cooldown"				"0.00"
+			"allied_healing_pct"		"50"		
 		}
 	}
 	"dawnbreaker_solar_guardian"
