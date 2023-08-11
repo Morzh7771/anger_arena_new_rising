@@ -99,7 +99,6 @@ function PercentDamage:_init()
 		"shadow_shaman_ether_shock",
 		"shadow_shaman_shackles",
 		"zuus_heavenly_jump",
-		"zuus_thundergods_wrath",
 		"zuus_lightning_bolt",
 		"witch_doctor_voodoo_restoration",
 		"storm_spirit_overload",

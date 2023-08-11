@@ -249,60 +249,32 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"trap_radius"				"400"
+			"trap_duration"				"5.0"
+			"trap_bonus_damage"			"250 300 350 400 450 500 550"
+			"movement_speed_min"			"30"
+			"movement_speed_max"			"60"
+			"trap_max_charge_duration"			"4"
+			"shard_min_silence_duration"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"trap_radius"				"400"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"trap_duration"				"5.0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350 400 450 500 550"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed_min"			"30"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed_max"			"60"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"trap_max_charge_duration"			"4"
-			}
-			"07"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"shard_min_silence_duration"		"1.5"
+				"value"		"1.5"
 				"RequiresShard"						"1"
 			}
-			"08"
+			"shard_max_silence_duration"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"shard_max_silence_duration"		"3.5"
+				"value"		"3.5"
 				"RequiresShard"						"1"
 			}
-			"09"
+			"shard_bonus_max_traps"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_bonus_max_traps"			"4"
+				"value"			"4"
 				"RequiresShard"						"1"
 			}
-			"10"
+			"shard_bonus_vision"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_bonus_vision"			"125"
+				"value"			"125"
 				"RequiresShard"						"1"
 			}
 		}

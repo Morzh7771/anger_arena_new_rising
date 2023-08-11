@@ -163,40 +163,29 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage"			"120 160 200 240 280 320 360"
+			"int_multiplier"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"120 160 200 240 280 320 360"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"	"1 1.5 2 2.5 3 3.5 4"
+				"value"	"1 1.5 2 2.5 3 3.5 4"
 				"LinkedSpecialBonus"	"special_bonus_unique_silencer_4"
 			}
-			"03"
+			"debuff_duration"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"debuff_duration"	"4"
+				"value"	"4"
 				"LinkedSpecialBonus"	"special_bonus_unique_silencer_2"
 			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"	"4.0"
+			"duration"	"4.0"
 			}
-			"05"
+			"scepter_radius"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"scepter_radius"		"500"
+				"value"		"500"
 				"RequiresScepter"			"1"
 			}
-			"06"
+			"scepter_bonus_damage"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"scepter_bonus_damage"		"0"
+				"value"		"0"
 				"RequiresScepter"			"1"
 			}
 		}

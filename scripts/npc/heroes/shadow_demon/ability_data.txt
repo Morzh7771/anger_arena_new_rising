@@ -192,49 +192,30 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"stack_damage"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"stack_damage"			"24 36 48 60 72 84 96"
+				"value"		"24 36 48 60 72 84 96"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
-			"02"
+			"max_multiply_stacks"	"6"
+			"bonus_stack_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_multiply_stacks"	"6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stack_damage"	"75"
+				"value"	"75"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
-			"04"
+			"radius"				"200"
+			"speed"					"1000 1000 1000 1000"
+			"hit_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"200"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1000 1000 1000 1000"
-			}
-			"06" //Damage that is applied every time shadow poison is applied.
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hit_damage"			"30 40 50 60 70 80 90"
+				"value"			"30 40 50 60 70 80 90"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_pct"			"35"
-			}
+			"damage_pct"			"35"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -377,7 +358,7 @@ DOTAAbilities
 		{
 				"purge_damage"		
 				{
-					"value"	"300 450 600"
+					"value"	"300 450 600 750 900 1050"
 					"LinkedSpecialBonus"	"special_bonus_unique_shadow_demon_1"
 				}
 				"max_charges"		

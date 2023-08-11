@@ -32,55 +32,44 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"gush_damage"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"gush_damage"		"130.0 205.0 280.0 355.0 430.0 505.0 580.0"
+				"value"		"130.0 205.0 280.0 355.0 430.0 505.0 580.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_2"
 			}
-			"02"
+			"projectile_speed"	"2500"
+			"movement_speed"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"projectile_speed"	"2500"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"movement_speed"	"-40"
+				"value"	"-40"
 				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_5"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
-
 			}
-			"04"
+			"negative_armor"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"negative_armor"		"6 8 10 12 14 16 18"
+
+				"value"		"6 8 10 12 14 16 18"
 				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter"
 			}
-			"05"
+			"speed_scepter"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"speed_scepter"		"1500"
+				"value"		"1500"
 				"RequiresScepter"		"1"
 			}
-			"06"
+			"aoe_scepter"	
 			{
-				"var_type"			"FIELD_INTEGER"
-				"aoe_scepter"		"260"
+				"value"	"260"
 				"RequiresScepter"		"1"
 			}
-			"07"
+			"cooldown_scepter"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"cooldown_scepter"		"7"
+				"value"		"7"
 				"RequiresScepter"		"1"
 			}
-			"08"
+			"cast_range_scepter"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"cast_range_scepter"		"2200"
+				"value"		"2200"
 				"RequiresScepter"		"1"
 			}	
 		}
@@ -97,30 +86,25 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage_reduction"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"22.0 45.0 68.0 91.0 114.0 137.0 160.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_4"
-				"CalculateSpellDamageTooltip"	"0"
+				"value"				"22.0 45.0 68.0 91.0 114.0 137.0 160.0"
+				
 			}
-			"02"
+			"damage_cleanse"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_cleanse"		"500"
-				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_6"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_reset_interval"	"5"
+				"value"		"600 575 550 525 500 475 450"
+				"special_bonus_unique_tidehunter_6"	"-100"
 
-				"CalculateSpellDamageTooltip"	"0"
 			}
+			"damage_reset_interval"	"7.0"
+			"bonus_reduction_per_stack"
+			{
+				"value"				"0"
+				"special_bonus_unique_tidehunter_4"	"+10"
+			}				
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -238,7 +222,7 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Ability.Ravage"
-		"IsGrantedByShard"				"1"
+		"IsGrantedByShard"				"0"
 		"MaxLevel"						"1"
 
 		// Casting
@@ -266,6 +250,51 @@ DOTAAbilities
 			"damage_pct"					"40"
 			"duration_pct"					"40"
 			"range_pct"						"75"
+		}
+	}
+	"tidehunter_dead_in_the_water"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5407"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"IsGrantedByShard"				"1"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+
+		// Damage.
+		"AbilityDamage"					"200"
+
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"attacks_to_destroy"			"5"
+			"max_movement_speed"			"100"
+			"chain_length"					"350"
+			"duration"						"10"
+			"projectile_speed"				"1000"
 		}
 	}
 }

@@ -202,35 +202,21 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"base_damage"				"100 200 300 400 500 600 700"
+			"radius"					"400 450 500 550 600 650 700"
+			"cast_range"					"700"
+			"damage_multiplier"	
 			{
-				"var_type"						"FIELD_INTEGER"
-				"base_damage"				"100 200 300 400 500 600 700"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"400 450 500 550 600 650 700"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range"					"700"
-			}			
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_multiplier"			"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
+				"value"			"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
 				"LinkedSpecialBonus"		"special_bonus_unique_outworld_devourer_4"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"illusion_bonus_damage"	"200"
-			}
+			"illusion_bonus_damage"	"200"
+			"debuff_duration"	"7"
+			"percentage_damage"	"100"
+			"percentage_heal"	"150"
 		}
 	}
 }

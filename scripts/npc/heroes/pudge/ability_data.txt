@@ -106,53 +106,36 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"rot_radius"			"250"
+			"rot_tick"				"0.2"
+			"rot_slow"	
 			{
-				"var_type"				"FIELD_INTEGER"
-				"rot_radius"			"250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"rot_tick"				"0.2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"rot_slow"				"-14 -16 -18 -20 -22 -24 -26"
+				"value"			"-14 -16 -18 -20 -22 -24 -26"
 				"LinkedSpecialBonus"			"special_bonus_unique_pudge_4"
 			}
-			"04"
+			"rot_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"rot_damage"			"30 60 90 120 150 180 210"
+				"value"				"30 60 90 120 150 180 210"
 				"LinkedSpecialBonus"	"special_bonus_unique_pudge_2"
 			}
-			"05"
+			"scepter_rot_damage_bonus"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_rot_damage_bonus"			"190"
+				"value"				"190"
 				"RequiresScepter"			"1"
 			}
-			"06"
+			"scepter_rot_radius_bonus"	
 			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_rot_radius_bonus"			"200"
+				"value"			"200"
 				"RequiresScepter"			"1"
 			}
-			"06"
+			"scepter_rot_regen_reduction_pct"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_rot_regen_reduction_pct"			"20"
+				"value"				"20"
 				"RequiresScepter"				"1"
 			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_pct"			"15"
-			}
+			"damage_pct"			"15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

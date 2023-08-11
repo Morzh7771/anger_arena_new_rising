@@ -35,50 +35,30 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"movement_speed"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"150 190 220 250 270 300 330"
+				"value"		"150 190 220 250 270 300 330"
 				"LinkedSpecialBonus"	"special_bonus_unique_spirit_breaker_4"
 			}
-			"02"
+			"stun_duration"			"0.9 1.0 1.1 1.2 1.3 1.4 1.5"
+			"bash_radius"			"300"
+			"vision_radius"			"400"
+			"vision_duration"		"0.94"
+			"scepter_cooldown"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.9 1.0 1.1 1.2 1.3 1.4 1.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bash_radius"			"300"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"400"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"vision_duration"		"0.94"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_cooldown"		"8"
+				"value"		"8"
 				"RequiresScepter"			"1"
 			}
-			"07"
+			"scepter_speed"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_speed"			"225"
+				"value"			"225"
 				"RequiresScepter"			"1"
 			}
-			"08"
+			"scepter_cast_point"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_cast_point"		"0.1"
+				"value"		"0.1"
 				"RequiresScepter"			"1"
 			}
 		}

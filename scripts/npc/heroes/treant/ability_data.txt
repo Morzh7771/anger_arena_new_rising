@@ -76,49 +76,20 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage_per_second"	
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_per_second"				"50.0 70.0 90.0 110.0 130.0 150.0 170.0"
+				"value"			"50.0 70.0 90.0 110.0 130.0 150.0 170.0"
 				"LinkedSpecialBonus"			"special_bonus_unique_treant_9"
 			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"30"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"vines_duration"				"7.0 8.0 9.0 10.0 11.0 12.0 13.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"creation_interval"			"0.1"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"initial_latch_delay"			"0.3"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"vine_spawn_interval"		"175"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"latch_range"		"135"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"latch_vision"		"150"
-			}
+			"movement_slow"				"30"
+			"vines_duration"				"7.0 8.0 9.0 10.0 11.0 12.0 13.0"
+			"creation_interval"			"0.1"
+			"initial_latch_delay"			"0.3"
+			"vine_spawn_interval"		"175"
+			"latch_range"		"135"
+			"latch_vision"		"150"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -148,42 +119,23 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage_interval"				"1"
+			"leech_damage"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_interval"				"1"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"leech_damage"					"25.0 50.0 75.0 100.0 125.0 150.0 175.0"
+				"value"					"25.0 50.0 75.0 100.0 125.0 150.0 175.0"
 				"LinkedSpecialBonus"			"special_bonus_unique_treant_2"
 			}		
-			"03"
+			"movement_slow"	
 			{
-				"var_type"						"FIELD_INTEGER"
-				"movement_slow"					"-6.0 -10.0 -14.0 -18.0 -22.0 -26.0 -30.0"
+				"value"				"-6.0 -10.0 -14.0 -18.0 -22.0 -26.0 -30.0"
 				"LinkedSpecialBonus"			"special_bonus_unique_treant_3"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
-
 			}	
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"650"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"5.0"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"projectile_speed"				"450"
-			}
+			"radius"						"650"
+			"duration"						"5.0"
+			"projectile_speed"				"450"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

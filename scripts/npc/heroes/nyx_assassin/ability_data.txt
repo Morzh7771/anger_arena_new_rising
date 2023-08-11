@@ -31,40 +31,22 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"width"				"150"
-			}
-			"02"
+			"width"				"150"
+			"duration"
 			{	
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.1 1.25 1.4 1.55 1.7 1.85 2.0"
+				"value"			"1.1 1.25 1.4 1.55 1.7 1.85 2.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx_4"
 			}
-			"03"
+			"length"			"750"
+			"speed"				"1600"
+			"impale_damage"	
 			{
-				"var_type"			"FIELD_INTEGER"
-				"length"			"750"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"speed"				"1600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"impale_damage"			"100 160 220 280 340 400 460"
+				"value"			"100 160 220 280 340 400 460"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx_2"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_pct"			"100"
-			}
+			"damage_pct"			"100"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -200,7 +182,7 @@ DOTAAbilities
 				"value"					"0.4 0.6 0.8 1.0 1.2 1.4 1.6"
 				"special_bonus_unique_nyx_6"	"+0.6"
 			}
-			"damage_reflect_pct"				"100"
+			"damage_reflect_pct"				"125"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
