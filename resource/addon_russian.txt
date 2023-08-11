@@ -193,6 +193,9 @@
         "DOTA_Tooltip_ability_abyss_warrior_ethereal_charge_stun_duration"		"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
         "DOTA_Tooltip_modifier_abyss_warrior_ethereal_charge"					"Ethernal Charge"
         "DOTA_Tooltip_modifier_abyss_warrior_ethereal_charge_stun"				"Ethernal Charge Stun"
+
+
+		"npc_dota_hero_guardian_of_the_ancients"							"Guardian of the Ancients"
         
         "npc_aa_keymaster_radiant"											"Keymaster"
         "npc_aa_keymaster_dire"												"Keymaster"
@@ -586,6 +589,67 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"					"2 заряда Acorn Shot"
 
+		"DOTA_Tooltip_ability_special_bonus_unique_guardian_of_the_ancients_ficle_ground_add_dmg"			"Ficle Ground наносит урон от атаки"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_guardian_of_the_ancients_guardians_step_add_dmg"			"Бьет всех врагов на пути Guardian`s step"
+		"DOTA_Tooltip_ability_special_bonus_unique_guardian_of_the_ancients_guardians_step_no_dmg"			"Дает неуязвимость на время Guardian`s step"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_guardian_of_the_ancients_command_height_can_move"					"Передвижение во время Сommand Height"
+		"DOTA_Tooltip_ability_special_bonus_unique_guardian_of_the_ancients_command_height_can_move_Description"		"Дает +{s:bonus_ms} скорости передвижения во время Сommand Height"
+		
+		"DOTA_Tooltip_ability_special_bonus_unique_guardian_of_the_ancients_command_height_range"						"Дает +{s:bonus_attack_range} к дальности атаки во впемя Сommand Height"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_guardian_of_the_ancients_confident_stance_attack_rate"				"Уменьшает время на атаку Confident Stance"
+		"DOTA_Tooltip_ability_special_bonus_unique_guardian_of_the_ancients_confident_stance_attack_rate_Description"	"Уменьшает время на атаку под действием Confident Stance с 1 до 0,75 во время действия Command Height"
+
+
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground"						"Ficle Ground"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_Description"			"Сотресает землю в выбраной точке c интервалом %interval%  секунды в радиусе %aoe_range%"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_damage"					"УРОН:"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_impuls_max"				"КОЛИЧЕСТВО ТОЛЧКОВ:"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_duration"				"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_slow_pct"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_guardians_step"						"Guardian`s step"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_guardians_step_Description"			"Делает рывок со скорость %dash_speed%  уничтожеает все деревья в радиусе %tree_cut_range%  вокруг героя"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_guardians_step_dash_range"			"РАССТОЯНИЕ РЫВКА:"
+
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance"						"Confident Stance"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance_Description"			"Позволяет наносить только %atack_rate_base% удар в секунду но герой получает %damage_const_bonus% базового урона за каждую еденицу скорость атаки. " 
+		
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height"						"Command Height"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_Description"			"Останавливает героя на месте делая его героем дальнего боя."
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_attack_range"			"БОНУС ДАЛЬНОСТИ АТАКИ:"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_duration"				"ДЛИТЕЛЬНОСТЬ:"
+
+
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many"					"One Against Many"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_Description"			"Получает бонус скорости атаки за каждого врага в радиусе %radius%"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_hero_bonus"			"БОНУС ЗА ГЕРОЯ:"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_creep_bonus"			"БОНУС ЗА КРИПА:"
+		
+
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_scepter_Description"	"Дарует полную неуязвимость к урону во время Confident Stance"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance_shard_Description"	"Так же получает %damage_amp_bonus%%%  дополнительного урона за еденицу скорости атаки"
+		
+		"DOTA_Tooltip_modifier_slow"				"Замедление"
+		"DOTA_Tooltip_modifier_slow_Description"	"Замедляет вас на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
+		"DOTA_Tooltip_BaseClass_dash_buff"			"Рывок"
+
+		"DOTA_Tooltip_guardian_of_the_ancients_confident_stance_on"						"Confident Stance"
+		"DOTA_Tooltip_guardian_of_the_ancients_confident_stance_on_Description"			"Добовляет %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% базового урона а так же увеличивает ваш урон на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%"
+
+		"DOTA_Tooltip_guardian_of_the_ancients_one_against_many_bonus"					"One Against Many"
+		"DOTA_Tooltip_guardian_of_the_ancients_one_against_many_bonus_Description"		"Увеличивает вашу скорость атаки на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%"
+
+
+		"DOTA_Tooltip_ability_item_repick"												"SWITCH HERO"
+		"DOTA_Tooltip_ability_item_repick_Description"									"Менает вашего героя на его альтернативную версию пропадет через 90 секунд после начала игры"
+
+		"npc_dota_hero_elder_titan_npedesc1"											"Имеет альтернативную версию что-бы её активировать нужно использовать предмет Switch Hero в начале игры"
+
+		
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua"						"Acorn Shot"
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Description"			"Герой совершает атаку увеличенной дальности, зарядив особый жёлудь, который отскакивает во врагов неподалёку. Если врагов нет, то отскочит в ближайшее дерево, а также замедляет всех жертв и наносит им базовый урон, к которому прибавляется атака героя .\nМожно применить на точку, чтобы создать дерево, после чего жёлудь отскочит в ближайших врагов. Если включить автоматическое применение, способность всегда будет применяться на точку."
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Lore"					"Прохвостка совсем не привередливая, но из желудей дубового и железного дерева получаются самые эффективные снаряды — их она и припасла больше всего."

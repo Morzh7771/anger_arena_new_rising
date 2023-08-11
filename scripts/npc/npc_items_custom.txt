@@ -3878,4 +3878,29 @@
             "bonus_int"                 "35"
 		}
     }
+    "item_repick"
+    {
+        "BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_repick"
+		"AbilityTextureName"			"third_eye"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+
+        "ItemPermanent"					"0"
+		"ItemInitialCharges"				"1"
+        "ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"1"
+
+		"ItemContributesToNetWorthWhenDropped"	"0"
+
+        "ShouldBeInitiallySuggested"	"1"
+		"IsTempestDoubleClonable"		"0"
+
+        "AbilityCooldown"				"0"
+        "AbilityValues"
+		{
+            "duration"                  "90"
+		}
+    }
 }

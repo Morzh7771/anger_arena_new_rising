@@ -1,0 +1,214 @@
+"DOTAAbilities"
+{
+	"guardian_of_the_ancients_ficle_ground"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/guardian_of_the_ancients/ficle_ground"
+		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.Avalanche"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30 28 26 24 22 20 18"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 150 175 200 225 250 275"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"interval"				"1 0.9 0.8 0.7 0.6 0.5 0.4"
+				"aoe_range"				"300"
+				"damage"				"100 150 200 250 300 350 400"
+				"impuls_max"			"4 5 6 7 8 9 10"
+				"duration"				"2"
+				"slow_pct"				"10 15 20 25 30 35 40"
+				"talant_caster_damage"
+				{
+					"value"				"0"
+					"special_bonus_unique_guardian_of_the_ancients_ficle_ground_add_dmg"			"1"
+				}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"guardian_of_the_ancients_guardians_step"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/guardian_of_the_ancients/guardians_step"
+		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.Avalanche"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 90 80 70 60 50 40 30"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"dash_range"				"200 250 300 350 400 450 500"
+				"dash_speed"				"2000"
+				"tree_cut_range"			"200"
+				"talant_caster_damage"
+				{
+					"value"				"0"
+					"special_bonus_unique_guardian_of_the_ancients_guardians_step_add_dmg"			"1"
+				}
+				"talant_no_dmg"
+				{
+					"value"				"0"
+					"special_bonus_unique_guardian_of_the_ancients_guardians_step_no_dmg"			"1"
+				}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"guardian_of_the_ancients_confident_stance"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/guardian_of_the_ancients/confident_stance"
+		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCooldown"				"2"
+		"MaxLevel"						"1"
+		"HasShardUpgrade"				"1"
+		"HasScepterUpgrade"				"1"
+		"AbilityValues"
+		{					
+			"damage_const_bonus"	"1"
+			"damage_amp_bonus"	
+			{	
+				"value"									"0"
+				"special_bonus_shard"					"0.1"
+			}
+			"atack_rate"	
+			{	
+				"value"																	"0"
+				"special_bonus_unique_guardian_of_the_ancients_confident_stance_attack_rate"					"1" 
+			}
+			"atack_rate_base"					"1" 		// поменять в таланте там хардкод
+			"atack_rate_ult"					"0.75" 		// поменять в таланте там хардкод
+		}
+	}
+	"guardian_of_the_ancients_command_height"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/guardian_of_the_ancients/command_height"
+		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCooldown"				"140 130 120 110 100 90 80"
+
+		"MaxLevel"						"7"
+
+		"AbilityManaCost"				"200 250 300 350 400 450 500"
+
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.3"
+
+		"HasScepterUpgrade"			"1"
+
+		"AbilityValues"
+		{					
+			"duration"					"5 6 7 8 9 10 11"
+			"attack_range"		
+			{
+				"value" 				"500"
+				"special_bonus_unique_guardian_of_the_ancients_command_height_range"			"200"
+			}		
+			"ms"
+			{
+				"value" 				"0.1"
+				"special_bonus_unique_guardian_of_the_ancients_command_height_can_move"			"50"
+			}
+			"invul"			
+			{
+				"value"		"0"
+				"RequiresScepter"						"1"
+				"special_bonus_scepter"	"1"
+			}
+		}
+	}
+
+	"guardian_of_the_ancients_one_against_many"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/guardian_of_the_ancients/one_against_many"
+		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"7"
+		"AbilityValues"
+		{					
+			"radius"					"1200"
+			"hero_bonus"				"10 20 30 40 50 60 70"
+			"creep_bonus"				"5 10 15 20 25 30 35"
+		}
+	}
+	"special_bonus_unique_guardian_of_the_ancients_command_height_range"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_guardian_of_the_ancients_confident_stance_attack_rate"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_guardian_of_the_ancients_ficle_ground_add_dmg"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_guardian_of_the_ancients_guardians_step_add_dmg"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_guardian_of_the_ancients_command_height_can_move"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_guardian_of_the_ancients_guardians_step_no_dmg"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+}
