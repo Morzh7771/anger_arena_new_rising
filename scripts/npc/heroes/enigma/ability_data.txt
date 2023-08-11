@@ -88,54 +88,32 @@ DOTAAbilities
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"140 150 160 170 180 190 200"
-
+		"AbilityHealthCost"				"140 150 160 170 180 190 200"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"spawn_count"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"spawn_count"			"3 3 3 3"
+				"value"			"3 3 3 3"
 				"LinkedSpecialBonus"	"special_bonus_unique_enigma"
 			}
-			"02"
+			"split_attack_count"	"6 6 6 6"
+			"eidolon_hp_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"split_attack_count"	"6 6 6 6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eidolon_hp_tooltip"	"200 275 350 425 500 575 650"
+				"value"	"200 275 350 425 500 575 650"
 				"LinkedSpecialBonus"	"special_bonus_unique_enigma_7"
 			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"life_extension"		"2.0 2.0 2.0 2.0"
+			"life_extension"		"2.0 2.0 2.0 2.0"
 			}
-			"05"
+			"eidolon_dmg_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"eidolon_dmg_tooltip"	"20 29 39 50 62 75 89"
+				"value"	"20 29 39 50 62 75 89"
 				"LinkedSpecialBonus"	"special_bonus_unique_enigma_3"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"creep_max_level"		"7"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eidolon_magic_resist_tooltip"		"30 35 40 45 50 55 60"
-			}	
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eidolon_attack_range_tooltip"		"425 450 475 500 525 550 575"
-			}
+			"creep_max_level"		"7"
+			"eidolon_magic_resist_tooltip"		"30 35 40 45 50 55 60"
+			"eidolon_attack_range_tooltip"		"425 450 475 500 525 550 575"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -168,25 +146,20 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"650"
+				"value"					"650"
 				"LinkedSpecialBonus"	"special_bonus_unique_enigma_9"
 			}
-			"02"
+			"duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"9"
+				"value"					"9"
 				"LinkedSpecialBonus"	"special_bonus_unique_enigma_8"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_percent"			"3 3.5 4 4.5 5 5.5 6"
-			}
+			"damage_percent"			"3 3.5 4 4.5 5 5.5 6"
+			"tick_rate"			"0.5"
 		}
 	}
 	"enigma_black_hole"

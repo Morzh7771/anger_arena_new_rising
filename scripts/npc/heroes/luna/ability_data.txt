@@ -14,7 +14,7 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Luna.LucentBeam.Target"
-		"HasShardUpgrade"				"1"
+		"HasShardUpgrade"				"0"
 
 
 		// Casting
@@ -86,6 +86,7 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Luna.MoonGlaive.Impact"
+		"HasShardUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -98,6 +99,60 @@ DOTAAbilities
 			{
 				"value"							"50 45 40 30 25 20 15"
 				"special_bonus_unique_luna_7"	"-5"
+			}
+			"rotating_glaives"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+4"
+			}
+
+			"rotating_glaives_hit_radius"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+90"
+			}
+
+			"rotating_glaives_movement_radius"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+150"
+			}
+
+			"rotating_glaives_damage_reduction"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+20"
+			}
+
+			"rotating_glaives_speed"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+160"
+			}
+
+
+			"rotating_glaives_duration"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+6"
+			}
+
+			"rotating_glaives_collision_damage"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+75"
+			}
+
+			"AbilityCooldown"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+25"
+			}
+
+			"AbilityManaCost"
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+25"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"

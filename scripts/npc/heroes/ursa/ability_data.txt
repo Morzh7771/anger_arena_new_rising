@@ -35,7 +35,12 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"shock_radius"				"385"
+			"shock_radius"				
+			{
+				"value"		"385"
+				"affected_by_aoe_increase"	"1"
+				"special_bonus_unique_ursa_2"			"+400"
+			}
 			"movement_slow"				"-22 -25 -28 -31 -34 -37 -40"
 			"hop_distance"				"250"
 			"hop_duration"				"0.25"
@@ -87,19 +92,15 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"max_attacks"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"max_attacks"				"3 4 5 6 7 8 9"
+				"value"					"3 4 5 6 7 8 9"
 				"LinkedSpecialBonus"		"special_bonus_unique_ursa_7"
 			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"attack_speed_bonus_pct"	"400 400 400 400"
-			}
+				"slow_resist"			"10 12.5 15 17.5 20 22.5 25"
 		}
 	}
 	"ursa_fury_swipes"
@@ -179,7 +180,7 @@ DOTAAbilities
 			"status_resistance"
 			{
 				"value"							"50"
-				"special_bonus_unique_ursa_8"			"+10"
+				"special_bonus_unique_ursa_8"			"+20"
 			}
 			"duration"
 			{

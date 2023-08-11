@@ -40,7 +40,7 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
-		"IsGrantedByScepter"			"1"
+		"IsGrantedByShard"			"1"
 		"AbilitySound"					"Hero_Enchantress.EnchantCreep"
 
 		// Casting
@@ -101,7 +101,7 @@ DOTAAbilities
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
-		"IsGrantedByShard"				"1"
+		"IsGrantedByScepter"				"1"
 		"AbilitySound"					"Hero_Enchantress.EnchantCreep"
 
 		// Casting
@@ -139,7 +139,7 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Enchantress.EnchantCreep"
-		"HasShardUpgrade"				"1"
+		"HasScepterUpgrade"				"1"
 
 		"AbilityDraftShardAbility"		"enchantress_little_friends"
 

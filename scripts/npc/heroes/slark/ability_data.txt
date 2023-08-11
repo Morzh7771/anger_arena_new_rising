@@ -119,49 +119,20 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"delay"					"1.5"
+			"pulse_duration"		"1.0"
+			"radius"				"325"
+			"total_damage"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pulse_duration"		"1.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"325"
-			}	
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_damage"			"80.0 160.0 240.0 320.0 400.0 480.0 560.0"
+				"value"		"80.0 160.0 240.0 320.0 400.0 480.0 560.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark_2"
 			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_pulses"			"10"
-			}	
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pulse_interval"		"0.1"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"self_damage_pct"			"30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_pct"			"20"
-			}							
+			"total_pulses"			"10"
+			"pulse_interval"		"0.1"
+			"self_damage_pct"			"30"
+			"damage_pct"			"20"						
 		}
 	}
 	"slark_pounce"

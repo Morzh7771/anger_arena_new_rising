@@ -212,67 +212,35 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"				"500"
+			"speed"					"1200"
+			"damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1200"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"120.0 160.0 200.0 240.0 280.0 320.0 360.0"
+				"value"					"120.0 160.0 200.0 240.0 280.0 320.0 360.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_4"
 			}
-			"04"
+			"buff_duration"			"6"
+			"base_absorb_amount"	"80.0 120.0 160.0 200.0 240.0 280.0 320.0"
+			"absorb_per_hero_hit"	"30.0 60.0 90.0 120.0 150.0 180.0 210.0"
+			"return_projectile_speed"	"900"
+			"max_charges"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"6"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_absorb_amount"	"80.0 120.0 160.0 200.0 240.0 280.0 320.0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"absorb_per_hero_hit"	"30.0 60.0 90.0 120.0 150.0 180.0 210.0"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"return_projectile_speed"	"900"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_charges"		"3"
+				"value"			"3"
 				"RequiresScepter"			"1"
 			}
-			"09"
+			"charge_restore_time"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"charge_restore_time"		"9"
+				"value"			"9"
 				"RequiresScepter"			"1"
 			}
-			"10"
+			"silence_duration_scepter"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"silence_duration_scepter"			"1.5"
+				"value"				"1.5"
 				"RequiresScepter"			"1"
 			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_pct"			"35"
-			}
+			"damage_pct"			"35"
 		}
 	}
 }

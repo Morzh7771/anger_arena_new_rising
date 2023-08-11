@@ -257,53 +257,17 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"										"FIELD_FLOAT"
-				"ball_lightning_initial_mana_percentage"		"6"
-			}
-			"02"
-			{
-				"var_type"										"FIELD_INTEGER"
-				"ball_lightning_initial_mana_base"				"35"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_move_speed"			"1400.0 1550.0 1700.0 1850.0 2000.0 2150.0 2300.0"		
-			}
-			"04"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_aoe"				"200"		
-			}
-			"05"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_travel_cost_base"	"15"		
-			}
-			"06"
-			{
-				"var_type"								"FIELD_FLOAT"
-				"ball_lightning_travel_cost_percent"	"0.55"		
-			}
-			"07"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"ball_lightning_vision_radius"			"400"		
-			}
-			"08"
-			{
-				"var_type"								"FIELD_FLOAT"
-				"blocker_duration"			"5"		
-			}
-			"09"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"scepter_remnant_interval"			"300"		
-			}
+			"ball_lightning_initial_mana_percentage"		"6"
+			"ball_lightning_initial_mana_base"				"35"
+			"ball_lightning_move_speed"			"1400.0 1550.0 1700.0 1850.0 2000.0 2150.0 2300.0"
+			"ball_lightning_aoe"				"200"		
+			"ball_lightning_travel_cost_base"	"15"		
+			"ball_lightning_travel_cost_percent"	"0.55"		
+			"ball_lightning_vision_radius"			"400"	
+			"blocker_duration"			"5"		
+			"scepter_remnant_interval"			"300"		
 		}
 	}
 	"special_bonus_unique_storm_spirit_5"

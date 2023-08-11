@@ -27,60 +27,26 @@ DOTAAbilities
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"hp_cost_perc"			"10"
+			"dash_length"	
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_cost_perc"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_length"			"1100 1150 1200 1250 1300 1350 1400" 
+				"value"		"1100 1150 1200 1250 1300 1350 1400" 
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_4"
 			}
-			"03"
+			"dash_width"			"500"
+			"hit_radius"			"200"
+			"burn_duration"			"4"
+			"damage_per_second"		"15 35 55 75 95 115 135"
+			"burn_tick_interval"	"0.2"
+			"slow_movement_speed_pct"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_width"			"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hit_radius"			"200"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"burn_duration"			"4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"15 35 55 75 95 115 135"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"burn_tick_interval"	"1.0"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow_movement_speed_pct"	"16 17.5 19 20.5 22 23.5 25"
+				"value"	"16 17.5 19 20.5 22 23.5 25"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_6"
 			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dive_duration"			"2.0"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_pct"			"35"
-			}
+			"dive_duration"			"2.0"
+			"damage_pct"			"7"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -126,59 +92,22 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"hp_cost_perc"		"15"
+			"spirit_duration"	"20"
+			"spirit_speed"		"900 900 900 900"
+			"radius"			"200"
+			"duration"			"4.0"
+			"attackspeed_slow"	"-80 -100 -120 -140 -160 -180 -200"
+			"damage_per_second"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"hp_cost_perc"		"15"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"spirit_duration"	"20"
-			}
-			"03"
-			{	
-				"var_type"			"FIELD_INTEGER"
-				"spirit_speed"		"900 900 900 900"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"200"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"4.0"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attackspeed_slow"	"-80 -100 -120 -140 -160 -180 -200"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_per_second"				"20 40 60 80 100 120 140"
+				"value"				"20 40 60 80 100 120 140"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
 			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spirit_count"		"5"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"tick_interval"		"1.0"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_pct"		"35"
-			}
+			"spirit_count"		"5"
+			"tick_interval"		"0.2"
+			"damage_pct"		"7"
 		}
 	}
 	"phoenix_sun_ray"
@@ -212,71 +141,30 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"hp_cost_perc_per_second"		"6"
+			"base_damage"			"14 20 26 32 38 44 50"
+			"hp_perc_damage"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"hp_cost_perc_per_second"		"6"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"base_damage"			"14 20 26 32 38 44 50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"hp_perc_damage"		"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+				"value"		"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_5"
 			}
-			"04"
+			"base_heal"			"7 10 13 16 19 22 25"
+			"hp_perc_heal"			"0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+			"radius"			"130"
+			"tick_interval"		"0.2"
+			"forward_move_speed"	"250"
+			"turn_rate_initial"			"250"
+			"turn_rate"					"25"
+			"shard_move_slow_pct"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"base_heal"			"7 10 13 16 19 22 25"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"hp_perc_heal"			"0.5 1.0 1.5 2.0 2.5 3.0 3.5"
-			}
-			
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"130"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"tick_interval"		"0.2"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"forward_move_speed"	"250"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"turn_rate_initial"			"250"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"turn_rate"					"25"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_move_slow_pct"			"12"
+				"value"			"12"
 				"RequiresShard"				"1"
 			}
-			"12"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_pct"		"10"
-			}
+			"damage_pct"		"10"
+			"blind_per_second"	"10"
+			"blind_duration"	"5"	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -342,49 +230,33 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"aura_radius"		"1200"
+			"damage_per_sec"	"60 90 120 150 180 210 240"
+			"tick_interval"		"0.2"
+			"stun_duration"	
 			{
-				"var_type"			"FIELD_INTEGER"
-				"aura_radius"		"1200"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_per_sec"	"60 90 120 150 180 210 240"
-			}
-			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.6 1.8 2 2.2 2.4 2.6 2.8"
+				"value"	"1.6 1.8 2 2.2 2.4 2.6 2.8"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_2"
 			}
-			"04"
+			"max_hero_attacks"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"max_hero_attacks"	"9 10 11 12 13 14 15"
+				"value"	"9 10 11 12 13 14 15"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
 			}
-			"05"
+			"max_hero_attacks_scepter"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"max_hero_attacks_scepter"	"12 13 14 15 16 17 18"
+				"value"	"12 13 14 15 16 17 18"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
 				"RequiresScepter"	"1"
 			}
-			"07"
+			"cast_range_tooltip_scepter"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"cast_range_tooltip_scepter"	"500"
+				"value"	"500"
 				"RequiresScepter"	"1"
 			}
-			"18"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_pct"		"100"
-			}
+			"damage_pct"		"50"
 		}
 	}
 	"phoenix_launch_fire_spirit"
@@ -415,59 +287,22 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"hp_cost_perc"		"15"
+			"spirit_duration"	"20"
+			"spirit_speed"		"900 900 900 900"
+			"radius"			"200"
+			"duration"			"4.0"
+			"attackspeed_slow"	"-80 -100 -120 -140 -160 -180 -200"
+			"damage_per_second"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"hp_cost_perc"		"15"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"spirit_duration"	"20.0 20.0 20.0 20.0"
-			}
-			"03"
-			{	
-				"var_type"			"FIELD_INTEGER"
-				"spirit_speed"		"900 900 900 900"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"200"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"4.0"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attackspeed_slow"	"-80 -100 -120 -140 -160 -180 -200"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_per_second"				"20 40 60 80 100 120 140"
+				"value"				"20 40 60 80 100 120 140"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
 			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spirit_count"		"5"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"tick_interval"		"1.0"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_pct"		"35"
-			}
+			"spirit_count"		"5"
+			"tick_interval"		"0.2"
+			"damage_pct"		"7"
 		}
 	}
 }

@@ -33,60 +33,38 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"120 170 220 270 320 370 420"
-				"LinkedSpecialBonus"		"special_bonus_unique_spectre_6"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"		"10 14 18 22 26 30 34"
-				"LinkedSpecialBonus"		"special_bonus_unique_spectre_3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dagger_path_duration"	"12.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hero_path_duration"	"7.0"
-			}
-			"05"	
-			{
-				"var_type"				"FIELD_FLOAT"
-				"buff_persistence"		"4.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dagger_radius"			"125"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"path_radius"			"175"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"200"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1000"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
+				"damage"				
+				{
+					"value"			"120 170 220 270 320 370 420"
+					"LinkedSpecialBonus"		"special_bonus_unique_spectre_6"
+				}
+				"bonus_movespeed"		
+				{
+					"value"			"10 14 18 22 26 30 34"
+					"LinkedSpecialBonus"		"special_bonus_unique_spectre_3"
+				}
+				"dagger_path_duration"	"12.0 12.0 12.0 12.0"
+				"hero_path_duration"	"7.0 7.0 7.0 7.0"
+				"buff_persistence"		"4.0 4.0 4.0 4.0"
+				"dagger_radius"			
+				{
+					"value"			"125"
+					"affected_by_aoe_increase"	"1"
+				}
+				"path_radius"			
+				{
+					"value"	"175"
+					"affected_by_aoe_increase"	"1"
+				}
+				"vision_radius"			
+				{
+					"value"			"200"
+					"affected_by_aoe_increase"	"1"
+				}
+				"speed"					"800"
 				"dagger_grace_period"	"1.0"
-			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -169,15 +147,14 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"spectre_haunt"
-		"MaxLevel"		"7"
+		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Spectre.Haunt"
+		"IsGrantedByScepter"			"1"
 
 		"AbilityDraftPreAbility"		"spectre_reality"
-		"AbilityDraftUltScepterAbility"		"spectre_haunt_single"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -186,7 +163,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"180 160 140 120 100 80"
+		"AbilityCooldown"				"120"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -194,39 +171,14 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"6.5"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_outgoing"	"-60 -50 -40 -30 -20 -10 0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_outgoing"			"40 50 60 70 80 90 100"
-				"LinkedSpecialBonus"		"special_bonus_unique_spectre_4"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_incoming"	"0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_total_damage_incoming"	"100"
-			}			
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"attack_delay"				"0"
-			}			
+			"duration"					"6.5"
+			"illusion_damage_outgoing"	"-20"
+			"tooltip_outgoing"			"80"
+			"illusion_damage_incoming"	"0"
+			"tooltip_illusion_total_damage_incoming"	"100"
+			"attack_delay"				"0"		
 		}
 	}
 	"spectre_haunt_single"
@@ -234,17 +186,16 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"spectre_haunt_single"
-		"MaxLevel"						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Spectre.Haunt"
-		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"7"
 
-		"IsGrantedByScepter"			"1"
 		"AbilityDraftPreAbility"		"spectre_reality"
 
 		// Casting
@@ -254,7 +205,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"80 75 70 65 60 55 50"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -262,45 +213,14 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"6.5"
-				"RequiresScepter"			"1"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_outgoing"	"-60 -50 -40 -30 -20 -10 0"
-				"RequiresScepter"			"1"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_outgoing"			"40 50 60 70 80 90 100"
-				"LinkedSpecialBonus"		"special_bonus_unique_spectre_4"
-				"RequiresScepter"			"1"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_incoming"	"0"
-				"RequiresScepter"			"1"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_total_damage_incoming"	"100"
-				"RequiresScepter"			"1"
-			}			
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
+				"illusion_damage_outgoing"	"-60 -50 -40 -30 -20 -20 -10"
+				"tooltip_outgoing"	"40 50 60 70 80 90 100"
+				"illusion_damage_incoming"	"100"
+				"tooltip_illusion_total_damage_incoming"	"200"
 				"attack_delay"				"0"
-				"RequiresScepter"			"1"
-			}						
 		}
 	}
 	"spectre_reality"

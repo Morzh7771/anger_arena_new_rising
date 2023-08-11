@@ -29,40 +29,22 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"start_radius"				"200 200 200 200"
+			"end_radius"				"300 300 300 300"
+			"end_distance"				"600"
+			"targets"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"start_radius"				"200 200 200 200"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"end_radius"				"300 300 300 300"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"end_distance"				"600"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"targets"					"3 4 5 6 7 8 9"
+				"value"					"3 4 5 6 7 8 9"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_7"
 			}
-			"05"
+			"damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"140 200 260 320 380 440 500"
+				"value"						"140 200 260 320 380 440 500"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_3"
 			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_pct"					"250"
-			}
+			"damage_pct"					"250"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -95,18 +77,11 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movespeed"					"100"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.2 1.5 1.8 2.1 2.4 2.7 3.0"
-			}
+			"movespeed"					"100"
+			"duration"					"1.2 1.5 1.8 2.1 2.4 2.7 3.0"
+			"damage_amp"				"5 7.5 10 12.5 15 17.5 20"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -221,57 +196,40 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 210 270 330 390 450 510"
+		"AbilityManaCost"				"150 270 390"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"ward_count"		"10"
+			"damage_tooltip"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"ward_count"		"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_tooltip"			"50 130 210"
+				"value"			"50 130 210"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_4"
 				"CalculateSpellDamageTooltip"	"0"				
 			}
-			"03"
+			"attack_range_tooltip"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_range_tooltip"		"650"
+				"value"		"650"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_8"
 			}
-			"04"
+			"duration"				"45.0 45.0 45.0"
+			"scepter_range"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"45.0 45.0 45.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_range"			"0"
+				"value"			"0"
 				"RequiresScepter"			"1"
 			}
-			"06"
+			"spawn_radius"			"150"
+			"hits_to_destroy_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"spawn_radius"			"150"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hits_to_destroy_tooltip"			"2"
+				"value"			"2"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_1"
 				"LinkedSpecialBonusField"		"value2"
 			}
-			"08"
+			"hits_to_destroy_tooltip_creeps"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hits_to_destroy_tooltip_creeps"		"4"
+				"value"		"4"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_1"
 			}
 		}

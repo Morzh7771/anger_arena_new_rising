@@ -236,35 +236,24 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"buff_duration"		"7"
+			"lifesteal_pct"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"buff_duration"		"7"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lifesteal_pct"			"22 26 30 34 38 42 46"
+				"value"			"10 12.5 15 17.5 20 22.5 25"
 				"LinkedSpecialBonus"	"special_bonus_unique_marci_guardian_lifesteal"
 			}
-			"03"
+			"bonus_damage"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"20 35 60 95 140 195 260"
+				"value"		"20 35 60 95 140 195 260"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_range"	"0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"nearest_ally_search_range"	"700"
-			}
+			"bonus_attack_range"	"0"
+			"nearest_ally_search_range"	"700"
+			"max_partner_distance"				"2500"
+			"max_partner_penalty"				"50"
+			"creep_lifesteal_reduction_pct"		"0"
 		}
 	}
 }

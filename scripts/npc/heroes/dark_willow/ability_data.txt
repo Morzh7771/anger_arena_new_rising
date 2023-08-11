@@ -30,53 +30,17 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"placement_range"		"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"placement_count"			"8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"placement_duration"		"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"latch_duration"		"0.75 1.0 1.25 1.5 1.75 2.0 2.75"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"latch_range"		"90"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_tick"		"50 55 60 65 70 75 80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"latch_creation_interval"		"0.075"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"latch_creation_delay"		"0.1"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"initial_creation_delay"		"0.3"
-			}
+			"placement_range"		"500"
+			"placement_count"			"8"
+			"placement_duration"		"15"
+			"latch_duration"		"0.75 1.0 1.25 1.5 1.75 2.0 2.75"
+			"latch_range"		"90"
+			"damage_per_tick"		"50 55 60 65 70 75 80"
+			"latch_creation_interval"		"0.075"
+			"latch_creation_delay"		"0.1"
+			"initial_creation_delay"		"0.3"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -163,38 +127,14 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"destination_travel_speed"	"2000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"destination_radius"		"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"destination_status_duration"	"2.0 2.2 2.4 2.6 2.8 3.0 3.2"
-			}	
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"return_travel_speed"	"600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"starting_height"		"300"
-			}	
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"telegraph_to_enemies"		"0"
-			}
+			"destination_travel_speed"	"2000"
+			"destination_radius"		"400"
+			"destination_status_duration"	"2.0 2.2 2.4 2.6 2.8 3.0 3.2"
+			"return_travel_speed"	"600"
+			"starting_height"		"300"
+			"telegraph_to_enemies"		"0"
 		}
 	}
 	"dark_willow_shadow_realm"
@@ -285,41 +225,31 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"delay"			"4"
+			"stun_duration"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"			"4"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.2 1.4 1.6 1.8 2.0 2.2 2.4"
+				"value"		"1.2 1.4 1.6 1.8 2.0 2.2 2.4"
 				"LinkedSpecialBonus"			"special_bonus_unique_dark_willow_6"
-			}
-			"03"
+			"stun_radius"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"stun_radius"			"360"
+				"value"			"360"
 				"LinkedSpecialBonus"			"special_bonus_unique_dark_willow_7"
 			}
-			"04"
+			"shard_delay_reduction"	
 			{
-				"var_type"						"FIELD_FLOAT"
-				"shard_delay_reduction"			"1"
+				"value"		"1"
 				"RequiresShard"					"1"
 			}			
-			"05"
+			"shard_bramble_amount"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_bramble_amount"			"4"
+				"value"			"4"
 				"RequiresShard"					"1"
 			}
-			"06"
+			"shard_spawn_radius"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_spawn_radius"			"175"
+				"value"			"175"
 				"RequiresShard"					"1"
 			}	
 		}

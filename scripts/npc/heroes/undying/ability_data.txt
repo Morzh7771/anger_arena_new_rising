@@ -98,29 +98,16 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage_per_unit"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_per_unit"			"15 25 35 45 55 65 75"
+				"value"			"15 25 35 45 55 65 75"
 				"LinkedSpecialBonus"			"special_bonus_unique_undying_6"
 			}			
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_units"					"10"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"1300"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tombstone_heal"			"4 6 8 10 12 14 16"
-			}
+			"max_units"					"10"
+			"radius"					"1300"
+			"tombstone_heal"			"4 6 8 10 12 14 16"
 		}
 	}	
 	"undying_tombstone"
