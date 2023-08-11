@@ -5,7 +5,6 @@ if IsServer() then
 	    if self:HasAbility(talent_name) and self:FindAbilityByName(talent_name):GetLevel() ~= 0 then 
 	    	return true 
 	    end
-
 	    return false
 	end
 

@@ -74,6 +74,7 @@ local cheat = false
 local is_game_start = false
 local is_game_end = false
 local game_start_for_courier = false
+local BearRespawnTime = 1
 KILL_LIMIT_CONST = 120
 GOLD_PER_TICK = 2
 
@@ -632,15 +633,13 @@ function AngelArena:OnNPCSpawned(keys)
 		end
 		if npc:IsRealHero() then
 			npc:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
-			if npc:GetUnitName() == "guardian_of_the_ancients" then
-				npc:FindAbilityByName("guardian_of_the_ancients_confident_stance"):SetLevel(1)
-			end
 		end
 	end
 	if npc:IsRealHero() then
 		Timers:CreateTimer(10, function()
-			print('remove')
-			npc:RemoveAllModifiersByName("modifier_fountain_invulnerability")
+			if npc:HasModifier("modifier_fountain_invulnerability") then
+				npc:RemoveAllModifiersByName("modifier_fountain_invulnerability")
+			end
 		end)
 	end
 	if spawnedUnit:IsIllusion() and spawnedUnit:IsHero() then
@@ -801,7 +800,7 @@ function AngelArena:OnEntityKilled(event)
 	if not killedUnit or not IsValidEntity(killedUnit) then return end
 
 	if killedUnit:GetUnitName() == 'npc_aa_creep_centaur_big'then
-		Timers:CreateTimer(1, function()
+		Timers:CreateTimer(BearRespawnTime, function()
 			BearSpawner:ReSpawnBear()
 		end)
 		

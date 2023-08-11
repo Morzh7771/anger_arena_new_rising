@@ -16,7 +16,6 @@ function slardar_corrosive_haze_lua:OnSpellStart()
 
 	-- load data
 	local debuff_duration = self:GetSpecialValueFor("duration")
-
 	-- Add modifier
 	target:AddNewModifier(
 		caster, -- player source

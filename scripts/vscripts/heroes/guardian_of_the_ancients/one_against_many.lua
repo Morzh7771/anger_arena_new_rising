@@ -23,9 +23,9 @@ guardian_of_the_ancients_one_against_many_bonus = class({
 })
 
 function guardian_of_the_ancients_one_against_many_bonus:OnCreated()
-    self.attack_speed_hero = self:GetAbility():GetSpecialValueFor("hero_bonus")
-    self.attack_speed_creep = self:GetAbility():GetSpecialValueFor("creep_bonus")
-    self.radius = self:GetAbility():GetSpecialValueFor("radius")
+    self:StartIntervalThink(0.03)
+end
+function guardian_of_the_ancients_one_against_many_bonus:OnUpgrade()
     self:StartIntervalThink(0.03)
 end
 if IsServer() then
@@ -34,12 +34,11 @@ if IsServer() then
 
         self.thirst_visioners = 0
         local stacks = 0
-
         local all = FindUnitsInRadius(
         caster:GetTeamNumber(), 
         caster:GetAbsOrigin(), 
         nil, 
-        self.radius,
+        self:GetAbility():GetSpecialValueFor("radius"),
         DOTA_UNIT_TARGET_TEAM_ENEMY, 
         DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
         0,
@@ -47,14 +46,12 @@ if IsServer() then
         false)
 
         for _, hero in pairs(all) do
-            local hero_pct = hero:GetHealthPercent()
-
             if not self:GetCaster():PassivesDisabled() then
                 if hero:IsRealHero() then
-                    stacks = stacks + self.attack_speed_hero
+                    stacks = stacks + self:GetAbility():GetSpecialValueFor("hero_bonus")
                 end
                 if hero:IsCreep() or hero:IsIllusion() or hero:IsCreepHero() then
-                    stacks = stacks + self.attack_speed_creep
+                    stacks = stacks + self:GetAbility():GetSpecialValueFor("creep_bonus")
                 end
             end
         end
