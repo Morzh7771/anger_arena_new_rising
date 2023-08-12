@@ -622,7 +622,9 @@
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height"						"Command Height"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_Description"			"Превращает героя в Башню, не позволяя передвигаться, но увеличивает его дальность атаки."
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_attack_range"			"БОНУС ДАЛЬНОСТИ АТАКИ:"
+        "DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_ms"                   "СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_duration"				"ДЛИТЕЛЬНОСТЬ:"
+        "DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_damage_reduction" "%УМЕНЬШЕНИЕ ВХОДЯЩЕГО ФИЗИЧЕСКОГО УРОНА:"
 
 
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many"					"One Against Many"
@@ -631,7 +633,7 @@
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_creep_bonus"			"БОНУС ЗА КРИПА:"
 		
 
-		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_scepter_Description"	"Дарует полную неуязвимость к урону во время Confident Stance"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_scepter_Description"	"Дарует магическую неуязвимость и +%damage_reduction%%  к уменьшению входящего физического урона во время Confident Stance"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance_shard_Description"	"Так же получает %damage_amp_bonus%%%  дополнительного урона за еденицу скорости атаки"
 		
 		"DOTA_Tooltip_modifier_slow"				"Замедление"
@@ -649,7 +651,7 @@
 		"DOTA_Tooltip_ability_item_repick"												"SWITCH HERO"
 		"DOTA_Tooltip_ability_item_repick_Description"									"Меняет вашего героя на его альтернативную версию. Пропадет через 90 секунд после начала игры."
 
-		"npc_dota_hero_elder_titan_npedesc1"											"Имеет альтернативную версию. Что-бы её активировать, нужно использовать предмет "Switch Hero" в начале игры."
+		"npc_dota_hero_elder_titan_npedesc1"											"Имеет альтернативную версию. Что-бы её активировать, нужно использовать предмет 'Switch Hero' в начале игры."
 
 		
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua"						"Acorn Shot"

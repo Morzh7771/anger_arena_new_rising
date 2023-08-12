@@ -16,7 +16,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"1.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -149,7 +149,7 @@
 			}		
 			"ms"
 			{
-				"value" 				"0.1"
+				"value" 				"0.00001"
 				"special_bonus_unique_guardian_of_the_ancients_command_height_can_move"			"50"
 			}
 			"invul"			
@@ -157,6 +157,11 @@
 				"value"		"0"
 				"RequiresScepter"						"1"
 				"special_bonus_scepter"	"1"
+			}
+			"damage_reduction"
+			{ 
+				"value"	"0"
+				"special_bonus_scepter" "-50"
 			}
 		}
 	}
