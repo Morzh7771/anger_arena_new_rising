@@ -604,27 +604,29 @@
 
 
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground"						"Ficle Ground"
-		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_Description"			"Сотресает землю в выбраной точке c интервалом %interval%  секунды в радиусе %aoe_range%"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_Description"			"Сотресает землю в выбраной точке, c интервалом %interval%, в радиусе %aoe_range%."
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_damage"					"УРОН:"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_impuls_max"				"КОЛИЧЕСТВО ТОЛЧКОВ:"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_duration"				"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_ficle_ground_slow_pct"				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
 		
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_guardians_step"						"Guardian`s step"
-		"DOTA_Tooltip_ability_guardian_of_the_ancients_guardians_step_Description"			"Делает рывок со скорость %dash_speed%  уничтожеает все деревья в радиусе %tree_cut_range%  вокруг героя"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_guardians_step_Description"			"Делает рывок, со скоростью %dash_speed%, в указанном направлении."
+        "DOTA_Tooltip_ability_guardian_of_the_ancients_guardians_step_Note0"                "Уничтожает все деревья в радиусе %tree_cut_range%  вокруг героя."
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_guardians_step_dash_range"			"РАССТОЯНИЕ РЫВКА:"
 
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance"						"Confident Stance"
-		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance_Description"			"Позволяет наносить только %atack_rate_base% удар в секунду но герой получает %damage_const_bonus% базового урона за каждую еденицу скорость атаки. " 
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance_Description"			"Позволяет наносить только %atack_rate_base% удар в секунду, но герой получает %damage_const_bonus% базового урона за каждую единицу скорость атаки."
+        "DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance_Note0"              "Если ваше количество атак меньше, чем 1 в секунду, то бонуса к урону не будет."
 		
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height"						"Command Height"
-		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_Description"			"Останавливает героя на месте делая его героем дальнего боя."
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_Description"			"Превращает героя в Башню, не позволяя передвигаться, но увеличивает его дальность атаки."
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_attack_range"			"БОНУС ДАЛЬНОСТИ АТАКИ:"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_duration"				"ДЛИТЕЛЬНОСТЬ:"
 
 
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many"					"One Against Many"
-		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_Description"			"Получает бонус скорости атаки за каждого врага в радиусе %radius%"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_Description"			"Получает бонус скорости атаки за каждого врага в радиусе %radius%."
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_hero_bonus"			"БОНУС ЗА ГЕРОЯ:"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_creep_bonus"			"БОНУС ЗА КРИПА:"
 		
@@ -638,16 +640,16 @@
 		"DOTA_Tooltip_BaseClass_dash_buff"			"Рывок"
 
 		"DOTA_Tooltip_guardian_of_the_ancients_confident_stance_on"						"Confident Stance"
-		"DOTA_Tooltip_guardian_of_the_ancients_confident_stance_on_Description"			"Добовляет %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% базового урона а так же увеличивает ваш урон на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%"
+		"DOTA_Tooltip_guardian_of_the_ancients_confident_stance_on_Description"			"Добавляет %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% базового урона, а так же увеличивает ваш урон на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%"
 
 		"DOTA_Tooltip_guardian_of_the_ancients_one_against_many_bonus"					"One Against Many"
 		"DOTA_Tooltip_guardian_of_the_ancients_one_against_many_bonus_Description"		"Увеличивает вашу скорость атаки на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%"
 
 
 		"DOTA_Tooltip_ability_item_repick"												"SWITCH HERO"
-		"DOTA_Tooltip_ability_item_repick_Description"									"Менает вашего героя на его альтернативную версию пропадет через 90 секунд после начала игры"
+		"DOTA_Tooltip_ability_item_repick_Description"									"Меняет вашего героя на его альтернативную версию. Пропадет через 90 секунд после начала игры."
 
-		"npc_dota_hero_elder_titan_npedesc1"											"Имеет альтернативную версию что-бы её активировать нужно использовать предмет Switch Hero в начале игры"
+		"npc_dota_hero_elder_titan_npedesc1"											"Имеет альтернативную версию. Что-бы её активировать, нужно использовать предмет "Switch Hero" в начале игры."
 
 		
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua"						"Acorn Shot"
