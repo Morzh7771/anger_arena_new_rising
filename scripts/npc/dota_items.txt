@@ -10388,23 +10388,11 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"			"350"
-			}
+			"damage_bonus"			"20"
+			"damage_bonus_ranged"	"12"
+			"quelling_range_tooltip"			"350"
 		}
 	}
 }
