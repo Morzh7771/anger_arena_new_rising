@@ -16,7 +16,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"1.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -49,7 +49,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/guardians_step"
-		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityTextureName"			"crystal_maiden_crystal_clone"
 		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
@@ -70,13 +70,13 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 90 80 70 60 50 40 30"
+		"AbilityManaCost"				"120 105 90 75 60 45 30"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"dash_range"				"200 250 300 350 400 450 500"
+				"dash_range"				"500"
 				"dash_speed"				"2000"
 				"tree_cut_range"			"200"
 				"talant_caster_damage"
@@ -96,7 +96,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/confident_stance"
-		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityTextureName"			"custom/hola_stunhammer"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
  		"AbilityCastAnimation"			"ACT_INVALID"
 		"AbilityCooldown"				"2"
@@ -124,7 +124,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/command_height"
-		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityTextureName"			"lone_druid_spirit_bear_demolish"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown"				"140 130 120 110 100 90 80"
@@ -144,12 +144,12 @@
 			"duration"					"5 6 7 8 9 10 11"
 			"attack_range"		
 			{
-				"value" 				"500"
-				"special_bonus_unique_guardian_of_the_ancients_command_height_range"			"200"
+				"value" 				"750"
+				"special_bonus_unique_guardian_of_the_ancients_command_height_range"			"250"
 			}		
 			"ms"
 			{
-				"value" 				"0.1"
+				"value" 				"0.00001"
 				"special_bonus_unique_guardian_of_the_ancients_command_height_can_move"			"50"
 			}
 			"invul"			
@@ -158,6 +158,11 @@
 				"RequiresScepter"						"1"
 				"special_bonus_scepter"	"1"
 			}
+			"damage_reduction"
+			{ 
+				"value"	"0"
+				"special_bonus_scepter" "-50"
+			}
 		}
 	}
 
@@ -165,7 +170,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/one_against_many"
-		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityTextureName"			"custom/reaver_lord_attract"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"						"7"
 		"AbilityValues"

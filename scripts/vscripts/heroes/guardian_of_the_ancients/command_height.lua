@@ -18,9 +18,10 @@ modifier_guardian_of_the_ancients_command_height = class({
     CheckState = function(self) 
         if self:GetAbility():GetSpecialValueFor('invul') == 1 then
             return{
-                [MODIFIER_STATE_INVULNERABLE] = true,
-                [MODIFIER_STATE_OUT_OF_GAME] = true,
-                [MODIFIER_STATE_NO_HEALTH_BAR] = true,
+                [MODIFIER_STATE_MAGIC_IMMUNE] = true,
+                [MODIFIER_STATE_INVULNERABLE] = false,
+                [MODIFIER_STATE_OUT_OF_GAME] = false,
+                [MODIFIER_STATE_NO_HEALTH_BAR] = false,
             }
         end 
     end,
@@ -28,10 +29,12 @@ modifier_guardian_of_the_ancients_command_height = class({
         MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
         MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
         MODIFIER_PROPERTY_MODEL_CHANGE,
+        MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE,
     } end,
     GetModifierMoveSpeed_Absolute = function (self) return self:GetAbility():GetSpecialValueFor('ms') end,
     GetModifierAttackRangeBonus = function (self) return self:GetAbility():GetSpecialValueFor('attack_range') end,
     GetModifierModelChange = function (self) return "models/props_structures/tower_good.vmdl" end,
+    GetModifierIncomingPhysicalDamage_Percentage = function (self) return self:GetAbility():GetSpecialValueFor('damage_reduction') end,
     
 })
 function modifier_guardian_of_the_ancients_command_height:OnCreated()
