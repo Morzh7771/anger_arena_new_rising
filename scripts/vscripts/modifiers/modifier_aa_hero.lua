@@ -1,21 +1,21 @@
-modifier_intelect = class({})
+modifier_aa_hero = class({})
 
-function modifier_intelect:IsHidden()
+function modifier_aa_hero:IsHidden()
 	return true
 end
-function modifier_intelect:IsPurgable()
+function modifier_aa_hero:IsPurgable()
 	return false
 end
-function modifier_intelect:RemoveOnDeath()
+function modifier_aa_hero:RemoveOnDeath()
     return false
 end
 
-function modifier_intelect:OnCreated()
+function modifier_aa_hero:OnCreated()
 	self.limit = 700
     self:StartIntervalThink(1.0)
 end
 
-function modifier_intelect:DeclareFunctions()
+function modifier_aa_hero:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
@@ -23,10 +23,10 @@ function modifier_intelect:DeclareFunctions()
 	}
 	return funcs
 end
-function modifier_intelect:GetModifierIgnoreMovespeedLimit()
+function modifier_aa_hero:GetModifierIgnoreMovespeedLimit()
     return 1
 end
-function modifier_intelect:GetModifierMoveSpeed_Limit( params )
+function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
 	if self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness") 
 	or self:GetParent():HasModifier("modifier_bloodseeker_thirst_speed") 
 	or self:GetParent():HasModifier("modifier_primal_beast_trample")
@@ -36,10 +36,10 @@ function modifier_intelect:GetModifierMoveSpeed_Limit( params )
 		return 700
 	end
 end
-function modifier_intelect:GetModifierMoveSpeedBonus_Percentage()
+function modifier_aa_hero:GetModifierMoveSpeedBonus_Percentage()
 	return (0.05 * self:GetParent():GetAgility())
 end
-function modifier_intelect:OnIntervalThink()
+function modifier_aa_hero:OnIntervalThink()
 	--for _,v in ipairs(self:GetParent():FindAllModifiers()) do
 		--print(v:GetName())
 	--end

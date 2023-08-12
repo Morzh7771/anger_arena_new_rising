@@ -245,7 +245,7 @@ function AngelArena:InitGameMode()
 	PlayerResource:ClearOnAbandonedCallbacks()
 	PlayerResource:RegisterOnAbandonedCallback(function(arg) AngelArena:OnAbandoned(arg) end)
 	LinkLuaModifier("modifier_godmode", 'modifiers/modifier_godmode', LUA_MODIFIER_MOTION_NONE)
-	LinkLuaModifier("modifier_intelect", 'modifiers/modifier_intelect', LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_aa_hero", 'modifiers/modifier_aa_hero', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_mid_teleport", "modifiers/modifier_mid_teleport", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
@@ -629,10 +629,10 @@ function AngelArena:OnNPCSpawned(keys)
 		npc.bFirstSpawned = true
 		if hero_table[unitname]then
 			print('heroheroheroherohero',hero_table[unitname])
-			npc:AddItemByName("item_repick")
+			--npc:AddItemByName("item_repick")
 		end
 		if npc:IsRealHero() then
-			npc:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
+			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
 		end
 	end
 	if npc:IsRealHero() then
