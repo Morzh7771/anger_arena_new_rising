@@ -233,7 +233,7 @@ DOTAAbilities
 				"crit_chance"				
 				{
 					"value"			"20"
-					"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_2"
+					"special_bonus_unique_phantom_assassin_2"	"10"
 				}
 				"dagger_crit_chance"		"40"
 				"crit_bonus"				"200 275 350 425 500 575 650"
@@ -257,7 +257,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"5"
+				"value"				"0"
 				"ad_linked_abilities"			"phantom_assassin_coup_de_grace"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}

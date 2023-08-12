@@ -73,7 +73,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ DOTAAbilities
 		{
 				"duration"				"16"
 				"charges_per_flurry"	"5"
-				"flurry_bonus_attack_speed"	"100 225 375 575 700 950 1225"
+				"flurry_bonus_attack_speed"	"50 110 180 280 350 475 620"
 				"time_between_flurries"	"0.3"
 				"pulse_radius"			"800"
 				"pulse_debuff_duration"	"2.0"
@@ -187,7 +187,11 @@ DOTAAbilities
 				"max_acceleration"		"6000.0"
 				"vector_preview_radius"	"100"
 				"ally_buff_duration"	"5.0"
-				"ally_movespeed_pct"	"25 30 35 40"
+				"ally_movespeed_pct"	
+				{
+					"value"				"25 27.5 30 32.5 35 37.5 40"
+					"special_bonus_unique_marci_lunge_movespeed" "+10"
+				}
 				"impact_position_offset"	"64"
 				"target_abort_distance"		"700"
 				"scepter_heal"
@@ -242,7 +246,7 @@ DOTAAbilities
 			"lifesteal_pct"
 			{
 				"value"			"10 12.5 15 17.5 20 22.5 25"
-				"LinkedSpecialBonus"	"special_bonus_unique_marci_guardian_lifesteal"
+				"special_bonus_unique_marci_guardian_lifesteal"	"10"
 			}
 			"bonus_damage"
 			{
