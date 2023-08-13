@@ -22,7 +22,7 @@ function BaseClass:OnSpellStart()
     end
 
     local nFlyTime = nDelta / nSpeed
-
+    
     hCaster:Purge( false, true, false, false, false )
 	ProjectileManager:ProjectileDodge(self:GetCaster())
     hCaster:AddNewModifier( hCaster, self, 'BaseClass_dash_buff', {
@@ -32,7 +32,6 @@ function BaseClass:OnSpellStart()
 	if hMotion then
 		hMotion:Start( vTarget, nSpeed, nTreeBreak )
 	end
-
 end
 
 
@@ -47,13 +46,13 @@ BaseClass_dash = class({
 })
 function BaseClass_dash:OnCreated()
     self.targets = {}
+   
 end
 function BaseClass_dash:Start( vTarget, nSpeed, nTreeBreak )
     self.vPos = self:GetParent():GetOrigin()
     self.vDir = vTarget - self.vPos
     self.vDir.z = 0
     self.nDistance = #self.vDir
-    
     if self.nDistance < 1 then
         self:Destroy()
 		return
@@ -84,6 +83,7 @@ function BaseClass_dash:OnDestroy()
         local hParent = self:GetParent()
         FindClearSpaceForUnit( hParent, hParent:GetOrigin(), false )
     end
+    
 end
 
 function BaseClass_dash:UpdateHorizontalMotion( hUnit, nTimeDelta )
@@ -154,6 +154,7 @@ end
 
 function BaseClass_dash_buff:OnCreated()
     if IsServer() then
+        self:GetParent():StartGesture(ACT_DOTA_RUN)
         local hParent = self:GetParent()
         local sParticle2 = 'particles/items/soul_wrapper/trail.vpcf'
         self.nParticle2 = ParticleManager:CreateParticle( sParticle2, PATTACH_CUSTOMORIGIN, hParent )
@@ -164,5 +165,6 @@ end
 function BaseClass_dash_buff:OnDestroy()
     if IsServer() then
         ParticleManager:DestroyParticle( self.nParticle2, true )
+        self:GetParent():FadeGesture(ACT_DOTA_RUN)
     end
 end
