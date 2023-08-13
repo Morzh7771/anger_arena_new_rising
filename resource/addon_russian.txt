@@ -2110,5 +2110,15 @@
 		"DOTA_Tooltip_ability_item_vision_day_vision"					"+ к радиусу обзора днем"
 		"DOTA_Tooltip_ability_item_vision_night_vision"					"+ к радиусу обзора ночью"
         "DOTA_Tooltip_ability_item_vision_Lore"                         "Я видел 14000000 вариантов будущего..."
-        }
+
+        "DOTA_Tooltip_ability_item_mirror_shield_aa"                    "Mirror Shield"
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_Description"        "<h1>Пассивное: Echo Shield</h1> Блокирует и отражает большинство направленных заклинаний обратно во врага раз в %block_cooldown% сек.<br><br><b><font color='#A52A2A'>Для сборки требует нейтральный рецепт 5-го уровня.</font></b>"
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_Lore"               "Этот щит давным-давно украл первые воспоминания у Старого."
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_mana"         "+$mana"
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_all_stats"    "+$all" 
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_armor"        "+$armor"
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_health_regen" "+$hp_regen"
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_mana_regen"   "+$mana_regen"
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_damage"       "+$damage"        
+        }  
 }
