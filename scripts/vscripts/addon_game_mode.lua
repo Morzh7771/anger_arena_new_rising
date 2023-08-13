@@ -629,7 +629,7 @@ function AngelArena:OnNPCSpawned(keys)
 		npc.bFirstSpawned = true
 		if hero_table[unitname]then
 			print('heroheroheroherohero',hero_table[unitname])
-			--npc:AddItemByName("item_repick")
+			npc:AddItemByName("item_repick")
 		end
 		if npc:IsRealHero() then
 			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
