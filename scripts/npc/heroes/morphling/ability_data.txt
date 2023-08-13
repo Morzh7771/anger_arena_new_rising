@@ -268,70 +268,80 @@ DOTAAbilities
 		"BaseClass"			"morphling_replicate"
 		"MaxLevel"		"7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilitySound"					"Hero_Morphling.Replicate"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+   		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+   		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+   		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+   		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+   		"AbilitySound"					"Hero_Morphling.Replicate"
+   		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
         "HasScepterUpgrade"			"1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 850 800 850 900 950 1000"
-		"AbilityCastPoint"				"0.25"
- 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+   		// Casting
+   		//-------------------------------------------------------------------------------------------------------------
+   		"AbilityCastRange"				"700 850 1000"
+   		"AbilityCastPoint"				"0.25"
+    	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
+   		// Time
+   		//-------------------------------------------------------------------------------------------------------------
+   		"AbilityCooldown"				"140 120 100 80 60"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"		
+   		// Cost
+   		//-------------------------------------------------------------------------------------------------------------
+   		"AbilityManaCost"				"50"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"duration"
-			{
-				"value"						"20"
-				"LinkedSpecialBonus"		"special_bonus_unique_morphling_8"
-			}
+   		// Special
+   		//-------------------------------------------------------------------------------------------------------------
+   		"AbilityValues"
+       		{
+       		"duration"
+       		{
+       			"value"						"20"
+       			"LinkedSpecialBonus"		"special_bonus_unique_morphling_8"
+       		}
             "scepter_stat_steal"
-			{
-				"value"						"20"
-				"RequiresScepter"			"1"
-			}
-			"scepter_spell_amplify"	
-			{
-				"value"						"25"
-				"RequiresScepter"			"1"
-			}
-			"scepter_attack_speed"	
-			{
-				"value"						"70"
-				"RequiresScepter"			"1"
-			}
-			"scepter_status_resist"	
-			{
-				"value"						"40"
-				"RequiresScepter"			"1"
-			}
-			"scepter_additional_stats"
-			{
-				"value"						"20"
-				"RequiresScepter"			"1"
-			}
-			"scepter_cooldown_reduction"	
-			{
-				"value"			"0"
-				"RequiresScepter"			"1"
-			}
-		}		
-	}
+       		{
+       			"value"						"20"
+       			"RequiresScepter"			"1"
+       		}
+       		"scepter_spell_amplify"
+       		{
+       			"value"						"25"
+       			"RequiresScepter"			"1"
+       		}
+       		"scepter_attack_speed"
+       		{
+       			"value"						"70"
+       			"RequiresScepter"			"1"
+       		}
+       		"scepter_status_resist"
+       		{
+       			"value"						"40"
+       			"RequiresScepter"			"1"
+       		}
+       		"scepter_additional_stats"
+       		{
+       			"value"						"20"
+       			"RequiresScepter"			"1"
+       		}
+       		"scepter_cooldown_reduction"
+       		{
+       			"value"						"0"
+       			"RequiresScepter"			"1"
+       		}
+       		"scepter_illusion_outgoing"
+       		{
+       			"value"						"100"
+       			"RequiresScepter"			"1"
+       		}
+       		"scepter_illusion_incoming"
+       		{
+       			"value"						"300"
+       			"RequiresScepter"			"1"
+       		}
+        }
+    }
 	"morphling_morph_replicate"
 	{
 		// General

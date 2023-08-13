@@ -3669,33 +3669,13 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"10 25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"bonus_health_regen"	"6.5 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"bonus_mana_regen"		"4.0 10"
-			}			
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_mana"			"250 700"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"active_duration"		"6 7"
-			}
 		}
 	}
 	//мамут рахал

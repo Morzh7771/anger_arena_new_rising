@@ -18,7 +18,6 @@ function BaseClass:OnSpellStart()
 		caster:GetTeamNumber(),
 		false
 	)
-
 end
 function BaseClass:GetAOERadius()
     return self:GetSpecialValueFor("aoe_range")
@@ -48,7 +47,8 @@ function guardian_of_the_ancients_ficle_ground_thinker:OnCreated( kv )
     if not IsServer() then return end
     self.impuls_now = 0
     self:StartIntervalThink(self.interval)
-    self:OnIntervalThink()    
+    self:OnIntervalThink()
+    
 end
 
 function guardian_of_the_ancients_ficle_ground_thinker:OnRefresh( kv )
