@@ -32,15 +32,23 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"placement_range"		"500"
-			"placement_count"			"8"
-			"placement_duration"		"15"
-			"latch_duration"		"0.75 1.0 1.25 1.5 1.75 2.0 2.75"
-			"latch_range"		"90"
-			"damage_per_tick"		"50 55 60 65 70 75 80"
-			"latch_creation_interval"		"0.075"
-			"latch_creation_delay"		"0.1"
-			"initial_creation_delay"		"0.3"
+				"placement_range"		
+				{
+					"value"		"500"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"placement_count"			"8"
+				"placement_duration"		"15"
+				"latch_duration"		
+				"latch_range"		"0.75 1.0 1.25 1.5 1.75 2.0 2.75"
+				{
+					"value"		"90"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"damage_per_tick"		"50 55 60 65 70 75 80"
+				"latch_creation_interval"		"0.075"
+				"latch_creation_delay"		"0.1"
+				"initial_creation_delay"		"0.3"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -81,9 +89,17 @@ DOTAAbilities
 				"LinkedSpecialBonus"		"special_bonus_unique_dark_willow_4"
 			}
 			"attack_interval"		"0.25"
-			"attack_radius"			"300"
+			"attack_radius"			
+			{
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"		
+			}
 			"attack_targets"			"1"
-			"roaming_radius"			"200"
+			"roaming_radius"			
+			{
+				"value"		"200"
+				"affected_by_aoe_increase"	"1"		
+			}
 			"roaming_seconds_per_rotation"				"1.5"
 			"roaming_duration"		"5.0"
 			"pierces_magic_immunity"
@@ -129,12 +145,16 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"destination_travel_speed"	"2000"
-			"destination_radius"		"400"
-			"destination_status_duration"	"2.0 2.2 2.4 2.6 2.8 3.0 3.2"
-			"return_travel_speed"	"600"
-			"starting_height"		"300"
-			"telegraph_to_enemies"		"0"
+				"destination_travel_speed"	"2000"
+				"destination_radius"		
+				{
+					"value"		"400"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"destination_status_duration"	"2.0 2.2 2.4 2.6 2.8 3.0 3.2"
+				"return_travel_speed"	"600"
+				"starting_height"		"300"
+				"telegraph_to_enemies"		"0"
 		}
 	}
 	"dark_willow_shadow_realm"
@@ -227,31 +247,33 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"delay"			"4"
-			"stun_duration"	
-			{
-				"value"		"1.2 1.4 1.6 1.8 2.0 2.2 2.4"
-				"LinkedSpecialBonus"			"special_bonus_unique_dark_willow_6"
-			"stun_radius"
-			{
-				"value"			"360"
-				"LinkedSpecialBonus"			"special_bonus_unique_dark_willow_7"
-			}
-			"shard_delay_reduction"	
-			{
-				"value"		"1"
-				"RequiresShard"					"1"
-			}			
-			"shard_bramble_amount"
-			{
-				"value"			"4"
-				"RequiresShard"					"1"
-			}
-			"shard_spawn_radius"
-			{
-				"value"			"175"
-				"RequiresShard"					"1"
-			}	
+				"delay"			"4"
+				"stun_duration"			
+				{
+					"value"			"1.2 1.4 1.6 1.8 2.0 2.2 2.4"
+					"LinkedSpecialBonus"			"special_bonus_unique_dark_willow_6"
+				}
+				"stun_radius"			
+				{
+					"value"			"360"
+					"LinkedSpecialBonus"			"special_bonus_unique_dark_willow_7"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"shard_delay_reduction"			
+				{
+					"value"			"1"
+					"RequiresShard"					"1"
+				}			
+				"shard_bramble_amount"			
+				{
+					"value"			"4"
+					"RequiresShard"					"1"
+				}
+				"shard_spawn_radius"
+				{
+					"value"	"175"
+					"RequiresShard"					"1"
+				}	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}

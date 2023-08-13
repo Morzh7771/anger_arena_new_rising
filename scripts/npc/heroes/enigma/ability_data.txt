@@ -68,12 +68,10 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"enigma_demonic_conversion"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"MaxLevel"		"4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilitySound"					"Hero_Enigma.Demonic_Conversion"
+		"LevelsBetweenUpgrades"			"4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -87,8 +85,8 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140 150 160 170 180 190 200"
-		"AbilityHealthCost"				"140 150 160 170 180 190 200"
+		"AbilityManaCost"				"140 160 180 200"
+		"AbilityHealthCost"				"140 160 180 200"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
@@ -96,24 +94,35 @@ DOTAAbilities
 			"spawn_count"
 			{
 				"value"			"3 3 3 3"
-				"LinkedSpecialBonus"	"special_bonus_unique_enigma"
+				"special_bonus_unique_enigma"	"+5"
 			}
 			"split_attack_count"	"6 6 6 6"
-			"eidolon_hp_tooltip"
+			"eidelon_max_health"
 			{
-				"value"	"200 275 350 425 500 575 650"
-				"LinkedSpecialBonus"	"special_bonus_unique_enigma_7"
+				"value"			"180 220 260 300"
+				"special_bonus_unique_enigma_7"	"+150"
 			}
 			"life_extension"		"2.0 2.0 2.0 2.0"
-			}
-			"eidolon_dmg_tooltip"
+			"eidelon_base_damage"		"20 38 56 74"
+			"eidolon_damage_spread"			"4"
+			
+			"eidolon_bonus_damage"
 			{
-				"value"	"20 29 39 50 62 75 89"
-				"LinkedSpecialBonus"	"special_bonus_unique_enigma_3"
+				"value"			"0"		
+				"special_bonus_unique_enigma_3"	"+40"
+			}			
+			"eidolon_bonus_attack_speed"
+			{
+				"value"			"0"
+				"special_bonus_unique_enigma_4"		"+25"
 			}
-			"creep_max_level"		"7"
-			"eidolon_magic_resist_tooltip"		"30 35 40 45 50 55 60"
-			"eidolon_attack_range_tooltip"		"425 450 475 500 525 550 575"
+			"eidelon_base_movespeed"			"280 310 340 370"
+			"creep_max_level"		"4"
+			"eidolon_magic_resist"		"30 40 50 60"
+			"eidolon_attack_range"		"425 475 525 575"
+			"allied_damage_pct"			"45"
+			"self_modelscale"			"-40"
+			"spawn_offset"				"100"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

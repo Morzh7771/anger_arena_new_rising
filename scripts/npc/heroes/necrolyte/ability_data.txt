@@ -85,29 +85,16 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"area_of_effect"		"500"
+			"heal"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"area_of_effect"		"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal"					"55 80 105 130 155 180 205"
+				"value"					"55 80 105 130 155 180 205"
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
 			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_pct"		"100"
-			}
+			"projectile_speed"		"600"
+			"damage_pct"		"100"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
