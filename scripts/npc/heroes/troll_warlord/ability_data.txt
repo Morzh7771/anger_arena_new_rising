@@ -309,23 +309,28 @@ DOTAAbilities
 		"ScriptFile"	                "heroes/troll_warlord/fervor/fervor_aa"
 		
 		"MaxLevel"						"7"
-
-		"AbilitySpecial"
+		"HasShardUpgrade"				"1"
+		"AbilityValues"
 		{
-			"01"
+			"attack_speed"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"6 8 10 12 14 16 18"
+				"value"											"6 8 10 12 14 16 18"
+				"special_bonus_unique_troll_warlord_fevor_attack_speed"			"5"
 			}
-			"02"
+			"damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"2 5 8 11 14 17 20"
+				"value"				"2 5 8 11 14 17 20"
 			}
-			"03"
+			"duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3"
+				"value"				"3"
+			}
+			"chance" 				"20"
+			"bonus_range" 				"175"
+			"has_shard"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"1"
 			}
 		}
 	}
@@ -374,5 +379,11 @@ DOTAAbilities
 			}
 			"range"				"900"
 		}
+	}
+	"special_bonus_unique_troll_warlord_fevor_attack_speed"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
 	}
 }

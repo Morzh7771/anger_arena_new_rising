@@ -13,12 +13,19 @@ end
 --------------------------------------------------------------------------------
 function modifier_fervor_aa:OnCreated(kv)
     self.duration = self:GetAbility():GetSpecialValueFor("duration")
+    self.chance = self:GetAbility():GetSpecialValueFor("chance")
+    self.chance_per_stack = self:GetAbility():GetSpecialValueFor("chance_per_stack")
+    self.bonus_range = self:GetAbility():GetSpecialValueFor("bonus_range")
     self.target = nil
+    self.add_attack_target = nil
 end
 
 -------------------------------------------------------------------------------
 function modifier_fervor_aa:OnRefresh(kv)
     self.duration = self:GetAbility():GetSpecialValueFor("duration")
+    self.chance = self:GetAbility():GetSpecialValueFor("chance")
+    self.chance_per_stack = self:GetAbility():GetSpecialValueFor("chance_per_stack")
+    self.bonus_range = self:GetAbility():GetSpecialValueFor("bonus_range")
 end
 
 -------------------------------------------------------------------------------
@@ -40,12 +47,39 @@ function modifier_fervor_aa:GetModifierProcAttack_Feedback(params)
 	parent:AddNewModifier(parent, self:GetAbility(), "modifier_fervor_aa_effect", { duration = self.duration })
 	local stack_count = params.attacker:GetModifierStackCount("modifier_fervor_aa_effect", parent)
 	
-	if self.target == params.target then
-		self:SetStacksCustom(stack_count + 1)
-	else
-		self:SetStacksCustom(1)
-	end
-	self.target = params.target
+	
+    local chance = self.chance+self.chance_per_stack*stack_count
+    if chance >= 100 then chance = 99 end
+
+    if params.target == self.target or
+        params.target == self.add_attack_target then
+        self:SetStacksCustom(stack_count + 1)
+    else
+        self:SetStacksCustom(1)
+    end
+    if self.target == self.add_attack_target then
+        self.target = params.target
+    end
+    if self:GetAbility():GetSpecialValueFor("has_shard") == 1 then
+        if RollPseudoRandomPercentage(chance,12,parent) then
+            local enemies = FindUnitsInRadius(
+                parent:GetTeamNumber(),	-- int, your team number
+                parent:GetOrigin(),	-- point, center point
+                nil,	-- handle, cacheUnit. (not known)
+                self.bonus_range+parent:GetBaseAttackRange(),	-- float, radius. or use FIND_UNITS_EVERYWHERE
+                DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+                DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+                0,	-- int, flag filter
+                0,	-- int, order filter
+                false	-- bool, can grow cache
+            )
+            for _,enemy in pairs(enemies) do
+                    parent:PerformAttack(enemy, true, true, true, false, true, false, false)
+                    self.add_attack_target = enemy
+                break
+            end
+        end
+    end
 end
 
 -------------------------------------------------------------------------------

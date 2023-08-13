@@ -586,6 +586,8 @@
         "DOTA_Tooltip_Ability_special_bonus_unique_wraith_king_crit"        "+{s:bonus_crit_mult}% к урону и -{s:bonus_AbilityCooldown} секунды к перезарядке Mortal Strike"
 
 
+		"DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_fevor_attack_speed"			"+{s:bonus_attack_speed} к скорости атаки за эффект от Fervor"
+
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"					"2 заряда Acorn Shot"
 
@@ -636,6 +638,7 @@
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_scepter_Description"	"Дарует магическую неуязвимость и %damage_reduction%%  сопротивления входящему урону во время Confident Stance"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance_shard_Description"	"Так же получает %damage_amp_bonus%%%  дополнительного урона за единицу скорости атаки"
 		
+		"DOTA_Tooltip_ability_fervor_aa_shard_Description"	"Даёт владельцу шанс совершить дополнительную атаку дальнего боя по случайному врагу в радиусе атаки + %bonus_range%. Шанс дополнительной атаки: %chance%%%"
 		"DOTA_Tooltip_modifier_slow"				"Замедление"
 		"DOTA_Tooltip_modifier_slow_Description"	"Замедляет вас на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
