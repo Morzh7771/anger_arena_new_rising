@@ -3917,6 +3917,7 @@
         "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER" 
         "ItemShopTags"                  ""
 
+
         
         // Recipe
         //-------------------------------------------------------------------------------------------------------------
@@ -3933,6 +3934,7 @@
         "ScriptFile"                    "items/item_mirror_shield_aa"
         "AbilityTextureName"            "item_mirror_shield"
         "ItemSellable"                  "0"
+        "AbilitySharedCooldown"			"sphere"
 
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityCooldown"               "12"
