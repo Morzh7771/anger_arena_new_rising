@@ -3950,46 +3950,4 @@
             "block_cooldown"        "12.0"
         }
     }
-    "item_recipe_lotus_sphere"
-    {
-        "BaseClass"                     "item_datadriven"
-        "Model"                         "models/props_gameplay/recipe.mdl"
-        "AbilityTextureName"            "item_recipe"
-        "ItemCost"                      "4500"
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_lotus_sphere"
-        "ItemRequirements"
-        {
-            "01"                        "item_sphere;item_lotus_orb"
-        }
-    }
-
-    "item_lotus_sphere"
-    {
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_lotus_sphere"
-        "AbilityTextureName"            "item_mirror_shield"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-        "AbilityCastRange"              "1000"
-        "AbilityCooldown"               "11"
-        "AbilityManaCost"               "125"
-
-        "ItemShopTags"                  "regen_health;regen_mana;str;agi;int;hard_to_tag"
-        "ItemAliases"                   "ls;linken's sphere;lotus orb;lotus sphere;linken's orb"
-        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "ItemQuality"                   "legendary"
-
-        "AbilityValues"
-        {
-            "bonus_damage"          "25"
-            "bonus_all_stats"       "15"
-            "bonus_armor"           "80"
-            "bonus_hp_regen_pct"    "2"
-            "bonus_mana_regen_pct"  "300"
-            "bonus_mana"            "250"
-            "bonus_day_vision"      "300"
-            "bonus_night_vision"    "250"
-        }
-    }
 }
