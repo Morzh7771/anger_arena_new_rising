@@ -2459,6 +2459,47 @@
         }
     }
 
+    "item_recipe_sunshard"
+    {
+        "AbilityTextureName" 				"item_recipe_sunshard"
+
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					"artifacts"
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_sunshard"
+        "ItemRequirements"
+        {
+            "01"						"item_moon_shard;item_moon_shard;item_boss_soul"
+        }
+    }
+    "item_sunshard"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemBaseLevel"					"1"
+        "BaseClass"						"item_lua"
+        "ScriptFile"					"items/item_sunshard"
+        "AbilityTextureName"			"item_sunshard"
+		"ItemCost"						"14000"
+		"ItemShopTags"					"attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"moonshard"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"AbilityValues"
+		{
+            "bonus_attack_speed"	"200"
+		}
+	}
+
     "item_recipe_greater_crit"
     {
         "Model"							"models/props_gameplay/recipe.vmdl"

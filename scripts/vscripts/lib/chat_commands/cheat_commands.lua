@@ -247,5 +247,5 @@ function Commands:cb(player, arg)
 		local target = CreateUnitByName( "npc_dota_hero_axe", position, true, nil, nil, hero:GetOpposingTeamNumber() )
 		target:SetControllableByPlayer( hero:GetPlayerOwnerID(), false )
 		target:AddExperience(999999,0,true,true)
-	end) 	
+	end)
 end

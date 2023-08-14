@@ -251,6 +251,7 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_duel_vision", 'modifiers/modifier_duel_vision', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_repick", 'modifiers/modifier_repick', LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier('modifier_bat', 'modifiers/modifier_bat', LUA_MODIFIER_MOTION_NONE)
 
 	
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
@@ -633,6 +634,7 @@ function AngelArena:OnNPCSpawned(keys)
 		end
 		if npc:IsRealHero() then
 			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
+			npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
 		end
 	end
 	if npc:IsRealHero() then
