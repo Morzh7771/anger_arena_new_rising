@@ -799,7 +799,7 @@
 		"AbilityTextureName"			"custom/abyss_warrior_ethereal_charge"
 		"ScriptFile"					"creeps/boss/abyss_warrior/abyss_warrior_ethereal_charge" 
 		
-		"AbilityCooldown"				"13"
+		"AbilityCooldown"				"15"
 		
 		"AbilityCastAnimation"			"ACT_DOTA_TELEPORT"
 		
@@ -818,7 +818,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_pct"			"7.0"
+				"hp_regen_pct"			"6.0"
 			}
 			"02"
 			{
@@ -833,7 +833,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"		"3.0"
+				"active_duration"		"2.5"
 			}
 		}
 	}
@@ -1119,7 +1119,7 @@
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCooldown"				"8"
+		"AbilityCooldown"				"12"
 		
 		"precache"
 		{
@@ -1146,7 +1146,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_pct"			"10.0"
+				"hp_regen_pct"			"6.0"
 			}
 			"04"
 			{
@@ -1179,7 +1179,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aspeed_per_hp_pct"		"7"
+				"aspeed_per_hp_pct"		"8"
 			}
 		}
 	}
