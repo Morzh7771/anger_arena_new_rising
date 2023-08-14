@@ -1,7 +1,9 @@
 item_sunshard = class({
-    GetIntrinsicModifierName = function (self) return 'modifier_sunshard' end
+    GetIntrinsicModifierName = function (self) return 'modifier_bat' end
+    --GetIntrinsicModifierName = function (self) return 'modifier_sunshard' end
 })
 
+LinkLuaModifier('modifier_sunshard', 'items/item_sunshard', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_sunshard', 'items/item_sunshard', LUA_MODIFIER_MOTION_NONE)
 
 -------------------------------------------
