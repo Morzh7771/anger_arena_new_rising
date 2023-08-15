@@ -7,6 +7,7 @@
 	"item_wraith_band" "REMOVE"
 	"item_null_talisman" "REMOVE"
 	"item_ultimate_scepter_2" "REMOVE"
+	"item_hand_of_midas"		"SOSI_LOX"
 
 	"item_recipe_bfury"
           {
@@ -3263,82 +3264,6 @@
 	}
 
 
-	"item_recipe_hand_of_midas"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1250"	
-		"ItemShopTags"					""
-		"ItemAliases"					"hom"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_hand_of_midas"
-		"ItemRequirements"
-		{
-			"01"						"item_gloves*"		
-		}
-	}
-	"item_hand_of_midas"
-	{
-		"ItemBaseLevel"					"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilitySharedCooldown"			"midas"
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0"
-		"AbilityCharges"				"2"
-		"AbilityChargeRestoreTime"		"90"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"ItemCost"						"2200"
-		"ItemShopTags"					"attack_speed;hard_to_tag"
-		"ItemQuality"					"common"
-		"ItemAliases"					"hand of midas"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		"ItemBaseLevel"					"1"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40 80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"xp_multiplier"			"2.1 4.2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"160 320"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_gold_rune"			"100 200"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"minute_gold_rune"			"5 10"
-			}
-		}
-	}
 	
 	"item_recipe_phylactery"
 	{
@@ -7493,17 +7418,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"blink_range"			"1200 1200"
-				"blink_damage_cooldown"	"3.0 3"
-				"blink_range_clamp"		"900 1000"
-				"bonus_strength"		"25 70"
-				"radius"				"800 900"
-				"movement_slow"			"50 70"
-				"attack_slow"			"50 90"
-				"duration"				"5 6"
-				"damage_base"			"100 250"
-				"damage_pct_instant"		"50 100"
-				"damage_pct_over_time"		"100 200"
+			"blink_range"			"1200"
+			"blink_damage_cooldown"	"3.0"
+			"blink_range_clamp"		"900 1000"
+			"bonus_strength"		"25 70"
+			"radius"		
+			{
+				"value"	"800 900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"movement_slow"		"50 70"
+			"attack_slow"		"50 90"
+			"duration"		"5 6"
+			"damage_base"			"100 250"
+			"damage_pct_instant"		"50 100"
+			"damage_pct_over_time"		"100 200"
 		}
 	}
 	"item_overwhelming_blink_2"
@@ -7534,17 +7463,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"blink_range"			"1200 1200"
-				"blink_damage_cooldown"	"3.0 3"
-				"blink_range_clamp"		"900 1000"
-				"bonus_strength"		"25 70"
-				"radius"				"800 900"
-				"movement_slow"			"50 70"
-				"attack_slow"			"50 90"
-				"duration"				"5 6"
-				"damage_base"			"100 250"
-				"damage_pct_instant"		"50 100"
-				"damage_pct_over_time"		"100 200"
+			"blink_range"			"1200"
+			"blink_damage_cooldown"	"3.0"
+			"blink_range_clamp"		"900 1000"
+			"bonus_strength"		"25 70"
+			"radius"		
+			{
+				"value"	"800 900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"movement_slow"		"50 70"
+			"attack_slow"		"50 90"
+			"duration"		"5 6"
+			"damage_base"			"100 250"
+			"damage_pct_instant"		"50 100"
+			"damage_pct_over_time"		"100 200"
 		}
 	}
 

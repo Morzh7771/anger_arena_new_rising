@@ -638,7 +638,7 @@
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_scepter_Description"	"Дарует магическую неуязвимость и %damage_reduction%%  сопротивления входящему урону во время Confident Stance"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_confident_stance_shard_Description"	"Так же получает %damage_amp_bonus%%%  дополнительного урона за единицу скорости атаки"
 		
-		"DOTA_Tooltip_ability_fervor_aa_shard_Description"	"Даёт владельцу шанс совершить дополнительную атаку дальнего боя по случайному врагу в радиусе атаки + %bonus_range%. Шанс дополнительной атаки: %chance%%%"
+		"DOTA_Tooltip_ability_fervor_aa_shard_Description"	"Даёт владельцу шанс совершить дополнительную атаку по цели атаки. Шанс дополнительной атаки: %chance%%% + %chance_per_stack%%% за еффект Fervor"
 		"DOTA_Tooltip_modifier_slow"				"Замедление"
 		"DOTA_Tooltip_modifier_slow_Description"	"Замедляет вас на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
@@ -1138,12 +1138,18 @@
 		"DOTA_Tooltip_modifier_item_mjollnir_3_static_Description"	        "Когда это существо атакуют, есть шанс в %dMODIFIER_PROPERTY_TOOLTIP%%%, что атакующий и %dMODIFIER_PROPERTY_TOOLTIP% соседних с ним врага будут поражены молнией."
 
         "DOTA_Tooltip_ability_item_advanced_midas"                             "HAND OF MIDAS 2"
-		"DOTA_Tooltip_ability_item_hand_of_midas_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта. При применении на нейтрального крипа гарантирует получение нейтрального предмета, если не все из них получены.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивная: Bounty</h1>Дает за руну богатства %base_gold_rune% золота +  %minute_gold_rune% золота за каждую игровую минуту."
-        "DOTA_Tooltip_ability_item_advanced_midas_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта. При применении на нейтрального крипа гарантирует получение нейтрального предмета, если не все из них получены.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивная: Bounty</h1>Дает за руну богатства %base_gold_rune% золота +  %minute_gold_rune% золота за каждую игровую минуту."
+		"DOTA_Tooltip_ability_item_advanced_midas_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивная: Bounty</h1>Дает за руну богатства %base_gold_rune% золота +  %minute_gold_rune% золота за каждую игровую минуту."
 		"DOTA_Tooltip_ability_item_advanced_midas_Lore"			"Эта перчатка, сохранившаяся благодаря неведомой магии, служит жадности владельца, наполняя его карманы золотом в обмен на жизни животных."
-		"DOTA_Tooltip_ability_advanced_midas_Note0"			"Получаемое золото идет в надёжный запас (при этом стандартная награда за убийство крипа не даётся)."
-		"DOTA_Tooltip_ability_advanced_midas_Note1"			"Опыт от убитого крипа не делится с другими героями."
-		"DOTA_Tooltip_ability_advanced_midas_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_advanced_midas_Note0"			"Получаемое золото идет в надёжный запас (при этом стандартная награда за убийство крипа не даётся)."
+		"DOTA_Tooltip_ability_item_advanced_midas_Note1"			"Опыт от убитого крипа не делится с другими героями."
+		"DOTA_Tooltip_ability_item_advanced_midas_bonus_attack_speed"		"+$attack"
+
+		"DOTA_Tooltip_ability_item_midas_aa"						"HAND OF MIDAS"
+		"DOTA_Tooltip_ability_item_midas_aa_Description"			"<h1>Активное: Transmute</h1> Убивает выбранную цель (но не героя), давая за неё %bonus_gold% золота и в %xp_multiplier% раза больше опыта.<br><br>Не действует на древних крипов.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивная: Bounty</h1>Дает за руну богатства %base_gold_rune% золота +  %minute_gold_rune% золота за каждую игровую минуту."
+        "DOTA_Tooltip_ability_item_midas_aa_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_midas_aa_Lore"			"Эта перчатка, сохранившаяся благодаря неведомой магии, служит жадности владельца, наполняя его карманы золотом в обмен на жизни животных."
+		"DOTA_Tooltip_ability_item_midas_aa_Note0"			"Получаемое золото идет в надёжный запас (при этом стандартная награда за убийство крипа не даётся)."
+		"DOTA_Tooltip_ability_item_midas_aa_Note1"			"Опыт от убитого крипа не делится с другими героями."
 
         "DOTA_Tooltip_Ability_item_phylactery_2"                                "PHYLACTERY 2"
         "DOTA_Tooltip_Ability_item_phylactery_2_Description"			"<h1>Пассивное: Empower Spell</h1> Следующая способность, направленная на врага, отдельно нанесёт ему ещё %bonus_spell_damage% урона и замедлит его на %slow%%%. Длительность: %slow_duration% сек."
@@ -1800,15 +1806,15 @@
 		"DOTA_Tooltip_modifier_item_holy_locket_3_aura"			"Аура от Holy Locket"
 		"DOTA_Tooltip_modifier_item_holy_locket_3_aura_Description"	"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
 
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2"                "OVERWHELMING BLINK 2"
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"	"<h1>Активное: Overwhelming Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения мгновенно наносит всем врагам в радиусе %radius% урон, равный 100 + %damage_pct_instant%%% от силы владельца, и постепенно наносит им урон, равный %damage_pct_over_time%%% силы владельца. Также замедляет передвижение врагов на %movement_slow%%%, а атаку — на %attack_slow%. Замедление действует %duration% сек.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Lore"           "Редкий смертный удержит в руках этот ужасающий книжал, выкованный в чреве хаоса."
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note0"          "Если применить на себя, переместит в сторону союзного фонтана."
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note1"		"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2_bonus_strength"	"+$str"
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2"                		"OVERWHELMING BLINK 2"
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"			    "<h1>Активное: Overwhelming Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения мгновенно наносит всем врагам в радиусе %radius% урон, равный 100 + %damage_pct_instang%%% от силы владельца, и постепенно наносит им урон, равный %damage_pct_over_time%%% силы владельца. Также замедляет передвижение врагов на %movement_slow%%%, а атаку — на %attack_slow%. Замедление действует %duration% сек.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Lore"                    "Редкий смертный удержит в руках этот ужасающий книжал, выкованный в чреве хаоса."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note0"                    "Если применить на себя, переместит в сторону союзного фонтана."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note1"					"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_bonus_strength"			"+$str"
 
-        "DOTA_Tooltip_modifier_item_overwhelming_blink_2_debuff"	"Overwhelming Blink 2"
-        "DOTA_Tooltip_modifier_item_overwhelming_blink_2_debuff_Description"      "Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+        "DOTA_Tooltip_modifier_item_overwhelming_blink_2_debuff"			        "Overwhelming Blink"
+        "DOTA_Tooltip_modifier_item_overwhelming_blink_2_debuff_Description"      "Получает периодический урон. Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
         "DOTA_Tooltip_ability_item_swift_blink_2"                       "SWIFT BLINK 2"
 		"DOTA_Tooltip_ability_item_swift_blink_2_Description"           "<h1>Активное: Swift Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения владелец на %duration% сек. получает +%bonus_movement%%% к скорости передвижения, +%bonus_agi_active% к ловкости и может проходить сквозь существ.<br><br>Предмет нельзя использовать, если последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."

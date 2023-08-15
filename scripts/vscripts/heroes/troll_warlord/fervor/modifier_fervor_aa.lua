@@ -17,7 +17,6 @@ function modifier_fervor_aa:OnCreated(kv)
     self.chance_per_stack = self:GetAbility():GetSpecialValueFor("chance_per_stack")
     self.bonus_range = self:GetAbility():GetSpecialValueFor("bonus_range")
     self.target = nil
-    self.add_attack_target = nil
 end
 
 -------------------------------------------------------------------------------
@@ -41,25 +40,20 @@ function modifier_fervor_aa:GetModifierProcAttack_Feedback(params)
 	local parent = self:GetParent()
     if not parent or parent:PassivesDisabled() then return end
     if not IsServer() then return end
-	
 	if parent:IsIllusion() then return end
 
 	parent:AddNewModifier(parent, self:GetAbility(), "modifier_fervor_aa_effect", { duration = self.duration })
 	local stack_count = params.attacker:GetModifierStackCount("modifier_fervor_aa_effect", parent)
 	
-	
     local chance = self.chance+self.chance_per_stack*stack_count
     if chance >= 100 then chance = 99 end
 
-    if params.target == self.target or
-        params.target == self.add_attack_target then
+    if params.target == self.target then
         self:SetStacksCustom(stack_count + 1)
     else
         self:SetStacksCustom(1)
     end
-    if self.target == self.add_attack_target then
-        self.target = params.target
-    end
+    if params.no_attack_cooldown then return end
     if self:GetAbility():GetSpecialValueFor("has_shard") == 1 then
         if RollPseudoRandomPercentage(chance,12,parent) then
             local enemies = FindUnitsInRadius(
@@ -74,12 +68,14 @@ function modifier_fervor_aa:GetModifierProcAttack_Feedback(params)
                 false	-- bool, can grow cache
             )
             for _,enemy in pairs(enemies) do
+                if enemy == params.target then
                     parent:PerformAttack(enemy, true, true, true, false, true, false, false)
-                    self.add_attack_target = enemy
-                break
+                    break
+                end
             end
         end
     end
+    self.target = params.target
 end
 
 -------------------------------------------------------------------------------
