@@ -2125,6 +2125,18 @@
         "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_armor"        "+$armor"
         "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_health_regen" "+$hp_regen"
         "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_mana_regen"   "+$mana_regen"
-        "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_damage"       "+$damage"        
+        "DOTA_Tooltip_ability_item_mirror_shield_aa_bonus_damage"       "+$damage"
+
+        "DOTA_Tooltip_Ability_item_sunshard"			"Sun Shard"
+        "DOTA_Tooltip_ability_item_sunshard_Description"						"<h1>Использование: Consume</h1> Поглощает предмет и навсегда увеличивает скорость атаки на %consumed_bonus%, а радиус обзора ночью — на %consumed_bonus_night_vision%. Можно поглотить лишь один Sun Shard.\n\n<h1>Пассивное: Shade Sight</h1>Увеличивает радиус обзора ночью."
+		"DOTA_Tooltip_ability_item_sunshard_bonus_attack_speed"				"+$attack"
+		"DOTA_Tooltip_ability_item_sunshard_bonus_night_vision"               "+к радиусу обзора ночью"
+		//"DOTA_Tooltip_ability_item_sunshard_consumed_bonus" "CONSUME ATTACK SPEED:"
+		//"DOTA_Tooltip_ability_item_sunshard_consumed_bonus_night_vision" "CONSUME NIGHT VISION:"
+		"DOTA_Tooltip_ability_item_sunshard_Lore"								"Осколок Солнца, отпечатавшийся в лунном колодце храма Селемине."
+
+		"DOTA_Tooltip_modifier_item_sunshard_consumed"	"Sun Shard"
+		"DOTA_Tooltip_modifier_item_sunshard_consumed_Description"	"От поглощённого Sun Shard скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, а радиус обзора ночью увеличен на %dMODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE%."
+		"DOTA_Tooltip_modifier_item_sunshard_consumed_Description_Dashboard"	"От поглощённого Sun Shard увеличены скорость атаки и радиус обзора ночью."
         }  
 }
