@@ -13,7 +13,9 @@ modifier_sunshard = class({
     IsBuff = function (self) return true end,
     GetPriority = function(self) return 4 end,
     DeclareFunctions = function (self) return {
-        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE,
     } end,
-    GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor('bonus_attack_speed') end
+    GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor('bonus_attack_speed') end,
+    GetModifierAttackSpeedPercentage = function (self) return 400 end,
 })

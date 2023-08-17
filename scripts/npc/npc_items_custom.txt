@@ -3946,23 +3946,23 @@
     }
    "item_recipe_mirror_shield_aa"
     {
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "-1"
-        "ItemIsNeutralDrop"             "1"
-        "ItemSellable"                  "0"
-        "ItemPurchasable"               "0"  
-        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER" 
-        "ItemShopTags"                  ""
+       "BaseClass"                        "item_datadriven"    
+        "Model"                            "models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe_mirror_shield"												// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
 
+		"ItemShopTags"					""
+		"ItemCost"						"1"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"                  "0"
 
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"                    "1"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
         "ItemResult"                    "item_mirror_shield_aa"
         "ItemRequirements"
         {
@@ -3991,4 +3991,126 @@
             "block_cooldown"        "12.0"
         }
     }
+    "item_recipe_midas_aa"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+        
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1250"	
+		"ItemShopTags"					""
+		"ItemAliases"					"hom"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_midas_aa"
+		"ItemRequirements"
+		{
+			"01"						"item_gloves*"		
+		}
+	}
+	"item_midas_aa"
+	{
+		"ItemBaseLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilitySharedCooldown"			"midas"
+
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_midas"
+		"AbilityTextureName"            "hand_of_midas"
+        // Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600 800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"90"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"						"2200"
+		"ItemShopTags"					"attack_speed;hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"hand of midas"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemBaseLevel"					"1"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_attack_speed"                "40 80"
+			"xp_multiplier"			            "2.1 4.2"
+			"bonus_gold"			            "160 320"
+			"transmute_cast_range_tooltip"		"600 700"
+			"base_gold_rune"			        "100 200"
+			"minute_gold_rune"			        "5 10"
+		}
+	}
+	"item_recipe_advanced_midas"
+	{
+		"AbilityTextureName" 				"item_recipe_advanced_midas"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_advanced_midas"
+		"ItemRequirements"
+		{
+			"01"						"item_midas_aa;item_midas_aa"
+		}
+	}
+	"item_advanced_midas"
+	{       
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_midas"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityTextureName"	        "midas_2"
+		"AbilitySharedCooldown"			"midas"
+		"AbilityCastAnimation" 			"ACT_RESET"
+		
+		"ItemBaseLevel"					"2"
+
+		"AbilityCooldown"				"90"
+
+		"AbilityCastRange"				"600 800"
+		"AbilityCastPoint"				"0.0"
+		"IsRefreshable"					"1"
+		
+		// Item Info
+		"ItemCost"						"4100"
+		"ItemStackable"					"0"
+		
+		"ItemPermanent"					"0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemPurchasable"				"1"
+
+		"AbilityValues"
+		{
+			"bonus_attack_speed"                "40 80"
+			"xp_multiplier"			            "2.1 4.2"
+			"bonus_gold"			            "160 320"
+			"transmute_cast_range_tooltip"		"600 700"
+			"base_gold_rune"			        "100 200"
+			"minute_gold_rune"			        "5 10"
+		}
+	}
 }

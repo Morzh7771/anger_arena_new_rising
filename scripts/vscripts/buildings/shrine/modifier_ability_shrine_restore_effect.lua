@@ -32,7 +32,7 @@ function modifier_ability_shrine_restore_effect:DeclareFunctions()
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
-        MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
+        MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
     }
     return funcs
 end
@@ -53,7 +53,7 @@ function modifier_ability_shrine_restore_effect:GetModifierHealthRegenPercentage
 end
 
 --------------------------------------------------------------------------------
-function modifier_ability_shrine_restore_effect:GetModifierPercentageManaRegen(params)
+function modifier_ability_shrine_restore_effect:GetModifierTotalPercentageManaRegen(params)
     return self.mana_regen_pct
 end
 
