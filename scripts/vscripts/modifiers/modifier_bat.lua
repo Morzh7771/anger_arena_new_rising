@@ -1,18 +1,15 @@
 local bat_dynamic = {
     --'bruda_talant_25',
-    --'chemical_rage',
-    --'Ульт Оракла',
-    --'Первый тролля',
-    --'Мета террора',
-    --'Ульт лондруида',
+    oracle_false_promise = 'shard_bat_bonus',
     --'3-ий снепки',
-    --'Талант, который я кинул выше',
     --'ульт марси'
     modifier_sunshard = 'bat_reduction'
 }
 
 local bat_constant = {
-    modifier_alchemist_chemical_rage = 'base_attack_time'
+    modifier_troll_warlord_berserkers_rage = 'base_attack_time',
+    modifier_alchemist_chemical_rage = 'base_attack_time',
+    modifier_terrorblade_metamorphosis = 'base_attack_time',
 }
 
 modifier_bat = class({
