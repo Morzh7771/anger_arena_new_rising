@@ -2487,7 +2487,7 @@
         "ItemBaseLevel"					"1"
         "BaseClass"						"item_lua"
         "ScriptFile"					"items/item_sunshard"
-        "AbilityTextureName"			"item_sunshard"
+        "AbilityTextureName"			"sunshard"
 		"ItemCost"						"14000"
 		"ItemShopTags"					"attack_speed"
 		"ItemQuality"					"epic"
@@ -2497,7 +2497,11 @@
 
 		"AbilityValues"
 		{
-            "bonus_attack_speed"	"200"
+            "bonus_attack_speed"	"280"
+            "bat_reduction"         "0.3"
+            "bonus_night_vision"          "600"
+            "consumed_bonus"        "120"
+            "consumed_bonus_night_vision"           "300"
 		}
 	}
 
