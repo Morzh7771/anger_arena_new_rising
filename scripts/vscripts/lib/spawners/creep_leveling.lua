@@ -128,6 +128,8 @@ function CreepLeveling:OnSpawnCallback( event )
 
 	creep:SetMana( creep:GetMaxMana() )
 	creep:SetHealth( creep:GetMaxHealth() )
+
+	creep:CreatureLevelUp(seek_creep_level)
 end
 
 function CreepLeveling:OnDeathCallback( event )

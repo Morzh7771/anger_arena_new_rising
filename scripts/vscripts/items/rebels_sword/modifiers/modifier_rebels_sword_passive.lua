@@ -65,7 +65,7 @@ function modifier_rebels_sword_passive:OnAttackLanded( kv )
     if target:HasModifier(disarmor_cd_mnamme) then return end 
 
     local stack_count       = target:GetModifierStackCount(disarmor_mname, target) 
-    local armor             = target:GetPhysicalArmorValue( false ) + stack_count 
+    local armor             = target:GetPhysicalArmorValue( false ) + stack_count + kv.target:GetModifierStackCount("modifier_item_stygian_aa_disarmor",kv.attacker)
     
     local total_stack_count = stack_count + self.disarmor*armor + self.disarmor_const
 

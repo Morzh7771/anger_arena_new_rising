@@ -428,6 +428,7 @@ function AngelArena:OnConnectFull(event)
 	local player = EntIndexToHScript(entIndex)
 	local playerID = player:GetPlayerID()
 
+	CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
 	PlayerResource:OnPlayerConnected(playerID, event.userid)
 end
 function AngelArena:GoldFilter(event)
@@ -539,6 +540,9 @@ function AngelArena:OnGameStateChange()
 		local needkill = KILL_LIMIT_CONST / 10 * player
 		KILL_LIMIT = needkill
 		_G.KILL_LIMIT = needkill
+		
+		CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
+
 		Attentions:SetKillLimit( KILL_LIMIT )
 		Bounty:Init()
 		local portals = {
