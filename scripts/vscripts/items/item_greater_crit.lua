@@ -11,6 +11,10 @@ function item_greater_crit:OnSpellStart()
     local caster   = self:GetCaster()
     local target   = self:GetCursorTarget()
 
+    if target:TriggerSpellAbsorb(self) then
+		return 
+	end
+
     caster:StartGesture(ACT_DOTA_ATTACK)
 
     local info = {

@@ -5910,12 +5910,12 @@
 				"bonus_attack_speed"		"60 120 180"
 				"bonus_damage"				"40 80 160"
 				"bonus_mana_regen"			"5 10 15"
-				"bonus_magic_resist"		"20 23 25"	
+				"bonus_magic_resist"		"10 15 20"	
 				"bonus_health_regen"		"6 12 30"	
 				"silence_duration"			"5"
 				"silence_damage_percent"	"30 35 40"
 				"duration"					"5 5.5 6"			
-				"spell_amp_debuff"			"35 40 45"
+				"spell_amp_debuff"			"10 15 20"
 		}
 	}
 
@@ -5973,12 +5973,12 @@
 				"bonus_attack_speed"		"60 120 180"
 				"bonus_damage"				"40 80 160"
 				"bonus_mana_regen"			"5 10 15"
-				"bonus_magic_resist"		"20 23 25"	
+				"bonus_magic_resist"		"10 15 20"	
 				"bonus_health_regen"		"6 12 30"	
 				"silence_duration"			"5"
 				"silence_damage_percent"	"30 35 40"
 				"duration"					"5 5.5 6"			
-				"spell_amp_debuff"			"35 40 45"
+				"spell_amp_debuff"			"10 15 20"
 		}
 	}
 
@@ -6036,12 +6036,12 @@
 				"bonus_attack_speed"		"60 120 180"
 				"bonus_damage"				"40 80 160"
 				"bonus_mana_regen"			"5 10 15"
-				"bonus_magic_resist"		"20 23 25"	
+				"bonus_magic_resist"		"10 15 20"	
 				"bonus_health_regen"		"6 12 30"	
 				"silence_duration"			"5"
 				"silence_damage_percent"	"30 35 40"
 				"duration"					"5 5.5 6"			
-				"spell_amp_debuff"			"35 40 45"
+				"spell_amp_debuff"			"10 15 20"
 		}
 	}
 
@@ -8060,6 +8060,38 @@
 			"damage_bonus"			"20"
 			"damage_bonus_ranged"	"12"
 			"quelling_range_tooltip"			"350"
+		}
+	}
+	"item_mage_slayer"
+	{
+		"BaseClass"						"item_mage_slayer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2500"
+		"ItemShopTags"					"hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"mage slayer;ms"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_magical_armor"	"20"
+				"bonus_attack_speed"	"20"
+				"bonus_damage"			"20"
+				"spell_amp_debuff"		"10"
+				"bonus_mana_regen"		"2"
+				"duration"				"6"
+				"bonus_intellect"		"10"
 		}
 	}
 }

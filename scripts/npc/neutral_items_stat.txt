@@ -1701,13 +1701,29 @@
         "AbilityTextureName"            "item_desolator_2"
         "ItemSellable"                  "1"
         "ItemIsNeutralDrop"				"1"
+        "ItemPurchasable"				"0"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemBaseLevel"                 "1"
         "AbilityValues"
         {
             "bonus_dmg"                 "250"
             "disarmor_pct"              "20"
             "duration"                  "7"
+        }
+    }
+    "item_apex_aa"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_apex_aa"
+        "AbilityTextureName"            "item_apex"
+        "ItemSellable"                  "1"
+        "ItemIsNeutralDrop"				"1"
+        "ItemPurchasable"				"0"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "primary_attribute_pct"                 "20"
+            "primary_attribute"                     "75"
+            "atribute_all_minus"                    "2.5"
         }
     }
 }

@@ -49,6 +49,10 @@ local forbidden_ability_boss = {
 	["snapfire_spit_creep"] = 1,
 	["juggernaut_omni_slash"] = 1,
 	["snapfire_gobble_up"] = 1,
+	['item_bloodthorn'] = 1,
+	['item_bloodthorn_2'] = 1,
+	['item_bloodthorn_3'] = 1,
+	['item_orchid'] = 1,
 }
 local crash_abilities = {
 	["shadow_demon_disruption"] = 1,
