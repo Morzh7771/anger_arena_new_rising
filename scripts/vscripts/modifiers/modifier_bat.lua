@@ -28,6 +28,7 @@ function modifier_bat:OnAttackLanded(params)
 end
 
 function modifier_bat:GetModifierBaseAttackTimeConstant()
+    if not IsServer() then return end
     local delta = 0;
     local constant = 1.7;
 
