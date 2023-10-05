@@ -19,7 +19,7 @@
         
         // Recipe
         //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
+        "ItemRecipe"					"1" 
         "ItemResult"					"item_boss_soul"
         "ItemRequirements"
         {
@@ -104,7 +104,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"35 70 140"
+				"bonus_agility"			"45 90 200"
 			}
 			"02"
 			{
@@ -175,26 +175,26 @@
         //special
         "AbilitySpecial"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_agi"				"35 70 140"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_dmg"				"25 60 110"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "bonus_evasion"			"35 40 45"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_attackspeed"		"30 60 140"
-            }
+           "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"45 90 200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_evasion"			"35 40 45"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 60 140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"	        "25 60 110"
+			}
             "05"
             {
                 "var_type"				"FIELD_INTEGER"
@@ -304,25 +304,25 @@
         "AbilitySpecial"
         {
             "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_agi"				"35 70 140"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_dmg"				"30 60 110"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_evasion"			"35 40 45"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_attackspeed"		"30 60 140"
-            }
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"45 90 200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_evasion"			"35 40 45"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 60 140"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"	        "25 60 110"
+			}
             "05"
             {
                 "var_type"				"FIELD_INTEGER"
@@ -2377,133 +2377,54 @@
             }
         }
     }
-    "item_recipe_talisman_of_ambition"
-    {
-        "AbilityTextureName" 				"item_recipe_talisman_of_ambition"
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"100"	
-        "ItemShopTags"					""
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_talisman_of_ambition"
-        "ItemRequirements"
-        {
-            "01"						"item_wraith_band_custom;item_ring_of_protection;item_wind_lace"
-        }
-    }
+    
 
-    "item_talisman_of_ambition"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"						"item_lua"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
-        "AbilityTextureName"	        "talisman_of_ambition"
-        "ScriptFile"					"items/talisman_of_ambition/talisman_of_ambition.lua"
-        
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"8.0"
-        "AbilityCastRange"				"1200"
-        "AbilityCastPoint"				"0.0"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"925"
-        "ItemStackable"					"0"
-        "ItemBaseLevel"					"1"
-        
-        "ItemKillable"                  "1"
-        "ItemSellable"                  "1"
-        "ItemDroppable"                 "1"
-        "ItemPurchasable"				"1"
+   //"item_recipe_sunshard"
+   //{
+   //    "AbilityTextureName" 				"item_recipe_sunshard"
 
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"4"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_agility"			"13"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_movespeed"		"25"
-            }
-            
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "duration"				"3.0"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "evasion"				"50"
-            }
-        }
-    }
+   //    "Model"							"models/props_gameplay/recipe.vmdl"
+   //    "BaseClass"                     "item_recipe_arcane_boots"
 
-    "item_recipe_sunshard"
-    {
-        "AbilityTextureName" 				"item_recipe_sunshard"
+   //    // Item Info
+   //    //-------------------------------------------------------------------------------------------------------------
+   //    "ItemCost"						"0"
+   //    "ItemShopTags"					"artifacts"
 
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
+   //    // Recipe
+   //    //-------------------------------------------------------------------------------------------------------------
+   //    "ItemRecipe"					"1"
+   //    "ItemResult"					"item_sunshard"
+   //    "ItemRequirements"
+   //    {
+   //        "01"						"item_moon_shard;item_moon_shard;item_boss_soul"
+   //    }
+   //}
+   //"item_sunshard"
+	//{
+	//	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	//	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	//	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CUSTOM"
+   //    "ItemBaseLevel"					"1"
+   //    "BaseClass"						"item_lua"
+   //    "ScriptFile"					"items/item_sunshard"
+   //    "AbilityTextureName"			"sunshard"
+	//	"ItemCost"						"14000"
+	//	"ItemShopTags"					"attack_speed"
+	//	"ItemQuality"					"epic"
+	//	"ItemAliases"					"moonshard"
+	//	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	//	"ShouldBeSuggested"				"1"
 
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"
-        "ItemShopTags"					"artifacts"
-
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_sunshard"
-        "ItemRequirements"
-        {
-            "01"						"item_moon_shard;item_moon_shard;item_boss_soul"
-        }
-    }
-    "item_sunshard"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemBaseLevel"					"1"
-        "BaseClass"						"item_lua"
-        "ScriptFile"					"items/item_sunshard"
-        "AbilityTextureName"			"sunshard"
-		"ItemCost"						"14000"
-		"ItemShopTags"					"attack_speed"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"moonshard"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-
-		"AbilityValues"
-		{
-            "bonus_attack_speed"	"280"
-            "bat_reduction"         "0.3"
-            "bonus_night_vision"          "600"
-            "consumed_bonus"        "120"
-            "consumed_bonus_night_vision"           "300"
-		}
-	}
+	//	"AbilityValues"
+	//	{
+   //        "bonus_attack_speed"	"280"
+   //        "bat_reduction"         "0.3"
+   //        "bonus_night_vision"          "600"
+   //        "consumed_bonus"        "120"
+   //        "consumed_bonus_night_vision"           "300"
+	//	}
+	//}
 
     "item_recipe_greater_crit"
     {
@@ -4051,8 +3972,8 @@
 			"xp_multiplier"			            "2.1 4.2"
 			"bonus_gold"			            "160 320"
 			"transmute_cast_range_tooltip"		"600 700"
-			"base_gold_rune"			        "100 200"
-			"minute_gold_rune"			        "5 10"
+			"base_gold_rune"			        "50 100"
+			"minute_gold_rune"			        "20 40"
 		}
 	}
 	"item_recipe_advanced_midas"
@@ -4113,8 +4034,327 @@
 			"xp_multiplier"			            "2.1 4.2"
 			"bonus_gold"			            "160 320"
 			"transmute_cast_range_tooltip"		"600 700"
-			"base_gold_rune"			        "100 200"
-			"minute_gold_rune"			        "5 10"
+			"base_gold_rune"			        "50 100"
+			"minute_gold_rune"			        "20 40"
 		}
 	}
+    "item_recipe_drum_of_endurance"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_drum_of_endurance"
+		"ItemRequirements"
+		{
+			"01"						"item_wraith_band_custom;item_wraith_band_custom;item_wind_lace;"
+		}
+	}
+    "item_drum_of_endurance"
+	{       
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/drum_and_base/item_drum_of_endurance"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemPermanent"					"1"
+		"FightRecapLevel"				"1"
+        "AbilityTextureName"	        "item_ancient_janggo"
+        "AbilityCooldown"				"30.0"
+        "AbilitySharedCooldown"			"drum"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1540"
+		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"drum of endurance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+        "ItemBaseLevel"					"1"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aura_movement_speed"	    "20"
+            "aura_attack_speed"	        "10"
+
+            "bonus_agi"				    "12"
+			"bonus_str"				    "6"
+			"bonus_int"				    "6"
+            "bonus_armor"				"4"
+
+			"active_bonus_attack_speed"	        "50"
+			"active_bonus_movement_speed_pct"	"13"
+            "active_bonus_damage_from_agi"	    "20"
+
+			"active_duration"				    "6"
+			"active_radius"				        "1200"
+		}
+	}
+
+    "item_recipe_boots_of_bearing_aa"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1500"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_of_bearing_aa"
+		"ItemRequirements"
+		{
+			"01"						"item_tranquil_boots;item_drum_of_endurance"
+		}
+	}
+    
+
+    "item_boots_of_bearing_aa"
+	{
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/drum_and_base/item_boots_of_bearing_aa"
+        "AbilityTextureName"	        "boots_of_bearing_aa"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemPermanent"					"1"
+		"FightRecapLevel"				"1"
+        "AbilitySharedCooldown"			"drum"
+		"AbilityCooldown"				"30.0"
+		"ItemBaseLevel"					"1"
+		"ItemCost"						"4275"
+		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"marching boots"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aura_movement_speed"	    "40 60"
+            "aura_attack_speed"	        "30 60"
+
+			"bonus_agi"				    "24 80"
+			"bonus_str"				    "12 30"
+			"bonus_int"				    "12 30"
+            "bonus_armor"				"8 16"
+            "bonus_movement_speed"	    "65 80"
+			"bonus_health_regen"	    "15 40"
+
+			"active_bonus_attack_speed"	        "90 150"
+			"active_bonus_movement_speed_pct"	"20 30"
+            "active_bonus_damage_from_agi"	    "30 40"
+
+			"active_duration"				    "6"
+			"active_radius"				        "1200"
+
+			"active_non_slow"		            "1.5 3"
+		}
+	}
+
+    "item_recipe_boots_of_bearing_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_of_bearing_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_boots_of_bearing_aa;item_boots_of_bearing_aa;item_boss_soul"
+		}
+	}
+    "item_boots_of_bearing_aa_2"
+	{
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/drum_and_base/item_boots_of_bearing_aa_2"
+        "AbilityTextureName"	        "boots_of_bearing_aa_2"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemPermanent"					"1"
+		"FightRecapLevel"				"1"
+        "AbilitySharedCooldown"			"drum"
+		"AbilityCooldown"				"30.0"
+		"ItemBaseLevel"					"2"
+		"ItemCost"						"4275"
+		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"marching boots"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aura_movement_speed"	    "40 60"
+            "aura_attack_speed"	        "30 60"
+
+			"bonus_agi"				    "24 80"
+			"bonus_str"				    "12 30"
+			"bonus_int"				    "12 30"
+            "bonus_armor"				"8 16"
+            "bonus_movement_speed"	    "65 80"
+			"bonus_health_regen"	    "15 40"
+
+			"active_bonus_attack_speed"	        "90 150"
+			"active_bonus_movement_speed_pct"	"20 30"
+            "active_bonus_damage_from_agi"	    "30 40"
+
+			"active_duration"				    "6"
+			"active_radius"				        "1200"
+
+			"active_non_slow"		            "1.5 3"
+		}
+	}
+    "item_recipe_talisman_of_ambition"
+    {
+        "AbilityTextureName" 				"item_recipe_talisman_of_ambition"
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"100"	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_talisman_of_ambition"
+        "ItemRequirements"
+        {
+            "01"						"item_wraith_band_custom;item_ring_of_protection;item_wind_lace"
+        }
+    }
+
+    "item_talisman_of_ambition"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_lua"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+        "AbilityTextureName"	        "talisman_of_ambition"
+        "ScriptFile"					"items/talisman_of_ambition/talisman_of_ambition.lua"
+        
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"8.0"
+        "AbilityCastRange"				"1200"
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"925"
+        "ItemStackable"					"0"
+        "ItemBaseLevel"					"1"
+        
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        "AbilityValues"
+        {
+            "bonus_str"                 "2 14"
+            "bonus_agi"			        "10 35"
+            "bonus_int"                 "2 14"
+            "bonus_armor"			    "4 6"
+            "attack_speed_pasive"		"10 20"
+            "bonus_movespeed"		    "25 35"
+
+            "duration"				    "3 3"
+            "evasion"				    "30 50"
+            "attack_speed_active"		"20 100"
+        }
+    }
+    "item_recipe_talisman_of_ambition_2"
+    {
+        "AbilityTextureName" 				"item_recipe_talisman_of_ambition"
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        "ItemCost"						"500"	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_talisman_of_ambition_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_fury_shield;item_blade_of_alacrity;item_wraith_band_custom;item_talisman_of_ambition"
+        }
+    }
+
+    "item_talisman_of_ambition_2"
+    {
+        "BaseClass"						"item_lua"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+        "AbilityTextureName"	        "talisman_of_ambition_2"
+        "ScriptFile"					"items/talisman_of_ambition/talisman_of_ambition_2"
+
+        "ItemBaseLevel"					"2"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"9.0"
+        "AbilityCastRange"				"1200"
+        "AbilityCastPoint"				"0.0"
+        "AbilityManaCost"				"25"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"		"particles/status_fx/status_effect_forcestaff.vpcf"		
+        }
+            
+        "ItemCost"						"3500"
+        "ItemStackable"					"0"
+
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        "AbilityValues"
+        {
+            "bonus_str"                 "2 14"
+            "bonus_agi"			        "10 35"
+            "bonus_int"                 "2 14"
+            "bonus_armor"			    "4 6"
+            "attack_speed_pasive"		"10 20"
+            "bonus_movespeed"		    "25 35"
+
+            "duration"				    "3 3"
+            "evasion"				    "30 50"
+            "attack_speed_active"		"20 100"
+            "block_damage"              "60"
+        }
+    }
 }

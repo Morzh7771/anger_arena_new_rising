@@ -70,6 +70,7 @@ function modifier_mirror_shield_aa:GetReflectSpell(kv)
 		local target = kv.ability:GetCaster()
 		local ability_level = kv.ability:GetLevel()
 		local ability_behaviour = kv.ability:GetBehavior()
+		
 		if type(ability_behaviour) == 'userdata' then
 		  ability_behaviour = tonumber(tostring(ability_behaviour))
 		end

@@ -2,7 +2,7 @@ if not IsServer() then return end
 
 require('lib/dropbox')
 require('lib/base_lua_helpers')
-
+local Constants = require('consts') -- XP TABLE
 require('lib/random/generators')
 require('lib/random/weighted_list')
 require('lib/connection_helpers')
@@ -14,6 +14,7 @@ local LOOT_RADIUS = 80
 local AMPLIFY_STAT_ELITE = 1
 local AMPLIFY_BOUNTY_ELITE = 1
 LinkLuaModifier("modifier_creep_elite", 'lib/spawners/modifier_creep_elite', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_creep_level", 'lib/spawners/modifier_creep_level', LUA_MODIFIER_MOTION_NONE)
 CreepLeveling = CreepLeveling or class({})
 
 function CreepLeveling:Init()
@@ -90,13 +91,11 @@ function CreepLeveling:OnSpawnCallback( event )
 
 	local level = self:_calculateHeroesAverageLevel() 
 
-	local total_creep_level 
 	for creep_level, info in pairs(self.stats[spawner_type]) do
 		local newSpawnLevel = tonumber(info["hero_avg_level"])
 		if newSpawnLevel <= level and newSpawnLevel > seek_creep_level then
 			seek_spawn_info  = info 
 			seek_creep_level = newSpawnLevel
-			total_creep_level  = creep_level
 		end 
 	end
 
@@ -129,7 +128,7 @@ function CreepLeveling:OnSpawnCallback( event )
 	creep:SetMana( creep:GetMaxMana() )
 	creep:SetHealth( creep:GetMaxHealth() )
 
-	creep:CreatureLevelUp(seek_creep_level)
+	--creep:AddNewModifier(nil,nil,"modifier_creep_level",{duration = -1}):SetStackCount(level)
 end
 
 function CreepLeveling:OnDeathCallback( event )

@@ -49,26 +49,16 @@ function mod:GetModifierTotalDamageOutgoing_Percentage()
 end
 function mod:OnTakeDamage(params)
     if not IsServer() then return end
-    --print(BossSpawner:IsBoss(params.unit))
+    if not self:GetParent():IsRealHero() then return end
 	if params.attacker ~= self:GetParent() then return end
 	if params.unit:GetTeamNumber() == params.attacker:GetTeamNumber() then return end
 	if params.unit == self:GetParent() then return end
     if params.inflictor ~= nil then
-        --print(params.inflictor:GetAbilityName())
-        if params.inflictor:GetAbilityName() == "batrider_sticky_napalm" then 
-            --print(params.inflictor:GetAbilityName())
-            return 
-        end
+        if params.inflictor:GetAbilityName() == "batrider_sticky_napalm" then return end
     end
-	if not self:GetParent():IsRealHero() then return end
-    if BossSpawner:IsBoss(params.unit) == nil then 
-        if not params.unit:IsRealHero() then
-            return 
-        end
-    end 
+    if BossSpawner:IsBoss(params.unit) == nil then if not params.unit:IsRealHero() then return end end 
 	if params.inflictor == self:GetAbility() then return end
-
-    local modifier = params.unit:FindModifierByName("modifier_item_piercing_blade_debuf")
+    local modifier = params.unit:FindModifierByName("modifier_item_piercing_blade_debuf") or nil
     local stack = 0
     if self:GetAbility():IsCooldownReady() then
         if modifier == nil then
@@ -84,11 +74,14 @@ function mod:OnTakeDamage(params)
         self:ProcessDamageToExp( self:GetParent(), self:GetAbility(), params.damage )
         self:GetAbility():UseResources(false, false, false, true)
     else
-        stack = modifier:GetStackCount()
+        if modifier == nil then
+            stack = 0
+        else 
+            stack = modifier:GetStackCount() 
+        end
     end
     
     local damage = params.original_damage/100*(self.pure_dmg + self.pure_dmg_stack*stack)
-    print(damage)
     ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,})
 end
 

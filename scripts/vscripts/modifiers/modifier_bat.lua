@@ -3,7 +3,7 @@ local bat_dynamic = {
     oracle_false_promise = 'shard_bat_bonus',
     --'3-ий снепки',
     --'ульт марси'
-    modifier_sunshard = 'bat_reduction'
+    modifier_sunshard_eat = 'bat_reduction'
 }
 
 local bat_constant = {

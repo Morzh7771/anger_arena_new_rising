@@ -62,17 +62,10 @@ DOTAAbilities
 				}
 		}
 	}
-
-	//=================================================================================================================
-	// Wisp: Spirits
-	//=================================================================================================================
 	"wisp_spirits"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"7"
 		"BaseClass"						"wisp_spirits"
-		"ID"							"5486"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -87,49 +80,55 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"20"
+		"AbilityDuration"				"19.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			
-			"creep_damage"				"20 30 40 50 60 70 80"
+			"creep_damage"						"20 30 40 50 60 70 80"
 			"hero_damage"
 			{
-				"value"				"20 40 60 80 100 120 140"
+				"value"							"30 50 70 90 110 130 150"
 				"special_bonus_unique_wisp"		"+60"
 			}
 			"revolution_time"			"5"
-			"min_range"					"200"
-			"max_range"					"700"
-			"hero_hit_radius"			"110"
-			"explode_radius"			"400"
-			"hit_radius"				"150"
-			"spirit_movement_rate"		"300"
-			"spirit_duration"			"20"
-			"spirit_amount"				"5 5 5 5 5 5"
+			"min_range"					"140"
+			"max_range"					
+			{
+					"value"		"750"
+					"affected_by_aoe_increase"	"1"
+			}
+			"hero_hit_radius"			"150"
+			"explode_radius"			
+			{
+				"value"		"360"
+				"affected_by_aoe_increase"	"1"
+			}
+			"hit_radius"				
+			{
+				"value"		"190"
+				"affected_by_aoe_increase"	"1"
+			}
+			"spirit_movement_rate"		"250 270 290 310 330 350 380"
+			"spirit_duration"			"19"
+			"spirit_amount"				"6"
 			"scepter_slow_pct"
 			{
-				"value"			"0"
-				"special_bonus_scepter"			"+15"
+				"value"							"0"
+				"special_bonus_scepter"			"+25"
 			}
 			"scepter_slow_duration"
 			{
-				"value"			"0"
-				"special_bonus_scepter"			"+0.5"
+				"value"							"0"
+				"special_bonus_scepter"			"+0.3"
 			}
 			"AbilityManaCost"				
 			{
-				"value"							"100 120 140 160 180 200 220"
+				"value"							"100 110 120 130 140 150 160"
 			}
 			"AbilityCooldown"				
 			{
-				"value"				"20"
+				"value"							"30 28 26 24 22 20 18"
 				"special_bonus_scepter"			"-50%"
 			}
 		}
@@ -302,109 +301,5 @@ DOTAAbilities
 		"AbilityTextureName"			"wisp_spirits_out"
 		"MaxLevel"						"1"
 		"InnateAbility"					"1"
-	}
-	"wisp_spirits_aa"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/wisp_spirits_aa"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityTextureName"			"wisp_spirits"
-		"MaxLevel"						"7"
-		
-		// Talents		
-		//-------------------------------------------------------------------------------------------------------------
-		"LinkedTalents"
-		{
-			"special_bonus_unique_wisp_spirits_bh_1"	"1"
-			"special_bonus_unique_wisp_spirits_bh_2"	"1"
-		}
-	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"350"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40 36 32 28 24 20 16"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-		
-		"precache"
-		{
-			"particle"					"particles/units/heroes/hero_wisp/wisp_guardian_explosion_small.vpcf"
-			"particle"  				"particles/units/heroes/hero_wisp/wisp_guardian_explosion.vpcf"
-			"particle"  				"particles/units/heroes/hero_wisp/wisp_guardian_.vpcf"
-			"particle"  				"particles/econ/items/wisp/wisp_guardian_ti7.vpcf"
-			"particle"  				"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
-			"particle"  				"particles/econ/items/wisp/wisp_ambient_ti7_trace.vpcf"
-
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
-		}
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_end"				"20 40 60 80 100 120 140"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_collide"			"10 18 26 34 42 50 58"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"0.5"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"explode_radius"			"360"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hit_radius"				"75"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spirit_movement_rate"		"250"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_wisps"					"5"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"min_radius"				"100"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"wisp_regen_rate"			"1"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"wisp_regen_cost"			"5 10 15 20 25 30 35"
-			}
-		}
 	}
 }

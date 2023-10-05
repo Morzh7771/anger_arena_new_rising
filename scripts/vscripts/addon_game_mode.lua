@@ -642,7 +642,7 @@ function AngelArena:OnNPCSpawned(keys)
 		end
 		if npc:IsRealHero() then
 			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
-			npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
+			--npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
 		end
 	end
 	if npc:IsRealHero() then

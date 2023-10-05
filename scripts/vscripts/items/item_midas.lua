@@ -31,7 +31,7 @@ end
 
 
 modifier_item_midas = class({
-	IsHiden = function (self) return true end,
+	IsHidden = function (self) return true end,
 	DeclareFunctions = function (self) return{
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
 	}end,

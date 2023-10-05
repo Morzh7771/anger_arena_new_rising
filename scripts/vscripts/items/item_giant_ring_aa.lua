@@ -16,7 +16,7 @@ function modifier_giant_ring_aa:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
     }
     return funcs
@@ -28,7 +28,7 @@ function modifier_giant_ring_aa:GetAttributes() return MODIFIER_ATTRIBUTE_PERMAN
 function modifier_giant_ring_aa:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end
 function modifier_giant_ring_aa:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end
 function modifier_giant_ring_aa:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end
-function modifier_giant_ring_aa:GetModifierMoveSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor('movement_speed') end
+function modifier_giant_ring_aa:GetModifierMoveSpeedBonus_Special_Boots() return self:GetAbility():GetSpecialValueFor('movement_speed') end
 function modifier_giant_ring_aa:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor('attack_speed') end
 
 

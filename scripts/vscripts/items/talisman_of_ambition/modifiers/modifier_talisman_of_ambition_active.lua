@@ -1,63 +1,16 @@
-modifier_talisman_of_ambition_active = class({})
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:IsHidden()
-	return false
-end
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:RemoveOnDeath()
-	return true
-end
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:IsDebuff()
-	return false
-end
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:IsPurgable()
-	return false
-end
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:DestroyOnExpire()
-	return true
-end
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:DeclareFunctions()
-	local funcs = {
+modifier_talisman_of_ambition_active = class({
+	IsHidden = function (self) return false end,
+	RemoveOnDeath = function (self) return true end,
+	IsDebuff = function (self) return false end,
+	IsPurgable = function (self) return true end,
+	DestroyOnExpire = function (self) return true end,
+	GetStatusEffectName = function (self) return "particles/status_fx/status_effect_blur.vpcf" end,
+	GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
+	DeclareFunctions = function (self) return {
 		MODIFIER_PROPERTY_EVASION_CONSTANT,
-	}
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+	}end,
+	GetModifierEvasion_Constant = function (self) return self:GetAbility():GetSpecialValueFor("evasion") end,
+	GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("attack_speed_active") end,
+})
 
-	return funcs
-end
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:OnCreated( kv )
-	self.evasion = kv.evasion
-end
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:GetModifierEvasion_Constant( params )
-	return self.evasion 
-end
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:OnDestroy()
-end
-
---------------------------------------------------------------------------------
-
-function modifier_talisman_of_ambition_active:GetStatusEffectName()
-    return "particles/status_fx/status_effect_blur.vpcf"
-end
