@@ -1856,14 +1856,14 @@
 		"Model"								"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     	"item_datadriven"
 		
-		"ItemCost"							"0"	
+		"ItemCost"							"350"	
 		"ItemShopTags"						"artifacts"
 		
 		"ItemRecipe"						"1"
 		"ItemResult"						"item_ranged_cleave"
 		"ItemRequirements"
 		{
-			"01"							"item_dragon_lance;item_relic"
+			"01"							"item_dragon_lance;item_diadem;item_claymore"
 
 		}
 	}
@@ -2077,6 +2077,21 @@
 //			}
 //		}
 //	}
+    "item_recipe_fury_shield"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_fury_shield"
+        "ItemRequirements"
+        {
+            "01"                        "item_circlet;item_circlet;item_gloves"
+        }
+    }
     "item_fury_shield"
     {       
         // General
@@ -2113,12 +2128,12 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_stats"			"10"
+                "bonus_stats"			"6"
             }
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "active_bonus_aspeed"	"50"
+                "active_bonus_aspeed"	"35"
             }
             "03"
             {
@@ -2128,7 +2143,7 @@
             "04"
             {
                 "var_type"				"FIELD_FLOAT"
-                "shield_duration"		"3.5"
+                "shield_duration"		"5"
             }
         }
     }

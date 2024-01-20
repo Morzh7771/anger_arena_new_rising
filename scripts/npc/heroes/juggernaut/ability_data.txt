@@ -12,7 +12,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"blade_dance_crit_chance"	"20 25 30 35 40 45 50"
+				"blade_dance_crit_chance"	"20 23 26 29 32 35 37"
 				"blade_dance_crit_mult"		"195 200 205 210 215 220 225"
 				"blade_dance_lifesteal"
 				{
@@ -38,7 +38,7 @@ DOTAAbilities
 
 		"AbilityValues"
 		{
-				"blade_dance_crit_chance"	"20 25 30 35 40 45 50"
+				"blade_dance_crit_chance"	"20 23 26 29 32 35 37"
 				"blade_dance_crit_mult"		"195 200 205 210 215 220 225"
 				"mortal_damage"				"8 10 12 14 16 18 20"
 				"mortal_duration"			"5"
@@ -93,15 +93,21 @@ DOTAAbilities
 				"special_bonus_shard"		"+100"
 				"affected_by_aoe_increase"	"1"
 			}
+			"damage_pct"			
+			{	
+				"value"				"30"
+			}
 
 			"blade_fury_damage_per_tick"			
 			{
-				"value"				"45 55 65 75 85 95 105"
+				"value"				"15 23 31 39 47 55 63"
 			}
+
 			"duration"					
 			{
 				"value"				"5.0"
 			}
+
 			"AbilityCooldown"
 			{
 				"value"					"42 38 34 30 26 22 18"
@@ -117,10 +123,7 @@ DOTAAbilities
 				"value"					"0"
 				"special_bonus_shard"		"+35"
 			}
-			"damage_pct"			
-			{	
-				"value"				"30"
-			}
+			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

@@ -86,7 +86,7 @@ DOTAAbilities
 				"value"					"375"
 				"LinkedSpecialBonus"	"special_bonus_unique_riki_7"
 			}
-			"miss_rate"					"10 20 30 40 50 60 70"
+			"miss_rate"					"40 45 50 55 60 65 70"
 
 			"block_targeting"
 			{
@@ -235,7 +235,6 @@ DOTAAbilities
 
 		// Ability Data
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
 		"AbilityManaCost"				"55"
 
 
@@ -243,6 +242,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{	
+				"value"					  	  "16"
+				"special_bonus_unique_riki_6" "-4"
+			}
 			"radius"
 			{
 				"value"		"450"
