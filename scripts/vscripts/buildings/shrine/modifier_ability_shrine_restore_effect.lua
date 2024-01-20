@@ -39,8 +39,7 @@ end
 
 function modifier_ability_shrine_restore_effect:OnAttacked(params)
     if params.target == self:GetParent() then  
-        print('dadsadasd')
-		--self:GetParent():AddNewModifier(nil,nil,"modifier_ability_shrine_restore_effect_toggle_off",{duration = 5})
+		self:GetParent():AddNewModifier(self:GetParent(),self:GetAbility(),"modifier_ability_shrine_restore_effect_toggle_off",{duration = 5})
 	end
 end
 

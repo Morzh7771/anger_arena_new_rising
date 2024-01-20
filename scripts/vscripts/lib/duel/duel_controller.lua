@@ -264,7 +264,7 @@ function DuelController:_OnTick( isEnd )
 			VisionHero(direHeroes)
 		end
 	end
-	print(nCountdown)
+	--print(nCountdown)
 	if nCountdown <= 10 then
 		if nCountdown == 0 then
 			EmitAnnouncerSound("announcer_ann_custom_mode_20")

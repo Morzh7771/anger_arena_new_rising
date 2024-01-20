@@ -206,7 +206,7 @@ function AngelArena:InitGameMode()
 	GameMode:SetStashPurchasingDisabled(false)
 	GameMode:SetLoseGoldOnDeath(true)
 
-	if GameRules:IsCheatMode() then
+	if not GameRules:IsCheatMode() then
 		GameRules:SetHeroSelectionTime(25)
 		GameRules:SetStrategyTime(1)
 		GameMode:SetDraftingHeroPickSelectTimeOverride(25)

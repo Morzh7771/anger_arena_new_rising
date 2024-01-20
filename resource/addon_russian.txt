@@ -35,6 +35,7 @@
         "duel_start"														"Дуэль началась"
         "duel_end"															"Дуэль окончена."
 		"duel_1"															"Дуэль начнется через 1"
+		"un_banned"															"Доступен в меню репика"
         "duel_error"														"<font color='#FF1111'>[ДУЭЛЬ]</font> Недостаточно игроков."
         "duel_nobody" 														"В этот раз дуэль окончилась ничьей"
         "duel_end_win_radiant"												"Ангелы сокрушили падших"
@@ -104,6 +105,7 @@
 		"DOTA_Tooltip_ability_ability_shrine_restore_mana_regen_const"		"ВОССТАНОВЛЕНИЕ МАНЫ:"
 		"DOTA_Tooltip_ability_ability_shrine_restore_health_regen_pct"		"%ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
 		"DOTA_Tooltip_ability_ability_shrine_restore_mana_regen_pct"		"%ВОССТАНОВЛЕНИЕ МАНЫ:"
+		"DOTA_Tooltip_modifier_ability_shrine_restore_effect_toggle_off"	"Восстановление от shrine отключено"
 
 		"DOTA_Tooltip_modifier_ability_shrine_restore_effect"				"Restoration"
 		"DOTA_Tooltip_modifier_ability_shrine_restore_effect_Description"	"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% + %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% здоровья и %dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% + %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% маны"
