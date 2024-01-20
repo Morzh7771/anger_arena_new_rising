@@ -73,13 +73,13 @@ DOTAAbilities
             "cleave_distance"				"700"
             "great_cleave_damage"
             {
-                    "value"     "15 25 35 45 55 65 75"
-                "special_bonus_unique_sven_8"      "25"
+                "value"     "15 25 35 45 55 65 75"
+                "special_bonus_unique_sven_10"      "25"
             }
             "strength_bonus"
             {
-                "value"        "15 25 35 45 55 65 75"
-                "special_bonus_unique_sven_8" "45"
+                "value"        "5 10 15 20 25 30 35"
+                "special_bonus_unique_sven_10" "25"
             }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -171,21 +171,24 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"gods_strength_damage"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"gods_strength_damage"		"50 75 100 125 150 175 200"	
-				"LinkedSpecialBonus"		"special_bonus_unique_sven_2"	
+				"value"		"50 75 100 125 150 175 200"	
+				"special_bonus_unique_sven_2"		"+50"	
+			}
+			"bonus_slow_resistance"
+			{
+				"value"		"20 22 24 26 28 30 32"	
+				"special_bonus_unique_sven_gods_strength_slow_resist"		"+20"	
 			}
 		}	
 	}
-	"special_bonus_unique_sven_8"
+	"special_bonus_unique_sven_10"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"766"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"

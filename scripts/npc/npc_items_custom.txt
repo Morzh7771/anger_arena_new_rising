@@ -87,9 +87,8 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		//"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        
 		"ItemBaseLevel"                 "1"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"4975"
 		"ItemShopTags"					"agi;damage;evasion;attack_speed"
 		"ItemQuality"					"epic"
@@ -99,32 +98,14 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+        "AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"45 90 200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"35 40 45"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"30 60 140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"	        "25 60 110"
-			}
+            "bonus_agility"			    "45 90 200"
+			"bonus_evasion"			    "35 40 45"
+			"bonus_attack_speed_pct"	"20 25 30"
+			"bonus_damage"	            "25 60 170"
 		}
 	}
-
-
     "item_recipe_burning_butterfly"
     {
         "AbilityTextureName" 				"item_recipe_burning_butterfly"
@@ -151,18 +132,11 @@
     }
     "item_burning_butterfly"
     {       
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"						"item_datadriven"
-        "ID"							"1119"
+        "BaseClass"						"item_lua"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"	        "burning_butterfly"
+        "ScriptFile"					"items/item_butterfly"
         "ItemBaseLevel"                 "3"
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
         "ItemCost"						"15950"
         "ItemStackable"					"0"
         
@@ -171,85 +145,14 @@
         "ItemSellable"                  "1"
         "ItemDroppable"                 "1"
         "ItemPurchasable"				"1"
-        
-        //special
-        "AbilitySpecial"
+        "AbilityValues"
         {
-           "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"45 90 200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"35 40 45"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"30 60 140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"	        "25 60 110"
-			}
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mvspd_pct"		"0 10 15"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "absorb_chance"			"12"
-            }
-        }
-        
-        "Modifiers"
-        {
-            "modifier_burning_butterfly"
-            {
-                "Passive"	"1"
-                "IsHidden"	"1"
-                "Attributes" 		        "MODIFIER_ATTRIBUTE_MULTIPLE"
-                
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%bonus_agi"
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_dmg"
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attackspeed"
-                    "MODIFIER_PROPERTY_EVASION_CONSTANT"			"%bonus_evasion"
-                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_mvspd_pct"			
-                }
-            }
-            
-            
-            "modifier_burning_butterfly_evasion"
-            {
-                "Passive"	"1"
-                "IsHidden"	"1"
-                
-                "OnTakeDamage"
-                {
-                    "Random"
-                    {
-                        "Chance"		"%absorb_chance"
-                        "PseudoRandom"	"DOTA_PSEUDO_RANDOM_TROLL_BASH"
-                        
-                        "OnSuccess"
-                        {
-                            "RunScript"
-                            {
-                                "ScriptFile"	"scripts/vscripts/items/funcs/absorb_damage.lua"
-                                "Function"		"AbsorbDamage"
-                                "damage"		"%attack_damage"
-                            }		
-                        }
-                    }
-                }
-            }
+            "bonus_agi"			        "45 90 200"
+			"bonus_evasion"			    "35 40 45"
+			"bonus_attack_speed_pct"	"20 25 30"
+			"bonus_damage"	            "25 60 170"
+			"bonus_mvspd_pct"		    "0 10 15"
+            "absorb_chance"			    "12"
         }
     }
 
@@ -257,10 +160,7 @@
     "item_recipe_sacred_butterfly"
     {
         "AbilityTextureName" 			"item_recipe_sacred_butterfly"
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "ID"							"1170"						
-        "Model"							"models/props_gameplay/recipe.vmdl"
+         "Model"							"models/props_gameplay/recipe.vmdl"
         "BaseClass"                     "item_recipe_arcane_boots"
         
         // Item Info
@@ -279,74 +179,25 @@
     }
     "item_sacred_butterfly"
     {       
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"						"item_datadriven"
-        "ID"							"1171"
+        "BaseClass"						"item_lua"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"	        "sacred_butterfly"
+        "ScriptFile"					"items/item_butterfly"
         "ItemBaseLevel"                 "2"
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"12950"
+        "ItemCost"						"15950"
         "ItemStackable"					"0"
-        
         "ItemPermanent"					"0"
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
         "ItemDroppable"                 "1"
         "ItemPurchasable"				"1"
-        
-        //special
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"45 90 200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"35 40 45"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"30 60 140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"	        "25 60 110"
-			}
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mvspd_pct"		"0 10 15"
-            }
-        }
-        
-        "Modifiers"
-        {
-            "modifier_sacred_butterfly"
-            {
-                "Passive"	"1"
-                "IsHidden"	"1"
-                "Attributes" 		        "MODIFIER_ATTRIBUTE_MULTIPLE"
-                
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%bonus_agi"
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_dmg"
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attackspeed"
-                    "MODIFIER_PROPERTY_EVASION_CONSTANT"			"%bonus_evasion"
-                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_mvspd_pct"			
-                }
-            }
+            "bonus_agi"			        "45 90 200"
+			"bonus_evasion"			    "35 40 45"
+			"bonus_attack_speed_pct"	"20 25 30"
+			"bonus_damage"	            "25 60 170"
+			"bonus_mvspd_pct"		    "0 10 15"
         }
     }
 
@@ -1206,7 +1057,6 @@
             "slow_duration"             "1.5 2 2.5"
             "min_damage_to_activate"    "0 0 0"
             "cast_range_bonus"          "250 250 250"
-            "mana_regen"                "0.7 2 10"
         }
     }
 
@@ -1230,12 +1080,14 @@
 
         "ItemRequirements"
         {
-            "01"                        "item_orb_of_venom;item_blight_stone;item_fluffy_hat"
+            "01"                        "item_orb_of_venom;item_ring_of_protection;item_gloves"
         }
     }
     "item_corrosion_custom"
     {
-        "BaseClass"                      "item_lua"
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_corrosion_custom"
         "AbilityTextureName"            "item_orb_of_corrosion"
         "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -1260,53 +1112,19 @@
         
         // Special  
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "duration"         "5"
-            } 
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "max_slow"         "-60"
-            }  
-            "03"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "duration_passive"         "3"
-            } 
-            "04"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "ranged_slow"         "-4"
-            } 
-            "05"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "melee_slow"         "-13"
-            }
-            "06"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "armor"                 "-3"
-            }
-            "07"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "damage"                 "3"
-            } 
-            "08"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "health_bonus"                 "150"
-            }    
-            "09"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "total_damage"                 "150"
-            }      
+            "duration"         "5"
+            "max_slow"         "-60"
+            "duration_passive"         "3"
+            "ranged_slow"         "-4"
+            "melee_slow"         "-13"
+            "damage"                 "5"
+            "total_damage"                 "150"
+            "attack_speed"      "25"
+            "armor"         "3"
+            "heal_reduction"    "-20"
+
         }
     }
 
@@ -1361,12 +1179,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_strength"		"10 40"
-			"bonus_agility"			"10 40"
-			"bonus_intellect"		"35 100"
+			"bonus_intellect"		"30 120"
 			"bonus_mana_regen"		"8.5 20"
 			"sheep_duration"		"2.5 3.0"
 			"sheep_movement_speed"	"140 120"
+			"upgrade_radius"	"200"
 		}
 	}
 
@@ -2074,22 +1891,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"20 40 80"
+				"bonus_str"				"20 40"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"20 40 80"
+				"bonus_agi"				"20 40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"40 80 160"
+				"bonus_dmg"				"40 80"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"150 175 200"
+				"bonus_range"			"150 175"
 			}
 			"05"
 			{
@@ -2099,12 +1916,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_target"			"1 2 3"
+				"max_target"			"1 2"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"split_shot_damage"		"60 80 100"
+				"split_shot_damage"		"60 80"
 			}
 		}
 	}
@@ -2150,22 +1967,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"20 40 80"
+				"bonus_str"				"20 40"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"20 40 80"
+				"bonus_agi"				"20 40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"40 80 160"
+				"bonus_dmg"				"40 80"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"150 175 200"
+				"bonus_range"			"150 175"
 			}
 			"05"
 			{
@@ -2175,12 +1992,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_target"			"1 2 3"
+				"max_target"			"1 2"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"split_shot_damage"		"60 80 100"
+				"split_shot_damage"		"60 80"
 			}
 		}
 	}
@@ -2556,7 +2373,7 @@
             "01"						"item_voodoo_mask;item_soul_booster"
         }
     }
-    "item_bloodstone"
+    "item_bloodstone_1"
     {
         "BaseClass"						"item_lua"
         "ScriptFile"					"items/item_bloodstone"
@@ -2593,6 +2410,8 @@
                 "lifesteal_multiplier"	"2.5 3.5 4.5"
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
+                "bonus_aoe"             "50 60 70"
+                
         }
     }
     "item_recipe_bloodstone_2"
@@ -2611,7 +2430,7 @@
         "ItemResult"					"item_bloodstone_2"
         "ItemRequirements"
         {
-            "01"						"item_bloodstone;item_bloodstone"
+            "01"						"item_bloodstone_1;item_bloodstone_1"
         }
     }
     "item_bloodstone_2"
@@ -2651,6 +2470,7 @@
                 "lifesteal_multiplier"	"2.5 3.5 4.5"
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
+                "bonus_aoe"             "50 60 70"
         }
     }
     "item_recipe_bloodstone_3"
@@ -2709,6 +2529,7 @@
                 "lifesteal_multiplier"	"2.5 3.5 4.5"
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
+                "bonus_aoe"             "50 60 700"
         }
     }
     "item_recipe_piercing_blade"
@@ -2736,8 +2557,8 @@
 		"ScriptFile"					"items/item_piercing_blade"
 		"AbilityTextureName"			"blaze_rod"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCooldown"				"1.2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET "
+        "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "1"
         "AbilityValues"
 		{
@@ -2754,6 +2575,9 @@
 
             "min_exp_ranged"		"60 80 120"
             "min_exp_melee"			"70 90 130"
+
+            "active_pure_dmg"       "100 120 140"
+            "active_duration"       "5"
 		}
     }
     "item_recipe_piercing_blade2"
@@ -2781,8 +2605,8 @@
 		"ScriptFile"					"items/item_piercing_blade"
 		"AbilityTextureName"			"blaze_rod2"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCooldown"				"1.2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET "
+        "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "2"
         "AbilityValues"
 		{
@@ -2799,6 +2623,9 @@
 
             "min_exp_ranged"		"32 42 52"
             "min_exp_melee"			"40 50 60"
+
+            "active_pure_dmg"       "100 120 140"
+            "active_duration"       "5"
 		}
     }
     "item_recipe_piercing_blade3"
@@ -2826,8 +2653,8 @@
 		"ScriptFile"					"items/item_piercing_blade"
 		"AbilityTextureName"			"blaze_rod3"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCooldown"				"1.2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "3"
         "AbilityValues"
 		{
@@ -2844,6 +2671,9 @@
 
             "min_exp_ranged"		"32 42 52"
             "min_exp_melee"			"40 50 60"
+
+            "active_pure_dmg"       "100 120 140"
+            "active_duration"       "5"
 		}
     }
     "item_recipe_chest_of_midas"
@@ -3160,7 +2990,7 @@
 	    "AbilityTextureName"			"slice_amulet"
         "AbilityManaCost"				"0"
         "ItemBaseLevel"					"1"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityCastRange"				"600"
         "AbilityValues"
 		{
@@ -3200,7 +3030,7 @@
         "AbilityManaCost"				"0"
         "ItemBaseLevel"					"2"
         "AbilityCastRange"				"800"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityValues"
 		{
             "mana_cost_pct"         "3 5"
@@ -3528,7 +3358,7 @@
         "ItemResult"					"item_rebels_sword"
         "ItemRequirements"
         {
-            "01"						"item_desolator_3;item_ultimate_orb;item_boss_soul;"
+            "01"						"item_desolator_aa_2;item_ultimate_orb;item_boss_soul;"
         }
     }
 
@@ -3574,18 +3404,18 @@
             "05"
             {
                 "var_type"				"FIELD_INTEGER"
-                "disarmor"				"4"
+                "disarmor"				"5"
             }
             
             "06"
             {
                 "var_type"				"FIELD_INTEGER"
-                "disarmor_const"		"6"
+                "disarmor_const"		"8"
             }
             "07"
             {
                 "var_type"				"FIELD_INTEGER"
-                "max_disarmor_pct"		"60"
+                "max_disarmor_pct"		"70"
             }
             "08"
             {
@@ -3611,7 +3441,7 @@
 		"ItemResult"					"item_pipe_custom"
 		"ItemRequirements"
 		{
-			"01"						"item_cloak*;item_headdress;item_ring_of_health"
+			"01"						"item_cloak*;item_headdress;item_ring_of_tarrasque"
 		}
 	}
     "item_recipe_pipe_custom_2"
@@ -3816,7 +3646,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"500"	
+        "ItemCost"						"0"	
         "ItemShopTags"					""
         // Recipe
         //-------------------------------------------------------------------------------------------------------------
@@ -3834,7 +3664,7 @@
 		"AbilityTextureName"			"third_eye"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityCooldown"				"120"
+        "AbilityCooldown"				"100"
         "ItemBaseLevel"                 "1"
         "AbilityValues"
 		{
@@ -4233,7 +4063,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"100"	
+        "ItemCost"						"600"	
         "ItemShopTags"					""
         
         // Recipe
@@ -4357,4 +4187,600 @@
             "block_damage"              "60"
         }
     }
+	"item_recipe_desolator_aa_1"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_mithril_hammer;item_mithril_hammer;item_blight_stone"
+		}
+	}
+    "item_recipe_desolator_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_aa_1;item_desolator_aa_1;"
+		}
+	}
+    "item_recipe_desolator_aa_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_aa_2;item_desolator_aa_2;item_boss_soul"
+		}
+	}
+	"item_desolator_aa_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_desolator"
+        "ScriptFile"					"items/desolator_blood"
+        "ItemBaseLevel"					"1"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"				"50 100 220"
+				"corruption_armor"			"7 14 30"
+				"corruption_duration"		"7.0 7.0 7.0"
+		}
+	}	
+	"item_desolator_aa_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"desolator_3"
+        "ScriptFile"					"items/desolator_blood"
+		"AbilityTextureName"			"desolatorr_2"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"				"50 100 220"
+				"corruption_armor"			"7 14 30"
+				"corruption_duration"		"7.0 7.0 7.0"
+		}
+	}
+	"item_desolator_aa_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"3"
+		
+		"AbilityTextureName"			"desolator_3"
+        "ScriptFile"					"items/desolator_blood"
+        "BaseClass"						"item_lua"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"				"50 100 220"
+				"corruption_armor"			"7 14 30"
+				"corruption_duration"		"7.0 7.0 7.0"
+                "chance"                    "17"
+                "damage_pct"                "12"
+		}
+	}
+    "item_recipe_solar_crest_1"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"375"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_solar_crest_1"
+		"ItemRequirements"
+		{
+			"01"						"item_pavise_2;item_crown;item_wind_lace"
+		}
+	}
+	"item_solar_crest_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "ScriptFile"					"items/item_solar_crest"
+        "BaseClass"						"item_lua"
+        "AbilityTextureName"			"item_solar_crest"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"16.0"
+		"AbilitySharedCooldown"			"medallion"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"solar crest"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_armor"			"7 13 24"
+			"all_stats"		        "10 30 120"
+			"movement_speed"	    "25 45 70"
+			"bonus_mana_regen_pct"	"1.75 4 10"
+
+			"target_movement_speed"	"18 20 22"
+			"target_attack_speed"	"70 140 250"
+			"target_armor"			"7 14 20"
+            
+			"duration"				"8 9 10"
+            "health_pct"            "10 20 30"
+            "barrier_block"         "800 1000 1500"
+		}
+	}
+
+	"item_recipe_solar_crest_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_solar_crest_2"
+		"ItemRequirements"
+		{
+			"01"						"item_solar_crest_1;item_solar_crest_1;"
+		}
+	}
+	"item_solar_crest_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"ScriptFile"					"items/item_solar_crest"
+        "BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_solar_crest2"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"16.0"
+		"AbilitySharedCooldown"			"medallion"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"solar crest"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_armor"			"7 13 24"
+			"all_stats"		        "10 30 120"
+			"movement_speed"	    "25 45 70"
+			"bonus_mana_regen_pct"	"1.75 4 10"
+
+			"target_movement_speed"	"18 20 22"
+			"target_attack_speed"	"70 140 250"
+			"target_armor"			"7 14 20"
+            
+			"duration"				"8 9 10"
+            "health_pct"            "10 20 30"
+            "barrier_block"         "800 1000 1500"
+		}
+	}
+
+	"item_recipe_solar_crest_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_solar_crest_3"
+		"ItemRequirements"
+		{
+			"01"						"item_solar_crest_2;item_solar_crest_2;item_boss_soul"
+		}
+	}
+	"item_solar_crest_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		"ScriptFile"					"items/item_solar_crest"
+        "BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_solar_crest3"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"16.0"
+		"AbilitySharedCooldown"			"medallion"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"solar crest"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_armor"			"7 13 24"
+			"all_stats"		        "10 30 120"
+			"movement_speed"	    "25 45 70"
+			"bonus_mana_regen_pct"	"1.75 4 10"
+
+			"target_movement_speed"	"18 20 22"
+			"target_attack_speed"	"70 140 250"
+			"target_armor"			"7 14 20"
+
+			"duration"				"8 9 10"
+            "health_pct"            "10 20 30"
+            "barrier_block"         "800 1000 1500"
+		}
+	}
+    "item_recipe_revenants_brooch_custom"
+    {
+        "BaseClass"                     "item_datadriven"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "item_recipe_revenants_brooch"
+
+        "ItemCost"                      "800"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_revenants_brooch_custom"
+        "ItemRequirements"
+        {
+            "01"                        "item_relic;item_voodoo_mask"
+        }
+    }
+     "item_recipe_revenants_brooch_custom_2"
+    {
+        "BaseClass"                     "item_datadriven"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "item_recipe_revenants_brooch"
+
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_revenants_brooch_custom_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_revenants_brooch_custom;item_revenants_brooch_custom"
+        }
+    }
+     "item_recipe_revenants_brooch_custom_3"
+    {
+        "BaseClass"                     "item_datadriven"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "item_recipe_revenants_brooch"
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_revenants_brooch_custom_3"
+        "ItemRequirements"
+        {
+            "01"                        "item_revenants_brooch_custom_2;item_revenants_brooch_custom_2;item_boss_soul"
+        }
+    }
+    
+    "item_revenants_brooch_custom"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_revenants_brooch_custom"
+        "ItemBaseLevel"					"1"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityTextureName"            "revenants_brooch_custom"
+        "AbilityManaCost"               "150"
+        "ItemCost"                      "4900"
+        "ItemShopTags"                  "int;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "staff;misery;sm"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"          "70 150 400"                
+            "spell_lifesteal"       "10 20 30"    
+            "manacost_per_hit"      "9 8 7"
+            "spell_lifesteal_creep" "10 20 30"
+            "damage_reduction"      "-30 -25 -20"
+            
+        }
+    }
+    "item_revenants_brooch_custom_2"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_revenants_brooch_custom"
+        "ItemBaseLevel"					"2"
+        "AbilityTextureName"            "revenants_brooch_custom_2"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityManaCost"               "150"
+        "ItemCost"                      "4900"
+        "ItemShopTags"                  "int;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "staff;misery;sm"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"          "70 150 400"                
+            "spell_lifesteal"       "10 20 30"    
+            "manacost_per_hit"      "9 8 7"
+            "spell_lifesteal_creep" "10 20 30"
+            "damage_reduction"      "-30 -25 -20"  
+        }
+    }
+    "item_revenants_brooch_custom_3"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_revenants_brooch_custom"
+        "ItemBaseLevel"					"3"
+        "AbilityTextureName"            "revenants_brooch_custom_3"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityManaCost"               "150"
+        "ItemCost"                      "4900"
+        "ItemShopTags"                  "int;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "staff;misery;sm"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"          "70 150 400"                
+            "spell_lifesteal"       "10 20 30"    
+            "manacost_per_hit"      "9 8 7"
+            "spell_lifesteal_creep" "10 20 30"
+            "damage_reduction"      "-30 -25 -20"  
+        }
+    }
+    "item_recipe_guardian_greaves_custom"
+	{
+		"BaseClass"                     "item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1450"	
+		"ItemShopTags"					""
+		"AbilityTextureName"			"item_recipe_guardian_greaves"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_guardian_greaves_custom"
+
+		"ItemRequirements"
+		{
+			"01"						"item_mekansm;item_arcane_boots;item_buckler"
+		}
+	}
+	"item_guardian_greaves_custom"
+	{
+		"BaseClass" 					"item_lua"
+		"ScriptFile" 					"/items/item_guardian_greaves_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"item_guardian_greaves"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityCastRange" 				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"						"5100"
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"guardian greaves"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{				
+				"bonus_movement"		"50 80"
+				"bonus_mana_regen"		"3.5 10"
+				"bonus_armor"		    "7 25"
+
+				"aura_health_regen"		        "20 60"
+                "aura_health_regen_active"		"60 180"
+                "aura_mana_regen"		        "10 30"
+                "aura_mana_regen_active"		"30 90"
+                "aura_armor"		            "8 24"
+                "aura_armor_active"		        "24 72"
+
+				"aura_reduction"		"-10 -15"
+				"aura_bonus_threshold"	"30"
+
+				"replenish_health"		"20 30"
+				"replenish_mana"		"20 30"
+                "base_mana"		        "400 1200"
+                "base_health"		    "400 1200"
+				"replenish_radius"		"1200"
+		}
+	}
+    "item_recipe_guardian_greaves_custom_2"
+	{
+		"BaseClass"                     "item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1450"	
+		"ItemShopTags"					""
+		"AbilityTextureName"			"item_recipe_guardian_greaves"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_guardian_greaves_custom_2"
+
+		"ItemRequirements"
+		{
+			"01"						"item_guardian_greaves_custom;item_guardian_greaves_custom;item_boss_soul"
+		}
+	}
+	"item_guardian_greaves_custom_2"
+	{
+		"BaseClass" 					"item_lua"
+		"ScriptFile" 					"/items/item_guardian_greaves_custom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"guardian_greaves_2"
+        "ItemBaseLevel"                 "2"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"AbilityCastRange" 				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"						"5100"
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"guardian greaves"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{				
+				"bonus_movement"		"50 80"
+				"bonus_mana_regen"		"3.5 10"
+				"bonus_armor"		    "7 25"
+
+				"aura_health_regen"		        "20 60"
+                "aura_health_regen_active"		"60 180"
+                "aura_mana_regen"		        "10 30"
+                "aura_mana_regen_active"		"30 90"
+                "aura_armor"		            "8 24"
+                "aura_armor_active"		        "24 72"
+
+				"aura_reduction"		"-10 -15"
+				"aura_bonus_threshold"	"30"
+
+				"replenish_health"		"20 30"
+				"replenish_mana"		"20 30"
+                "base_mana"		        "400 1200"
+                "base_health"		    "400 1200"
+				"replenish_radius"		"1200"
+		}
+	}
 }

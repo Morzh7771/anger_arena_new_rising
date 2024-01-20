@@ -79,7 +79,6 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-		"AbilityCharges"				"3"
 		"AbilityChargeRestoreTime"		"25"
 
 		// Cost
@@ -110,7 +109,7 @@ DOTAAbilities
 			"slow_duration"			"2.0"
 			"AbilityCharges"
 			{
-				"value"			""
+				"value"			"3"
 				"LinkedSpecialBonus"	"special_bonus_unique_sniper_2"
 			}
 			"damage_pct"		"35"

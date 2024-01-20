@@ -26,20 +26,28 @@ local attribute_table = {
 	["DOTA_ATTRIBUTE_ALL"] = DOTA_ATTRIBUTE_ALL,
 }
 
-function RepickMenu:_init()
+function RepickMenu:init()
 	if self.gods_data then return end
 
 	local hero_data = PreloadCache:GetHeroData()
 	
 	
 	self.gods_data = {}
+	local banned = GameRules:GetBannedHeroes()
+	for int,_ in pairs(banned) do
+		print('roll')
+		if RollPercentage(30) then
+			print('unbanned')
+			table.remove(banned,int)
+		end
+		DeepPrintTable(banned)
+	end
 
 	for hero_name, hero_info in pairs(hero_data) do
 			local data = {}
 
 			local abilities = {}
-
-			-- if some god have more than 6 abilities, idk what i should to do, and how i should 'filter' abilities
+			
 			for i = 1, 6 do
 				local key = "Ability" .. tostring(i)
 				local ability_name = hero_info[key]
@@ -93,19 +101,31 @@ function RepickMenu:_init()
 			data['item_name']	= hero_info['GodRepickItem'] or "item_invalid"
 
 			data['picked']		= 0
-
-			-- TODO: Is we need a Magical Resistance, Vision and etc that dota shows?
-
-			self.gods_data[hero_name] = data
+			local togledHero = LoadKeyValues('scripts/npc/herolist.txt')
+			
+			for name,toggleState in pairs(togledHero) do
+				if name == hero_name then
+					if toggleState == 1 then
+						for _,ban in pairs(banned) do
+							print(("npc_dota_hero_"..ban))
+							print(hero_name)
+							if ("npc_dota_hero_"..ban) ~= hero_name then
+								print('removed')
+								self.gods_data[hero_name] = data
+							end
+						end
+					end
+				end
+			end
+			
 	end
-
 	CustomGameEventManager:RegisterListener("aa_repick_menu_retrive_data", Dynamic_Wrap(self, '_retriveHeroData'))
 	CustomGameEventManager:RegisterListener("aa_repick_menu_start_repick", Dynamic_Wrap(self, '_repickHero'))
 	--print("aa_repick_menu_start_repick")
 end
 
 function RepickMenu:CanPickNow()
-	return true --DuelController:GetTimeToDuel() > DUEL_CANT_PICK_PERIOD and BossSpawner:GetDeathCount(BOSS_FOR_REPICK) ~= 0 and not BossSpawner:IsBossAlive(BOSS_FOR_REPICK)
+	return DuelController:GetTimeToDuel() > DUEL_CANT_PICK_PERIOD and BossSpawner:GetDeathCount(BOSS_FOR_REPICK) ~= 0 and not BossSpawner:IsBossAlive(BOSS_FOR_REPICK)
 end
 
 function RepickMenu:PickHero(player, newHeroName)
@@ -213,44 +233,6 @@ function RepickMenu:_retriveHeroData(data)
 
 	local data = RepickMenu:GetData()
 
-	
 	CustomGameEventManager:Send_ServerToPlayer(player, "aa_repick_menu_set_data", data )
 end
-function RepickMenu:sortTableAlphabetically(tables)
-    -- Создаем временную таблицу для хранения отсортированных значений
-    local sortedTable = {}
-	local names = {}
-    -- Копируем значения из исходной таблицы во временную таблицу
-    for name, info in pairs(tables) do
-		sortedTable[name] = info
-    end
-	for key, value in pairs(tables) do
-        table.insert(names, key)
-    end
-	print("OLD")
-	--DeepPrintTable(sortedTable["npc_dota_hero_pangolier"])
-	DeepPrintTable(tables)
-	print("NEW")
-	DeepPrintTable(sortedTable)
 
-
-    -- Сортируем временную таблицу по алфавиту
-    table.sort(names, function(a, b)
-        return tostring(a) < tostring(b)
-    end)
-	--DeepPrintTable(names)
-    -- Создаем новую таблицу и копируем отсортированные значения из временной таблицы
-    local resultTable = {}
-    for _, name in pairs(names) do
-		--print(name)
-		--DeepPrintTable(sortedTable[name])
-        --table.insert(resultTable ,{name,sortedTable[name]})
-		--DeepPrintTable(resultTable)
-    end
-	--print("result")
-	--DeepPrintTable(resultTable)
-	--print("result")
-    -- Возвращаем отсортированную таблицу
-    return {1}
-end
-RepickMenu:_init()

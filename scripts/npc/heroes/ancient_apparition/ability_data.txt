@@ -206,17 +206,36 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius_min"			"325"
-			"radius_grow"			"65.0"
-			"radius_max"			"1500"
-			"path_radius"			"325"
-			"frostbite_duration"	"10 11 12 13 14 15"
+			"radius_min"			
+			{
+				"value"	"325"
+					"affected_by_aoe_increase"	"1"
+			}
+			"radius_grow"			
+			{
+				"value"		"65.0"
+			}
+			"radius_max"			
+			{
+				"value"			"1500"
+				"affected_by_aoe_increase"	"1"
+			}
+			"path_radius"			
+			{
+				"value"		"325"
+				"affected_by_aoe_increase"	"1"
+			}
+			"frostbite_duration"	
+			{
+				"value"		"10 11 12 13 14 15 16"
+				"special_bonus_unique_ancient_apparition_ice_vortex_duration"			"+5"
+			}
 			"dot_damage"				
 			{
 				"value"					"12.5 20.0 32.0 40.0 48.0 56.0 62.0"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"speed"					"1500 1500 1500 1500"
+			"speed"					"1500 1500 1500 1500 1500 1500 1500"
 			"kill_pct"
 			{	
 				"value"				"9 10 11 12 13 14 15"

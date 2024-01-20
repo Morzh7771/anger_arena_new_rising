@@ -46,7 +46,7 @@ function modifier_fervor_aa:GetModifierProcAttack_Feedback(params)
 	local stack_count = params.attacker:GetModifierStackCount("modifier_fervor_aa_effect", parent)
 	
     local chance = self.chance+self.chance_per_stack*stack_count
-    if chance >= 100 then chance = 99 end
+    if chance >= 50 then chance = 50 end
 
     if params.target == self.target then
         self:SetStacksCustom(stack_count + 1)

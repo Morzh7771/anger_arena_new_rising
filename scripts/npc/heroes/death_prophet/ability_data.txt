@@ -33,32 +33,31 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValuess"
 		{
-			"01"
+			"start_radius"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"start_radius"				"110"
+				"value"			"110"
+				"affected_by_aoe_increase"	"1"
 			}
-			"02"
+			"end_radius"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"end_radius"				"300"
+				"value"			"300"
+				"affected_by_aoe_increase"	"1"
 			}
-			"03"
+			"range"						"810 810 810 810"
+			"speed"						"1100 1100 1100 1100"
+			"slow_percent"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"range"						"810"
+				"value"				"0"
+				"special_bonus_unique_death_prophet_crypt_swarm_slow"	"-50"
 			}
-			"04"
+			"slow_duration"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"speed"						"1100"
+				"value"				"0"
+				"special_bonus_unique_death_prophet_crypt_swarm_slow"	"+1"
 			}
-			"05"
-			{
-				"damage_pct"				"30"
-			}
+			"damage_pct"				"30"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -91,9 +90,18 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"					"450"
+			"radius"					
+			{
+				"value"	"450"
+				"affected_by_aoe_increase"	"1"
+			}
 			"duration"					"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
 			"projectile_speed"					"1200"
+			"movement_slow"
+			{
+				"value"				"10 15 20 25 30 35 40"
+				"special_bonus_unique_death_prophet_silence_slow"		"+15"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	

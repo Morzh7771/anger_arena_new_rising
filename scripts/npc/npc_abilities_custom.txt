@@ -239,7 +239,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"BonusPercentDamage"		"0.4"
+				"BonusPercentDamage"		"0.6"
 			}
 		}
 	}
@@ -1509,5 +1509,40 @@
 			}
 		}
 		
+	}
+	"tower_ability"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"					"lib/tower/tower_base"
+		"AbilityTextureName"			"custom/possessed_hellshield"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"				"1"
+
+		"AbilitySpecial"{
+			"01"{
+				"var_type"				"FIELD_INTEGER"
+				"base_health"			"50000"
+			}
+			"02"{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"1500"
+			}
+			"03"{
+				"var_type"				"FIELD_INTEGER"
+				"health_inc"			"10000"
+			}
+			"04"{
+				"var_type"				"FIELD_INTEGER"
+				"health_inc_inc"		"2500"
+			}
+			"05"{
+				"var_type"				"FIELD_INTEGER"
+				"damage_inc"			"300"
+			}
+			"06"{
+				"var_type"				"FIELD_INTEGER"
+				"damage_inc_inc"		"75"
+			}
+		}
 	}
 }

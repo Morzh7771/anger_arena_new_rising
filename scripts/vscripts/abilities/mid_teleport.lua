@@ -52,10 +52,10 @@ function mid_teleport:OnChannelFinish(bInterrupted)
 	hero:AddNewModifier(hero, nil, "modifier_mid_teleport_cd", {duration = 10} )
 
 	local targets = {
-		"teleport_dire_bot_target",
-		"teleport_radiant_bot_target",
-		"teleport_dire_top_target",
 		"teleport_radiant_top_target",
+		"teleport_dire_top_target",
+		"teleport_radiant_bot_target",
+		"teleport_dire_bot_target",
 	}
 	local teleports = {
 		"teleport_dire_top",

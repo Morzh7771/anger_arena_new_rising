@@ -3,7 +3,7 @@
 if AngelArena == nil then
 	_G.AngelArena = class({})
 end
---srequire('tp_s')
+require('tp_s')
 require('lib/utils')
 require('lib/teleport')
 require('lib/duel/duel_controller')
@@ -22,7 +22,12 @@ require('lib/move_limiter')
 require('lib/spawners/bear_spawner')
 require('lib/bounty')
 require('lib/game_ender')
---require('lib/repick_menu')
+require('lib/repick_menu')
+function CEntityInstance:SetNetworkableEntityInfo(key, value)
+    local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
+    t[key] = value
+    CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), t)
+end
 function Precache( context )
 	--[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
@@ -78,7 +83,7 @@ local cheat = false
 local is_game_start = false
 local is_game_end = false
 local game_start_for_courier = false
-local BearRespawnTime = 1
+local BearRespawnTime = 1.3
 KILL_LIMIT_CONST = 120
 GOLD_PER_TICK = 2
 
@@ -131,7 +136,6 @@ function UpdatePlayersCount()
 
 	if nPlayersConnected == 0 or (nRadiants == 0 or nDire == 0 and not GameRules:IsCheatMode()) then
 		local team
-
 		if nPlayersConnected == 0 then
 			team = DOTA_TEAM_NEUTRALS -- creeps is the best
 		elseif nRadiants == 0 then
@@ -544,6 +548,7 @@ function AngelArena:OnGameStateChange()
 		local needkill = KILL_LIMIT_CONST / 10 * player
 		KILL_LIMIT = needkill
 		_G.KILL_LIMIT = needkill
+		RepickMenu:init() 
 		
 		CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
 
@@ -570,15 +575,36 @@ function AngelArena:OnGameStateChange()
 			AddFOWViewer(DOTA_TEAM_BADGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
 			self.creep:AddNewModifier(self.creep, nil,'modifier_mid_teleport', {duration = -1} )
 		end
+
+		local tower_ab =
+		{
+			["separation_of_souls_bear"] = 1,
+			["lone_druid_spirit_bear_defender"] = 1,
+		}
+
+		local towers = Entities:FindAllByClassname("npc_dota_tower")
+		for _, tower in pairs(towers) do
+			local ability
+			for _,v in ipairs(tower:FindAllModifiers()) do
+				tower:RemoveModifierByName(v)
+			end
+			for i = 0, tower:GetAbilityCount() - 1 do
+				ability = tower:GetAbilityByIndex(i)
+				if ability then ability:SetLeevl(1) end
+			end
+		end
+		
+		local spawners = Entities:FindAllByClassname("npc_dota_neutral_spawner")
+
+		for _, spawner in pairs(spawners) do
+			print(spawner)
+			UTIL_Remove(spawner)
+		end
 		
 
 		PauseGame(true)
 
-		local spawners = Entities:FindAllByClassname("npc_dota_neutral_spawner")
-
-		for _, spawner in pairs(spawners) do
-			UTIL_Remove(spawner)
-		end
+		
 	end
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -1014,6 +1040,7 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 	return true
 end
 
+	
 function AngelArena:OnPlayerUsedAbility(event)
 	local player = PlayerResource:GetPlayer(event.PlayerID)
 	local ability_name = event.abilityname

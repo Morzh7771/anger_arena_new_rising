@@ -272,35 +272,23 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier"			"525"
-				"LinkedSpecialBonus"		"special_bonus_unique_tusk"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"air_time"					"0.75"
-				"LinkedSpecialBonus"		"special_bonus_unique_tusk_7"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"			"50"
+				"crit_multiplier"			
+				{
+					"value"				"250 300 350 400 450 500 550"
+					"LinkedSpecialBonus"		"special_bonus_unique_tusk"
+				}
+				"air_time"					
+				{
+					"value"				"0.75"
+					"LinkedSpecialBonus"		"special_bonus_unique_tusk_7"
+				}
+				"slow_duration"				"2.0 3.0 4.0"
 				"move_slow"					"40"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
 				"push_length"				"1000"
-			}
 		}
 	}
 	"tusk_walrus_kick"

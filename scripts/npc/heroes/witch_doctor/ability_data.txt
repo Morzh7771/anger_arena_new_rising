@@ -95,15 +95,18 @@ DOTAAbilities
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 				"LinkedSpecialBonusField"	"value"
 
+			}			
+			"radius"					
+			{
+				"value"			"500 550 600 650 700 750 800"
+				"affected_by_aoe_increase"	"1"
 			}
-			"radius"					"500 550 600 650 700 750 800"
 			"heal"	
 			{
 				"value"						"15 30 45 60 75 90 105"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
 			}
 			"heal_interval"					"0.33"
-			"enemy_damage_pct"				"100"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

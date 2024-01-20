@@ -28,80 +28,43 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"7 8 9 10 11 12 13"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"attack_range_bonus"	"350 400 450 500 550 600 650"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"percent_damage"		"4 6 8 10 12 14 16"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"tick_rate"				"1.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_duration"		"5.0"
-				"CalculateSpellDamageTooltip"	"0"
-				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_6"
-				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
-
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"move_slow"				"16 20 24 28 32 36 40"
-				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_1"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
+				"damage_duration"		
+				{
+					"value"			"5.0"
+					"CalculateSpellDamageTooltip"	"0"
+					"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_6"
+					"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+				}
+				"move_slow"				
+				{
+					"value"			"16 20 24 28 32 36 40"
+					"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_1"
+				}
 				"night_vision_bonus"	"400"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"projectile_speed_bonus"	"500"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tree_destruction_radius"	"175"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
+				"tree_destruction_radius"
+				{
+					"value"						"175"
+					"affected_by_aoe_increase"	"1"	
+				}
 				"attack_point"			"0.1"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"max_attacks"			"5"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_cost_scepter"		"100"
-				"RequiresScepter"			"1"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_scepter"		"25"
-				"RequiresScepter"			"1"
-			}
+				"mana_cost_scepter"		
+				{
+					"value"		"100"
+					"RequiresScepter"			"1"
+				}
+				"movement_scepter"		
+				{
+					"value"		"25"
+					"RequiresScepter"			"1"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

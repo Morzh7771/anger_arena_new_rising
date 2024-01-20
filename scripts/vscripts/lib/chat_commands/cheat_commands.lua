@@ -234,6 +234,7 @@ function Commands:q(player, arg)
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
+	hero:AddItemByName("item_boss_soul")
 end
 
 function Commands:cb(player, arg)

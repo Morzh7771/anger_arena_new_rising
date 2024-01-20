@@ -95,10 +95,12 @@ DOTAAbilities
 			{	
 				"value"	"17 16 15 14 13 12 11"
 				"special_bonus_unique_bane_8"			"-3"
+				"special_bonus_shard"				"-3"
 			}
 			"shard_radius"
 			{
-				"special_bonus_shard"				"+400"
+				"special_bonus_shard"				"+550"
+				"affected_by_aoe_increase"	"1"
 			}
 			"shard_secondary_target_heal_pct"
 			{

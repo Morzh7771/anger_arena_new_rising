@@ -132,10 +132,6 @@ DOTAAbilities
 		"AbilityCastPoint"				"0 0 0 0"
 		"AbilityChannelTime"			"0.6 1 1.4 1.8 2.2 2.6 3.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8 7.75 7.5 7.25 7 6.75 6.5"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
@@ -154,6 +150,10 @@ DOTAAbilities
 				{
 					"RequiresShard"				"1"
 					"value"						"100"
+				}
+				"AbilityCooldown"			
+				{
+					"value"				"8 7.75 7.5 7.25 7 6.75 6.5"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

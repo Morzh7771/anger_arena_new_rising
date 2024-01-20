@@ -4,6 +4,8 @@ item_piercing_blade3 = class({})
 require('lib/common_abilities/damage_to_exp')
 LinkLuaModifier("modifier_item_piercing_blade", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_piercing_blade_debuf", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_piercing_blade_cd", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_piercing_blade_pure_damage", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
 
 function item_piercing_blade:GetIntrinsicModifierName()
 	return "modifier_item_piercing_blade"
@@ -15,6 +17,22 @@ end
 
 function item_piercing_blade3:GetIntrinsicModifierName()
 	return "modifier_item_piercing_blade"
+end
+
+function item_piercing_blade:OnSpellStart()
+    if not self:GetCaster():HasModifier("modifier_piercing_blade_pure_damage") then
+        self:GetCaster():AddNewModifier(self:GetCaster(),self,'modifier_piercing_blade_pure_damage',{duration = self:GetSpecialValueFor("active_duration")})
+    end
+end
+function item_piercing_blade2:OnSpellStart()
+    if not self:GetCaster():HasModifier("modifier_piercing_blade_pure_damage") then
+        self:GetCaster():AddNewModifier(self:GetCaster(),self,'modifier_piercing_blade_pure_damage',{duration = self:GetSpecialValueFor("active_duration")})
+    end
+end
+function item_piercing_blade3:OnSpellStart()
+    if not self:GetCaster():HasModifier("modifier_piercing_blade_pure_damage") then
+        self:GetCaster():AddNewModifier(self:GetCaster(),self,'modifier_piercing_blade_pure_damage',{duration = self:GetSpecialValueFor("active_duration")})
+    end
 end
 
 modifier_item_piercing_blade = CommonAbilities:ConstructModifier( modifier_item_piercing_blade, CommonAbilities.DamageToExp )
@@ -42,7 +60,7 @@ function mod:OnCreated()
     self.pure_dmg_stack = self:GetAbility():GetSpecialValueFor("pure_dmg_stack")
     self.pure_dmg_duration = self:GetAbility():GetSpecialValueFor("pure_dmg_duration")
     self.pure_dmg_cd = self:GetAbility():GetSpecialValueFor("pure_dmg_cd")
-    self:CommonInitDamageToExp(  self:GetAbility(),  self:GetAbility():GetCooldown(  self:GetAbility():GetLevel() - 1 ) )
+    self:CommonInitDamageToExp(  self:GetAbility(),  self:GetAbility():GetSpecialValueFor("pure_dmg_cd") )
 end
 function mod:GetModifierTotalDamageOutgoing_Percentage()
     return -self.pure_dmg
@@ -60,7 +78,7 @@ function mod:OnTakeDamage(params)
 	if params.inflictor == self:GetAbility() then return end
     local modifier = params.unit:FindModifierByName("modifier_item_piercing_blade_debuf") or nil
     local stack = 0
-    if self:GetAbility():IsCooldownReady() then
+    if not self:GetParent():HasModifier("modifier_piercing_blade_cd") then
         if modifier == nil then
             if BossSpawner:IsBoss(params.unit) == nil then
                 params.unit:AddNewModifier(self:GetCaster(),self:GetAbility(),"modifier_item_piercing_blade_debuf",{duration = self.pure_dmg_duration}):IncrementStackCount()
@@ -72,7 +90,7 @@ function mod:OnTakeDamage(params)
             modifier:ForceRefresh()
         end
         self:ProcessDamageToExp( self:GetParent(), self:GetAbility(), params.damage )
-        self:GetAbility():UseResources(false, false, false, true)
+        self:GetParent():AddNewModifier(self:GetParent(),self:GetAbility(),'modifier_piercing_blade_cd',{duration = self.pure_dmg_cd})
     else
         if modifier == nil then
             stack = 0
@@ -116,12 +134,46 @@ function mod:GetModifierBonusStats_Intellect()
 	end
 end
 
-modifier_item_piercing_blade_debuf = class({})
+modifier_item_piercing_blade_debuf = class({
+    GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
+    IsDebuff = function (self) return true end,
+    IsHidden = function (self) return false end,
+    IsPurgable = function (self) return false end,
+})
 
-function modifier_item_piercing_blade_debuf:IsDebuff() return true end
-function modifier_item_piercing_blade_debuf:IsHidden() return false end
-function modifier_item_piercing_blade_debuf:IsPurgable() return false end
+modifier_piercing_blade_cd = class({
+    GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
+    IsDebuff = function (self) return false end,
+    IsHidden = function (self) return false end,
+})
 
-function modifier_item_piercing_blade_debuf:OnCreated( kv )
-	
+modifier_piercing_blade_pure_damage = class({
+    GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
+    IsDebuff = function (self) return false end,
+    IsHidden = function (self) return false end,
+    DeclareFunctions = function (self) return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE} end,
+})
+
+function modifier_piercing_blade_pure_damage:GetModifierTotalDamageOutgoing_Percentage( params )
+    print(params.original_damage)
+    if params.attacker ~= self:GetParent() then return end
+    if IsValidEntity(params.inflictor) and params.inflictor ~= self:GetAbility() or params.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK then
+        print(params.original_damage)    
+        print("...........................")  
+            local damage = self:GetAbility():GetSpecialValueFor("active_pure_dmg")/100 * params.original_damage
+            print(damage)
+            if not params.target:IsMagicImmune() then
+                local damageTable = {
+                    victim = params.target,
+                    attacker = self:GetParent(),
+                    damage = damage,
+                    damage_type = DAMAGE_TYPE_PURE,
+                    damage_flag = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
+                    ability =  self:GetAbility(), --Optional.
+                }
+            self:Destroy()
+            ApplyDamage( damageTable )
+            return -200
+        end
+    end
 end

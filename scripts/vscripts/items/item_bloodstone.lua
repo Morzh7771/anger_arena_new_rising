@@ -1,11 +1,11 @@
-item_bloodstone = class({
+item_bloodstone_1 = class({
     GetIntrinsicModifierName = function (self) return 'modifier_bloodstone' end
 })
 
-item_bloodstone_2 = item_bloodstone
-item_bloodstone_3 = item_bloodstone
+item_bloodstone_2 = item_bloodstone_1
+item_bloodstone_3 = item_bloodstone_1
 
-function item_bloodstone:OnSpellStart()
+function item_bloodstone_1:OnSpellStart()
     local caster = self:GetCaster()
     local duration = self:GetSpecialValueFor("buff_duration")
     local force_cooldown = self:GetSpecialValueFor("force_cooldown")
@@ -27,7 +27,8 @@ modifier_bloodstone = class({
         return {
             MODIFIER_PROPERTY_HEALTH_BONUS,
             MODIFIER_PROPERTY_MANA_BONUS,
-            MODIFIER_EVENT_ON_TAKEDAMAGE
+            MODIFIER_EVENT_ON_TAKEDAMAGE,
+            MODIFIER_PROPERTY_AOE_BONUS_CONSTANT,
         }
     end
 })
@@ -53,6 +54,7 @@ end
 
 function modifier_bloodstone:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor('bonus_health') end
 function modifier_bloodstone:GetModifierManaBonus() return self:GetAbility():GetSpecialValueFor('bonus_mana') end
+function modifier_bloodstone:GetModifierAoEBonusConstant() return 700 end
 
 -----------------------------------------------------------------------
 

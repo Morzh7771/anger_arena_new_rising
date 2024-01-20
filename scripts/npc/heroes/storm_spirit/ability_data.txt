@@ -164,69 +164,58 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		
+		"AbilityValues"
 		{
-			"01"
+			"overload_aoe"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"overload_aoe"					"300"
-			}			
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"overload_move_slow"			"-80"
-			}			
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"overload_attack_slow"			"-125"
+				"value"			"300"		
+				"affected_by_aoe_increase"	"1"
 			}
-			"04"
+			"overload_move_slow"			"-80"
+			"overload_attack_slow"			"-80"
+			"overload_damage"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"overload_damage"			"50 75 100 125 175 250 275"
-				"LinkedSpecialBonus"	"special_bonus_unique_storm_spirit_6"
+				"value"			"50 75 100 125 175 250 275"
+				"special_bonus_unique_storm_spirit_6"	"+60"
 			}
-			"05"
+			"shard_activation_radius"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_activation_radius"					"750"
+				"value"							"750"
 				"RequiresShard"						"1"
 			}	
-			"06"
+			"shard_activation_charges"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_activation_charges"					"5"
+				"value"								"5"
 				"RequiresShard"						"1"
 			}	
-			"07"
+			"shard_activation_duration"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"shard_activation_duration"					"12"
+				"value"								"12"
 				"RequiresShard"						"1"
 			}	
-			"08"
+			"shard_manacost"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_manacost"					"150"
+				"value"								"150"
 				"RequiresShard"						"1"
 			}
-			"09"
+			"shard_cooldown"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"shard_cooldown"					"30"
+				"value"								"30"
 				"RequiresShard"						"1"
 			}	
-			"10"
+			"shard_attack_speed_bonus"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"shard_attack_speed_bonus"					"40"
+				"value"								"40"
 				"RequiresShard"						"1"
-			}	
-			"11"
+			}																	
+			"overload_cast_range"
 			{
-				"damage_pct"						"15"
-			}																
+				"value"					"0"
+				"special_bonus_unique_storm_spirit_overload_aspd"		"+150.0"
+			}
+			"damage_pct"						"15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -264,7 +253,7 @@ DOTAAbilities
 			"ball_lightning_move_speed"			"1400.0 1550.0 1700.0 1850.0 2000.0 2150.0 2300.0"
 			"ball_lightning_aoe"				"200"		
 			"ball_lightning_travel_cost_base"	"15"		
-			"ball_lightning_travel_cost_percent"	"0.55"		
+			"ball_lightning_travel_cost_percent"	"1"		
 			"ball_lightning_vision_radius"			"400"	
 			"blocker_duration"			"5"		
 			"scepter_remnant_interval"			"300"		

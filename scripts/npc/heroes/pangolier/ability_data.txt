@@ -87,23 +87,27 @@ DOTAAbilities
 				"value"					"70 140 210 280 350 420 490"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"hero_stacks"			
+			"base_shield"	"100"
+			"hero_shield"
 			{
-				"value"					"12"
-				"special_bonus_unique_pangolier_shield_crash_herostacks"		"+3"
+				"value"	"50 100 150 200 250 350 450"
+				"special_bonus_unique_pangolier_shield_crash_herostacks"		"+200"
+
 			}
-			"duration"				"5"
-			"radius"				"500"
+			"duration"				"10"
+			"radius"				
+			{
+				"value"			"500"
+				"special_bonus_unique_pangolier_shield_crash_radius"		"+125"
+
+				"affected_by_aoe_increase"	"1"		
+			}
 			"jump_duration"			"0.4"
 			"jump_duration_gyroshell"	"0.75"
 			"jump_height"			"250"
-			"jump_height_gyroshell"		"350"
+			"jump_height_gyroshell"	"350"
 			"jump_horizontal_distance"	"225"
-			"rolling_thunder_cooldown"
-			{
-				"value"						"0"
-				"special_bonus_unique_pangolier_2"	"+3.0"
-			}
+
 			"slow"	"22 24 26 28 30 32 34"
 			"slow_duration"	"3"
 		}
@@ -213,75 +217,39 @@ DOTAAbilities
 		}
 
 		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		//-------------------------------------------------------------------------------------------------------------		
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"cast_time_tooltip"		"1.2"
-			}			
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"tick_interval"			"0.05"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"forward_move_speed"	"550"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT" // used after any break in the roll (start/jump/bounce)
 				"turn_rate_boosted"		"165"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"turn_rate"				"120"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}			
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hit_radius"			"150"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
+				"radius"				
+				{
+					"value"			"400"
+					"affected_by_aoe_increase"	"1"		
+				}			
+				"hit_radius"			
+				{
+					"value"		"150"
+					"affected_by_aoe_increase"	"1"		
+				}			
 				"bounce_duration"		"0.4"
-			}			
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"stun_duration"			"0.6 0.7 0.8 0.9 1.0 1.1 1.2"
-			}			
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"knockback_radius"		"150"
-			}			
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"10.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_6"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
+				"knockback_radius"		
+				{
+					"value"			"150"
+					"affected_by_aoe_increase"	"1"		
+				}			
+				"duration"				
+				{
+					"value"		"10.0"
+					"LinkedSpecialBonus"	"special_bonus_unique_pangolier_6"
+				}
 				"jump_recover_time"		"0.25"
-			}	
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
+				"shield_crash_cooldown"			"9 8 7 6 5 4 3"
 				"damage_pct"		"100"
-			}
 		}
 	}
 	"pangolier_gyroshell_stop"

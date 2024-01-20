@@ -99,7 +99,8 @@ local InvalidateCache = function()
 	if doors_cache then return end
 
 	local doorNames = {
-		{ "aa_prop_door_1", { "aa_prop_door_1_obstacle_1", "aa_prop_door_1_obstacle_2", "aa_prop_door_1_obstacle_3", "aa_prop_door_1_obstacle_4", "aa_prop_door_1_obstacle_5"} },
+		{ "aa_prop_door_1", { "aa_prop_door_1_obstacle_1", "aa_prop_door_1_obstacle_2", "aa_prop_door_1_obstacle_3", "aa_prop_door_1_obstacle_4", "aa_prop_door_1_obstacle_5", "aa_prop_door_1_obstacle_6"} },
+		{ "aa_prop_door_2", { "aa_prop_door_2_obstacle_1", "aa_prop_door_2_obstacle_2", "aa_prop_door_2_obstacle_3", "aa_prop_door_2_obstacle_4", "aa_prop_door_2_obstacle_5", "aa_prop_door_2_obstacle_6"} },
 	}
 
 	local doors = {}

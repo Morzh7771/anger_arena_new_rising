@@ -22,6 +22,35 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+	"juggernaut_blade_dance_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/juggernaut/juggernaut_blade_dance_lua"
+		"AbilityTextureName"			"juggernaut_blade_dance"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"7"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+		}
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+				"blade_dance_crit_chance"	"20 25 30 35 40 45 50"
+				"blade_dance_crit_mult"		"195 200 205 210 215 220 225"
+				"mortal_damage"				"8 10 12 14 16 18 20"
+				"mortal_duration"			"5"
+				"mortal_hp"					"30"
+				"blade_dance_lifesteal"
+				{
+					"value"	"0"
+					"special_bonus_unique_juggernaut_blade_dance_lifesteal"	"+35"
+				}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 	"juggernaut_blade_fury"
 	{
 		// General
@@ -53,41 +82,40 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"blade_fury_damage_tick"	
+			"blade_fury_aspd_multiplier"
 			{
-				"value"					"0.2"
-				"CalculateSpellDamageTooltip"	"0"
+				"value"		"2.0"
 			}
 			"blade_fury_radius"			
 			{
 				"value"						"260"
-				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut"
+				"special_bonus_unique_juggernaut"		"+100"
+				"special_bonus_shard"		"+100"
+				"affected_by_aoe_increase"	"1"
 			}
-			"blade_fury_damage"			
+
+			"blade_fury_damage_per_tick"			
 			{
-				"value"				"90 115 140 165 190 215 240"
-				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_3"
+				"value"				"45 55 65 75 85 95 105"
 			}
 			"duration"					
 			{
 				"value"				"5.0"
-				"special_bonus_unique_juggernaut_4"	"+1"
 			}
-
-			"shard_bonus_move_speed"			
-			{	
-				"value"				"75"
-				"RequiresShard"					"1"
+			"AbilityCooldown"
+			{
+				"value"					"42 38 34 30 26 22 18"
+				"special_bonus_unique_juggernaut_blade_fury_cooldown"		"-3"
 			}
-			"shard_attack_rate"			
-			{	
-				"value"				"0.8"
-				"RequiresShard"					"1"
+			"bonus_movespeed"
+			{
+				"value"			"0"
+				"special_bonus_unique_juggernaut_blade_fury_movespeed"		"+30"
 			}
-			"shard_damage_pct"			
-			{	
-				"value"				"100"
-				"RequiresShard"					"1"
+			"movement_slow"			
+			{
+				"value"					"0"
+				"special_bonus_shard"		"+35"
 			}
 			"damage_pct"			
 			{	

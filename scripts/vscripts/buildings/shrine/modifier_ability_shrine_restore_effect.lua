@@ -26,36 +26,55 @@ function modifier_ability_shrine_restore_effect:OnRefresh(kv)
     self.mana_regen_pct = self:GetAbility():GetSpecialValueFor("mana_regen_pct")
 end
 
---------------------------------------------------------------------------------
 function modifier_ability_shrine_restore_effect:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
         MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
+        MODIFIER_EVENT_ON_ATTACKED,
     }
     return funcs
 end
 
+function modifier_ability_shrine_restore_effect:OnAttacked(params)
+    if params.target == self:GetParent() then  
+        print('dadsadasd')
+		--self:GetParent():AddNewModifier(nil,nil,"modifier_ability_shrine_restore_effect_toggle_off",{duration = 5})
+	end
+end
+
 --------------------------------------------------------------------------------
 function modifier_ability_shrine_restore_effect:GetModifierConstantHealthRegen(params)
-    return self.health_regen_const
+    if not self:GetParent():HasModifier('modifier_ability_shrine_restore_effect_toggle_off') then 
+        return self.health_regen_const
+    end
 end
 
 --------------------------------------------------------------------------------
 function modifier_ability_shrine_restore_effect:GetModifierConstantManaRegen(params)
-    return self.mana_regen_const
+    if not self:GetParent():HasModifier('modifier_ability_shrine_restore_effect_toggle_off') then 
+        return self.mana_regen_const
+    end
 end
 
 --------------------------------------------------------------------------------
 function modifier_ability_shrine_restore_effect:GetModifierHealthRegenPercentage(params)
-    return self.health_regen_pct
+    if not self:GetParent():HasModifier('modifier_ability_shrine_restore_effect_toggle_off') then 
+        return self.health_regen_pct
+    end
 end
 
 --------------------------------------------------------------------------------
 function modifier_ability_shrine_restore_effect:GetModifierTotalPercentageManaRegen(params)
-    return self.mana_regen_pct
+    if not self:GetParent():HasModifier('modifier_ability_shrine_restore_effect_toggle_off') then  
+        return self.mana_regen_pct
+    end
 end
 
 --------------------------------------------------------------------------------
-
+modifier_ability_shrine_restore_effect_toggle_off = class({
+    isHidden = function (self) return false end,
+    isDebuff = function (self) return false end,
+    isPurgable = function (self) return false end,
+})

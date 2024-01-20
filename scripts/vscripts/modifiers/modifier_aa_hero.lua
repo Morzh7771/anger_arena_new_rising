@@ -12,6 +12,7 @@ end
 
 function modifier_aa_hero:OnCreated()
 	self.limit = 700
+	self.int = 0
     self:StartIntervalThink(1.0)
 end
 
@@ -30,7 +31,9 @@ function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
 	if self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness") 
 	or self:GetParent():HasModifier("modifier_bloodseeker_thirst_speed") 
 	or self:GetParent():HasModifier("modifier_primal_beast_trample")
-	or self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze") then
+	or self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze") 
+	or self:GetParent():HasModifier("modifier_weaver_shukuchi") 
+	or self:GetParent():HasModifier("modifier_dark_seer_surge")  then
     	return 99999999
 	else 
 		return 700

@@ -38,7 +38,7 @@ end
 function item_greater_crit:OnProjectileHit(target, location)
     if not target then return end
 
-    local dmg = self:GetParent():GetAttackDamage() / 100 * self:GetSpecialValueFor('crit_multiplier')
+    local dmg = self:GetParent():GetAverageTrueAttackDamage(self:GetParent()) / 100 * self:GetSpecialValueFor('crit_multiplier')
 
     ApplyDamage({ victim = target,
                   attacker = self:GetParent(),
@@ -46,6 +46,7 @@ function item_greater_crit:OnProjectileHit(target, location)
                   damage_type = DAMAGE_TYPE_PHYSICAL,
         --damage_flags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR,
                   ability = self}) --deal damage-
+
 
     EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "DOTA_Item.HeavensHalberd.Activate", self:GetCaster())
 

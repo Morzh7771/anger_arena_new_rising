@@ -108,8 +108,8 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"2.4 2.7 3.0 3.3 3.6 3.9 4.2"
-		"AbilityCooldown"				"10"
+		"AbilityChannelTime"			"2.2 2.4 2.6 2.8 3 3.2 3.4"
+		"AbilityCooldown"				"12"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -133,7 +133,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"2.4 2.7 3.0 3.3 3.6 3.9 4.2"
+				"channel_time"		"2.2 2.4 2.6 2.8 3 3.2 3.4"
 				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_2"
 			}
 			"04"

@@ -17,6 +17,7 @@ function PercentDamage:_init()
 		"omniknight_purification",
 		"pudge_meat_hook",
 		"sandking_epicenter",
+		"dark_seer_ion_shell",
 		"sandking_sand_storm",
 		"rattletrap_battery_assault",
 		"rattletrap_rocket_flare",
@@ -41,7 +42,8 @@ function PercentDamage:_init()
 		"legion_commander_overwhelming_odds",
 		"mars_spear",
 		"primal_beast_uproar",
-		"kunkka_torrent"
+		"kunkka_torrent",
+		"dragon_knight_breathe_fire"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
@@ -127,7 +129,6 @@ function PercentDamage:_init()
 		"batrider_flamebreak",
 		"batrider_firefly",
 		"bane_brain_sap",
-		"dark_seer_ion_shell",
 		"muerta_dead_shot",
 		"vengefulspirit_magic_missile",
 		"void_spirit_dissimilate",

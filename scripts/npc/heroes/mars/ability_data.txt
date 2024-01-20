@@ -105,7 +105,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90"
+		"AbilityManaCost"				"90 120 140 160 180 200 220"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -136,7 +136,7 @@ DOTAAbilities
 			"AbilityCooldown"
 			{
 				"value"					"16 15 14 13 12 11 10"
-				"special_bonus_unique_mars_rebuke_cooldown"				"-4"
+				"special_bonus_unique_mars_rebuke_cooldown"				"-7"
 			}
 		}
 	}

@@ -23,11 +23,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"max_stun"					"1.75"
-				"recent_duration"			"3.0"
-				"max_distance"			"900"
+				"max_stun"						"1.75"
+				"recent_duration"				"3.0"
+				"max_distance"					"900"
 				"knockback_distance"			"350"
-				"illusion_duration"			"6.0"
+				"illusion_duration"				"8.0"
 				"max_damage"					"900"
 				"normal_punch_illusion_delay"   "0.25"
 		}
@@ -115,7 +115,7 @@ DOTAAbilities
 				"value"										"275"
 				"special_bonus_unique_dark_seer_5"			"+75"
 			}
-			"damage_pct"							"10"
+			"damage_pct"							"20"
 			"damage_per_second"		
 			{ 
 				"value"										"30 50 70 90 110 130 150"
@@ -137,7 +137,7 @@ DOTAAbilities
 			"bonus_health"	
 			{
 				"value"										"0"
-				"special_bonus_unique_dark_seer_6"						"+500"
+				"special_bonus_unique_dark_seer_6"						"+750"
 			}
 			
 		}
@@ -179,7 +179,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"					"3 3.5 4 4.5 5 5.5 6"
-			"speed_boost"				"550"
+			"speed_boost"				"850"
 			"trail_radius"				
 			{
 				"value" 				"0"
@@ -229,7 +229,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"70"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -239,17 +239,17 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"30.0"
-			"replica_damage_outgoing"	"-20 -10 0 10 20 30 40"
+			"duration"				"20.0"
+			"replica_damage_outgoing"	"-20 0 20 40 60 80 100"
 			"tooltip_outgoing"
 			{
-				"value"	"80 90 100 110 120 130 140"
+				"value"	"80 100 120 140 160 180 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_7"
 			}
-			"replica_damage_incoming"	"100"
+			"replica_damage_incoming"	"100 90 80 70 60 50 40"
 			"tooltip_replica_total_damage_incoming"
 			{
-				"value"	"200"
+				"value"	"200 190 180 170 160 150 140"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}				
@@ -266,6 +266,7 @@ DOTAAbilities
 				"value"			"2"
 				"RequiresScepter"		"1"
 			}
+			"wall_damage"				"20 50 80 110 140 170 200"
 		}
 	}
 }

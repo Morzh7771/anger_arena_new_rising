@@ -133,6 +133,9 @@ function DuelController:_StartDuel()
 
 	if nRadiants == 0 or nDires == 0 then
 		Attentions:SendChatMessage("#duel_error")
+		if GameRules:IsCheatMode() then
+			DuelController:SetFreezeTimer( true )
+		end
 		return false
 	end
 
@@ -216,6 +219,7 @@ end
 function DuelController:_StartDuelTimer(toDuel)
 	local interval
 	local duelCount = DuelLibrary:GetDuelCount()
+    
 	if toDuel then
 		if duelCount == 0 then
 			interval = 30
@@ -260,8 +264,18 @@ function DuelController:_OnTick( isEnd )
 			VisionHero(direHeroes)
 		end
 	end
-
+	print(nCountdown)
+	if nCountdown <= 10 then
+		if nCountdown == 0 then
+			EmitAnnouncerSound("announcer_ann_custom_mode_20")
+		elseif nCountdown == 10 then
+			EmitAnnouncerSound("announcer_ann_custom_countdown_10")
+		else
+			EmitAnnouncerSound("announcer_ann_custom_countdown_0".. nCountdown)
+		end
+    end
 	if nCountdown == -1 then
+		
 		if DuelLibrary:IsDuelActive() or isEnd then
 			self:_CancelDuels()
 			self:_StartDuelTimer( true )

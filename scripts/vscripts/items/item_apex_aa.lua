@@ -11,7 +11,6 @@ modifier_item_apex_aa = ({
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
     } end,
-    GetModifierBonusStats_Strength
 })
 function modifier_item_apex_aa:OnCreated()
     self.primary_attribute_pct = self:GetAbility():GetSpecialValueFor("primary_attribute_pct")

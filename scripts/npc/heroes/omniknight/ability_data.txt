@@ -296,8 +296,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"omniknight_guardian_angel"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
@@ -308,7 +311,9 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"0.5"
+		"AbilityCharges"				"2"
+
 		"AbilityCastPoint"				"0.4"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
@@ -320,18 +325,22 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"					"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
-				"radius"					"1200"
-				"duration_scepter"
-				{
-					"value"		"7.0 7.5 8.0 8.5 9.0 9.5 10.0"
-					"RequiresScepter"		"1"
-				}
-				"scepter_status_resist"					
-				{
-					"value"			"40"
-					"RequiresScepter"		"1"
-				}
+			"duration"					"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
+            "scepter_max_charges"	
+			{
+				"value"			"3"
+				"RequiresScepter"	"1"
+			}
+			"AbilityChargeRestoreTime"		
+			{
+				"value"					"90 85 80 75 70 65 60"
+				"special_bonus_unique_omniknight_7"			"-15"		
+			}
+			"AbilityCastRange"				
+			{
+				"value"		"900"	
+				"special_bonus_scepter"		"=0"
+			}
 		}
 	}
 	"special_bonus_unique_omniknight_7"

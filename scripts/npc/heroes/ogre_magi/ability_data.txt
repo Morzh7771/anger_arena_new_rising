@@ -2,16 +2,24 @@ DOTAAbilities
 {
 	"ogre_magi_dumb_luck"
 	{
-		"ID"							"1115"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
 		"BaseClass"			"ogre_magi_dumb_luck"
-
 		"MaxLevel"						"1"
 
 		"AbilityValues"
 		{
-			"mana_per_str"				"6"
-			"mana_regen_per_str"		"0.03"
+			"mana_per_str"				
+			{ 
+				"value"					"6"
+				"special_bonus_unique_ogre_magi_dumb_luck_mana"			"+2"
+			}
+			"mana_regen_per_str"		
+			{ 
+				"value"			"0.01"
+				"special_bonus_unique_ogre_magi_dumb_luck_mana"			"+0.01"
+
+			}
 		}
 	}
 	"ogre_magi_fireblast"
@@ -35,10 +43,6 @@ DOTAAbilities
 		"AbilityCastRange"				"475"
 		"AbilityCastPoint"				"0.45"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11 10.5 10 9.5 9 8.5 8"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"70 85 100 115 130 145 160"
@@ -48,12 +52,17 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"										"11 10.5 10 9.5 9 8.5 8"
+				"special_bonus_unique_ogre_magi_5"			"-1"
+			}
 			"stun_duration"		"1.2"
 			"multicast_delay"	"0.6"
 			"fireblast_damage"
 			{
 				"value"			"70 130 190 250 310 370 430"
-				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi_2"
+				"special_bonus_unique_ogre_magi_2"	"+240"
 			}
 			"damage_pct"		"100"			
 		}

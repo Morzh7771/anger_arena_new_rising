@@ -37,19 +37,11 @@ function modifier_item_sheepstick_aa:OnDestroy()
 end
 function modifier_item_sheepstick_aa:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 	}
 end
 
-function modifier_item_sheepstick_aa:GetModifierBonusStats_Strength()
-	return self:GetAbility():GetSpecialValueFor("bonus_strength")
-end
-function modifier_item_sheepstick_aa:GetModifierBonusStats_Agility()
-	return self:GetAbility():GetSpecialValueFor("bonus_agility")
-end
 function modifier_item_sheepstick_aa:GetModifierBonusStats_Intellect()
 	return self:GetAbility():GetSpecialValueFor("bonus_intellect")
 end

@@ -214,7 +214,7 @@ function DuelLibrary:_MoveToDuel( unit, point )
 	end
 
 	function IsAroundDuel(unit, unitPoint) 
-		local units = Entities:FindAllInSphere(unitPoint, 10)
+		local units = Entities:FindAllInSphere(unitPoint, 100)
 
 		for _, thing in pairs( units )  do
 			if thing:GetName() == DUEL_TRIGGER_NAME then

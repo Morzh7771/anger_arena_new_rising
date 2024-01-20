@@ -114,7 +114,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"5.0 4.8 4.6 4.4 4.2 4"
 		"AbilityDuration"				"14"
 
 		// Damage.
@@ -133,7 +133,7 @@ DOTAAbilities
 			{
 				"value"		"50 150 250 350 450 550 650"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_unique_earthshaker_totem_damage"	"+50"
+				"special_bonus_unique_earthshaker_totem_damage"	"+150"
 			}
 			"distance_scepter"			
 			{
@@ -149,10 +149,10 @@ DOTAAbilities
 			"scepter_height_arcbuffer"	"100"
 			"scepter_acceleration_z"	"4000"
 			"scepter_acceleration_horizontal"	"3000"
-			"scepter_leap_duration"		"0.8"
+			"scepter_leap_duration"		"0.6"
 			"scepter_cleave_pct"
 			{
-				"value"					"60"
+				"value"					"100"
 				"RequiresScepter"		"1"
 			}
 			"scepter_cleave_starting_width"
