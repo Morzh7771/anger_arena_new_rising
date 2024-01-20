@@ -64,6 +64,7 @@ DOTAAbilities
 
 			"slow_amount"					"100"
 			"shard_ground_delay"			"5"
+			"damage_pct"					"75"
 		}
 	}
 	"disruptor_glimpse"
@@ -217,6 +218,7 @@ DOTAAbilities
 					"value"				"4.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_disruptor_7"
 			}
+			"damage_pct"				"25"
 		}
 	}
 	"special_bonus_unique_disruptor_7"

@@ -115,6 +115,8 @@ function PercentDamage:_init()
 		"grimstroke_ink_creature",
 		"grimstroke_spirit_walk",
 		"grimstroke_dark_artistry",
+		"disruptor_thunder_strike",
+		"disruptor_static_storm"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
@@ -148,7 +150,9 @@ function PercentDamage:_init()
 		"shredder_whirling_death",
 		"shredder_timber_chain",
 		"shredder_chakram",
-		"shredder_chakram_2"
+		"shredder_chakram_2",
+		"night_stalker_crippling_fear",
+		"night_stalker_void"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
