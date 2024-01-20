@@ -149,34 +149,24 @@ DOTAAbilities
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{	
-				"var_type"			"FIELD_FLOAT"
+
 				"duration"			"4.0"
-			}
-			"02"
+			"heal_additive"
 			{	
-				"var_type"			"FIELD_INTEGER"
-				"heal_additive"		"30 35 40 45 50 55 60"
+				"value"		"30 35 40 45 50 55 60"
 				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_5"
 			}
-			"03"
-			{	
-				"var_type"			"FIELD_FLOAT"
-				"heal_percentage"	"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
-			}
-			"04"
+			"heal_percentage"	"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
+			"shard_cooldown_reduction"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"shard_cooldown_reduction"			"2.0"	
+				"value"			"2.0"	
 				"RequiresShard"				"1"
 			}
-			"05"
+			"shard_splinter_range"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_splinter_range"			"1200"	
+				"value"			"1200"	
 				"RequiresShard"				"1"
 			}
 		}
@@ -213,39 +203,18 @@ DOTAAbilities
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"			"700"
+			"damage_reduction"	"100"
+			"damage_amplification"	"0"
+			"bonus_attack_speed"	"150"
+			"duration"
 			{	
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"	"100"
-			}
-			"03"
-			{	
-				"var_type"			"FIELD_INTEGER"
-				"damage_amplification"	"0"
-			}
-			"04"
-			{	
-				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"	"150"
-			}
-			"05"
-			{	
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"4.0 4.25 4.5 4.75 5.0 5.25 5.5"
+				"value"			"4.0 4.25 4.5 4.75 5.0 5.25 5.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_3"
 			}
-			"06"
-			{	
-				"var_type"			"FIELD_FLOAT"
-				"early_out_timer"	"3.5"
-			}
+			"early_out_timer"	"3.5"
 		}
 	}
 }
