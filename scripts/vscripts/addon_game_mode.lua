@@ -53,6 +53,7 @@ local forbidden_ability_boss = {
 	["night_stalker_hunter_in_the_night"] = 1,
 	["snapfire_spit_creep"] = 1,
 	["juggernaut_omni_slash"] = 1,
+	["juggernaut_swift_slash"] = 1,
 	["snapfire_gobble_up"] = 1,
 	['item_bloodthorn'] = 1,
 	['item_bloodthorn_2'] = 1,

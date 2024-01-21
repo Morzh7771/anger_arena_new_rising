@@ -315,6 +315,9 @@
 		"DOTA_Tooltip_Ability_earth_spirit_geomagnetic_grip_damage_pct"		"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_earth_spirit_petrify_damage_pct"				"%УРОН ОТ СИЛЫ"
 
+        //Beastmaster
+        "DOTA_Tooltip_Ability_beastmaster_primal_roar_damage_pct"           "%УРОН ОТ ВСЕХ АТРИБУТОВ"
+
 		//Bane
 		"DOTA_Tooltip_Ability_bane_brain_sap_damage_pct"					"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 
@@ -357,6 +360,7 @@
 		//Mirana
 		"DOTA_Tooltip_Ability_mirana_arrow_damage_pct"						"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_mirana_starfall_damage_pct"					"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        "DOTA_Tooltip_Ability_special_bonus_unique_mirana_arrow_cd"         "-{s:bonus_AbilityCooldown} к перезарядке Sacred Arrow"
 
 		//Necrolite
 		"DOTA_Tooltip_Ability_necrolyte_death_pulse_damage_pct"				"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -454,6 +458,7 @@
 		"DOTA_Tooltip_Ability_bounty_hunter_shuriken_toss_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_void_spirit_dissimilate_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_void_spirit_resonant_pulse_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        "DOTA_Tooltip_Ability_special_bonus_unique_bounty_hunter_jinada_no_cooldown"    "-{s:bonus_AbilityCooldown} сек. перезарядки Jinada"
 
 		//Spirit Breaker
 		"DOTA_Tooltip_Ability_spirit_breaker_greater_bash_damage_pct"			"%УРОН ОТ СИЛЫ"
@@ -599,6 +604,18 @@
 
         //Wraith King
         "DOTA_Tooltip_Ability_special_bonus_unique_wraith_king_crit"        "+{s:bonus_crit_mult}% к урону и -{s:bonus_AbilityCooldown} секунды к перезарядке Mortal Strike"
+
+        //Disruptor
+        "DOTA_Tooltip_Ability_disruptor_thunder_strike_damage_pct"          "%УРОН ОТ ИНТЕЛЛЕКТА"
+        "DOTA_Tooltip_Ability_disruptor_static_storm_damage_pct"          "%УРОН ОТ ИНТЕЛЛЕКТА"
+
+        //Night Stalker
+        "DOTA_Tooltip_Ability_night_stalker_crippling_fear_damage_pct"     "%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        "DOTA_Tooltip_Ability_night_stalker_void_damage_pct"               "%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        //Ancient Apparition
+        "DOTA_Tooltip_Ability_ancient_apparition_chilling_touch_damage_pct" "%УРОН ОТ ИНТЕЛЛЕКТА"
+        "DOTA_Tooltip_Ability_ancient_apparition_ice_vortex_damage_pct"     "%УРОН ОТ ИНТЕЛЛЕКТА"
+        "DOTA_Tooltip_Ability_ancient_apparition_cold_feet_damage_pct"      "%УРОН ОТ ИНТЕЛЛЕКТА"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_fevor_attack_speed"			"+{s:bonus_attack_speed} к скорости атаки за эффект от Fervor"
         "DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_berserkers_rage_bat"           "Уменьшение задержки перед атакой от Berserkers Rage на {s:bonus_base_attack_time}"
@@ -1893,7 +1910,7 @@
 		"DOTA_Tooltip_ability_item_fury_shield_block_damage"					"БЛОКИРОВАНИЯ ФИЗ. АТАК:"
 
 		"DOTA_Tooltip_ability_item_piercing_blade"								"Piercing Blade"
-		"DOTA_Tooltip_ability_item_piercing_blade_Description"					"<h1>Активаня: Pure power</h1> В Следующие %active_duration% секунд преобразует %active_pure_dmg%%  урона вашей следующей атаки или способсти в чистый  \n\n <h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
+		"DOTA_Tooltip_ability_item_piercing_blade_Description"					"<h1>Активаня: Pure power</h1> В следующие %active_duration% секунд преобразует %active_pure_dmg%% урона вашей следующей атаки или способности в чистый. \n\n <h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_hp"					"+$health"
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_mp"					"+$mana"
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_all_stats"				"+$all"

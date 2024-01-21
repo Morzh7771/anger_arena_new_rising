@@ -345,6 +345,11 @@
 		"DOTA_Tooltip_Ability_lina_laguna_blade_damage_pct"					"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_lion_impale_damage_pct"						"%INTELLIGENCE DAMAGE"
 
+		//Ancient Apparition
+        "DOTA_Tooltip_Ability_ancient_apparition_chilling_touch_damage_pct" "%INTELLIGENCE DAMAGE"
+        "DOTA_Tooltip_Ability_ancient_apparition_ice_vortex_damage_pct"     "%INTELLIGENCE DAMAGE"
+        "DOTA_Tooltip_Ability_ancient_apparition_cold_feet_damage_pct"      "%INTELLIGENCE DAMAGE"
+
 		//Lion
 		"DOTA_Tooltip_Ability_lion_finger_of_death_damage_pct"				"%INTELLIGENCE DAMAGE"
 
@@ -356,6 +361,7 @@
 		//Mirana
 		"DOTA_Tooltip_Ability_mirana_arrow_damage_pct"						"%ALL ATTRIBUTES DAMAGE"
 		"DOTA_Tooltip_Ability_mirana_starfall_damage_pct"					"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_special_bonus_unique_mirana_arrow_cd"         "-{s:bonus_AbilityCooldown} sec. Sacred Arrow cooldown"
 
 		//Necrolite
 		"DOTA_Tooltip_Ability_necrolyte_death_pulse_damage_pct"				"%INTELLIGENCE DAMAGE"
@@ -454,6 +460,7 @@
 		"DOTA_Tooltip_Ability_bounty_hunter_shuriken_toss_damage_pct"			"%ALL ATTRIBUTES DAMAGE"
 		"DOTA_Tooltip_Ability_void_spirit_dissimilate_damage_pct"			"%ALL ATTRIBUTES DAMAGE"
 		"DOTA_Tooltip_Ability_void_spirit_resonant_pulse_damage_pct"			"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_special_bonus_unique_bounty_hunter_jinada_no_cooldown"    "-{s:bonus_AbilityCooldown} sec. Jinada cooldown"
 
 		//Spirit Breaker
 		"DOTA_Tooltip_Ability_spirit_breaker_greater_bash_damage_pct"			"%STRENGTH DAMAGE"
@@ -598,7 +605,21 @@
         //Wraith King
         "DOTA_Tooltip_Ability_special_bonus_unique_wraith_king_crit"        "+{s:bonus_crit_mult}% to damage and -{s:bonus_AbilityCooldown} seconds to Mortal Strike cooldown"
 
+        //Disruptor
+        "DOTA_Tooltip_Ability_disruptor_thunder_strike_damage_pct"          "%INTELLIGENCE DAMAGE"
+        "DOTA_Tooltip_Ability_disruptor_static_storm_damage_pct"          	"%INTELLIGENCE DAMAGE"
+        
+        //Night Stalker
+        "DOTA_Tooltip_Ability_night_stalker_crippling_fear_damage_pct"     "%ALL ATTRIBUTES DAMAGE"
+        "DOTA_Tooltip_Ability_night_stalker_void_damage_pct"               "%ALL ATTRIBUTES DAMAGE"
+
+        //Troll Warlord
 		"DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_fevor_attack_speed"			"+{s:bonus_attack_speed} to attack speed during Fervor effect"
+		"DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_berserkers_rage_bat"           "-{s:bonus_base_attack_time} to the Base Attack Time of Berserker's Rage"
+
+		//Beastmaster
+        "DOTA_Tooltip_Ability_beastmaster_primal_roar_damage_pct"           "%ALL ATTRIBUTES DAMAGE"
+
 
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 to Acorn Shot bounces"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"					"2 charges for Acorn Shot"

@@ -37,49 +37,31 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"delay"				"0.35"
+			"radius"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.35"
-			}
-			
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"150 165 180 195 210 225 240"
+				"value"			"150 165 180 195 210 225 240"
 				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_5"
 			}
-			
-			"03"
+			"duration"			"1.7"
+			"shard_radius_increase"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.7"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_radius_increase"			"55"
+				"value"			"55"
 				"RequiresShard"					"1"
 			}
-			"05"
+			"shard_max_count"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_max_count"			"3"
+				"value"			"3"
 				"RequiresShard"					"1"
 			}
-			"06"
+			"shard_secondary_delay"	
 			{
-				"var_type"			"FIELD_FLOAT"
-				"shard_secondary_delay"			"5"
+				"value"		"5"
 				"RequiresShard"					"1"
 			}		
-			"07"
-			{
-				"damage_pct"			"50"
-			}				
-
+			"damage_pct"			"50"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -117,30 +99,16 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"num_explosions"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"num_explosions"		"40"
+				"value"		"40"
 				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_1"
 			}
-			
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tower_bonus"			"0"
-			}
-			"04"
-			{
-				"damage_pct"			"20"
-			}	
-
+			"radius"			"500"
+			"tower_bonus"			"0"
+			"damage_pct"			"20"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

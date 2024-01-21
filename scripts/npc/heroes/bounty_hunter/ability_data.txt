@@ -94,8 +94,8 @@ DOTAAbilities
 		{
 			"bonus_damage"
 			{
-				"value"			"30 60 90 120 150 180 210"
-				"special_bonus_unique_bounty_hunter_4"	"+90"
+				"value"			"30 60 120 180 270 360"
+				"special_bonus_unique_bounty_hunter_4"	"+120"
 			}
 			"gold_steal"
 			{
@@ -105,7 +105,7 @@ DOTAAbilities
 			"AbilityCooldown"				
 			{
 				"value"			"3"
-				"special_bonus_unique_bounty_hunter_jinada_no_cooldown"			"-100%"
+				"special_bonus_unique_bounty_hunter_jinada_no_cooldown"			"-2"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -235,7 +235,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 
-				"target_crit_multiplier"	"140 170 200 230 260 290 320"
+				"target_crit_multiplier"	"140 155 170 185 200 215 230"
 				"bonus_gold_radius"		
 				{
 					"value"		"1500"
@@ -249,7 +249,7 @@ DOTAAbilities
 				"bonus_gold"			
 				{
 					"value"		"40 80 120 160 200 240 280"
-					"special_bonus_unique_bounty_hunter_3"	"+45"
+					"special_bonus_unique_bounty_hunter_3"	"+105"
 				}
 				"duration"				"30.0 30.0 30.0"
 				"gold_steal"			"0.3 0.4 0.5"
