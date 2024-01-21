@@ -116,7 +116,10 @@ function PercentDamage:_init()
 		"grimstroke_spirit_walk",
 		"grimstroke_dark_artistry",
 		"disruptor_thunder_strike",
-		"disruptor_static_storm"
+		"disruptor_static_storm",
+		"ancient_apparition_chilling_touch",
+		"ancient_apparition_ice_vortex",
+		"ancient_apparition_cold_feet"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
