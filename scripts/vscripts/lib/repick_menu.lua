@@ -127,7 +127,7 @@ function RepickMenu:init()
 end
 
 function RepickMenu:CanPickNow()
-	return true --DuelController:GetTimeToDuel() > DUEL_CANT_PICK_PERIOD and BossSpawner:GetDeathCount(BOSS_FOR_REPICK) ~= 0 and not BossSpawner:IsBossAlive(BOSS_FOR_REPICK)
+	return DuelController:GetTimeToDuel() > DUEL_CANT_PICK_PERIOD and BossSpawner:GetDeathCount(BOSS_FOR_REPICK) ~= 0 and not BossSpawner:IsBossAlive(BOSS_FOR_REPICK)
 end
 
 function RepickMenu:PickHero(player, newHeroName)
