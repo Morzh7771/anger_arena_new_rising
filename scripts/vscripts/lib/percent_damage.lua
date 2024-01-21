@@ -155,7 +155,8 @@ function PercentDamage:_init()
 		"shredder_chakram",
 		"shredder_chakram_2",
 		"night_stalker_crippling_fear",
-		"night_stalker_void"
+		"night_stalker_void",
+		"beastmaster_primal_roar"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
