@@ -40,7 +40,8 @@ DOTAAbilities
 			{
 				"value"					"4.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
-			}	
+			}
+			"damage_pct"				"60"	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -126,6 +127,7 @@ DOTAAbilities
 			"movement_slow"				"24 28 32 36 40 44 48"
 			"radius"					"400"
 			"extra_duration"					"3"
+			"damage_pct"				"15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

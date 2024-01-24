@@ -141,7 +141,7 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-		"AbilityCharges"		"4"
+		"AbilityCharges"				"4"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
@@ -180,6 +180,65 @@ DOTAAbilities
 				}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"void_spirit_astral_step_aa"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/void_spirit/void_spirit_astral_step"
+		"AbilityTextureName"			"void_spirit_astral_step"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"7"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
+			"particle"	"particles/status_fx/status_effect_void_spirit_astral_step_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_impact.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_dmg.vpcf"
+		}
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"80 90 100"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"				"170"
+			"AbilityCharges"			"4"
+			"AbilityChargeRestoreTime"	
+			{
+				"value"			"15.0 14.0 13.0 12.0 11.0 10.0 9.0"
+				"special_bonus_unique_void_spirit_1"	"-3"
+			}
+			"min_travel_distance"	"200"
+			"max_travel_distance"	"700.0 800.0 900.0 1000.0 1100.0 1200.0 1300.0"
+			"pop_damage_delay"		
+			{
+				"value"	"1.0"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+			}
+			"pop_damage"			
+			{
+				"value"					"100.0 130.0 160.0 190.0 220.0 250.0 280.0"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"movement_slow_pct"		"10 20 30 40 50 60 70"
+			"damage_hp_pct"			"5 8 11 14 17 20 23"
+		}
 	}
 	"void_spirit_resonant_pulse"
 	{

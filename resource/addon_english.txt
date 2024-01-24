@@ -3,6 +3,20 @@
 	"Language"		"English"
 	"Tokens"
 	{		
+		"DOTA_Item_Build_Starting_Items_Farm" "For early carry"
+		"DOTA_Item_Build_Starting_Items_Gank" "For ganking at the beginning"
+		"DOTA_Item_Build_Starting_Items_Mage" "For the mage at the beginning"
+
+		"DOTA_Item_Build_Mid_Items_Farm" "For mid-game carry"
+		"DOTA_Item_Build_Mid_Items_Gank" "For mid-game ganks"
+		"DOTA_Item_Build_Mid_Items_Mage" "For a mid-game mage"
+
+		"DOTA_Item_Build_Late_Items_Farm" "For late game carry"
+		"DOTA_Item_Build_Late_Items_Gank" "For late game ganks"
+		"DOTA_Item_Build_Late_Items_Mage" "For a late game mage"
+
+		"DOTA_Item_Build_Good_Choice" "Also good"
+
 		"AA_REPICK_MENU_PICK_GOD"							"CHANGE HERO"
 		"AA_REPICK_MENU_ALREADY_PICKED"						"HERO ALREADY PICKED"
 		"AA_REPICK_MENU_NO_SHARD"							"NO MATCHED SHARD"
@@ -562,7 +576,7 @@
 		"DOTA_Tooltip_Ability_jakiro_liquid_fire_damage_pct"			"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_jakiro_dual_breath_damage_pct"			"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_jakiro_macropyre_damage_pct"			"%INTELLIGENCE DAMAGE"
-
+		
         //Grimstroke
 		"DOTA_Tooltip_Ability_grimstroke_ink_creature_damage_pct"			"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_grimstroke_spirit_walk_damage_pct"			"%INTELLIGENCE DAMAGE"
@@ -581,6 +595,10 @@
 		"DOTA_Tooltip_Ability_viper_nethertoxin_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
 		"DOTA_Tooltip_Ability_viper_corrosive_skin_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
 		"DOTA_Tooltip_Ability_viper_viper_strike_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
+
+		"DOTA_Tooltip_Ability_bane_enfeeble_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_brewmaster_thunder_clap_damage_pct"						"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_brewmaster_cinder_brew_damage_pct"						"%ALL ATTRIBUTES DAMAGE"
 
         //Death Prophet
 		"DOTA_Tooltip_Ability_death_prophet_carrion_swarm_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
@@ -786,7 +804,7 @@
 		"DOTA_Tooltip_ability_item_power_treads_3_bonus_attack_speed"	"+$attack"
 		
 		"DOTA_Tooltip_ability_item_skadi_2"	"EYE OF SKADI 2"
-		"DOTA_Tooltip_ability_item_skadi_2_Description"	"<h1>Passive: Cold Attack</h1> Each attack for %cold_duration% sec. slows down the movement and attack of the target, as well as reduces its healing, health regeneration, vampirism, and vampirism abilities by %heal_reduction%%%. The slowdown depends on the type of attack of the victim: for ranged creatures, it slows down movement by %cold_slow_ranged%%%, and attack by %cold_slow_ranged%. For melee creatures, it slows down movement by %cold_slow_melee%%%, and attack by %cold_slow_melee%."
+		"DOTA_Tooltip_ability_item_skadi_2_Description"	"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement by %cold_slow_melee%%% if they are melee and %cold_slow_ranged%%% if they are ranged, as well as their attack speed by %cold_attack_slow_melee%%% if they are melee and %cold_attack_slow_ranged%%% if they are ranged. Additionally it reduces all healing, lifesteal and regen by %heal_reduction%%% Lasts for %cold_duration% seconds."
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_all_stats"	"+$all"
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_mana"	"+$mana"
@@ -795,7 +813,7 @@
 		"DOTA_Tooltip_modifier_item_skadi_2_slow_Description"	"Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		
 		"DOTA_Tooltip_ability_item_skadi_3"	"EYE OF SKADI 3"
-		"DOTA_Tooltip_ability_item_skadi_3_Description"	"<h1>Passive: Cold Attack</h1> Each attack for %cold_duration% sec. slows down the movement and attack of the target, as well as reduces its healing, health regeneration, vampirism, and vampirism abilities by %heal_reduction%%%. The slowdown depends on the type of attack of the victim: for ranged creatures, it slows down movement by %cold_slow_ranged%%%, and attack by %cold_slow_ranged%. For melee creatures, it slows down movement by %cold_slow_melee%%%, and attack by %cold_slow_melee%."
+		"DOTA_Tooltip_ability_item_skadi_3_Description"	"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement by %cold_slow_melee%%% if they are melee and %cold_slow_ranged%%% if they are ranged, as well as their attack speed by %cold_attack_slow_melee%%% if they are melee and %cold_attack_slow_ranged%%% if they are ranged. Additionally it reduces all healing, lifesteal and regen by %heal_reduction%%% Lasts for %cold_duration% seconds."
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_all_stats"	"+$all"
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_mana"	"+$mana"
@@ -2235,5 +2253,22 @@
 
 		"DOTA_Tooltip_modifier_damage_to_exp_cd"						"Minder is cooldown"
 		"DOTA_Tooltip_modifier_piercing_blade_cd"						"Pierce перезаряжается"
+
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa"						"Astral Step"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_Description"			"The hero moves to the target location through an astral rift, attacking all enemies along the path. This attack applies a Void Mark, slowing the victims for %pop_damage_delay% seconds, then dealing damage."
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_Note0"				"Attacks from this ability do not deal cleave damage."
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_Lore"					"A single step from the Nether Realm can lead to devastating consequences in the mortal world."
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_bonus_damage"			"ADDITIONAL ATTACK DAMAGE:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_max_charges"			"MAX CHARGES:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_charge_restore_time"	"BASE CHARGE RESTORE TIME:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_max_travel_distance"	"TRAVEL DISTANCE:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_pop_damage"			"DAMAGE FROM VOID MARK:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_movement_slow_pct"		"%MOVEMENT SLOW:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_damage_hp_pct"			"%DAMAGE BASED ON TARGET'S CURRENT HEALTH:"
+		"DOTA_Tooltip_modifier_void_spirit_astral_step_lua"				"Astral Step"
+		"DOTA_Tooltip_modifier_void_spirit_astral_step_lua_Description"	"The creature is slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. At the end of the effect, it takes damage."
+
+		"dota_hud_error_astral_step_aa_no_charges"							"No Astral Step charges available."
+
 	}
 }

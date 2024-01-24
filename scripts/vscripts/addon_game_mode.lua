@@ -549,7 +549,7 @@ function AngelArena:OnGameStateChange()
 		local needkill = KILL_LIMIT_CONST / 10 * player
 		KILL_LIMIT = needkill
 		_G.KILL_LIMIT = needkill
-		RepickMenu:init() 
+		
 		
 		CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
 
@@ -614,6 +614,7 @@ function AngelArena:OnGameStateChange()
 			CreepSpawner:StartSpawning()
 			BossSpawner:OnGameStart()
 			BearSpawner:SpawnBear()
+			RepickMenu:init() 
 			Timers:CreateTimer(0.5, function()
 				AngelArena:SaveGold()
 				return 0.5

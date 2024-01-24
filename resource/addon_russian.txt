@@ -3,6 +3,20 @@
 	"Language"		"Russian"
 	"Tokens"
 	{	
+		"DOTA_Item_Build_Starting_Items_Farm"				"Для керри в начале"
+		"DOTA_Item_Build_Starting_Items_Gank"				"Для ганга в начале"
+		"DOTA_Item_Build_Starting_Items_Mage"				"Для мага в начале"
+
+		"DOTA_Item_Build_Mid_Items_Farm"					"Для керри в середине игры"
+		"DOTA_Item_Build_Mid_Items_Gank"					"Для ганга в середине игры"
+		"DOTA_Item_Build_Mid_Items_Mage"					"Для мага в середине игры"
+
+		"DOTA_Item_Build_Late_Items_Farm"					"Для керри в конце игры"
+		"DOTA_Item_Build_Late_Items_Gank"					"Для ганга в конце игры"
+		"DOTA_Item_Build_Late_Items_Mage"					"Для мага в конце игры"
+
+		"DOTA_Item_Build_Good_Choice"						"Так же полезно"
+
 		"AA_REPICK_MENU_PICK_GOD"							"СМЕНИТЬ ГЕРОЯ"
 		"AA_REPICK_MENU_ALREADY_PICKED"						"ГЕРОЙ УЖЕ ЗАНЯТ"
 		"AA_REPICK_MENU_NO_SHARD"							"НЕТ ОСКОЛКА"
@@ -410,6 +424,10 @@
 		"DOTA_Tooltip_Ability_razor_plasma_field_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_razor_unstable_current_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_razor_eye_of_the_storm_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+		"DOTA_Tooltip_Ability_bane_enfeeble_damage_pct"						"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+
+		"DOTA_Tooltip_Ability_brewmaster_thunder_clap_damage_pct"						"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+		"DOTA_Tooltip_Ability_brewmaster_cinder_brew_damage_pct"						"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 
 		//Sand King
 		"DOTA_Tooltip_Ability_sandking_epicenter_damage_pct"				"%УРОН ОТ СИЛЫ"
@@ -784,7 +802,7 @@
         "DOTA_Tooltip_ability_item_power_treads_3_bonus_attack_speed"			"+$attack"
 
         "DOTA_Tooltip_ability_item_skadi_2"										"EYE OF SKADI 2"
-		"DOTA_Tooltip_ability_item_skadi_2_Description"							"<h1>Пассивное: Cold Attack</h1> Каждая атака на %cold_duration% сек. замедляет передвижение и атаку цели, а также уменьшает её лечение, восстановление здоровья, вампиризм и вампиризм способностями на %heal_reduction%%%. Замедление зависит от типа атаки жертвы: у существ дальнего боя замедляет передвижение на %cold_slow_ranged%%%, атаку — на %cold_slow_ranged%. У существ ближнего боя замедляет передвижение на %cold_slow_melee%%%, атаку — на %cold_slow_melee%. "
+		"DOTA_Tooltip_ability_item_skadi_2_Description"							"<h1>Пассивное: Cold Attack</h1> Каждая атака на %cold_duration% сек. замедляет передвижение и атаку цели, а также уменьшает её лечение, восстановление здоровья, вампиризм и вампиризм заклинаниями на %heal_reduction%%%. Замедление зависит от типа атаки жертвы: у существ дальнего боя замедляет передвижение на %cold_slow_ranged%%%, атаку — на %cold_attack_slow_ranged%%%. У существ ближнего боя замедляет передвижение на %cold_slow_melee%%%, атаку — на %cold_attack_slow_melee%%%."
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_all_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_mana"							"+$mana"
@@ -795,7 +813,7 @@
 		"DOTA_Tooltip_modifier_item_skadi_2_slow_Description"		       		"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
         
         "DOTA_Tooltip_ability_item_skadi_3"										"EYE OF SKADI 3"
-		"DOTA_Tooltip_ability_item_skadi_3_Description"							"<h1>Пассивное: Cold Attack</h1> Каждая атака на %cold_duration% сек. замедляет передвижение и атаку цели, а также уменьшает её лечение, восстановление здоровья, вампиризм и вампиризм способностями на %heal_reduction%%%. Замедление зависит от типа атаки жертвы: у существ дальнего боя замедляет передвижение на %cold_slow_ranged%%%, атаку — на %cold_slow_ranged%. У существ ближнего боя замедляет передвижение на %cold_slow_melee%%%, атаку — на %cold_slow_melee%. "
+		"DOTA_Tooltip_ability_item_skadi_3_Description"							"<h1>Пассивное: Cold Attack</h1> Каждая атака на %cold_duration% сек. замедляет передвижение и атаку цели, а также уменьшает её лечение, восстановление здоровья, вампиризм и вампиризм заклинаниями на %heal_reduction%%%. Замедление зависит от типа атаки жертвы: у существ дальнего боя замедляет передвижение на %cold_slow_ranged%%%, атаку — на %cold_attack_slow_ranged%%%. У существ ближнего боя замедляет передвижение на %cold_slow_melee%%%, атаку — на %cold_attack_slow_melee%%%."
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_all_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_mana"							"+$mana"
@@ -2233,5 +2251,23 @@
 
 		"DOTA_Tooltip_modifier_damage_to_exp_cd"						"Minder перезаряжается"
 		"DOTA_Tooltip_modifier_piercing_blade_cd"						"Pierce перезаряжается"
+
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa"						"Astral Step"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_Description"			"Герой перемещается в указанную точку через астральный разлом, атакуя всех врагов на пути. Эта атака накладывает метку пустоты, которая замедляет жертв на %pop_damage_delay% сек. и затем наносит урон."
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_Note0"				"Атаки от этой способности не наносят прорубающий урон."
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_Lore"					"Один шаг Иная приводит к страшным разрушениям в мире смертных."
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_bonus_damage"			"ДОП. УРОН ОТ АТАКИ:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_max_charges"			"МАКС. ЗАРЯДОВ:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_charge_restore_time"	"БАЗОВОЕ ВРЕМЯ ВОССТАНОВЛЕНИЯ ЗАРЯДА:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_max_travel_distance"	"ДАЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_pop_damage"			"УРОН ОТ МЕТКИ ПУСТОТЫ:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_movement_slow_pct"		"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_damage_hp_pct"			"%УРОТ ОТ ТЕКУЩЕГО ЗДОРОВЬЯ ЦЕЛИ:"
+		"DOTA_Tooltip_modifier_void_spirit_astral_step_lua"				"Astral Step"
+		"DOTA_Tooltip_modifier_void_spirit_astral_step_lua_Description"	"Это существо замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. По окончании эффекта оно получит урон."
+
+		"dota_hud_error_astral_step_aa_no_charges"							"Нет зарядов Astral Step"
+
+		
 	}  
 }

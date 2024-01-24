@@ -30,7 +30,7 @@ function RepickMenu:init()
 	if self.gods_data then return end
 
 	local hero_data = PreloadCache:GetHeroData()
-	
+	print("RepickMenu:init")
 	
 	self.gods_data = {}
 	local banned = GameRules:GetBannedHeroes()
@@ -101,7 +101,15 @@ function RepickMenu:init()
 		data['armor'] 		= (hero_info['ArmorPhysical'] or 0) + agi * ARMOR_PER_AGI
 		data['item_name']	= hero_info['GodRepickItem'] or "item_invalid"
 
-		data['picked']		= 0
+		self.isPicked = 0
+		for i,heroOnMap in pairs(HeroList:GetAllHeroes()) do
+			if heroOnMap:GetUnitName() == hero_name then
+				self.isPicked = 1
+				print(self.isPicked)
+			end
+		end
+		data['picked'] = self.isPicked
+		print(data['picked'])
 		local togledHero = LoadKeyValues('scripts/npc/herolist.txt')
 		self.isBan = false
 		for _,ban in pairs(banned) do
@@ -123,6 +131,7 @@ function RepickMenu:init()
 	
 	CustomGameEventManager:RegisterListener("aa_repick_menu_retrive_data", Dynamic_Wrap(self, '_retriveHeroData'))
 	CustomGameEventManager:RegisterListener("aa_repick_menu_start_repick", Dynamic_Wrap(self, '_repickHero'))
+	CustomGameEventManager:Send_ServerToAllClients("aa_repick_menu_set_data", self.gods_data )
 	--print("aa_repick_menu_start_repick")
 end
 
@@ -196,6 +205,7 @@ function RepickMenu:PickHero(player, newHeroName)
 end
 
 function RepickMenu:GetData()
+	print(self.gods_data)
 	return self.gods_data
 end
 

@@ -572,15 +572,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"22 50 120"
-				"bonus_health"			"220 500 1000"
-				"bonus_mana"			"220 500 1000"
-				"cold_slow_melee"	"-20 -30 -40"
-				"cold_attack_slow_melee"	"-30 -40 -60"
-				"cold_slow_ranged"	"-40 -50 -60"
-				"cold_attack_slow_ranged"	"-60 -70 -90"
-				"cold_duration"	"3.0"
-				"heal_reduction"	"30 40 50"
+			"bonus_all_stats"			"30 70 150"
+			"bonus_health"				"220 500 1000"
+			"bonus_mana"				"220 500 1000"
+			"cold_slow_melee"			"-20 -30 -40"
+			"cold_attack_slow_melee"	"-25 -35 -45"
+			"cold_slow_ranged"			"-40 -50 -60"
+			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_duration"				"3.0"
+			"heal_reduction"			"30 40 50"
 		}
 	}
 
@@ -619,15 +619,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"22 50 120"
-				"bonus_health"			"220 500 1000"
-				"bonus_mana"			"220 500 1000"
-				"cold_slow_melee"	"-20 -30 -40"
-				"cold_attack_slow_melee"	"-30 -40 -60"
-				"cold_slow_ranged"	"-40 -50 -60"
-				"cold_attack_slow_ranged"	"-60 -70 -90"
-				"cold_duration"	"3.0"
-				"heal_reduction"	"30 40 50"
+			"bonus_all_stats"			"30 70 150"
+			"bonus_health"				"220 500 1000"
+			"bonus_mana"				"220 500 1000"
+			"cold_slow_melee"			"-20 -30 -40"
+			"cold_attack_slow_melee"	"-25 -35 -45"
+			"cold_slow_ranged"			"-40 -50 -60"
+			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_duration"				"3.0"
+			"heal_reduction"			"30 40 50"
 		}
 	}
 
@@ -666,19 +666,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"22 50 120"
-				"bonus_health"			"220 500 1000"
-				"bonus_mana"			"220 500 1000"
-				"cold_slow_melee"	"-20 -30 -40"
-				"cold_attack_slow_melee"	"-30 -40 -60"
-				"cold_slow_ranged"	"-40 -50 -60"
-				"cold_attack_slow_ranged"	"-60 -70 -90"
-				"cold_duration"	"3.0"
-				"heal_reduction"	"30 40 50"
+			"bonus_all_stats"			"30 70 150"
+			"bonus_health"				"220 500 1000"
+			"bonus_mana"				"220 500 1000"
+			"cold_slow_melee"			"-20 -30 -40"
+			"cold_attack_slow_melee"	"-25 -35 -45"
+			"cold_slow_ranged"			"-40 -50 -60"
+			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_duration"				"3.0"
+			"heal_reduction"			"30 40 50"
 		}
 	}
-
-
 	"item_lifesteal"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4820,7 +4818,7 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_spirit_vessel_2"
+		"ItemResult"					"item_spirit_vessel_3"
 		"ItemRequirements"
 		{
 			"01"						"item_spirit_vessel_2;item_spirit_vessel_2;item_boss_soul"
@@ -7613,7 +7611,7 @@
 				"int_damage_multiplier"	"1 1.5 2"
 				"slow"					"25 35 45"
 				"slow_duration"			"3 4 5"
-				"active_mres_reduction"		"20 25 30"
+				"active_mres_reduction"	"10 15 20"
 				"passive_cooldown"		"4"
 		}
 	}
@@ -7679,7 +7677,7 @@
 				"int_damage_multiplier"	"1 1.5 2"
 				"slow"					"25 35 45"
 				"slow_duration"			"3 4 5"
-				"active_mres_reduction"		"20 25 30"
+				"active_mres_reduction"		"10 15 20"
 				"passive_cooldown"		"4"
 		}
 	}
@@ -7745,7 +7743,7 @@
 				"int_damage_multiplier"	"1 1.5 2"
 				"slow"					"25 35 45"
 				"slow_duration"			"3 4 5"
-				"active_mres_reduction"		"20 25 30"
+				"active_mres_reduction"		"10 15 20"
 				"passive_cooldown"		"4"
 		}
 	}

@@ -28,7 +28,7 @@ DOTAAbilities
 				"AbilityCooldown"
 				{
 					"value"	"15 14.5 14 13.5 13 12.5 12"
-					"special_bonus_unique_underlord_5"	"-4"
+					"special_bonus_unique_underlord_5"	"-2"
 				}
 				"radius"					
 				{
@@ -49,7 +49,7 @@ DOTAAbilities
 				"wave_interval"					"1.0"
 				"burn_damage"					
 				{
-					"value"					"1.5 2 2.5 3 3.5 4 4.5"
+					"value"					"1.5 1.75 2 2.25 2.5 2.75 3"
 					"special_bonus_unique_underlord_4"	"+1"
 				}
 				"burn_interval"					"1.0"
@@ -242,7 +242,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90 80 70 60 50 40 30"
+		"AbilityCooldown"				"90 85 80 75 70 65 60"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------

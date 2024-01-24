@@ -63,7 +63,7 @@ function mod:OnCreated()
     self:CommonInitDamageToExp(  self:GetAbility(),  self:GetAbility():GetSpecialValueFor("pure_dmg_cd") )
 end
 function mod:GetModifierTotalDamageOutgoing_Percentage()
-    return -self.pure_dmg
+    return 0 --self.pure_dmg
 end
 function mod:OnTakeDamage(params)
     if not IsServer() then return end
@@ -100,7 +100,7 @@ function mod:OnTakeDamage(params)
     end
     
     local damage = params.original_damage/100*(self.pure_dmg + self.pure_dmg_stack*stack)
-    ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,})
+    --ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,})
 end
 
 
@@ -168,7 +168,7 @@ function modifier_piercing_blade_pure_damage:GetModifierTotalDamageOutgoing_Perc
                     attacker = self:GetParent(),
                     damage = damage,
                     damage_type = DAMAGE_TYPE_PURE,
-                    damage_flag = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
+                    damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL,
                     ability =  self:GetAbility(), --Optional.
                 }
             self:Destroy()

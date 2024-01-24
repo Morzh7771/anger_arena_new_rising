@@ -1,0 +1,50 @@
+"itembuilds"
+{
+	"author"  "Valve"
+	"hero"    "npc_dota_hero_drow_ranger"
+	"Title"   "Recommended items for Drow Ranger"
+ 
+	"Items"
+	{  
+		"#DOTA_Item_Build_Starting_Items_Farm"
+		{
+			"item"  	"item_fury_shield"
+			"item"  	"item_power_treads_2"
+			"item"  	"item_talisman_of_ambition_2"
+		}
+		"#DOTA_Item_Build_Starting_Items_Gank"
+		{
+			"item"  	"item_talisman_of_mastery"
+			"item"  	"item_fury_shield"
+			"item"  	"item_corrosion_custom"
+			"item"  	"item_power_treads_2"
+			"item"  	"item_talisman_of_ambition_2"
+		}
+		"#DOTA_Item_Build_Mid_Items_Farm"
+		{
+			"item"  	"item_desolator_aa_2"
+			"item"  	"item_skadi_2"
+			"item"  	"item_satanic_2"
+		}
+		"#DOTA_Item_Build_Late_Items_Farm"
+		{
+			"item"  	"item_rebels_sword"
+			"item"  	"item_giant_ring_aa"
+			"item"  	"item_trisula"
+			"item"  	"item_burning_butterfly"
+			"item"  	"item_monkey_king_bar_3"
+			"item"  	"item_greater_crit_2"
+		}
+		"#DOTA_Item_Build_Good_Choice"
+		{
+			"item"  	"item_bkb_aa_3"
+			"item"  	"item_desolator_aa_3"
+			"item"  	"item_piercing_blade3"
+			"item"  	"item_sheepstick_aa"
+			"item"  	"item_pipe_custom_3"
+			"item"  	"item_abyssal_blade_2" 
+			"item"  	"item_blade_mail_3"          
+			"item"  	"item_satanic_3"
+		}
+	}
+}
