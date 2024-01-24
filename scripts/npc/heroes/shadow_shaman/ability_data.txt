@@ -117,55 +117,40 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"tick_interval"		"0.2"
+			"total_damage"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"tick_interval"		"0.1 0.1 0.1 0.1"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"total_damage"		"60 130 200 270 340 410 480"
+				"value"		"60 130 200 270 340 410 480"
 				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_6"
 			}
-			"03"
+			"channel_time"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"2.2 2.4 2.6 2.8 3 3.2 3.4"
+				"value"		"2.2 2.4 2.6 2.8 3 3.2 3.4"
 				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_2"
 			}
-			"04"
+			"shard_bonus_cast_range"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_bonus_cast_range"		"125"
+				"value"		"125"
 				"RequiresShard"			"1"
 			}
-			"05"
+			"shard_ward_count"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_ward_count"		"4"
+				"value"		"4"
 				"RequiresShard"			"1"
 			}
-			"06"
+			"shard_ward_duration"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"shard_ward_duration"		"7"
+				"value"		"7"
 				"RequiresShard"			"1"
 			}
-			"06"
+			"shard_ward_spawn_distance"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"shard_ward_spawn_distance"		"100"
+				"value"		"100"
 				"RequiresShard"			"1"
 			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_pct"		"15"
-			}
-
+			"damage_pct"		"15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
