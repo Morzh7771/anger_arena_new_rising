@@ -101,6 +101,8 @@ function RepickMenu:init()
 		data['armor'] 		= (hero_info['ArmorPhysical'] or 0) + agi * ARMOR_PER_AGI
 		data['item_name']	= hero_info['GodRepickItem'] or "item_invalid"
 
+		data['id'] = DOTAGameManager:GetHeroIDByName(hero_name)
+		
 		self.isPicked = 0
 		for i,heroOnMap in pairs(HeroList:GetAllHeroes()) do
 			if heroOnMap:GetUnitName() == hero_name then

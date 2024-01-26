@@ -3715,6 +3715,17 @@
             "duration"                  "90"
 		}
     }
+    "item_repick_hero"
+    {
+        "BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_repick_hero"
+		"AbilityTextureName"			"third_eye"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+         "AbilityValues"
+        {
+            "duration"                  "90"
+		}
+    }
    "item_recipe_mirror_shield_aa"
     {
         "BaseClass"                        "item_datadriven"    

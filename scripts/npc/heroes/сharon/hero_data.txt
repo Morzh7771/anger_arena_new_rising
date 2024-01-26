@@ -1,0 +1,55 @@
+
+"DOTAHeroes"
+{
+	"npc_dota_hero_charon"
+	{
+		"Model"						"models/items/visage/ti9_cache_visage_pit_guard_familiar/ti9_cache_visage_pit_guard_familiar.vmdl"
+		"BaseClass" 				"npc_dota_hero"
+		"HeroID"					"203"
+		"IsCustom"					"1"
+
+		"Ability1"					"charon_soul_drain"
+		"Ability2"					"charon_overload"
+		"Ability3"					"charon_last_word"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"charon_collapse"
+
+		//10 LEVEL
+		"Ability10"					"special_bonus_exp_boost_25" //dota
+		"Ability11"					"special_bonus_cast_range_100" //dota
+
+		//15 LEVEL
+		"Ability12"					"charon_soul_drain_cast_time_fast_bonus_const_tallent"
+		"Ability13"					"charon_last_word_bonus_slow_per_mana_tallent"
+
+		//20 LEVEL
+		"Ability14"					"special_bonus_cooldown_reduction_20" //dota
+		"Ability15"					"charon_overload_manacost_reduction_percent_tallent"
+
+		//25 LEVEL
+		"Ability16"					"charon_collapse_bonus_duration_tallent"
+		"Ability17"					"charon_collapse_bonus_radius_tallent"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackAnimationPoint"		"0.4"
+		"AttackAcquisitionRange"		"800"
+		"BaseAttackSpeed"		"110"
+		"AttackRange"		"600"
+
+		"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
+		"ProjectileSpeed"		"1400"
+
+		"ArmorPhysical"		"2.000000"
+		"AttackDamageMin"	"24"
+		"AttackDamageMax"	"34"
+		"AttackRate"		"1.7"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseAgility"		"11"
+		"AttributeAgilityGain"		"2.300000"
+		"AttributeBaseIntelligence"		"24"
+		"AttributeIntelligenceGain"		"2.500000"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+	}
+}

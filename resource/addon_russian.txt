@@ -698,8 +698,8 @@
 		"DOTA_Tooltip_guardian_of_the_ancients_one_against_many_bonus"					"One Against Many"
 		"DOTA_Tooltip_guardian_of_the_ancients_one_against_many_bonus_Description"		"Увеличивает вашу скорость атаки на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%"
 
-		"DOTA_Tooltip_ability_item_repick"												"SWITCH HERO"
-		"DOTA_Tooltip_ability_item_repick_Description"									"Меняет вашего героя на его альтернативную версию. Пропадет через 90 секунд после начала игры."
+		"DOTA_Tooltip_ability_item_repick_hero"												"SWITCH HERO"
+		"DOTA_Tooltip_ability_item_repick_hero_Description"									"Меняет вашего героя на его альтернативную версию. Пропадет через 90 секунд после начала игры."
 
 		"npc_dota_hero_elder_titan_npedesc1"											"Имеет альтернативную версию. Что-бы её активировать, нужно использовать предмет 'Switch Hero' в начале игры."
 
@@ -2268,6 +2268,279 @@
 
 		"dota_hud_error_astral_step_aa_no_charges"							"Нет зарядов Astral Step"
 
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua"				"Aphotic Shield"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Description"	"Окружает союзника барьером из тёмной энергии, который поглощает некоторое количество урона. Если барьер пропадёт или его уничтожат, он взорвётся и нанесёт врагам вокруг урон, равный здоровью барьера. Применение снимает с цели оглушение и большинство отрицательных эффектов.\n\nТИП РАЗВЕИВАНИЯ: сильное"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Lore"			"Сила чёрного тумана поглощает удары так же, как он сам поглощает дневной свет."
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_duration"		"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_damage_absorb"	"ЗДОРОВЬЕ БАРЬЕРА:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_damage_absorb_pct"	"%ЗДОРОВЬЕ БАРЬЕРА ОТ ЗДОРОВЬЯ ГЕРОЯ:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_radius"		"РАДИУС ВЗРЫВА:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Note0"			"Взрыв наносит максимальный урон вне зависимости от того, сколько урона поглотил барьер."
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Note1"			"Взрыв щита не наносит урон существам в тумане войны."
+
 		
+		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_damage_absorb_pct"		"+{s:bonus_damage_absorb_pct}% от здоровья героя к барьеру от Aphotic Shield"
+	
+		"npc_dota_hero_charon"												"Charon"
+
+		"DOTA_Tooltip_ability_charon_soul_drain"							"Soul Drain"
+		"DOTA_Tooltip_ability_charon_soul_drain_Description"				"Charon оглушает и поглощает магическую энергию цели. Если мана исчерпалась, отнимает жизненные силы жертвы\nЕсли герой обладает предметом <b><font color='#af72cd'>Charon's Scepter</font></b> или <b><font color='#1a887d'>Void Scepter</font></b>, он будет передавать себе поглащенные ману и здоровье цели"
+		"DOTA_Tooltip_ability_charon_soul_drain_range_tooltip"				"ДАЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_charon_soul_drain_duration_tooltip"			"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_charon_soul_drain_manaburn_tooltip"			"МАНЫ В СЕКУНДУ:"
+		"DOTA_Tooltip_ability_charon_soul_drain_manaburn_pct_tooltip"	    "%МАНЫ В СЕКУНДУ%:"
+		"DOTA_Tooltip_ability_charon_soul_drain_damage_tooltip"				"ЗДОРОВЬЯ В СЕКУНДУ:"
+		"DOTA_Tooltip_modifier_charon_soul_drain"	                        "Оглушен"
+
+		"DOTA_Tooltip_ability_charon_last_word"							    "Last Word"
+		"DOTA_Tooltip_ability_charon_last_word_Description"				    "Присутствие героя замедляет вражеских героев, в зависимости от их недостающей маны"
+		"DOTA_Tooltip_ability_charon_last_word_radius"				        "РАДИУС:"
+		"DOTA_Tooltip_ability_charon_last_word_slow_for_mana_pct"		    "%ЗАМЕДЛЕНИЕ ЗА ПРОЦЕНТ МАНЫ:"
+		"DOTA_Tooltip_modifier_charon_last_word_aura_effect"		        "Замедлен"
+
+		"DOTA_Tooltip_ability_charon_overload"							    "Overload"
+		"DOTA_Tooltip_ability_charon_overload_Description"				    "Герой высвобождает в цель разряд, который наносит урон, в зависимости от своего максимального запаса маны. Стоимость умения также зависит от максимальной маны"
+		"DOTA_Tooltip_ability_charon_overload_damage_constant"				"УРОН:"
+		"DOTA_Tooltip_ability_charon_overload_damage_for_mana_pct"		    "%УРОН ОТ МАНЫ:"
+		"DOTA_Tooltip_ability_charon_overload_mana_cost_pct"		        "%СТОИМОСТЬ ПРИМЕНЕНИЯ:"
+
+		"DOTA_Tooltip_ability_charon_collapse"							    "Collapse"
+		"DOTA_Tooltip_ability_charon_collapse_Description"				    "Герой притягивает всех врагов в радиусе к себе, выжигая им ману (чем ближе, тем больше), после чего нанесет всем целям урон в зависимости от количества сожженной маны и отбросит их назад"
+		"DOTA_Tooltip_ability_charon_collapse_radius"				        "РАДИУС СТЯГИВАНИЯ:"
+		"DOTA_Tooltip_ability_charon_collapse_duration_inside"				"ДЛИТЕЛЬНОСТЬ СТЯГИВАНИЯ:"
+		"DOTA_Tooltip_ability_charon_collapse_manaburn_min"		            "СЖИГАНИЕ МАНЫ МИН:"
+		"DOTA_Tooltip_ability_charon_collapse_manaburn_max"		            "СЖИГАНИЕ МАНЫ МАКС:"
+		"DOTA_Tooltip_ability_charon_collapse_damage_per_mana_burn"		    "УРОН ЗА ЕД.МАНЫ:"
+		"DOTA_Tooltip_ability_charon_collapse_radius_out"		            "РАДИУС ОТТАЛКИВАНИЯ:"
+		"DOTA_Tooltip_modifier_charon_collapse_in_caster"		            "Collapse"
+		"DOTA_Tooltip_ability_charon_collapse_Note0"		                "Притягивает и оттакликает юнитов, невосприимчивых к магии, однако, не сжигает им ману и не наносит урона"
+		"DOTA_Tooltip_modifier_charon_collapse_inside"		                "Притягивается"	
+
+		"DOTA_Tooltip_ability_charon_soul_drain_cast_time_fast_bonus_const_tallent"               "+1.5сек к скорости прочтения Soul Drain"
+		"DOTA_Tooltip_ability_charon_last_word_bonus_slow_per_mana_tallent"                       "+0.2 к замедлению за % маны к Last Word"
+		"DOTA_Tooltip_ability_charon_overload_manacost_reduction_percent_tallent"                 "Астральная Петля"
+		"DOTA_Tooltip_ability_charon_overload_manacost_reduction_percent_tallent_Description"     "Снижает стоимость Overload на 50%, однако урон остается прежним"
+		"DOTA_Tooltip_ability_charon_collapse_bonus_duration_tallent"                             "+2 секунды к длительности Collapse"
+		"DOTA_Tooltip_ability_charon_collapse_bonus_radius_tallent"                               "+250 к радиусу Collapse"
+
+		"npc_dota_hero_satan"											"Satan"
+
+		"DOTA_Tooltip_ability_satan_might"										"Satan's Might"
+		"DOTA_Tooltip_ability_satan_might_Description"							"Каждый атакующий может получить урон в ответ и будет выведен из строя."
+		"DOTA_Tooltip_ability_satan_might_chance"								"%ШАНС:"
+		"DOTA_Tooltip_ability_satan_might_damage"								"УРОН:"
+		"DOTA_Tooltip_ability_satan_might_damage_pct"							"%УРОН ОТ МАКС. ХП:"
+		"DOTA_Tooltip_ability_satan_might_stun_duration"						"ВРЕМЯ СТАНА:"
+		"DOTA_Tooltip_ability_satan_might_radius"								"РАДИУС СРАБАТЫВАНИЯ:"
+
+		"DOTA_Tooltip_ability_satan_breath"										"Breath of Devil"
+		"DOTA_Tooltip_ability_satan_breath_Description"							"Дьявол сжигает всех на своему пути, нанося большое количество урона. Крипы получают в разы больше урона."
+		"DOTA_Tooltip_ability_satan_breath_range"								"ДАЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_satan_breath_damage"								"УРОН:"
+		"DOTA_Tooltip_ability_satan_breath_damage_from_str"						"%УРОН ОТ СИЛЫ:"
+		"DOTA_Tooltip_ability_satan_breath_creep_multipler"						"МНОЖИТЕЛЬ ПО КРИПАМ:"
+		"DOTA_Tooltip_ability_satan_breath_duration"							"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_satan_breath_tick_count"							"КОЛИЧЕСТВО УДАРОВ:"
+
+		"DOTA_Tooltip_modifier_satan_breath_active"								"Breath of Devil"
+		"DOTA_Tooltip_modifier_satan_breath_active_Description"					"Дьявол сжигает всех на своему пути. Обезоружен."
+
+		"DOTA_Tooltip_ability_satan_trade"										"Bloody Trade"
+		"DOTA_Tooltip_ability_satan_trade_Description"							"Герой обменивает часть своего здоровья ради дополнительного урона."
+		"DOTA_Tooltip_ability_satan_trade_Note0"								"Полученный урон здоровью не может убить персонажа."
+		"DOTA_Tooltip_ability_satan_trade_Note1"								"Полученный урон здоровью сбивает блинк."
+		"DOTA_Tooltip_ability_satan_trade_Note2"								"Полученный урон может быть очищен."
+		"DOTA_Tooltip_ability_satan_trade_health_lose"							"%ПОТЕРЯ ЗДОРОВЬЯ:"
+		"DOTA_Tooltip_ability_satan_trade_damage_get"							"%ЗДОРОВЬЕ В УРОН:"
+		"DOTA_Tooltip_ability_satan_trade_duration"								"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_modifier_satan_trade_attack"								"Trade Result"
+		"DOTA_Tooltip_modifier_satan_trade_attack_Description"					"Получает %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%% атаки."
+
+		"DOTA_Tooltip_ability_satan_overpain"									"Painkiller"
+		"DOTA_Tooltip_ability_satan_overpain_Description"						"Satan на время может поглощать часть входящего урона и регенерировать."
+		"DOTA_Tooltip_ability_satan_overpain_duration"							"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_satan_overpain_damage_decrease"					"%СНИЖЕНИЕ УРОНА:"
+		"DOTA_Tooltip_ability_satan_overpain_hp_regen"							"%РЕГЕНЕРАЦИЯ:"
+
+		"DOTA_Tooltip_modifier_satan_overpain_active"							"Painkiller"
+		"DOTA_Tooltip_modifier_satan_overpain_active_Description"				"Дьявол не чувствует боли."
+
+		"DOTA_Tooltip_ability_satan_curse"										"Curse of Devil"
+		"DOTA_Tooltip_ability_satan_curse_Description"							"Satan проклинает выбранную цель, замедляя ее полностью, отключая ее пассивные способности, запрещая ей использовать активные способности и обезоруживая цель."
+		"DOTA_Tooltip_ability_satan_curse_duration"								"ДЛИТЕЛЬНОСТЬ:"
+
+		"DOTA_Tooltip_modifier_satan_curse_debuff"								"Cursed by Lucifer"
+		"DOTA_Tooltip_modifier_satan_curse_debuff_Description"					"Наказание люцифера неоспаримо."
+
+		"DOTA_Tooltip_ability_satan_special_bonus_trade_damage"					"+50% урона к Bloody Trade"
+		"DOTA_Tooltip_ability_satan_special_bonus_trade_duration"				"+15 секунд длительности к Bloody Trade"
+		"DOTA_Tooltip_ability_satan_special_bonus_might_nocd"					"Satan's Might не имеет кулдауна"
+		"DOTA_Tooltip_ability_satan_special_bonus_breath_damage"				"+100 урона к Satan's Breath"
+
+		"npc_dota_hero_shadowsong"												"Shadowsong"
+
+		"DOTA_Tooltip_ability_shadowsong_magic_fire" 							"Magic Fire"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_Description"				"Запускает снаряд, который при попадании сжигает ману цели и наносит такой же урон. Так же на цель накладывается уменьшающий сопротивление эффектам и восстановление здоровье. Повторное применение во время действия эффекта обновит его действие, а так же увеличит сжигаение маны и урон."
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_manaburn" 					"СЖИГАНИЕ МАНЫ:"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_status_resist_debuff" 		"%УМЕНЬШЕНИЕ СОПРОТИВЛЕНИЯ ЭФФЕКТАМ:"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_heal_decrease_debuff" 		"%УМЕНЬШЕНИЕ ЛЕЧЕНИЯ:"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_debuff_duration" 			"ДЛИТЕЛЬНОСТЬ ЭФФЕКТА:"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_projectile_speed" 			"СКОРОСТЬ СНАРЯДА:"
+		"DOTA_Tooltip_modifier_shadowsond_magic_fire_debuff" 					"Magic Fire Effect"
+		"DOTA_Tooltip_modifier_shadowsond_magic_fire_debuff_Description"		"Уменьшает сопротивление эффектам на -%dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%%  и уменьшает лечение на -%dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%."
+
+		"DOTA_Tooltip_ability_shadowsong_talent_magic_fire_aoe"					"Magic Fire применяется в области"
+		"DOTA_Tooltip_ability_shadowsong_talent_magic_fire_cd_decrease"			"-{s:value} сек. перезарядки Magic Fire"
+
+		"DOTA_Tooltip_ability_shadowsong_absorption"							"Absorbtion"
+		"DOTA_Tooltip_ability_shadowsong_absorption_Description"				"При активации Shadowsong излучает ауру которая крадет здоровье окружающих врагов. Каждая смерть увеличивает время действия ауры."
+		"DOTA_Tooltip_ability_shadowsong_absorption_damage"						"УРОН:"
+		"DOTA_Tooltip_ability_shadowsong_absorption_duration"					"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_shadowsong_absorption_interval"					"ИНТЕРВАЛ УРОНА:"
+		"DOTA_Tooltip_ability_shadowsong_absorption_bonus_duration_hero"		"ДОП. ДЛИТЕЛЬНОСТЬ ЗА СМЕРТЬ ГЕРОЯ:"
+		"DOTA_Tooltip_ability_shadowsong_absorption_bonus_duration_creep"		"ДОП. ДЛИТЕЛЬНОСТЬ ЗА СМЕРТЬ КРИПА:"
+
+		"DOTA_Tooltip_modifier_shadowsong_absorption_aura"						"Absorption Aura"
+		"DOTA_Tooltip_modifier_shadowsong_absorption_aura_effect"				"Absorption Effect"
+		"DOTA_Tooltip_modifier_shadowsong_absorption_talent"					"Absorption Bonus Life"
+		"DOTA_Tooltip_modifier_shadowsong_absorption_talent_Description"		"Здоровье увеличено на %dMODIFIER_PROPERTY_HEALTH_BONUS%"
+
+		"DOTA_Tooltip_ability_shadowsong_special_bonus_absorbtion"				"+{s:value} урона для Absorbtion"
+		"DOTA_Tooltip_ability_shadowsong_special_bonus_absorbtion_kill_bonus"	"+{s:value} здоровья за убийство героя под Absorbtion"
+
+		"DOTA_Tooltip_ability_angel_arena_death_aura"							"Аура тления"
+		"DOTA_Tooltip_ability_angel_arena_death_aura_Description"				"Аура тления заставляет всех союзников и героя бегать и регенерировать хп быстрее."
+		"DOTA_Tooltip_ability_angel_arena_death_aura_aura_radius"				"РАДИУС:"		
+		"DOTA_Tooltip_ability_angel_arena_death_aura_bonus_speed"				"%СКОРОСТЬ:"	
+		"DOTA_Tooltip_ability_angel_arena_death_aura_hp_regen"					"РЕГЕН:"
+		"DOTA_Tooltip_modifier_death_aura"										"Аура тления"
+		"DOTA_Tooltip_modifier_death_aura_Description"							"Аура тления увеличивает восстановление здоровья и скорость передвижения."
+
+		"DOTA_Tooltip_ability_shadowsong_dark_reflection"						"Dark Reflection"
+		"DOTA_Tooltip_ability_shadowsong_dark_reflection_Description"			"Shadowsong искажает измерение и меняет местами себя и выбраную цель. Другие измерения оглушают враждебную цель."
+		"DOTA_Tooltip_ability_shadowsong_dark_reflection_stun_duration"			"ДЛИТЕЛЬНОСТЬ СТАНА:"
+
+		"DOTA_Tooltip_ability_shadowsong_special_bonus_reflection_magic_immune"	"+{s:value} сек. невосприимчивости к магии от Dark Reflection"
+		"DOTA_Tooltip_ability_shadowsong_special_bonus_reflection_teammate"		"Dark Reflection работает на союзников"
+
+		"npc_dota_hero_fireblade"											"Fireblade"
+
+		"DOTA_Tooltip_ability_fireblade_fiery_stream"							"Fiery Stream"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_Description"				"Fireblade выпускает поток огня, сжигая все перед собой, за каждого задетого героя Fireblade получает бонусный урон на небольшой срок."
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_distantion"				"РАССТОЯНИЕ:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_damage"					"УРОН:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_damage_per_hero"			"ПОЛУЧЕНИЕ УРОНА:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_buff_duration"				"ДЛИТЕЛЬНОСТЬ БАФФА:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_slow"						"%ЗАМЕДЛЕНИЕ:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_slow_duration"				"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_talent"					"Fiery Stream Dash"
+
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_debuff"					"Slowed"
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_debuff_Description"		"Замедлен на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% от Fiery Stream"
+
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_buff"						"Damage bonus"
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_buff_Description"			"Бонус %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% урона от Fiery Stream"
+
+		"DOTA_Tooltip_ability_fireblade_burn_offering"							"Burn Offering"
+		"DOTA_Tooltip_ability_fireblade_burn_offering_Description"				"Fireblade запускает огненный снаряд в ближайшую к нему цель, который при попадании наносит урон."
+		"DOTA_Tooltip_ability_fireblade_burn_offering_damage"					"УРОН:"
+		"DOTA_Tooltip_ability_fireblade_burn_offering_speed"					"СКОРОСТЬ СНАРЯДА:"
+
+		"DOTA_Tooltip_ability_fireblade_scorched_blades"						"Scorched Blades"
+		"DOTA_Tooltip_ability_fireblade_scorched_blades_Description"			"Fireblade с каждой атакой наносит дополнительный магический урон врагам.\nПри наличии артефакта <font color='#d40b0b'>BURNING BLADES</font> наносит часть урона от своей атаки в виде магического урона."
+		"DOTA_Tooltip_ability_fireblade_scorched_blades_damage"					"УРОН:"
+		"DOTA_Tooltip_ability_fireblade_scorched_blades_damage_with_item_pct"	"%УРОН С <font color='#d40b0b'>BURNING BLADES</font>:"
+
+		"DOTA_Tooltip_modifier_fireblade_scorched_blades_debuff"				"Scorched Blades Silence"
+
+		"DOTA_Tooltip_Ability_fireblade_firestrip"								"Firestrip"
+		"DOTA_Tooltip_Ability_fireblade_firestrip_Description"					"Герой наносит атаку всем врагам вокруг него, получая на каждый удар бонусный магический урон. За каждого задетого героя Fireblade получает дополнительное сопротивление урону."
+		"DOTA_Tooltip_Ability_fireblade_firestrip_Note0"						"Модификаторы атаки не применяются во время атаки."
+		"DOTA_Tooltip_Ability_fireblade_firestrip_damage"						"МАГ. УРОН:"
+		"DOTA_Tooltip_Ability_fireblade_firestrip_damage_resist_per_hero"		"%СОПРОТИВЛЕНИЕ УРОНУ:"
+		"DOTA_Tooltip_Ability_fireblade_firestrip_buff_duration"				"ДЛИТЕЛЬНОСТЬ СОПРОТИВЛЕНИЯ:"
+		"DOTA_Tooltip_Ability_fireblade_firestrip_abilitycastrange"				"РАДИУС:"
+
+		"DOTA_Tooltip_modifier_fireblade_firestrip_buff"						"Firestrip resist"
+		"DOTA_Tooltip_modifier_fireblade_firestrip_buff_Description"			"Incoming damage changed -%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% "
+
+		"DOTA_Tooltip_ability_fireblade_talent_fire_stream_blink"				"Fiery Stream перемещает героя вслед за огнем"
+		"DOTA_Tooltip_ability_fireblade_talent_fire_stream_blink_Description"	"Во время перемещения герой получает неуязвимость, но не может применять заклинания или предметы."
+		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_heal"				"Burn Offering излечивает героя на нанесенный урон"
+		"DOTA_Tooltip_ability_fireblade_talent_firestrip_stun"					"Firestrip накладывает стан на {s:value} секунды"
+		"DOTA_Tooltip_ability_fireblade_talent_firestrip_spellimmune"			"Firestrip проходит сквозь невосприимчивость к заклинаниям"
+		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_aoe"				"Burn Offsering применяется на всех окружающих врагов"
+		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_attack_dmg"		"Burn Offering получает урон от атаки"
+		"DOTA_Tooltip_ability_fireblade_talent_scorched_blades_silence"			"Scorched Blades накладывают безмолвие {s:value} секунду"
+		"DOTA_Tooltip_ability_fireblade_talent_scorched_blades_silence_Description"			"Перезарядка способности длится {s:cooldown} секунд. Так же отключает использование предметов."
+
+		"DOTA_Tooltip_ability_fireblade_talent_scorched_blades_spellimmune"		"Scorched Blades игнорирует магический иммунитет"
+
+		"npc_dota_hero_huntress"												"Huntress"
+
+		//===========================================================================================
+		"DOTA_Tooltip_ability_huntress_aim_shot"							"Aim Shot"
+		"DOTA_Tooltip_ability_huntress_aim_shot_Description"				"При включении Huntress со 100% вероятностью атакует цель критическими ударами, повышая свою дальность атаки, но уменьшаная базовое время атаки"
+		"DOTA_Tooltip_ability_huntress_aim_shot_crit_damage_pct"	        "%УРОН:"
+		"DOTA_Tooltip_ability_huntress_aim_shot_bonus_attack_range"	        "ДОП.ДАЛЬНОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_huntress_aim_shot_bat_value_tooltip"	        "УМЕНЬШЕНИЕ БАТ:"
+		"DOTA_Tooltip_modifier_huntress_aim_shot"	                        "Aim Shot"
+		"DOTA_Tooltip_ability_huntress_aim_shot_Lore"				        "Когда-то Huntress обучили простому правилу охоты: одна стрела - один труп. Перебравшись на поля сражений, охотница не забыла старые уроки"
+
+		"DOTA_Tooltip_ability_huntress_aim_shot_bonus_crit_tallent"         "+{s:value}%  к критическому урона Aim Shot"
+		"DOTA_Tooltip_ability_huntress_aim_shot_bonus_bat_tallent"          "-{s:value} к штрафу БАТ от Aim Shot"
+		//===========================================================================================
+
+		"DOTA_Tooltip_ability_huntress_owl"							        "Summon Owl"
+		"DOTA_Tooltip_ability_huntress_owl_Description"				        "Huntress призывает на выбранное дерево сову для разведки карты и обнаружения невидимости в радиусе. Сова также обеспечивает 100% шанс попадания по врагам дружественным целям, находящимся рядом"
+		"DOTA_Tooltip_ability_huntress_owl_radius"	                        "РАДИУС:"
+		"DOTA_Tooltip_ability_huntress_owl_max_owl"				            "МАКС.ПРИЗВАННЫХ СУЩЕСТВ:"
+		"DOTA_Tooltip_ability_huntress_owl_health"				            "ЗДОРОВЬЕ СОВЫ:"
+		"DOTA_Tooltip_huntress_owl_modifier_current_value"	                "Призвано сов"
+		"DOTA_Tooltip_ability_huntress_owl_Lore"				            "Прирученные Huntress совы помогают ей разведать территорию во время боя и точно узнать, где находится противник"
+
+		"npc_aa_huntess_owl_unit"									        "Owl Huntress"
+		"DOTA_Tooltip_modifier_huntress_owl_aura_true_strike_effect_lua"	"Точные выстрелы"
+		"DOTA_Tooltip_ability_huntress_huntress_owl_radius_aura_tallent"    "+{s:value} к обзору Huntress Owl"
+		"DOTA_Tooltip_ability_huntress_huntress_owl_invisible_tallent"      "Huntress Owl становятся невидимыми"
+
+		//===========================================================================================
+		"DOTA_Tooltip_ability_huntress_crippling_arrow"						"Crippling Arrow"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_Description"			"Атаки Huntress замедляют цель и с некотором шансом опутывают цель корнями"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_slow_pct"	        "%ЗАМЕДЛЕНИЕ:"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_duration_slow"	    "ДЛИТЕЛНОСТЬ (ЗАМЕДЛЕНИЕ):"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_chance_root"	        "%ШАНС ОПУТЫВАНИЯ:"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_duration_root"	    "ДЛИТЕЛЬНОСТЬ(ОПУТЫВАНИЕ):"
+		"DOTA_Tooltip_modifier_huntress_crippling_arrow_root"	            "Опутан"
+		"DOTA_Tooltip_modifier_huntress_crippling_arrow_slow"	            "Замедлен"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_Lore"				"Во время одной из охот, Huntress повстречала дриаду, которая предложила зачаровать ее стрелы в обмен на то, что охотница никогда не вернется в ее лес."
+
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_chance_tallent"     "+{s:value}% к шансу опутывания Crippling Arrow"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_duration_tallent"   "+{s:value} к длительности опутывания Crippling Arrow"
+
+		//===========================================================================================
+		"DOTA_Tooltip_ability_huntress_hunting_spirit"						"Hunting Spirit"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_Description"			"Скорость передвижения Huntress увеичивается и герой получает возможность проходить сквозь деревья.\n Во время действия данной способности, <font color='#229917'>Aim Shot</font> не уменьшает базовое время атаки\n При наличии <font color='#ffef27'>Daedalus</font>, Huntress получает новую способность - Curse Arrow"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_duration"	            "ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_bonus_movespeed_pct"	"%БОНУС К СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_Lore"				    "Главное в бою - сосредоточенность и спокойствие. Они позволяют любому охотнику двигаться быстрее и легче. Huntress довела свои боевые навыки до предела, за счет чего стала прозываться в известных кругах Духом Охоты."
+
+		"DOTA_Tooltip_modifier_huntress_hunting_spirit"	                    "Дух Охоты"
+
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_heavy_arrow_tallent"              "Тяжелые стрелы"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_heavy_arrow_tallent_Description"  "Во время действия Hunting Spirit, выстрелы от Crippling Arrow не опутывают цель, а оглушают. Оглушение длится на {s:value}%  меньше."
+
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_status_resist_tallent"            "Hunting Spirit дает {s:value}% сопротивление эффектам"
+
+		//===========================================================================================
+		"DOTA_Tooltip_ability_huntress_curse_arrow"						"Curse Arrow"
+		"DOTA_Tooltip_ability_huntress_curse_arrow_Description"			"Выпускает в цель зачарованную стрелу, которая при попадании будет снимать с цели все положительные эффекты. Длительность зависит от время чтения заклинания.\n\nТИП РАЗВЕИВАНИЯ: сильное"
+		"DOTA_Tooltip_ability_huntress_curse_arrow_min_duration"	    "МИН.ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_huntress_curse_arrow_max_duration"		"МАКС.ДЛИТЕЛЬНОСТЬ:"
+
+		"DOTA_Tooltip_modifier_huntress_curse_arrow"				"Curse Arrow"
+		"DOTA_Tooltip_modifier_huntress_curse_arrow_Description"	"Вы прокляты и теряете все положительные эффекты"
+
 	}  
 }

@@ -2,7 +2,7 @@
 {
 	"npc_dota_hero_elder_titan"
 	{
-		"override_hero"		"npc_dota_hero_elder_titan"
+		"BaseClass"		"npc_dota_hero_elder_titan"
 		"Ability1"		"elder_titan_echo_stomp"
 		"Ability2"		"elder_titan_ancestral_spirit"
 		"Ability3"		"elder_titan_natural_order"

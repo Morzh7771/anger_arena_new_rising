@@ -656,6 +656,7 @@ function AngelArena:IsUnitBear(unit)
 
 	return false
 end
+local pickedCustomHero= {}
 function AngelArena:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	local spawnedUnit = EntIndexToHScript(keys.entindex)
@@ -665,10 +666,9 @@ function AngelArena:OnNPCSpawned(keys)
 	if npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
 		if hero_table[unitname]then
-			print('heroheroheroherohero',hero_table[unitname])
-			npc:AddItemByName("item_repick")
+			--npc:AddItemByName("item_repick_hero")
 		end
-		if npc:IsRealHero() then
+		if npc:IsRealHero() or npc:IsIllusion()then
 			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
 			--npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
 		end

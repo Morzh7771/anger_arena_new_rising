@@ -2,9 +2,11 @@
 {
 	"npc_dota_hero_guardian_of_the_ancients"
 	{
-		"BaseClass"		"npc_dota_hero_elder_titan"
+		"BaseClass"		"npc_dota_hero"
 		"Model"			"models/creeps/lane_creeps/creep_radiant_hulk/creep_radiant_ancient_hulk.vmdl"
-		"HeroID"		"124"
+		"IsCustom"					"1"
+		"HeroID"		"200"
+
 		"Ability1"		"guardian_of_the_ancients_ficle_ground"
 		"Ability2"		"guardian_of_the_ancients_guardians_step"
 		"Ability3"		"guardian_of_the_ancients_one_against_many"
@@ -19,6 +21,7 @@
 		"Ability15"		"special_bonus_unique_guardian_of_the_ancients_guardians_step_no_dmg"
 		"Ability16"		"special_bonus_unique_guardian_of_the_ancients_command_height_can_move"
 		"Ability17"		"special_bonus_unique_guardian_of_the_ancients_confident_stance_attack_rate"
+		
 		"AbilityDraftIgnoreCount" "7"
 		"ArmorPhysical"		"0.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

@@ -2270,5 +2270,280 @@
 
 		"dota_hud_error_astral_step_aa_no_charges"							"No Astral Step charges available."
 
+
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua"				"Aphotic Shield"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Description"	"Summons dark energies around an ally unit, creating an all damage barrier that absorbs a set amount of damage before expiring. When the barrier is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.\n\nDISPEL TYPE: Strong Dispel"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Lore"			"The powers of the black mist rise to absorb attacks like the black mist absorbs light."
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_duration"		"DURATION:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_damage_absorb"	"DAMAGE BARRIER:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_damage_absorb_pct"	"%DAMAGE BARRIER FROM HERO HEALTH:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_radius"		"BURST RADIUS:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Note0"			"The max damage is always dealt whether the barrier is destroyed by expiring or absorbing damage."
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Note1"			"The explosion does not damage units hidden by the fog of war."
+		
+		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_damage_absorb_pct"					"+%{s:bonus_damage_absorb_pct} of hero health to Aphotic Shield's barrier health."
+		
+		"npc_dota_hero_charon"												"Charon"
+
+		"DOTA_Tooltip_ability_charon_soul_drain"							"Soul Drain"
+		"DOTA_Tooltip_ability_charon_soul_drain_Description"				"Charon stuns and steals mana from enemy. When mana ends Charon starts stealing health from unit.\nWhen owner has a <b><font color='#af72cd'>Charon's Scepter</font></b> or <b><font color='#1a887d'>Void Scepter</font></b>, stealed mana and health will be restored to ability owner."
+		"DOTA_Tooltip_ability_charon_soul_drain_range_tooltip"				"RANGE:"
+		"DOTA_Tooltip_ability_charon_soul_drain_duration_tooltip"			"DURATION:"
+		"DOTA_Tooltip_ability_charon_soul_drain_manaburn_tooltip"			"MANA PER SEC:"
+		"DOTA_Tooltip_ability_charon_soul_drain_manaburn_pct_tooltip"	    "%MANA PER SEC%:"
+		"DOTA_Tooltip_ability_charon_soul_drain_damage_tooltip"				"HEALTH PER SEC:"
+		"DOTA_Tooltip_modifier_charon_soul_drain"	                        "Stunned"
+
+		"DOTA_Tooltip_ability_charon_last_word"							    "Last Word"
+		"DOTA_Tooltip_ability_charon_last_word_Description"				    "All enemies in radius will be slowed."
+		"DOTA_Tooltip_ability_charon_last_word_radius"				        "RADIUS:"
+		"DOTA_Tooltip_ability_charon_last_word_slow_for_mana_pct"		    "%SLOW BY MANA PERCENTAGE:"
+		"DOTA_Tooltip_modifier_charon_last_word_aura_effect"		        "Slow"
+
+		"DOTA_Tooltip_ability_charon_overload"							    "Overload"
+		"DOTA_Tooltip_ability_charon_overload_Description"				    "Hero release a soul to target that deal damage that depends of Charon manapool. Ability manacost depends on manapool of Charon."
+		"DOTA_Tooltip_ability_charon_overload_damage_constant"				"DAMAGE:"
+		"DOTA_Tooltip_ability_charon_overload_damage_for_mana_pct"		    "%DAMAGE FROM MANA:"
+		"DOTA_Tooltip_ability_charon_overload_mana_cost_pct"		        "%MANACOST:"
+
+		"DOTA_Tooltip_ability_charon_collapse"							    "Collapse"
+		"DOTA_Tooltip_ability_charon_collapse_Description"				    "Charon collapse and pulls all enemies to himself, stealing mana that depends of distnace between enemy and Charon. After collapsing Charon knockback all enemies and deal damage that depends of stealed mana."
+		"DOTA_Tooltip_ability_charon_collapse_radius"				        "PULL RADIUS:"
+		"DOTA_Tooltip_ability_charon_collapse_duration_inside"				"PULL DURATION:"
+		"DOTA_Tooltip_ability_charon_collapse_manaburn_min"		            "MANA BURN MIN:"
+		"DOTA_Tooltip_ability_charon_collapse_manaburn_max"		            "MANA BURN MAX:"
+		"DOTA_Tooltip_ability_charon_collapse_damage_per_mana_burn"		    "DAMAGE FROM STEALED MANA::"
+		"DOTA_Tooltip_ability_charon_collapse_radius_out"		            "KNOCKBACK RADIUS:"
+		"DOTA_Tooltip_modifier_charon_collapse_in_caster"		            "Collapse"
+		"DOTA_Tooltip_ability_charon_collapse_Note0"		                "Pulls and knockback spellimmune emeies, but doesn't steal mana and doesn't deal damage to them."
+		"DOTA_Tooltip_modifier_charon_collapse_inside"		                "Pulled by Charon"	
+
+		"DOTA_Tooltip_ability_charon_soul_drain_cast_time_fast_bonus_const_tallent"               "+1.5sec. to Soul Drain duration."
+		"DOTA_Tooltip_ability_charon_last_word_bonus_slow_per_mana_tallent"                       "+0.2 slow for mana percent for Last Word"
+		"DOTA_Tooltip_ability_charon_overload_manacost_reduction_percent_tallent"                 "Astral Loop"
+		"DOTA_Tooltip_ability_charon_overload_manacost_reduction_percent_tallent_Description"     "Decreasing Overload manacost for 50% without damage chaning."
+		"DOTA_Tooltip_ability_charon_collapse_bonus_duration_tallent"                             "-2 seconds to Collapse duration"
+		"DOTA_Tooltip_ability_charon_collapse_bonus_radius_tallent"                               "+250 to Collapse Radius"
+
+		"npc_dota_hero_satan"											"Satan"
+
+		"DOTA_Tooltip_ability_satan_might"										"Satan's Might"
+		"DOTA_Tooltip_ability_satan_might_Description"							"Chance to stun attackers or return tdamage to them."
+		"DOTA_Tooltip_ability_satan_might_chance"								"%CHANCE:"
+		"DOTA_Tooltip_ability_satan_might_stun_duration"						"STUN DURATION:"
+		"DOTA_Tooltip_ability_satan_might_radius"								"RADIUS:"
+
+		"DOTA_Tooltip_ability_satan_breath"										"Devil's Breath"
+		"DOTA_Tooltip_ability_satan_breath_Description"							"Satan burns all enemies in front of him. Damage against creeps is multiplied."
+		"DOTA_Tooltip_ability_satan_breath_range"								"RANGE:"
+		"DOTA_Tooltip_ability_satan_breath_damage"								"DAMAGE:"
+		"DOTA_Tooltip_ability_satan_breath_damage_from_str"						"%DAMAGE FROM STR:"
+		"DOTA_Tooltip_ability_satan_breath_creep_multipler"						"CREEP DAMAGE MULTIPLER:"
+		"DOTA_Tooltip_ability_satan_breath_duration"							"DURATION:"
+		"DOTA_Tooltip_ability_satan_breath_tick_count"							"TICK COUNT:"
+
+		"DOTA_Tooltip_modifier_satan_breath_active"								"Breath of Devil"
+		"DOTA_Tooltip_modifier_satan_breath_active_Description"					"Satan burns everybody in his path. Disarmed."
+
+		"DOTA_Tooltip_ability_satan_trade"										"Bloody Trade"
+		"DOTA_Tooltip_ability_satan_trade_Description"							"Satan trades a part of his current health to increase his damage for a short time."
+		"DOTA_Tooltip_ability_satan_trade_Note0"								"Lost health can't kill Satan."
+		"DOTA_Tooltip_ability_satan_trade_Note1"								"Loosing health will start the cooldown on blink dagger."
+		"DOTA_Tooltip_ability_satan_trade_Note2"								"Additional damage can be purged."
+		"DOTA_Tooltip_ability_satan_trade_health_lose"							"%HEALTH LOSE:"
+		"DOTA_Tooltip_ability_satan_trade_damage_get"							"%HP TO DAMAGE:"
+		"DOTA_Tooltip_ability_satan_trade_duration"								"DURATION:"
+		"DOTA_Tooltip_modifier_satan_trade_attack"								"Trade Result"
+		"DOTA_Tooltip_modifier_satan_trade_attack_Description"					"Gain %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%% damage."
+
+		"DOTA_Tooltip_ability_satan_overpain"									"Painkiller"
+		"DOTA_Tooltip_ability_satan_overpain_Description"						"For a short time Satan absorbs a percent of incoming damage and regenerates faster."
+		"DOTA_Tooltip_ability_satan_overpain_duration"							"DURATION:"
+		"DOTA_Tooltip_ability_satan_overpain_damage_decrease"					"%INCOMING DAMAGE DECREASE:"
+		"DOTA_Tooltip_ability_satan_overpain_hp_regen"							"%REGENERATION:"
+
+		"DOTA_Tooltip_modifier_satan_overpain_active"							"Painkiller"
+		"DOTA_Tooltip_modifier_satan_overpain_active_Description"				"Devil does not feel pain."
+
+		"DOTA_Tooltip_ability_satan_curse"										"Devil's Curse"
+		"DOTA_Tooltip_ability_satan_curse_Description"							"Satan curses the enemy, slowing it, disabling passive and active abilities aswell as disarming the target."
+		"DOTA_Tooltip_ability_satan_curse_duration"								"DURATION:"
+
+		"DOTA_Tooltip_modifier_satan_curse_debuff"								"Cursed by Lucifer"
+		"DOTA_Tooltip_modifier_satan_curse_debuff_Description"					"Lucifer is law."
+
+		"DOTA_Tooltip_ability_satan_special_bonus_trade_damage"					"+50% damage Bloody Trade"
+		"DOTA_Tooltip_ability_satan_special_bonus_trade_duration"				"+15sec duration to Bloody Trade"
+		"DOTA_Tooltip_ability_satan_special_bonus_might_nocd"					"Removes Satan's Might cooldown"
+		"DOTA_Tooltip_ability_satan_special_bonus_breath_damage"				"+100 damage to Satan's Breath"
+
+		"npc_dota_hero_shadowsong"												"Shadowsong"
+
+		"DOTA_Tooltip_ability_shadowsong_magic_fire" 							"Magic Fire"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_Description"				"Launch a projectile that burn target mana and deal damage. Also applies effect that decrease status effect and health regen. All new projectile that hit the target with that effect multiply mana burn, damage and effect values."
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_manaburn" 					"MANA BURN:"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_status_resist_debuff" 		"%STATUS EFFECT DECREASING:"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_heal_decrease_debuff" 		"%HEAL DECREASING:"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_debuff_duration" 			"EFFECT DURATION:"
+		"DOTA_Tooltip_ability_shadowsong_magic_fire_projectile_speed" 			"PROJECTILE SPEED:"
+
+		"DOTA_Tooltip_modifier_shadowsond_magic_fire_debuff" 					"Magic Fire Effect"
+		"DOTA_Tooltip_modifier_shadowsond_magic_fire_debuff_Description"		"Decrease status resistance for a -%dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%%  and decrease life healing for -%dMODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET%%%."
+
+		"DOTA_Tooltip_ability_shadowsong_talent_magic_fire_aoe"					"Magic Fire now work in AOE around caster"
+		"DOTA_Tooltip_ability_shadowsong_talent_magic_fire_cd_decrease"			"Magic Fire cooldown decreases by {s:value} seconds"
+
+		"DOTA_Tooltip_ability_shadowsong_absorption"							"Absorbtion"
+		"DOTA_Tooltip_ability_shadowsong_absorption_Description"				"On activation Shadowsong emits an aura that steal life from nearbing enemy. Every enemy death increase duration of aura."
+		"DOTA_Tooltip_ability_shadowsong_absorption_damage"						"DAMAGE:"
+		"DOTA_Tooltip_ability_shadowsong_absorption_duration"					"DURATION:"
+		"DOTA_Tooltip_ability_shadowsong_absorption_interval"					"DAMAGE INTERVAL:"
+		"DOTA_Tooltip_ability_shadowsong_absorption_bonus_duration_hero"		"BONUS DURATION FOR HERO DEATH:"
+		"DOTA_Tooltip_ability_shadowsong_absorption_bonus_duration_creep"		"BONUS DURATION FOR CREEP DEATH:"
+
+		"DOTA_Tooltip_modifier_shadowsong_absorption_aura"						"Absorption Aura"
+		"DOTA_Tooltip_modifier_shadowsong_absorption_aura_effect"				"Absorption Effect"
+		"DOTA_Tooltip_modifier_shadowsong_absorption_talent"					"Absorption Bonus Life"
+		"DOTA_Tooltip_modifier_shadowsong_absorption_talent_Description"		"Health are increased by %dMODIFIER_PROPERTY_HEALTH_BONUS%"
+
+		"DOTA_Tooltip_ability_shadowsong_special_bonus_absorbtion"				"+{s:value} damage for Absorbtion"
+		"DOTA_Tooltip_ability_shadowsong_special_bonus_absorbtion_kill_bonus"	"Die on Absorbtion effect give owner {s:value} health"
+
+		"DOTA_Tooltip_ability_angel_arena_death_aura"							"Aura of Death"
+		"DOTA_Tooltip_ability_angel_arena_death_aura_Description"				"Death aura aids allies, increasing their movement speed and health regeneration."
+		"DOTA_Tooltip_ability_angel_arena_death_aura_aura_radius"				"RADIUS:"		
+		"DOTA_Tooltip_ability_angel_arena_death_aura_bonus_speed"				"%SPEED:"	
+		"DOTA_Tooltip_ability_angel_arena_death_aura_hp_regen"					"REGEN:"
+		"DOTA_Tooltip_modifier_death_aura"										"Death Aura"
+		"DOTA_Tooltip_modifier_death_aura_Description"							"Death aura is giving this unit bonus movement speed and regen."
+
+		"DOTA_Tooltip_ability_shadowsong_dark_reflection"						"Dark Reflection"
+		"DOTA_Tooltip_ability_shadowsong_dark_reflection_Description"			"Shadowsong distorts dimension and swap himself and target unit. Another dimensions stuns enemy target unit."
+		"DOTA_Tooltip_ability_shadowsong_dark_reflection_stun_duration"			"STUN DURATION:"
+
+		"DOTA_Tooltip_ability_shadowsong_special_bonus_reflection_magic_immune"	"+{s:value} sec. magic immune after Dark Reflection"
+		"DOTA_Tooltip_ability_shadowsong_special_bonus_reflection_teammate"		"Allow Dark Reflection on allies"
+
+		"npc_dota_hero_fireblade"											"Fireblade"
+
+		"DOTA_Tooltip_ability_fireblade_fiery_stream"							"Fiery Stream"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_Description"				"Fireblade throws fire stream that deal damage all enemies in front of him. For every hero damaged by this skill Fireblade take bonus damage for a short time."
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_distantion"				"DISTANTION:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_damage"					"DAMAGE:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_damage_per_hero"			"BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_buff_duration"				"DURATION:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_slow"							"%SLOW:"
+		"DOTA_Tooltip_ability_fireblade_fiery_stream_slow_duration"				"SLOW DURATION:"
+
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_talent"					"Fiery Stream Dash"
+
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_debuff"					"Slowed"
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_debuff_Description"		"Slowed for %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% by Fiery Stream"
+
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_buff"						"Damage bonus"
+		"DOTA_Tooltip_modifier_fireblade_fiery_stream_buff_Description"			"Bonus %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% damage from Fiery Stream"
+
+		"DOTA_Tooltip_ability_fireblade_burn_offering"							"Burn Offering"
+		"DOTA_Tooltip_ability_fireblade_burn_offering_Description"				"Fireblade launch fireball into nearest unit. Fireball deal damage on hit."
+		"DOTA_Tooltip_ability_fireblade_burn_offering_damage"					"DAMAGE:"
+		"DOTA_Tooltip_ability_fireblade_burn_offering_speed"					"SPEED:"
+		"DOTA_Tooltip_ability_fireblade_burn_offering_abilitycastrange"			"RADIUS:"
+
+		"DOTA_Tooltip_ability_fireblade_scorched_blades"						"Scorched Blades"
+		"DOTA_Tooltip_ability_fireblade_scorched_blades_Description"			"Fireblade deal additional magical damage with every attack.\nWith artefact <font color='#d40b0b'>BURNING BLADES</font> Fireblade increase magical damage by percent of himself attack damage."
+		"DOTA_Tooltip_ability_fireblade_scorched_blades_damage"					"DAMAGE:"
+		"DOTA_Tooltip_ability_fireblade_scorched_blades_damage_with_item_pct"	"%DAMAGE WITH <font color='#d40b0b'>BURNING BLADES</font>:"
+
+		"DOTA_Tooltip_modifier_fireblade_scorched_blades_debuff"				"Scorched Blades Silence"
+
+		"DOTA_Tooltip_Ability_fireblade_firestrip"								"Firestrip"
+		"DOTA_Tooltip_Ability_fireblade_firestrip_Description"					"Hero attacks everybody around him. Attack will deal bonus magical damage to enemies. Fireblade gets additional damage resisting per every hitted hero."
+		"DOTA_Tooltip_Ability_fireblade_firestrip_Note0"						"Attack modifiers wasn't applied on this ability."
+		"DOTA_Tooltip_Ability_fireblade_firestrip_damage"						"BONUS MAGICAL DAMAGE::"
+		"DOTA_Tooltip_Ability_fireblade_firestrip_damage_resist_per_hero"		"%DAMAGE RESISTANCE:"
+		"DOTA_Tooltip_Ability_fireblade_firestrip_buff_duration"				"BUFF DURATION:"
+		"DOTA_Tooltip_Ability_fireblade_firestrip_abilitycastrange"				"RADIUS:"
+
+
+		"DOTA_Tooltip_modifier_fireblade_firestrip_buff"						"Firestrip resist"
+		"DOTA_Tooltip_modifier_fireblade_firestrip_buff_Description"			"Incoming damage changed -%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% "
+
+		"DOTA_Tooltip_ability_fireblade_talent_fire_stream_blink"				"Fiery Stream move caster with fire"
+		"DOTA_Tooltip_ability_fireblade_talent_fire_stream_blink_Description"	"On dash hero grants invulnerability but can't use any ability or item"
+		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_heal"				"Burn Offering heal owner for dealed damage"
+		"DOTA_Tooltip_ability_fireblade_talent_firestrip_stun"					"Firestrip applies stun for {s:value} sec."
+		"DOTA_Tooltip_ability_fireblade_talent_firestrip_spellimmune"			"Firestrip work on magic immune units"
+		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_aoe"				"Burn Offsering applies on all nearby enemies"
+		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_attack_dmg"		"Burn Offering applies damage from attack"
+		"DOTA_Tooltip_ability_fireblade_talent_scorched_blades_silence"			"Scorched Blades applies silence for {s:value} sec."
+		"DOTA_Tooltip_ability_fireblade_talent_scorched_blades_silence_Description"			"Silence cooldown is {s:cooldown} sec. Also disable item casting."
+
+		"DOTA_Tooltip_ability_fireblade_talent_scorched_blades_spellimmune"		"Scorched Blades ignores magic immune"
+
+		"npc_dota_hero_huntress"												"Huntress"
+
+		//===========================================================================================
+		"DOTA_Tooltip_ability_huntress_aim_shot"							"Aim Shot"
+		"DOTA_Tooltip_ability_huntress_aim_shot_Description"				"On activate allow Huntress attack with 100% critical hits, incresing Huntress attack range but decreasing base attack time."
+		"DOTA_Tooltip_ability_huntress_aim_shot_crit_damage_pct"	        "%DAMGE:"
+		"DOTA_Tooltip_ability_huntress_aim_shot_bonus_attack_range"	        "BONUS ATTACK RANGE:"
+		"DOTA_Tooltip_ability_huntress_aim_shot_bat_value_tooltip"	        "BAT DECREASING:"
+		"DOTA_Tooltip_modifier_huntress_aim_shot"	                        "Aim Shot"
+		"DOTA_Tooltip_ability_huntress_aim_shot_Lore"				        "Somewhen Huntress was learning to main hunt rule: one arrow - one dead. Moving to battlefield Huntress don't forget that old lession."
+
+		"DOTA_Tooltip_ability_huntress_aim_shot_bonus_crit_tallent"         "+{s:value}%  Aim Shot critical damage"
+		"DOTA_Tooltip_ability_huntress_aim_shot_bonus_bat_tallent"          "-{s:value} BAT penalty from Aim Shot"
+
+		//===========================================================================================
+
+		"DOTA_Tooltip_ability_huntress_owl"							        "Summon Owl"
+		"DOTA_Tooltip_ability_huntress_owl_Description"				        "Huntress summon Owl to selected tree. Own have small vision, true strike and grants true strike to all allies in range."
+		"DOTA_Tooltip_ability_huntress_owl_radius"	                        "RADIUS:"
+		"DOTA_Tooltip_ability_huntress_owl_max_owl"				            "MAX OWLS:"
+		"DOTA_Tooltip_ability_huntress_owl_health"				            "OWN HEALTH:"
+		"DOTA_Tooltip_huntress_owl_modifier_current_value"	                "Owl Count"
+		"DOTA_Tooltip_ability_huntress_owl_Lore"				            "Huntress personal Owl helps to scout around area in battle."
+
+		"npc_aa_huntess_owl_unit"									        "Owl Huntress"
+		"DOTA_Tooltip_modifier_huntress_owl_aura_true_strike_effect_lua"	"Accurate Shots"
+		"DOTA_Tooltip_ability_huntress_huntress_owl_radius_aura_tallent"    "+{s:value} to Huntress Owl vision range"
+		"DOTA_Tooltip_ability_huntress_huntress_owl_invisible_tallent"      "Huntress Owl gets invisibility"
+
+		//===========================================================================================
+		"DOTA_Tooltip_ability_huntress_crippling_arrow"						"Crippling Arrow"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_Description"			"Huntress attacks slow enemy target and can root enemy."
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_slow_pct"	        "%SLOW:"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_duration_slow"	    "SLOW DURATION:"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_chance_root"	        "%ROOT CHANCE:"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_duration_root"	    "ROOT DURATION:"
+		"DOTA_Tooltip_modifier_huntress_crippling_arrow_root"	            "Rooted"
+		"DOTA_Tooltip_modifier_huntress_crippling_arrow_slow"	            "Slowed"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_Lore"				"When Huntress meat one of driad in the hunt, driad suggest enchant Huntress arrows for on conditional that Huntress never come back to that forest."
+
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_chance_tallent"     "+{s:value}% to root chance of Crippling Arrow"
+		"DOTA_Tooltip_ability_huntress_crippling_arrow_duration_tallent"   "+{s:value} to root duration of Crippling Arrow"
+
+		//===========================================================================================
+		"DOTA_Tooltip_ability_huntress_hunting_spirit"						"Hunting Spirit"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_Description"			"Huntress movement speed is increased and she can move throught trees.\nWhen ability is active <font color='#229917'>Aim Shot</font> don't decrease base attack time.\n<font color='#ffef27'>Daedalus</font> granting Huntress new ability Curse Arrow"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_duration"	            "DURATION:"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_bonus_movespeed_pct"	"%BONUS MOVEMENT SPEED:"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_Lore"				    "Main battle law is concentration and calmness. That merits allow any hunter move faster. Huntress honed that skills for mastery, and that why someone calls she a Hunting Spirit."
+
+		"DOTA_Tooltip_modifier_huntress_hunting_spirit"	                    "Hunting Spirit"
+
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_heavy_arrow_tallent"              "Heavy Arrows"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_heavy_arrow_tallent_Description"  "When Hunting Spirit is active, Crippling Arrow applies stun to target instead root, but stun duration is decreased for {s:value}% "
+
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_status_resist_tallent"            "Hunting Spirit grants {s:value}%  status resistance."
+
+		//===========================================================================================
+		"DOTA_Tooltip_ability_huntress_curse_arrow"						"Curse Arrow"
+		"DOTA_Tooltip_ability_huntress_curse_arrow_Description"			"Launch cursed arrow that purges all positive effects from target for all duration. Duration depends of channel time.\n\nPurge type: strong"
+		"DOTA_Tooltip_ability_huntress_curse_arrow_min_duration"	    "MIN DURATION:"
+		"DOTA_Tooltip_ability_huntress_curse_arrow_max_duration"		"MAX DURATION:"
+
+		"DOTA_Tooltip_modifier_huntress_curse_arrow"				"Curse Arrow"
+		"DOTA_Tooltip_modifier_huntress_curse_arrow_Description"	"You are cursed and lose all buffs"
 	}
 }
