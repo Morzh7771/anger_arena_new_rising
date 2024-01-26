@@ -1,0 +1,47 @@
+"itembuilds"
+{
+	"author"  "Valve"
+	"hero"    "npc_dota_hero_disruptor"
+	"Title"   "Recommended items for Disruptor"
+ 
+	"Items"
+	{  
+		"#DOTA_Item_Build_Starting_Items_Mage"
+		{
+			"item"  	"item_talisman_of_mastery"
+			"item"  	"item_corrosion_custom"
+			"item"		"item_falcon_blade_custom"
+			"item"		"item_aether_lens"
+			"item"		"item_travel_boots"
+		}
+		"#DOTA_Item_Build_Mid_Items_Mage"
+		{
+			"item"		"item_custom_seer_stone"
+			"item"		"item_travel_boots_2"
+			"item"		"item_piercing_blade"
+			"item"		"item_center_of_peace"
+			"item"		"item_charon"
+		}
+		"#DOTA_Item_Build_Late_Items_Mage"
+		{
+			"item"		"item_custom_seer_stone_3"
+			"item"		"item_piercing_blade3"
+			"item"		"item_void_stick"
+			"item"		"item_snake_boots"
+			"item"		"item_static_amulet_old"
+			"item"		"item_static_amulet"
+			"item"		"item_ethereal_blade_3"
+		}
+		"#DOTA_Item_Build_Good_Choice"
+		{
+			"item"  	"item_bkb_aa_3"
+			"item"  	"item_piercing_blade3"
+			"item"  	"item_sheepstick_aa"
+			"item"  	"item_pipe_custom_3"   
+			"item" 		"item_skadi_3"
+			"item" 		"item_shivas_guard_3"
+			"item" 		"item_meteor_hammer_3"
+			"item"      "item_octarine_core_3"
+		}
+	}
+}
