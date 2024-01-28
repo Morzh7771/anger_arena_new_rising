@@ -43,7 +43,8 @@ function PercentDamage:_init()
 		"mars_spear",
 		"primal_beast_uproar",
 		"kunkka_torrent",
-		"dragon_knight_breathe_fire"
+		"dragon_knight_breathe_fire",
+		"satan_breath"
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
