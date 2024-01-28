@@ -23,24 +23,24 @@
 		
 		"Ability10"				"special_bonus_strength_6"
 		"Ability11"				"special_bonus_attack_damage_20"
-		"Ability12"				"satan_special_bonus_trade_damage"
-		"Ability13"				"satan_special_bonus_trade_duration"
-		"Ability14"				"satan_special_bonus_breath_damage"
-		"Ability15"				"satan_special_bonus_might_nocd"
-		"Ability16"				"special_bonus_agility_25"
-		"Ability17"				"special_bonus_armor_15"
+		"Ability12"				"satan_special_bonus_breath_damage"
+		"Ability13"				"special_bonus_cleave_40"
+		"Ability14"				"special_bonus_lifesteal_20"
+		"Ability15"				"satan_special_bonus_trade_duration"
+		"Ability16"				"satan_special_bonus_trade_damage"
+		"Ability17"				"satan_special_bonus_might_nocd"
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"-1"										// Physical protection.
+		"ArmorPhysical"				"-2"										// Physical protection.
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"80"									// Damage range min.
-		"AttackDamageMax"			"85"									// Damage range max.	
+		"AttackDamageMin"			"17"									// Damage range min.
+		"AttackDamageMax"			"25"									// Damage range max.	
 		
-		"AttackRate"				"1.7"									// Speed of attack.
+		"AttackRate"				"2.0"									// Speed of attack.
 		"AttackAnimationPoint"		"0.3"										// Normalized time in animation cycle to attack.
 		
 		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
@@ -52,10 +52,10 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"38"									// Base strength
+		"AttributeBaseStrength"		"30"									// Base strength
 		"AttributeStrengthGain"		"3.2"									// Strength bonus per level.
-		"AttributeBaseAgility"		"20"									// Base agility
-		"AttributeAgilityGain"		"2.8"									// Agility bonus per level.
+		"AttributeBaseAgility"		"16"									// Base agility
+		"AttributeAgilityGain"		"1.7"									// Agility bonus per level.
 		"AttributeBaseIntelligence"	"18"									// Base intelligence
 		"AttributeIntelligenceGain"	"1.6"									// Intelligence bonus per level.
 		
@@ -65,8 +65,8 @@
 		"StatusManaRegen"			"0.5" 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"300"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
+		"MovementSpeed"				"290"									// Speed.
+		"MovementTurnRate"			"0.8"									// Turning rate.
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"

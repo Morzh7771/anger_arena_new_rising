@@ -26,9 +26,9 @@
 
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
-		"AbilityCooldown"				"22.0"
+		"AbilityCooldown"				"16.0"
 		
-		"AbilityManaCost"				"250 300 350 400 450 500 550"
+		"AbilityManaCost"				"75 90 105 120 135 150 165"
 		
 		"AbilitySpecial"
 		{
@@ -55,13 +55,13 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 50 60 65 70 75 80"
+				"damage"				"10 15 20 25 30 35 40"
 				"LinkedSpecialBonus"	"satan_special_bonus_breath_damage"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"creep_multipler"		"30"
+				"creep_multipler"		"3"
 			}
 			"07"
 			{
@@ -71,14 +71,9 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"think_time"			"0.1"
+				"think_time"			"0.2"
 			}
 			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tick_count"			"30"
-			}
-			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage_from_str"		"5"
@@ -103,7 +98,7 @@
 			"particle" 			"particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf"
 		}
 		
-		"AbilityCooldown"		"10 9 8 7 6 5 4"
+		"AbilityCooldown"		"4"
 		
 		"AbilitySpecial"
 		{
@@ -115,7 +110,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.0"
+				"stun_duration"		"0.2"
 			}
 			"03"
 			{
@@ -160,7 +155,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_get"			"20 22 25 30 32 35 37"
+				"damage_get"			"10 13 16 19 22 25 27"
 				"LinkedSpecialBonus"	"satan_special_bonus_trade_damage"
 			}
 			"03"
@@ -193,7 +188,7 @@
 		}
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"30.0 28.0 26.0 24.0 20.0 18.0 16.0"
-		"AbilityManaCost"				"200 300 400 500 600 700 800 900"	
+		"AbilityManaCost"				"50 90 130 170 210 250 290"	
 		
 		"AbilitySpecial"
 		{
@@ -242,15 +237,15 @@
 		"AbilityCastRange"				"720"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.55"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"95"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 400 600 800 1000 1200 1400"	
+		"AbilityManaCost"				"150 225 300 375 450 525 600"	
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -282,7 +277,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"50"
+				"value"						"23"
 			}
 		}
 	}
@@ -318,7 +313,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"100"
+				"value"						"40"
 			}
 		}
 	}

@@ -194,36 +194,28 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"					"1"
 		"AbilityCastRange"					"500"
 		"AbilityCastPoint"					"0.15"
 		"AbilityManaCost"					"150 180 200 220 240 260 300"
+		//"AbilityChargeRestoreTime"			"15"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"					"15"
+		//"AbilityCooldown"					"15"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage"					"300 450 550 750 850 950 1050"
+			"damage_resist_per_hero"	"5"
+			"buff_duration"				"5"
+			"abilitycastrange"			"500"
+			"AbilityCharges"			
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage"					"300 450 550 750 850 950 1050"
+				"value"										"1"
+				"special_bonus_scepter"						"1"
 			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_resist_per_hero"	"15"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"buff_duration"				"5"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"abilitycastrange"			""
-			}
+			"AbilityChargeRestoreTime"						"15"
 		}
 	}
 	
@@ -276,7 +268,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"2.0"
+				"value"						"1.0"
 			}
 		}
 	}

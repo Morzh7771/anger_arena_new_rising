@@ -2316,7 +2316,7 @@
 		"DOTA_Tooltip_ability_charon_collapse_Note0"		                "Притягивает и оттакликает юнитов, невосприимчивых к магии, однако, не сжигает им ману и не наносит урона"
 		"DOTA_Tooltip_modifier_charon_collapse_inside"		                "Притягивается"	
 
-		"DOTA_Tooltip_ability_charon_soul_drain_cast_time_fast_bonus_const_tallent"               "+1.5сек к скорости прочтения Soul Drain"
+		"DOTA_Tooltip_ability_charon_soul_drain_cast_time_fast_bonus_const_tallent"               "+1.5 cек. к длительности прочтения Soul Drain"
 		"DOTA_Tooltip_ability_charon_last_word_bonus_slow_per_mana_tallent"                       "+0.2 к замедлению за % маны к Last Word"
 		"DOTA_Tooltip_ability_charon_overload_manacost_reduction_percent_tallent"                 "Астральная Петля"
 		"DOTA_Tooltip_ability_charon_overload_manacost_reduction_percent_tallent_Description"     "Снижает стоимость Overload на 50%, однако урон остается прежним"
@@ -2372,10 +2372,10 @@
 		"DOTA_Tooltip_modifier_satan_curse_debuff"								"Cursed by Lucifer"
 		"DOTA_Tooltip_modifier_satan_curse_debuff_Description"					"Наказание люцифера неоспаримо."
 
-		"DOTA_Tooltip_ability_satan_special_bonus_trade_damage"					"+50% урона к Bloody Trade"
+		"DOTA_Tooltip_ability_satan_special_bonus_trade_damage"					"+23%% урона к Bloody Trade"
 		"DOTA_Tooltip_ability_satan_special_bonus_trade_duration"				"+15 секунд длительности к Bloody Trade"
 		"DOTA_Tooltip_ability_satan_special_bonus_might_nocd"					"Satan's Might не имеет кулдауна"
-		"DOTA_Tooltip_ability_satan_special_bonus_breath_damage"				"+100 урона к Satan's Breath"
+		"DOTA_Tooltip_ability_satan_special_bonus_breath_damage"				"+40 урона к Satan's Breath"
 
 		"npc_dota_hero_shadowsong"												"Shadowsong"
 
@@ -2468,7 +2468,7 @@
 		"DOTA_Tooltip_ability_fireblade_talent_fire_stream_blink"				"Fiery Stream перемещает героя вслед за огнем"
 		"DOTA_Tooltip_ability_fireblade_talent_fire_stream_blink_Description"	"Во время перемещения герой получает неуязвимость, но не может применять заклинания или предметы."
 		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_heal"				"Burn Offering излечивает героя на нанесенный урон"
-		"DOTA_Tooltip_ability_fireblade_talent_firestrip_stun"					"Firestrip накладывает стан на {s:value} секунды"
+		"DOTA_Tooltip_ability_fireblade_talent_firestrip_stun"					"Firestrip накладывает стан на {s:value} сек."
 		"DOTA_Tooltip_ability_fireblade_talent_firestrip_spellimmune"			"Firestrip проходит сквозь невосприимчивость к заклинаниям"
 		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_aoe"				"Burn Offsering применяется на всех окружающих врагов"
 		"DOTA_Tooltip_ability_fireblade_talent_burn_offering_attack_dmg"		"Burn Offering получает урон от атаки"
@@ -2477,11 +2477,13 @@
 
 		"DOTA_Tooltip_ability_fireblade_talent_scorched_blades_spellimmune"		"Scorched Blades игнорирует магический иммунитет"
 
+        "DOTA_Tooltip_ability_fireblade_firestrip_scepter_Description"          "Добавляет +1 заряд на Firestrip"
+
 		"npc_dota_hero_huntress"												"Huntress"
 
 		//===========================================================================================
 		"DOTA_Tooltip_ability_huntress_aim_shot"							"Aim Shot"
-		"DOTA_Tooltip_ability_huntress_aim_shot_Description"				"При включении Huntress со 100% вероятностью атакует цель критическими ударами, повышая свою дальность атаки, но уменьшаная базовое время атаки"
+		"DOTA_Tooltip_ability_huntress_aim_shot_Description"				"При включении Huntress со 100% вероятностью атакует цель критическими ударами, повышая свою дальность атаки, но получая штраф к базовому времени атаки."
 		"DOTA_Tooltip_ability_huntress_aim_shot_crit_damage_pct"	        "%УРОН:"
 		"DOTA_Tooltip_ability_huntress_aim_shot_bonus_attack_range"	        "ДОП.ДАЛЬНОСТЬ АТАКИ:"
 		"DOTA_Tooltip_ability_huntress_aim_shot_bat_value_tooltip"	        "УМЕНЬШЕНИЕ БАТ:"
