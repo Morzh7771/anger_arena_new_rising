@@ -24,12 +24,12 @@ DOTAAbilities
 			"damage_block"					
 			{
 				"value"			"8 14 20 26 32 38 44"
-				"special_bonus_unique_pudge_1"	"x1.75"
+				"special_bonus_unique_pudge_1"	"x1.7"
 			}
 			"flesh_heap_strength_buff_amount"
 			{
-				"value"	"1.1 1.4 1.7 2 2.3 2.6 2.9"
-				"special_bonus_unique_pudge_1"	"x1.75"
+				"value"	"1.0 1.3 1.6 1.9 2.8 2.5 2.8"
+				"special_bonus_unique_pudge_1"	"x1.7"
 			}
 			"flesh_heap_range"		"450"
 			"duration"	"5 5.5 6 6.5 7 7.5 8"
@@ -117,12 +117,12 @@ DOTAAbilities
 			}
 			"rot_damage"
 			{
-				"value"				"30 60 90 120 150 180 210"
+				"value"				"30 55 80 105 130 155 180"
 				"LinkedSpecialBonus"	"special_bonus_unique_pudge_2"
 			}
 			"scepter_rot_damage_bonus"
 			{
-				"value"				"190"
+				"value"				"150"
 				"RequiresScepter"			"1"
 			}
 			"scepter_rot_radius_bonus"	
@@ -193,13 +193,13 @@ DOTAAbilities
 			"dismember_damage"		
 			{
 				"value"					"80 100 120 140 160 180 200"
-				"special_bonus_unique_pudge_3"	"x1.8"	
+				"special_bonus_unique_pudge_3"	"x1.6"	
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"strength_damage"		
 			{
-				"value"				"0.3 0.6 0.9 1.2 1.5 1.8 2.1"
-				"special_bonus_unique_pudge_3"	"x1.8"
+				"value"				"0.3 0.55 0.8 1.05 1.3 1.55 1.8"
+				"special_bonus_unique_pudge_3"	"x1.6"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"ticks"		
@@ -222,8 +222,8 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"							"30 28 26 24 22 20 18"
-				"special_bonus_shard"			"-3"
+				"value"							"26 25 24 23 22 21 20"
+				"special_bonus_shard"			"-2"
 			}
 			"shard_regen_pct"			
 			{
@@ -242,7 +242,7 @@ DOTAAbilities
 			}
 			"shard_cooldown_reduction"		
 			{
-				"value"					"3.0"
+				"value"					"2.0"
 				"RequiresShard"			"1"
 			}
 		}

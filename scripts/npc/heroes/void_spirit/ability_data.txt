@@ -61,8 +61,8 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"							"11.0 10.0 9.0 8.0 7.0 6.0 5.0"
-				"special_bonus_shard"			"-1"
+				"value"							"11 10.5 10 9.5 9 8.5 8"
+				"special_bonus_shard"			"-0.5"
 			}
 			
 		}
@@ -141,20 +141,21 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-		"AbilityCharges"				"4"
+		"AbilityCharges"				"2"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
+		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityManaCost"				"100"
 				"radius"				"170"
 				"AbilityChargeRestoreTime"	
 				{
-					"value"			"15.0 14.0 13.0 12.0 11.0 10.0 9.0"
-					"special_bonus_unique_void_spirit_1"	"-3"
+					"value"			"12 11.5 11 10.5 10 9.5 9"
+					"special_bonus_unique_void_spirit_1"	"-1"
 				}
 				"min_travel_distance"	"200"
 				"max_travel_distance"	"700.0 800.0 900.0 1000.0 1100.0 1200.0 1300.0"
@@ -208,7 +209,7 @@ DOTAAbilities
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-		"AbilityManaCost"				"80 90 100"
+		"AbilityManaCost"				"100"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -218,11 +219,11 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"radius"				"170"
-			"AbilityCharges"			"4"
+			"AbilityCharges"			"2"
 			"AbilityChargeRestoreTime"	
 			{
-				"value"			"15.0 14.0 13.0 12.0 11.0 10.0 9.0"
-				"special_bonus_unique_void_spirit_1"	"-3"
+				"value"			"14 13.5 13 12.5 12 11.5 11"
+				"special_bonus_unique_void_spirit_1"	"-2"
 			}
 			"min_travel_distance"	"200"
 			"max_travel_distance"	"700.0 800.0 900.0 1000.0 1100.0 1200.0 1300.0"
@@ -286,17 +287,17 @@ DOTAAbilities
 			"return_projectile_speed"	"900"
 			"max_charges"
 			{
-				"value"			"3"
+				"value"			"2"
 				"RequiresScepter"			"1"
 			}
 			"charge_restore_time"
 			{
-				"value"			"9"
+				"value"			"10"
 				"RequiresScepter"			"1"
 			}
 			"silence_duration_scepter"
 			{
-				"value"				"1.5"
+				"value"				"1"
 				"RequiresScepter"			"1"
 			}
 			"damage_pct"			"35"
