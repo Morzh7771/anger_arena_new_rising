@@ -142,75 +142,51 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"max_illusions"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_illusions"			"6"
+				"value"			"6"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_3"
 			}
-			"02"
+			"proc_chance_pct"		"30 35 40 45 50 55 60"
+			"illusion_proc_chance_pct"		"10"
+			"illusion_duration"			"8"
+			"illusion_damage_out_pct"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"proc_chance_pct"		"30 35 40 45 50 55 60"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"illusion_proc_chance_pct"		"10"
-			}			
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_duration"			"8"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_out_pct"	"-82 -80 -78 -76 -74 -72 -70"
+				"value"	            "-82 -80 -78 -76 -74 -72 -70"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"06"
+			"tooltip_illusion_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_damage"	"18 20 22 24 26 28 30"
+				"value"	            "18 20 22 24 26 28 30"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_6"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"07"
+			"illusion_damage_in_pct"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_in_pct"	"325"
+				"value" 	       "325"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"08"
+			"tooltip_total_illusion_damage_in_pct"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_total_illusion_damage_in_pct"	"425"
+				"value"	            "425"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"09"
+			"illusion_from_illusion_duration"	"8"
+			"shard_bonus_illusions"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_from_illusion_duration"	"8"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_bonus_illusions"		"0"
+				"value"		"0"
 				"RequiresShard"				"1"
 			}
-			"11"
+			"invis_duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"invis_duration"			"8"
+				"value"			"8"
 				"RequiresScepter"			"1"
 			}
-			"12"
+			"invis_movespeed"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"invis_movespeed"			"15"
+				"value"			"15"
 				"RequiresScepter"			"1"
 			}
 		}

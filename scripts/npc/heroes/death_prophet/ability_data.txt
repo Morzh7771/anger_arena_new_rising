@@ -33,7 +33,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValuess"
+		"AbilityValues"
 		{
 			"start_radius"				
 			{
@@ -110,53 +110,21 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"death_prophet_witchcraft"
-		"MaxLevel"		"7"
+		"MaxLevel"		"4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"550"
-			}			
-			"02"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"carrion_swarm_mana_cost_adjust"	"-75"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"carrion_swarm_cooldown_adjust"		"-3"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"silence_mana_cost_adjust"			"-90"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"silence_cooldown_adjust"			"-12"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"exorcism_1_extra_spirits"			"90"
-			}
-			"07"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"exorcism_2_extra_spirits"			"90"
-			}
-			"08"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"exorcism_3_extra_spirits"			"90"
-			}
+			"bonus_movement_speed"	"5 10 15 20"
+			"carrion_swarm_mana_cost_adjust"	"-10 -15 -20 -25"
+			"carrion_swarm_cooldown_adjust"		"-1.0 -2.0 -3.0 -4.0"
+			"silence_mana_cost_adjust"			"-10 -15 -20 -25"
+			"silence_cooldown_adjust"			"-1.0 -2.0 -3.0 -4.0"
+			"exorcism_1_extra_spirits"			"3 4 5 6"
+			"exorcism_2_extra_spirits"			"3 4 5 6"
+			"exorcism_3_extra_spirits"			"3 4 5 6"
 		}
 	}
 	"death_prophet_spirit_siphon"
