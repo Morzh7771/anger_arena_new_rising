@@ -63,7 +63,7 @@ function mod:OnCreated()
     self:CommonInitDamageToExp(  self:GetAbility(),  self:GetAbility():GetSpecialValueFor("pure_dmg_cd") )
 end
 function mod:GetModifierTotalDamageOutgoing_Percentage()
-    return 0 --self.pure_dmg
+    return self.pure_dmg
 end
 function mod:OnTakeDamage(params)
     if not IsServer() then return end
@@ -100,7 +100,7 @@ function mod:OnTakeDamage(params)
     end
     
     local damage = params.original_damage/100*(self.pure_dmg + self.pure_dmg_stack*stack)
-    --ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,})
+    ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,})
 end
 
 
@@ -155,13 +155,11 @@ modifier_piercing_blade_pure_damage = class({
 })
 
 function modifier_piercing_blade_pure_damage:GetModifierTotalDamageOutgoing_Percentage( params )
-    print(params.original_damage)
+    print(params.damage_type)
     if params.attacker ~= self:GetParent() then return end
-    if IsValidEntity(params.inflictor) and params.inflictor ~= self:GetAbility() or params.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK then
-        print(params.original_damage)    
+    if IsValidEntity(params.inflictor) and params.inflictor ~= self:GetAbility() or params.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK then 
         print("...........................")  
             local damage = self:GetAbility():GetSpecialValueFor("active_pure_dmg")/100 * params.original_damage
-            print(damage)
             if not params.target:IsMagicImmune() then
                 local damageTable = {
                     victim = params.target,

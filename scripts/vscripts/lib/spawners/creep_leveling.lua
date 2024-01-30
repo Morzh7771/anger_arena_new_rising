@@ -109,7 +109,7 @@ function CreepLeveling:OnSpawnCallback( event )
 	creep._leveling_drop = seek_spawn_info['drops']
 	if elite then
 		AMPLIFY_STAT_ELITE = 2
-		AMPLIFY_BOUNTY_ELITE = 1.7
+		AMPLIFY_BOUNTY_ELITE = 2.2
 		creep:AddNewModifier(nil,nil,"modifier_creep_elite",{duration = -1})
 	end
 	creep:SetDeathXP( seek_spawn_info.exp * AMPLIFY_BOUNTY_ELITE )

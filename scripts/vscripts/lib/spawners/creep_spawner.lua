@@ -116,24 +116,26 @@ function CreepSpawner:SpawnCreeps()
 				end 
 
 				Timers:CreateTimer(spawnDelay, function()
+					local time_min = GameRules:GetDOTATime(false,false) / 60 
 					local elite = false
-					if GameRules:GetDOTATime(false,false) / 60 > 0.10 then
-						if RandomInt(0, 100)<CHANCE_ELITE then
-							elite = true
+					for i=0,math.floor(time_min)/20 do
+						if time_min > 0.10 then
+							if RandomInt(0, 100)<CHANCE_ELITE then
+								elite = true
+							end
 						end
+						local creep = CreateUnitByName(creep_name, spawner_pos, true, nil, nil, DOTA_TEAM_NEUTRALS) 	
+
+						if not creep then
+							print("Error handled, no unit with name", creep, " exists. Trying to spawn it on spawner ", spawner_name)
+							return nil
+						end
+
+						creep:SetForwardVector(spawner_dir)
+						creep:Stop()
+						
+						self:_CreateCreep(creep, spawner_info,elite)
 					end
-					
-					local creep = CreateUnitByName(creep_name, spawner_pos, true, nil, nil, DOTA_TEAM_NEUTRALS) 	
-
-					if not creep then
-						print("Error handled, no unit with name", creep, " exists. Trying to spawn it on spawner ", spawner_name)
-						return nil
-					end
-
-					creep:SetForwardVector(spawner_dir)
-					creep:Stop()
-
-					self:_CreateCreep(creep, spawner_info,elite)
 				end)
 			end 
 		end 
