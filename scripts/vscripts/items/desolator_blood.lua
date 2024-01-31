@@ -61,8 +61,8 @@ function modifier_item_desolator_lua_2:GetModifierProcAttack_Feedback(data)
     if data.target:HasModifier("modifier_curruption_armor_debuff_3") then return end
     if data.target:HasModifier("modifier_curruption_armor_debuff_1") then 
         data.target:RemoveModifierByName("modifier_curruption_armor_debuff_1") 
-	    data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_curruption_armor_debuff_2", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration"),})
     end
+        data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_curruption_armor_debuff_2", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration"),})
 end
 
 modifier_item_desolator_lua_3 = class({
