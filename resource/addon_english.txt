@@ -400,6 +400,7 @@
 		//Pango
 		"DOTA_Tooltip_Ability_pangolier_swashbuckle_damage_pct"				"%STRENGTH DAMAGE"
 		"DOTA_Tooltip_Ability_pangolier_shield_crash_damage_pct"			"%STRENGTH DAMAGE"
+		"DOTA_Tooltip_Ability_special_bonus_unique_pangolier_3" "Swashbuckle deals damage from attacks"
 
 		//Phoenix
 		"DOTA_Tooltip_Ability_phoenix_icarus_dive_damage_pct"				"%INTELLIGENCE DAMAGE"
@@ -500,6 +501,9 @@
 		"DOTA_Tooltip_Ability_gyrocopter_rocket_barrage_damage_pct"			"%AGILITY DAMAGE"
         "DOTA_Tooltip_Ability_special_bonus_unique_gyrocopter_barrage_agi_dmg_pct"  "+{s:bonus_damage_pct}% to Agility damage for Rocket Barrage"
 		"DOTA_Tooltip_Ability_gyrocopter_call_down_damage_pct"			"%AGILITY DAMAGE"
+
+		 "DOTA_Tooltip_Ability_special_bonus_unique_spectre_desolate_agi_dmg_pct"  "+{s:bonus_damage_pct}% to Agility damage for Desolate"
+
 		//Keeper of the Light
 		"DOTA_Tooltip_Ability_keeper_of_the_light_illuminate_damage_pct"		"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_keeper_of_the_light_spirit_form_illuminate_damage_pct"	"%INTELLIGENCE DAMAGE"
@@ -508,6 +512,10 @@
 		"DOTA_Tooltip_Ability_sniper_shrapnel_damage_pct"				"%AGILITY DAMAGE"
 		"DOTA_Tooltip_Ability_sniper_assassinate_damage_pct"				"%AGILITY DAMAGE"
         "DOTA_Tooltip_Ability_special_bonus_unique_sniper_headshot_damage"  "+{s:bonus_damage}% to Headshot damage"
+
+		//Spectre
+		"DOTA_Tooltip_Ability_spectre_desolate_damage_pct"						"%AGILITY DAMAGE"	
+		"DOTA_Tooltip_Ability_spectre_spectral_dagger_damage_pct"				"%AGILITY DAMAGE"
 
 		//Tusk
 		"DOTA_Tooltip_Ability_tusk_ice_shards_damage_pct"				"%STRENGTH DAMAGE"

@@ -112,8 +112,8 @@ DOTAAbilities
 				"value"			"3"
 				"LinkedSpecialBonus"	"special_bonus_unique_sniper_2"
 			}
-			"damage_pct"		"35"
-		}
+				"damage_pct"		"35"
+			}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"sniper_headshot"
@@ -289,6 +289,7 @@ DOTAAbilities
 				"RequiresShard"	"1"
 			}
 			"cooldown_reduction_on_kill"		"15"
+				"damage_pct"		"200 250 300 350 400 450 500"
 		}		
 	}
 }

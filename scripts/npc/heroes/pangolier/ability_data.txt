@@ -390,4 +390,24 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 	}
+	"special_bonus_unique_pangolier_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"-145"
+				"ad_linked_abilities"			"pangolier_swashbuckle"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
 }

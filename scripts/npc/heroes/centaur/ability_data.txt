@@ -23,7 +23,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"						"350"
+			"radius"						"325 350 375 400 425 450 475"
 			"damage_pct"						"100"
 			"stomp_damage"
 			{
@@ -57,7 +57,7 @@ DOTAAbilities
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3.5"
+		"AbilityCooldown"				"4 3.7 3.4 3.1 2.8 2.5 2.2"
 		"AbilityCastRange"				"150 150 150 150"
 		"AbilityCastPoint"				"0.25"
 
@@ -81,7 +81,7 @@ DOTAAbilities
 			"radius"						"220"
 			"shard_str_pct"
 			{
-				"special_bonus_shard"		"+15"
+				"special_bonus_shard"		"+20"
 			}
 			"shard_str_duration"
 			{
@@ -89,7 +89,7 @@ DOTAAbilities
 			}
 			"shard_max_stacks"
 			{
-				"special_bonus_shard"		"+5"
+				"special_bonus_shard"		"+15"
 			}
 			"shard_movement_slow"
 			{
@@ -122,11 +122,11 @@ DOTAAbilities
 		{
 				"return_damage"				
 				{
-					"value"	"15 25 35 45 55 65 75"
-					"special_bonus_unique_centaur_3"	"+45"	
+					"value"	"40 70 100 130 150 180 210"
+					"special_bonus_unique_centaur_3"	"+250"	
 					"CalculateSpellDamageTooltip"	"1"
 				}
-				"return_damage_str"			"16 24 32 40 48 56 64"
+				"return_damage_str"			"20 30 40 60 70 80 90"
 				"aura_radius"				"1200"
 		}
 	}

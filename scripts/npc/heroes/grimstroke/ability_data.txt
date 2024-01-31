@@ -11,13 +11,11 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 
-		"AbilityCastRange"				"1400"
 		"AbilityCastPoint"				"0.6"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
 		"AbilityCooldown"				"11 10 9 8 7 6 5"
 		"AbilityManaCost"				"100 110 120 130 140 150 160"
-
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
 		// Stats
@@ -28,32 +26,41 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"start_radius"			"120"
-			"end_radius"			"160"
-			"projectile_speed"		"2000"
-			"damage"
-			{
-				"value"					"100 160 220 280 340 400 460"
-				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-			"bonus_damage_per_target"
-			{
-				"value"	"20 25 30 35 40 45 50"
-				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-			"movement_slow_pct"		"50 55 60 65 70 75 80"
-			"slow_duration"			"2.0"
-			"vision_duration"			"2.0"
-			"abilitycastrange"
-			{
-				"value"				""
-				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_3"
-			}
-			"damage_pct"				"60"	
+				"start_radius"			
+				{
+					"value"		"120"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"end_radius"
+				{
+					"value"		"160"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"projectile_speed"		"2000"
+				"damage"
+				{
+					"value"					"100 160 220 280 340 400 460"
+					"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
+					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
+				}
+					"bonus_damage_per_target"
+				{
+					"value"	"20 25 30 35 40 45 50"
+					"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
+					"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
+				}	
+				"movement_slow_pct"		"50 60 70 80 90 95 100"
+				"slow_duration"			"1.75"
+				"vision_duration"			"3.0"
+				"abilitycastrange"				
+				{
+					"value"		"1400"
+					"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_3"
+				}
+				"damage_pct"				"100"	
 		}
 	}
+
 	"grimstroke_ink_creature"
 	{
 		// General

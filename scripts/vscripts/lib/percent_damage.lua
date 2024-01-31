@@ -61,6 +61,9 @@ function PercentDamage:_init()
 		"nevermore_shadowraze2",
 		"nevermore_shadowraze3",
 		"juggernaut_blade_fury",
+		"spectre_desolate",
+		"spectre_spectral_dagger",
+		"sniper_assassinate",
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
