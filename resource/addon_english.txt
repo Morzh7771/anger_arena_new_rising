@@ -2553,5 +2553,38 @@
 
 		"DOTA_Tooltip_modifier_huntress_curse_arrow"				"Curse Arrow"
 		"DOTA_Tooltip_modifier_huntress_curse_arrow_Description"	"You are cursed and lose all buffs"
+
+		"DOTA_Tooltip_ability_item_mjolnir_aa_1"                                "Mjollnir"
+		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Description"                    "<h1>Active: Static Charge</h1> For %active_duration% seconds, surrounds the targeted unit with a charged shield. With a %active_chance%%% chance, it can deal %active_arc_damage% magical damage to the attacking enemy and %active_jump_count% others.<br><br>Cast Range: %abilitycastrange%\n\n<h1>Passive: Chain Lightning</h1> Each attack has a %chance%%% chance to create a chain lightning strike that jumps up to %jump_count% times to random enemies within a %radius%, dealing %arc_damage% + %bonus_damage_per_base_damage%%% of the hero's base damage as magical damage. Chain Lightning strikes cannot be evaded."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Lore"                            "Thor's magical hammer, forged for him by the gnomes Brok and Eitri."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Note0"                           "Can trigger no more than once per second."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Note1"                           "Static Charge lightning does not trigger on invisible or fog-hidden heroes."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_1_bonus_damage"                    "+$damage"
+		"DOTA_Tooltip_ability_item_mjolnir_aa_1_bonus_attack_speed"              "+$attack"        
+		
+		"DOTA_Tooltip_ability_item_mjolnir_aa_2"                                "Mjollnir 2"
+		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Description"                    "<h1>Active: Static Charge</h1> For %active_duration% seconds, surrounds the targeted unit with a charged shield. With a %active_chance%%% chance, it can deal %active_arc_damage% magical damage to the attacking enemy and %active_jump_count% others.<br><br>Cast Range: %abilitycastrange%\n\n<h1>Passive: Chain Lightning</h1> Each attack has a %chance%%% chance to create a chain lightning strike that jumps up to %jump_count% times to random enemies within a %radius%, dealing %arc_damage% + %bonus_damage_per_base_damage%%% of the hero's base damage as magical damage. Chain Lightning strikes cannot be evaded."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Lore"                            "Thor's magical hammer, forged for him by the gnomes Brok and Eitri."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Note0"                           "Can trigger no more than once per second."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Note1"                           "Static Charge lightning does not trigger on invisible or fog-hidden heroes."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_2_bonus_damage"                    "+$damage"
+		"DOTA_Tooltip_ability_item_mjolnir_aa_2_bonus_attack_speed"              "+$attack"  
+		
+		"DOTA_Tooltip_ability_item_mjolnir_aa_3"                                "Mjollnir 3"
+		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Description"                    "<h1>Active: Static Charge</h1> For %active_duration% seconds, surrounds the targeted unit with a charged shield. With a %active_chance%%% chance, it can deal %active_arc_damage% magical damage to the attacking enemy and %active_jump_count% others.<br><br>Cast Range: %abilitycastrange%\n\n<h1>Passive: Chain Lightning</h1> Each attack has a %chance%%% chance to create a chain lightning strike that jumps up to %jump_count% times to random enemies within a %radius%, dealing %arc_damage% + %bonus_damage_per_base_damage%%% of the hero's base damage as magical damage. Chain Lightning strikes cannot be evaded."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Lore"                            "Thor's magical hammer, forged for him by the gnomes Brok and Eitri."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Note0"                           "Can trigger no more than once per second."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Note1"                           "Static Charge lightning does not trigger on invisible or fog-hidden heroes."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_3_bonus_damage"                    "+$damage"
+		"DOTA_Tooltip_ability_item_mjolnir_aa_3_bonus_attack_speed"              "+$attack"  
+		
+		"DOTA_Tooltip_ability_item_maelstorm_aa"                                "Maelstorm"
+		"DOTA_Tooltip_ability_item_maelstorm_aa_Description"                    "<h1>Passive: Chain Lightning</h1> Each attack has a %chance%%% chance to create a chain lightning strike that jumps up to %jump_count% times to random enemies within a %radius%, dealing %arc_damage% + %bonus_damage_per_base_damage%%% of the hero's base damage as magical damage. Chain Lightning strikes cannot be evaded."
+		"DOTA_Tooltip_ability_item_maelstorm_aa_Lore"                            "Thor's magical hammer, forged for him by the gnomes Brok and Eitri."
+		"DOTA_Tooltip_ability_item_maelstorm_aa_Note0"                           "Can trigger no more than once per second."
+		"DOTA_Tooltip_ability_item_maelstorm_aa_Note1"                           "Static Charge lightning does not trigger on invisible or fog-hidden heroes."
+		"DOTA_Tooltip_ability_item_maelstorm_aa_bonus_damage"                    "+$damage"
+		"DOTA_Tooltip_ability_item_maelstorm_aa_bonus_attack_speed"              "+$attack"
+
 	}
 }
