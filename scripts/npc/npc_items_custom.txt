@@ -2296,7 +2296,7 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"90 200"
+                "bonus_damage"			"88 200"
             }
             "02"
             {
@@ -2360,7 +2360,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_damage"			"90 200"
+            "bonus_damage"			"88 200"
             "crit_chance"			"25 30"
             "crit_multiplier"		"225 350"
             "projectile_speed"      "2000"
@@ -2572,7 +2572,7 @@
 		"ScriptFile"					"items/item_piercing_blade"
 		"AbilityTextureName"			"blaze_rod"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET "
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "1"
         "AbilityValues"
@@ -2591,7 +2591,7 @@
             "min_exp_ranged"		"60 80 120"
             "min_exp_melee"			"70 90 130"
 
-            "active_pure_dmg"       "100 120 140"
+            //"active_pure_dmg"       "100 120 140"
             "active_duration"       "5"
 		}
     }
@@ -2620,7 +2620,7 @@
 		"ScriptFile"					"items/item_piercing_blade"
 		"AbilityTextureName"			"blaze_rod2"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET "
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "2"
         "AbilityValues"
@@ -2639,7 +2639,7 @@
             "min_exp_ranged"		"32 42 52"
             "min_exp_melee"			"40 50 60"
 
-            "active_pure_dmg"       "100 120 140"
+            //"active_pure_dmg"       "100 120 140"
             "active_duration"       "5"
 		}
     }
@@ -2687,7 +2687,7 @@
             "min_exp_ranged"		"32 42 52"
             "min_exp_melee"			"40 50 60"
 
-            "active_pure_dmg"       "100 120 140"
+            "active_pure_dmg"       "100"
             "active_duration"       "5"
 		}
     }
