@@ -1,8 +1,8 @@
-item_apex_aa = ({})
+item_apex_aa = ({
+    GetIntrinsicModifierName = function (self) return 'modifier_item_apex_aa' end
+})
+
 LinkLuaModifier( "modifier_item_apex_aa", "items/item_apex_aa.lua", LUA_MODIFIER_MOTION_NONE )
-function item_apex_aa:GetIntrinsicModifierName()
-    return 'modifier_item_apex_aa'
-end
 
 modifier_item_apex_aa = ({
     IsHidden = function(self) return true end,

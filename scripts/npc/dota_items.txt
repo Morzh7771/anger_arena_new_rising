@@ -1119,64 +1119,6 @@
 			}
 		}
 	}
-
-	"item_recipe_monkey_king_bar_3"
-	{
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_monkey_king_bar_3"
-		"ItemRequirements"
-		{
-			"01"						"item_monkey_king_bar_2;item_monkey_king_bar_2;item_boss_soul"
-		}
-	}
-	"item_monkey_king_bar_3"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemBaseLevel"					"3"
-		"BaseClass"						"item_monkey_king_bar"
-		"AbilityTextureName"			"mkb_3"
-		"ItemCost"						"4975"
-		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"mkb;monkey king bar"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"40 80 180"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"45 90 180"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"80 90 100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"			"70 100 120"
-			}
-		}
-	}
-
 	"item_recipe_meteor_hammer"
 	{
 		// General

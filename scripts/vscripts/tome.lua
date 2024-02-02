@@ -9,10 +9,18 @@ function UpgradeStats(keys)
 
 	if not caster or not caster:IsRealHero() then return end
 	if caster:HasModifier("modifier_arc_warden_tempest_double") then return end
-	
-	if str then caster:ModifyStrength(str) end
-	if agi then caster:ModifyAgility(agi) end
-	if int then caster:ModifyIntellect(int) end
+	if str then 
+		caster:FindModifierByName('bonus_str_tome'):SetStackCount(caster:FindModifierByName('bonus_str_tome'):GetStackCount() + str/2)
+		caster:ModifyStrength(str/2)
+	end
+	if agi then
+		caster:FindModifierByName('bonus_agi_tome'):SetStackCount(caster:FindModifierByName('bonus_agi_tome'):GetStackCount() + agi/2)
+		caster:ModifyAgility(agi/2)
+	end
+	if int then
+		caster:FindModifierByName('bonus_int_tome'):SetStackCount(caster:FindModifierByName('bonus_int_tome'):GetStackCount() + int/2)
+		caster:ModifyIntellect(int/2)
+	end
 end
 
 
@@ -27,7 +35,6 @@ function tome_levelup(keys)
 	if not old_exp then old_exp = 0 end
 	local cost = keys.ability:GetCost() 
 
-	caster:HeroLevelUp(true)
 	caster:AddExperience(need_exp - old_exp, 0, true, true)
 end
 

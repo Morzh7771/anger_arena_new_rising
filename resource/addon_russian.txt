@@ -82,22 +82,31 @@
 		"Dota_tooltip_modifier_edible_gem_aura"		        				"Edible Gem"
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6"								"Книга ИНТЕЛЛЕКТА (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6_Description"					"Навсегда увеличивает 10 Интеллекта вашему герою."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6_Description"					"Дает герою навсегда 5 надежнего интеллекта и 5 ненадежнего. Каждую смерть вы будете терять 10% ненадежного интеллекта."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6"								"Книга ловкости(+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6_Description"					"Навсегда увеличивает 10 Ловкости вашему герою."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6_Description"					"Дает герою навсегда 5 надежной силы и 5 не надежнего. Каждую смерть вы будете терять 10% ненадежной силы."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6"								"Книга силы (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6_Description"					"Навсегда увеличивает 10 Силы вашему герою."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6_Description"					"Дает герою навсегда 5 надежной силы и 5 не надежнего. Каждую смерть вы будете терять 10% ненадежной ловкости."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6"								"Книга богов (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"					"Навсегда добавляет 10 Силы 10 Ловкости 10 Интеллекта вашему герою."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"					"Дает герою навсегда 5 всех надежный аттрибутов и 5 не надежнех. Каждую смерть вы будете терять 10% ненадежных аттрибутов."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED"								"Медицинский трактат"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"					"Навсегда увеличивает здоровье вашего персонажа на 400 и ману на 200"
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP"								"Книга героев"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP_Description"					"Повышает ваш уровень."
+
+		"DOTA_TOOLTIP_bonus_str_tome"										"Ненадежная сила"
+		"DOTA_TOOLTIP_bonus_str_tome_Description"							"При смерти вы будете терять 10%%% ненадежной силы."
+
+		"DOTA_TOOLTIP_bonus_agi_tome"										"Ненадежная ловкость"
+		"DOTA_TOOLTIP_bonus_agi_tome_Description"							"При смерти вы будете терять 10%%% ненадежной ловкости."
+
+		"DOTA_TOOLTIP_bonus_int_tome"										"Ненадежный интеллект"
+		"DOTA_TOOLTIP_bonus_int_tome_Description"							"При смерти вы будете терять 10%%% ненадежного интеллекта."
 
 		"npc_aa_bulding_shrine_radiant"										"Shrine"
 		"npc_aa_bulding_shrine_dire"										"Shrine"
@@ -950,10 +959,11 @@
 		"DOTA_Tooltip_ability_item_desolator_aa_2_bonus_damage"					"+$damage"
 
         "DOTA_Tooltip_ability_item_desolator_aa_3"                                 "Desolator 3"
-        "DOTA_Tooltip_ability_item_desolator_aa_3_Description"						"<h1>Пассивное: Corruption</h1> Атаки уменьшают броню цели на %corruption_armor%. Эффект длится %corruption_duration% сек.\n\n<h1>Пассивное: Bleeding</h1>Каждая атака с вероятностью %chance%%  вызовет ранение которое за %corruption_duration% секунд длительности нанест %damage_pct%%  от максимально здоровья жертвы урон равно делится между <font color='#D8AF54'>чистым</font>, <font color='#FF453C'>физическим</font> и <font color='#9AC9FF'>магическим</font> наносит урон 2 раза в секунду"
-		"DOTA_Tooltip_ability_item_desolator_aa_3_Lore"							"Этим нечистым оружием пытали политических преступников."
+        "DOTA_Tooltip_ability_item_desolator_aa_3_Description"						"<h1>Пассивное: Corruption</h1> Атаки уменьшают броню цели на %corruption_armor%. Эффект длится %corruption_duration% сек.\n\n<h1>Пассивное: Bleeding</h1>Каждая атака с вероятностью %chance%%  вызовет ранение которое за %corruption_duration% секунд длительности нанест %damage_pct%%  от максимально здоровья жертвы урон равно делится между <font color='#D8AF54'>чистым</font>, <font color='#FF453C'>физическим</font> и <font color='#9AC9FF'>магическим</font> наносит урон 2 раза в секунду \n\n <h1>Пассивная: True Strike</h1> Ваши атаки больше не могут промахнуться"
+		"DOTA_Tooltip_ability_item_desolator_aa_3_Lore"								"Этим нечистым оружием пытали политических преступников."
 		"DOTA_Tooltip_ability_item_desolator_aa_3_Note0"							"Снижение брони действует на постройки."
-		"DOTA_Tooltip_ability_item_desolator_aa_3_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_desolator_aa_3_bonus_damage"						"+$damage"
+		"DOTA_Tooltip_ability_item_desolator_aa_3_bonus_attack_speed"				"+$attack"
 		
 		"DOTA_Tooltip_modifier_curruption_armor_debuff_1"								"Desolator 1"
 		"DOTA_Tooltip_modifier_curruption_armor_debuff_1_Description"		       		"Атака с Desolator снизила броню этого существа на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."

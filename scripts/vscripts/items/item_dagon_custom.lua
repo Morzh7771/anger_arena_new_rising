@@ -1,13 +1,9 @@
 LinkLuaModifier("modifier_item_dagon_custom", "items/item_dagon_custom", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_dagon_custom_break", "items/item_dagon_custom", LUA_MODIFIER_MOTION_NONE)
 
-item_dagon_custom = class({})
-
-function item_dagon_custom:GetIntrinsicModifierName() return "modifier_item_dagon_custom" end
-
-function item_dagon_custom:GetAOERadius()
-    return self:GetSpecialValueFor("aoe_radius")
-end
+item_dagon_custom = class({
+    GetIntrinsicModifierName = function (self) return "modifier_item_dagon_custom" end,
+    GetAOERadius = function (self) return self:GetSpecialValueFor("aoe_radius") end,
+})
 
 function item_dagon_custom:OnSpellStart()
     if not IsServer() then return end
@@ -46,74 +42,43 @@ function item_dagon_custom:OnSpellStart()
     end
 end
 
-modifier_item_dagon_custom = class({})
-
-function modifier_item_dagon_custom:IsHidden() return true end
-function modifier_item_dagon_custom:IsPurgable() return false end
-function modifier_item_dagon_custom:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE  end
-
-function modifier_item_dagon_custom:DeclareFunctions()
-    return {
+modifier_item_dagon_custom = class({
+    IsHidden = function (self) return true end,
+    IsPurgable = function (self) return false end,
+    GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
+    DeclareFunctions = function (self) return {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_EVENT_ON_TAKEDAMAGE
-    }
-end
-
-function modifier_item_dagon_custom:GetModifierBonusStats_Strength() 
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end 
-end
-
-function modifier_item_dagon_custom:GetModifierBonusStats_Agility()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end 
-end
-
-function modifier_item_dagon_custom:GetModifierBonusStats_Intellect()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end 
-end
-
+    } end,
+    GetModifierBonusStats_Strength = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end end,
+    GetModifierBonusStats_Agility = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end end,
+    GetModifierBonusStats_Intellect = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end end,
+})
 
 function modifier_item_dagon_custom:OnTakeDamage(params)
-if params.unit == self:GetParent() then return end
-if params.attacker ~= self:GetParent() then return end
-if params.inflictor == nil then return end
-if self:GetParent():IsIllusion() then return end
-if not params.unit then return end
-if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
-if params.unit:IsIllusion() then return end
-if (params.unit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() > 2000 then return end
+    if params.unit == self:GetParent() then return end
+    if params.attacker ~= self:GetParent() then return end
+    if params.inflictor == nil then return end
+    if self:GetParent():IsIllusion() then return end
+    if not params.unit then return end
+    if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
+    if params.unit:IsIllusion() then return end
+    if (params.unit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() > 2000 then return end
 
-self.lifesteal = self:GetAbility():GetSpecialValueFor("spell_lifesteal")/100
+    self.lifesteal = self:GetAbility():GetSpecialValueFor("spell_lifesteal")/100
 
-local lifesteal = self.lifesteal
-
-
-local heal = params.damage * lifesteal
+    local lifesteal = self.lifesteal
 
 
-self:GetParent():Heal(heal, self:GetAbility())
+    local heal = params.damage * lifesteal
 
 
-local particle = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-ParticleManager:ReleaseParticleIndex( particle )
+    self:GetParent():Heal(heal, self:GetAbility())
+
+    local particle = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+    ParticleManager:ReleaseParticleIndex( particle )
 end
 
 
-
-
-
-
-
-
-modifier_item_dagon_custom_break = class({})
-function modifier_item_dagon_custom_break:IsHidden() return false end
-function modifier_item_dagon_custom_break:IsPurgable() return false end
-function modifier_item_dagon_custom_break:CheckState() return {[MODIFIER_STATE_PASSIVES_DISABLED] = true} end
-function modifier_item_dagon_custom_break:GetEffectName() return "particles/items3_fx/silver_edge.vpcf" end
-function modifier_item_dagon_custom_break:OnCreated(table)
-if not IsServer() then return end
-  self.particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_break.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
-  ParticleManager:SetParticleControl(self.particle, 1, self:GetParent():GetAbsOrigin())
-  self:AddParticle(self.particle, false, false, -1, false, false)
-end

@@ -255,6 +255,9 @@ function AngelArena:InitGameMode()
 	PlayerResource:RegisterOnAbandonedCallback(function(arg) AngelArena:OnAbandoned(arg) end)
 	LinkLuaModifier("modifier_godmode", 'modifiers/modifier_godmode', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_aa_hero", 'modifiers/modifier_aa_hero', LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("bonus_str_tome", "modifiers/modifier_aa_hero", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("bonus_agi_tome", "modifiers/modifier_aa_hero", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("bonus_int_tome", "modifiers/modifier_aa_hero", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_mid_teleport", "modifiers/modifier_mid_teleport", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
@@ -668,9 +671,17 @@ function AngelArena:OnNPCSpawned(keys)
 		if hero_table[unitname]then
 			--npc:AddItemByName("item_repick_hero")
 		end
-		if npc:IsRealHero() or npc:IsIllusion()then
+		if npc:IsRealHero()then
 			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
 			--npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
+		end
+		if npc:IsIllusion() then
+			local player = PlayerResource:GetSelectedHeroEntity( npc:GetPlayerOwnerID() )
+			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
+			npc:AddNewModifier(npc, nil, "bonus_str_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_str_tome'):GetStackCount())
+			npc:AddNewModifier(npc, nil, "bonus_agi_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_agi_tome'):GetStackCount())
+			npc:AddNewModifier(npc, nil, "bonus_int_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_int_tome'):GetStackCount())
+			
 		end
 	end
 	if npc:IsRealHero() then

@@ -10,43 +10,54 @@ function item_giant_ring_aa:OnSpellStart()
     caster:AddNewModifier( caster, self, "modifier_giant_ring_aa_active", {duration = self:GetSpecialValueFor("duration")} )
 end
 
-modifier_giant_ring_aa = class({})
-function modifier_giant_ring_aa:DeclareFunctions()
-    local funcs = {
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE,
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-    }
-    return funcs
-end
-function modifier_giant_ring_aa:IsBuff() return true end
-function modifier_giant_ring_aa:IsDebuff() return false end
-function modifier_giant_ring_aa:IsHidden() return true end
-function modifier_giant_ring_aa:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_MULTIPLE end
-function modifier_giant_ring_aa:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end
-function modifier_giant_ring_aa:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end
-function modifier_giant_ring_aa:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end
-function modifier_giant_ring_aa:GetModifierMoveSpeedBonus_Special_Boots() return self:GetAbility():GetSpecialValueFor('movement_speed') end
-function modifier_giant_ring_aa:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor('attack_speed') end
+modifier_giant_ring_aa = class({ 
+	IsBuff = function(self)return true end,
+	IsDebuff = function(self) return false end,
+	IsHidden = function(self) return true end,
+	GetAttributes = function(self) return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_MULTIPLE end,
+	DeclareFunctions = function(self) 
+		return {
+			MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+			MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+			MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+			MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE,
+			MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		}
+	end,
+	GetModifierBonusStats_Strength = function(self) return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end,
+	GetModifierBonusStats_Agility = function(self) return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end,
+	GetModifierBonusStats_Intellect = function(self) return self:GetAbility():GetSpecialValueFor('bonus_all_stats') end,
+	GetModifierMoveSpeedBonus_Special_Boots = function(self) return self:GetAbility():GetSpecialValueFor('movement_speed') end,
+	GetModifierAttackSpeedBonus_Constant = function(self) return self:GetAbility():GetSpecialValueFor('attack_speed') end,
+})
 
-
-modifier_giant_ring_aa_active = class({})
-
-function modifier_giant_ring_aa_active:OnCreated()
-    self.bonus_stats = self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")
-    self.interval = 0.5
-    self:StartIntervalThink(self.interval)
-end
-
-function modifier_giant_ring_aa_active:IsBuff() return true end
-function modifier_giant_ring_aa_active:IsDebuff() return false end
-function modifier_giant_ring_aa_active:IsHidden() return false end
-function modifier_giant_ring_aa_active:GetTexture()
-	return "../items/giant_ring_aa" 
-end
-
+modifier_giant_ring_aa_active = class({
+	IsBuff = function(self) return true end,
+	IsDebuff = function(self) return false end,
+	IsHidden = function(self) return false end,
+	GetTexture = function(self) return "../items/giant_ring_aa" end,
+	OnCreated = function(self)
+		self.bonus_stats = self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")
+		self.interval = 0.5
+		self:StartIntervalThink(self.interval) 
+		self.bonus_str = self:GetParent():GetStrength() * self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")/100
+		self.bonus_agi = self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")/100
+		self.bonus_int = self:GetParent():GetIntellect() * self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")/100
+	end,
+	DeclareFunctions = function(self) 
+		return {
+			MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+			MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+			MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+			MODIFIER_PROPERTY_MODEL_SCALE,
+		}
+	end,
+	GetModifierBonusStats_Strength = function(self) return self.bonus_str end,
+	GetModifierBonusStats_Agility = function(self) return self.bonus_agi end,
+	GetModifierBonusStats_Intellect = function(self) return self.bonus_int end,
+	CheckState = function(self) return {[MODIFIER_STATE_NO_UNIT_COLLISION] = true,} end,
+	GetModifierModelScale = function(self) return 20 end,
+})
 function modifier_giant_ring_aa_active:OnIntervalThink()
     local radius = self:GetAbility():GetSpecialValueFor('radius')
     local caster = self:GetParent()
@@ -86,107 +97,4 @@ function modifier_giant_ring_aa_active:OnIntervalThink()
         end
         
     end
-end
-function modifier_giant_ring_aa_active:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_MODEL_SCALE,
-	}
-	return funcs
-end
-function modifier_giant_ring_aa_active:GetModifierBonusStats_Agility()
-	if not IsServer() then return end
-
-	if self.bonus_stats then
-	if self:GetParent()==self:GetParent() then
-		-- use lock mechanism to prevent infinite recursive
-		if self.lock1 then return end
-
-		-- calculate bonus
-		self.lock1 = true
-		local agi = self:GetParent():GetAgility()
-		self.lock1 = false
-
-		local bonus = self.bonus_stats*agi/100
-
-		return bonus
-	else
-		-- this agi includes bonus from this ability, which should be excluded
-		local agi = self:GetParent():GetAgility()
-		agi = 100/(100+self.bonus_stats)*agi
-
-		local bonus = self.bonus_stats*agi/100
-
-		return bonus
-	end
-end
-
-end
-function modifier_giant_ring_aa_active:GetModifierBonusStats_Strength()
-	if not IsServer() then return end
-
-	if self.bonus_stats then
-	if self:GetParent()==self:GetParent() then
-		-- use lock mechanism to prevent infinite recursive
-		if self.lock2 then return end
-
-		-- calculate bonus
-		self.lock2 = true
-		local str = self:GetParent():GetStrength()
-		self.lock2 = false
-
-		local bonus = self.bonus_stats*str/100
-
-		return bonus
-	else
-		-- this agi includes bonus from this ability, which should be excluded
-		local str = self:GetParent():GetStrength()
-		str = 100/(100+self.bonus_stats)*str
-
-		local bonus = self.bonus_stats*str/100
-
-		return bonus
-	end
-	end
-end
-
-function modifier_giant_ring_aa_active:GetModifierBonusStats_Intellect()
-    if not IsServer() then return end
-
-    if self.bonus_stats then
-        if self:GetParent()==self:GetParent() then
-            -- use lock mechanism to prevent infinite recursive
-            if self.lock3 then return end
-
-            -- calculate bonus
-            self.lock3 = true
-            local int = self:GetParent():GetIntellect()
-            self.lock3 = false
-
-            local bonus = self.bonus_stats*int/100
-
-            return bonus
-        else
-            -- this agi includes bonus from this ability, which should be excluded
-            local int = self:GetParent():GetIntellect()
-            int = 100/(100+self.bonus_stats)*int
-
-            local bonus = self.bonus_stats*int/100
-
-            return bonus
-        end
-    end
-
-end
-function modifier_giant_ring_aa_active:CheckState()
-	return {
-		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
-	}
-end
-
-
-function modifier_giant_ring_aa_active:GetModifierModelScale()
-	return 20
 end

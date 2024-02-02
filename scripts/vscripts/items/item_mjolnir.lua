@@ -13,14 +13,6 @@ function item_mjolnir_aa_1:OnSpellStart()
     local target = self:GetCursorTarget()
     target:AddNewModifier(self:GetCaster(), self, "modifier_item_mjolnir_shield", {duration = self:GetSpecialValueFor("active_duration")})
 end
-function item_mjolnir_aa_2:OnSpellStart()
-	local target = self:GetCursorTarget()
-    target:AddNewModifier(self:GetCaster(), self, "modifier_item_mjolnir_shield", {duration = self:GetSpecialValueFor("active_duration")})
-end
-function item_mjolnir_aa_3:OnSpellStart()
-	local target = self:GetCursorTarget()
-    target:AddNewModifier(self:GetCaster(), self, "modifier_item_mjolnir_shield", {duration = self:GetSpecialValueFor("active_duration")})
-end
 
 item_mjolnir_modifier = class({
     IsHidden = function (self) return true end,
@@ -29,12 +21,30 @@ item_mjolnir_modifier = class({
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
+        MODIFIER_EVENT_ON_ATTACK_RECORD,
     }
     end,
     GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end,
     GetModifierBaseAttack_BonusDamage = function (self)return self:GetAbility():GetSpecialValueFor('bonus_damage') end,
-
+    CheckState = function (self) if self.pierce_proc then return {[MODIFIER_STATE_CANNOT_MISS] = true,} else return {} end end,
+    GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end
 })
+function item_mjolnir_modifier:OnCreated()
+    self.pierce_proc = true
+    self.pierce_records = {}
+end
+function item_mjolnir_modifier:OnAttackRecord(keys)
+    if keys.attacker == self:GetParent() then
+        if self.pierce_proc then
+            table.insert(self.pierce_records, keys.record)
+            self.pierce_proc = false
+        end
+        
+        if RollPseudoRandomPercentage(self:GetAbility():GetSpecialValueFor('chance'),99,self:GetParent()) then
+            self.pierce_proc = true
+        end
+    end
+end
 modifier_item_mjolnir_shield = class({
     IsHidden = function (self) return false end,
     DeclareFunctions = function (self) return 
@@ -60,10 +70,13 @@ function modifier_item_mjolnir_shield:OnAttackLanded(keys)
 end
 function item_mjolnir_modifier:OnAttackLanded(keys)
     if keys.attacker == self:GetParent() then
-        if RollPseudoRandomPercentage(self:GetAbility():GetSpecialValueFor('chance'),99,self:GetParent()) then
-            self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "item_mjolnir_modifier_tinkerer", {
-                starting_unit_entindex = keys.target:entindex(),self_casted = 0
-            })
+        for _, record in pairs(self.pierce_records) do  
+            if record == keys.record then
+            table.remove(self.pierce_records, _)
+                self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "item_mjolnir_modifier_tinkerer", {
+                    starting_unit_entindex = keys.target:entindex(),self_casted = 0
+                })
+            end
         end
     end
 end

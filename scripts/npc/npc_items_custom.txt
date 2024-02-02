@@ -4264,7 +4264,7 @@
 		"ItemResult"					"item_desolator_aa_3"
 		"ItemRequirements"
 		{
-			"01"						"item_desolator_aa_2;item_desolator_aa_2;item_boss_soul"
+			"01"						"item_desolator_aa_2;item_monkey_king_bar_2;item_boss_soul;item_boss_soul"
 		}
 	}
 	"item_desolator_aa_1"
@@ -4346,9 +4346,10 @@
 		"AbilityValues"
 		{
 				"bonus_damage"				"50 100 220"
+                "bonus_attack_speed"		"180"
 				"corruption_armor"			"7 14 30"
 				"corruption_duration"		"7.0 7.0 7.0"
-                "chance"                    "17"
+                "chance"                    "20"
                 "damage_pct"                "12"
 		}
 	}

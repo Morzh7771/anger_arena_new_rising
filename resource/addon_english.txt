@@ -81,17 +81,26 @@
 		"DOTA_Tooltip_modifier_modifier_edible_gem_aura"					"True Sight"
 		"Dota_tooltip_modifier_edible_gem_aura"		        				"Edible Gem"
 
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6"								"Tome of Intellect (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6_Description"					"Permanently increases your hero's Intelligence by 10."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6"                             "Book of Intelligence (+10)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6_Description"                 "Permanently grants the hero 5 reliable intelligence and 5 unreliable intelligence. Upon each death, you will lose 10%%% of unreliable intelligence."
 
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6"								"Tome of Agility(+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6_Description"					"Permanently increases your hero's Agility by 10."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6"                             "Book of Agility (+10)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6_Description"                 "Permanently grants the hero 5 reliable strength and 5 unreliable strength. Upon each death, you will lose 10%%% of unreliable strength."
 
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6"								"Tome of Strength (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6_Description"					"Permanently increases your hero's Strength by 10."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6"                             "Book of Strength (+10)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6_Description"                 "Permanently grants the hero 5 reliable strength and 5 unreliable agility. Upon each death, you will lose 10%%% of unreliable agility."
 
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6"								"Tome of Gods (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"					"Permanently increases your hero's Strength, Agility, and Intelligence by 6."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6"                              "Book of Gods (+10)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"                  "Permanently grants the hero 5 of each reliable attribute and 5 of each unreliable attribute. Upon each death, you will lose 10%%% of unreliable attributes."
+
+		"DOTA_TOOLTIP_bonus_str_tome"                                    "Unreliable Strength"
+		"DOTA_TOOLTIP_bonus_str_tome_Description"                        "Upon death, you will lose 10%%% of unreliable strength."
+
+		"DOTA_TOOLTIP_bonus_agi_tome"                                    "Unreliable Agility"
+		"DOTA_TOOLTIP_bonus_agi_tome_Description"                        "Upon death, you will lose 10%%% of unreliable agility."
+
+		"DOTA_TOOLTIP_bonus_int_tome"                                    "Unreliable Intelligence"
+		"DOTA_TOOLTIP_bonus_int_tome_Description"                        "Upon death, you will lose 10%%% of unreliable intelligence."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED"								"Medical Tractate"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"					"Permanently increases your hero's Health by 500 and mana by 250."
