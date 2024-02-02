@@ -3,7 +3,8 @@ LinkLuaModifier("bonus_str_tome", "modifiers/modifier_aa_hero", LUA_MODIFIER_MOT
 LinkLuaModifier("bonus_agi_tome", "modifiers/modifier_aa_hero", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("bonus_int_tome", "modifiers/modifier_aa_hero", LUA_MODIFIER_MOTION_NONE)
 bonus_str_tome = class({
-	IsHidden = function (self) return false end,
+	IsHidden = function (self) 
+		if self:GetStackCount() > 1 then return false else return true end end,
 	IsPurgable = function (self) return false end,
 	RemoveOnDeath = function (self) return false end,
 	GetTexture = function (self)
@@ -51,17 +52,19 @@ end
 function modifier_aa_hero:OnDeath(data)
 	if data.unit == self:GetParent() then
 		if self:GetParent():FindModifierByName('bonus_str_tome'):GetStackCount() > 10 then
-			self:GetParent():FindModifierByName('bonus_str_tome'):SetStackCount(self:GetParent():FindModifierByName('bonus_str_tome'):GetStackCount() * (1 - 10/100))
+			self:GetParent():FindModifierByName('bonus_str_tome'):SetStackCount(self:GetParent():FindModifierByName('bonus_str_tome'):GetStackCount() * (1 - 20/100))
 		end
 		if self:GetParent():FindModifierByName('bonus_agi_tome'):GetStackCount() > 10 then
-			self:GetParent():FindModifierByName('bonus_agi_tome'):SetStackCount(self:GetParent():FindModifierByName('bonus_agi_tome'):GetStackCount() * (1 - 10/100))
+			self:GetParent():FindModifierByName('bonus_agi_tome'):SetStackCount(self:GetParent():FindModifierByName('bonus_agi_tome'):GetStackCount() * (1 - 20/100))
 		end
 		if self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() > 10 then
-			self:GetParent():FindModifierByName('bonus_int_tome'):SetStackCount(self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() * (1 - 10/100))
+			self:GetParent():FindModifierByName('bonus_int_tome'):SetStackCount(self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() * (1 - 20/100))
 		end
 	end
 end
-
+function modifier_aa_hero:GetModifierIgnoreMovespeedLimit()
+    return 1
+end
 function modifier_aa_hero:GetModifierBonusStats_Strength() if self:GetParent():HasModifier("bonus_str_tome") and self:GetParent():FindModifierByName('bonus_str_tome'):GetStackCount() > 1 then return self:GetParent():FindModifierByName('bonus_str_tome'):GetStackCount() end end
 function modifier_aa_hero:GetModifierBonusStats_Agility() if self:GetParent():HasModifier("bonus_agi_tome") and self:GetParent():FindModifierByName('bonus_agi_tome'):GetStackCount() > 1 then return self:GetParent():FindModifierByName('bonus_agi_tome'):GetStackCount() end end
 function modifier_aa_hero:GetModifierBonusStats_Intellect() if self:GetParent():HasModifier("bonus_int_tome") and self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() > 1 then return self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() end end
