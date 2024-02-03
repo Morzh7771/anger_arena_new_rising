@@ -33,6 +33,9 @@ modifier_item_desolator_lua_1 = class({
     if self:GetAbility():GetName() == "item_desolator_aa_3" then table.insert(funcs, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT ) end
         return funcs
     end,
+    CheckState = function (self)
+        if self:GetAbility():GetName() == "item_desolator_aa_3" then return {[MODIFIER_STATE_CANNOT_MISS] = true,} end
+    end,
     GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end,
     GetModifierProjectileName = function (self) return "particles/items_fx/desolator_projectile.vpcf" end,
     GetModifierPreAttack_BonusDamage = function (self) return self:GetAbility():GetSpecialValueFor("bonus_damage")  end,
@@ -86,7 +89,7 @@ modifier_blood = ({
         self.damage = (self:GetParent():GetMaxHealth() * (self:GetAbility():GetSpecialValueFor("damage_pct") / 100)) / 2 / self:GetAbility():GetSpecialValueFor("corruption_duration")
         self:StartIntervalThink(0.5)
     end,
-    CheckState = function (self) return {[MODIFIER_STATE_CANNOT_MISS] = true,} end,
+   
     OnIntervalThink = function(self)
         if not IsServer() then return end
         ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), damage = self.damage/3.33, damage_type = DAMAGE_TYPE_MAGICAL,  ability = self:GetAbility(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL})
