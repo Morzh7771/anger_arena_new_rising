@@ -11,7 +11,7 @@ attack_slow = class{
 	DeclareFunctions = function(self)return {
 		MODIFIER_PROPERTY_FIXED_ATTACK_RATE,
 	}end,
-    GetModifierFixedAttackRate = function(self) return 1 end,
+    GetModifierFixedAttackRate = function(self) return 1.5 end,
 }
 
 tower_controller = class{
@@ -50,7 +50,8 @@ function tower_controller:OnAttackLanded(e)
 			attacker = self:GetParent(),
 			ability = self:GetAbility(),
 			damage = self.damage,
-			damage_type = DAMAGE_TYPE_PURE,
+			damage_flags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR+DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR,
+			damage_type = DAMAGE_TYPE_PHYSICAL,
 		}
 	end
 end
@@ -59,6 +60,10 @@ function tower_controller:OnAttacked(e)
 		if (e.attacker:GetOrigin() - e.target:GetOrigin()):Length2D() < e.target:Script_GetAttackRange() + e.attacker:GetHullRadius() + e.target:GetHullRadius() and e.attacker:IsRealHero() then
 			if e.target:GetHealth() <= e.target:GetMaxHealth() * 0.05 + 10 then
 				e.target:SetTeam(e.target:GetOpposingTeamNumber())
+				TeamHelper:ApplyForHeroes(e.attacker:GetTeamNumber(), function(playerid, hero)
+					PlayerResource:ModifyGold(playerid, 300+(GameRules:GetDOTATime(false,false) / 60) * 100, false, DOTA_ModifyGold_RoshanKill)
+					hero:HeroLevelUp(true)
+				end)
 				e.target:SetHealth(e.target:GetMaxHealth())
 			else
 				e.target:SetHealth( (e.target:GetHealth() - e.target:GetMaxHealth() * 0.05 ))
