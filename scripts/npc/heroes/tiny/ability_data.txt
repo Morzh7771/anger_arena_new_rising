@@ -323,7 +323,7 @@ DOTAAbilities
 					"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 					"CalculateSpellDamageTooltip"	"0"
 				}
-				"attack_speed_reduction"	"-30"
+				"attack_speed_reduction"	"-30 -25 -20 -15 -10 -5 0"
 				"toss_bonus_damage"
 				{
 					"value"					"100 175 250 325 400 475 550"

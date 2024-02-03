@@ -44,7 +44,10 @@ function PercentDamage:_init()
 		"primal_beast_uproar",
 		"kunkka_torrent",
 		"dragon_knight_breathe_fire",
-		"satan_breath"
+		"satan_breath",
+		"primal_beast_rock_throw",
+		"primal_beast_pulverize",
+		"primal_beast_onslaught",
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",
@@ -164,6 +167,8 @@ function PercentDamage:_init()
 		"bane_enfeeble",
 		"brewmaster_cinder_brew",
 		"brewmaster_thunder_clap",
+		"furion_sprout",
+		"furion_wrath_of_nature",
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 

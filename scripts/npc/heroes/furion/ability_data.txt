@@ -6,6 +6,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"furion_sprout"
 		"MaxLevel"		"7"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Furion.Sprout"
@@ -41,6 +42,7 @@ DOTAAbilities
 			"sprout_damage"					"15 30 45 60 75 90 105"
 			"sprout_damage_inteval"			"0.5"
 			"sprout_damage_radius"			"275"
+			"damage_pct"		"17"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -108,7 +110,7 @@ DOTAAbilities
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"3 2.9 2.8 2.7 2.6 2.5 2.4"
+		"AbilityCastPoint"				"3 2.5 2.3 2.1 1.9 1.7 1.5"
 		"AbilityCooldown"				"60 55 50 45 40 35 30"
 		"AbilityManaCost"				"50 60 70 80 90 100 110"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -211,7 +213,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"max_targets"			"18"
+			"max_targets"			"50"
 			"damage"
 			{
 				"value"				"120 160 200 240 280 320 360"
@@ -251,6 +253,7 @@ DOTAAbilities
 				"value"					"3.8"
 				"RequiresScepter"		"1"
 			}	
+			"damage_pct"		"30"
 		}
 	}
 	"furion_curse_of_the_forest"
