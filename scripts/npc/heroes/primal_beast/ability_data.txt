@@ -44,7 +44,7 @@ DOTAAbilities
 				"special_bonus_unique_primal_beast_onslaught_damage"	"+135"
 			}
 			"knockback_duration"		"0.2"
-			"max_charge_time"			"0.3"
+			"max_charge_time"			"1.7"
 			"turn_rate"					"70"
 			"base_power"				"0.05"
 			"movement_turn_rate"		"50"
@@ -279,7 +279,7 @@ DOTAAbilities
 			"interval"					"0.5"
 			"ministun"					"0.2"
 			"cast_range"				"200"
-			"animation_rate"			"1.5"			// FLAIL MULTIPLIER ON ENEMY UNITS
+			"animation_rate"			"0.5"			// FLAIL MULTIPLIER ON ENEMY UNITS
 			"damage"
 			{
 				"value"						"125 175 225 275 325 375 425"
@@ -343,14 +343,14 @@ DOTAAbilities
 				"value"					"325"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-            "impact_radius"             "225"    
-            "min_range"               "550"
-            "min_travel_time"                 "0.45"
+            "impact_radius"             "350"    
+            "min_range"               "225"
+            "min_travel_time"                 "0.225"
             "max_travel_time"                  "1.7"
             "bounce_travel_time"                  "0.6"
-            "stun_duration"                  "1.4"
-			"fragment_impact_distance"    "600"
-            "fragment_impact_radius"                  "150"
+            "stun_duration"                  "1.7"
+			"fragment_impact_distance"    "450"
+            "fragment_impact_radius"                  "225"
 			"damage_pct"    "500"      
 
         }

@@ -420,20 +420,24 @@ function modifier_hoodwink_acorn_shot_lua_thinker:OnIntervalThink()
 
 		local next_target
 		for _,enemy in pairs(enemies) do
-			if enemy~=self.target then
+			if enemy ~= self.target then
 				next_target = enemy
 				break
 			end
 		end
 		if not next_target then
 			local trees = GridNav:GetAllTreesAroundPoint( self.target:GetAbsOrigin(), self.range, false )
+			local bestTree = mainTree
 			for _,tree in pairs(trees) do
-				self.unit = CreateUnitByName("npc_tree_thinker",tree:GetAbsOrigin(),false,nil,nil,DOTA_TEAM_NEUTRALS )
-				next_target = self.unit
-				mainTree = tree
-				self.bounces = self.bounces+1
-				break
+				print(self.target:GetUnitName())
+				if (tree:GetAbsOrigin() - self.target:GetAbsOrigin()):Length2D() < (bestTree:GetAbsOrigin() - self.target:GetAbsOrigin()):Length2D() then
+					bestTree = tree
+				end
 			end
+			self.unit = CreateUnitByName("npc_tree_thinker",bestTree:GetAbsOrigin(),false,nil,nil,DOTA_TEAM_NEUTRALS )
+			next_target = self.unit
+			mainTree = bestTree
+			self.bounces = self.bounces+1
 		end
 		if not next_target then
 			self:Destroy()
