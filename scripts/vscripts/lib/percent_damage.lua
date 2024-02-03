@@ -9,6 +9,8 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("bane_brain_sap",						BaneBrainSap)
 	PercentDamage:ListenAbilityCallback("pugna_life_drain",						LifeDrain )
 	PercentDamage:ListenAbilityCallback("axe_counter_helix",						axe_counter_helix )
+	PercentDamage:ListenAbilityCallback("snapfire_scatterblast",						snapfire_scatterblast )
+	PercentDamage:ListenAbilityCallback("axe_culling_blade",						axe_culling_blade )
 	
 	local MagicalDamageFromStr = {
 		"ogre_magi_fireblast",
@@ -216,6 +218,18 @@ function axe_counter_helix(keys)
 	print(caster:GetPhysicalArmorValue(false))
 	return (percent_damage * caster:GetPhysicalArmorValue(false))
 end
+function axe_culling_blade(keys)
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+
+	if not ability then return end
+	
+	local percent_damage = ability:GetSpecialValueFor("damage_pct")
+	print(caster:GetPhysicalArmorValue(false))
+	return (percent_damage * caster:GetPhysicalArmorValue(false))
+end
 function DamageFromAll(keys)
 	local ability 			= keys.ability
 	local caster 			= keys.caster
@@ -340,5 +354,17 @@ function PudgeRot(keys)
 				})
 
 
+end
+function snapfire_scatterblast(keys)
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+
+	if not ability then return end
+	
+	local percent_damage = ability:GetSpecialValueFor("damage_pct_stat") / 100
+	
+	return (percent_damage * caster:GetAgility()) + (percent_damage * caster:GetStrength()) + (percent_damage * caster:GetIntellect())
 end
 PercentDamage:_init();

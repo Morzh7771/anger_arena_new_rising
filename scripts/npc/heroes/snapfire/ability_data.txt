@@ -74,6 +74,7 @@ DOTAAbilities
 				"value"				"50"
 				"RequiresShard"				"1"
 			}
+				"damage_pct_stat"						"35"
 		}
 	}
 	"snapfire_mortimer_kisses"
@@ -359,7 +360,7 @@ DOTAAbilities
 				"damage"					"20 45 70 95 120 145 170"
 				"buffed_attacks"			
 				{
-					"value"		"6"
+					"value"		"4 6 8 10 12 14 16"
 					"special_bonus_unique_snapfire_2"	"+4"
 				}
 				"attack_speed_bonus"		"300"
