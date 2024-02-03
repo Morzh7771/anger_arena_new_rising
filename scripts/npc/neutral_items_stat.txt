@@ -1852,10 +1852,10 @@
 		"AbilityValues"
 		{
 			"radius"					"800"
-			"slow_duration"			"0.5"
+			"slow_duration"			"1"
 			"damage_reset_interval"		"7"
-			"damage_threshold"			"150"
-			"slow"			"1000"
+			"damage_threshold"			"600"
+			"slow"			"40"
 			"projectile_speed"				"3000"
 			"projectile_damage"				"300"
 			"target_count"					"4"
