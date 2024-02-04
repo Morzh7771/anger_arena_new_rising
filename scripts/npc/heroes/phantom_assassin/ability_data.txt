@@ -173,39 +173,24 @@ DOTAAbilities
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"bonus_evasion"	
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_evasion"				"20 25 30 35 40 45 50"
+				"value"			"20 25 30 35 40 45 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_3"
 			}
-			"02"
+			"duration"			"25"
+			"radius"				"400"
+			"fade_duration"			"0.5"
+			"scepter_cooldown"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"			"25"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_duration"			"0.5"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_cooldown"			"50"
+				"value"			"50"
 				"RequiresScepter"		"1"
 			}
-			"05"
+			"scepter_fade_duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"scepter_fade_duration"			"0.75"
+				"value"			"0.75"
 				"RequiresScepter"		"1"
 			}
 		}

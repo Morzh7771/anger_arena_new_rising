@@ -1363,7 +1363,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"625"	
+		"ItemCost"						"325"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1398,14 +1398,14 @@
 		{
 			"bonus_damage"								"15 30 80"
 			"bonus_attack_speed"						"25 50 120"
-			"bonus_armor"								"6 12 25"
+			"bonus_armor"								"5 9 18"
 			"bonus_health_regen"						"5 10 25"
 			"unholy_bonus_damage"						"35 70 150"
 			"unholy_bonus_attack_speed"					"0"
 			"unholy_bonus_strength"						"25 50 120"
-			"unholy_bonus_armor"						"4 8 18"
+			"unholy_bonus_armor"						"4 6 12"
 			"unholy_bonus_slow_resistance"				"35 45 60"
-			"unholy_health_drain_per_second"			"45 90 200"
+			"unholy_health_drain_per_second"			"35 70 160"
 			"toggle_cooldown"							"0.036"
 		}
 	}
@@ -1453,14 +1453,14 @@
 		{
 			"bonus_damage"			"15 30 80"
 			"bonus_attack_speed"	"25 50 120"
-			"bonus_armor"			"6 12 25"
+			"bonus_armor"			"5 9 18"
 			"bonus_health_regen"	"5 10 25"
 			"unholy_bonus_damage"	"35 70 150"
 			"unholy_bonus_attack_speed"	"0"
 			"unholy_bonus_strength"	"25 50 120"
-			"unholy_bonus_armor"	"4 8 18"
+			"unholy_bonus_armor"	"4 6 12"
 			"unholy_bonus_slow_resistance"	"35 45 60"
-			"unholy_health_drain_per_second"	"45 90 200"
+			"unholy_health_drain_per_second"	"35 70 160"
 			"toggle_cooldown"		"0.036"
 		}
 	}
@@ -1480,7 +1480,7 @@
 		"ItemResult"					"item_armlet_3"
 		"ItemRequirements"
 		{
-			"01"						"item_armlet_2;item_armlet_2;item_boss_soul"
+			"01"						"item_armlet_2;item_armlet_2"
 		}
 	}
 	"item_armlet_3"
@@ -1508,14 +1508,14 @@
 		{
 			"bonus_damage"			"15 30 80"
 			"bonus_attack_speed"	"25 50 120"
-			"bonus_armor"			"6 12 25"
+			"bonus_armor"			"5 9 18"
 			"bonus_health_regen"	"5 10 25"
 			"unholy_bonus_damage"	"35 70 150"
 			"unholy_bonus_attack_speed"	"0"
 			"unholy_bonus_strength"	"25 50 120"
-			"unholy_bonus_armor"	"4 8 18"
+			"unholy_bonus_armor"	"4 6 12"
 			"unholy_bonus_slow_resistance"	"35 45 60"
-			"unholy_health_drain_per_second"	"45 90 200"
+			"unholy_health_drain_per_second"	"35 70 160"
 			"toggle_cooldown"		"0.036"
 		}
 	}
