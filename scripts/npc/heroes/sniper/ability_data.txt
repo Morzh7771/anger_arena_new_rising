@@ -258,7 +258,7 @@ DOTAAbilities
 			"projectile_speed"			"2500 2500 2500"
 			"scepter_stun_duration"			
 			{
-				"value" "0.8 1.0 1.2"
+				"value" "0.6 0.7 0.8 0.9 1.0 1.1 1.2"
 				"RequiresScepter"		"1"
 			}
 			"scepter_crit"			
@@ -289,7 +289,7 @@ DOTAAbilities
 				"RequiresShard"	"1"
 			}
 			"cooldown_reduction_on_kill"		"15"
-				"damage_pct"		"200 250 300 350 400 450 500"
+				"damage_pct"		"75 100 125 150 175 200 225"
 		}		
 	}
 }

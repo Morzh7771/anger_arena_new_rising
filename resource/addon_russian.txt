@@ -2608,7 +2608,12 @@
 		"DOTA_Tooltip_ability_item_maelstorm_aa_Note0"								"Срабатывает не чаще, чем раз в секунду."
 		"DOTA_Tooltip_ability_item_maelstorm_aa_Note1"								"Молнии от Static Charge не срабатывают на невидимых или скрытых в тумане войны героев."
 		"DOTA_Tooltip_ability_item_maelstorm_aa_bonus_damage"						"+$damage"
-		"DOTA_Tooltip_ability_item_maelstorm_aa_bonus_attack_speed"					"+$attack"	
+		"DOTA_Tooltip_ability_item_maelstorm_aa_bonus_attack_speed"					"+$attack"
+
+        "DOTA_Tooltip_ability_item_rattlecage_Description"                          "<h1>Пассивная: Reverberate</h1> Получив %damage_threshold% урона от любого источника, владелец выпускает снаряды в %target_count% случайных врагов в радиусе %radius% (в первую очередь в героев). Снаряды наносят %projectile_damage% физического урона и замедляют передвижение и атаку жертв на %slow% ед. на %slow_duration% сек."
+        "DOTA_Tooltip_ability_item_rattlecage_bonus_armor"                          "+$armor"
+        "DOTA_Tooltip_modifier_item_rattlecage_slow"                                "Rattlecage"
+        "DOTA_Tooltip_modifier_item_rattlecage_slow_Description"                    "Существо замедлено"
 		
 
 	}  
