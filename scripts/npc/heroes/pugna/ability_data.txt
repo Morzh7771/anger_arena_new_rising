@@ -5,12 +5,13 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"pugna_nether_blast"
-		"MaxLevel"						"7"
+		"MaxLevel"						"4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Pugna.NetherBlast"
+		"LevelsBetweenUpgrades"			"4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -107,7 +108,7 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35.0 35.0 35.0 35.0"
-		"AbilityDuration"				"18 20 22 24 26 28 30"
+		"AbilityDuration"				"18 22 26 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -118,10 +119,10 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"radius"					"1400"
-			"base_damage"				"50 60 70 80 90 100 110"
+			"base_damage"				"50 70 90 110"
 			"mana_multiplier"
 			{
-				"value"			"1 1.25 1.5 1.75 2.0 2.25 2.5"
+				"value"			"1 1.5 2.0 2.5"
 				"special_bonus_unique_pugna_3"		"+2.0"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
 			}

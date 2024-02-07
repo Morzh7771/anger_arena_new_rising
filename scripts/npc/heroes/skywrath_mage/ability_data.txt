@@ -91,26 +91,27 @@ DOTAAbilities
 		{ 
 			"launch_radius"		
 			{
-				"value"	"1600"
-			}
-			"slow_radius"		
-			{
-				"value"			"250"
-			}
-			"speed"				"800 800 800 800"
-			"damage"			"120 180 240 300 360 420 480"
-			"slow_duration"		"4.0"
-			"movement_speed_pct"	"40"
-			"shot_vision"		"300"
-			"vision_duration"		"3.34"
-			"scepter_radius"		
-			{
-				"value"	"700"
-				"RequiresScepter"	"1"
-			}
-			"creep_damage_pct"		"75"
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+				"value"						"1600"
+			}	
+			"slow_radius"			
+			{	
+				"value"						"250"
+			}	
+			"speed"							"800 800 800 800"
+			"damage"						"120 180 240 300 360 420 480"
+			"slow_duration"					"4.0"
+			"movement_speed_pct"			"40"
+			"shot_vision"					"300"
+			"vision_duration"				"3.34"
+			"scepter_radius"				
+			{	
+				"value"						"700"	
+				"RequiresScepter"			"1"
+			}	
+			"creep_damage_pct"				"250"
+			"damage_pct"					"100"
+		}	
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"skywrath_mage_ancient_seal"
 	{
@@ -188,25 +189,26 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"300.0 550.0 800.0 1050.0 1300.0 1550.0 1800.0"
+		"AbilityManaCost"				"150 200 250 300 350 400 450"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"			"170"
-			"duration"				"2.0"
+			"radius"			"225"
+			"duration"				"2.0 2.1 2.2 2.3 2.4 2.5 2.6"
 			"damage"				
 			{
 				"value"			"800 1200 1600 2000 2400 2800 3200"
 				"LinkedSpecialBonus"	"special_bonus_unique_skywrath_5"
 			}
-			"damage_interval"		"0.1"
+			"damage_interval"		"0.05"
 			"scepter_radius"		
 			{
 				"value"		"700"
 				"RequiresScepter"	"1"
 			}
+			"damage_pct"		"4.2 5.0 5.8 7.6 8.4 9.2 10"
 		}
 	}
 	"skywrath_mage_shield_of_the_scion"
@@ -223,9 +225,9 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"stack_duration"			"60"
-			"bonus_intelligence"		"2"
-			"bonus_armor"				"0.6"
+			"stack_duration"			"120"
+			"bonus_intelligence"		"4"
+			"bonus_armor"				"0.25"
 		}
 	}
 }

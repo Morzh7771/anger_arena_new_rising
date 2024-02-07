@@ -128,7 +128,9 @@ function PercentDamage:_init()
 		"disruptor_static_storm",
 		"ancient_apparition_chilling_touch",
 		"ancient_apparition_ice_vortex",
-		"ancient_apparition_cold_feet"
+		"ancient_apparition_cold_feet",
+		"skywrath_mage_concussive_shot",
+		"skywrath_mage_mystic_flare"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
