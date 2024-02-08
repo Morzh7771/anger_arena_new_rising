@@ -4117,7 +4117,6 @@
 	"item_octarine_core"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown"				"6.0"
 		"ItemBaseLevel"					"1"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4158,7 +4157,6 @@
 	"item_octarine_core_2"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown"				"6.0"
 		"ItemBaseLevel"					"2"	
 		"BaseClass"						"item_octarine_core"
 		"AbilityTextureName"			"octarine2"
@@ -4179,53 +4177,52 @@
 			"bonus_cooldown"		"25 30 35"
 			"bonus_health"			"600 1200 2000"
 			"bonus_mana"			"600 1200 2000"
-			"bonus_health_regen"	"0 0 0"
 			"bonus_mana_regen"		"5 10 20"
 		}
 	}
 
-	"item_recipe_octarine_core_3"
-	{
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_octarine_core_3"
-		"ItemRequirements"
-		{
-			"01"						"item_octarine_core_2;item_octarine_core_2;item_boss_soul"
-		}
-	}
-	"item_octarine_core_3"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown"				"6.0"
-		"ItemBaseLevel"					"3"	
-		"BaseClass"						"item_octarine_core"
-		"AbilityTextureName"			"octarine3"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4600"
-		"ItemShopTags"					"move_speed;boost_mana;mana_pool"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"mana;mb;octarine core"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ShouldBeSuggested"				"1"
-		"ItemStackable"					"0"
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"bonus_cooldown"		"25 30 35"
-			"bonus_health"			"600 1200 2000"
-			"bonus_mana"			"600 1200 2000"
-			"bonus_health_regen"	"0 0 0"
-			"bonus_mana_regen"		"5 10 20"
-		}
-	}
+	//"item_recipe_octarine_core_3"
+	//{
+	//	"ItemCost"						"0"	
+	//	"ItemShopTags"					""
+	//	"BaseClass"						"item_recipe_arcane_boots"
+	//	// Recipe
+	//	//-------------------------------------------------------------------------------------------------------------
+	//	"ItemRecipe"					"1"
+	//	"ItemResult"					"item_octarine_core_3"
+	//	"ItemRequirements"
+	//	{
+	//		"01"						"item_octarine_core_2;item_octarine_core_2;item_boss_soul"
+	//	}
+	//}
+	//"item_octarine_core_3"
+	//{
+	//	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	//	"AbilityCooldown"				"6.0"
+	//	"ItemBaseLevel"					"3"	
+	//	"BaseClass"						"item_octarine_core"
+	//	"AbilityTextureName"			"octarine3"
+	//	// Item Info
+	//	//-------------------------------------------------------------------------------------------------------------
+	//	"ItemCost"						"4600"
+	//	"ItemShopTags"					"move_speed;boost_mana;mana_pool"
+	//	"ItemQuality"					"rare"
+	//	"ItemAliases"					"mana;mb;octarine core"
+	//	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	//	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	//	"ShouldBeSuggested"				"1"
+	//	"ItemStackable"					"0"
+	//	// Special	
+	//	//-------------------------------------------------------------------------------------------------------------
+	//	"AbilityValues"
+	//	{
+	//		"bonus_cooldown"		"25 30 35"
+	//		"bonus_health"			"600 1200 2000"
+	//		"bonus_mana"			"600 1200 2000"
+	//		"bonus_health_regen"	"0 0 0"
+	//		"bonus_mana_regen"		"5 10 20"
+	//	}
+	//}
 
 	"item_recipe_sheepstick"
 	{
