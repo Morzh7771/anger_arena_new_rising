@@ -1,0 +1,23 @@
+"DOTAAbilities"
+{	
+    "special_bonus_all_stats_420"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_all_stats"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"420"
+			}
+		}
+	}
+}
