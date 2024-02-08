@@ -86,7 +86,7 @@ local is_game_end = false
 local game_start_for_courier = false
 local BearRespawnTime = 1.3
 KILL_LIMIT_CONST = 120
-GOLD_PER_TICK = 2
+GOLD_PER_TICK = 0
 
 KILL_LIMIT = 80
 
@@ -476,14 +476,14 @@ function AngelArena:SaveGoldForPlayerId(playerid)
 		tPlayers[playerid] = tPlayers[playerid] or {} -- nil error exception
 		tPlayers[playerid].gold = tPlayers[playerid].gold or 0 -- nil error exception
 
-		if player_gold > 80000 then
-			local gold_to_save = player_gold - 80000
+		if player_gold > 50000 then
+			local gold_to_save = player_gold - 50000
 			tPlayers[playerid].gold = tPlayers[playerid].gold + gold_to_save
 			PlayerResource:SpendGold(playerid, gold_to_save, 0)
 		end
 
-		if player_gold < 80000 then
-			local free_gold = 80000 - player_gold
+		if player_gold < 50000 then
+			local free_gold = 50000 - player_gold
 			local total_saved_gold = tPlayers[playerid].gold
 			if total_saved_gold > free_gold then
 				tPlayers[playerid].gold = tPlayers[playerid].gold - free_gold
