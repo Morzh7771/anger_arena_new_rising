@@ -1000,21 +1000,6 @@
 		"DOTA_Tooltip_modifier_item_assault_2_negative_buildings_aura"			"Assault Cuirass 2"
 		"DOTA_Tooltip_modifier_item_assault_2_negative_buildings_aura_Description""Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
-        "DOTA_Tooltip_ability_item_assault_3"                                   "Assault Cuirass 3"
-        "DOTA_Tooltip_ability_item_assault_3_Description"						"<h1>Пассивное: Assault Aura</h1> Увеличивает броню союзных построек и существ на %aura_positive_armor%, а их скорость атаки — на %aura_attack_speed%. Снижает броню врагов на %aura_negative_armor%.<br><br>Радиус: %aura_radius%"
-		"DOTA_Tooltip_ability_item_assault_3_Lore"								"Этот жуткий доспех, выкованный в кузнях нижних пределов, способен укрепить и ускорить целую армию."
-		"DOTA_Tooltip_ability_item_assault_3_bonus_attack_speed"				"+$attack"
-		"DOTA_Tooltip_ability_item_assault_3_bonus_armor"						"+$armor"
-		
-		"DOTA_Tooltip_modifier_item_assault_3_negative_armor"					"Assault Cuirass 3"
-		"DOTA_Tooltip_modifier_item_assault_3_negative_armor_Description"	"Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
-		"DOTA_Tooltip_modifier_item_assault_3_positive"				"Assault Cuirass 3"
-		"DOTA_Tooltip_modifier_item_assault_3_positive_Description"	        "Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.\nСкорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
-		"DOTA_Tooltip_modifier_item_assault_3_positive_buildings"		"Assault Cuirass 3"
-		"DOTA_Tooltip_modifier_item_assault_3_positive_buildings_Description"   "Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
-		"DOTA_Tooltip_modifier_item_assault_3_negative_buildings_aura"		"Assault Cuirass 3"
-		"DOTA_Tooltip_modifier_item_assault_3_negative_buildings_aura_Description""Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
-
         "DOTA_Tooltip_ability_item_heart_2"                                     "Heart of Tarrasque 2"
         "DOTA_Tooltip_ability_item_heart_2_Lore"				"Сохранившееся сердце вымершего монстра, которое укрепляет стойкость владельца."
 		"DOTA_Tooltip_ability_item_heart_2_bonus_strength"			"+$str"
@@ -1694,24 +1679,24 @@
 		"DOTA_Tooltip_modifier_bloodthorn_3_debuff"                       "Bloodthorn"
 		"DOTA_Tooltip_modifier_bloodthorn_3_debuff_Description"           "Это существо не может применять способности, а в конце действия ему нанесётся магический урон в размере 60%% от полученного урона.\nВсе атаки по этому существу наносят дополнительный урон и не промахиваются."
 
-        "DOTA_Tooltip_ability_item_disperser_2"                         "DISPERSER 2"
-        "DOTA_Tooltip_ability_item_disperser_2_Description"		"<h1>Активное: Suppress</h1> Действует на всех существ в радиусе %radius% вокруг цели. Замедляет передвижение врагов на %enemy_effect_duration% сек. <br><br>Ускоряет передвижение союзников, накладывает на них развеивание, и запрещает замедлять их на %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны.<br><br>Иллюзии героев ближнего боя сжигают по %feedback_mana_burn_illusion_melee% маны за атаку, а дальнего боя — %feedback_mana_burn_illusion_ranged%."
-		"DOTA_Tooltip_ability_item_disperser_2_bonus_agility"		"+$agi"
-		"DOTA_Tooltip_ability_item_disperser_2_bonus_intellect"		"+$int"
-		"DOTA_Tooltip_ability_item_disperser_2_bonus_damage"		"+$damage"
+		"DOTA_Tooltip_ability_item_disperser_aa_1"                      "DISPERSER"
+        "DOTA_Tooltip_ability_item_disperser_aa_1_Description"			"<h1>Активное: Suppress</h1> Действует на всех существ в радиусе %radius% вокруг цели. Замедляет передвижение врагов на %enemy_effect_duration% сек. <br><br>Ускоряет передвижение союзников, накладывает на них развеивание, и запрещает замедлять их на %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %mana_burn% маны врага + %mana_burn_pct%%%  от максимальной маны и наносит ему %damage_per_burn% магического урона за единицу сожжённой маны.<br><br>Иллюзии героев сжигают по %ilusion_mana_burn% маны за атаку."
+		"DOTA_Tooltip_ability_item_disperser_aa_1_bonus_agility"		"+$agi"
+		"DOTA_Tooltip_ability_item_disperser_aa_1_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_ability_item_disperser_aa_1_bonus_damage"			"+$damage"
 
-		"DOTA_Tooltip_modifier_disperser_2_movespeed_buff"		"Disperser 2"
-		"DOTA_Tooltip_modifier_disperser_2_movespeed_buff_Description"	"Существо нельзя замедлить, его скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
-		
-        "DOTA_Tooltip_ability_item_disperser_3"                         "DISPERSER 3"
-        "DOTA_Tooltip_ability_item_disperser_3_Description"		"<h1>Активное: Suppress</h1> Действует на всех существ в радиусе %radius% вокруг цели. Замедляет передвижение врагов на %enemy_effect_duration% сек. <br><br>Ускоряет передвижение союзников, накладывает на них развеивание, и запрещает замедлять их на %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn% физического урона за единицу сожжённой маны.<br><br>Иллюзии героев ближнего боя сжигают по %feedback_mana_burn_illusion_melee% маны за атаку, а дальнего боя — %feedback_mana_burn_illusion_ranged%."
-		"DOTA_Tooltip_ability_item_disperser_3_bonus_agility"		"+$agi"
-		"DOTA_Tooltip_ability_item_disperser_3_bonus_intellect"		"+$int"
-		"DOTA_Tooltip_ability_item_disperser_3_bonus_damage"		"+$damage"
+        "DOTA_Tooltip_ability_item_disperser_aa_2"                      "DISPERSER 2"
+        "DOTA_Tooltip_ability_item_disperser_aa_2_Description"			"<h1>Активное: Suppress</h1> Действует на всех существ в радиусе %radius% вокруг цели. Замедляет передвижение врагов на %enemy_effect_duration% сек. <br><br>Ускоряет передвижение союзников, накладывает на них развеивание, и запрещает замедлять их на %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %mana_burn% маны врага + %mana_burn_pct%%%  от максимальной маны и наносит ему %damage_per_burn% магического урона за единицу сожжённой маны.<br><br>Иллюзии героев сжигают по %ilusion_mana_burn% маны за атаку."
+		"DOTA_Tooltip_ability_item_disperser_aa_2_bonus_agility"		"+$agi"
+		"DOTA_Tooltip_ability_item_disperser_aa_2_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_ability_item_disperser_aa_2_bonus_damage"			"+$damage"
 
-		"DOTA_Tooltip_modifier_disperser_3_movespeed_buff"		"Disperser 3"
-		"DOTA_Tooltip_modifier_disperser_3_movespeed_buff_Description"	"Существо нельзя замедлить, его скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
-        
+        "DOTA_Tooltip_ability_item_disperser_aa_3"                      "DISPERSER 3"
+        "DOTA_Tooltip_ability_item_disperser_aa_3_Description"			"<h1>Активное: Suppress</h1> Действует на всех существ в радиусе %radius% вокруг цели. Замедляет передвижение врагов на %enemy_effect_duration% сек. <br><br>Ускоряет передвижение союзников, накладывает на них развеивание, и запрещает замедлять их на %ally_effect_duration% сек.<br><br>И замедление, и ускорение равно %phase_movement_speed%%% в момент применения и постепенно снижается до нуля.<br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>\n\n<h1>Пассивное: Manabreak</h1> Каждая атака сжигает %mana_burn% маны врага + %mana_burn_pct%%%  от максимальной маны и наносит ему %damage_per_burn% магического урона за единицу сожжённой маны.<br><br>Иллюзии героев сжигают по %ilusion_mana_burn% маны за атаку."
+		"DOTA_Tooltip_ability_item_disperser_aa_3_bonus_agility"		"+$agi"
+		"DOTA_Tooltip_ability_item_disperser_aa_3_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_ability_item_disperser_aa_3_bonus_damage"			"+$damage"
+
         "DOTA_Tooltip_ability_item_nullifier_2"                         "NULLIFIER 2"
         "DOTA_Tooltip_ability_item_nullifier_2_Description"             "<h1>Активное: Nullify</h1> Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"		
 		"DOTA_Tooltip_ability_item_nullifier_2_lore"                    "Опасное оружие, выкраденное из обратного измерения."		
@@ -1868,7 +1853,7 @@
 
 		"DOTA_Tooltip_Ability_item_trisula"                      "Trisula Shakti"
 		"DOTA_Tooltip_Ability_item_trisula_Note0"				"Trisula Shakti можно собрать иcпользуя War Fury или Holy Book 2"
-        "DOTA_Tooltip_Ability_item_trisula_Description"	        "<h1>Активное: Chop Forest</h1>Срубает деревья в радиусе %chop_tree_radius%.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Cleave</h1>Атаки героя наносят урон всем врагам в радиусе %cleave_range% вокруг основной цели. Наносит иллюзям %cleave_illusion_pure%%% чистого урона.<br><br>• Урон героям: %cleave_damage_hero%%%<br>• Урон крипам: %cleave_damage_creep%%%<br>• Урон иллюзиям: %cleave_damage_illusion%%%"
+        "DOTA_Tooltip_Ability_item_trisula_Description"	        "<h1>Активное: Chop Forest</h1>Срубает деревья в радиусе %chop_tree_radius%.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Cleave</h1>Атаки героя наносят урон всем врагам в радиусе %cleave_range% вокруг основной цели.<br><br>• Урон героям: %cleave_damage_hero%%%<br>• Урон крипам: %cleave_damage_creep%%%<br>• Урон иллюзиям: %cleave_damage_illusion%%%"
         "DOTA_Tooltip_Ability_item_trisula_Lore"	        "Магическое оружие великого бога Шивы. Каждая из частей его содержит полную силу бога создания и разрушения."
         "DOTA_Tooltip_Ability_item_trisula_bonus_damage"		"+$damage"
         "DOTA_Tooltip_ability_item_trisula_bonus_range"			"+ к дальности атаки (дальний бой)"
@@ -2615,6 +2600,19 @@
         "DOTA_Tooltip_modifier_item_rattlecage_slow"                                "Rattlecage"
         "DOTA_Tooltip_modifier_item_rattlecage_slow_Description"                    "Существо замедлено"
 		
+		"DOTA_Tooltip_ability_item_assault_3"							"Assault Cuirass 3"
+		"DOTA_Tooltip_ability_item_assault_3_Description"				"<h1>Пассивное: Assault Aura</h1> Увеличивает броню союзных существ на %aura_positive_armor%,скорость атаки на %aura_attack_speed% вампиризм союзников на %lifesteal_aura%%%, их урон на %damage_aura%%%,и восстановление маны на %mana_regen_aura%. Снижает броню врагов на %aura_negative_armor%.<br><br>Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_assault_3_Lore"						"Этот жуткий доспех, выкованный в кузнях нижних пределов, способен укрепить и ускорить целую армию."
+		"DOTA_Tooltip_ability_item_assault_3_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_assault_3_bonus_armor"				"+$armor"
 
+		"DOTA_Tooltip_modifier_assault_aa_aura_friend"				"Assault Cuirass"
+		"DOTA_Tooltip_modifier_assault_aa_aura_friend_Description"	"Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%<br>Урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%<br>Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%<br>Восстановление маны увеличено на %dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%<br>Вампиризм увеличен на %dMODIFIER_PROPERTY_TOOLTIP%%%"
+		"DOTA_Tooltip_modifier_assault_aa_aura_enemy"				"Assault Cuirass"
+		"DOTA_Tooltip_modifier_assault_aa_aura_enemy_Description"	"Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
+
+		"DOTA_Tooltip_ability_item_vladmir_2"							"Vladmir's Offering 2"
+		"DOTA_Tooltip_ability_item_vladmir_2_Description"							"<h1>Пассивное: Vladmir's Aura</h1>Увеличивает вампиризм союзников на %lifesteal_aura%%%, их урон на %damage_aura%%%, броню на %armor_aura% и восстановление маны на %mana_regen_aura%. Вампиризм от крипов слабее на %creep_lifesteal_reduction_pct%%%.<br><br>Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_vladmir_2_Lore"								"Жуткая маска, проклятая злобой павшего вампира."
 	}  
 }

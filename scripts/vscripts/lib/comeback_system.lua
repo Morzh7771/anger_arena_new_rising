@@ -11,7 +11,7 @@ local KILLS_TO_GOLD_COMEBACK = 10
 local GOLD_TO_TEAMMATES = 40
 local TEAM_MATE_AOE = 1200
 
--- [ (level, goldDiff ), ...]
+-- [ (Time, goldDiff ), ...]
 local GoldDifferenceTable = {
 	{ 0, 250 },
 	{ 5, 750 },

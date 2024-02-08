@@ -1265,7 +1265,7 @@
                 "bonus_spell_lifesteal_amp_pct"     "60"
                 "bonus_heal_amp_pct"                "60"
                 "cleave_range"                      "300"
-                "cleave_damage_hero"                "30"
+                "cleave_damage_hero"                "20"
                 "cleave_damage_creep"               "50"
                 "cleave_damage_illusion"            "50"
                 "cleave_illusion_pure"              "20"
@@ -5067,4 +5067,287 @@
             "bonus_damage_per_base_damage"  "20"
         }
     }
+    "item_recipe_assault_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_assault_3"
+		"ItemRequirements"
+		{
+			"01"						"item_assault_2;item_vladmir_2;item_boss_soul"
+		}
+	}
+    "item_assault_3"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_assault_aa"
+        "ItemBaseLevel"					"3"
+        "AbilityTextureName"            "assault_3"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5125"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag;damage;regen_mana"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;assault cuirass;vladmir's offering;vlads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_attack_speed"	"30 60 120"
+			"bonus_armor"			"10 20 40"
+			"aura_radius"			"1200 1200 1200"
+			"aura_attack_speed"		"30 60 120"
+			"aura_positive_armor"	"5 10 30"
+			"aura_negative_armor"	"-5 -10 -25"
+
+			"mana_regen_aura"		"2 4 12"
+			"lifesteal_aura"		"18 20 22"
+			"damage_aura"			"18 20 22"
+		}
+	}
+    "item_recipe_disperser_aa_1"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"400"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_disperser_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_diffusal_blade;item_eagle"
+		}
+	}
+	"item_disperser_aa_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySharedCooldown"			"disperser"
+		"ItemBaseLevel"					"1"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_disperser_aa"
+        "AbilityTextureName"			"item_disperser"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"75"
+		"AbilitySharedCooldown"			"diffusal"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5700"
+		"ItemShopTags"					"agi;int;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"diffusal blade 1"
+		"ItemPermanent"					"1"
+
+
+		"UpgradesItems"					"item_diffusal_blade"
+		"UpgradeRecipe"					"item_recipe_diffusal_blade"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_agility"							"20 40 100"
+			"bonus_intellect"						"10 20 50"
+            "bonus_damage"							"50 100 200"
+
+            "radius"								"450 500 550"
+            "purge_rate"							"5 5 5"
+			"purge_root_duration"					"3.0 3.5 4.0"
+			"enemy_effect_duration"					"4.0 4.5 5.0"
+			"ally_effect_duration"					"4.0 4.5 5.0"
+
+            "damage_per_burn"						"1.0 1.5 2"
+            "mana_burn_pct"						    "1.0 1.5 2"
+            "mana_burn"						        "40 80 120"
+			"ilusion_mana_burn"					    "40 60 100"
+		
+			"phase_movement_speed"					"100 150 200"
+			"movement_speed_buff_rate"				"5 6 7"
+		}
+	}
+
+	"item_recipe_disperser_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_disperser_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_disperser_aa_1;item_disperser_aa_1"
+		}
+	}
+	"item_disperser_aa_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySharedCooldown"			"disperser"
+		"ItemBaseLevel"					"2"
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_disperser_aa"
+		"AbilityTextureName"			"disperser2"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"75"
+		"AbilitySharedCooldown"			"diffusal"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5700"
+		"ItemShopTags"					"agi;int;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"diffusal blade 1"
+		"ItemPermanent"					"1"
+
+
+		"UpgradesItems"					"item_diffusal_blade"
+		"UpgradeRecipe"					"item_recipe_diffusal_blade"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_agility"							"20 40 100"
+			"bonus_intellect"						"10 20 50"
+            "bonus_damage"							"50 100 200"
+
+            "radius"								"450 500 550"
+            "purge_rate"							"5 5 5"
+			"purge_root_duration"					"3.0 3.5 4.0"
+			"enemy_effect_duration"					"4.0 4.5 5.0"
+			"ally_effect_duration"					"4.0 4.5 5.0"
+
+            "damage_per_burn"						"1.0 1.5 2"
+            "mana_burn_pct"						    "1.0 1.5 2"
+            "mana_burn"						        "40 80 120"
+			"ilusion_mana_burn"					    "40 60 100"
+		
+			"phase_movement_speed"					"100 150 200"
+			"movement_speed_buff_rate"				"5 6 7"
+		}
+	}
+
+	"item_recipe_disperser_aa_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_disperser_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_disperser_aa_2;item_disperser_aa_2;item_boss_soul"
+		}
+	}
+	"item_disperser_aa_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySharedCooldown"			"disperser"
+		"ItemBaseLevel"					"3"
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_disperser_aa"
+		"AbilityTextureName"			"disperser3"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"75"
+		"AbilitySharedCooldown"			"diffusal"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5700"
+		"ItemShopTags"					"agi;int;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"diffusal blade 1"
+		"ItemPermanent"					"1"
+
+
+		"UpgradesItems"					"item_diffusal_blade"
+		"UpgradeRecipe"					"item_recipe_diffusal_blade"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_agility"							"20 40 100"
+			"bonus_intellect"						"10 20 50"
+            "bonus_damage"							"50 100 200"
+
+            "radius"								"450 500 550"
+            "purge_rate"							"5 5 5"
+			"purge_root_duration"					"3.0 3.5 4.0"
+			"enemy_effect_duration"					"4.0 4.5 5.0"
+			"ally_effect_duration"					"4.0 4.5 5.0"
+
+            "damage_per_burn"						"1.0 1.5 2"
+            "mana_burn_pct"						    "1.0 1.5 2"
+            "mana_burn"						        "40 80 120"
+			"ilusion_mana_burn"					    "40 60 100"
+		
+			"phase_movement_speed"					"100 150 200"
+			"movement_speed_buff_rate"				"5 6 7"
+		}
+	}
 }

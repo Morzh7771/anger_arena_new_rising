@@ -7,6 +7,7 @@
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -36,7 +37,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -66,7 +67,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityCastRange" 				"1200"
-
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 
 		// Item Info
@@ -106,7 +107,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -129,7 +130,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -154,7 +155,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -179,7 +180,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -208,7 +209,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
 		"FightRecapLevel"				"1"
-
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"750"
@@ -241,7 +242,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -267,7 +268,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -292,7 +293,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -321,7 +322,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -345,7 +346,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -370,7 +371,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -393,7 +394,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -419,7 +420,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -444,7 +445,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+			"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -472,7 +473,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -499,7 +500,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12.0"
@@ -529,7 +530,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -558,7 +559,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -582,7 +583,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -608,7 +609,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"250"
@@ -639,7 +640,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -665,7 +666,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -691,7 +692,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"1.5"
@@ -720,7 +721,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0"
@@ -751,7 +752,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0"
@@ -784,7 +785,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"10.0"
@@ -820,7 +821,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -844,7 +845,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
@@ -886,7 +887,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"250"
@@ -918,7 +919,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -941,7 +942,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -969,7 +970,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"377"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0"
@@ -996,7 +997,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1021,7 +1022,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0"
@@ -1050,7 +1051,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1070,12 +1071,12 @@
 			"status_resistance"			"25"		
 		}
 	}
-		"item_chipped_vest"
+	"item_chipped_vest"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1099,7 +1100,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1124,7 +1125,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1151,7 +1152,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1180,7 +1181,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1203,7 +1204,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1233,7 +1234,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
@@ -1267,7 +1268,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1295,7 +1296,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1328,7 +1329,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1352,38 +1353,37 @@
 		}
 	}
 	"item_ascetic_cap"
-		{
-
-			// General
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-			// Item Info
-			//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"0"
-			"ItemIsNeutralDrop"				"1"
-			"ItemPurchasable"				"0"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+				// Item Info
+				//-------------------------------------------------------------------------------------------------------------
+				"ItemCost"						"0"
+				"ItemIsNeutralDrop"				"1"
+				"ItemPurchasable"				"0"
 		"ItemSellable"				"1"
 
 
-			// Stats
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"15.0"
-			"AbilityManaCost"				"0"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
 
-			"Model"							"models/props_gameplay/neutral_box.vmdl"
-		
-			// Special	
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilityValues"
-			{
-				"status_resistance"	"65"
-				"slow_resistance"	"65"
-				"bonus_health"		"750"
-				"duration"		"5"
-				"hp_regen"		"50"
-			}
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"status_resistance"	"65"
+			"slow_resistance"	"65"
+			"bonus_health"		"750"
+			"duration"		"5"
+			"hp_regen"		"50"
 		}
+	}
 	"item_paintball"
 	{
 		// General
@@ -1393,7 +1393,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1422,7 +1422,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1454,7 +1454,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1487,7 +1487,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1518,7 +1518,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-	
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1557,7 +1557,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1582,7 +1582,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"1.5"
@@ -1613,7 +1613,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCooldown"				"4.5"
 
 
@@ -1641,7 +1641,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"
@@ -1669,7 +1669,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"100"
@@ -1695,7 +1695,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"850"
@@ -1726,8 +1726,8 @@
 		}
 	}
     "item_stygian_aa"
-
     {
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_stygian_aa"
@@ -1745,6 +1745,7 @@
     }
     "item_apex_aa"
     {
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_apex_aa"
@@ -1765,7 +1766,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -1789,7 +1790,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemIsNeutralDrop"				"1"
@@ -1815,7 +1816,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
@@ -1838,7 +1839,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"

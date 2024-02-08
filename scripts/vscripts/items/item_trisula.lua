@@ -111,16 +111,16 @@ function modifier_item_trisula:OnAttackLanded(params)
 				dmg = params.damage / 100 * self.cleave_damage_creep
 			end
 			if x:IsIllusion() then
-				dmg = params.damage / 100 * self.cleave_damage_illusion / 100 * self.cleave_illusion_pure
+				dmg = params.damage / 100 * self.cleave_damage_illusion -- / 100 * self.cleave_illusion_pure
 
 				ApplyDamage({ victim = x,
 							  attacker = caster,
 							  damage = dmg,
-							  damage_type = DAMAGE_TYPE_PURE,
+							  damage_type = DAMAGE_TYPE_PHYSICAL,
 							  damage_flags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR,
 							  ability = params.ability}) --deal damage
 
-				dmg = params.damage / 100 * self.cleave_damage_illusion / 100 * (100 - self.cleave_illusion_pure)
+				dmg = params.damage / 100 * self.cleave_damage_illusion -- / 100 * (100 - self.cleave_illusion_pure)
 			end
 			if x:IsHero() then
 				dmg = params.damage / 100 * self.cleave_damage_hero
