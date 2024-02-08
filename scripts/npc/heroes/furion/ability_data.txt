@@ -20,7 +20,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"625 675 725 775 825 875 925"
 		"AbilityCastPoint"				"0.35"
-		"AbilityCooldown"				"12 11.5 11 10.5 10 9.5 9"
+		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
 		
 		// Special
@@ -42,7 +42,7 @@ DOTAAbilities
 			"sprout_damage"					"15 30 45 60 75 90 105"
 			"sprout_damage_inteval"			"0.5"
 			"sprout_damage_radius"			"275"
-			"damage_pct"		"17"
+			"damage_pct"		"3 5 7 9 11 13 15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

@@ -57,7 +57,6 @@ local blocked_abilities = {
     ["ogre_magi_bloodlust"] = 1,
     ["rubick_telekinesis_land"] = 1,
     ["item_enchanted_mango"] = 1,
-    ["skywrath_mage_mystic_flare"] = 1,
     ["elder_titan_return_spirit"] = 1,
     ["broodmother_spin_web"] = 1,
     ["shredder_return_chakram_2"] = 1,
