@@ -20,12 +20,12 @@ item_mjolnir_modifier = class({
     {
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_EVENT_ON_ATTACK_RECORD,
     }
     end,
     GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end,
-    GetModifierBaseAttack_BonusDamage = function (self)return self:GetAbility():GetSpecialValueFor('bonus_damage') end,
+    GetModifierPreAttack_BonusDamage = function (self)return self:GetAbility():GetSpecialValueFor('bonus_damage') end,
     CheckState = function (self) if self.pierce_proc then return {[MODIFIER_STATE_CANNOT_MISS] = true,} else return {} end end,
     GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end
 })
@@ -88,7 +88,7 @@ item_mjolnir_modifier_tinkerer = class({
 })
 function item_mjolnir_modifier_tinkerer:OnCreated(keys)
 	if not IsServer() or not self:GetAbility() then return end
-    print(keys.self_casted)
+    print(self:GetParent():GetDamageMax())
     if keys.self_casted == 0 then
         self.arc_damage			= self:GetAbility():GetSpecialValueFor('arc_damage') + self:GetParent():GetDamageMax() * self:GetAbility():GetSpecialValueFor('bonus_damage_per_base_damage') / 100
         self.radius				= self:GetAbility():GetSpecialValueFor('radius')

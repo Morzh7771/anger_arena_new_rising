@@ -1,23 +1,53 @@
 "DOTAAbilities"
 {	
-    "special_bonus_all_stats_420"
+    "special_bonus_base_aa_hp_10"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_all_stats"
+		"BaseClass"					    "special_bonus_base"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"420"
-			}
+			"value"				"10"
+			"pct"				"100"
+		}
+	}
+	"special_bonus_base_aa_baseDamage_10"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"10"
+			"pct"				"10"
+		}
+	}
+	"special_bonus_base_aa_bash_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"100"
+			"pct"				"10"
+			"restore_time"		"2"
+			"bash_duration"		"2"
 		}
 	}
 }

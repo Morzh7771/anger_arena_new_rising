@@ -23,6 +23,7 @@ require('lib/spawners/bear_spawner')
 require('lib/bounty')
 require('lib/game_ender')
 require('lib/repick_menu')
+require('lib/special_bonus_base_aa/Special_bonus_base_aa')
 function CEntityInstance:SetNetworkableEntityInfo(key, value)
     local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
     t[key] = value
@@ -249,6 +250,7 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent('player_disconnect', Safe_Wrap(AngelArena, 'OnPlayerDisconnect'), self)
 	ListenToGameEvent("player_chat", Safe_Wrap(ChatListener, 'OnPlayerChat'), ChatListener)
 	ListenToGameEvent('dota_item_purchased', Safe_Wrap(AngelArena, 'OnPlayerBuyItem'), self)
+	ListenToGameEvent( "dota_player_learned_ability", Dynamic_Wrap( Special_bonus_base_aa, "OnAbilityLearned" ), self )
 
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
 	PlayerResource:ClearOnAbandonedCallbacks()
@@ -294,6 +296,7 @@ function AngelArena:InitGameMode()
 	end
 
 end
+
 function AngelArena:ModifierRuneSpawn(keys)
 	--print(EntIndexToHScript(keys.spawner_entindex_const):GetName())
 	--print(keys.rune_type)
