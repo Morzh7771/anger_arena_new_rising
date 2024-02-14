@@ -2743,7 +2743,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1150"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2752,7 +2752,7 @@
 		"ItemResult"					"item_dagon_custom"
 		"ItemRequirements"
 		{
-			"01"						"item_dagon_5;item_dagon_5;item_boss_soul"
+			"01"						"item_dagon_5;item_dagon_5;"
 		}
 	}
     "item_recipe_dagon"
@@ -2902,7 +2902,7 @@
 			"damage"				"380 460 540 620 700 1000"
 			"damage_delay"			"0"
 			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"stat_primary_damage_pct"		    "250"
+			"stat_primary_damage_pct"		    "350"
 			"aoe_radius"			"300"
             "active_heal"           "75"
 		}   
