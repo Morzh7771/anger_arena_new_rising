@@ -312,6 +312,10 @@
 
         "DOTA_Tooltip_modifier_possessed_hellshield"						"Hellshield Damage Return"
 
+        "DOTA_Tooltip_ability_disarmor_boss"                                              "Boss Disarmor"
+        "DOTA_Tooltip_ability_disarmor_boss_Description"                                  "Каждая атака снижает броню врага на %disarmor%."
+        "DOTA_Tooltip_ability_disarmor_boss_Lore"                                         "Кусается? Нет, она делает больно по-другому."
+
 		"DOTA_Tooltip_ability_fervor_aa"							"Fervor"
 		"DOTA_Tooltip_ability_fervor_aa_Description"				"С каждой атакой Troll Warlord все больше узнает о защите врага, что позволяет ему наносить каждый следующий удар быстрее и с большим уроном. \nПри атаке другой цели вся накопленая скорость атаки и урон теряются."
 		"DOTA_Tooltip_ability_fervor_aa_attack_speed"				"СКОРОСТЬ АТАКИ:"
@@ -439,6 +443,7 @@
 		"DOTA_Tooltip_Ability_razor_plasma_field_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_razor_unstable_current_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_razor_eye_of_the_storm_damage_pct"			"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+                "DOTA_Tooltip_ability_special_bonus_unique_razor_storm_surge_damage_and_slow"                   "+{s:bonus_strike_move_slow_pct}% к замедлению и урону от Storm Surge"
 		"DOTA_Tooltip_Ability_bane_enfeeble_damage_pct"						"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 
 		"DOTA_Tooltip_Ability_brewmaster_thunder_clap_damage_pct"						"%УРОН ОТ ВСЕХ АТРИБУТОВ"

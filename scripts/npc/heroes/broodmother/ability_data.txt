@@ -129,7 +129,11 @@ DOTAAbilities
 				"value"				"3 5 7 9 11 13 15"
 				"special_bonus_unique_broodmother_6" "+5"
 			}
-			"heath_regen"			"2 5 8 11 14 17 20"
+			"health_regen"			
+			{
+				"value"				"7 13 19 26 32 38 44"
+				"special_bonus_unique_broodmother_web_hpregen" "+16"
+			}
 			"bonus_movespeed"		"10 16 22 28 34 40 46"
 			"AbilityChargeRestoreTime"	
 			{
