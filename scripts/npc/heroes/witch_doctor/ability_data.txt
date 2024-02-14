@@ -144,29 +144,23 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"200"
+				"value"			"200"
 				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_6"
+				"affected_by_aoe_increase"	"1"
 			}
-			"03"
+			"bonus_damage"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"18 20 22 24 26 28 30"
+				"value"			"18 20 22 24 26 28 30"
 				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_7"
 			}
-			"04"
+			"bonus_damage_threshold"	"100"
+			"ticks"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_threshold"	"100"
-			}			
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"ticks"						"3"
+				"value"		"3"
 				"LinkedSpecialBonusField"		"value2"
 			}			
 		}
