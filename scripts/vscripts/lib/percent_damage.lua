@@ -131,7 +131,8 @@ function PercentDamage:_init()
 		"ancient_apparition_cold_feet",
 		"skywrath_mage_concussive_shot",
 		"skywrath_mage_mystic_flare",
-		"enchantress_enchant"
+		"enchantress_enchant",
+		"witch_doctor_maledict"
 	}
 	local MagicalDamageFromAll = {
 		"mirana_arrow",

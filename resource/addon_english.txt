@@ -587,6 +587,9 @@
 
         //Witch Doctor
 		"DOTA_Tooltip_Ability_witch_doctor_voodoo_restoration_damage_pct"			"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_special_bonus_unique_witch_doctor_ticks"                          "+{s:bonus_ticks} damage tick for Maledict"
+		"DOTA_Tooltip_Ability_witch_doctor_maledict_damage_pct"                                 "%INTELLIGENCE DAMAGE"
+        "DOTA_Tooltip_Ability_special_bonus_unique_witch_doctor_damage_pct"                     "+{s:bonus_damage_pct}% int damage for Maledict"
 
         //Storm Spirit
 		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"			"%INTELLIGENCE DAMAGE"
@@ -1562,7 +1565,7 @@
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Description"	"<h1>Active: Hex</h1>Transforms the target into a harmless creature for %sheep_duration% seconds. The target's passive abilities are disabled, and the target cannot attack, use abilities, or use items, and its base speed is reduced to %sheep_movement_speed%.<br>Instantly destroys illusions.<br><br>Cast Range: %abilitycastrange%"
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Note0"	"The victim has a base speed of %sheep_movement_speed%, but does not lose effects that grant maximum speed."
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Lore"	"This relic, guarded by the cult of Vais, is coveted by any mage."
-		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_strength"	"+$str"
+		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_intellect"   "+$int""
 		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_mana_regen"	"+$mana_regen"	
 		
 		"DOTA_Tooltip_modifier_sheepstick_hex"	"HEXED"

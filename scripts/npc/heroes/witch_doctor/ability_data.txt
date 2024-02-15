@@ -127,11 +127,11 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 28 26 24 22 20 18"
+		"AbilityCooldown"				"18"
 		"AbilityDuration"				"12"
 
 		// Damage.
@@ -161,8 +161,13 @@ DOTAAbilities
 			"ticks"
 			{
 				"value"		"3"
-				"LinkedSpecialBonusField"		"value2"
-			}			
+				"special_bonus_unique_witch_doctor_ticks"	"+1"
+			}
+			"damage_pct"
+			{
+				"value"		"0"
+				"special_bonus_unique_witch_doctor_damage_pct"	"+7"
+			}		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}
@@ -292,5 +297,21 @@ DOTAAbilities
 				"ad_linked_abilities"			"witch_doctor_maledict"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
+	}
+	"special_bonus_unique_witch_doctor_ticks"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_witch_doctor_damage_pct"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
 	}
 }

@@ -595,6 +595,9 @@
 
         //Witch Doctor
 		"DOTA_Tooltip_Ability_witch_doctor_voodoo_restoration_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+                "DOTA_Tooltip_Ability_special_bonus_unique_witch_doctor_ticks"                          "+{s:bonus_ticks} к срабатываниям Maledict"
+                "DOTA_Tooltip_Ability_witch_doctor_maledict_damage_pct"                                 "%УРОН ОТ ИНТЕЛЛЕКТА"
+                "DOTA_Tooltip_Ability_special_bonus_unique_witch_doctor_damage_pct"                     "+{s:bonus_damage_pct}% урона от интеллекта для Maledict"
 
         //Storm Spirit
 		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -1576,7 +1579,7 @@
         "DOTA_Tooltip_ability_item_sheepstick_aa_Description"		"<h1>Активное: Hex</h1>Превращает цель в безобидную зверушку на %sheep_duration% сек. Пассивные способности жертвы отключены жертва не может атаковать применять способности или использовать предметы, а её базовая скорость падает до %sheep_movement_speed%.<br>Мгновенно уничтожает иллюзии.<br><br>Дальность применения: %abilitycastrange%"
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Note0"			"Жертва имеет базовую скорость в %sheep_movement_speed%, но не теряет эффекты, дающие максимальную скорость."
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Lore"			"Эту реликвию, что находится под стражей культа Вайз, жаждет заполучить любой маг."
-		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_strength"	"+$str"
+		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_intellect"       "+$int"
 		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_mana_regen"	"+$mana_regen"	      
 			
 		"DOTA_Tooltip_modifier_sheepstick_hex"		                "Освинован"
