@@ -122,7 +122,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"					"6"
-			"bonus_attack_speed"		"150"
+			"bonus_attack_speed"		"350"
 			"bonus_move_speed"			"100"
 			"radius"					"1200"
 		}
@@ -150,7 +150,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 27 24 21 18 15 12"
+		"AbilityCooldown"				"12"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -160,32 +160,32 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"slow_movement_speed"		"-30 -35 -40 -45 -50 -55 -60"
-			"slow_duration"				"5"
-			"damage"					"20 30 40 50"
-			
-			"dominate_duration"			"30 45 60 75 90 105 120"
+			"slow_movement_speed"		"-15 -17 -19 -21 -23 -25 -27"
+			"slow_duration"				"4"
+			"damage"					"30 50 70 90 110 130 150"
+			"damage_pct"				"25"
+			"dominate_duration"			"180"
 			"enchant_health"			
 			{
 				"value" 				"200 300 500 800 1200 1700 2300"
-				"special_bonus_unique_enchantress_enchant_health_damage"		"+30%"
+				"special_bonus_unique_enchantress_enchant_health_damage"		"+45%"
 			}
 			
 			"enchant_armor"			
 			{
-				"value" 				"2 4 6 8 10 12 14"
-				"special_bonus_unique_enchantress_enchant_armor"		"+10"
+				"value" 				"4 8 12 16 20 24 28"
+				"special_bonus_unique_enchantress_enchant_armor"		"+12"
 			}
 			"enchant_damage"			
 			{
-				"value" 				"0 25 50 75"
-				"special_bonus_unique_enchantress_enchant_health_damage"		"+30%"
+				"value" 				"25 65 105 145 185 225 265"
+				"special_bonus_unique_enchantress_enchant_health_damage"		"+45%"
 			}
-			"level_req"					"4 5 6 7 8 9 10"
+			"level_req"					"10"
 			"max_creeps"
 			{
-				"value"					"1"
-				"special_bonus_scepter"	"+1"
+				"value"					"2"
+				"special_bonus_scepter"	"+2"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -267,7 +267,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"25 45 65 85 105 125 145"
+		"AbilityManaCost"				"15 20 25 30 35 40 45"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -275,7 +275,7 @@ DOTAAbilities
 		{
 			"distance_damage_pct"	
 			{
-				"value"			"6 9 12 15 18 21 24"
+				"value"			"9 14 19 24 29 34 39"
 				"special_bonus_unique_enchantress_4"	"+6"	
 			}
 			"distance_cap"			"99999"
