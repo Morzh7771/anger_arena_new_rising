@@ -20,7 +20,7 @@ DOTAAbilities
 		"AbilityCastAnimation"			"ACT_DOTA_COLD_FEET"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"700 750 800 850 900 950 1000"
-		"AbilityCastPoint"				"0.01 0.01 0.01 0.01 0.01 0.01 0.01"
+		"AbilityCastPoint"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ DOTAAbilities
 		"AbilityCastAnimation"			"ACT_DOTA_ICE_VORTEX"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"1500 1500 1500 1500"
-		"AbilityCastPoint"				"0.01 0.01 0.01 0.01 0.01 0.01 0.01"
+		"AbilityCastPoint"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -207,7 +207,7 @@ DOTAAbilities
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"250 325 400 475 550 625"
+		"AbilityDamage"					"250 325 400 475 550 625 700"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -261,7 +261,6 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"ancient_apparition_ice_blast_release"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"1"
