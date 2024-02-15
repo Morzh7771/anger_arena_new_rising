@@ -97,7 +97,6 @@ local blocked_abilities = {
     ["invoker_exort"] = 1,
     ["invoker_invoke"] = 1,
     ["death_prophet_spirit_siphon"] = 1,
-    ["pugna_life_drain"] = 1,
     ["item_tango"] = 1,
     ["item_diffusal_blade"] = 1,
     ["item_diffusal_blade_2"] = 1,
