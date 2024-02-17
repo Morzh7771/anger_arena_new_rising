@@ -7215,6 +7215,57 @@
 				"aura_radius"	"1200"
 		}
 	}
+  "item_recipe_rapier"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "6275" 
+    "ItemShopTags"          ""
+    
+    // Recipe
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemRecipe"          "1"
+    "ItemResult"          "item_rapier"
+    "ItemRequirements"
+    {
+      "01"            "item_relic;item_demon_edge;item_boss_soul"
+    }
+  }
+  "item_rapier"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "Model"             "models/props_gameplay/divine_rapier.vmdl"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "5600"
+    "ItemShopTags"          "damage"
+    "ItemQuality"         "epic"
+    "ItemAliases"         "divine rapier"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemSellable"          "0"
+    "ItemKillable"          "0"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+    "ItemContributesToNetWorthWhenDropped"  "0"
+    "AllowedInBackpack"       "0"
+    "IsTempestDoubleClonable"   "0"
+    "ItemDisassembleRule"       "DOTA_ITEM_DISASSEMBLE_NEVER"
+    "ShouldBeSuggested"       "1"
+    
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityValues"
+    {
+        "bonus_spell_amp"   "75"
+        "bonus_damage"      "1675"
+    }
+  }
 }
 	
 
