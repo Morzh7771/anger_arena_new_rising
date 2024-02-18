@@ -46,9 +46,9 @@ DOTAAbilities
 				"bonus_movement_speed"
 				{
 					"value"			"0"
-					"special_bonus_unique_gyrocopter_4"	"+30"
+					"special_bonus_unique_gyrocopter_4"	"+20"
 				}
-				"slow_resistance"	"20 25 30 35 40 45 50"
+				"slow_resistance"	"20 22.5 25 27.5 30 32.5 35"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -160,8 +160,8 @@ DOTAAbilities
 			}
 			"max_attacks"
 			{
-				"value"					"4 5 6 7 8 9 10"
-				"special_bonus_unique_gyrocopter_2"			"+5"
+				"value"					"4 4 5 5 6 6 6"
+				"special_bonus_unique_gyrocopter_2"			"+4"
 			}
 			"projectile_speed"				"1000"
 			"bonus_damage"
@@ -171,12 +171,12 @@ DOTAAbilities
 			}
 			"fire_rate"  
 			{
-				"value"								"0.4"
+				"value"								"0.6"
 				"RequiresScepter"					"1"
 			}
 			"scepter_radius"
 			{
-				"value"								"700"
+				"value"								"650"
 				"RequiresScepter"					"1"
 			}
 		}
