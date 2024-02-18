@@ -137,7 +137,11 @@ DOTAAbilities
 			"quill_stack_duration"	"15.0"
 			"max_damage"			"2500.0"
 			"projectile_speed"		"2400"
-			"damage_pct"			"5 10 15 20 25 30 40"
+			"damage_pct"			
+			{
+				"value"	"5 10 15 20 25 30 40"
+				"special_bonus_unique_bristleback_quill_spray_str_dmg_pct" "+60"
+			}
 		}
 	}
 	"bristleback_bristleback"
@@ -226,5 +230,11 @@ DOTAAbilities
 				"max_stacks"					"8 9 10 11 12 13 14"
 			}
 		}
+	}
+	"special_bonus_unique_bristleback_quill_spray_str_dmg_pct"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
 	}
 }
