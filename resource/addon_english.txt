@@ -385,6 +385,12 @@
 		//Luna
 		"DOTA_Tooltip_Ability_luna_lucent_beam_damage_pct"					"%AGILITY DAMAGE"
 		"DOTA_Tooltip_Ability_slark_dark_pact_damage_pct"					"%AGILITY DAMAGE"
+		//Faceless Void
+		"DOTA_Tooltip_Ability_special_bonus_unique_faceless_void_time_lock_agi_dmg_pct" 			"+{s:bonus_damage_pct}% to Agility damage for Time Lock"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agi_faceless_void1"								"+{s:pct}% to agility"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agi_faceless_void2"								"+{s:value} to agility"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agiLevel_faceless_void3"						"+{s:value} agility per level"
+
 		"DOTA_Tooltip_Ability_faceless_void_time_lock_damage_pct"			"%AGILITY DAMAGE"
 
 		//Mirana
