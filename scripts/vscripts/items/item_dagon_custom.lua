@@ -14,31 +14,40 @@ function item_dagon_custom:OnSpellStart()
 
     if self:GetCursorTarget():TriggerSpellAbsorb(self) then return end
 
-    print(self:GetCaster():GetPrimaryStatValue())
+    print(self:GetCaster():GetStrength())
     local radius = self:GetSpecialValueFor("aoe_radius")
     local damage_kv = self:GetSpecialValueFor("damage")
-    local damage = damage_kv + (self:GetCaster():GetPrimaryStatValue()/3 * int)
+    local damage = 0
+    
+
+    if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
+        damage = damage_kv + ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect())/3 * int)
+    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
+        damage = damage_kv + (self:GetCaster():GetStrength() * int)
+    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
+        damage = damage_kv + (self:GetCaster():GetAgility() * int)
+    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
+        damage = damage_kv + (self:GetCaster():GetIntellect() * int)
+    end
     self:GetCaster():EmitSound("DOTA_Item.Dagon.Activate")
     local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), point, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false )
     for _, enemy in pairs(enemies) do
+        local dagon_pfx = ParticleManager:CreateParticle("particles/items_fx/dagon.vpcf", PATTACH_RENDERORIGIN_FOLLOW, self:GetCaster())
+        ParticleManager:SetParticleControlEnt(dagon_pfx, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), false)
+        ParticleManager:SetParticleControlEnt(dagon_pfx, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), false)
+        ParticleManager:SetParticleControl(dagon_pfx, 2, Vector(damage, 0, 0))
+        ParticleManager:SetParticleControl(dagon_pfx, 3, Vector(0.3, 0, 0))
+        ParticleManager:ReleaseParticleIndex(dagon_pfx)
 
-            local dagon_pfx = ParticleManager:CreateParticle("particles/items_fx/dagon.vpcf", PATTACH_RENDERORIGIN_FOLLOW, self:GetCaster())
-            ParticleManager:SetParticleControlEnt(dagon_pfx, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), false)
-            ParticleManager:SetParticleControlEnt(dagon_pfx, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), false)
-            ParticleManager:SetParticleControl(dagon_pfx, 2, Vector(damage, 0, 0))
-            ParticleManager:SetParticleControl(dagon_pfx, 3, Vector(0.3, 0, 0))
-            ParticleManager:ReleaseParticleIndex(dagon_pfx)
+        local damage = ApplyDamage({ attacker = self:GetCaster(), victim = enemy, ability = self, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+        
+        if enemy == self:GetCursorTarget() then 
+            self:GetCaster():Heal(damage*self:GetSpecialValueFor("active_heal")/100, self)
+        end
 
-            local damage = ApplyDamage({ attacker = self:GetCaster(), victim = enemy, ability = self, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
-            
-            if enemy == self:GetCursorTarget() then 
-                self:GetCaster():Heal(damage*self:GetSpecialValueFor("active_heal")/100, self)
-            end
-
-            if enemy:IsIllusion() and not enemy:HasModifier("modifier_chaos_knight_phantasm_illusion") then
-                enemy:Kill(self, self:GetCaster())
-            end
-
+        if enemy:IsIllusion() and not enemy:HasModifier("modifier_chaos_knight_phantasm_illusion") then
+            enemy:Kill(self, self:GetCaster())
+        end
     end
 end
 
