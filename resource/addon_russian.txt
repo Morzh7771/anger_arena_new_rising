@@ -455,6 +455,16 @@
 		"DOTA_Tooltip_Ability_sandking_epicenter_damage_pct"				"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_sandking_sand_storm_damage_pct"				"%УРОН ОТ СИЛЫ"
 
+                "DOTA_Tooltip_ability_sandking_sand_storm"                                                                              "Sand Storm"
+                "DOTA_Tooltip_ability_sandking_sand_storm_Description"                                                  "Герой вызывает ужасающую песчаную бурю, которая делает его невидимым и наносит урон врагам. Буря следует за владельцем со скоростью в %sand_storm_move_speed%. Эффект заканчивается, когда владелец способности выйдет из области действия."
+                "DOTA_Tooltip_ability_sandking_sand_storm_scepter_description"                                  "Каждые %damage_tick_rate% сек. в %scepter_explosions_per_pulse% случайных точках появляются шипы от способности Burrowstrike радиусом %scepter_explosion_radius_pct%%% от текущего радиуса Sand Storm. Шипы оглушают врагов и наносят им урон."
+                "DOTA_Tooltip_ability_sandking_sand_storm_Lore"                                                                 "Ходит слух, что Криксалис — это всего лишь мираж; его панцирь то появляется, то исчезает среди песчаных бурь Искрящейся пустыни."
+                "DOTA_Tooltip_ability_sandking_sand_storm_Note0"                                                                "Позволяет сбить с цели многие направленные в героя снаряды."
+                "DOTA_Tooltip_ability_sandking_sand_storm_Note1"                                                                "Совершив атаку или применив способность, герой ненадолго станет видимым, но вновь станет невидимым через %fade_delay% сек."
+                "DOTA_Tooltip_ability_sandking_sand_storm_AbilityDuration"                                              "ДЛИТЕЛЬНОСТЬ:"
+                "DOTA_Tooltip_ability_sandking_sand_storm_sand_storm_radius"                                    "РАДИУС:"
+                "DOTA_Tooltip_ability_sandking_sand_storm_sand_storm_damage"                                    "ПЕРИОДИЧЕСКИЙ УРОН:"
+
 		//Clockwerk
 		"DOTA_Tooltip_Ability_rattletrap_battery_assault_damage_pct"		"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_rattletrap_rocket_flare_damage_pct"			"%УРОН ОТ СИЛЫ"
