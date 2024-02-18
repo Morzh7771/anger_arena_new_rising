@@ -2695,11 +2695,11 @@
 		"AbilityValues"
 		{
 			"bonus_health"              "200 500 750"
-            "bonus_mana"                "200 500 750"           
-            "bonus_all_stats"           "7 15 25" 
-			"slow"						"50 50 50"
-			"bonus_spell_damage"		"150 250 350"
-			"slow_duration"				"1.5 2 2.5"
+      "bonus_mana"                "200 500 750"           
+      "bonus_all_stats"           "7 15 25" 
+			"slow"						          "50 50 50"
+			"bonus_spell_damage"		    "250 350 450"
+			"slow_duration"				      "1.5 2 2.5"
 		}
 	}
 
@@ -2745,11 +2745,11 @@
 		"AbilityValues"
 		{
 			"bonus_health"              "200 500 750"
-            "bonus_mana"                "200 500 750"           
-            "bonus_all_stats"           "7 15 25" 
-			"slow"						"50 50 50"
-			"bonus_spell_damage"		"150 250 350"
-			"slow_duration"				"1.5 2 2.5"
+      "bonus_mana"                "200 500 750"           
+      "bonus_all_stats"           "7 15 25" 
+			"slow"						          "50 50 50"
+			"bonus_spell_damage"       "250 350 450"
+			"slow_duration"			       	"1.5 2 2.5"
 		}
 	}
 
@@ -3916,7 +3916,7 @@
 		"ItemResult"					"item_gungir"
 		"ItemRequirements"
 		{
-			"01"						"item_maelstrom;item_rod_of_atos*"
+			"01"						"item_maelstorm_aa*;item_rod_of_atos*"
 		}
 	}
 	"item_gungir"
@@ -6999,13 +6999,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{				
-				"bonus_intellect"		"45 100 200"				
+				"bonus_intellect"		"45 90 180"				
 				"bonus_attack_speed"	"40 80 160"	
-				"bonus_armor"			"8 20 50"
-				"bonus_mana_regen"		"1.5 5 30"
+				"bonus_armor"     "6 12 30"
+				"bonus_mana_regen"		"2 6 18"
 				"projectile_speed"		"300 350 400"
-				"int_damage_multiplier"	"1 1.5 2"
-				"slow"					"25 35 45"
+				"int_damage_multiplier" "1 1.25 1.5"
+				"slow"					"25 30 35"
 				"slow_duration"			"3 4 5"
 				"active_mres_reduction"	"10 15 20"
 				"passive_cooldown"		"4"
@@ -7065,13 +7065,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"		"45 100 200"				
+				"bonus_intellect"   "45 90 180"				
 				"bonus_attack_speed"	"40 80 160"	
-				"bonus_armor"			"8 20 50"
-				"bonus_mana_regen"		"1.5 5 30"
+				"bonus_armor"     "6 12 30"
+				"bonus_mana_regen"    "2 6 18"
 				"projectile_speed"		"300 350 400"
-				"int_damage_multiplier"	"1 1.5 2"
-				"slow"					"25 35 45"
+				"int_damage_multiplier" "1 1.25 1.5"
+				"slow"          "25 30 35"
 				"slow_duration"			"3 4 5"
 				"active_mres_reduction"		"10 15 20"
 				"passive_cooldown"		"4"
@@ -7131,13 +7131,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"		"45 100 200"				
+				"bonus_intellect"   "45 90 180"				
 				"bonus_attack_speed"	"40 80 160"	
-				"bonus_armor"			"8 20 50"
-				"bonus_mana_regen"		"1.5 5 30"
+				"bonus_armor"			"6 12 30"
+			  "bonus_mana_regen"   "2 6 18"
 				"projectile_speed"		"300 350 400"
-				"int_damage_multiplier"	"1 1.5 2"
-				"slow"					"25 35 45"
+				"int_damage_multiplier"	"1 1.25 1.5"
+				"slow"          "25 30 35"
 				"slow_duration"			"3 4 5"
 				"active_mres_reduction"		"10 15 20"
 				"passive_cooldown"		"4"
@@ -7215,6 +7215,119 @@
 				"aura_radius"	"1200"
 		}
 	}
+  "item_recipe_rapier"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "6275" 
+    "ItemShopTags"          ""
+    
+    // Recipe
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemRecipe"          "1"
+    "ItemResult"          "item_rapier"
+    "ItemRequirements"
+    {
+      "01"            "item_relic;item_demon_edge;item_boss_soul"
+    }
+  }
+  "item_rapier"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "Model"             "models/props_gameplay/divine_rapier.vmdl"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "5600"
+    "ItemShopTags"          "damage"
+    "ItemQuality"         "epic"
+    "ItemAliases"         "divine rapier"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemSellable"          "0"
+    "ItemKillable"          "0"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+    "ItemContributesToNetWorthWhenDropped"  "0"
+    "AllowedInBackpack"       "0"
+    "IsTempestDoubleClonable"   "0"
+    "ItemDisassembleRule"       "DOTA_ITEM_DISASSEMBLE_NEVER"
+    "ShouldBeSuggested"       "1"
+    
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityValues"
+    {
+        "bonus_spell_amp"   "75"
+        "bonus_damage"      "1675"
+    }
+  }
+  "item_recipe_wind_waker"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "Model"             "models/props_gameplay/recipe.vmdl"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "350"  
+    "ItemShopTags"          ""
+    
+    // Recipe
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemRecipe"          "1"
+    "ItemResult"          "item_wind_waker"
+    "ItemRequirements"
+    {
+      "01"            "item_cyclone*;item_mystic_staff"
+    }
+  }
+  "item_wind_waker"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_CUSTOM"
+    "FightRecapLevel"       "1"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"        "750"
+    "AbilityCastPoint"        "0.0"
+
+    // Stats    
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"       "13.0"
+    "AbilitySharedCooldown"     "cyclone"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"       "175"
+    "ItemCost"            "6825"
+    "ItemShopTags"          "int;regen_mana;move_speed;hard_to_tag"
+    "ItemQuality"         "rare"
+    "ItemAliases"         "cyclone;wind waker;ww"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ShouldBeSuggested"       "1"
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityValues"
+    {
+        "bonus_movement_speed"  "30"
+        "bonus_mana_regen"    "3.0"
+        "bonus_intellect"   "35"
+        "cyclone_duration"    "3"
+        "tooltip_drop_damage" "50"
+        "tornado_speed" "700"
+    }
+  }
 }
 	
 

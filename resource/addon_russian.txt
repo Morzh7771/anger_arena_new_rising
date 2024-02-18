@@ -355,6 +355,7 @@
 
 		//Bristleback
 		"DOTA_Tooltip_Ability_bristleback_quill_spray_damage_pct"			"%УРОН ОТ СИЛЫ"
+		"DOTA_Tooltip_Ability_special_bonus_unique_bristleback_quill_spray_str_dmg_pct"  "+{s:bonus_damage_pct}% к урону от Силы для QuillSpray"
 
 		//Cristal Maiden
 		"DOTA_Tooltip_Ability_crystal_maiden_crystal_nova_damage_pct"		"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -370,6 +371,7 @@
 
 		//Lich
 		"DOTA_Tooltip_Ability_lich_chain_frost_damage_pct"          		"%УРОН ОТ ИНТЕЛЛЕКТА"
+                "DOTA_Tooltip_Ability_lich_frost_nova_damage_pct"                       "%УРОН ОТ ИНТЕЛЛЕКТА"
 
 		//Lina
 		"DOTA_Tooltip_Ability_lina_dragon_slave_damage_pct"					"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -384,6 +386,12 @@
 		"DOTA_Tooltip_Ability_luna_lucent_beam_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
 		"DOTA_Tooltip_Ability_slark_dark_pact_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
 		"DOTA_Tooltip_Ability_faceless_void_time_lock_damage_pct"			"%УРОН ОТ ЛОВКОСТИ"
+
+		//Faceless Void
+		"DOTA_Tooltip_Ability_special_bonus_unique_faceless_void_time_lock_agi_dmg_pct" 			"+{s:bonus_damage_pct}% к урону от Ловкости для Time Lock"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agi_faceless_void1"								"+{s:pct}% к ловкости"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agi_faceless_void2"								"+{s:value} к ловкости"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agiLevel_faceless_void3"						"+{s:value} к ловкости за уровень"
 
 		//Mirana
 		"DOTA_Tooltip_Ability_mirana_arrow_damage_pct"						"%УРОН ОТ ВСЕХ АТРИБУТОВ"
@@ -452,6 +460,16 @@
 		//Sand King
 		"DOTA_Tooltip_Ability_sandking_epicenter_damage_pct"				"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_sandking_sand_storm_damage_pct"				"%УРОН ОТ СИЛЫ"
+
+                "DOTA_Tooltip_ability_sandking_sand_storm"                                                                              "Sand Storm"
+                "DOTA_Tooltip_ability_sandking_sand_storm_Description"                                                  "Герой вызывает ужасающую песчаную бурю, которая делает его невидимым и наносит урон врагам. Буря следует за владельцем со скоростью в %sand_storm_move_speed%. Эффект заканчивается, когда владелец способности выйдет из области действия."
+                "DOTA_Tooltip_ability_sandking_sand_storm_scepter_description"                                  "Каждые %damage_tick_rate% сек. в %scepter_explosions_per_pulse% случайных точках появляются шипы от способности Burrowstrike радиусом %scepter_explosion_radius_pct%%% от текущего радиуса Sand Storm. Шипы оглушают врагов и наносят им урон."
+                "DOTA_Tooltip_ability_sandking_sand_storm_Lore"                                                                 "Ходит слух, что Криксалис — это всего лишь мираж; его панцирь то появляется, то исчезает среди песчаных бурь Искрящейся пустыни."
+                "DOTA_Tooltip_ability_sandking_sand_storm_Note0"                                                                "Позволяет сбить с цели многие направленные в героя снаряды."
+                "DOTA_Tooltip_ability_sandking_sand_storm_Note1"                                                                "Совершив атаку или применив способность, герой ненадолго станет видимым, но вновь станет невидимым через %fade_delay% сек."
+                "DOTA_Tooltip_ability_sandking_sand_storm_AbilityDuration"                                              "ДЛИТЕЛЬНОСТЬ:"
+                "DOTA_Tooltip_ability_sandking_sand_storm_sand_storm_radius"                                    "РАДИУС:"
+                "DOTA_Tooltip_ability_sandking_sand_storm_sand_storm_damage"                                    "ПЕРИОДИЧЕСКИЙ УРОН:"
 
 		//Clockwerk
 		"DOTA_Tooltip_Ability_rattletrap_battery_assault_damage_pct"		"%УРОН ОТ СИЛЫ"
@@ -595,6 +613,9 @@
 
         //Witch Doctor
 		"DOTA_Tooltip_Ability_witch_doctor_voodoo_restoration_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
+                "DOTA_Tooltip_Ability_special_bonus_unique_witch_doctor_ticks"                          "+{s:bonus_ticks} к срабатываниям Maledict"
+                "DOTA_Tooltip_Ability_witch_doctor_maledict_damage_pct"                                 "%УРОН ОТ ИНТЕЛЛЕКТА"
+                "DOTA_Tooltip_Ability_special_bonus_unique_witch_doctor_damage_pct"                     "+{s:bonus_damage_pct}% урона от интеллекта для Maledict"
 
         //Storm Spirit
 		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -675,6 +696,9 @@
         "DOTA_Tooltip_Ability_skywrath_mage_concussive_shot_damage_pct"        "%УРОН ОТ ИНТЕЛЛЕКТА"
         "DOTA_Tooltip_Ability_skywrath_mage_mystic_flare_damage_pct"        "%УРОН ОТ ИНТЕЛЛЕКТА"
 
+        //Enchantress
+        "DOTA_Tooltip_Ability_enchantress_enchant_damage_pct"                   "%УРОН ОТ ИНТЕЛЛЕКТА"
+
 
 		"DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_fevor_attack_speed"			"+{s:bonus_attack_speed} к скорости атаки за эффект от Fervor"
         "DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_berserkers_rage_bat"           "Уменьшение задержки перед атакой от Berserkers Rage на {s:bonus_base_attack_time}"
@@ -745,7 +769,7 @@
 		//"npc_dota_hero_elder_titan_npedesc1"											"Имеет альтернативную версию. Что-бы её активировать, нужно использовать предмет 'Switch Hero' в начале игры."
 
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua"						"Acorn Shot"
-		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Description"			"Герой совершает атаку увеличенной дальности, зарядив особый жёлудь, который отскакивает во врагов неподалёку. Если врагов нет, то отскочит в ближайшее дерево, а также замедляет всех жертв и наносит им базовый урон, к которому прибавляется атака героя .\nМожно применить на точку, чтобы создать дерево, после чего жёлудь отскочит в ближайших врагов. Если включить автоматическое применение, способность всегда будет применяться на точку."
+		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Description"			"Герой совершает атаку увеличенной дальности, зарядив особый жёлудь, который отскакивает во врагов неподалёку. Если врагов нет, то отскочит в ближайшее дерево, а также замедляет всех жертв и наносит им базовый урон, к которому прибавляется атака героя.\nМожно применить на точку, чтобы создать дерево, после чего жёлудь отскочит в ближайших врагов. Если включить автоматическое применение, способность всегда будет применяться на точку."
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_Lore"					"Прохвостка совсем не привередливая, но из желудей дубового и железного дерева получаются самые эффективные снаряды — их она и припасла больше всего."
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_bonus_range"			"ДОП. ДАЛЬНОСТЬ АТАКИ:"
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua_bounce_count"			"ОТСКОКОВ:"
@@ -1573,7 +1597,7 @@
         "DOTA_Tooltip_ability_item_sheepstick_aa_Description"		"<h1>Активное: Hex</h1>Превращает цель в безобидную зверушку на %sheep_duration% сек. Пассивные способности жертвы отключены жертва не может атаковать применять способности или использовать предметы, а её базовая скорость падает до %sheep_movement_speed%.<br>Мгновенно уничтожает иллюзии.<br><br>Дальность применения: %abilitycastrange%"
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Note0"			"Жертва имеет базовую скорость в %sheep_movement_speed%, но не теряет эффекты, дающие максимальную скорость."
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Lore"			"Эту реликвию, что находится под стражей культа Вайз, жаждет заполучить любой маг."
-		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_strength"	"+$str"
+		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_intellect"       "+$int"
 		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_mana_regen"	"+$mana_regen"	      
 			
 		"DOTA_Tooltip_modifier_sheepstick_hex"		                "Освинован"
@@ -1985,7 +2009,7 @@
 		"DOTA_Tooltip_modifier_item_piercing_blade_debuf_Description"			"Каждый стак увеличивает чистый урон входящий по вам"
 
 		"DOTA_Tooltip_ability_item_chest_of_midas"								"Chest Of Midas"
-		"DOTA_Tooltip_ability_item_chest_of_midas_Description"					"<h1>Пассивная: Chest Of Midas</h1>Владелец получает %xp% опыта и %gold% золота за каждый удар вражеских героев по себе."
+		"DOTA_Tooltip_ability_item_chest_of_midas_Description"					"<h1>Пассивная: Chest Of Midas</h1>Владелец получает %gold% золота за каждый удар вражеских героев по себе."
 		"DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor"					"+$armor"
 		
 		"DOTA_Tooltip_ability_item_dagon_custom"									"Dagon"

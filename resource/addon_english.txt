@@ -350,6 +350,7 @@
 
 		//Bristleback
 		"DOTA_Tooltip_Ability_bristleback_quill_spray_damage_pct"			"%STRENGTH DAMAGE"
+		"DOTA_Tooltip_Ability_special_bonus_unique_bristleback_quill_spray_str_dmg_pct"  "+{s:bonus_damage_pct}%to Strength damage for QuillSpray"
 
 		//Cristal Maiden
 		"DOTA_Tooltip_Ability_crystal_maiden_crystal_nova_damage_pct"		"%INTELLIGENCE DAMAGE"
@@ -365,6 +366,7 @@
 
 		//Lich
 		"DOTA_Tooltip_Ability_lich_chain_frost_damage_pct"          		"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_lich_frost_nova_damage_pct"                   "%INTELLIGENCE DAMAGE"
 
 		//Lina
 		"DOTA_Tooltip_Ability_lina_dragon_slave_damage_pct"					"%INTELLIGENCE DAMAGE"
@@ -383,6 +385,12 @@
 		//Luna
 		"DOTA_Tooltip_Ability_luna_lucent_beam_damage_pct"					"%AGILITY DAMAGE"
 		"DOTA_Tooltip_Ability_slark_dark_pact_damage_pct"					"%AGILITY DAMAGE"
+		//Faceless Void
+		"DOTA_Tooltip_Ability_special_bonus_unique_faceless_void_time_lock_agi_dmg_pct" 			"+{s:bonus_damage_pct}% to Agility damage for Time Lock"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agi_faceless_void1"								"+{s:pct}% to agility"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agi_faceless_void2"								"+{s:value} to agility"
+		"DOTA_Tooltip_Ability_special_bonus_base_aa_agiLevel_faceless_void3"						"+{s:value} agility per level"
+
 		"DOTA_Tooltip_Ability_faceless_void_time_lock_damage_pct"			"%AGILITY DAMAGE"
 
 		//Mirana
@@ -587,6 +595,9 @@
 
         //Witch Doctor
 		"DOTA_Tooltip_Ability_witch_doctor_voodoo_restoration_damage_pct"			"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_special_bonus_unique_witch_doctor_ticks"                          "+{s:bonus_ticks} damage tick for Maledict"
+		"DOTA_Tooltip_Ability_witch_doctor_maledict_damage_pct"                                 "%INTELLIGENCE DAMAGE"
+        "DOTA_Tooltip_Ability_special_bonus_unique_witch_doctor_damage_pct"                     "+{s:bonus_damage_pct}% int damage for Maledict"
 
         //Storm Spirit
 		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"			"%INTELLIGENCE DAMAGE"
@@ -665,6 +676,9 @@
 
 		//Beastmaster
         "DOTA_Tooltip_Ability_beastmaster_primal_roar_damage_pct"           "%ALL ATTRIBUTES DAMAGE"
+
+        //Enchantress
+        "DOTA_Tooltip_Ability_enchantress_enchant_damage_pct"                   "%INTELLIGENCE DAMAGE"
 
 
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 to Acorn Shot bounces"
@@ -1559,7 +1573,7 @@
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Description"	"<h1>Active: Hex</h1>Transforms the target into a harmless creature for %sheep_duration% seconds. The target's passive abilities are disabled, and the target cannot attack, use abilities, or use items, and its base speed is reduced to %sheep_movement_speed%.<br>Instantly destroys illusions.<br><br>Cast Range: %abilitycastrange%"
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Note0"	"The victim has a base speed of %sheep_movement_speed%, but does not lose effects that grant maximum speed."
 		"DOTA_Tooltip_ability_item_sheepstick_aa_Lore"	"This relic, guarded by the cult of Vais, is coveted by any mage."
-		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_strength"	"+$str"
+		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_intellect"   "+$int""
 		"DOTA_Tooltip_ability_item_sheepstick_aa_bonus_mana_regen"	"+$mana_regen"	
 		
 		"DOTA_Tooltip_modifier_sheepstick_hex"	"HEXED"
@@ -1975,7 +1989,7 @@
 		"DOTA_Tooltip_modifier_item_piercing_blade_debuf_Description"	"Each stack increases the net damage taken by you."
 		
 		"DOTA_Tooltip_ability_item_chest_of_midas"	"Chest Of Midas"
-		"DOTA_Tooltip_ability_item_chest_of_midas_Description"	"<h1>Passive: Chest Of Midas</h1>The owner receives %xp% experience and %gold% gold for each attack by enemy heroes on themselves."
+		"DOTA_Tooltip_ability_item_chest_of_midas_Description"	"<h1>Passive: Chest Of Midas</h1>The owner receives %gold% gold for each attack by enemy heroes on themselves."
 		"DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor"	"+$armor"
 
 		"DOTA_Tooltip_Ability_item_dagon_custom"									"Dagon 6"

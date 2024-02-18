@@ -1035,7 +1035,7 @@
         "ScriptFile"                    "items/item_manaflare_lens_custom"
         "AbilityTextureName"            "manaflare"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCooldown"               "5.0"
+        "AbilityCooldown"               "4.0"
         "AbilityManaCost"				"10"
         "ItemCost"                      "2400"
         "ItemShopTags"                  "hard_to_tag"
@@ -1046,14 +1046,12 @@
 		"AbilitySharedCooldown"			"phylactery"
         "AbilityValues"
         {
-
-
             "bonus_health"              "200 500 750"
             "bonus_mana"                "200 500 750"           
             "bonus_all_stats"           "7 15 25"         
             "slow"                      "-50 -50 -50"
-            "bonus_spell_damage"        "150 250 350"
-            "bonus_spell_damage_mana"   "7 7 7 "
+            "bonus_spell_damage"        "250 350 450"
+            "bonus_spell_damage_mana"   "14 14 14"
             "slow_duration"             "1.5 2 2.5"
             "min_damage_to_activate"    "0 0 0"
             "cast_range_bonus"          "250 250 250"
@@ -1282,7 +1280,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"100"	
+		"ItemCost"						"210"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1311,43 +1309,15 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal"					"180"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str"					"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int"					"2"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"agi"					"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"3"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"regen"					"0.75"
-			}
+			"heal"					"180"
+			"duration"				"5"
+			"str"					"5"
+			"int"					"2"
+			"agi"					"2"
+			"damage"				"3"
+			"regen"					"0.75"
 		}
 	}
 
@@ -1359,7 +1329,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"100"	
+		"ItemCost"						"210"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1388,43 +1358,15 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed_buf"					"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"agi"					"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str"					"2"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int"					"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"5"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"2"
-			}
+			"speed_buf"				"30"
+			"duration"				"8"
+			"agi"					"5"
+			"str"					"2"
+			"int"					"2"
+			"speed"					"5"
+			"armor"					"2"
 		}
 	}
 
@@ -1436,7 +1378,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"100"	
+		"ItemCost"						"210"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1465,43 +1407,15 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana"					"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
+				"mana"					"80"
 				"duration"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"int"					"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"str"					"2"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"agi"					"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell"					"3"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"0.75"
-			}
+				"spell"					"4"
+				"regen"					"1"
 		}
 	}
 
@@ -2716,23 +2630,11 @@
 		"ItemAliases"					"chest of midas"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"xp"					"27"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gold"					"23"
-			}
+			"bonus_armor"			"6"
+			"xp"					"0"
+			"gold"					"30"
 		}
     }
     "item_recipe_dagon_custom"
@@ -4089,7 +3991,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"600"	
+        "ItemCost"						"200"	
         "ItemShopTags"					""
         
         // Recipe
@@ -4142,7 +4044,7 @@
 
             "duration"				    "3 3"
             "evasion"				    "30 50"
-            "attack_speed_active"		"20 100"
+            "attack_speed_active"		"30 100"
         }
     }
     "item_recipe_talisman_of_ambition_2"
@@ -4151,7 +4053,7 @@
         "Model"							"models/props_gameplay/recipe.vmdl"
         "BaseClass"                     "item_recipe_arcane_boots"
         
-        "ItemCost"						"500"	
+        "ItemCost"						"0"	
         "ItemShopTags"					""
         
         // Recipe
@@ -4209,7 +4111,7 @@
 
             "duration"				    "3 3"
             "evasion"				    "30 50"
-            "attack_speed_active"		"20 100"
+            "attack_speed_active"		"30 100"
             "block_damage"              "60"
         }
     }

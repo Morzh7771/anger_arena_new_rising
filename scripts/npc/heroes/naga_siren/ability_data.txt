@@ -23,46 +23,27 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"illusion_duration"			"26"
+			"outgoing_damage"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"illusion_duration"			"26"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage"			"-77 -75 -73 -71 -69 -67 -65"
+				"value"			"-78 -75 -72 -69 -66 -63 -60"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_4"
 			}
-			"03"
+			"outgoing_damage_tooltip"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage_tooltip"	"23 25 27 29 31 33 35"
+				"value"			"22 25 28 31 34 37 40"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_4"
 			}
-			"04"
+			"incoming_damage"			"200"
+			"tooltip_incoming_damage_total_pct"			"300"
+			"images_count"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"200"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_incoming_damage_total_pct"			"300"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"images_count"				"2 2 3 3 4 4 4"
+				"value"				"2 3 3 4 4 4 4"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren"
 			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"invuln_duration"			"0.5"
-			}			
+			"invuln_duration"			"0.5"		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -148,19 +129,19 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_pct"						"20"
+			"damage_pct"						"25"
 			"hits"						
 			{
-				"value"											"6 6 6 6 5 5 5"
+				"value"											"6 6 6 5 5 5 5"
 				"special_bonus_unique_naga_siren_3"				"-1"
 			}
 			"armor_reduction"			
 			{	
-				"value"						"-2 -4 -6 -8 -10 -12 -14"
+				"value"						"-2 -4 -6 -9 -12 -15 -18"
 			}
 			"damage"	
 			{
-				"value"			"50 65 80 95 110 125 140"
+				"value"			"80 100 120 140 160 180 200"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_2"
 			}
 			"radius"					"300"
