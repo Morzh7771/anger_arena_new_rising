@@ -1035,7 +1035,7 @@
         "ScriptFile"                    "items/item_manaflare_lens_custom"
         "AbilityTextureName"            "manaflare"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCooldown"               "5.0"
+        "AbilityCooldown"               "4.0"
         "AbilityManaCost"				"10"
         "ItemCost"                      "2400"
         "ItemShopTags"                  "hard_to_tag"
@@ -1046,14 +1046,12 @@
 		"AbilitySharedCooldown"			"phylactery"
         "AbilityValues"
         {
-
-
             "bonus_health"              "200 500 750"
             "bonus_mana"                "200 500 750"           
             "bonus_all_stats"           "7 15 25"         
             "slow"                      "-50 -50 -50"
-            "bonus_spell_damage"        "150 250 350"
-            "bonus_spell_damage_mana"   "7 7 7 "
+            "bonus_spell_damage"        "250 350 450"
+            "bonus_spell_damage_mana"   "14 14 14"
             "slow_duration"             "1.5 2 2.5"
             "min_damage_to_activate"    "0 0 0"
             "cast_range_bonus"          "250 250 250"
@@ -1393,7 +1391,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed_buf"					"20"
+				"speed_buf"					"30"
 			}
 			"02"
 			{
