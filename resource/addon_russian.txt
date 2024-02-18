@@ -693,8 +693,19 @@
         "DOTA_Tooltip_Ability_satan_breath_damage_pct"                      "%УРОН ОТ СИЛЫ"
 
         //Skywrath mage
-        "DOTA_Tooltip_Ability_skywrath_mage_concussive_shot_damage_pct"        "%УРОН ОТ ИНТЕЛЛЕКТА"
         "DOTA_Tooltip_Ability_skywrath_mage_mystic_flare_damage_pct"        "%УРОН ОТ ИНТЕЛЛЕКТА"
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot"                            "Concussive Shot"
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_Description"        "Делает выстрел по ближайшему вражескому герою в большой области. При попадании наносит урон врагам в области действия и замедляет их."
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_Lore"                       "My Cum to Ur FACE!!!"
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_Note0"                      "Когда в радиусе применения нет вражеских героев или их не видно, применяется на ближайшего вражеского крипа."
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_Note1"                      "Наносит %creep_damage_pct%%% урона крипам в области действия."
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_Note2"                      "Снаряд даёт обзор в 400 единиц и показывает область вокруг цели в течение 3,34 секунды после попадания."
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_launch_radius"      "ДАЛЬНОСТЬ ВЫСТРЕЛА:"
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_slow_radius"        "РАДИУС УРОНА:"
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_damage"                     "УРОН:"
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_slow_duration"      "ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+        "DOTA_Tooltip_ability_skywrath_mage_concussive_shot_movement_speed_pct" "%ЗАМЕДЛЕНИЕ:"
+        "DOTA_Tooltip_Ability_skywrath_mage_concussive_shot_damage_pct"        "%УРОН ОТ ИНТЕЛЛЕКТА"
 
         //Enchantress
         "DOTA_Tooltip_Ability_enchantress_enchant_damage_pct"                   "%УРОН ОТ ИНТЕЛЛЕКТА"
