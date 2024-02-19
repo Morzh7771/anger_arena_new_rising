@@ -711,18 +711,27 @@
         "DOTA_Tooltip_Ability_enchantress_enchant_damage_pct"                   "%УРОН ОТ ИНТЕЛЛЕКТА"
 
         //Lycan
-        "DOTA_Tooltip_ability_summons_attack_magical"                                                   "Summon Power"
+        "DOTA_Tooltip_ability_summons_attack_magical"                                           "Summon Power"
         "DOTA_Tooltip_ability_summons_attack_magical_Description"                               "Призванное существо наносит часть своего урона в виде магического."
-        "DOTA_Tooltip_ability_summons_attack_magical_dmg_to_magical"                    "%УРОН В МАГИЧЕСКИЙ:"
+        "DOTA_Tooltip_ability_summons_attack_magical_dmg_to_magical"                            "%УРОН В МАГИЧЕСКИЙ:"
 
-        "DOTA_Tooltip_ability_summons_attack_lycan_wolfs"                                                       "Summon Power"
-        "DOTA_Tooltip_ability_summons_attack_lycan_wolfs_Description"                           "Призванное существо наносит часть своего урона в виде магического."
+        "DOTA_Tooltip_ability_summons_attack_lycan_wolfs"                                       "Magic bite"
+        "DOTA_Tooltip_ability_summons_attack_lycan_wolfs_Description"                           "Волк наносит часть своего урона в виде магического."
         "DOTA_Tooltip_ability_summons_attack_lycan_wolfs_dmg_to_magical"                        "%УРОН В МАГИЧЕСКИЙ:"
         "DOTA_Tooltip_ability_lycan_summon_wolves_shard_description"                            "Перезарядка Summon Wolfes становится %AbilityCooldown% сек."
+        "DOTA_Tooltip_ability_summons_attack_lycan_wolfs_Lore"                                  "Она точно не кусается?"
+        "DOTA_Tooltip_ability_lycan_feral_impulse"                                              "Feral Impulse"
+        "DOTA_Tooltip_ability_lycan_feral_impulse_Lore"                                         "Люсенька, 7к Силы"
+        "DOTA_Tooltip_ability_lycan_feral_impulse_Description"                                  "Увеличивает урон и восстановление здоровья у героя и всех подконтрольных ему существ."
+        "DOTA_Tooltip_ability_lycan_feral_impulse_radius"                                       "РАДИУС:"
+        "DOTA_Tooltip_ability_lycan_feral_impulse_bonus_damage"                                 "%ДОПОЛНИТЕЛЬНЫЙ УРОН:"
+        "DOTA_Tooltip_ability_lycan_feral_impulse_bonus_hp_regen"                               "ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_modifier_lycan_feral_impulse"                                             "Feral Impulse"
+        "DOTA_Tooltip_modifier_lycan_feral_impulse_Description"                                 "Восстановление здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%."
 
 
 		"DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_fevor_attack_speed"			"+{s:bonus_attack_speed} к скорости атаки за эффект от Fervor"
-        "DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_berserkers_rage_bat"           "Уменьшение задержки перед атакой от Berserkers Rage на {s:bonus_base_attack_time}"
+                "DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_berserkers_rage_bat"           "Уменьшение задержки перед атакой от Berserkers Rage на {s:bonus_base_attack_time}"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"					"2 заряда Acorn Shot"
