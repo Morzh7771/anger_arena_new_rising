@@ -47,6 +47,7 @@ function modifier_item_manaflare_lens_custom:OnSpellTargetReady(params)
 	if params.unit ~= self:GetParent() then return end
 	if params.unit:GetTeamNumber() == params.target:GetTeamNumber() then return end
 	if not self:GetParent():IsRealHero() then return end
+	if self:GetAbility():IsCooldownReady() == false then return end
 	if self:GetParent():HasModifier("modifier_item_phylactery_lens_custom") then return end
 
 	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana")/100
@@ -80,6 +81,7 @@ function modifier_item_manaflare_lens_custom:OnTakeDamage(params)
 	if params.inflictor == nil then return end
 	if params.inflictor == self:GetAbility() then return end
 	if params.inflictor:IsItem() then return end
+	if self:GetAbility():IsCooldownReady() == false then return end
 	if not self:GetAbility():IsFullyCastable() then return end
 	if self:GetParent():HasModifier("modifier_item_phylactery_lens_custom") then return end
 	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana")/100

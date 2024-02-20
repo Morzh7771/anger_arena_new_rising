@@ -12,6 +12,8 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("snapfire_scatterblast",						snapfire_scatterblast )
 	PercentDamage:ListenAbilityCallback("axe_culling_blade",						axe_culling_blade )
 	PercentDamage:ListenAbilityCallback("lion_mana_drain",						lion_mana_drain )
+	PercentDamage:ListenAbilityCallback("beastmaster_drums_of_slom",						beastmaster_drums_of_slom )
+
 	local MagicalDamageFromStr = {
 		"ogre_magi_fireblast",
 		"ogre_magi_unrefined_fireblast",
@@ -212,6 +214,23 @@ function LifeDrain( keys )
 	
 	caster:Heal(heal, caster) 
 end
+function beastmaster_drums_of_slom( keys )
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+	
+	local percent_damage = ability:GetSpecialValueFor("damage_pct") / 100
+	
+	if target:IsMagicImmune() then return end 
+
+	Util:DealPercentDamage(target, caster, DAMAGE_TYPE_MAGICAL,(caster:GetStrength()+caster:GetAgility()+caster:GetIntellect()) * percent_damage, 0)
+
+	local heal = (caster:GetStrength()+caster:GetAgility()+caster:GetIntellect()) * percent_damage * (ability:GetSpecialValueFor("heal_pct")/100)
+
+	SendOverheadEventMessage(caster, OVERHEAD_ALERT_HEAL , caster, heal,nil)
+	caster:Heal(heal, caster) 
+end
 function lion_mana_drain( keys )
 	local ability 			= keys.ability
 	local caster 			= keys.caster
@@ -221,7 +240,7 @@ function lion_mana_drain( keys )
 	if target:IsMagicImmune() then return end 
 	
 	local percent_damage = ability:GetSpecialValueFor("mana_damage_pct")/100
-	return (percent_damage * caster:GetMana())
+	return (percent_damage * caster:GetMana()/7.5)
 end
 function axe_counter_helix(keys)
 	local ability 			= keys.ability
@@ -359,7 +378,6 @@ function PudgeRot(keys)
 	
 	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
 
-	print(caster:GetPrimaryStatValue())
 	
 	local damage = percent_damage * caster:GetPrimaryStatValue() 
 

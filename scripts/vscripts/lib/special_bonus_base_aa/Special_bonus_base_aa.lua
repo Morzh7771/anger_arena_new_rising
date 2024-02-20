@@ -31,7 +31,7 @@ function Special_bonus_base_aa:OnAbilityLearned(event)
         local hero = PlayerResource:GetSelectedHeroEntity( event.PlayerID )
         local modifierName = "modifier_"..string.match(event.abilityname, "^special_bonus_base_aa_(.-)_")
         local abilityName = hero:FindAbilityByName(event.abilityname)
-        hero:AddNewModifier(abilityName,hero,modifierName,{
+        hero:AddNewModifier(hero,abilityName,modifierName,{
 			duration = -1,
 			value = abilityName:GetSpecialValueFor('value'),
 			pct = abilityName:GetSpecialValueFor('pct'),

@@ -96,12 +96,12 @@ function DuelController:_StartDuel()
 	local direHeroes 	= TeamHelper:GetHeroes(DOTA_TEAM_BADGUYS)
 
 	local no_refresh_skill = {
-		["faceless_void_chronosphere"] = true,
+		["faceless_void_chronosphere"] = 15,
 	}
 	local refresher_shared = {
-		["item_refresher"] = true, 
-		["item_vision"] = true,
-		["item_aeon_disk"] = true,
+		["item_refresher"] = 20, 
+		["item_vision"] = 10,
+		["item_aeon_disk"] = 10,
 	}
 		function RespawnHeroes(tbl)
 			for _, hero in pairs(tbl) do
@@ -110,14 +110,29 @@ function DuelController:_StartDuel()
 				end
 				for i = 0, hero:GetAbilityCount() - 1 do
 					local ability = hero:GetAbilityByIndex( i )
-					if ability and not no_refresh_skill[ ability:GetAbilityName() ] then
-						ability:EndCooldown()
+					if ability then
+						if no_refresh_skill[ ability:GetAbilityName() ] then
+							if not ability:IsCooldownReady() then  
+								ability:EndCooldown()
+								ability:StartCooldown(no_refresh_skill[ ability:GetAbilityName()])
+							end
+						else
+							ability:EndCooldown()
+							ability:RefreshCharges()
+						end
 					end
 				end
 				for i = 0, 5 do
 					local item = hero:GetItemInSlot( i )
-					if item and not refresher_shared[item:GetName()] then
-						item:EndCooldown()
+					if item then
+						if refresher_shared[ item:GetAbilityName() ] then
+							if not item:IsCooldownReady() then  
+								item:EndCooldown()
+								item:StartCooldown(refresher_shared[ item:GetAbilityName()])
+							end
+						else
+							item:EndCooldown()
+						end
 					end
 				end
 			end

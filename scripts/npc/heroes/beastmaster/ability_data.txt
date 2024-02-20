@@ -472,11 +472,10 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"radius"						"700"
-			"max_stacks"					"30"
-			"stack_decay_time"				"1.0"
-			"min_drum_hit_interval"			"0.25"
-			"max_drum_hit_interval"			"4"
-
+			"max_stacks"					"20"
+			"stack_decay_time"				"2.0"
+			"min_drum_hit_interval"			"0.15"
+			"max_drum_hit_interval"			"2.5"
 			"base_damage"						
 			{
 				"value"			"110"
@@ -485,6 +484,7 @@ DOTAAbilities
 			"heal_pct"						"15"
 			"creep_heal_pct"				"7"
 			"aura_radius"					"1200"
+			"damage_pct"					"10"
 		}
 	}	
 	"beastmaster_drums_of_slom_stop"

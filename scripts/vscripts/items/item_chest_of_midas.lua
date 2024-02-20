@@ -19,6 +19,7 @@ modifier_item_chest_of_midas = class({
         if params.attacker == self:GetParent() then return end
         if params.target ~= self:GetParent() then return end
         if not params.attacker:IsRealHero() then return end
+        if self:GetAbility():IsCooldownReady() == false then return end
         self:GetAbility():UseResources(false,false,false,true)
         self:GetParent():AddExperience(self:GetAbility():GetSpecialValueFor("xp"), 0, true, true) 
         self:GetParent():ModifyGold( self:GetAbility():GetSpecialValueFor("gold"), true, 0) 

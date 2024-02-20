@@ -11,8 +11,8 @@ modifier_agi = class({
     GetModifierBonusStats_Agility = function(self) return self.value end,
     OnCreated = function (self,kv)
       self.value = 0
-      self.kvValue = kv.value
-      self.KvPercent = kv.pct
+      self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+      self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
       self:StartIntervalThink(0.1)
     end,
     OnIntervalThink = function (self)
@@ -33,8 +33,8 @@ modifier_str = class({
     GetModifierBonusStats_Strength = function(self) return self.value end,
     OnCreated = function (self,kv)
       self.value = 0
-      self.kvValue = kv.value
-      self.KvPercent = kv.pct
+      self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+      self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
       self:StartIntervalThink(0.1)
     end,
     OnIntervalThink = function (self)
@@ -55,8 +55,8 @@ modifier_int = class({
     GetModifierBonusStats_Intellect = function(self) return self.value end,
     OnCreated = function (self,kv)
       self.value = 0
-      self.kvValue = kv.value
-      self.KvPercent = kv.pct
+      self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+      self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
       self:StartIntervalThink(0.1)
     end,
     OnIntervalThink = function (self)
@@ -83,8 +83,8 @@ modifier_all = class({
     self.str = 0
     self.agi = 0
     self.int = 0
-    self.kvValue = kv.value
-    self.KvPercent = kv.pct
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+    self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
     self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
@@ -110,8 +110,8 @@ modifier_hp = class({
   GetModifierHealthBonus = function(self) return self.value end,
   OnCreated = function (self,kv)
     self.value = 0
-    self.kvValue = kv.value
-    self.KvPercent = kv.pct
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+    self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
     self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
@@ -131,12 +131,11 @@ modifier_damage = class({
   GetModifierPreAttack_BonusDamage = function(self) return self.value end,
   OnCreated = function (self,kv)
       self.value = 0
-      self.kvValue = kv.value
-      self.KvPercent = kv.pct
+      self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+      self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
       self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
-    if not IsServer() then return end
     self.value = 0
     if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetDamageMax() * self.KvPercent / 100 else self.value = self.kvValue end
     self:GetParent():CalculateStatBonus(true)
@@ -153,8 +152,8 @@ modifier_baseDamage = class({
   GetModifierBaseAttack_BonusDamage = function(self) return self.value end,
   OnCreated = function (self,kv)
     self.value = 0
-    self.kvValue = kv.value
-    self.KvPercent = kv.pct
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+    self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
     self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
@@ -174,8 +173,7 @@ modifier_miss = class({
   IsPurgable = function (self) return false end,
   GetModifierEvasion_Constant = function(self) return self.value end,
   OnCreated = function (self,kv)
-    self.value = kv.value
-    self.KvPercent = kv.pct
+    self.value = self:GetAbility():GetSpecialValueFor("pct")
   end,
 })
 modifier_trueMiss = class({
@@ -187,7 +185,7 @@ modifier_trueMiss = class({
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
   OnCreated = function (self,kv)
-    self.value = kv.value
+    self.value = self:GetAbility():GetSpecialValueFor("value")
   end,
   GetModifierIncomingDamage_Percentage = function (self)
     if RollPercentage(self.value) then
@@ -207,13 +205,11 @@ modifier_hpRegen = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
-  GetModifierHealthRegenPercentage = function(self) return self:GetParent():GetNetworkableEntityInfo("modifier_hpRegen_pct") end,
-  GetModifierConstantHealthRegen = function(self) return self:GetParent():GetNetworkableEntityInfo("modifier_hpRegen_value") end,
+  GetModifierHealthRegenPercentage = function(self) return self.kvValue end,
+  GetModifierConstantHealthRegen = function(self) return self.KvPercent end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
-    self.KvPercent = kv.pct
-    self:GetParent():SetNetworkableEntityInfo("modifier_hpRegen_value",kv.value)
-    self:GetParent():SetNetworkableEntityInfo("modifier_hpRegen_pct",kv.pct)
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+    self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
   end,
 })
 modifier_agiLevel = class({
@@ -226,7 +222,7 @@ modifier_agiLevel = class({
   IsPurgable = function (self) return false end,
   GetModifierBonusStats_Agility = function(self) return self.value end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
@@ -245,7 +241,7 @@ modifier_strLevel = class({
   IsPurgable = function (self) return false end,
   GetModifierBonusStats_Strength = function(self) return self.value end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
@@ -264,7 +260,7 @@ modifier_intLevel = class({
   IsPurgable = function (self) return false end,
   GetModifierBonusStats_Intellect = function(self) return self.value end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
@@ -283,11 +279,10 @@ modifier_strHp = class({
   IsPurgable = function (self) return false end,
   GetModifierHealthBonus = function(self) return self.value end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
-    if not IsServer() then return end
     self.value = self:GetParent():GetStrength() * self.kvValue
     self:GetParent():CalculateStatBonus(true)
   end,
@@ -302,11 +297,10 @@ modifier_agiArmor = class({
   IsPurgable = function (self) return false end,
   GetModifierPhysicalArmorBonus = function(self) return self.value end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self:StartIntervalThink(0.1)
   end,
   OnIntervalThink = function (self)
-    if not IsServer() then return end
     self.value = self:GetParent():GetAgility() * self.kvValue
     self:GetParent():CalculateStatBonus(true)
   end,
@@ -321,13 +315,13 @@ modifier_intSpell = class({
   IsPurgable = function (self) return false end,
   GetModifierSpellAmplify_Percentage = function(self) return self.value end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
+    self.value = 0
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self:StartIntervalThink(0.1)
+    
   end,
   OnIntervalThink = function (self)
-    if not IsServer() then return end
     self.value = self:GetParent():GetIntellect() * self.kvValue
-    self:GetParent():CalculateStatBonus(true)
   end,
 })
 modifier_attackSpeed = class({
@@ -342,8 +336,8 @@ modifier_attackSpeed = class({
   GetModifierAttackSpeedPercentage = function(self) return self.KvPercent end,
   GetModifierAttackSpeedBonus_Constant = function(self) return self.kvValue end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
-    self.KvPercent = kv.pct
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
+    self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
   end,
 })
 modifier_dayVision = class({
@@ -356,7 +350,7 @@ modifier_dayVision = class({
   IsPurgable = function (self) return false end,
   GetBonusDayVision = function(self) return self.kvValue end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
   end,
 })
 modifier_nightVision = class({
@@ -368,9 +362,8 @@ modifier_nightVision = class({
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
   GetBonusDayVision = function(self) return self.kvValue end,
-  GetBonusDayVisionPercentage = function(self) return self.KvPercent end,
   OnCreated = function (self,kv)
-    self.kvValue = kv.value
+    self.kvValue = self:GetAbility():GetSpecialValueFor("value")
   end,
 })
 modifier_bash = class({
@@ -383,11 +376,11 @@ modifier_bash = class({
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
   OnCreated = function (self,kv)
-    self.damage = kv.value
-    self.chance = kv.pct
-    self.cd = kv.restore_time
+    self.damage = self:GetAbility():GetSpecialValueFor("damage")
+    self.chance = self:GetAbility():GetSpecialValueFor("chance")
+    self.cd = self:GetAbility():GetSpecialValueFor("bash_cd")
     self.bash_proc = false
-    self.bash_duration = kv.bash_duration
+    self.bash_duration = self:GetAbility():GetSpecialValueFor("bash_duration")
   end,
   OnAttack = function (self,keys)
     print("gey")
@@ -417,8 +410,8 @@ modifier_crit = class({
   } end,
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   OnCreated = function (self,kv)
-    self.damage = kv.value
-    self.chance = kv.pct
+    self.damage = self:GetAbility():GetSpecialValueFor("damage")
+    self.chance = self:GetAbility():GetSpecialValueFor("chance")
   end,
   GetModifierPreAttack_CriticalStrike = function (self,params)
     if self:LegitimateAttack(params) then
