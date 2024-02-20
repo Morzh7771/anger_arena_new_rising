@@ -157,7 +157,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 55 50 45 40 35 30"
+		"AbilityCooldown"				"30"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -217,12 +217,12 @@ DOTAAbilities
 		{
 				"crit_chance"				
 				{
-					"value"			"20"
-					"special_bonus_unique_phantom_assassin_2"	"10"
+					"value"			"12"
+					"special_bonus_unique_phantom_assassin_2"	"6"
 				}
-				"dagger_crit_chance"		"40"
+				"dagger_crit_chance"		"30"
 				"crit_bonus"				"200 275 350 425 500 575 650"
-				"duration"				"6"
+				"duration"				"3"
 		}
 	}
 	"special_bonus_unique_phantom_assassin_2"
