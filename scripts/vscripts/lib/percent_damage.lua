@@ -220,8 +220,8 @@ function lion_mana_drain( keys )
 
 	if target:IsMagicImmune() then return end 
 	
-	local percent_damage = ability:GetSpecialValueFor("mana_damage_pct")/100
-	return (percent_damage * caster:GetMana())
+	local percent_damage = ability:GetSpecialValueFor("mana_damage_pct") / 100
+	return (percent_damage * caster:GetMana() / 7.5)
 end
 function axe_counter_helix(keys)
 	local ability 			= keys.ability
