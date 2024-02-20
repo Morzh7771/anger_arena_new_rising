@@ -138,8 +138,8 @@ DOTAAbilities
 				"value"											"1000"
 				"special_bonus_unique_phantom_assassin_6"		"+250"				
 			}
-			"lifesteal_pct"						"10 12.5 15 17.5 20 22.5 25"
-
+			"lifesteal_pct"						"0"
+			"creep_lifesteal_penalty"			"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
