@@ -83,14 +83,14 @@ DOTAAbilities
 				"value"										"100.0 150.0 200.0 250.0 300.0 350.0 400.0"
 				"special_bonus_unique_weaver_1"				"+100"
 			}
-			"speed"					"200.0 220.0 240.0 260.0 280.0 300.0 320.0"
+			"speed"					"400"
 			"radius"				"175"
-			"fade_time"				"0.25"
+			"fade_time"				"0.15"
 			"duration"				"3"
 			"AbilityCooldown"
 			{
-				"value"								"6.5"
-				"special_bonus_unique_weaver_6"		"-2.5"
+				"value"								"6"
+				"special_bonus_unique_weaver_6"		"-2"
 			}
 			"geminate_attack_mark_duration"
 			{
@@ -117,28 +117,22 @@ DOTAAbilities
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityCooldown"				"7 6 5 4 3 2 1"
+		"AbilityCooldown"				"4 3.5 3 2.5 2 1.5 1"
 
 		"AbilityCastRange"				"425"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"delay"			"0.2"
+			"tooltip_attack"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"			"0.2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_attack"			"1 1 1 1 1 1 2"
+				"value"			"1 1 1 1 1 1 2"
 				"LinkedSpecialBonus"	"special_bonus_unique_weaver_5"
 			}
-			"03"
+			"bonus_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20.0 40.0 60.0 80.0 100.0 120.0 140.0"
+				"value"			"30 60 90 120 150 180 210"
 				"LinkedSpecialBonus"	"special_bonus_unique_weaver_2"
 			}
 			"04"
