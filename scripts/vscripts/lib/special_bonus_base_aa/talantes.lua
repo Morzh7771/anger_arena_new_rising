@@ -207,11 +207,13 @@ modifier_hpRegen = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
-  GetModifierHealthRegenPercentage = function(self) return self.kvValue end,
-  GetModifierConstantHealthRegen = function(self) return self.KvPercent end,
+  GetModifierHealthRegenPercentage = function(self) return self:GetParent():GetNetworkableEntityInfo("modifier_hpRegen_pct") end,
+  GetModifierConstantHealthRegen = function(self) return self:GetParent():GetNetworkableEntityInfo("modifier_hpRegen_value") end,
   OnCreated = function (self,kv)
     self.kvValue = kv.value
     self.KvPercent = kv.pct
+    self:GetParent():SetNetworkableEntityInfo("modifier_hpRegen_value",kv.value)
+    self:GetParent():SetNetworkableEntityInfo("modifier_hpRegen_pct",kv.pct)
   end,
 })
 modifier_agiLevel = class({

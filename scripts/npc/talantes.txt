@@ -124,4 +124,20 @@
 			}
 		}
 	}
+	"special_bonus_base_aa_hpRegen_3" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"200"
+			"pct"				"0"
+		}
+	}
 }

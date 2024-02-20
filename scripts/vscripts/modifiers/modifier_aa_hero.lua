@@ -82,7 +82,11 @@ function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
 	end
 end
 function modifier_aa_hero:GetModifierMoveSpeedBonus_Percentage()
-	return (0.05 * self:GetParent():GetAgility())
+	if(0.05 * self:GetParent():GetAgility()>35) then
+		return 35
+	else
+		return (0.05 * self:GetParent():GetAgility())
+	end
 end
 function modifier_aa_hero:OnIntervalThink()
     local int = self:GetParent():GetIntellect()

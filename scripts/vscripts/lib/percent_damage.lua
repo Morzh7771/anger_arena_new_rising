@@ -11,7 +11,7 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("axe_counter_helix",						axe_counter_helix )
 	PercentDamage:ListenAbilityCallback("snapfire_scatterblast",						snapfire_scatterblast )
 	PercentDamage:ListenAbilityCallback("axe_culling_blade",						axe_culling_blade )
-	
+	PercentDamage:ListenAbilityCallback("lion_mana_drain",						lion_mana_drain )
 	local MagicalDamageFromStr = {
 		"ogre_magi_fireblast",
 		"ogre_magi_unrefined_fireblast",
@@ -211,6 +211,17 @@ function LifeDrain( keys )
 	
 	caster:Heal(heal, caster) 
 end
+function lion_mana_drain( keys )
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+
+	if target:IsMagicImmune() then return end 
+	
+	local percent_damage = ability:GetSpecialValueFor("mana_damage_pct")/100
+	return (percent_damage * caster:GetMana())
+end
 function axe_counter_helix(keys)
 	local ability 			= keys.ability
 	local caster 			= keys.caster
@@ -346,6 +357,8 @@ function PudgeRot(keys)
 	if not ability then return end
 	
 	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
+
+	print(caster:GetPrimaryStatValue())
 	
 	local damage = percent_damage * caster:GetPrimaryStatValue() 
 
