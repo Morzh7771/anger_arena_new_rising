@@ -183,6 +183,41 @@
 			"value"				"0.1"
 		}
 	}
+	"special_bonus_base_aa_intSpell_0_0_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"0.05"
+		}
+	}
+	//agi
+	//str
+	//int
+	//all
+	//hp
+	//damage
+	//baseDamage
+	//miss
+	//trueMiss
+	//hpRegen
+	//agiLeve
+	//strLevel
+	//intLevel
+	//strHp
+	//agiArmor
+	//attackSpeed
+	//dayVision
+	//nightVision
+	//bash
+	//crit
 
 	//faceless_void
 	"special_bonus_base_aa_agi_faceless_void1" 
