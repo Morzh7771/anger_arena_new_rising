@@ -33,7 +33,7 @@ function modifier_lycan_wolfes:GetModifierExtraHealthBonus(params)
 end
 
 function modifier_lycan_wolfes:GetModifierBaseAttack_BonusDamage(params)
-	local time = GameRules:GetGameTime() / 45
+	local time = GameRules:GetGameTime() / 60
 
 
 	--return math.abs(0.0984*math.pow(time,2) + 5.49*time - 30)
@@ -54,7 +54,7 @@ function modifier_lycan_wolfes:GetModifierAttackSpeedBonus_Constant(params)
 end
 
 function modifier_lycan_wolfes:GetModifierPhysicalArmorBonus(params)
-	local time = GameRules:GetGameTime() / 15
+	local time = GameRules:GetGameTime() / 60
 	local armor = math.pow(math.sqrt(time - 15), (2.718*0.88))
 	
 	if time < 15 then armor = 0 end -- caused by sqrt(-15)
