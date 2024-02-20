@@ -38,7 +38,7 @@ DOTAAbilities
 				"special_bonus_unique_clinkz_7"			"+60"
 			}
 	
-			"duration"						"3.5"
+			"duration"						"5.5"
 			"attack_range_bonus"			"200"
 			"AbilityCooldown"				
 			{
@@ -46,8 +46,8 @@ DOTAAbilities
 				"special_bonus_unique_clinkz_4"		"-6"
 
 			}
-			"strafe_skeleton_radius"					"1200"
-			"archer_attack_speed_pct"					"100"
+			"strafe_skeleton_radius"					"2000"
+			"archer_attack_speed_pct"					"150"
 
 			
 		}
@@ -161,7 +161,7 @@ DOTAAbilities
 			"move_speed_bonus_pct"		"10 15 20 25 30 35 40"
 			"skeleton_count"			
 			{
-				"value"								"1 1 2 2 3 3 4"
+				"value"								"2 3 3 4 4 4 4"
 			}
 			"AbilityCooldown"
 			{
@@ -197,7 +197,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80"
+		"AbilityCooldown"				"40"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -250,7 +250,7 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0.0"
-		"AbilityChargeRestoreTime"		"40"
+		"AbilityChargeRestoreTime"		"15"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -264,7 +264,7 @@ DOTAAbilities
 			"duration"				"60"
 			"AbilityCharges"				
 			{
-				"value"				"1 1 1 2 2 2 3"
+				"value"				"1 2 2 3 3 3 3"
 				"special_bonus_unique_clinkz_9"		"+1"
 			}
 			"health_gain"			
@@ -272,7 +272,7 @@ DOTAAbilities
 				"value"				"175 250 325 400 475 550 625"
 				"special_bonus_unique_clinkz_8"		"+275"
 			}
-			"skeleton_duration"					"60"
+			"skeleton_duration"					"15"
 			"skeleton_health"
 			{
 				"value"					"8"
@@ -329,8 +329,8 @@ DOTAAbilities
 			"projectile_speed"					"2000"
 			"damage_bonus"					
 			{
-				"value"					"25 35 45 55 65 75 85"		
-				"special_bonus_unique_clinkz_1"			"+35"
+				"value"					"40 75 110 145 180 215 250"		
+				"special_bonus_unique_clinkz_1"			"+50"
 			}
 			"ground_duration"				"7"				
 			"slow_movement_speed"			"-25"

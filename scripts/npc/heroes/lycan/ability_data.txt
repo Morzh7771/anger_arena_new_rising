@@ -17,7 +17,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30.0 30.0 30.0 30.0"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -27,13 +27,18 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"			"30"
+				"special_bonus_shard"	"-10"
+			}
 			"wolf_index"				"1 2 3 4 5 6 7"
 			"wolf_duration"				"50"
-			"wolf_bat"					"1.2 1.1 1.0 0.9 0.8 0.7 0.6"
+			"wolf_bat"					"1.0 0.9 0.8 0.7 0.6 0.5 0.4"
 			"wolf_damage"
 			{
-				"value"							"25 35 46 58 70 83 97"
-				"special_bonus_unique_lycan_3"	"+14"
+				"value"							"36 50 64 78 92 106 120"
+				"special_bonus_unique_lycan_3"	"+30"
 
 			}
 			"wolf_hp"					
@@ -49,13 +54,13 @@ DOTAAbilities
 			"bonus_damage"
 			{
 				"value"			"0"
-				"special_bonus_unique_lycan_3"	"+23"
+				"special_bonus_unique_lycan_3"	"+30"
 			}
-			"bash_chance"				"15"
-			"bash_duration"				"1.0"
+			"bash_chance"				"30"
+			"bash_duration"				"2.0"
 			"tooltip_wolf_count"			
 			{
-				"value"			"2 2 2 2"
+				"value"			"2 3 3 4 4 4 4"
 				"special_bonus_unique_lycan_2" "+2"
 			}
 		}
@@ -165,7 +170,7 @@ DOTAAbilities
 		{
 			"bonus_damage"			
 			{
-				"value"			"10 15 20 25 30 35 40"
+				"value"			"13 20 27 34 41 48 55"
 				"special_bonus_unique_lycan_4"	"+35"
 			}
 			"bonus_hp_regen"		
@@ -234,15 +239,15 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"maim_chance"				"20"
+			"maim_chance"				"30"
 			"maim_duration"				"4.0"
 			"maim_movement_speed"				
 			{
-				"value"			"15"
-				"special_bonus_unique_lycan_3"	"+10"
+				"value"			"20"
+				"special_bonus_unique_lycan_3"	"+15"
 			}
 			"maim_attack_speed"			"60"
-			"maim_damage"				"8"
+			"maim_damage"				"20"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -272,4 +277,44 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+	"summons_attack_lycan_wolfs"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+	"AbilityTextureName"			"custom/summons_attack_magical"
+	"MaxLevel"						"1"
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityValues"
+	{
+		"dmg_to_magical"	"25"
+	}
+
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"Modifiers"
+	{
+		"modifier_summons_attack_magical"
+		{
+			"Passive"						"1"
+			"IsHidden"						"1"
+			"IsPurgable"					"0"
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"creeps/abilities/summons_attack_lycan_wolfs.lua"
+					"Function"			"DamageMagical"
+					"Damage"			"%dmg_to_magical"
+				}
+			}
+		}
+	}
+}
 }

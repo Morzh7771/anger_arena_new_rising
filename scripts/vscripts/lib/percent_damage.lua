@@ -69,6 +69,7 @@ function PercentDamage:_init()
 		"spectre_desolate",
 		"spectre_spectral_dagger",
 		"sniper_assassinate",
+		"broodmother_silken_bola"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
