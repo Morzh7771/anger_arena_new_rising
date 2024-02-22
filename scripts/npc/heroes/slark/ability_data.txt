@@ -208,7 +208,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"agi_gain"				"1 2 3 4 5 6 7"
+				"agi_gain"				"1 2 2 3 3 4 4"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark_5"
 
 			}
@@ -220,7 +220,7 @@ DOTAAbilities
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"10 20 30 40 50 60 70"
+				"duration"				"30"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark_4"
 			}
 		}
@@ -268,6 +268,44 @@ DOTAAbilities
 			}
 			"activation_delay"			"0.5"
 			"neutral_disable"			"2.0"
+		}
+	}
+	"special_bonus_unique_slark_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"15"
+				"ad_linked_abilities"			"slark_essence_shift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	"special_bonus_unique_slark_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1"
+				"ad_linked_abilities"			"slark_essence_shift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
 		}
 	}
 }

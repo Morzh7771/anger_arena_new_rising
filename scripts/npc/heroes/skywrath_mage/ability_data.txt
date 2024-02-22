@@ -226,8 +226,27 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"stack_duration"			"120"
-			"bonus_intelligence"		"4"
+			"bonus_intelligence"		"2"
 			"bonus_armor"				"0.25"
+		}
+	}
+	"special_bonus_unique_skywrath_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1200"
+				"ad_linked_abilities"			"skywrath_mage_mystic_flare"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
 		}
 	}
 }

@@ -145,6 +145,7 @@
         "ItemSellable"                  "1"
         "ItemDroppable"                 "1"
         "ItemPurchasable"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
         "AbilityValues"
         {
             "bonus_agi"			        "45 90 200"
@@ -933,6 +934,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySharedCooldown"			"bkb"
 		"ItemBaseLevel"					"3"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"60"
@@ -1044,6 +1046,7 @@
         "ShouldBeSuggested"             "1"
 		"ItemBaseLevel"					"3"
 		"AbilitySharedCooldown"			"phylactery"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
         "AbilityValues"
         {
             "bonus_health"              "200 500 750"
@@ -1153,9 +1156,10 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"2"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
         "ItemBaseLevel"                 "2"
         "AbilitySharedCooldown"			"item_sheepstick"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
@@ -2269,6 +2273,7 @@
         "ItemAliases"					"daedalus"
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
         "ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -2430,6 +2435,7 @@
         "FightRecapLevel"				"2"
         "AbilitySharedCooldown"			"bloodstone"
         "ItemBaseLevel"					"3"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
         // Stats
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastPoint"				"0.0"
@@ -2585,6 +2591,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "3"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
         "AbilityValues"
 		{
             "pure_dmg"		        "5 7 10"
@@ -2780,7 +2787,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 750 800 850 900 1000"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"26 23 20 17 14 12"
+		"AbilityCooldown"				"19 18 17 16 15 14"
 		"AbilitySharedCooldown"			"dagon"
 		"ItemBaseLevel"					"6"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -2804,16 +2811,36 @@
 			"damage"				"380 460 540 620 700 1000"
 			"damage_delay"			"0"
 			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"stat_primary_damage_pct"		    "350"
+			"stat_primary_damage_pct"		    "200"
 			"aoe_radius"			"300"
             "active_heal"           "75"
 		}   
 	}
+    "item_dagon"
+    {
+        "BaseClass"                     "item_dagon"
+        "ItemBaseLevel"                 "1"
+        "AbilityCastRange"              "700 750 800 850 900 1000"
+        "AbilityCooldown"               "19 18 17 16 15 14"
+        "AbilityValues"
+        {
+            "bonus_int"     "7 9 11 13 15 50"
+            "bonus_str"     "7 9 11 13 15 50"
+            "bonus_agi"     "7 9 11 13 15 50"
+            "passive_spell_lifesteal"       "11 12 13 14 15 20"
+            "damage"                "380 460 540 620 700 1000"
+            "damage_delay"          "0"
+            "mana_cost_tooltip"     "120 140 160 180 200 250"
+            "int_damage"            "0 0 0 0 0 200"
+            "active_heal"           "75"
+        }
+    }
     "item_dagon_2"
 	{
 		"BaseClass"                     "item_dagon_2"
 		"ItemBaseLevel"					"2"
         "AbilityCastRange"				"700 750 800 850 900 1000"
+        "AbilityCooldown"               "19 18 17 16 15 14"
 		"AbilityValues"
 		{
 			"bonus_int"		"7 9 11 13 15 50"
@@ -2823,7 +2850,7 @@
 			"damage"				"380 460 540 620 700 1000"
 			"damage_delay"			"0"
 			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "0 0 0 0 0 150"
+			"int_damage"		    "0 0 0 0 0 200"
             "active_heal"           "75"
 		}
 	}
@@ -2832,6 +2859,7 @@
 		"BaseClass"                     "item_dagon_3"
 		"ItemBaseLevel"					"3"
         "AbilityCastRange"				"700 750 800 850 900 1000"
+        "AbilityCooldown"               "19 18 17 16 15 14"
 		"AbilityValues"
 		{
 			"bonus_int"		"7 9 11 13 15 50"
@@ -2841,7 +2869,7 @@
 			"damage"				"380 460 540 620 700 1000"
 			"damage_delay"			"0"
 			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "0 0 0 0 0 150"
+			"int_damage"		    "0 0 0 0 0 200"
             "active_heal"           "75"
 		}
 	}
@@ -2850,6 +2878,7 @@
 		"BaseClass"                     "item_dagon_4"
 		"ItemBaseLevel"					"4"
         "AbilityCastRange"				"700 750 800 850 900 1000"
+        "AbilityCooldown"               "19 18 17 16 15 14"
 		"AbilityValues"
 		{
 			"bonus_int"		"7 9 11 13 15 50"
@@ -2859,7 +2888,7 @@
 			"damage"				"380 460 540 620 700 1000"
 			"damage_delay"			"0"
 			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "0 0 0 0 0 150"
+			"int_damage"		    "0 0 0 0 0 200"
             "active_heal"           "75"
 		}
 	}
@@ -2868,6 +2897,7 @@
 		"BaseClass"                     "item_dagon_5"
 		"ItemBaseLevel"					"5"
         "AbilityCastRange"				"700 750 800 850 900 1000"
+        "AbilityCooldown"               "19 18 17 16 15 14"
 		"AbilityValues"
 		{
 			"bonus_int"		"7 9 11 13 15 50"
@@ -2877,7 +2907,7 @@
 			"damage"				"380 460 540 620 700 1000"
 			"damage_delay"			"0"
 			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "0 0 0 0 0 150"
+			"int_damage"		    "0 0 0 0 0 200"
             "active_heal"           "75"
 		}
 	}
@@ -2913,7 +2943,7 @@
 		{
             "mana_cost_pct"         "3 5"
 			"radius"		        "600 800"
-			"bonus_armor"		    "5 24"
+			"bonus_armor"		    "5 14"
 			"bonus_int"		        "25 85"
             "bonus_all_att"         "10 24"
 			"damage"				"50 150"
@@ -2948,11 +2978,12 @@
         "ItemBaseLevel"					"2"
         "AbilityCastRange"				"800"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
         "AbilityValues"
 		{
             "mana_cost_pct"         "3 5"
 			"radius"		        "600 800"
-			"bonus_armor"		    "5 24"
+			"bonus_armor"		    "5 14"
 			"bonus_int"		        "25 85"
             "bonus_all_att"         "10 24"
 			"damage"				"50 150"
@@ -3017,7 +3048,7 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"5 24"
+                "bonus_armor"			"5 14"
             }
             "02"
             {
@@ -3105,6 +3136,7 @@
         "AbilityCastRangeBuffer"		"1100"
         "AbilityCastAnimation" 			"ACT_RESET"
         "AbilitySharedCooldown"			"static_amulet"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
             
         //special
         "AbilitySpecial"
@@ -3112,7 +3144,7 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"5 24"
+                "bonus_armor"			"5 14"
             }
             "02"
             {
@@ -3247,8 +3279,10 @@
         "ItemBaseLevel"     "3"
 		"AbilityCooldown"	"60 50 40"
 		"AbilityCastRange"	"0"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
-		"AbilityValues"{
+		"AbilityValues"
+        {
 			"int"			"30 60 120"
 			"mp"			"500 1000 2000"
 			"mp_regen"		"7 14 28"
@@ -3421,6 +3455,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAlertable"					"1"
 		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -3545,6 +3580,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
         "AbilityValues"
 		{
             "bonus_all_stats"		"80"
@@ -3956,6 +3992,7 @@
 		"ItemAliases"					"marching boots"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -4248,7 +4285,7 @@
 		"AbilityValues"
 		{
 				"bonus_damage"				"50 100 220"
-                "bonus_attack_speed"		"180"
+                "bonus_attack_speed"		"45 90 180"
 				"corruption_armor"			"7 14 30"
 				"corruption_duration"		"7.0 7.0 7.0"
                 "chance"                    "20"
@@ -4429,6 +4466,7 @@
 		"ItemAliases"					"solar crest"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -4510,6 +4548,7 @@
         "ItemAliases"                   "staff;misery;sm"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
         "ShouldBeSuggested"             "1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
         "AbilityValues"
         {
@@ -4686,6 +4725,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAlertable"					"1"
 		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -4902,6 +4942,7 @@
 		"ItemAliases"					"mjollnir"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
         "AbilityValues"
         {
@@ -5005,6 +5046,7 @@
 		"ItemAliases"					"ac;assault cuirass;vladmir's offering;vlads"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -5028,7 +5070,7 @@
 		"BaseClass"						"item_recipe_arcane_boots"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"400"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -5228,6 +5270,7 @@
 		"UpgradesItems"					"item_diffusal_blade"
 		"UpgradeRecipe"					"item_recipe_diffusal_blade"
 		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------

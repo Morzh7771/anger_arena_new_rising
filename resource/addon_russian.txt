@@ -1819,6 +1819,18 @@
 		"DOTA_Tooltip_modifier_item_nullifier_2_slow"			"Замедление от Nullifier 2"
 		"DOTA_Tooltip_modifier_item_nullifier_2_slow_Description"	"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
+        "DOTA_Tooltip_ability_item_heavens_halberd_Description"                                                 "<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.<br><br>Дальность: %abilitycastrange%"
+        "DOTA_Tooltip_ability_item_heavens_halberd_Lore"                                                                "Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы."
+        "DOTA_Tooltip_ability_item_heavens_halberd_bonus_evasion"               "%+$evasion"
+        "DOTA_Tooltip_ability_item_heavens_halberd_bonus_strength"              "+$str"
+        "DOTA_Tooltip_ability_item_heavens_halberd_status_resistance"           "%+к сопротивлению эффектам"
+        "DOTA_Tooltip_ability_item_heavens_halberd_hp_regen_amp"                "%+к здоровью от восстановления и вампиризма"
+
+        "DOTA_Tooltip_modifier_heavens_halberd_buff"                            "Maim"
+        "DOTA_Tooltip_modifier_heavens_halberd_buff_Description"                "Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+        "DOTA_Tooltip_modifier_heavens_halberd_debuff"                                          "Обезоружен"
+        "DOTA_Tooltip_modifier_heavens_halberd_debuff_Description"                      "Обезоружен артефактом Heaven's Halberd, не может атаковать."
+
         "DOTA_Tooltip_ability_item_heavens_halberd_2"                   "HEAVENS HALBERD 2"
         "DOTA_Tooltip_ability_item_heavens_halberd_2_Description"		"<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.<br><br>Дальность: %abilitycastrange%"
 		"DOTA_Tooltip_ability_item_heavens_halberd_2_Lore"		"Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы."
