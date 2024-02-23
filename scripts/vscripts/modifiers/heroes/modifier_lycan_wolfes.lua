@@ -20,7 +20,7 @@ function modifier_lycan_wolfes:IsPurgable()
 end
 
 function modifier_lycan_wolfes:GetModifierExtraHealthBonus(params)
-	local time = GameRules:GetGameTime() / 30
+	local time = GameRules:GetGameTime() / 60
 
 	local delitel = (time / 60) * (time / 60) * 20
 	if time < 60 then delitel = time/2 end
@@ -38,9 +38,9 @@ function modifier_lycan_wolfes:GetModifierBaseAttack_BonusDamage(params)
 
 	--return math.abs(0.0984*math.pow(time,2) + 5.49*time - 30)
 	if time < 30 then
-		return (0.0454*math.pow(time,2) - 0.03*time)*0.8
+		return (0.0454*math.pow(time,2) - 0.03*time)*0.6
 	else
-		return 0.106*math.pow(time,2) - 0.03*time
+		return (0.106*math.pow(time,2) - 0.03*time)*0.5
 	end
 end
 

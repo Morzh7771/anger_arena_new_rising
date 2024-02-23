@@ -73,9 +73,9 @@ function item_octarine_core_3_aa:OnSpellStart()
 
 	PrecacheUnitByNameAsync("npc_dota_observer_wards", function(...)
 		local cr = CreateUnitByName("npc_dota_observer_wards", point, true, caster, caster, caster:GetTeamNumber() )
-		cr:AddNewModifier(caster, nil, "modifier_kill", {duration = 180})
-		cr:AddNewModifier(caster, nil, "modifier_item_buff_ward", {duration = 180})
-		cr:AddNewModifier(caster, nil, "modifier_obs_ward_custom", {duration = 180})
+		cr:AddNewModifier(caster, nil, "modifier_kill", {duration = self:GetSpecialValueFor("duration")})
+		cr:AddNewModifier(caster, nil, "modifier_item_buff_ward", {duration = self:GetSpecialValueFor("duration")})
+		cr:AddNewModifier(caster, nil, "modifier_obs_ward_custom", {duration = self:GetSpecialValueFor("duration")})
 	end)
 end
 

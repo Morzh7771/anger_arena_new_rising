@@ -209,11 +209,11 @@ function AngelArena:InitGameMode()
 	GameMode:SetLoseGoldOnDeath(true)
 
 	if GameRules:IsCheatMode() then
-		GameRules:SetHeroSelectionTime(25)
+		GameRules:SetHeroSelectionTime(90)
 		GameRules:SetStrategyTime(1)
 		GameMode:SetDraftingHeroPickSelectTimeOverride(25)
 		GameMode:SetDraftingBanningTimeOverride(0)
-		GameRules:SetPreGameTime(5)
+		GameRules:SetPreGameTime(60)
 	else
 		GameRules:SetCustomGameBansPerTeam( 5 )
 		GameMode:SetDraftingBanningTimeOverride(20)
@@ -322,15 +322,15 @@ function AngelArena:OnRuneActivate(event)
 		local cur_min = GameRules:GetGameTime() / 60
 
 		local item_mod_table = {
-			{ "item_hand_of_midas",  50 + 20 * cur_min },
-			{ "item_advanced_midas", 100 + 40 * cur_min }
+			{ "item_hand_of_midas",  40 + 18 * cur_min },
+			{ "item_advanced_midas", 80 + 36 * cur_min }
 		}
 
 		local hero_mod_table = {
-			["npc_dota_hero_alchemist"] = 1.5,
+			["npc_dota_hero_alchemist"] = 2.5,
 		}
 	
-		local gold_without_mods = 50 + 15 * cur_min
+		local gold_without_mods = 40 + 14 * cur_min
 
 		function CalcBountyGold( hero )
 			local hero_mult = hero_mod_table[ hero:GetUnitName() ] or 1
