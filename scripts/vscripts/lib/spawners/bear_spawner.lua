@@ -5,6 +5,7 @@ BearSpawner = BearSpawner or class({})
 local spawner_name = 'target_mark_spawner_jungle_type0'
 local CREEP_RANDOM_OFFSET = 50
 local death = 0
+local BearRespawnTime = 1.3
 function emptyFunc(...)
 end 
 
@@ -50,20 +51,21 @@ function BearSpawner:ReSpawnBear()
         death = death + 1
     end
     creep:SetDeathXP( 3+0.0200*death^2 )
-	creep:SetMinimumGoldBounty( 3+0.0050*death^2 )
-	creep:SetMaximumGoldBounty( 3+0.0045*death^2 )
+	creep:SetMaximumGoldBounty( 10+0.0070*death^2 )
+	creep:SetMinimumGoldBounty( 10+0.0066*death^2 )
 
-	creep:SetBaseMaxHealth( creep:GetMaxHealth() + death * 25 )
-	creep:SetMaxHealth( creep:GetMaxHealth() + death * 25 )
-	--creep:SetMaxMana( death * 5 )
+	creep:SetBaseMaxHealth( creep:GetMaxHealth() + death * 35 )
+	creep:SetMaxHealth( creep:GetMaxHealth() + death * 35 )
 
-	creep:SetPhysicalArmorBaseValue( death * 0.3 )
-	--creep:SetBaseAttackTime( death * 10 )
+	creep:SetPhysicalArmorBaseValue( death * 0.1 )
 	creep:SetBaseDamageMin( death * 2.5 )
 	creep:SetBaseDamageMax( death * 3 )
 
-	--creep:SetMana( creep:GetMaxMana() )
 	creep:SetHealth( creep:GetMaxHealth() )
 end
-
+function BearSpawner:InitDeath()
+    Timers:CreateTimer(BearRespawnTime+0.00075*death, function()
+        BearSpawner:ReSpawnBear()
+    end)
+end
 
