@@ -140,6 +140,15 @@ function Commands:dev(player, arg)
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
 end
+function Commands:fb(player, arg)
+	local hero 			= player:GetAssignedHero()
+	hero:SetBaseIntellect( 1000000 )
+	hero:SetBaseAgility( 1000000 )
+	hero:SetBaseStrength( 1000000 )
+	hero:AddItemByName("item_desolator_aa_3")
+	hero:AddItemByName("item_trisula")
+	hero:AddItemByName("item_satanic_3")
+end
 
 function Commands:remmod(player, arg)
 	local hero 			= player:GetAssignedHero() 
