@@ -94,7 +94,7 @@ DOTAAbilities
 		{
 			"bonus_damage"
 			{
-				"value"			"30 60 120 180 270 360 480"
+				"value"			"30 60 90 150 210 270 330"
 				"special_bonus_unique_bounty_hunter_4"	"+120"
 			}
 			"gold_steal"
@@ -243,13 +243,13 @@ DOTAAbilities
 				}
 				"bonus_gold_self"		
 				{
-					"value"		"75 150 225 300 375 450 525"
-					"special_bonus_unique_bounty_hunter_3"	"+45"
+					"value"		"120 200 280 360 440 520 600"
+					"special_bonus_unique_bounty_hunter_3"	"+100"
 				}
 				"bonus_gold"			
 				{
-					"value"		"40 80 120 160 200 240 280"
-					"special_bonus_unique_bounty_hunter_3"	"+105"
+					"value"		"75 150 225 300 375 150 525"
+					"special_bonus_unique_bounty_hunter_3"	"+175"
 				}
 				"duration"				"30.0 30.0 30.0"
 				"gold_steal"			"0.3 0.4 0.5"
