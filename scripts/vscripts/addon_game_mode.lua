@@ -85,7 +85,7 @@ local cheat = false
 local is_game_start = false
 local is_game_end = false
 local game_start_for_courier = false
-local BearRespawnTime = 1.3
+
 KILL_LIMIT_CONST = 120
 GOLD_PER_TICK = 0
 
@@ -854,10 +854,7 @@ function AngelArena:OnEntityKilled(event)
 	if not killedUnit or not IsValidEntity(killedUnit) then return end
 
 	if killedUnit:GetUnitName() == 'npc_aa_creep_centaur_big'then
-		Timers:CreateTimer(BearRespawnTime, function()
-			BearSpawner:ReSpawnBear()
-		end)
-		
+		BearSpawner:InitDeath()
 	end
 
 	if BossSpawner:HandleUnitKill( killedUnit, hero ) then
