@@ -205,6 +205,22 @@
 	//hp
 	//damage
 	//baseDamage
+	"special_bonus_base_aa_baseDamage_100pct"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"0"
+			"pct"				"100"
+		}
+	}
 	//miss
 	//trueMiss
 	//hpRegen
