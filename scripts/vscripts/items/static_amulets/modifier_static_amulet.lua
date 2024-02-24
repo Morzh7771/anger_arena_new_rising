@@ -9,6 +9,7 @@ local ability_not_trigger =
     ["reaver_lord_attract"] = 1,
     ["phantom_lancer_phantom_edge"] = 1,
     ["leshrac_pulse_nova"] = 1,
+    ["shadow_demon_shadow_poison_release"] = 1,
 }
 
 --------------------------------------------------------------------------------
