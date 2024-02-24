@@ -52,6 +52,7 @@ function PercentDamage:_init()
 		"primal_beast_rock_throw",
 		"primal_beast_pulverize",
 		"primal_beast_onslaught",
+		"slardar_bash",
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",

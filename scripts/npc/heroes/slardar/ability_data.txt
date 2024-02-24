@@ -22,7 +22,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"29 27 25 23 21 19 17"
+		"AbilityCooldown"				"17"
 		
 			"AbilityValues"
 		{			
@@ -134,7 +134,7 @@ DOTAAbilities
 				}
 				"puddle_duration"		
 				{
-					"value"					"3 4 5 6 7 8 9"
+					"value"					"6"
 					"special_bonus_scepter"	"+16"
 				}
 				"puddle_radius"		
@@ -188,6 +188,11 @@ DOTAAbilities
 			"duration"				"0.8"
 			"attack_count"			"3"
 			"river_damage"			"25 50 75 100 125 150 175"
+			"damage_pct"			
+			{
+				"value"				"10"
+				"special_bonus_unique_slardar_bashStrDmg"	"15"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -308,5 +313,11 @@ DOTAAbilities
 				"special_bonus_unique_slardar_3"	"+1"
 			}
 		}
+	}
+	"special_bonus_unique_slardar_bashStrDmg"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "special_bonus_unique_earth_spirit"
 	}
 }
