@@ -137,12 +137,12 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage"				"90 180 270 360 450 540 630"			
+			"damage"				"90 160 240 300 360 420 480"			
 			"heal_per_second"		"11.0 22.0 33.0 44.0 55.0 66.0 77.0"
 			"total_heal_tooltip"	"99 198 297 396 495 594 693"
 			"duration"				"9.0"
 			"tick_rate"				"1.0"
-			"damage_pct"			"57"
+			"damage_pct"			"65"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	} 
