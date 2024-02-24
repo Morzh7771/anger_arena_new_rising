@@ -82,7 +82,25 @@
         }
     }
 
-
+    "item_recipe_butterfly"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_butterfly"
+        "ItemRequirements"
+        {
+            "01"                        "item_eagle;item_talisman_of_evasion;item_broadsword"
+        }
+    }
     "item_butterfly"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2695,7 +2713,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"850"	
+		"ItemCost"						"950"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2806,14 +2824,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_stats"		    "7 9 11 13 15 50"
-            "spell_lifesteal"       "11 12 13 14 15 20"
-			"damage"				"380 460 540 620 700 1000"
-			"damage_delay"			"0"
-			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"stat_primary_damage_pct"		    "125"
-			"aoe_radius"			"300"
-            "active_heal"           "75"
+			"bonus_stats"		        "7 9 11 13 15 50"
+            "spell_lifesteal"           "15 15 15 15 15 20"
+			"damage"				    "380 460 540 620 700 1000"
+			"damage_delay"			    "0"
+			"mana_cost_tooltip"		    "120 140 160 180 200 250"
+			"stat_primary_damage_pct"	"125"
+			"aoe_radius"			    "300"
+            "active_heal"               "75"
 		}   
 	}
     "item_dagon"
@@ -2824,15 +2842,15 @@
         "AbilityCooldown"               "19 18 17 16 15 14"
         "AbilityValues"
         {
-            "bonus_int"     "7 9 11 13 15 50"
-            "bonus_str"     "7 9 11 13 15 50"
-            "bonus_agi"     "7 9 11 13 15 50"
-            "passive_spell_lifesteal"       "11 12 13 14 15 20"
-            "damage"                "380 460 540 620 700 1000"
-            "damage_delay"          "0"
-            "mana_cost_tooltip"     "120 140 160 180 200 250"
-            "int_damage"            "0 0 0 0 0 200"
-            "active_heal"           "75"
+            "bonus_int"                 "7 9 11 13 15 50"
+            "bonus_str"                 "7 9 11 13 15 50"
+            "bonus_agi"                 "7 9 11 13 15 50"
+            "passive_spell_lifesteal"   "15 15 15 15 15 20"
+            "damage"                    "380 460 540 620 700 1000"
+            "damage_delay"              "0"
+            "mana_cost_tooltip"         "120 140 160 180 200 250"
+            "int_damage"                "0 0 0 0 0 200"
+            "active_heal"               "75"
         }
     }
     "item_dagon_2"
@@ -2843,15 +2861,15 @@
         "AbilityCooldown"               "19 18 17 16 15 14"
 		"AbilityValues"
 		{
-			"bonus_int"		"7 9 11 13 15 50"
-			"bonus_str"		"7 9 11 13 15 50"
-			"bonus_agi"		"7 9 11 13 15 50"
-            "passive_spell_lifesteal"       "11 12 13 14 15 20"
-			"damage"				"380 460 540 620 700 1000"
-			"damage_delay"			"0"
-			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "0 0 0 0 0 200"
-            "active_heal"           "75"
+			"bonus_int"                 "7 9 11 13 15 50"
+            "bonus_str"                 "7 9 11 13 15 50"
+            "bonus_agi"                 "7 9 11 13 15 50"
+            "passive_spell_lifesteal"   "15 15 15 15 15 20"
+            "damage"                    "380 460 540 620 700 1000"
+            "damage_delay"              "0"
+            "mana_cost_tooltip"         "120 140 160 180 200 250"
+            "int_damage"                "0 0 0 0 0 200"
+            "active_heal"               "75"
 		}
 	}
     "item_dagon_3"
@@ -2862,15 +2880,15 @@
         "AbilityCooldown"               "19 18 17 16 15 14"
 		"AbilityValues"
 		{
-			"bonus_int"		"7 9 11 13 15 50"
-			"bonus_str"		"7 9 11 13 15 50"
-			"bonus_agi"		"7 9 11 13 15 50"
-            "passive_spell_lifesteal"       "11 12 13 14 15 20"
-			"damage"				"380 460 540 620 700 1000"
-			"damage_delay"			"0"
-			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "0 0 0 0 0 200"
-            "active_heal"           "75"
+			"bonus_int"                 "7 9 11 13 15 50"
+            "bonus_str"                 "7 9 11 13 15 50"
+            "bonus_agi"                 "7 9 11 13 15 50"
+            "passive_spell_lifesteal"   "15 15 15 15 15 20"
+            "damage"                    "380 460 540 620 700 1000"
+            "damage_delay"              "0"
+            "mana_cost_tooltip"         "120 140 160 180 200 250"
+            "int_damage"                "0 0 0 0 0 200"
+            "active_heal"               "75"
 		}
 	}
     "item_dagon_4"
@@ -2881,15 +2899,15 @@
         "AbilityCooldown"               "19 18 17 16 15 14"
 		"AbilityValues"
 		{
-			"bonus_int"		"7 9 11 13 15 50"
-			"bonus_str"		"7 9 11 13 15 50"
-			"bonus_agi"		"7 9 11 13 15 50"
-            "passive_spell_lifesteal"       "11 12 13 14 15 20"
-			"damage"				"380 460 540 620 700 1000"
-			"damage_delay"			"0"
-			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "0 0 0 0 0 200"
-            "active_heal"           "75"
+			"bonus_int"                 "7 9 11 13 15 50"
+            "bonus_str"                 "7 9 11 13 15 50"
+            "bonus_agi"                 "7 9 11 13 15 50"
+            "passive_spell_lifesteal"   "15 15 15 15 15 20"
+            "damage"                    "380 460 540 620 700 1000"
+            "damage_delay"              "0"
+            "mana_cost_tooltip"         "120 140 160 180 200 250"
+            "int_damage"                "0 0 0 0 0 200"
+            "active_heal"               "75"
 		}
 	}
     "item_dagon_5"
@@ -2900,15 +2918,15 @@
         "AbilityCooldown"               "19 18 17 16 15 14"
 		"AbilityValues"
 		{
-			"bonus_int"		"7 9 11 13 15 50"
-			"bonus_str"		"7 9 11 13 15 50"
-			"bonus_agi"		"7 9 11 13 15 50"
-            "passive_spell_lifesteal"       "11 12 13 14 15 20"
-			"damage"				"380 460 540 620 700 1000"
-			"damage_delay"			"0"
-			"mana_cost_tooltip"		"120 140 160 180 200 250"
-			"int_damage"		    "0 0 0 0 0 200"
-            "active_heal"           "75"
+			"bonus_int"                 "7 9 11 13 15 50"
+            "bonus_str"                 "7 9 11 13 15 50"
+            "bonus_agi"                 "7 9 11 13 15 50"
+            "passive_spell_lifesteal"   "15 15 15 15 15 20"
+            "damage"                    "380 460 540 620 700 1000"
+            "damage_delay"              "0"
+            "mana_cost_tooltip"         "120 140 160 180 200 250"
+            "int_damage"                "0 0 0 0 0 200"
+            "active_heal"               "75"
 		}
 	}
     "item_recipe_slice_amulet"
@@ -3763,11 +3781,11 @@
 		"AbilityValues"
 		{
 			"bonus_attack_speed"                "40 80"
-			"xp_multiplier"			            "2.1 4.2"
-			"bonus_gold"			            "160 320"
+			"xp_multiplier"			            "2.2 4.4"
+			"bonus_gold"			            "170 340"
 			"transmute_cast_range_tooltip"		"600 700"
-			"base_gold_rune"			        "50 100"
-			"minute_gold_rune"			        "20 40"
+			"base_gold_rune"			        "40 80"
+			"minute_gold_rune"			        "18 36"
 		}
 	}
 	"item_recipe_advanced_midas"
@@ -3825,11 +3843,11 @@
 		"AbilityValues"
 		{
 			"bonus_attack_speed"                "40 80"
-			"xp_multiplier"			            "2.1 4.2"
-			"bonus_gold"			            "160 320"
+			"xp_multiplier"			            "2.2 4.4"
+			"bonus_gold"			            "170 340"
 			"transmute_cast_range_tooltip"		"600 700"
-			"base_gold_rune"			        "50 100"
-			"minute_gold_rune"			        "20 40"
+			"base_gold_rune"			        "40 80"
+            "minute_gold_rune"                  "18 36"
 		}
 	}
     "item_recipe_drum_of_endurance"
@@ -3898,7 +3916,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1500"	
+		"ItemCost"						"1300"	
 		"ItemShopTags"					"artifacts"
 		
 		// Recipe
@@ -3934,21 +3952,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"aura_movement_speed"	    "40 60"
-            "aura_attack_speed"	        "30 60"
+			"aura_movement_speed"	            "40 60"
+            "aura_attack_speed"	                "40 80"
+        
+			"bonus_agi"				            "25 80"
+			"bonus_str"				            "12 30"
+			"bonus_int"				            "12 30"
+            "bonus_armor"				        "8 16"
+            "bonus_movement_speed"	            "65 80"
+			"bonus_health_regen"	            "15 40"
 
-			"bonus_agi"				    "24 80"
-			"bonus_str"				    "12 30"
-			"bonus_int"				    "12 30"
-            "bonus_armor"				"8 16"
-            "bonus_movement_speed"	    "65 80"
-			"bonus_health_regen"	    "15 40"
-
-			"active_bonus_attack_speed"	        "90 150"
+			"active_bonus_attack_speed"	        "90 180"
 			"active_bonus_movement_speed_pct"	"20 30"
             "active_bonus_damage_from_agi"	    "30 40"
 
-			"active_duration"				    "6"
+			"active_duration"				    "8"
 			"active_radius"				        "1200"
 
 			"active_non_slow"		            "1.5 3"
@@ -3998,24 +4016,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"aura_movement_speed"	    "40 60"
-            "aura_attack_speed"	        "30 60"
+			"aura_movement_speed"                "40 60"
+            "aura_attack_speed"                  "40 80"
 
-			"bonus_agi"				    "24 80"
-			"bonus_str"				    "12 30"
-			"bonus_int"				    "12 30"
-            "bonus_armor"				"8 16"
-            "bonus_movement_speed"	    "65 80"
-			"bonus_health_regen"	    "15 40"
+			"bonus_agi"                          "25 80"
+			"bonus_str"                          "10 30"
+			"bonus_int"                          "10 30"
+            "bonus_armor"                        "8 16"
+            "bonus_movement_speed"               "65 80"
+			"bonus_health_regen"                 "15 40"
 
-			"active_bonus_attack_speed"	        "90 150"
-			"active_bonus_movement_speed_pct"	"20 30"
-            "active_bonus_damage_from_agi"	    "30 40"
+			"active_bonus_attack_speed"          "90 180"
+			"active_bonus_movement_speed_pct"    "20 30"
+            "active_bonus_damage_from_agi"       "30 40"
 
-			"active_duration"				    "6"
-			"active_radius"				        "1200"
+			"active_duration"                    "8"
+			"active_radius"                      "1200"
 
-			"active_non_slow"		            "1.5 3"
+			"active_non_slow"                    "1.5 3"
 		}
 	}
     "item_recipe_talisman_of_ambition"
@@ -4229,8 +4247,8 @@
 		"AbilityValues"
 		{
 				"bonus_damage"				"50 100 220"
-				"corruption_armor"			"7 14 30"
-				"corruption_duration"		"7.0 7.0 7.0"
+				"corruption_armor"			"8 16 35"
+				"corruption_duration"		"8 8 8"
 		}
 	}	
 	"item_desolator_aa_2"
@@ -4257,8 +4275,8 @@
 		"AbilityValues"
 		{
 				"bonus_damage"				"50 100 220"
-				"corruption_armor"			"7 14 30"
-				"corruption_duration"		"7.0 7.0 7.0"
+				"corruption_armor"			"8 16 35"
+				"corruption_duration"		"8 8 8"
 		}
 	}
 	"item_desolator_aa_3"
@@ -4286,8 +4304,8 @@
 		{
 				"bonus_damage"				"50 100 220"
                 "bonus_attack_speed"		"45 90 180"
-				"corruption_armor"			"7 14 30"
-				"corruption_duration"		"7.0 7.0 7.0"
+				"corruption_armor"			"8 16 35"
+				"corruption_duration"		"8 8 8"
                 "chance"                    "20"
                 "damage_pct"                "12"
 		}
@@ -4553,10 +4571,10 @@
         "AbilityValues"
         {
             "bonus_damage"          "70 150 400"                
-            "spell_lifesteal"       "10 20 30"    
+            "spell_lifesteal"       "15 20 25"    
             "manacost_per_hit"      "9 8 7"
-            "spell_lifesteal_creep" "10 20 30"
-            "damage_reduction"      "-30 -25 -20"
+            "spell_lifesteal_creep" "15 20 25"
+            "damage_reduction"      "-35 -32.5 -30"
             
         }
     }
@@ -4579,10 +4597,10 @@
         "AbilityValues"
         {
             "bonus_damage"          "70 150 400"                
-            "spell_lifesteal"       "10 20 30"    
+            "spell_lifesteal"       "15 20 25"    
             "manacost_per_hit"      "9 8 7"
-            "spell_lifesteal_creep" "10 20 30"
-            "damage_reduction"      "-30 -25 -20"  
+            "spell_lifesteal_creep" "15 20 25"
+            "damage_reduction"      "-35 -32.5 -30"  
         }
     }
     "item_revenants_brooch_custom_3"
@@ -4604,10 +4622,10 @@
         "AbilityValues"
         {
             "bonus_damage"          "70 150 400"                
-            "spell_lifesteal"       "10 20 30"    
+            "spell_lifesteal"       "15 20 25"    
             "manacost_per_hit"      "9 8 7"
-            "spell_lifesteal_creep" "10 20 30"
-            "damage_reduction"      "-30 -25 -20"  
+            "spell_lifesteal_creep" "15 20 25"
+            "damage_reduction"      "-35 -32.5 -30"  
         }
     }
     "item_recipe_guardian_greaves_custom"
@@ -4659,25 +4677,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{				
-				"bonus_movement"		"50 80"
-				"bonus_mana_regen"		"3.5 10"
-				"bonus_armor"		    "7 25"
-
+				"bonus_movement"		        "50 80"
+				"bonus_mana_regen"		        "3.5 10"
+				"bonus_armor"		            "7 25"
 				"aura_health_regen"		        "20 60"
                 "aura_health_regen_active"		"60 180"
                 "aura_mana_regen"		        "10 30"
                 "aura_mana_regen_active"		"30 90"
                 "aura_armor"		            "8 24"
                 "aura_armor_active"		        "24 72"
-
-				"aura_reduction"		"-10 -15"
-				"aura_bonus_threshold"	"30"
-
-				"replenish_health"		"20 30"
-				"replenish_mana"		"20 30"
-                "base_mana"		        "400 1200"
-                "base_health"		    "400 1200"
-				"replenish_radius"		"1200"
+				"aura_reduction"		        "-8 -12"
+				"aura_bonus_threshold"	        "30"
+				"replenish_health"		        "20 30"
+				"replenish_mana"		        "20 30"
+                "base_mana"		                "400 1200"
+                "base_health"		            "400 1200"
+				"replenish_radius"		        "1200"
 		}
 	}
     "item_recipe_guardian_greaves_custom_2"
@@ -4731,25 +4746,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{				
-				"bonus_movement"		"50 80"
-				"bonus_mana_regen"		"3.5 10"
-				"bonus_armor"		    "7 25"
-
-				"aura_health_regen"		        "20 60"
-                "aura_health_regen_active"		"60 180"
-                "aura_mana_regen"		        "10 30"
-                "aura_mana_regen_active"		"30 90"
-                "aura_armor"		            "8 24"
-                "aura_armor_active"		        "24 72"
-
-				"aura_reduction"		"-10 -15"
-				"aura_bonus_threshold"	"30"
-
-				"replenish_health"		"20 30"
-				"replenish_mana"		"20 30"
-                "base_mana"		        "400 1200"
-                "base_health"		    "400 1200"
-				"replenish_radius"		"1200"
+				"bonus_movement"                "50 80"
+				"bonus_mana_regen"              "3.5 10"
+				"bonus_armor"                   "7 25"
+				"aura_health_regen"             "20 60"
+                "aura_health_regen_active"      "60 180"
+                "aura_mana_regen"               "10 30"
+                "aura_mana_regen_active"        "30 90"
+                "aura_armor"                    "8 24"
+                "aura_armor_active"             "24 72"
+				"aura_reduction"                "-8 -12"
+				"aura_bonus_threshold"          "30"
+				"replenish_health"              "20 30"
+				"replenish_mana"                "20 30"
+                "base_mana"                     "400 1200"
+                "base_health"                   "400 1200"
+				"replenish_radius"              "1200"
 		}
 	}
     "item_recipe_mjolnir_aa_1"
