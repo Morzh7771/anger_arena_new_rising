@@ -323,7 +323,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------	
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"4.5"
 		"AbilityHealthCost"				"50 60 70 80 90 100 110"
 
 		// Special
@@ -348,12 +348,12 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"dazzle_good_juju"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"LinkedAbility"					"dazzle_bad_juju"
+		"Innate"						"1"
 		"HasScepterUpgrade"				"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -368,10 +368,10 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"cooldown_reduction"		"1 1.5 2"
+				"cooldown_reduction"		"1"
 				"item_cooldown_reduction"		
 				{
-					"value"		"50"
+					"value"		"20"
 					"RequiresScepter"	"1"
 				}
 				"scepter_mana_cost"			"250"
