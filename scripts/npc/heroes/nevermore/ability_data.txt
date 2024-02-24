@@ -366,7 +366,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"1.67 1.57 1.37 1.17 0.97 0.77 0.57"
+		"AbilityCastPoint"				"1.67 1.57 1.37 1.27 1.17 0.97 0.77"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		// Time		
@@ -425,7 +425,7 @@ DOTAAbilities
 					"RequiresScepter"			"1"
 					"CalculateSpellDamageTooltip"	"0"
 				}
-				"damage_pct"					"30"
+				"damage_pct"					"17"
 		}
 	}
 	"special_bonus_unique_nevermore_2"
