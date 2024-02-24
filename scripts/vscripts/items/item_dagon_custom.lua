@@ -17,8 +17,11 @@ function item_dagon_custom:OnSpellStart()
     print(self:GetCaster():GetStrength())
     local radius = self:GetSpecialValueFor("aoe_radius")
     local damage_kv = self:GetSpecialValueFor("damage")
+    local max_dif_multiplier = self:GetSpecialValueFor("max_dif_multiplier") / 100
+    local caster_lvl = self:GetCaster():GetLevel()
+    local target_lvl = self:GetCursorTarget():GetLevel()
+    local difference_lvl = target_lvl / caster_lvl
     local damage = 0
-    
 
     if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
         damage = damage_kv + ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect())/3 * int)
@@ -29,6 +32,12 @@ function item_dagon_custom:OnSpellStart()
     elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
         damage = damage_kv + (self:GetCaster():GetIntellect() * int)
     end
+    
+    if difference_lvl >= max_dif_multiplier then difference_lvl = max_dif_multiplier end
+    if self:GetCursorTarget():IsCreep() then difference_lvl = 1 end
+    
+    damage = damage * difference_lvl
+
     self:GetCaster():EmitSound("DOTA_Item.Dagon.Activate")
     local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), point, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false )
     for _, enemy in pairs(enemies) do

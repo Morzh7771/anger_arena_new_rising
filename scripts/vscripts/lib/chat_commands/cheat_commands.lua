@@ -149,6 +149,15 @@ function Commands:fb(player, arg)
 	hero:AddItemByName("item_trisula")
 	hero:AddItemByName("item_satanic_3")
 end
+function Commands:alls(player, arg)
+	if not player then return end
+	MouseCursor:OnNearestUnit(player, function(unit)
+		unit:SetBaseStrength( tonumber(arg[1]) )
+		unit:SetBaseAgility( tonumber(arg[1]) )
+		unit:SetBaseIntellect( tonumber(arg[1]) )
+		unit:CalculateStatBonus( true )
+	end)
+end 
 
 function Commands:remmod(player, arg)
 	local hero 			= player:GetAssignedHero() 
