@@ -99,6 +99,7 @@ function mod:OnCreated(kv)
 							duration = duration, 
 							duration_full = duration_full,
 						})
+						print('added')
 					end
 				end
 			end

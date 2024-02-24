@@ -24,6 +24,8 @@ require('lib/bounty')
 require('lib/game_ender')
 require('lib/repick_menu')
 require('lib/special_bonus_base_aa/Special_bonus_base_aa')
+require('lib/events_protector')
+
 function CEntityInstance:SetNetworkableEntityInfo(key, value)
     local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
     t[key] = value

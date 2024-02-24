@@ -100,6 +100,7 @@ function mod:OnTakeDamage(params)
     end
     
     local damage = params.original_damage/100*(self.pure_dmg + self.pure_dmg_stack*stack)
+    print('damage')
     ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,})
 end
 
