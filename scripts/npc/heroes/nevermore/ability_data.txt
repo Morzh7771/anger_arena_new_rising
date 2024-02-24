@@ -18,7 +18,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_RAZE_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.55"
+		"AbilityCastPoint"				"0.55 0.5 0.45 0.4 0.35 0.3 0.25"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_RAZE_2"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.55"
+		"AbilityCastPoint"				"0.55 0.5 0.45 0.4 0.35 0.3 0.25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -145,7 +145,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_RAZE_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.55"
+		"AbilityCastPoint"				"0.55 0.5 0.45 0.4 0.35 0.3 0.25"
 
 
 		// Cost
@@ -236,7 +236,7 @@ DOTAAbilities
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls"	"13 16 19 22 25 27 30"
+				"necromastery_max_souls"	"16 19 21 25 28 30 33"
 			}
 			"03"
 			{
@@ -246,7 +246,7 @@ DOTAAbilities
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls_scepter" "45"
+				"necromastery_max_souls_scepter" "50"
 				"RequiresScepter"			"1"
 			}	
 			"05"
@@ -366,7 +366,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"1.67 1.57 1.47 1.37 1.27 1.17 1.07"
+		"AbilityCastPoint"				"1.67 1.57 1.37 1.17 0.97 0.77 0.57"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		// Time		
@@ -425,6 +425,7 @@ DOTAAbilities
 					"RequiresScepter"			"1"
 					"CalculateSpellDamageTooltip"	"0"
 				}
+				"damage_pct"					"30"
 		}
 	}
 	"special_bonus_unique_nevermore_2"
