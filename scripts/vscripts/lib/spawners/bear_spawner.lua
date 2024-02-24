@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_stuck_count", 'lib/spawners/modifier_stuck_count', LUA
 BearSpawner = BearSpawner or class({})
 local spawner_name = 'target_mark_spawner_jungle_type0'
 local CREEP_RANDOM_OFFSET = 50
-local death = 0
+local death = 1
 local BearRespawnTime = 1.3
 function emptyFunc(...)
 end 

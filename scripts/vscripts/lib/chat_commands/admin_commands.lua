@@ -125,9 +125,7 @@ function Commands:r(player, arg)
     if not IsAdmin(player) then return end
 
     SendToServerConsole('script_reload');
-    SendToServerConsole('script_reload_entity_code');
     SendToConsole('cl_script_reload');
-    SendToConsole('cl_script_reload_entity_code');
 end
 
 function Commands:rc(player,arg)

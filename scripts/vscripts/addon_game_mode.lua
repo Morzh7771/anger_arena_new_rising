@@ -1,5 +1,5 @@
 -- Generated from template
-
+_G.inited = false
 if AngelArena == nil then
 	_G.AngelArena = class({})
 end
@@ -1081,3 +1081,4 @@ function AngelArena:OnPlayerUsedAbility(event)
 		end)
 	end
 end
+_G.inited = true
