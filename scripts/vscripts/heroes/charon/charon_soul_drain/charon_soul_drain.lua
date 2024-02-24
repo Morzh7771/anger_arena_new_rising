@@ -43,16 +43,20 @@ function charon_soul_drain:OnSpellStart()
 end
 
 function charon_soul_drain:DealDamage()
+    local damage = self.damage * ((100 - self.target:GetManaPercent())/100)
+    if self.target:GetMana() > self.manaburn then
+        damage = damage + self.manaburn + self.target:GetMaxMana()/100*self.manaburn_pct
+    end
     local info = {
         victim = self.target,
         attacker = self:GetCaster(),
-        damage = self.damage,
+        damage = damage,
         damage_type = DAMAGE_TYPE_MAGICAL,
     }
     ApplyDamage(info)
 	local parent =self:GetCaster()
 	if parent:HasModifier("modifier_charon_passive") or parent:HasModifier("modifier_item_void_stick") then
-		parent:Heal(self.damage, self)
+		parent:Heal(damage, self)
 	end
 end
 
@@ -60,7 +64,7 @@ function charon_soul_drain:ManaBurn()
     if not IsServer() then return end
     local manaburn_full = self.manaburn + self.target:GetMaxMana()/100*self.manaburn_pct
     self.target:Script_ReduceMana(manaburn_full,self)
-	local parent =self:GetCaster()
+	local parent = self:GetCaster()
 	if parent:HasModifier("modifier_charon_passive") or parent:HasModifier("modifier_item_void_stick") then
 		parent:GiveMana(manaburn_full)
 	end
@@ -74,9 +78,8 @@ function charon_soul_drain:OnChannelThink(fInterval)
         self.cc_timer = self.cc_timer - self.interval
         if self.target:GetMana() > self.manaburn then
             self:ManaBurn()
-        else
-            self:DealDamage()
         end
+        self:DealDamage()
     end
 end
 

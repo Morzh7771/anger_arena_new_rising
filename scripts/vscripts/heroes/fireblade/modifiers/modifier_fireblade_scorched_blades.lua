@@ -5,6 +5,8 @@ local itemModNames = {
 	"modifier_passive_burning_blades_damn_passive",
 	"modifier_burning_book",
 	"modifier_curse_demons_fury",
+	"modifier_item_trident_aa",
+	"modifier_item_trisula",
 }
 
 function mod:IsHidden() 		return true end
