@@ -70,8 +70,8 @@ function mod:OnCreated(kv)
             mana_burn = self.manaburn_max - (self.manaburn_max / 100 * pct_range_position)
             mana_burn = math.min(self.manaburn_max, math.max(mana_burn, self.manaburn_min))
 
-            if target:IsRealHero() and (not target:IsMagicImmune()) and (not target:IsInvulnerable()) then
-                if not target:IsMagicImmune() then
+            if target:IsRealHero() and (not target:IsMagicImmune()) and (not target:IsDebuffImmune()) and (not target:IsInvulnerable()) then
+                if not target:IsMagicImmune() and (not target:IsDebuffImmune()) then
                     target:Script_ReduceMana(mana_burn,self)
                 end
             end

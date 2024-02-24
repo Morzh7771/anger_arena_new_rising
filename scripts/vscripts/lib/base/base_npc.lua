@@ -35,3 +35,17 @@ function CDOTA_BaseNPC:IsPlayerDisconnected()
 
     return PlayerResource:IsDisconnected(playerid) 
 end 
+
+function CDOTA_BaseNPC:IsDebuffImmune()
+    return self:HasModifierState(MODIFIER_STATE_DEBUFF_IMMUNE)
+end
+
+function CDOTA_BaseNPC:HasModifierState(state, exceptions)
+    for _, mod in pairs(self:FindAllModifiers()) do
+        if not exceptions or not table.contains(exceptions, mod) then
+            local states = {} mod:CheckStateToTable(states)
+            if states[tostring(state)] ~= nil then return true end
+        end
+    end
+    return false
+end

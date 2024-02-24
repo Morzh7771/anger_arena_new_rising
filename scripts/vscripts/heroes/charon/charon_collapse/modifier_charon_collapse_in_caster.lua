@@ -91,7 +91,7 @@ function mod:OnCreated(kv)
 			local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
 		
 			for _, enemy in pairs(enemies) do
-				if enemy and not enemy:IsNull() and IsValidEntity(enemy) and (not enemy:IsMagicImmune()) and (not enemy:IsInvulnerable()) and (not (enemy:HasModifier("modifier_charon_collapse_inside"))) then
+				if enemy and not enemy:IsNull() and IsValidEntity(enemy) and (not enemy:IsMagicImmune()) and (not enemy:IsDebuffImmune()) and (not enemy:IsInvulnerable()) and (not (enemy:HasModifier("modifier_charon_collapse_inside"))) then
 					local bIsMotionControlled = enemy:IsCurrentlyHorizontalMotionControlled() == true or enemy:IsCurrentlyVerticalMotionControlled() == true
 					if not bIsMotionControlled then
 						enemy:AddNewModifier(caster, ability, "modifier_charon_collapse_inside", {
@@ -155,7 +155,7 @@ function mod:OnDestroy()
 	}
 	
 	for _, enemy in pairs(enemies) do
-		if enemy and not enemy:IsNull() and IsValidEntity(enemy) and (not enemy:IsMagicImmune()) and (not enemy:IsInvulnerable()) then			
+		if enemy and not enemy:IsNull() and IsValidEntity(enemy) and (not enemy:IsMagicImmune()) and (not enemy:IsDebuffImmune()) and (not enemy:IsInvulnerable()) then			
 			
 			Timers:CreateTimer(0.1, function()
 				if not enemy or enemy:IsNull() then return end
