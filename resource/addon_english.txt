@@ -1656,7 +1656,7 @@
 		"DOTA_Tooltip_modifier_item_spirit_vessel_3_aura"	"Spirit Vessel 3 Degen Aura"
 		"DOTA_Tooltip_modifier_item_spirit_vessel_3_aura_Description"	"Healing reduced by %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%"
 		
-		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1"                    "HURRICANE PIKE 2"
+		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1"                    "HURRICANE PIKE"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Description"        "<h1>Active: Hurricane Thrust</h1> Pushes the target enemy and the wielder away from each other by %push_length%. If the wielder is engaged in ranged combat, for the next %range_duration% seconds, they can attack the target without distance restrictions. The projectile speed of these attacks is increased by %bonus_projectile_speed%. <br><br>When used on self or allies, pushes the target away by %push_length%. \n\n<h1>Passive: Double Shoots</h1> Allows ranged heroes to perform a double attack once every %double_attack_cd% seconds."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Lore"               "A legendary pike, once the royal symbol of wyvern riders."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Note0"              "Can be self-cast."
@@ -1668,7 +1668,7 @@
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_bonus_health"       "+$health"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_base_attack_range"  "+$attack_range"
 
-		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2"                    "HURRICANE PIKE "
+		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2"                    "HURRICANE PIKE 2"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Description"        "<h1>Active: Hurricane Thrust</h1> Pushes the target enemy and the wielder away from each other by %push_length%. If the wielder is engaged in ranged combat, for the next %range_duration% seconds, they can attack the target without distance restrictions. The projectile speed of these attacks is increased by %bonus_projectile_speed%. <br><br>When used on self or allies, pushes the target away by %push_length%. \n\n<h1>Passive: Double Shoots</h1> Allows ranged heroes to perform a double attack once every %double_attack_cd% seconds."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Lore"               "A legendary pike, once the royal symbol of wyvern riders."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Note0"              "Can be self-cast."
@@ -2679,5 +2679,6 @@
 		"DOTA_Tooltip_ability_item_vladmir_2_Description"                   "<h1>Passive: Vladmir's Aura</h1> Increases lifesteal of allies by %lifesteal_aura%%%, their damage by %damage_aura%%%, armor by %armor_aura%, and mana regeneration by %mana_regen_aura%. Creep lifesteal is reduced by %creep_lifesteal_reduction_pct%%%.<br><br>Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_vladmir_2_Lore"                          "A sinister mask, cursed with the malice of a fallen vampire."
 
+		"DOTA_Tooltip_ability_item_ultimate_scepter_Description"			"<h1>Passive: Ability Upgrade</h1> Upgrades the hero's ultimate ability and some other abilities. \n\nThe consumable version drops from Tormentor."
 	}
 }

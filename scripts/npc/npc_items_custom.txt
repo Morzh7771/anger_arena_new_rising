@@ -1289,7 +1289,7 @@
                 "cleave_damage_creep"               "50"
                 "cleave_damage_illusion"            "50"
                 "cleave_illusion_pure"              "20"
-                "bonus_range"                       "200"
+                "bonus_range"                       "150"
                 "chop_tree_radius"                  "150"
     		}
     	}
@@ -1842,7 +1842,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"150 175"
+				"bonus_range"			"150"
 			}
 			"05"
 			{
@@ -1918,7 +1918,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"150 175"
+				"bonus_range"			"150"
 			}
 			"05"
 			{
@@ -5453,7 +5453,7 @@
 			"bonus_health"			"200 400 800"
 			"bonus_agility"			"20 40 80"
 			"bonus_strength"		"15 30 60"
-			"base_attack_range"		"150 175 200"
+			"base_attack_range"		"150"
 
 			"push_length"			"600 650 700"
 			"range_duration"		"4 4.5 5"
@@ -5498,7 +5498,7 @@
 			"bonus_health"			"200 400 800"
 			"bonus_agility"			"20 40 80"
 			"bonus_strength"		"15 30 60"
-			"base_attack_range"		"150 175 200"
+			"base_attack_range"		"150"
 
 			"push_length"			"600 650 700"
 			"range_duration"		"4 4.5 5"
@@ -5543,7 +5543,7 @@
 			"bonus_health"			"200 400 800"
 			"bonus_agility"			"20 40 80"
 			"bonus_strength"		"15 30 60"
-			"base_attack_range"		"150 175 200"
+			"base_attack_range"		"150"
 
 			"push_length"			"600 650 700"
 			"range_duration"		"4 4.5 5"
