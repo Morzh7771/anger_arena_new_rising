@@ -22,6 +22,9 @@ function modifier_charon_last_word_aura_effect:OnCreated(kv)
     if self:GetAbility():GetCaster():HasTalent("charon_last_word_bonus_slow_per_mana_tallent") then
         self.slow_for_mana_pct = self.slow_for_mana_pct + self:GetAbility():GetCaster():GetTalentSpecialValueFor("charon_last_word_bonus_slow_per_mana_tallent")
     end
+    if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+        self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("tick_per_sec")/60)
+    end
 end
 
 -------------------------------------------------------------------------------
@@ -31,6 +34,13 @@ function modifier_charon_last_word_aura_effect:OnRefresh(kv)
     if self:GetAbility():GetCaster():HasTalent("charon_last_word_bonus_slow_per_mana_tallent") then
         self.slow_for_mana_pct = self.slow_for_mana_pct + self:GetAbility():GetCaster():GetTalentSpecialValueFor("charon_last_word_bonus_slow_per_mana_tallent")
     end
+    if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+        self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("tick_per_sec")/60)
+    end
+end
+function modifier_charon_last_word_aura_effect:OnDestroy(kv)
+    if not IsServer() then return end
+    self:StartIntervalThink(-1)
 end
 
 -------------------------------------------------------------------------------
@@ -39,6 +49,18 @@ function modifier_charon_last_word_aura_effect:DeclareFunctions()
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
     }
     return funcs
+end
+
+function modifier_charon_last_word_aura_effect:OnIntervalThink()
+    local damage = (self:GetParent():GetMaxMana() - self:GetParent():GetMana())/100*self:GetAbility():GetSpecialValueFor("damage_per_mana_pct")/self:GetAbility():GetSpecialValueFor("tick_per_sec")
+    local info = {
+        victim = self:GetParent(),
+        attacker = self:GetCaster(),
+        damage = damage,
+        damage_type = DAMAGE_TYPE_MAGICAL,
+    }
+    if damage <= 0 then return end
+    ApplyDamage(info)
 end
 
 -------------------------------------------------------------------------------

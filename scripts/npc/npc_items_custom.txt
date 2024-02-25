@@ -4703,7 +4703,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1450"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					""
 		"AbilityTextureName"			"item_recipe_guardian_greaves"
 		
@@ -5311,7 +5311,7 @@
     "item_recipe_octarine_core_3_aa"
     {
         "BaseClass"                     "item_datadriven"
-                "AbilityTextureName"                "recipe"
+        "AbilityTextureName"                "recipe"
         // General
         //-------------------------------------------------------------------------------------------------------------
         //"ID"                          "1152"                                                      // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
@@ -5363,5 +5363,407 @@
             "bonus_mana_regen"      "5 10 20"
             "duration"              "240"
         }           
-    }           
+    }
+    "item_recipe_hurricane_pike_aa_1"
+	{
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"350"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hurricane_pike_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_force_staff*;item_dragon_lance"
+		}
+	}
+    "item_recipe_hurricane_pike_aa_2"
+	{
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hurricane_pike_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_hurricane_pike_aa_1;item_hurricane_pike_aa_1"
+		}
+	}
+    "item_recipe_hurricane_pike_aa_3"
+	{
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hurricane_pike_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_hurricane_pike_aa_2;item_hurricane_pike_aa_2;item_boss_soul"
+		}
+	}
+    "item_hurricane_pike_aa_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+        "AbilityTextureName"            "item_hurricane_pike"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_hurricane_pike_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilitySharedCooldown"			"force"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		"ItemCost"						"4450"
+		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"fs;force staff"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"15 30 60"
+			"bonus_health"			"200 400 800"
+			"bonus_agility"			"20 40 80"
+			"bonus_strength"		"15 30 60"
+			"base_attack_range"		"150 175 200"
+
+			"push_length"			"600 650 700"
+			"range_duration"		"4 4.5 5"
+			"cast_range_enemy"		"450 500 550"
+			"bonus_projectile_speed"	"100 200 300"
+			"push_time"				"0.5 0.5 0.5"
+            "double_attack_cd"      "1.2 0.8 0.4"
+		}
+	}   
+    "item_hurricane_pike_aa_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+        "AbilityTextureName"            "hurricane_pike2"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_hurricane_pike_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilitySharedCooldown"			"force"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		"ItemCost"						"4450"
+		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"fs;force staff"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"15 30 60"
+			"bonus_health"			"200 400 800"
+			"bonus_agility"			"20 40 80"
+			"bonus_strength"		"15 30 60"
+			"base_attack_range"		"150 175 200"
+
+			"push_length"			"600 650 700"
+			"range_duration"		"4 4.5 5"
+			"cast_range_enemy"		"450 500 550"
+			"bonus_projectile_speed"	"100 200 300"
+			"push_time"				"0.5 0.5 0.5"
+            "double_attack_cd"      "1.2 0.8 0.4"
+		}
+	}   
+    "item_hurricane_pike_aa_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+        "AbilityTextureName"            "hurricane_pike3"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_hurricane_pike_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilitySharedCooldown"			"force"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		"ItemCost"						"4450"
+		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"fs;force staff"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"15 30 60"
+			"bonus_health"			"200 400 800"
+			"bonus_agility"			"20 40 80"
+			"bonus_strength"		"15 30 60"
+			"base_attack_range"		"150 175 200"
+
+			"push_length"			"600 650 700"
+			"range_duration"		"4 4.5 5"
+			"cast_range_enemy"		"450 500 550"
+			"bonus_projectile_speed"	"100 200 300"
+			"push_time"				"0.5 0.5 0.5"
+            "double_attack_cd"      "1.2 0.8 0.4"
+		}
+	}
+    "item_recipe_harpoon_aa_1"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"               "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_harpoon_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_echo_sabre;item_diadem"
+		}
+	}
+    "item_recipe_harpoon_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"               "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_harpoon_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_harpoon_aa_1;item_harpoon_aa_1"
+		}
+	}
+    "item_recipe_harpoon_aa_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"               "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_harpoon_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_harpoon_aa_2;item_harpoon_aa_2;item_boss_soul"
+		}
+	}   
+    "item_harpoon_aa_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"harpoon"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "item_harpoon"
+        "ScriptFile"                    "items/item_harpoon_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilityManaCost"				"50"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemPurchasable"				"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+			"bonus_attack_speed"	"15 30 80"
+			"bonus_damage"			"30 70 160"
+
+			"bonus_strength"		"25 50 120"
+			"bonus_agility"			"16 32 64"
+			"bonus_intellect"		"16 32 64"
+			"bonus_mana_regen"		"2.0 5 10"
+			
+			"passive_cooldown"		"1.2 0.8 0.4"
+			"movement_slow"			"100"
+			"slow_duration"			"0.2"
+            "hit_slow_duration"		"2"
+            "damage"                "50"
+
+			"pull_duration"			"0.3 0.2 0.1"
+			"min_distance"			"100"
+			"projectile_speed"		"2000 2500 3000"
+
+		}
+	}
+    "item_harpoon_aa_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"harpoon"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "harpoon2"
+        "ScriptFile"                    "items/item_harpoon_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilityManaCost"				"50"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemPurchasable"				"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+			"bonus_attack_speed"	"15 30 80"
+			"bonus_damage"			"30 70 160"
+
+			"bonus_strength"		"25 50 120"
+			"bonus_agility"			"16 32 64"
+			"bonus_intellect"		"16 32 64"
+			"bonus_mana_regen"		"2.0 5 10"
+			
+			"passive_cooldown"		"1.2 0.8 0.4"
+			"movement_slow"			"100"
+			"slow_duration"			"0.2"
+            "hit_slow_duration"		"2"
+            "damage"                "50"
+
+			"pull_duration"			"0.3 0.2 0.1"
+			"min_distance"			"100"
+			"projectile_speed"		"2000 2500 3000"
+
+		}
+	}
+    "item_harpoon_aa_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"harpoon"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "harpoon3"
+        "ScriptFile"                    "items/item_harpoon_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilityManaCost"				"50"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemPurchasable"				"1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+			"bonus_attack_speed"	"15 30 80"
+			"bonus_damage"			"30 70 160"
+
+			"bonus_strength"		"25 50 120"
+			"bonus_agility"			"16 32 64"
+			"bonus_intellect"		"16 32 64"
+			"bonus_mana_regen"		"2.0 5 10"
+			
+			"passive_cooldown"		"1.2 0.8 0.4"
+			"movement_slow"			"100"
+			"slow_duration"			"0.2"
+            "hit_slow_duration"		"2"
+            "damage"                "50"
+
+			"pull_duration"			"0.3 0.2 0.1"
+			"min_distance"			"100"
+			"projectile_speed"		"2000 2500 3000"
+
+		}
+	}
+    
 }

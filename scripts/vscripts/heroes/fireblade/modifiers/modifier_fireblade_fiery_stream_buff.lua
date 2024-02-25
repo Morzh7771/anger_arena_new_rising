@@ -32,23 +32,23 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_fireblade_fiery_stream_buff:OnCreated( kv )
-	self.damage = self:GetAbility():GetSpecialValueFor( "damage_per_hero" )
+	if kv.dmg ~= nil then 
+		self.damage = kv.dmg
+	end
 end
-
 --------------------------------------------------------------------------------
 
 function modifier_fireblade_fiery_stream_buff:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 	}
-
 	return funcs
 end
 
 --------------------------------------------------------------------------------
 
 function modifier_fireblade_fiery_stream_buff:GetModifierPreAttack_BonusDamage()
-	return self.damage
+	return self:GetCaster():GetNetworkableEntityInfo("fireblade_fiery_stream")
 end
 
 --------------------------------------------------------------------------------

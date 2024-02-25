@@ -79,7 +79,9 @@ function charon_soul_drain:OnChannelThink(fInterval)
         if self.target:GetMana() > self.manaburn then
             self:ManaBurn()
         end
-        self:DealDamage()
+        if self:GetCaster():HasModifier("modifier_charon_passive") or self:GetCaster():HasModifier("modifier_item_void_stick") then
+            self:DealDamage()
+        end
     end
 end
 
@@ -90,7 +92,8 @@ function charon_soul_drain:OnChannelFinish(bInterrupted)
     if not bInterrupted then
         if self.target:GetMana() > self.manaburn then
             self:ManaBurn()
-        else
+        end
+        if self:GetCaster():HasModifier("modifier_charon_passive") or self:GetCaster():HasModifier("modifier_item_void_stick") then
             self:DealDamage()
         end
     end

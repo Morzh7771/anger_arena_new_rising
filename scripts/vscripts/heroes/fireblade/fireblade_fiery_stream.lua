@@ -61,7 +61,12 @@ function ability:OnProjectileHit( hTarget, vLocation )
 	ApplyDamage( damage )
 
 	if hTarget:IsRealHero() then
-		caster:AddNewModifier(caster, self, "modifier_fireblade_fiery_stream_buff", { duration = self:GetSpecialValueFor("buff_duration") })
+		local damage_bonus = self:GetSpecialValueFor( "damage_per_hero" ) 
+		if caster:HasModifier("modifier_item_aghanims_shard") then
+			damage_bonus = self:GetSpecialValueFor( "damage_per_hero" ) + hTarget:GetAverageTrueAttackDamage(nil)/100*self:GetSpecialValueFor("damage_steel_pct") 
+		end
+		caster:SetNetworkableEntityInfo("fireblade_fiery_stream",damage_bonus)
+		caster:AddNewModifier(caster, self, "modifier_fireblade_fiery_stream_buff", { duration = self:GetSpecialValueFor("buff_duration"),dmg = damage_bonus })
 	end
 
 	hTarget:AddNewModifier(caster, self, "modifier_fireblade_fiery_stream_debuff", { duration = self:GetSpecialValueFor("slow_duration") })

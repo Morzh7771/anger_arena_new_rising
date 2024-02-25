@@ -58,7 +58,7 @@ function mod:OnAttackLanded( kv )
 	local damage = self.damage
 
 	for _, modName in pairs(itemModNames) do
-		if parent:HasModifier(itemModName) then
+		if parent:HasModifier(modName) then
 			damage = damage + parent:GetAverageTrueAttackDamage(nil) * self.itemDmg
 			break
 		end

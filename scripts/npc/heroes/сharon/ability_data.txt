@@ -38,33 +38,33 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_tooltip"      "4.0"
+				"duration_tooltip"      "2.0"
 				"LinkedSpecialBonus"	"charon_soul_drain_cast_time_fast_bonus_const_tallent"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"manaburn"              "4 4.5 5 5.5 6 6.5 7"
+				"manaburn"              "5 6 7 8 9 10 11"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"manaburn_pct"          "0.3 0.375 0.45 0.525 0.6 0.675 0.75"
+				"manaburn_pct"          "0.3 0.4 0.5 0.6 0.7 0.8 0.9"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manaburn_tooltip"      "40 45 50 55 60 65 70"
+				"manaburn_tooltip"      "50 60 70 80 90 100 110"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"manaburn_pct_tooltip"  "3.0 3.75 4.5 5.25 6.0 6.75 7.5"
+				"manaburn_pct_tooltip"  "3.0 4.0 5.0 6.0 7.0 8.0 9.0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"                "5 7.5 10 12.5 15 17.5 20"
+				"damage"                "5 10 15 20 25 30 35"
 			}
 			"08"
 			{
@@ -74,7 +74,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_tooltip"        "50 75 100 125 150 175 200"
+				"damage_tooltip"        "50 100 150 200 250 300 350"
 			}
 			"10"
 			{
@@ -98,6 +98,7 @@
 		"AbilityTextureName"			"custom/charon/charon_last_word"
 		"ScriptFile"					"heroes/charon/charon_last_word/charon_last_word"
 		"MaxLevel"                      "7"
+		"HasShardUpgrade"				"1"
 
 		"precache"
 		{
@@ -105,18 +106,30 @@
 			"particle"					"particles/charon/charon_overload/charon_overload.vpcf"
 		}
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-			"var_type"			    "FIELD_INTEGER"
-			"radius"		            "600 640 680 720 760 800 840"
+				"var_type"			    		"FIELD_INTEGER"
+				"value"		            		"600 640 680 720 760 800 840"
 			}
-			"02"
+			"slow_for_mana_pct"
 			{
-				"var_type"			    "FIELD_FLOAT"
-				"slow_for_mana_pct"     "0.4 0.45 0.5 0.55 0.6 0.65 0.7"
-				"LinkedSpecialBonus"	"charon_last_word_bonus_slow_per_mana_tallent"
+				"var_type"			    		"FIELD_FLOAT"
+				"value"     					"0.4 0.45 0.5 0.55 0.6 0.65 0.7"
+				"LinkedSpecialBonus"			"charon_last_word_bonus_slow_per_mana_tallent"
+			}
+			"tick_per_sec"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"value"     					"10"
+				"RequiresShard"				"1"
+			}
+			"damage_per_mana_pct"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"value"     					"10"
+				"RequiresShard"					"1"
 			}
 		}
 	}
@@ -134,37 +147,45 @@
 		"AbilityTextureName"			"custom/charon/charon_overload"
 		"ScriptFile"					"heroes/charon/charon_overload/charon_overload"
 		"MaxLevel"                      "7"
-
+		"HasScepterUpgrade"				"1"
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"10"
 
 		"AbilityCastPoint"				"0.3"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage_constant"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_constant"       "100 140 180 230 280 340 410"
+				"value"       "100 140 180 230 280 340 410"
 			}
-			"02"
+			"damage_for_mana_pct"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_for_mana_pct"   "10 15 20 25 30 35 40"
+				"value"   "10 15 20 25 30 35 40"
 			}
-			"03"
+			"mana_cost_pct"
 			{
 				"var_type"				        "FIELD_FLOAT"
-				"mana_cost_pct"                 "10 15 20 25 30 35 40"
+				"value"                 "10 15 20 25 30 35 40"
 				"LinkedSpecialBonus"	        "charon_overload_manacost_reduction_percent_tallent"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
-			"04"
+			"projectile_speed"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"      "5000"
+				"value"      "5000"
+			}
+			"AbilityCharges"
+			{
+				"value"							"1"
+				"special_bonus_scepter"			"1" 
+			}
+			"AbilityChargeRestoreTime"		
+			{
+				"value"					"10"
 			}
 		}
 	}
