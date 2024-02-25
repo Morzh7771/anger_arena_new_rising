@@ -19,7 +19,7 @@ function charon_soul_drain:OnSpellStart()
 
     if caster:HasTalent("charon_soul_drain_cast_time_fast_bonus_const_tallent") then
         local speedBonus = caster:GetTalentSpecialValueFor("charon_soul_drain_cast_time_fast_bonus_const_tallent")
-        local mainCastTime = self.duration + speedBonus
+        local mainCastTime = self.duration - speedBonus
         local coef = self.duration/mainCastTime
         self.damage = self.damage*coef
         self.manaburn = self.manaburn*coef

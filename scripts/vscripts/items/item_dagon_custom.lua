@@ -22,21 +22,22 @@ function item_dagon_custom:OnSpellStart()
     local target_lvl = self:GetCursorTarget():GetLevel()
     local difference_lvl = target_lvl / caster_lvl
     local damage = 0
-
-    if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
-        damage = damage_kv + ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect())/3 * int)
-    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
-        damage = damage_kv + (self:GetCaster():GetStrength() * int)
-    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
-        damage = damage_kv + (self:GetCaster():GetAgility() * int)
-    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
-        damage = damage_kv + (self:GetCaster():GetIntellect() * int)
-    end
     
     if difference_lvl >= max_dif_multiplier then difference_lvl = max_dif_multiplier end
-    if self:GetCursorTarget():IsCreep() then difference_lvl = 1 end
+    if self:GetCursorTarget():IsCreep() and not self:GetCursorTarget():IsAncient() and not self:GetCursorTarget():IsBoss() then self:GetCursorTarget():Kill(self, self:GetCaster()) end
+
+    if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
+        damage = ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect())/3 * int)
+    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
+        damage = (self:GetCaster():GetStrength() * int)
+    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
+        damage = (self:GetCaster():GetAgility() * int)
+    elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
+        damage = (self:GetCaster():GetIntellect() * int)
+    end
+
+    damage = (damage * difference_lvl) + damage_kv    
     
-    damage = damage * difference_lvl
 
     self:GetCaster():EmitSound("DOTA_Item.Dagon.Activate")
     local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), point, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_CLOSEST, false )
@@ -53,6 +54,8 @@ function item_dagon_custom:OnSpellStart()
         if enemy == self:GetCursorTarget() then 
             self:GetCaster():Heal(damage*self:GetSpecialValueFor("active_heal")/100, self)
         end
+
+        if enemy:IsCreep() and not enemy:IsAncient() and not enemy:IsBoss() then enemy:Kill(self, self:GetCaster()) end
 
         if enemy:IsIllusion() and not enemy:HasModifier("modifier_chaos_knight_phantasm_illusion") then
             enemy:Kill(self, self:GetCaster())
