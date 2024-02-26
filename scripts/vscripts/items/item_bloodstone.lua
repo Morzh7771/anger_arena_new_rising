@@ -34,6 +34,7 @@ modifier_bloodstone = class({
 })
 
 function modifier_bloodstone:OnTakeDamage(params)
+    if self:GetParent():IsIllusion() then return end
     if params.attacker ~= self:GetParent() then return end
     if params.unit == self:GetParent() then return end
     if not params.unit then return end
@@ -41,6 +42,9 @@ function modifier_bloodstone:OnTakeDamage(params)
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION) > 0 then return end
+    if not self:GetParent():HasModifier("modifier_muerta_pierce_the_veil_buff") then 
+        if params.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK then return end
+    end
 
     local heal = params.damage * self:GetAbility():GetSpecialValueFor( "spell_lifesteal" ) / 100
 
