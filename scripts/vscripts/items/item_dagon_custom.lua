@@ -79,27 +79,27 @@ modifier_item_dagon_custom = class({
 })
 
 function modifier_item_dagon_custom:OnTakeDamage(params)
-    if self:GetParent():IsIllusion() then return end
-    if params.attacker ~= self:GetParent() then return end
     if params.unit == self:GetParent() then return end
+    if params.attacker ~= self:GetParent() then return end
+    if params.inflictor == nil then return end
+    if self:GetParent():IsIllusion() then return end
     if not params.unit then return end
-    --if not params.inflictor or params.inflictor:IsNull() then return end
-    if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) > 0 then return end
-    if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) > 0 then return end
-    if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION) > 0 then return end
-    if not params.damage_type == DAMAGE_TYPE_MAGICAL then return end
+    if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
+    if params.unit:IsIllusion() then return end
+    if (params.unit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() > 2000 then return end
 
-        self.lifesteal = self:GetAbility():GetSpecialValueFor("spell_lifesteal")/100
+    self.lifesteal = self:GetAbility():GetSpecialValueFor("spell_lifesteal")/100
 
-        local lifesteal = self.lifesteal
+    local lifesteal = self.lifesteal
 
-        local heal = params.damage * lifesteal
+    print(params.damage)
+    local heal = params.damage * lifesteal
 
 
-        self:GetParent():Heal(heal, self:GetAbility())
+    self:GetParent():Heal(heal, self:GetAbility())
 
-        local particle = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-        ParticleManager:ReleaseParticleIndex( particle )
+    local particle = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+    ParticleManager:ReleaseParticleIndex( particle )
 end
 
 
