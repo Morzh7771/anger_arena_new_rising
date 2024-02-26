@@ -138,16 +138,13 @@ function modifier_revenants_brooch_custom:OnTakeDamage(params)
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION) > 0 then return end
-    if not self:GetParent():HasModifier("modifier_muerta_pierce_the_veil_buff") then 
-        if params.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK then return end
-    end
-
-    local lifesteal = self.lifesteal*params.damage
-    if not IsServer() then return end
-    self:GetParent():Heal(lifesteal, self:GetAbility())
-    print(lifesteal)
-    local particle = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-    ParticleManager:ReleaseParticleIndex( particle )
+    if not params.damage_type == DAMAGE_TYPE_MAGICAL then return end
+        local lifesteal = self.lifesteal*params.damage
+        if not IsServer() then return end
+        self:GetParent():Heal(lifesteal, self:GetAbility())
+        print(lifesteal)
+        local particle = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+        ParticleManager:ReleaseParticleIndex( particle )
 end
 
 

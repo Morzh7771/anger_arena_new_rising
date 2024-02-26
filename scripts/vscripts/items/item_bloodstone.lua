@@ -42,19 +42,17 @@ function modifier_bloodstone:OnTakeDamage(params)
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION) > 0 then return end
-    if not self:GetParent():HasModifier("modifier_muerta_pierce_the_veil_buff") then 
-        if params.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK then return end
-    end
+    if not params.damage_type == DAMAGE_TYPE_MAGICAL then return end
 
-    local heal = params.damage * self:GetAbility():GetSpecialValueFor( "spell_lifesteal" ) / 100
+        local heal = params.damage * self:GetAbility():GetSpecialValueFor( "spell_lifesteal" ) / 100
 
-    heal = heal * (self:GetParent():HasModifier('modifier_bloodstone_active') and self:GetAbility():GetSpecialValueFor('lifesteal_multiplier') or 1)
+        heal = heal * (self:GetParent():HasModifier('modifier_bloodstone_active') and self:GetAbility():GetSpecialValueFor('lifesteal_multiplier') or 1)
 
-    self:GetParent():Heal(heal, self:GetAbility())
+        self:GetParent():Heal(heal, self:GetAbility())
 
-    local particle = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-    ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
-    ParticleManager:ReleaseParticleIndex(particle)
+        local particle = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+        ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
+        ParticleManager:ReleaseParticleIndex(particle)
 end
 
 function modifier_bloodstone:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor('bonus_health') end
