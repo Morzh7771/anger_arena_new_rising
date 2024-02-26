@@ -1221,7 +1221,7 @@
 		"ItemResult"					"item_trident_aa"
 		"ItemRequirements"
 		{
-			"01"						"item_yasha_and_kaya;item_kaya_and_sange;item_sange_and_yasha;item_boss_soul"
+			"01"						"item_yasha_and_kaya;item_kaya_and_sange;item_sange_and_yasha"
 		}
 	}
     "item_trident_aa"
@@ -1236,7 +1236,7 @@
             "bonus_attack_speed"                "70"
             "bonus_status_res"                  "25"
             "bonus_mana_regen_amp"              "75"
-            "bonus_ms"                          "25"
+            "bonus_ms"                          "15"
             "bonus_spell_amp"                   "25"
             "bonus_spell_lifesteal_amp_pct"     "50"
             "bonus_heal_amp_pct"                "50"
@@ -1259,7 +1259,7 @@
     		"ItemRequirements"
     		{
     			"01"						"item_bfury_2;item_trident_aa;item_boss_soul"
-    			"02"						"item_ranged_cleave2;item_trident_aa;item_boss_soul"
+    			"02"						"item_ranged_cleave2;item_trident_aa;item_boss_soul;item_boss_soul"
     		}
     	}
     "item_trisula"
@@ -1280,7 +1280,7 @@
                 "bonus_attack_speed"                "80"
                 "bonus_status_res"                  "25"
                 "bonus_mana_regen_amp"              "75"
-                "bonus_ms"                          "35"
+                "bonus_ms"                          "20"
                 "bonus_spell_amp"                   "30"
                 "bonus_spell_lifesteal_amp_pct"     "60"
                 "bonus_heal_amp_pct"                "60"

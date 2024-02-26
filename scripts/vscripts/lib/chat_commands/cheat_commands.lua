@@ -257,6 +257,8 @@ function Commands:q(player, arg)
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
+	hero:AddItemByName("item_boss_soul")
+	hero:SetGold(99999,false)
 end
 
 function Commands:cb(player, arg)
