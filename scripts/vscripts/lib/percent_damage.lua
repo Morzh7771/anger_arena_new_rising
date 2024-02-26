@@ -378,19 +378,19 @@ function PudgeRot(keys)
 	local damage 			= keys.damage
 
 	if not ability then return end
-	
-	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
 
+	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
 	
 	local damage = percent_damage * caster:GetPrimaryStatValue() 
 
 	if caster == target then return end
-	
-	ApplyDamage({ 	victim = target, 
+
+	ApplyDamage({ 	victim = target,
 					attacker = caster,
-					damage = damage, 
+					damage = damage,
 					damage_type = ability:GetAbilityDamageType(),
-					damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL 
+					damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL,
+					ability = keys.inflictor
 				})
 
 
