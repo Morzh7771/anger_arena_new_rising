@@ -20,7 +20,7 @@ function item_hurricane_pike_aa_1:OnSpellStart()
 
     if self:GetCaster():GetTeamNumber() == target:GetTeamNumber() then
         target:EmitSound("DOTA_Item.HurricanePike.Activate")
-        target:AddNewModifier(self:GetCaster(), self, "modifier_item_hurricane_pike_aa_active", {duration = 0.4})
+        target:AddNewModifier(self:GetCaster(), self, "modifier_item_hurricane_pike_aa_active", {duration = 0.3})
     else
         if target:TriggerSpellAbsorb(self) then
             return nil
@@ -115,7 +115,7 @@ function modifier_item_hurricane_pike_aa:OnAttackFinished( params )
 	end	
 
 	if not parent:IsRangedAttacker() then return end
-
+    if parent:IsIllusion() then return end
 	if not isSecondaryAttack then
 		if parent:HasModifier("modifier_item_hurricane_pike_aa_cd") then return end
 
@@ -219,7 +219,7 @@ function modifier_item_hurricane_pike_aa_caster:IsHidden() return true end
 function modifier_item_hurricane_pike_aa_caster:OnCreated(params)
     if not IsServer() then return end
     self.target = EntIndexToHScript(params.target)
-    self.speed = 1000
+    self.speed = 1400
     self.pfx = ParticleManager:CreateParticle("particles/items_fx/force_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
     self:GetParent():StartGesture(ACT_DOTA_FLAIL)
     self.angle = (self.target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Normalized()
@@ -283,7 +283,7 @@ function modifier_item_hurricane_pike_aa_enemy:IsHidden() return true end
 function modifier_item_hurricane_pike_aa_enemy:OnCreated(params)
     if not IsServer() then return end
     self.target = self:GetCaster()
-    self.speed = 1000
+    self.speed = 1400
     self.pfx = ParticleManager:CreateParticle("particles/items_fx/force_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
     self:GetParent():StartGesture(ACT_DOTA_FLAIL)
     self.angle = (self.target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Normalized()

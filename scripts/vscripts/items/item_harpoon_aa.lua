@@ -133,7 +133,7 @@ function modifier_item_harpoon_custom:OnAttackLanded(params)
 		if timer ~= nil then
 			Timers:RemoveTimer(timer)
 		end
-
+        
 		self.timer = Timers:CreateTimer( 0.1, function()
 			if not ability or ability:IsNull() then return end
 			if not parent or parent:IsNull() then return end

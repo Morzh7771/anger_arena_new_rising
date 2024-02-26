@@ -69,3 +69,7 @@ function BearSpawner:InitDeath()
     end)
 end
 
+function BearSpawner:SetDeath(count)
+    death = count
+end
+

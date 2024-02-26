@@ -56,3 +56,21 @@ function MedicalTractat(keys)
 	caster:AddNewModifier(caster, nil, "modifier_medical_tractate", null)
 
 end
+function MedicalTractat2(keys)
+	local caster = keys.caster
+	if not caster then return end
+	
+	if not(caster.medical_tractates2) then
+		caster.medical_tractates2 = 0
+	end
+	local cost = keys.ability:GetCost() 
+
+	caster.medical_tractates2 = caster.medical_tractates2 + 1
+	
+	caster:RemoveModifierByName("modifier_medical_tractate_2") 
+	while (caster:HasModifier("modifier_medical_tractate_2")) do
+		caster:RemoveModifierByName("modifier_medical_tractate_2") 
+	end
+	caster:AddNewModifier(caster, nil, "modifier_medical_tractate_2", null)
+
+end

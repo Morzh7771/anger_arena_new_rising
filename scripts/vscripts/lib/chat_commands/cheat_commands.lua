@@ -219,6 +219,10 @@ function Commands:int(player, arg)
 		unit:CalculateStatBonus( true )
 	end)
 end 
+function Commands:sbd(player, arg)
+	if not player then return end
+	BearSpawner:SetDeath(tonumber(arg[1]))
+end 
 
 function Commands:rmana(player, arg)
 	if not player then return end

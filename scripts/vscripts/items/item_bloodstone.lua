@@ -11,7 +11,7 @@ function item_bloodstone_1:OnSpellStart()
     local force_cooldown = self:GetSpecialValueFor("force_cooldown")
     if not caster:HasModifier('modifier_bloodstone_cooldown') then
         caster:AddNewModifier(caster, self, "modifier_bloodstone_active", {duration = duration})
-        caster:AddNewModifier(caster, self, "modifier_bloodstone_cooldown", {duration = force_cooldown})
+        caster:AddNewModifier(caster, self, "modifier_bloodstone_cooldown", {duration = force_cooldown * self:GetCaster():GetCooldownReduction()})
     end
 end
 
@@ -44,7 +44,8 @@ function modifier_bloodstone:OnTakeDamage(params)
     local heal = params.damage * self:GetAbility():GetSpecialValueFor( "spell_lifesteal" ) / 100
 
     heal = heal * (self:GetParent():HasModifier('modifier_bloodstone_active') and self:GetAbility():GetSpecialValueFor('lifesteal_multiplier') or 1)
-
+    print("hilll",heal)
+    print("damage",params.damage)
     self:GetParent():Heal(heal, self:GetAbility())
 
     local particle = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())

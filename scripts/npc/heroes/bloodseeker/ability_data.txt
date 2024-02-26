@@ -38,37 +38,29 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"8"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_speed"				"60 80 100 120 140 160 180"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_5"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp"				"15 20 25 30 35 40 45"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_6"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_pct"				"2"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shard_max_health_dmg_pct"	"2"
-				"RequiresShard"				"1"
-			}
+            "duration"                  "8"
+            "attack_speed"              
+            {
+                "value"     "60 80 100 120 140 160 180"
+                "special_bonus_unique_bloodseeker_5" "+25"
+            }
+            "spell_amp"             
+            {
+                "value"     "15 20 25 30 35 40 45"
+                "special_bonus_unique_bloodseeker_6"    "+10"
+            }
+            "damage_pct"                
+            {
+                "value"     "1.5"
+                "DamageTypeTooltip"         "DAMAGE_TYPE_PURE"
+            }
+            "shard_max_health_dmg"  
+            {
+                "value"         "100"
+                "RequiresShard"             "1"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -90,10 +82,6 @@ DOTAAbilities
 		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.3"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 14 13 12 11 10 9"
-	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"90 100 110 120 130 140 150"
@@ -101,35 +89,31 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"						"625"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
-			}			
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"90 140 190 240 290 340 390"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_2"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"delay"						"2.3"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"delay_plus_castpoint_tooltip"						"2.6"
-			}
-		}
+		"AbilityValues"
+        {
+            "AbilityCooldown"               
+            {
+                "value"         "13"
+                "special_bonus_unique_bloodseeker"  "-2.5"
+            }
+            "radius"
+            {
+                "value"     "600"
+                "affected_by_aoe_increase"  "1"
+            }
+            "silence_duration"          "3 3.5 4 4.5 5 5.5 6"
+            "damage"                    
+            {
+                "value"         "110 180 250 320 390 460 530"
+                "special_bonus_unique_bloodseeker_2"    "+120"
+            }
+			"damage_pct"                    
+            {
+                "value"         "20"
+            }
+            "delay"                     						"2.6 2.5 2.4 2.3 2.2 2.1 2"
+            "delay_plus_castpoint_tooltip"                      "2.9 2.8 2.7 2.6 2.5 2.4 2.3"
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"bloodseeker_thirst"

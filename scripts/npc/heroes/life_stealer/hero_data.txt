@@ -4,7 +4,7 @@
 	{
 		"override_hero"		"npc_dota_hero_life_stealer"
 		"Ability1"		"life_stealer_rage"
-		"Ability2"		"life_stealer_feast"
+		"Ability2"		"life_stealer_feast_aa"
 		"Ability3"		"life_stealer_ghoul_frenzy"
 		"Ability4"		"life_stealer_open_wounds"
 		"Ability5"		"generic_hidden"
@@ -19,14 +19,6 @@
 		"Ability16"		"special_bonus_unique_lifestealer_3"
 		"Ability17"		"special_bonus_unique_lifestealer"
 		"AbilityDraftIgnoreCount" "9"
-		"AbilityDraftAbilities"
-		{
-			"Ability1"		"life_stealer_rage"
-			"Ability2"		"life_stealer_feast"
-			"Ability3"		"life_stealer_ghoul_frenzy"
-			"Ability4"		"life_stealer_infest"
-		}
-
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"22"

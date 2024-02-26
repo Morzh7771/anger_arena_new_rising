@@ -74,6 +74,7 @@ function PercentDamage:_init()
 		"sniper_assassinate",
 		"broodmother_silken_bola",
 		"nevermore_requiem",
+		"bloodseeker_blood_bath",
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",

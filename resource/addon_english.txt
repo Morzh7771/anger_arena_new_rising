@@ -93,6 +93,18 @@
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6"                              "Book of Gods (+10)"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"                  "Permanently grants the hero 5 of each reliable attribute and 5 of each unreliable attribute. Upon each death, you will lose 20% of unreliable attributes."
 
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_60"                             "Book of Intelligence (+100)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_60_Description"                 "Permanently grants the hero 50 reliable intelligence and 50 unreliable intelligence. Upon each death, you will lose 20% of unreliable intelligence."
+0
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_60"                             "Book of Agility (+100)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_60_Description"                 "Permanently grants the hero 50 reliable strength and 50 unreliable strength. Upon each death, you will lose 20% of unreliable agility."
+0
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_60"                             "Book of Strength (+100)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_60_Description"                 "Permanently grants the hero 50 reliable strength and 50 unreliable agility. Upon each death, you will lose 20% of unreliable strength."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60"                              "Book of Gods (+100)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60_Description"                  "Permanently grants the hero 50 of each reliable attribute and 50 of each unreliable attribute. Upon each death, you will lose 20% of unreliable attributes."
+
 		"DOTA_TOOLTIP_bonus_str_tome"                                    "Unreliable Strength"
 		"DOTA_TOOLTIP_bonus_str_tome_Description"                        "Upon death, you will lose 20%%% of unreliable strength."
 
@@ -103,7 +115,11 @@
 		"DOTA_TOOLTIP_bonus_int_tome_Description"                        "Upon death, you will lose 20%%% of unreliable intelligence."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED"								"Medical Tractate"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"					"Permanently increases your hero's Health by 500 and mana by 250."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"					"Permanently increases your hero's Health by 400 and mana by 200."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_2"								"Medical Tractate"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_2_Description"					"Permanently increases your hero's Health by 4000 and mana by 2000."
+
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP"								"Tome of Heroes"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP_Description"					"Increases your hero's level by 1."
@@ -583,7 +599,7 @@
 		//Ember Spirit
 		"DOTA_Tooltip_Ability_ember_spirit_searing_chains_damage_pct"			"%AGILITY DAMAGE"
 		"DOTA_Tooltip_Ability_ember_spirit_flame_guard_damage_pct"				"%AGILITY DAMAGE"
-
+		"DOTA_Tooltip_Ability_bloodseeker_blood_bath_damage_pct"				"%AGILITY DAMAGE"
 		"DOTA_Tooltip_ability_ember_spirit_sleight_of_fist_scepter_Description"	"Reduces cooldown by 2 seconds"
 		
 		//Templar Assassin
@@ -1374,7 +1390,7 @@
 		"DOTA_Tooltip_modifier_bkb_aa_3_immune_Description"	"Creature is immune to magic."
 		
 		"DOTA_Tooltip_Ability_item_falcon_blade_custom"	"Falcon Blade"
-		"DOTA_Tooltip_ability_item_falcon_blade_custom_Description"	"<h1>Activated: Falcon Rush</h1>The owner makes a quick <b><font color='#53ea48'>dash</font></b> in the specified direction for a distance of <b><font color='#53ea48'>%range%</font></b><br><br>Upon activation, the owner dodges all projectiles<br><br>When taking damage from heroes, the ability goes on cooldown for %damage_cd% seconds"
+		"DOTA_Tooltip_ability_item_falcon_blade_custom_Description"	"<h1>Activated: Falcon Rush</h1>The owner makes a quick <b><font color='#53ea48'>dash</font></b> in the specified direction for a distance of <b><font color='#53ea48'>%range%</font></b><br><br>Upon activation, the owner dodges all projectiles"
 		"DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_damage"	"+$damage"
 		"DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_mana_regen"	"+$mana_regen"
 		"DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_health"	"+$health"
@@ -2680,5 +2696,14 @@
 		"DOTA_Tooltip_ability_item_vladmir_2_Lore"                          "A sinister mask, cursed with the malice of a fallen vampire."
 
 		"DOTA_Tooltip_ability_item_ultimate_scepter_Description"			"<h1>Passive: Ability Upgrade</h1> Upgrades the hero's ultimate ability and some other abilities. \n\nThe consumable version drops from Tormentor."
+
+		"DOTA_Tooltip_ability_life_stealer_feast_aa" "Feast"
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Description" "Adds bonus damage and lifesteal to the hero's attacks, based on the target's maximum health."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Lore" "After escaping from the Devarque prison, N'aix began to feast on the flesh and bones of those unfortunate enough to cross his path."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note0" "Does not affect bosses."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note1" "The amount of health restored is not based on damage dealt."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note2" "Stacks with other sources of lifesteal."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_leech_percent" "%Lifesteal from Max Health:"
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_damage_percent" "%Damage from Max Health:"
 	}
 }

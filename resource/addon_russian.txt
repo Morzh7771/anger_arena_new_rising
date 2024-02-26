@@ -96,8 +96,24 @@
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED"								"Медицинский трактат"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"					"Навсегда увеличивает здоровье вашего персонажа на 400 и ману на 200"
 
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_2"								"Медицинский трактат"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_2_Description"					"Навсегда увеличивает здоровье вашего персонажа на 4000 и ману на 2000"
+
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP"								"Книга героев"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_LVLUP_Description"					"Повышает ваш уровень."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_60"								"Книга ИНТЕЛЛЕКТА (+100)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_60_Description"					"Дает герою навсегда 50 надежнего интеллекта и 50 ненадежнего. Каждую смерть вы будете терять 20% ненадежного интеллекта."
+
+		"DOTA_TOOLTIP_ABILITY_item_tome_agi_60"								"Книга ловкости(+100)"
+		"DOTA_TOOLTIP_ABILITY_item_tome_agi_60_Description"					"Дает герою навсегда 50 надежной силы и 50 не надежнего. Каждую смерть вы будете терять 20% ненадежной ловкости."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_60"								"Книга силы (+100)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_60_Description"					"Дает герою навсегда 50 надежной силы и 50 не надежнего. Каждую смерть вы будете терять 20% ненадежной силы."
+
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60"								"Книга богов (+100)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60_Description"					"Дает герою навсегда 50 всех надежный аттрибутов и 50 не надежнех. Каждую смерть вы будете терять 20% ненадежных аттрибутов."
+
 
 		"DOTA_TOOLTIP_bonus_str_tome"										"Ненадежная сила"
 		"DOTA_TOOLTIP_bonus_str_tome_Description"							"При смерти вы будете терять 20%%% ненадежной силы."
@@ -557,6 +573,7 @@
 		//Spectre
 		"DOTA_Tooltip_Ability_spectre_desolate_damage_pct"						"%УРОН ОТ ЛОВКОСТИ"
 		"DOTA_Tooltip_Ability_spectre_spectral_dagger_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
+		"DOTA_Tooltip_Ability_bloodseeker_blood_bath_damage_pct"				"%УРОН ОТ ЛОВКОСТИ"
 		
 		//Earthshaker
 		"DOTA_Tooltip_Ability_earthshaker_fissure_damage_pct"				"%УРОН ОТ СИЛЫ"
@@ -1457,7 +1474,7 @@
 		"DOTA_Tooltip_modifier_bkb_aa_3_immune_Description"	        "Существо невосприимчиво к магии."
 
         "DOTA_Tooltip_Ability_item_falcon_blade_custom"	                "Falcon Blade"
-        "DOTA_Tooltip_ability_item_falcon_blade_custom_Description"	"<h1>Активируемая: Falcon Rush</h1>Владелец совершает быстрый <b><font color='#53ea48'>рывок</font></b> в указанном направлении на расстояние <b><font color='#53ea48'>%range%</font></b><br><br>В момент применения владелец уклоняется от всех снарядов<br><br>При получении урона от героев, способность уходит на перезарядку в %damage_cd% сек"
+        "DOTA_Tooltip_ability_item_falcon_blade_custom_Description"	"<h1>Активируемая: Falcon Rush</h1>Владелец совершает быстрый <b><font color='#53ea48'>рывок</font></b> в указанном направлении на расстояние <b><font color='#53ea48'>%range%</font></b><br><br>В момент применения владелец уклоняется от всех снарядов"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_damage"	"+$damage"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_mana_regen""+$mana_regen"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_health"	"+$health"
@@ -2792,7 +2809,15 @@
 		
 		"DOTA_Tooltip_modifier_talant_bash_cd"					"Bash"
 		"DOTA_Tooltip_modifier_talant_bash_cd_Description"		"Перезарядка"
-
+		
+		"DOTA_Tooltip_ability_life_stealer_feast_aa"                                       "Feast"
+        "DOTA_Tooltip_ability_life_stealer_feast_aa_Description"                           "Добавляет к атакам героя дополнительный урон и вампиризм, зависящие от максимального здоровья противника."     
+        "DOTA_Tooltip_ability_life_stealer_feast_aa_Lore"                                  "После побега из темницы Деварка Н'эйкс начал питаться плотью и костьми тех, кому не посчастливилось с ним встретиться." 
+        "DOTA_Tooltip_ability_life_stealer_feast_aa_Note0"                                 "Не действует на боссов."
+        "DOTA_Tooltip_ability_life_stealer_feast_aa_Note1"                                 "Количество восстановленного здоровья не зависит от нанесённого урона."
+        "DOTA_Tooltip_ability_life_stealer_feast_aa_Note2"                                 "Складывается с другими источниками вампиризма."
+        "DOTA_Tooltip_ability_life_stealer_feast_aa_hp_leech_percent"                      "%ВАМПИРИЗМ ОТ МАКС. ЗДОРОВЬЯ:"
+        "DOTA_Tooltip_ability_life_stealer_feast_aa_hp_damage_percent"                     "%УРОН ОТ МАКС. ЗДОРОВЬЯ:"
 		"DOTA_Tooltip_ability_item_ultimate_scepter_Description"	"<h1>Пассивное: Ability Upgrade</h1>Улучшает ульт и некоторые способности. \n\n Поглощаемая версия выпадает из Терзателя"
 	}  
 }

@@ -266,6 +266,7 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier("modifier_full_disable_stun", 'modifiers/modifier_full_disable_stun', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_mid_teleport", "modifiers/modifier_mid_teleport", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_medical_tractate", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_medical_tractate_2", 'modifiers/modifier_medical_tractate', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_duel_vision", 'modifiers/modifier_duel_vision', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_repick", 'modifiers/modifier_repick', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier('modifier_bat', 'modifiers/modifier_bat', LUA_MODIFIER_MOTION_NONE)
@@ -452,59 +453,66 @@ function AngelArena:OnConnectFull(event)
 	PlayerResource:OnPlayerConnected(playerID, event.userid)
 end
 function AngelArena:GoldFilter(event)
+	print(event.gold)
 	ComebackSystem:OnGiveGold( event.player_id_const, event.gold, event.reliable, event.reason_const )
-
+	AngelArena:SaveGold(event.gold)
 	return true
 end
 function AngelArena:OnPlayerBuyItem(event)
 	local playerid = event.PlayerID
 
-	AngelArena:SaveGoldForPlayerId(playerid)
+	AngelArena:SaveGoldForPlayerId(playerid,0)
 end
-function AngelArena:SaveGold()
+function AngelArena:OnPlayerBuyItem(event)
+	local playerid = event.PlayerID
+
+	AngelArena:SaveGoldForPlayerId(playerid,0)
+end
+function AngelArena:SaveGold(gold)
 	TeamHelper:ApplyForPlayers( nil, function(pid)
-		AngelArena:SaveGoldForPlayerId(pid)
+		AngelArena:SaveGoldForPlayerId(pid,gold)
 	end)
 end
-function AngelArena:SaveGoldForPlayerId(playerid)
+function AngelArena:SaveGoldForPlayerId(playerid,gold)
 	if not PlayerResource:IsValidPlayerID(playerid) then return end
-
+	
 	local player_gold = PlayerResource:GetGold(playerid)
-
+	
 	local tPlayers = self.tPlayers
-
+	
 	if not tPlayers then
-		tPlayers = {}
-		self.tPlayers = tPlayers
+	  tPlayers = {}
+	  self.tPlayers = tPlayers
 	end
-
+	
 	if not IsAbadonedPlayerID(playerid) then
-		tPlayers[playerid] = tPlayers[playerid] or {} -- nil error exception
-		tPlayers[playerid].gold = tPlayers[playerid].gold or 0 -- nil error exception
-
-		if player_gold > 50000 then
+	  	tPlayers[playerid] = tPlayers[playerid] or {} -- nil error exception
+	  	tPlayers[playerid].gold = tPlayers[playerid].gold or 0 -- nil error exception
+		
+	  	if player_gold > 50000 then
 			local gold_to_save = player_gold - 50000
 			tPlayers[playerid].gold = tPlayers[playerid].gold + gold_to_save
 			PlayerResource:SpendGold(playerid, gold_to_save, 0)
-		end
-
-		if player_gold < 50000 then
+	  	end
+	  
+	  	if player_gold < 50000 then
 			local free_gold = 50000 - player_gold
 			local total_saved_gold = tPlayers[playerid].gold
 			if total_saved_gold > free_gold then
-				tPlayers[playerid].gold = tPlayers[playerid].gold - free_gold
-				PlayerResource:ModifyGold(playerid, free_gold, true, 0)
+			  tPlayers[playerid].gold = tPlayers[playerid].gold - free_gold
+			  PlayerResource:ModifyGold(playerid, free_gold, true, 0)
 			else
-				PlayerResource:ModifyGold(playerid, total_saved_gold, true, 0)
-				tPlayers[playerid].gold = 0
+			  PlayerResource:ModifyGold(playerid, total_saved_gold, true, 0)
+			  tPlayers[playerid].gold = 0
 			end
-		end
-
-		local total_gold = PlayerResource:GetGold(playerid) + tPlayers[playerid].gold -- почему не player_gold? потому что золото игрока изменилось, а эта переменная нет :c
-
-		CustomNetTables:SetTableValue("gold", "player_id_" .. playerid, { gold = total_gold })
+	  	end
+	  
+	  	local total_gold = PlayerResource:GetGold(playerid) + tPlayers[playerid].gold -- почему не player_gold? потому что золото игрока изменилось, а эта переменная нет :c
+	  
+	  	CustomNetTables:SetTableValue("gold", "player_id_" .. playerid, { gold = total_gold })
 	end
 end
+
 function AngelArena:ShareGold()
 	local teamGolds = {}
 
@@ -560,8 +568,7 @@ function AngelArena:OnGameStateChange()
 		local needkill = KILL_LIMIT_CONST / 10 * player
 		KILL_LIMIT = needkill
 		_G.KILL_LIMIT = needkill
-		
-		
+
 		CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
 
 		Attentions:SetKillLimit( KILL_LIMIT )
@@ -606,6 +613,7 @@ function AngelArena:OnGameStateChange()
 			end
 		end
 		
+		
 		local spawners = Entities:FindAllByClassname("npc_dota_neutral_spawner")
 
 		for _, spawner in pairs(spawners) do
@@ -626,14 +634,13 @@ function AngelArena:OnGameStateChange()
 			BossSpawner:OnGameStart()
 			BearSpawner:SpawnBear()
 			RepickMenu:init() 
-			Timers:CreateTimer(0.5, function()
-				AngelArena:SaveGold()
-				return 0.5
-			end)
 			Timers:CreateTimer(0.1, function()
 				GPM_Init()
 			end)
-
+			Timers:CreateTimer(0.5, function()
+				AngelArena:SaveGold(0)
+				return 0.5
+			end)
 			Timers:CreateTimer(10, function() -- таймер для шаринга голды
 				AngelArena:ShareGold()
 				UpdatePlayersCount()
@@ -944,7 +951,6 @@ function AngelArena:DamageFilter(event)
 	-----------------------------------------------------------------------------------------------------
 	------------------------------ Костыль для ланаи ----------------------------------------------------
 	-----------------------------------------------------------------------------------------------------
-	
 	if attacker and victim:HasModifier("modifier_templar_assassin_refraction_absorb") then
 		if skill_name ~= "item_helm_of_the_undying" and skill_name ~= "skeleton_king_reincarnation" then
 			return
@@ -987,7 +993,6 @@ function AngelArena:DamageFilter(event)
 			end
 		end
 	end
-
 	return true
 end
 
