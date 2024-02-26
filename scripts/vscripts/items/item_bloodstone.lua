@@ -38,7 +38,7 @@ function modifier_bloodstone:OnTakeDamage(params)
     if params.attacker ~= self:GetParent() then return end
     if params.unit == self:GetParent() then return end
     if not params.unit then return end
-    --if not params.inflictor or params.inflictor:IsNull() then return end
+    if not params.inflictor or params.inflictor:IsNull() then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION) > 0 then return end

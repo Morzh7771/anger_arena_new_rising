@@ -26,7 +26,6 @@ require('lib/repick_menu')
 require('lib/special_bonus_base_aa/Special_bonus_base_aa')
 --require('lib/events_protector')
 
-
 function CEntityInstance:SetNetworkableEntityInfo(key, value)
     local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
     t[key] = value
@@ -106,7 +105,7 @@ function Activate()
 	GameRules.AddonTemplate = AngelArena()
 	GameRules.AddonTemplate:InitGameMode()
 	local fountains = Entities:FindAllByClassname('ent_dota_fountain')
-    for _, fountain in pairs(fountains) do 
+    for _, fountain in pairs(fountains) do
     if ability then
         ability:SetLevel(100)
     end
@@ -116,7 +115,7 @@ end
 function UpdatePlayersCount()
 	if is_game_end then return end
 
-	local teamsData = 
+	local teamsData =
 	{
 		[DOTA_TEAM_GOODGUYS] = 0,
 		[DOTA_TEAM_BADGUYS]  = 0,
@@ -190,10 +189,10 @@ function AngelArena:InitGameMode()
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 100)
 	GameRules:SetCustomVictoryMessage("#aa_on_win_message")
 
-	
+
 	BossSpawner:Init()
 	CreepSpawner:Init()
-	
+
 	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepLeveling:OnSpawnCallback(arg); end)
 	CreepSpawner:RegisterOnDeathCallback(function(arg) CreepLeveling:OnDeathCallback(arg); end)
 	if GameRules:IsCheatMode()then
@@ -224,12 +223,12 @@ function AngelArena:InitGameMode()
 		GameMode:SetDraftingHeroPickSelectTimeOverride(60)
 		GameRules:SetPreGameTime(60)
 	end
-	
+
 	GameRules:SetGoldPerTick(GOLD_PER_TICK)
 	GameRules:SetHeroRespawnEnabled(true)
 	GameRules:SetPostGameTime(30)
 	GameRules:SetStrategyTime(15.0)
-	
+
 	GameRules:SetCreepSpawningEnabled( false )
 
 	GameRules:SetGoldTickTime(1)
@@ -239,7 +238,7 @@ function AngelArena:InitGameMode()
 	GameRules:SetRuneSpawnTime(120)
 	GameMode:SetCustomBackpackSwapCooldown(4.0)
 	GameRules:SetStartingGold(750)
-	
+
 	GameRules:SetUseUniversalShopMode(true)
 
 
@@ -271,7 +270,7 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier("modifier_repick", 'modifiers/modifier_repick', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier('modifier_bat', 'modifiers/modifier_bat', LUA_MODIFIER_MOTION_NONE)
 
-	
+
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
 	GameMode:SetRuneSpawnFilter(Safe_Wrap(AngelArena, "ModifierRuneSpawn"), self)
 	GameMode:SetModifyGoldFilter(Safe_Wrap(AngelArena, "GoldFilter"), self)
@@ -293,7 +292,7 @@ function AngelArena:InitGameMode()
 	_G.Kills[DOTA_TEAM_BADGUYS] = _G.Kills[DOTA_TEAM_BADGUYS] or 0
 
 	AngelArena:OnGameStateChange()
-	
+
 	if GameRules:IsCheatMode() then
 		require('lib/debug/keyexec')
 		KeyExec:Init()
@@ -312,7 +311,7 @@ function AngelArena:ModifierRuneSpawn(keys)
 	local runes = { 0, 1, 2, 3, 4, 6, 9}
 
 	local Dotatime = GameRules:GetDOTATime(false, false)
-		keys.rune_type = runes[RandomInt(1, #runes)]	
+		keys.rune_type = runes[RandomInt(1, #runes)]
 	return true
 end
 function AngelArena:OnRuneActivate(event)
@@ -333,7 +332,7 @@ function AngelArena:OnRuneActivate(event)
 		local hero_mod_table = {
 			["npc_dota_hero_alchemist"] = 2.5,
 		}
-	
+
 		local gold_without_mods = 40 + 14 * cur_min
 
 		function CalcBountyGold( hero )
@@ -475,26 +474,26 @@ function AngelArena:SaveGold(gold)
 end
 function AngelArena:SaveGoldForPlayerId(playerid,gold)
 	if not PlayerResource:IsValidPlayerID(playerid) then return end
-	
+
 	local player_gold = PlayerResource:GetGold(playerid)
-	
+
 	local tPlayers = self.tPlayers
-	
+
 	if not tPlayers then
 	  tPlayers = {}
 	  self.tPlayers = tPlayers
 	end
-	
+
 	if not IsAbadonedPlayerID(playerid) then
 	  	tPlayers[playerid] = tPlayers[playerid] or {} -- nil error exception
 	  	tPlayers[playerid].gold = tPlayers[playerid].gold or 0 -- nil error exception
-		
+
 	  	if player_gold > 50000 then
 			local gold_to_save = player_gold - 50000
 			tPlayers[playerid].gold = tPlayers[playerid].gold + gold_to_save
 			PlayerResource:SpendGold(playerid, gold_to_save, 0)
 	  	end
-	  
+
 	  	if player_gold < 50000 then
 			local free_gold = 50000 - player_gold
 			local total_saved_gold = tPlayers[playerid].gold
@@ -506,9 +505,9 @@ function AngelArena:SaveGoldForPlayerId(playerid,gold)
 			  tPlayers[playerid].gold = 0
 			end
 	  	end
-	  
+
 	  	local total_gold = PlayerResource:GetGold(playerid) + tPlayers[playerid].gold -- почему не player_gold? потому что золото игрока изменилось, а эта переменная нет :c
-	  
+
 	  	CustomNetTables:SetTableValue("gold", "player_id_" .. playerid, { gold = total_gold })
 	end
 end
@@ -585,11 +584,11 @@ function AngelArena:OnGameStateChange()
 			if number <= 2 then
 				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS)
 				self.creep:SetMaterialGroup("0")
-			end 
+			end
 			if number >= 3 then
 				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
 				self.creep:SetMaterialGroup("1")
-			end 
+			end
 			AddFOWViewer(DOTA_TEAM_GOODGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
 			AddFOWViewer(DOTA_TEAM_BADGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
 			self.creep:AddNewModifier(self.creep, nil,'modifier_mid_teleport', {duration = -1} )
@@ -612,19 +611,19 @@ function AngelArena:OnGameStateChange()
 				if ability then ability:SetLeevl(1) end
 			end
 		end
-		
-		
+
+
 		local spawners = Entities:FindAllByClassname("npc_dota_neutral_spawner")
 
 		for _, spawner in pairs(spawners) do
 			print(spawner)
 			UTIL_Remove(spawner)
 		end
-		
+
 
 		PauseGame(true)
 
-		
+
 	end
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -633,7 +632,7 @@ function AngelArena:OnGameStateChange()
 			CreepSpawner:StartSpawning()
 			BossSpawner:OnGameStart()
 			BearSpawner:SpawnBear()
-			RepickMenu:init() 
+			RepickMenu:init()
 			Timers:CreateTimer(0.1, function()
 				GPM_Init()
 			end)
@@ -688,6 +687,7 @@ function AngelArena:OnNPCSpawned(keys)
 		end
 		if npc:IsRealHero()then
 			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
+			npc:AddAbility("divine_intervention")
 			--npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
 		end
 		if npc:IsIllusion() then
@@ -696,7 +696,7 @@ function AngelArena:OnNPCSpawned(keys)
 			npc:AddNewModifier(npc, nil, "bonus_str_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_str_tome'):GetStackCount())
 			npc:AddNewModifier(npc, nil, "bonus_agi_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_agi_tome'):GetStackCount())
 			npc:AddNewModifier(npc, nil, "bonus_int_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_int_tome'):GetStackCount())
-			
+
 		end
 	end
 	if npc:IsRealHero() then
@@ -758,7 +758,7 @@ function AngelArena:OnNPCSpawned(keys)
 	if AngelArena:IsUnitBear(spawnedUnit) then
 		spawnedUnit:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
 		local ability
-		
+
 		local bear_abilities =
 		{
 			["separation_of_souls_bear"] = 1,
@@ -971,6 +971,8 @@ function AngelArena:DamageFilter(event)
 					ability = attacker:FindItemInInventory(skill_name)
 				end
 
+				local divine_intervention = attacker:FindAbilityByName("divine_intervention")
+
 				if attacker and (skill_name == "batrider_sticky_napalm") then
 					return
 				end
@@ -982,12 +984,19 @@ function AngelArena:DamageFilter(event)
 					ability = ability,
 					damage = damage,
 					damage_type = damagetype_const,
+					inflictor = divine_intervention
 				}
 
 				local status, res = pcall(callback, callback_data)
 				if victim ~= attacker then
 					if status and res then
-						ApplyDamage({ victim = victim, attacker = attacker, damage = res, damage_type = damagetype_const })
+						ApplyDamage({
+                            victim = victim,
+                            attacker = attacker,
+                            damage = res,
+                            damage_type = damagetype_const,
+                            ability = divine_intervention
+						})
 					end
 				end
 			end
@@ -1014,14 +1023,14 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
     if not hero then return true end
 		if ord.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or ord.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET  then
 			if target and not target:IsNull() and  target:IsBaseNPC() and target:GetUnitName() == "npc_teleport" and unit:IsRealHero() then
-				if teleport_range >= ( hero:GetOrigin() - target:GetOrigin() ):Length2D() then 
+				if teleport_range >= ( hero:GetOrigin() - target:GetOrigin() ):Length2D() then
 					if not hero:HasModifier("modifier_mid_teleport_cd") then
-						hero:Interrupt() 
+						hero:Interrupt()
 						hero:Stop()
 						hero:AddAbility("mid_teleport")
 						local ability = hero:FindAbilityByName("mid_teleport")
 						ability:SetLevel(1)
-						hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID()) 
+						hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID())
 					else
 						print('cd')
 						CustomGameEventManager:Send_ServerToPlayer(player, "CreateIngameErrorMessage", {message = "#midteleport_cd"})
@@ -1032,9 +1041,9 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 				end
 				return false
 			end
-		
+
 			if ord.order_type == DOTA_UNIT_ORDER_CAST_TARGET  then
-				if target:GetUnitName() == "npc_teleport" then 
+				if target:GetUnitName() == "npc_teleport" then
 					print('error2')
 					return false
 				end
@@ -1045,17 +1054,17 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 			local ability = EntIndexToHScript(ord.entindex_ability)
 			local target = EntIndexToHScript(ord.entindex_target)
 			local target_id = target:GetPlayerOwnerID()
-	
+
 			if PlayerResource:IsDisableHelpSetForPlayerID(target_id, player_id) then
 				return UF_FAIL_DISABLE_HELP
 			end
-	
+
 			if forbidden_ability_boss[ability:GetName()] and BossSpawner:IsBoss(target) then
 				return UF_FAIL_DISABLE_HELP
 			end
-	
+
 			if target:HasAbility("wisp_tether") and ability:GetName() == "wisp_tether" then return end
-			
+
 			if unit and target == unit and ability:GetName() == "rubick_spell_steal" then
 				return UF_FAIL_DISABLE_HELP
 			end
@@ -1063,7 +1072,7 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 	return true
 end
 
-	
+
 function AngelArena:OnPlayerUsedAbility(event)
 	local player = PlayerResource:GetPlayer(event.PlayerID)
 	local ability_name = event.abilityname
