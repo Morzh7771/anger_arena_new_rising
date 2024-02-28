@@ -15,6 +15,7 @@ function charon_overload:OnSpellStart()
 	self:ShotArcTarget(self:GetCaster(), self.target)
 
 	EmitSoundOn(CAST_SOUND, self:GetCaster())
+	if self:GetCursorTarget():TriggerSpellAbsorb(self) then return end
 end
 
 ------------------------------------------------------------------------------
