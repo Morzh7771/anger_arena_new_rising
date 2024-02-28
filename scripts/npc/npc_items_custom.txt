@@ -2545,7 +2545,7 @@
         }
     }
 
-    "item_recipe_bloodstone"
+    "item_recipe_bloodstone_1"
     {
         "Model"							"models/props_gameplay/recipe.vmdl"
         "BaseClass"                     "item_recipe_arcane_boots"
@@ -2596,9 +2596,9 @@
         {
                 "bonus_health"			"500 1000 3000"
                 "bonus_mana"			"500 1000 3000"
-                "spell_lifesteal"		"20 25 30"
-                "buff_duration"			"6 8 10"
-                "lifesteal_multiplier"	"2.5 3.5 4.5"
+                "spell_lifesteal"		"20 22.5 25"
+                "buff_duration"			"6"
+                "lifesteal_multiplier"	"2 2.5 3"
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
                 "bonus_aoe"             "50 60 70"
