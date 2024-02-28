@@ -11,7 +11,7 @@ end
 
 function charon_soul_drain:OnSpellStart()
     if not IsServer() then return end
-    if self:GetCursorTarget():TriggerSpellAbsorb(self) then return end
+    if self:GetCursorTarget():TriggerSpellAbsorb(self) then self:EndChannel(true); return end
     self.damage = self:GetSpecialValueFor("damage")
     self.manaburn = self:GetSpecialValueFor("manaburn")
     self.manaburn_pct = self:GetSpecialValueFor("manaburn_pct")
