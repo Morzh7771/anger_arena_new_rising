@@ -92,7 +92,7 @@ function modifier_item_dagon_custom:OnTakeDamage(params)
 
     local lifesteal = self.lifesteal
 
-
+    print(params.damage)
     local heal = params.damage * lifesteal
 
 

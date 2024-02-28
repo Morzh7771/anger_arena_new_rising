@@ -130,16 +130,16 @@ end
 
 
 function modifier_revenants_brooch_custom:OnTakeDamage(params)
-if params.unit == self:GetParent() then return end
-if params.attacker ~= self:GetParent() then return end
-if params.inflictor == nil then return end
-if self:GetParent():IsIllusion() then return end
-if not params.unit then return end
-if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
-if params.unit:IsIllusion() then return end
-if (params.unit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() > 2000 then return end
+    if params.unit == self:GetParent() then return end
+    if params.attacker ~= self:GetParent() then return end
+    if params.inflictor == nil then return end
+    if self:GetParent():IsIllusion() then return end
+    if not params.unit then return end
+    if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
+    if params.unit:IsIllusion() then return end
+    if (params.unit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() > 2000 then return end
 
-local lifesteal = self.lifesteal*params.damage
+    local lifesteal = self.lifesteal*params.damage
     if not IsServer() then return end
     self:GetParent():Heal(lifesteal, self:GetAbility())
     print(lifesteal)

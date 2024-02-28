@@ -133,7 +133,14 @@
 #base heroes/huntress/ability_data.txt
 
 "DOTAAbilities"
-{	
+{
+    "divine_intervention"
+    {
+        "BaseClass"							"ability_lua"
+        "AbilityTextureName" 				"you_shall_never_see_it"
+        "AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "ScriptFile"						"abilities/divine_intervention"
+    }
 	"summon_cleave"
 	{
 		"BaseClass"						"ability_datadriven"
