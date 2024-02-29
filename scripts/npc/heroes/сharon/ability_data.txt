@@ -159,17 +159,17 @@
 			"damage_constant"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"       			"100 140 180 230 280 340 410"
+				"value"       "100 160 220 280 340 400 460"
 			}
 			"damage_for_mana_pct"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"   				"10 15 20 25 30 35 40"
+				"value"   "10 13 16 19 22 25 28"
 			}
 			"mana_cost_pct"
 			{
 				"var_type"				        "FIELD_FLOAT"
-				"value"                 		"10 15 20 25 30 35 40"
+				"value"                 "10 13 16 19 22 25 28"
 				"LinkedSpecialBonus"	        "charon_overload_manacost_reduction_percent_tallent"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}

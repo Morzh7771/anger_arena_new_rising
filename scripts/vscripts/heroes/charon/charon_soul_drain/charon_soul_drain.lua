@@ -9,8 +9,11 @@ function charon_soul_drain:IsStealable()
 	return true
 end
 
+
+
 function charon_soul_drain:OnSpellStart()
     if not IsServer() then return end
+    if self:GetCursorTarget():TriggerSpellAbsorb(self) then Timers:CreateTimer(0.01, function() self:EndChannel(true) return end); return end
     self.damage = self:GetSpecialValueFor("damage")
     self.manaburn = self:GetSpecialValueFor("manaburn")
     self.manaburn_pct = self:GetSpecialValueFor("manaburn_pct")
