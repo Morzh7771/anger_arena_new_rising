@@ -16,15 +16,15 @@ function charon_soul_drain:OnSpellStart()
     self.manaburn_pct = self:GetSpecialValueFor("manaburn_pct")
     self.duration = self:GetSpecialValueFor("duration_tooltip")
     local caster = self:GetCaster()
-
-    if caster:HasTalent("charon_soul_drain_cast_time_fast_bonus_const_tallent") then
-        local speedBonus = caster:GetTalentSpecialValueFor("charon_soul_drain_cast_time_fast_bonus_const_tallent")
-        local mainCastTime = self.duration - speedBonus
-        local coef = self.duration/mainCastTime
-        self.damage = self.damage*coef
-        self.manaburn = self.manaburn*coef
-        self.manaburn_pct = self.manaburn_pct*coef
-    end
+ 
+    --if caster:HasTalent("charon_soul_drain_cast_time_fast_bonus_const_tallent") then
+    --    local speedBonus = caster:GetTalentSpecialValueFor("charon_soul_drain_cast_time_fast_bonus_const_tallent")  --1.5
+    --    local mainCastTime = self.duration - speedBonus                                                             --75 - 1.5
+    --    local coef = (self.duration/mainCastTime)/2                                                                 -- 3.5/2
+    --    self.damage = self.damage*coef                                                                              -- 350 * 1.75 // 2143 1050 = база
+    --    self.manaburn = self.manaburn*coef                                                                          -- 110 * 1.75 // 673 330 = конст мана //
+    --    self.manaburn_pct = self.manaburn_pct*coef                                                                  -- 9 * 1.75 // 15.75 * 3,5 = 55% // 6000 3000
+    --end
 
     self.interval = self:GetSpecialValueFor("interval")
     self.target = self:GetCursorTarget()

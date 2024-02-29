@@ -1858,7 +1858,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"70000"
+        "ItemCost"						"35000"
         "ItemQuality"					"component"
         "ItemStackable"					"1"
         "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -1877,9 +1877,9 @@
                 "Target"			"CASTER"
                 "ScriptFile"		"tome.lua"
                 "Function"			"UpgradeStats"
-                "Str"				"100"
-                "Agi"				"100"
-                "Int"				"100"
+                "Str"				"50"
+                "Agi"				"50"
+                "Int"				"50"
             }
             "SpendCharge"
             {
