@@ -2656,9 +2656,9 @@
         {
                 "bonus_health"			"500 1000 3000"
                 "bonus_mana"			"500 1000 3000"
-                "spell_lifesteal"		"20 25 30"
-                "buff_duration"			"6 8 10"
-                "lifesteal_multiplier"	"2.5 3.5 4.5"
+                "spell_lifesteal"		"20 22.5 25"
+                "buff_duration"			"6"
+                "lifesteal_multiplier"	"2 2.5 3"
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
                 "bonus_aoe"             "50 60 70"
@@ -2716,12 +2716,12 @@
         {
                 "bonus_health"			"500 1000 3000"
                 "bonus_mana"			"500 1000 3000"
-                "spell_lifesteal"		"20 25 30"
-                "buff_duration"			"6 8 10"
-                "lifesteal_multiplier"	"2.5 3.5 4.5"
+                "spell_lifesteal"		"20 22.5 25"
+                "buff_duration"			"6"
+                "lifesteal_multiplier"	"2 2.5 3"
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
-                "bonus_aoe"             "50 60 700"
+                "bonus_aoe"             "50 60 70"
         }
     }
     "item_recipe_piercing_blade"
@@ -4814,7 +4814,7 @@
             "spell_lifesteal"       "15 20 25"    
             "manacost_per_hit"      "9 8 7"
             "spell_lifesteal_creep" "15 20 25"
-            "damage_reduction"      "-35 -32.5 -30"
+            "damage_reduction"      "-35 -30 -25"
             
         }
     }
@@ -4840,7 +4840,7 @@
             "spell_lifesteal"       "15 20 25"    
             "manacost_per_hit"      "9 8 7"
             "spell_lifesteal_creep" "15 20 25"
-            "damage_reduction"      "-35 -32.5 -30"  
+            "damage_reduction"      "-35 -30 -25"  
         }
     }
     "item_revenants_brooch_custom_3"
@@ -4865,7 +4865,7 @@
             "spell_lifesteal"       "15 20 25"    
             "manacost_per_hit"      "9 8 7"
             "spell_lifesteal_creep" "15 20 25"
-            "damage_reduction"      "-35 -32.5 -30"  
+            "damage_reduction"      "-35 -30 -25"  
         }
     }
     "item_recipe_guardian_greaves_custom"
