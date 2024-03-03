@@ -41,7 +41,7 @@ function modifier_bloodstone:OnTakeDamage(params)
     if not params.inflictor or params.inflictor:IsNull() then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) > 0 then return end
     if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) > 0 then return end
-    if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION) > 0 then return end
+    --if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION) > 0 then return end
     if not params.damage_type == DAMAGE_TYPE_MAGICAL then return end
 
         local heal = params.damage * self:GetAbility():GetSpecialValueFor( "spell_lifesteal" ) / 100

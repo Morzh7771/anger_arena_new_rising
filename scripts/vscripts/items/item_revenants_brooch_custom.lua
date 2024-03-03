@@ -220,7 +220,7 @@ if event.damage_category ~= DOTA_DAMAGE_CATEGORY_ATTACK then return 0 end
 if event.damage_type == DAMAGE_TYPE_MAGICAL then return 0 end
 if not self:GetAbility() then return 0 end
 if self:GetParent():GetMana() < self.mana_cost*self:GetParent():GetMaxMana() then return 0 end
-
+if self:GetParent():IsIllusion() then return end
 self:GetParent():SetMana(math.max(1, self:GetParent():GetMana() - self.mana_cost*self:GetParent():GetMaxMana()))
 
 local damageTable = {
@@ -229,7 +229,7 @@ local damageTable = {
     damage_type = DAMAGE_TYPE_MAGICAL,
     victim = event.target,
     ability = self:GetAbility(),
-    damage_flags = DOTA_DAMAGE_FLAG_MAGIC_AUTO_ATTACK
+    damage_flags = DOTA_DAMAGE_FLAG_MAGIC_AUTO_ATTACK + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 }
 ApplyDamage(damageTable)
 

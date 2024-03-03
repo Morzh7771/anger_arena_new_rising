@@ -102,8 +102,8 @@
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_60"                             "Book of Strength (+100)"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_60_Description"                 "Permanently grants the hero 50 reliable strength and 50 unreliable agility. Upon each death, you will lose 20% of unreliable strength."
 
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60"                              "Book of Gods (+100)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60_Description"                  "Permanently grants the hero 50 of each reliable attribute and 50 of each unreliable attribute. Upon each death, you will lose 20% of unreliable attributes."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60"                              "Book of Gods (+50)"
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60_Description"                  "Permanently grants the hero 25 of each reliable attribute and 25 of each unreliable attribute. Upon each death, you will lose 20% of unreliable attributes."
 
 		"DOTA_TOOLTIP_bonus_str_tome"                                    "Unreliable Strength"
 		"DOTA_TOOLTIP_bonus_str_tome_Description"                        "Upon death, you will lose 20%%% of unreliable strength."
@@ -126,6 +126,198 @@
 
 		"npc_aa_bulding_shrine_radiant"										"Shrine"
 		"npc_aa_bulding_shrine_dire"										"Shrine"
+
+		"npc_aa_megacreep_energy_creature"										"Energy Creature"
+		"npc_aa_megacreep_beast"												"Legendary Beast"
+		"npc_aa_megacreep_golem"												"Abyss Golem"
+		"npc_aa_creep_ghost_big"												"Banshi"
+		"npc_aa_creep_ghost_small_blue"											"Water Spirit"
+		"npc_aa_creep_ghost_small_red"											"Vengence Spirit"
+		"npc_aa_creep_ghost_small_green"										"Live Spirit"
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_ghost_big.kv' begin 
+		"DOTA_Tooltip_ability_ghost_big_dash"                                                                 "Dimensional Dash"
+		"DOTA_Tooltip_ability_ghost_big_dash_Description"                                                     "The ghost dashs forward and deal damage to all units on this path."
+		"DOTA_Tooltip_ability_ghost_big_dash_damage"                                                          "DAMAGE:"
+		"DOTA_Tooltip_ability_ghost_big_dash_range"                                                           "RANGE:"
+		"DOTA_Tooltip_ability_ghost_big_dash_speed"                                                           "SPEED:"
+
+		"DOTA_Tooltip_ability_ghost_big_slow"                                                                 "Curse"
+		"DOTA_Tooltip_ability_ghost_big_slow_Description"                                                     "Curses selected unit that slows him movement speed."
+		"DOTA_Tooltip_ability_ghost_big_slow_duration"                                                        "DURATION:"
+		"DOTA_Tooltip_ability_ghost_big_slow_bonus_movespeed"                                                 "%MOVEMENT SLOW:"
+
+		"DOTA_Tooltip_ability_ghost_big_passive_slow"                                                         "Spirit Slowness"
+		"DOTA_Tooltip_ability_ghost_big_passive_slow_Description"                                             "Slow enemy movement speed and attack speed with some chance."
+		"DOTA_Tooltip_ability_ghost_big_passive_slow_chance"                                                  "%CHACNE:"
+		"DOTA_Tooltip_ability_ghost_big_passive_slow_bonus_movespeed"                                         "%MOVEMENT SLOW:"
+		"DOTA_Tooltip_ability_ghost_big_passive_slow_bonus_attackspeed"                                       "BONUS ATTACK SPEED:"
+		"DOTA_Tooltip_ability_ghost_big_passive_slow_duration"                                                "DURATION:"
+
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_ghost_big.kv' end
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_ghost_small_blue.kv' begin 
+		"DOTA_Tooltip_ability_ghost_small_blue_lightning"                                                     "Spirit Light"
+		"DOTA_Tooltip_ability_ghost_small_blue_lightning_Description"                                         "Ghost launch a lightning that deal damage and bounces of around enemies. Bounces dealing smaller damage."
+		"DOTA_Tooltip_ability_ghost_small_blue_lightning_damage_main"                                         "MAIN DAMAGE:"
+		"DOTA_Tooltip_ability_ghost_small_blue_lightning_damage_second"                                       "BOUNCE DAMAGE:"
+		"DOTA_Tooltip_ability_ghost_small_blue_lightning_radius"                                              "RADIUS:"
+
+		"DOTA_Tooltip_ability_ghost_small_blue_magic_curse"                                                   "Blue Curse"
+		"DOTA_Tooltip_ability_ghost_small_blue_magic_curse_Description"                                       "Decrease selected unit magical resistance."
+		"DOTA_Tooltip_ability_ghost_small_blue_magic_curse_magical_resist_pct"                                "%MAGICAL RESIST RECREASING:"
+		"DOTA_Tooltip_ability_ghost_small_blue_magic_curse_duration"                                          "DURATION:"
+
+		"DOTA_Tooltip_ability_ghost_small_blue_aura"                                                          "Ghost Nonvalence"
+		"DOTA_Tooltip_ability_ghost_small_blue_aura_Description"                                              "Ghost increase around allies movement speed."
+		"DOTA_Tooltip_ability_ghost_small_blue_aura_radius"                                                   "RADIUS:"
+		"DOTA_Tooltip_ability_ghost_small_blue_aura_bonus_movespeed"                                          "BONUS MOVEMENT SPEED:"
+
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_ghost_small_blue.kv' end
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_ghost_small_green.kv' begin 
+		"DOTA_Tooltip_ability_ghost_small_green_wind"                                                         "Wilf Spirit"
+		"DOTA_Tooltip_ability_ghost_small_green_wind_Description"                                             "Greatly improves around allies movement speed."
+		"DOTA_Tooltip_ability_ghost_small_green_wind_radius"                                                  "RADIUS:"
+		"DOTA_Tooltip_ability_ghost_small_green_wind_bonus_movespeed"                                         "%BONUS MOVEMENT SPEED"
+		"DOTA_Tooltip_ability_ghost_small_green_wind_duration"                                                "DURATION:"
+
+		"DOTA_Tooltip_ability_ghost_small_green_nature"                                                       "Nature Power"
+		"DOTA_Tooltip_ability_ghost_small_green_nature_Description"                                           "Increase attack speed and armor of selected target."
+		"DOTA_Tooltip_ability_ghost_small_green_nature_bonus_attack_speed"                                    "BONUS ATTACK SPEED:"
+		"DOTA_Tooltip_ability_ghost_small_green_nature_bonus_armor"                                           "BONUS ARMOR:"
+		"DOTA_Tooltip_ability_ghost_small_green_nature_duration"                                              "DURATION:"
+
+		"DOTA_Tooltip_ability_ghost_small_green_aura"                                                         "Wind Aura"
+		"DOTA_Tooltip_ability_ghost_small_green_aura_Description"                                             "Increase attack speed of around allies."
+		"DOTA_Tooltip_ability_ghost_small_green_aura_radius"                                                  "RADIUS:"
+		"DOTA_Tooltip_ability_ghost_small_green_aura_bonus_attack_speed"                                      "BONUS ATTACK SPEED:"
+
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_ghost_small_green.kv' end
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_ghost_small_red.kv' begin 
+		"DOTA_Tooltip_ability_ghost_small_red_manaburn"                                                       "Mana Burning"
+		"DOTA_Tooltip_ability_ghost_small_red_manaburn_Description"                                           "Burns selected target mana."
+		"DOTA_Tooltip_ability_ghost_small_red_manaburn_mana_burn"                                             "MANA BURN:"
+
+		"DOTA_Tooltip_ability_ghost_small_red_magic_fire"                                                     "Spirit Fire"
+		"DOTA_Tooltip_ability_ghost_small_red_magic_fire_Description"                                         "Ignites selected target for a while that dealing damage to ignited target."
+		"DOTA_Tooltip_ability_ghost_small_red_magic_fire_damage"                                              "DAMAGE:"
+		"DOTA_Tooltip_ability_ghost_small_red_magic_fire_duration"                                            "DURATION:"
+
+		"DOTA_Tooltip_ability_ghost_small_red_aura"                                                           "Spirit Blessing"
+		"DOTA_Tooltip_ability_ghost_small_red_aura_Description"                                               "Applies additional magical to main attacks of around heroes."
+		"DOTA_Tooltip_ability_ghost_small_red_aura_radius"                                                    "RADIUS:"
+		"DOTA_Tooltip_ability_ghost_small_red_aura_bonus_mag_damage"                                          "BONUS DAMAGE:"
+
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_ghost_small_red.kv' end
+
+		// File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\localization\en\creeps\map creeps\npc_aa_creep_gnoll_one.kv' begin 
+		"DOTA_Tooltip_ability_gnoll_small_one_haste"                                                          "Haste"
+		"DOTA_Tooltip_ability_gnoll_small_one_haste_Description"                                              "Increase selected unit movement speed."
+		"DOTA_Tooltip_ability_gnoll_small_one_haste_speed"                                                    "MOVEMENT SPEED:"
+		"DOTA_Tooltip_ability_gnoll_small_one_haste_duration"                                                 "DURATION:"
+
+		"DOTA_Tooltip_ability_gnoll_small_one_slow"                                                           "Poison"
+		"DOTA_Tooltip_ability_gnoll_small_one_slow_Description"                                               "Poisons selected target decreasing attack speed and applies damage for a while."
+		"DOTA_Tooltip_ability_gnoll_small_one_slow_attack_slow"                                               "ATTACK SPEED SLOW:"
+		"DOTA_Tooltip_ability_gnoll_small_one_slow_damage"                                                    "DAMAGE:"
+		"DOTA_Tooltip_ability_gnoll_small_one_slow_duration"                                                  "DURATION:"
+
+		"DOTA_Tooltip_ability_gnoll_small_one_aura"                                                           "Arcane Curse"
+		"DOTA_Tooltip_ability_gnoll_small_one_aura_Description"                                               "All neraby allied heroes deals additional magical damage on attacks."
+		"DOTA_Tooltip_ability_gnoll_small_one_aura_radius"                                                    "RADIUS:"
+		"DOTA_Tooltip_ability_gnoll_small_one_aura_damage"                                                    "DAMAGE:"
+
+		"DOTA_Tooltip_ability_megacreep_beast_stomp"                                                          "Ancient Stomps"
+		"DOTA_Tooltip_ability_megacreep_beast_stomp_Description"                                              "Stuns and deal damage to enemies in front of the Beast."
+		"DOTA_Tooltip_ability_megacreep_beast_stomp_radius"                                                   "RADIUS:"
+		"DOTA_Tooltip_ability_megacreep_beast_stomp_duration"                                                 "STUN DURATION:"
+		"DOTA_Tooltip_ability_megacreep_beast_stomp_damage"                                                   "DAMAGE:"
+		"DOTA_Tooltip_ability_megacreep_beast_stomp_damage_from_hp"                                           "DAMAGE FROM HEALTH:"
+
+		"DOTA_Tooltip_ability_megacreep_beast_jump"                                                           "Ancient Jump"
+		"DOTA_Tooltip_ability_megacreep_beast_jump_Description"                                               "Jumps and deal damage to the target."
+		"DOTA_Tooltip_ability_megacreep_beast_jump_duration"                                                  "DURATION:"
+		"DOTA_Tooltip_ability_megacreep_beast_jump_damage"                                                    "DAMAGE:"
+		"DOTA_Tooltip_ability_megacreep_beast_jump_damage_from_hp"                                            "DAMAGE FROM HEALTH:"
+
+		"DOTA_Tooltip_ability_megacreep_beast_haste"                                                          "Ancient Empower"
+		"DOTA_Tooltip_ability_megacreep_beast_haste_Description"                                              "Increase movement speed of arounding allies for a while."
+		"DOTA_Tooltip_ability_megacreep_beast_haste_duration"                                                 "DURATION:"
+		"DOTA_Tooltip_ability_megacreep_beast_haste_radius"                                                   "RADIUS:"
+
+		"DOTA_Tooltip_ability_megacreep_beast_tail_stomp"                                                     "Ancient Tail Stomp"
+		"DOTA_Tooltip_ability_megacreep_beast_tail_stomp_Description"                                         "Stuns and deal damage to enemies behind of the Beast."
+		"DOTA_Tooltip_ability_megacreep_beast_tail_stomp_radius"                                              "RADIUS:"
+		"DOTA_Tooltip_ability_megacreep_beast_tail_stomp_damage"                                              "DAMAGE:"
+		"DOTA_Tooltip_ability_megacreep_beast_tail_stomp_damage_from_hp"                                      "DAMAGE FROM HEALTH:"
+
+		"DOTA_Tooltip_ability_megacreep_beast_life_drain"                                                     "Ancient Consumption"
+		"DOTA_Tooltip_ability_megacreep_beast_life_drain_Description"                                         "Stealing life from selected unit."
+		"DOTA_Tooltip_ability_megacreep_beast_life_drain_range"                                               "RANGE:"
+		"DOTA_Tooltip_ability_megacreep_beast_life_drain_duration"                                            "DURATION:"
+		"DOTA_Tooltip_ability_megacreep_beast_life_drain_damage"                                              "DAMAGE:"
+		"DOTA_Tooltip_ability_megacreep_beast_life_drain_damage_from_hp"                                      "DAMGE FROM HEALTH:"
+
+		"DOTA_Tooltip_ability_megacreep_beast_bonus_attackspeed"                                              "Ancient Attacks"
+		"DOTA_Tooltip_ability_megacreep_beast_bonus_attackspeed_Description"                                  "Increase attack speed for a short time."
+		"DOTA_Tooltip_ability_megacreep_beast_bonus_attackspeed_attackspeed"                                  "BONUS ATTACK SPEED:"
+		"DOTA_Tooltip_ability_megacreep_beast_bonus_attackspeed_duration"                                     "DURATION "
+
+		"DOTA_Tooltip_ability_megacreep_energy_creature_shock_blast"						"Skockblast"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_shock_blast_Description"			"Launch shock blast to selected target that stuns enemy and deal some damage."
+		"DOTA_Tooltip_ability_megacreep_energy_creature_shock_blast_abilitycastrange"		"RADIUS:"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_shock_blast_damage"					"DAMAGE:"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_shock_blast_abilityduration"		"STUN DURATION:"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_shock_blast_projectile_speed"		"PROJECTILE SPEED:"
+
+		"DOTA_Tooltip_ability_megacreep_energy_creature_flash"								"Flash"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_flash_Description"					"Moving to selecting point.."
+		"DOTA_Tooltip_ability_megacreep_energy_creature_flash_abilitycastrange"				"RANGE:"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_flash_speed"						"SPEED:"
+
+		"DOTA_Tooltip_ability_megacreep_energy_creature_buff"								"Electrolize"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_buff_Description"					"Increase damage resistance for every nearby ally."
+		"DOTA_Tooltip_ability_megacreep_energy_creature_buff_abilityduration"				"DURATION:"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_buff_abilitycastrange"				"RADIUS:"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_buff_resist_per_hero"				"%DAMAGE RESISTANCE:"
+
+		"DOTA_Tooltip_ability_megacreep_energy_creature_passive"							"Focused Attack"
+		"DOTA_Tooltip_ability_megacreep_energy_creature_passive_Description"				"After several attacks Energy Creature charge himself attack that deal additional pure damage same like normal attack damage."
+		"DOTA_Tooltip_ability_megacreep_energy_creature_passive_attack_count"				"CHARGE ATTACK COUNT:"
+		
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_fireball"                                               "Golem Fireball"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_fireball_Description"                                   "Golem launch a fireball to selected unit."
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_fireball_fireball_speed"                                "FIREBALL SPEED:"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_fireball_fireball_damage"                               "FIREBALL DAMAGE:"
+
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_fire_fist"                                              "Golem Firefist"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_fire_fist_Description"                                  "Deals additional magical damage with every attack."
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_fire_fist_hit_damage"                                   "DAMAGE:"
+
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_close"                                             "Golem Firehell"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_close_Description"                                 "Deals damage to all arounding enemies for every second."
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_close_radius"                                      "RADIUS:"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_close_duration"                                    "DURATION:"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_close_tickrate"                                    "INTERVAL:"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_close_TotalDmg"                                    "DAMAGE:"
+
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_far"                                               "Golem Firebreath"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_far_Description"                                   "Launch fire wave that deal damage to all enemies on contact."
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_far_contact_damage"                                "DAMAGE:"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_far_wave_speed"                                    "WAVE SPEED:"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_far_wave_width"                                    "WAVE WIDTH"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_burn_far_distance"                                      "WAVE RANGE:"
+
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_meteor_rain"                                            "Golem Hellrain"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_meteor_rain_Description"                                "Abyss Golem launch hellrain from a skies that deal massive damage to all units around selected point."
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_meteor_rain_damage"                                     "DAMAGE:"
+		"DOTA_Tooltip_ability_megacreep_ancient_golem_meteor_rain_radius"                                     "RADIUS:"
 
 		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord"										"Presence of the Dark Lord"
 		"DOTA_Tooltip_ability_shadow_fiend_presence_of_the_dark_lord_Description"							"The hero's presence reduces the armor of nearby enemies. Each death of an enemy hero in proximity enhances the armor reduction by %bonus_armor_per_stack% for %kill_buff_duration% seconds."

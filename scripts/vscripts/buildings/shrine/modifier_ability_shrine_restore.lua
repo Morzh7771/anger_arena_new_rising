@@ -80,7 +80,9 @@ function modifier_ability_shrine_restore:CheckState()
 		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
 		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
 	}
-
+	if self:GetParent():GetName() == "tower_top_dire" or "tower_top_radiant" then
+		return {}
+	end
 	return state
 end
 
