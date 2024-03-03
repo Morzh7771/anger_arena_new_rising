@@ -15,7 +15,7 @@ function modifier_item_void_stick:DeclareFunctions() return
 	MODIFIER_PROPERTY_MANA_BONUS,
 	MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 	MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-	MODIFIER_PROPERTY_CAST_RANGE_BONUS,
+	MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 	MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
 	MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
 }
@@ -44,9 +44,9 @@ function modifier_item_void_stick:OnCreated()
 	self.bonus_mana 				= ability:GetSpecialValueFor("bonus_mana") or 0
 	self.bonus_mgregen 				= ability:GetSpecialValueFor("bonus_mpregen") or 0
 	self.bonus_hpregen 				= ability:GetSpecialValueFor("bonus_hpregen") or 0
-	self.bonus_castrange 			= ability:GetSpecialValueFor("bonus_castrange") or 0
 	self.bonus_speed 				= ability:GetSpecialValueFor("bonus_speed") or 0
 	self.bonus_spell_lifesteal 		= ability:GetSpecialValueFor("bonus_spell_lifesteal") or 0
+	self.bonus_spell_amp			= ability:GetSpecialValueFor("bonus_spell_amp") or 0
 
 	self:ReloadCooldownBuff()
 end
@@ -59,7 +59,7 @@ function modifier_item_void_stick:GetModifierBonusStats_Intellect( params ) retu
 
 function modifier_item_void_stick:GetModifierConstantManaRegen( params ) return self.bonus_mgregen end
 function modifier_item_void_stick:GetModifierConstantHealthRegen( params ) return self.bonus_hpregen end
-function modifier_item_void_stick:GetModifierCastRangeBonus( params ) return self.bonus_castrange end
+function modifier_item_void_stick:GetModifierSpellAmplify_Percentage( params ) return self.bonus_spell_amp end
 
 function modifier_item_void_stick:GetModifierMoveSpeedBonus_Constant( params ) return self.bonus_speed end
 

@@ -625,7 +625,7 @@
         // Stats
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySharedCooldown"			"cyclone"
-        "AbilityCooldown"				"25.0"
+        "AbilityCooldown"				"20.0"
         "AbilityCastPoint"				"0.0"
         "AbilityManaCost"				"150"
         
@@ -641,70 +641,20 @@
         "ItemDroppable"                 "1"
         "ItemPurchasable"				"1"
 
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
                 "bonus_int"				"60"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
                 "bonus_hp"				"700"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
                 "bonus_mana"			"500"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
                 "bonus_mpregen"			"25"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_FLOAT"
                 "bonus_hpregen"			"25"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_castrange"		"175"
-            }
-            "07"
-            {
-                "var_type"				"FIELD_INTEGER"
+                "bonus_spell_amp"		"17"
                 "bonus_speed"			"25"
-            }
-            "08"
-            {
-                "var_type"				"FIELD_FLOAT"
                 "astral_duration"		"2.5"
-            }
-            "09"
-            {
-                "var_type"				"FIELD_FLOAT"
                 "astral_regen"			"7"
-            }
-
-            // After cast bonus
-            "10"
-            {
-                "var_type"				     "FIELD_INTEGER"
                 "after_cast_bonus_duration"	 "14"
-            }
-            "11"
-            {
-                "var_type"				     "FIELD_INTEGER"
                 "after_cast_mana_regen"	     "20"
-            }
-            "12"
-            {
-                "var_type"					      "FIELD_INTEGER"
                 "after_cast_reduce_manacost_pct"  "20"
-            }
         }
     }
 
@@ -720,7 +670,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"450"
+        "ItemCost"						"950"
         "ItemShopTags"					""
 
         // Recipe
@@ -730,7 +680,7 @@
         "ItemRequirements"
         {
             //1740
-            "01"						"item_energy_booster;item_ultimate_orb"
+            "01"						"item_energy_booster;item_null_talisman_custom;item_null_talisman_custom;"
         }
     }
     "item_center_of_peace"
@@ -747,7 +697,7 @@
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"20.0"
+        "AbilityCooldown"				"16.0"
         "AbilityCastPoint"				"0.0"
         "AbilityChannelTime"			"4"
         // Item Info
@@ -761,69 +711,20 @@
         "ItemDroppable"                 "1"
         "ItemPurchasable"				"1"
 
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            //Stats
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mana"			"500"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
+                "bonus_mana"			"300"
                 "bonus_int"				"20"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_agi"				"20"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_str"				"20"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_manaregen"		"10"
-            }
-
-            // Active
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
+                "bonus_agi"				"12"
+                "bonus_str"				"12"
+                "bonus_manaregen"		"5"
+                "bonus_spell_amp"       "10"
                 "mana_regen_total_pct"	"10"
-            }
-            "07"
-            {
-                "var_type"				"FIELD_INTEGER"
                 "bonus_magical_resist"	"50"
-            }
-            "08"
-            {
-                "var_type"				"FIELD_INTEGER"
                 "channel_time_tooltip"	"4"
-            }
-
-            // After cast bonus
-            "09"
-            {
-                "var_type"				     "FIELD_INTEGER"
                 "after_cast_bonus_duration"	 "14"
-            }
-            "10"
-            {
-                "var_type"				     "FIELD_INTEGER"
                 "after_cast_mana_regen"	     "15"
-            }
-            "11"
-            {
-                "var_type"					      "FIELD_INTEGER"
                 "after_cast_reduce_manacost_pct"  "15"
-            }
-
         }
     }
 
@@ -1431,7 +1332,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"mana"					"80"
+				"mana"					"130"
 				"duration"				"5"
 				"int"					"5"
 				"str"					"2"

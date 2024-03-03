@@ -21,6 +21,7 @@ function modifier_center_of_peace:OnCreated(kv)
     self.bonus_agi = self:GetAbility():GetSpecialValueFor("bonus_agi")
     self.bonus_str = self:GetAbility():GetSpecialValueFor("bonus_str")
     self.bonus_manaregen = self:GetAbility():GetSpecialValueFor("bonus_manaregen")
+    self.bonus_spell_amp = self:GetAbility():GetSpecialValueFor("bonus_spell_amp")
 end
 
 --------------------------------------------------------------------------------
@@ -36,6 +37,7 @@ function modifier_center_of_peace:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
     }
     return funcs
 end
@@ -46,5 +48,6 @@ function modifier_center_of_peace:GetModifierBonusStats_Intellect(kv) return sel
 function modifier_center_of_peace:GetModifierBonusStats_Agility(kv) return self.bonus_agi; end
 function modifier_center_of_peace:GetModifierBonusStats_Strength(kv) return self.bonus_str; end
 function modifier_center_of_peace:GetModifierConstantManaRegen(kv) return self.bonus_manaregen; end
+function modifier_center_of_peace:GetModifierSpellAmplify_Percentage(kv) return self.bonus_spell_amp end
 
 --------------------------------------------------------------------------------
