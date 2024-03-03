@@ -102,8 +102,8 @@ _G.KILL_LIMIT = KILL_LIMIT
 
 RESPAWN_MODIFER = 0.135
 function Activate()
-	GameRules.AddonTemplate = AngelArena()
-	GameRules.AddonTemplate:InitGameMode()
+	GameRules.AngelArena = AngelArena()
+	GameRules.AngelArena:InitGameMode()
 	local fountains = Entities:FindAllByClassname('ent_dota_fountain')
     for _, fountain in pairs(fountains) do
     if ability then
@@ -563,21 +563,22 @@ function AngelArena:OnGameStateChange()
 	end
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
-		local player = PlayerResource:GetPlayerCount()
-		local needkill = KILL_LIMIT_CONST / 10 * player
-		KILL_LIMIT = needkill
-		_G.KILL_LIMIT = needkill
-
-		CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
-
-		Attentions:SetKillLimit( KILL_LIMIT )
-		Bounty:Init()
+		print('DOTA_GAMERULES_STATE_PRE_GAME')
 		local portals = {
 			"teleport_radiant_top",
 			"teleport_radiant_bot",
 			"teleport_dire_top",
 			"teleport_dire_bot",
 		}
+		
+		
+		local spawners = Entities:FindAllByClassname("npc_dota_neutral_spawner")
+
+		for _, spawner in pairs(spawners) do
+			UTIL_Remove(spawner)
+		end
+		print('remove spawner')
+
 		for number,name in pairs(portals) do
 			local spawnpoint = Entities:FindByName( nil, name )
 			self.creep = nil
@@ -593,37 +594,28 @@ function AngelArena:OnGameStateChange()
 			AddFOWViewer(DOTA_TEAM_BADGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
 			self.creep:AddNewModifier(self.creep, nil,'modifier_mid_teleport', {duration = -1} )
 		end
+		print('initrotal')
+		local player = PlayerResource:GetPlayerCount()
+		local needkill = KILL_LIMIT_CONST / 10 * player
+		KILL_LIMIT = needkill
+		_G.KILL_LIMIT = needkill
+		print('kl')
+		CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
 
-		local tower_ab =
-		{
-			["separation_of_souls_bear"] = 1,
-			["lone_druid_spirit_bear_defender"] = 1,
-		}
-
+		Attentions:SetKillLimit( KILL_LIMIT )
+		Bounty:Init()
+		PauseGame(true)
 		local towers = Entities:FindAllByClassname("npc_dota_tower")
+		print('tower')
 		for _, tower in pairs(towers) do
+			print('1')
+			tower:RemoveModifierByName("modifier_invulnerable")
 			local ability
 			for _,v in ipairs(tower:FindAllModifiers()) do
-				tower:RemoveModifierByName(v)
-			end
-			for i = 0, tower:GetAbilityCount() - 1 do
-				ability = tower:GetAbilityByIndex(i)
-				if ability then ability:SetLeevl(1) end
+				print(v:GetName())
 			end
 		end
-
-
-		local spawners = Entities:FindAllByClassname("npc_dota_neutral_spawner")
-
-		for _, spawner in pairs(spawners) do
-			print(spawner)
-			UTIL_Remove(spawner)
-		end
-
-
-		PauseGame(true)
-
-
+		print('abset')
 	end
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then

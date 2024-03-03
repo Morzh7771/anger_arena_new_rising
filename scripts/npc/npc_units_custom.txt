@@ -8,6 +8,7 @@
 #base heroes/lycan/unit.txt
 #base heroes/shadow_shaman/unit.txt
 #base heroes/witch_doctor/utit.txt
+#base neutral_creeps_unit.txt
 "DOTAUnits"
 {	
 	"npc_aa_huntess_owl_unit"
@@ -94,6 +95,7 @@
 		"Level"						"1"
 
 		"Ability1"					"tower_ability"
+		"Ability2"					"ability_shrine_restore"
 
 		"ModelScale" 				"1"
 
