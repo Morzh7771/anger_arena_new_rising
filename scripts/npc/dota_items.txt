@@ -73,7 +73,7 @@
           "bonus_mana_regen"                                "2.75 3.0"
           "cleave_damage_percent"                           "70 90"
           "cleave_damage_percent_creep"                     "40 60"
-          "quelling_bonus"                                  "20 40"
+          "quelling_bonus"                                  "30 60"
           "cleave_starting_width"                           "150"
           "cleave_ending_width"                             "360"
           "cleave_distance"                                 "650"
@@ -133,7 +133,7 @@
           "bonus_mana_regen"                                "2.75 3.0"
           "cleave_damage_percent"                           "70 90"
           "cleave_damage_percent_creep"                     "40 60"
-          "quelling_bonus"                                  "20 40"
+          "quelling_bonus"                                  "30 60"
           "cleave_starting_width"                           "150"
           "cleave_ending_width"                             "360"
           "cleave_distance"                                 "650"
@@ -3043,7 +3043,7 @@
 				"bonus_armor"			"8 20"
 				"block_damage_melee"	"75 120"
 				"block_damage_ranged"	"50 95"
-				"block_chance"			"50 60"
+				"block_chance"			"60"
 				"duration"				"6 8"
 				"bonus_aoe_radius"		"1200 1200"
 				"block_damage_active"	"70 150"
@@ -3107,7 +3107,7 @@
 				"bonus_armor"			"8 20"
 				"block_damage_melee"	"75 120"
 				"block_damage_ranged"	"50 95"
-				"block_chance"			"50 60"
+				"block_chance"			"60"
 				"duration"				"6 8"
 				"bonus_aoe_radius"		"1200 1200"
 				"block_damage_active"	"70 150"
@@ -5918,8 +5918,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_bonus"			"20"
-			"damage_bonus_ranged"	"12"
+			"damage_bonus"			"24"
+			"damage_bonus_ranged"	"16"
 			"quelling_range_tooltip"			"350"
 		}
 	}

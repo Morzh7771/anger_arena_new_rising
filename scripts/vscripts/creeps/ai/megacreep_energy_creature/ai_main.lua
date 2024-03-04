@@ -87,6 +87,7 @@ function EnergyAI:OnTick()
 	local enemies = _GetEnemiesNear( spawnPos, unit:GetTeamNumber() )
 
 	for _, hUnit in pairs(enemies) do
+		if hUnit:GetUnitName() == "npc_teleport" then return end
 		if _CanBeSeen(unit, hUnit) then
 			local unitPos = hUnit:GetAbsOrigin()
 			local distToUnit = (unitPos - pos):Length()

@@ -164,7 +164,9 @@ function BeastAI:FindEnemies(pos)
 
 	for _, enemy in pairs(temp_enemies) do 
 		if self.beast:CanEntityBeSeenByMyTeam(enemy) then
-			table.insert(enemies, enemy)
+			print( enemy:GetUnitName())
+			if enemy:GetUnitName() == "npc_teleport" then return end
+				table.insert(enemies, enemy)
 		end 
 	end 
 

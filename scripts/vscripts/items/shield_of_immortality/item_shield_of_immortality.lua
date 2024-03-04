@@ -18,19 +18,19 @@ modifier_shield_of_immortality = class ({
     GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
     DeclareFunctions = function (self)
         return {
-            MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS,
+            MODIFIER_PROPERTY_HEALTH_BONUS,
             MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT
         }
     end,
-    GetModifierExtraHealthBonus = function (self) return self:GetAbility():GetSpecialValueFor('bonus_hp') end,
+    GetModifierHealthBonus = function (self) return self:GetAbility():GetSpecialValueFor('bonus_hp') end,
     GetModifierIncomingDamageConstant = function (self, params)
         if (self:GetParent():HasModifier("modifier_shield_of_immortality_hex")) then
             local mult = self:GetAbility():GetSpecialValueFor("barrier_percent") / 100
 
-            self:SetStackCount(self:GetStackCount() + mult * params.damage)
+            self:SetStackCount(self:GetStackCount() + mult * params.original_damage)
 
             if IsServer() then
-                return params.damage * -1
+                return params.original_damage * -1
             end
 
             if IsClient() then
@@ -38,7 +38,7 @@ modifier_shield_of_immortality = class ({
             end
         end
 
-        local damage_left = params.damage - self:GetStackCount()
+        local damage_left = params.original_damage - self:GetStackCount()
 
         if (damage_left < 0) then
             damage_left = 0
@@ -46,7 +46,7 @@ modifier_shield_of_immortality = class ({
 
         local blocked = self:GetStackCount()
 
-        self:SetStackCount(self:GetStackCount() - params.damage)
+        self:SetStackCount(self:GetStackCount() - params.original_damage)
 
         if (self:GetStackCount() < 0) then
             self:SetStackCount(0)
@@ -90,11 +90,12 @@ modifier_shield_of_immortality_hex = class ({
     CheckState = function (self)
         return {
             [MODIFIER_STATE_DISARMED] = true,
-            [MODIFIER_STATE_SILENCED] = true
+            [MODIFIER_STATE_SILENCED] = true,
+            [MODIFIER_STATE_ROOTED] = true,
         }
     end,
     --GetModifierModelChange = function (self) return "models/vr_env/vr_avatars/avatar_dendi_model.vmdl" end,
     --GetModifierModelChange = function (self) return "models/vr_env/vr_avatars/avatar_antimage_model.vmdl" end,
     GetModifierModelChange = function (self) return "models/items/hex/sheep_hex/sheep_hex_gold.vmdl" end,
-    --GetModifierModelScale = function (self) return 1000 end
+    --GetModifierModelScale = function (self) return 10 end
 })

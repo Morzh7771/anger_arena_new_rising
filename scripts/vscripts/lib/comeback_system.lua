@@ -125,12 +125,55 @@ function ComebackSystem:OnKill( killerPlayerID, killerTeam, victimPlayerID, vict
 
 		TeamHelper:ApplyForHeroes(killerTeam, function( teammatePlayerID, hero )
 			if Check( teammatePlayerID, hero ) then
-				GiveGoldTo(teammatePlayerID, teamMateGold, true)
+				if teamMateGold < 50000 then
+					GiveGoldTo(teammatePlayerID, teamMateGold, true)
+				else
+					local x = 1
+					local totalGoldtoMath = teamMateGold
+					while x<math.ceil(teamMateGold/50000) do
+						if totalGoldtoMath > 50000 then
+							Timers:CreateTimer(0.6, function()
+								GiveGoldTo(teammatePlayerID, 50000, true)
+								return
+							end)
+							
+						else
+							Timers:CreateTimer(0.6, function()
+								GiveGoldTo(teammatePlayerID, totalGoldtoMath, true)
+								return
+							end)
+						end
+						totalGoldtoMath = totalGoldtoMath - 50000
+						x = x + 1
+					end
+				end
 			end
 		end)
 	end
 
-	GiveGoldTo(killerPlayerID, totalGold, false)
+	if totalGold < 50000 then
+		GiveGoldTo(killerPlayerID, totalGold, false)
+	else
+		local totalGoldtoMath = totalGold
+		local x = 1
+		while x<math.ceil(totalGold/50000) do
+			if totalGoldtoMath > 50000 then
+				Timers:CreateTimer(0.6, function()
+					GiveGoldTo(killerPlayerID, 50000, false)
+					return
+				end)
+			else
+				Timers:CreateTimer(0.6, function()
+					GiveGoldTo(killerPlayerID, totalGold, false)
+					return
+				end)
+			end
+			totalGoldtoMath = totalGoldtoMath - 50000
+			x = x + 1
+		end
+		
+	end
+	
 end
 
 function ComebackSystem:_Init()

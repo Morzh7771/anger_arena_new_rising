@@ -2891,7 +2891,7 @@
 
 		//===========================================================================================
 		"DOTA_Tooltip_ability_huntress_hunting_spirit"						"Hunting Spirit"
-		"DOTA_Tooltip_ability_huntress_hunting_spirit_Description"			"Скорость передвижения Huntress увеичивается и герой получает возможность проходить сквозь деревья.\n Во время действия данной способности, <font color='#229917'>Aim Shot</font> не уменьшает базовое время атаки\n При наличии <font color='#ffef27'>Daedalus</font>, Huntress получает новую способность - Curse Arrow"
+		"DOTA_Tooltip_ability_huntress_hunting_spirit_Description"			"Скорость передвижения Huntress увеичивается и герой получает возможность проходить сквозь деревья.\n Во время действия данной способности, <font color='#229917'>Aim Shot</font> не уменьшает базовое время атаки\n При наличии <font color='#ffef27'>Hurricane pike</font>, Huntress получает новую способность - Curse Arrow"
 		"DOTA_Tooltip_ability_huntress_hunting_spirit_duration"	            "ДЛИТЕЛЬНОСТЬ:"
 		"DOTA_Tooltip_ability_huntress_hunting_spirit_bonus_movespeed_pct"	"%БОНУС К СКОРОСТИ ПЕРЕДВИЖЕНИЯ:"
 		"DOTA_Tooltip_ability_huntress_hunting_spirit_Lore"				    "Главное в бою - сосредоточенность и спокойствие. Они позволяют любому охотнику двигаться быстрее и легче. Huntress довела свои боевые навыки до предела, за счет чего стала прозываться в известных кругах Духом Охоты."
@@ -2992,5 +2992,13 @@
 		"DOTA_Tooltip_ability_item_ultimate_scepter_Description"	"<h1>Пассивное: Ability Upgrade</h1>Улучшает ульт и некоторые способности. \n\n Поглощаемая версия выпадает из Терзателя"
 
 		"DOTA_Tooltip_ability_divine_intervention"                                       "Divine Intervention"
+
+
+
+		"DOTA_Tooltip_ability_item_shield_of_immortality"                                       "Sheep of Immortaluty"
+		"DOTA_Tooltip_ability_item_shield_of_immortality_Description"                           "<h1>Активное: Sheep Shield</h1>Превращает вас в золотого барана на %barrier_duration% секунды в это время вы не получаете урон а %barrier_percent%%% от входящего урона преобразуется во временный щит который будет уменьшается по %barrier_decay%%% в секунду"
+		"DOTA_Tooltip_ability_item_shield_of_immortality_bonus_hp"								"+$health"
+		"DOTA_Tooltip_ability_item_shield_of_immortality_bonus_hp_regen"						"+$hp_regen"
+		"DOTA_Tooltip_ability_item_shield_of_immortality_bonus_mp"								"+$mana"
 	}  
 }

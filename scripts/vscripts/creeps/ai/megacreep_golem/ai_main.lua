@@ -172,6 +172,7 @@ function GolemAI:CheckFireball(golem_pos, enemies)
 	local index = 0
 	local distance = 0
 	for _, enemy in pairs(enemies) do
+		if enemy:GetUnitName() == "npc_teleport" then return end
 		index = index + 1
 		distance = (enemy:GetAbsOrigin() - golem_pos):Length()
 		if distance < AOE and distance > GOLEM_FIREBALL_MIN_RANGE then

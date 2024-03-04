@@ -48,5 +48,5 @@ end
 
 function huntress_curse_arrow:OnInventoryContentsChanged()
 	self:SetLevel(1)
-	self:SetHidden(not self:GetCaster():HasModifier("modifier_greater_crit"))
+	self:SetHidden(not self:GetCaster():HasModifier("modifier_item_hurricane_pike_aa"))
 end

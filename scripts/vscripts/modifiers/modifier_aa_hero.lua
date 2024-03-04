@@ -45,9 +45,35 @@ function modifier_aa_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE ,
 		MODIFIER_EVENT_ON_DEATH,
 	}
 	return funcs
+end
+function modifier_aa_hero:GetModifierTotalDamageOutgoing_Percentage()
+	if GetPlayerSteamID(self:GetParent()) == '395560624' then
+		return -30
+	else
+		return 0
+	end
+end
+function modifier_aa_hero:GetModifierIncomingDamage_Percentage()
+	if GetPlayerSteamID(self:GetParent()) == '395560624' then
+		return 30
+	else
+		return 0
+	end
+end
+function GetPlayerSteamID(heroEntity)
+    local playerID = heroEntity:GetPlayerID()
+    if playerID and playerID ~= -1 then
+        local playerInfo = PlayerResource:GetPlayer(playerID)
+        if playerInfo then
+            return tostring(PlayerResource:GetSteamAccountID(playerID))
+        end
+    end
+    return nil
 end
 function modifier_aa_hero:OnDeath(data)
 	if data.unit == self:GetParent() then
