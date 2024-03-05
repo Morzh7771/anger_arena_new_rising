@@ -124,6 +124,7 @@ modifier_shield_of_immortality_hex = class ({
     IsBuff = function (self) return true end,
     --GetEffectName = function (self) return "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf" end,
     GetEffectName = function (self) return "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf" end,
+    GetTexture = function (self) return "../items/shield_of_immortality" end,
     DeclareFunctions = function (self)
         return {
             MODIFIER_PROPERTY_MODEL_CHANGE
