@@ -383,7 +383,7 @@ function PudgeRot(keys)
 	
 	local damage = percent_damage * caster:GetPrimaryStatValue() 
 
-	if caster == target then return end
+	--if caster == target then return end
 
 	ApplyDamage({ 	victim = target,
 					attacker = caster,

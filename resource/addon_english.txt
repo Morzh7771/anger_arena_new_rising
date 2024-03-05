@@ -2900,5 +2900,12 @@
 		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_damage_percent" "%Damage from Max Health:"
 
 		"DOTA_Tooltip_ability_divine_intervention"                                       "Divine Intervention"
+
+		"DOTA_Tooltip_ability_item_shield_of_immortality"                                       "Sheep of Immortality"
+        "DOTA_Tooltip_ability_item_shield_of_immortality_Description"                           "<h1>Active: Sheep Shield</h1>Transforms bearer into immovable golden sheep for %barrier_duration% seconds. During transformation bearer is invincible and %barrier_percent%%% of damage taken is transformed into universal barrier that decays %barrier_decay%%% per second. \n\n<h1>Passive: Damage Block</h1> Has a %block_chance%%% chance to block %block_damage_melee% damage if the owner is a melee hero, or %block_damage_ranged% damage if the hero is ranged."
+        "DOTA_Tooltip_ability_item_shield_of_immortality_Lore"                                  "Great Amon might lend powers of his holy sheep-companion to anyone"
+        "DOTA_Tooltip_ability_item_shield_of_immortality_bonus_hp"								"+$health"
+        "DOTA_Tooltip_ability_item_shield_of_immortality_bonus_hp_regen"						"+$hp_regen"
+        "DOTA_Tooltip_ability_item_shield_of_immortality_bonus_mp"								"+$mana"
 	}
 }

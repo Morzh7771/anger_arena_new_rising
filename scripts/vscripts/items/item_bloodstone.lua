@@ -23,6 +23,7 @@ LinkLuaModifier('modifier_bloodstone_cooldown', 'items/item_bloodstone', LUA_MOD
 
 modifier_bloodstone = class({
     IsHidden = function (self) return true end,
+    GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
     DeclareFunctions = function (self)
         return {
             MODIFIER_PROPERTY_HEALTH_BONUS,

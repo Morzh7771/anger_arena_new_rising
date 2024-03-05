@@ -2993,10 +2993,9 @@
 
 		"DOTA_Tooltip_ability_divine_intervention"                                       "Divine Intervention"
 
-
-
-		"DOTA_Tooltip_ability_item_shield_of_immortality"                                       "Sheep of Immortaluty"
-		"DOTA_Tooltip_ability_item_shield_of_immortality_Description"                           "<h1>Активное: Sheep Shield</h1>Превращает вас в золотого барана на %barrier_duration% секунды в это время вы не получаете урон а %barrier_percent%%% от входящего урона преобразуется во временный щит который будет уменьшается по %barrier_decay%%% в секунду"
+		"DOTA_Tooltip_ability_item_shield_of_immortality"                                       "Sheep of Immortality"
+		"DOTA_Tooltip_ability_item_shield_of_immortality_Description"                           "<h1>Активное: Sheep Shield</h1>Превращает владельца в неподвижного золотого барана на %barrier_duration% секунды. В это время владелец не получает урон, а %barrier_percent%%% от входящего урона преобразуется во временный щит который будет уменьшается по %barrier_decay%%% в секунду. \n\n<h1>Пассивное: Damage Block</h1>С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона от атак, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
+		"DOTA_Tooltip_ability_item_shield_of_immortality_Lore"                                  "Великий Амон волен наделить любого силой своего священного спутника-барана"
 		"DOTA_Tooltip_ability_item_shield_of_immortality_bonus_hp"								"+$health"
 		"DOTA_Tooltip_ability_item_shield_of_immortality_bonus_hp_regen"						"+$hp_regen"
 		"DOTA_Tooltip_ability_item_shield_of_immortality_bonus_mp"								"+$mana"
