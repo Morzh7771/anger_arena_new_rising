@@ -78,9 +78,6 @@ function PercentDamage:_init()
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
-		"lina_dragon_slave",
-		"lina_light_strike_array",
-		"lina_laguna_blade",
 		"lion_finger_of_death",
 		"lion_impale",
 		"necrolyte_death_pulse",
@@ -182,6 +179,9 @@ function PercentDamage:_init()
 		"brewmaster_thunder_clap",
 		"furion_sprout",
 		"furion_wrath_of_nature",
+		"lina_dragon_slave",
+		"lina_light_strike_array",
+		"lina_laguna_blade",
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
