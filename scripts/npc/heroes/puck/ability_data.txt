@@ -29,8 +29,8 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"radius"					"225"		
-			"max_distance"				"1950"
-			"orb_speed"					"550"
+			"max_distance"				"1950 2000 2050 2100 2150 2200 2250"
+			"orb_speed"					"550 600 650 700 750 800 850"
 			"orb_vision"				"450"
 			"vision_duration"			"3.34"
 			"damage"			
@@ -38,7 +38,11 @@ DOTAAbilities
 				"value"										"75 150 225 300 375 450 525"
 				"special_bonus_unique_puck_orb_damage"		"+75"
 			}
-			"damage_pct"					"100"
+			"damage_pct"			
+			{
+				"value"	"100"
+				"special_bonus_unique_puck_illusory_orb_int_dmg_pct" "+25"
+			}
 			"AbilityCooldown"
 			{
 				"value"								"12 11.5 11 10.5 10 9.5 9"
@@ -108,7 +112,11 @@ DOTAAbilities
 					"value"		"60 120 180 240 300 360 420"
 					"special_bonus_unique_puck_6"	"+80"
 				}
-				"damage_pct"				"100"
+				"damage_pct"			
+			{
+				"value"	"100"
+				"special_bonus_unique_puck_waning_rift_int_dmg_pct" "+50"
+			}
 				"max_distance"			
 				{
 					"value"					"400"
@@ -226,7 +234,29 @@ DOTAAbilities
 					"value"							"0"
 					"special_bonus_scepter"			"+150"
 				}
-
+				"damage_pct"			
+			{
+				"value"	"150"
+				"special_bonus_unique_puck_dream_coil_int_dmg_pct" "+50"
+			}
 		}
+	}
+	"special_bonus_unique_puck_illusory_orb_int_dmg_pct"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+	}
+	"special_bonus_unique_puck_waning_rift_int_dmg_pct"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
+	}
+	"special_bonus_unique_puck_dream_coil_int_dmg_pct"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                        "special_bonus_unique_earth_spirit"
 	}
 }

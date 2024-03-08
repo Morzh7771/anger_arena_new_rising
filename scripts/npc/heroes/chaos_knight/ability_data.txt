@@ -24,7 +24,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12 10 8 6"
+		"AbilityCooldown"				"12 11 10 9 8 7 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -207,7 +207,7 @@ DOTAAbilities
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"images_count"				"1 1 2 2 3 3 4"
+				"images_count"				"1 2 2 3 3 4 4"
 			}
 			"02"
 			{
@@ -228,14 +228,14 @@ DOTAAbilities
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"150"
+				"incoming_damage"			"100"
 				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_7"
 
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage_tooltip"			"250"
+				"incoming_damage_tooltip"			"200"
 				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_7"
 
 			}		

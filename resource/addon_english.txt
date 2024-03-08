@@ -590,10 +590,10 @@
 		"DOTA_Tooltip_Ability_lich_frost_nova_damage_pct"                   "%INTELLIGENCE DAMAGE"
 
 		//Lina
-		"DOTA_Tooltip_Ability_lina_dragon_slave_damage_pct"					"%INTELLIGENCE DAMAGE"
-		"DOTA_Tooltip_Ability_lina_light_strike_array_damage_pct"			"%INTELLIGENCE DAMAGE"
-		"DOTA_Tooltip_Ability_lina_laguna_blade_damage_pct"					"%INTELLIGENCE DAMAGE"
-		"DOTA_Tooltip_Ability_lion_impale_damage_pct"						"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_lina_dragon_slave_damage_pct"					"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_lina_light_strike_array_damage_pct"			"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_lina_laguna_blade_damage_pct"					"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_lion_impale_damage_pct"						"%ALL ATTRIBUTES DAMAGE"
 
 		//Ancient Apparition
         "DOTA_Tooltip_Ability_ancient_apparition_chilling_touch_damage_pct" "%INTELLIGENCE DAMAGE"
@@ -770,6 +770,11 @@
 		//Puck
 		"DOTA_Tooltip_Ability_puck_illusory_orb_damage_pct"				"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_puck_waning_rift_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_puck_dream_coil_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_special_bonus_unique_puck_illusory_orb_int_dmg_pct"  "+{s:bonus_damage_pct}% to Intellect damage for Illusory Orb"
+		"DOTA_Tooltip_Ability_special_bonus_unique_puck_waning_rift_int_dmg_pct"  "+{s:bonus_damage_pct}% to Intellect damage for Waning Rift"
+		"DOTA_Tooltip_Ability_special_bonus_unique_puck_dream_coil_int_dmg_pct"  "+{s:bonus_damage_pct}% to Intellect damage for Dream Coil"
+
 
 		//Treant
 		"DOTA_Tooltip_Ability_treant_overgrowth_damage_pct"				"%STRENGTH DAMAGE"
@@ -2903,5 +2908,15 @@
 		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_damage_percent" "%Damage from Max Health:"
 
 		"DOTA_Tooltip_ability_divine_intervention"                                       "Divine Intervention"
+
+		"DOTA_Tooltip_ability_item_shield_of_immortality"                                       "Sheep of Immortality"
+        "DOTA_Tooltip_ability_item_shield_of_immortality_Description"                           "<h1>Active: Sheep Shield</h1>Transforms bearer into immovable golden sheep for %barrier_duration% seconds. During transformation bearer is invincible and %barrier_percent%%% of damage taken is transformed into universal barrier that decays %barrier_decay%%% per second. \n\n<h1>Passive: Damage Block</h1> Has a %block_chance%%% chance to block %block_damage_melee% damage if the owner is a melee hero, or %block_damage_ranged% damage if the hero is ranged."
+        "DOTA_Tooltip_ability_item_shield_of_immortality_Lore"                                  "Great Amon might lend powers of his holy sheep-companion to anyone"
+        "DOTA_Tooltip_ability_item_shield_of_immortality_bonus_hp"								"+$health"
+        "DOTA_Tooltip_ability_item_shield_of_immortality_bonus_hp_regen"						"+$hp_regen"
+        "DOTA_Tooltip_ability_item_shield_of_immortality_bonus_mp"								"+$mana"
+
+        "DOTA_Tooltip_modifier_shield_of_immortality_hex" 								"Sheep Shield"
+        "DOTA_Tooltip_modifier_shield_of_immortality_hex_Description"					"Can't move, invincible and receives timed shield"
 	}
 }

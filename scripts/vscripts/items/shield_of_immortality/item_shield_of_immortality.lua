@@ -9,6 +9,28 @@ item_shield_of_immortality = class({
          local caster = self:GetCaster()
 
          caster:AddNewModifier(caster, self, "modifier_shield_of_immortality_hex", { duration = self:GetSpecialValueFor("barrier_duration")})
+         if (caster:GetName() == "npc_dota_hero_axe") then
+         	EmitSoundOn("axe_axe_sheepstick_02", self:GetCaster())
+         else
+            EmitSoundOn("General.MorphIn", self:GetCaster())
+         end
+
+         Timers:CreateTimer("som_sheep_" .. tostring(caster:entindex()), {
+            useGameTime = true,
+            endTime = 0,
+            callback = function()
+               EmitSoundOn("Hero_ShadowShaman.SheepHex.Target", self:GetCaster())
+               return 1.1
+            end
+         })
+         Timers:CreateTimer({
+            useGameTime = true,
+            endTime = self:GetSpecialValueFor("barrier_duration"),
+            callback = function()
+               Timers:RemoveTimer("som_sheep_" .. tostring(caster:entindex()))
+               EmitSoundOn("General.MorphOut", self:GetCaster())
+            end
+         })
     end
 })
 
@@ -19,10 +41,26 @@ modifier_shield_of_immortality = class ({
     DeclareFunctions = function (self)
         return {
             MODIFIER_PROPERTY_HEALTH_BONUS,
-            MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT
+            MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT,
+            MODIFIER_PROPERTY_MANA_BONUS,
+            MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+            MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK
         }
     end,
     GetModifierHealthBonus = function (self) return self:GetAbility():GetSpecialValueFor('bonus_hp') end,
+    GetModifierManaBonus = function (self) return self:GetAbility():GetSpecialValueFor('bonus_mp') end,
+    GetModifierConstantHealthRegen = function (self) return self:GetAbility():GetSpecialValueFor('bonus_hp_regen') end,
+    GetModifierPhysical_ConstantBlock = function (self)
+        local proc = (RandomInt(1, 100) + math.random()) / 100
+
+        if proc <= self:GetAbility():GetSpecialValueFor("block_chance") / 100 then
+            if (self:GetParent():IsRangedAttacker()) then
+                return self:GetAbility():GetSpecialValueFor("block_damage_ranged")
+            else
+                return self:GetAbility():GetSpecialValueFor("block_damage_melee")
+            end
+        end
+    end,
     GetModifierIncomingDamageConstant = function (self, params)
         if (self:GetParent():HasModifier("modifier_shield_of_immortality_hex")) then
             local mult = self:GetAbility():GetSpecialValueFor("barrier_percent") / 100
@@ -76,26 +114,28 @@ modifier_shield_of_immortality = class ({
                return 0.1
             end
         })
+    end,
+    OnRemoved = function (self)
+        Timers:RemoveTimer("som_decay" .. tostring(self:GetParent():entindex()))
     end
 })
 
 modifier_shield_of_immortality_hex = class ({
     IsBuff = function (self) return true end,
+    --GetEffectName = function (self) return "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf" end,
+    GetEffectName = function (self) return "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf" end,
+    GetTexture = function (self) return "../items/shield_of_immortality" end,
     DeclareFunctions = function (self)
         return {
-            MODIFIER_PROPERTY_MODEL_CHANGE,
-            MODIFIER_PROPERTY_MODEL_SCALE
+            MODIFIER_PROPERTY_MODEL_CHANGE
         }
     end,
     CheckState = function (self)
         return {
             [MODIFIER_STATE_DISARMED] = true,
             [MODIFIER_STATE_SILENCED] = true,
-            [MODIFIER_STATE_ROOTED] = true,
+            [MODIFIER_STATE_STUNNED] = true,
         }
     end,
-    --GetModifierModelChange = function (self) return "models/vr_env/vr_avatars/avatar_dendi_model.vmdl" end,
-    --GetModifierModelChange = function (self) return "models/vr_env/vr_avatars/avatar_antimage_model.vmdl" end,
     GetModifierModelChange = function (self) return "models/items/hex/sheep_hex/sheep_hex_gold.vmdl" end,
-    --GetModifierModelScale = function (self) return 10 end
 })
