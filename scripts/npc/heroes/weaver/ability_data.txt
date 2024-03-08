@@ -15,7 +15,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"3000"
-		"AbilityCooldown"				"44.0 40.0 36.0 32.0 28.0 24.0 20.0"
+		"AbilityCooldown"				"20.0"
 		"AbilityManaCost"				"110"
 
 		// Stats
@@ -27,7 +27,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"damage"			"20.0 28.0 36.0 44.0 52.0 60.0 68.0"
-			"attack_rate"		"1.0 0.9 0.8 0.7 0.6 0.5 0.4"
+			"attack_rate"		"0.5"
 			"count"				"12"
 			"armor_reduction"
 			{
@@ -86,11 +86,11 @@ DOTAAbilities
 			"speed"					"400"
 			"radius"				"175"
 			"fade_time"				"0.15"
-			"duration"				"3"
+			"duration"				"4"
 			"AbilityCooldown"
 			{
-				"value"								"6"
-				"special_bonus_unique_weaver_6"		"-2"
+				"value"								"9 8.5 8 7.5 7 6.5 6"
+				"special_bonus_unique_weaver_6"		"-1"
 			}
 			"geminate_attack_mark_duration"
 			{
@@ -117,7 +117,7 @@ DOTAAbilities
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityCooldown"				"4 3.5 3 2.5 2 1.5 1"
+		"AbilityCooldown"				"6 5.2 4.4 3.6 2.8 2 1.2"
 
 		"AbilityCastRange"				"425"
 		// Special	
@@ -132,7 +132,7 @@ DOTAAbilities
 			}
 			"bonus_damage"
 			{
-				"value"			"30 60 90 120 150 180 210"
+				"value"			"30 50 70 90 110 130 150"
 				"LinkedSpecialBonus"	"special_bonus_unique_weaver_2"
 			}
 			"04"
@@ -216,6 +216,25 @@ DOTAAbilities
 			{
 				"var_type"					"FIELD_FLOAT"
 				"damage_per_burn"				"1"
+			}
+		}
+	}
+	"special_bonus_unique_weaver_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"50"
+				"ad_linked_abilities"			"weaver_geminate_attack"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
