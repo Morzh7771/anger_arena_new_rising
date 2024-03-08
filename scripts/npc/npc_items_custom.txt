@@ -56,11 +56,11 @@
                 "bonus_hp_regen"        "5"
                 "bonus_mp"              "750"
                 
-                "block_chance"     "60"
-                "block_damage_melee"  "50"
-                "block_damage_ranged" "25"
+                "block_chance"          "80"
+                "block_damage_melee"    "130"
+                "block_damage_ranged"   "65"
 
-                "barrier_duration"      "3"
+                "barrier_duration"      "4"
                 "barrier_percent"       "60"
                 "barrier_decay"         "6"
             }
@@ -2876,7 +2876,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"3000"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2897,7 +2897,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"500"	
 		"ItemShopTags"					""
 		
 		// Recipe
