@@ -590,10 +590,10 @@
 		"DOTA_Tooltip_Ability_lich_frost_nova_damage_pct"                   "%INTELLIGENCE DAMAGE"
 
 		//Lina
-		"DOTA_Tooltip_Ability_lina_dragon_slave_damage_pct"					"%INTELLIGENCE DAMAGE"
-		"DOTA_Tooltip_Ability_lina_light_strike_array_damage_pct"			"%INTELLIGENCE DAMAGE"
-		"DOTA_Tooltip_Ability_lina_laguna_blade_damage_pct"					"%INTELLIGENCE DAMAGE"
-		"DOTA_Tooltip_Ability_lion_impale_damage_pct"						"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_lina_dragon_slave_damage_pct"					"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_lina_light_strike_array_damage_pct"			"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_lina_laguna_blade_damage_pct"					"%ALL ATTRIBUTES DAMAGE"
+		"DOTA_Tooltip_Ability_lion_impale_damage_pct"						"%ALL ATTRIBUTES DAMAGE"
 
 		//Ancient Apparition
         "DOTA_Tooltip_Ability_ancient_apparition_chilling_touch_damage_pct" "%INTELLIGENCE DAMAGE"
@@ -770,6 +770,11 @@
 		//Puck
 		"DOTA_Tooltip_Ability_puck_illusory_orb_damage_pct"				"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_puck_waning_rift_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_puck_dream_coil_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_special_bonus_unique_puck_illusory_orb_int_dmg_pct"  "+{s:bonus_damage_pct}% to Intellect damage for Illusory Orb"
+		"DOTA_Tooltip_Ability_special_bonus_unique_puck_waning_rift_int_dmg_pct"  "+{s:bonus_damage_pct}% to Intellect damage for Waning Rift"
+		"DOTA_Tooltip_Ability_special_bonus_unique_puck_dream_coil_int_dmg_pct"  "+{s:bonus_damage_pct}% to Intellect damage for Dream Coil"
+
 
 		//Treant
 		"DOTA_Tooltip_Ability_treant_overgrowth_damage_pct"				"%STRENGTH DAMAGE"
@@ -2333,6 +2338,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_1_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_1_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_1_spell_lifesteal"					"%+$spell_lifesteal"
+		"DOTA_Tooltip_ability_item_bloodstone_1_mana_regen"							"%+$mana_regen"
 
 		"DOTA_Tooltip_ability_item_bloodstone_2"									"BLOODSTONE 2"
 		"DOTA_Tooltip_ability_item_bloodstone_2_Description"						"<h1>Active: Bloodpact</h1> Increases spell lifesteal from this item by %lifesteal_multiplier%. At the end of the effect, converts the same portion of damage dealt into mana. Duration: %buff_duration% seconds."
@@ -2341,6 +2347,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_2_spell_lifesteal"					"%+$spell_lifesteal"
+		"DOTA_Tooltip_ability_item_bloodstone_2_mana_regen"							"%+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_bloodstone_3"									"BLOODSTONE 3"
 		"DOTA_Tooltip_ability_item_bloodstone_3_Description"						"<h1>Active: Bloodpact</h1> Increases spell lifesteal from this item by %lifesteal_multiplier%. At the end of the effect, converts the same portion of damage dealt into mana. Duration: %buff_duration% seconds."
@@ -2349,6 +2356,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"					"%+$spell_lifesteal"
+		"DOTA_Tooltip_ability_item_bloodstone_3_mana_regen"							"%+$mana_regen"
 
         "DOTA_Tooltip_modifier_bloodstone_active"                            "Bloodpact"
         "DOTA_Tooltip_modifier_bloodstone_active_Description"                "Increases spell lifesteal and regens mana from dealt spell damage."
@@ -2496,7 +2504,7 @@
 		"DOTA_Tooltip_tower_controller"									"Tower"
 		"npc_dota_custom_tower"										"Tower"
 		"DOTA_Tooltip_ability_tower_ability"                             "Tower"
-		"DOTA_Tooltip_ability_tower_ability_Description"                 "When the tower is destroyed, it changes its allegiance and grants all heroes on the team <b><font color='#FFFFFF'>1 level</font></b> and <b><font color='#FFD700'>300</font></b> + <b><font color='#FFD700'>100 gold</font></b> for each minute of the game.<br><br>You cannot attack the tower more often than once every <b><font color='#ff0000'>1.5</font></b> seconds.<br><br>Each attack on the tower deals <b><font color='#ff0000'>5%</font></b> of its maximum health as damage.<br><br>Every tower attack deals <b><font color='#ff0000'>5%</font></b> of maximum health, instantly killing everyone except heroes.<br><br>If the tower has not taken damage for 10 seconds, it starts regenerating <b><font color='#008000'>0.8%</font></b> of its health per second."
+		"DOTA_Tooltip_ability_tower_ability_Description"                 "When the tower is destroyed, it changes its allegiance and grants all heroes on the team <b><font color='#FFFFFF'>1 level</font></b> and <b><font color='#FFD700'>300</font></b> + <b><font color='#FFD700'>100 gold</font></b> for each minute of the game.<br><br>You cannot attack the tower more often than once every <b><font color='#ff0000'>1.5</font></b> seconds.<br><br>Each attack on the tower deals <b><font color='#ff0000'>2.5%</font></b> of its maximum health as damage.<br><br>Every tower attack deals <b><font color='#ff0000'>2.5%</font></b> of maximum health, instantly killing everyone except heroes.<br><br>If the tower has not taken damage for 10 seconds, it starts regenerating <b><font color='#008000'>0.8%</font></b> of its health per second."
 		"DOTA_Tooltip_attack_slow"                                      "Attack Slow"
 		"DOTA_Tooltip_attack_slow_Description"                          "Your attack speed is reduced to 1.5 attack per second."
 

@@ -43,7 +43,7 @@ function tower_controller:OnAttackLanded(e)
 		if not e.target:IsRealHero() then 
 			self.damage = e.target:GetMaxHealth() * 10000
 		else
-			self.damage = e.target:GetMaxHealth() * 0.05
+			self.damage = e.target:GetMaxHealth() * 0.025
 		end
 		ApplyDamage{
 			victim = e.target,
@@ -66,7 +66,7 @@ function tower_controller:OnAttacked(e)
 				end)
 				e.target:SetHealth(e.target:GetMaxHealth())
 			else
-				e.target:SetHealth( (e.target:GetHealth() - e.target:GetMaxHealth() * 0.05 ))
+				e.target:SetHealth( (e.target:GetHealth() - e.target:GetMaxHealth() * 0.025 ))
 				self.CanRegen = false
 				self.timeLastDamage = GameRules:GetDOTATime( false, false )
 				local timeLastDamage = GameRules:GetDOTATime( false, false )

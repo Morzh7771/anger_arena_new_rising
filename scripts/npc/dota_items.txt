@@ -83,7 +83,7 @@
     {
 
       "Model"                                               "models/props_gameplay/recipe.vmdl"
-      "BaseClass"                     "item_recipe_arcane_boots"
+      "BaseClass"                    						"item_recipe_arcane_boots"
 
       "ItemCost"                                            "0"
       "ItemShopTags"                                        ""
@@ -3723,7 +3723,7 @@
 			"bonus_health"			"600 1200 2000"
 			"bonus_mana"			"600 1200 2000"
 			"bonus_health_regen"	"0 0 0"
-			"bonus_mana_regen"		"5 10 20"
+			"bonus_mana_regen"		"6 15 40"
 		}
 	}
 
@@ -3764,7 +3764,7 @@
 			"bonus_cooldown"		"25 30 35"
 			"bonus_health"			"600 1200 2000"
 			"bonus_mana"			"600 1200 2000"
-			"bonus_mana_regen"		"5 10 20"
+			"bonus_mana_regen"		"6 15 40"
 		}
 	}
 

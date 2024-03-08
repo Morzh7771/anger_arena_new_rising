@@ -30,10 +30,11 @@ modifier_bloodstone = class({
             MODIFIER_PROPERTY_MANA_BONUS,
             MODIFIER_EVENT_ON_TAKEDAMAGE,
             MODIFIER_PROPERTY_AOE_BONUS_CONSTANT,
+            MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         }
     end
 })
-
+mana_regen
 function modifier_bloodstone:OnTakeDamage(params)
     if self:GetParent():IsIllusion() then return end
     if params.attacker ~= self:GetParent() then return end
@@ -58,6 +59,7 @@ end
 
 function modifier_bloodstone:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor('bonus_health') end
 function modifier_bloodstone:GetModifierManaBonus() return self:GetAbility():GetSpecialValueFor('bonus_mana') end
+function modifier_bloodstone:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor('mana_regen') end
 function modifier_bloodstone:GetModifierAoEBonusConstant() return 700 end
 
 -----------------------------------------------------------------------
