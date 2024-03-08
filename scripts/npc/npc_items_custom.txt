@@ -2566,6 +2566,7 @@
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
                 "bonus_aoe"             "50 60 70"
+                "mana_regen"            "3 10 25"
                 
         }
     }
@@ -2626,6 +2627,7 @@
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
                 "bonus_aoe"             "50 60 70"
+                "mana_regen"            "3 10 25"
         }
     }
     "item_recipe_bloodstone_3"
@@ -2686,6 +2688,7 @@
                 "hp_cost"				"0"
                 "force_cooldown"        "35"
                 "bonus_aoe"             "50 60 70"
+                "mana_regen"            "3 10 25"
         }
     }
     "item_recipe_piercing_blade"
@@ -3455,11 +3458,11 @@
 		"AbilityCastRange"	"0"
 
 		"AbilityValues"{
-			"int"			"30 60 120"
-			"mp"			"500 1000 2000"
-			"mp_regen"		"7 14 28"
-			"spell_damage"	"12 21 30"
-			"cast_range"	"300 400 500"
+			"int"			    "30 60 120"
+			"mp"			    "400 800 1600"
+			"mp_regen"		    "7 14 28"
+			"spell_damage"	    "12 21 30"
+			"cast_range"	    "300 400 500"
 			"active_duration"	"6"
 			"active_radius"		"500 750 1000"
 		}
@@ -5563,7 +5566,7 @@
             "bonus_cooldown"        "25 30 35"
             "bonus_health"          "600 1200 2000"
             "bonus_mana"            "600 1200 2000"
-            "bonus_mana_regen"      "5 10 20"
+            "bonus_mana_regen"      "6 15 40"
             "duration"              "240"
         }           
     }
