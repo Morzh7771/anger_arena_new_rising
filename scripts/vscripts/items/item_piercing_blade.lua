@@ -76,6 +76,7 @@ function mod:OnTakeDamage(params)
     end
     if BossSpawner:IsBoss(params.unit) == nil then if not params.unit:IsRealHero() then return end end 
 	if params.inflictor == self:GetAbility() then return end
+    if not params.attacker:IsAlive() then return end
     local modifier = params.unit:FindModifierByName("modifier_item_piercing_blade_debuf") or nil
     local stack = 0
     if not self:GetParent():HasModifier("modifier_piercing_blade_cd") then

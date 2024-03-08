@@ -2414,6 +2414,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_1_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_1_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_1_spell_lifesteal"					"%+$spell_lifesteal"
+		"DOTA_Tooltip_ability_item_bloodstone_1_mana_regen"							"%+$mana_regen"
 
 		"DOTA_Tooltip_ability_item_bloodstone_2"									"BLOODSTONE 2"
 		"DOTA_Tooltip_ability_item_bloodstone_2_Description"						"<h1>Активное: Bloodpact</h1> Увеличивает вампиризм заклинаниями от этого предмета в %lifesteal_multiplier% раза. По окончании эффекта превращает ту же долю нанесённого урона в ману. Длительность: %buff_duration% сек."
@@ -2422,6 +2423,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_2_spell_lifesteal"					"%+$spell_lifesteal"
+		"DOTA_Tooltip_ability_item_bloodstone_2_mana_regen"							"%+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_bloodstone_3"									"BLOODSTONE 3"
 		"DOTA_Tooltip_ability_item_bloodstone_3_Description"						"<h1>Активное: Bloodpact</h1> Увеличивает вампиризм заклинаниями от этого предмета в %lifesteal_multiplier% раза. По окончании эффекта превращает ту же долю нанесённого урона в ману. Длительность: %buff_duration% сек."
@@ -2430,6 +2432,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"					"%+$spell_lifesteal"
+		"DOTA_Tooltip_ability_item_bloodstone_3_mana_regen"							"%+$mana_regen"
 		
 		"DOTA_Tooltip_modifier_bloodstone_active"                               "Bloodpact"
 		"DOTA_Tooltip_modifier_bloodstone_active_Description"                   "Имеет повышенный вампиризм от заклинаний и восстанавливает ману при нанесении урона."
@@ -2578,7 +2581,7 @@
 		"DOTA_Tooltip_tower_controller"								"Башня"
 		"npc_dota_custom_tower"										"Tower"
 		"DOTA_Tooltip_ability_tower_ability"						"Tower"
-		"DOTA_Tooltip_ability_tower_ability_Description"			"Когда башня будет сломана она сменит свою команду и даст всем героям команде <b><font color='#FFFFFF'>1 уровень </font></b>и <b><font color='#FFD700'>300</font></b> + <b><font color='#FFD700'>100 золота</font></b> за каждую минуту игры.<br><br>Вы не можете атаковать башню чаше чем раз в <b><font color='#ff0000'>1.5</font></b> секунлы<br><br>Каждая атака по башне наносит ей <b><font color='#ff0000'>5%</font></b> от ее максимального здоровья.<br><br>  Каждая атака башни наносит <b><font color='#ff0000'>5%</font></b> от максимального здоровья моментальное убивая всех кроме героев.<br><br> Если башня не получала урон на протяжении 10 секунд начинает восснавливать <b><font color='#008000'>0.8%</font></b> здоровья в секунду. "
+		"DOTA_Tooltip_ability_tower_ability_Description"			"Когда башня будет сломана она сменит свою команду и даст всем героям команде <b><font color='#FFFFFF'>1 уровень </font></b>и <b><font color='#FFD700'>300</font></b> + <b><font color='#FFD700'>100 золота</font></b> за каждую минуту игры.<br><br>Вы не можете атаковать башню чаше чем раз в <b><font color='#ff0000'>1.5</font></b> секунлы<br><br>Каждая атака по башне наносит ей <b><font color='#ff0000'>2.5%</font></b> от ее максимального здоровья.<br><br>  Каждая атака башни наносит <b><font color='#ff0000'>2.5%</font></b> от максимального здоровья моментальное убивая всех кроме героев.<br><br> Если башня не получала урон на протяжении 10 секунд начинает восснавливать <b><font color='#008000'>0.8%</font></b> здоровья в секунду. "
 		"DOTA_Tooltip_attack_slow"							"Attack Slow"
 		"DOTA_Tooltip_attack_slow_Description"				"Скорость вашей атаки замедленна до 1.5 атаки в секунду"
 		
