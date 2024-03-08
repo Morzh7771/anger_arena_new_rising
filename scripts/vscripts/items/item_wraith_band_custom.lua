@@ -38,21 +38,21 @@ end
 
 
 function modifier_item_wraith_band_custom:GetModifierBonusStats_Strength()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("str") * (GameRules:GetGameTime() / 600) end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("str") * math.floor(GameRules:GetGameTime() / 600) end
 end
 function modifier_item_wraith_band_custom:GetModifierBonusStats_Agility()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("agi") * (GameRules:GetGameTime() / 600) end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("agi") * math.floor(GameRules:GetGameTime() / 600) end
 end
 function modifier_item_wraith_band_custom:GetModifierBonusStats_Intellect()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("int") * (GameRules:GetGameTime() / 600) end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("int") * math.floor(GameRules:GetGameTime() / 600) end
 end
 function modifier_item_wraith_band_custom:GetModifierPhysicalArmorBonus()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("armor") * (GameRules:GetGameTime() / 600) end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("armor") * math.floor(GameRules:GetGameTime() / 600) end
 end
 
 
 function modifier_item_wraith_band_custom:GetModifierAttackSpeedBonus_Constant()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("speed") * (GameRules:GetGameTime() / 600) end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("speed") * math.floor(GameRules:GetGameTime() / 600) end
 end
 
 modifier_item_wraith_band_custom_speed = class({})
@@ -60,7 +60,7 @@ function modifier_item_wraith_band_custom_speed:IsHidden() return false end
 function modifier_item_wraith_band_custom_speed:IsPurgable() return true end
 
 function modifier_item_wraith_band_custom_speed:OnCreated(table)
-self.speed = self:GetAbility():GetSpecialValueFor("speed_buf") * (GameRules:GetGameTime() / 600)
+self.speed = self:GetAbility():GetSpecialValueFor("speed_buf") * math.floor(GameRules:GetGameTime() / 600)
 if not IsServer() then return end
 
 local particle = ParticleManager:CreateParticle("particles/wb_bif.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
