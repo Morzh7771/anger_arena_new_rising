@@ -108,7 +108,7 @@ DOTAAbilities
 			}
 			"radius"			"500"
 			"tower_bonus"			"0"
-			"damage_pct"			"20"
+			"damage_pct"			"15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -148,7 +148,7 @@ DOTAAbilities
 			"damage"
 			{
 				"value"			"90 140 190 240 290 340 390"
-				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_6"
+				"special_bonus_unique_leshrac_6"	  "+100"
 			}			
 			"jump_count"			"5 6 7 8 9 10 11"	
 			"radius"			"475"
@@ -169,7 +169,7 @@ DOTAAbilities
 				"value"			"0"
 				"special_bonus_unique_leshrac_pulse_nova_lightning"		"+2"
 			}		
-			"damage_pct"			"50"	
+			"damage_pct"			"40"	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -277,5 +277,13 @@ DOTAAbilities
 				}
 				"damage_pct"			"20"
 		}
+	}
+	"special_bonus_unique_leshrac_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
 	}
 }
