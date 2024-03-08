@@ -146,7 +146,7 @@ DOTAAbilities
 				"duration"				"7"
 				"slow_steps"			"-50 -50 -40 -30 -20 -10 -10 -10"
 				"heal_percent"			"50"
-				"max_health_as_damage_pct"	"2"
+				"max_health_as_damage_pct"	"4"
 				"damage_threshold"		"500"
 				"spread_radius"			"700"
 				"slow_tooltip"			"50"
@@ -176,13 +176,13 @@ DOTAAbilities
 		{
 			"movement_slow"
 			{
-				"value"				"5 10 15 20 25 30 35"
-				"special_bonus_unique_lifestealer_6"	"+10"
+				"value"				"8 14 20 26 32 38 44"
+				"special_bonus_unique_lifestealer_6"	"+6"
 			}
 			"duration"				"1.5"
 			"attack_speed_bonus"
 			{
-				"value"	"25 40 55 70 95 120 145"
+				"value"	"40 65 90 115 140 165 190"
 				"special_bonus_unique_lifestealer_7"	"+50"
 			}
 			"miss_pct"
@@ -258,12 +258,12 @@ DOTAAbilities
 			"AbilityCastRange"
 			{
 				"value"				"150"
-				"special_bonus_scepter"		"+350"
+				"special_bonus_scepter"		"+400"
 			}
 			"attack_rate_enemy"
 			{
 				"value"				"0"
-				"special_bonus_scepter"		"+0.3"
+				"special_bonus_scepter"		"+0.2"
 			}
 			"AbilityCooldown"
 			{

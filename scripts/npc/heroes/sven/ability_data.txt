@@ -78,8 +78,8 @@ DOTAAbilities
             }
             "strength_bonus"
             {
-                "value"        "5 10 15 20 25 30 35"
-                "special_bonus_unique_sven_10" "25"
+                "value"     "7 14 21 28 35 42 49"
+                "special_bonus_unique_sven_10" 		"31"
             }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -104,7 +104,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35.0 32.5 30.0 27.5 25.0 22.5 20.0"
+		"AbilityCooldown"				"20.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -180,7 +180,7 @@ DOTAAbilities
 			}
 			"bonus_slow_resistance"
 			{
-				"value"		"20 22 24 26 28 30 32"	
+				"value"		"20 25 30 35 40 45 50"	
 				"special_bonus_unique_sven_gods_strength_slow_resist"		"+20"	
 			}
 		}	
