@@ -33,21 +33,21 @@ end
 
 
 function modifier_item_null_talisman_custom:GetModifierBonusStats_Strength()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("str") *  math.floor(GameRules:GetGameTime() / 600) + 1 end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("str") *  math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("str") end
 end
 function modifier_item_null_talisman_custom:GetModifierBonusStats_Agility()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("agi") *  math.floor(GameRules:GetGameTime() / 600) + 1 end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("agi") *  math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("agi") end
 end
 function modifier_item_null_talisman_custom:GetModifierBonusStats_Intellect()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("int") *  math.floor(GameRules:GetGameTime() / 600) + 1 end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("int") *  math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("int") end
 end
 function modifier_item_null_talisman_custom:GetModifierSpellAmplify_Percentage()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("spell") *  math.floor(GameRules:GetGameTime() / 600) + 1 end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("spell") *  math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("spell") end
 end
 
 
 function modifier_item_null_talisman_custom:GetModifierConstantManaRegen()
-    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("regen") *  math.floor(GameRules:GetGameTime() / 600) + 1 end
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("regen") *  math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("regen") end
 end
 
 
@@ -60,7 +60,7 @@ function modifier_item_null_talisman_custom_mana:IsPurgable() return true end
 function modifier_item_null_talisman_custom_mana:GetEffectName() return "particles/items_fx/healing_clarity.vpcf" end
 
 function modifier_item_null_talisman_custom_mana:OnCreated(table)
-self.mana = self:GetAbility():GetSpecialValueFor("mana")/self:GetAbility():GetSpecialValueFor("duration") *  math.floor(GameRules:GetGameTime() / 600) + 1
+self.mana = self:GetAbility():GetSpecialValueFor("mana")/self:GetAbility():GetSpecialValueFor("duration") *  math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("mana")/self:GetAbility():GetSpecialValueFor("duration")
 if not IsServer() then return end
 
 for _,mod in pairs(self:GetParent():FindAllModifiers()) do 
