@@ -20,11 +20,11 @@ modifier_item_bracer_custom = class({
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
     } end,
-    GetModifierBonusStats_Strength = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("str") * math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("str") end end,
-    GetModifierBonusStats_Intellect = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("int") * math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("int") end end,
-    GetModifierBonusStats_Agility = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("agi") * math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("agi") end end,
-    GetModifierPreAttack_BonusDamage = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage") * math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("damage") end end,
-    GetModifierConstantHealthRegen = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("regen") * math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("regen") end end,
+    GetModifierBonusStats_Strength = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("str") * (math.floor(GameRules:GetGameTime() / 600) + 1) end end,
+    GetModifierBonusStats_Intellect = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("int") * (math.floor(GameRules:GetGameTime() / 600) + 1) end end,
+    GetModifierBonusStats_Agility = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("agi") * (math.floor(GameRules:GetGameTime() / 600) + 1) end end,
+    GetModifierPreAttack_BonusDamage = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage") * (math.floor(GameRules:GetGameTime() / 600) + 1) end end,
+    GetModifierConstantHealthRegen = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("regen") * (math.floor(GameRules:GetGameTime() / 600) + 1) end end,
 })
 
 modifier_item_bracer_custom_heal = class({
@@ -34,7 +34,7 @@ modifier_item_bracer_custom_heal = class({
     DeclareFunctions = function (self) return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT} end,
     GetModifierConstantHealthRegen = function (self) return self.heal*self:GetStackCount() end,
     OnCreated = function (self) 
-        self.heal = self:GetAbility():GetSpecialValueFor("heal")/self:GetAbility():GetSpecialValueFor("duration") * math.floor(GameRules:GetGameTime() / 600) + self:GetAbility():GetSpecialValueFor("heal")/self:GetAbility():GetSpecialValueFor("duration") 
+        self.heal = self:GetAbility():GetSpecialValueFor("heal")/self:GetAbility():GetSpecialValueFor("duration") * (math.floor(GameRules:GetGameTime() / 600) + 1)
 
         if not IsServer() then return end
 
