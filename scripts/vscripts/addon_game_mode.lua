@@ -330,7 +330,7 @@ function AngelArena:OnRuneActivate(event)
 
 		local item_mod_table = {
 			{ "item_hand_of_midas",  40 + 18 * cur_min },
-			{ "item_advanced_midas", 80 + 36 * cur_min }
+			{ "item_advanced_midas", 60 + 27 * cur_min }
 		}
 
 		local hero_mod_table = {
