@@ -183,6 +183,7 @@ function PercentDamage:_init()
 		"lina_dragon_slave",
 		"lina_light_strike_array",
 		"lina_laguna_blade",
+		"magnataur_shockwave"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
