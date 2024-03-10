@@ -60,7 +60,7 @@ function modifier_item_wraith_band_custom_speed:IsHidden() return false end
 function modifier_item_wraith_band_custom_speed:IsPurgable() return true end
 
 function modifier_item_wraith_band_custom_speed:OnCreated(table)
-self.speed = self:GetAbility():GetSpecialValueFor("speed_buf") *  (math.floorGameRules:GetDOTATime(false,false) / 600) + 1)
+self.speed = self:GetAbility():GetSpecialValueFor("speed_buf") *  (math.floor(GameRules:GetDOTATime(false,false) / 600) + 1)
 if not IsServer() then return end
 
 local particle = ParticleManager:CreateParticle("particles/wb_bif.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
