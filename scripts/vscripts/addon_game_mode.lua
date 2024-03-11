@@ -334,7 +334,7 @@ function AngelArena:OnRuneActivate(event)
 		}
 
 		local hero_mod_table = {
-			["npc_dota_hero_alchemist"] = 2.5,
+			["npc_dota_hero_alchemist"] = 2,
 		}
 
 		local gold_without_mods = 40 + 14 * cur_min
