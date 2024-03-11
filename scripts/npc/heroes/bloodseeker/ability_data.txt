@@ -104,8 +104,8 @@ DOTAAbilities
             "silence_duration"          "3 3.5 4 4.5 5 5.5 6"
             "damage"                    
             {
-                "value"         "110 180 250 320 390 460 530"
-                "special_bonus_unique_bloodseeker_2"    "+120"
+                "value"         "110 190 270 350 440 530 620"
+                "special_bonus_unique_bloodseeker_2"    "+180"
             }
 			"damage_pct"                    
             {
@@ -136,9 +136,9 @@ DOTAAbilities
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
 			}			
 			"hero_kill_heal"		"3 6 9 12 15 18 21 24"
-			"creep_kill_heal"		"20"
+			"creep_kill_heal"		"25"
 			"half_bonus_aoe"		"250"
-			"max_bonus_pct"				"10"
+			"max_bonus_pct"				"15"
 			"visibility_threshold_pct"	"35"
 			"invis_threshold_pct"	"15"
 			"linger_duration"			"6.0"
@@ -225,7 +225,7 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
