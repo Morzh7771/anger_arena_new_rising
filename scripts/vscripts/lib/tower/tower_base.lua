@@ -58,7 +58,7 @@ end
 function tower_controller:OnAttacked(e)
 	if e.target == self:GetParent() then  
 		if (e.attacker:GetOrigin() - e.target:GetOrigin()):Length2D() < e.target:Script_GetAttackRange() + e.attacker:GetHullRadius() + e.target:GetHullRadius() and e.attacker:IsRealHero() then
-			if e.target:GetHealth() <= e.target:GetMaxHealth() * 0.05 + 10 then
+			if e.target:GetHealth() <= e.target:GetMaxHealth() * 0.025 + 10 then
 				e.target:SetTeam(e.target:GetOpposingTeamNumber())
 				TeamHelper:ApplyForHeroes(e.attacker:GetTeamNumber(), function(playerid, hero)
 					PlayerResource:ModifyGold(playerid, 300+(GameRules:GetDOTATime(false,false) / 60) * 100, false, DOTA_ModifyGold_RoshanKill)
