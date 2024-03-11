@@ -545,7 +545,8 @@
         "DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_0_5"                             "Магическое усиление заклинаний за интеллект"
 
 
-        
+        //Lifestealer
+        "DOTA_Tooltip_ability_special_bonus_unique_lifestealer_3"	"+{s:bonus_hp_leech_percent}% к вампиризму и +{s:bonus_hp_damage_percent}% к урону от Feast"
         //Magnus
         "DOTA_Tooltip_Ability_magnataur_shockwave_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
         //Riki
@@ -1660,7 +1661,7 @@
 		"DOTA_Tooltip_modifier_bkb_aa_3_immune_Description"	        "Существо невосприимчиво к магии."
 
         "DOTA_Tooltip_Ability_item_falcon_blade_custom"	                "Falcon Blade"
-        "DOTA_Tooltip_ability_item_falcon_blade_custom_Description"	"<h1>Активируемая: Falcon Rush</h1>Владелец совершает быстрый <b><font color='#53ea48'>рывок</font></b> в указанном направлении на расстояние <b><font color='#53ea48'>%range%</font></b><br><br>В момент применения владелец уклоняется от всех снарядов"
+        "DOTA_Tooltip_ability_item_falcon_blade_custom_Description"	"<h1>Активируемая: Falcon Rush</h1>Владелец совершает быстрый <b><font color='#53ea48'>рывок</font></b> в указанном направлении на расстояние <b><font color='#53ea48'>%range%</font>.</b><br><br>В момент применения владелец уклоняется от всех снарядов."
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_damage"	"+$damage"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_mana_regen""+$mana_regen"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_health"	"+$health"
