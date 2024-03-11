@@ -553,6 +553,14 @@
 		"DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_1"                               "+{s:value}% to Magic Amp per Intellect unit"
 		"DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_0_5"                             "+{s:value}% to Magic Amp per Intellect unit"
 
+		//Lifestealer
+		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_3"	"+{s:bonus_hp_leech_percent}% Feast Lifesteal and +{s:bonus_hp_damage_percent}% Damage"
+		//Magnus
+        "DOTA_Tooltip_Ability_magnataur_shockwave_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
+        
+		//Riki
+        "DOTA_Tooltip_Ability_riki_blink_strike_damage_pct"					"%AGILITY DAMAGE"
+        
 		//Axe
 		"DOTA_Tooltip_Ability_axe_counter_helix_damage_pct"					"ARMOR MULTIPLIER"
 		"DOTA_Tooltip_Ability_axe_culling_blade_damage_pct"					"ARMOR MULTIPLIER"
@@ -2147,7 +2155,7 @@
 		
 		"DOTA_Tooltip_Ability_item_wraith_band_custom"				"Wraith Band"
 		"DOTA_Tooltip_ability_item_wraith_band_custom_Description"		"<h1>Active: Zeal</h1>Increases your attack speed by %speed_buf% for each Wraith Band<br><br>Duration: %duration% seconds\n\n<h1>Passive: Practice makes Perfect</h1>Gives 100% more base bonuses every 10 minutes."
-		"DOTA_Tooltip_ability_item_wraith_band_custom_Lore"	"Tiara, from which a gentle whisper can be heard."
+		"DOTA_Tooltip_ability_item_wraith_band_custom_Lore"	"Project B.R.U.S.K.I."
 		"DOTA_Tooltip_ability_item_wraith_band_custom_agi"	"+$agi"
 		"DOTA_Tooltip_ability_item_wraith_band_custom_str"	"+$str"
 		"DOTA_Tooltip_ability_item_wraith_band_custom_int"	"+$int"
@@ -2159,7 +2167,7 @@
 		
 		"DOTA_Tooltip_Ability_item_null_talisman_custom"	"Null Talisman"
 		"DOTA_Tooltip_ability_item_null_talisman_custom_Description"	"<h1>Active: Regen</h1>Restores %mana% mana over %duration% seconds for each Null Talisman\n\n<h1>Passive: Practice makes Perfect</h1>Gives 100% more base bonuses every 10 minutes."
-		"DOTA_Tooltip_ability_item_null_talisman_custom_Lore"	"A small precious gem on several chains."
+		"DOTA_Tooltip_ability_item_null_talisman_custom_Lore"	"Project B.R.U.S.K.I."
 		"DOTA_Tooltip_ability_item_null_talisman_custom_int"	"+$int"
 		"DOTA_Tooltip_ability_item_null_talisman_custom_str"	"+$str"
 		"DOTA_Tooltip_ability_item_null_talisman_custom_agi"	"+$agi"
@@ -2171,7 +2179,7 @@
 	
 		"DOTA_Tooltip_Ability_item_bracer_custom"	"Bracer"
 		"DOTA_Tooltip_ability_item_bracer_custom_Description"	"<h1>Active: Regen</h1>Restores %heal% health over %duration% seconds for each Bracer\n\n<h1>Passive: Practice makes Perfect</h1>Gives 100% more base bonuses every 10 minutes."
-		"DOTA_Tooltip_ability_item_bracer_custom_Lore"	"Bracers will be suitable if you need to strengthen defense and increase survivability."
+		"DOTA_Tooltip_ability_item_bracer_custom_Lore"	"Project B.R.U.S.K.I."
 		"DOTA_Tooltip_ability_item_bracer_custom_str"	"+$str"
 		"DOTA_Tooltip_ability_item_bracer_custom_int"	"+$int"
 		"DOTA_Tooltip_ability_item_bracer_custom_agi"	"+$agi"

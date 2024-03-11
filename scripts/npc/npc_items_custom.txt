@@ -3987,12 +3987,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_attack_speed"                "40 80"
+			"bonus_attack_speed"                "40 60"
 			"xp_multiplier"			            "2.2 4.4"
 			"bonus_gold"			            "170 340"
 			"transmute_cast_range_tooltip"		"600 700"
 			"base_gold_rune"			        "40 80"
-			"minute_gold_rune"			        "18 36"
+			"minute_gold_rune"			        "18 27"
 		}
 	}
 	"item_recipe_advanced_midas"
@@ -4049,12 +4049,12 @@
 
 		"AbilityValues"
 		{
-			"bonus_attack_speed"                "40 80"
+			"bonus_attack_speed"                "40 60"
 			"xp_multiplier"			            "2.2 4.4"
 			"bonus_gold"			            "170 340"
 			"transmute_cast_range_tooltip"		"600 700"
 			"base_gold_rune"			        "40 80"
-            "minute_gold_rune"                  "18 36"
+            "minute_gold_rune"                  "18 27"
 		}
 	}
     "item_recipe_drum_of_endurance"
@@ -5971,5 +5971,4 @@
 
 		}
 	}
-    
 }

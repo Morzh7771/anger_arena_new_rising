@@ -62,13 +62,19 @@ modifier_shield_of_immortality = class ({
         end
     end,
     GetModifierIncomingDamageConstant = function (self, params)
+        local damage = params.original_damage
+
+        if damage < params.damage then
+        	damage = params.damage
+        end
+
         if (self:GetParent():HasModifier("modifier_shield_of_immortality_hex")) then
             local mult = self:GetAbility():GetSpecialValueFor("barrier_percent") / 100
 
-            self:SetStackCount(self:GetStackCount() + mult * params.original_damage)
+            self:SetStackCount(self:GetStackCount() + mult * damage)
 
             if IsServer() then
-                return params.original_damage * -1
+                return damage * -1
             end
 
             if IsClient() then
@@ -76,7 +82,7 @@ modifier_shield_of_immortality = class ({
             end
         end
 
-        local damage_left = params.original_damage - self:GetStackCount()
+        local damage_left = damage - self:GetStackCount()
 
         if (damage_left < 0) then
             damage_left = 0
@@ -84,7 +90,7 @@ modifier_shield_of_immortality = class ({
 
         local blocked = self:GetStackCount()
 
-        self:SetStackCount(self:GetStackCount() - params.original_damage)
+        self:SetStackCount(self:GetStackCount() - damage)
 
         if (self:GetStackCount() < 0) then
             self:SetStackCount(0)

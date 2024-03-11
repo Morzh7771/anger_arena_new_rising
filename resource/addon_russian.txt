@@ -544,6 +544,14 @@
         "DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_0_5_Description"                 "+{s:value}% за единицу интеллекта"
         "DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_0_5"                             "Магическое усиление заклинаний за интеллект"
 
+
+        //Lifestealer
+        "DOTA_Tooltip_ability_special_bonus_unique_lifestealer_3"	"+{s:bonus_hp_leech_percent}% к вампиризму и +{s:bonus_hp_damage_percent}% к урону от Feast"
+        //Magnus
+        "DOTA_Tooltip_Ability_magnataur_shockwave_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        //Riki
+        "DOTA_Tooltip_Ability_riki_blink_strike_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
+        
 		//Axe
 		"DOTA_Tooltip_Ability_axe_counter_helix_damage_pct"					"МНОЖИТЕЛЬ БРОНИ"
 		"DOTA_Tooltip_Ability_axe_culling_blade_damage_pct"					"МНОЖИТЕЛЬ БРОНИ"
@@ -1653,7 +1661,7 @@
 		"DOTA_Tooltip_modifier_bkb_aa_3_immune_Description"	        "Существо невосприимчиво к магии."
 
         "DOTA_Tooltip_Ability_item_falcon_blade_custom"	                "Falcon Blade"
-        "DOTA_Tooltip_ability_item_falcon_blade_custom_Description"	"<h1>Активируемая: Falcon Rush</h1>Владелец совершает быстрый <b><font color='#53ea48'>рывок</font></b> в указанном направлении на расстояние <b><font color='#53ea48'>%range%</font></b><br><br>В момент применения владелец уклоняется от всех снарядов"
+        "DOTA_Tooltip_ability_item_falcon_blade_custom_Description"	"<h1>Активируемая: Falcon Rush</h1>Владелец совершает быстрый <b><font color='#53ea48'>рывок</font></b> в указанном направлении на расстояние <b><font color='#53ea48'>%range%</font>.</b><br><br>В момент применения владелец уклоняется от всех снарядов."
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_damage"	"+$damage"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_mana_regen""+$mana_regen"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_health"	"+$health"
@@ -2222,8 +2230,8 @@
         "DOTA_Tooltip_modifier_item_wraith_band_custom_speed_Description"       "Скорость атаки увеличена на <b><font color='#53ea48'>%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%</font></b>"
 
         "DOTA_Tooltip_Ability_item_wraith_band_custom"			"Wraith Band"
-        "DOTA_Tooltip_ability_item_wraith_band_custom_Description"	"<h1>Активное: Zeal</h1>Увеличивает вашу скорость атаки на %speed_buf% за каждый Wraith Band<br><br>Длительность: %duration% секунд\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
-        "DOTA_Tooltip_ability_item_wraith_band_custom_Lore"		"Тиара, от которой доносится лёгкий шёпот."
+        "DOTA_Tooltip_ability_item_wraith_band_custom_Description"	"<h1>Активное: Zeal</h1>Увеличивает вашу скорость атаки на %speed_buf% за каждый Wraith Band.<br><br>Длительность: %duration% секунд\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
+        "DOTA_Tooltip_ability_item_wraith_band_custom_Lore"		"Project B.R.U.S.K.I."
         "DOTA_Tooltip_ability_item_wraith_band_custom_agi"		"+$agi"
         "DOTA_Tooltip_ability_item_wraith_band_custom_str"		"+$str"
         "DOTA_Tooltip_ability_item_wraith_band_custom_int"		"+$int"
@@ -2234,8 +2242,8 @@
         "DOTA_Tooltip_modifier_item_null_talisman_custom_mana_Description"	"Восстанавливает <b><font color='#53ea48'>%dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%</font></b> маны в секунду"
 
         "DOTA_Tooltip_Ability_item_null_talisman_custom"		"Null Talisman"
-        "DOTA_Tooltip_ability_item_null_talisman_custom_Description"	"<h1>Активное: Regen</h1>Восстанавливает %mana% маны за %duration% секунд за каждый Null Talisman\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
-        "DOTA_Tooltip_ability_item_null_talisman_custom_Lore"		"Небольшой драгоценный камень на нескольких цепочках."
+        "DOTA_Tooltip_ability_item_null_talisman_custom_Description"	"<h1>Активное: Regen</h1>Восстанавливает %mana% маны за %duration% секунд за каждый Null Talisman.\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
+        "DOTA_Tooltip_ability_item_null_talisman_custom_Lore"		"Project B.R.U.S.K.I."
         "DOTA_Tooltip_ability_item_null_talisman_custom_int"		"+$int"
         "DOTA_Tooltip_ability_item_null_talisman_custom_str"		"+$str"
         "DOTA_Tooltip_ability_item_null_talisman_custom_agi"		"+$agi"
@@ -2246,8 +2254,8 @@
         "DOTA_Tooltip_modifier_item_bracer_custom_heal_Description"	"Восстанавливает <b><font color='#53ea48'>%dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%</font></b> здоровья в секунду"
 
         "DOTA_Tooltip_Ability_item_bracer_custom"			"Bracer"
-        "DOTA_Tooltip_ability_item_bracer_custom_Description"		"<h1>Активное: Regen</h1>Восстанавливает %heal% здоровья за %duration% секунд за каждый Bracer\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
-        "DOTA_Tooltip_ability_item_bracer_custom_Lore"			"Наручи подойдут в том случае, если нужно укрепить защиту и повысить живучесть."
+        "DOTA_Tooltip_ability_item_bracer_custom_Description"		"<h1>Активное: Regen</h1>Восстанавливает %heal% здоровья за %duration% секунд за каждый Bracer.\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
+        "DOTA_Tooltip_ability_item_bracer_custom_Lore"			"Project B.R.U.S.K.I."
         "DOTA_Tooltip_ability_item_bracer_custom_str"			"+$str"
         "DOTA_Tooltip_ability_item_bracer_custom_int"			"+$int"
         "DOTA_Tooltip_ability_item_bracer_custom_agi"			"+$agi"

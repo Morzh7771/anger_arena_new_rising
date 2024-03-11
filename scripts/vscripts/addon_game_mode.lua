@@ -330,11 +330,11 @@ function AngelArena:OnRuneActivate(event)
 
 		local item_mod_table = {
 			{ "item_hand_of_midas",  40 + 18 * cur_min },
-			{ "item_advanced_midas", 80 + 36 * cur_min }
+			{ "item_advanced_midas", 60 + 27 * cur_min }
 		}
 
 		local hero_mod_table = {
-			["npc_dota_hero_alchemist"] = 2.5,
+			["npc_dota_hero_alchemist"] = 2,
 		}
 
 		local gold_without_mods = 40 + 14 * cur_min
@@ -366,9 +366,9 @@ function AngelArena:OnRuneActivate(event)
 		local cur_min = GameRules:GetGameTime() / 60
 
 		local item_mod_table = {
-			{"item_talisman_of_mastery", 25 * cur_min },
+			{"item_talisman_of_mastery", 20 * cur_min },
 		}
-		local xp_without_mods = 100 + 25 * cur_min
+		local xp_without_mods = 70 + 18 * cur_min
 
 		function CalcWisdomXp(hero )
 			local item_xp = 0

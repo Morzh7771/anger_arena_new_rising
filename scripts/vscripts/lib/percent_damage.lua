@@ -75,6 +75,7 @@ function PercentDamage:_init()
 		"broodmother_silken_bola",
 		"nevermore_requiem",
 		"bloodseeker_blood_bath",
+		"riki_blink_strike"
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
@@ -182,6 +183,7 @@ function PercentDamage:_init()
 		"lina_dragon_slave",
 		"lina_light_strike_array",
 		"lina_laguna_blade",
+		"magnataur_shockwave"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
