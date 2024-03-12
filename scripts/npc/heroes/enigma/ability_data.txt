@@ -24,7 +24,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 19 18 17 16 15 14"
+		"AbilityCooldown"				"16"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -41,8 +41,8 @@ DOTAAbilities
 			"tick_rate"				"2.0 1.9 1.8 1.7 1.6 1.5 1.4"
 			"stun_duration"
 			{
-				"value" 							"0.3 0.35 0.4 0.45 0.5 0.55 0.6"
-				"special_bonus_shard"		"+0.1"
+				"value" 							"0.4"
+				"special_bonus_shard"		"+0.35" //доп-но менять в локе
 			}		
 			"damage"
 			{
@@ -57,7 +57,7 @@ DOTAAbilities
 			"eidolon_spawns_per_tick"
 			{
 				"value"										"0"
-				"special_bonus_shard"						"+1"
+				"special_bonus_shard"						"0"
 			}
 
 		}
@@ -65,66 +65,56 @@ DOTAAbilities
 	}
 	"enigma_demonic_conversion"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"enigma_demonic_conversion"
-		"MaxLevel"		"4"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilitySound"					"Hero_Enigma.Demonic_Conversion"
-		"LevelsBetweenUpgrades"			"4"
+		"MaxLevel"						"7"
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"enigma_demonic_conversion"
+		"ScriptFile"					"heroes/enigma/demonic_conversion"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 
+	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40"
-		"AbilityDuration"				"40.0"
+		"AbilityCooldown"				"35"
+		"AbilityDuration"				"35"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140 160 180 200"
-		"AbilityHealthCost"				"140 160 180 200"
+		"AbilityManaCost"				"170"
+		"AbilityHealthCost"				"0"
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"spawn_count"
 			{
-				"value"			"3 3 3 3"
-				"special_bonus_unique_enigma"	"+5"
+				"value"			"3"
+				"LinkedSpecialBonus"	"special_bonus_unique_enigma"
 			}
-			"split_attack_count"	"6 6 6 6"
-			"eidelon_max_health"
+			"split_attack_count"	"6"
+			"eidolon_hp_tooltip"
 			{
-				"value"			"180 220 260 300"
-				"special_bonus_unique_enigma_7"	"+150"
+				"value"			"250 350 450 550 850 950 1000" //писать в unit
+				"LinkedSpecialBonus"	"special_bonus_unique_enigma_7"
 			}
-			"life_extension"		"2.0 2.0 2.0 2.0"
-			"eidelon_base_damage"		"20 38 56 74"
-			"eidolon_damage_spread"			"4"
-			
-			"eidolon_bonus_damage"
+			"life_extension"		"2.0"
+			"eidolon_dmg_tooltip"
 			{
-				"value"			"0"		
-				"special_bonus_unique_enigma_3"	"+40"
-			}			
-			"eidolon_bonus_attack_speed"
-			{
-				"value"			"0"
-				"special_bonus_unique_enigma_4"		"+25"
+				"value"			"20 30 40 50 60 70 80" //писать в unit
+				"LinkedSpecialBonus"	"special_bonus_unique_enigma_3"
 			}
-			"eidelon_base_movespeed"			"280 310 340 370"
-			"creep_max_level"		"4"
-			"eidolon_magic_resist"		"30 40 50 60"
-			"eidolon_attack_range"		"425 475 525 575"
-			"allied_damage_pct"			"45"
-			"self_modelscale"			"-40"
-			"spawn_offset"				"100"
+			"creep_max_level"		"100"
+			"eidolon_attack_range"		"425 450 475 500 525 550 575"
+			"eidolon_magic_resist"		"30 35 40 45 50 55 60" //писать в unit
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"enigma_midnight_pulse"
 	{
@@ -168,6 +158,7 @@ DOTAAbilities
 				"LinkedSpecialBonus"	"special_bonus_unique_enigma_8"
 			}
 			"damage_percent"			"3 3.5 4 4.5 5 5.5 6"
+			"base_damage"				"15 30 45 60 75 90 105"
 			"tick_rate"			"0.5"
 		}
 	}
@@ -195,7 +186,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0 140.0 130.0 120.0 110.0 100.0 90.0"
+		"AbilityCooldown"				"120 115 110 105 100 95 90"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------

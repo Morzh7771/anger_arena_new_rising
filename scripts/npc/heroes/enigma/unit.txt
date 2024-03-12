@@ -1,197 +1,515 @@
 "DOTAUnits"
 {
-"npc_dota_lesser_eidolon"
+	"npc_eidolon_1" 
 	{
 		// General
-		//
+		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
 		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
-		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
-		"ModelScale"				"0.75"
+		"SoundSet"					"Hero_Enigma"					// Name of sound set.
 		"Level"						"1"
-		"IsSummoned"				"1"
-		"SelectionGroup"			"Eidolons"
-		"UnitLabel"			"eidolons"
-		"wearable"				"8638"
+		"ModelScale" 				"0.8"
+		"SelectionGroup"			"Enigma_Eidelons"
+		"wearable"					"8638"
 		
-		// Abilities
-		//----------------------------------------------------------------
+		"Ability3"					"summons_attack_magical"
+		"Ability4"					"creep_piercing"
 		
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
-
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"2"			// Physical protection.
-		"MagicalResistance"				"30"		// Magical protection.
-
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"			"30"			// Magical protection.
+	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"16"		// Damage range min.
-		"AttackDamageMax"			"24"		// Damage range max.
+		"AttackDamageMin"			"20"		// Damage range min.
+		"AttackDamageMax"			"20"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.5"			// Speed of attack.
-		"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
-		"AttackRange"				"425"		// Range within a target can be attacked.
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			"900"		// Speed of projectile.
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"10"		// Experience earn.
-		"BountyGoldMin"				"18"		// Gold earned min.
-		"BountyGoldMax"				"24"		// Gold earned max.
-
+		"ProjectileSpeed"			"1900"		// Speed of projectile.
+	
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
-		"HealthBarOffset"			"130"
-
+		"HealthBarOffset"			"170"
+	
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"280"		// Speed
-		"MovementTurnRate"			"0.9"		// Turning rate.
-
-		// Status
+		"MovementSpeed"				"370"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Bounty
 		//----------------------------------------------------------------
-		"StatusHealth"				"200"		// Base health.
-		"StatusHealthRegen"			"4"		// Health regeneration rate.
+		"BountyXP"					"70"		// Experience earn.
+		"BountyGoldMin"				"40"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	
+			// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"250"		// Base health.
+		"StatusHealthRegen"			"2.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
-
+	
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-	}	
-
-	"npc_dota_eidolon"
+		"VisionNighttimeRange"		"1100"		// Range of vision at night time.
+	
+		//Inventory
+		"HasInventory"				"0"
+	}
+	
+	"npc_eidolon_2" 
 	{
-		"include_keys_from" "npc_dota_lesser_eidolon"
-		"ModelScale"				"0.8"
-		
-		"ArmorPhysical"				"3"			// Physical protection.
-		"MagicalResistance"			"35"		// Magical protection.
-
-		"AttackDamageMin"			"25"		// Damage range min.
-		"AttackDamageMax"			"33"		// Damage range max.
-
-		"HealthBarOffset"			"135"
-
-		"MovementSpeed"				"310"		// Speed
-
-		"StatusHealth"				"275"		// Base health.
-		"AttackRange"				"450"		// Range within a target can be attacked.
-
-	}	
-
-	"npc_dota_greater_eidolon"
-	{
-		"include_keys_from" "npc_dota_lesser_eidolon"
-		"ModelScale"				"0.85"
+		"Ability3"					"summons_attack_magical"
+		"Ability4"					"creep_piercing"
+	
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
+		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+		"SoundSet"					"Hero_Enigma"					// Name of sound set.
+		"Level"						"1"
+		"ModelScale" 				"0.8"
+		"SelectionGroup"			"Enigma_Eidelons"
+		"wearable"					"8638"
+	
+		// Armor
+		//----------------------------------------------------------------
 		"ArmorPhysical"				"4"			// Physical protection.
-		"MagicalResistance"			"40"		// Magical protection.
-
-		"AttackDamageMin"			"35"		// Damage range min.
-		"AttackDamageMax"			"43"		// Damage range max.
-		
-		"HealthBarOffset"			"140"
-
-		"MovementSpeed"				"340"		// Speed
-
+		"MagicalResistance"			"35"			// Magical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"30"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1900"		// Speed of projectile.
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"170"
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"370"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"70"		// Experience earn.
+		"BountyGoldMin"				"40"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	
+			// Status
+		//----------------------------------------------------------------
 		"StatusHealth"				"350"		// Base health.
-		"AttackRange"				"475"		// Range within a target can be attacked.
-
-	}	
-
-	"npc_dota_dire_eidolon"
-	{
-		"include_keys_from" "npc_dota_lesser_eidolon"
+		"StatusHealthRegen"			"2.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
-		"ModelScale"				".9"
-		
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"			"45"		// Magical protection.
-		
-		"AttackDamageMin"			"46"		// Damage range min.
-		"AttackDamageMax"			"54"		// Damage range max.
-
-		"HealthBarOffset"			"145"
-
-		"MovementSpeed"				"370"		// Speed
-		
-		"StatusHealth"				"425"		// Base health.
-		"AttackRange"				"500"		// Range within a target can be attacked.
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1100"		// Range of vision at night time.
+	
+		//Inventory
+		"HasInventory"				"0"
 	}
-	"npc_dota_dire_eidolon1"
+	
+	"npc_eidolon_3" 
 	{
-		"include_keys_from" "npc_dota_lesser_eidolon"
+		"Ability3"					"summons_attack_magical"
+		"Ability4"					"creep_piercing"
 		
-		"ModelScale"				".9"
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
+		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+		"SoundSet"					"Hero_Enigma"					// Name of sound set.
+		"Level"						"1"
+		"ModelScale" 				"0.8"
+		"SelectionGroup"			"Enigma_Eidelons"
+		"wearable"					"8638"
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"			"40"			// Magical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"40"		// Damage range min.
+		"AttackDamageMax"			"40"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1900"		// Speed of projectile.
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"170"
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"370"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"70"		// Experience earn.
+		"BountyGoldMin"				"40"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	
+			// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"450"		// Base health.
+		"StatusHealthRegen"			"2.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
-		"ArmorPhysical"				"6"			// Physical protection.
-		"MagicalResistance"			"50"		// Magical protection.
-		
-		"AttackDamageMin"			"58"		// Damage range min.
-		"AttackDamageMax"			"66"		// Damage range max.
-
-		"HealthBarOffset"			"145"
-
-		"MovementSpeed"				"390"		// Speed
-		
-		"StatusHealth"				"500"		// Base health.
-		"AttackRange"				"525"		// Range within a target can be attacked.
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1100"		// Range of vision at night time.
+	
+		//Inventory
+		"HasInventory"				"0"
 	}
-	"npc_dota_dire_eidolon2"
+	
+	
+	"npc_eidolon_4" 
 	{
-		"include_keys_from" "npc_dota_lesser_eidolon"
+		"Ability3"					"summons_attack_magical"
+		"Ability4"					"creep_piercing"
 		
-		"ModelScale"				".9"
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
+		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+		"SoundSet"					"Hero_Enigma"					// Name of sound set.
+		"Level"						"1"
+		"ModelScale" 				"0.8"
+		"SelectionGroup"			"Enigma_Eidelons"
+		"wearable"					"8638"
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"			"45"			// Magical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"50"		// Damage range min.
+		"AttackDamageMax"			"50"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1900"		// Speed of projectile.
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"170"
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"370"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"70"		// Experience earn.
+		"BountyGoldMin"				"40"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	
+			// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"550"		// Base health.
+		"StatusHealthRegen"			"2.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
-		"ArmorPhysical"				"7"			// Physical protection.
-		"MagicalResistance"			"55"		// Magical protection.
-		
-		"AttackDamageMin"			"71"		// Damage range min.
-		"AttackDamageMax"			"79"		// Damage range max.
-
-		"HealthBarOffset"			"145"
-
-		"MovementSpeed"				"410"		// Speed
-		
-		"StatusHealth"				"575"		// Base health.
-		"AttackRange"				"550"		// Range within a target can be attacked.
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1100"		// Range of vision at night time.
+	
+		//Inventory
+		"HasInventory"				"0"
 	}
-	"npc_dota_dire_eidolon3"
+	
+	"npc_eidolon_5" 
 	{
-		"include_keys_from" "npc_dota_lesser_eidolon"
+		"Ability3"					"summons_attack_magical"
+		"Ability4"					"creep_piercing"
 		
-		"ModelScale"				".9"
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
+		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+		"SoundSet"					"Hero_Enigma"					// Name of sound set.
+		"Level"						"1"
+		"ModelScale" 				"0.8"
+		"SelectionGroup"			"Enigma_Eidelons"
+		"wearable"					"8638"
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"			"50"			// Magical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"60"		// Damage range min.
+		"AttackDamageMax"			"60"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1900"		// Speed of projectile.
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"170"
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"370"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"70"		// Experience earn.
+		"BountyGoldMin"				"40"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	
+			// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"850"		// Base health.
+		"StatusHealthRegen"			"2.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
-		"ArmorPhysical"				"8"			// Physical protection.
-		"MagicalResistance"			"60"		// Magical protection.
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1100"		// Range of vision at night time.
+	
+		//Inventory
+		"HasInventory"				"0"
+	}
+	
+	"npc_eidolon_6" 
+	{	
+		"Ability3"					"summons_attack_magical"
+		"Ability4"					"creep_piercing"
 		
-		"AttackDamageMin"			"85"		// Damage range min.
-		"AttackDamageMax"			"93"		// Damage range max.
-
-		"HealthBarOffset"			"145"
-
-		"MovementSpeed"				"430"		// Speed
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
+		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+		"SoundSet"					"Hero_Enigma"					// Name of sound set.
+		"Level"						"1"
+		"ModelScale" 				"0.8"
+		"SelectionGroup"			"Enigma_Eidelons"
+		"wearable"					"8638"
 		
-		"StatusHealth"				"650"		// Base health.
-		"AttackRange"				"575"		// Range within a target can be attacked.
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"			"55"			// Magical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"70"		// Damage range min.
+		"AttackDamageMax"			"70"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1900"		// Speed of projectile.
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"170"
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"370"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"70"		// Experience earn.
+		"BountyGoldMin"				"40"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	
+			// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"2.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1100"		// Range of vision at night time.
+	
+		//Inventory
+		"HasInventory"				"0"
+	}
+	
+	
+	"npc_eidolon_7" 
+	{
+		"Ability3"					"summons_attack_magical"
+		"Ability4"					"creep_piercing"
+		
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
+		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+		"SoundSet"					"Hero_Enigma"					// Name of sound set.
+		"Level"						"1"
+		"ModelScale" 				"0.8"
+		"SelectionGroup"			"Enigma_Eidelons"
+		"wearable"					"8638"
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"			"60"			// Magical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"80"		// Damage range min.
+		"AttackDamageMax"			"80"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_enigma/enigma_base_attack_eidolon.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1900"		// Speed of projectile.
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"170"
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"370"			// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"70"		// Experience earn.
+		"BountyGoldMin"				"40"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	
+			// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1000"		// Base health.
+		"StatusHealthRegen"			"2.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1100"		// Range of vision at night time.
+	
+		//Inventory
+		"HasInventory"				"0"
 	}
 }

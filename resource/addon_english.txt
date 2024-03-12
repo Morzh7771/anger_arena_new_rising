@@ -553,6 +553,27 @@
 		"DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_1"                               "+{s:value}% to Magic Amp per Intellect unit"
 		"DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_0_5"                             "+{s:value}% to Magic Amp per Intellect unit"
 
+		//Enigma
+		"DOTA_Tooltip_ability_enigma_demonic_conversion"								"Demonic Summoning"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_Description"					"Summons three fragments of Enigma himself at the cost of health.  The eidolons health is increased by %current_health_pct%%% of Enigma's current health. These eidolons are all under Enigma's control, and repeated successful attacks cause them to multiply.  When this happens, the eidolons have their health restored."
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_Lore"							"Enigma is capable of drawing aspects of himself from other dimensions - the result is a trio of dark eidolons that hunt the corporeal plane."
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_split_attack_count"				"ATTACKS TO MULTIPLY:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_spawn_count"					"SPAWN COUNT:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidelon_max_health"				""
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidelon_base_damage"			""
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidolon_hp_tooltip"				"EIDOLON HP:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidolon_dmg_tooltip"			"EIDOLON DAMAGE:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_abilityduration"				"DURATION:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidolon_magic_resist"			"%EIDOLON MAGIC RESISTANCE:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidolon_attack_range"			"EIDOLON ATTACK RANGE:"
+		"npc_eidolon_1" "Enigma Eidelon"
+		"npc_eidolon_2" "Enigma Eidelon"
+		"npc_eidolon_3" "Enigma Eidelon"
+		"npc_eidolon_4" "Enigma Eidelon"
+		"npc_eidolon_5" "Enigma Eidelon"
+		"npc_eidolon_6" "Enigma Eidelon"
+		"npc_eidolon_7" "Enigma Eidelon"
+
 		//Lifestealer
 		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_3"	"+{s:bonus_hp_leech_percent}% Feast Lifesteal and +{s:bonus_hp_damage_percent}% Damage"
 		//Magnus
