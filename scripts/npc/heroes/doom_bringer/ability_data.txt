@@ -6,7 +6,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"doom_bringer_devour"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
@@ -20,7 +20,7 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300 300 300 300"
-		"AbilityCooldown"				"60 55 50 45 40 35 30"
+		"AbilityCooldown"				"30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ DOTAAbilities
 				"value"				"40 80 120 160 200 240 280"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_3"
 			}
-			"armor"					"1 2 3 4 5 6 7"
+			"armor"					"3 4 5 6 7 8 9"
 			"creep_level"			"100"
 			"hero_ability_steal_time"	"99999"
 			"magic_resist"
