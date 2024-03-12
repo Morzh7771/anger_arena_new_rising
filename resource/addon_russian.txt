@@ -545,10 +545,34 @@
         "DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_0_5"                             "Магическое усиление заклинаний за интеллект"
 
 
+        //Enigma
+        "DOTA_Tooltip_ability_enigma_demonic_conversion"								"Demonic Summoning"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_Description"					"Герой ценой своего здоровья призывает три подконтрольных фрагмента самого себя — эйдолонов. Они раздваиваются после нескольких атак, при этом полностью восстанавливая здоровье."
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_Lore"							"Предвечный может притягивать свои сущности из других измерений, создавая в материальном мире троицу тёмных эйдолонов."
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_split_attack_count"				"АТАК ДЛЯ РАЗДВОЕНИЯ:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_spawn_count"					"ЧИСЛО ЭЙДОЛОНОВ:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidelon_max_health"				""
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidelon_base_damage"			""
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidolon_hp_tooltip"				"ЗДОРОВЬЕ ЭЙДОЛОНОВ:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidolon_dmg_tooltip"			"УРОН ЭЙДОЛОНОВ:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_duration_tooltip"				"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidolon_magic_resist"			"%СОПРОТИВЛЕНИЕ МАГИИ ЭЙДОЛОНОВ:"
+		"DOTA_Tooltip_ability_enigma_demonic_conversion_eidolon_attack_range"			"ДАЛЬНОСТЬ АТАКИ ЭЙДОЛОНОВ:"
+		"npc_eidolon_1" "Enigma Eidelon"
+		"npc_eidolon_2" "Enigma Eidelon"
+		"npc_eidolon_3" "Enigma Eidelon"
+		"npc_eidolon_4" "Enigma Eidelon"
+		"npc_eidolon_5" "Enigma Eidelon"
+		"npc_eidolon_6" "Enigma Eidelon"
+		"npc_eidolon_7" "Enigma Eidelon"
+		"DOTA_Tooltip_ability_enigma_malefice_shard_description"						"Увеличивает длительность оглушения на 0,35 секунды."
+
         //Lifestealer
         "DOTA_Tooltip_ability_special_bonus_unique_lifestealer_3"	"+{s:bonus_hp_leech_percent}% к вампиризму и +{s:bonus_hp_damage_percent}% к урону от Feast"
+
         //Magnus
         "DOTA_Tooltip_Ability_magnataur_shockwave_damage_pct"				"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+
         //Riki
         "DOTA_Tooltip_Ability_riki_blink_strike_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
         
