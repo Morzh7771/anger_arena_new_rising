@@ -34,7 +34,7 @@ modifier_bloodstone = class({
         }
     end
 })
-mana_regen
+
 function modifier_bloodstone:OnTakeDamage(params)
     if self:GetParent():IsIllusion() then return end
     if params.attacker ~= self:GetParent() then return end
