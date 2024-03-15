@@ -171,7 +171,7 @@ DOTAAbilities
 		{
 			"damage_multiplier"				
 			{
-				"value"		"0.8 1.1 1.4 1.7 2.0 2.3 2.6"
+				"value"		"0.6 0.8 1.0 1.25 1.5 1.75 2.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_riki_1"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
@@ -179,8 +179,8 @@ DOTAAbilities
 		
 			"backstab_angle"				"120 120 120"
 			"fade_delay"					"6 5.5 5 4.5 4 3.5 3"
-			"bonus_xp_kill"					"100 150 200 250 300 350 400"
-			"bonus_xp_assist"				"50 75 100 125 150 175 200"
+			"bonus_xp_kill"					"75 110 150 190 220 260 300"
+			"bonus_xp_assist"				"35 55 75 95 110 130 150"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -300,6 +300,25 @@ DOTAAbilities
 				"var_type"					"FIELD_INTEGER"
 				"value"				"300"
 				"ad_linked_abilities"			"riki_tricks_of_the_trade"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	"special_bonus_unique_riki_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"0.2"
+				"ad_linked_abilities"			"riki_backstab"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
