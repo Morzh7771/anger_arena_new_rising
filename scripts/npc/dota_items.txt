@@ -379,9 +379,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_movement_speed_ranged"   "50 60 80"
+				"bonus_movement_speed_ranged"   "50 60 70"
 				"bonus_movement_speed_melee"    "60 70 90"
-				"bonus_stat"			        "10 25 50"
+				"bonus_stat"			        "10 25 40"
 				"bonus_attack_speed"			"25 50 100"
 				"bonus_damage"			        "0"
 		}
@@ -423,9 +423,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_movement_speed_ranged"   "50 60 80"
+				"bonus_movement_speed_ranged"   "50 60 70"
 				"bonus_movement_speed_melee"    "60 70 90"
-				"bonus_stat"			        "10 25 50"
+				"bonus_stat"			        "10 25 40"
 				"bonus_attack_speed"			"25 50 100"
 				"bonus_damage"			        "0"
 		}
@@ -442,7 +442,7 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1250"	
+		"ItemCost"						"0"	
 		"ItemShopTags"					"artifacts"
 	
 		// Recipe
@@ -461,7 +461,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1216"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_power_treads_3.lua"
 		"AbilityTextureName"			"power_treads_3"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -476,32 +477,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_movement_speed_ranged"   "50 60 80"
+			"bonus_movement_speed_ranged"   "50 60 70"
 			"bonus_movement_speed_melee"    "60 70 90"
-			"bonus_stat"					"10 25 50"
+			"bonus_stat"					"10 25 40"
 			"bonus_attack_speed"			"25 50 100"
 			"bonus_damage"					"0"	
-		}
-		
-		"Modifiers"
-		{
-			"modifier_power_treads_3_passive"
-			{
-				"IsHidden"		"1"
-				"Passive"		"1"
-				"IsPurgable"	"0"
-				
-				"Attribute"  "MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"				"%bonus_movement_speed"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"					"%bonus_stat"			
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"						"%bonus_stat"	
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"					"%bonus_stat"	
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%bonus_attack_speed"
-				}
-			}
 		}
 	}
 
