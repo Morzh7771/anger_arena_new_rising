@@ -643,6 +643,14 @@
         //Slardar
         "DOTA_Tooltip_Ability_slardar_bash_damage_pct"                                  "%УРОН ОТ СИЛЫ"
         "DOTA_Tooltip_Ability_special_bonus_unique_slardar_bashStrDmg"                  "+{s:bonus_damage_pct}% к урону от силы у Bash of the Deep"
+        "DOTA_Tooltip_ability_slardar_bash"												"Bash of the Deep"
+		"DOTA_Tooltip_ability_slardar_bash_Description"									"После каждых %attack_count% атак герой оглушит и нанесёт дополнительный урон своей следующей атакой. Урон крипам вдвое больше. Пассивно увеличивает урон от атак владельца, когда тот находится в воде.<br><font color='#A52A2A'>Не проходит сквозь Невосприимчивость к Эффектам.</font>"
+		"DOTA_Tooltip_ability_slardar_bash_Lore"										"Любой, кто посягнёт на сокровища глубин, встретится лицом к лицу с их беспощадным змееногим стражем."
+		"DOTA_Tooltip_ability_slardar_bash_Note0"										"Не сочетается с эффектом от предмета Skull Basher."
+		"DOTA_Tooltip_ability_slardar_bash_abilitydraft_note"							"В этом режиме эффект <b>сочетается</b> с предметом Skull Basher."
+		"DOTA_Tooltip_ability_slardar_bash_bonus_damage"								"ДОПОЛНИТЕЛЬНЫЙ УРОН:"
+		"DOTA_Tooltip_ability_slardar_bash_duration"									"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+		"DOTA_Tooltip_ability_slardar_bash_river_damage"								"ДОП. УРОН В ВОДЕ:"
 
 		//Lion
 		"DOTA_Tooltip_Ability_lion_impale_damage_pct"						"%УРОН ОТ ИНТЕЛЛЕКТА"
