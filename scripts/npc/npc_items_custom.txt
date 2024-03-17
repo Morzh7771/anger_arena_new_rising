@@ -5971,4 +5971,69 @@
 
 		}
 	}
+    "item_recipe_raindrop_aa"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"225"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_raindrop_aa"
+		"ItemRequirements"
+		{
+			"01"						"item_fluffy_hat;item_ring_of_regen;item_sobi_mask"
+		}
+	}   
+    "item_raindrop_aa"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"item_raindrop_aa"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "item_infused_raindrop"
+        "ScriptFile"                    "items/item_raindrop_aa"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemPurchasable"				"1"
+		"AbilityValues"
+		{
+            "bonus_hp"			    "400"
+			"mana_regen"			"1.6"
+            "hp_regen"              "4"
+
+			"magic_damage_block"	    "600"
+			"time_since_last_damage"    "5"
+            "regen_pct"                 "25"
+            "regen_tick_per_sec"        "10"
+		}
+	}
+    "item_mini_bkb"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "potion_immune"
+        "ScriptFile"                    "items/item_bkb_aa"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"400"
+        "AbilityCooldown"				"50"
+		"ItemPurchasable"				"1"
+		"AbilityValues"
+		{
+            "duration"				"3"
+			"magic_resist"			"35"
+		}
+	}
 }

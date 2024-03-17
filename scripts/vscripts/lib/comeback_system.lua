@@ -158,12 +158,12 @@ function ComebackSystem:OnKill( killerPlayerID, killerTeam, victimPlayerID, vict
 		local x = 1
 		while x<math.ceil(totalGold/50000) do
 			if totalGoldtoMath > 50000 then
-				Timers:CreateTimer(0.6, function()
+				Timers:CreateTimer(0.8, function()
 					GiveGoldTo(killerPlayerID, 50000, false)
 					return
 				end)
 			else
-				Timers:CreateTimer(0.6, function()
+				Timers:CreateTimer(0.8, function()
 					GiveGoldTo(killerPlayerID, totalGold, false)
 					return
 				end)

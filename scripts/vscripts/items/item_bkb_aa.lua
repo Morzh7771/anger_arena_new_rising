@@ -3,7 +3,7 @@ item_bkb_aa_1 = class({
 })
 item_bkb_aa_2 = item_bkb_aa_1
 item_bkb_aa_3 = item_bkb_aa_1
-
+item_mini_bkb = item_bkb_aa_1
 LinkLuaModifier( "modifier_item_bkb_aa", "items/item_bkb_aa.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_generic_debuff_immune", "modifiers/modifier_generic_debuff_immune.lua", LUA_MODIFIER_MOTION_NONE )
 

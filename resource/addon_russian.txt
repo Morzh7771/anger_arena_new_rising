@@ -2446,7 +2446,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_1_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_1_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_1_spell_lifesteal"					"%+$spell_lifesteal"
-		"DOTA_Tooltip_ability_item_bloodstone_1_mana_regen"							"%+$mana_regen"
+		"DOTA_Tooltip_ability_item_bloodstone_1_mana_regen"							"+$mana_regen"
 
 		"DOTA_Tooltip_ability_item_bloodstone_2"									"BLOODSTONE 2"
 		"DOTA_Tooltip_ability_item_bloodstone_2_Description"						"<h1>Активное: Bloodpact</h1> Увеличивает вампиризм заклинаниями от этого предмета в %lifesteal_multiplier% раза. По окончании эффекта превращает ту же долю нанесённого урона в ману. Длительность: %buff_duration% сек."
@@ -2455,7 +2455,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_2_spell_lifesteal"					"%+$spell_lifesteal"
-		"DOTA_Tooltip_ability_item_bloodstone_2_mana_regen"							"%+$mana_regen"
+		"DOTA_Tooltip_ability_item_bloodstone_2_mana_regen"							"+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_bloodstone_3"									"BLOODSTONE 3"
 		"DOTA_Tooltip_ability_item_bloodstone_3_Description"						"<h1>Активное: Bloodpact</h1> Увеличивает вампиризм заклинаниями от этого предмета в %lifesteal_multiplier% раза. По окончании эффекта превращает ту же долю нанесённого урона в ману. Длительность: %buff_duration% сек."
@@ -2464,7 +2464,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"					"%+$spell_lifesteal"
-		"DOTA_Tooltip_ability_item_bloodstone_3_mana_regen"							"%+$mana_regen"
+		"DOTA_Tooltip_ability_item_bloodstone_3_mana_regen"							"+$mana_regen"
 		
 		"DOTA_Tooltip_modifier_bloodstone_active"                               "Bloodpact"
 		"DOTA_Tooltip_modifier_bloodstone_active_Description"                   "Имеет повышенный вампиризм от заклинаний и восстанавливает ману при нанесении урона."
@@ -3046,5 +3046,17 @@
 
 		"DOTA_Tooltip_modifier_shield_of_immortality_hex" 								"Sheep Shield"
         "DOTA_Tooltip_modifier_shield_of_immortality_hex_Description"					"Не может двигаться, неуязвим и получает временный барьер"
+
+
+		"DOTA_Tooltip_ability_item_raindrop_aa"                                       	"Infused Raindrops"
+		"DOTA_Tooltip_ability_item_raindrop_aa_Description"                           	"<h1>Пассивное: Magic Shield</h1>Накладывает на героя барьер поглощающий %magic_damage_block% магического урона. Он начнет восстанавливается по %regen_pct%%% в секунду, если не получать урон в течение %time_since_last_damage% секунд"
+		"DOTA_Tooltip_ability_item_raindrop_aa_bonus_hp"								"+$health"
+		"DOTA_Tooltip_ability_item_raindrop_aa_hp_regen"								"+$hp_regen"
+		"DOTA_Tooltip_ability_item_raindrop_aa_mana_regen"								"+$mana_regen"
+
+		"DOTA_Tooltip_ability_item_mini_bkb"                            "Immune Potion"
+        "DOTA_Tooltip_ability_item_mini_bkb_Description"		"<h1>Активное: Avatar</h1> Применяет на владельца нормальное развеивание. Даёт +%magic_resist%%% к сопротивлению магии и невосприимчивость к чистому и отражённому урону. Защищает владельца от действия отрицательных эффектов.<br><br>Длительность: %duration%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+		"DOTA_Tooltip_ability_item_mini_bkb_Lore"			"Зелье силы гигантов."
+		"DOTA_Tooltip_ability_item_mini_bkb_Note0"			"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
 	}  
 }

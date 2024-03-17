@@ -2367,7 +2367,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_1_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_1_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_1_spell_lifesteal"					"%+$spell_lifesteal"
-		"DOTA_Tooltip_ability_item_bloodstone_1_mana_regen"							"%+$mana_regen"
+		"DOTA_Tooltip_ability_item_bloodstone_1_mana_regen"							"+$mana_regen"
 
 		"DOTA_Tooltip_ability_item_bloodstone_2"									"BLOODSTONE 2"
 		"DOTA_Tooltip_ability_item_bloodstone_2_Description"						"<h1>Active: Bloodpact</h1> Increases spell lifesteal from this item by %lifesteal_multiplier%. At the end of the effect, converts the same portion of damage dealt into mana. Duration: %buff_duration% seconds."
@@ -2376,7 +2376,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_2_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_2_spell_lifesteal"					"%+$spell_lifesteal"
-		"DOTA_Tooltip_ability_item_bloodstone_2_mana_regen"							"%+$mana_regen"
+		"DOTA_Tooltip_ability_item_bloodstone_2_mana_regen"							"+$mana_regen"
 		
 		"DOTA_Tooltip_ability_item_bloodstone_3"									"BLOODSTONE 3"
 		"DOTA_Tooltip_ability_item_bloodstone_3_Description"						"<h1>Active: Bloodpact</h1> Increases spell lifesteal from this item by %lifesteal_multiplier%. At the end of the effect, converts the same portion of damage dealt into mana. Duration: %buff_duration% seconds."
@@ -2385,7 +2385,7 @@
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_bloodstone_3_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_ability_item_bloodstone_3_spell_lifesteal"					"%+$spell_lifesteal"
-		"DOTA_Tooltip_ability_item_bloodstone_3_mana_regen"							"%+$mana_regen"
+		"DOTA_Tooltip_ability_item_bloodstone_3_mana_regen"							"+$mana_regen"
 
         "DOTA_Tooltip_modifier_bloodstone_active"                            "Bloodpact"
         "DOTA_Tooltip_modifier_bloodstone_active_Description"                "Increases spell lifesteal and regens mana from dealt spell damage."
@@ -2947,5 +2947,16 @@
 
         "DOTA_Tooltip_modifier_shield_of_immortality_hex" 								"Sheep Shield"
         "DOTA_Tooltip_modifier_shield_of_immortality_hex_Description"					"Can't move, invincible and receives timed shield"
+
+		"DOTA_Tooltip_ability_item_raindrop_aa" 									"Infused Raindrops"
+		"DOTA_Tooltip_ability_item_raindrop_aa_Description" 						"<h1>Passive: Magic Shield</h1>Applies a barrier to the hero that absorbs %magic_damage_block% magical damage. It begins replenishing at %regen_pct%%% per second if no damage is taken for %time_since_last_damage% seconds."
+		"DOTA_Tooltip_ability_item_raindrop_aa_bonus_hp" 							"+$health"
+		"DOTA_Tooltip_ability_item_raindrop_aa_hp_regen" 							"+$hp_regen"
+		"DOTA_Tooltip_ability_item_raindrop_aa_mana_regen" 							"+$mana_regen"
+
+		"DOTA_Tooltip_ability_item_mini_bkb" "Immune Potion"
+		"DOTA_Tooltip_ability_item_mini_bkb_Description" "<h1>Active: Avatar</h1> Applies a normal dispel on the owner. Grants +%magic_resist%%% magic resistance and immunity to pure and reflected damage. Protects the owner from the effects of negative debuffs.<br><br>Duration: %duration%<br>Dispel Type: <span class="GameplayValues GameplayVariable">normal</span>"
+		"DOTA_Tooltip_ability_item_mini_bkb_Lore" "A potion of giant strength."
+		"DOTA_Tooltip_ability_item_mini_bkb_Note0" "Abilities that pierce spell immunity ignore the effects of this item."
 	}
 }
