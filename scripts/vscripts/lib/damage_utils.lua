@@ -70,6 +70,25 @@ function Util:DisableSpellAmp(caster, damage)
 	return damage
 end
 
+function Util:testflag(set, flag)
+    return set % (2*flag) >= flag
+end
+
+function Util:ArmorDamageReductionByNumber(armor)
+    local base = 1
+    local factor = 0.06
+
+    local dmg_mult = 1 - (factor * armor) / (base + factor * math.abs(armor))
+
+    return dmg_mult
+end
+
+function Util:ArmorDamageReductionByUnit(unit)
+    local armor = unit:GetPhysicalArmorValue(false)
+
+    return Util:ArmorDamageReductionByNumber(armor)
+end
+
 function Util:GetReallyCooldown(caster, ability)
 	local multipler = 1
 	
