@@ -65,17 +65,17 @@ function modifier_item_trisula:OnDestroy()
 	end
 end
 
-function modifier_item_trisula:OnTakeDamage(params)
+function modifier_item_trisula:OnAttackLanded(params)
 	if params.attacker ~= self:GetParent() then return end
 	if not IsServer() then return end
 	if params.damage_flags and Util:testflag(params.damage_flags, DOTA_DAMAGE_FLAG_TRISULA) then return end
 
 	local caster = params.attacker
-	local target = params.unit
+	local target = params.target
 	local radius = self.cleave_range
 
 	if not caster or not target then return end
-	--if not params.ranged_attack and caster:IsRangedAttacker() then return end
+	if not params.ranged_attack and caster:IsRangedAttacker() then return end
 	if caster and caster:IsIllusion() then return end
 
 	if not IsValidEntity(caster) or not IsValidEntity(target) then return end
@@ -106,7 +106,7 @@ function modifier_item_trisula:OnTakeDamage(params)
     print()
 
 	for _,x in pairs(units_in_radius) do
-		if x ~= params.unit or x:IsIllusion() then
+		if x ~= params.target or x:IsIllusion() then
 		    local dmg = 0
 		    local cleave_physical_pierce = self:GetAbility():GetSpecialValueFor('cleave_physical_pierce')
 		    local result_armor = target:GetPhysicalArmorValue(false) / 100 * (100 - cleave_physical_pierce)
@@ -158,7 +158,7 @@ function modifier_item_trisula:DeclareFunctions()
 		MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_EVENT_ON_TAKEDAMAGE,
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
 	}
 end
