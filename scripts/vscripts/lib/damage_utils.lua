@@ -73,9 +73,15 @@ end
 function Util:GetReallyCooldown(caster, ability)
 	local multipler = 1
 	
-	if caster:HasItemInInventory("item_octarine_core_2") or caster:HasItemInInventory("item_octarine_core") then
+	if caster:HasItemInInventory("item_octarine_core") then
 		multipler = 0.75
 	end
+	if caster:HasItemInInventory("item_octarine_core_2") then
+        multipler = 0.7
+    end
+    if caster:HasItemInInventory("item_octarine_core_3") then
+        multipler = 0.65
+    end
 
 	return ability:GetCooldown(ability:GetLevel() - 1) * multipler
 end
