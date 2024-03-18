@@ -70,12 +70,37 @@ function Util:DisableSpellAmp(caster, damage)
 	return damage
 end
 
+function Util:testflag(set, flag)
+    return set % (2*flag) >= flag
+end
+
+function Util:ArmorDamageReductionByNumber(armor)
+    local base = 1
+    local factor = 0.06
+
+    local dmg_mult = 1 - (factor * armor) / (base + factor * math.abs(armor))
+
+    return dmg_mult
+end
+
+function Util:ArmorDamageReductionByUnit(unit)
+    local armor = unit:GetPhysicalArmorValue(false)
+
+    return Util:ArmorDamageReductionByNumber(armor)
+end
+
 function Util:GetReallyCooldown(caster, ability)
 	local multipler = 1
 	
-	if caster:HasItemInInventory("item_octarine_core_2") or caster:HasItemInInventory("item_octarine_core") then
+	if caster:HasItemInInventory("item_octarine_core") then
 		multipler = 0.75
 	end
+	if caster:HasItemInInventory("item_octarine_core_2") then
+        multipler = 0.7
+    end
+    if caster:HasItemInInventory("item_octarine_core_3") then
+        multipler = 0.65
+    end
 
 	return ability:GetCooldown(ability:GetLevel() - 1) * multipler
 end
