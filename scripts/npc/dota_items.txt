@@ -3359,7 +3359,7 @@
 				"bonus_strength"			"10 30 80"
 				"bonus_intellect"			"10 30 80"
 				"bonus_mana"			"300 600 1200"
-				"bonus_cast_range"		"250 300 350"
+				"bonus_cast_range"		"200 225 250"
 				"bonus_mana_regen"		"3 10 25"
 				"blast_movement_slow"	"-80 -80 -80"
 				"duration"				"3.0 3.5 4.0"
@@ -6557,6 +6557,55 @@
 		{
 				"corruption_armor"		"-3"
 				"corruption_duration"	"8.0"
+		}
+	}
+	"item_recipe_aether_lens"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"775"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens"
+		"ItemRequirements"
+		{
+			"01"						"item_energy_booster;item_void_stone"
+		}
+	}
+	
+	//=================================================================================================================
+	// Aether Lens
+	//=================================================================================================================
+	"item_aether_lens"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2275"
+		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"aether lens"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_mana"			"300"
+				"bonus_mana_regen"		"2.5"
+				"cast_range_bonus"		"175"
 		}
 	}
 }

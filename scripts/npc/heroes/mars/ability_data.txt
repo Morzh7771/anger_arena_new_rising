@@ -105,7 +105,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 120 140 160 180 200 220"
+		"AbilityManaCost"				"90"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -132,10 +132,10 @@ DOTAAbilities
 				"special_bonus_unique_mars_rebuke_slow"		"+0"
 			}
 			"activity_duration"			"2"
-			"bonus_damage_vs_heroes"	"25 50 75 100 125 150 175"
+			"bonus_damage_vs_heroes"	"25 75 125 175 225 275 325"
 			"AbilityCooldown"
 			{
-				"value"					"16 15 14 13 12 11 10"
+				"value"					"10"
 				"special_bonus_unique_mars_rebuke_cooldown"				"-7"
 			}
 		}
@@ -239,17 +239,17 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5"
-			"radius"			"550"
-			"width"				"100"
-			"spear_damage"		"75 150 225 300 375 450 525"
-			"formation_time"	"0.3"
-			"spear_distance_from_wall"	"160"
-			"spear_attack_interval"	"1"
-			"warrior_count"		"14"
-			"first_warrior_angle"	"0.0"
-			"warrior_fade_min_dist"	"350.0"
-			"warrior_fade_max_dist"	"450.0"
+			"duration"					"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
+			"radius"					"550"
+			"width"						"100"
+			"spear_damage"				"75 150 225 300 375 450 525"
+			"formation_time"			"0.2"
+			"spear_distance_from_wall"	"200"
+			"spear_attack_interval"		"0.7"
+			"warrior_count"				"14"
+			"first_warrior_angle"		"0.0"
+			"warrior_fade_min_dist"		"350.0"
+			"warrior_fade_max_dist"		"450.0"
 		}
 	}
 }
