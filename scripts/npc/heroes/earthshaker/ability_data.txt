@@ -73,7 +73,7 @@ DOTAAbilities
 			"07"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"shard_aftershock_stun_duration_pct"	"50"
+				"shard_aftershock_stun_duration_pct"	"35"
 				"RequiresShard"							"1"
 			}
 			"08"
@@ -114,7 +114,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5.0 4.8 4.6 4.4 4.2 4"
+		"AbilityCooldown"				"5.0"
 		"AbilityDuration"				"14"
 
 		// Damage.
@@ -261,6 +261,25 @@ DOTAAbilities
 			}
 			"echo_slam_initial_damage"		"60 100 140 180 220 260 300"
 			"damage_pct"		"25"
+		}
+	}
+	"special_bonus_unique_earthshaker"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1.0"
+				"ad_linked_abilities"			"earthshaker_enchant_totem"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
 		}
 	}
 }
