@@ -2475,8 +2475,8 @@
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
-        "AbilityCastRange"				"800"
-        "AbilityCastRangeBuffer"		"900"
+        //"AbilityCastRange"				"800"
+        //"AbilityCastRangeBuffer"		"900"
 
         "AbilitySharedCooldown"			"item_greater_crit"
 
@@ -2499,11 +2499,12 @@
         // Special
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
-        {
+        {   
+            "min_cast_range"        "200"
             "bonus_damage"			"88 200"
             "crit_chance"			"25 30"
             "crit_multiplier"		"225 350"
-            "projectile_speed"      "2000"
+            "projectile_speed"      "1800"
             "cripple_duration"      "2"
             "cripple_ms"            "100"
         }

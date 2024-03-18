@@ -7,6 +7,10 @@ item_greater_crit_2 = item_greater_crit
 LinkLuaModifier('modifier_greater_crit', 'items/item_greater_crit', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_greater_crit_crippled', 'items/item_greater_crit', LUA_MODIFIER_MOTION_NONE)
 
+function item_greater_crit_2:GetCastRange( vLocation, hTarget )
+    return self:GetCaster():Script_GetAttackRange() + self:GetSpecialValueFor( "min_cast_range" )
+end
+
 function item_greater_crit:OnSpellStart()
     local caster   = self:GetCaster()
     local target   = self:GetCursorTarget()
