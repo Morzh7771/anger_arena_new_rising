@@ -7,7 +7,7 @@ function item_manaflare_lens_custom:GetIntrinsicModifierName()
 	return "modifier_item_manaflare_lens_custom"
 end
 function item_manaflare_lens_custom:GetManaCost()
-	return self:GetCaster():GetMana()*self:GetSpecialValueFor("bonus_spell_damage_mana")/100
+	return self:GetCaster():GetMana()*self:GetSpecialValueFor("bonus_spell_damage_mana") / 100
 end
 
 modifier_item_manaflare_lens_custom = class({})
@@ -50,7 +50,7 @@ function modifier_item_manaflare_lens_custom:OnSpellTargetReady(params)
 	if self:GetAbility():IsCooldownReady() == false then return end
 	if self:GetParent():HasModifier("modifier_item_phylactery_lens_custom") then return end
 
-	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana")/100
+	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana") / 100 * self:GetAbility():GetSpecialValueFor("damage_per_mana")
 	SendOverheadEventMessage(params.target, 4, params.target, damage, nil)
 
 	self:GetAbility():UseResources(true, false, false, true)
