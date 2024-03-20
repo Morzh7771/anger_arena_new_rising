@@ -1,5 +1,7 @@
 item_dimensional_predictor = item_dimensional_predictor or class({}) 
-
+item_dimensional_predictor_1 = item_dimensional_predictor
+item_dimensional_predictor_2 = item_dimensional_predictor
+item_dimensional_predictor_3 = item_dimensional_predictor
 LinkLuaModifier( "modifier_dimensional_predictor_passive", 			'items/dimensional_predictor/modifiers/modifier_dimensional_predictor_passive', 		LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_dimensional_predictor_active",  			'items/dimensional_predictor/modifiers/modifier_dimensional_predictor_active', 			LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_dimensional_predictor_passive_unique", 	'items/dimensional_predictor/modifiers/modifier_dimensional_predictor_passive_unique', 	LUA_MODIFIER_MOTION_NONE )

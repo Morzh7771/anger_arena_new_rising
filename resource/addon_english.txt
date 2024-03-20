@@ -2959,5 +2959,47 @@
 		"DOTA_Tooltip_ability_item_mini_bkb_Description" "<h1>Active: Avatar</h1> Applies a normal dispel on the owner. Grants +%magic_resist%%% magic resistance and immunity to pure and reflected damage. Protects the owner from the effects of negative debuffs.<br><br>Duration: %duration%<br>Dispel Type: <span class="GameplayValues GameplayVariable">normal</span>"
 		"DOTA_Tooltip_ability_item_mini_bkb_Lore" "A potion of giant strength."
 		"DOTA_Tooltip_ability_item_mini_bkb_Note0" "Abilities that pierce spell immunity ignore the effects of this item."
+
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1"								"Dimensional Predictor"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Description"					"<h1>Active: Transparent</h1> Hides the caster from the minimap for %active_duration% seconds.<br><h1>Passive: Dimensional Charge</h1>Your attack once every %passive_cd% seconds will deal magical damage equal to %passive_damage_att%%% of your attack damage to all enemies in a %radius% radius.<br><br>Enemies hit by the attack will deal %spell_amp_debuff%%% less spell damage and receive %dps% damage per second.<br>Duration: %duration% seconds."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_attackspeed"				"+$attack"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_magresist"				"%+$spell_resist"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_mana_regen"				"+$mana_regen"
+
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2"								"Dimensional Predictor 2"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Description"					"<h1>Active: Transparent</h1> Hides the caster from the minimap for %active_duration% seconds.<br><h1>Passive: Dimensional Charge</h1>Your attack once every %passive_cd% seconds will deal magical damage equal to %passive_damage_att%%% of your attack damage to all enemies in a %radius% radius.<br><br>Enemies hit by the attack will deal %spell_amp_debuff%%% less spell damage and receive %dps% damage per second.<br>Duration: %duration% seconds."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_attackspeed"				"+$attack"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_magresist"				"%+$spell_resist"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_mana_regen"				"+$mana_regen"
+
+
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3"								"Dimensional Predictor 3"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Description"					"<h1>Active: Transparent</h1> Hides the caster from the minimap for %active_duration% seconds.<br><h1>Passive: Dimensional Charge</h1>Your attack once every %passive_cd% seconds will deal magical damage equal to %passive_damage_att%%% of your attack damage to all enemies in a %radius% radius.<br><br>Enemies hit by the attack will deal %spell_amp_debuff%%% less spell damage and receive %dps% damage per second.<br>Duration: %duration% seconds."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_attackspeed"				"+$attack"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_magresist"				"%+$spell_resist"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_mana_regen"				"+$mana_regen"
+
+		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy"						"Weapon Charged"
+		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy_cd"					"Weapon Charging"
+		"DOTA_Tooltip_modifier_dimensional_predictor_active"							"Hidden from minimap"
+
+		"DOTA_Tooltip_ability_item_talisman_of_heal"                            "Talisman of Heal"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_Description"                "<h1>Passive: Minder</h1> The owner receives additional experience for any damage dealt to heroes, depending on the damage dealt, in the amount of %damage_to_exp_melee%% for melee heroes and %damage_to_exp_ranged%% for ranged heroes, but not less than %min_exp_melee% for melee heroes and %min_exp_ranged% for ranged heroes.\n\n <h1>Passive: Bliss</h1>By gaining a level, restores %replenish_health%% health and %replenish_mana%% mana. Additionally, it gives an increase in health recovery by %buff_health%% and mana by %buff_mana%% . Duration %duration% seconds.  <br>If the unit is attacked by an enemy hero or Roshan, the effect is lost."
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_attack"            "+$damage"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_all"                "+$all"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_health"            "+$health"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_hp_regen"            "+$hp_regen"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_mp_regen"            "+$mana_regen"
+        "DOTA_Tooltip_modifier_talisman_of_heal_buff"                        "Bliss"
+        "DOTA_Tooltip_modifier_talisman_of_heal_buff_Description"            "Restoring health and mana"
 	}
 }
