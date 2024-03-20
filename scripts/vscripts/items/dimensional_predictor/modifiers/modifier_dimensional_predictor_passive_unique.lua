@@ -60,7 +60,7 @@ function modifier_dimensional_predictor_passive_unique:OnAttackLanded( kv )
 	if targetName == "npc_dota_observer_wards" or targetName == "npc_dota_sentry_wards" then return end
 
 	local caster = kv.attacker
-
+	
 	if self.charged then
 		local damage = 0
 
@@ -75,7 +75,7 @@ function modifier_dimensional_predictor_passive_unique:OnAttackLanded( kv )
 		end
 
 		local enemies = FindUnitsInRadius( caster:GetTeamNumber(), target:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-
+		print(#enemies)
 		if #enemies > 0 then
 			for _,enemy in pairs(enemies) do
 				if enemy ~= nil and ( not enemy:IsMagicImmune() ) and ( not enemy:IsInvulnerable() ) then
@@ -88,6 +88,7 @@ function modifier_dimensional_predictor_passive_unique:OnAttackLanded( kv )
 					}
 					ApplyDamage(infoDamage)
 					SendOverheadEventMessage( enemy, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE , caster, damage, nil )
+					enemy:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_mage_slayer_debuff", { duration = self:GetAbility():GetSpecialValueFor('duration') })
 				end
 			end
 		end

@@ -14,11 +14,10 @@ function modifier_dimensional_predictor_passive:GetAttributes() return (MODIFIER
 function modifier_dimensional_predictor_passive:OnCreated(kv)
     local caster = self:GetParent()
 
-
-
-
     self.bonus_strength = self:GetAbility():GetSpecialValueFor("bonus_strength")
+    self.bonus_intellect = self:GetAbility():GetSpecialValueFor("bonus_intellect")
     self.attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
+    self.bonus_mana_regen = self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
     self.bonus_damage = self:GetAbility():GetSpecialValueFor("bonus_damage")
     self.bonus_magresist = self:GetAbility():GetSpecialValueFor("bonus_magresist")
 
@@ -43,12 +42,19 @@ function modifier_dimensional_predictor_passive:DeclareFunctions() return {
     MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
     MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
     MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+    MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+    MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 }
 end
-
 --------------------------------------------------------------------------------
 function modifier_dimensional_predictor_passive:GetModifierBonusStats_Strength(params)
     return self.bonus_strength
+end
+function modifier_dimensional_predictor_passive:GetModifierBonusStats_Intellect(params)
+    return self.bonus_intellect
+end
+function modifier_dimensional_predictor_passive:GetModifierConstantManaRegen(params)
+    return self.bonus_mana_regen
 end
 
 function modifier_dimensional_predictor_passive:GetModifierAttackSpeedBonus_Constant(params)

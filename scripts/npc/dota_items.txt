@@ -6608,6 +6608,40 @@
 				"cast_range_bonus"		"175"
 		}
 	}
+	"item_mage_slayer"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2825"
+		"ItemShopTags"					"hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"mage slayer;ms"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_magical_armor"	"20"
+				"bonus_attack_speed"	"45"
+				"bonus_mana_regen"		"2"
+				"bonus_intellect"		"10"
+				"duration"				"3"
+				"spell_amp_debuff"		"20"
+				"dps"					"25"
+		}
+	}
 }
 	
 

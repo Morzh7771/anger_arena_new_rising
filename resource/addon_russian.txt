@@ -3074,5 +3074,37 @@
         "DOTA_Tooltip_ability_item_mini_bkb_Description"		"<h1>Активное: Avatar</h1> Применяет на владельца нормальное развеивание. Даёт +%magic_resist%%% к сопротивлению магии и невосприимчивость к чистому и отражённому урону. Защищает владельца от действия отрицательных эффектов.<br><br>Длительность: %duration%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
 		"DOTA_Tooltip_ability_item_mini_bkb_Lore"			"Зелье силы гигантов."
 		"DOTA_Tooltip_ability_item_mini_bkb_Note0"			"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
+
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1"								"Dimensional Predictor"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от урона атаки. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_attackspeed"				"+$attack"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_magresist"				"%+$spell_resist"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_mana_regen"				"+$mana_regen"
+
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2"								"Dimensional Predictor 2"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от урона атаки. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_attackspeed"				"+$attack"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_magresist"				"%+$spell_resist"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_mana_regen"				"+$mana_regen"
+
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3"								"Dimensional Predictor 3"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от урона атаки. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_attackspeed"				"+$attack"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_magresist"				"%+$spell_resist"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_mana_regen"				"+$mana_regen"
+
+		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy"						"Оружие заряжено"
+		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy_cd"					"Оружие заряжается"
+		"DOTA_Tooltip_modifier_dimensional_predictor_active"							"Скрыт с миникарты"
+	
 	}  
 }
