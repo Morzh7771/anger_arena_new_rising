@@ -121,11 +121,11 @@ DOTAAbilities
 				"value"					"50"
 				"special_bonus_unique_wraith_king_vampiric_skeleton_duration"	"-25%"	
 			}
-			"max_skeleton_charges"			"2 3 4 5 6 7 8"
+			"max_skeleton_charges"			"2 3 3 4 4 5 5"
 			"min_skeleton_spawn"
 			{
 				"value"		"0"
-				"special_bonus_unique_wraith_king_5"	"+6"
+				"special_bonus_unique_wraith_king_5"	"+4"
 			}
 			"spawn_interval"			"0.25"
 			"reincarnate_time"			"3"
@@ -133,7 +133,7 @@ DOTAAbilities
 			"xp_bounty"						"5"
 			"skeleton_damage_tooltip"
 			{
-				"value"							"25 35 45 55 65 75 85"
+				"value"							"30 40 50 60 70 80 90"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"talent_skeleton_damage"

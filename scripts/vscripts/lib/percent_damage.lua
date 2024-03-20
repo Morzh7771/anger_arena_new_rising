@@ -74,7 +74,9 @@ function PercentDamage:_init()
 		"broodmother_silken_bola",
 		"nevermore_requiem",
 		"bloodseeker_blood_bath",
-		"riki_blink_strike"
+		"riki_blink_strike",
+		"hoodwink_bushwhack",
+		"hoodwink_sharpshooter",
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",

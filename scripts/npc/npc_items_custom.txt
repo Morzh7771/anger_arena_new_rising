@@ -706,18 +706,18 @@
 
         "AbilityValues"
         {
-                "bonus_int"				"60"
-                "bonus_hp"				"700"
-                "bonus_mana"			"500"
-                "bonus_mpregen"			"25"
-                "bonus_hpregen"			"25"
-                "bonus_spell_amp"		"17"
-                "bonus_speed"			"25"
-                "astral_duration"		"2.5"
-                "astral_regen"			"7"
-                "after_cast_bonus_duration"	 "14"
-                "after_cast_mana_regen"	     "20"
-                "after_cast_reduce_manacost_pct"  "20"
+            "bonus_int"				"60"
+            "bonus_hp"				"700"
+            "bonus_mana"			"500"
+            "bonus_mpregen"			"25"
+            "bonus_hpregen"			"25"
+            "bonus_spell_amp"		"17"
+            "bonus_speed"			"25"
+            "astral_duration"		"2.5"
+            "astral_regen"			"10"
+            "after_cast_bonus_duration"	 "14"
+            "after_cast_mana_regen"	     "20"
+            "after_cast_reduce_manacost_pct"  "20"
         }
     }
 
@@ -6114,11 +6114,11 @@
 		"ItemPurchasable"				"1"
 		"AbilityValues"
 		{
-            "bonus_hp"			    "400"
+            "bonus_hp"			    "300"
 			"mana_regen"			"1.6"
             "hp_regen"              "4"
 
-			"magic_damage_block"	    "600"
+			"magic_damage_block"	    "400"
 			"time_since_last_damage"    "5"
             "regen_pct"                 "25"
             "regen_tick_per_sec"        "10"

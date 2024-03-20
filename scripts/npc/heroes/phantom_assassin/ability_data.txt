@@ -157,7 +157,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"40"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -180,12 +180,12 @@ DOTAAbilities
 				"value"			"20 25 30 35 40 45 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_3"
 			}
-			"duration"			"25"
-			"radius"				"400"
+			"duration"			"17"
+			"radius"				"600"
 			"fade_duration"			"0.5"
 			"scepter_cooldown"
 			{
-				"value"			"50"
+				"value"			"20"
 				"RequiresScepter"		"1"
 			}
 			"scepter_fade_duration"

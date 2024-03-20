@@ -658,8 +658,9 @@
 		"DOTA_Tooltip_Ability_lion_finger_of_death_damage_pct"				"%УРОН ОТ ИНТЕЛЛЕКТА"
         "DOTA_Tooltip_Ability_mana_damage_pct"                                          "%УРОН ОТ МАНЫ ВЛАДЕЛЬЦА"
 
-		//Luna
+		//Luna 
 		"DOTA_Tooltip_Ability_luna_lucent_beam_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
+		
 		"DOTA_Tooltip_Ability_special_bonus_unique_luna_bounces"                                "+{s:bonus_bounces} к отскокам Moon Glaves"
 
 		//Faceless Void
@@ -1032,6 +1033,11 @@
         "DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_berserkers_rage_bat"           "Уменьшение задержки перед атакой от Berserkers Rage на {s:bonus_base_attack_time}"
 
         //Hoodwink
+
+		"DOTA_Tooltip_Ability_hoodwink_bushwhack_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
+		"DOTA_Tooltip_Ability_hoodwink_sharpshooter_damage_pct"					"%УРОН ОТ ЛОВКОСТИ"
+		
+
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 к числу отскоков у Acorn Shot"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"					"2 заряда Acorn Shot"
 		"DOTA_Tooltip_ability_hoodwink_acorn_shot_lua"						"Acorn Shot"
@@ -3038,12 +3044,12 @@
 		"DOTA_Tooltip_ability_life_stealer_feast_aa"                                       "Feast"
         "DOTA_Tooltip_ability_life_stealer_feast_aa_Description"                           "Добавляет к атакам героя дополнительный урон и вампиризм, зависящие от максимального здоровья противника."     
         "DOTA_Tooltip_ability_life_stealer_feast_aa_Lore"                                  "После побега из темницы Деварка Н'эйкс начал питаться плотью и костьми тех, кому не посчастливилось с ним встретиться." 
-        "DOTA_Tooltip_ability_life_stealer_feast_aa_Note0"                                 "Не действует на боссов."
+        "DOTA_Tooltip_ability_life_stealer_feast_aa_Note0"                                 "Наносит по боссам только половину урона и не дает вампризм."
         "DOTA_Tooltip_ability_life_stealer_feast_aa_Note1"                                 "Количество восстановленного здоровья не зависит от нанесённого урона."
         "DOTA_Tooltip_ability_life_stealer_feast_aa_Note2"                                 "Складывается с другими источниками вампиризма."
         "DOTA_Tooltip_ability_life_stealer_feast_aa_hp_leech_percent"                      "%ВАМПИРИЗМ ОТ МАКС. ЗДОРОВЬЯ:"
         "DOTA_Tooltip_ability_life_stealer_feast_aa_hp_damage_percent"                     "%УРОН ОТ МАКС. ЗДОРОВЬЯ:"
-		"DOTA_Tooltip_ability_item_ultimate_scepter_Description"	"<h1>Пассивное: Ability Upgrade</h1>Улучшает ульт и некоторые способности. \n\n Поглощаемая версия выпадает из Терзателя"
+		"DOTA_Tooltip_ability_item_ultimate_scepter_Description"							"<h1>Пассивное: Ability Upgrade</h1>Улучшает ульт и некоторые способности. \n\n Поглощаемая версия выпадает из Терзателя"
 
 		"DOTA_Tooltip_ability_divine_intervention"                                       "Divine Intervention"
 
