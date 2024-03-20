@@ -40,7 +40,7 @@ DOTAAbilities
 				"special_bonus_unique_furion_7"		"+1"
 			}
 			"sprout_damage"					"15 30 45 60 75 90 105"
-			"sprout_damage_inteval"			"0.5"
+			"sprout_damage_inteval"			"1.0"
 			"sprout_damage_radius"			"275"
 			"damage_pct"		"3 5 7 9 11 13 15"
 		}
@@ -120,12 +120,12 @@ DOTAAbilities
 		{
 			"max_stacks"				
 			{
-				"value"				"6 8 10 12 14 16 18"
-				"special_bonus_unique_furion_teleportation_max_stacks"		"+12"
+				"value"				"3 5 7 9 11 13 15"
+				"special_bonus_unique_furion_teleportation_max_stacks"		"+5"
 			}
 			"buff_duration"				"25"
 			"damage_per_stack"		"6 8 10 12 14 16 18"
-			"armor_per_stack"		"1 2 3 4 5 6 7" 	
+			"armor_per_stack"		"1.0 1.5 2.0 2.5 3.0 3.5 4.0" 	
 		}
 	}
 	"furion_force_of_nature"
@@ -158,17 +158,17 @@ DOTAAbilities
 			"treant_health"
 			{
 				"value"					"650"
-				"special_bonus_unique_furion"			"x2.5"
+				"special_bonus_unique_furion"			"x3.0"
 			}
 			"treant_damage_min"
 			{
-				"value"					"18 27 37 48 60 73 87"
+				"value"					"27 37 48 60 73 87 102"
 				"special_bonus_unique_furion"			"x2.5"
 			}
 			"treant_damage_max"
 			{
-				"value"					"20 29 39 50 62 75 89"
-				"special_bonus_unique_furion"			"x2.5"
+				"value"					"25 35 46 58 71 85 100"
+				"special_bonus_unique_furion"			"x3.0"
 			}
 			"AbilityCooldown"				
 			{
