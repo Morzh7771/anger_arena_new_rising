@@ -1135,6 +1135,205 @@
         }
     }
 
+    "item_recipe_khanda"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "Model"							"models/props_gameplay/recipe.vmdl"
+                "BaseClass"						"item_recipe_arcane_boots"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"600"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_khanda"
+        "ItemRequirements"
+        {
+            "01"						"item_phylactery;item_lesser_crit"
+        }
+    }
+    "item_khanda"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"                               "DAMAGE_TYPE_MAGICAL"
+        "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_khanda_custom"
+        "ItemBaseLevel"					"1"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"6.0 5 4"
+        "AbilitySharedCooldown"			"phylactery"
+        "AbilityTextureName"            "angels_demise"
+
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"5000"
+        "ItemShopTags"					"hard_to_tag"
+        "ItemQuality"					"common"
+        "ItemAliases"					"angel;demise"
+        "ShouldBeSuggested"				"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_damage"			"50 100 150"
+            "crit_chance"			"30 35 40"
+            "spell_crit_multiplier"		"100 150 200"
+            "spell_crit_flat"			"250 400 650"
+            "crit_multiplier"		"150 200 250"
+            "bonus_health"		"200 500 1200"
+            "bonus_mana"		"200 500 1200"
+            "bonus_all_stats"	"8 30 120"
+            "slow"						"50 60 70"
+            "slow_duration"				"1 1.5 2"
+        }
+    }
+    "item_recipe_khanda_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                                           "item_datadriven"
+        "Model"                                               "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"                                  "custom/recipe/recipe_2"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCorePointCost"                                   "0"
+        "ItemCost"                                            "0"
+        "ItemShopTags"                                        ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                                          "1"
+        "ItemResult"                                          "item_khanda_2"
+        "ItemRequirements"
+        {
+        "01"                                                "item_khanda;item_khanda"
+        }
+    }
+    "item_khanda_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_khanda_custom"
+        "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"                               "DAMAGE_TYPE_MAGICAL"
+        "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+        "AbilityTextureName"                                  "khanda_2"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                                     "6.0 5.0 4.0"
+        "AbilitySharedCooldown"                               "phylactery"
+        "AbilityManaCost"                                     "0"
+
+        "MaxUpgradeLevel"                                     "3"
+        "ItemBaseLevel"                                       "2"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                                            "6501"
+        "ItemShopTags"                                        "hard_to_tag"
+        "ItemQuality"                                         "common"
+        "ItemAliases"                                         "khanda; kanda"
+        "ItemDisassembleRule"                                 "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_damage"			"50 100 150"
+            "crit_chance"			"30 35 40"
+            "spell_crit_multiplier"		"100 150 200"
+            "spell_crit_flat"			"250 400 650"
+            "crit_multiplier"		"150 200 250"
+            "tooltip_crit_damage"	"50 100 150"
+            "bonus_health"		"200 500 1200"
+            "bonus_mana"		"200 500 1200"
+            "bonus_all_stats"	"8 30 120"
+            "slow"						"50 60 70"
+            "slow_duration"				"1 1.5 2"
+        }
+    }
+    "item_recipe_khanda_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                                           "item_datadriven"
+        "Model"                                               "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"                                  "custom/recipe/recipe_2"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCorePointCost"                                   "0"
+        "ItemCost"                                            "0"
+        "ItemShopTags"                                        ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                                          "1"
+        "ItemResult"                                          "item_khanda_3"
+        "ItemRequirements"
+        {
+        "01"                                                "item_khanda_2;item_khanda_2;item_boss_soul"
+        }
+    }
+    "item_khanda_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_khanda_custom"
+        "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"                               "DAMAGE_TYPE_MAGICAL"
+        "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+        "AbilityTextureName"                                  "khanda_3"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                                     "6.0 5.0 4.0"
+        "AbilitySharedCooldown"                               "phylactery"
+        "AbilityManaCost"                                     "0"
+
+        "MaxUpgradeLevel"                                     "3"
+        "ItemBaseLevel"                                       "3"
+
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                                            "6501"
+        "ItemShopTags"                                        "hard_to_tag"
+        "ItemQuality"                                         "common"
+        "ItemAliases"                                         "khanda; kanda"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_damage"			"50 100 150"
+            "crit_chance"			"30 35 40"
+            "spell_crit_multiplier"		"100 150 200"
+            "spell_crit_flat"			"250 400 650"
+            "crit_multiplier"		"150 200 250"
+            "tooltip_crit_damage"	"50 100 150"
+            "bonus_health"		"200 500 1200"
+            "bonus_mana"		"200 500 1200"
+            "bonus_all_stats"	"8 30 120"
+            "slow"						"50 60 70"
+            "slow_duration"				"1 1.5 2"
+        }
+    }
 
 	"item_recipe_corrosion_custom"
     {

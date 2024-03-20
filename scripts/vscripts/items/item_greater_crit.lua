@@ -69,7 +69,7 @@ modifier_greater_crit = class({
     IsHidden = function (self) return true end,
     DeclareFunctions = function (self) return {
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
     } end,
     GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end
 })
@@ -89,7 +89,7 @@ function modifier_greater_crit:GetModifierPreAttack_CriticalStrike(params)
     end
 end
 
-function modifier_greater_crit:GetModifierBaseAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor('bonus_damage') end
+function modifier_greater_crit:GetModifierPreAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor('bonus_damage') end
 
 function modifier_greater_crit:LegitimateAttack(params)
     local target = params.unit or params.target
