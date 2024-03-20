@@ -37,6 +37,7 @@ item_shield_of_immortality = class({
 modifier_shield_of_immortality = class ({
     IsBuff = function (self) return true end,
     IsHidden = function (self) return true end,
+    IsPurgable = function (self) return false end,
     GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
     DeclareFunctions = function (self)
         return {
@@ -128,6 +129,7 @@ modifier_shield_of_immortality = class ({
 
 modifier_shield_of_immortality_hex = class ({
     IsBuff = function (self) return true end,
+    IsPurgable = function (self) return false end,
     --GetEffectName = function (self) return "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf" end,
     GetEffectName = function (self) return "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf" end,
     GetTexture = function (self) return "../items/shield_of_immortality" end,

@@ -27,14 +27,13 @@ function modifier_item_manaflare_lens_custom:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING,
-		MODIFIER_EVENT_ON_SPELL_TARGET_READY,
-
+		MODIFIER_EVENT_ON_SPELL_TARGET_READY
 	}
 end
 
 
 function modifier_item_manaflare_lens_custom:GetModifierCastRangeBonusStacking()
-if self:GetCaster():HasModifier("modifier_item_aether_lens") then return end
+    if self:GetCaster():HasModifier("modifier_item_aether_lens") then return end
 
 	return self:GetAbility():GetSpecialValueFor("cast_range_bonus")
 end
@@ -49,6 +48,8 @@ function modifier_item_manaflare_lens_custom:OnSpellTargetReady(params)
 	if not self:GetParent():IsRealHero() then return end
 	if self:GetAbility():IsCooldownReady() == false then return end
 	if self:GetParent():HasModifier("modifier_item_phylactery_lens_custom") then return end
+	if self:GetParent():HasModifier("modifier_item_angels_demise") then return end
+	if self:GetParent():HasModifier("modifier_item_phylactery") then return end
 
 	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana") / 100 * self:GetAbility():GetSpecialValueFor("damage_per_mana")
 	SendOverheadEventMessage(params.target, 4, params.target, damage, nil)
