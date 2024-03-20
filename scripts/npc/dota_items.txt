@@ -1708,7 +1708,7 @@
 			"bonus_damage"			           "25 50 120"
 			"bonus_armor"			           "6 12 25"
 			"bonus_intellect"		           "0"
-			"duration"				           "5 5.75 6.5"
+			"duration"				           "5"
 			"passive_reflection_constant"	   "15 45 75"
 			"passive_reflection_pct"		   "10 12.5 15"
 			"active_reflection_pct"			   "80 87.5 95"
@@ -1763,7 +1763,7 @@
         	"bonus_damage"			           "25 50 120"
         	"bonus_armor"			           "6 12 25"
         	"bonus_intellect"		           "0"
-        	"duration"				           "5 5.75 6.5"
+        	"duration"				           "5"
         	"passive_reflection_constant"	   "15 45 75"
         	"passive_reflection_pct"		   "10 12.5 15"
         	"active_reflection_pct"			   "80 87.5 95"
@@ -1812,14 +1812,14 @@
     "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		
 
-		// Special	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
     	{
         	"bonus_damage"			           "25 50 120"
         	"bonus_armor"			           "6 12 25"
         	"bonus_intellect"		           "0"
-        	"duration"				           "5 5.75 6.5"
+        	"duration"				           "5"
         	"passive_reflection_constant"	   "15 45 75"
         	"passive_reflection_pct"		   "10 12.5 15"
         	"active_reflection_pct"			   "80 87.5 95"
@@ -2530,11 +2530,11 @@
 		"AbilityValues"
 		{
 			"bonus_health"              "200 500 750"
-      "bonus_mana"                "200 500 750"           
-      "bonus_all_stats"           "7 15 25" 
-			"slow"						          "50 50 50"
-			"bonus_spell_damage"		    "250 350 450"
-			"slow_duration"				      "1.5 2 2.5"
+      		"bonus_mana"                "200 500 750"  
+      		"bonus_all_stats"           "7 15 25" 
+			"slow"						"50 50 50"
+			"bonus_spell_damage"		"250 350 450"
+			"slow_duration"				"1.5 2 2.5"
 		}
 	}
 
@@ -2580,11 +2580,11 @@
 		"AbilityValues"
 		{
 			"bonus_health"              "200 500 750"
-      "bonus_mana"                "200 500 750"           
-      "bonus_all_stats"           "7 15 25" 
-			"slow"						          "50 50 50"
-			"bonus_spell_damage"       "250 350 450"
-			"slow_duration"			       	"1.5 2 2.5"
+      		"bonus_mana"                "200 500 750"           
+      		"bonus_all_stats"           "7 15 25" 
+			"slow"						"50 50 50"
+			"bonus_spell_damage"        "250 350 450"
+			"slow_duration"			    "1.5 2 2.5"
 		}
 	}
 
@@ -4800,12 +4800,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_spell_resist"					"20 25 30"
+			"bonus_spell_resist"					"20 22.5 25"
 			"bonus_strength"						"14 30 80"
 			"bonus_health"							"300 600 1500"
 			"stack_threshold"						"300 600 1500"
 			"stack_duration"						"4 5 6"
-			"stack_resist"							"4"
+			"stack_resist"							"3 3.5 4"
 			"mana_restore_pct"						"20 25 30"
 			"max_stacks"							"4 5 6"
 		}
@@ -4844,12 +4844,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_spell_resist"					"25 30 35"
+			"bonus_spell_resist"					"20 22.5 25"
 			"bonus_strength"						"14 30 80"
 			"bonus_health"							"300 600 1500"
 			"stack_threshold"						"300 600 1500"
 			"stack_duration"						"4 5 6"
-			"stack_resist"							"4 5 6"
+			"stack_resist"							"3 3.5 4"
 			"mana_restore_pct"						"20 25 30"
 			"max_stacks"							"4 5 6"
 		}
@@ -4889,12 +4889,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_spell_resist"					"25 30 35"
+			"bonus_spell_resist"					"20 22.5 25"
 			"bonus_strength"						"14 30 80"
 			"bonus_health"							"300 600 1500"
 			"stack_threshold"						"300 600 1500"
 			"stack_duration"						"4 5 6"
-			"stack_resist"							"4 5 6"
+			"stack_resist"							"3 3.5 4"
 			"mana_restore_pct"						"20 25 30"
 			"max_stacks"							"4 5 6"
 		}
@@ -5663,6 +5663,26 @@
 				"replenish_radius"		"1200"
 		}
 	}
+	"item_recipe_soul_ring"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"150"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_soul_ring"
+		"ItemRequirements"
+		{
+			"01"						"item_ring_of_protection;item_gauntlets;item_gauntlets"
+		}
+	}	
 	"item_soul_ring"
 	{
 		// General

@@ -3,7 +3,22 @@ item_bkb_aa_1 = class({
 })
 item_bkb_aa_2 = item_bkb_aa_1
 item_bkb_aa_3 = item_bkb_aa_1
-item_mini_bkb = item_bkb_aa_1
+item_mini_bkb = class({
+	OnSpellStart = function (self)
+		self.caster = self:GetCaster()
+		self.duration = self:GetSpecialValueFor("duration")
+		self.caster:AddNewModifier(self.caster, self, "modifier_generic_debuff_immune", {effect = 1 , duration = self.duration})
+		self.caster:Purge( false, true, false, false, false )
+
+		if self:GetCurrentCharges() > 1 then
+			self:SetCurrentCharges(self:GetCurrentCharges() - 1)
+		else
+			self.caster:FindItemInInventory("item_mini_bkb"):Destroy()
+		end
+			
+	end
+})
+
 LinkLuaModifier( "modifier_item_bkb_aa", "items/item_bkb_aa.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_generic_debuff_immune", "modifiers/modifier_generic_debuff_immune.lua", LUA_MODIFIER_MOTION_NONE )
 

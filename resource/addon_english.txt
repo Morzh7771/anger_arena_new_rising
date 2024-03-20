@@ -945,7 +945,8 @@
 		 //Broodmother
         "DOTA_Tooltip_Ability_broodmother_silken_bola_damage_pct"                               "%AGILITY DAMAGE"
 
-
+		"DOTA_Tooltip_Ability_hoodwink_bushwhack_damage_pct"					"%AGILITY DAMAGE"
+		"DOTA_Tooltip_Ability_hoodwink_sharpshooter_damage_pct"					"%AGILITY DAMAGE"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_bounces_custom"			"+2 to Acorn Shot bounces"
 		"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_acorn_shot_charges_custom"					"2 charges for Acorn Shot"
@@ -2927,14 +2928,14 @@
 
 		"DOTA_Tooltip_ability_item_ultimate_scepter_Description"			"<h1>Passive: Ability Upgrade</h1> Upgrades the hero's ultimate ability and some other abilities. \n\nThe consumable version drops from Tormentor."
 
-		"DOTA_Tooltip_ability_life_stealer_feast_aa" "Feast"
-		"DOTA_Tooltip_ability_life_stealer_feast_aa_Description" "Adds bonus damage and lifesteal to the hero's attacks, based on the target's maximum health."
-		"DOTA_Tooltip_ability_life_stealer_feast_aa_Lore" "After escaping from the Devarque prison, N'aix began to feast on the flesh and bones of those unfortunate enough to cross his path."
-		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note0" "Does not affect bosses."
-		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note1" "The amount of health restored is not based on damage dealt."
-		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note2" "Stacks with other sources of lifesteal."
-		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_leech_percent" "%Lifesteal from Max Health:"
-		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_damage_percent" "%Damage from Max Health:"
+		"DOTA_Tooltip_ability_life_stealer_feast_aa" 					"Feast"
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Description" 		"Adds bonus damage and lifesteal to the hero's attacks, based on the target's maximum health."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Lore" 				"After escaping from the Devarque prison, N'aix began to feast on the flesh and bones of those unfortunate enough to cross his path."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note0" 				"It deals only half damage to bosses and does not provide lifesteal."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note1" 				"The amount of health restored is not based on damage dealt."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_Note2" 				"Stacks with other sources of lifesteal."
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_leech_percent" 	"%Lifesteal from Max Health:"
+		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_damage_percent"	"%Damage from Max Health:"
 
 		"DOTA_Tooltip_ability_divine_intervention"                                       "Divine Intervention"
 

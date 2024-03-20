@@ -50,11 +50,13 @@ end
 function modifier_life_stealer_feast_aa:GetModifierProcAttack_BonusDamage_Physical( params )
 	if IsServer() then
 		if self:GetParent():PassivesDisabled() then return end
-		if BossSpawner:IsBoss(params.target) then return end
-        
 		local leech = params.target:GetMaxHealth() * self.leech_percent
 		local damage = params.target:GetMaxHealth() * self.damage_percent
-		self:GetParent():Heal( leech, self:GetParent() )
+		if BossSpawner:IsBoss(params.target) then 
+			damage = damage / 2
+		else 
+			self:GetParent():Heal( leech, self:GetParent() )
+		end
 		self:PlayEffects()
 		return damage
 	end
