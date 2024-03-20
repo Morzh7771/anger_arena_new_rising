@@ -264,7 +264,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"50.0 43.0 36.0 29.0 22.0 15.0 8.0"
+		"AbilityCooldown"				"32 28 24 20 16 12 8"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -283,11 +283,11 @@ DOTAAbilities
 				}
 				"air_time"					
 				{
-					"value"				"0.75"
+					"value"				"0.5"
 					"LinkedSpecialBonus"		"special_bonus_unique_tusk_7"
 				}
 				"slow_duration"				"1.75 2.0 2.25 2.5 2.75 3.0 3.25"
-				"move_slow"					"40"
+				"move_slow"					"30"
 				"push_length"				"1000"
 		}
 	}
@@ -338,6 +338,25 @@ DOTAAbilities
 				}
 				"search_radius"					"250"
 				"creep_cooldown_reduction_pct"	"50"
+		}
+	}
+	"special_bonus_unique_tusk_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"0.25"
+				"ad_linked_abilities"			"tusk_walrus_punch"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
 		}
 	}
 }
