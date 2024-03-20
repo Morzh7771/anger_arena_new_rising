@@ -6221,10 +6221,9 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_lua"
-        "ID"							"1319"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
-        "AbilityTextureName"	        "dimensional_predictor1"
+        "AbilityTextureName"	        "dimensional_predictor"
         "ScriptFile"					"items/dimensional_predictor/dimensional_predictor.lua"
         "ItemBaseLevel"					"1"
         "precache"
@@ -6245,7 +6244,6 @@
         //-------------------------------------------------------------------------------------------------------------
         "ItemCost"						"3600"
         "ItemStackable"					"0"
-        "ItemBaseLevel"					"1"
         
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
@@ -6277,10 +6275,9 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_lua"
-        "ID"							"1319"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
-        "AbilityTextureName"	        "dimensional_predictor2"
+        "AbilityTextureName"	        "dimensional_predictor_2"
         "ScriptFile"					"items/dimensional_predictor/dimensional_predictor.lua"
         "ItemBaseLevel"					"2"
         "precache"
@@ -6301,7 +6298,6 @@
         //-------------------------------------------------------------------------------------------------------------
         "ItemCost"						"3600"
         "ItemStackable"					"0"
-        "ItemBaseLevel"					"1"
         
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
@@ -6333,10 +6329,9 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_lua"
-        "ID"							"1319"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
-        "AbilityTextureName"	        "dimensional_predictor3"
+        "AbilityTextureName"	        "dimensional_predictor_3"
         "ScriptFile"					"items/dimensional_predictor/dimensional_predictor.lua"
         "ItemBaseLevel"					"3"
         "precache"
@@ -6357,7 +6352,6 @@
         //-------------------------------------------------------------------------------------------------------------
         "ItemCost"						"3600"
         "ItemStackable"					"0"
-        "ItemBaseLevel"					"1"
         
         "ItemKillable"                  "1"
         "ItemSellable"                  "1"
@@ -6382,6 +6376,62 @@
             "duration"		        "3"
 			"spell_amp_debuff"		"20 25 30"
 			"dps"	                "25 50 150"
+        }
+    }
+    "item_recipe_talisman_of_heal"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_talisman_of_heal"
+        "ItemRequirements"
+        {
+            "01"                        "item_circlet;item_talisman_of_mastery;item_fluffy_hat;item_sobi_mask"
+        }
+    }
+    "item_talisman_of_heal"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"							"item_lua"
+        "AbilityTextureName" 				"talisman_of_heal"
+        "AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES"
+        "ScriptFile"						"items/talisman_of_mastery/talisman_of_heal.lua"
+        
+        "ItemQuality"						"common"
+        "ItemDroppable" 					"1"
+        "ItemCastOnPickup"					"0"
+        "ItemKillable"						"1"
+        "ItemPurchasable"					"1"
+        "ItemSellable"						"1"
+        "ItemCost"							"1100"
+        "ItemStackable"						"0"
+        "AbilityCooldown"					"1.0"
+        "ShouldBeInitiallySuggested"		"1"
+        
+        // Special	
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_attack"			"5"
+            "bonus_all"				"4"
+            "bonus_hp_regen"		"1.5"
+            "bonus_mp_regen"		"1.5"
+            "bonus_health"		    "150"
+            "damage_to_exp_ranged"	"25"
+            "damage_to_exp_melee" 	"30"
+            "min_exp_ranged"		"15"
+            "min_exp_melee"			"18"
+            "replenish_health"		"20"
+            "replenish_mana"		"20"
+            "buff_health"			"3.5"
+            "buff_mana"			    "3.5"
+            "duration"			    "7"
         }
     }
 }

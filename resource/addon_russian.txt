@@ -3106,6 +3106,16 @@
 		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy"						"Оружие заряжено"
 		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy_cd"					"Оружие заряжается"
 		"DOTA_Tooltip_modifier_dimensional_predictor_active"							"Скрыт с миникарты"
+
+		"DOTA_Tooltip_ability_item_talisman_of_heal"                            "Talisman of Heal"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_Description"                "<h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя.\n\n <h1>Пассивная: Bliss</h1>При получения уровня востанавливает %replenish_health%% здоровья и %replenish_mana%%  маны. Дополнительно, дает увеличение востановления здоровья на %buff_health%% и маны на %buff_mana%% .<br> Длительность %duration% секунд.  <br>Восстановление прекращается, если получить урон от вражеского героя."
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_attack"            "+$damage"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_all"                "+$all"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_health"            "+$health"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_hp_regen"            "+$hp_regen"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_mp_regen"            "+$mana_regen"
+        "DOTA_Tooltip_modifier_talisman_of_heal_buff"                        "Bliss"
+        "DOTA_Tooltip_modifier_talisman_of_heal_buff_Description"            "Востановления здоровья и маны"
 	
 	}  
 }
