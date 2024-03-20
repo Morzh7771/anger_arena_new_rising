@@ -521,7 +521,7 @@
         "ItemPurchasable"				"1"
         
         "AbilityCooldown"				"25.0"
-        "AbilityManaCost"				"300"
+        "AbilityManaCost"				"200"
         
         //special
         "AbilitySpecial"
@@ -3465,7 +3465,7 @@
 			"mp"			    "400 800 1600"
 			"mp_regen"		    "7 14 28"
 			"spell_damage"	    "12 21 30"
-			"cast_range"	    "225 275 325"
+			"cast_range"	    "200 300 400"
 			"active_duration"	"6"
 			"active_radius"		"500 750 1000"
 		}
@@ -6126,7 +6126,7 @@
 	}
     "item_mini_bkb"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"FightRecapLevel"				"1"
 		"ItemBaseLevel"					"1"
         "BaseClass"                     "item_lua"
@@ -6135,9 +6135,15 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"400"
+		"ItemCost"						"200"
         "AbilityCooldown"				"50"
-		"ItemPurchasable"				"1"
+		"ItemStackable"					"1"
+        "ItemStackableMax"				"5"
+		
+		"ItemInitialCharges"			"1"
+        "ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
 		"AbilityValues"
 		{
             "duration"				"3"

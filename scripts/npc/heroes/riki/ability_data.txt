@@ -255,12 +255,12 @@ DOTAAbilities
 				"value"		"750"
 				"LinkedSpecialBonus"		"special_bonus_unique_riki_4"
 			}
-			"attack_count"	"5 6 7 7 8 8 9"
-			"damage_pct"	"60"
+			"attack_count"	"5 5 6 6 7 7 8"
+			"damage_pct"	"45 47.5 50 52.5 55 57.5 60"
 			"agility_pct"
 			{
-				"value" 				"75"
-				"special_bonus_unique_riki_2" "+50"
+				"value" 				"70 75 80 85 90 95 100"
+				"special_bonus_unique_riki_2" "+25"
 			}
 			"scepter_duration"				
 			{
@@ -269,12 +269,12 @@ DOTAAbilities
 			}
 			"scepter_attacks"
 			{
-				"value"		"9 10 11 11 12 12 13"
+				"value"		"7 7 8 8 9 9 10"
 				"RequiresScepter"		"1"
 			}
 			"scepter_cast_range"
 			{
-				"value"		"1000"
+				"value"		"700"
 				"RequiresScepter"		"1"
 			}
 			"dispel"
