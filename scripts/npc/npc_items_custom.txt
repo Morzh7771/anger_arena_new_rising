@@ -6724,4 +6724,35 @@
             "duration"			    "7"
         }
     }
+    "item_explosive_mantle_of_intelligence"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES"
+        "AbilityTextureName"            "item_pet_mage"
+        "ScriptFile"                    "items/explosive_mantle_of_intelligence/item_explosive_mantle_of_intelligence"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "45.0"
+        "AbilityCastPoint"              "0.5"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"               "1"
+
+        "AbilityValues"
+        {
+            "bonus_int"                 "6"
+            "burn_damage_per_hp"        "5"
+            "explosive_damage_per_hp"   "100"
+            "radius"                    "450"
+            "pre_explode_duration"      "3"
+        }
+    }
 }
