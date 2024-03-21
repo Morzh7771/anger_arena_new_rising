@@ -6064,7 +6064,7 @@
 			"cast_range_enemy"		"450 500 550"
 			"bonus_projectile_speed"	"100 200 300"
 			"push_time"				"0.5 0.5 0.5"
-            "double_attack_cd"      "1.2 0.8 0.4"
+            "double_attack_cd"      "1.0 0.8 0.5"
 		}
 	}   
     "item_hurricane_pike_aa_2"
@@ -6109,7 +6109,7 @@
 			"cast_range_enemy"		"450 500 550"
 			"bonus_projectile_speed"	"100 200 300"
 			"push_time"				"0.5 0.5 0.5"
-            "double_attack_cd"      "1.2 0.8 0.4"
+            "double_attack_cd"      "1.0 0.8 0.5"
 		}
 	}   
     "item_hurricane_pike_aa_3"
@@ -6154,7 +6154,7 @@
 			"cast_range_enemy"		"450 500 550"
 			"bonus_projectile_speed"	"100 200 300"
 			"push_time"				"0.5 0.5 0.5"
-            "double_attack_cd"      "1.2 0.8 0.4"
+            "double_attack_cd"      "1.0 0.8 0.5"
 		}
 	}
     "item_recipe_harpoon_aa_1"
@@ -6227,7 +6227,7 @@
         "ScriptFile"                    "items/item_harpoon_aa"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"850"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"19.0"
 		"AbilityManaCost"				"50"
@@ -6254,7 +6254,7 @@
 			"bonus_intellect"		"16 32 64"
 			"bonus_mana_regen"		"2.0 5 10"
 			
-			"passive_cooldown"		"1.2 0.8 0.4"
+			"passive_cooldown"		"1.0 0.8 0.5"
 			"movement_slow"			"100"
 			"slow_duration"			"0.2"
             "hit_slow_duration"		"2"
@@ -6279,7 +6279,7 @@
         "ScriptFile"                    "items/item_harpoon_aa"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"850"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"19.0"
 		"AbilityManaCost"				"50"
@@ -6306,7 +6306,7 @@
 			"bonus_intellect"		"16 32 64"
 			"bonus_mana_regen"		"2.0 5 10"
 			
-			"passive_cooldown"		"1.2 0.8 0.4"
+			"passive_cooldown"		"1.0 0.8 0.5"
 			"movement_slow"			"100"
 			"slow_duration"			"0.2"
             "hit_slow_duration"		"2"
@@ -6331,7 +6331,7 @@
         "ScriptFile"                    "items/item_harpoon_aa"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"850"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"19.0"
 		"AbilityManaCost"				"50"
@@ -6357,7 +6357,7 @@
 			"bonus_intellect"		"16 32 64"
 			"bonus_mana_regen"		"2.0 5 10"
 			
-			"passive_cooldown"		"1.2 0.8 0.4"
+			"passive_cooldown"		"1.0 0.8 0.5"
 			"movement_slow"			"100"
 			"slow_duration"			"0.2"
             "hit_slow_duration"		"2"
