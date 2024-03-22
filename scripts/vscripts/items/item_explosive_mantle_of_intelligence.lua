@@ -9,16 +9,18 @@ function item_explosive_mantle_of_intelligence:GetIntrinsicModifierName()
 end
 
 function item_explosive_mantle_of_intelligence:OnSpellStart()
-    if self:GetCurrentCharges() > 0 then 
-        self:SetCurrentCharges(self:GetCurrentCharges() - 1)
-    else
-        self:EndCooldown() 
-    end
-
 	local pre_explode_duration = self:GetSpecialValueFor("pre_explode_duration")
 
 	self:GetCaster():AddNewModifier(caster, self, "modifier_explosive_mantle_of_intelligence_active_channel", { duration = pre_explode_duration })
     self:GetCaster():AddNewModifier(caster, self, "modifier_explosive_mantle_of_intelligence_active_finish", { duration = pre_explode_duration })
+    Timers:CreateTimer("time_until_happiness_" .. tostring(self:GetCaster():entindex()), {
+            useGameTime = true,
+            endTime = 0,
+            callback = function()
+               EmitSoundOn("Hero_Techies.StickyBomb.Priming", self:GetCaster())
+               return 1
+            end
+         })         
 end
 
 
@@ -70,11 +72,11 @@ function modifier_explosive_mantle_of_intelligence_active_channel:OnIntervalThin
         ParticleManager:ReleaseParticleIndex( effect_cast )
 
         local effect_cast = ParticleManager:CreateParticle(
-            "particles/units/heroes/hero_sandking/sandking_epicenter_ring.vpcf",
+            "particles/units/heroes/hero_doom_bringer/doom_infernal_blade_impact.vpcf",
             PATTACH_ABSORIGIN_FOLLOW,
             self:GetParent()
         )
-        ParticleManager:SetParticleControl( effect_cast, 1, Vector( radius, radius, radius ) )
+        ParticleManager:SetParticleControl( effect_cast, 1, Vector( radius, radius+150, radius ) )
         ParticleManager:ReleaseParticleIndex( effect_cast )
 
         local damage_per_tick = caster:GetMaxHealth() / 100 * self:GetAbility():GetSpecialValueFor("burn_hp_to_damage")
@@ -107,6 +109,8 @@ modifier_explosive_mantle_of_intelligence_active_finish = class({
     IsPurgable = function (self) return false end,
      OnCreated = function(self)
         self:StartIntervalThink(3)
+        self.item = self:GetParent():FindItemInInventory("item_explosive_mantle_of_intelligence")
+        self.pre_explode_duration = self:GetSpecialValueFor("pre_explode_duration")
     end
 })
 
@@ -143,7 +147,36 @@ function modifier_explosive_mantle_of_intelligence_active_finish:OnIntervalThink
                 damage = final_explode
             })
         end
+        local MANTLE_PURGE_MODIFIERS = {
+            "modifier_dazzle_shallow_grave",
+            "modifier_troll_warlord_battle_trance",
+            "modifier_skeleton_king_reincarnation_scepter",
+            "modifier_skeleton_king_reincarnation_scepter_active",
+        }
+        for _,modifier_name in pairs(MANTLE_PURGE_MODIFIERS) do
+            caster:RemoveAllModifiersByName(modifier_name)
+        end
+        Timers:CreateTimer({
+            useGameTime = true,
+            endTime = self.pre_explode_duration,
+            callback = function()
+               Timers:RemoveTimer("time_until_happiness_" .. tostring(caster:entindex()))
+               EmitSoundOn("Hero_Gyrocopter.CallDown.Damage", caster)
+            end
+         })
+        if self.item:GetCurrentCharges() > 1 then 
+            self.item:SetCurrentCharges(self.item:GetCurrentCharges() - 1)
+        else
+            caster:RemoveItem(self.item)
+        end
         caster:Kill(caster, caster)
+        ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN, caster)
+        ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN, caster)
+        ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN, caster)
+        ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN, caster)
+        ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN, caster)
+        ParticleManager:CreateParticle("particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf", PATTACH_ABSORIGIN, caster)
     end
-    self:StartIntervalThink(3)
+    self:StartIntervalThink(3.0)
+    
 end

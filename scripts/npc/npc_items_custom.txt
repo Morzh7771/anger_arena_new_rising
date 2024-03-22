@@ -797,13 +797,13 @@
         "BaseClass"                     "item_datadriven"
         "AbilityTextureName"            "item_recipe"
         "Model"                         "models/props_gameplay/recipe.vmdl"
-        "ItemCost"                      "1450"   
+        "ItemCost"                      "450"   
         "ItemShopTags"                  ""
         "ItemRecipe"                    "1"
         "ItemResult"                    "item_bkb_aa_1"
         "ItemRequirements"
         {
-            "01"                        "item_ogre_axe;item_mithril_hammer"
+            "01"                        "item_ogre_axe;item_mithril_hammer;item_mini_bkb"
         }
     }
 	"item_recipe_bkb_aa_2"
@@ -868,7 +868,7 @@
 			"bonus_strength"		"10 20 50"
 			"bonus_damage"			"25 50 120"
 			"duration"				"6 6.5 7"
-			"magic_resist"			"50 65 80"
+			"magic_resist"			"60 70 80"
 		}
     }
 	"item_bkb_aa_2"
@@ -903,7 +903,7 @@
 			"bonus_strength"		"10 20 50"
 			"bonus_damage"			"25 50 120"
 			"duration"				"6 6.5 7"
-			"magic_resist"			"50 65 80"
+			"magic_resist"			"60 70 80"
 		}
     }
 	"item_bkb_aa_3"
@@ -939,7 +939,7 @@
 			"bonus_strength"		"10 20 50"
 			"bonus_damage"			"25 50 120"
 			"duration"				"6 6.5 7"
-			"magic_resist"			"50 65 80"
+			"magic_resist"			"60 70 80"
 		}
     }
 	
@@ -6730,14 +6730,14 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES"
-        "AbilityTextureName"            "mantle"
+        "AbilityTextureName"            "explosive_mantle_of_intellect"
         "ScriptFile"                    "items/item_explosive_mantle_of_intelligence"
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"               "45.0"
         "AbilityCastPoint"              "0.5"
-        "ItemCost"                      "1200"
+        "ItemCost"                      "700"
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
         "ItemKillable"                  "1"
