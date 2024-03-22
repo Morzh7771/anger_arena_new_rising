@@ -6163,7 +6163,7 @@
   {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_TOGGLE"
     "Model"             "models/props_gameplay/divine_rapier.vmdl"
 
     // Item Info
@@ -6174,7 +6174,7 @@
     "ItemAliases"         "divine rapier"
     "ItemShareability"        "ITEM_NOT_SHAREABLE"
     "ItemSellable"          "0"
-    "ItemKillable"          "0"
+    "ItemKillable"          "1"
     "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
     "ItemContributesToNetWorthWhenDropped"  "0"
     "AllowedInBackpack"       "0"
@@ -6187,7 +6187,8 @@
     "AbilityValues"
     {
         "bonus_spell_amp"   "60"
-        "bonus_damage"      "1675"
+        "bonus_damage"      "1200"
+        "bonus_damage_base"	"300"
     }
   }
   "item_recipe_wind_waker"
@@ -6467,6 +6468,61 @@
 				"duration"				"3"
 				"spell_amp_debuff"		"20"
 				"dps"					"25"
+		}
+	}
+	"item_recipe_refresher"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"FightRecapLevel"				"2"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_refresher"
+		"ItemRequirements"
+		{
+			"01"						"item_cornucopia;item_ring_of_tarrasque;item_tiara_of_selemene"
+		}
+	}
+	
+	//=================================================================================================================
+	// Refresher
+	//=================================================================================================================
+	"item_refresher"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"180.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"350"
+		"ItemCost"						"5000"
+		"ItemShopTags"					"regen_health;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"refresher orb"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_health_regen"	"18"
+			"bonus_mana_regen"		"8.0"
+			"bonus_damage"			"10"
 		}
 	}
 }

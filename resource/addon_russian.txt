@@ -1596,6 +1596,8 @@
 
 		"DOTA_Tooltip_modifier_item_phylactery_2_slow"				"Phylactery 2"
 		"DOTA_Tooltip_modifier_item_phylactery_2_slow_Description"		"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_ability_item_phylactery_Lore"				"Не большой камень, заставляющий улыбаться всякого мага, взявшего его у руки."
+		"DOTA_Tooltip_ability_item_phylactery_2_Lore"				"Не большой камень, заставляющий улыбаться всякого мага, взявшего его у руки."
 
         "DOTA_Tooltip_Ability_item_manaflare_lens_custom"	                "Manaflare Lens"
         "DOTA_Tooltip_Ability_item_manaflare_lens_custom_Description"		"<h1>Пассивное: Empower Spell</h1>Следующая способность направленная на врага или наносящая урон потребует <b><font color='#53ea48'>%bonus_spell_damage_mana%%% от вашей текущей маны</font></b> и нанесёт урон в размере %bonus_spell_damage% + <b><font color='#738092'>затраченная мана, умноженная на</font></b> %damage_per_mana% , и замедлит цель на %slow%%%<br><br>Длительность: %slow_duration% сек."
@@ -1607,6 +1609,7 @@
 
         "DOTA_Tooltip_modifier_item_manaflare_lens_custom_debuff"		"Manaflare Lens"
         "DOTA_Tooltip_modifier_item_manaflare_lens_custom_debuff_Description"	"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+        "DOTA_Tooltip_ability_item_manaflare_lens_custom_Lore"				"Странная эссенция, позволяющая небольшой силой воли ломать судьбы многих."
 
         "DOTA_Tooltip_ability_item_lotus_orb_2"                                 "LOTUS ORB 2"
         "DOTA_Tooltip_ability_item_lotus_orb_2_Description"			"<h1>Активное: Echo Shell</h1> Создаёт вокруг цели щит, отражающий большинство направленных заклинаний обратно во врага. Действует %active_duration% сек.<br><br>Не блокирует эффекты вражеских заклинаний. <br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
@@ -1640,6 +1643,7 @@
 		"DOTA_Tooltip_Ability_item_harpoon_aa_1_bonus_damage"			"+$damage"
 		"DOTA_Tooltip_Ability_item_harpoon_aa_1_bonus_strength"         "+$str"
 		"DOTA_Tooltip_Ability_item_harpoon_aa_1_bonus_mana_regen"       "+$mana_regen"
+		"DOTA_Tooltip_Ability_item_harpoon_aa_1_Lore"					"Инструмент для тех, у кого всегда были некие трудности в первом шаге."
 
 		"DOTA_Tooltip_Ability_item_harpoon_aa_2"                        "HARPOON 2"
 		"DOTA_Tooltip_Ability_item_harpoon_aa_2_Description"			"<h1>Активное: Draw Forth</h1> Выстреливает в выбранного врага гарпун, который тянет владельца и цель в упор друг к другу. Накладывает на %hit_slow_duration% секунд, %movement_slow%%% замедления на цель\n\n <h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку раз в %passive_cooldown% сек, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%."
@@ -1651,6 +1655,7 @@
 		"DOTA_Tooltip_Ability_item_harpoon_aa_2_bonus_damage"			"+$damage"
 		"DOTA_Tooltip_Ability_item_harpoon_aa_2_bonus_strength"         "+$str"
 		"DOTA_Tooltip_Ability_item_harpoon_aa_2_bonus_mana_regen"       "+$mana_regen"
+		"DOTA_Tooltip_Ability_item_harpoon_aa_2_Lore"					"Инструмент для тех, у кого всегда были некие трудности в первом шаге."
 
 		"DOTA_Tooltip_Ability_item_harpoon_aa_3"                        "HARPOON 3"
         "DOTA_Tooltip_Ability_item_harpoon_aa_3_Description"			"<h1>Активное: Draw Forth</h1> Выстреливает в выбранного врага гарпун, который тянет владельца и цель в упор друг к другу. Накладывает на %hit_slow_duration% секунд, %movement_slow%%% замедления на цель\n\n <h1>Пассивное: Echo Strike</h1> Позволяет героям ближнего боя совершить двойную атаку раз в %passive_cooldown% сек, которая на %slow_duration% сек. уменьшает скорость передвижения жертвы на %movement_slow%%%."
@@ -1662,6 +1667,7 @@
 		"DOTA_Tooltip_Ability_item_harpoon_aa_3_bonus_damage"			"+$damage"
 		"DOTA_Tooltip_Ability_item_harpoon_aa_3_bonus_strength"         "+$str"
 		"DOTA_Tooltip_Ability_item_harpoon_aa_3_bonus_mana_regen"       "+$mana_regen"
+		"DOTA_Tooltip_Ability_item_harpoon_aa_3_Lore"					"Инструмент для тех, у кого всегда были некие трудности в первом шаге."
 
 		"DOTA_Tooltip_modifier_item_harpoon_custom_pull"						"Harpoon"
 		"DOTA_Tooltip_modifier_item_harpoon_custom_pull_Description"			"Это существо тянут гарпуном."
@@ -1722,13 +1728,22 @@
 		"DOTA_Tooltip_modifier_item_corrosion_custom_passive_slow"			"Orb of Corrosion"					
 		"DOTA_Tooltip_modifier_item_corrosion_custom_passive_slow_Description"		"Скорость передвижения снижена на <b><font color='#ff0000'>%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%</font></b>, исцеление снижено на <b><font color='#ff0000'>%dMODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET%%%</font></b>"
 
-        "DOTA_Tooltip_ability_item_pavise_2"                            "PAVISE 2"
-        "DOTA_Tooltip_ability_item_pavise_2_Description"		"<h1>Активное: Protect</h1> При применении на союзника даёт ему барьер, поглощающий %absorb_amount% физического урона. Длительность: %duration% сек. <br><br>Дальность применения: %abilitycastrange%"
-		"DOTA_Tooltip_ability_item_pavise_2_bonus_armor"			"+$armor"
-		"DOTA_Tooltip_ability_item_pavise_2_bonus_mana"			"+$mana"
-		"DOTA_Tooltip_ability_item_pavise_2_bonus_health"			"+$health"
+		"DOTA_Tooltip_ability_item_pavise"							"Pavise"
+		"DOTA_Tooltip_ability_item_pavise_Description"				"<h1>Активное: Protect</h1> При применении на союзника даёт ему барьер, поглощающий %absorb_amount% физического урона. Длительность: %duration% сек. <br><br>Дальность применения: %abilitycastrange%"
+		"DOTA_Tooltip_ability_item_pavise_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_pavise_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_pavise_bonus_health"				"+$health"
+		"DOTA_Tooltip_ability_item_pavise_Lore"						"Этот ростовой щит обладает непревзайдёнными защитными функциями, так ещё и действует благоприятно на боевой дух владельца."
+		"DOTA_Tooltip_modifier_item_pavise_shield"					"Pavise"
+		"DOTA_Tooltip_modifier_item_pavise_shield_Description"		"Поглощает физический урон."
 
-		"DOTA_Tooltip_modifier_item_pavise_2_shield"			"Pavise 2"
+        "DOTA_Tooltip_ability_item_pavise_2"                        "PAVISE 2"
+        "DOTA_Tooltip_ability_item_pavise_2_Description"			"<h1>Активное: Protect</h1> При применении на союзника даёт ему барьер, поглощающий %absorb_amount% физического урона. Длительность: %duration% сек. <br><br>Дальность применения: %abilitycastrange%"
+		"DOTA_Tooltip_ability_item_pavise_2_bonus_armor"			"+$armor"
+		"DOTA_Tooltip_ability_item_pavise_2_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_pavise_2_bonus_health"			"+$health"
+		"DOTA_Tooltip_ability_item_pavise_2_Lore"						"Этот ростовой щит обладает непревзайдёнными защитными функциями, так ещё и действует благоприятно на боевой дух владельца."
+		"DOTA_Tooltip_modifier_item_pavise_2_shield"				"Pavise 2"
 		"DOTA_Tooltip_modifier_item_pavise_2_shield_Description"	"Поглощает физический урон."
 
         "DOTA_Tooltip_ability_item_crimson_guard_3"                     "CRIMSON GUARD 2"
@@ -1750,6 +1765,18 @@
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra_Description"	"Имеет шанс в 100%% заблокировать %dMODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK% урона от атак."
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack"	        "Перезарядка Guard 2"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description""Способность Guard 2 не действует на существ, на которых ее недавно применяли."
+		
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence"	"Explosive Mantle of Intelligence"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Description"	"<h1>Активное: Explode</h1>При использовании делает вас беспомощным. В момент активации и каждую секунду наносит вам и всем врагам в радиусе %radius% урон от вашего максимального здоровья. По истечении %pre_explode_duration% секунд убивает вас, нанося врагам урон от вашего текущего здоровья. Конечный урон увеличивается от вашего интеллекта."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_bonus_int"	"+$int"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_burn_hp_to_damage"	"%УРОН ОТ ПРЕДЕТОНАЦИИ:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_explosive_damage_per_hp"	"%УРОН ОТ ДЕТОНАЦИИ:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_int_dmg_mlp"	"%УСИЛЕНИЕ УРОНА ЗА ЕД. ИНТ:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Lore"			"Кто знает, что у тебя под мантией..."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note0"			"При покупке имеет один заряд."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note1"			"Использование тратит заряды."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note2"			"Для восстановления зарядов необходимо покупать новые мантии."
+
 
 		"DOTA_Tooltip_ability_item_solar_crest_1"                       "SOLAR CREST"
         "DOTA_Tooltip_ability_item_solar_crest_1_Description"			"<h1>Активное: Shine</h1>Если использовать на союзника или себя, увеличит его броню на %target_armor%, скорость атаки на %target_attack_speed%, скорость передвижения на %target_movement_speed%%% и дает барьер поглощающий %barrier_block% + %health_pct%%  от максимального здоровья цели. Если использовать на врага, уменьшит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%.<br><br>Дальность применения: %abilitycastrange%<br><br>Длительность: %duration% сек."	
@@ -1892,6 +1919,7 @@
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_str"		"+$str"
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_manaregen"	"+$mana_regen"
         "DOTA_Tooltip_ability_item_center_of_peace_bonus_spell_amp"	"%+к урону от заклинаний"
+        "DOTA_Tooltip_ability_item_center_of_peace_Lore"			"Только сильнейшие маги понимают Реальную силу Медитаций."
 		
         "DOTA_Tooltip_modifier_center_of_peace_active_channel"		"Center Of Peace"
         "DOTA_Tooltip_modifier_center_of_peace_active_channel_Description""Восстанавливает 10%% маны, от максимального значения, в секунду."
@@ -1907,6 +1935,7 @@
         "DOTA_Tooltip_ability_item_void_stick_bonus_hpregen"		"+$hp_regen"
         "DOTA_Tooltip_ability_item_void_stick_bonus_speed"		"+$move_speed"
         "DOTA_Tooltip_ability_item_void_stick_bonus_spell_amp"	"%+к урону от заклинаний"
+        "DOTA_Tooltip_ability_item_void_stick_Lore"		"Небольшой скипетр, обладающий силой скрывать обладателя из реальности."
 
         "DOTA_Tooltip_modifier_item_void_stick_astral"			"Void Astral"
         "DOTA_Tooltip_modifier_item_void_stick_astral_Description"	"Постепенно восстанавливает 7%% здоровья и маны."
@@ -1915,6 +1944,7 @@
         "DOTA_Tooltip_modifier_void_stick_active_finish"		"Void Scepter"
         "DOTA_Tooltip_modifier_void_stick_active_finish_Description" "Увеличивает восстановление маны на 20 и уменьшает её расход на 20%%."
 
+
         "DOTA_Tooltip_Ability_item_charon"				"Charon's Scepter"
         "DOTA_Tooltip_Ability_item_charon_Description"			"<h1>Активируемая: Disappear</h1> Юнит уходит в астрал, где получает регенерацию жизней."
         "DOTA_Tooltip_Ability_item_charon_bonus_speed"			"+$move_speed"
@@ -1922,6 +1952,7 @@
         "DOTA_Tooltip_Ability_item_charon_bonus_manaregen"		"+$mana_regen"
         "DOTA_Tooltip_Ability_item_charon_hp_regen_pct"			"%РЕГЕН В АСТРАЛЕ:"
         "DOTA_Tooltip_Ability_item_charon_astral_duration"		"ДЛИТЕЛЬНОСТЬ АСТРАЛА:"
+        "DOTA_Tooltip_Ability_item_charon_Lore"					"Посох, имеющий возможность отправит вас в незабываемое путешествие на пляжи Стикса."
 
         "DOTA_Tooltip_modifier_charon"	                                "Регенерирует"
 
@@ -1989,19 +2020,18 @@
 
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1"                    "HURRICANE PIKE"
         "DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Description"        "<h1>Активное: Hurricane Thrust</h1> Отталкивает вражескую цель и владельца друг от друга на расстояние в %push_length%. Если владелец сражается в дальнем бою, то после этого он следующие %range_duration% секунд может совершить атаки по цели без ограничения на расстояние. Скорость полета таких атак увеличена на %bonus_projectile_speed%. <br><br>При использовании на себя или союзников толкает цель на расстояние в %push_length%.\n\n<h1>Пассивное: Double Shoots</h1> Позволяет героям дальнего боя совершить двойную атаку раз в %double_attack_cd% секунд."
-		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Lore"               "Легендарная пика, в далеком прошлом служившая монаршим символом наездников на вивернах."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Note0"              "Можно применить на себя."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Note1"              "Не прерывает действия цели."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Note2"              "Не работает на существ под воздействием способностей Chronosphere, Duel или Black Hole."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_bonus_intellect"    "+$int"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_bonus_agility"      "+$agi"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_bonus_strength"     "+$str"
-		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_bonus_health"	"+$health"
+		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_bonus_health"		"+$health"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_base_attack_range"  "+$attack_range"
+		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_1_Lore"				"Всем иногда надо побыть наедине..."
 
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2"                    "HURRICANE PIKE 2"
         "DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Description"        "<h1>Активное: Hurricane Thrust</h1> Отталкивает вражескую цель и владельца друг от друга на расстояние в %push_length%. Если владелец сражается в дальнем бою, то после этого он следующие %range_duration% секунд может совершить атаки по цели без ограничения на расстояние. Скорость полета таких атак увеличена на %bonus_projectile_speed%. <br><br>При использовании на себя или союзников толкает цель на расстояние в %push_length%.\n\n<h1>Пассивное: Double Shoots</h1> Позволяет героям дальнего боя совершить двойную атаку раз в %double_attack_cd% секунд."
-		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Lore"               "Легендарная пика, в далеком прошлом служившая монаршим символом наездников на вивернах."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Note0"              "Можно применить на себя."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Note1"              "Не прерывает действия цели."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Note2"              "Не работает на существ под воздействием способностей Chronosphere, Duel или Black Hole."
@@ -2010,10 +2040,10 @@
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_bonus_strength"     "+$str"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_bonus_health"	"+$health"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_base_attack_range"  "+$attack_range"
+		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_2_Lore"				"Всем иногда надо побыть наедине..."
 
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3"                    "HURRICANE PIKE 3"
         "DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_Description"        "<h1>Активное: Hurricane Thrust</h1> Отталкивает вражескую цель и владельца друг от друга на расстояние в %push_length%. Если владелец сражается в дальнем бою, то после этого он следующие %range_duration% секунд может совершить атаки по цели без ограничения на расстояние. Скорость полета таких атак увеличена на %bonus_projectile_speed%. <br><br>При использовании на себя или союзников толкает цель на расстояние в %push_length%.\n\n<h1>Пассивное: Double Shoots</h1> Позволяет героям дальнего боя совершить двойную атаку раз в %double_attack_cd% секунд."
-		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_Lore"               "Легендарная пика, в далеком прошлом служившая монаршим символом наездников на вивернах."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_Note0"              "Можно применить на себя."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_Note1"              "Не прерывает действия цели."
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_Note2"              "Не работает на существ под воздействием способностей Chronosphere, Duel или Black Hole."
@@ -2022,6 +2052,7 @@
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_bonus_strength"     "+$str"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_bonus_health"	"+$health"
 		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_base_attack_range"  "+$attack_range"
+		"DOTA_Tooltip_Ability_item_hurricane_pike_aa_3_Lore"				"Всем иногда надо побыть наедине..."
 			
 		"DOTA_Tooltip_modifier_item_hurricane_pike_aa_caster"							"Толчок Hurricane Pike"
 		"DOTA_Tooltip_modifier_item_hurricane_pike_aa_caster_Description"        		"Под воздействием толчка Hurricane Pike"
@@ -2153,6 +2184,19 @@
 		"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_health_regen"	"+$hp_regen"
 		"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_strength"	"+$str"
 
+		"DOTA_Tooltip_Ability_item_mage_slayer"			"Mage Slayer"
+		"DOTA_Tooltip_ability_item_mage_slayer_Description"				"<h1>Пассивное: Mage Slayer</h1>Атакуемые враги получают %dps% урона в секунду и наносят на %spell_amp_debuff%%% меньше урона заклинаниями. Действует %duration% сек."
+		"DOTA_Tooltip_ability_item_mage_slayer_Lore"			"Оружие, выкованное потайным орденом в Третью эпоху Пракса'ции, чтобы сразить Ложного короля."
+		"DOTA_Tooltip_ability_item_mage_slayer_bonus_magical_armor"			"%+$spell_resist"
+		
+		"DOTA_Tooltip_ability_item_mage_slayer_bonus_attack_speed"			"+$attack"
+		"DOTA_Tooltip_ability_item_mage_slayer_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mage_slayer_bonus_mana_regen"			"+$mana_regen"
+		"DOTA_Tooltip_ability_item_mage_slayer_bonus_intellect"			"+$int"
+
+		"DOTA_Tooltip_modifier_item_mage_slayer_debuff" 				"Mage Slayer"
+		"DOTA_Tooltip_modifier_item_mage_slayer_debuff_Description"		"Это существо наносит на 20%% меньше урона заклинаниями и получает периодический урон."
+
         "DOTA_Tooltip_ability_item_glimmer_cape_2"                      "GLIMMER CAPE 2"
         "DOTA_Tooltip_ability_item_glimmer_cape_2_Description"		"<h1>Активное: Glimmer</h1> После задержки в %initial_fade_delay% сек. даёт владельцу или выбранному союзнику невидимость, +%active_movement_speed% к скорости передвижения и барьер, поглощающий до %barrier_block% магического урона. Действует %duration% сек. <br><br>Дальность применения: %abilitycastrange%<br><br>Не останавливает прерываемые способности."
 		"DOTA_Tooltip_ability_item_glimmer_cape_2_movement_speed"	"+$move_speed"
@@ -2234,10 +2278,10 @@
 		"DOTA_Tooltip_modifier_item_swift_blink_2_buff_Description"     "Ловкость увеличена на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%. Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Проходит сквозь других существ."
 
         "DOTA_Tooltip_ability_item_arcane_blink_2"                      "ARCANE BLINK 2"
-		"DOTA_Tooltip_ability_item_arcane_blink_2_Description"         	"<h1>Активное: Arcane Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
+		"DOTA_Tooltip_ability_item_arcane_blink_2_Description"         	"<h1>Активное: Arcane Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>Перемещение восстанавливает владельцу %heal_amount% здоровья и %mana_amount% маны.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
         "DOTA_Tooltip_ability_item_arcane_blink_2_Lore"                 "Живительный инструмент, который поможет вытерпеть затраты магической мощи."
         "DOTA_Tooltip_ability_item_arcane_blink_2_Note0"                "Если применить на себя, переместит в сторону союзного фонтана."
-        "DOTA_Tooltip_ability_item_arcane_blink_2_Note1"      		"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
+        "DOTA_Tooltip_ability_item_arcane_blink_2_Note1"      			"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
         "DOTA_Tooltip_ability_item_arcane_blink_2_bonus_intellect"      "+$int"
 
 		"DOTA_Tooltip_modifier_item_arcane_blink_2_buff"         	"Arcane Blink 2"
@@ -2253,6 +2297,8 @@
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_status_res"		"%+к сопротивлению эффектам"
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_heal_amp_pct"	"%+к здоровью от восстановления и вампиризма"
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_spell_lifesteal_amp_pct"	"%+к усилению вампиризма от заклинаний"
+		"DOTA_Tooltip_Ability_item_trident_aa_Lore"                          "Одно Меч, чтоб править всеми, Он главнее всех, Он соберёт всех вместе И заключит во Тьме"
+		
 
 		"DOTA_Tooltip_Ability_item_trisula"                      "Trisula Shakti"
 		"DOTA_Tooltip_Ability_item_trisula_Note0"				"Trisula Shakti можно собрать иcпользуя War Fury или Holy Book 2"
@@ -2312,33 +2358,36 @@
         "DOTA_Tooltip_Ability_item_bfury_2_bonus_health_regen" "+$hp_regen"
         "DOTA_Tooltip_Ability_item_bfury_2_bonus_mana_regen" "+$mana_regen"
 
-		"DOTA_Tooltip_ability_item_ranged_cleave" 																							"Holy book"
-		"DOTA_Tooltip_ability_item_ranged_cleave_Description"																				"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."
-		"DOTA_Tooltip_ability_item_ranged_cleave_max_target"																				"+ цели"
-		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_range"																				"+ к дальности атаки"
-		"DOTA_Tooltip_ability_item_ranged_cleave_split_shot_damage" 																		"%Урон дополнительных стрел"  
-		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_str" 																					"+$str"
-		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_agi" 																				"+$agi"
-		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_dmg"																					"+$damage"
+		"DOTA_Tooltip_ability_item_ranged_cleave" 						"Holy book"
+		"DOTA_Tooltip_ability_item_ranged_cleave_Description"			"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."
+		"DOTA_Tooltip_ability_item_ranged_cleave_max_target"			"+ цели"
+		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_range"			"+ к дальности атаки"
+		"DOTA_Tooltip_ability_item_ranged_cleave_split_shot_damage" 	"%Урон дополнительных стрел"  
+		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_str" 			"+$str"
+		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_agi" 			"+$agi"
+		"DOTA_Tooltip_ability_item_ranged_cleave_bonus_dmg"				"+$damage"
+		"DOTA_Tooltip_ability_item_ranged_cleave_Lore"					"Том, в котором описаны всевозможные техники поражения нескольких целей одной стрелой."
 		
-		"DOTA_Tooltip_ability_item_ranged_cleave_radius"                             															"Радиус поиска цели: "
-		"DOTA_Tooltip_ability_item_ranged_cleave2_radius"                             															"Радиус поиска цели: "
-		"DOTA_Tooltip_ability_item_ranged_cleave3_radius"                             															"Радиус поиска цели: "
+		"DOTA_Tooltip_ability_item_ranged_cleave_radius"                "Радиус поиска цели: "
+		"DOTA_Tooltip_ability_item_ranged_cleave2_radius"               "Радиус поиска цели: "
+		"DOTA_Tooltip_ability_item_ranged_cleave3_radius"               "Радиус поиска цели: "
 		
-		"DOTA_Tooltip_ability_item_ranged_cleave2" 																							"Holy book 2"
-		"DOTA_Tooltip_ability_item_ranged_cleave2_Description"																				"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."
-		"DOTA_Tooltip_ability_item_ranged_cleave2_max_target"																				"+ цели"
-		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_range"																				"+ к дальности атаки"
-		"DOTA_Tooltip_ability_item_ranged_cleave2_split_shot_damage" 																		"%Урон дополнительных стрел"  
-		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_str" 																					"+$str"
-		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_agi" 																				"+$agi"
-		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_dmg"																					"+$damage"
+		"DOTA_Tooltip_ability_item_ranged_cleave2" 						"Holy book 2"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_Description"			"<h1> Пассивный: Splitfire </h1> ТОЛЬКО ДАЛЬНЯЯ АТАКА: у ваших атак появляется дополнительная цель."
+		"DOTA_Tooltip_ability_item_ranged_cleave2_max_target"			"+ цели"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_range"			"+ к дальности атаки"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_split_shot_damage"	"%Урон дополнительных стрел"  
+		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_str" 			"+$str"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_agi" 			"+$agi"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_bonus_dmg"			"+$damage"
+		"DOTA_Tooltip_ability_item_ranged_cleave2_Lore"					"Том, в котором описаны всевозможные техники поражения нескольких целей одной стрелой."
 		
 		"DOTA_Tooltip_ability_item_talisman_of_mastery"							"Talisman of Mastery"
 		"DOTA_Tooltip_ability_item_talisman_of_mastery_Description"				"<h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
 		"DOTA_Tooltip_ability_item_talisman_of_mastery_bonus_attack"			"+$damage"
 		"DOTA_Tooltip_ability_item_talisman_of_mastery_bonus_str"				"+$str"
 		"DOTA_Tooltip_ability_item_talisman_of_mastery_bonus_hp_regen"			"+$hp_regen"
+		"DOTA_Tooltip_ability_item_talisman_of_mastery_Lore"				"Только бывалые воины знают, что отточить свои навыки можно только в бою."
 		
 		"DOTA_Tooltip_ability_item_fury_shield"									"Fury Shield"
 		"DOTA_Tooltip_ability_item_fury_shield_Description"						"<h1>Активируемая: Protection</h1> Владелец получает %active_bonus_aspeed% дополнительной скорость атаки и %block_damage% едениц блокирования входящих физического урона на %shield_duration% секунды."
@@ -2346,6 +2395,7 @@
 		"DOTA_Tooltip_ability_item_fury_shield_active_bonus_aspeed"				"СКОРОСТЬ АТАКИ:"
 		"DOTA_Tooltip_ability_item_fury_shield_shield_duration"					"ДЛИТЕЛЬНОСТЬ:"
 		"DOTA_Tooltip_ability_item_fury_shield_block_damage"					"БЛОКИРОВАНИЯ ФИЗ. АТАК:"
+		"DOTA_Tooltip_ability_item_fury_shield_Lore"							"Небольшой и удобный щит, позволяющий без стеснения движений защищаться даже самому неопытному бойцу."
 
 		"DOTA_Tooltip_ability_item_piercing_blade"								"Piercing Blade"
 		"DOTA_Tooltip_ability_item_piercing_blade_Description"					"<h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
@@ -2355,6 +2405,7 @@
 		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg"					"%ЧИСТЫЙ УРОН:"
 		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
 		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
+		"DOTA_Tooltip_ability_item_piercing_blade_Lore"			"Клинок, способность которого находить слабые места в защите аппонента на столько идеальна, что, иногда кажется, будто он сам эти места создаёт из неоткуда."
 
 		"DOTA_Tooltip_ability_item_piercing_blade2"								"Piercing Blade 2"
 		"DOTA_Tooltip_ability_item_piercing_blade2_Description"					"<h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
@@ -2364,6 +2415,7 @@
 		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg"					"%ЧИСТЫЙ УРОН:"
 		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
 		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
+		"DOTA_Tooltip_ability_item_piercing_blade2_Lore"			"Клинок, способность которого находить слабые места в защите аппонента на столько идеальна, что, иногда кажется, будто он сам эти места создаёт из неоткуда."
 
 		"DOTA_Tooltip_ability_item_piercing_blade3"								"Piercing Blade 3"
 		"DOTA_Tooltip_ability_item_piercing_blade3_Description"					"<h1>Активаня: Pure power</h1> В Следующие %active_duration% секунд преобразует %active_pure_dmg%%  урона вашей следующей атаки или способности в чистый  \n\n <h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
@@ -2373,6 +2425,7 @@
 		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg"					"%ЧИСТЫЙ УРОН:"
 		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
 		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
+		"DOTA_Tooltip_ability_item_piercing_blade3_Lore"			"Клинок, способность которого находить слабые места в защите аппонента на столько идеальна, что, иногда кажется, будто он сам эти места создаёт из неоткуда."
 
 		"DOTA_Tooltip_modifier_item_piercing_blade_debuf"						"Piercing Blade"
 		"DOTA_Tooltip_modifier_item_piercing_blade_debuf_Description"			"Каждый стак увеличивает чистый урон входящий по вам"
@@ -2380,6 +2433,7 @@
 		"DOTA_Tooltip_ability_item_chest_of_midas"								"Chest Of Midas"
 		"DOTA_Tooltip_ability_item_chest_of_midas_Description"					"<h1>Пассивная: Chest Of Midas</h1>Владелец получает %gold% золота за каждый удар вражеских героев по себе."
 		"DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor"					"+$armor"
+		"DOTA_Tooltip_ability_item_chest_of_midas_Lore"							"Этот примечательный нагрудник отлично себя зарекомендовал на закрытых празднествах Высшего Света."
 		
 		"DOTA_Tooltip_ability_item_dagon_custom"									"Dagon"
 		"DOTA_Tooltip_ability_item_dagon_custom_Description"						"<h1>Активное: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и всем противникам в <b><font color='#53ea48'>радиусе %aoe_radius%</font></b>.  Исцеляет на %active_heal%%% от нанесенного урона основной цели<br><br>Урон: %damage%<br>Урон от основного атрибута: %stat_primary_damage_pct%%%<br>Дальность применения: %abilitycastrange%<br>Расход маны: %mana_cost_tooltip%
@@ -2397,18 +2451,21 @@
 		"DOTA_Tooltip_ability_item_static_amulet_bonus_armor"						"+$armor"
 		"DOTA_Tooltip_ability_item_static_amulet_bonus_int"							"+$int"
 		"DOTA_Tooltip_ability_item_static_amulet_bonus_all_att"						"+$all"
+		"DOTA_Tooltip_ability_item_static_amulet_Lore"								"От одного слова обладателя этим... 'Предметом', хочется вывернуть себя наизнанку."
 
 		"DOTA_Tooltip_ability_item_slice_amulet"									"Static Amulet"
 		"DOTA_Tooltip_ability_item_slice_amulet_Description"						"<h1>Пассивная: Static Amulet</h1>При касте наносит дополнительный урон в размере %damage% + %damage_pct%%  от их текущего здоровья всем врагам в радиусе %radius% от кастера"
 		"DOTA_Tooltip_ability_item_slice_amulet_bonus_armor"						"+$armor"
 		"DOTA_Tooltip_ability_item_slice_amulet_bonus_int"							"+$int"
 		"DOTA_Tooltip_ability_item_slice_amulet_bonus_all_att"						"+$all"
+		"DOTA_Tooltip_ability_item_slice_amulet_Lore"								"От одного слова обладателя этим... 'Предметом', хочется вывернуть себя наизнанку."
 
 		"DOTA_Tooltip_Ability_item_static_amulet_old"						"Magic Singularity"
 		"DOTA_Tooltip_Ability_item_static_amulet_old_Description"			"<h1>Активируемая: Disarm</h1>Запрещает врагу атаковать на %debuff_duration%.\n<h1>Пассивная: Magic Singularity</h1> Использование любой способности даст 1 заряд увеличивающий урон от заклинаний на %spell_amplify_by_cast%%  заряд длится %buff_duration% секунд"
 		"DOTA_Tooltip_Ability_item_static_amulet_old_bonus_armor"			"+$armor"
 		"DOTA_Tooltip_Ability_item_static_amulet_old_bonus_int"				"+$int"
 		"DOTA_Tooltip_Ability_item_static_amulet_old_bonus_stats"			"+$all"
+		"DOTA_Tooltip_Ability_item_static_amulet_old_Lore"					"Чем дальше,тем хуже..."
 
 		"DOTA_Tooltip_modifier_static_mag_amplify_count"							"Magic Singularity Amplification"
 		"DOTA_Tooltip_modifier_static_mag_amplify_count_Description"				"Увеличивает исходящий урон способностей"
@@ -2421,28 +2478,45 @@
 		"DOTA_Tooltip_Ability_item_slice_amulet_old_bonus_armor"			"+$armor"
 		"DOTA_Tooltip_Ability_item_slice_amulet_old_bonus_int"				"+$int"
 		"DOTA_Tooltip_Ability_item_slice_amulet_old_bonus_stats"			"+$all"
+		"DOTA_Tooltip_Ability_item_slice_amulet_old_Lore"					"Чем дальше,тем хуже..."
 
-		"DOTA_Tooltip_Ability_item_custom_seer_stone"					"Seer stone"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone"						"Seer stone"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_Description"	 		"<h1>Активная: Reveal</h1> Раскрывает туман войны в указанной области карты радусом %active_radius% на %active_duration% секунд."
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_int"					"+$int"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_mp"					"+$mana"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_mp_regen"				"+$mana_regen"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_cast_range"				"+$cast_range"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_cast_range"			"+$cast_range"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_spell_damage"			"%+к урону от заклинаний"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_2"					"Seer stone 2"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_Lore"			"Творение чародей, который желал заглянуть как можно дальше за пределы сущего."
+
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_2"						"Seer stone 2"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_Description"	 		"<h1>Активная: Reveal</h1> Раскрывает туман войны в указанной области карты радусом %active_radius% на %active_duration% секунд."
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_int"					"+$int"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_mp"					"+$mana"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_mp_regen"				"+$mana_regen"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_cast_range"				"+$cast_range"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_spell_damage"			"%+к урону от заклинаний"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_3"					"Seer stone 3"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_mp_regen"			"+$mana_regen"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_cast_range"			"+$cast_range"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_spell_damage"		"%+к урону от заклинаний"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_Lore"			"Творение чародей, который желал заглянуть как можно дальше за пределы сущего."
+
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_3"							"Seer stone 3"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_Description"			 "<h1>Активная: Reveal</h1> Раскрывает туман войны в указанной области карты радусом %active_radius% на %active_duration% секунд."
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_int"					"+$int"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_mp"					"+$mana"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_mp_regen"				"+$mana_regen"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_cast_range"				"+$cast_range"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_spell_damage"			"%+к урону от заклинаний"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_Description"	 "<h1>Активная: Reveal</h1> Раскрывает туман войны в указанной области карты радусом %active_radius% на %active_duration% секунд."
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_Description"	 "<h1>Активная: Reveal</h1> Раскрывает туман войны в указанной области карты радусом %active_radius% на %active_duration% секунд."
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_Description"	 "<h1>Активная: Reveal</h1> Раскрывает туман войны в указанной области карты радусом %active_radius% на %active_duration% секунд."
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_mp_regen"			"+$mana_regen"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_cast_range"			"+$cast_range"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_spell_damage"		"%+к урону от заклинаний"
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_Lore"			"Творение чародей, который желал заглянуть как можно дальше за пределы сущего."
+		
+		"DOTA_Tooltip_Ability_item_refresher"									"Refresher Orb"
+		"DOTA_Tooltip_ability_item_refresher_Description"						"<h1>Активное: Reset</h1> Сбрасывает перезарядку всех предметов и способностей. Имеет общую перезарядку с предметом Refresher Shard. Перезарядка этого предмета происходит, только когда он находится в основном инвентаре героя."
+		"DOTA_Tooltip_ability_item_refresher_Lore"								"Могущественный артефакт, позволяющий делать одно и тоже действие раз за разом, в надежде на изменение."
+		"DOTA_Tooltip_ability_item_refresher_bonus_health_regen"				"+$hp_regen"
+		"DOTA_Tooltip_ability_item_refresher_bonus_mana_regen"					"+$mana_regen"
+		"DOTA_Tooltip_ability_item_refresher_bonus_damage"						"+$damage"
+
+		
+		
+		
 		
 		"DOTA_Tooltip_Ability_item_rebels_sword"							"Rebels Sword"
 		"DOTA_Tooltip_Ability_item_rebels_sword_Description"				"<h1>Пассивная: Corrosive Armor</h1> Снимает броню врага за каждый удар по нему.\n После снижения %max_disarmor_pct%%  брони, дополнительно снижает броню на %disarmor_const% за удар."
@@ -2628,6 +2702,7 @@
 		"DOTA_Tooltip_ability_item_talisman_of_ambition_bonus_armor"				"+$armor"
 		"DOTA_Tooltip_Ability_item_talisman_of_ambition_attack_speed_pasive"		"+$attack"
 		"DOTA_Tooltip_Ability_item_talisman_of_ambition_bonus_movespeed"			"+$move_speed"
+		"DOTA_Tooltip_Ability_item_talisman_of_ambition_lore"						"Float like a butterfly, sting like a bee"
 
 		"DOTA_Tooltip_tower_controller"								"Башня"
 		"npc_dota_custom_tower"										"Tower"
@@ -2644,6 +2719,7 @@
 		"DOTA_Tooltip_Ability_item_khanda_bonus_mana"					"+$mana"
 		"DOTA_Tooltip_ability_item_khanda_bonus_all_stats"				"+$all"
 		"DOTA_Tooltip_ability_item_khanda_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_khanda_Lore"							"Клинок, влияние которого распространяется далеко за зримые пределы, выводил не одного бедняка в Цари, ценой достоинства."
 
 		"DOTA_Tooltip_Ability_item_khanda_2"									"Khanda 2"
 		"DOTA_Tooltip_Ability_item_khanda_2_Description"						"<h1>Пассивное: Empower Spell</h1> Следующая способность, направленная на врага или наносящая урон, замедлит его на %slow%%% и отдельно нанесёт урон, равный %spell_crit_flat% + %spell_crit_multiplier%%% от атаки владельца. Длительность замедления: %slow_duration% сек.\n\n<h1>Пассивное: Critical Strike</h1> Каждая атака может с вероятностью в %crit_chance%%% нанести %crit_multiplier%%% урона."
@@ -2653,6 +2729,7 @@
 		"DOTA_Tooltip_Ability_item_khanda_2_bonus_mana"					"+$mana"
 		"DOTA_Tooltip_ability_item_khanda_2_bonus_all_stats"				"+$all"
 		"DOTA_Tooltip_ability_item_khanda_2_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_khanda_2_Lore"							"Клинок, влияние которого распространяется далеко за зримые пределы, выводил не одного бедняка в Цари, ценой достоинства."
 
 		"DOTA_Tooltip_Ability_item_khanda_3"									"Khanda 3"
 		"DOTA_Tooltip_Ability_item_khanda_3_Description"						"<h1>Пассивное: Empower Spell</h1> Следующая способность, направленная на врага или наносящая урон, замедлит его на %slow%%% и отдельно нанесёт урон, равный %spell_crit_flat% + %spell_crit_multiplier%%% от атаки владельца. Длительность замедления: %slow_duration% сек.\n\n<h1>Пассивное: Critical Strike</h1> Каждая атака может с вероятностью в %crit_chance%%% нанести %crit_multiplier%%% урона."
@@ -2662,10 +2739,11 @@
 		"DOTA_Tooltip_Ability_item_khanda_3_bonus_mana"					"+$mana"
 		"DOTA_Tooltip_ability_item_khanda_3_bonus_all_stats"				"+$all"
 		"DOTA_Tooltip_ability_item_khanda_3_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_khanda_3_Lore"							"Клинок, влияние которого распространяется далеко за зримые пределы, выводил не одного бедняка в Цари, ценой достоинства."
 
 		"DOTA_Tooltip_ability_item_devastator_2"							"Parasma 2"
 		"DOTA_Tooltip_ability_item_devastator_2_Description"				"<h1>Пассивное: Witch Blade</h1> Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Этой атакой невозможно промахнуться.\n\n<h1>Пассивное: Magic Corruption</h1> Атаки на %passive_cooldown% сек. снижают сопротивление магии жертвы на %active_mres_reduction%%%."
-		"DOTA_Tooltip_ability_item_devastator_2_Lore"						"Поразительно."
+		"DOTA_Tooltip_ability_item_devastator_2_Lore"						"Удивительно."
 		"DOTA_Tooltip_ability_item_devastator_2_bonus_attack_speed"				"+$attack"
 		"DOTA_Tooltip_ability_item_devastator_2_bonus_armor"					"+$armor"
 		"DOTA_Tooltip_ability_item_devastator_2_bonus_intellect"				"+$int"
@@ -2674,7 +2752,7 @@
 
 		"DOTA_Tooltip_ability_item_devastator_3"							"Parasma 3"
 		"DOTA_Tooltip_ability_item_devastator_3_Description"				"<h1>Пассивное: Witch Blade</h1> Следующая атака отравит жертву на %slow_duration% сек., замедлив её на %slow%%% и каждую секунду нанося ей урон, равный интеллекту владельца, помноженному на %int_damage_multiplier%. Этой атакой невозможно промахнуться.\n\n<h1>Пассивное: Magic Corruption</h1> Атаки на %passive_cooldown% сек. снижают сопротивление магии жертвы на %active_mres_reduction%%%."
-		"DOTA_Tooltip_ability_item_devastator_3_Lore"						"Поразительно."
+		"DOTA_Tooltip_ability_item_devastator_3_Lore"						"Гениально."
 		"DOTA_Tooltip_ability_item_devastator_3_bonus_attack_speed"				"+$attack"
 		"DOTA_Tooltip_ability_item_devastator_3_bonus_armor"					"+$armor"
 		"DOTA_Tooltip_ability_item_devastator_3_bonus_intellect"				"+$int"
@@ -3089,31 +3167,37 @@
 		"DOTA_Tooltip_ability_item_mini_bkb_Note0"			"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
 
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1"								"Dimensional Predictor"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от урона атаки. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного аттрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_strength"				"+$str"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_intellect"				"+$int"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_attackspeed"				"+$attack"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_magresist"				"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Note0"						"У героев Универсалов урон берётся от суммы всех аттрибутов, делённая на 3."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Lore"						"Этот камень, встречающийся в далёких и забытых местах, позволяет проецировать свою силу на множества."
 
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2"								"Dimensional Predictor 2"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от урона атаки. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного аттрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_strength"				"+$str"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_intellect"				"+$int"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_attackspeed"				"+$attack"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_magresist"				"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Note0"						"У героев Универсалов урон берётся от суммы всех аттрибутов, делённая на 3."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Lore"						"Этот камень, встречающийся в далёких и забытых местах, позволяет проецировать свою силу на множества."
 
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3"								"Dimensional Predictor 3"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от урона атаки. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного аттрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_strength"				"+$str"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_intellect"				"+$int"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_attackspeed"				"+$attack"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_magresist"				"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Note0"						"У героев Универсалов урон берётся от суммы всех аттрибутов, делённая на 3."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Lore"						"Этот камень, встречающийся в далёких и забытых местах, позволяет проецировать свою силу на множества."
 
 		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy"						"Оружие заряжено"
 		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy_cd"					"Оружие заряжается"

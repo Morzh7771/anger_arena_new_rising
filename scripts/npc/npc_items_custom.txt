@@ -797,13 +797,13 @@
         "BaseClass"                     "item_datadriven"
         "AbilityTextureName"            "item_recipe"
         "Model"                         "models/props_gameplay/recipe.vmdl"
-        "ItemCost"                      "1450"   
+        "ItemCost"                      "450"   
         "ItemShopTags"                  ""
         "ItemRecipe"                    "1"
         "ItemResult"                    "item_bkb_aa_1"
         "ItemRequirements"
         {
-            "01"                        "item_ogre_axe;item_mithril_hammer"
+            "01"                        "item_ogre_axe;item_mithril_hammer;item_mini_bkb"
         }
     }
 	"item_recipe_bkb_aa_2"
@@ -868,7 +868,7 @@
 			"bonus_strength"		"10 20 50"
 			"bonus_damage"			"25 50 120"
 			"duration"				"6 6.5 7"
-			"magic_resist"			"50 65 80"
+			"magic_resist"			"60 70 80"
 		}
     }
 	"item_bkb_aa_2"
@@ -903,7 +903,7 @@
 			"bonus_strength"		"10 20 50"
 			"bonus_damage"			"25 50 120"
 			"duration"				"6 6.5 7"
-			"magic_resist"			"50 65 80"
+			"magic_resist"			"60 70 80"
 		}
     }
 	"item_bkb_aa_3"
@@ -939,7 +939,7 @@
 			"bonus_strength"		"10 20 50"
 			"bonus_damage"			"25 50 120"
 			"duration"				"6 6.5 7"
-			"magic_resist"			"50 65 80"
+			"magic_resist"			"60 70 80"
 		}
     }
 	
@@ -1131,7 +1131,7 @@
             "slow_duration"             "1.5 2 2.5"
             "min_damage_to_activate"    "0 0 0"
             "cast_range_bonus"          "250 250 250"
-            "damage_per_mana"           "2.5"
+            "damage_per_mana"           "1.5"
         }
     }
 
@@ -1187,7 +1187,7 @@
         {
             "bonus_damage"			"50 100 150"
             "crit_chance"			"30 35 40"
-            "spell_crit_multiplier"		"100 150 200"
+            "spell_crit_multiplier"		"60 100 140"
             "spell_crit_flat"			"250 400 650"
             "crit_multiplier"		"150 200 250"
             "bonus_health"		"200 500 1200"
@@ -1254,7 +1254,7 @@
         {
             "bonus_damage"			"50 100 150"
             "crit_chance"			"30 35 40"
-            "spell_crit_multiplier"		"100 150 200"
+            "spell_crit_multiplier"		"60 100 140"
             "spell_crit_flat"			"250 400 650"
             "crit_multiplier"		"150 200 250"
             "tooltip_crit_damage"	"50 100 150"
@@ -1323,7 +1323,7 @@
         {
             "bonus_damage"			"50 100 150"
             "crit_chance"			"30 35 40"
-            "spell_crit_multiplier"		"100 150 200"
+            "spell_crit_multiplier"		"60 100 140"
             "spell_crit_flat"			"250 400 650"
             "crit_multiplier"		"150 200 250"
             "tooltip_crit_damage"	"50 100 150"
@@ -6064,7 +6064,7 @@
 			"cast_range_enemy"		"450 500 550"
 			"bonus_projectile_speed"	"100 200 300"
 			"push_time"				"0.5 0.5 0.5"
-            "double_attack_cd"      "1.2 0.8 0.4"
+            "double_attack_cd"      "1.0 0.8 0.5"
 		}
 	}   
     "item_hurricane_pike_aa_2"
@@ -6109,7 +6109,7 @@
 			"cast_range_enemy"		"450 500 550"
 			"bonus_projectile_speed"	"100 200 300"
 			"push_time"				"0.5 0.5 0.5"
-            "double_attack_cd"      "1.2 0.8 0.4"
+            "double_attack_cd"      "1.0 0.8 0.5"
 		}
 	}   
     "item_hurricane_pike_aa_3"
@@ -6154,7 +6154,7 @@
 			"cast_range_enemy"		"450 500 550"
 			"bonus_projectile_speed"	"100 200 300"
 			"push_time"				"0.5 0.5 0.5"
-            "double_attack_cd"      "1.2 0.8 0.4"
+            "double_attack_cd"      "1.0 0.8 0.5"
 		}
 	}
     "item_recipe_harpoon_aa_1"
@@ -6227,7 +6227,7 @@
         "ScriptFile"                    "items/item_harpoon_aa"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"850"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"19.0"
 		"AbilityManaCost"				"50"
@@ -6254,7 +6254,7 @@
 			"bonus_intellect"		"16 32 64"
 			"bonus_mana_regen"		"2.0 5 10"
 			
-			"passive_cooldown"		"1.2 0.8 0.4"
+			"passive_cooldown"		"1.0 0.8 0.5"
 			"movement_slow"			"100"
 			"slow_duration"			"0.2"
             "hit_slow_duration"		"2"
@@ -6279,7 +6279,7 @@
         "ScriptFile"                    "items/item_harpoon_aa"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"850"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"19.0"
 		"AbilityManaCost"				"50"
@@ -6306,7 +6306,7 @@
 			"bonus_intellect"		"16 32 64"
 			"bonus_mana_regen"		"2.0 5 10"
 			
-			"passive_cooldown"		"1.2 0.8 0.4"
+			"passive_cooldown"		"1.0 0.8 0.5"
 			"movement_slow"			"100"
 			"slow_duration"			"0.2"
             "hit_slow_duration"		"2"
@@ -6331,7 +6331,7 @@
         "ScriptFile"                    "items/item_harpoon_aa"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"850"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"19.0"
 		"AbilityManaCost"				"50"
@@ -6357,7 +6357,7 @@
 			"bonus_intellect"		"16 32 64"
 			"bonus_mana_regen"		"2.0 5 10"
 			
-			"passive_cooldown"		"1.2 0.8 0.4"
+			"passive_cooldown"		"1.0 0.8 0.5"
 			"movement_slow"			"100"
 			"slow_duration"			"0.2"
             "hit_slow_duration"		"2"
@@ -6722,6 +6722,43 @@
             "buff_health"			"3.5"
             "buff_mana"			    "3.5"
             "duration"			    "7"
+        }
+    }
+    "item_explosive_mantle_of_intelligence"
+    {
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES"
+        "AbilityTextureName"            "explosive_mantle_of_intellect"
+        "ScriptFile"                    "items/item_explosive_mantle_of_intelligence"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "45.0"
+        "AbilityCastPoint"              "0.5"
+        "ItemCost"                      "700"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"               "1"
+        "ItemStackable"                 "1"
+        "ItemInitialCharges"            "1"
+        "ItemDisplayCharges"            "1"
+        "ItemRequiresCharges"           "1"
+        "IsTempestDoubleClonable"       "0"
+        "ShouldBeInitiallySuggested"    "1"
+
+        "AbilityValues"
+        {
+            "bonus_int"                 "6"
+            "burn_hp_to_damage"         "5"
+            "explosive_damage_per_hp"   "100"
+            "radius"                    "450"
+            "pre_explode_duration"      "3"
+            "int_dmg_mlp"               "0.25"
         }
     }
 }
