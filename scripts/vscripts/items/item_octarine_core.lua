@@ -31,11 +31,11 @@ modifier_item_octarine_core = class({
             MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
             }
     end,
-    GetPriority = function () return MODIFIER_PRIORITY_SUPER_ULTRA end,
-    GetModifierPercentageCooldown = function () return self:GetAbility():GetSpecialValueFor('bonus_cooldown') end,
-    GetModifierConstantManaRegen = function () return self:GetAbility():GetSpecialValueFor('bonus_mana_regen') end,
-    GetModifierManaBonus = function () return self:GetAbility():GetSpecialValueFor('bonus_mana') end,
-    GetModifierHealthBonus = function () return self:GetAbility():GetSpecialValueFor('bonus_health') end
+    GetPriority = function (self) return MODIFIER_PRIORITY_SUPER_ULTRA end,
+    GetModifierPercentageCooldown = function (self) return self:GetAbility():GetSpecialValueFor('bonus_cooldown') end,
+    GetModifierConstantManaRegen = function (self) return self:GetAbility():GetSpecialValueFor('bonus_mana_regen') end,
+    GetModifierManaBonus = function (self) return self:GetAbility():GetSpecialValueFor('bonus_mana') end,
+    GetModifierHealthBonus = function (self) return self:GetAbility():GetSpecialValueFor('bonus_health') end
 })
 
 modifier_obs_ward_custom = modifier_obs_ward_custom or class({})

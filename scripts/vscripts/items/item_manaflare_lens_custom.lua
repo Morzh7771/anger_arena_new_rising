@@ -87,7 +87,7 @@ function modifier_item_manaflare_lens_custom:OnTakeDamage(params)
 	SendOverheadEventMessage(params.unit, 4, params.unit, damage, nil)
 
 	self:GetAbility():UseResources(true, false, false, true)
-	ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
+	ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL,damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
 	params.unit:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_manaflare_lens_custom_debuff", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
 	
 	local particle = ParticleManager:CreateParticle("particles/items_fx/phylactery_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.unit)
