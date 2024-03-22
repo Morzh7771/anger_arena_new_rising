@@ -6761,4 +6761,52 @@
             "int_dmg_mlp"               "0.25"
         }
     }
+    "item_recipe_infinite_branch"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"                      "100000"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_infinite_branch"
+        "ItemRequirements"
+        {
+            "01"                        "item_branches"
+        }
+    }
+    "item_infinite_branch"
+    {
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES"
+        "AbilityTextureName"            "infinite_branch"
+        "ScriptFile"                    "items/item_infinite_branch"
+        "AbilityCooldown"               "5.0"
+        "AbilityManaCost"               "250"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"               "1"
+        "ItemStackable"                 "1"
+        "ItemInitialCharges"            "1"
+        "ItemDisplayCharges"            "1"
+        "ItemRequiresCharges"           "1"
+        "IsTempestDoubleClonable"       "0"
+        "ShouldBeInitiallySuggested"    "1"
+
+        "AbilityValues"
+        {
+            "bonus_all"                 "1"
+            "step"                      "1"
+            "time"                      "300"
+        }
+    }
 }
