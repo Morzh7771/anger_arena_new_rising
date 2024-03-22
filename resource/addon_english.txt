@@ -1663,6 +1663,17 @@
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra_Description"	"Has a 100% chance to block %dMODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK% damage from attacks."
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack"	"Reload Guard 2"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description"	"The ability Guard 2 does not affect creatures on which it was recently applied."
+
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence"							"Explosive Mantle of Intelligence"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Description"				"<h1>Active: Explode</h1>Makes you helpless when used. When activated, deals damage equal to your maximum health every second to you and all enemies in a %radius%. Kills you after %pre_explode_duration% seconds, dealing damage to enemies based on your current health. Final damage is increased by your intelligence."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_bonus_int"					+$int"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_burn_hp_to_damage"			"%Damage from Predetonation:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_explosive_damage_per_hp"	"%Damage from Detonation:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_int_dmg_mlp"				"%Final Damage Int Amp:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Lore"						"Who knows what's under your mantle..."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note0"						"When purchased, it has one charge."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note1"						"Using it consumes charges."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note2"						"To restore the charges, you need to buy new mantles."
 		
 		"DOTA_Tooltip_ability_item_solar_crest_1"                       "SOLAR CREST"
 		"DOTA_Tooltip_ability_item_solar_crest_1_Description"			"<h1>Active: Shine</h1> If used on an ally or self, increases armor by %target_armor%, attack speed by %target_attack_speed%, movement speed by %target_movement_speed%%, and provides a barrier absorbing %barrier_block% + %health_pct%% of the target's maximum health. If used on an enemy, reduces armor by %target_armor%, attack speed by %target_attack_speed%, and movement speed by %target_movement_speed%%.<br><br>Cast Range: %abilitycastrange%<br><br>Duration: %duration% seconds."	

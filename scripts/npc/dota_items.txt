@@ -6163,7 +6163,7 @@
   {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_TOGGLE"
     "Model"             "models/props_gameplay/divine_rapier.vmdl"
 
     // Item Info
@@ -6187,7 +6187,8 @@
     "AbilityValues"
     {
         "bonus_spell_amp"   "60"
-        "bonus_damage"      "1675"
+        "bonus_damage"      "1200"
+        "bonus_damage_base"	"300"
     }
   }
   "item_recipe_wind_waker"

@@ -1765,6 +1765,18 @@
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra_Description"	"Имеет шанс в 100%% заблокировать %dMODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK% урона от атак."
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack"	        "Перезарядка Guard 2"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description""Способность Guard 2 не действует на существ, на которых ее недавно применяли."
+		
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence"	"Explosive Mantle of Intelligence"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Description"	"<h1>Активное: Explode</h1>При использовании делает вас беспомощным. В момент активации и каждую секунду наносит вам и всем врагам в радиусе %radius% урон от вашего максимального здоровья. По истечении %pre_explode_duration% секунд убивает вас, нанося врагам урон от вашего текущего здоровья. Конечный урон увеличивается от вашего интеллекта."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_bonus_int"	"+$int"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_burn_hp_to_damage"	"%УРОН ОТ ПРЕДЕТОНАЦИИ:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_explosive_damage_per_hp"	"%УРОН ОТ ДЕТОНАЦИИ:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_int_dmg_mlp"	"%УСИЛЕНИЕ УРОНА ЗА ЕД. ИНТ:"
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Lore"			"Кто знает, что у тебя под мантией..."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note0"			"При покупке имеет один заряд."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note1"			"Использование тратит заряды."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Note2"			"Для восстановления зарядов необходимо покупать новые мантии."
+
 
 		"DOTA_Tooltip_ability_item_solar_crest_1"                       "SOLAR CREST"
         "DOTA_Tooltip_ability_item_solar_crest_1_Description"			"<h1>Активное: Shine</h1>Если использовать на союзника или себя, увеличит его броню на %target_armor%, скорость атаки на %target_attack_speed%, скорость передвижения на %target_movement_speed%%% и дает барьер поглощающий %barrier_block% + %health_pct%%  от максимального здоровья цели. Если использовать на врага, уменьшит его броню на %target_armor%, скорость атаки на %target_attack_speed% и скорость передвижения на %target_movement_speed%%%.<br><br>Дальность применения: %abilitycastrange%<br><br>Длительность: %duration% сек."	
