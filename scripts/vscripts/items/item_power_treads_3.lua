@@ -1,5 +1,5 @@
 LinkLuaModifier('modifier_power_treads_3', 'items/item_power_treads_3', LUA_MODIFIER_MOTION_NONE)
-local kastil = 0
+
 item_power_treads_3 = class({
 	GetIntrinsicModifierName = function (self) return 'modifier_power_treads_3' end,
 	OnSpellStart = function (self)
@@ -8,27 +8,32 @@ item_power_treads_3 = class({
 			stat = 0
 		end
 		self:GetCaster():FindModifierByName("modifier_power_treads_3"):SetStackCount(stat + 1)
+		self:SetCurrentCharges(stat + 1)
 	end,
 	GetAbilityTextureName = function (self)
-		return "pt" .. self:GetCaster():FindModifierByName("modifier_power_treads_3"):GetStackCount()
+		return "pt" ..  self:GetCurrentCharges()
 	end,
 })
 
 
 modifier_power_treads_3 = class({
-	IsHidden = function (self) return false end,
+	IsHidden = function (self) return true end,
 	OnCreated = function (self) 
 		if self:GetParent():IsIllusion() then
 			self:SetStackCount(PlayerResource:GetSelectedHeroEntity( self:GetParent():GetPlayerOwnerID() ):FindModifierByName("modifier_power_treads_3"):GetStackCount())
 		else
 			if self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH  then
 				self:SetStackCount(1) 
+				self:GetAbility():SetCurrentCharges(1)
 			elseif self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
 				self:SetStackCount(3) 
+				self:GetAbility():SetCurrentCharges(3)
 			elseif self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT  then
 				self:SetStackCount(2) 
+				self:GetAbility():SetCurrentCharges(2)
 			else
 				self:SetStackCount(1) 
+				self:GetAbility():SetCurrentCharges(1)
 			end
 		end
 		self:StartIntervalThink(0.1)
