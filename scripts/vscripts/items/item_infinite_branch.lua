@@ -37,8 +37,8 @@ modifier_infinite_branch = class({
 		}
 		return funcs
 	end,
-	GetModifierBonusStats_Strength = function(self) return self:GetAbility():GetSpecialValueFor("bonus_all") + self:GetParent():FindItemInInventory("item_infinite_branch"):GetCurrentCharges() end,
-	GetModifierBonusStats_Agility = function(self) return self:GetAbility():GetSpecialValueFor("bonus_all") + self:GetParent():FindItemInInventory("item_infinite_branch"):GetCurrentCharges() end,
-	GetModifierBonusStats_Intellect = function(self) return self:GetAbility():GetSpecialValueFor("bonus_all") + self:GetParent():FindItemInInventory("item_infinite_branch"):GetCurrentCharges() end,
+	GetModifierBonusStats_Strength = function(self) return self:GetParent():FindItemInInventory("item_infinite_branch"):GetCurrentCharges() end,
+	GetModifierBonusStats_Agility = function(self) return self:GetParent():FindItemInInventory("item_infinite_branch"):GetCurrentCharges() end,
+	GetModifierBonusStats_Intellect = function(self) return self:GetParent():FindItemInInventory("item_infinite_branch"):GetCurrentCharges() end,
 })
 
