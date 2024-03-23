@@ -118,7 +118,7 @@ function CreepSpawner:SpawnCreeps()
 				Timers:CreateTimer(spawnDelay, function()
 					local time_min = GameRules:GetDOTATime(false,false) / 60 
 					local elite = false
-					for i=0,math.floor(time_min)/20 do
+					for i=0,math.floor(time_min)/25 do
 						if time_min > 0.10 then
 							if RandomInt(0, 100)<CHANCE_ELITE then
 								elite = true

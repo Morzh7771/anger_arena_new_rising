@@ -2162,7 +2162,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1200"
+        "ItemCost"						"900"
         "ItemQuality"					"component"
         "ItemAliases"					"lvl;book;tome;книга;уровень;героев"
         "ItemStackable"					"1"
@@ -2792,7 +2792,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {   
-            "min_cast_range"        "200"
+            "min_cast_range"        "500"
             "bonus_damage"			"88 200"
             "crit_chance"			"25 30"
             "crit_multiplier"		"225 350"
@@ -4617,7 +4617,7 @@
         "ItemResult"					"item_talisman_of_ambition_2"
         "ItemRequirements"
         {
-            "01"                        "item_talisman_of_ambition;item_wraith_band_custom;item_fury_shield;item_blade_of_alacrity"
+            "01"                        "item_talisman_of_ambition;item_wraith_band_custom;item_fury_shield"
         }
     }
 
@@ -5633,7 +5633,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_agility"							"20 40 100"
+			"bonus_agility"							"35 70 150"
 			"bonus_intellect"						"10 20 50"
             "bonus_damage"							"50 100 200"
 
@@ -5710,7 +5710,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_agility"							"20 40 100"
+			"bonus_agility"							"35 70 150"
 			"bonus_intellect"						"10 20 50"
             "bonus_damage"							"50 100 200"
 
@@ -5788,7 +5788,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_agility"							"20 40 100"
+			"bonus_agility"							"35 70 150"
 			"bonus_intellect"						"10 20 50"
             "bonus_damage"							"50 100 200"
 
@@ -6513,7 +6513,7 @@
         "BaseClass"						"item_lua"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
-        "AbilityTextureName"	        "dimensional_predictor"
+        "AbilityTextureName"	        "dimensional_predictor_1"
         "ScriptFile"					"items/dimensional_predictor/dimensional_predictor.lua"
         "ItemBaseLevel"					"1"
         "precache"

@@ -85,7 +85,7 @@ function modifier_item_khanda_custom:DealDamage(params)
     SendOverheadEventMessage(target, 4, target, damage, nil)
 
     self:GetAbility():UseResources(true, false, false, true)
-    ApplyDamage({attacker = self:GetCaster(), victim = target, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL,damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+    ApplyDamage({attacker = self:GetCaster(), victim = target, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
     target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_khanda_custom_debuff", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
 
     local particle = ParticleManager:CreateParticle("particles/items_fx/khanda_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.unit)

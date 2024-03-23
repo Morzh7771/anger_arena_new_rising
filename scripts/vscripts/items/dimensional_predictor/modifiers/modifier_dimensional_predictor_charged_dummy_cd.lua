@@ -10,5 +10,5 @@ function modifier_dimensional_predictor_charged_dummy_cd:RemoveOnDeath() 		retur
 function modifier_dimensional_predictor_charged_dummy_cd:GetAttributes() 		return (MODIFIER_ATTRIBUTE_PERMANENT); end
 
 function modifier_dimensional_predictor_charged_dummy_cd:GetTexture()
-	return "../items/dimensional_predictor_big"
+	return "../items/dimensional_predictor_big" .. "_" .. self:GetAbility():GetName():match("%d+")
 end

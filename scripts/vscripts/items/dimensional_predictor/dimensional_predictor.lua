@@ -26,8 +26,24 @@ end
 
 function item_dimensional_predictor:GetAbilityTextureName()
 	if self:GetCaster():HasModifier("modifier_dimensional_predictor_charged_dummy") then
-		return"dimensional_predictor_charge"
+		if self:GetName() == 'item_dimensional_predictor_1' then
+			return"dimensional_predictor_charge_1"
+		end
+		if self:GetName() == 'item_dimensional_predictor_2' then
+			return"dimensional_predictor_charge_2"
+		end
+		if self:GetName() == 'item_dimensional_predictor_3' then
+			return"dimensional_predictor_charge_3"
+		end
 	else
-		return "dimensional_predictor"
+		if self:GetName() == 'item_dimensional_predictor_1' then
+			return"dimensional_predictor_1"
+		end
+		if self:GetName() == 'item_dimensional_predictor_2' then
+			return"dimensional_predictor_2"
+		end
+		if self:GetName() == 'item_dimensional_predictor_3' then
+			return"dimensional_predictor_3"
+		end
 	end
 end
