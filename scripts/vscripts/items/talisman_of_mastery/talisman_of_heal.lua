@@ -51,9 +51,8 @@ end
 
 function mod:OnTakeDamage( params )
 	if not IsServer() then return end
-
 	local parent = self:GetParent()
-
+	
 	if params.attacker ~= parent then return end
 
 	local target = params.unit
@@ -95,6 +94,8 @@ end
 
 function item_talisman_of_heal:OnHeroLevelUp()
 	if not IsServer() then return end
+	local item = self:GetParent():FindItemInInventory("item_talisman_of_heal")
+	if not item or item:IsInBackpack() then return end 
 	local heal = self:GetSpecialValueFor("replenish_health")*self:GetCaster():GetMaxHealth()/100 
 	local mana = self:GetSpecialValueFor("replenish_mana")*self:GetCaster():GetMaxMana()/100 
 

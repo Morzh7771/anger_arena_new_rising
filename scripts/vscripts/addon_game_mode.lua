@@ -24,7 +24,6 @@ require('lib/bounty')
 require('lib/game_ender')
 require('lib/repick_menu')
 require('lib/special_bonus_base_aa/Special_bonus_base_aa')
---require('lib/animations')
 --require('lib/events_protector')
 
 function CEntityInstance:SetNetworkableEntityInfo(key, value)
