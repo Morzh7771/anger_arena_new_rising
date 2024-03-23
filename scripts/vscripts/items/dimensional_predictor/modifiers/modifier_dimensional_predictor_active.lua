@@ -3,7 +3,7 @@ modifier_dimensional_predictor_active = class({})
 --------------------------------------------------------------------------------
 
 function modifier_dimensional_predictor_active:GetTexture()
-	return "../items/dimensional_predictor_big"
+	return "../items/dimensional_predictor_big" .. "_" .. self:GetAbility():GetName():match("%d+")
 end
 
 --------------------------------------------------------------------------------
