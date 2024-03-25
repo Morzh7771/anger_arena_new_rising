@@ -23,7 +23,7 @@ modifier_crystal_maiden_brilliance_aura_aa_emitter = class({
 	GetAuraSearchFlags = 	function (self) return DOTA_UNIT_TARGET_FLAG_NONE end,
 	GetAuraSearchTeam = 	function (self) return DOTA_UNIT_TARGET_TEAM_FRIENDLY end,
 	GetAuraSearchType = 	function (self) return DOTA_UNIT_TARGET_HERO end,
-	GetModifierAura = 		function (self) return "modifier_crystal_maiden_brilliance_aura_aa" end,
+	GetModifierAura = 		function (self) return "modifier_crystal_maiden_brilliance_aura_aa" end,  
 	IsAura = 				function (self)
 		if self:GetCaster():PassivesDisabled() then
 			return false
