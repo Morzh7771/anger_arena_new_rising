@@ -608,12 +608,14 @@
 		"DOTA_Tooltip_Ability_crystal_maiden_freezing_field_damage_pct"		"%INTELLIGENCE DAMAGE"
 
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura"									"Arcane Aura"
-		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_Description"						"Gives additional mana regeneration and spell amplify to all friendly units on the map. Crystal Maiden herself receives %self_factor%x the bonus."
+		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_Description"						"Gives additional mana regeneration and spell amplify to all friendly units on the map. Crystal Maiden herself receives %self_factor%x the bonus.<br><br>ACTIVE - Creates a shield around the hero that replenishes itself from mana regeneration and absorbs all types of damage.<br>The maximum shield volume is equal to <b>ten times</b> mana regeneration."
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_Lore"								"Cold temperatures promote the essence of magic, causing Rylai's presence to allow spell usage in abundance."
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_aa_mana_regen"						"MANA REGEN:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_aa_mana_regen_share"				"%SHARED MANAREGEN:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_aa_spellamp_const"					"%SPELL AMP. CONST:"
 		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_aa_spellamp_mlp"					"%SPELL AMP. FROM MANAREGEN:"
+		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_aa_mana_regen_to_shield"			"MANA REGENERATION INTO SHIELD:"
+		"DOTA_Tooltip_ability_crystal_maiden_brilliance_aura_aa_shield_duration"				"SHIELD DURATION:"
 		"DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_aa"								"Arcane Aura"
 		"DOTA_Tooltip_modifier_crystal_maiden_brilliance_aura_aa_Description"					"Gives additional mana regeneration and spell amplify"
 
