@@ -46,6 +46,7 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_axe.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context )
 	--ItemPrecache:Precache(context)
 end
 local hero_table = require('lib/hero_table')
