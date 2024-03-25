@@ -2278,8 +2278,7 @@
 		"DOTA_Tooltip_ability_item_fury_shield_block_damage"	"BLOCKING PHYSICAL ATTACKS:"
 
 		"DOTA_Tooltip_ability_item_piercing_blade"	"Piercing Blade"
-		"DOTA_Tooltip_ability_item_piercing_blade_Description"	"<h1>Activation: Pure Power</h1> Over the next %active_duration% seconds, converts %active_pure_dmg%% of the damage of your next hit or abylity into pure \n\n
-		<h1>Passive: Pierce</h1>Reduces hero's outgoing damage by %pure_dmg%%, but any damage dealt by the hero also deals an additional %pure_dmg%% pure damage. Additionally, any damage dealt by the hero applies a stacking effect on the enemy, increasing the pure damage received from this item by %pure_dmg_stack%% for each effect.\n\n <h1>Passive: Minder</h1>For any damage dealt to heroes, the owner gains additional experience based on the damage dealt, equal to %damage_to_exp_melee%% for melee heroes and %damage_to_exp_ranged%% for ranged heroes, but not less than %min_exp_melee% for melee heroes and %min_exp_ranged% for ranged heroes."
+		"DOTA_Tooltip_ability_item_piercing_blade_Description"	"<h1>Passive: Pierce</h1>Reduces hero's outgoing damage by %pure_dmg%%, but any damage dealt by the hero also deals an additional %pure_dmg%% pure damage. Additionally, any damage dealt by the hero applies a stacking effect on the enemy, increasing the pure damage received from this item by %pure_dmg_stack%% for each effect.<br> Cooldown: %pure_dmg_cd% sec."
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_hp"	"+$health"
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_mp"	"+$mana"
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_all_stats"	"+$all"
@@ -2288,8 +2287,7 @@
 		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg_duratiom"	"DURATION OF DEBUFF:"
 
 		"DOTA_Tooltip_ability_item_piercing_blade2"	"Piercing Blade 2"
-		"DOTA_Tooltip_ability_item_piercing_blade2_Description"	"<h1>Activation: Pure Power</h1> Over the next %active_duration% seconds, converts %active_pure_dmg%% of the damage of your next hit or abylity into pure \n\n
-		<h1>Passive: Pierce</h1>Reduces hero's outgoing damage by %pure_dmg%%, but any damage dealt by the hero also deals an additional %pure_dmg%% pure damage. Additionally, any damage dealt by the hero applies a stacking effect on the enemy, increasing the pure damage received from this item by %pure_dmg_stack%% for each effect.\n\n <h1>Passive: Minder</h1>For any damage dealt to heroes, the owner gains additional experience based on the damage dealt, equal to %damage_to_exp_melee%% for melee heroes and %damage_to_exp_ranged%% for ranged heroes, but not less than %min_exp_melee% for melee heroes and %min_exp_ranged% for ranged heroes."
+		"DOTA_Tooltip_ability_item_piercing_blade2_Description"	"<h1>Passive: Pierce</h1>Reduces hero's outgoing damage by %pure_dmg%%, but any damage dealt by the hero also deals an additional %pure_dmg%% pure damage. Additionally, any damage dealt by the hero applies a stacking effect on the enemy, increasing the pure damage received from this item by %pure_dmg_stack%% for each effect.<br> Cooldown: %pure_dmg_cd% sec."
 		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_hp"	"+$health"
 		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_mp"	"+$mana"
 		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_all_stats"	"+$all"
@@ -2299,7 +2297,7 @@
 
 		"DOTA_Tooltip_ability_item_piercing_blade3"	"Piercing Blade 3"
 		"DOTA_Tooltip_ability_item_piercing_blade3_Description"	"<h1>Activation: Pure Power</h1> Over the next %active_duration% seconds, converts %active_pure_dmg%% of the damage of your next hit or abylity into pure \n\n
-		<h1>Passive: Pierce</h1>Reduces hero's outgoing damage by %pure_dmg%%, but any damage dealt by the hero also deals an additional %pure_dmg%% pure damage. Additionally, any damage dealt by the hero applies a stacking effect on the enemy, increasing the pure damage received from this item by %pure_dmg_stack%% for each effect.\n\n <h1>Passive: Minder</h1>For any damage dealt to heroes, the owner gains additional experience based on the damage dealt, equal to %damage_to_exp_melee%% for melee heroes and %damage_to_exp_ranged%% for ranged heroes, but not less than %min_exp_melee% for melee heroes and %min_exp_ranged% for ranged heroes."
+		<h1>Passive: Pierce</h1>Reduces hero's outgoing damage by %pure_dmg%%, but any damage dealt by the hero also deals an additional %pure_dmg%% pure damage. Additionally, any damage dealt by the hero applies a stacking effect on the enemy, increasing the pure damage received from this item by %pure_dmg_stack%% for each effect. <br> Cooldown: %pure_dmg_cd% sec."
 		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_hp"	"+$health"
 		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_mp"	"+$mana"
 		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_all_stats"	"+$all"
@@ -2614,7 +2612,7 @@
 		"DOTA_Tooltip_modifier_devastator_debuff_Description"  			"Magic resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
 
 		"DOTA_Tooltip_modifier_damage_to_exp_cd"						"Minder is cooldown"
-		"DOTA_Tooltip_modifier_piercing_blade_cd"						"Pierce перезаряжается"
+		"DOTA_Tooltip_modifier_piercing_blade_cd"						"Pierce is cooldown"
 
 		"DOTA_Tooltip_ability_void_spirit_astral_step_aa"						"Astral Step"
 		"DOTA_Tooltip_ability_void_spirit_astral_step_aa_Description"			"The hero moves to the target location through an astral rift, attacking all enemies along the path. This attack applies a Void Mark, slowing the victims for %pop_damage_delay% seconds, then dealing damage."

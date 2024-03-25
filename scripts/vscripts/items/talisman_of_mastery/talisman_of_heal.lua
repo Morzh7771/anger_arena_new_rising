@@ -113,6 +113,7 @@ modifier_talisman_of_heal_buff = class({
 	IsDebuff = function(self) return false end,
 	IsPurgable  = function(self) return true end,
 	IsHidden = function(self) return false end,
+	GetTexture  = function(self) return "item_talisman_of_heal" end,
 	DeclareFunctions = function(self) 
 		return {
 			MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,

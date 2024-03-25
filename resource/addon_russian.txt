@@ -2427,7 +2427,7 @@
 		"DOTA_Tooltip_ability_item_fury_shield_Lore"							"Небольшой и удобный щит, позволяющий без стеснения движений защищаться даже самому неопытному бойцу."
 
 		"DOTA_Tooltip_ability_item_piercing_blade"								"Piercing Blade"
-		"DOTA_Tooltip_ability_item_piercing_blade_Description"					"<h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
+		"DOTA_Tooltip_ability_item_piercing_blade_Description"					"<h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.<br> Перезарядка: %pure_dmg_cd% сек."
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_hp"					"+$health"
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_mp"					"+$mana"
 		"DOTA_Tooltip_ability_item_piercing_blade_bonus_all_stats"				"+$all"
@@ -2437,7 +2437,7 @@
 		"DOTA_Tooltip_ability_item_piercing_blade_Lore"			"Клинок, способность которого находить слабые места в защите аппонента на столько идеальна, что, иногда кажется, будто он сам эти места создаёт из неоткуда."
 
 		"DOTA_Tooltip_ability_item_piercing_blade2"								"Piercing Blade 2"
-		"DOTA_Tooltip_ability_item_piercing_blade2_Description"					"<h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
+		"DOTA_Tooltip_ability_item_piercing_blade2_Description"					"<h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.<br> Перезарядка: %pure_dmg_cd% сек."
 		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_hp"					"+$health"
 		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_mp"					"+$mana"
 		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_all_stats"				"+$all"
@@ -2447,7 +2447,7 @@
 		"DOTA_Tooltip_ability_item_piercing_blade2_Lore"			"Клинок, способность которого находить слабые места в защите аппонента на столько идеальна, что, иногда кажется, будто он сам эти места создаёт из неоткуда."
 
 		"DOTA_Tooltip_ability_item_piercing_blade3"								"Piercing Blade 3"
-		"DOTA_Tooltip_ability_item_piercing_blade3_Description"					"<h1>Активаня: Pure power</h1> В Следующие %active_duration% секунд преобразует %active_pure_dmg%%  урона вашей следующей атаки или способности в чистый  \n\n <h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.\n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя."
+		"DOTA_Tooltip_ability_item_piercing_blade3_Description"					"<h1>Активаня: Pure power</h1> В Следующие %active_duration% секунд преобразует %active_pure_dmg%%  урона вашей следующей атаки или способности в чистый \n\n <h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект <br> Перезарядка: %pure_dmg_cd% сек."
 		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_hp"					"+$health"
 		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_mp"					"+$mana"
 		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_all_stats"				"+$all"
@@ -3241,6 +3241,21 @@
         "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_mp_regen"            "+$mana_regen"
         "DOTA_Tooltip_modifier_talisman_of_heal_buff"                        "Bliss"
         "DOTA_Tooltip_modifier_talisman_of_heal_buff_Description"            "Востановления здоровья и маны"
+
+		"DOTA_Tooltip_ability_item_talisman_of_heal_2"                            "Talisman of Heal 2"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_Description"                "<h1>Активная: Extencive Heal</h1> Восстанавливает %heal_const% + %heal_per_main_stat% * на ваш основной аттрибут здоровья за %duration_active% сек. \n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя. Перезарядка: %minder_cd% сек. \n\n <h1>Пассивная: Bliss</h1>При получения уровня востанавливает %replenish_health%% здоровья и %replenish_mana%%  маны. Дополнительно, дает увеличение востановления здоровья и маны %buff_health%%.<br> Длительность %duration% секунд.  <br>Восстановление прекращается, если получить урон от вражеского героя."
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_attack"            "+$damage"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_all"                "+$all"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_health"            "+$health"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_hp_regen"            "+$hp_regen"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_mp_regen"            "+$mana_regen"
+
+        "DOTA_Tooltip_modifier_talisman_of_heal_2_buff"                        "Bliss"
+        "DOTA_Tooltip_modifier_talisman_of_heal_2_buff_Description"            "Востановления здоровья и маны"
+
+
+		"DOTA_Tooltip_modifier_talisman_of_heal_2_active"                        "Extencive Heal"
+        "DOTA_Tooltip_modifier_talisman_of_heal_2_active_Description"            "Осталось восстановить здоровья"
 	
 	}  
 }
