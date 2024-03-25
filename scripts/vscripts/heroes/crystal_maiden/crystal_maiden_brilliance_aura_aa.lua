@@ -27,6 +27,7 @@ end
 function modifier_crystal_maiden_brilliance_aura_aa_emitter:IsHidden() return true end
 function modifier_crystal_maiden_brilliance_aura_aa_emitter:IsDebuff() return false end
 function modifier_crystal_maiden_brilliance_aura_aa_emitter:IsPurgable() return false end
+function modifier_crystal_maiden_brilliance_aura_aa_emitter:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 
 modifier_crystal_maiden_brilliance_aura_aa = class({})
 
@@ -34,21 +35,21 @@ function modifier_crystal_maiden_brilliance_aura_aa:OnCreated()
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 	self.parent = self:GetParent()
+	self.manaregen = self.caster:GetManaRegen()
 	self.mana_regen_share = self.ability:GetSpecialValueFor("mana_regen_share") / 100
-	self.bonus_self = self.ability:GetSpecialValueFor("self_bonus")
 	self.spellamp_const = self.ability:GetSpecialValueFor("spellamp_const")
 	self.spellamp_mlp = self.ability:GetSpecialValueFor("spellamp_mlp") / 100
 
 	if IsServer() then
 		self:StartIntervalThink(0.2)
-	end
+	end 
 end
 function modifier_crystal_maiden_brilliance_aura_aa:OnIntervalThink()
 	if IsServer() then
 		if not self:GetAbility() then return end
 
 		if self.parent then
-			self:SetStackCount(self.spellamp_const + (self.caster:GetManaRegen() * self.spellamp_mlp))
+			self:SetStackCount(self.caster:GetManaRegen())
 		end
 	end
 end
@@ -67,21 +68,21 @@ function modifier_crystal_maiden_brilliance_aura_aa:DeclareFunctions()
 end
 
 function modifier_crystal_maiden_brilliance_aura_aa:GetModifierConstantManaRegen()
-	if not self:GetAbility() then return end
+	if not self.ability then return end
 
 	if self.parent == self.caster then
-		return self:GetAbility():GetSpecialValueFor("mana_regen") * self.bonus_self
+		return self.ability:GetSpecialValueFor("mana_regen") * self.ability:GetSpecialValueFor("self_bonus")
 	else
-		return self:GetAbility():GetSpecialValueFor("mana_regen") + (self.caster:GetManaRegen() * self.mana_regen_share)
+		return self.ability:GetSpecialValueFor("mana_regen") + self:GetStackCount() * self.mana_regen_share
 	end
 end
 
 function modifier_crystal_maiden_brilliance_aura_aa:GetModifierSpellAmplify_Percentage()
 
 	if self.parent == self.caster then
-		return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("self_bonus")
+		return (self:GetStackCount() * self.spellamp_mlp + self.spellamp_const) * self.ability:GetSpecialValueFor("self_bonus")
 	else
-		return self:GetStackCount()
+		return self:GetStackCount() * self.spellamp_mlp + self.spellamp_const
 	end 
 end
 
