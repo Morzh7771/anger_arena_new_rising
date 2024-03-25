@@ -2567,28 +2567,12 @@
         "AbilityManaCost"				"25"
         
         //special
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_stats"			"6"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "active_bonus_aspeed"	"35"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "block_damage"			"25"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "shield_duration"		"5"
-            }
+            "bonus_stats"			"4"
+            "active_bonus_aspeed"	"20"
+            "block_damage"			"25"
+            "shield_duration"		"5"
         }
     }
     "item_talisman_of_mastery"
@@ -2614,43 +2598,15 @@
         
         // Special	
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_attack"			"2"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_str"				"2"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_FlOAT"
-                "bonus_hp_regen"		"0.5"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "damage_to_exp_ranged"	"20"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_FlOAT"
-                "damage_to_exp_melee" 	"25"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "min_exp_ranged"		"12"
-            }
-            "07"
-            {
-                "var_type"				"FIELD_FlOAT"
-                "min_exp_melee"			"15"
-            }
+            "bonus_attack"			"2"
+            "bonus_str"				"2"
+            "bonus_hp_regen"		"0.5"
+            "damage_to_exp_ranged"	"20"
+            "damage_to_exp_melee" 	"25"
+            "min_exp_ranged"		"12"
+            "min_exp_melee"			"15"
         }
     }
     
@@ -6143,6 +6099,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"150"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemCost"						"4450"
 		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"epic"
@@ -6798,7 +6755,7 @@
             "buff_health"			"3 4.5"
             "buff_mana"			    "3 4.5"
 
-            "duration"			    "7"
+            "duration"			    "10"
 
             "duration_active"	        "5"
             "heal_per_main_stat"        "5"
@@ -7022,8 +6979,8 @@
                 "spell_lifesteal_amp"       "24 30 45"
 
                 "burn_dps_units"            "60 80 120"
-                "max_hp_impact_damage"      "5 12 20"
-                "max_hp_burn_damage"        "1 2 5"
+                "max_hp_impact_damage"      "5 10 15"
+                "max_hp_burn_damage"        "1 1.5 3"
                 "burn_slow"                 "20 30 40"
                 "burn_duration"             "6 6 6"
                 "stun_duration"             "0.5 0.7 1"
@@ -7087,8 +7044,8 @@
                 "spell_lifesteal_amp"       "24 30 45"
 
                 "burn_dps_units"            "60 80 120"
-                "max_hp_impact_damage"      "5 12 20"
-                "max_hp_burn_damage"        "1 2 5"
+                "max_hp_impact_damage"      "5 10 15"
+                "max_hp_burn_damage"        "1 1.5 3"
                 "burn_slow"                 "20 30 40"
                 "burn_duration"             "6 6 6"
                 "stun_duration"             "0.5 0.7 1"
@@ -7148,8 +7105,8 @@
                 "bonus_agility"             "6 20 80"
                 "bonus_intellect"           "24 60 150"
                 "spell_amp"                 "10 15 20"
-                "mana_regen_multiplier"     "75 100 125"
-                "spell_lifesteal_amp"       "24 30 45"
+                "max_hp_impact_damage"      "5 10 15"
+                "max_hp_burn_damage"        "1 1.5 3"
 
                 "burn_dps_units"            "60 80 120"
                 "max_hp_impact_damage"      "5 12 20"
