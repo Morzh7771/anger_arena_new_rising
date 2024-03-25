@@ -1477,6 +1477,19 @@
 		"ItemRequirements"
 		{
 			"01"						"item_yasha_and_kaya;item_kaya_and_sange;item_sange_and_yasha"
+
+            "02"						"item_yasha_and_kaya;item_yasha_and_kaya;item_yasha_and_kaya"
+            "03"						"item_sange_and_yasha;item_sange_and_yasha;item_sange_and_yasha"
+            "04"						"item_kaya_and_sange;item_kaya_and_sange;item_kaya_and_sange"
+
+            "05"						"item_yasha_and_kaya;item_yasha_and_kaya;item_sange_and_yasha"
+            "06"						"item_yasha_and_kaya;item_yasha_and_kaya;item_kaya_and_sange"
+
+            "07"						"item_sange_and_yasha;item_sange_and_yasha;item_yasha_and_kaya"
+            "08"						"item_sange_and_yasha;item_sange_and_yasha;item_kaya_and_sange"
+
+            "09"						"item_kaya_and_sange;item_kaya_and_sange;item_sange_and_yasha"
+            "10"						"item_kaya_and_sange;item_kaya_and_sange;item_yasha_and_kaya"
 		}
 	}
     "item_trident_aa"
@@ -3000,7 +3013,7 @@
         "ItemResult"					"item_piercing_blade"
         "ItemRequirements"
         {
-            "01"						"item_ultimate_orb;item_point_booster;item_talisman_of_mastery"
+            "01"						"item_ultimate_orb;item_point_booster"
         }
     }
     "item_piercing_blade"
@@ -6787,7 +6800,7 @@
 
             "duration"			    "7"
 
-            "duration_active"	        "4"
+            "duration_active"	        "5"
             "heal_per_main_stat"        "5"
             "heal_const"                "250"
         }
@@ -6829,21 +6842,21 @@
             "int_dmg_mlp"               "0.25"
         }
     }
-    "item_recipe_infinite_branch"
-    {
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-
-        "ItemCost"                      "100000"
-        "ItemShopTags"                  ""
-
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_infinite_branch"
-        "ItemRequirements"
-        {
-            "01"                        "item_branches"
-        }
-    }
+    //"item_recipe_infinite_branch"
+    //{
+    //    "Model"                         "models/props_gameplay/recipe.vmdl"
+    //    "BaseClass"                     "item_recipe_arcane_boots"
+//
+    //    "ItemCost"                      "100000"
+    //    "ItemShopTags"                  ""
+//
+    //    "ItemRecipe"                    "1"
+    //    "ItemResult"                    "item_infinite_branch"
+    //    "ItemRequirements"
+    //    {
+    //        "01"                        "item_branches"
+    //    }
+    //}
     //"item_infinite_branch"
     //{
     //    "BaseClass"                     "item_lua"
@@ -6901,7 +6914,7 @@
 			"bonus_movement_speed_ranged"   "50 60 70"
 			"bonus_movement_speed_melee"    "60 70 80"
 			"bonus_stat"					"10 25 40"
-			"bonus_attack_speed"			"25 50 100"
+			"bonus_attack_speed"			"20 40 80"
 			"bonus_damage"					"0"	
 		}
 	}
