@@ -60,7 +60,7 @@ function mod:OnCreated()
     self.pure_dmg_stack = self:GetAbility():GetSpecialValueFor("pure_dmg_stack")
     self.pure_dmg_duration = self:GetAbility():GetSpecialValueFor("pure_dmg_duration")
     self.pure_dmg_cd = self:GetAbility():GetSpecialValueFor("pure_dmg_cd")
-    self:CommonInitDamageToExp(  self:GetAbility(),  self:GetAbility():GetSpecialValueFor("pure_dmg_cd") )
+    --self:CommonInitDamageToExp(  self:GetAbility(),  self:GetAbility():GetSpecialValueFor("pure_dmg_cd") )
 end
 function mod:GetModifierTotalDamageOutgoing_Percentage()
     return self.pure_dmg
@@ -90,7 +90,7 @@ function mod:OnTakeDamage(params)
             stack = modifier:GetStackCount()
             modifier:ForceRefresh()
         end
-        self:ProcessDamageToExp( self:GetParent(), self:GetAbility(), params.damage )
+        --self:ProcessDamageToExp( self:GetParent(), self:GetAbility(), params.damage )
         self:GetParent():AddNewModifier(self:GetParent(),self:GetAbility(),'modifier_piercing_blade_cd',{duration = self.pure_dmg_cd})
     else
         if modifier == nil then
@@ -101,7 +101,7 @@ function mod:OnTakeDamage(params)
     end
     
     local damage = params.original_damage/100*(self.pure_dmg + self.pure_dmg_stack*stack)
-    print('damage')
+   -- print('damage')
     ApplyDamage({attacker = self:GetCaster(), victim = params.unit, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,})
 end
 

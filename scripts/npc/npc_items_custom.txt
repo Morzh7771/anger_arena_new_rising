@@ -3010,7 +3010,6 @@
 		"AbilityTextureName"			"blaze_rod"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "1"
         "AbilityValues"
 		{
@@ -3058,7 +3057,6 @@
 		"AbilityTextureName"			"blaze_rod2"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCooldown"				"20"
         "ItemBaseLevel"                 "2"
         "AbilityValues"
 		{
@@ -6708,20 +6706,90 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_attack"			"5"
-            "bonus_all"				"4"
-            "bonus_hp_regen"		"1.5"
-            "bonus_mp_regen"		"1.5"
-            "bonus_health"		    "150"
-            "damage_to_exp_ranged"	"25"
-            "damage_to_exp_melee" 	"30"
-            "min_exp_ranged"		"15"
-            "min_exp_melee"			"18"
-            "replenish_health"		"20"
-            "replenish_mana"		"20"
-            "buff_health"			"3.5"
-            "buff_mana"			    "3.5"
+            "bonus_attack"			"5 15"
+            "bonus_all"				"4 9"
+            "bonus_hp_regen"		"1.5 3"
+            "bonus_mp_regen"		"1.5 3"
+            "bonus_health"		    "150 250"
+
+            "damage_to_exp_ranged"	"25 40"
+            "damage_to_exp_melee" 	"30 45"
+            "min_exp_ranged"		"15 18"
+            "min_exp_melee"			"18 25"
+            "minder_cd"			    "1"
+
+            "replenish_health"		"15 25"
+            "replenish_mana"		"15 25"
+            "buff_health"			"3 4.5"
+            "buff_mana"			    "3 4.5"
+
             "duration"			    "7"
+
+        }
+    }
+     "item_recipe_talisman_of_heal_2"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"                      "200"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_talisman_of_heal_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_talisman_of_heal;item_bracer_custom"
+        }
+    }
+    "item_talisman_of_heal_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"							"item_lua"
+        "AbilityTextureName" 				"talisman_of_heal_2"
+        "AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES"
+        "ScriptFile"						"items/talisman_of_mastery/talisman_of_heal_2"
+        
+        "ItemQuality"						"common"
+        "ItemDroppable" 					"1"
+        "ItemCastOnPickup"					"0"
+        "ItemKillable"						"1"
+        "ItemPurchasable"					"1"
+        "ItemSellable"						"1"
+        "ItemCost"							"1100"
+        "ItemStackable"						"0"
+        "AbilityCooldown"					"16"
+        "ShouldBeInitiallySuggested"		"1"
+        "ItemBaseLevel"                     "2"
+        
+        // Special	
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_attack"			"5 15"
+            "bonus_all"				"4 9"
+            "bonus_hp_regen"		"1.5 3"
+            "bonus_mp_regen"		"1.5 3"
+            "bonus_health"		    "150 250"
+
+            "damage_to_exp_ranged"	"25 40"
+            "damage_to_exp_melee" 	"30 45"
+            "min_exp_ranged"		"15 18"
+            "min_exp_melee"			"18 25"
+            "minder_cd"			    "1"
+
+            "replenish_health"		"15 25"
+            "replenish_mana"		"15 25"
+            "buff_health"			"3 4.5"
+            "buff_mana"			    "3 4.5"
+
+            "duration"			    "7"
+
+            "duration_active"	        "4"
+            "heal_per_main_stat"        "5"
+            "heal_const"                "250"
         }
     }
     "item_explosive_mantle_of_intelligence"
@@ -6776,38 +6844,38 @@
             "01"                        "item_branches"
         }
     }
-    "item_infinite_branch"
-    {
-        "BaseClass"                     "item_lua"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES"
-        "AbilityTextureName"            "infinite_branch"
-        "ScriptFile"                    "items/item_infinite_branch"
-        "AbilityCooldown"               "5.0"
-        "AbilityManaCost"               "250"
-        // Stats
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "1"
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemKillable"                  "1"
-        "ItemSellable"                  "1"
-        "ItemDroppable"                 "1"
-        "ItemPurchasable"               "1"
-        "ItemStackable"                 "1"
-        "ItemInitialCharges"            "1"
-        "ItemDisplayCharges"            "1"
-        "ItemRequiresCharges"           "1"
-        "IsTempestDoubleClonable"       "0"
-        "ShouldBeInitiallySuggested"    "1"
-
-        "AbilityValues"
-        {
-            "step"                      "1"
-            "time"                      "300"
-        }
-    }
+    //"item_infinite_branch"
+    //{
+    //    "BaseClass"                     "item_lua"
+    //    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    //    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    //    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES"
+    //    "AbilityTextureName"            "infinite_branch"
+    //    "ScriptFile"                    "items/item_infinite_branch"
+    //    "AbilityCooldown"               "5.0"
+    //    "AbilityManaCost"               "250"
+    //    // Stats
+    //    //-------------------------------------------------------------------------------------------------------------
+    //    "ItemCost"                      "1"
+    //    // Item Info
+    //    //-------------------------------------------------------------------------------------------------------------
+    //    "ItemKillable"                  "1"
+    //    "ItemSellable"                  "1"
+    //    "ItemDroppable"                 "1"
+    //    "ItemPurchasable"               "1"
+    //    "ItemStackable"                 "1"
+    //    "ItemInitialCharges"            "1"
+    //    "ItemDisplayCharges"            "1"
+    //    "ItemRequiresCharges"           "1"
+    //    "IsTempestDoubleClonable"       "0"
+    //    "ShouldBeInitiallySuggested"    "1"
+//
+    //    "AbilityValues"
+    //    {
+    //        "step"                      "1"
+    //        "time"                      "300"
+    //    }
+    //}
     "item_power_treads_3"
 	{
 		// General
