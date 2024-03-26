@@ -977,6 +977,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
         "AbilityCastRange"              "99999"
         "AbilityCooldown"               "6"
+        "AbilitySharedCooldown"         "phase"
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
         "ItemCost"                      "1125"
@@ -992,7 +993,7 @@
                 "bonus_health"          "200"
                 "bonus_mana_regen"      "2.2"
                 "bonus_damage"          "14"  
-                "range"                 "320"   
+                "range"                 "300"   
                 "duration"              "0.18" 
                 "damage_cd"             "1.5"                
         }
@@ -2600,9 +2601,8 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_attack"			"2"
             "bonus_str"				"2"
-            "bonus_hp_regen"		"0.5"
+            "bonus_hp_regen"		"1"
             "damage_to_exp_ranged"	"20"
             "damage_to_exp_melee" 	"25"
             "min_exp_ranged"		"12"
@@ -4557,16 +4557,16 @@
 
         "AbilityValues"
         {
-            "bonus_str"                 "2 14"
-            "bonus_agi"			        "10 35"
-            "bonus_int"                 "2 14"
+            "bonus_str"                 "2 8"
+            "bonus_agi"			        "9 18"
+            "bonus_int"                 "2 8"
             "bonus_armor"			    "4 6"
-            "attack_speed_pasive"		"10 20"
-            "bonus_movespeed"		    "25 35"
+            "attack_speed_pasive"		"5 10"
+            "bonus_movespeed"		    "20 25"
 
-            "duration"				    "3 3"
+            "duration"				    "3 4"
             "evasion"				    "30 50"
-            "attack_speed_active"		"30 100"
+            "attack_speed_active"		"30 80"
         }
     }
     "item_recipe_talisman_of_ambition_2"
@@ -4624,17 +4624,16 @@
 
         "AbilityValues"
         {
-            "bonus_str"                 "2 14"
-            "bonus_agi"			        "10 35"
-            "bonus_int"                 "2 14"
-            "bonus_armor"			    "4 6"
-            "attack_speed_pasive"		"10 20"
-            "bonus_movespeed"		    "25 35"
+            "bonus_str"                 "2 8"
+            "bonus_agi"                 "9 18"
+            "bonus_int"                 "2 8"
+            "bonus_armor"               "4 6"
+            "attack_speed_pasive"       "5 10"
+            "bonus_movespeed"           "20 25"
 
-            "duration"				    "3 3"
-            "evasion"				    "30 50"
-            "attack_speed_active"		"30 100"
-            "block_damage"              "60"
+            "duration"                  "3 4"
+            "evasion"                   "30 50"
+            "attack_speed_active"       "30 80"
         }
     }
 	"item_recipe_desolator_aa_1"
@@ -6676,11 +6675,10 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_attack"			"5 15"
-            "bonus_all"				"4 9"
-            "bonus_hp_regen"		"1.5 3"
-            "bonus_mp_regen"		"1.5 3"
-            "bonus_health"		    "150 250"
+            "bonus_all"				"3 6"
+            "bonus_hp_regen"		"1 1.75"
+            "bonus_mp_regen"		"0.7 1"
+            "bonus_health"		    "125 200"
 
             "damage_to_exp_ranged"	"25 40"
             "damage_to_exp_melee" 	"30 45"
@@ -6688,13 +6686,12 @@
             "min_exp_melee"			"18 25"
             "minder_cd"			    "1"
 
-            "replenish_health"		"15 25"
-            "replenish_mana"		"15 25"
+            "replenish_health"		"10 15"
+            "replenish_mana"		"10 15"
             "buff_health"			"3 4.5"
             "buff_mana"			    "3 4.5"
 
-            "duration"			    "7"
-
+            "duration"			    "10"
         }
     }
      "item_recipe_talisman_of_heal_2"
@@ -6738,24 +6735,23 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_attack"			"5 15"
-            "bonus_all"				"4 9"
-            "bonus_hp_regen"		"1.5 3"
-            "bonus_mp_regen"		"1.5 3"
-            "bonus_health"		    "150 250"
+            "bonus_all"             "3 6"
+            "bonus_hp_regen"        "1 1.75"
+            "bonus_mp_regen"        "0.7 1"
+            "bonus_health"          "125 200"
 
-            "damage_to_exp_ranged"	"25 40"
-            "damage_to_exp_melee" 	"30 45"
-            "min_exp_ranged"		"15 18"
-            "min_exp_melee"			"18 25"
-            "minder_cd"			    "1"
+            "damage_to_exp_ranged"  "25 40"
+            "damage_to_exp_melee"   "30 45"
+            "min_exp_ranged"        "15 18"
+            "min_exp_melee"         "18 25"
+            "minder_cd"             "1"
 
-            "replenish_health"		"15 25"
-            "replenish_mana"		"15 25"
-            "buff_health"			"3 4.5"
-            "buff_mana"			    "3 4.5"
+            "replenish_health"      "10 15"
+            "replenish_mana"        "10 15"
+            "buff_health"           "3 4.5"
+            "buff_mana"             "3 4.5"
 
-            "duration"			    "10"
+            "duration"              "10"
 
             "duration_active"	        "5"
             "heal_per_main_stat"        "5"
@@ -6775,7 +6771,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"               "45.0"
         "AbilityCastPoint"              "0.5"
-        "ItemCost"                      "700"
+        "ItemCost"                      "400"
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
         "ItemKillable"                  "1"
@@ -6875,7 +6871,7 @@
 			"bonus_damage"					"0"	
 		}
 	}
-    "item_recipe_meteor_hammer"
+    "item_recipe_meteor_hammer_aa"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
@@ -6890,7 +6886,7 @@
         // Recipe
         //-------------------------------------------------------------------------------------------------------------
         "ItemRecipe"                    "1"
-        "ItemResult"                    "item_meteor_hammer"
+        "ItemResult"                    "item_meteor_hammer_aa"
         "ItemRequirements"
         {
             "01"                        "item_crown;item_kaya"
@@ -6911,7 +6907,7 @@
         "ItemResult"                    "item_meteor_hammer_aa_2"
         "ItemRequirements"
         {
-            "01"                        "item_meteor_hammer;item_meteor_hammer"
+            "01"                        "item_meteor_hammer_aa;item_meteor_hammer_aa"
         }
     }
     "item_recipe_meteor_hammer_aa_3"
@@ -6932,7 +6928,7 @@
             "01"                        "item_meteor_hammer_aa_2;item_meteor_hammer_aa_2;item_boss_soul"
         }
     }
-    "item_meteor_hammer"
+    "item_meteor_hammer_aa"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
@@ -6978,9 +6974,10 @@
                 "mana_regen_multiplier"     "75 100 125"
                 "spell_lifesteal_amp"       "24 30 45"
 
+                "damage_to_the_boss"        "35"
                 "burn_dps_units"            "60 80 120"
-                "max_hp_impact_damage"      "5 10 15"
-                "max_hp_burn_damage"        "1 1.5 3"
+                "max_hp_impact_damage"      "3 6 12"
+                "max_hp_burn_damage"        "1 1.5 3.5"
                 "burn_slow"                 "20 30 40"
                 "burn_duration"             "6 6 6"
                 "stun_duration"             "0.5 0.7 1"
@@ -7044,8 +7041,8 @@
                 "spell_lifesteal_amp"       "24 30 45"
 
                 "burn_dps_units"            "60 80 120"
-                "max_hp_impact_damage"      "5 10 15"
-                "max_hp_burn_damage"        "1 1.5 3"
+                "max_hp_impact_damage"      "3 6 12"
+                "max_hp_burn_damage"        "1 1.5 3.5"
                 "burn_slow"                 "20 30 40"
                 "burn_duration"             "6 6 6"
                 "stun_duration"             "0.5 0.7 1"
@@ -7109,8 +7106,8 @@
                 "max_hp_burn_damage"        "1 1.5 3"
 
                 "burn_dps_units"            "60 80 120"
-                "max_hp_impact_damage"      "5 12 20"
-                "max_hp_burn_damage"        "1 2 5"
+                "max_hp_impact_damage"      "3 6 12"
+                "max_hp_burn_damage"        "1 1.5 3.5"
                 "burn_slow"                 "20 30 40"
                 "burn_duration"             "6 6 6"
                 "stun_duration"             "0.5 0.7 1"
@@ -7125,6 +7122,124 @@
                 "impact_damage_buildings"   "100 200 300"
                 "impact_damage_units"       "150 300 500"
                 "enemy_particles_visible"   "0"
+        }
+    }
+    "item_recipe_phase_boots_aa"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_phase_boots_aa"
+        "ItemRequirements"
+        {
+            "01"                        "item_phase_boots;item_falcon_blade_custom"
+        }
+    }
+    "item_recipe_phase_boots_aa_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_phase_boots_aa_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_phase_boots_aa;item_phase_boots_aa"
+        }
+    }
+    "item_phase_boots_aa"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+         "BaseClass"                      "item_lua"
+        "ScriptFile"                    "items/item_phase_boots_aa"
+        "AbilityTextureName"            "phase_boots_2"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityCastRange"              "99999"
+        "AbilityCooldown"               "6"
+        "ItemBaseLevel"                 "2"
+        "AbilitySharedCooldown"         "phase"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1125"
+        "ItemShopTags"                  "hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "fb;falcon blade"
+        "ShouldBeInitiallySuggested"    "1"
+
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_movement_speed"          "60 70 80"
+            "bonus_damage_melee"            "20 40 120"
+            "bonus_damage_range"            "15 30 100"
+            "phase_movement_speed"          "20 30 40"
+            "phase_movement_speed_range"    "10 20 30"
+            "phase_duration"                "3.0 4.0 5.0"
+            "bonus_armor"                   "5 10 30"
+
+            "bonus_health"                  "0 200 325"
+            "bonus_mana_regen"              "0 2.5 3.75"
+            "range"                         "0 340 380"   
+            "duration"                      "0.18" 
+        }
+    } 
+    "item_phase_boots_aa_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+         "BaseClass"                      "item_lua"
+        "ScriptFile"                    "items/item_phase_boots_aa"
+        "AbilityTextureName"            "phase_boots_3"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityCastRange"              "99999"
+        "AbilityCooldown"               "6"
+        "ItemBaseLevel"                 "3"
+        "AbilitySharedCooldown"         "phase"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1125"
+        "ItemShopTags"                  "hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "fb;falcon blade"
+        "ShouldBeInitiallySuggested"    "1"
+
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_movement_speed"          "60 70 80"
+            "bonus_damage_melee"            "20 40 120"
+            "bonus_damage_range"            "15 30 100"
+            "phase_movement_speed"          "20 30 40"
+            "phase_movement_speed_range"    "10 20 30"
+            "phase_duration"                "3.0 4.0 5.0"
+            "bonus_armor"                   "5 10 30"
+
+            "bonus_health"                  "0 200 325"
+            "bonus_mana_regen"              "0 2.5 3.75"
+            "range"                         "0 340 380"   
+            "duration"                      "0.18" 
         }
     }
 }

@@ -1,6 +1,8 @@
 LinkLuaModifier("modifier_item_phase_boots_aa", "items/item_phase_boots_aa", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_phase_boots_aa_active", "items/item_phase_boots_aa", LUA_MODIFIER_MOTION_HORIZONTAL)
 
+item_phase_boots_aa_2 = item_phase_boots_aa
+
 item_phase_boots_aa = class({
     GetIntrinsicModifierName = function (self) return "modifier_item_phase_boots_aa"end,
     GetCastRange = function (self) if IsClient() then return self:GetSpecialValueFor("range") end return 99999 end,
@@ -21,9 +23,10 @@ item_phase_boots_aa = class({
 
         self:GetCaster():EmitSound("Item.Falcon_blade")
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_aa_active", {x = point.x, y = point.y, z = point.z, duration = self:GetSpecialValueFor("duration")})
-
+        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_active", {duration = self:GetSpecialValueFor("phase_duration")})
     end,
 })
+item_phase_boots_aa_2 = item_phase_boots_aa
 
 modifier_item_phase_boots_aa_active = class({
     IsDebuff = function (self) return false end,
@@ -92,13 +95,22 @@ modifier_item_phase_boots_aa = class({
     IsPurgable = function (self) return false end,
     DeclareFunctions = function (self) 
         return {
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE,
         MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_EVENT_ON_TAKEDAMAGE
     }
     end,
     GetModifierHealthBonus = function (self)  if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_health") end end,
     GetModifierConstantManaRegen = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end end,
-    GetModifierPreAttack_BonusDamage = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") end end,
+    GetModifierPreAttack_BonusDamage = function (self) if self:GetAbility() and self:GetCaster():IsRangedAttacker() then
+            return self:GetAbility():GetSpecialValueFor("bonus_damage_range")
+        else 
+            return self:GetAbility():GetSpecialValueFor("bonus_damage_melee")
+        end 
+    end,
+    GetModifierMoveSpeedBonus_Special_Boots = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_movement_speed") end end,
+
+    GetModifierPhysicalArmorBonus = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_armor") end end,
 })

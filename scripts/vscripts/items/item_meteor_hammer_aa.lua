@@ -7,6 +7,13 @@ item_meteor_hammer = class({})
 item_meteor_hammer_aa_2 = item_meteor_hammer
 item_meteor_hammer_aa_3 = item_meteor_hammer
 
+BossSpawner = BossSpawner or class({})
+function BossSpawner:IsBoss(unit)
+  if not unit then return nil end
+  
+  return unit.IsAngelArenaBoss
+end
+
 function item_meteor_hammer:GetAOERadius()
   return self:GetSpecialValueFor("impact_radius")
 end
@@ -167,7 +174,8 @@ function modifier_item_meteor_hammer_oaa_thinker:OnCreated()
     -- item info from kv
     self.impact_radius = ability:GetSpecialValueFor("impact_radius")
     self.impact_damage = ability:GetSpecialValueFor("impact_damage_units")
-    self.impact_damage_bosses = ability:GetSpecialValueFor("impact_damage_units")
+    self.damage_to_the_boss = ability:GetSpecialValueFor("damage_to_the_boss") * 0.01
+    self.impact_damage_bosses = self.impact_damage * self.damage_to_the_boss
 
     self.land_time = ability:GetSpecialValueFor("land_time")
     self.burn_duration = ability:GetSpecialValueFor("burn_duration")
@@ -225,8 +233,8 @@ function modifier_item_meteor_hammer_oaa_thinker:OnIntervalThink()
       enemy:AddNewModifier(caster, ability, "modifier_item_meteor_hammer_oaa_stun", {duration = stun_duration})
 
       -- Is the enemy a boss?
-      if enemy:IsBoss() then
-        damage_table.damage = self.impact_damage_bosses + (enemy:GetMaxHealth() * ability:GetSpecialValueFor("max_hp_impact_damage") * 0.01)
+      if BossSpawner:IsBoss(enemy) then
+        damage_table.damage = self.impact_damage * 0.35 + (0.35 * enemy:GetMaxHealth() * ability:GetSpecialValueFor("max_hp_impact_damage") * 0.01)
       else
         damage_table.damage = self.impact_damage + (enemy:GetMaxHealth() * ability:GetSpecialValueFor("max_hp_impact_damage") * 0.01)
       end
@@ -302,8 +310,8 @@ function modifier_item_meteor_hammer_oaa_dot:OnIntervalThink()
       ability = ability,
     }
 
-    if enemy:IsBoss() then
-      damage_table.damage = self.burn_dps_boss * self.burn_interval + (enemy:GetMaxHealth() *  ability:GetSpecialValueFor("max_hp_burn_damage") * 0.01)
+    if BossSpawner:IsBoss(enemy) then
+      damage_table.damage = self.burn_dps_boss * 0.35 * self.burn_interval + (0.35 * enemy:GetMaxHealth() *  ability:GetSpecialValueFor("max_hp_burn_damage") * 0.01)
     end
 
     ApplyDamage(damage_table)
