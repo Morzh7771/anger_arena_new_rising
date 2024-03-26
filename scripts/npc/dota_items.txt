@@ -186,21 +186,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"		"10 25 50"
-				"bonus_agility"			"30 60 100"
-				"bonus_intellect"		"10 25 50"
-				"bonus_attack_speed"	"15 30 70"
-				"bonus_movement_speed"	"10 12 14"
-				"images_count"			"2 2 2"
-				"tooltip_illusion_duration"			"20 20 20"
-				"images_do_damage_percent_melee"	"-70 -60 -50"
-				"tooltip_damage_outgoing_melee"			"30 40 50"
-				"images_take_damage_percent"	"200 175 150"
-				"tooltip_damage_incoming_total_pct"			"300 275 250"
-				"images_do_damage_percent_ranged"	"-75 -65 -55"
-				"tooltip_damage_outgoing_ranged"			"25 35 45"
-				"invuln_duration"		"0.1 0.1 0.1"
-				"vision_radius"			"1000 1000 1000"
+			"bonus_strength"						"10 25 50"
+			"bonus_agility"							"30 60 100"
+			"bonus_intellect"						"10 25 50"
+			"bonus_attack_speed"					"15 30 70"
+			"bonus_movement_speed"					"10 12 14"
+			"images_count"							"2 2 2"
+			"tooltip_illusion_duration"				"20 20 20"
+			"images_do_damage_percent_melee"		"-70 -60 -50"
+			"tooltip_damage_outgoing_melee"			"30 40 50"
+			"images_take_damage_percent"			"200 175 150"
+			"tooltip_damage_incoming_total_pct"		"300 275 250"
+			"images_do_damage_percent_ranged"		"-75 -65 -55"
+			"tooltip_damage_outgoing_ranged"		"25 35 45"
+			"invuln_duration"						"0.1 0.1 0.1"
+			"vision_radius"							"1000 1000 1000"
 		}
 	}
 
@@ -254,21 +254,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"		"10 25 50"
-				"bonus_agility"			"30 60 100"
-				"bonus_intellect"		"10 25 50"
-				"bonus_attack_speed"	"15 30 70"
-				"bonus_movement_speed"	"10 12 14"
-				"images_count"			"2 2 2"
-				"tooltip_illusion_duration"			"20 20 20"
-				"images_do_damage_percent_melee"	"-70 -60 -50"
-				"tooltip_damage_outgoing_melee"			"30 40 50"
-				"images_take_damage_percent"	"200 175 150"
-				"tooltip_damage_incoming_total_pct"			"300 275 250"
-				"images_do_damage_percent_ranged"	"-75 -65 -55"
-				"tooltip_damage_outgoing_ranged"			"25 35 45"
-				"invuln_duration"		"0.1 0.1 0.1"
-				"vision_radius"			"1000 1000 1000"
+			"bonus_strength"						"10 25 50"
+			"bonus_agility"							"30 60 100"
+			"bonus_intellect"						"10 25 50"
+			"bonus_attack_speed"					"15 30 70"
+			"bonus_movement_speed"					"10 12 14"
+			"images_count"							"2 2 2"
+			"tooltip_illusion_duration"				"20 20 20"
+			"images_do_damage_percent_melee"		"-70 -60 -50"
+			"tooltip_damage_outgoing_melee"			"30 40 50"
+			"images_take_damage_percent"			"200 175 150"
+			"tooltip_damage_incoming_total_pct"		"300 275 250"
+			"images_do_damage_percent_ranged"		"-75 -65 -55"
+			"tooltip_damage_outgoing_ranged"		"25 35 45"
+			"invuln_duration"						"0.1 0.1 0.1"
+			"vision_radius"							"1000 1000 1000"
 		}
 	}
 
@@ -320,21 +320,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"		"10 25 50"
-				"bonus_agility"			"30 60 100"
-				"bonus_intellect"		"10 25 50"
-				"bonus_attack_speed"	"15 30 70"
-				"bonus_movement_speed"	"10 12 14"
-				"images_count"			"2 2 2"
-				"tooltip_illusion_duration"			"20 20 20"
-				"images_do_damage_percent_melee"	"-70 -60 -50"
-				"tooltip_damage_outgoing_melee"			"30 40 50"
-				"images_take_damage_percent"	"200 175 150"
-				"tooltip_damage_incoming_total_pct"			"300 275 250"
-				"images_do_damage_percent_ranged"	"-75 -65 -55"
-				"tooltip_damage_outgoing_ranged"			"25 35 45"
-				"invuln_duration"		"0.1 0.1 0.1"
-				"vision_radius"			"1000 1000 1000"
+			"bonus_strength"						"10 25 50"
+			"bonus_agility"							"30 60 100"
+			"bonus_intellect"						"10 25 50"
+			"bonus_attack_speed"					"15 30 70"
+			"bonus_movement_speed"					"10 12 14"
+			"images_count"							"2 2 2"
+			"tooltip_illusion_duration"				"20 20 20"
+			"images_do_damage_percent_melee"		"-70 -60 -50"
+			"tooltip_damage_outgoing_melee"			"30 40 50"
+			"images_take_damage_percent"			"200 175 150"
+			"tooltip_damage_incoming_total_pct"		"300 275 250"
+			"images_do_damage_percent_ranged"		"-75 -65 -55"
+			"tooltip_damage_outgoing_ranged"		"25 35 45"
+			"invuln_duration"						"0.1 0.1 0.1"
+			"vision_radius"							"1000 1000 1000"
 		}
 	}
 	
@@ -380,11 +380,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+<<<<<<< Updated upstream
 				"bonus_movement_speed_ranged"   "50 60 70"
 				"bonus_movement_speed_melee"    "60 70 90"
 				"bonus_stat"			        "10 25 40"
 				"bonus_attack_speed"			"25 50 100"
 				"bonus_damage"			        "0"
+=======
+			"bonus_movement_speed_ranged"   "50 60 70"
+			"bonus_movement_speed_melee"    "60 70 80"
+			"bonus_stat"			        "10 25 40"
+			"bonus_attack_speed"			"20 40 80"
+			"bonus_damage"			        "0"
+>>>>>>> Stashed changes
 		}
 	}
 
@@ -424,11 +432,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+<<<<<<< Updated upstream
 				"bonus_movement_speed_ranged"   "50 60 70"
 				"bonus_movement_speed_melee"    "60 70 90"
 				"bonus_stat"			        "10 25 40"
 				"bonus_attack_speed"			"25 50 100"
 				"bonus_damage"			        "0"
+=======
+			"bonus_movement_speed_ranged"   "50 60 70"
+			"bonus_movement_speed_melee"    "60 70 80"
+			"bonus_stat"			        "10 25 40"
+			"bonus_attack_speed"			"20 40 80"
+			"bonus_damage"			        "0"
+>>>>>>> Stashed changes
 		}
 	}
 
@@ -688,13 +704,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"					"25 50 120"
-				"bonus_damage"						"25 50 120"
-				"lifesteal_percent"					"25 30 35"
-				"creep_lifesteal_reduction_pct"		"0"
-				"unholy_lifesteal_percent"			"150 170 215"
-				"unholy_lifesteal_total_tooltip"	"175 200 250"
-				"unholy_duration"					"4.0 5.0 6.0"
+			"bonus_strength"					"25 50 120"
+			"bonus_damage"						"25 50 120"
+			"lifesteal_percent"					"25 30 35"
+			"creep_lifesteal_reduction_pct"		"0"
+			"unholy_lifesteal_percent"			"150 170 215"
+			"unholy_lifesteal_total_tooltip"	"175 200 250"
+			"unholy_duration"					"4.0 5.0 6.0"
 		}
 	}
 	"item_recipe_satanic_2"
@@ -740,13 +756,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"					"25 50 120"
-				"bonus_damage"						"25 50 120"
-				"lifesteal_percent"					"25 30 35"
-				"creep_lifesteal_reduction_pct"		"0"
-				"unholy_lifesteal_percent"			"150 170 215"
-				"unholy_lifesteal_total_tooltip"	"175 200 250"
-				"unholy_duration"					"4.0 5.0 6.0"
+			"bonus_strength"					"25 50 120"
+			"bonus_damage"						"25 50 120"
+			"lifesteal_percent"					"25 30 35"
+			"creep_lifesteal_reduction_pct"		"0"
+			"unholy_lifesteal_percent"			"150 170 215"
+			"unholy_lifesteal_total_tooltip"	"175 200 250"
+			"unholy_duration"					"4.0 5.0 6.0"
 		}
 	}
 
@@ -794,13 +810,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"					"25 50 120"
-				"bonus_damage"						"25 50 120"
-				"lifesteal_percent"					"25 30 35"
-				"creep_lifesteal_reduction_pct"		"0"
-				"unholy_lifesteal_percent"			"150 170 215"
-				"unholy_lifesteal_total_tooltip"	"175 200 250"
-				"unholy_duration"					"4.0 5.0 6.0"
+			"bonus_strength"					"25 50 120"
+			"bonus_damage"						"25 50 120"
+			"lifesteal_percent"					"25 30 35"
+			"creep_lifesteal_reduction_pct"		"0"
+			"unholy_lifesteal_percent"			"150 170 215"
+			"unholy_lifesteal_total_tooltip"	"175 200 250"
+			"unholy_duration"					"4.0 5.0 6.0"
 		}
 	}
 
@@ -832,13 +848,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"					"20 60 150"
-				"lifesteal_percent"				"20 25 30"
-				"creep_lifesteal_reduction_pct"	"0"
-				"berserk_bonus_attack_speed"	"110 160 250"
-				"berserk_bonus_movement_speed"	"30 50 80"
-				"berserk_armor_reduction"		"6"
-				"berserk_duration"		"6.0"
+			"bonus_damage"					"20 60 150"
+			"lifesteal_percent"				"20 25 30"
+			"creep_lifesteal_reduction_pct"	"0"
+			"berserk_bonus_attack_speed"	"110 160 250"
+			"berserk_bonus_movement_speed"	"30 50 80"
+			"berserk_armor_reduction"		"6"
+			"berserk_duration"		"6.0"
 		}
 	}
 
@@ -888,13 +904,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"					"20 60 150"
-				"lifesteal_percent"				"20 25 30"
-				"creep_lifesteal_reduction_pct"	"0"
-				"berserk_bonus_attack_speed"	"110 160 250"
-				"berserk_bonus_movement_speed"	"30 50 80"
-				"berserk_armor_reduction"		"6"
-				"berserk_duration"		"6.0"
+			"bonus_damage"					"20 60 150"
+			"lifesteal_percent"				"20 25 30"
+			"creep_lifesteal_reduction_pct"	"0"
+			"berserk_bonus_attack_speed"	"110 160 250"
+			"berserk_bonus_movement_speed"	"30 50 80"
+			"berserk_armor_reduction"		"6"
+			"berserk_duration"		"6.0"
 		}
 	}
 
@@ -944,13 +960,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"					"20 60 150"
-				"lifesteal_percent"				"20 25 30"
-				"creep_lifesteal_reduction_pct"	"0"
-				"berserk_bonus_attack_speed"	"110 160 250"
-				"berserk_bonus_movement_speed"	"30 50 80"
-				"berserk_armor_reduction"		"6"
-				"berserk_duration"		"6.0"
+			"bonus_damage"					"20 60 150"
+			"lifesteal_percent"				"20 25 30"
+			"creep_lifesteal_reduction_pct"	"0"
+			"berserk_bonus_attack_speed"	"110 160 250"
+			"berserk_bonus_movement_speed"	"30 50 80"
+			"berserk_armor_reduction"		"6"
+			"berserk_duration"		"6.0"
 		}
 	}
 
@@ -987,10 +1003,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"40 80 220"
-				"bonus_attack_speed"	"45 90 180"
-				"bonus_chance"			"80 90 100"
-				"bonus_chance_damage"			"70 100 120"
+			"bonus_damage"			"40 80 220"
+			"bonus_attack_speed"	"45 90 180"
+			"bonus_chance"			"80 90 100"
+			"bonus_chance_damage"			"70 100 120"
 		}
 	}
 
@@ -1872,26 +1888,26 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"		"16 35 80"
-				"bonus_strength"		"16 35 80"
-				"bonus_agility"			"16 35 80"
-				"bonus_hp_regen"		"20 50 100"
-				"bonus_armor"			"12 32 70"
-				"aura_radius"			"1200"
-				"aura_attack_speed"		"-60 -120 -300"
-				"blast_damage"			"200 400 800"
-				"blast_movement_speed"	"-40 -50 -60"
-				"blast_debuff_duration"	"4.0 "
-				"blast_radius"			
-				{
-					"value"		"900"
-					"affected_by_aoe_increase"	"1"
-				}
-				"blast_speed"				"400"
-				"hp_regen_degen_aura"		"20 25 30"
-				"illusion_multiplier_pct"	"150 250 350"
-				"spell_amp"					"18 21 25"				
-				"resist_debuff_duration"	"16.0"
+			"bonus_intellect"		"16 35 80"
+			"bonus_strength"		"16 35 80"
+			"bonus_agility"			"16 35 80"
+			"bonus_hp_regen"		"20 50 100"
+			"bonus_armor"			"12 32 70"
+			"aura_radius"			"1200"
+			"aura_attack_speed"		"-60 -120 -300"
+			"blast_damage"			"200 400 800"
+			"blast_movement_speed"	"-40 -50 -60"
+			"blast_debuff_duration"	"4.0 "
+			"blast_radius"			
+			{
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"blast_speed"				"400"
+			"hp_regen_degen_aura"		"20 25 30"
+			"illusion_multiplier_pct"	"150 250 350"
+			"spell_amp"					"18 21 25"				
+			"resist_debuff_duration"	"16.0"
 		}
 	}
 	"item_recipe_shivas_guard_2"
@@ -1940,26 +1956,26 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"		"16 35 80"
-				"bonus_strength"		"16 35 80"
-				"bonus_agility"			"16 35 80"
-				"bonus_hp_regen"		"20 50 100"
-				"bonus_armor"			"12 32 70"
-				"aura_radius"			"1200"
-				"aura_attack_speed"		"-60 -120 -300"
-				"blast_damage"			"200 400 800"
-				"blast_movement_speed"	"-40 -50 -60"
-				"blast_debuff_duration"	"4.0 "
-				"blast_radius"			
-				{
-					"value"		"900"
-					"affected_by_aoe_increase"	"1"
-				}
-				"blast_speed"				"400"
-				"hp_regen_degen_aura"		"20 25 30"
-				"illusion_multiplier_pct"	"150 250 350"
-				"spell_amp"					"18 21 25"				
-				"resist_debuff_duration"	"16.0"
+			"bonus_intellect"		"16 35 80"
+			"bonus_strength"		"16 35 80"
+			"bonus_agility"			"16 35 80"
+			"bonus_hp_regen"		"20 50 100"
+			"bonus_armor"			"12 32 70"
+			"aura_radius"			"1200"
+			"aura_attack_speed"		"-60 -120 -300"
+			"blast_damage"			"200 400 800"
+			"blast_movement_speed"	"-40 -50 -60"
+			"blast_debuff_duration"	"4.0 "
+			"blast_radius"			
+			{
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"blast_speed"				"400"
+			"hp_regen_degen_aura"		"20 25 30"
+			"illusion_multiplier_pct"	"150 250 350"
+			"spell_amp"					"18 21 25"				
+			"resist_debuff_duration"	"16.0"
 		}
 	}
 
@@ -2010,26 +2026,26 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"		"16 35 80"
-				"bonus_strength"		"16 35 80"
-				"bonus_agility"			"16 35 80"
-				"bonus_hp_regen"		"20 50 100"
-				"bonus_armor"			"12 32 70"
-				"aura_radius"			"1200"
-				"aura_attack_speed"		"-60 -120 -300"
-				"blast_damage"			"200 400 800"
-				"blast_movement_speed"	"-40 -50 -60"
-				"blast_debuff_duration"	"4.0 "
-				"blast_radius"			
-				{
-					"value"		"900"
-					"affected_by_aoe_increase"	"1"
-				}
-				"blast_speed"				"400"
-				"hp_regen_degen_aura"		"20 25 30"
-				"illusion_multiplier_pct"	"150 250 350"
-				"spell_amp"					"18 21 25"				
-				"resist_debuff_duration"	"16.0"
+			"bonus_intellect"		"16 35 80"
+			"bonus_strength"		"16 35 80"
+			"bonus_agility"			"16 35 80"
+			"bonus_hp_regen"		"20 50 100"
+			"bonus_armor"			"12 32 70"
+			"aura_radius"			"1200"
+			"aura_attack_speed"		"-60 -120 -300"
+			"blast_damage"			"200 400 800"
+			"blast_movement_speed"	"-40 -50 -60"
+			"blast_debuff_duration"	"4.0 "
+			"blast_radius"			
+			{
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"blast_speed"				"400"
+			"hp_regen_degen_aura"		"20 25 30"
+			"illusion_multiplier_pct"	"150 250 350"
+			"spell_amp"					"18 21 25"				
+			"resist_debuff_duration"	"16.0"
 		}
 	}
 
@@ -2074,17 +2090,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_movement_speed"			"60 70 80"
-				"bonus_damage_melee"			"20 40 120"
-				"bonus_damage_range"			"15 30 100"
-				"damage_block_melee"			"0"
-				"damage_block_ranged"			"0"
-				"block_chance"					"0"
-				"phase_movement_speed"  		"20 30 40"
-				"phase_movement_speed_range"  	"10 20 30"
-				"phase_duration"				"3.0 4.0 5.0"
-				"bonus_attack_speed"			"0"
-				"bonus_armor"					"5 10 30"
+			"bonus_movement_speed"			"60 70 80"
+			"bonus_damage_melee"			"20 40 120"
+			"bonus_damage_range"			"15 30 100"
+			"damage_block_melee"			"0"
+			"damage_block_ranged"			"0"
+			"block_chance"					"0"
+			"phase_movement_speed"  		"20 30 40"
+			"phase_movement_speed_range"  	"10 20 30"
+			"phase_duration"				"3.0 4.0 5.0"
+			"bonus_attack_speed"			"0"
+			"bonus_armor"					"5 10 30"
 		}
 	}
 
@@ -2130,17 +2146,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_movement_speed"			"60 70 80"
-				"bonus_damage_melee"			"20 40 120"
-				"bonus_damage_range"			"15 30 100"
-				"damage_block_melee"			"0"
-				"damage_block_ranged"			"0"
-				"block_chance"					"0"
-				"phase_movement_speed"  		"20 30 40"
-				"phase_movement_speed_range"  	"10 20 30"
-				"phase_duration"				"3.0 4.0 5.0"
-				"bonus_attack_speed"			"0"
-				"bonus_armor"					"5 10 30"
+			"bonus_movement_speed"			"60 70 80"
+			"bonus_damage_melee"			"20 40 120"
+			"bonus_damage_range"			"15 30 100"
+			"damage_block_melee"			"0"
+			"damage_block_ranged"			"0"
+			"block_chance"					"0"
+			"phase_movement_speed"  		"20 30 40"
+			"phase_movement_speed_range"  	"10 20 30"
+			"phase_duration"				"3.0 4.0 5.0"
+			"bonus_attack_speed"			"0"
+			"bonus_armor"					"5 10 30"
 		}
 	}
 
@@ -2186,17 +2202,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_movement_speed"			"60 70 80"
-				"bonus_damage_melee"			"20 40 120"
-				"bonus_damage_range"			"15 30 100"
-				"damage_block_melee"			"0"
-				"damage_block_ranged"			"0"
-				"block_chance"					"0"
-				"phase_movement_speed"  		"20 30 40"
-				"phase_movement_speed_range"  	"10 20 30"
-				"phase_duration"				"3.0 4.0 5.0"
-				"bonus_attack_speed"			"0"
-				"bonus_armor"					"5 10 30"
+			"bonus_movement_speed"			"60 70 80"
+			"bonus_damage_melee"			"20 40 120"
+			"bonus_damage_range"			"15 30 100"
+			"damage_block_melee"			"0"
+			"damage_block_ranged"			"0"
+			"block_chance"					"0"
+			"phase_movement_speed"  		"20 30 40"
+			"phase_movement_speed_range"  	"10 20 30"
+			"phase_duration"				"3.0 4.0 5.0"
+			"bonus_attack_speed"			"0"
+			"bonus_armor"					"5 10 30"
 		}
 	}
 
@@ -2431,15 +2447,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"65 115 250"
-				"aura_damage"			"50 125 225"
-				"aura_damage_illusions"	"40 60 100"
-				"upgrade_day_vision"	"250 250 250"
-				"evasion"				"15 15 15"
-				"blind_pct"				"17 18 20"
-				"aura_damage_stats" 	"0.1 0.25 0.4"
-				"aura_radius"			"700 700 700"
-				"illusion_multiplier_pct"	"150"
+			"bonus_damage"				"65 115 250"
+			"aura_damage"				"50 125 225"
+			"aura_damage_illusions"		"40 60 100"
+			"upgrade_day_vision"		"250 250 250"
+			"evasion"					"15 15 15"
+			"blind_pct"					"17 18 20"
+			"aura_damage_stats" 		"0.1 0.25 0.4"
+			"aura_radius"				"700 700 700"
+			"illusion_multiplier_pct"	"150"
 		}
 	}
 	
@@ -2478,15 +2494,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"65 115 250"
-				"aura_damage"			"50 125 225"
-				"aura_damage_illusions"	"40 60 100"
-				"upgrade_day_vision"	"250 250 250"
-				"evasion"				"15 15 15"
-				"blind_pct"				"17 18 20"
-				"aura_damage_stats" 	"0.1 0.25 0.4"
-				"aura_radius"			"700 700 700"
-				"illusion_multiplier_pct"	"150"
+			"bonus_damage"				"65 115 250"
+			"aura_damage"				"50 125 225"
+			"aura_damage_illusions"		"40 60 100"
+			"upgrade_day_vision"		"250 250 250"
+			"evasion"					"15 15 15"
+			"blind_pct"					"17 18 20"
+			"aura_damage_stats" 		"0.1 0.25 0.4"
+			"aura_radius"				"700 700 700"
+			"illusion_multiplier_pct"	"150"
 		}
 	}
 	
@@ -2635,13 +2651,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"16 40"
-				"bonus_health_regen"	"6 15"
-				"bonus_mana_regen"		"4.25 12"
-				"block_cooldown"		"14.0 13.0"
-				"upgrade_absorb_duration"		"10.0"
-				"damage_absorb"				"300 300"
-				"bonus_damage"				"10 40"
+			"bonus_all_stats"			"16 40"
+			"bonus_health_regen"		"6 15"
+			"bonus_mana_regen"			"4.25 12"
+			"block_cooldown"			"14.0 13.0"
+			"upgrade_absorb_duration"	"10.0"
+			"damage_absorb"				"300 300"
+			"bonus_damage"				"10 40"
 		}
 	}
 
@@ -2691,13 +2707,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"16 40"
-				"bonus_health_regen"	"6 15"
-				"bonus_mana_regen"		"4.25 12"
-				"block_cooldown"		"14.0 12.0"
-				"upgrade_absorb_duration"		"10.0"
-				"damage_absorb"				"300 300"
-				"bonus_damage"				"10 40"
+			"bonus_all_stats"			"16 40"
+			"bonus_health_regen"		"6 15"
+			"bonus_mana_regen"			"4.25 12"
+			"block_cooldown"			"14.0 13.0"
+			"upgrade_absorb_duration"	"10.0"
+			"damage_absorb"				"300 300"
+			"bonus_damage"				"10 40"
 		}
 	}
 
@@ -2746,11 +2762,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_armor"			"10 25"
-				"bonus_health_regen"	"6.5 15"
-				"bonus_mana_regen"		"4.0 10"
-				"bonus_mana"			"250 700"
-				"active_duration"		"6 7"
+			"bonus_armor"			"10 25"
+			"bonus_health_regen"	"6.5 15"
+			"bonus_mana_regen"		"4.0 10"
+			"bonus_mana"			"250 700"
+			"active_duration"		"6 7"
 		}
 	}
 
@@ -2800,11 +2816,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_armor"			"10 25"
-				"bonus_health_regen"	"6.5 15"
-				"bonus_mana_regen"		"4.0 10"
-				"bonus_mana"			"250 700"
-				"active_duration"		"6 7"
+			"bonus_armor"			"10 25"
+			"bonus_health_regen"	"6.5 15"
+			"bonus_mana_regen"		"4.0 10"
+			"bonus_mana"			"250 700"
+			"active_duration"		"6 7"
 		}
 	}
 	"item_clarity"
@@ -2836,18 +2852,10 @@
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"8.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"30"
-			}			
+			"mana_regen"			"8.5"
+			"buff_duration"			"30"		
 		}
 	}
 
@@ -2901,7 +2909,7 @@
 			"bonus_mana"			"250 500"
 			"bonus_health"			"150 300"
 			"duration"				"8 8"
-			"absorb_amount"				"300 600"
+			"absorb_amount"			"300 600"
 		}
 	}
 
@@ -2955,7 +2963,7 @@
 			"bonus_mana"			"250 500"
 			"bonus_health"			"150 300"
 			"duration"				"8 8"
-			"absorb_amount"				"300 600"
+			"absorb_amount"			"300 600"
 		}
 	}
 
@@ -3001,7 +3009,7 @@
 		{
 			"radius"				"900"
 			"active_radius"			"300"
-			"duration"			"4"
+			"duration"				"4"
 		}
 	}
 
@@ -3050,18 +3058,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"600 1500"
-				"bonus_health_regen"	"6 20"
-				"bonus_armor"			"8 20"
-				"block_damage_melee"	"80 130"
-				"block_damage_ranged"	"50 95"
-				"block_chance"			"65"
-				"duration"				"6 8"
-				"bonus_aoe_radius"		"1200 1200"
-				"block_damage_active"	"70 150"
-				"block_chance_active"	"100 100"
-				"tooltip_reapply_time"	"35 35"
-				"strength_pct"			"50 65"
+			"bonus_health"			"600 1500"
+			"bonus_health_regen"	"6 20"
+			"bonus_armor"			"8 20"
+			"block_damage_melee"	"80 130"
+			"block_damage_ranged"	"50 95"
+			"block_chance"			"65"
+			"duration"				"6 8"
+			"bonus_aoe_radius"		"1200 1200"
+			"block_damage_active"	"70 150"
+			"block_chance_active"	"100 100"
+			"tooltip_reapply_time"	"35 35"
+			"strength_pct"			"50 65"
 		}
 	}
 
@@ -3114,18 +3122,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"600 1500"
-				"bonus_health_regen"	"6 20"
-				"bonus_armor"			"8 20"
-				"block_damage_melee"	"80 130"
-				"block_damage_ranged"	"50 95"
-				"block_chance"			"65"
-				"duration"				"6 8"
-				"bonus_aoe_radius"		"1200 1200"
-				"block_damage_active"	"70 150"
-				"block_chance_active"	"100 100"
-				"tooltip_reapply_time"	"35 35"
-				"strength_pct"			"50 65"
+			"bonus_health"			"600 1500"
+			"bonus_health_regen"	"6 20"
+			"bonus_armor"			"8 20"
+			"block_damage_melee"	"80 130"
+			"block_damage_ranged"	"50 95"
+			"block_chance"			"65"
+			"duration"				"6 8"
+			"bonus_aoe_radius"		"1200 1200"
+			"block_damage_active"	"70 150"
+			"block_chance_active"	"100 100"
+			"tooltip_reapply_time"	"35 35"
+			"strength_pct"			"50 65"
 		}
 	}
 
@@ -3174,19 +3182,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_stats"			"21 50 130"
-				"bonus_armor"			"7 16 40"
-				"bonus_regen"			"7 15 60"
-				"health_min"			"1800 3600 7000"
-				"speed_base"			"380 400 440"
-				"bounty_gold"			"250 400 700"
-				"creep_bonus_damage"			"70 140 250"
-				"creep_bonus_hp_regen"			"12 24 40"
-				"creep_bonus_mp_regen"			"7 14 21"
-				"creep_bonus_armor"			"7 14 21"
-				"model_scale"			"20"
-				"count_limit"			"1 2 3"
-				"creep_ability_level_increase"			"1"
+			"bonus_stats"					"21 50 130"
+			"bonus_armor"					"7 16 40"
+			"bonus_regen"					"7 15 60"
+			"health_min"					"1800 3600 7000"
+			"speed_base"					"380 400 440"
+			"bounty_gold"					"250 400 700"
+			"creep_bonus_damage"			"70 140 250"
+			"creep_bonus_hp_regen"			"12 24 40"
+			"creep_bonus_mp_regen"			"7 14 21"
+			"creep_bonus_armor"				"7 14 21"
+			"model_scale"					"20"
+			"count_limit"					"1 2 3"
+			"creep_ability_level_increase"	"1"
 		}
 	}
 
@@ -3234,19 +3242,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_stats"			"21 50 130"
-				"bonus_armor"			"7 16 40"
-				"bonus_regen"			"7 15 60"
-				"health_min"			"1800 3600 7000"
-				"speed_base"			"380 400 440"
-				"bounty_gold"			"250 400 700"
-				"creep_bonus_damage"			"70 140 250"
-				"creep_bonus_hp_regen"			"12 24 40"
-				"creep_bonus_mp_regen"			"7 14 21"
-				"creep_bonus_armor"			"7 14 21"
-				"model_scale"			"20"
-				"count_limit"			"1 2 3"
-				"creep_ability_level_increase"			"1"
+			"bonus_stats"					"21 50 130"
+			"bonus_armor"					"7 16 40"
+			"bonus_regen"					"7 15 60"
+			"health_min"					"1800 3600 7000"
+			"speed_base"					"380 400 440"
+			"bounty_gold"					"250 400 700"
+			"creep_bonus_damage"			"70 140 250"
+			"creep_bonus_hp_regen"			"12 24 40"
+			"creep_bonus_mp_regen"			"7 14 21"
+			"creep_bonus_armor"				"7 14 21"
+			"model_scale"					"20"
+			"count_limit"					"1 2 3"
+			"creep_ability_level_increase"	"1"
 		}
 	}
 
@@ -3295,19 +3303,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_stats"			"21 50 130"
-				"bonus_armor"			"7 16 40"
-				"bonus_regen"			"7 15 60"
-				"health_min"			"1800 3600 7000"
-				"speed_base"			"380 400 440"
-				"bounty_gold"			"250 400 700"
-				"creep_bonus_damage"			"70 140 250"
-				"creep_bonus_hp_regen"			"12 24 40"
-				"creep_bonus_mp_regen"			"7 14 21"
-				"creep_bonus_armor"			"7 14 21"
-				"model_scale"			"20"
-				"count_limit"			"1 2 3"
-				"creep_ability_level_increase"			"1"
+			"bonus_stats"					"21 50 130"
+			"bonus_armor"					"7 16 40"
+			"bonus_regen"					"7 15 60"
+			"health_min"					"1800 3600 7000"
+			"speed_base"					"380 400 440"
+			"bounty_gold"					"250 400 700"
+			"creep_bonus_damage"			"70 140 250"
+			"creep_bonus_hp_regen"			"12 24 40"
+			"creep_bonus_mp_regen"			"7 14 21"
+			"creep_bonus_armor"				"7 14 21"
+			"model_scale"					"20"
+			"count_limit"					"1 2 3"
+			"creep_ability_level_increase"	"1"
 		}
 	}
 
@@ -3356,19 +3364,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_agility"				"10 30 80"
-				"bonus_strength"			"10 30 80"
-				"bonus_intellect"			"10 30 80"
-				"bonus_mana"			"300 600 1200"
-				"bonus_cast_range"		"200 225 250"
-				"bonus_mana_regen"		"3 10 25"
-				"blast_movement_slow"	"-80 -80 -80"
-				"duration"				"3.0 3.5 4.0"
-				"blast_agility_multiplier"			"1.5 2 2.5"
-				"blast_damage_base"			"50 100 200"
-				"duration_ally"				"3.0 3.5 4.0"
-				"ethereal_damage_bonus"	"-40 -45 -50"
-				"projectile_speed"	"1200 1400 1600"
+			"bonus_agility"				"10 30 80"
+			"bonus_strength"			"10 30 80"
+			"bonus_intellect"			"10 30 80"
+			"bonus_mana"				"300 600 1200"
+			"bonus_cast_range"			"200 225 250"
+			"bonus_mana_regen"			"3 10 25"
+			"blast_movement_slow"		"-80 -80 -80"
+			"duration"					"3.0 3.5 4.0"
+			"blast_agility_multiplier"	"1.5 2 2.5"
+			"blast_damage_base"			"50 100 200"
+			"duration_ally"				"3.0 3.5 4.0"
+			"ethereal_damage_bonus"		"-40 -45 -50"
+			"projectile_speed"			"1200 1400 1600"
 		}
 	}
 
@@ -3419,19 +3427,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_agility"				"10 30 80"
-				"bonus_strength"			"10 30 80"
-				"bonus_intellect"			"10 30 80"
-				"bonus_mana"			"300 600 1200"
-				"bonus_cast_range"		"200 225 250"
-				"bonus_mana_regen"		"3 10 25"
-				"blast_movement_slow"	"-80 -80 -80"
-				"duration"				"3.0 3.5 4.0"
-				"blast_agility_multiplier"			"1.5 2 2.5"
-				"blast_damage_base"			"50 100 200"
-				"duration_ally"				"3.0 3.5 4.0"
-				"ethereal_damage_bonus"	"-40 -45 -50"
-				"projectile_speed"	"1200 1400 1600"
+			"bonus_agility"				"10 30 80"
+			"bonus_strength"			"10 30 80"
+			"bonus_intellect"			"10 30 80"
+			"bonus_mana"				"300 600 1200"
+			"bonus_cast_range"			"200 225 250"
+			"bonus_mana_regen"			"3 10 25"
+			"blast_movement_slow"		"-80 -80 -80"
+			"duration"					"3.0 3.5 4.0"
+			"blast_agility_multiplier"	"1.5 2 2.5"
+			"blast_damage_base"			"50 100 200"
+			"duration_ally"				"3.0 3.5 4.0"
+			"ethereal_damage_bonus"		"-40 -45 -50"
+			"projectile_speed"			"1200 1400 1600"
 		}
 	}
 
@@ -3482,19 +3490,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_agility"				"10 30 80"
-				"bonus_strength"			"10 30 80"
-				"bonus_intellect"			"10 30 80"
-				"bonus_mana"			"300 600 1200"
-				"bonus_cast_range"		"200 225 250"
-				"bonus_mana_regen"		"3 10 25"
-				"blast_movement_slow"	"-80 -80 -80"
-				"duration"				"3.0 3.5 4.0"
-				"blast_agility_multiplier"			"1.5 2 2.5"
-				"blast_damage_base"			"50 100 200"
-				"duration_ally"				"3.0 3.5 4.0"
-				"ethereal_damage_bonus"	"-40 -45 -50"
-				"projectile_speed"	"1200 1400 1600"
+			"bonus_agility"				"10 30 80"
+			"bonus_strength"			"10 30 80"
+			"bonus_intellect"			"10 30 80"
+			"bonus_mana"				"300 600 1200"
+			"bonus_cast_range"			"200 225 250"
+			"bonus_mana_regen"			"3 10 25"
+			"blast_movement_slow"		"-80 -80 -80"
+			"duration"					"3.0 3.5 4.0"
+			"blast_agility_multiplier"	"1.5 2 2.5"
+			"blast_damage_base"			"50 100 200"
+			"duration_ally"				"3.0 3.5 4.0"
+			"ethereal_damage_bonus"		"-40 -45 -50"
+			"projectile_speed"			"1200 1400 1600"
 		}
 	}
 
@@ -3548,19 +3556,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"	"40 80 160"
-				"bonus_damage"			"30 60 120"
-				"chain_chance"			"30 35 40"
-				"chain_damage"			"160 200 300"
-				"chain_strikes"			"4 6 8"
-				"chain_radius"			"650 700 750"
-				"chain_delay"			"0.25 0.25 0.25"
-				"chain_cooldown"		"0.2 0.2 0.2"
-				"bonus_intellect"		"24 48 100"
-				"duration"				"2.0 2.5 3"
-				"radius"				"350 400 450"
-				"active_damage"			"180 360 600"
-				"illusion_multiplier_pct"	"150"
+			"bonus_attack_speed"		"40 80 160"
+			"bonus_damage"				"30 60 120"
+			"chain_chance"				"30 35 40"
+			"chain_damage"				"160 200 300"
+			"chain_strikes"				"4 6 8"
+			"chain_radius"				"650 700 750"
+			"chain_delay"				"0.25 0.25 0.25"
+			"chain_cooldown"			"0.2 0.2 0.2"
+			"bonus_intellect"			"24 48 100"
+			"duration"					"2.0 2.5 3"
+			"radius"					"350 400 450"
+			"active_damage"				"180 360 600"
+			"illusion_multiplier_pct"	"150"
 		}
 	}
 
@@ -3615,19 +3623,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"	"40 80 160"
-				"bonus_damage"			"30 60 120"
-				"chain_chance"			"30 35 40"
-				"chain_damage"			"160 200 300"
-				"chain_strikes"			"4 6 8"
-				"chain_radius"			"650 700 750"
-				"chain_delay"			"0.25 0.25 0.25"
-				"chain_cooldown"		"0.2 0.2 0.2"
-				"bonus_intellect"		"24 48 100"
-				"duration"				"2.0 2.5 3"
-				"radius"				"350 400 450"
-				"active_damage"			"180 360 600"
-				"illusion_multiplier_pct"	"150"
+			"bonus_attack_speed"		"40 80 160"
+			"bonus_damage"				"30 60 120"
+			"chain_chance"				"30 35 40"
+			"chain_damage"				"160 200 300"
+			"chain_strikes"				"4 6 8"
+			"chain_radius"				"650 700 750"
+			"chain_delay"				"0.25 0.25 0.25"
+			"chain_cooldown"			"0.2 0.2 0.2"
+			"bonus_intellect"			"24 48 100"
+			"duration"					"2.0 2.5 3"
+			"radius"					"350 400 450"
+			"active_damage"				"180 360 600"
+			"illusion_multiplier_pct"	"150"
 		}
 	}
 
@@ -3683,19 +3691,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"	"40 80 160"
-				"bonus_damage"			"30 60 120"
-				"chain_chance"			"30 35 40"
-				"chain_damage"			"160 200 300"
-				"chain_strikes"			"4 6 8"
-				"chain_radius"			"650 700 750"
-				"chain_delay"			"0.25 0.25 0.25"
-				"chain_cooldown"		"0.2 0.2 0.2"
-				"bonus_intellect"		"24 48 100"
-				"duration"				"2.0 2.5 3"
-				"radius"				"350 400 450"
-				"active_damage"			"180 360 600"
-				"illusion_multiplier_pct"	"150"
+			"bonus_attack_speed"		"40 80 160"
+			"bonus_damage"				"30 60 120"
+			"chain_chance"				"30 35 40"
+			"chain_damage"				"160 200 300"
+			"chain_strikes"				"4 6 8"
+			"chain_radius"				"650 700 750"
+			"chain_delay"				"0.25 0.25 0.25"
+			"chain_cooldown"			"0.2 0.2 0.2"
+			"bonus_intellect"			"24 48 100"
+			"duration"					"2.0 2.5 3"
+			"radius"					"350 400 450"
+			"active_damage"				"180 360 600"
+			"illusion_multiplier_pct"	"150"
 		}
 	}
 
@@ -3855,18 +3863,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"250 500 1000"
-				"bonus_mana_regen"		"2 5 10"
-				"bonus_all_stats"		"2 15 25"
-				"bonus_armor"			"4 8 15"
-				"soul_radius"			"1400 1500 1600"
-				"soul_initial_charge"	"2 3 4"
-				"soul_additional_charges"	"1 2 3"
-				"soul_heal_amount"		"40 100 200"
-				"soul_damage_amount"	"35 80 160"
-				"duration"				"8.0"
-				"hp_regen_reduction_enemy"	"40 45 50"
-				"enemy_hp_drain"		"4 5 6"
+			"bonus_health"				"250 500 1000"
+			"bonus_mana_regen"			"2 5 10"
+			"bonus_all_stats"			"2 15 25"
+			"bonus_armor"				"4 8 15"
+			"soul_radius"				"1400 1500 1600"
+			"soul_initial_charge"		"2 3 4"
+			"soul_additional_charges"	"1 2 3"
+			"soul_heal_amount"			"40 100 200"
+			"soul_damage_amount"		"35 80 160"
+			"duration"					"8.0"
+			"hp_regen_reduction_enemy"	"40 45 50"
+			"enemy_hp_drain"			"4 5 6"
 		}
 	}
 
@@ -3925,18 +3933,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"250 500 1000"
-				"bonus_mana_regen"		"2 5 10"
-				"bonus_all_stats"		"2 15 25"
-				"bonus_armor"			"4 8 15"
-				"soul_radius"			"1400 1500 1600"
-				"soul_initial_charge"	"2 3 4"
-				"soul_additional_charges"	"1 2 3"
-				"soul_heal_amount"		"40 100 200"
-				"soul_damage_amount"	"35 80 160"
-				"duration"				"8.0"
-				"hp_regen_reduction_enemy"	"40 45 50"
-				"enemy_hp_drain"		"4 5 6"
+			"bonus_health"				"250 500 1000"
+			"bonus_mana_regen"			"2 5 10"
+			"bonus_all_stats"			"2 15 25"
+			"bonus_armor"				"4 8 15"
+			"soul_radius"				"1400 1500 1600"
+			"soul_initial_charge"		"2 3 4"
+			"soul_additional_charges"	"1 2 3"
+			"soul_heal_amount"			"40 100 200"
+			"soul_damage_amount"		"35 80 160"
+			"duration"					"8.0"
+			"hp_regen_reduction_enemy"	"40 45 50"
+			"enemy_hp_drain"			"4 5 6"
 		}
 	}
 
@@ -3995,18 +4003,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"250 500 1000"
-				"bonus_mana_regen"		"2 5 10"
-				"bonus_all_stats"		"2 15 25"
-				"bonus_armor"			"4 8 15"
-				"soul_radius"			"1400 1500 1600"
-				"soul_initial_charge"	"2 3 4"
-				"soul_additional_charges"	"1 2 3"
-				"soul_heal_amount"		"40 100 200"
-				"soul_damage_amount"	"35 80 160"
-				"duration"				"8.0"
-				"hp_regen_reduction_enemy"	"40 45 50"
-				"enemy_hp_drain"		"4 5 6"
+			"bonus_health"				"250 500 1000"
+			"bonus_mana_regen"			"2 5 10"
+			"bonus_all_stats"			"2 15 25"
+			"bonus_armor"				"4 8 15"
+			"soul_radius"				"1400 1500 1600"
+			"soul_initial_charge"		"2 3 4"
+			"soul_additional_charges"	"1 2 3"
+			"soul_heal_amount"			"40 100 200"
+			"soul_damage_amount"		"35 80 160"
+			"duration"					"8.0"
+			"hp_regen_reduction_enemy"	"40 45 50"
+			"enemy_hp_drain"			"4 5 6"
 		}
 	}
 
@@ -4059,17 +4067,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"			"15 45 120"
-				"bonus_attack_speed"		"100 200 300"
-				"bonus_mana_regen"			"3.5 6 16"
-				"bonus_health_regen"		"6.5 15 35"	
-				"silence_duration"			"5 5 5"
-				"silence_damage_percent"	"30 35 40"
-				"bonus_damage"				"10 15 20"
-				"duration"					"5 5.5 6"			
-				"spell_amp_debuff"			"10 15 20"
-				"proc_damage"				"60 90 110"
-				"proc_chance"				"40 60 80"
+			"bonus_intellect"			"15 45 120"
+			"bonus_attack_speed"		"100 200 300"
+			"bonus_mana_regen"			"3.5 6 16"
+			"bonus_health_regen"		"6.5 15 35"	
+			"silence_duration"			"5 5 5"
+			"silence_damage_percent"	"30 35 40"
+			"bonus_damage"				"10 15 20"
+			"duration"					"5 5.5 6"			
+			"spell_amp_debuff"			"10 15 20"
+			"proc_damage"				"60 90 110"
+			"proc_chance"				"40 60 80"
 		}
 	}
 
@@ -4123,17 +4131,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"			"15 45 120"
-				"bonus_attack_speed"		"100 200 300"
-				"bonus_mana_regen"			"3.5 6 16"
-				"bonus_health_regen"		"6.5 15 35"	
-				"silence_duration"			"5 5 5"
-				"silence_damage_percent"	"30 35 40"
-				"bonus_damage"				"10 15 20"
-				"duration"					"5 5.5 6"			
-				"spell_amp_debuff"			"10 15 20"
-				"proc_damage"				"60 90 110"
-				"proc_chance"				"40 60 80"
+			"bonus_intellect"			"15 45 120"
+			"bonus_attack_speed"		"100 200 300"
+			"bonus_mana_regen"			"3.5 6 16"
+			"bonus_health_regen"		"6.5 15 35"	
+			"silence_duration"			"5 5 5"
+			"silence_damage_percent"	"30 35 40"
+			"bonus_damage"				"10 15 20"
+			"duration"					"5 5.5 6"			
+			"spell_amp_debuff"			"10 15 20"
+			"proc_damage"				"60 90 110"
+			"proc_chance"				"40 60 80"
 		}
 	}
 
@@ -4188,17 +4196,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_intellect"			"15 45 120"
-				"bonus_attack_speed"		"100 200 300"
-				"bonus_mana_regen"			"3.5 6 16"
-				"bonus_health_regen"		"6.5 15 35"	
-				"silence_duration"			"5 5 5"
-				"silence_damage_percent"	"30 35 40"
-				"bonus_damage"				"10 15 20"
-				"duration"					"5 5.5 6"			
-				"spell_amp_debuff"			"10 15 20"
-				"proc_damage"				"60 90 110"
-				"proc_chance"				"40 60 80"
+			"bonus_intellect"			"15 45 120"
+			"bonus_attack_speed"		"100 200 300"
+			"bonus_mana_regen"			"3.5 6 16"
+			"bonus_health_regen"		"6.5 15 35"	
+			"silence_duration"			"5 5 5"
+			"silence_damage_percent"	"30 35 40"
+			"bonus_damage"				"10 15 20"
+			"duration"					"5 5.5 6"			
+			"spell_amp_debuff"			"10 15 20"
+			"proc_damage"				"60 90 110"
+			"proc_chance"				"40 60 80"
 		}
 	}
 	
