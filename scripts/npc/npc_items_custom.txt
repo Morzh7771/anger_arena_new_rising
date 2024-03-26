@@ -2543,45 +2543,8 @@
         
         // Special	
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_attack"			"2"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_str"				"2"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_FlOAT"
-                "bonus_hp_regen"		"0.5"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "damage_to_exp_ranged"	"20"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_FlOAT"
-                "damage_to_exp_melee" 	"25"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "min_exp_ranged"		"12"
-            }
-            "07"
-            {
-                "var_type"				"FIELD_FlOAT"
-                "min_exp_melee"			"15"
-            }
-
             "bonus_str"				         "2"
             "bonus_hp_regen"		         "1"
             "damage_to_exp_ranged"	         "20"
@@ -6553,22 +6516,6 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-
-            "bonus_attack"			"5"
-            "bonus_all"				"4"
-            "bonus_hp_regen"		"1.5"
-            "bonus_mp_regen"		"1.5"
-            "bonus_health"		    "150"
-            "damage_to_exp_ranged"	"25"
-            "damage_to_exp_melee" 	"30"
-            "min_exp_ranged"		"15"
-            "min_exp_melee"			"18"
-            "replenish_health"		"20"
-            "replenish_mana"		"20"
-            "buff_health"			"3.5"
-            "buff_mana"			    "3.5"
-            "duration"			    "7"
-
             "bonus_all"				"2 4"
             "bonus_hp_regen"		"1.5 3"
             "bonus_mp_regen"		"1.5 3"
