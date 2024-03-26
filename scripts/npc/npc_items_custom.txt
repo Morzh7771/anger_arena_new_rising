@@ -2545,7 +2545,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
-<<<<<<< Updated upstream
+
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
@@ -2581,14 +2581,14 @@
                 "var_type"				"FIELD_FlOAT"
                 "min_exp_melee"			"15"
             }
-=======
+
             "bonus_str"				         "2"
             "bonus_hp_regen"		         "1"
             "damage_to_exp_ranged"	         "20"
             "damage_to_exp_melee" 	         "25"
             "min_exp_ranged"		         "12"
             "min_exp_melee"			         "15"
->>>>>>> Stashed changes
+
         }
     }
     
@@ -6553,7 +6553,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-<<<<<<< Updated upstream
+
             "bonus_attack"			"5"
             "bonus_all"				"4"
             "bonus_hp_regen"		"1.5"
@@ -6568,7 +6568,7 @@
             "buff_health"			"3.5"
             "buff_mana"			    "3.5"
             "duration"			    "7"
-=======
+
             "bonus_all"				"2 4"
             "bonus_hp_regen"		"1.5 3"
             "bonus_mp_regen"		"1.5 3"
@@ -6646,7 +6646,7 @@
             "buff_mana"             "3 4.5"
 
             "duration"              "10"
->>>>>>> Stashed changes
+
         }
     }
     "item_explosive_mantle_of_intelligence"
@@ -6678,8 +6678,8 @@
             "explosive_damage_per_hp"   "100"
             "radius"                    "450"
             "pre_explode_duration"      "3"
-<<<<<<< Updated upstream
-=======
+
+
             "int_dmg_mlp"               "0.25"
         }
     }
@@ -7059,7 +7059,7 @@
                 "range"                 "320"   
                 "duration"              "0.18" 
                 "damage_cd"             "1.5"                
->>>>>>> Stashed changes
+
         }
     }
 }
