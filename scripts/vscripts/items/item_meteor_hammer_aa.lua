@@ -41,7 +41,10 @@ function item_meteor_hammer:OnSpellStart()
   ParticleManager:SetParticleControl(self.channel_particle, 0, target_location)
   ParticleManager:SetParticleControl(self.channel_particle, 1, Vector(radius, 0, 0))
 end
+function item_meteor_hammer:OnChannelThink(fInterval)
+  if not IsServer() then return end
 
+end
 function item_meteor_hammer:OnChannelFinish(bInterrupted)
   local caster = self:GetCaster()
 
