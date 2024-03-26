@@ -1,8 +1,8 @@
-LinkLuaModifier("modifier_item_falcon_blade_custom", "items/item_falcon_blade_custom", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_falcon_blade_custom_active", "items/item_falcon_blade_custom", LUA_MODIFIER_MOTION_HORIZONTAL)
+LinkLuaModifier("modifier_item_phase_boots_aa", "items/item_phase_boots_aa", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_phase_boots_aa_active", "items/item_phase_boots_aa", LUA_MODIFIER_MOTION_HORIZONTAL)
 
-item_falcon_blade_custom = class({
-    GetIntrinsicModifierName = function (self) return "modifier_item_falcon_blade_custom"end,
+item_phase_boots_aa = class({
+    GetIntrinsicModifierName = function (self) return "modifier_item_phase_boots_aa"end,
     GetCastRange = function (self) if IsClient() then return self:GetSpecialValueFor("range") end return 99999 end,
     OnSpellStart =  function (self)
         if not IsServer() then return end
@@ -20,12 +20,12 @@ item_falcon_blade_custom = class({
         ProjectileManager:ProjectileDodge(self:GetCaster())
 
         self:GetCaster():EmitSound("Item.Falcon_blade")
-        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_falcon_blade_custom_active", {x = point.x, y = point.y, z = point.z, duration = self:GetSpecialValueFor("duration")})
+        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_aa_active", {x = point.x, y = point.y, z = point.z, duration = self:GetSpecialValueFor("duration")})
 
     end,
 })
 
-modifier_item_falcon_blade_custom_active = class({
+modifier_item_phase_boots_aa_active = class({
     IsDebuff = function (self) return false end,
     IsHidden = function (self) return true end,
     IsPurgable = function (self) return true end,
@@ -86,7 +86,7 @@ modifier_item_falcon_blade_custom_active = class({
     end,
 })
 
-modifier_item_falcon_blade_custom = class({
+modifier_item_phase_boots_aa = class({
     GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
     IsHidden = function (self) return true end,
     IsPurgable = function (self) return false end,
@@ -101,17 +101,4 @@ modifier_item_falcon_blade_custom = class({
     GetModifierHealthBonus = function (self)  if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_health") end end,
     GetModifierConstantManaRegen = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end end,
     GetModifierPreAttack_BonusDamage = function (self) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") end end,
-    OnTakeDamage = function (self,params)
-        if not IsServer() then return end
-        if self:GetParent() ~= params.unit then return end
-        if self:GetParent() == params.attacker then return end
-        if not params.attacker:IsRealHero() and not params.attacker:IsIllusion() then return end
-        if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
-
-        if params.damage < 5 then return end
-        if self:GetAbility():GetCooldownTime() > self:GetAbility():GetSpecialValueFor("damage_cd") then return end
-
-        self:GetAbility():EndCooldown()
-        self:GetAbility():StartCooldown(self:GetAbility():GetSpecialValueFor("damage_cd"))
-    end,
 })

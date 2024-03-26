@@ -21,7 +21,6 @@ function mod:OnCreated( kv )
 
 	self.bonusHpReg  = ability:GetSpecialValueFor("bonus_hp_regen")
 	self.bonusStr    = ability:GetSpecialValueFor("bonus_str")
-	self.bonusAttack = ability:GetSpecialValueFor("bonus_attack")
 
 	self:CommonInitDamageToExp( ability, ability:GetCooldown( ability:GetLevel() - 1 ) )
 end
@@ -31,7 +30,6 @@ mod.OnRefresh = mod.OnRefresh
 function mod:DeclareFunctions() return 
 {
 	MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-	MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 	MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 	MODIFIER_EVENT_ON_TAKEDAMAGE,
 }
@@ -61,8 +59,4 @@ end
 
 function mod:GetModifierBonusStats_Strength( params )
 	return self.bonusStr
-end
-
-function mod:GetModifierPreAttack_BonusDamage( params )
-	return self.bonusAttack
 end

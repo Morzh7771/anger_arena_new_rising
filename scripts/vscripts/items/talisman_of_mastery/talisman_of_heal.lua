@@ -29,7 +29,6 @@ function mod:OnCreated( kv )
 	self.bonusAgl    = ability:GetSpecialValueFor("bonus_all")
 	self.bonusInt    = ability:GetSpecialValueFor("bonus_all")
 	self.bonusHp    = ability:GetSpecialValueFor("bonus_health")
-	self.bonusAttack = ability:GetSpecialValueFor("bonus_attack")
 
 	self:CommonInitDamageToExp( ability, ability:GetCooldown( ability:GetLevel() - 1 ) )
 end
@@ -41,7 +40,6 @@ function mod:DeclareFunctions() return
 	MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 	MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 	MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-	MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 	MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 	MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 	MODIFIER_PROPERTY_HEALTH_BONUS,
@@ -80,9 +78,6 @@ function mod:GetModifierBonusStats_Agility( params )
 end
 function mod:GetModifierBonusStats_Intellect( params )
 	return self.bonusInt
-end
-function mod:GetModifierPreAttack_BonusDamage( params )
-	return self.bonusAttack
 end
 function mod:GetModifierHealthBonus( params )
 	return self.bonusHp
