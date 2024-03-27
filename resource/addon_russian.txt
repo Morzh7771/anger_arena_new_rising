@@ -91,7 +91,7 @@
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6_Description"					"Дает герою навсегда 5 надежной силы и 5 не надежнего. Каждую смерть вы будете терять 20% ненадежной силы."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6"								"Книга богов (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"					"Дает герою навсегда 5 всех надежный атрибутов и 5 не надежнех. Каждую смерть вы будете терять 20% ненадежных атрибутов."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"					"Дает герою навсегда 5 всех надежный аттрибутов и 5 не надежнех. Каждую смерть вы будете терять 20% ненадежных аттрибутов."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED"								"Медицинский трактат"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"					"Навсегда увеличивает здоровье вашего персонажа на 400 и ману на 200"
@@ -112,7 +112,7 @@
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_60_Description"					"Дает герою навсегда 50 надежной силы и 50 не надежнего. Каждую смерть вы будете терять 20% ненадежной силы."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60"								"Книга богов (+50)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60_Description"					"Дает герою навсегда 25 всех надежный атрибутов и 25 не надежнех. Каждую смерть вы будете терять 20% ненадежных атрибутов."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_60_Description"					"Дает герою навсегда 25 всех надежный аттрибутов и 25 не надежнех. Каждую смерть вы будете терять 20% ненадежных аттрибутов."
 
 
 		"DOTA_TOOLTIP_bonus_str_tome"										"Ненадежная сила"
@@ -1209,7 +1209,7 @@
         "DOTA_Tooltip_ability_item_power_treads_2_bonus_attack_speed"			"+$attack"
 
         "DOTA_Tooltip_Ability_item_power_treads_3"								"Power Treads 3"
-        "DOTA_Tooltip_ability_item_power_treads_3_Description"					"<h1>Активируемая: Switch Attribute</h1> Меняет значение выбранного атрибута между силой, ловкостью и интеллектом. Выбранный атрибут получает <B><font color='#A0A0D0'>100%</font></B> бонуса, остальные - <B><font color='#A0A0D0'>50%</font></B>.\n\nPower Treads могут быть собраны с помощью Belt of Strength, Band of Elvenskin или Robe of the Magi. Основные бонусы к скорости передвижения от нескольких пар ботинок не складываются. Бонусы к скорости атаки от нескольких Power Treads не складываются."
+        "DOTA_Tooltip_ability_item_power_treads_3_Description"					"<h1>Активируемая: Switch Attribute</h1> Меняет значение выбранного аттрибута между силой, ловкостью и интеллектом. Выбранный аттрибут получает 100% бонуса а остальные 50%.\n\nPower Treads могут быть собраны с помощью Belt of Strength, Band of Elvenskin или Robe of the Magi. Основные бонусы к скорости передвижения от нескольких пар ботинок не складываются. Бонусы к скорости атаки от нескольких Power Treads не складываются."
         "DOTA_Tooltip_ability_item_power_treads_3_Lore"							"Еще что впаришь?"
         "DOTA_Tooltip_ability_item_power_treads_3_bonus_movement_speed_ranged"	"+ к скорость передвижения в дальнем бою"
         "DOTA_Tooltip_ability_item_power_treads_3_bonus_movement_speed_melee"	"+ к скорость передвижения в ближнем бою"
@@ -2446,9 +2446,9 @@
 
 		"DOTA_Tooltip_ability_item_piercing_blade"								"Piercing Blade"
 		"DOTA_Tooltip_ability_item_piercing_blade_Description"					"<h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.<br> Перезарядка: %pure_dmg_cd% сек."
-		"DOTA_Tooltip_ability_item_piercing_blade_bonus_damage"					"+$damage"
-		"DOTA_Tooltip_ability_item_piercing_blade_bonus_health_regen"			"+$hp_regen"
-		"DOTA_Tooltip_ability_item_piercing_blade_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_piercing_blade_bonus_hp"					"+$health"
+		"DOTA_Tooltip_ability_item_piercing_blade_bonus_mp"					"+$mana"
+		"DOTA_Tooltip_ability_item_piercing_blade_bonus_all_stats"				"+$all"
 		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg"					"%ЧИСТЫЙ УРОН:"
 		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
 		"DOTA_Tooltip_ability_item_piercing_blade_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
@@ -2456,9 +2456,9 @@
 
 		"DOTA_Tooltip_ability_item_piercing_blade2"								"Piercing Blade 2"
 		"DOTA_Tooltip_ability_item_piercing_blade2_Description"					"<h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект.<br> Перезарядка: %pure_dmg_cd% сек."
-		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_damage"					"+$damage"
-		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_health_regen"			"+$hp_regen"
-		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_hp"					"+$health"
+		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_mp"					"+$mana"
+		"DOTA_Tooltip_ability_item_piercing_blade2_bonus_all_stats"				"+$all"
 		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg"					"%ЧИСТЫЙ УРОН:"
 		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
 		"DOTA_Tooltip_ability_item_piercing_blade2_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
@@ -2466,9 +2466,9 @@
 
 		"DOTA_Tooltip_ability_item_piercing_blade3"								"Piercing Blade 3"
 		"DOTA_Tooltip_ability_item_piercing_blade3_Description"					"<h1>Активаня: Pure power</h1> В Следующие %active_duration% секунд преобразует %active_pure_dmg%%  урона вашей следующей атаки или способности в чистый \n\n <h1>Пассивная: Pierce</h1>Заменяет %pure_dmg%%  всего исходящего урона на чистый. Не работает на крипов. Дополнительно, любой урон героя накладывает на врага складывающийся эффект, повышающий получаемый от этого предмета чистый урон на %pure_dmg_stack%% за каждый эффект <br> Перезарядка: %pure_dmg_cd% сек."
-		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_damage"					"+$damage"
-		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_health_regen"			"+$hp_regen"
-		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_mana_regen"				"+$mana_regen"
+		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_hp"					"+$health"
+		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_mp"					"+$mana"
+		"DOTA_Tooltip_ability_item_piercing_blade3_bonus_all_stats"				"+$all"
 		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg"					"%ЧИСТЫЙ УРОН:"
 		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg_stack"				"%УРОНА ЗА КАЖДЫЙ ДЕБАФ:"
 		"DOTA_Tooltip_ability_item_piercing_blade3_pure_dmg_duratiom"			"ДЛИТЕЛЬНОСТЬ ДЕБАФА:"
@@ -3159,17 +3159,9 @@
 		"DOTA_Tooltip_modifier_assault_aa_aura_enemy"				"Assault Cuirass"
 		"DOTA_Tooltip_modifier_assault_aa_aura_enemy_Description"	"Броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
-		"DOTA_Tooltip_Ability_item_vladmir"								"Vladmir's Offering"
-		"DOTA_Tooltip_ability_item_vladmir_Description"							"<h1>Пассивное: Vladmir's Aura</h1>Увеличивает вампиризм союзников на %lifesteal_aura%%%, их урон на %damage_aura%%%, броню на %armor_aura% и восстановление маны на %mana_regen_aura%.<br><br>Радиус: %aura_radius%"
-		"DOTA_Tooltip_ability_item_vladmir_Lore"								"Жуткая маска, проклятая злобой павшего вампира."
-		"DOTA_Tooltip_ability_item_vladmir_armor"								"+$armor"
-		"DOTA_Tooltip_ability_item_vladmir_mana_regen"							"+$mana_regen"
-
 		"DOTA_Tooltip_ability_item_vladmir_2"							"Vladmir's Offering 2"
-		"DOTA_Tooltip_ability_item_vladmir_2_Description"							"<h1>Пассивное: Vladmir's Aura</h1>Увеличивает вампиризм союзников на %lifesteal_aura%%%, их урон на %damage_aura%%%, броню на %armor_aura% и восстановление маны на %mana_regen_aura%.<br><br>Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_vladmir_2_Description"							"<h1>Пассивное: Vladmir's Aura</h1>Увеличивает вампиризм союзников на %lifesteal_aura%%%, их урон на %damage_aura%%%, броню на %armor_aura% и восстановление маны на %mana_regen_aura%. Вампиризм от крипов слабее на %creep_lifesteal_reduction_pct%%%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_vladmir_2_Lore"								"Жуткая маска, проклятая злобой павшего вампира."
-		"DOTA_Tooltip_ability_item_vladmir_2_armor"								"+$armor"
-		"DOTA_Tooltip_ability_item_vladmir_2_mana_regen"							"+$mana_regen"
 
 
 		"DOTA_Tooltip_ability_special_bonus_all_stats_420"		"+{s:value} ко всем атрибутам"
@@ -3222,36 +3214,36 @@
 		"DOTA_Tooltip_ability_item_mini_bkb_Note0"			"Способности, проходящие сквозь невосприимчивость к эффектам, игнорируют действие этого предмета."
 
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1"								"Dimensional Predictor"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного атрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного аттрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_strength"				"+$str"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_intellect"				"+$int"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_attackspeed"				"+$attack"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_magresist"				"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_bonus_mana_regen"				"+$mana_regen"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Note0"						"У героев Универсалов урон берётся от суммы всех атрибутов, делённая на 3."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Note0"						"У героев Универсалов урон берётся от суммы всех аттрибутов, делённая на 3."
 		"DOTA_Tooltip_ability_item_dimensional_predictor_1_Lore"						"Этот камень, встречающийся в далёких и забытых местах, позволяет проецировать свою силу на множества."
 
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2"								"Dimensional Predictor 2"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного атрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного аттрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_strength"				"+$str"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_intellect"				"+$int"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_attackspeed"				"+$attack"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_magresist"				"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_bonus_mana_regen"				"+$mana_regen"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Note0"						"У героев Универсалов урон берётся от суммы всех атрибутов, делённая на 3."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Note0"						"У героев Универсалов урон берётся от суммы всех аттрибутов, делённая на 3."
 		"DOTA_Tooltip_ability_item_dimensional_predictor_2_Lore"						"Этот камень, встречающийся в далёких и забытых местах, позволяет проецировать свою силу на множества."
 
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3"								"Dimensional Predictor 3"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного атрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Description"					"<h1>Активируемая: Transparent</h1> Скрывает кастера с миникарты на %active_duration% секунд\n<h1>Пассивная: Dimensional Charge</h1>Ваша атака раз в %passive_cd% секунд нанесет всем врагам в радиусе %radius% магический урон равный %passive_damage_att%%% от основного аттрибута. <br><br> Враги попавшие под действие атаки будут наносить на %spell_amp_debuff%%% меньше урона заклинаний и получать %dps% урона в секунду <br> Длительность: %duration% секунды "
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_strength"				"+$str"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_intellect"				"+$int"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_attackspeed"				"+$attack"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_magresist"				"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_bonus_mana_regen"				"+$mana_regen"
-		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Note0"						"У героев Универсалов урон берётся от суммы всех атрибутов, делённая на 3."
+		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Note0"						"У героев Универсалов урон берётся от суммы всех аттрибутов, делённая на 3."
 		"DOTA_Tooltip_ability_item_dimensional_predictor_3_Lore"						"Этот камень, встречающийся в далёких и забытых местах, позволяет проецировать свою силу на множества."
 
 		"DOTA_Tooltip_modifier_dimensional_predictor_charged_dummy"						"Оружие заряжено"
@@ -3269,7 +3261,7 @@
         "DOTA_Tooltip_modifier_talisman_of_heal_buff_Description"            "Востановления здоровья и маны"
 
 		"DOTA_Tooltip_ability_item_talisman_of_heal_2"                            "Talisman of Heal 2"
-        "DOTA_Tooltip_ability_item_talisman_of_heal_2_Description"                "<h1>Активная: Extencive Heal</h1> Восстанавливает %heal_const% + %heal_per_main_stat% * на ваш основной атрибут здоровья за %duration_active% сек. \n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя. Перезарядка: %minder_cd% сек. \n\n <h1>Пассивная: Bliss</h1>При получения уровня востанавливает %replenish_health%% здоровья и %replenish_mana%%  маны. Дополнительно, дает увеличение востановления здоровья и маны %buff_health%%.<br> Длительность %duration% секунд.  <br>Восстановление прекращается, если получить урон от вражеского героя."
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_Description"                "<h1>Активная: Extencive Heal</h1> Восстанавливает %heal_const% + %heal_per_main_stat% * на ваш основной аттрибут здоровья за %duration_active% сек. \n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя. Перезарядка: %minder_cd% сек. \n\n <h1>Пассивная: Bliss</h1>При получения уровня востанавливает %replenish_health%% здоровья и %replenish_mana%%  маны. Дополнительно, дает увеличение востановления здоровья и маны %buff_health%%.<br> Длительность %duration% секунд.  <br>Восстановление прекращается, если получить урон от вражеского героя."
         "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_attack"            "+$damage"
         "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_all"                "+$all"
         "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_health"            "+$health"

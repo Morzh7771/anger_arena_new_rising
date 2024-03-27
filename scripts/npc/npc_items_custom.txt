@@ -2904,7 +2904,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"500"	
+        "ItemCost"						"425"	
         "ItemShopTags"					""
         
         // Recipe
@@ -2913,7 +2913,7 @@
         "ItemResult"					"item_piercing_blade"
         "ItemRequirements"
         {
-            "01"						"item_relic;item_pers"
+            "01"						"item_ultimate_orb;item_point_booster"
         }
     }
     "item_piercing_blade"
@@ -2930,9 +2930,9 @@
             "pure_dmg_stack"		"2"
 			"pure_dmg_duration"		"3 4 5"
 			"pure_dmg_cd"			"1.2"
-           	"bonus_damage"			"55 110 300"
-           	"bonus_health_regen"	"6.5 13 30"
-			"bonus_mana_regen"		"2.25 4.5 10"
+            "bonus_hp"			    "200 500 1300"
+            "bonus_mp"			    "200 500 1300"
+            "bonus_all_stats"		"15 30 80"
 
             "damage_to_exp_ranged"	"20 25 40"
             "damage_to_exp_melee" 	"25 30 45"
@@ -2977,15 +2977,15 @@
             "pure_dmg_stack"		"2"
 			"pure_dmg_duration"		"3 4 5"
 			"pure_dmg_cd"			"1.2"
-           	"bonus_damage"			"55 110 300"
-           	"bonus_health_regen"	"6.5 13 30"
-			"bonus_mana_regen"		"2.25 4.5 10"
+            "bonus_hp"			    "200 500 1300"
+            "bonus_mp"			    "200 500 1300"
+            "bonus_all_stats"		"15 30 80"
 
-            "damage_to_exp_ranged"	"20 25 40"
-            "damage_to_exp_melee" 	"25 30 45"
+            "damage_to_exp_ranged"	"17 22 27"
+            "damage_to_exp_melee" 	"20 25 30"
 
-            "min_exp_ranged"		"60 80 120"
-            "min_exp_melee"			"70 90 130"
+            "min_exp_ranged"		"32 42 52"
+            "min_exp_melee"			"40 50 60"
 
             //"active_pure_dmg"       "100 120 140"
             "active_duration"       "5"
@@ -3026,15 +3026,15 @@
             "pure_dmg_stack"		"2"
 			"pure_dmg_duration"		"3 4 5"
 			"pure_dmg_cd"			"1.2"
-           	"bonus_damage"			"55 110 300"
-           	"bonus_health_regen"	"6.5 13 30"
-			"bonus_mana_regen"		"2.25 4.5 10"
+            "bonus_hp"			    "200 500 1300"
+            "bonus_mp"			    "200 500 1300"
+            "bonus_all_stats"		"15 30 80"
 
-            "damage_to_exp_ranged"	"20 25 40"
-            "damage_to_exp_melee" 	"25 30 45"
+            "damage_to_exp_ranged"	"17 22 27"
+            "damage_to_exp_melee" 	"20 25 30"
 
-            "min_exp_ranged"		"60 80 120"
-            "min_exp_melee"			"70 90 130"
+            "min_exp_ranged"		"32 42 52"
+            "min_exp_melee"			"40 50 60"
 
             "active_pure_dmg"       "100"
             "active_duration"       "5"
@@ -3067,7 +3067,7 @@
 
 		"AbilityValues"
 		{
-			"bonus_armor"			"4"
+			"bonus_armor"			"6"
 			"xp"					"0"
 			"gold"					"30"
 		}
@@ -4191,7 +4191,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_attack_speed"                "20 30"
+			"bonus_attack_speed"                "40 60"
 			"xp_multiplier"			            "2.2 4.4"
 			"bonus_gold"			            "170 340"
 			"transmute_cast_range_tooltip"		"600 700"
@@ -4253,7 +4253,7 @@
 
 		"AbilityValues"
 		{
-			"bonus_attack_speed"                "20 30"
+			"bonus_attack_speed"                "40 60"
 			"xp_multiplier"			            "2.2 4.4"
 			"bonus_gold"			            "170 340"
 			"transmute_cast_range_tooltip"		"600 700"
@@ -5481,8 +5481,8 @@
 			"aura_positive_armor"	"5 10 30"
 			"aura_negative_armor"	"-5 -10 -25"
 
-			"mana_regen_aura"		"1 2 6"
-			"lifesteal_aura"		"20 22 24"
+			"mana_regen_aura"		"2 4 12"
+			"lifesteal_aura"		"18 20 22"
 			"damage_aura"			"18 20 22"
 		}
 	}
@@ -6315,9 +6315,9 @@
 		"ItemPurchasable"				"1"
 		"AbilityValues"
 		{
-            "bonus_hp"			    "120"
-            "hp_regen"              "0.7"
-			"mana_regen"			"1.0"
+            "bonus_hp"			    "300"
+			"mana_regen"			"1.6"
+            "hp_regen"              "4"
 
 			"magic_damage_block"	    "400"
 			"time_since_last_damage"    "5"
