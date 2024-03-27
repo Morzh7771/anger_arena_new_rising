@@ -1527,7 +1527,7 @@
     		"ItemResult"					"item_trisula"
     		"ItemRequirements"
     		{
-    			"01"						"item_bfury_2;item_trident_aa;item_boss_soul;item_boss_soul"
+    			"01"						"item_bfury_aa_2;item_trident_aa;item_boss_soul;item_boss_soul"
     			"02"						"item_ranged_cleave2;item_trident_aa;item_boss_soul;item_boss_soul"
     		}
     	}
@@ -2514,8 +2514,8 @@
         //special
         "AbilityValues"
         {
-            "bonus_stats"			"4"
-            "active_bonus_aspeed"	"20"
+            "bonus_stats"			"6"
+            "active_bonus_aspeed"	"35"
             "block_damage"			"25"
             "shield_duration"		"5"
         }
@@ -4042,8 +4042,8 @@
             "duration"                  "60"
             "day_vision"                "300"
             "night_vision"              "200"
-            "bonus_str"                 "10"
-            "bonus_int"                 "25"
+            "bonus_str"                 "20"
+            "bonus_int"                 "35"
 		}
     }
     "item_repick"
@@ -7172,6 +7172,134 @@
             "bonus_mana_regen"              "0 2.5 3.75"
             "range"                         "0 340 380"   
             "duration"                      "0.18" 
+        }
+    }
+    "item_recipe_bfury_aa"
+    {
+         //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bfury_aa"
+        "ItemRequirements"
+        {
+            "01"                        "item_broadsword;item_claymore;item_cornucopia;item_quelling_blade"
+        }
+    }
+    "item_recipe_bfury_aa_2"
+    {
+         //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "450" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bfury_aa_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_bfury_aa;item_blade_of_alacrity;item_ogre_axe"
+        }
+    }   
+    "item_bfury_aa"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_bfury_aa"
+        "AbilityTextureName"            "bfury"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+        "ItemBaseLevel"                 "1"
+
+        "AbilityCastRange"              "350"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "4.0"
+
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "4100"
+        "ItemShopTags"                  "damage;health_regen;mana_regen;hard_to_tag"
+        "ItemQuality"                   "epic"
+        "ItemAliases"                   "bf;battle fury"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+        
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_damage"                      "60 80"
+            "bonus_str"                         "0 15"
+            "bonus_agi"                         "0 15"
+            "bonus_health_regen"                "7.5 11"
+            "bonus_mana_regen"                  "2.75 3.0"
+            "cleave_damage_percent"             "70 90"
+            "cleave_damage_percent_creep"       "40 60"
+            "quelling_bonus"                    "32 64"
+            "quelling_bonus_ranged"             "16 32"
+            "cleave_starting_width"             "150"
+            "cleave_ending_width"               "360"
+            "cleave_distance"                   "650"
+        }
+    }
+    "item_bfury_aa_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_bfury_aa"
+        "AbilityTextureName"            "battle_fury_2"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+        "ItemBaseLevel"                 "2"
+
+        "AbilityCastRange"              "350"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "4.0"
+
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "4100"
+        "ItemShopTags"                  "damage;health_regen;mana_regen;hard_to_tag"
+        "ItemQuality"                   "epic"
+        "ItemAliases"                   "bf;battle fury"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+        
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_damage"                      "60 80"
+            "bonus_str"                         "0 15"
+            "bonus_agi"                         "0 15"
+            "bonus_health_regen"                "7.5 11"
+            "bonus_mana_regen"                  "2.75 3.0"
+            "cleave_damage_percent"             "70 90"
+            "cleave_damage_percent_creep"       "40 60"
+            "quelling_bonus"                    "32 64"
+            "quelling_bonus_ranged"             "16 32"
+            "cleave_starting_width"             "150"
+            "cleave_ending_width"               "360"
+            "cleave_distance"                   "650"
         }
     }
 }
