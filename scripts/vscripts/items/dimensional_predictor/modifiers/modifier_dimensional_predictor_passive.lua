@@ -18,6 +18,7 @@ function modifier_dimensional_predictor_passive:OnCreated(kv)
     self.bonus_intellect = self:GetAbility():GetSpecialValueFor("bonus_intellect")
     self.attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
     self.bonus_mana_regen = self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
+    self.bonus_damage = self:GetAbility():GetSpecialValueFor("bonus_damage")
     self.bonus_magresist = self:GetAbility():GetSpecialValueFor("bonus_magresist")
 
     if not IsServer() then return end
@@ -39,6 +40,7 @@ end
 function modifier_dimensional_predictor_passive:DeclareFunctions() return {
     MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
     MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+    MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
     MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
     MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
     MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
@@ -57,6 +59,10 @@ end
 
 function modifier_dimensional_predictor_passive:GetModifierAttackSpeedBonus_Constant(params)
     return self.attack_speed
+end
+
+function modifier_dimensional_predictor_passive:GetModifierPreAttack_BonusDamage(params)
+    return self.bonus_damage
 end
 
 function modifier_dimensional_predictor_passive:GetModifierMagicalResistanceBonus(params)

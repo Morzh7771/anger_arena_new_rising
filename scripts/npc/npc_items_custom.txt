@@ -1186,14 +1186,14 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_damage"				"50 100 220"
-            "crit_chance"				"30 35 40"
+            "bonus_damage"			"50 100 150"
+            "crit_chance"			"30 35 40"
             "spell_crit_multiplier"		"60 100 140"
             "spell_crit_flat"			"250 400 650"
-            "crit_multiplier"			"150 200 250"
-            "bonus_health"				"200 500 1200"
-            "bonus_mana"				"200 500 1200"
-            "bonus_all_stats"			"8 16 40"
+            "crit_multiplier"		"150 200 250"
+            "bonus_health"		"200 500 1200"
+            "bonus_mana"		"200 500 1200"
+            "bonus_all_stats"	"8 30 120"
             "slow"						"50 60 70"
             "slow_duration"				"1 1.5 2"
         }
@@ -1253,14 +1253,15 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_damage"				"50 100 220"
-            "crit_chance"				"30 35 40"
+            "bonus_damage"			"50 100 150"
+            "crit_chance"			"30 35 40"
             "spell_crit_multiplier"		"60 100 140"
             "spell_crit_flat"			"250 400 650"
-            "crit_multiplier"			"150 200 250"
-            "bonus_health"				"200 500 1200"
-            "bonus_mana"				"200 500 1200"
-            "bonus_all_stats"			"8 16 40"
+            "crit_multiplier"		"150 200 250"
+            "tooltip_crit_damage"	"50 100 150"
+            "bonus_health"		"200 500 1200"
+            "bonus_mana"		"200 500 1200"
+            "bonus_all_stats"	"8 30 120"
             "slow"						"50 60 70"
             "slow_duration"				"1 1.5 2"
         }
@@ -1321,14 +1322,15 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_damage"				"50 100 220"
-            "crit_chance"				"30 35 40"
+            "bonus_damage"			"50 100 150"
+            "crit_chance"			"30 35 40"
             "spell_crit_multiplier"		"60 100 140"
             "spell_crit_flat"			"250 400 650"
-            "crit_multiplier"			"150 200 250"
-            "bonus_health"				"200 500 1200"
-            "bonus_mana"				"200 500 1200"
-            "bonus_all_stats"			"8 16 40"
+            "crit_multiplier"		"150 200 250"
+            "tooltip_crit_damage"	"50 100 150"
+            "bonus_health"		"200 500 1200"
+            "bonus_mana"		"200 500 1200"
+            "bonus_all_stats"	"8 30 120"
             "slow"						"50 60 70"
             "slow_duration"				"1 1.5 2"
         }
@@ -1499,12 +1501,12 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityValues"
 		{
-			"bonus_all_stats"		            "32"
-            "bonus_attack_speed"                "50"
+			"bonus_all_stats"		            "70"
+            "bonus_attack_speed"                "70"
             "bonus_status_res"                  "25"
             "bonus_mana_regen_amp"              "75"
             "bonus_ms"                          "15"
-            "bonus_spell_amp"                   "20"
+            "bonus_spell_amp"                   "25"
             "bonus_spell_lifesteal_amp_pct"     "50"
             "bonus_heal_amp_pct"                "50"
 			
@@ -2338,7 +2340,7 @@
 			"radius"		     	"300"
 			"max_target"			"2 4"
 			"split_shot_damage"		"80 100"
-		}
+        }
 	}
 	"item_recipe_ranged_cleave2"
 	{
@@ -2377,44 +2379,16 @@
 		"ItemSellable"					"1"
 		"ItemBaseLevel"                 "2"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"20 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"20 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"40 80"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"150"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"		     	"300"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_target"			"2 4"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"split_shot_damage"		"80 100"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_str"             "20 40"
+            "bonus_agi"             "20 40"
+            "bonus_dmg"             "15 30"
+            "bonus_range"           "150"
+            "radius"                "300"
+            "max_target"            "2 4"
+            "split_shot_damage"     "80 100"
+        }
 	}
 //	"item_recipe_ranged_cleave3"
 //	{
@@ -5294,7 +5268,7 @@
         "AbilityValues"
         {
             "bonus_damage"                  "25 60 180"
-            "bonus_attack_speed"            "90 180 400"
+            "bonus_attack_speed"            "70 140 280"
 
             "active_jump_count"             "4 6 8"
             "active_chance"                 "15 20 25"
@@ -6183,11 +6157,12 @@
 		"AbilityValues"
 		{
 
-			"bonus_damage"			"25 60 150"
+			"bonus_attack_speed"	"15 30 80"
+			"bonus_damage"			"30 70 160"
 
 			"bonus_strength"		"25 50 120"
-			"bonus_agility"			"10 20 60"
-			"bonus_intellect"		"10 20 60"
+			"bonus_agility"			"16 32 64"
+			"bonus_intellect"		"16 32 64"
 			"bonus_mana_regen"		"2.0 5 10"
 			
 			"passive_cooldown"		"1.0 0.8 0.5"
@@ -6478,10 +6453,11 @@
 
         "AbilityValues"
         {
-            "bonus_strength"        "10 20 60"
-            "bonus_attackspeed"     "45 90 200"
+            "bonus_strength"        "12 24 75"
+            "bonus_attackspeed"     "50 100 150"
+            "bonus_damage"          "25 50 150"
             "bonus_magresist"       "20 22.5 25"
-			"bonus_mana_regen"		"2 4 10"
+			"bonus_mana_regen"		"2 6 16"
 			"bonus_intellect"		"10 20 50"
 
             "passive_cd"            "4"	
