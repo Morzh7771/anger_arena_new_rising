@@ -42,7 +42,6 @@ modifier_item_raindrop_aa = class({
         else
             local i = self:GetStackCount()
             self:SetStackCount(0)
-            self:Destroy()
             return -i
         end
     end,

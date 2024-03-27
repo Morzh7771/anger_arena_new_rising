@@ -603,6 +603,11 @@
 		"DOTA_Tooltip_Ability_bristleback_quill_spray_damage_pct"			"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_special_bonus_unique_bristleback_quill_spray_str_dmg_pct"  "+{s:bonus_damage_pct}% к урону от Силы для QuillSpray"
 
+
+		//tidehunter
+		"DOTA_Tooltip_Ability_tidehunter_ravage_damage_pct"					"%УРОН ОТ СИЛЫ"
+		"DOTA_Tooltip_Ability_tidehunter_gush_damage_pct"					"%УРОН ОТ СИЛЫ"
+
 		//Cristal Maiden
 		"DOTA_Tooltip_Ability_crystal_maiden_crystal_nova_damage_pct"		"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_crystal_maiden_frostbite_damage_pct"			"%УРОН ОТ ИНТЕЛЛЕКТА"
@@ -1285,7 +1290,7 @@
 		"DOTA_Tooltip_ability_item_monkey_king_bar_3_bonus_attack_speed"		"+$attack"
 
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa"                             "Meteor Hammer"
-        "DOTA_Tooltip_ability_item_meteor_hammer_aa_Description"                 "<h1>Активное: Meteor Hammer</h1> ПРЕРЫВАЕМАЯ — призывает метеорит, который после небольшой задержки бьёт по области радиусом %impact_radius%. Удар наносит урон вражеским существам, оглушает их на %stun_duration% сек. и поджигает, нанося периодический урон в течение %burn_duration% сек. Также замедляет подожжённых существ на %burn_slow%%%.<BR><BR>Урон существам при ударе: %impact_damage_units% + %max_hp_impact_damage%%% от максимального здоровья. <BR><BR>Периодический урон существам: %burn_dps_units% + %max_hp_burn_damage%%% от максимального здоровья. <BR><BR>Время применения: %max_duration% сек.<BR>Задержка после применения: %land_time% сек."		
+        "DOTA_Tooltip_ability_item_meteor_hammer_aa_Description"                 "<h1>Активное: Meteor Hammer</h1> ПРЕРЫВАЕМАЯ — призывает метеорит, который после небольшой задержки бьёт по области радиусом %impact_radius%. Удар наносит урон вражеским существам, оглушает их на %stun_duration% сек. и поджигает, нанося периодический урон в течение %burn_duration% сек. Также замедляет подожжённых существ на %burn_slow%%%.<BR><BR>Урон существам при ударе: %impact_damage_units% + %max_hp_impact_damage%%% от максимального здоровья. <BR><BR>Периодический урон существам: %burn_dps_units% + %max_hp_burn_damage%%% от текущего здоровья. <BR><BR>Время применения: %max_duration% сек.<BR>Задержка после применения: %land_time% сек."		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_lore"                   "Этот зачарованный молот сковали из металла, который обнаружили в руинах деревни, уничтоженной великим звездопадом."		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_bonus_strength"					"+$str"	
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_bonus_agility"						"+$agi"	
@@ -1299,7 +1304,7 @@
 		"DOTA_Tooltip_modifier_item_meteor_hammer_aa_burn_Description"			"Существо замедлено. Получает %dMODIFIER_PROPERTY_TOOLTIP% урона раз в %dMODIFIER_PROPERTY_TOOLTIP2% сек."
 
         "DOTA_Tooltip_ability_item_meteor_hammer_aa_2"                             "Meteor Hammer 2"
-        "DOTA_Tooltip_ability_item_meteor_hammer_aa_2_Description"                 "<h1>Активное: Meteor Hammer</h1> ПРЕРЫВАЕМАЯ — призывает метеорит, который после небольшой задержки бьёт по области радиусом %impact_radius%. Удар наносит урон вражеским существам, оглушает их на %stun_duration% сек. и поджигает, нанося периодический урон в течение %burn_duration% сек. Также замедляет подожжённых существ на %burn_slow%%%.<BR><BR>Урон существам при ударе: %impact_damage_units% + %max_hp_impact_damage%%% от максимального здоровья. <BR><BR>Периодический урон существам: %burn_dps_units% + %max_hp_burn_damage%%% от максимального здоровья. <BR><BR>Время применения: %max_duration% сек.<BR>Задержка после применения: %land_time% сек."		
+        "DOTA_Tooltip_ability_item_meteor_hammer_aa_2_Description"                 "<h1>Активное: Meteor Hammer</h1> ПРЕРЫВАЕМАЯ — призывает метеорит, который после небольшой задержки бьёт по области радиусом %impact_radius%. Удар наносит урон вражеским существам, оглушает их на %stun_duration% сек. и поджигает, нанося периодический урон в течение %burn_duration% сек. Также замедляет подожжённых существ на %burn_slow%%%.<BR><BR>Урон существам при ударе: %impact_damage_units% + %max_hp_impact_damage%%% от максимального здоровья. <BR><BR>Периодический урон существам: %burn_dps_units% + %max_hp_burn_damage%%% от текущего здоровья. <BR><BR>Время применения: %max_duration% сек.<BR>Задержка после применения: %land_time% сек."		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_2_lore"                   "Этот зачарованный молот сковали из металла, который обнаружили в руинах деревни, уничтоженной великим звездопадом."		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_2_bonus_strength"						"+$str"	
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_2_bonus_agility"						"+$agi"	
@@ -1313,7 +1318,7 @@
 		"DOTA_Tooltip_modifier_item_meteor_hammer_2_burn_Description"			"Существо замедлено. Получает %dMODIFIER_PROPERTY_TOOLTIP% урона раз в %dMODIFIER_PROPERTY_TOOLTIP2% сек."
 
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_3"                             "Meteor Hammer 3"
-        "DOTA_Tooltip_ability_item_meteor_hammer_aa_3_Description"                 "<h1>Активное: Meteor Hammer</h1> ПРЕРЫВАЕМАЯ — призывает метеорит, который после небольшой задержки бьёт по области радиусом %impact_radius%. Удар наносит урон вражеским существам, оглушает их на %stun_duration% сек. и поджигает, нанося периодический урон в течение %burn_duration% сек. Также замедляет подожжённых существ на %burn_slow%%%.<BR><BR>Урон существам при ударе: %impact_damage_units% + %max_hp_impact_damage%%% от максимального здоровья. <BR><BR>Периодический урон существам: %burn_dps_units% + %max_hp_burn_damage%%% от максимального здоровья. <BR><BR>Время применения: %max_duration% сек.<BR>Задержка после применения: %land_time% сек."		
+        "DOTA_Tooltip_ability_item_meteor_hammer_aa_3_Description"                 "<h1>Активное: Meteor Hammer</h1> ПРЕРЫВАЕМАЯ — призывает метеорит, который после небольшой задержки бьёт по области радиусом %impact_radius%. Удар наносит урон вражеским существам, оглушает их на %stun_duration% сек. и поджигает, нанося периодический урон в течение %burn_duration% сек. Также замедляет подожжённых существ на %burn_slow%%%.<BR><BR>Урон существам при ударе: %impact_damage_units% + %max_hp_impact_damage%%% от максимального здоровья. <BR><BR>Периодический урон существам: %burn_dps_units% + %max_hp_burn_damage%%% от текущего здоровья. <BR><BR>Время применения: %max_duration% сек.<BR>Задержка после применения: %land_time% сек."		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_3_lore"                   "Этот зачарованный молот сковали из металла, который обнаружили в руинах деревни, уничтоженной великим звездопадом."		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_3_bonus_strength"						"+$str"	
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_3_bonus_agility"						"+$agi"	
@@ -1780,7 +1785,27 @@
 		"DOTA_Tooltip_modifier_item_pavise_2_shield"				"Pavise 2"
 		"DOTA_Tooltip_modifier_item_pavise_2_shield_Description"	"Поглощает физический урон."
 
-        "DOTA_Tooltip_ability_item_crimson_guard_3"                     "CRIMSON GUARD 2"
+		"DOTA_Tooltip_ability_item_crimson_guard_2"                     "CRIMSON GUARD 2"
+        "DOTA_Tooltip_ability_item_crimson_guard_2_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %strength_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
+		"DOTA_Tooltip_ability_item_crimson_guard_2_Lore"		"Кираса, изначально выкованная для защиты от ужасающего Годня."
+		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health"	"+$health"
+		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health_regen"	"+$hp_regen"
+		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_armor"		"+$armor"
+			
+		"DOTA_Tooltip_ability_item_crimson_guard_2_Note0"		"Эффекты нескольких способностей, блокирующих урон, не сочетаются."
+
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_aura"		"Броня от Crimson Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_aura_Description"	"Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_effect"		"Броня от Crimson Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_effect_Description"	"Броня увеличена на %MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_extra"		"Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_extra_Description"	"Имеет шанс в 100%% заблокировать %dMODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK% урона от атак."
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_nostack"	        "Перезарядка Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_nostack_Description""Способность Guard 2 не действует на существ, на которых ее недавно применяли."
+
+        "DOTA_Tooltip_ability_item_crimson_guard_3"                     "CRIMSON GUARD 3"
         "DOTA_Tooltip_ability_item_crimson_guard_3_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %strength_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_Lore"		"Кираса, изначально выкованная для защиты от ужасающего Годня."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health"	"+$health"
@@ -1789,16 +1814,16 @@
 			
 		"DOTA_Tooltip_ability_item_crimson_guard_3_Note0"		"Эффекты нескольких способностей, блокирующих урон, не сочетаются."
 
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_aura"		"Броня от Crimson Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_aura"		"Броня от Crimson Guard 3"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_aura_Description"	"Броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_effect"		"Броня от Crimson Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_effect"		"Броня от Crimson Guard 3"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_effect_Description"	"Броня увеличена на %MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra"		"Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra"		"Guard 3"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra_Description"	"Имеет шанс в 100%% заблокировать %dMODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK% урона от атак."
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack"	        "Перезарядка Guard 2"
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description""Способность Guard 2 не действует на существ, на которых ее недавно применяли."
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack"	        "Перезарядка Guard 3"
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description""Способность Guard 3 не действует на существ, на которых ее недавно применяли."
 		
 		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence"	"Explosive Mantle of Intelligence"
 		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Description"	"<h1>Активное: Explode</h1>При использовании делает вас беспомощным. В момент активации и каждую секунду наносит вам и всем врагам в радиусе %radius% урон от вашего максимального здоровья. По истечении %pre_explode_duration% секунд убивает вас, нанося врагам урон от вашего текущего здоровья. Конечный урон увеличивается от вашего интеллекта."
@@ -2734,6 +2759,22 @@
 		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_2_bonus_armor"					"+$armor"
 		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_2_bonus_movement_speed"		"+$move_speed"
 		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_2_bonus_health_regen"			"+$hp_regen"
+
+		"DOTA_Tooltip_modifier_boots_of_bearing_aa_3_aura"							"Swiftness Aura"
+		"DOTA_Tooltip_modifier_boots_of_bearing_aa_3_aura_Description"				"Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%.<br>Cкорость атаки на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%. "
+		
+		"DOTA_Tooltip_modifier_boots_of_bearing_aa_3_active"						"Endurance"
+		"DOTA_Tooltip_modifier_boots_of_bearing_aa_3_active_Description"			"Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.<br>Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.<br>Урон от атаки увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%."
+		
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3"						"BOOTS OF BEARING 3"
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3_Description"					"<h1>Активное: Endurance</h1> Действует на союзников вокруг. Активация увеличивает их скорость атаки на %active_bonus_attack_speed% скорость передвижения на %active_bonus_movement_speed_pct%%% урон в размере %active_bonus_damage_from_agi%%% от ловкости владельца.<br><br> Действует %active_duration% сек.<br><br>В первые %active_non_slow% сек. союзников нельзя замедлить.<br><br>Радиус: %active_radius%\n\n<h1>Пассивное: Swiftness Aura</h1> Увеличивает скорость передвижения союзников вокруг на %aura_movement_speed% и скорость атаки на %aura_attack_speed%. <br><br>Радиус: %active_radius%"
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3_Lore"						"Реликвия, в неспокойные времена зачаровывающая тела воинов вокруг, дабы те двигались скорее."
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3_bonus_str"					"+$str"
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3_bonus_int"					"+$int"
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3_bonus_agi"					"+$agi"
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3_bonus_armor"					"+$armor"
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3_bonus_movement_speed"		"+$move_speed"
+		"DOTA_Tooltip_Ability_item_boots_of_bearing_aa_3_bonus_health_regen"			"+$hp_regen"
 
 		"DOTA_Tooltip_modifier_drum_of_endurance_aura"							"Swiftness Aura"
 		"DOTA_Tooltip_modifier_drum_of_endurance_aura_Description"				"Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%.<br>Cкорость атаки на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%. "

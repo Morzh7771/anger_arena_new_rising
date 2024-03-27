@@ -176,17 +176,17 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"health_cost"
-				{
-					"value"							"3"
-					"DamageTypeTooltip"				"DAMAGE_TYPE_PURE"
-				}
-				"burn_damage"
-				{
-					"value"							"10 17 25 34 44 55 68"
-					"special_bonus_unique_huskar_2" "12"
-				}
-				"duration"							"8"
+			"health_cost"
+			{
+				"value"							"3"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PURE"
+			}
+			"burn_damage"
+			{
+				"value"							"6 12 18 24 32 40 48"
+				"special_bonus_unique_huskar_2" "12"
+			}
+			"duration"							"8"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

@@ -1,0 +1,143 @@
+"DOTAAbilities"
+{
+    "item_recipe_desolator_aa_1"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_mithril_hammer;item_mithril_hammer;item_blight_stone"
+		}
+	}
+    "item_recipe_desolator_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_aa_1;item_desolator_aa_1;"
+		}
+	}
+    "item_recipe_desolator_aa_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator_aa_2;item_monkey_king_bar_2;item_boss_soul;item_boss_soul"
+		}
+	}
+	"item_desolator_aa_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_desolator"
+        "ScriptFile"					"items/desolator_blood"
+        "ItemBaseLevel"					"1"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"				"50 100 220"
+				"corruption_armor"			"8 16 35"
+				"corruption_duration"		"8 8 8"
+		}
+	}	
+	"item_desolator_aa_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"desolator_3"
+        "ScriptFile"					"items/desolator_blood"
+		"AbilityTextureName"			"desolatorr_2"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"				"50 100 220"
+				"corruption_armor"			"8 16 35"
+				"corruption_duration"		"8 8 8"
+		}
+	}
+	"item_desolator_aa_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"3"
+		
+		"AbilityTextureName"			"desolator_3"
+        "ScriptFile"					"items/desolator_blood"
+        "BaseClass"						"item_lua"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"				"50 100 220"
+                "bonus_attack_speed"		"45 90 180"
+				"corruption_armor"			"8 16 35"
+				"corruption_duration"		"8 8 8"
+                "chance"                    "20"
+                "damage_pct"                "12"
+		}
+	}
+}

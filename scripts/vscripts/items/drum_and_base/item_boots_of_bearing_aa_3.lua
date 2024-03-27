@@ -1,13 +1,13 @@
 
-LinkLuaModifier('modifier_boots_of_bearing_aa_2', 'items/drum_and_base/item_boots_of_bearing_aa_2', LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier('modifier_boots_of_bearing_aa_2_aura', 'items/drum_and_base/item_boots_of_bearing_aa_2', LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier('modifier_boots_of_bearing_aa_2_active', 'items/drum_and_base/item_boots_of_bearing_aa_2', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_boots_of_bearing_aa_3', 'items/drum_and_base/item_boots_of_bearing_aa_3', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_boots_of_bearing_aa_3_aura', 'items/drum_and_base/item_boots_of_bearing_aa_3', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_boots_of_bearing_aa_3_active', 'items/drum_and_base/item_boots_of_bearing_aa_3', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_boots_of_bearing_aa_unslowable', 'items/drum_and_base/item_boots_of_bearing_aa', LUA_MODIFIER_MOTION_NONE)
 
-item_boots_of_bearing_aa_2 = class({
-    GetIntrinsicModifierName = function (self) return 'modifier_boots_of_bearing_aa_2' end
+item_boots_of_bearing_aa_3 = class({
+    GetIntrinsicModifierName = function (self) return 'modifier_boots_of_bearing_aa_3' end
 })
-function item_boots_of_bearing_aa_2:OnSpellStart()
+function item_boots_of_bearing_aa_3:OnSpellStart()
     EmitSoundOn("DOTA_Item.DoE.Activate", self:GetCaster())
 
 	-- Find all nearby allies
@@ -40,7 +40,7 @@ end
 
 -----------------------------------------------------------------------
 
-modifier_boots_of_bearing_aa_2 = class({
+modifier_boots_of_bearing_aa_3 = class({
     IsHidden = function (self) return true end,
     DeclareFunctions = function (self)
         return {
@@ -52,7 +52,7 @@ modifier_boots_of_bearing_aa_2 = class({
             MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE,
         }
     end,
-    GetModifierAura = function (self)return "modifier_boots_of_bearing_aa_2_aura" end,
+    GetModifierAura = function (self)return "modifier_boots_of_bearing_aa_3_aura" end,
     IsAura = function (self) return true end,
     GetAuraSearchTeam = function (self) return DOTA_UNIT_TARGET_TEAM_FRIENDLY end,
     GetAuraSearchType = function (self) return  DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP end,
@@ -66,7 +66,7 @@ modifier_boots_of_bearing_aa_2 = class({
     GetModifierMoveSpeedBonus_Special_Boots = function (self) return self:GetAbility():GetSpecialValueFor("bonus_movement_speed") end,
 })
 
-modifier_boots_of_bearing_aa_2_aura = class({
+modifier_boots_of_bearing_aa_3_aura = class({
     IsHidden = function (self) return false end,
     DeclareFunctions = function (self)
         return {
@@ -78,12 +78,8 @@ modifier_boots_of_bearing_aa_2_aura = class({
     GetModifierMoveSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("aura_movement_speed") end,
     GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end
 })
-function modifier_boots_of_bearing_aa_2:GetAuraEntityReject(target)
-    if target:HasModifier("modifier_boots_of_bearing_aa_3_aura") then
-		return true
-	end
-end
-modifier_boots_of_bearing_aa_2_active = class({
+
+modifier_boots_of_bearing_aa_3_active = class({
     IsHidden = function (self) return false end,
     IsPurgable = function (self) return true end,
     DeclareFunctions = function (self)
@@ -99,14 +95,14 @@ modifier_boots_of_bearing_aa_2_active = class({
     GetModifierPreAttack_BonusDamage = function (self) return self:GetAbility():GetSpecialValueFor("active_bonus_damage_from_agi") / 100 * self:GetCaster():GetAgility() end,
     GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end
 })
-function modifier_boots_of_bearing_aa_2_active:OnCreated()
+function modifier_boots_of_bearing_aa_3_active:OnCreated()
     self:Particle()
 end
-function modifier_boots_of_bearing_aa_2_active:OnRefresh()
+function modifier_boots_of_bearing_aa_3_active:OnRefresh()
     self:Particle()
 end
 
-function modifier_boots_of_bearing_aa_2_active:Particle()
+function modifier_boots_of_bearing_aa_3_active:Particle()
     self.particle_buff = "particles/items_fx/drum_of_endurance_buff.vpcf"
     local particle_buff_fx = ParticleManager:CreateParticle(self.particle_buff, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 	ParticleManager:SetParticleControl(particle_buff_fx, 0, self:GetParent():GetAbsOrigin())
@@ -114,7 +110,7 @@ function modifier_boots_of_bearing_aa_2_active:Particle()
 	self:AddParticle(particle_buff_fx, false, false, -1, false, false)
 end
 
-modifier_boots_of_bearing_aa_2_unslowable = class({
+modifier_boots_of_bearing_aa_3_unslowable = class({
     IsHidden = function (self) return false end,
     IsDebuff = function (self) return false end,
     IsPurgable = function (self) return true end,

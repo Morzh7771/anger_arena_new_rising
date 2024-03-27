@@ -1,13 +1,10 @@
 LinkLuaModifier("modifier_item_phase_boots_aa", "items/item_phase_boots_aa", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_phase_boots_aa_active", "items/item_phase_boots_aa", LUA_MODIFIER_MOTION_HORIZONTAL)
 
-item_phase_boots_aa_2 = item_phase_boots_aa
-
 item_phase_boots_aa = class({
     GetIntrinsicModifierName = function (self) return "modifier_item_phase_boots_aa"end,
     GetCastRange = function (self) if IsClient() then return self:GetSpecialValueFor("range") end return 99999 end,
     OnSpellStart =  function (self)
-        if not IsServer() then return end
 
         local point = self:GetCaster():GetCursorPosition()
         if point == self:GetCaster():GetAbsOrigin() then 
@@ -16,16 +13,21 @@ item_phase_boots_aa = class({
 
         local dir = (point - self:GetCaster():GetAbsOrigin()):Normalized()
 
-        self:GetCaster():SetForwardVector(dir)
-        self:GetCaster():FaceTowards(point)
-
         ProjectileManager:ProjectileDodge(self:GetCaster())
 
         self:GetCaster():EmitSound("DOTA_Item.Force_Boots.Cast")
-        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_aa_active", {x = point.x, y = point.y, z = point.z, duration = self:GetSpecialValueFor("duration")})
+        
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_active", {duration = self:GetSpecialValueFor("phase_duration")})
+        
+        if self:GetCaster():HasModifier("modifier_spirit_breaker_charge_of_darkness") then return end
+
+        self:GetCaster():SetForwardVector(dir)
+        self:GetCaster():FaceTowards(point)
+        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_aa_active", {x = point.x, y = point.y, z = point.z, duration = self:GetSpecialValueFor("duration")}) 
     end,
+
 })
+
 item_phase_boots_aa_2 = item_phase_boots_aa
 
 modifier_item_phase_boots_aa_active = class({

@@ -184,14 +184,14 @@ DOTAAbilities
 				"distance"			"900"
 				"final_aoe"			"450"
 				"speed"				"900"
-				"damage_pct"			"12"
+				"damage_pct"		"16"
 				"damage"			
 				{
 					"value"											"310 430 550 670 890 1010 1130"
 					"special_bonus_unique_queen_of_pain_7"			"+270"
 				}
 				"knockback_distance"	"350"
-				"knockback_duration" "1.4"
+				"knockback_duration" 	"1.4"
 				"AbilityCooldown"
 				{	
 					"value"											"60"
