@@ -237,7 +237,7 @@ function modifier_item_meteor_hammer_oaa_thinker:OnIntervalThink()
 
       -- Is the enemy a boss?
       if BossSpawner:IsBoss(enemy) then
-        damage_table.damage = self.impact_damage * 0.35 + (0.35 * enemy:GetMaxHealth() * ability:GetSpecialValueFor("max_hp_impact_damage") * 0.01)
+        damage_table.damage = self.impact_damage_bosses + (self.damage_to_the_boss * enemy:GetMaxHealth() * ability:GetSpecialValueFor("max_hp_impact_damage") * 0.01)
       else
         damage_table.damage = self.impact_damage + (enemy:GetMaxHealth() * ability:GetSpecialValueFor("max_hp_impact_damage") * 0.01)
       end
@@ -304,6 +304,7 @@ function modifier_item_meteor_hammer_oaa_dot:OnIntervalThink()
     local enemy = self:GetParent()
     local caster = self:GetCaster()
     local ability = self:GetAbility()
+    self.damage_to_the_boss = ability:GetSpecialValueFor("damage_to_the_boss") * 0.01
 
     local damage_table = {
       victim = enemy,
@@ -314,7 +315,7 @@ function modifier_item_meteor_hammer_oaa_dot:OnIntervalThink()
     }
 
     if BossSpawner:IsBoss(enemy) then
-      damage_table.damage = self.burn_dps_boss * 0.35 * self.burn_interval + (0.35 * enemy:GetMaxHealth() *  ability:GetSpecialValueFor("max_hp_burn_damage") * 0.01)
+      damage_table.damage = self.burn_dps_boss * self.damage_to_the_boss * self.burn_interval + (self.damage_to_the_boss * enemy:GetMaxHealth() *  ability:GetSpecialValueFor("max_hp_burn_damage") * 0.01)
     end
 
     ApplyDamage(damage_table)
