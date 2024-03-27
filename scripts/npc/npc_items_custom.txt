@@ -2543,10 +2543,11 @@
         
         // Special	
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityValues"
+        AbilityValues"
         {
-            "bonus_str"				"2"
-            "bonus_hp_regen"		"1"
+            "bonus_attack"          "2"
+            "bonus_str"             "2"
+            "bonus_hp_regen"        "0.5"
             "damage_to_exp_ranged"	"20"
             "damage_to_exp_melee" 	"25"
             "min_exp_ranged"		"12"
@@ -4501,16 +4502,16 @@
 
         "AbilityValues"
         {
-            "bonus_str"                 "2 8"
-            "bonus_agi"			        "9 18"
-            "bonus_int"                 "2 8"
-            "bonus_armor"			    "4 6"
-            "attack_speed_pasive"		"5 10"
-            "bonus_movespeed"		    "20 25"
+            "bonus_str"                 "2 14"
+            "bonus_agi"                 "10 35"
+            "bonus_int"                 "2 14"
+            "bonus_armor"               "4 6"
+            "attack_speed_pasive"       "10 20"
+            "bonus_movespeed"           "25 35"
 
-            "duration"				    "3 4"
-            "evasion"				    "30 50"
-            "attack_speed_active"		"30 80"
+            "duration"                  "3 3"
+            "evasion"                   "30 50"
+            "attack_speed_active"       "30 100"
         }
     }
     "item_recipe_talisman_of_ambition_2"
@@ -4568,16 +4569,16 @@
 
         "AbilityValues"
         {
-            "bonus_str"                 "2 8"
-            "bonus_agi"                 "9 18"
-            "bonus_int"                 "2 8"
+            "bonus_str"                 "2 14"
+            "bonus_agi"                 "10 35"
+            "bonus_int"                 "2 14"
             "bonus_armor"               "4 6"
-            "attack_speed_pasive"       "5 10"
-            "bonus_movespeed"           "20 25"
+            "attack_speed_pasive"       "10 20"
+            "bonus_movespeed"           "25 35"
 
-            "duration"                  "3 4"
+            "duration"                  "3 3"
             "evasion"                   "30 50"
-            "attack_speed_active"       "30 80"
+            "attack_speed_active"       "30 100"
         }
     }
 	"item_recipe_desolator_aa_1"
@@ -6619,23 +6620,23 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_all"				"3 6"
-            "bonus_hp_regen"		"1 1.75"
-            "bonus_mp_regen"		"0.7 1"
-            "bonus_health"		    "125 200"
+            "bonus_attack"          "5 15"
+            "bonus_all"             "4 9"
+            "bonus_hp_regen"        "1.5 3"
+            "bonus_mp_regen"        "1.5 3"
+            "bonus_health"          "150 250"
 
-            "damage_to_exp_ranged"	"25 40"
-            "damage_to_exp_melee" 	"30 45"
-            "min_exp_ranged"		"15 18"
-            "min_exp_melee"			"18 25"
-            "minder_cd"			    "1"
+            "damage_to_exp_ranged"  "25 40"
+            "damage_to_exp_melee"   "30 45"
+            "min_exp_melee"         "18 25"
+            "minder_cd"             "1"
 
-            "replenish_health"		"10 15"
-            "replenish_mana"		"10 15"
-            "buff_health"			"3 4.5"
-            "buff_mana"			    "3 4.5"
+            "replenish_health"      "15 25"
+            "replenish_mana"        "15 25"
+            "buff_health"           "3 4.5"
+            "buff_mana"             "3 4.5"
 
-            "duration"			    "5"
+            "duration"              "5"
         }
     }
      "item_recipe_talisman_of_heal_2"
@@ -6681,19 +6682,19 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_all"             "3 6"
-            "bonus_hp_regen"        "1 1.75"
-            "bonus_mp_regen"        "0.7 1"
-            "bonus_health"          "125 200"
+            "bonus_attack"          "5 15"
+            "bonus_all"             "4 9"
+            "bonus_hp_regen"        "1.5 3"
+            "bonus_mp_regen"        "1.5 3"
+            "bonus_health"          "150 250"
 
             "damage_to_exp_ranged"  "25 40"
             "damage_to_exp_melee"   "30 45"
-            "min_exp_ranged"        "15 18"
             "min_exp_melee"         "18 25"
             "minder_cd"             "1"
 
-            "replenish_health"      "10 15"
-            "replenish_mana"        "10 15"
+            "replenish_health"      "15 25"
+            "replenish_mana"        "15 25"
             "buff_health"           "3 4.5"
             "buff_mana"             "3 4.5"
 
