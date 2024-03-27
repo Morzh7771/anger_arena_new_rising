@@ -1,0 +1,207 @@
+"DOTAAbilities"
+{
+    "item_recipe_shivas_guard"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1650"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_shivas_guard"
+		"ItemRequirements"
+		{
+			"01"						"item_veil_of_discord;item_platemail"
+		}
+	}
+	"item_shivas_guard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySharedCooldown"			"shivas"
+		"BaseClass"						"item_shivas_guard"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"4825"
+		"ItemShopTags"					"int;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"shiva's guard;shivas"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"6 12 60"
+			"bonus_strength"		"6 12 60"
+			"bonus_agility"			"6 12 60"
+			"bonus_hp_regen"		"10 20 50"
+			"bonus_armor"			"14 24 70"
+			"aura_radius"			"1200"
+			"aura_attack_speed"		"-60 -120 -300"
+			"blast_damage"			"200 400 800"
+			"blast_movement_speed"	"-40 -50 -60"
+			"blast_debuff_duration"	"4.0 "
+			"blast_radius"			
+			{
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"blast_speed"				"400"
+			"hp_regen_degen_aura"		"20 25 30"
+			"illusion_multiplier_pct"	"150 250 350"
+			"spell_amp"					"18 21 25"				
+			"resist_debuff_duration"	"16.0"
+		}
+	}
+	"item_recipe_shivas_guard_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_shivas_guard_2"
+		"ItemRequirements"
+		{
+			"01"						"item_shivas_guard;item_shivas_guard"
+		}
+	}
+	"item_shivas_guard_2"
+	{
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_shivas_guard"
+		"AbilityTextureName"			"shiva_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27"
+		"AbilityCastRange"				"900"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"4850"
+		"ItemShopTags"					"int;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"shiva's guard;shivas"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"6 12 60"
+			"bonus_strength"		"6 12 60"
+			"bonus_agility"			"6 12 60"
+			"bonus_hp_regen"		"10 20 50"
+			"bonus_armor"			"14 24 70"
+			"aura_radius"			"1200"
+			"aura_attack_speed"		"-60 -120 -300"
+			"blast_damage"			"200 400 800"
+			"blast_movement_speed"	"-40 -50 -60"
+			"blast_debuff_duration"	"4.0 "
+			"blast_radius"			
+			{
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"blast_speed"				"400"
+			"hp_regen_degen_aura"		"20 25 30"
+			"illusion_multiplier_pct"	"150 250 350"
+			"spell_amp"					"18 21 25"				
+			"resist_debuff_duration"	"16.0"
+		}
+	}
+
+	"item_recipe_shivas_guard_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_shivas_guard_3"
+		"ItemRequirements"
+		{
+			"01"						"item_shivas_guard_2;item_shivas_guard_2;item_boss_soul"
+		}
+	}
+	"item_shivas_guard_3"
+	{
+		"ItemBaseLevel"					"3"
+		"BaseClass"						"item_shivas_guard"
+		"AbilityTextureName"			"shiva_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySharedCooldown"			"shivas"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27"
+		"AbilityCastRange"				"900"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"4850"
+		"ItemShopTags"					"int;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"shiva's guard;shivas"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"6 12 60"
+			"bonus_strength"		"6 12 60"
+			"bonus_agility"			"6 12 60"
+			"bonus_hp_regen"		"10 20 50"
+			"bonus_armor"			"14 24 70"
+			"aura_radius"			"1200"
+			"aura_attack_speed"		"-60 -120 -300"
+			"blast_damage"			"200 400 800"
+			"blast_movement_speed"	"-40 -50 -60"
+			"blast_debuff_duration"	"4.0 "
+			"blast_radius"			
+			{
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"blast_speed"				"400"
+			"hp_regen_degen_aura"		"20 25 30"
+			"illusion_multiplier_pct"	"150 250 350"
+			"spell_amp"					"18 21 25"				
+			"resist_debuff_duration"	"16.0"
+		}
+	}
+}

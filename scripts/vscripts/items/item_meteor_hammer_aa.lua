@@ -309,13 +309,13 @@ function modifier_item_meteor_hammer_oaa_dot:OnIntervalThink()
     local damage_table = {
       victim = enemy,
       attacker = caster,
-      damage = self.burn_dps * self.burn_interval + (enemy:GetMaxHealth() * ability:GetSpecialValueFor("max_hp_burn_damage") * 0.01),
+      damage = self.burn_dps * self.burn_interval + (enemy:GetHealth() * ability:GetSpecialValueFor("max_hp_burn_damage") * 0.01),
       damage_type = DAMAGE_TYPE_MAGICAL,
       ability = ability,
     }
 
     if BossSpawner:IsBoss(enemy) then
-      damage_table.damage = self.burn_dps_boss * self.damage_to_the_boss * self.burn_interval + (self.damage_to_the_boss * enemy:GetMaxHealth() *  ability:GetSpecialValueFor("max_hp_burn_damage") * 0.01)
+      damage_table.damage = self.burn_dps_boss * self.damage_to_the_boss * self.burn_interval + (self.damage_to_the_boss * enemy:GetHealth() *  ability:GetSpecialValueFor("max_hp_burn_damage") * 0.01)
     end
 
     ApplyDamage(damage_table)

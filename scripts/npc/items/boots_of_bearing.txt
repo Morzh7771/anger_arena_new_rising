@@ -1,0 +1,192 @@
+"DOTAAbilities"
+{
+    "item_recipe_boots_of_bearing_aa"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"700"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_of_bearing_aa"
+		"ItemRequirements"
+		{
+			"01"						"item_tranquil_boots;item_drum_of_endurance"
+		}
+	}
+    "item_recipe_boots_of_bearing_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_of_bearing_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_boots_of_bearing_aa;item_boots_of_bearing_aa"
+		}
+	}
+    "item_recipe_boots_of_bearing_aa_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_of_bearing_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_boots_of_bearing_aa_2;item_boots_of_bearing_aa_2;item_boss_soul"
+		}
+	}
+
+    "item_boots_of_bearing_aa"
+	{
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/drum_and_base/item_boots_of_bearing_aa"
+        "AbilityTextureName"	        "boots_of_bearing_aa"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemPermanent"					"1"
+		"FightRecapLevel"				"1"
+        "AbilitySharedCooldown"			"drum"
+		"AbilityCooldown"				"30.0"
+		"ItemBaseLevel"					"1"
+		"ItemCost"						"4275"
+		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"marching boots"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aura_movement_speed"	            "20 30 40"
+            "aura_attack_speed"	                "20 40 80"
+        
+			"bonus_agi"				            "16 25 80"
+			"bonus_str"				            "8 16 50"
+			"bonus_int"				            "8 16 50"
+            "bonus_armor"				        "5 10 25"
+            "bonus_movement_speed"	            "65 70 90"
+			"bonus_health_regen"	            "15 30 80"
+
+			"active_bonus_attack_speed"	        "80 120 180"
+			"active_bonus_movement_speed_pct"	"15 20 30"
+            "active_bonus_damage_from_agi"	    "30 40 50"
+
+			"active_duration"				    "8"
+			"active_radius"				        "1200"
+
+			"active_non_slow"		            "1.5 2.5 3.5"
+		}
+	}
+    "item_boots_of_bearing_aa_2"
+	{
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/drum_and_base/item_boots_of_bearing_aa_2"
+        "AbilityTextureName"	        "boots_of_bearing_aa_2"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemPermanent"					"1"
+		"FightRecapLevel"				"1"
+        "AbilitySharedCooldown"			"drum"
+		"AbilityCooldown"				"30.0"
+		"ItemBaseLevel"					"2"
+		"ItemCost"						"4275"
+		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"marching boots"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aura_movement_speed"	            "20 30 40"
+            "aura_attack_speed"	                "20 40 80"
+        
+			"bonus_agi"				            "16 25 80"
+			"bonus_str"				            "8 16 50"
+			"bonus_int"				            "8 16 50"
+            "bonus_armor"				        "5 10 25"
+            "bonus_movement_speed"	            "65 70 90"
+			"bonus_health_regen"	            "15 30 80"
+
+			"active_bonus_attack_speed"	        "80 120 180"
+			"active_bonus_movement_speed_pct"	"15 20 30"
+            "active_bonus_damage_from_agi"	    "30 40 50"
+
+			"active_duration"				    "8"
+			"active_radius"				        "1200"
+
+			"active_non_slow"		            "1.5 2.5 3.5"
+		}
+	}
+    
+    "item_boots_of_bearing_aa_3"
+	{
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/drum_and_base/item_boots_of_bearing_aa_3"
+        "AbilityTextureName"	        "boots_of_bearing_aa_3"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemPermanent"					"1"
+		"FightRecapLevel"				"1"
+        "AbilitySharedCooldown"			"drum"
+		"AbilityCooldown"				"30.0"
+		"ItemBaseLevel"					"3"
+		"ItemCost"						"4275"
+		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"marching boots"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aura_movement_speed"	            "20 30 40"
+            "aura_attack_speed"	                "20 40 80"
+        
+			"bonus_agi"				            "16 25 80"
+			"bonus_str"				            "8 16 50"
+			"bonus_int"				            "8 16 50"
+            "bonus_armor"				        "5 10 25"
+            "bonus_movement_speed"	            "65 70 90"
+			"bonus_health_regen"	            "15 30 80"
+
+			"active_bonus_attack_speed"	        "80 120 180"
+			"active_bonus_movement_speed_pct"	"15 20 30"
+            "active_bonus_damage_from_agi"	    "30 40 50"
+
+			"active_duration"				    "8"
+			"active_radius"				        "1200"
+
+			"active_non_slow"		            "1.5 2.5 3.5"
+		}
+	}
+}

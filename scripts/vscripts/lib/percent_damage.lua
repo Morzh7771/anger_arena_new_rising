@@ -52,6 +52,8 @@ function PercentDamage:_init()
 		"primal_beast_pulverize",
 		"primal_beast_onslaught",
 		"slardar_bash",
+		"tidehunter_ravage",
+		"tidehunter_gush",
 	}
 	local MagicalDamageFromAgi = {
 		"luna_lucent_beam",

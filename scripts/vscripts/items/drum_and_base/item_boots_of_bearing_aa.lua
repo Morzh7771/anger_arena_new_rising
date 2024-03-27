@@ -66,6 +66,9 @@ function modifier_boots_of_bearing_aa:GetAuraEntityReject(target)
 	if target:HasModifier("modifier_boots_of_bearing_aa_2_aura") then
 		return true
 	end
+    if target:HasModifier("modifier_boots_of_bearing_aa_3_aura") then
+		return true
+	end
 end
 modifier_boots_of_bearing_aa_aura = class({
     IsHidden = function (self) return false end,

@@ -48,7 +48,7 @@ DOTAAbilities
 			"arrow_max_stunrange"	"1500"
 			"arrow_min_stun"	"0.01"
 			"arrow_max_stun"	"2.6 2.8 3.0 3.2 3.4 3.6 3.8"
-			"arrow_bonus_damage"	"180"
+			"arrow_bonus_damage"	"180 220 260 300 340 380 520"
 			"arrow_vision"	"400"
 			"scepter_radius"
 			{
@@ -60,7 +60,7 @@ DOTAAbilities
 				"value"		"50"
 				"RequiresScepter"		"1"
 			}
-			"damage_pct"			"35"
+			"damage_pct"			"60"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -230,7 +230,7 @@ DOTAAbilities
 				"value"			"75 150 225 300 375 450 525"
 				"special_bonus_unique_mirana_7"	"+275"						
 			}
-			"damage_pct"			"35"
+			"damage_pct"			"45"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
