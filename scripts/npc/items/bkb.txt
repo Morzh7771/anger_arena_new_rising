@@ -1,0 +1,178 @@
+"DOTAAbilities"
+{
+	"item_recipe_bkb_aa_1"
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "ItemCost"                      "450"   
+        "ItemShopTags"                  ""
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bkb_aa_1"
+        "ItemRequirements"
+        {
+            "01"                        "item_ogre_axe;item_mithril_hammer;item_mini_bkb"
+        }
+    }
+	"item_recipe_bkb_aa_2"
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bkb_aa_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_bkb_aa_1;item_bkb_aa_1"
+        }
+    }
+	"item_recipe_bkb_aa_3"
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bkb_aa_3"
+        "ItemRequirements"
+        {
+            "01"                        "item_bkb_aa_2;item_bkb_aa_2;item_boss_soul"
+        }
+    }
+
+
+    "item_bkb_aa_1"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_bkb_aa"
+		"AbilityTextureName"			"item_black_king_bar"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemBaseLevel"					"1"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"50"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4050"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemSellable"					"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"		"10 20 50"
+			"bonus_damage"			"25 50 120"
+			"duration"				"6 6.5 7"
+			"magic_resist"			"60 70 80"
+		}
+    }
+	"item_bkb_aa_2"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_bkb_aa"
+		"AbilityTextureName"			"bkb_2"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemBaseLevel"					"2"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"50"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4050"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemSellable"					"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"		"10 20 50"
+			"bonus_damage"			"25 50 120"
+			"duration"				"6 6.5 7"
+			"magic_resist"			"60 70 80"
+		}
+    }
+	"item_bkb_aa_3"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_bkb_aa"
+		"AbilityTextureName"			"bkb_3"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilitySharedCooldown"			"bkb"
+		"ItemBaseLevel"					"3"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"50"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4050"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemSellable"					"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"		"10 20 50"
+			"bonus_damage"			"25 50 120"
+			"duration"				"6 6.5 7"
+			"magic_resist"			"60 70 80"
+		}
+    }
+    "item_mini_bkb"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "potion_immune"
+        "ScriptFile"                    "items/item_bkb_aa"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+        "AbilityCooldown"				"50"
+		"ItemStackable"					"1"
+        "ItemStackableMax"				"5"
+		"ItemInitialCharges"			"1"
+        "ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+		"AbilityValues"
+		{
+            "duration"				"3"
+			"magic_resist"			"35"
+		}
+	}
+}

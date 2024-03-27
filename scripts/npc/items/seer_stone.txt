@@ -1,0 +1,112 @@
+"DOTAAbilities"
+{    
+    "item_recipe_custom_seer_stone"
+    {
+		"BaseClass"		                "item_recipe_arcane_boots"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1125"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_custom_seer_stone"
+		"ItemRequirements"{
+			"01"						"item_kaya;item_aether_lens"
+		}
+	}
+
+	"item_recipe_custom_seer_stone_2"
+    {
+		"BaseClass"		                "item_recipe_arcane_boots"
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_custom_seer_stone_2"
+		"ItemRequirements"{
+			"01"						"item_custom_seer_stone;item_custom_seer_stone;"
+		}
+	}
+
+	"item_recipe_custom_seer_stone_3"
+    {
+		"BaseClass"		                "item_recipe_arcane_boots"
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_custom_seer_stone_3"
+		"ItemRequirements"{
+			"01"						"item_custom_seer_stone_2;item_custom_seer_stone_2;item_boss_soul"
+		}
+	}
+    
+	"item_custom_seer_stone"
+    {
+		"BaseClass"				"item_lua"
+		"ScriptFile"			"items/seer_stone"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+
+		"AbilityTextureName"	"seer_stone1"
+		"ItemAliases"			"seer stone"
+		"AbilitySharedCooldown"			"seer_stone"
+
+		"AbilityCooldown"	"60 50 40"
+        "ItemBaseLevel"     "1"
+		"AbilityCastRange"	"0"
+
+		"AbilityValues"{
+			"int"			    "30 60 120"
+			"mp"			    "400 800 1600"
+			"mp_regen"		    "7 14 28"
+			"spell_damage"	    "12 21 30"
+			"cast_range"	    "200 300 400"
+			"active_duration"	"6"
+			"active_radius"		"500 750 1000"
+		}
+	}
+
+	"item_custom_seer_stone_2"
+    {
+		"BaseClass"				"item_lua"
+		"ScriptFile"			"items/seer_stone"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+
+		"AbilityTextureName"	"seer_stone2"
+		"ItemAliases"			"seer stone"
+		"AbilitySharedCooldown"			"seer_stone"
+        "ItemBaseLevel"     "2"
+		"AbilityCooldown"	"60 50 40"
+		"AbilityCastRange"	"0"
+
+		"AbilityValues"{
+			"int"			"30 60 120"
+			"mp"			"500 1000 2000"
+			"mp_regen"		"7 14 28"
+			"spell_damage"	"12 21 30"
+			"cast_range"	"225 275 325"
+			"active_duration"	"6"
+			"active_radius"		"500 750 1000"
+		}
+	}
+
+	"item_custom_seer_stone_3"
+    {
+		"BaseClass"				"item_lua"
+		"ScriptFile"			"items/seer_stone"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+
+		"AbilityTextureName"	"seer_stone3"
+		"ItemAliases"			"seer stone"
+		"AbilitySharedCooldown"			"seer_stone"
+        "ItemBaseLevel"     "3"
+		"AbilityCooldown"	"60 50 40"
+		"AbilityCastRange"	"0"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		"AbilityValues"
+        {
+			"int"			"30 60 120"
+			"mp"			"500 1000 2000"
+			"mp_regen"		"7 14 28"
+			"spell_damage"	"12 21 30"
+			"cast_range"	"225 275 325"
+			"active_duration"	"6"
+			"active_radius"		"500 750 1000"
+		}
+	}
+}

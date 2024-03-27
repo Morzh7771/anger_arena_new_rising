@@ -1,0 +1,119 @@
+"DOTAAbilities"
+{    
+    "item_recipe_phase_boots_aa"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_phase_boots_aa"
+        "ItemRequirements"
+        {
+            "01"                        "item_phase_boots;item_falcon_blade_custom"
+        }
+    }
+    "item_recipe_phase_boots_aa_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_phase_boots_aa_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_phase_boots_aa;item_phase_boots_aa"
+        }
+    }
+    "item_phase_boots_aa"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+         "BaseClass"                      "item_lua"
+        "ScriptFile"                    "items/item_phase_boots_aa"
+        "AbilityTextureName"            "phase_boots_2"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityCastRange"              "99999"
+        "AbilityCooldown"               "6"
+        "ItemBaseLevel"                 "2"
+        "AbilitySharedCooldown"         "phase"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1125"
+        "ItemShopTags"                  "hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "fb;falcon blade"
+        "ShouldBeInitiallySuggested"    "1"
+
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_movement_speed"          "60 70 80"
+            "bonus_damage_melee"            "20 60 120"
+            "bonus_damage_range"            "15 45 100"
+            "phase_movement_speed"          "20 30 40"
+            "phase_movement_speed_range"    "10 20 30"
+            "phase_duration"                "3.0 4.0 5.0"
+            "bonus_armor"                   "5 5 10"
+            "bonus_health"                  "0 200 325"
+            "bonus_mana_regen"              "0 2.5 3.75"
+            "range"                         "0 340 380"   
+            "duration"                      "0.18" 
+        }
+    } 
+    "item_phase_boots_aa_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+         "BaseClass"                      "item_lua"
+        "ScriptFile"                    "items/item_phase_boots_aa"
+        "AbilityTextureName"            "phase_boots_3"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityCastRange"              "99999"
+        "AbilityCooldown"               "6"
+        "ItemBaseLevel"                 "3"
+        "AbilitySharedCooldown"         "phase"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1125"
+        "ItemShopTags"                  "hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "fb;falcon blade"
+        "ShouldBeInitiallySuggested"    "1"
+
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_movement_speed"          "60 70 80"
+            "bonus_damage_melee"            "20 60 120"
+            "bonus_damage_range"            "15 45 100"
+            "phase_movement_speed"          "20 30 40"
+            "phase_movement_speed_range"    "10 20 30"
+            "phase_duration"                "3.0 4.0 5.0"
+            "bonus_armor"                   "5 5 10"
+            "bonus_health"                  "0 200 325"
+            "bonus_mana_regen"              "0 2.5 3.75"
+            "range"                         "0 340 380"   
+            "duration"                      "0.18" 
+        }
+    }
+}

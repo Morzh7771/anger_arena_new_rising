@@ -1,0 +1,193 @@
+"DOTAAbilities"
+{	
+	"item_recipe_hurricane_pike_aa_1"
+	{
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"350"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hurricane_pike_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_force_staff*;item_dragon_lance"
+		}
+	}
+    "item_recipe_hurricane_pike_aa_2"
+	{
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hurricane_pike_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_hurricane_pike_aa_1;item_hurricane_pike_aa_1"
+		}
+	}
+    "item_recipe_hurricane_pike_aa_3"
+	{
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hurricane_pike_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_hurricane_pike_aa_2;item_hurricane_pike_aa_2;item_boss_soul"
+		}
+	}
+    "item_hurricane_pike_aa_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+        "AbilityTextureName"            "item_hurricane_pike"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_hurricane_pike_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilitySharedCooldown"			"force"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		"ItemCost"						"4450"
+		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"fs;force staff"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"15 30 60"
+			"bonus_health"			"200 400 800"
+			"bonus_agility"			"20 40 80"
+			"bonus_strength"		"15 30 60"
+			"base_attack_range"		"150"
+
+			"push_length"			"600 650 700"
+			"range_duration"		"4 4.5 5"
+			"cast_range_enemy"		"450 500 550"
+			"bonus_projectile_speed"	"100 200 300"
+			"push_time"				"0.5 0.5 0.5"
+            "double_attack_cd"      "1.0 0.8 0.5"
+		}
+	}   
+    "item_hurricane_pike_aa_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+        "AbilityTextureName"            "hurricane_pike2"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_hurricane_pike_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilitySharedCooldown"			"force"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		"ItemCost"						"4450"
+		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"fs;force staff"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"15 30 60"
+			"bonus_health"			"200 400 800"
+			"bonus_agility"			"20 40 80"
+			"bonus_strength"		"15 30 60"
+			"base_attack_range"		"150"
+
+			"push_length"			"600 650 700"
+			"range_duration"		"4 4.5 5"
+			"cast_range_enemy"		"450 500 550"
+			"bonus_projectile_speed"	"100 200 300"
+			"push_time"				"0.5 0.5 0.5"
+            "double_attack_cd"      "1.0 0.8 0.5"
+		}
+	}   
+    "item_hurricane_pike_aa_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+        "AbilityTextureName"            "hurricane_pike3"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_hurricane_pike_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilitySharedCooldown"			"force"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemCost"						"4450"
+		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"fs;force staff"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_intellect"		"15 30 60"
+			"bonus_health"			"200 400 800"
+			"bonus_agility"			"20 40 80"
+			"bonus_strength"		"15 30 60"
+			"base_attack_range"		"150"
+
+			"push_length"			"600 650 700"
+			"range_duration"		"4 4.5 5"
+			"cast_range_enemy"		"450 500 550"
+			"bonus_projectile_speed"	"100 200 300"
+			"push_time"				"0.5 0.5 0.5"
+            "double_attack_cd"      "1.0 0.8 0.5"
+		}
+	}
+}

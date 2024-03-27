@@ -1,0 +1,149 @@
+"DOTAAbilities"
+{	
+	"item_recipe_bracer_custom"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe_bracer"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"210"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bracer_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_circlet;item_gauntlets"
+		}
+	}
+	"item_bracer_custom"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_bracer_custom"	
+		"AbilityTextureName"			"item_bracer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"505"
+		"ItemShopTags"					"bracer"
+		"ItemAliases"					"bracer"
+		"AbilityCooldown"				"25.0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"heal"					"180"
+			"duration"				"5"
+			"str"					"5"
+			"int"					"2"
+			"agi"					"2"
+			"damage"				"3"
+			"regen"					"0.75"
+		}
+	}
+
+	"item_recipe_wraith_band_custom"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe_wraith_band"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"210"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_wraith_band_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_slippers;item_circlet"
+		}
+	}
+	"item_wraith_band_custom"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_wraith_band_custom"	
+		"AbilityTextureName"			"item_wraith_band"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"505"
+		"ItemShopTags"					"wraith_band"
+		"ItemAliases"					"wraith_band"
+		"AbilityCooldown"				"25.0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"speed_buf"				"30"
+			"duration"				"8"
+			"agi"					"5"
+			"str"					"2"
+			"int"					"2"
+			"speed"					"5"
+			"armor"					"2"
+		}
+	}
+
+	"item_recipe_null_talisman_custom"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe_null_talisman"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"210"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_null_talisman_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_mantle;item_circlet"
+		}
+	}
+    "item_null_talisman_custom"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_null_talisman_custom"	
+		"AbilityTextureName"			"item_null_talisman"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"505"
+		"ItemShopTags"					"null_talisman"
+		"ItemAliases"					"null_talisman"
+		"AbilityCooldown"				"20.0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"mana"					"130"
+				"duration"				"5"
+				"int"					"5"
+				"str"					"2"
+				"agi"					"2"
+				"spell"					"4"
+				"regen"					"1"
+		}
+	}
+}

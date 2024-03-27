@@ -1,0 +1,103 @@
+"DOTAAbilities"
+{    
+    "item_recipe_greater_crit"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"						"1000"
+        "ItemShopTags"					""
+
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_greater_crit"
+        "ItemRequirements"
+        {
+            "01"						"item_lesser_crit;item_demon_edge"
+        }
+    }
+    "item_greater_crit"
+    {
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemBaseLevel"					"1"
+        "BaseClass"						"item_lua"
+        "ScriptFile"					"items/item_greater_crit"
+        "AbilityTextureName"			"item_greater_crit"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"5150"
+        "ItemShopTags"					"damage;crit"
+        "ItemQuality"					"epic"
+        "ItemAliases"					"daedalus"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"				"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_damage"			"88 200"
+            "crit_chance"			"25 30"
+            "crit_multiplier"		"225 350"
+        }
+    }
+    "item_recipe_greater_crit_2"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_greater_crit_2"
+        "ItemRequirements"
+        {
+            "01"						"item_greater_crit;item_greater_crit;item_boss_soul"
+        }
+    }
+    "item_greater_crit_2"
+    {
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "ItemBaseLevel"					"2"
+        "BaseClass"						"item_lua"
+        "ScriptFile"					"items/item_greater_crit"
+        "AbilityTextureName"			"crit_2"
+
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+        //"AbilityCastRange"				"800"
+        //"AbilityCastRangeBuffer"		"900"
+
+        "AbilitySharedCooldown"			"item_greater_crit"
+
+        "AbilityCastPoint"				"0.0"
+        "AbilityCooldown"				"30.0"
+        "AbilityManaCost"				"100"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "AbilityCastAnimation"  		"ACT_DOTA_CAST_ABILITY_1"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"5150"
+        "ItemShopTags"					"damage;crit"
+        "ItemQuality"					"epic"
+        "ItemAliases"					"daedalus"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {   
+            "min_cast_range"        "500"
+            "bonus_damage"			"88 200"
+            "crit_chance"			"25 30"
+            "crit_multiplier"		"225 350"
+            "projectile_speed"      "1800"
+            "cripple_duration"      "2"
+            "cripple_ms"            "100"
+        }
+    }
+}

@@ -1,0 +1,261 @@
+"DOTAAbilities"
+{    
+    "item_recipe_mjolnir_aa_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"			"item_recipe_mjollnir"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"550"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjolnir_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_maelstorm_aa*;item_hyperstone"
+		}
+	}
+    "item_recipe_mjolnir_aa_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjolnir_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_mjolnir_aa_1;item_mjolnir_aa_1"
+		}
+	}
+    "item_recipe_mjolnir_aa_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjolnir_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjolnir_aa_2;item_mjolnir_aa_2;item_boss_soul"
+		}
+	}
+    "item_mjolnir_aa_1"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_mjolnir"
+        "ItemBaseLevel"					"1"
+        "AbilityTextureName"            "item_mjollnir"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"35.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		"ItemCost"						"5500"
+		"ItemShopTags"					"damage;attack_speed;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mjollnir"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"                  "25 60 180"
+            "bonus_attack_speed"            "90 180 400"
+
+            "active_jump_count"             "4 6 8"
+            "active_chance"                 "15 20 25"
+            "active_arc_damage"             "230 370 670"
+            "active_duration"               "15"
+            "active_radius"                 "800"
+            "active_damage_per_base_damage"  "40 50 60"
+
+            "chance"                        "20 25 30"
+            "arc_damage"			        "150 250 500"
+	        "radius"			            "650"
+	        "jump_count"			        "6 8 10"
+            "bonus_damage_per_base_damage"  "30 40 50"
+        }
+    }
+    "item_mjolnir_aa_2"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_mjolnir"
+        "ItemBaseLevel"					"2"
+        "AbilityTextureName"            "mjollnir_2"
+
+        
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"35.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		"ItemCost"						"5500"
+		"ItemShopTags"					"damage;attack_speed;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mjollnir"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"                  "25 60 180"
+            "bonus_attack_speed"            "90 180 400"
+
+            "active_jump_count"             "4 6 8"
+            "active_chance"                 "15 20 25"
+            "active_arc_damage"             "230 370 670"
+            "active_duration"               "15"
+            "active_radius"                 "800"
+            "active_damage_per_base_damage"  "40 50 60"
+
+            "chance"                        "20 25 30"
+            "arc_damage"			        "150 250 500"
+	        "radius"			            "650"
+	        "jump_count"			        "6 8 10"
+            "bonus_damage_per_base_damage"  "30 40 50"
+        }
+    }
+    "item_mjolnir_aa_3"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_mjolnir"
+        "ItemBaseLevel"					"3"
+        "AbilityTextureName"            "mjollnir_3"
+
+       
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"35.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		"ItemCost"						"5500"
+		"ItemShopTags"					"damage;attack_speed;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mjollnir"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+        "AbilityValues"
+        {
+            "bonus_damage"                  "25 60 180"
+            "bonus_attack_speed"            "90 180 400"
+
+            "active_jump_count"             "4 6 8"
+            "active_chance"                 "15 20 25"
+            "active_arc_damage"             "230 370 670"
+            "active_duration"               "15"
+            "active_radius"                 "800"
+            "active_damage_per_base_damage"  "40 50 60"
+
+            "chance"                        "20 25 30"
+            "arc_damage"			        "150 250 500"
+	        "radius"			            "650"
+	        "jump_count"			        "6 8 10"
+            "bonus_damage_per_base_damage"  "30 40 50"
+        }
+    }
+    "item_recipe_maelstorm_aa"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_maelstorm_aa"
+		"ItemRequirements"
+		{
+			"01"						"item_mithril_hammer;item_javelin;item_gloves"
+		}
+	}
+    "item_maelstorm_aa"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_mjolnir"
+        "ItemBaseLevel"					"1"
+        "AbilityTextureName"            "item_maelstrom"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						"2950"
+		"ItemShopTags"					"damage;attack_speed;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"maelstrom"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"                  "25"
+            "bonus_attack_speed"            "25"
+
+            "chance"                        "20"
+            "arc_damage"			        "100"
+	        "radius"			            "650"
+	        "jump_count"			        "4"
+            "bonus_damage_per_base_damage"  "20"
+        }
+    }
+}

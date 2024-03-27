@@ -1,0 +1,185 @@
+"DOTAAbilities"
+{    
+    "item_recipe_bloodstone_1"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"700"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_bloodstone_1"
+        "ItemRequirements"
+        {
+            "01"						"item_voodoo_mask;item_soul_booster"
+        }
+    }
+    "item_bloodstone_1"
+    {
+        "BaseClass"						"item_lua"
+        "ScriptFile"					"items/item_bloodstone"
+        "AbilityTextureName"			"bloodstone"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "FightRecapLevel"				"2"
+        "AbilitySharedCooldown"			"bloodstone"
+        "ItemBaseLevel"					"1"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        "AbilityCooldown"				"35.0"
+        "AbilityManaCost"				"0"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"4400"
+        "ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+        "ItemQuality"					"epic"
+        "ItemAliases"					"bs;bloodstone"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "AllowedInBackpack"				"1"
+        "ShouldBeSuggested"				"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+                "bonus_health"			"500 1000 3000"
+                "bonus_mana"			"500 1000 3000"
+                "spell_lifesteal"		"20 22.5 25"
+                "buff_duration"			"6"
+                "lifesteal_multiplier"	"2 2.5 3"
+                "hp_cost"				"0"
+                "force_cooldown"        "35"
+                "bonus_aoe"             "50 60 70"
+                "mana_regen"            "3 10 25"
+                
+        }
+    }
+    "item_recipe_bloodstone_2"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_bloodstone_2"
+        "ItemRequirements"
+        {
+            "01"						"item_bloodstone_1;item_bloodstone_1"
+        }
+    }
+    "item_bloodstone_2"
+    {
+        "BaseClass"						"item_lua"
+        "ScriptFile"					"items/item_bloodstone"
+        "AbilityTextureName"			"bloodstone2"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "FightRecapLevel"				"2"
+        "AbilitySharedCooldown"			"bloodstone"
+        "ItemBaseLevel"					"2"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        "AbilityCooldown"				"35.0"
+        "AbilityManaCost"				"0"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"4400"
+        "ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+        "ItemQuality"					"epic"
+        "ItemAliases"					"bs;bloodstone"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "AllowedInBackpack"				"1"
+        "ShouldBeSuggested"				"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+                "bonus_health"			"500 1000 3000"
+                "bonus_mana"			"500 1000 3000"
+                "spell_lifesteal"		"20 22.5 25"
+                "buff_duration"			"6"
+                "lifesteal_multiplier"	"2 2.5 3"
+                "hp_cost"				"0"
+                "force_cooldown"        "35"
+                "bonus_aoe"             "50 60 70"
+                "mana_regen"            "3 10 25"
+        }
+    }
+    "item_recipe_bloodstone_3"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_bloodstone_3"
+        "ItemRequirements"
+        {
+            "01"						"item_bloodstone_2;item_bloodstone_2;item_boss_soul"
+        }
+    }
+    "item_bloodstone_3"
+    {
+        "BaseClass"						"item_lua"
+        "ScriptFile"					"items/item_bloodstone"
+        "AbilityTextureName"			"bloodstone3"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "FightRecapLevel"				"2"
+        "AbilitySharedCooldown"			"bloodstone"
+        "ItemBaseLevel"					"3"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        "AbilityCooldown"				"35.0"
+        "AbilityManaCost"				"0"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"4400"
+        "ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+        "ItemQuality"					"epic"
+        "ItemAliases"					"bs;bloodstone"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "AllowedInBackpack"				"1"
+        "ShouldBeSuggested"				"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+                "bonus_health"			"500 1000 3000"
+                "bonus_mana"			"500 1000 3000"
+                "spell_lifesteal"		"20 22.5 25"
+                "buff_duration"			"6"
+                "lifesteal_multiplier"	"2 2.5 3"
+                "hp_cost"				"0"
+                "force_cooldown"        "35"
+                "bonus_aoe"             "50 60 70"
+                "mana_regen"            "3 10 25"
+        }
+    }
+}
