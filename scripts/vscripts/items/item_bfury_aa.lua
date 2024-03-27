@@ -29,15 +29,14 @@ function modifier_item_bfury_aa:OnCreated()
 	self.damage_bonus			= self:GetAbility():GetSpecialValueFor("bonus_damage")
 	self.hp_regen			= self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 	self.mp_regen	= self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
-	self.damage_bonus_creep_quelling = self:GetAbility():GetSpecialValueFor("quelling_bonus")
-
+	self.quelling_bonus_pct = self:GetCaster():GetAverageTrueAttackDamage(self:GetParent()) * self:GetAbility():GetSpecialValueFor("quelling_bonus_pct") / 100
+	self.damage_bonus_creep_quelling = self:GetAbility():GetSpecialValueFor("quelling_bonus") + self.quelling_bonus_pct
 	self.damage_bonus_creep_quelling_ranged = self:GetAbility():GetSpecialValueFor("quelling_bonus_ranged")
-
+	self.splash_bonus_pct = self.quelling_bonus_pct * self:GetAbility():GetSpecialValueFor("cleave_damage_percent_creep") / 100
 	self.start_width = self:GetAbility():GetSpecialValueFor("cleave_starting_width")
 	self.end_width = self:GetAbility():GetSpecialValueFor("cleave_ending_width")
 	self.cleave_distance = self:GetAbility():GetSpecialValueFor("cleave_distance")
 end
-
 
 
 function modifier_item_bfury_aa:DeclareFunctions()
@@ -65,7 +64,7 @@ function modifier_item_bfury_aa:GetModifierProcAttack_BonusDamage_Physical( keys
 		if self:GetParent():IsRangedAttacker() then 
 			return self.damage_bonus_creep_quelling_ranged
 		else 
-			return self.damage_bonus_creep_quelling
+			return self.quelling_bonus_pct
 		end
 	end
 end
@@ -90,12 +89,10 @@ if self:GetParent() ~= params.attacker then return end
 if self:GetParent():IsRangedAttacker() then return end
 if not params.target:IsHero() and not params.target:IsCreep() then return end
 
-
 local k = self:GetAbility():GetSpecialValueFor("cleave_damage_percent")
 if params.target:IsCreep() then 
-	k = self:GetAbility():GetSpecialValueFor("cleave_damage_percent_creep")
-end 
-
+	k = self:GetAbility():GetSpecialValueFor("cleave_damage_percent_creep") + self.splash_bonus_pct
+end
 
 params.target:EmitSound("DOTA_Item.BattleFury")
 
