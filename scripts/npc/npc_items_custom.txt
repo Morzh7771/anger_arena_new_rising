@@ -2661,11 +2661,23 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityValues"
+        "AbilitySpecial"
         {
-            "bonus_damage"			"88 200"
-            "crit_chance"			"25 30"
-            "crit_multiplier"		"225 350"
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"88 200"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "crit_chance"			"25 30"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "crit_multiplier"		"225 350"
+            }
         }
     }
     "item_recipe_greater_crit_2"
@@ -3675,16 +3687,14 @@
         "ItemBaseLevel"     "1"
 		"AbilityCastRange"	"0"
 
-		"AbilityValues"
-		{
-			"int"						"20 40 120"
-			"mp"						"500 1000 2000"
-			"mp_regen"					"3 6 18"
-			"bonus_mana_regen_amp"		"50 75 100"
-			"spell_damage"				"12 21 30"
-			"cast_range"				"225 275 325"
-			"active_duration"			"6"
-			"active_radius"				"500 750 1000"
+		"AbilityValues"{
+			"int"			    "30 60 120"
+			"mp"			    "400 800 1600"
+			"mp_regen"		    "7 14 28"
+			"spell_damage"	    "12 21 30"
+			"cast_range"	    "200 300 400"
+			"active_duration"	"6"
+			"active_radius"		"500 750 1000"
 		}
 	}
 
@@ -3701,16 +3711,14 @@
 		"AbilityCooldown"	"60 50 40"
 		"AbilityCastRange"	"0"
 
-		"AbilityValues"
-		{
-			"int"						"20 40 120"
-			"mp"						"500 1000 2000"
-			"mp_regen"					"3 6 18"
-			"bonus_mana_regen_amp"		"50 75 100"
-			"spell_damage"				"12 21 30"
-			"cast_range"				"225 275 325"
-			"active_duration"			"6"
-			"active_radius"				"500 750 1000"
+		"AbilityValues"{
+			"int"			"30 60 120"
+			"mp"			"500 1000 2000"
+			"mp_regen"		"7 14 28"
+			"spell_damage"	"12 21 30"
+			"cast_range"	"225 275 325"
+			"active_duration"	"6"
+			"active_radius"		"500 750 1000"
 		}
 	}
 
@@ -3730,14 +3738,13 @@
 
 		"AbilityValues"
         {
-			"int"						"20 40 120"
-			"mp"						"500 1000 2000"
-			"mp_regen"					"3 6 18"
-			"bonus_mana_regen_amp"		"50 75 100"
-			"spell_damage"				"12 21 30"
-			"cast_range"				"225 275 325"
-			"active_duration"			"6"
-			"active_radius"				"500 750 1000"
+			"int"			"30 60 120"
+			"mp"			"500 1000 2000"
+			"mp_regen"		"7 14 28"
+			"spell_damage"	"12 21 30"
+			"cast_range"	"225 275 325"
+			"active_duration"	"6"
+			"active_radius"		"500 750 1000"
 		}
 	}
     "item_recipe_rebels_sword"
@@ -5785,7 +5792,7 @@
             "bonus_cooldown"        "25 30 35"
             "bonus_health"          "600 1200 2000"
             "bonus_mana"            "600 1200 2000"
-            "bonus_mana_regen"      "6 12 40"
+            "bonus_mana_regen"      "6 15 40"
         }
     }
     "item_recipe_octarine_core_2"
@@ -5837,7 +5844,7 @@
             "bonus_cooldown"        "25 30 35"
             "bonus_health"          "600 1200 2000"
             "bonus_mana"            "600 1200 2000"
-            "bonus_mana_regen"      "6 12 40"
+            "bonus_mana_regen"      "6 15 40"
         }
     }
 
@@ -5893,7 +5900,7 @@
             "bonus_cooldown"        "25 30 35"
             "bonus_health"          "600 1200 2000"
             "bonus_mana"            "600 1200 2000"
-            "bonus_mana_regen"      "6 12 40"
+            "bonus_mana_regen"      "6 15 40"
             "duration"              "240"
         }           
     }

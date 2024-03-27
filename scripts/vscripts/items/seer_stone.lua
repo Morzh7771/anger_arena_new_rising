@@ -43,7 +43,6 @@ function modifier_item_custom_seer_stone:DeclareFunctions()
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-        MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE,
     }
     return func
 end
@@ -52,9 +51,7 @@ function modifier_item_custom_seer_stone:GetModifierBonusStats_Intellect()
 		return self:GetAbility():GetSpecialValueFor("int")
 	end
 end
-function modifier_item_custom_seer_stone:GetModifierMPRegenAmplify_Percentage()
-    return self:GetAbility():GetSpecialValueFor("bonus_mana_regen_amp")
-end
+
 function modifier_item_custom_seer_stone:GetModifierManaBonus()
 	if self:GetAbility() then
 		return self:GetAbility():GetSpecialValueFor("mp")
