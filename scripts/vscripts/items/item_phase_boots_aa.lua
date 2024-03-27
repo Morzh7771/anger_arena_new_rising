@@ -21,7 +21,7 @@ item_phase_boots_aa = class({
 
         ProjectileManager:ProjectileDodge(self:GetCaster())
 
-        self:GetCaster():EmitSound("Item.Falcon_blade")
+        self:GetCaster():EmitSound("DOTA_Item.Force_Boots.Cast")
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_aa_active", {x = point.x, y = point.y, z = point.z, duration = self:GetSpecialValueFor("duration")})
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_active", {duration = self:GetSpecialValueFor("phase_duration")})
     end,
@@ -86,6 +86,12 @@ modifier_item_phase_boots_aa_active = class({
     end,
     OnHorizontalMotionInterrupted = function (self) 
         self:Destroy()
+    end,
+    CheckState = function (self)
+        local state = {
+            [MODIFIER_STATE_INVULNERABLE] = true
+            } 
+        return state
     end,
 })
 

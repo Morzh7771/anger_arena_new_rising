@@ -2636,23 +2636,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"88 200"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "crit_chance"			"25 30"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "crit_multiplier"		"225 350"
-            }
+            "bonus_damage"			"88 200"
+            "crit_chance"			"25 30"
+            "crit_multiplier"		"225 350"
         }
     }
     "item_recipe_greater_crit_2"

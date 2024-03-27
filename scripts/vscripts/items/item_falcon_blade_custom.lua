@@ -19,7 +19,7 @@ item_falcon_blade_custom = class({
 
         ProjectileManager:ProjectileDodge(self:GetCaster())
 
-        self:GetCaster():EmitSound("Item.Falcon_blade")
+        self:GetCaster():EmitSound("DOTA_Item.Force_Boots.Cast")
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_falcon_blade_custom_active", {x = point.x, y = point.y, z = point.z, duration = self:GetSpecialValueFor("duration")})
 
     end,
