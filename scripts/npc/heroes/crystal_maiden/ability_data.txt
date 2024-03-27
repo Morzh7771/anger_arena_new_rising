@@ -171,17 +171,18 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		"AbilityCooldown"				"25"
 		
 		"AbilityValues"
 		{
+			"AbilityCastPoint"			"0.3"
+			"AbilityCooldown"			"25"
 			"self_bonus"				"2"
-			"mana_regen"				"2 4 6 8 10 12 14"
 			"mana_regen_share"			"10"
-			"spellamp_const"			"5 7 9 11 13 15 17"
 			"spellamp_mlp"				"2"
 			"mana_regen_to_shield"		"1 1.2 1.4 1.6 1.8 2.0 2.2"
-			"shield_duration"			"12"			
+			"shield_duration"			"12"
+			"mana_regen"				"2 4 6 8 10 12 14"
+			"spellamp_const"			"5 7 9 11 13 15 17"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
