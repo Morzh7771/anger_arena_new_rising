@@ -97,13 +97,11 @@ modifier_item_harpoon_custom = class({
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
 
     } end,
     GetModifierPreAttack_BonusDamage = function(self)return self:GetAbility():GetSpecialValueFor("bonus_damage") end,
     GetModifierConstantManaRegen = function(self)return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end,
-    GetModifierAttackSpeedBonus_Constant = function(self)return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end,
     GetModifierBonusStats_Intellect = function(self)return self:GetAbility():GetSpecialValueFor("bonus_intellect") end,
     GetModifierBonusStats_Strength = function(self)return self:GetAbility():GetSpecialValueFor("bonus_strength") end,
     GetModifierBonusStats_Agility = function(self)return self:GetAbility():GetSpecialValueFor("bonus_agility") end,
