@@ -181,10 +181,10 @@
 		//-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
 		{
-            "bonus_agility"			    "35 70 150"
+            "bonus_agility"			    "45 90 200"
 			"bonus_evasion"			    "35 40 45"
-			"bonus_attack_speed_pct"	"20 40 120"
-			"bonus_damage"	            "25 50 150"
+			"bonus_attack_speed_pct"	"20 25 30"
+			"bonus_damage"	            "25 60 170"
 		}
 	}
     "item_recipe_burning_butterfly"
@@ -229,10 +229,10 @@
         "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
         "AbilityValues"
         {
-            "bonus_agility"			    "35 70 150"
+            "bonus_agi"			        "45 90 200"
 			"bonus_evasion"			    "35 40 45"
-			"bonus_attack_speed_pct"	"20 40 120"
-			"bonus_damage"	            "25 50 150"
+			"bonus_attack_speed_pct"	"20 25 30"
+			"bonus_damage"	            "25 60 170"
 			"bonus_mvspd_pct"		    "0 10 15"
             "absorb_chance"			    "12"
         }
@@ -275,10 +275,10 @@
         "ItemPurchasable"				"1"
         "AbilityValues"
         {
-            "bonus_agility"			    "35 70 150"
+            "bonus_agi"			        "45 90 200"
 			"bonus_evasion"			    "35 40 45"
-			"bonus_attack_speed_pct"	"20 40 120"
-			"bonus_damage"	            "25 50 150"
+			"bonus_attack_speed_pct"	"20 25 30"
+			"bonus_damage"	            "25 60 170"
 			"bonus_mvspd_pct"		    "0 10 15"
         }
     }
@@ -7142,7 +7142,6 @@
             "phase_movement_speed_range"    "10 20 30"
             "phase_duration"                "3.0 4.0 5.0"
             "bonus_armor"                   "5 5 10"
-
             "bonus_health"                  "0 200 325"
             "bonus_mana_regen"              "0 2.5 3.75"
             "range"                         "0 340 380"   
@@ -7180,7 +7179,6 @@
             "phase_movement_speed_range"    "10 20 30"
             "phase_duration"                "3.0 4.0 5.0"
             "bonus_armor"                   "5 5 10"
-
             "bonus_health"                  "0 200 325"
             "bonus_mana_regen"              "0 2.5 3.75"
             "range"                         "0 340 380"   
