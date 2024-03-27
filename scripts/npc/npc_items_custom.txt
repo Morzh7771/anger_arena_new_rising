@@ -6688,9 +6688,11 @@
         "ItemSellable"						"1"
         "ItemCost"							"1100"
         "ItemStackable"						"0"
-        "AbilityCooldown"					"16"
         "ShouldBeInitiallySuggested"		"1"
         "ItemBaseLevel"                     "2"
+
+        "AbilityCooldown"                   "16"
+        "AbilityManaCost"                   "75"
         
         // Special	
         //-------------------------------------------------------------------------------------------------------------
