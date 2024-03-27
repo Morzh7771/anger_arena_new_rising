@@ -46,12 +46,9 @@ function mod:DeclareFunctions()
     local func = {
         MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,  
         MODIFIER_EVENT_ON_TAKEDAMAGE,
-        MODIFIER_PROPERTY_MANA_BONUS,
-		MODIFIER_PROPERTY_HEALTH_BONUS,
-		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
     }
     return func
 end
@@ -106,33 +103,21 @@ function mod:OnTakeDamage(params)
 end
 
 
-function mod:GetModifierManaBonus()
+function mod:GetModifierPreAttack_BonusDamage()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_mp")
+		return self:GetAbility():GetSpecialValueFor("bonus_damage")
 	end
 end
 
-function mod:GetModifierHealthBonus()
+function mod:GetModifierConstantHealthRegen()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_hp")
+		return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 	end
 end
 
-function mod:GetModifierBonusStats_Strength()
+function mod:GetModifierConstantManaRegen()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
-	end
-end
-
-function mod:GetModifierBonusStats_Agility()
-	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
-	end
-end
-
-function mod:GetModifierBonusStats_Intellect()
-	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+		return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 	end
 end
 
