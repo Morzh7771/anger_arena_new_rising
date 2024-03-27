@@ -18,7 +18,7 @@ function mod:OnCreated( kv )
 	local ability = self:GetAbility()
 
 	if not ability then return end
-
+	self.bonusAttack = ability:GetSpecialValueFor("bonus_attack")
 	self.bonusHpReg  = ability:GetSpecialValueFor("bonus_hp_regen")
 	self.bonusStr    = ability:GetSpecialValueFor("bonus_str")
 
@@ -32,6 +32,7 @@ function mod:DeclareFunctions() return
 	MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 	MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 	MODIFIER_EVENT_ON_TAKEDAMAGE,
+	MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 }
 end
 
@@ -59,4 +60,8 @@ end
 
 function mod:GetModifierBonusStats_Strength( params )
 	return self.bonusStr
+end
+
+function mod:GetModifierPreAttack_BonusDamage( params )
+	return self.bonusAttack
 end

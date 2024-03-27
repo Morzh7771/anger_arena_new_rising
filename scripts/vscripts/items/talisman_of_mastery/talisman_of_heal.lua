@@ -22,7 +22,7 @@ function mod:OnCreated( kv )
 	local ability = self:GetAbility()
 
 	if not ability then return end
-
+	self.bonusAttack = ability:GetSpecialValueFor("bonus_attack")
 	self.bonusHpReg  = ability:GetSpecialValueFor("bonus_hp_regen")
 	self.bonusMpReg  = ability:GetSpecialValueFor("bonus_mp_regen")
 	self.bonusStr    = ability:GetSpecialValueFor("bonus_all")
@@ -44,6 +44,7 @@ function mod:DeclareFunctions() return
 	MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 	MODIFIER_PROPERTY_HEALTH_BONUS,
 	MODIFIER_EVENT_ON_TAKEDAMAGE,
+	MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 }
 end
 
@@ -81,6 +82,9 @@ function mod:GetModifierBonusStats_Intellect( params )
 end
 function mod:GetModifierHealthBonus( params )
 	return self.bonusHp
+end
+function mod:GetModifierPreAttack_BonusDamage( params )
+	return self.bonusAttack
 end
 
 function item_talisman_of_heal:GetIntrinsicModifierName()
