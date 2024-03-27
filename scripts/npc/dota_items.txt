@@ -24,6 +24,7 @@
 	"item_angels_demise"            "huita"
 	"item_meteor_hammer"			"reworked"
 	"item_bfury"					"reworked"
+	"item_quelling_blade"			"reworked"
 
     "item_recipe_manta"
 	  {
@@ -5405,41 +5406,6 @@
 				"rune_expire_time"		"90.0"
 		}
 	}
-	"item_quelling_blade"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-
-		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"4.0"
-		"Model"							"models/props_gameplay/quelling_blade.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"ItemCost"						"100"
-		"ItemShopTags"					"damage"
-		"ItemQuality"					"component"
-		"ItemAliases"					"qb;quelling blade"
-		//"SideShop"						"1"
-		"ShouldBeSuggested"				"1"
-		"ShouldBeInitiallySuggested"	"1"
-
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"damage_bonus"			"24"
-			"damage_bonus_ranged"	"16"
-			"quelling_range_tooltip"			"350"
-		}
-	}
-
 	"item_recipe_devastator"
 	{
 		// General

@@ -1553,6 +1553,7 @@
                 "bonus_spell_amp"                   "30"
                 "bonus_spell_lifesteal_amp_pct"     "60"
                 "bonus_heal_amp_pct"                "60"
+
                 "cleave_range"                      "300"
                 "cleave_physical_pierce"            "50"
                 "cleave_damage_hero"                "20"
@@ -7191,7 +7192,7 @@
         "ItemResult"                    "item_bfury_aa"
         "ItemRequirements"
         {
-            "01"                        "item_broadsword;item_claymore;item_cornucopia;item_quelling_blade"
+            "01"                        "item_broadsword;item_claymore;item_cornucopia;item_quelling_blade_aa"
         }
     }
     "item_recipe_bfury_aa_2"
@@ -7249,15 +7250,17 @@
             "bonus_agi"                         "0 15"
             "bonus_health_regen"                "7.5 11"
             "bonus_mana_regen"                  "2.75 3.0"
-            "cleave_damage_percent"             "70 90"
-            "cleave_damage_percent_creep"       "40 60"
+
             "quelling_bonus"                    "32 64"
             "quelling_bonus_pct"                "20 40"
-            "quelling_bonus_ranged"             "16 32"
-            "quelling_bonus_pct_ranged"         "10 20"
-            "cleave_starting_width"             "150"
-            "cleave_ending_width"               "360"
-            "cleave_distance"                   "650"
+            "quelling_bonus_ranged_coef"        "50"
+
+            "cleave_range"                      "300"
+            "cleave_physical_pierce"            "20 35"
+            "cleave_damage_hero"                "10 15"
+            "cleave_damage_creep"               "30 50"
+            "cleave_damage_illusion"            "50"
+            "cleave_illusion_pure"              "20"
         }
     }
     "item_bfury_aa_2"
@@ -7295,15 +7298,54 @@
             "bonus_agi"                         "0 15"
             "bonus_health_regen"                "7.5 11"
             "bonus_mana_regen"                  "2.75 3.0"
-            "cleave_damage_percent"             "70 90"
-            "cleave_damage_percent_creep"       "40 60"
+
             "quelling_bonus"                    "32 64"
             "quelling_bonus_pct"                "20 40"
-            "quelling_bonus_ranged"             "16 32"
-            "quelling_bonus_pct_ranged"         "10 20"
-            "cleave_starting_width"             "150"
-            "cleave_ending_width"               "360"
-            "cleave_distance"                   "650"
+            "quelling_bonus_ranged_coef"        "50"
+
+            "cleave_range"                      "300"
+            "cleave_physical_pierce"            "20 35"
+            "cleave_damage_hero"                "10 15"
+            "cleave_damage_creep"               "30 50"
+            "cleave_damage_illusion"            "50"
+            "cleave_illusion_pure"              "20"
+        }
+    }
+    "item_quelling_blade_aa"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_quelling_blade_aa"
+        "AbilityTextureName"            "quelling_blade"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+        "AbilityCastRange"              "350"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "4.0"
+        "Model"                         "models/props_gameplay/quelling_blade.vmdl"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "0"
+        "ItemCost"                      "100"
+        "ItemShopTags"                  "damage"
+        "ItemQuality"                   "component"
+        "ItemAliases"                   "qb;quelling blade"
+        //"SideShop"                        "1"
+        "ShouldBeSuggested"             "1"
+        "ShouldBeInitiallySuggested"    "1"
+
+        
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "quelling_bonus"                "24"
+            "quelling_bonus_pct"            "10"
+            "quelling_bonus_ranged_coef"    "50"
         }
     }
 }
