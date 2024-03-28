@@ -3,9 +3,19 @@ LinkLuaModifier("modifier_item_disperser_aa", "items/item_disperser_aa", LUA_MOD
 item_disperser_aa_1 = class({
     GetAOERadius = function (self) return self:GetSpecialValueFor("radius") end,
     GetIntrinsicModifierName = function (self) return "modifier_item_disperser_aa" end,
+    GetBehavior = function (self)
+        if self:GetCaster():HasModifier("modifier_spirit_breaker_charge_of_darkness") then 
+            return DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_NO_TARGET
+        else
+            return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
+        end
+    end,
     OnSpellStart = function (self)
         if not IsServer() then return end
         local ftarget = self:GetCursorTarget()
+        if self:GetCaster():HasModifier("modifier_spirit_breaker_charge_of_darkness") then 
+            ftarget = self:GetCaster()
+        end
         local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), ftarget:GetAbsOrigin(), nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, FIND_ANY_ORDER, false)
 		for _, target in pairs(enemies) do
             if target:GetTeamNumber() == self:GetCaster():GetTeamNumber() then

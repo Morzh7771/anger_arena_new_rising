@@ -119,6 +119,6 @@ modifier_boots_of_bearing_aa_2_unslowable = class({
     IsDebuff = function (self) return false end,
     IsPurgable = function (self) return true end,
     GetPriority = function (self) return MODIFIER_PRIORITY_SUPER_ULTRA + 10000 end,
-    CheckState = function (self) return {[MODIFIER_STATE_UNSLOWABLE] = true,} + 10000 end,
+    CheckState = function (self) return {[MODIFIER_STATE_UNSLOWABLE] = true,} end,
     GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end
 })

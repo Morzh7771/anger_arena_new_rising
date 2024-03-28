@@ -1,0 +1,279 @@
+"DOTAAbilities"
+{
+    "item_recipe_dark_edge"
+    {
+         //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_dark_edge"
+        "ItemRequirements"
+        {
+            "01"                        "item_skadi_2;item_silver_edge_2;item_boss_soul;item_boss_soul"
+        }
+    }   
+    "item_dark_edge"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_dark_edge"
+        "AbilityTextureName"            "silver_edge3"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0"
+		"AbilitySharedCooldown"			"shadow_blade"
+		"AbilitySharedCooldown"			"silver"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"5450"
+		"ItemShopTags"					"damage;attack_speed;movespeed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sb;invis;shadow blade;skadi;silver;eye;eos;eye of skadi;silver edge;dark edge;dark;edge;"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage" 				"60 120 240"
+			"bonus_attack_speed"		"40 80 180"
+            "bonus_all_stats"			"30 70 150"
+			"bonus_health"				"220 500 1000"
+			"bonus_mana"				"220 500 1000"
+
+			"windwalk_duration"			"8"
+			"windwalk_movement_speed"	"25 30 35"
+			"windwalk_fade_time"		"0.3 0.3 0.3"
+			"windwalk_bonus_damage"		"175 250 400"
+
+			"backstab_duration"			"5 6 7"
+
+			"cold_slow_melee"			"-20 -30 -40"
+			"cold_attack_slow_melee"	"-25 -35 -45"
+			"cold_slow_ranged"			"-40 -50 -60"
+			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_duration"				"3.0"
+			"heal_reduction"			"30 40 50"
+		}
+    }
+    "item_recipe_silver_edge"
+	{
+		
+		"ItemCost"						"250"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_silver_edge"
+		"ItemRequirements"
+		{
+			"01"						"item_invis_sword*;item_demon_edge"
+		}
+	}
+	"item_silver_edge"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0"
+		"AbilitySharedCooldown"			"shadow_blade"
+		"AbilitySharedCooldown"			"silver"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"5450"
+		"ItemShopTags"					"damage;attack_speed;movespeed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sb;invis;shadow blade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage" 				"60 120 240"
+			"bonus_attack_speed"		"40 80 180"
+			"bonus_strength"			"0"
+			"bonus_intellect"			"0"
+			"bonus_mana_regen"			"0"
+			"windwalk_duration"			"14.0 14.0 14.0"
+			"windwalk_movement_speed"	"25 30 35"
+			"windwalk_fade_time"		"0.3 0.3 0.3"
+			"windwalk_bonus_damage"		"175 250 400"
+			"backstab_duration"			"5 6 7"
+			"crit_chance"				"25 30 35"
+			"crit_multiplier"			"150 200 250"
+			"tooltip_crit_damage"		"50 100 150"
+		}
+	}
+
+	"item_recipe_silver_edge_2"
+	{
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_silver_edge_2"
+		"ItemRequirements"
+		{
+			"01"						"item_silver_edge;item_silver_edge"
+		}
+	}
+	"item_silver_edge_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_silver_edge"
+		"AbilityTextureName"			"silver_edge2"
+		"AbilitySharedCooldown"			"silver"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0"
+		"AbilitySharedCooldown"			"shadow_blade"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"5450"
+		"ItemShopTags"					"damage;attack_speed;movespeed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sb;invis;shadow blade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage" 				"60 120 240"
+			"bonus_attack_speed"		"40 80 180"
+			"bonus_strength"			"0"
+			"bonus_intellect"			"0"
+			"bonus_mana_regen"			"0"
+			"windwalk_duration"			"14.0 14.0 14.0"
+			"windwalk_movement_speed"	"25 30 35"
+			"windwalk_fade_time"		"0.3 0.3 0.3"
+			"windwalk_bonus_damage"		"175 250 400"
+			"backstab_duration"			"5 6 7"
+			"crit_chance"				"25 30 35"
+			"crit_multiplier"			"150 200 250"
+			"tooltip_crit_damage"		"50 100 150"
+		}
+	}
+    "item_recipe_skadi"
+	{
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster"
+		}
+	}
+	"item_skadi"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"1"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5300"
+		"ItemShopTags"					"agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"eos;eye of skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"30 70 150"
+			"bonus_health"				"220 500 1000"
+			"bonus_mana"				"220 500 1000"
+			"cold_slow_melee"			"-20 -30 -40"
+			"cold_attack_slow_melee"	"-25 -35 -45"
+			"cold_slow_ranged"			"-40 -50 -60"
+			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_duration"				"3.0"
+			"heal_reduction"			"30 40 50"
+		}
+	}
+
+	"item_recipe_skadi_2"
+	{
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"                     "item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_2"
+		"ItemRequirements"
+		{
+			"01"						"item_skadi;item_skadi"
+		}
+	}
+	"item_skadi_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"2"
+		"BaseClass"                     "item_skadi"
+		"AbilityTextureName"			"skadi_2"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5300"
+		"ItemShopTags"					"agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"eos;eye of skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"30 70 150"
+			"bonus_health"				"220 500 1000"
+			"bonus_mana"				"220 500 1000"
+			"cold_slow_melee"			"-20 -30 -40"
+			"cold_attack_slow_melee"	"-25 -35 -45"
+			"cold_slow_ranged"			"-40 -50 -60"
+			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_duration"				"3.0"
+			"heal_reduction"			"30 40 50"
+		}
+	}
+}

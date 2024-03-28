@@ -7,7 +7,11 @@
 #base items/boots_of_bearing.txt
 #base items/hex.txt
 #base items/third_eye.txt
-
+#base items/phase_boots.txt
+#base items/linken.txt
+#base items/lotus_orb.txt
+#base items/nullifier.txt
+#base items/mask_of_madness.txt
 "DOTAAbilities"
 {
     "item_recipe_shield_of_immortality"
@@ -3995,52 +3999,52 @@
             "duration"                  "90"
 		}
     }
-   "item_recipe_mirror_shield_aa"
-    {
-        "BaseClass"                        "item_datadriven"    
-        "Model"                            "models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"			    "item_recipe_mirror_shield"												// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
+   //item_recipe_mirror_shield_aa"
+   //{
+   //    "BaseClass"                        "item_datadriven"    
+   //    "Model"                            "models/props_gameplay/recipe.vmdl"
+	//	"AbilityTextureName"			    "item_recipe_mirror_shield"												// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	//	
+	//	// Item Info
+	//	//-------------------------------------------------------------------------------------------------------------
 
-		"ItemShopTags"					""
-		"ItemCost"						"1"
-		"ItemIsNeutralDrop"				"1"
-		"ItemPurchasable"				"0"
-		"ItemSellable"                  "0"
+	//	"ItemShopTags"					""
+	//	"ItemCost"						"1"
+	//	"ItemIsNeutralDrop"				"1"
+	//	"ItemPurchasable"				"0"
+	//	"ItemSellable"                  "0"
 
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-        "ItemResult"                    "item_mirror_shield_aa"
-        "ItemRequirements"
-        {
-            "01"                        "item_sphere_2;item_lotus_orb_2;item_boss_soul"
-        }
-    }
-    "item_mirror_shield_aa"
-    {
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_mirror_shield_aa"
-        "AbilityTextureName"            "item_mirror_shield"
-        "ItemSellable"                  "0"
-        "AbilitySharedCooldown"			"sphere"
+	//	// Recipe
+	//	//-------------------------------------------------------------------------------------------------------------
+	//	"ItemRecipe"					"1"
+   //    "ItemResult"                    "item_mirror_shield_aa"
+   //    "ItemRequirements"
+   //    {
+   //        "01"                        "item_sphere_2;item_lotus_orb_2;item_boss_soul"
+   //    }
+   //}
+   //"item_mirror_shield_aa"
+   //{
+   //    "BaseClass"                     "item_lua"
+   //    "ScriptFile"                    "items/item_mirror_shield_aa"
+   //    "AbilityTextureName"            "item_mirror_shield"
+   //    "ItemSellable"                  "0"
+   //    "AbilitySharedCooldown"			"sphere"
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCooldown"               "12"
-        "ItemBaseLevel"                 "1"
-        "AbilityValues"
-        {
-            "bonus_mana"            "700"
-            "bonus_all_stats"       "40"
-            "bonus_armor"           "25"
-            "bonus_health_regen"    "30"
-            "bonus_mana_regen"      "22"
-            "bonus_damage"          "40"            
-            "block_cooldown"        "12.0"
-        }
-    }
+   //    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+   //    "AbilityCooldown"               "12"
+   //    "ItemBaseLevel"                 "1"
+   //    "AbilityValues"
+   //    {
+   //        "bonus_mana"            "700"
+   //        "bonus_all_stats"       "40"
+   //        "bonus_armor"           "25"
+   //        "bonus_health_regen"    "30"
+   //        "bonus_mana_regen"      "22"
+   //        "bonus_damage"          "40"            
+   //        "block_cooldown"        "12.0"
+   //    }
+   //}
     "item_recipe_midas_aa"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -6706,122 +6710,7 @@
             "enemy_particles_visible"   "0"
         }
     }
-    "item_recipe_phase_boots_aa"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "0"   
-        "ItemShopTags"                  ""
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_phase_boots_aa"
-        "ItemRequirements"
-        {
-            "01"                        "item_phase_boots;item_falcon_blade_custom"
-        }
-    }
-    "item_recipe_phase_boots_aa_2"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "0"   
-        "ItemShopTags"                  ""
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_phase_boots_aa_2"
-        "ItemRequirements"
-        {
-            "01"                        "item_phase_boots_aa;item_phase_boots_aa"
-        }
-    }
-    "item_phase_boots_aa"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-         "BaseClass"                      "item_lua"
-        "ScriptFile"                    "items/item_phase_boots_aa"
-        "AbilityTextureName"            "phase_boots_2"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-        "AbilityCastRange"              "99999"
-        "AbilityCooldown"               "6"
-        "ItemBaseLevel"                 "2"
-        "AbilitySharedCooldown"         "phase"
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "1125"
-        "ItemShopTags"                  "hard_to_tag"
-        "ItemQuality"                   "rare"
-        "ItemAliases"                   "fb;falcon blade"
-        "ShouldBeInitiallySuggested"    "1"
-
-        // Special  
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityValues"
-        {
-            "bonus_movement_speed"          "60 70 80"
-            "bonus_damage_melee"            "20 60 120"
-            "bonus_damage_range"            "15 45 100"
-            "phase_movement_speed"          "20 30 40"
-            "phase_movement_speed_range"    "10 20 30"
-            "phase_duration"                "3.0 4.0 5.0"
-            "bonus_armor"                   "5 5 10"
-            "bonus_health"                  "0 200 325"
-            "bonus_mana_regen"              "0 2.5 3.75"
-            "range"                         "0 340 380"   
-            "duration"                      "0.18" 
-        }
-    } 
-    "item_phase_boots_aa_2"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-         "BaseClass"                      "item_lua"
-        "ScriptFile"                    "items/item_phase_boots_aa"
-        "AbilityTextureName"            "phase_boots_3"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-        "AbilityCastRange"              "99999"
-        "AbilityCooldown"               "6"
-        "ItemBaseLevel"                 "3"
-        "AbilitySharedCooldown"         "phase"
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "1125"
-        "ItemShopTags"                  "hard_to_tag"
-        "ItemQuality"                   "rare"
-        "ItemAliases"                   "fb;falcon blade"
-        "ShouldBeInitiallySuggested"    "1"
-
-        // Special  
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityValues"
-        {
-            "bonus_movement_speed"          "60 70 80"
-            "bonus_damage_melee"            "20 60 120"
-            "bonus_damage_range"            "15 45 100"
-            "phase_movement_speed"          "20 30 40"
-            "phase_movement_speed_range"    "10 20 30"
-            "phase_duration"                "3.0 4.0 5.0"
-            "bonus_armor"                   "5 5 10"
-            "bonus_health"                  "0 200 325"
-            "bonus_mana_regen"              "0 2.5 3.75"
-            "range"                         "0 340 380"   
-            "duration"                      "0.18" 
-        }
-    }
+   
     "item_recipe_bfury_aa"
     {
          //-------------------------------------------------------------------------------------------------------------
@@ -6954,4 +6843,5 @@
             "cleave_distance"                   "650"
         }
     }
+    
 }

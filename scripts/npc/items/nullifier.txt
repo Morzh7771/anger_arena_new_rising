@@ -1,0 +1,111 @@
+"DOTAAbilities"
+{
+    "item_recipe_nullifier"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier"
+		"ItemRequirements"
+		{
+			"01"						"item_relic;item_helm_of_iron_will"
+		}
+	}
+	"item_nullifier"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"nullifier"
+		"AbilityCooldown"				"10.0"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"0"
+		
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4375"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"nlf;nullifier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage"			"75 300"
+			"bonus_armor"			"10 30"
+			"bonus_regen"			"6 15"
+			"mute_duration"			"4 4.5"
+			"projectile_speed"		"1800 1800"
+			"slow_pct"				"70 90"
+			"slow_interval_duration"	"0.5 0.3"
+		}
+	}
+
+	"item_recipe_nullifier_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier_2"
+		"ItemRequirements"
+		{
+			"01"						"item_nullifier;item_nullifier;item_boss_soul"
+		}
+	}
+	"item_nullifier_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"nullifier"
+		"AbilityTextureName"			"nullifier3"
+		"BaseClass"						"item_nullifier"
+		"AbilityCooldown"				"10.0"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"0"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4375"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"nlf;nullifier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+        {
+            "bonus_damage"			    "75 300"
+			"bonus_armor"			    "10 30"
+            "bonus_regen"               "6 15"
+            "mute_duration"             "4 4.5"
+            "projectile_speed"          "1800 1800"
+            "slow_pct"                  "70 90"
+            "slow_interval_duration"    "0.5 0.3"
+        }
+	}
+}
