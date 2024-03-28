@@ -36,6 +36,40 @@
 			"01"						"item_desolator_aa_1;item_desolator_aa_1;"
 		}
 	}
+	"item_recipe_monkey_king_bar"
+	{
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"675"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_monkey_king_bar"
+		"ItemRequirements"
+		{
+			"01"						"item_demon_edge;item_javelin;item_blitz_knuckles"
+		}
+	}
+	"item_recipe_monkey_king_bar_2"
+	{
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_monkey_king_bar_2"
+		"ItemRequirements"
+		{
+			"01"						"item_monkey_king_bar;item_monkey_king_bar;"
+		}
+	}
     "item_recipe_desolator_aa_3"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -108,6 +142,50 @@
 				"corruption_armor"			"8 16 35"
 				"corruption_duration"		"8 8 8"
 		}
+	}
+	"item_monkey_king_bar"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"1"
+		"ItemCost"						"4975"
+		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage"				"40 80 220"
+			"bonus_attack_speed"		"45 90 180"
+			"bonus_chance"				"80 90 100"
+			"bonus_chance_damage"		"70 100 120"
+		}
+	}
+	"item_monkey_king_bar_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_monkey_king_bar"
+		"AbilityTextureName"			"mkb_2"
+		"ItemCost"						"4975"
+		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+    	{
+        	"bonus_damage"      		"40 80 220"
+        	"bonus_attack_speed"  		"45 90 180"
+        	"bonus_chance"      		"80 90 100"
+        	"bonus_chance_damage"   	"70 100 120"
+    	}
 	}
 	"item_desolator_aa_3"
 	{
