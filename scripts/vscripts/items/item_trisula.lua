@@ -2,10 +2,10 @@ require('items.funcs.cleave')
 DOTA_DAMAGE_FLAG_TRISULA = 524288
 
 local forbidden_modifiers = {
-	"modifier_pangolier_swashbuckle_stunned",
-	"modifier_pangolier_swashbuckle",
-	"modifier_pangolier_swashbuckle_attack",
-	"modifier_monkey_king_boundless_strike_crit",
+	--"modifier_pangolier_swashbuckle_stunned",
+	--"modifier_pangolier_swashbuckle",
+	--"modifier_pangolier_swashbuckle_attack",
+	--"modifier_monkey_king_boundless_strike_crit",
 }
 
 LinkLuaModifier( "modifier_item_trisula", "items/item_trisula.lua", LUA_MODIFIER_MOTION_NONE )
@@ -38,20 +38,20 @@ function modifier_item_trisula:IsHidden() return true end
 function modifier_item_trisula:IsPurgable() return false end
 
 function modifier_item_trisula:OnCreated(params)
-	self.bonus_all_stats = self:GetAbility():GetSpecialValueFor("bonus_all_stats")
-	self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
-	self.bonus_status_res = self:GetAbility():GetSpecialValueFor("bonus_status_res") 
-	self.bonus_mana_regen_amp = self:GetAbility():GetSpecialValueFor("bonus_mana_regen_amp")
-	self.bonus_ms = self:GetAbility():GetSpecialValueFor("bonus_ms")
-	self.bonus_spell_amp = self:GetAbility():GetSpecialValueFor("bonus_spell_amp")
-	self.bonus_spell_lifesteal_amp_pct = self:GetAbility():GetSpecialValueFor("bonus_spell_lifesteal_amp_pct")
-	self.bonus_heal_amp_pct = self:GetAbility():GetSpecialValueFor("bonus_heal_amp_pct")
+	self.bonus_all_stats 				= self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+	self.bonus_attack_speed 			= self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
+	self.bonus_status_res 				= self:GetAbility():GetSpecialValueFor("bonus_status_res") 
+	self.bonus_mana_regen_amp 			= self:GetAbility():GetSpecialValueFor("bonus_mana_regen_amp")
+	self.bonus_ms 						= self:GetAbility():GetSpecialValueFor("bonus_ms")
+	self.bonus_spell_amp 				= self:GetAbility():GetSpecialValueFor("bonus_spell_amp")
+	self.bonus_spell_lifesteal_amp_pct 	= self:GetAbility():GetSpecialValueFor("bonus_spell_lifesteal_amp_pct")
+	self.bonus_heal_amp_pct 			= self:GetAbility():GetSpecialValueFor("bonus_heal_amp_pct")
 
-	self.cleave_damage_creep = self:GetAbility():GetSpecialValueFor('cleave_damage_creep')
-	self.cleave_damage_hero = self:GetAbility():GetSpecialValueFor('cleave_damage_hero')
-	self.cleave_range = self:GetAbility():GetSpecialValueFor('cleave_range')
-	self.cleave_damage_illusion = self:GetAbility():GetSpecialValueFor('cleave_damage_illusion')
-	self.cleave_illusion_pure = self:GetAbility():GetSpecialValueFor('cleave_illusion_pure')
+	self.cleave_damage_creep 			= self:GetAbility():GetSpecialValueFor('cleave_damage_creep')
+	self.cleave_damage_hero 			= self:GetAbility():GetSpecialValueFor('cleave_damage_hero')
+	self.cleave_range 					= self:GetAbility():GetSpecialValueFor('cleave_range')
+	self.cleave_damage_illusion 		= self:GetAbility():GetSpecialValueFor('cleave_damage_illusion')
+	self.cleave_illusion_pure 			= self:GetAbility():GetSpecialValueFor('cleave_illusion_pure')
 
 	if IsServer() then
 	end

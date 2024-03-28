@@ -1,0 +1,66 @@
+"DOTAAbilities"
+{    
+    "item_recipe_shield_of_immortality"
+        {
+            // General
+            //-------------------------------------------------------------------------------------------------------------
+
+            // Item Info
+            //-------------------------------------------------------------------------------------------------------------
+            "ItemCost"                      "1000"
+            "BaseClass"                     "item_recipe_arcane_boots"
+            "ItemShopTags"                  ""
+
+            // Recipe
+            //-------------------------------------------------------------------------------------------------------------
+            "ItemRecipe"                    "1"
+            "ItemResult"                    "item_shield_of_immortality"
+            "ItemRequirements"
+            {
+                "01"                        "item_vanguard;item_soul_booster;item_aeon_disk"
+            }
+        }
+        "item_shield_of_immortality"
+    	{
+    		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+    		"ItemCost"						"7000"
+    		"ItemShopTags"					"health"
+    		"ItemQuality"					"epic"
+    		"ItemAliases"					"shield;immortality;soa"
+    		"AbilityCooldown"				"80.0"
+    		"AbilityCastPoint"				"0.0"
+            "AbilityManaCost"				"100"
+    		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    		"ShouldBeSuggested"				"1"
+
+            "BaseClass"						"item_lua"
+
+            "AbilityTextureName"	        "shield_of_immortality"
+            "ScriptFile"					"items/shield_of_immortality/item_shield_of_immortality"
+            "ItemBaseLevel"                 "1"
+            "ItemCost"						"8700"
+
+            "ItemKillable"                  "1"
+            "ItemSellable"                  "1"
+            "ItemDroppable"                 "1"
+            "ItemPurchasable"				"1"
+
+    		// Special
+    		//-------------------------------------------------------------------------------------------------------------
+            "AbilityValues"
+    		{
+                "bonus_hp"			    "1000"
+                "bonus_hp_regen"        "5"
+                "bonus_mp"              "750"
+                
+                "block_chance"          "80"
+                "block_damage_melee"    "130"
+                "block_damage_ranged"   "65"
+
+                "barrier_duration"      "4"
+                "barrier_percent"       "60"
+                "barrier_decay"         "6"
+            }
+    	}
+}

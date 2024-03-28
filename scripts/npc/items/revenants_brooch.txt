@@ -1,0 +1,127 @@
+"DOTAAbilities"
+{    
+    "item_recipe_revenants_brooch_custom"
+    {
+        "BaseClass"                     "item_datadriven"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "item_recipe_revenants_brooch"
+
+        "ItemCost"                      "800"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_revenants_brooch_custom"
+        "ItemRequirements"
+        {
+            "01"                        "item_relic;item_voodoo_mask"
+        }
+    }
+     "item_recipe_revenants_brooch_custom_2"
+    {
+        "BaseClass"                     "item_datadriven"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "item_recipe_revenants_brooch"
+
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_revenants_brooch_custom_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_revenants_brooch_custom;item_revenants_brooch_custom"
+        }
+    }
+     "item_recipe_revenants_brooch_custom_3"
+    {
+        "BaseClass"                     "item_datadriven"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "item_recipe_revenants_brooch"
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_revenants_brooch_custom_3"
+        "ItemRequirements"
+        {
+            "01"                        "item_revenants_brooch_custom_2;item_revenants_brooch_custom_2;item_boss_soul"
+        }
+    }
+    
+    "item_revenants_brooch_custom"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_revenants_brooch_custom"
+        "ItemBaseLevel"					"1"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityTextureName"            "revenants_brooch_custom"
+        "AbilityManaCost"               "150"
+        "ItemCost"                      "4900"
+        "ItemShopTags"                  "int;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "staff;misery;sm"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+        "AbilityValues"
+        {
+            "bonus_damage"          "70 150 400"                
+            "spell_lifesteal"       "15 20 25"    
+            "manacost_per_hit"      "9 8 7"
+            "spell_lifesteal_creep" "15 20 25"
+            "damage_reduction"      "-35 -30 -25"
+            
+        }
+    }
+    "item_revenants_brooch_custom_2"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_revenants_brooch_custom"
+        "ItemBaseLevel"					"2"
+        "AbilityTextureName"            "revenants_brooch_custom_2"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityManaCost"               "150"
+        "ItemCost"                      "4900"
+        "ItemShopTags"                  "int;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "staff;misery;sm"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"          "70 150 400"                
+            "spell_lifesteal"       "15 20 25"    
+            "manacost_per_hit"      "9 8 7"
+            "spell_lifesteal_creep" "15 20 25"
+            "damage_reduction"      "-35 -30 -25"  
+        }
+    }
+    "item_revenants_brooch_custom_3"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_revenants_brooch_custom"
+        "ItemBaseLevel"					"3"
+        "AbilityTextureName"            "revenants_brooch_custom_3"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityManaCost"               "150"
+        "ItemCost"                      "4900"
+        "ItemShopTags"                  "int;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "staff;misery;sm"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"          "70 150 400"                
+            "spell_lifesteal"       "15 20 25"    
+            "manacost_per_hit"      "9 8 7"
+            "spell_lifesteal_creep" "15 20 25"
+            "damage_reduction"      "-35 -30 -25"  
+        }
+    }
+}

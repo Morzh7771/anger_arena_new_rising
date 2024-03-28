@@ -1,0 +1,139 @@
+"DOTAAbilities"
+{
+    "item_recipe_phylactery"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"300"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_phylactery"
+        "ItemRequirements"
+        {
+            "01"						"item_point_booster;item_diadem"
+        }
+    }
+    "item_phylactery"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_phylactery_custom"
+        "AbilityTextureName"            "phylactery"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCooldown"               "6.0"
+        "ItemCost"                      "2375"
+        "ItemShopTags"                  "hard_to_tag"
+        "ItemQuality"                   "common"
+        "ItemAliases"                   "phylactery"
+        "ShouldBeSuggested"             "1"
+        "ItemBaseLevel"					"1"
+        "AbilitySharedCooldown"			"phylactery"
+
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_health"              "200 500 750"
+            "bonus_mana"                "200 500 750"
+            "bonus_all_stats"           "7 15 25"
+            "slow"						"50 50 50"
+            "bonus_spell_damage"		"250 350 450"
+            "slow_duration"				"1.5 2 2.5"
+        }
+    }
+
+    "item_recipe_phylactery_2"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"						"item_recipe_arcane_boots"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_phylactery_2"
+        "ItemRequirements"
+        {
+            "01"						"item_phylactery;item_phylactery;"
+        }
+    }
+    "item_phylactery_2"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_phylactery_custom"
+        "AbilityTextureName"            "phylactery"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCooldown"               "6.0"
+        "ItemCost"                      "4750"
+        "ItemShopTags"                  "hard_to_tag"
+        "ItemQuality"                   "common"
+        "ItemAliases"                   "phylactery"
+        "ShouldBeSuggested"             "1"
+        "ItemBaseLevel"					"2"
+        "AbilitySharedCooldown"			"phylactery"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_health"              "200 500 750"
+            "bonus_mana"                "200 500 750"
+            "bonus_all_stats"           "7 15 25"
+            "slow"						"50 50 50"
+            "bonus_spell_damage"        "250 350 450"
+            "slow_duration"			    "1.5 2 2.5"
+        }
+    }
+    "item_recipe_manaflare_lens_custom"
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_manaflare_lens_custom"
+        "ItemRequirements"
+        {
+            "01"                        "item_phylactery_2;item_aether_lens;item_boss_soul"
+        }
+    }
+    "item_manaflare_lens_custom"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_manaflare_lens_custom"
+        "AbilityTextureName"            "manaflare"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCooldown"               "6.0"
+        "AbilityManaCost"				"10"
+        "ItemCost"                      "2400"
+        "ItemShopTags"                  "hard_to_tag"
+        "ItemQuality"                   "common"
+        "ItemAliases"                   "phylactery"
+        "ShouldBeSuggested"             "1"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"phylactery"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+        "AbilityValues"
+        {
+            "bonus_health"              "200 500 750"
+            "bonus_mana"                "200 500 750"           
+            "bonus_all_stats"           "7 15 25"         
+            "slow"                      "-50 -50 -50"
+            "bonus_spell_damage"        "250 350 450"
+            "bonus_spell_damage_mana"   "14 14 14"
+            "slow_duration"             "1.5 2 2.5"
+            "min_damage_to_activate"    "0 0 0"
+            "cast_range_bonus"          "250 250 250"
+            "damage_per_mana"           "1.5"
+        }
+    }
+}

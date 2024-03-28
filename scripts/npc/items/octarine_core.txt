@@ -1,0 +1,164 @@
+"DOTAAbilities"
+{	
+    "item_recipe_octarine_core"
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        //"ID"                          "1152"                                                      // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "200"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_octarine_core"
+        "ItemRequirements"
+        {
+            "01"                        "item_tiara_of_selemene;item_soul_booster"
+        }
+    }
+    "item_octarine_core"
+    {
+        // General
+        //--------------------------------------------------------------------- ----------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "item_octarine_core"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_octarine_core"
+
+        // Item Info
+        //--------------------------------------------------------------------- ----------------------------------------
+        "ItemCost"                      "4600"
+        "ItemShopTags"                  "boost_mana;mana_pool"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "mana;mb;octarine core;observer ward"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES |   DECLARE_PURCHASES_TO_SPECTATORS"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+        "ItemBaseLevel"                 "1"
+        "ShouldBeSuggested"				"1"
+        "ItemStackable"					"0"
+        // Special
+        //--------------------------------------------------------------------- ----------------------------------------
+        "AbilityValues"
+        {
+            "bonus_cooldown"        "25 30 35"
+            "bonus_health"          "600 1200 2000"
+            "bonus_mana"            "600 1200 2000"
+            "bonus_mana_regen"      "6 15 40"
+        }
+    }
+    "item_recipe_octarine_core_2"
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        //"ID"                          "1152"                                                      // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_octarine_core_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_octarine_core;item_octarine_core"
+        }
+    }
+    "item_octarine_core_2"
+    {
+        // General
+        //--------------------------------------------------------------------- ----------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "octarine2"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_octarine_core"
+
+        // Item Info
+        //--------------------------------------------------------------------- ----------------------------------------
+        "ItemCost"                      "9200"
+        "ItemShopTags"                  "boost_mana;mana_pool"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "mana;mb;octarine core;observer ward"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES |   DECLARE_PURCHASES_TO_SPECTATORS"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+        "ItemBaseLevel"                 "2"
+        "ShouldBeSuggested"				"1"
+        "ItemStackable"					"0"
+        // Special
+        //--------------------------------------------------------------------- ----------------------------------------
+        "AbilityValues"
+        {
+            "bonus_cooldown"        "25 30 35"
+            "bonus_health"          "600 1200 2000"
+            "bonus_mana"            "600 1200 2000"
+            "bonus_mana_regen"      "6 15 40"
+        }
+    }
+
+    "item_recipe_octarine_core_3"
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"                "recipe"
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        //"ID"                          "1152"                                                      // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"  
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_octarine_core_3"
+        "ItemRequirements"
+        {
+            "01"                        "item_octarine_core_2;item_octarine_core_2;item_boss_soul"
+        }
+    }
+    "item_octarine_core_3"
+    {
+        // General
+        //--------------------------------------------------------------------- ----------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT |  DOTA_ABILITY_BEHAVIOR_AOE "
+        "AbilityTextureName"            "octarine3"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_octarine_core"
+        //--------------------------------------------------------------------- ----------------------------------------
+        "AbilityCastRange"              "500"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "90.0"
+        "AbilityManaCost"               "200"   
+        
+        // Item Info
+        //--------------------------------------------------------------------- ----------------------------------------
+        "ItemCost"                      "18400"
+        "ItemShopTags"                  "boost_mana;mana_pool"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "mana;mb;octarine core;observer ward"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES |   DECLARE_PURCHASES_TO_SPECTATORS"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+        "ItemBaseLevel"                 "3" 
+        // Special  
+        //--------------------------------------------------------------------- ----------------------------------------
+        "AbilityValues"
+        {
+            "bonus_cooldown"        "25 30 35"
+            "bonus_health"          "600 1200 2000"
+            "bonus_mana"            "600 1200 2000"
+            "bonus_mana_regen"      "6 15 40"
+            "duration"              "240"
+        }           
+    }
+}

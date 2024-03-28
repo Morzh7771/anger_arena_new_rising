@@ -1,0 +1,178 @@
+"DOTAAbilities"
+{    
+    "item_recipe_pipe_custom"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1450"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pipe_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_cloak*;item_headdress;item_ring_of_tarrasque"
+		}
+	}
+    "item_recipe_pipe_custom_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pipe_custom_2"
+		"ItemRequirements"
+		{
+			"01"						"item_pipe_custom;item_pipe_custom;"
+		}
+	}
+     "item_recipe_pipe_custom_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pipe_custom_3"
+		"ItemRequirements"
+		{
+			"01"						"item_pipe_custom_2;item_pipe_custom_2;item_boss_soul"
+		}
+	}
+    "item_pipe_custom"
+    {
+		"BaseClass"				        "item_lua"
+		"ScriptFile"			        "items/item_pipe_custom"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"pipe"
+        "AbilityTextureName"            "pipe"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"150"
+		"AbilityCastRange"				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3375"
+		"ItemShopTags"					"regen_health;boost_magic_resist"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"pipe of insight"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"health_regen"				"6.0 12.0 30.0"
+			"magic_resistance"			"10 15 20"
+			"aura_health_regen"			"2.5 5 15"
+			"magic_resistance_aura"		"10 15 20"
+			"aura_radius"				"1200"
+            "barrier_block"				"500 1000 1500"
+			"barrier_duration"			"10 15 20"
+			"barrier_radius"			"1200"
+            "bonus_block_per_int"       "5 7 10"
+		}
+	}
+    "item_pipe_custom_2"
+    {
+		"BaseClass"				        "item_lua"
+		"ScriptFile"			        "items/item_pipe_custom"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"pipe"
+        "AbilityTextureName"            "pipe_2"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"150"
+		"AbilityCastRange"				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3375"
+		"ItemShopTags"					"regen_health;boost_magic_resist"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"pipe of insight"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"health_regen"				"6.0 12.0 30.0"
+			"magic_resistance"			"10 15 20"
+			"aura_health_regen"			"2.5 5 15"
+			"magic_resistance_aura"		"10 15 20"
+			"aura_radius"				"1200"
+            "barrier_block"				"500 1000 1500"
+			"barrier_duration"			"10 15 20"
+			"barrier_radius"			"1200"
+            "bonus_block_per_int"       "5 7 10"
+		}
+	}
+    "item_pipe_custom_3"
+    {
+		"BaseClass"				        "item_lua"
+		"ScriptFile"			        "items/item_pipe_custom"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"pipe"
+        "AbilityTextureName"            "pipe_3"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"150"
+		"AbilityCastRange"				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3375"
+		"ItemShopTags"					"regen_health;boost_magic_resist"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"pipe of insight"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"health_regen"				"6.0 12.0 30.0"
+			"magic_resistance"			"10 15 20"
+			"aura_health_regen"			"2.5 5 15"
+			"magic_resistance_aura"		"10 15 20"
+			"aura_radius"				"1200"
+            "barrier_block"				"500 1000 1500"
+			"barrier_duration"			"10 15 20"
+			"barrier_radius"			"1200"
+            "bonus_block_per_int"       "5 7 10"
+		}
+	}
+}

@@ -1,0 +1,215 @@
+"DOTAAbilities"
+{	
+	"item_recipe_harpoon_aa_1"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"               "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_harpoon_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_echo_sabre;item_diadem"
+		}
+	}
+    "item_recipe_harpoon_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"               "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_harpoon_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_harpoon_aa_1;item_harpoon_aa_1"
+		}
+	}
+    "item_recipe_harpoon_aa_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"               "recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_harpoon_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_harpoon_aa_2;item_harpoon_aa_2;item_boss_soul"
+		}
+	}   
+    "item_harpoon_aa_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"harpoon"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "item_harpoon"
+        "ScriptFile"                    "items/item_harpoon_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"850"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilityManaCost"				"50"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemPurchasable"				"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+			"bonus_attack_speed"	"15 30 80"
+			"bonus_damage"			"30 70 160"
+
+			"bonus_strength"		"25 50 120"
+			"bonus_agility"			"16 32 64"
+			"bonus_intellect"		"16 32 64"
+			"bonus_mana_regen"		"2.0 5 10"
+			
+			"passive_cooldown"		"1.0 0.8 0.5"
+			"movement_slow"			"100"
+			"slow_duration"			"0.2"
+            "hit_slow_duration"		"2"
+            "damage"                "50"
+
+			"pull_duration"			"0.3 0.2 0.1"
+			"min_distance"			"100"
+			"projectile_speed"		"2000 2500 3000"
+
+		}
+	}
+    "item_harpoon_aa_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"harpoon"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "harpoon2"
+        "ScriptFile"                    "items/item_harpoon_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"850"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilityManaCost"				"50"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemPurchasable"				"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+			"bonus_attack_speed"	"15 30 80"
+			"bonus_damage"			"30 70 160"
+
+			"bonus_strength"		"25 50 120"
+			"bonus_agility"			"16 32 64"
+			"bonus_intellect"		"16 32 64"
+			"bonus_mana_regen"		"2.0 5 10"
+			
+			"passive_cooldown"		"1.0 0.8 0.5"
+			"movement_slow"			"100"
+			"slow_duration"			"0.2"
+            "hit_slow_duration"		"2"
+            "damage"                "50"
+
+			"pull_duration"			"0.3 0.2 0.1"
+			"min_distance"			"100"
+			"projectile_speed"		"2000 2500 3000"
+
+		}
+	}
+    "item_harpoon_aa_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"harpoon"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "harpoon3"
+        "ScriptFile"                    "items/item_harpoon_aa"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"850"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19.0"
+		"AbilityManaCost"				"50"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemPurchasable"				"1"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+			"bonus_attack_speed"	"15 30 80"
+			"bonus_damage"			"30 70 160"
+
+			"bonus_strength"		"25 50 120"
+			"bonus_agility"			"16 32 64"
+			"bonus_intellect"		"16 32 64"
+			"bonus_mana_regen"		"2.0 5 10"
+			
+			"passive_cooldown"		"1.0 0.8 0.5"
+			"movement_slow"			"100"
+			"slow_duration"			"0.2"
+            "hit_slow_duration"		"2"
+            "damage"                "50"
+
+			"pull_duration"			"0.3 0.2 0.1"
+			"min_distance"			"100"
+			"projectile_speed"		"2000 2500 3000"
+
+		}
+	}
+}

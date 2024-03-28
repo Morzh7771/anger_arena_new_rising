@@ -1,0 +1,136 @@
+"DOTAAbilities"
+{    
+    "item_recipe_talisman_of_ambition"
+    {
+        "AbilityTextureName" 				"item_recipe_talisman_of_ambition"
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"200"	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_talisman_of_ambition"
+        "ItemRequirements"
+        {
+            "01"						"item_wraith_band_custom;item_ring_of_protection;item_wind_lace"
+        }
+    }
+
+    "item_talisman_of_ambition"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_lua"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+        "AbilityTextureName"	        "talisman_of_ambition"
+        "ScriptFile"					"items/talisman_of_ambition/talisman_of_ambition.lua"
+        
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"8.0"
+        "AbilityCastRange"				"1200"
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"925"
+        "ItemStackable"					"0"
+        "ItemBaseLevel"					"1"
+        
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        "AbilityValues"
+        {
+            "bonus_str"                 "2 14"
+            "bonus_agi"                 "10 25"
+            "bonus_int"                 "2 14"
+            "bonus_armor"               "4 6"
+            "attack_speed_pasive"       "10 20"
+            "bonus_movespeed"           "25 35"
+
+            "duration"                  "3 3"
+            "evasion"                   "30 50"
+            "attack_speed_active"       "30 100"
+        }
+    }
+    "item_recipe_talisman_of_ambition_2"
+    {
+        "AbilityTextureName" 				"item_recipe_talisman_of_ambition"
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        "ItemCost"						"0"	
+        "ItemShopTags"					""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_talisman_of_ambition_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_talisman_of_ambition;item_wraith_band_custom;item_fury_shield"
+        }
+    }
+
+    "item_talisman_of_ambition_2"
+    {
+        "BaseClass"						"item_lua"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+        "AbilityTextureName"	        "talisman_of_ambition_2"
+        "ScriptFile"					"items/talisman_of_ambition/talisman_of_ambition_2"
+
+        "ItemBaseLevel"					"2"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"9.0"
+        "AbilityCastRange"				"1200"
+        "AbilityCastPoint"				"0.0"
+        "AbilityManaCost"				"25"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"		"particles/status_fx/status_effect_forcestaff.vpcf"		
+        }
+            
+        "ItemCost"						"3500"
+        "ItemStackable"					"0"
+
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        "AbilityValues"
+        {
+            "bonus_str"                 "2 14"
+            "bonus_agi"                 "10 25"
+            "bonus_int"                 "2 14"
+            "bonus_armor"               "4 6"
+            "attack_speed_pasive"       "10 20"
+            "bonus_movespeed"           "25 35"
+
+            "duration"                  "3 3"
+            "evasion"                   "30 50"
+            "attack_speed_active"       "30 100"
+        }
+    }
+}

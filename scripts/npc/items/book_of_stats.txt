@@ -1,0 +1,524 @@
+"DOTAAbilities"
+{    
+    "item_tome_agi_6"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1187"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_agi_6"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"5000"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+        "ItemAliases"					"agi;book;tome;stats;книга;ловкости"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"UpgradeStats"
+                "Agi"				"10"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+        //special
+    }
+    "item_tome_int_6"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1190"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_int_6"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"5000"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+        "ItemAliases"					"int;book;tome;stats;книга;интеллект"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"UpgradeStats"
+                "Int"				"10"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+    }
+    "item_tome_str_6"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1195"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_str_6"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"5000"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+        "ItemAliases"					"str;book;tome;stats;книга;силы;сила"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"UpgradeStats"
+                "Str"				"10"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+        //special
+    }
+
+    "item_tome_un_6"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1198"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_un_6"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"11500"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+        "ItemAliases"					"all;book;tome;stats;gods;книга;богов;статы"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"UpgradeStats"
+                "Str"				"10"
+                "Agi"				"10"
+                "Int"				"10"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+    }
+    "item_tome_agi_60"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1187"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_agi_6"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"50000"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+        "ItemAliases"					"agi;book;tome;stats;книга;ловкости"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"UpgradeStats"
+                "Agi"				"100"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+        //special
+    }
+    "item_tome_int_60"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1190"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_int_6"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"50000"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+        "ItemAliases"					"int;book;tome;stats;книга;интеллект"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"UpgradeStats"
+                "Int"				"100"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+    }
+    "item_tome_str_60"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1195"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_str_6"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"50000"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+        "ItemAliases"					"str;book;tome;stats;книга;силы;сила"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"UpgradeStats"
+                "Str"				"100"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+        //special
+    }
+
+    "item_tome_un_60"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1198"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_un_6"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"57500"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+        "ItemAliases"					"all;book;tome;stats;gods;книга;богов;статы"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"UpgradeStats"
+                "Str"				"50"
+                "Agi"				"50"
+                "Int"				"50"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+    }
+    "item_tome_lvlup"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1192"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_lvlup"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"900"
+        "ItemQuality"					"component"
+        "ItemAliases"					"lvl;book;tome;книга;уровень;героев"
+        "ItemStackable"					"1"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+        "ItemInitialStockTime"			"10.0"
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"tome_levelup"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+    }
+    "item_tome_med"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1193"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_med"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"7000"
+        "ItemAliases"					"medical;book;tome;health;mana;med;книга;жизней;медецинский"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"MedicalTractat"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+        //special
+    }
+    "item_tome_med_2"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1193"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        
+        "AbilityTextureName"	        "tome_med"
+
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"70000"
+        "ItemAliases"					"medical;book;tome;health;mana;med;книга;жизней;медецинский"
+        "ItemQuality"					"component"
+        "ItemStackable"					"1"
+        "ItemPermanent"					"0"
+        "ItemInitialCharges"			"1"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"				"1"
+
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "Target"			"CASTER"
+                "ScriptFile"		"tome.lua"
+                "Function"			"MedicalTractat2"
+            }
+            "SpendCharge"
+            {
+            }        
+        }
+        //special
+    }
+}

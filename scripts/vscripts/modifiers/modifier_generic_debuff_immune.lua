@@ -4,7 +4,7 @@ modifier_generic_debuff_immune = class({})
 function modifier_generic_debuff_immune:IsHidden() return false end
 function modifier_generic_debuff_immune:GetTexture() return "item_black_king_bar" end
 function modifier_generic_debuff_immune:IsPurgable() return false end 
-function modifier_generic_debuff_immune:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_generic_debuff_immune:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
 
 function modifier_generic_debuff_immune:CheckState()
     return {

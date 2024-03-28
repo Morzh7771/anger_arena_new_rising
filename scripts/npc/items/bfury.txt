@@ -1,0 +1,176 @@
+"DOTAAbilities"
+{    
+    "item_recipe_bfury_aa"
+    {
+         //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bfury_aa"
+        "ItemRequirements"
+        {
+            "01"                        "item_broadsword;item_claymore;item_cornucopia;item_quelling_blade_aa"
+        }
+    }
+    "item_recipe_bfury_aa_2"
+    {
+         //-------------------------------------------------------------------------------------------------------------
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1800" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bfury_aa_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_bfury_aa;item_blade_of_alacrity;item_ogre_axe"
+        }
+    }   
+    "item_bfury_aa"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_bfury_aa"
+        "AbilityTextureName"            "bfury"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+        "ItemBaseLevel"                 "1"
+
+        "AbilityCastRange"              "350"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "4.0"
+
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "4100"
+        "ItemShopTags"                  "damage;health_regen;mana_regen;hard_to_tag"
+        "ItemQuality"                   "epic"
+        "ItemAliases"                   "bf;battle fury"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+        
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_damage"                      "60 80"
+            "bonus_str"                         "0 15"
+            "bonus_agi"                         "0 15"
+            "bonus_health_regen"                "7.5 11"
+            "bonus_mana_regen"                  "2.75 3.0"
+
+            "quelling_bonus"                    "32 64"
+            "quelling_bonus_pct"                "20 40"
+            "quelling_bonus_ranged_coef"        "50"
+
+            "cleave_range"                      "300"
+            "cleave_physical_pierce"            "20 35"
+            "cleave_damage_hero"                "10 15"
+            "cleave_damage_creep"               "30 50"
+            "cleave_damage_illusion"            "50"
+            "cleave_illusion_pure"              "20"
+        }
+    }
+    "item_bfury_aa_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_bfury_aa"
+        "AbilityTextureName"            "battle_fury_2"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+        "ItemBaseLevel"                 "2"
+
+        "AbilityCastRange"              "350"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "4.0"
+
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "4100"
+        "ItemShopTags"                  "damage;health_regen;mana_regen;hard_to_tag"
+        "ItemQuality"                   "epic"
+        "ItemAliases"                   "bf;battle fury"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+        
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_damage"                      "60 80"
+            "bonus_str"                         "0 15"
+            "bonus_agi"                         "0 15"
+            "bonus_health_regen"                "7.5 11"
+            "bonus_mana_regen"                  "2.75 3.0"
+
+            "quelling_bonus"                    "32 64"
+            "quelling_bonus_pct"                "20 40"
+            "quelling_bonus_ranged_coef"        "50"
+
+            "cleave_range"                      "300"
+            "cleave_physical_pierce"            "20 35"
+            "cleave_damage_hero"                "10 15"
+            "cleave_damage_creep"               "30 50"
+            "cleave_damage_illusion"            "50"
+            "cleave_illusion_pure"              "20"
+        }
+    }
+    "item_quelling_blade_aa"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_quelling_blade_aa"
+        "AbilityTextureName"            "quelling_blade"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+        "AbilityCastRange"              "350"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "4.0"
+        "Model"                         "models/props_gameplay/quelling_blade.vmdl"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "0"
+        "ItemCost"                      "100"
+        "ItemShopTags"                  "damage"
+        "ItemQuality"                   "component"
+        "ItemAliases"                   "qb;quelling blade"
+        //"SideShop"                        "1"
+        "ShouldBeSuggested"             "1"
+        "ShouldBeInitiallySuggested"    "1"
+
+        
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "quelling_bonus"                "24"
+            "quelling_bonus_pct"            "10"
+            "quelling_bonus_ranged_coef"    "50"
+        }
+    }
+}

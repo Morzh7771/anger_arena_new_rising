@@ -41,6 +41,7 @@ function PercentDamage:_init()
 		"earth_spirit_boulder_smash",
 		"earth_spirit_geomagnetic_grip",
 		"earth_spirit_petrify",
+		"earth_spirit_magnetize",
 		"spirit_breaker_greater_bash",
 		"spirit_breaker_nether_strike",
 		"legion_commander_overwhelming_odds",
