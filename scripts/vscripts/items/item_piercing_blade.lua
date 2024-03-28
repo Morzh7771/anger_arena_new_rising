@@ -63,7 +63,7 @@ function mod:OnCreated()
     --self:CommonInitDamageToExp(  self:GetAbility(),  self:GetAbility():GetSpecialValueFor("pure_dmg_cd") )
 end
 function mod:GetModifierTotalDamageOutgoing_Percentage()
-    return self.pure_dmg
+    return  - self.pure_dmg
 end
 function mod:OnTakeDamage(params)
     if not IsServer() then return end

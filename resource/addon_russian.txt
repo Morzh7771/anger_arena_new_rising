@@ -1230,17 +1230,24 @@
 
         "DOTA_Tooltip_modifier_item_fury_shield_active"                         "Furu Shield"
         "DOTA_Tooltip_modifier_item_fury_shield_active_Description"             "Увеличивает скорость атаки на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% и дарует блок к физическим атакам."
+		
 		"DOTA_Tooltip_modifier_item_skadi_2_slow"								"Cold Attack от Eye of Skadi"
 		"DOTA_Tooltip_modifier_item_skadi_2_slow_Description"		       		"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
         
-        "DOTA_Tooltip_ability_item_skadi_3"										"EYE OF SKADI 3"
+        "DOTA_Tooltip_ability_item_skadi_3"										"Dark Edge"
 		"DOTA_Tooltip_ability_item_skadi_3_Description"							"<h1>Пассивное: Cold Attack</h1> Каждая атака на %cold_duration% сек. замедляет передвижение и атаку цели, а также уменьшает её лечение, восстановление здоровья, вампиризм и вампиризм заклинаниями на %heal_reduction%%%. Замедление зависит от типа атаки жертвы: у существ дальнего боя замедляет передвижение на %cold_slow_ranged%%%, атаку — на %cold_attack_slow_ranged%%%. У существ ближнего боя замедляет передвижение на %cold_slow_melee%%%, атаку — на %cold_attack_slow_melee%%%."
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_all_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_skadi_3_bonus_mana"							"+$mana"
 
-		"DOTA_Tooltip_modifier_item_skadi_3_slow"								"Cold Attack от Eye of Skadi"
-		"DOTA_Tooltip_modifier_item_skadi_3_slow_Description"					"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+        "DOTA_Tooltip_ability_item_dark_edge"                               "Silver Edge 3"
+        "DOTA_Tooltip_ability_item_dark_edge_Description"						"<h1>Активное: Shadow Walk</h1>Делает героя невидимым на %windwalk_duration% сек. или до момента, когда он совершит атаку или применит способность. Также увеличивает скорость передвижения на %windwalk_movement_speed%%% и позволяет проходить сквозь существ. <br><br>Атака, прерывающая невидимость, нанесёт %windwalk_bonus_damage% дополнительного урона и отключит пассивные способности жертвы на %backstab_duration% сек.\n\n <h1>Пассивное: Cold Attack</h1> Каждая атака на %cold_duration% сек. замедляет передвижение и атаку цели, а также уменьшает её лечение, восстановление здоровья, вампиризм и вампиризм заклинаниями на %heal_reduction%%%. Замедление зависит от типа атаки жертвы: у существ дальнего боя замедляет передвижение на %cold_slow_ranged%%%, атаку — на %cold_attack_slow_ranged%%%. У существ ближнего боя замедляет передвижение на %cold_slow_melee%%%, атаку — на %cold_attack_slow_melee%%%"
+		"DOTA_Tooltip_ability_item_dark_edge_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_dark_edge_bonus_attack_speed"			"+$attack"
+		"DOTA_Tooltip_ability_item_dark_edge_bonus_all_stats"						"+$all"
+		"DOTA_Tooltip_ability_item_dark_edge_bonus_health"						"+$health"
+		"DOTA_Tooltip_ability_item_dark_edge_bonus_mana"							"+$mana"
+		"DOTA_Tooltip_ability_item_dark_edge_Lore"						"Повергнув несправедливого правителя, этот клинок лишь развязал гражданскую войну."
 
         "DOTA_Tooltip_ability_item_satanic_2"									"Satanic 2"
 		"DOTA_Tooltip_ability_item_satanic_2_Description"						"<h1>Активное: Unholy Rage</h1> Увеличивает эффект вампиризма до %unholy_lifesteal_total_tooltip%%% на %unholy_duration%сек. \n\n<h1>Пассивное: Lifesteal</h1> Наделяет атаки владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
@@ -1260,23 +1267,29 @@
         "DOTA_Tooltip_modifier_item_satanic_3_unholy"							"Unholy Rage"
 		"DOTA_Tooltip_modifier_item_satanic_3_unholy_Description"				"Вампиризм увеличен на %dMODIFIER_PROPERTY_TOOLTIP%%%."
 
-        "DOTA_Tooltip_ability_item_mask_of_madness_2"                           "Mask of Madness 2"
-        "DOTA_Tooltip_ability_item_mask_of_madness_2_Description"				"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction% и запрещает ему применять способности. Действует %berserk_duration% сек.\n\n<h1>Пассивное: Lifesteal</h1> Наделяет атаки владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
-		"DOTA_Tooltip_ability_item_mask_of_madness_2_Lore"						"Надев эту маску, воин впадает в безудержную ярость."
-		"DOTA_Tooltip_ability_item_mask_of_madness_2_bonus_damage"				"+$damage"
-		"DOTA_Tooltip_ability_item_mask_of_madness_2_lifesteal_percent"	        "%+$lifesteal"
-		
-		"DOTA_Tooltip_modifier_item_mask_of_madness_2_berserk"					"Berserk"
-		"DOTA_Tooltip_modifier_item_mask_of_madness_2_berserk_Description"		"Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, но герой обезмолвлен и имеет на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% меньше брони."
+        "DOTA_Tooltip_ability_item_mask_of_madness_aa_1"                           "Mask of Madness"
+        "DOTA_Tooltip_ability_item_mask_of_madness_aa_1_Description"				"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction%. Действует %berserk_duration% сек.\n\n<h1>Пассивное: Lifesteal</h1> Наделяет атаки владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_Lore"						"Надев эту маску, воин впадает в безудержную ярость."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_bonus_lifesteal"	        "%+$lifesteal"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_bonus_armor"	        	"+$armor"
 
-        "DOTA_Tooltip_ability_item_mask_of_madness_3"                           "Mask of Madness 3"
-        "DOTA_Tooltip_ability_item_mask_of_madness_3_Description"				"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction% и запрещает ему применять способности. Действует %berserk_duration% сек.\n\n<h1>Пассивное: Lifesteal</h1> Наделяет атаки владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
-		"DOTA_Tooltip_ability_item_mask_of_madness_3_Lore"						"Надев эту маску, воин впадает в безудержную ярость."
-		"DOTA_Tooltip_ability_item_mask_of_madness_3_bonus_damage"				"+$damage"
-		"DOTA_Tooltip_ability_item_mask_of_madness_3_lifesteal_percent"	        "%+$lifesteal"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2"                           "Mask of Madness 2"
+        "DOTA_Tooltip_ability_item_mask_of_madness_aa_2_Description"				"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction%. Действует %berserk_duration% сек.\n\n<h1>Пассивное: Lifesteal</h1> Наделяет атаки владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_Lore"						"Надев эту маску, воин впадает в безудержную ярость."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_bonus_lifesteal"	        "%+$lifesteal"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_bonus_armor"	        	"+$armor"
+
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3"                           "Mask of Madness 3"
+        "DOTA_Tooltip_ability_item_mask_of_madness_aa_3_Description"				"<h1>Активное: Berserk</h1> Даёт владельцу %berserk_bonus_attack_speed% скорости атаки и %berserk_bonus_movement_speed% скорости передвижения, но уменьшает его броню на %berserk_armor_reduction%. Действует %berserk_duration% сек.\n\n<h1>Пассивное: Lifesteal</h1> Наделяет атаки владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_Lore"						"Надев эту маску, воин впадает в безудержную ярость."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_bonus_lifesteal"	        "%+$lifesteal"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_bonus_armor"	        	"+$armor"
 		
-		"DOTA_Tooltip_modifier_item_mask_of_madness_3_berserk"			 		"Berserk"
-		"DOTA_Tooltip_modifier_item_mask_of_madness_3_berserk_Description"	 	"Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, но герой обезмолвлен и имеет на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% меньше брони."
+		"DOTA_Tooltip_modifier_item_mask_of_madness_aa_active"					"Berserk"
+		"DOTA_Tooltip_modifier_item_mask_of_madness_aa_active_Description"		"Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, и имеет на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% меньше брони."
 
         "DOTA_Tooltip_ability_item_monkey_king_bar_2"                           "Monkey King Bar 2"
         "DOTA_Tooltip_ability_item_monkey_king_bar_2_Description"				"<h1>Пассивное: Pierce</h1> Каждая атака может с вероятностью в %bonus_chance%%% пройти сквозь уклонение и нанести %bonus_chance_damage% дополнительного магического урона."
@@ -1553,14 +1566,6 @@
         "DOTA_Tooltip_modifier_silver_edge_2_debuff"		                "Атака Shadow Walk"
 		"DOTA_Tooltip_modifier_silver_edge_2_debuff_Description"		"Пассивные способности отключены."
 
-        "DOTA_Tooltip_ability_item_silver_edge_3"                               "Silver Edge 3"
-        "DOTA_Tooltip_ability_item_silver_edge_3_Description"						"<h1>Активное: Shadow Walk</h1>Делает героя невидимым на %windwalk_duration% сек. или до момента, когда он совершит атаку или применит способность. Также увеличивает скорость передвижения на %windwalk_movement_speed%%% и позволяет проходить сквозь существ. <br><br>Атака, прерывающая невидимость, нанесёт %windwalk_bonus_damage% дополнительного урона и отключит пассивные способности жертвы на %backstab_duration% сек."
-		"DOTA_Tooltip_ability_item_silver_edge_3_bonus_damage"				"+$damage"
-		"DOTA_Tooltip_ability_item_silver_edge_3_bonus_attack_speed"			"+$attack"
-		"DOTA_Tooltip_ability_item_silver_edge_3_Lore"						"Повергнув несправедливого правителя, этот клинок лишь развязал гражданскую войну."
-
-        "DOTA_Tooltip_modifier_silver_edge_3_debuff"		                "Атака Shadow Walk"
-		"DOTA_Tooltip_modifier_silver_edge_3_debuff_Description"		"Пассивные способности отключены."
 
         "DOTA_Tooltip_ability_item_radiance_Description"                        "<h1>Переключаемое: Burn</h1> Если включена, каждую секунду наносит наносит противникам %aura_damage% магического урона + %aura_damage_stats%%% урона от статов и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев. На иллюзиях наносит %aura_damage_illusions% магического урона в секунду. Наносит иллюзиям %illusion_multiplier_pct%%% урона.<br><br>Радиус: %aura_radius%"  
         "DOTA_Tooltip_ability_item_radiance_Lore"                               "Божественный меч, окружающий владельца ярким сиянием, которое обращает в пепел всех врагов вокруг."

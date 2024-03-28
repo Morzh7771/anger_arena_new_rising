@@ -4,6 +4,7 @@ LinkLuaModifier("modifier_item_meteor_hammer_oaa_dot", "items/item_meteor_hammer
 LinkLuaModifier("modifier_item_meteor_hammer_oaa_stun", "items/item_meteor_hammer_aa.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_meteor_hammer = class({})
+item_meteor_hammer_aa = item_meteor_hammer
 item_meteor_hammer_aa_2 = item_meteor_hammer
 item_meteor_hammer_aa_3 = item_meteor_hammer
 
@@ -20,6 +21,10 @@ end
 
 function item_meteor_hammer:GetIntrinsicModifierName()
   return "modifier_item_meteor_hammer_oaa_passives"
+end
+
+function item_meteor_hammer:GetChannelTime()
+    return 3
 end
 
 function item_meteor_hammer:OnSpellStart()

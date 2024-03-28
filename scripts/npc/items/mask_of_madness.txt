@@ -1,0 +1,174 @@
+"DOTAAbilities"
+{
+    "item_recipe_mask_of_madness_aa_1"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_aa_1"
+		"ItemRequirements"
+		{
+			"01"						"item_lifesteal;item_blades_of_attack;item_chainmail"
+		}
+	}
+	"item_recipe_mask_of_madness_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness_aa_1;item_mask_of_madness_aa_1"
+		}
+	}
+	"item_recipe_mask_of_madness_aa_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness_aa_2;item_mask_of_madness_aa_2"
+		}
+	}
+    "item_mask_of_madness_aa_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"mask_of_madness_cooldown_shared"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_mask_of_madness"
+		"AbilityTextureName"			"item_mask_of_madness"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"
+		"ItemCost"						"1775"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"					"15 40 90"
+				"bonus_lifesteal"				"20 25 30"
+				"bonus_armor"					"5 10 20"
+
+				"berserk_bonus_attack_speed"	"110 160 250"
+				"berserk_bonus_movement_speed"	"30 50 80"
+				"berserk_armor_reduction"		"6"
+				"berserk_duration"		"6.0"
+		}
+	}
+	"item_mask_of_madness_aa_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"mask_of_madness_cooldown_shared"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_mask_of_madness"
+		"AbilityTextureName"			"mom_2"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"
+		"ItemCost"						"1775"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"					"15 40 90"
+				"bonus_lifesteal"				"20 25 30"
+				"bonus_armor"					"5 10 20"
+
+				"berserk_bonus_attack_speed"	"110 160 250"
+				"berserk_bonus_movement_speed"	"30 50 80"
+				"berserk_armor_reduction"		"6"
+				"berserk_duration"		"6.0"
+		}
+	}
+	"item_mask_of_madness_aa_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"mask_of_madness_cooldown_shared"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_mask_of_madness"
+		"AbilityTextureName"			"mom_3"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"
+		"ItemCost"						"1775"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"					"15 40 90"
+				"bonus_lifesteal"				"20 25 30"
+				"bonus_armor"					"5 10 20"
+
+				"berserk_bonus_attack_speed"	"110 160 250"
+				"berserk_bonus_movement_speed"	"30 50 80"
+				"berserk_armor_reduction"		"6"
+				"berserk_duration"				"6.0"
+		}
+	}
+}

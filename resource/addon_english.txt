@@ -1165,24 +1165,7 @@
 		"DOTA_Tooltip_modifier_item_satanic_3_unholy"	"Unholy Rage"
 		"DOTA_Tooltip_modifier_item_satanic_3_unholy_Description"	"Vampirism increased by %dMODIFIER_PROPERTY_TOOLTIP%%%"
 		
-		"DOTA_Tooltip_ability_item_mask_of_madness_2"                           "Mask of Madness 2"
-        "DOTA_Tooltip_ability_item_mask_of_madness_2_Description"          "<h1>Active: Berserk</h1> Grants the owner %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed, but reduces their armor by %berserk_armor_reduction% and prevents them from using abilities. Lasts for %berserk_duration% seconds.\n\n<h1>Passive: Lifesteal</h1> Bestows the owner's attacks with vampirism, causing them to restore health based on a fraction of the damage dealt."
-		"DOTA_Tooltip_ability_item_mask_of_madness_2_Lore"                   "Wearing this mask, a warrior falls into an unstoppable rage."
-		"DOTA_Tooltip_ability_item_mask_of_madness_2_bonus_damage"           "+$damage"
-		"DOTA_Tooltip_ability_item_mask_of_madness_2_lifesteal_percent"      "%+$lifesteal"
 		
-		"DOTA_Tooltip_modifier_item_mask_of_madness_2_berserk"               "Berserk"
-		"DOTA_Tooltip_modifier_item_mask_of_madness_2_berserk_Description"   "Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, but the hero is silenced and has %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% less armor."
-
-        "DOTA_Tooltip_ability_item_mask_of_madness_3"                       "Mask of Madness 3"
-        "DOTA_Tooltip_ability_item_mask_of_madness_3_Description"          "<h1>Active: Berserk</h1> Grants the owner %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed, but reduces their armor by %berserk_armor_reduction% and prevents them from using abilities. Lasts for %berserk_duration% seconds.<br><br><h1>Passive: Lifesteal</h1> Bestows the owner's attacks with vampirism, causing them to restore health based on a fraction of the damage dealt."
-		"DOTA_Tooltip_ability_item_mask_of_madness_3_Lore"                   "Wearing this mask, a warrior falls into an unstoppable rage."
-		"DOTA_Tooltip_ability_item_mask_of_madness_3_bonus_damage"           "+$damage"
-		"DOTA_Tooltip_ability_item_mask_of_madness_3_lifesteal_percent"      "%+$lifesteal"
-		
-		"DOTA_Tooltip_modifier_item_mask_of_madness_3_berserk"               "Berserk"
-		"DOTA_Tooltip_modifier_item_mask_of_madness_3_berserk_Description"   "Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, but the hero is silenced and has %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% less armor."
-
 		"DOTA_Tooltip_ability_item_monkey_king_bar_2"	"MONKEY KING BAR 2"
 		"DOTA_Tooltip_ability_item_monkey_king_bar_2_Description"	"<h1>Passive: Pierce</h1> Each attack has a %bonus_chance%%% chance to bypass evasion and deal %bonus_chance_damage% additional magic damage."
 		"DOTA_Tooltip_ability_item_monkey_king_bar_2_Lore"	"Powerful staff, belonging to a brilliant warrior."
@@ -1195,6 +1178,30 @@
 		"DOTA_Tooltip_ability_item_monkey_king_bar_3_bonus_damage"	"+$damage"
 		"DOTA_Tooltip_ability_item_monkey_king_bar_3_bonus_attack_speed"	"+$attack"
 		
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1" "Mask of Madness 1"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_Description" "<h1>Active: Berserk</h1> Grants the owner %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed but reduces their armor by %berserk_armor_reduction%. Lasts %berserk_duration% sec.\n\n<h1>Passive: Lifesteal</h1> Grants the owner's attacks lifesteal, allowing them to restore health based on a portion of the damage dealt."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_Lore" "Wearing this mask, a warrior falls into an uncontrollable rage."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_bonus_damage" "+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_bonus_lifesteal" "%+$lifesteal"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_1_bonus_armor" "+$armor"
+
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2" "Mask of Madness 2"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_Description" "<h1>Active: Berserk</h1> Grants the owner %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed but reduces their armor by %berserk_armor_reduction%. Lasts %berserk_duration% sec.\n\n<h1>Passive: Lifesteal</h1> Grants the owner's attacks lifesteal, allowing them to restore health based on a portion of the damage dealt."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_Lore" "Wearing this mask, a warrior falls into an uncontrollable rage."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_bonus_damage" "+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_bonus_lifesteal" "%+$lifesteal"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_2_bonus_armor" "+$armor"
+
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3" "Mask of Madness 3"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_Description" "<h1>Active: Berserk</h1> Grants the owner %berserk_bonus_attack_speed% attack speed and %berserk_bonus_movement_speed% movement speed but reduces their armor by %berserk_armor_reduction%. Lasts %berserk_duration% sec.\n\n<h1>Passive: Lifesteal</h1> Grants the owner's attacks lifesteal, allowing them to restore health based on a portion of the damage dealt."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_Lore" "Wearing this mask, a warrior falls into an uncontrollable rage."
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_bonus_damage" "+$damage"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_bonus_lifesteal" "%+$lifesteal"
+		"DOTA_Tooltip_ability_item_mask_of_madness_aa_3_bonus_armor" "+$armor"
+
+		"DOTA_Tooltip_modifier_item_mask_of_madness_aa_active"					"Berserk"
+		"DOTA_Tooltip_modifier_item_mask_of_madness_aa_active_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, and has %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% less armor."
+
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa" 						"Meteor Hammer"
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_Description" 			"<h1>Active: Meteor Hammer</h1> CHANNELING - Summons a meteor that strikes the target area after a short delay. Deals damage to enemy units, stuns them for %stun_duration% sec, and burns them, dealing periodic damage over %burn_duration% sec. Also slows affected units by %burn_slow%%.<BR><BR>Damage to units upon impact: %impact_damage_units% + %max_hp_impact_damage%%% of max health. <BR><BR>Periodic damage to units: %burn_dps_units% + %max_hp_burn_damage%%% of current health. <BR><BR>Cast Range: %max_duration% sec.<BR>Delay after cast: %land_time% sec."
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_lore" 					"Forged from metal found in ruins of a village destroyed by a great meteor storm."

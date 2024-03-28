@@ -4,8 +4,18 @@ LinkLuaModifier("modifier_item_phase_boots_aa_active", "items/item_phase_boots_a
 item_phase_boots_aa = class({
     GetIntrinsicModifierName = function (self) return "modifier_item_phase_boots_aa"end,
     GetCastRange = function (self) if IsClient() then return self:GetSpecialValueFor("range") end return 99999 end,
+    GetBehavior = function (self)
+        if self:GetCaster():HasModifier("modifier_spirit_breaker_charge_of_darkness") then 
+            return DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_NO_TARGET
+        else
+            return DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES
+        end
+    end,
     OnSpellStart =  function (self)
-
+        if self:GetCaster():HasModifier("modifier_spirit_breaker_charge_of_darkness") then 
+            self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_active", {duration = self:GetSpecialValueFor("phase_duration")})
+            return
+        end
         local point = self:GetCaster():GetCursorPosition()
         if point == self:GetCaster():GetAbsOrigin() then 
             point = self:GetCaster():GetForwardVector()*10 + self:GetCaster():GetAbsOrigin()
@@ -19,8 +29,6 @@ item_phase_boots_aa = class({
         
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_active", {duration = self:GetSpecialValueFor("phase_duration")})
         
-        if self:GetCaster():HasModifier("modifier_spirit_breaker_charge_of_darkness") then return end
-
         self:GetCaster():SetForwardVector(dir)
         self:GetCaster():FaceTowards(point)
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_phase_boots_aa_active", {x = point.x, y = point.y, z = point.z, duration = self:GetSpecialValueFor("duration")}) 
@@ -91,7 +99,8 @@ modifier_item_phase_boots_aa_active = class({
     end,
     CheckState = function (self)
         local state = {
-            [MODIFIER_STATE_INVULNERABLE] = true
+            [MODIFIER_STATE_INVULNERABLE] = true,
+            [MODIFIER_STATE_NO_HEALTH_BAR] = true
             } 
         return state
     end,
