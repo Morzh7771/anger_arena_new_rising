@@ -92,61 +92,6 @@
 			}			
 		}
 	}
-
-
-	"item_recipe_pavise"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		
-		"ItemCost"						"75"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_pavise"
-		"ItemRequirements"
-		{
-			"01"						"item_energy_booster;item_ring_of_protection;item_fluffy_hat"
-		}
-	}
-	"item_pavise"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"ItemBaseLevel"					"1"
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
-		"AbilityCooldown"				"18.0"
-		"AbilityManaCost"				"75"
-		
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1400"
-		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"pavise"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"bonus_armor"			"3"
-			"bonus_mana"			"250"
-			"bonus_health"			"150"
-			"duration"				"8 8"
-			"absorb_amount"			"300"
-		}
-	}
-
 	"item_gem"
 	{
 		// General
@@ -785,10 +730,6 @@
 			"01"						"item_energy_booster;item_void_stone"
 		}
 	}
-	
-	//=================================================================================================================
-	// Aether Lens
-	//=================================================================================================================
 	"item_aether_lens"
 	{
 		// General
