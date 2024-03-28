@@ -1409,6 +1409,7 @@
 		"DOTA_Tooltip_ability_item_phase_boots_aa_bonus_mana_regen"		"+$mana_regen"
 		"DOTA_Tooltip_ability_item_phase_boots_aa_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_phase_boots_aa_Note0"				"Upon activation, the owner dodges all projectiles and invulnerabel."
+		"DOTA_Tooltip_ability_item_phase_boots_aa_Note1"				"Increasing cast range does not affect dash range."
 		
 		"DOTA_Tooltip_modifier_item_phase_boots_2_active"				"Phase Boots 2"
 		"DOTA_Tooltip_modifier_item_phase_boots_2_active_Description"	"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Passes through other creatures."
@@ -1423,6 +1424,7 @@
 		"DOTA_Tooltip_ability_item_phase_boots_aa_2_bonus_mana_regen"		"+$mana_regen"
 		"DOTA_Tooltip_ability_item_phase_boots_aa_2_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_phase_boots_aa_2_Note0"					"Upon activation, the owner dodges all projectiles and invulnerabel."
+		"DOTA_Tooltip_ability_item_phase_boots_aa_2_Note1"					"Increasing cast range does not affect dash range."
 		
 		"DOTA_Tooltip_modifier_item_phase_boots_3_active"	"Phase Boots 3"
 		"DOTA_Tooltip_modifier_item_phase_boots_3_active_Description"	"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Passes through other creatures."
@@ -1661,6 +1663,7 @@
 		"DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_mana_regen"	"+$mana_regen"
 		"DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_health"		"+$health"
 		"DOTA_Tooltip_ability_item_falcon_blade_custom_Lore"				"Enchanted dagger that long ago lifted a street urchin out of the mud and into nobility."
+		"DOTA_Tooltip_ability_item_falcon_blade_custom_Note0"				"Increasing cast range does not affect dash range."
 		
 		"DOTA_Tooltip_Ability_item_corrosion_custom"	"Orb of Corrosion"
 		"DOTA_Tooltip_Ability_item_corrosion_custom_Description"	"<h1>Active: Corrosion</h1>Launches a projectile that slows the target for %duration% seconds. The slow increases over time up to <b><font color='#53ea48'>%max_slow%%%</font></b>. The target also takes %total_damage% physical damage during this time \n\n<h1>Passive: Corrosion</h1>Attacks reduce the target's armor by %armor% and deal %damage% damage per second. If the owner is engaged in melee combat, the target is slowed by %melee_slow%%%, and if ranged combat, by %ranged_slow%%%.<br><br>Duration: %duration_passive% sec."

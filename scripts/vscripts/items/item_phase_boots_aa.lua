@@ -54,8 +54,8 @@ modifier_item_phase_boots_aa_active = class({
         self.point = Vector(kv.x, kv.y, kv.z)
     
         self.angle = self:GetParent():GetForwardVector():Normalized()--(self.point - self:GetParent():GetAbsOrigin()):Normalized() 
-    
-        self.distance = self:GetAbility():GetSpecialValueFor("range") / ( self:GetDuration() / FrameTime())
+
+        self.distance = self:GetAbility():GetSpecialValueFor("range") / (self:GetDuration() / FrameTime())
     
         self.targets = {}
     

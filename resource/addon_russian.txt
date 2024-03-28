@@ -1505,6 +1505,7 @@
 		"DOTA_Tooltip_ability_item_phase_boots_aa_bonus_mana_regen"				"+$mana_regen"
         "DOTA_Tooltip_ability_item_phase_boots_aa_bonus_health"					"+$health"
         "DOTA_Tooltip_ability_item_phase_boots_aa_Note0"						"В момент применения владелец уклоняется от всех снарядов и неуязвим."
+        "DOTA_Tooltip_ability_item_phase_boots_aa_Note1"						"Увеличение дальности каста не влияет на дальность рывка."
 		
 		"DOTA_Tooltip_modifier_item_phase_boots_aa_active"			"Phase Boots 2"
 		"DOTA_Tooltip_modifier_item_phase_boots_aa_active_Description"	        "Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Проходит сквозь других существ."
@@ -1519,6 +1520,7 @@
 		"DOTA_Tooltip_ability_item_phase_boots_aa_2_bonus_mana_regen"				"+$mana_regen"
         "DOTA_Tooltip_ability_item_phase_boots_aa_2_bonus_health"					"+$health"
         "DOTA_Tooltip_ability_item_phase_boots_aa_2_Note0"							"В момент применения владелец уклоняется от всех снарядов и неуязвим."
+        "DOTA_Tooltip_ability_item_phase_boots_aa_2_Note1"						"Увеличение дальности каста не влияет на дальность рывка."
 		
 		"DOTA_Tooltip_modifier_item_phase_boots_aa_2_active"			"Phase Boots 3"
 		"DOTA_Tooltip_modifier_item_phase_boots_aa_2_active_Description"	        "Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Проходит сквозь других существ."
@@ -1755,6 +1757,7 @@
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_mana_regen""+$mana_regen"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_bonus_health"	"+$health"
         "DOTA_Tooltip_ability_item_falcon_blade_custom_Lore"	        "Зачарованный кинжал, который давным-давно вывел уличного оборванца из грязи в князи."
+        "DOTA_Tooltip_ability_item_falcon_blade_custom_Note0"			"Увеличение дальности каста не влияет на дальность рывка."
 
         "DOTA_Tooltip_Ability_item_corrosion_custom"                "Orb of Corrosion"
 		"DOTA_Tooltip_Ability_item_corrosion_custom_Description"	"<h1>Активное: Corrosion</h1>Запускает снаряд, который замедляет цель на %duration% секунд. Замедление растет со временем вплоть до <b><font color='#53ea48'>%max_slow%%%</font></b>. Цель также получает %total_damage% физического урона за это время \n\n<h1>Пассивное: Corrosion</h1>Атаки снижают исцеление и регенерацию цели на %heal_reduction%%% и наносят %damage% урона в секунду. Если владелец сражается в ближнем бою, цель замедлится на %melee_slow%%%, а если в дальнем — на %ranged_slow%%%.<br><br>Длительность: %duration_passive% сек."
