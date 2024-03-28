@@ -21,6 +21,50 @@
 			"01"						"item_diadem;item_headdress;item_magic_wand"
 		}
 	}
+	"item_recipe_holy_locket_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_holy_locket_2"
+		"ItemRequirements"
+		{
+			"01"						"item_holy_locket;item_holy_locket;"
+		}
+	}
+	"item_recipe_holy_locket_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_holy_locket_3"
+		"ItemRequirements"
+		{
+			"01"						"item_holy_locket_2;item_holy_locket_2;item_boss_soul"
+		}
+	}
 	"item_holy_locket"
 	{
 		// General
@@ -64,39 +108,16 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
-				"bonus_health"			"0"
-				"bonus_mana"			"0"
-				"heal_increase"			"30 35 40"
-				"max_charges"			"20 25 30"
-				"charge_radius"			"1200 1200 1200"
-				"bonus_all_stats"		"10 20 50"
-				"restore_per_charge"	"15 25 50"
-				"charge_gain_timer"		"20 15 10"
-				"use_cooldown"			"13"
-		}
-	}
-
-	"item_recipe_holy_locket_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
 		
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpRingShop"
-		"UIDropSound"					"Item.DropRingShop"
-		"WorldDropSound"				"Item.DropRingWorld"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_holy_locket_2"
-		"ItemRequirements"
-		{
-			"01"						"item_holy_locket;item_holy_locket;"
+			"bonus_health"			"0"
+			"bonus_mana"			"0"
+			"heal_increase"			"30 35 40"
+			"max_charges"			"20 25 30"
+			"charge_radius"			"1200 1200 1200"
+			"bonus_all_stats"		"10 20 50"
+			"restore_per_charge"	"15 25 50"
+			"charge_gain_timer"		"20 15 10"
+			"use_cooldown"			"13"
 		}
 	}
 	"item_holy_locket_2"
@@ -143,38 +164,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"0"
-				"bonus_mana"			"0"
-				"heal_increase"			"30 35 40"
-				"max_charges"			"20 25 30"
-				"charge_radius"			"1200 1200 1200"
-				"bonus_all_stats"		"10 20 50"
-				"restore_per_charge"	"15 25 50"
-				"charge_gain_timer"		"20 15 10"
-				"use_cooldown"			"13"
-		}
-	}
-
-	"item_recipe_holy_locket_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpRingShop"
-		"UIDropSound"					"Item.DropRingShop"
-		"WorldDropSound"				"Item.DropRingWorld"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_holy_locket_3"
-		"ItemRequirements"
-		{
-			"01"						"item_holy_locket_2;item_holy_locket_2;item_boss_soul"
+			"bonus_health"			"0"
+			"bonus_mana"			"0"
+			"heal_increase"			"30 35 40"
+			"max_charges"			"20 25 30"
+			"charge_radius"			"1200 1200 1200"
+			"bonus_all_stats"		"10 20 50"
+			"restore_per_charge"	"15 25 50"
+			"charge_gain_timer"		"20 15 10"
+			"use_cooldown"			"13"
 		}
 	}
 	"item_holy_locket_3"
@@ -222,15 +220,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"0"
-				"bonus_mana"			"0"
-				"heal_increase"			"30 35 40"
-				"max_charges"			"20 25 30"
-				"charge_radius"			"1200 1200 1200"
-				"bonus_all_stats"		"10 20 50"
-				"restore_per_charge"	"15 25 50"
-				"charge_gain_timer"		"20 15 10"
-				"use_cooldown"			"13"
+			"bonus_health"			"0"
+			"bonus_mana"			"0"
+			"heal_increase"			"30 35 40"
+			"max_charges"			"20 25 30"
+			"charge_radius"			"1200 1200 1200"
+			"bonus_all_stats"		"10 20 50"
+			"restore_per_charge"	"15 25 50"
+			"charge_gain_timer"		"20 15 10"
+			"use_cooldown"			"13"
 		}
 	}
 }

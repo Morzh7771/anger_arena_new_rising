@@ -19,6 +19,48 @@
 			"01"						"item_helm_of_iron_will"
 		}
 	}
+	"item_recipe_helm_of_the_overlord"
+	{
+		"ItemCost"						"1325"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_helm_of_the_overlord"
+		"ItemRequirements"
+		{
+			"01"						"item_helm_of_the_dominator;item_ultimate_orb"
+		}
+	}
+	"item_recipe_helm_of_the_overlord_2"
+	{
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_helm_of_the_overlord_2"
+		"ItemRequirements"
+		{
+			"01"						"item_helm_of_the_overlord;item_helm_of_the_overlord"
+		}
+	}
+	"item_recipe_helm_of_the_overlord_3"
+	{
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_helm_of_the_overlord_3"
+		"ItemRequirements"
+		{
+			"01"						"item_helm_of_the_overlord_2;item_helm_of_the_overlord_2;item_boss_soul"
+		}
+	}
 	"item_helm_of_the_dominator"
 	{
 		// General
@@ -49,33 +91,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_stats"			"0"
-			"bonus_armor"			"6"
-			"bonus_regen"			"6"
-			"health_min"			"1000"
-			"speed_base"			"380"
-			"bounty_gold"			"100"
-			"creep_bonus_damage"			"25"
-			"creep_bonus_hp_regen"			"12"
-			"creep_bonus_mp_regen"			"4"
-			"creep_bonus_armor"			"4"
-			"model_scale"			"0"
-			"count_limit"			"1"
-			"creep_ability_level_increase"			"0"
-		}
-	}
-	"item_recipe_helm_of_the_overlord"
-	{
-		"ItemCost"						"1325"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_helm_of_the_overlord"
-		"ItemRequirements"
-		{
-			"01"						"item_helm_of_the_dominator;item_ultimate_orb"
+			"bonus_stats"						"0"
+			"bonus_armor"						"6"
+			"bonus_regen"						"6"
+			"health_min"						"1000"
+			"speed_base"						"380"
+			"bounty_gold"						"100"
+			"creep_bonus_damage"				"25"
+			"creep_bonus_hp_regen"				"12"
+			"creep_bonus_mp_regen"				"4"
+			"creep_bonus_armor"					"4"
+			"model_scale"						"0"
+			"count_limit"						"1"
+			"creep_ability_level_increase"		"0"
 		}
 	}
 	"item_helm_of_the_overlord"
@@ -106,34 +134,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_stats"			"15 30 80"
-				"bonus_armor"			"7 16 40"
-				"bonus_regen"			"7 15 60"
-				"health_min"			"1800 3600 7000"
-				"speed_base"			"380 400 440"
-				"bounty_gold"			"250 400 700"
-				"creep_bonus_damage"			"70 140 250"
-				"creep_bonus_hp_regen"			"12 24 40"
-				"creep_bonus_mp_regen"			"7 14 21"
-				"creep_bonus_armor"			"7 14 21"
-				"model_scale"			"20"
-				"count_limit"			"1 2 3"
-				"creep_ability_level_increase"			"1"
-		}
-	}
-
-	"item_recipe_helm_of_the_overlord_2"
-	{
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_helm_of_the_overlord_2"
-		"ItemRequirements"
-		{
-			"01"						"item_helm_of_the_overlord;item_helm_of_the_overlord"
+			"bonus_stats"						"15 30 80"
+			"bonus_armor"						"7 16 40"
+			"bonus_regen"						"7 15 60"
+			"health_min"						"1800 3600 7000"
+			"speed_base"						"380 400 440"
+			"bounty_gold"						"250 400 700"
+			"creep_bonus_damage"				"70 140 250"
+			"creep_bonus_hp_regen"				"12 24 40"
+			"creep_bonus_mp_regen"				"7 14 21"
+			"creep_bonus_armor"					"7 14 21"
+			"model_scale"						"20"
+			"count_limit"						"1 2 3"
+			"creep_ability_level_increase"		"1"
 		}
 	}
 	"item_helm_of_the_overlord_2"
@@ -166,34 +179,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_stats"			"15 30 80"
-				"bonus_armor"			"7 16 40"
-				"bonus_regen"			"7 15 60"
-				"health_min"			"1800 3600 7000"
-				"speed_base"			"380 400 440"
-				"bounty_gold"			"250 400 700"
-				"creep_bonus_damage"			"70 140 250"
-				"creep_bonus_hp_regen"			"12 24 40"
-				"creep_bonus_mp_regen"			"7 14 21"
-				"creep_bonus_armor"			"7 14 21"
-				"model_scale"			"20"
-				"count_limit"			"1 2 3"
-				"creep_ability_level_increase"			"1"
-		}
-	}
-
-	"item_recipe_helm_of_the_overlord_3"
-	{
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_helm_of_the_overlord_3"
-		"ItemRequirements"
-		{
-			"01"						"item_helm_of_the_overlord_2;item_helm_of_the_overlord_2;item_boss_soul"
+			"bonus_stats"						"15 30 80"
+			"bonus_armor"						"7 16 40"
+			"bonus_regen"						"7 15 60"
+			"health_min"						"1800 3600 7000"
+			"speed_base"						"380 400 440"
+			"bounty_gold"						"250 400 700"
+			"creep_bonus_damage"				"70 140 250"
+			"creep_bonus_hp_regen"				"12 24 40"
+			"creep_bonus_mp_regen"				"7 14 21"
+			"creep_bonus_armor"					"7 14 21"
+			"model_scale"						"20"
+			"count_limit"						"1 2 3"
+			"creep_ability_level_increase"		"1"
 		}
 	}
 	"item_helm_of_the_overlord_3"
@@ -227,19 +225,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_stats"			"15 30 80"
-				"bonus_armor"			"7 16 40"
-				"bonus_regen"			"7 15 60"
-				"health_min"			"1800 3600 7000"
-				"speed_base"			"380 400 440"
-				"bounty_gold"			"250 400 700"
-				"creep_bonus_damage"			"70 140 250"
-				"creep_bonus_hp_regen"			"12 24 40"
-				"creep_bonus_mp_regen"			"7 14 21"
-				"creep_bonus_armor"			"7 14 21"
-				"model_scale"			"20"
-				"count_limit"			"1 2 3"
-				"creep_ability_level_increase"			"1"
+			"bonus_stats"						"15 30 80"
+			"bonus_armor"						"7 16 40"
+			"bonus_regen"						"7 15 60"
+			"health_min"						"1800 3600 7000"
+			"speed_base"						"380 400 440"
+			"bounty_gold"						"250 400 700"
+			"creep_bonus_damage"				"70 140 250"
+			"creep_bonus_hp_regen"				"12 24 40"
+			"creep_bonus_mp_regen"				"7 14 21"
+			"creep_bonus_armor"					"7 14 21"
+			"model_scale"						"20"
+			"count_limit"						"1 2 3"
+			"creep_ability_level_increase"		"1"
 		}
 	}
 }

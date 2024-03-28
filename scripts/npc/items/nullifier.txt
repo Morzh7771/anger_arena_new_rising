@@ -18,6 +18,22 @@
 			"01"						"item_relic;item_helm_of_iron_will"
 		}
 	}
+	"item_recipe_nullifier_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_nullifier_2"
+		"ItemRequirements"
+		{
+			"01"						"item_nullifier;item_nullifier;item_boss_soul"
+		}
+	}
 	"item_nullifier"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -51,23 +67,6 @@
 			"projectile_speed"		"1800 1800"
 			"slow_pct"				"70 90"
 			"slow_interval_duration"	"0.5 0.3"
-		}
-	}
-
-	"item_recipe_nullifier_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_nullifier_2"
-		"ItemRequirements"
-		{
-			"01"						"item_nullifier;item_nullifier;item_boss_soul"
 		}
 	}
 	"item_nullifier_2"

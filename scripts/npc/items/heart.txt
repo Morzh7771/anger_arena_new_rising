@@ -18,6 +18,42 @@
 			"01"						"item_vitality_booster;item_reaver"
 		}
 	}
+	"item_recipe_heart_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heart_2"
+		"ItemRequirements"
+		{
+			"01"						"item_heart;item_heart"
+		}
+	}
+	"item_recipe_heart_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heart_3"
+		"ItemRequirements"
+		{
+			"01"						"item_heart_2;item_heart_2;item_boss_soul"
+		}
+	}
 	"item_heart"
 	{	
 		"ItemBaseLevel"					"1"
@@ -39,25 +75,6 @@
 			"bonus_strength"		"35 70 170"
 			"bonus_health"			"200 400 800"
 			"health_regen_pct"		"1.4 1.8 2.2"
-		}
-	}
-
-	"item_recipe_heart_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart_2"
-		"ItemRequirements"
-		{
-			"01"						"item_heart;item_heart"
 		}
 	}
 	"item_heart_2"
@@ -82,25 +99,6 @@
 			"bonus_strength"		"35 70 170"
 			"bonus_health"			"200 400 800"
 			"health_regen_pct"		"1.4 1.8 2.2"
-		}
-	}
-
-	"item_recipe_heart_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart_3"
-		"ItemRequirements"
-		{
-			"01"						"item_heart_2;item_heart_2;item_boss_soul"
 		}
 	}
 	"item_heart_3"

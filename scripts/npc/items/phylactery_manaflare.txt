@@ -18,6 +18,38 @@
             "01"						"item_point_booster;item_diadem"
         }
     }
+    "item_recipe_phylactery_2"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_phylactery_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_phylactery;item_phylactery;"
+        }
+    }
+    "item_recipe_manaflare_lens_custom"
+    {
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "item_recipe"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_manaflare_lens_custom"
+        "ItemRequirements"
+        {
+            "01"                        "item_phylactery_2;item_aether_lens;item_boss_soul"
+        }
+    }
     "item_phylactery"
     {
         "BaseClass"                     "item_lua"
@@ -46,25 +78,6 @@
             "slow_duration"				"1.5 2 2.5"
         }
     }
-
-    "item_recipe_phylactery_2"
-    {
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"						"item_recipe_arcane_boots"
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"
-        "ItemShopTags"					""
-
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_phylactery_2"
-        "ItemRequirements"
-        {
-            "01"						"item_phylactery;item_phylactery;"
-        }
-    }
     "item_phylactery_2"
     {
         "BaseClass"                     "item_lua"
@@ -90,20 +103,6 @@
             "slow"						"50 50 50"
             "bonus_spell_damage"        "250 350 450"
             "slow_duration"			    "1.5 2 2.5"
-        }
-    }
-    "item_recipe_manaflare_lens_custom"
-    {
-        "BaseClass"                     "item_datadriven"
-        "AbilityTextureName"            "item_recipe"
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "ItemCost"                      "0"   
-        "ItemShopTags"                  ""
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_manaflare_lens_custom"
-        "ItemRequirements"
-        {
-            "01"                        "item_phylactery_2;item_aether_lens;item_boss_soul"
         }
     }
     "item_manaflare_lens_custom"

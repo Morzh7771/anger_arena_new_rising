@@ -19,6 +19,63 @@
 			"01"						"item_wraith_band_custom;item_wraith_band_custom;item_wind_lace;"
 		}
 	}
+	"item_recipe_boots_of_bearing_aa"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"700"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_of_bearing_aa"
+		"ItemRequirements"
+		{
+			"01"						"item_tranquil_boots;item_drum_of_endurance"
+		}
+	}
+	"item_recipe_boots_of_bearing_aa_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_of_bearing_aa_2"
+		"ItemRequirements"
+		{
+			"01"						"item_boots_of_bearing_aa;item_boots_of_bearing_aa"
+		}
+	}
+    "item_recipe_boots_of_bearing_aa_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_of_bearing_aa_3"
+		"ItemRequirements"
+		{
+			"01"						"item_boots_of_bearing_aa_2;item_boots_of_bearing_aa_2;item_boss_soul"
+		}
+	}
     "item_drum_of_endurance"
 	{       
 		"BaseClass"                     "item_lua"
@@ -57,65 +114,7 @@
 			"active_duration"				    "6"
 			"active_radius"				        "1200"
 		}
-	}	
-    "item_recipe_boots_of_bearing_aa"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_recipe_arcane_boots"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"700"	
-		"ItemShopTags"					"artifacts"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_boots_of_bearing_aa"
-		"ItemRequirements"
-		{
-			"01"						"item_tranquil_boots;item_drum_of_endurance"
-		}
 	}
-    "item_recipe_boots_of_bearing_aa_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_recipe_arcane_boots"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					"artifacts"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_boots_of_bearing_aa_2"
-		"ItemRequirements"
-		{
-			"01"						"item_boots_of_bearing_aa;item_boots_of_bearing_aa"
-		}
-	}
-    "item_recipe_boots_of_bearing_aa_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_recipe_arcane_boots"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					"artifacts"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_boots_of_bearing_aa_3"
-		"ItemRequirements"
-		{
-			"01"						"item_boots_of_bearing_aa_2;item_boots_of_bearing_aa_2;item_boss_soul"
-		}
-	}
-
     "item_boots_of_bearing_aa"
 	{
 		"BaseClass"                     "item_lua"

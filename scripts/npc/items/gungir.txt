@@ -18,6 +18,42 @@
 			"01"						"item_maelstorm_aa*;item_rod_of_atos*"
 		}
 	}
+	"item_recipe_gungir_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_gungir_2"
+		"ItemRequirements"
+		{
+			"01"						"item_gungir;item_gungir"
+		}
+	}
+	"item_recipe_gungir_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_gungir_3"
+		"ItemRequirements"
+		{
+			"01"						"item_gungir_2;item_gungir_2;item_boss_soul"
+		}
+	}
 	"item_gungir"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -49,38 +85,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"	"40 80 160"
-				"bonus_damage"			"30 60 120"
-				"chain_chance"			"30 35 40"
-				"chain_damage"			"160 200 300"
-				"chain_strikes"			"4 6 8"
-				"chain_radius"			"650 700 750"
-				"chain_delay"			"0.25 0.25 0.25"
-				"chain_cooldown"		"0.2 0.2 0.2"
-				"bonus_intellect"		"24 48 100"
-				"duration"				"2.0 2.5 3"
-				"radius"				"350 400 450"
-				"active_damage"			"180 360 600"
-				"illusion_multiplier_pct"	"150"
-		}
-	}
-
-	"item_recipe_gungir_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_gungir_2"
-		"ItemRequirements"
-		{
-			"01"						"item_gungir;item_gungir"
+			"bonus_attack_speed"	"40 80 160"
+			"bonus_damage"			"30 60 120"
+			"chain_chance"			"30 35 40"
+			"chain_damage"			"160 200 300"
+			"chain_strikes"			"4 6 8"
+			"chain_radius"			"650 700 750"
+			"chain_delay"			"0.25 0.25 0.25"
+			"chain_cooldown"		"0.2 0.2 0.2"
+			"bonus_intellect"		"24 48 100"
+			"duration"				"2.0 2.5 3"
+			"radius"				"350 400 450"
+			"active_damage"			"180 360 600"
+			"illusion_multiplier_pct"	"150"
 		}
 	}
 	"item_gungir_2"
@@ -116,38 +133,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"	"40 80 160"
-				"bonus_damage"			"30 60 120"
-				"chain_chance"			"30 35 40"
-				"chain_damage"			"160 200 300"
-				"chain_strikes"			"4 6 8"
-				"chain_radius"			"650 700 750"
-				"chain_delay"			"0.25 0.25 0.25"
-				"chain_cooldown"		"0.2 0.2 0.2"
-				"bonus_intellect"		"24 48 100"
-				"duration"				"2.0 2.5 3"
-				"radius"				"350 400 450"
-				"active_damage"			"180 360 600"
-				"illusion_multiplier_pct"	"150"
-		}
-	}
-
-	"item_recipe_gungir_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_gungir_3"
-		"ItemRequirements"
-		{
-			"01"						"item_gungir_2;item_gungir_2;item_boss_soul"
+			"bonus_attack_speed"	"40 80 160"
+			"bonus_damage"			"30 60 120"
+			"chain_chance"			"30 35 40"
+			"chain_damage"			"160 200 300"
+			"chain_strikes"			"4 6 8"
+			"chain_radius"			"650 700 750"
+			"chain_delay"			"0.25 0.25 0.25"
+			"chain_cooldown"		"0.2 0.2 0.2"
+			"bonus_intellect"		"24 48 100"
+			"duration"				"2.0 2.5 3"
+			"radius"				"350 400 450"
+			"active_damage"			"180 360 600"
+			"illusion_multiplier_pct"	"150"
 		}
 	}
 	"item_gungir_3"
@@ -184,19 +182,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"	"40 80 160"
-				"bonus_damage"			"30 60 120"
-				"chain_chance"			"30 35 40"
-				"chain_damage"			"160 200 300"
-				"chain_strikes"			"4 6 8"
-				"chain_radius"			"650 700 750"
-				"chain_delay"			"0.25 0.25 0.25"
-				"chain_cooldown"		"0.2 0.2 0.2"
-				"bonus_intellect"		"24 48 100"
-				"duration"				"2.0 2.5 3"
-				"radius"				"350 400 450"
-				"active_damage"			"180 360 600"
-				"illusion_multiplier_pct"	"150"
+			"bonus_attack_speed"	"40 80 160"
+			"bonus_damage"			"30 60 120"
+			"chain_chance"			"30 35 40"
+			"chain_damage"			"160 200 300"
+			"chain_strikes"			"4 6 8"
+			"chain_radius"			"650 700 750"
+			"chain_delay"			"0.25 0.25 0.25"
+			"chain_cooldown"		"0.2 0.2 0.2"
+			"bonus_intellect"		"24 48 100"
+			"duration"				"2.0 2.5 3"
+			"radius"				"350 400 450"
+			"active_damage"			"180 360 600"
+			"illusion_multiplier_pct"	"150"
 		}
 	}
 }

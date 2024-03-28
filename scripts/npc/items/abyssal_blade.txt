@@ -16,6 +16,22 @@
 			"01"						"item_basher;item_vanguard"
 		}
 	}
+	"item_recipe_abyssal_blade_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_abyssal_blade_2"
+		"ItemRequirements"
+		{
+			"01"						"item_abyssal_blade;item_abyssal_blade;item_boss_soul"
+		}
+	}
 	"item_abyssal_blade"
 	{
 		"BaseClass"						"item_abyssal_blade"
@@ -62,23 +78,6 @@
 				"bash_cooldown"			"3 3"
 				"bonus_chance_damage"	"120 250"
 				"stun_duration"			"1.6 2"
-		}
-	}
-
-	"item_recipe_abyssal_blade_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_abyssal_blade_2"
-		"ItemRequirements"
-		{
-			"01"						"item_abyssal_blade;item_abyssal_blade;item_boss_soul"
 		}
 	}
 	"item_abyssal_blade_2"

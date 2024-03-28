@@ -15,6 +15,38 @@
 			"01"						"item_cloak;item_ogre_axe;item_vitality_booster"
 		}
 	}
+	"item_recipe_eternal_shroud_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eternal_shroud_2"
+		"ItemRequirements"
+		{
+			"01"						"item_eternal_shroud;item_eternal_shroud"
+		}
+	}
+	"item_recipe_eternal_shroud_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eternal_shroud_3"
+		"ItemRequirements"
+		{
+			"01"						"item_eternal_shroud_2;item_eternal_shroud_2;item_boss_soul"
+		}
+	}
 	"item_eternal_shroud"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -38,23 +70,6 @@
 			"stack_resist"							"3 3.5 4"
 			"mana_restore_pct"						"20 25 30"
 			"max_stacks"							"4 5 6"
-		}
-	}
-
-	"item_recipe_eternal_shroud_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_eternal_shroud_2"
-		"ItemRequirements"
-		{
-			"01"						"item_eternal_shroud;item_eternal_shroud"
 		}
 	}
 	"item_eternal_shroud_2"
@@ -82,23 +97,6 @@
 			"stack_resist"							"3 3.5 4"
 			"mana_restore_pct"						"20 25 30"
 			"max_stacks"							"4 5 6"
-		}
-	}
-
-	"item_recipe_eternal_shroud_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_eternal_shroud_3"
-		"ItemRequirements"
-		{
-			"01"						"item_eternal_shroud_2;item_eternal_shroud_2;item_boss_soul"
 		}
 	}
 	"item_eternal_shroud_3"

@@ -19,6 +19,44 @@
             "01"						"item_ultimate_orb;item_point_booster"
         }
     }
+    "item_recipe_piercing_blade2"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_piercing_blade2"
+        "ItemRequirements"
+        {
+            "01"                        "item_piercing_blade;item_piercing_blade"
+        }
+    }
+    "item_recipe_piercing_blade3"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_piercing_blade3"
+        "ItemRequirements"
+        {
+            "01"                        "item_piercing_blade2;item_piercing_blade2;item_boss_soul"
+        }
+    }
     "item_piercing_blade"
     {
         "BaseClass"						"item_lua"
@@ -47,25 +85,6 @@
             "active_duration"       "5"
 		}
     }
-    "item_recipe_piercing_blade2"
-    {
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"	
-        "ItemShopTags"					""
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_piercing_blade2"
-        "ItemRequirements"
-        {
-            "01"						"item_piercing_blade;item_piercing_blade"
-        }
-    }
     "item_piercing_blade2"
     {
         "BaseClass"						"item_lua"
@@ -93,25 +112,6 @@
             //"active_pure_dmg"       "100 120 140"
             "active_duration"       "5"
 		}
-    }
-    "item_recipe_piercing_blade3"
-    {
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"	
-        "ItemShopTags"					""
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_piercing_blade3"
-        "ItemRequirements"
-        {
-            "01"						"item_piercing_blade2;item_piercing_blade2;item_boss_soul"
-        }
     }
     "item_piercing_blade3"
     {

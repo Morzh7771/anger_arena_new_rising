@@ -19,6 +19,50 @@
             "01"                        "item_eagle;item_talisman_of_evasion;item_broadsword"
         }
     }
+    "item_recipe_sacred_butterfly"
+    {
+        "AbilityTextureName"            "item_recipe_sacred_butterfly"
+         "Model"                            "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  "artifacts"
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_sacred_butterfly"
+        "ItemRequirements"
+        {
+            "01"                        "item_butterfly;item_butterfly"
+        }
+    }
+    "item_recipe_burning_butterfly"
+    {
+        "AbilityTextureName"                "item_recipe_burning_butterfly"
+        
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                            "1118"                      
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  "artifacts"
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_burning_butterfly"
+        "ItemRequirements"
+        {
+            "01"                        "item_sacred_butterfly;item_sacred_butterfly;item_boss_soul"
+        }
+    }
     "item_butterfly"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -42,78 +86,6 @@
 			"bonus_damage"	            "25 60 170"
 		}
 	}
-    "item_recipe_burning_butterfly"
-    {
-        "AbilityTextureName" 				"item_recipe_burning_butterfly"
-        
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "ID"							"1118"						
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"	
-        "ItemShopTags"					"artifacts"
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_burning_butterfly"
-        "ItemRequirements"
-        {
-            "01"						"item_sacred_butterfly;item_sacred_butterfly;item_boss_soul"
-        }
-    }
-    "item_burning_butterfly"
-    {       
-        "BaseClass"						"item_lua"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"	        "burning_butterfly"
-        "ScriptFile"					"items/item_butterfly"
-        "ItemBaseLevel"                 "3"
-        "ItemCost"						"15950"
-        "ItemStackable"					"0"
-        
-        "ItemPermanent"					"0"
-        "ItemKillable"                  "1"
-        "ItemSellable"                  "1"
-        "ItemDroppable"                 "1"
-        "ItemPurchasable"				"1"
-        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
-        "AbilityValues"
-        {
-            "bonus_agi"			        "45 90 200"
-			"bonus_evasion"			    "35 40 45"
-			"bonus_attack_speed_pct"	"20 25 30"
-			"bonus_damage"	            "25 60 170"
-			"bonus_mvspd_pct"		    "0 10 15"
-            "absorb_chance"			    "12"
-        }
-    }
-
-
-    "item_recipe_sacred_butterfly"
-    {
-        "AbilityTextureName" 			"item_recipe_sacred_butterfly"
-         "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"	
-        "ItemShopTags"					"artifacts"
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_sacred_butterfly"
-        "ItemRequirements"
-        {
-            "01"						"item_butterfly;item_butterfly"
-        }
-    }
     "item_sacred_butterfly"
     {       
         "BaseClass"						"item_lua"
@@ -135,6 +107,32 @@
 			"bonus_attack_speed_pct"	"20 25 30"
 			"bonus_damage"	            "25 60 170"
 			"bonus_mvspd_pct"		    "0 10 15"
+        }
+    }
+    "item_burning_butterfly"
+    {       
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "burning_butterfly"
+        "ScriptFile"                    "items/item_butterfly"
+        "ItemBaseLevel"                 "3"
+        "ItemCost"                      "15950"
+        "ItemStackable"                 "0"
+        
+        "ItemPermanent"                 "0"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"               "1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+        "AbilityValues"
+        {
+            "bonus_agi"                 "45 90 200"
+            "bonus_evasion"             "35 40 45"
+            "bonus_attack_speed_pct"    "20 25 30"
+            "bonus_damage"              "25 60 170"
+            "bonus_mvspd_pct"           "0 10 15"
+            "absorb_chance"             "12"
         }
     }
 }

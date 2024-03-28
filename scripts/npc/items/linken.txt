@@ -18,6 +18,24 @@
 			"01"						"item_ultimate_orb;item_cornucopia"
 		}
 	}
+	"item_recipe_sphere_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sphere_2"
+		"ItemRequirements"
+		{
+			"01"						"item_sphere;item_sphere;item_boss_soul"
+		}
+	}
 	"item_sphere"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -54,25 +72,6 @@
 				"bonus_damage"				    "10 130"
 		}
 	}
-
-	"item_recipe_sphere_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_sphere_2"
-		"ItemRequirements"
-		{
-			"01"						"item_sphere;item_sphere;item_boss_soul"
-		}
-	}
 	"item_sphere_2"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -101,13 +100,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"22 70"
-				"bonus_health_regen"	"6 15"
-				"bonus_mana_regen"		"4.25 12"
-				"block_cooldown"		"14.0 12.0"
-				"upgrade_absorb_duration"		"10.0"
-				"damage_absorb"				"300 300"
-				"bonus_damage"				"10 130"
+			"bonus_all_stats"				"22 70"
+			"bonus_health_regen"			"6 15"
+			"bonus_mana_regen"				"4.25 12"
+			"block_cooldown"				"14.0 12.0"
+			"upgrade_absorb_duration"		"10.0"
+			"damage_absorb"					"300 300"
+			"bonus_damage"					"10 130"
 		}
 	}
 }

@@ -1,25 +1,5 @@
 "DOTAAbilities"
 {    
-    "item_recipe_dagon_custom"
-	{
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_recipe_dagon"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3000"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_dagon_custom"
-		"ItemRequirements"
-		{
-			"01"						"item_dagon_5;item_dagon_5;"
-		}
-	}
     "item_recipe_dagon"
 	{
 		// General
@@ -129,49 +109,25 @@
 			"02"						"item_dagon_4*;item_recipe_dagon_2"
 		}
 	}
-    "item_dagon_custom"
+	"item_recipe_dagon_custom"
 	{
-		"BaseClass"						"item_lua"
-	    "ScriptFile"                    "items/item_dagon_custom"
-	    "AbilityTextureName"			"dagon_6"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AOERadius"						"%aoe_radius"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 750 800 850 900 1000"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"19 18 17 16 15 14"
-		"AbilitySharedCooldown"			"dagon"
-		"ItemBaseLevel"					"6"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe_dagon"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 140 160 180 200 250"
-		"ItemCost"						"2700"
-		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
-		"ItemAliases"					"dagon 6"
+		"ItemCost"						"3000"	
+		"ItemShopTags"					""
 		
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
+		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_dagon_custom"
+		"ItemRequirements"
 		{
-			"bonus_stats"		        "7 9 11 13 15 50"
-            "spell_lifesteal"           "15 15 15 15 15 20"
-			"damage"				    "380 460 540 620 700 1000"
-			"damage_delay"			    "0"
-			"mana_cost_tooltip"		    "120 140 160 180 200 250"
-			"stat_primary_damage_pct"	"250"
-			"aoe_radius"			    "300"
-            "active_heal"               "75"
-            "max_dif_multiplier"        "400"
-		}   
+			"01"						"item_dagon_5;item_dagon_5;"
+		}
 	}
     "item_dagon"
     {
@@ -267,5 +223,49 @@
             "int_damage"                "0 0 0 0 0 200"
             "active_heal"               "75"
 		}
+	}
+	"item_dagon_custom"
+	{
+		"BaseClass"						"item_lua"
+	    "ScriptFile"                    "items/item_dagon_custom"
+	    "AbilityTextureName"			"dagon_6"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AOERadius"						"%aoe_radius"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 750 800 850 900 1000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"19 18 17 16 15 14"
+		"AbilitySharedCooldown"			"dagon"
+		"ItemBaseLevel"					"6"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 140 160 180 200 250"
+		"ItemCost"						"2700"
+		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
+		"ItemQuality"					"rare"	
+		"ItemAliases"					"dagon 6"
+		
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_stats"		        "7 9 11 13 15 50"
+            "spell_lifesteal"           "15 15 15 15 15 20"
+			"damage"				    "380 460 540 620 700 1000"
+			"damage_delay"			    "0"
+			"mana_cost_tooltip"		    "120 140 160 180 200 250"
+			"stat_primary_damage_pct"	"250"
+			"aoe_radius"			    "300"
+            "active_heal"               "75"
+            "max_dif_multiplier"        "400"
+		}   
 	}
 }

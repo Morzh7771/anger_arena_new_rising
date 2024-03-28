@@ -15,6 +15,36 @@
 			"01"						"item_sange;item_talisman_of_evasion"
 		}
 	}
+	"item_recipe_heavens_halberd_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heavens_halberd_2"
+		"ItemRequirements"
+		{
+			"01"						"item_heavens_halberd;item_heavens_halberd"
+		}
+	}
+	"item_recipe_heavens_halberd_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heavens_halberd_3"
+		"ItemRequirements"
+		{
+			"01"						"item_heavens_halberd_2;item_heavens_halberd_2;item_boss_soul"
+		}
+	}
 	"item_heavens_halberd"
 	{
 		"BaseClass"						"item_heavens_halberd"
@@ -50,24 +80,8 @@
 			"bonus_strength"			"20 40 100"
 			"disarm_range"				"4.5 5 5.5"
 			"disarm_melee"				"3.0 3.5 4"
-			"status_resistance"		"16 20 24"
-			"hp_regen_amp"			  "20 25 30"	
-		}
-	}
-
-	"item_recipe_heavens_halberd_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heavens_halberd_2"
-		"ItemRequirements"
-		{
-			"01"						"item_heavens_halberd;item_heavens_halberd"
+			"status_resistance"			"16 20 24"
+			"hp_regen_amp"			  	"20 25 30"	
 		}
 	}
 	"item_heavens_halberd_2"
@@ -101,30 +115,14 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-    {
-      "bonus_evasion"       "20 25 30"
-      "bonus_strength"      "20 40 100"
-      "disarm_range"        "4.5 5 5.5"
-      "disarm_melee"        "3.0 3.5 4"
-      "status_resistance"   "16 20 24"
-      "hp_regen_amp"        "20 25 30"  
-    }
-	}
-
-	"item_recipe_heavens_halberd_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heavens_halberd_3"
-		"ItemRequirements"
-		{
-			"01"						"item_heavens_halberd_2;item_heavens_halberd_2;item_boss_soul"
-		}
+    	{
+      		"bonus_evasion"       		"20 25 30"
+      		"bonus_strength"      		"20 40 100"
+      		"disarm_range"        		"4.5 5 5.5"
+      		"disarm_melee"        		"3.0 3.5 4"
+      		"status_resistance"   		"16 20 24"
+      		"hp_regen_amp"        		"20 25 30"  
+    	}
 	}
 	"item_heavens_halberd_3"
 	{
@@ -136,7 +134,7 @@
 		"AbilitySharedCooldown"			"heavens_halberd"
 		"AbilityTextureName"			"heavens_halberd3"
 		"BaseClass"						"item_heavens_halberd"
-    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+    	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"18"
@@ -158,12 +156,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
     	{
-      "bonus_evasion"       "20 25 30"
-      "bonus_strength"      "20 40 100"
-      "disarm_range"        "4.5 5 5.5"
-      "disarm_melee"        "3.0 3.5 4"
-      "status_resistance"   "16 20 24"
-      "hp_regen_amp"        "20 25 30"  
+      		"bonus_evasion"       		"20 25 30"
+      		"bonus_strength"      		"20 40 100"
+      		"disarm_range"        		"4.5 5 5.5"
+      		"disarm_melee"        		"3.0 3.5 4"
+      		"status_resistance"   		"16 20 24"
+      		"hp_regen_amp"        		"20 25 30"  
     	}
 	}
 }

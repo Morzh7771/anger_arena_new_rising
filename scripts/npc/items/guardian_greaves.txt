@@ -1,5 +1,66 @@
 "DOTAAbilities"
 {   	
+   	"item_recipe_arcane_boots"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"375"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_arcane_boots"
+		"ItemRequirements"
+		{
+			"01"						"item_boots*;item_ring_of_basilius"
+		}
+	}
+	"item_recipe_guardian_greaves_custom"
+	{
+		"BaseClass"                     "item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1450"	
+		"ItemShopTags"					""
+		"AbilityTextureName"			"item_recipe_guardian_greaves"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_guardian_greaves_custom"
+
+		"ItemRequirements"
+		{
+			"01"						"item_mekansm;item_arcane_boots;item_buckler"
+		}
+	}
+	"item_recipe_guardian_greaves_custom_2"
+	{
+		"BaseClass"                     "item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"AbilityTextureName"			"item_recipe_guardian_greaves"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_guardian_greaves_custom_2"
+
+		"ItemRequirements"
+		{
+			"01"						"item_guardian_greaves_custom;item_guardian_greaves_custom;item_boss_soul"
+		}
+	}
    	"item_arcane_boots"
 	{
 		// General
@@ -33,27 +94,6 @@
 				"replenish_radius"		"1200"
 		}
 	}
-   	"item_recipe_guardian_greaves_custom"
-	{
-		"BaseClass"                     "item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1450"	
-		"ItemShopTags"					""
-		"AbilityTextureName"			"item_recipe_guardian_greaves"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_guardian_greaves_custom"
-
-		"ItemRequirements"
-		{
-			"01"						"item_mekansm;item_arcane_boots;item_buckler"
-		}
-	}
 	"item_guardian_greaves_custom"
 	{
 		"BaseClass" 					"item_lua"
@@ -82,43 +122,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{				
-				"bonus_movement"		        "50 80"
-				"bonus_mana_regen"		        "3.5 10"
-				"bonus_armor"		            "7 25"
-				"aura_health_regen"		        "20 60"
-                "aura_health_regen_active"		"60 180"
-                "aura_mana_regen"		        "10 30"
-                "aura_mana_regen_active"		"30 90"
-                "aura_armor"		            "8 24"
-                "aura_armor_active"		        "24 72"
-				"aura_reduction"		        "-8 -12"
-				"aura_bonus_threshold"	        "30"
-				"replenish_health"		        "20 30"
-				"replenish_mana"		        "20 30"
-                "base_mana"		                "400 1200"
-                "base_health"		            "400 1200"
-				"replenish_radius"		        "1200"
-		}
-	}
-    "item_recipe_guardian_greaves_custom_2"
-	{
-		"BaseClass"                     "item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"AbilityTextureName"			"item_recipe_guardian_greaves"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_guardian_greaves_custom_2"
-
-		"ItemRequirements"
-		{
-			"01"						"item_guardian_greaves_custom;item_guardian_greaves_custom;item_boss_soul"
+			"bonus_movement"		        "50 80"
+			"bonus_mana_regen"		        "3.5 10"
+			"bonus_armor"		            "7 25"
+			"aura_health_regen"		        "20 60"
+            "aura_health_regen_active"		"60 180"
+            "aura_mana_regen"		        "10 30"
+            "aura_mana_regen_active"		"30 90"
+            "aura_armor"		            "8 24"
+            "aura_armor_active"		        "24 72"
+			"aura_reduction"		        "-8 -12"
+			"aura_bonus_threshold"	        "30"
+			"replenish_health"		        "20 30"
+			"replenish_mana"		        "20 30"
+            "base_mana"		                "400 1200"
+            "base_health"		            "400 1200"
+			"replenish_radius"		        "1200"
 		}
 	}
 	"item_guardian_greaves_custom_2"
@@ -151,22 +170,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{				
-				"bonus_movement"                "50 80"
-				"bonus_mana_regen"              "3.5 10"
-				"bonus_armor"                   "7 25"
-				"aura_health_regen"             "20 60"
-                "aura_health_regen_active"      "60 180"
-                "aura_mana_regen"               "10 30"
-                "aura_mana_regen_active"        "30 90"
-                "aura_armor"                    "8 24"
-                "aura_armor_active"             "24 72"
-				"aura_reduction"                "-8 -12"
-				"aura_bonus_threshold"          "30"
-				"replenish_health"              "20 30"
-				"replenish_mana"                "20 30"
-                "base_mana"                     "400 1200"
-                "base_health"                   "400 1200"
-				"replenish_radius"              "1200"
+			"bonus_movement"                "50 80"
+			"bonus_mana_regen"              "3.5 10"
+			"bonus_armor"                   "7 25"
+			"aura_health_regen"             "20 60"
+            "aura_health_regen_active"      "60 180"
+            "aura_mana_regen"               "10 30"
+            "aura_mana_regen_active"        "30 90"
+            "aura_armor"                    "8 24"
+            "aura_armor_active"             "24 72"
+			"aura_reduction"                "-8 -12"
+			"aura_bonus_threshold"          "30"
+			"replenish_health"              "20 30"
+			"replenish_mana"                "20 30"
+            "base_mana"                     "400 1200"
+            "base_health"                   "400 1200"
+			"replenish_radius"              "1200"
 		}
 	}
 }

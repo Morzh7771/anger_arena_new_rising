@@ -13,7 +13,35 @@
 		{
 			"01"						"item_aether_lens;item_ghost*"
 		}
-	}	
+	}
+	"item_recipe_ethereal_blade_2"
+	{
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_blade_2"
+		"ItemRequirements"
+		{
+			"01"						"item_ethereal_blade;item_ethereal_blade"
+		}
+	}
+	"item_recipe_ethereal_blade_3"
+	{
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_blade_3"
+		"ItemRequirements"
+		{
+			"01"						"item_ethereal_blade_2;item_ethereal_blade_2;item_boss_soul"
+		}
+	}
 	"item_ethereal_blade"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -45,34 +73,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_agility"				"10 30 80"
-				"bonus_strength"			"10 30 80"
-				"bonus_intellect"			"10 30 80"
-				"bonus_mana"			"300 600 1200"
-				"bonus_cast_range"		"200 225 250"
-				"bonus_mana_regen"		"3 10 25"
-				"blast_movement_slow"	"-80 -80 -80"
-				"duration"				"3.0 3.5 4.0"
-				"blast_agility_multiplier"			"1.5 2 2.5"
-				"blast_damage_base"			"50 100 200"
-				"duration_ally"				"3.0 3.5 4.0"
-				"ethereal_damage_bonus"	"-40 -45 -50"
-				"projectile_speed"	"1200 1400 1600"
-		}
-	}
-
-	"item_recipe_ethereal_blade_2"
-	{
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_ethereal_blade_2"
-		"ItemRequirements"
-		{
-			"01"						"item_ethereal_blade;item_ethereal_blade"
+			"bonus_agility"				"10 30 80"
+			"bonus_strength"			"10 30 80"
+			"bonus_intellect"			"10 30 80"
+			"bonus_mana"			"300 600 1200"
+			"bonus_cast_range"		"200 225 250"
+			"bonus_mana_regen"		"3 10 25"
+			"blast_movement_slow"	"-80 -80 -80"
+			"duration"				"3.0 3.5 4.0"
+			"blast_agility_multiplier"			"1.5 2 2.5"
+			"blast_damage_base"			"50 100 200"
+			"duration_ally"				"3.0 3.5 4.0"
+			"ethereal_damage_bonus"	"-40 -45 -50"
+			"projectile_speed"	"1200 1400 1600"
 		}
 	}	
 	"item_ethereal_blade_2"
@@ -108,34 +121,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_agility"				"10 30 80"
-				"bonus_strength"			"10 30 80"
-				"bonus_intellect"			"10 30 80"
-				"bonus_mana"			"300 600 1200"
-				"bonus_cast_range"		"200 225 250"
-				"bonus_mana_regen"		"3 10 25"
-				"blast_movement_slow"	"-80 -80 -80"
-				"duration"				"3.0 3.5 4.0"
-				"blast_agility_multiplier"			"1.5 2 2.5"
-				"blast_damage_base"			"50 100 200"
-				"duration_ally"				"3.0 3.5 4.0"
-				"ethereal_damage_bonus"	"-40 -45 -50"
-				"projectile_speed"	"1200 1400 1600"
-		}
-	}
-
-	"item_recipe_ethereal_blade_3"
-	{
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_ethereal_blade_3"
-		"ItemRequirements"
-		{
-			"01"						"item_ethereal_blade_2;item_ethereal_blade_2;item_boss_soul"
+			"bonus_agility"				"10 30 80"
+			"bonus_strength"			"10 30 80"
+			"bonus_intellect"			"10 30 80"
+			"bonus_mana"			"300 600 1200"
+			"bonus_cast_range"		"200 225 250"
+			"bonus_mana_regen"		"3 10 25"
+			"blast_movement_slow"	"-80 -80 -80"
+			"duration"				"3.0 3.5 4.0"
+			"blast_agility_multiplier"			"1.5 2 2.5"
+			"blast_damage_base"			"50 100 200"
+			"duration_ally"				"3.0 3.5 4.0"
+			"ethereal_damage_bonus"	"-40 -45 -50"
+			"projectile_speed"	"1200 1400 1600"
 		}
 	}	
 	"item_ethereal_blade_3"
@@ -148,7 +146,7 @@
 		"BaseClass"						"item_ethereal_blade"
 		"AbilityTextureName"			"ethereal_blade3"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+    	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -171,19 +169,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_agility"				"10 30 80"
-				"bonus_strength"			"10 30 80"
-				"bonus_intellect"			"10 30 80"
-				"bonus_mana"			"300 600 1200"
-				"bonus_cast_range"		"200 225 250"
-				"bonus_mana_regen"		"3 10 25"
-				"blast_movement_slow"	"-80 -80 -80"
-				"duration"				"3.0 3.5 4.0"
-				"blast_agility_multiplier"			"1.5 2 2.5"
-				"blast_damage_base"			"50 100 200"
-				"duration_ally"				"3.0 3.5 4.0"
-				"ethereal_damage_bonus"	"-40 -45 -50"
-				"projectile_speed"	"1200 1400 1600"
+			"bonus_agility"				"10 30 80"
+			"bonus_strength"			"10 30 80"
+			"bonus_intellect"			"10 30 80"
+			"bonus_mana"			"300 600 1200"
+			"bonus_cast_range"		"200 225 250"
+			"bonus_mana_regen"		"3 10 25"
+			"blast_movement_slow"	"-80 -80 -80"
+			"duration"				"3.0 3.5 4.0"
+			"blast_agility_multiplier"			"1.5 2 2.5"
+			"blast_damage_base"			"50 100 200"
+			"duration_ally"				"3.0 3.5 4.0"
+			"ethereal_damage_bonus"	"-40 -45 -50"
+			"projectile_speed"	"1200 1400 1600"
 		}
 	}
 }

@@ -15,6 +15,21 @@
             "01"						"item_lesser_crit;item_demon_edge"
         }
     }
+    "item_recipe_greater_crit_2"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_greater_crit_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_greater_crit;item_greater_crit;item_boss_soul"
+        }
+    }
     "item_greater_crit"
     {
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -38,21 +53,6 @@
             "bonus_damage"			"88 200"
             "crit_chance"			"25 30"
             "crit_multiplier"		"225 350"
-        }
-    }
-    "item_recipe_greater_crit_2"
-    {
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-
-        "ItemCost"						"0"
-        "ItemShopTags"					""
-
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_greater_crit_2"
-        "ItemRequirements"
-        {
-            "01"						"item_greater_crit;item_greater_crit;item_boss_soul"
         }
     }
     "item_greater_crit_2"

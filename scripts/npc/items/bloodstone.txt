@@ -19,6 +19,44 @@
             "01"						"item_voodoo_mask;item_soul_booster"
         }
     }
+    "item_recipe_bloodstone_2"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bloodstone_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_bloodstone_1;item_bloodstone_1"
+        }
+    }
+    "item_recipe_bloodstone_3"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bloodstone_3"
+        "ItemRequirements"
+        {
+            "01"                        "item_bloodstone_2;item_bloodstone_2;item_boss_soul"
+        }
+    }
     "item_bloodstone_1"
     {
         "BaseClass"						"item_lua"
@@ -61,25 +99,6 @@
                 
         }
     }
-    "item_recipe_bloodstone_2"
-    {
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"
-        "ItemShopTags"					""
-
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_bloodstone_2"
-        "ItemRequirements"
-        {
-            "01"						"item_bloodstone_1;item_bloodstone_1"
-        }
-    }
     "item_bloodstone_2"
     {
         "BaseClass"						"item_lua"
@@ -119,25 +138,6 @@
                 "force_cooldown"        "35"
                 "bonus_aoe"             "50 60 70"
                 "mana_regen"            "3 10 25"
-        }
-    }
-    "item_recipe_bloodstone_3"
-    {
-        "Model"							"models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"
-        "ItemShopTags"					""
-
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"					"1"
-        "ItemResult"					"item_bloodstone_3"
-        "ItemRequirements"
-        {
-            "01"						"item_bloodstone_2;item_bloodstone_2;item_boss_soul"
         }
     }
     "item_bloodstone_3"

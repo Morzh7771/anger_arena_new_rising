@@ -20,6 +20,26 @@
 			"01"						"item_buckler;item_ring_of_basilius;item_lifesteal;item_blades_of_attack"
 		}
 	}
+	"item_recipe_vladmir_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_vladmir_2"
+		"ItemRequirements"
+		{
+			"01"						"item_vladmir;item_vladmir"
+		}
+	}
 	"item_vladmir"
 	{
 		// General
@@ -50,26 +70,6 @@
 			"creep_lifesteal_reduction_pct"		"0"
 			"damage_aura"						"18 20 22"
 			"aura_radius"						"1200"
-		}
-	}
-	"item_recipe_vladmir_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_vladmir_2"
-		"ItemRequirements"
-		{
-			"01"						"item_vladmir;item_vladmir"
 		}
 	}
 	"item_vladmir_2"
@@ -126,6 +126,42 @@
 			"01"						"item_platemail;item_hyperstone;item_buckler"
 		}
 	}
+	"item_recipe_assault_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_assault_2"
+		"ItemRequirements"
+		{
+			"01"						"item_assault;item_assault;"
+		}
+	}
+	"item_recipe_assault_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_assault_3"
+		"ItemRequirements"
+		{
+			"01"						"item_assault_2;item_vladmir_2;item_boss_soul"
+		}
+	}
 	"item_assault"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -151,25 +187,6 @@
 			"aura_attack_speed"		"30 60 120"
 			"aura_positive_armor"	"5 10 30"
 			"aura_negative_armor"	"-5 -10 -25"
-		}
-	}
-
-	"item_recipe_assault_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_assault_2"
-		"ItemRequirements"
-		{
-			"01"						"item_assault;item_assault;"
 		}
 	}
 	"item_assault_2"
@@ -199,24 +216,6 @@
 			"aura_attack_speed"		"30 60 120"
 			"aura_positive_armor"	"5 10 30"
 			"aura_negative_armor"	"-5 -10 -25"
-		}
-	}
-    "item_recipe_assault_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_assault_3"
-		"ItemRequirements"
-		{
-			"01"						"item_assault_2;item_vladmir_2;item_boss_soul"
 		}
 	}
     "item_assault_3"

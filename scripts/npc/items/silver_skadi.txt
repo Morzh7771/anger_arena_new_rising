@@ -1,5 +1,35 @@
 "DOTAAbilities"
 {
+    "item_recipe_silver_edge"
+	{
+		
+		"ItemCost"						"250"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_silver_edge"
+		"ItemRequirements"
+		{
+			"01"						"item_invis_sword*;item_demon_edge"
+		}
+	}
+	"item_recipe_silver_edge_2"
+	{
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_silver_edge_2"
+		"ItemRequirements"
+		{
+			"01"						"item_silver_edge;item_silver_edge"
+		}
+	}
     "item_recipe_dark_edge"
     {
          //-------------------------------------------------------------------------------------------------------------
@@ -19,7 +49,39 @@
         {
             "01"                        "item_skadi_2;item_silver_edge_2;item_boss_soul;item_boss_soul"
         }
-    }   
+    }
+	"item_recipe_skadi"
+	{
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster"
+		}
+	}
+	"item_recipe_skadi_2"
+	{
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"                     "item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_2"
+		"ItemRequirements"
+		{
+			"01"						"item_skadi;item_skadi"
+		}
+	}
     "item_dark_edge"
     {
         // General
@@ -71,21 +133,6 @@
 			"heal_reduction"			"30 40 50"
 		}
     }
-    "item_recipe_silver_edge"
-	{
-		
-		"ItemCost"						"250"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_silver_edge"
-		"ItemRequirements"
-		{
-			"01"						"item_invis_sword*;item_demon_edge"
-		}
-	}
 	"item_silver_edge"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -124,22 +171,6 @@
 			"crit_chance"				"25 30 35"
 			"crit_multiplier"			"150 200 250"
 			"tooltip_crit_damage"		"50 100 150"
-		}
-	}
-
-	"item_recipe_silver_edge_2"
-	{
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_silver_edge_2"
-		"ItemRequirements"
-		{
-			"01"						"item_silver_edge;item_silver_edge"
 		}
 	}
 	"item_silver_edge_2"
@@ -185,22 +216,6 @@
 			"tooltip_crit_damage"		"50 100 150"
 		}
 	}
-    "item_recipe_skadi"
-	{
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_skadi"
-		"ItemRequirements"
-		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster"
-		}
-	}
 	"item_skadi"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -227,23 +242,6 @@
 			"cold_attack_slow_ranged"	"-35 -45 -55"
 			"cold_duration"				"3.0"
 			"heal_reduction"			"30 40 50"
-		}
-	}
-
-	"item_recipe_skadi_2"
-	{
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"                     "item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_skadi_2"
-		"ItemRequirements"
-		{
-			"01"						"item_skadi;item_skadi"
 		}
 	}
 	"item_skadi_2"

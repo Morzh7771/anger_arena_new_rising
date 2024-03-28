@@ -8,7 +8,8 @@
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_custom_seer_stone"
-		"ItemRequirements"{
+		"ItemRequirements"
+		{
 			"01"						"item_kaya;item_aether_lens"
 		}
 	}
@@ -19,7 +20,8 @@
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_custom_seer_stone_2"
-		"ItemRequirements"{
+		"ItemRequirements"
+		{
 			"01"						"item_custom_seer_stone;item_custom_seer_stone;"
 		}
 	}
@@ -30,7 +32,8 @@
 		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_custom_seer_stone_3"
-		"ItemRequirements"{
+		"ItemRequirements"
+		{
 			"01"						"item_custom_seer_stone_2;item_custom_seer_stone_2;item_boss_soul"
 		}
 	}
@@ -49,7 +52,8 @@
         "ItemBaseLevel"     "1"
 		"AbilityCastRange"	"0"
 
-		"AbilityValues"{
+		"AbilityValues"
+		{
 			"int"			    "30 60 120"
 			"mp"			    "400 800 1600"
 			"mp_regen"		    "7 14 28"
@@ -73,12 +77,13 @@
 		"AbilityCooldown"	"60 50 40"
 		"AbilityCastRange"	"0"
 
-		"AbilityValues"{
-			"int"			"30 60 120"
-			"mp"			"500 1000 2000"
-			"mp_regen"		"7 14 28"
-			"spell_damage"	"12 21 30"
-			"cast_range"	"225 275 325"
+		"AbilityValues"
+		{
+			"int"				"30 60 120"
+			"mp"				"500 1000 2000"
+			"mp_regen"			"7 14 28"
+			"spell_damage"		"12 21 30"
+			"cast_range"		"225 275 325"
 			"active_duration"	"6"
 			"active_radius"		"500 750 1000"
 		}
@@ -100,11 +105,11 @@
 
 		"AbilityValues"
         {
-			"int"			"30 60 120"
-			"mp"			"500 1000 2000"
-			"mp_regen"		"7 14 28"
-			"spell_damage"	"12 21 30"
-			"cast_range"	"225 275 325"
+			"int"				"30 60 120"
+			"mp"				"500 1000 2000"
+			"mp_regen"			"7 14 28"
+			"spell_damage"		"12 21 30"
+			"cast_range"		"225 275 325"
 			"active_duration"	"6"
 			"active_radius"		"500 750 1000"
 		}

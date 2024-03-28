@@ -18,6 +18,42 @@
 			"01"						"item_urn_of_shadows*;item_vitality_booster"
 		}
 	}
+	"item_recipe_spirit_vessel_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spirit_vessel_2"
+		"ItemRequirements"
+		{
+			"01"						"item_spirit_vessel;item_spirit_vessel"
+		}
+	}
+	"item_recipe_spirit_vessel_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spirit_vessel_3"
+		"ItemRequirements"
+		{
+			"01"						"item_spirit_vessel_2;item_spirit_vessel_2;item_boss_soul"
+		}
+	}
 	"item_spirit_vessel"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -54,37 +90,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"250 500 1000"
-				"bonus_mana_regen"		"2 5 10"
-				"bonus_all_stats"		"2 15 25"
-				"bonus_armor"			"4 8 15"
-				"soul_radius"			"1400 1500 1600"
-				"soul_initial_charge"	"2 3 4"
-				"soul_additional_charges"	"1 2 3"
-				"soul_heal_amount"		"40 100 200"
-				"soul_damage_amount"	"35 80 160"
-				"duration"				"8.0"
-				"hp_regen_reduction_enemy"	"40 45 50"
-				"enemy_hp_drain"		"4 5 6"
-		}
-	}
-
-	"item_recipe_spirit_vessel_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_spirit_vessel_2"
-		"ItemRequirements"
-		{
-			"01"						"item_spirit_vessel;item_spirit_vessel"
+			"bonus_health"				"250 500 1000"
+			"bonus_mana_regen"			"2 5 10"
+			"bonus_all_stats"			"2 15 25"
+			"bonus_armor"				"4 8 15"
+			"soul_radius"				"1400 1500 1600"
+			"soul_initial_charge"		"2 3 4"
+			"soul_additional_charges"	"1 2 3"
+			"soul_heal_amount"			"40 100 200"
+			"soul_damage_amount"		"35 80 160"
+			"duration"					"8.0"
+			"hp_regen_reduction_enemy"	"40 45 50"
+			"enemy_hp_drain"			"4 5 6"
 		}
 	}
 	"item_spirit_vessel_2"
@@ -124,37 +141,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"250 500 1000"
-				"bonus_mana_regen"		"2 5 10"
-				"bonus_all_stats"		"2 15 25"
-				"bonus_armor"			"4 8 15"
-				"soul_radius"			"1400 1500 1600"
-				"soul_initial_charge"	"2 3 4"
-				"soul_additional_charges"	"1 2 3"
-				"soul_heal_amount"		"40 100 200"
-				"soul_damage_amount"	"35 80 160"
-				"duration"				"8.0"
-				"hp_regen_reduction_enemy"	"40 45 50"
-				"enemy_hp_drain"		"4 5 6"
-		}
-	}
-
-	"item_recipe_spirit_vessel_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_spirit_vessel_3"
-		"ItemRequirements"
-		{
-			"01"						"item_spirit_vessel_2;item_spirit_vessel_2;item_boss_soul"
+			"bonus_health"				"250 500 1000"
+			"bonus_mana_regen"			"2 5 10"
+			"bonus_all_stats"			"2 15 25"
+			"bonus_armor"				"4 8 15"
+			"soul_radius"				"1400 1500 1600"
+			"soul_initial_charge"		"2 3 4"
+			"soul_additional_charges"	"1 2 3"
+			"soul_heal_amount"			"40 100 200"
+			"soul_damage_amount"		"35 80 160"
+			"duration"					"8.0"
+			"hp_regen_reduction_enemy"	"40 45 50"
+			"enemy_hp_drain"			"4 5 6"
 		}
 	}
 	"item_spirit_vessel_3"
@@ -165,7 +163,7 @@
 		"ItemBaseLevel"					"3"
 		"BaseClass"						"item_spirit_vessel"
 		"AbilityTextureName"			"spirit_vessel3"
-    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+    	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"750"
@@ -194,18 +192,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"250 500 1000"
-				"bonus_mana_regen"		"2 5 10"
-				"bonus_all_stats"		"2 15 25"
-				"bonus_armor"			"4 8 15"
-				"soul_radius"			"1400 1500 1600"
-				"soul_initial_charge"	"2 3 4"
-				"soul_additional_charges"	"1 2 3"
-				"soul_heal_amount"		"40 100 200"
-				"soul_damage_amount"	"35 80 160"
-				"duration"				"8.0"
-				"hp_regen_reduction_enemy"	"40 45 50"
-				"enemy_hp_drain"		"4 5 6"
+			"bonus_health"				"250 500 1000"
+			"bonus_mana_regen"			"2 5 10"
+			"bonus_all_stats"			"2 15 25"
+			"bonus_armor"				"4 8 15"
+			"soul_radius"				"1400 1500 1600"
+			"soul_initial_charge"		"2 3 4"
+			"soul_additional_charges"	"1 2 3"
+			"soul_heal_amount"			"40 100 200"
+			"soul_damage_amount"		"35 80 160"
+			"duration"					"8.0"
+			"hp_regen_reduction_enemy"	"40 45 50"
+			"enemy_hp_drain"			"4 5 6"
 		}
 	}
 }

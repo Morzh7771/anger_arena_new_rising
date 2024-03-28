@@ -1,5 +1,58 @@
 "DOTAAbilities"
 {	
+	"item_recipe_radiance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance"
+		"ItemRequirements"
+		{
+			"01"						"item_relic;item_talisman_of_evasion" 
+		}
+	}
+	"item_recipe_radiance_2"
+	{
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance_2"
+		"ItemRequirements"
+		{
+			"01"						"item_radiance;item_radiance"
+		}
+	}
+	"item_recipe_radiance_3"
+	{
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance_3"
+		"ItemRequirements"
+		{
+			"01"						"item_radiance_2;item_radiance_2;item_boss_soul"
+		}
+	}
 	"item_radiance"
 	{
 		// General
@@ -32,25 +85,6 @@
 			"illusion_multiplier_pct"	"150"
 		}
 	}
-
-	"item_recipe_radiance_2"
-	{
-		"BaseClass"						"item_recipe_arcane_boots"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_radiance_2"
-		"ItemRequirements"
-		{
-			"01"						"item_radiance;item_radiance"
-		}
-	}
 	"item_radiance_2"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
@@ -70,31 +104,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage"			"65 115 250"
-			"aura_damage"			"50 125 225"
-			"aura_damage_illusions"	"40 60 100"
-			"upgrade_day_vision"	"250 250 250"
-			"evasion"				"15 15 15"
-			"blind_pct"				"17 18 20"
-			"aura_damage_stats" 	"0.1 0.25 0.4"
-			"aura_radius"			"700 700 700"
+			"bonus_damage"				"65 115 250"
+			"aura_damage"				"50 125 225"
+			"aura_damage_illusions"		"40 60 100"
+			"upgrade_day_vision"		"250 250 250"
+			"evasion"					"15 15 15"
+			"blind_pct"					"17 18 20"
+			"aura_damage_stats" 		"0.1 0.25 0.4"
+			"aura_radius"				"700 700 700"
 			"illusion_multiplier_pct"	"150"
-		}
-	}
-	
-	"item_recipe_radiance_3"
-	{
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_radiance_3"
-		"ItemRequirements"
-		{
-			"01"						"item_radiance_2;item_radiance_2;item_boss_soul"
 		}
 	}
 	"item_radiance_3"
@@ -111,20 +129,20 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"radiance"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+    	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage"			"65 115 250"
-			"aura_damage"			"50 125 225"
-			"aura_damage_illusions"	"40 60 100"
-			"upgrade_day_vision"	"250 250 250"
-			"evasion"				"15 15 15"
-			"blind_pct"				"17 18 20"
-			"aura_damage_stats" 	"0.1 0.25 0.4"
-			"aura_radius"			"700 700 700"
+			"bonus_damage"				"65 115 250"
+			"aura_damage"				"50 125 225"
+			"aura_damage_illusions"		"40 60 100"
+			"upgrade_day_vision"		"250 250 250"
+			"evasion"					"15 15 15"
+			"blind_pct"					"17 18 20"
+			"aura_damage_stats" 		"0.1 0.25 0.4"
+			"aura_radius"				"700 700 700"
 			"illusion_multiplier_pct"	"150"
 		}
 	}

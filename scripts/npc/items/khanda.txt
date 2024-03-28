@@ -21,6 +21,52 @@
             "01"						"item_phylactery;item_lesser_crit"
         }
     }
+    "item_recipe_khanda_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                                           "item_datadriven"
+        "Model"                                               "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"                                  "custom/recipe/recipe_2"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCorePointCost"                                   "0"
+        "ItemCost"                                            "0"
+        "ItemShopTags"                                        ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                                          "1"
+        "ItemResult"                                          "item_khanda_2"
+        "ItemRequirements"
+        {
+        "01"                                                "item_khanda;item_khanda"
+        }
+    }
+    "item_recipe_khanda_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                                           "item_datadriven"
+        "Model"                                               "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"                                  "custom/recipe/recipe_2"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCorePointCost"                                   "0"
+        "ItemCost"                                            "0"
+        "ItemShopTags"                                        ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                                          "1"
+        "ItemResult"                                          "item_khanda_3"
+        "ItemRequirements"
+        {
+        "01"                                                "item_khanda_2;item_khanda_2;item_boss_soul"
+        }
+    }
     "item_khanda"
     {
         // General
@@ -60,29 +106,6 @@
             "bonus_all_stats"	"8 30 120"
             "slow"						"50 60 70"
             "slow_duration"				"1 1.5 2"
-        }
-    }
-    "item_recipe_khanda_2"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                                           "item_datadriven"
-        "Model"                                               "models/props_gameplay/recipe.vmdl"
-        "AbilityTextureName"                                  "custom/recipe/recipe_2"
-
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCorePointCost"                                   "0"
-        "ItemCost"                                            "0"
-        "ItemShopTags"                                        ""
-
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"                                          "1"
-        "ItemResult"                                          "item_khanda_2"
-        "ItemRequirements"
-        {
-        "01"                                                "item_khanda;item_khanda"
         }
     }
     "item_khanda_2"
@@ -128,29 +151,6 @@
             "bonus_all_stats"	"8 30 120"
             "slow"						"50 60 70"
             "slow_duration"				"1 1.5 2"
-        }
-    }
-    "item_recipe_khanda_3"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                                           "item_datadriven"
-        "Model"                                               "models/props_gameplay/recipe.vmdl"
-        "AbilityTextureName"                                  "custom/recipe/recipe_2"
-
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCorePointCost"                                   "0"
-        "ItemCost"                                            "0"
-        "ItemShopTags"                                        ""
-
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"                                          "1"
-        "ItemResult"                                          "item_khanda_3"
-        "ItemRequirements"
-        {
-        "01"                                                "item_khanda_2;item_khanda_2;item_boss_soul"
         }
     }
     "item_khanda_3"

@@ -18,6 +18,42 @@
 			"01"						"item_pavise;item_crown;item_wind_lace"
 		}
 	}
+	"item_recipe_solar_crest_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_solar_crest_2"
+		"ItemRequirements"
+		{
+			"01"						"item_solar_crest_1;item_solar_crest_1;"
+		}
+	}
+	"item_recipe_solar_crest_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_solar_crest_3"
+		"ItemRequirements"
+		{
+			"01"						"item_solar_crest_2;item_solar_crest_2;item_boss_soul"
+		}
+	}
 	"item_solar_crest_1"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -64,25 +100,6 @@
             "barrier_block"         "800 1000 1500"
 		}
 	}
-
-	"item_recipe_solar_crest_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_solar_crest_2"
-		"ItemRequirements"
-		{
-			"01"						"item_solar_crest_1;item_solar_crest_1;"
-		}
-	}
 	"item_solar_crest_2"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -127,25 +144,6 @@
 			"duration"				"8 9 10"
             "health_pct"            "10 20 30"
             "barrier_block"         "800 1000 1500"
-		}
-	}
-
-	"item_recipe_solar_crest_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_solar_crest_3"
-		"ItemRequirements"
-		{
-			"01"						"item_solar_crest_2;item_solar_crest_2;item_boss_soul"
 		}
 	}
 	"item_solar_crest_3"

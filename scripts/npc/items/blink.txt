@@ -1,5 +1,53 @@
 "DOTAAbilities"
 {	
+	"item_recipe_overwhelming_blink_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_overwhelming_blink_2"
+		"ItemRequirements"
+		{
+			"01"						"item_overwhelming_blink;item_overwhelming_blink;item_boss_soul"
+		}
+	}
+	"item_recipe_swift_blink_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_swift_blink_2"
+		"ItemRequirements"
+		{
+			"01"						"item_swift_blink;item_swift_blink;item_boss_soul"
+		}
+	}
+	"item_recipe_arcane_blink_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_arcane_blink_2"
+		"ItemRequirements"
+		{
+			"01"						"item_arcane_blink;item_arcane_blink;item_boss_soul"
+		}
+	}
 	"item_overwhelming_blink"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
@@ -243,55 +291,6 @@
 				"debuff_amp"				"0"
 				"heal_amount"			"200 500"
 				"mana_amount"			"100 250"
-		}
-	}
-
-	"item_recipe_arcane_blink_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_arcane_blink_2"
-		"ItemRequirements"
-		{
-			"01"						"item_arcane_blink;item_arcane_blink;item_boss_soul"
-		}
-	}
-	"item_recipe_swift_blink_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_swift_blink_2"
-		"ItemRequirements"
-		{
-			"01"						"item_swift_blink;item_swift_blink;item_boss_soul"
-		}
-	}
-	"item_recipe_overwhelming_blink_2"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_overwhelming_blink_2"
-		"ItemRequirements"
-		{
-			"01"						"item_overwhelming_blink;item_overwhelming_blink;item_boss_soul"
 		}
 	}
 }
