@@ -1,0 +1,189 @@
+"DOTAAbilities"
+{	
+	"item_recipe_ethereal_blade"
+	{
+		"ItemCost"						"1100"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_blade"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens;item_ghost*"
+		}
+	}	
+	"item_ethereal_blade"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"22.0"	    
+		"AbilitySharedCooldown"			"ethereal"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"4650"
+		"ItemShopTags"					"agi;str;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemAliases"					"eb;ethereal blade;eblade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_agility"				"10 30 80"
+				"bonus_strength"			"10 30 80"
+				"bonus_intellect"			"10 30 80"
+				"bonus_mana"			"300 600 1200"
+				"bonus_cast_range"		"200 225 250"
+				"bonus_mana_regen"		"3 10 25"
+				"blast_movement_slow"	"-80 -80 -80"
+				"duration"				"3.0 3.5 4.0"
+				"blast_agility_multiplier"			"1.5 2 2.5"
+				"blast_damage_base"			"50 100 200"
+				"duration_ally"				"3.0 3.5 4.0"
+				"ethereal_damage_bonus"	"-40 -45 -50"
+				"projectile_speed"	"1200 1400 1600"
+		}
+	}
+
+	"item_recipe_ethereal_blade_2"
+	{
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_blade_2"
+		"ItemRequirements"
+		{
+			"01"						"item_ethereal_blade;item_ethereal_blade"
+		}
+	}	
+	"item_ethereal_blade_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_ethereal_blade"
+		"AbilityTextureName"			"ethereal_blade2"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"22.0"	    
+		"AbilitySharedCooldown"			"ethereal"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"4650"
+		"ItemShopTags"					"agi;str;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemAliases"					"eb;ethereal blade;eblade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_agility"				"10 30 80"
+				"bonus_strength"			"10 30 80"
+				"bonus_intellect"			"10 30 80"
+				"bonus_mana"			"300 600 1200"
+				"bonus_cast_range"		"200 225 250"
+				"bonus_mana_regen"		"3 10 25"
+				"blast_movement_slow"	"-80 -80 -80"
+				"duration"				"3.0 3.5 4.0"
+				"blast_agility_multiplier"			"1.5 2 2.5"
+				"blast_damage_base"			"50 100 200"
+				"duration_ally"				"3.0 3.5 4.0"
+				"ethereal_damage_bonus"	"-40 -45 -50"
+				"projectile_speed"	"1200 1400 1600"
+		}
+	}
+
+	"item_recipe_ethereal_blade_3"
+	{
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_blade_3"
+		"ItemRequirements"
+		{
+			"01"						"item_ethereal_blade_2;item_ethereal_blade_2;item_boss_soul"
+		}
+	}	
+	"item_ethereal_blade_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		"BaseClass"						"item_ethereal_blade"
+		"AbilityTextureName"			"ethereal_blade3"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"22.0"	    
+		"AbilitySharedCooldown"			"ethereal"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"4650"
+		"ItemShopTags"					"agi;str;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"eb;ethereal blade;eblade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_agility"				"10 30 80"
+				"bonus_strength"			"10 30 80"
+				"bonus_intellect"			"10 30 80"
+				"bonus_mana"			"300 600 1200"
+				"bonus_cast_range"		"200 225 250"
+				"bonus_mana_regen"		"3 10 25"
+				"blast_movement_slow"	"-80 -80 -80"
+				"duration"				"3.0 3.5 4.0"
+				"blast_agility_multiplier"			"1.5 2 2.5"
+				"blast_damage_base"			"50 100 200"
+				"duration_ally"				"3.0 3.5 4.0"
+				"ethereal_damage_bonus"	"-40 -45 -50"
+				"projectile_speed"	"1200 1400 1600"
+		}
+	}
+}

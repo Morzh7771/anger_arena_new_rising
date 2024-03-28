@@ -1,0 +1,258 @@
+"DOTAAbilities"
+{    
+	"item_recipe_vladmir"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_vladmir"
+		"ItemRequirements"
+		{
+			"01"						"item_buckler;item_ring_of_basilius;item_lifesteal;item_blades_of_attack"
+		}
+	}
+	"item_vladmir"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2200"
+		"ItemShopTags"					"damage;armor;regen_mana"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"vladmir's offering;vlads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"armor"								"2 4 40"
+			"mana_regen"						"0.75 1.5"
+			"armor_aura"						"4 8 30"
+			"mana_regen_aura"					"2 4 12"
+			"lifesteal_aura"					"20 22 24"
+			"creep_lifesteal_reduction_pct"		"0"
+			"damage_aura"						"18 20 22"
+			"aura_radius"						"1200"
+		}
+	}
+	"item_recipe_vladmir_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_vladmir_2"
+		"ItemRequirements"
+		{
+			"01"						"item_vladmir;item_vladmir"
+		}
+	}
+	"item_vladmir_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"ItemBaseLevel"					"2"
+		"AbilityTextureName"            "vladmir_2"
+		"BaseClass"						"item_vladmir"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2200"
+		"ItemShopTags"					"damage;armor;regen_mana"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"vladmir's offering;vlads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"armor"								"2 4"
+			"mana_regen"						"0.75 1.5"
+			"armor_aura"						"4 8 30"
+			"mana_regen_aura"					"2 4 12"
+			"lifesteal_aura"					"20 22 24"
+			"creep_lifesteal_reduction_pct"		"0"
+			"damage_aura"						"18 20 22"
+			"aura_radius"						"1200"
+		}
+	}
+
+//====================================================================================================================
+
+	"item_recipe_assault"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1300"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_assault"
+		"ItemRequirements"
+		{
+			"01"						"item_platemail;item_hyperstone;item_buckler"
+		}
+	}
+	"item_assault"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"ItemBaseLevel"					"1"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5125"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;assault cuirass"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_attack_speed"	"30 60 120"
+			"bonus_armor"			"10 20 40"
+			"aura_radius"			"1200 1200 1200"
+			"aura_attack_speed"		"30 60 120"
+			"aura_positive_armor"	"5 10 30"
+			"aura_negative_armor"	"-5 -10 -25"
+		}
+	}
+
+	"item_recipe_assault_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_assault_2"
+		"ItemRequirements"
+		{
+			"01"						"item_assault;item_assault;"
+		}
+	}
+	"item_assault_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_assault"
+		"AbilityTextureName"			"assault_2"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5125"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;assault cuirass"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_attack_speed"	"30 60 120"
+			"bonus_armor"			"10 20 40"
+			"aura_radius"			"1200 1200 1200"
+			"aura_attack_speed"		"30 60 120"
+			"aura_positive_armor"	"5 10 30"
+			"aura_negative_armor"	"-5 -10 -25"
+		}
+	}
+    "item_recipe_assault_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_assault_3"
+		"ItemRequirements"
+		{
+			"01"						"item_assault_2;item_vladmir_2;item_boss_soul"
+		}
+	}
+    "item_assault_3"
+	{
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_assault_aa"
+        "ItemBaseLevel"					"3"
+        "AbilityTextureName"            "assault_3"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5125"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag;damage;regen_mana"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;assault cuirass;vladmir's offering;vlads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_attack_speed"	"30 60 120"
+			"bonus_armor"			"10 20 40"
+			"aura_radius"			"1200 1200 1200"
+			"aura_attack_speed"		"30 60 120"
+			"aura_positive_armor"	"5 10 30"
+			"aura_negative_armor"	"-5 -10 -25"
+
+			"mana_regen_aura"		"2 4 12"
+			"lifesteal_aura"		"20 22 24"
+			"damage_aura"			"18 20 22"
+		}
+	}
+}

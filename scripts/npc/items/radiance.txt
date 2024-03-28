@@ -1,0 +1,131 @@
+"DOTAAbilities"
+{	
+	"item_radiance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"700"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4700" 
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	
+		"ItemBaseLevel"					"1"
+
+
+		"AbilityValues"
+		{	
+			"bonus_damage"				"65 115 250"
+			"aura_damage"				"50 125 225"
+			"aura_damage_illusions"		"40 60 100"
+			"upgrade_day_vision"		"250 250 250"
+			"evasion"					"15 15 15"
+			"blind_pct"					"17 18 20"
+			"aura_damage_stats" 		"0.1 0.25 0.4"
+			"aura_radius"				"700 700 700"
+			"illusion_multiplier_pct"	"150"
+		}
+	}
+
+	"item_recipe_radiance_2"
+	{
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance_2"
+		"ItemRequirements"
+		{
+			"01"						"item_radiance;item_radiance"
+		}
+	}
+	"item_radiance_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"BaseClass"						"item_radiance"
+		"AbilityTextureName"			"radiance_2"
+		"ItemBaseLevel"					"2"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"7650"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage"			"65 115 250"
+			"aura_damage"			"50 125 225"
+			"aura_damage_illusions"	"40 60 100"
+			"upgrade_day_vision"	"250 250 250"
+			"evasion"				"15 15 15"
+			"blind_pct"				"17 18 20"
+			"aura_damage_stats" 	"0.1 0.25 0.4"
+			"aura_radius"			"700 700 700"
+			"illusion_multiplier_pct"	"150"
+		}
+	}
+	
+	"item_recipe_radiance_3"
+	{
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_radiance_3"
+		"ItemRequirements"
+		{
+			"01"						"item_radiance_2;item_radiance_2;item_boss_soul"
+		}
+	}
+	"item_radiance_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"BaseClass"						"item_radiance"
+		"AbilityTextureName"			"radiance_3"
+		"ItemBaseLevel"					"3"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"7650"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage"			"65 115 250"
+			"aura_damage"			"50 125 225"
+			"aura_damage_illusions"	"40 60 100"
+			"upgrade_day_vision"	"250 250 250"
+			"evasion"				"15 15 15"
+			"blind_pct"				"17 18 20"
+			"aura_damage_stats" 	"0.1 0.25 0.4"
+			"aura_radius"			"700 700 700"
+			"illusion_multiplier_pct"	"150"
+		}
+	}
+}

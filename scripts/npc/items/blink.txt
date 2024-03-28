@@ -1,0 +1,297 @@
+"DOTAAbilities"
+{	
+	"item_overwhelming_blink"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
+		"AbilityOvershootCastRange"     "960"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"blink"
+		"ItemBaseLevel"					"1"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6800"
+		"ItemShopTags"					"teleport"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blink dagger"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"blink_range"			"1200"
+			"blink_damage_cooldown"	"3.0"
+			"blink_range_clamp"		"900 1000"
+			"bonus_strength"		"25 70"
+			"radius"		
+			{
+				"value"	"800 900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"movement_slow"		"50 70"
+			"attack_slow"		"50 90"
+			"duration"		"5 6"
+			"damage_base"			"100 250"
+			"damage_pct_instant"		"50 100"
+			"damage_pct_over_time"		"100 200"
+		}
+	}
+	"item_overwhelming_blink_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
+		"AbilityOvershootCastRange"     "960"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"blink"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_overwhelming_blink"
+		"AbilityTextureName"			"overwhelming_blink3"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6800"
+		"ItemShopTags"					"teleport"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blink dagger"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"blink_range"			"1200"
+			"blink_damage_cooldown"	"3.0"
+			"blink_range_clamp"		"900 1000"
+			"bonus_strength"		"25 70"
+			"radius"		
+			{
+				"value"	"800 900"
+				"affected_by_aoe_increase"	"1"
+			}
+			"movement_slow"		"50 70"
+			"attack_slow"		"50 90"
+			"duration"		"5 6"
+			"damage_base"			"100 250"
+			"damage_pct_instant"		"50 100"
+			"damage_pct_over_time"		"100 200"
+		}
+	}
+	"item_swift_blink"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
+		"AbilityOvershootCastRange"     "960"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"blink"
+		"ItemBaseLevel"					"1"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6800"
+		"ItemShopTags"					"teleport"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blink dagger"
+		//"SideShop"						"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"blink_range"			"1200 1200"
+				"blink_damage_cooldown"	"3.0 3.0"
+				"blink_range_clamp"		"900 1000"
+				"bonus_agility"			"25 75"
+				"bonus_movement"		"40 60"
+				"bonus_agi_active"		"35 100"
+				"duration"				"6 7"
+		}
+	}
+	"item_swift_blink_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
+		"AbilityOvershootCastRange"     "960"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"blink"
+		"BaseClass"						"item_swift_blink"
+		"ItemBaseLevel"					"2"
+		"AbilityTextureName"			"swift_blink3"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6800"
+		"ItemShopTags"					"teleport"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blink dagger"
+		//"SideShop"						"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"blink_range"			"1200 1200"
+				"blink_damage_cooldown"	"3.0 3.0"
+				"blink_range_clamp"		"900 1000"
+				"bonus_agility"			"25 75"
+				"bonus_movement"		"40 60"
+				"bonus_agi_active"		"35 100"
+				"duration"				"6 7"
+		}
+	}
+	"item_arcane_blink"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
+		"AbilityOvershootCastRange"     "1120"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"7.0"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"blink"
+		"ItemBaseLevel"					"1"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6800"
+		"ItemShopTags"					"teleport"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blink dagger"
+		//"SideShop"						"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"blink_range"				"1400 1600"
+				"blink_damage_cooldown"		"3.0 1.5"
+				"blink_range_clamp"			"1200 1400"
+				"bonus_intellect"			"25 100"
+				"duration"					"0"
+				"cast_pct_improvement"		"0"
+				"manacost_reduction"		"0"
+				"debuff_amp"				"0"
+				"heal_amount"			"200 500"
+				"mana_amount"			"100 250"
+		}
+	}
+	"item_arcane_blink_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
+		"AbilityOvershootCastRange"     "1120"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"7.0"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"blink"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_arcane_blink"
+		"AbilityTextureName"			"arcane_blink3"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6800"
+		"ItemShopTags"					"teleport"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blink dagger"
+		//"SideShop"						"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"blink_range"				"1400 1600"
+				"blink_damage_cooldown"		"3.0 1.5"
+				"blink_range_clamp"			"1200 1400"
+				"bonus_intellect"			"25 100"
+				"duration"					"0"
+				"cast_pct_improvement"		"0"
+				"manacost_reduction"		"0"
+				"debuff_amp"				"0"
+				"heal_amount"			"200 500"
+				"mana_amount"			"100 250"
+		}
+	}
+
+	"item_recipe_arcane_blink_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_arcane_blink_2"
+		"ItemRequirements"
+		{
+			"01"						"item_arcane_blink;item_arcane_blink;item_boss_soul"
+		}
+	}
+	"item_recipe_swift_blink_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_swift_blink_2"
+		"ItemRequirements"
+		{
+			"01"						"item_swift_blink;item_swift_blink;item_boss_soul"
+		}
+	}
+	"item_recipe_overwhelming_blink_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_overwhelming_blink_2"
+		"ItemRequirements"
+		{
+			"01"						"item_overwhelming_blink;item_overwhelming_blink;item_boss_soul"
+		}
+	}
+}

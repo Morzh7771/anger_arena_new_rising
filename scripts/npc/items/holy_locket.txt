@@ -1,0 +1,236 @@
+"DOTAAbilities"
+{	
+	"item_recipe_holy_locket"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"525"	
+		"ItemShopTags"					""
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_holy_locket"
+		"ItemRequirements"
+		{
+			"01"						"item_diadem;item_headdress;item_magic_wand"
+		}
+	}
+	"item_holy_locket"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"						"item_holy_locket"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"	
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2350"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"hl;holy locket"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+		"AbilitySharedCooldown"			"magicwand"
+
+		"AbilityCharges"				"20 25 30"
+		"AbilityChargeRestoreTime"		"8"
+		"ItemInitialCharges"			"1"
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_health"			"0"
+				"bonus_mana"			"0"
+				"heal_increase"			"30 35 40"
+				"max_charges"			"20 25 30"
+				"charge_radius"			"1200 1200 1200"
+				"bonus_all_stats"		"10 20 50"
+				"restore_per_charge"	"15 25 50"
+				"charge_gain_timer"		"20 15 10"
+				"use_cooldown"			"13"
+		}
+	}
+
+	"item_recipe_holy_locket_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_holy_locket_2"
+		"ItemRequirements"
+		{
+			"01"						"item_holy_locket;item_holy_locket;"
+		}
+	}
+	"item_holy_locket_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_holy_locket"
+		"AbilityTextureName"			"holy_locket2"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"	
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2350"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"hl;holy locket"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+		"AbilitySharedCooldown"			"magicwand"
+
+		"AbilityCharges"				"20 25 30"
+		"AbilityChargeRestoreTime"		"8"
+		"ItemInitialCharges"			"1"
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_health"			"0"
+				"bonus_mana"			"0"
+				"heal_increase"			"30 35 40"
+				"max_charges"			"20 25 30"
+				"charge_radius"			"1200 1200 1200"
+				"bonus_all_stats"		"10 20 50"
+				"restore_per_charge"	"15 25 50"
+				"charge_gain_timer"		"20 15 10"
+				"use_cooldown"			"13"
+		}
+	}
+
+	"item_recipe_holy_locket_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_holy_locket_3"
+		"ItemRequirements"
+		{
+			"01"						"item_holy_locket_2;item_holy_locket_2;item_boss_soul"
+		}
+	}
+	"item_holy_locket_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"ItemBaseLevel"					"3"
+		"BaseClass"						"item_holy_locket"
+		"AbilityTextureName"			"holy_locket3"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"	
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2350"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"hl;holy locket"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+		"AbilitySharedCooldown"			"magicwand"
+
+		"AbilityCharges"				"20 25 30"
+		"AbilityChargeRestoreTime"		"8"
+		"ItemInitialCharges"			"1"
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+
+		
+		// Sound
+		//-------------------------------------------------------------------------------------------------------------			
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_health"			"0"
+				"bonus_mana"			"0"
+				"heal_increase"			"30 35 40"
+				"max_charges"			"20 25 30"
+				"charge_radius"			"1200 1200 1200"
+				"bonus_all_stats"		"10 20 50"
+				"restore_per_charge"	"15 25 50"
+				"charge_gain_timer"		"20 15 10"
+				"use_cooldown"			"13"
+		}
+	}
+}

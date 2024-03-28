@@ -1,0 +1,134 @@
+"DOTAAbilities"
+{	
+	"item_recipe_abyssal_blade"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1675"	
+		"ItemShopTags"					""
+
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_abyssal_blade"
+		"ItemRequirements"
+		{
+			"01"						"item_basher;item_vanguard"
+		}
+	}
+	"item_abyssal_blade"
+	{
+		"BaseClass"						"item_abyssal_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilitySharedCooldown"			"abyssal_blade"
+		"ItemBaseLevel"					"1"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35"
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"6250"
+		"ItemShopTags"					"damage;str;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"abyssal blade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"			"30 100"
+				"bonus_health"			"250 750"
+				"bonus_health_regen"	"10 30"
+				"block_damage_melee"	"70 120"
+				"block_damage_ranged"	"35 90"
+				"block_chance"			"60 70"
+				"bonus_strength"		"10 40"
+				"bash_chance_melee"		"20 25"
+				"bash_chance_ranged"	"10 15"
+				"bash_duration"			"1.2 1.5"
+				"bash_cooldown"			"3 3"
+				"bonus_chance_damage"	"120 250"
+				"stun_duration"			"1.6 2"
+		}
+	}
+
+	"item_recipe_abyssal_blade_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_abyssal_blade_2"
+		"ItemRequirements"
+		{
+			"01"						"item_abyssal_blade;item_abyssal_blade;item_boss_soul"
+		}
+	}
+	"item_abyssal_blade_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilitySharedCooldown"			"abyssal_blade"
+		"ItemBaseLevel"					"2"
+		"AbilityTextureName"			"abyssal_blade3"
+		"BaseClass"						"item_abyssal_blade"
+    	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35"
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"6250"
+		"ItemShopTags"					"damage;str;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"abyssal blade"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+    	{
+        "bonus_damage"      "30 100"
+        "bonus_health"      "250 750"
+        "bonus_health_regen"  "10 30"
+        "block_damage_melee"  "70 120"
+        "block_damage_ranged" "35 90"
+        "block_chance"      "60 70"
+        "bonus_strength"    "10 40"
+        "bash_chance_melee"   "20 25"
+        "bash_chance_ranged"  "10 15"
+        "bash_duration"     "1.2 1.5"
+        "bash_cooldown"     "3 3"
+        "bonus_chance_damage" "120 250"
+        "stun_duration"     "1.6 2"
+    	}
+	}
+}

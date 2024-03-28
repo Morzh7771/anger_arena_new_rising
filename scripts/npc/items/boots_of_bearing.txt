@@ -1,5 +1,63 @@
 "DOTAAbilities"
 {
+    "item_recipe_drum_of_endurance"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_recipe_arcane_boots"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_drum_of_endurance"
+		"ItemRequirements"
+		{
+			"01"						"item_wraith_band_custom;item_wraith_band_custom;item_wind_lace;"
+		}
+	}
+    "item_drum_of_endurance"
+	{       
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/drum_and_base/item_drum_of_endurance"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemPermanent"					"1"
+		"FightRecapLevel"				"1"
+        "AbilityTextureName"	        "item_ancient_janggo"
+        "AbilityCooldown"				"30.0"
+        "AbilitySharedCooldown"			"drum"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1540"
+		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"drum of endurance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+        "ItemBaseLevel"					"1"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aura_movement_speed"	    "20"
+            "aura_attack_speed"	        "10"
+
+            "bonus_agi"				    "12"
+			"bonus_str"				    "6"
+			"bonus_int"				    "6"
+            "bonus_armor"				"4"
+
+			"active_bonus_attack_speed"	        "50"
+			"active_bonus_movement_speed_pct"	"13"
+            "active_bonus_damage_from_agi"	    "20"
+
+			"active_duration"				    "6"
+			"active_radius"				        "1200"
+		}
+	}	
     "item_recipe_boots_of_bearing_aa"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"

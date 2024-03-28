@@ -1,0 +1,162 @@
+"DOTAAbilities"
+{	
+	"item_recipe_glimmer_cape"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"350"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_glimmer_cape"
+		"ItemRequirements"
+		{
+			"01"						"item_shadow_amulet*;item_cloak"
+		}
+	}
+	"item_glimmer_cape"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"glimmer"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"12.0"
+		"AbilityManaCost"				"90"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2150"
+		"ItemShopTags"					""
+		"ItemQuality"					"rare"
+		"ItemAliases"					"glimmer cape"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{			
+			"initial_fade_delay"				"0.5 0.4 0.3"
+			"secondary_fade_delay"				"0.5 0.4 0.3"
+			"active_movement_speed"				"40 45 50"
+			"duration"							"5 6 7"
+			"bonus_magical_armor"				"25 30 35"
+			"barrier_block"						"400 800 1500"
+		}
+	}
+
+	"item_recipe_glimmer_cape_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_glimmer_cape_2"
+		"ItemRequirements"
+		{
+			"01"						"item_glimmer_cape;item_glimmer_cape"
+		}
+	}
+	"item_glimmer_cape_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"glimmer"
+		"BaseClass"						"item_glimmer_cape"
+		"AbilityTextureName"			"glimmer_cape2"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"12.0"
+		"AbilityManaCost"				"90"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2150"
+		"ItemShopTags"					""
+		"ItemQuality"					"rare"
+		"ItemAliases"					"glimmer cape"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{			
+			"initial_fade_delay"				"0.5 0.4 0.3"
+			"secondary_fade_delay"				"0.5 0.4 0.3"
+			"active_movement_speed"				"40 45 50"
+			"duration"							"5 6 7"
+			"bonus_magical_armor"				"25 30 35"
+			"barrier_block"						"400 800 1500"
+		}
+	}
+
+	"item_recipe_glimmer_cape_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_glimmer_cape_3"
+		"ItemRequirements"
+		{
+			"01"						"item_glimmer_cape_2;item_glimmer_cape_2;item_boss_soul"
+		}
+	}
+	"item_glimmer_cape_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"glimmer"
+		"BaseClass"						"item_glimmer_cape"
+		"AbilityTextureName"			"glimmer_cape3"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"12.0"
+		"AbilityManaCost"				"90"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2150"
+		"ItemShopTags"					""
+		"ItemQuality"					"rare"
+		"ItemAliases"					"glimmer cape"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{			
+			"initial_fade_delay"				"0.5 0.4 0.3"
+			"secondary_fade_delay"				"0.5 0.4 0.3"
+			"active_movement_speed"				"40 45 50"
+			"duration"							"5 6 7"
+			"bonus_magical_armor"				"25 30 35"
+			"barrier_block"						"400 800 1500"
+		}
+	}
+}

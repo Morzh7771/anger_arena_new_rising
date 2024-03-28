@@ -1,0 +1,131 @@
+"DOTAAbilities"
+{	
+	"item_recipe_heart"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heart"
+		"ItemRequirements"
+		{
+			"01"						"item_vitality_booster;item_reaver"
+		}
+	}
+	"item_heart"
+	{	
+		"ItemBaseLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"str;regen_health;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"hot;heart of tarrasque"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"		"35 70 170"
+			"bonus_health"			"200 400 800"
+			"health_regen_pct"		"1.4 1.8 2.2"
+		}
+	}
+
+	"item_recipe_heart_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heart_2"
+		"ItemRequirements"
+		{
+			"01"						"item_heart;item_heart"
+		}
+	}
+	"item_heart_2"
+	{	
+		"ItemBaseLevel"					"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_heart"
+		"AbilityTextureName"			"heart_2"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"str;regen_health;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"hot;heart of tarrasque"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"		"35 70 170"
+			"bonus_health"			"200 400 800"
+			"health_regen_pct"		"1.4 1.8 2.2"
+		}
+	}
+
+	"item_recipe_heart_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heart_3"
+		"ItemRequirements"
+		{
+			"01"						"item_heart_2;item_heart_2;item_boss_soul"
+		}
+	}
+	"item_heart_3"
+	{	
+		"ItemBaseLevel"					"3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_heart"
+		"AbilityTextureName"			"heart_3"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"str;regen_health;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"hot;heart of tarrasque"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"		"35 70 170"
+			"bonus_health"			"200 400 800"
+			"health_regen_pct"		"1.4 1.8 2.2"
+		}
+	}
+}

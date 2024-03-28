@@ -1,0 +1,193 @@
+"DOTAAbilities"
+{	
+	"item_recipe_devastator"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_devastator"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade;item_mystic_staff"
+		}
+	}
+	"item_devastator"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"BaseClass"						"item_devastator"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"                               "parasma"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7 5 6"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5575"
+		"ItemShopTags"					"int;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"staff;misery;sm"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{				
+				"bonus_intellect"		"45 90 180"				
+				"bonus_attack_speed"	"40 80 160"	
+				"bonus_armor"     		"6 12 30"
+				"bonus_mana_regen"		"2 6 18"
+				"projectile_speed"		"300 350 400"
+				"int_damage_multiplier" "1 1.25 1.5"
+				"slow"					"25 30 35"
+				"slow_duration"			"3 4 5"
+				"active_mres_reduction"	"10 15 20"
+				"passive_cooldown"		"4"
+		}
+	}
+	"item_recipe_devastator_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                                           "item_datadriven"
+		"Model"                                               "models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"                                  "custom/recipe/recipe_2"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCorePointCost"                                   "0"
+		"ItemCost"                                            "0"
+		"ItemShopTags"                                        ""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"                                          "1"
+		"ItemResult"                                          "item_devastator_2"
+		"ItemRequirements"
+		{
+		"01"                                                "item_devastator;item_devastator"
+		}
+	}
+	"item_devastator_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                                           "item_devastator"
+		"AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"                                  "parasma_2"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"                                     "7 6 5"
+		"AbilitySharedCooldown"                               "parasma"
+		"AbilityManaCost"                                     "0"
+
+		"MaxUpgradeLevel"                                     "3"
+		"ItemBaseLevel"                                       "2"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                                            "7076"
+		"ItemShopTags"                                        "int;hard_to_tag"
+		"ItemQuality"                                         "rare"
+		"ItemAliases"                                         "parasma; prasma; pasma; pirasma"
+		"ItemDisassembleRule"                                 "DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemDeclarations"                                    "DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_intellect"   "45 90 180"				
+				"bonus_attack_speed"	"40 80 160"	
+				"bonus_armor"     "6 12 30"
+				"bonus_mana_regen"    "2 6 18"
+				"projectile_speed"		"300 350 400"
+				"int_damage_multiplier" "1 1.25 1.5"
+				"slow"          "25 30 35"
+				"slow_duration"			"3 4 5"
+				"active_mres_reduction"		"10 15 20"
+				"passive_cooldown"		"4"
+		}
+	}
+	"item_recipe_devastator_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                                           "item_datadriven"
+		"Model"                                               "models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"                                  "custom/recipe/recipe_2"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCorePointCost"                                   "0"
+		"ItemCost"                                            "0"
+		"ItemShopTags"                                        ""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"                                          "1"
+		"ItemResult"                                          "item_devastator_3"
+		"ItemRequirements"
+		{
+		"01"                                                "item_devastator_2;item_devastator_2;item_boss_soul"
+		}
+	}
+	"item_devastator_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                                           "item_devastator"
+		"AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"                                  "parasma_3"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"                                     "7 6 5"
+		"AbilitySharedCooldown"                               "parasma"
+		"AbilityManaCost"                                     "0"
+
+		"MaxUpgradeLevel"                                     "3"
+		"ItemBaseLevel"                                       "3"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"                                            "7076"
+		"ItemShopTags"                                        "int;hard_to_tag"
+		"ItemQuality"                                         "rare"
+		"ItemAliases"                                         "parasma; prasma; pasma; pirasma"
+		"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"                                    "DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_intellect"   "45 90 180"				
+				"bonus_attack_speed"	"40 80 160"	
+				"bonus_armor"			"6 12 30"
+			  "bonus_mana_regen"   "2 6 18"
+				"projectile_speed"		"300 350 400"
+				"int_damage_multiplier"	"1 1.25 1.5"
+				"slow"          "25 30 35"
+				"slow_duration"			"3 4 5"
+				"active_mres_reduction"		"10 15 20"
+				"passive_cooldown"		"4"
+		}
+	}
+}

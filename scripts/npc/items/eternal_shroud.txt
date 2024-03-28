@@ -1,0 +1,132 @@
+"DOTAAbilities"
+{	
+	"item_recipe_eternal_shroud"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eternal_shroud"
+		"ItemRequirements"
+		{
+			"01"						"item_cloak;item_ogre_axe;item_vitality_booster"
+		}
+	}
+	"item_eternal_shroud"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"1"
+		"ItemCost"						"3100"
+		"ItemShopTags"					"regen_health;magic_resist"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"eternal shroud;es"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_spell_resist"					"20 22.5 25"
+			"bonus_strength"						"14 30 80"
+			"bonus_health"							"300 600 1500"
+			"stack_threshold"						"300 600 1500"
+			"stack_duration"						"4 5 6"
+			"stack_resist"							"3 3.5 4"
+			"mana_restore_pct"						"20 25 30"
+			"max_stacks"							"4 5 6"
+		}
+	}
+
+	"item_recipe_eternal_shroud_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eternal_shroud_2"
+		"ItemRequirements"
+		{
+			"01"						"item_eternal_shroud;item_eternal_shroud"
+		}
+	}
+	"item_eternal_shroud_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"2"
+		"AbilityTextureName"			"eternal_shroud2"
+		"BaseClass"						"item_eternal_shroud"
+		"ItemCost"						"3100"
+		"ItemShopTags"					"regen_health;magic_resist"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"eternal shroud;es"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_spell_resist"					"20 22.5 25"
+			"bonus_strength"						"14 30 80"
+			"bonus_health"							"300 600 1500"
+			"stack_threshold"						"300 600 1500"
+			"stack_duration"						"4 5 6"
+			"stack_resist"							"3 3.5 4"
+			"mana_restore_pct"						"20 25 30"
+			"max_stacks"							"4 5 6"
+		}
+	}
+
+	"item_recipe_eternal_shroud_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eternal_shroud_3"
+		"ItemRequirements"
+		{
+			"01"						"item_eternal_shroud_2;item_eternal_shroud_2;item_boss_soul"
+		}
+	}
+	"item_eternal_shroud_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemBaseLevel"					"3"
+		"AbilityTextureName"			"eternal_shroud3"
+		"BaseClass"						"item_eternal_shroud"
+		"ItemCost"						"3100"
+		"ItemShopTags"					"regen_health;magic_resist"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"eternal shroud;es"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_spell_resist"					"20 22.5 25"
+			"bonus_strength"						"14 30 80"
+			"bonus_health"							"300 600 1500"
+			"stack_threshold"						"300 600 1500"
+			"stack_duration"						"4 5 6"
+			"stack_resist"							"3 3.5 4"
+			"mana_restore_pct"						"20 25 30"
+			"max_stacks"							"4 5 6"
+		}
+	}
+}

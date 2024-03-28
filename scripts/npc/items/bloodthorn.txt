@@ -1,0 +1,194 @@
+"DOTAAbilities"
+{	
+	"item_recipe_bloodthorn"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"825"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloodthorn"
+		"ItemRequirements"
+		{
+			"01"						"item_orchid*;item_javelin;item_hyperstone"
+		}
+	}
+	"item_bloodthorn"
+	{
+		"BaseClass"						"item_bloodthorn"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemBaseLevel"					"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilitySharedCooldown"			"orchid"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"6800"
+		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"orchid malevolence"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_intellect"			"15 45 120"
+				"bonus_attack_speed"		"100 200 300"
+				"bonus_mana_regen"			"3.5 6 16"
+				"bonus_health_regen"		"6.5 15 35"	
+				"silence_duration"			"5 5 5"
+				"silence_damage_percent"	"30 35 40"
+				"bonus_damage"				"10 15 20"
+				"duration"					"5 5.5 6"			
+				"spell_amp_debuff"			"10 15 20"
+				"proc_damage"				"60 90 110"
+				"proc_chance"				"40 60 80"
+		}
+	}
+
+	"item_recipe_bloodthorn_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloodthorn_2"
+		"ItemRequirements"
+		{
+			"01"						"item_bloodthorn;item_bloodthorn"
+		}
+	}
+	"item_bloodthorn_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemBaseLevel"					"2"
+		"BaseClass"						"item_bloodthorn"
+		"AbilityTextureName"			"bloodthorn2"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilitySharedCooldown"			"orchid"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"6800"
+		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"orchid malevolence"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_intellect"			"15 45 120"
+				"bonus_attack_speed"		"100 200 300"
+				"bonus_mana_regen"			"3.5 6 16"
+				"bonus_health_regen"		"6.5 15 35"	
+				"silence_duration"			"5 5 5"
+				"silence_damage_percent"	"30 35 40"
+				"bonus_damage"				"10 15 20"
+				"duration"					"5 5.5 6"			
+				"spell_amp_debuff"			"10 15 20"
+				"proc_damage"				"60 90 110"
+				"proc_chance"				"40 60 80"
+		}
+	}
+
+	"item_recipe_bloodthorn_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bloodthorn_3"
+		"ItemRequirements"
+		{
+			"01"						"item_bloodthorn_2;item_bloodthorn_2;item_boss_soul"
+		}
+	}
+	"item_bloodthorn_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemBaseLevel"					"3"
+		"BaseClass"						"item_bloodthorn"
+		"AbilityTextureName"			"bloodthorn3"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilitySharedCooldown"			"orchid"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"6800"
+		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"orchid malevolence"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_intellect"			"15 45 120"
+				"bonus_attack_speed"		"100 200 300"
+				"bonus_mana_regen"			"3.5 6 16"
+				"bonus_health_regen"		"6.5 15 35"	
+				"silence_duration"			"5 5 5"
+				"silence_damage_percent"	"30 35 40"
+				"bonus_damage"				"10 15 20"
+				"duration"					"5 5.5 6"			
+				"spell_amp_debuff"			"10 15 20"
+				"proc_damage"				"60 90 110"
+				"proc_chance"				"40 60 80"
+		}
+	}
+}

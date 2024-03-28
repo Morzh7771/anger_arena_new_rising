@@ -1,0 +1,169 @@
+"DOTAAbilities"
+{	
+	"item_recipe_heavens_halberd"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"200"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heavens_halberd"
+		"ItemRequirements"
+		{
+			"01"						"item_sange;item_talisman_of_evasion"
+		}
+	}
+	"item_heavens_halberd"
+	{
+		"BaseClass"						"item_heavens_halberd"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"AbilitySharedCooldown"			"heavens_halberd"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"3550"
+		"ItemShopTags"					"str;damage;evasion"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"heaven's halberd"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_evasion"				"20 25 30"
+			"bonus_strength"			"20 40 100"
+			"disarm_range"				"4.5 5 5.5"
+			"disarm_melee"				"3.0 3.5 4"
+			"status_resistance"		"16 20 24"
+			"hp_regen_amp"			  "20 25 30"	
+		}
+	}
+
+	"item_recipe_heavens_halberd_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heavens_halberd_2"
+		"ItemRequirements"
+		{
+			"01"						"item_heavens_halberd;item_heavens_halberd"
+		}
+	}
+	"item_heavens_halberd_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"heavens_halberd"
+		"AbilityTextureName"			"heavens_halberd2"
+		"BaseClass"						"item_heavens_halberd"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"3550"
+		"ItemShopTags"					"str;damage;evasion"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"heaven's halberd"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+    {
+      "bonus_evasion"       "20 25 30"
+      "bonus_strength"      "20 40 100"
+      "disarm_range"        "4.5 5 5.5"
+      "disarm_melee"        "3.0 3.5 4"
+      "status_resistance"   "16 20 24"
+      "hp_regen_amp"        "20 25 30"  
+    }
+	}
+
+	"item_recipe_heavens_halberd_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heavens_halberd_3"
+		"ItemRequirements"
+		{
+			"01"						"item_heavens_halberd_2;item_heavens_halberd_2;item_boss_soul"
+		}
+	}
+	"item_heavens_halberd_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"heavens_halberd"
+		"AbilityTextureName"			"heavens_halberd3"
+		"BaseClass"						"item_heavens_halberd"
+    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"3550"
+		"ItemShopTags"					"str;damage;evasion"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"heaven's halberd"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+    	{
+      "bonus_evasion"       "20 25 30"
+      "bonus_strength"      "20 40 100"
+      "disarm_range"        "4.5 5 5.5"
+      "disarm_melee"        "3.0 3.5 4"
+      "status_resistance"   "16 20 24"
+      "hp_regen_amp"        "20 25 30"  
+    	}
+	}
+}

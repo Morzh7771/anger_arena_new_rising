@@ -1,0 +1,197 @@
+"DOTAAbilities"
+{    
+    "item_recipe_solar_crest_1"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"375"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_solar_crest_1"
+		"ItemRequirements"
+		{
+			"01"						"item_pavise;item_crown;item_wind_lace"
+		}
+	}
+	"item_solar_crest_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "ScriptFile"					"items/item_solar_crest"
+        "BaseClass"						"item_lua"
+        "AbilityTextureName"			"item_solar_crest"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"16.0"
+		"AbilitySharedCooldown"			"medallion"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"solar crest"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_armor"			"7 13 24"
+			"all_stats"		        "10 30 120"
+			"movement_speed"	    "25 45 70"
+			"bonus_mana_regen_pct"	"1.75 4 10"
+
+			"target_movement_speed"	"18 20 22"
+			"target_attack_speed"	"70 140 250"
+			"target_armor"			"7 14 20"
+            
+			"duration"				"8 9 10"
+            "health_pct"            "10 20 30"
+            "barrier_block"         "800 1000 1500"
+		}
+	}
+
+	"item_recipe_solar_crest_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_solar_crest_2"
+		"ItemRequirements"
+		{
+			"01"						"item_solar_crest_1;item_solar_crest_1;"
+		}
+	}
+	"item_solar_crest_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"ScriptFile"					"items/item_solar_crest"
+        "BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_solar_crest2"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"16.0"
+		"AbilitySharedCooldown"			"medallion"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"solar crest"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_armor"			"7 13 24"
+			"all_stats"		        "10 30 120"
+			"movement_speed"	    "25 45 70"
+			"bonus_mana_regen_pct"	"1.75 4 10"
+
+			"target_movement_speed"	"18 20 22"
+			"target_attack_speed"	"70 140 250"
+			"target_armor"			"7 14 20"
+            
+			"duration"				"8 9 10"
+            "health_pct"            "10 20 30"
+            "barrier_block"         "800 1000 1500"
+		}
+	}
+
+	"item_recipe_solar_crest_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_solar_crest_3"
+		"ItemRequirements"
+		{
+			"01"						"item_solar_crest_2;item_solar_crest_2;item_boss_soul"
+		}
+	}
+	"item_solar_crest_3"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		"ScriptFile"					"items/item_solar_crest"
+        "BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_solar_crest3"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"16.0"
+		"AbilitySharedCooldown"			"medallion"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"solar crest"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_armor"			"7 13 24"
+			"all_stats"		        "10 30 120"
+			"movement_speed"	    "25 45 70"
+			"bonus_mana_regen_pct"	"1.75 4 10"
+
+			"target_movement_speed"	"18 20 22"
+			"target_attack_speed"	"70 140 250"
+			"target_armor"			"7 14 20"
+
+			"duration"				"8 9 10"
+            "health_pct"            "10 20 30"
+            "barrier_block"         "800 1000 1500"
+		}
+	}
+}
