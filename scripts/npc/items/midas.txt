@@ -1,0 +1,156 @@
+"DOTAAbilities"
+{	
+	"item_recipe_chest_of_midas"
+    {
+        "BaseClass"                     "item_datadriven"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+        "ItemCost"                      "550"
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_chest_of_midas"
+        "ItemRequirements"
+        {
+            "01"                        "item_chainmail"
+        }
+    }
+    "item_recipe_midas_aa"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1250"  
+        "ItemShopTags"                  ""
+        "ItemAliases"                   "hom"
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_midas_aa"
+        "ItemRequirements"
+        {
+            "01"                        "item_gloves*"      
+        }
+    }
+    "item_recipe_advanced_midas"
+    {
+        "AbilityTextureName"                "item_recipe_advanced_midas"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"  
+        "ItemShopTags"                  "artifacts"
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_advanced_midas"
+        "ItemRequirements"
+        {
+            "01"                        "item_midas_aa;item_midas_aa"
+        }
+    }
+    "item_chest_of_midas"
+    {
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "chest_of_midas"
+        "ScriptFile"                    "items/item_chest_of_midas"
+        "AbilityCooldown"               "1"
+        "ItemQuality"                   "common"
+        "ItemAliases"                   "chest of midas"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        "AbilityValues"
+        {
+            "bonus_armor"           "6"
+            "xp"                    "0"
+            "gold"                  "30"
+        }
+    }
+    "item_midas_aa"
+    {
+        "ItemBaseLevel"                 "1"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_CREEP"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilitySharedCooldown"         "midas"
+
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_midas"
+        "AbilityTextureName"            "hand_of_midas"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "600 800"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "90"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "0"
+        "ItemCost"                      "2200"
+        "ItemShopTags"                  "attack_speed;hard_to_tag"
+        "ItemQuality"                   "common"
+        "ItemAliases"                   "hand of midas"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+        "ItemBaseLevel"                 "1"
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_attack_speed"                "40 60"
+            "xp_multiplier"                     "2.2 4.4"
+            "bonus_gold"                        "170 340"
+            "transmute_cast_range_tooltip"      "600 700"
+            "base_gold_rune"                    "40 80"
+            "minute_gold_rune"                  "18 27"
+        }
+    }
+    "item_advanced_midas"
+    {       
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_midas"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_CREEP"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+        "AbilityTextureName"            "midas_2"
+        "AbilitySharedCooldown"         "midas"
+        "AbilityCastAnimation"          "ACT_RESET"
+        
+        "ItemBaseLevel"                 "2"
+
+        "AbilityCooldown"               "90"
+
+        "AbilityCastRange"              "600 800"
+        "AbilityCastPoint"              "0.0"
+        "IsRefreshable"                 "1"
+        
+        // Item Info
+        "ItemCost"                      "4100"
+        "ItemStackable"                 "0"
+        
+        "ItemPermanent"                 "0"
+        "ItemKillable"                  "1"
+        "ItemSellable"                  "1"
+        "ItemDroppable"                 "1"
+        "ItemPurchasable"               "1"
+
+        "AbilityValues"
+        {
+            "bonus_attack_speed"                "40 60"
+            "xp_multiplier"                     "2.2 4.4"
+            "bonus_gold"                        "170 340"
+            "transmute_cast_range_tooltip"      "600 700"
+            "base_gold_rune"                    "40 80"
+            "minute_gold_rune"                  "18 27"
+        }
+    }
+}
