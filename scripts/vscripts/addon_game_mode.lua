@@ -394,6 +394,16 @@ function AngelArena:OnRuneActivate(event)
 			SendOverheadEventMessage(unit, OVERHEAD_ALERT_XP, unit, CalcWisdomXp( unit ),nil)
 		end)
 	end
+	local item
+	for i = 0, 5 do
+		item = hero:GetItemInSlot(i)
+		if item and item:GetPurchaser() == hero then
+			if item and (item:GetName() == "item_unknown_amulet")then
+				item:SetCurrentCharges(item:GetCurrentCharges() + 2)
+				return
+			end
+		end
+	end
 end
 function AngelArena:OnPlayerDisconnect(event)
 	local name = event.name

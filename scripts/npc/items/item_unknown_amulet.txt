@@ -1,0 +1,211 @@
+"DOTAAbilities"
+{
+	"item_recipe_unknown_amulet"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_unknown_amulet"
+		"ItemRequirements"
+		{
+			"01"						"item_diadem;item_crown;item_blades_of_attack;item_bottle;"
+		}
+	}
+	"item_unknown_amulet"
+	{
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_unknown_amulet"
+        "AbilityTextureName"            "nullifier2"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	
+        "AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"45.0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemPurchasable"               "1"
+		"ItemStackable"                 "1"
+		"ItemInitialCharges"            "1"
+		"ItemDisplayCharges"            "1"
+		"ItemRequiresCharges"           "1"
+		"IsTempestDoubleClonable"       "0"
+		"ShouldBeInitiallySuggested"    "1"
+		//"ItemPermanent"					"1"
+		//"ItemKillable"                  "1"
+		//"ItemSellable"                  "0"
+		//"ItemDroppable"                 "1"
+		//"ItemPurchasable"				"1"
+		//"ItemInitialCharges"			"1"
+		"AbilityManaCost"				"220"
+	
+		"AbilityValues"
+		{
+			"charge_primary_attribute"	"3"
+		}
+	}
+//"item_unknown_amulet"
+//{       
+//	// General
+//	//-------------------------------------------------------------------------------------------------------------
+//    "BaseClass"						"item_datadriven"
+//	"ID"							"1184"
+//	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+//	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+//	"AbilityTextureName"	        "nullifier2"
+//	
+//	"AbilityCastPoint"				"0.0"
+//	"AbilityCooldown"				"45.0"
+//	// Stats
+//	//-------------------------------------------------------------------------------------------------------------
+//	"AbilitySharedCooldown"			""
+//	
+//	// Item Info
+//	"ItemCost"						"5000"
+//	"ItemStackable"					"0"
+//	
+//	"ItemPermanent"					"1"
+//	"ItemKillable"                  "1"
+//	"ItemSellable"                  "0"
+//	"ItemDroppable"                 "1"
+//	"ItemPurchasable"				"1"
+//	"ItemInitialCharges"			"1"
+//	"AbilityManaCost"				"220"	
+//	
+//	//special
+//	"AbilitySpecial"
+//	{
+//		"01"
+//		{
+//			"var_type"				"FIELD_INTEGER"
+//			"bonus_damage"			"10"
+//		}
+//		"02"
+//		{
+//			"var_type"				"FIELD_INTEGER"
+//			"bonus_str"				"20"
+//		}
+//		//activate
+//		"03"
+//		{
+//			"var_type"				"FIELD_INTEGER"
+//			"bonus_str_pct"			"100"
+//		}
+//		"04"
+//		{
+//			"var_type"				"FIELD_FLOAT"
+//			"duration"				"5.0"
+//		}
+//		
+//		//пассивно
+//		"05"
+//		{
+//			"var_type"				"FIELD_INTEGER"
+//			"armor_per_charge"		"2"
+//		}
+//		"06"
+//		{
+//			"var_type"				"FIELD_INTEGER"
+//			"str_per_charge"		"5"
+//		}
+//		"07"
+//		{
+//			"var_type"				"FIELD_INTEGER"
+//			"hp_per_charge"			"200"
+//		}
+//		"08"
+//		{
+//			"var_type"				"FIELD_FLOAT"
+//			"lost_death_tooltip"	"50"
+//		}
+//	}
+//	
+//	"OnSpellStart"
+//	{
+//		"RunScript"
+//		{
+//			"ScriptFile"			"items/item_unknown_amulet.lua"
+//			"Function"				"StrangeAmuletStart"
+//			"StrPct"				"%bonus_str_pct"
+//			"Duration"				"%duration"
+//		}
+//		"SpendCharge"
+//		{
+//		} 
+//	}
+//
+//	"Modifiers"
+//	{
+//		"modifier_strange_amulet_passive"
+//		{
+//			"Passive"	"1"
+//			"IsHidden"	"1"
+//			"Attributes" 		        "MODIFIER_ATTRIBUTE_MULTIPLE"
+//			
+//			"ThinkInterval"  "1.0"
+//			"OnIntervalThink"
+//			{
+//				"RunScript"
+//				{
+//					"ScriptFile"	"items/item_unknown_amulet.lua"
+//					"Function"		"CheckCharges"
+//					"Target"		"CASTER"
+//				}
+//			}
+//			
+//			"Properties"
+//			{
+//				
+//				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+//				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 		"%bonus_str"		
+//			}
+//			
+//			"OnDestroy"
+//			{
+//				"RemoveModifier"
+//				{
+//					"Target"	"CASTER"
+//					"ModifierName"	"modifier_strange_amulet_bonus"
+//				}
+//			}
+//		}
+//		
+//		"modifier_strange_amulet_activate_str"
+//		{
+//			"IsHidden"	"1"
+//			"Passive"	"0"
+//			"IsPurgable"	"1"
+//			
+//			"TextureName" 		"nullifier2"
+//			
+//			"Properties"
+//			{
+//				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"1"
+//			}
+//		}
+//		
+//		"modifier_strange_amulet_bonus"
+//		{
+//			"Passive"	"0"
+//			"IsHidden"	"0"
+//			"IsBuff"	"1"
+//			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+//
+//			"TextureName" 		"nullifier2"
+//			
+//			"Properties"
+//			{
+//				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" 	"%str_per_charge"
+//				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_per_charge"
+//				"MODIFIER_PROPERTY_HEALTH_BONUS"		"%hp_per_charge"
+//			}
+//		}
+//	}
+//}
+}
