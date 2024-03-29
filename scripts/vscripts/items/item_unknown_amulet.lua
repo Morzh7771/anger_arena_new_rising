@@ -70,20 +70,14 @@ modifier_item_unknown_amulet = class({
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
     } end,
     OnCreated = function (self)
-    	self.primary_attribute_pct = self:GetAbility():GetSpecialValueFor("charge_primary_attribute") * self:GetAbility():GetCurrentCharges()
-    	self.str_bonus = 0
-    	self.agi_bonus = 0
-    	self.int_bonus = 0
     	if not IsServer() then return end
     	self:StartIntervalThink(0.3)
 	end,
 	OnIntervalThink = function (self)
 		if not IsServer() then return end
-    	self.str_bonus = 0
+		self.primary_attribute_pct = self:GetAbility():GetSpecialValueFor("charge_primary_attribute") * self:GetAbility():GetCurrentCharges()
     	self.str_bonus = self.primary_attribute_pct
-    	self.agi_bonus = 0
     	self.agi_bonus = self.primary_attribute_pct
-    	self.int_bonus = 0
     	self.int_bonus = self.primary_attribute_pct
     	self:GetParent():CalculateStatBonus(true)
 	end,
