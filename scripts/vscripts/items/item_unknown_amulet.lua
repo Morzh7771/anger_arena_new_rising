@@ -49,13 +49,15 @@ item_unknown_amulet = class({
 	GetIntrinsicModifierName = function (self) return "modifier_item_unknown_amulet_stats" end,
 	OnSpellStart = function (self)
         if not IsServer() then return end
-        self:GetCaster():RemoveAllModifiersByName("modifier_item_unknown_amulet_abilites")
         if self:GetSecondaryCharges() > 3 then
             self:SetSecondaryCharges(1)
         else self:SetSecondaryCharges(self:GetSecondaryCharges() + 1)
         end
-        self:GetCaster():AddNewModifier(self:GetCaster(), self:GetCaster(), "modifier_item_unknown_amulet_abilites",{})
+        self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_unknown_amulet_abilites",{})
         print(self:GetSecondaryCharges())
+    end,
+    OnDestroy =  function (self)
+        self:RemoveAllModifiersByName("modifier_item_unknown_amulet_abilites")
     end,
 })
 
@@ -68,12 +70,18 @@ modifier_item_unknown_amulet_abilites = class({
     } end,
     OnCreated = function (self)
         if not IsServer() then return end
-        self.charges = self:GetAbility():GetSecondaryCharges()
         self.ef_hp = 0
+        self.def = 0
         self:StartIntervalThink(0.3)
     end,
+    OnIntervalThink = function (self)
+        if self:GetAbility():GetSecondaryCharges() == 1 then
+            self.ef_hp = (self:GetAbility():GetCurrentCharges() * 0.1 * self:GetParent():GetMaxHealth()) + self:GetParent():GetMaxHealth()
+        end
+        self.def = 
+    end,
     GetModifierIncomingDamage_Percentage = function (self)
-        if self.charges == 1 then
+        if self:GetAbility():GetSecondaryCharges() == 1 then
             return -100
         else
             return 0 
@@ -81,19 +89,15 @@ modifier_item_unknown_amulet_abilites = class({
     end,
 
     OnDestroy = function (self)
+        self:GetAbility():RemoveAllModifiersByName("modifier_item_unknown_amulet_abilites")
         print("Destroy")
     end,
-    --OnIntervalThink = function (self)
-    --    if self:GetParent():GetSecondaryCharges() == 0 then
-    --        self.ef_hp = (self:GetParent():GetCurrentCharges() * 0.1 * self:GetParent():GetMaxHealth()) + self:GetParent():GetMaxHealth()
-    --    end
-    --    print(self.ef_hp)
-    --end,
+    
 })
 
 modifier_item_unknown_amulet_stats = class({
 	IsPassive = function() return false end,
-    IsHidden = function() return true end,
+    IsHidden = function() return false end,
     IsPurgable = function() return false end,
     DestroyOnExpire = function() return false end,
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
@@ -112,6 +116,10 @@ modifier_item_unknown_amulet_stats = class({
         self.mode = self:GetAbility():GetSecondaryCharges()
     	self:GetParent():CalculateStatBonus(true)
 	end,
+    OnDestroy = function (self)
+        self:GetAbility():RemoveAllModifiersOfName("modifier_item_unknown_amulet_abilites")
+        print("Destroy__2")
+    end,
 	GetModifierBonusStats_Strength = function (self)
 		if self.mode == 1 then
     	    return self.primary_attribute_pct
