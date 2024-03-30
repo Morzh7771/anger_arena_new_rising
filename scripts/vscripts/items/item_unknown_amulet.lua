@@ -54,6 +54,13 @@ item_unknown_amulet = class({
         end
         print(self:GetSecondaryCharges())
     end,
+    GetAbilityTextureName = function (self)
+        if self:GetSecondaryCharges() == 0 then
+            return "unknown_amulet4"
+        else
+            return "unknown_amulet" .. (self:GetSecondaryCharges())
+        end
+    end,
     OnDestroy =  function (self)
         self:RemoveAllModifiersByName("modifier_item_unknown_amulet_abilites")
     end,
@@ -84,6 +91,7 @@ modifier_item_unknown_amulet_stats = class({
     	self:StartIntervalThink(0.3)
 	end,
 	OnIntervalThink = function (self)
+        self.item_stats = self:GetAbility():GetSpecialValueFor("stats")
 		self.primary_attribute_pct = self:GetAbility():GetSpecialValueFor("charge_primary_attribute") * self:GetAbility():GetCurrentCharges()
         self.mode = self:GetAbility():GetSecondaryCharges()
     	self:GetParent():CalculateStatBonus(true)
@@ -91,56 +99,64 @@ modifier_item_unknown_amulet_stats = class({
         if self:GetAbility():GetSecondaryCharges() == 1 then
             self.ef_hp = (self:GetAbility():GetCurrentCharges() * self.all_damage_def_per_charge * self:GetParent():GetMaxHealth()) + self:GetParent():GetMaxHealth()
             self.def = ((self:GetParent():GetMaxHealth() / self.ef_hp) - 1) * 100
-            print(self.def)
         end
         --Agility Mode
         if self:GetAbility():GetSecondaryCharges() == 2 then
             self.hand_damage = self:GetAbility():GetCurrentCharges() *  self.hand_damage_per_charge
-            print(self.hand_damage)
         end
         --Intellect Mode
         if self:GetAbility():GetSecondaryCharges() == 3 then
             self.spell_amp = self:GetAbility():GetCurrentCharges() * self.spell_amp_pre_charge
-            print(self.spell_amp)
         end
         --Univ Mode
         if self:GetAbility():GetSecondaryCharges() == 4 then
         end
+        print(self.item_stats)
 	end,
 	GetModifierBonusStats_Strength = function (self)
 		if self.mode == 1 then
-    	    return self.primary_attribute_pct
+    	    return self.primary_attribute_pct + self.item_stats
     	elseif self.mode == 4 then
-    	    return self.primary_attribute_pct / 3
-    	end
+    	    return self.item_stats + self.primary_attribute_pct / 3
+            else return self.item_stats
+    	   end
 	end,
 	GetModifierBonusStats_Agility = function (self)
 		if self.mode == 2  then
-    	    return self.primary_attribute_pct
+    	    return self.primary_attribute_pct + self.item_stats
     	elseif self.mode == 4 then
-    	    return self.primary_attribute_pct / 3
+    	    return self.item_stats + self.primary_attribute_pct / 3
+            else return self.item_stats
     	end
 	end,
 	GetModifierBonusStats_Intellect = function (self)
 		if self.mode == 3  then
-    	    return self.primary_attribute_pct
+    	    return self.primary_attribute_pct + self.item_stats
     	elseif self.mode == 4 then
-    	    return self.primary_attribute_pct / 3 
+    	    return self.item_stats + self.primary_attribute_pct / 3 
+        else return self.item_stats
     	end
 	end,
     GetModifierIncomingDamage_Percentage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 1 then
             return self.def
-        else
-            return 0 
-        end
+            elseif self:GetAbility():GetSecondaryCharges() == 4 then
+                return self.def / 3 
+            end
     end,  
     GetModifierBaseDamageOutgoing_Percentage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 2 then
-            return self.hand_damage end 
+            return self.hand_damage
+            elseif self:GetAbility():GetSecondaryCharges() == 4 then 
+                return self.hand_damage / 3 
+            end 
+
     end,
     GetModifierSpellAmplify_Percentage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 3 then
-            return self.spell_amp end
+            return self.spell_amp 
+            elseif self:GetAbility():GetSecondaryCharges() == 4 then 
+                return self.spell_amp / 3 
+            end 
     end,
 })

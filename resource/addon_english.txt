@@ -3116,5 +3116,10 @@
         "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_mp_regen"            "+$mana_regen"
         "DOTA_Tooltip_modifier_talisman_of_heal_buff"                        "Bliss"
         "DOTA_Tooltip_modifier_talisman_of_heal_buff_Description"            "Restoring health and mana"
+
+        "DOTA_Tooltip_ability_item_unknown_amulet"    						"Unknown Amulet"
+        "DOTA_Tooltip_ability_item_unknown_amulet_Description"				"<h1>Active: Swap Bonus</h1> Switches the state of the amulet. Each of the options (Strength/Agility/Intelligence) gives %charge_primary_attribute% stats for the selected attribute. The Universal option divides this bonus by 3, across all attributes.<br><br><b><font color='#eb4034'>Strength</font></b> - For each charge, the owner receives a %all_damage_def_per_charge%%% reduction incoming damage.<br><br><b><font color='#53ea48'>Agility</font></b> - For each charge, the owner receives +%hand_damage_per_charge%%% damage from the hand, from the base.<br><br><b><font color='#1722eb'>Intelligence</font></b> - For each charge, the owner receives %spell_amp_pre_charge%%% spell amplify.<br><br><b>Universal</b> - The owner receives a third of each improvement above.\n\n<h1>Passive: Rune Power</h1> The amulet replenishes charges from raised runes. If there are 10 or more charges, then the amulet will receive only one charge, otherwise - two."
+        "DOTA_Tooltip_ability_item_unknown_amulet_stats"					"+$all"
+
 	}
 }

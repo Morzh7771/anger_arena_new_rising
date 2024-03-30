@@ -399,8 +399,12 @@ function AngelArena:OnRuneActivate(event)
 		item = hero:GetItemInSlot(i)
 		if item and item:GetPurchaser() == hero then
 			if item and (item:GetName() == "item_unknown_amulet")then
-				item:SetCurrentCharges(item:GetCurrentCharges() + 2)
-				return
+				if item:GetCurrentCharges() < 10 then
+					item:SetCurrentCharges(item:GetCurrentCharges() + 2)
+				else
+					item:SetCurrentCharges(item:GetCurrentCharges() + 1)
+				return 
+				end 
 			end
 		end
 	end
@@ -942,6 +946,17 @@ function AngelArena:OnHeroDeath(dead_hero, killer)
 	if not killer or killer:IsNull() or not IsValidEntity(killer) then return end
 
 	ComebackSystem:OnKill( killer:GetPlayerOwnerID(), killer:GetTeamNumber(), dead_hero:GetPlayerOwnerID(), dead_hero:GetTeamNumber() )
+
+	if dead_hero:HasInventory() and dead_hero.IsReincarnating and not dead_hero:IsReincarnating() then
+		local item
+		for i = 0, 8 do
+			item = dead_hero:GetItemInSlot(i)
+
+			if item and (item:GetName() == "item_unknown_amulet") then
+					item:SetCurrentCharges(item:GetCurrentCharges() - (item:GetCurrentCharges() * 0.25) )
+			end
+		end
+	end
 end
 function AngelArena:DamageFilter(event)
 	local damage = event.damage

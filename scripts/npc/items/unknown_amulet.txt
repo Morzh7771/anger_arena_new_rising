@@ -1,28 +1,28 @@
 "DOTAAbilities"
 {
-	//"item_recipe_unknown_amulet"
-	//{
-	//	"Model"							"models/props_gameplay/recipe.vmdl"
-	//	"BaseClass"						"item_recipe_arcane_boots"
-	//	// Item Info
-	//	//-------------------------------------------------------------------------------------------------------------
-	//	"ItemCost"						"0"	
-	//	"ItemShopTags"					""
-	//	
-	//	// Recipe
-	//	//-------------------------------------------------------------------------------------------------------------
-	//	"ItemRecipe"					"1"
-	//	"ItemResult"					"item_unknown_amulet"
-	//	"ItemRequirements"
-	//	{
-	//		"01"						"item_diadem;item_crown;item_blades_of_attack;item_bottle;"
-	//	}
-	//}
+	"item_recipe_unknown_amulet"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_unknown_amulet"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_diadem;item_crown;item_bottle;"
+		}
+	}
 	"item_unknown_amulet"
 	{
 		"BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_unknown_amulet"
-        "AbilityTextureName"            "nullifier2"
+        "AbilityTextureName"            "unknown_amulet4"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	
         "AbilityCastPoint"				"0.0"
@@ -44,7 +44,8 @@
 		//"ItemInitialCharges"			"1"
 	
 		"AbilityValues"
-		{
+		{	
+			"stats"						"25"
 			"charge_primary_attribute"	"3"
 			"all_damage_def_per_charge"	"3"
 			"hand_damage_per_charge"	"5"
