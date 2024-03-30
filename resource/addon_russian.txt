@@ -1317,7 +1317,12 @@
 		"DOTA_Tooltip_modifier_item_meteor_hammer_aa_burn"						"Горение от Meteor Hammer"
 		"DOTA_Tooltip_modifier_item_meteor_hammer_aa_burn_Description"			"Существо замедлено. Получает %dMODIFIER_PROPERTY_TOOLTIP% урона раз в %dMODIFIER_PROPERTY_TOOLTIP2% сек."
 
-        "DOTA_Tooltip_ability_item_meteor_hammer_aa_2"                             "Meteor Hammer 2"
+        
+		"DOTA_Tooltip_modifier_item_meteor_hammer_oaa_channel"						"Channeling Meteor Hammer"
+		"DOTA_Tooltip_modifier_item_meteor_hammer_oaa_channel_Description"			"Мы не смогли придумать как сделать так что-бы ченел был нормальным так что жуйте модифаер хули)! "
+
+		
+		"DOTA_Tooltip_ability_item_meteor_hammer_aa_2"                             "Meteor Hammer 2"
         "DOTA_Tooltip_ability_item_meteor_hammer_aa_2_Description"                 "<h1>Активное: Meteor Hammer</h1> ПРЕРЫВАЕМАЯ — призывает метеорит, который после небольшой задержки бьёт по области радиусом %impact_radius%. Удар наносит урон вражеским существам, оглушает их на %stun_duration% сек. и поджигает, нанося периодический урон в течение %burn_duration% сек. Также замедляет подожжённых существ на %burn_slow%%%.<BR><BR>Урон существам при ударе: %impact_damage_units% + %max_hp_impact_damage%%% от максимального здоровья. <BR><BR>Периодический урон существам: %burn_dps_units% + %max_hp_burn_damage%%% от текущего здоровья. <BR><BR>Время применения: %max_duration% сек.<BR>Задержка после применения: %land_time% сек."		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_2_lore"                   "Этот зачарованный молот сковали из металла, который обнаружили в руинах деревни, уничтоженной великим звездопадом."		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_2_bonus_strength"						"+$str"	

@@ -2,29 +2,27 @@ LinkLuaModifier("modifier_item_meteor_hammer_oaa_passives", "items/item_meteor_h
 LinkLuaModifier("modifier_item_meteor_hammer_oaa_thinker", "items/item_meteor_hammer_aa.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_meteor_hammer_oaa_dot", "items/item_meteor_hammer_aa.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_meteor_hammer_oaa_stun", "items/item_meteor_hammer_aa.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_meteor_hammer_oaa_channel", "items/item_meteor_hammer_aa.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_meteor_hammer = class({})
 item_meteor_hammer_aa = item_meteor_hammer
 item_meteor_hammer_aa_2 = item_meteor_hammer
 item_meteor_hammer_aa_3 = item_meteor_hammer
 
-BossSpawner = BossSpawner or class({})
-function BossSpawner:IsBoss(unit)
-  if not unit then return nil end
-  
-  return unit.IsAngelArenaBoss
-end
-
+modifier_item_meteor_hammer_oaa_channel = class({
+  IsHidden = function(self) return false end,
+  GetTexture = function(self) return "item_meteor_hammer" end,
+})
 function item_meteor_hammer:GetAOERadius()
   return self:GetSpecialValueFor("impact_radius")
 end
 
-function item_meteor_hammer:GetIntrinsicModifierName()
-  return "modifier_item_meteor_hammer_oaa_passives"
+function item_meteor_hammer:GetChannelTime()
+	return self:GetSpecialValueFor( "max_duration" )
 end
 
-function item_meteor_hammer:GetChannelTime()
-    return 3
+function item_meteor_hammer:GetIntrinsicModifierName()
+  return "modifier_item_meteor_hammer_oaa_passives"
 end
 
 function item_meteor_hammer:OnSpellStart()
@@ -36,7 +34,7 @@ function item_meteor_hammer:OnSpellStart()
   caster:EmitSound("DOTA_Item.MeteorHammer.Channel")
 
   caster:StartGesture(ACT_DOTA_TELEPORT)
-
+  self:GetCaster():AddNewModifier(self:GetCaster(),self,"modifier_item_meteor_hammer_oaa_channel",{duration = self:GetSpecialValueFor( "max_duration" )})
   self:CreateVisibilityNode(target_location, radius, vision_duration)
 
   --Particle that surrounds caster
@@ -67,6 +65,7 @@ function item_meteor_hammer:OnChannelFinish(bInterrupted)
       false
     )
   else
+    caster:RemoveModifierByName("modifier_item_meteor_hammer_oaa_channel")
     caster:StopSound("DOTA_Item.MeteorHammer.Channel")
     ParticleManager:DestroyParticle(self.channel_particle_caster, true)
     ParticleManager:DestroyParticle(self.channel_particle, true)

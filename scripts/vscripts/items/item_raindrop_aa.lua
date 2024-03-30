@@ -8,7 +8,7 @@ modifier_item_raindrop_aa_off = class({
     IsHidden = function(self) return false end,
 })
 modifier_item_raindrop_aa = class({
-    IsHidden = function(self) return false end,
+    IsHidden = function(self) return true end,
     IsPurgable = function(self) return false end,
     GetTexture = function(self) return "item_infused_raindrop" end,
     RemoveOnDeath = function(self) return false end,
@@ -27,7 +27,8 @@ modifier_item_raindrop_aa = class({
     OnTakeDamage = function(self,e) 
         if e.damage_type ~= DAMAGE_TYPE_MAGICAL then return end
         if e.unit ~= self:GetParent() then return end
-        self:GetParent():AddNewModifier(self:GetParent(),self:GetAbility(),"modifier_item_raindrop_aa_off",{duration = self:GetAbility():GetSpecialValueFor("time_since_last_damage")})
+        self:GetAbility():StartCooldown(self:GetAbility():GetSpecialValueFor("time_since_last_damage"))
+        --self:GetParent():AddNewModifier(self:GetParent(),self:GetAbility(),"modifier_item_raindrop_aa_off",{duration = self:GetAbility():GetSpecialValueFor("time_since_last_damage")})
     end,
     GetModifierIncomingSpellDamageConstant = function(self,params)
         if IsClient() then 
@@ -47,7 +48,7 @@ modifier_item_raindrop_aa = class({
     end,
     OnIntervalThink = function(self)
         local addbonus = self:GetStackCount() + self:GetAbility():GetSpecialValueFor("magic_damage_block") / 100 * (self:GetAbility():GetSpecialValueFor("regen_pct")/self:GetAbility():GetSpecialValueFor("regen_tick_per_sec"))
-        if not self:GetParent():HasModifier("modifier_item_raindrop_aa_off") then
+        if self:GetAbility():IsCooldownReady() then
             if addbonus > self:GetAbility():GetSpecialValueFor("magic_damage_block") then
                 self:SetStackCount(self:GetAbility():GetSpecialValueFor("magic_damage_block"))
             else

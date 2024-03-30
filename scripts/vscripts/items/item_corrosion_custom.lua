@@ -49,7 +49,7 @@ modifier_item_corrosion_custom_active_slow = class({
     GetModifierMoveSpeedBonus_Percentage = function (self) return self.tick*self:GetStackCount() end,
     OnCreated = function (self)
         self.max_slow = self:GetAbility():GetSpecialValueFor("max_slow")
-        self.tick = self.max_slow/self:GetRemainingTime()
+        self.tick = self.max_slow/(self:GetRemainingTime() - 1.5)
         self.damage = self:GetAbility():GetSpecialValueFor("total_damage")/(self:GetAbility():GetSpecialValueFor("duration") + 1)
         self.damageTable = { attacker = self:GetCaster(), victim = self:GetParent(), damage = self.damage, damage_type = DAMAGE_TYPE_PHYSICAL, ability = self:GetAbility() }
 

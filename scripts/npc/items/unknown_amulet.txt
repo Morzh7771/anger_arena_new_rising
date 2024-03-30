@@ -1,23 +1,23 @@
 "DOTAAbilities"
 {
-	"item_recipe_unknown_amulet"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1600"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_unknown_amulet"
-		"ItemRequirements"
-		{
-			"01"						"item_ultimate_orb;item_diadem;item_crown;item_bottle;"
-		}
-	}
+//"item_recipe_unknown_amulet"
+//{
+//	"Model"							"models/props_gameplay/recipe.vmdl"
+//	"BaseClass"						"item_recipe_arcane_boots"
+//	// Item Info
+//	//-------------------------------------------------------------------------------------------------------------
+//	"ItemCost"						"1600"	
+//	"ItemShopTags"					""
+//	
+//	// Recipe
+//	//-------------------------------------------------------------------------------------------------------------
+//	"ItemRecipe"					"1"
+//	"ItemResult"					"item_unknown_amulet"
+//	"ItemRequirements"
+//	{
+//		"01"						"item_ultimate_orb;item_diadem;item_crown;item_bottle;"
+//	}
+//}
 	"item_unknown_amulet"
 	{
 		"BaseClass"                     "item_lua"

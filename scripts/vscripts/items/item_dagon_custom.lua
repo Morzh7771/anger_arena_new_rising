@@ -20,10 +20,14 @@ function item_dagon_custom:OnSpellStart()
     local max_dif_multiplier = self:GetSpecialValueFor("max_dif_multiplier") / 100
     local caster_lvl = self:GetCaster():GetLevel()
     local target_lvl = self:GetCursorTarget():GetLevel()
-    local difference_lvl = target_lvl / caster_lvl
+    local difference_lvl = 1
     local damage = 0
+
+    if target_lvl - caster_lvl > 10 or -10 then
+        difference_lvl = target_lvl / caster_lvl
+        if difference_lvl >= max_dif_multiplier then difference_lvl = max_dif_multiplier end
+    end
     
-    if difference_lvl >= max_dif_multiplier then difference_lvl = max_dif_multiplier end
     if self:GetCursorTarget():IsCreep() and not self:GetCursorTarget():IsAncient() and not self:GetCursorTarget():IsBoss() then self:GetCursorTarget():Kill(self, self:GetCaster()) end
 
     if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
