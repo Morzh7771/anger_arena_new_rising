@@ -18,39 +18,39 @@
 	//		"01"						"item_diadem;item_crown;item_blades_of_attack;item_bottle;"
 	//	}
 	//}
-	"item_unknown_amulet"
-	{
-		"BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_unknown_amulet"
-        "AbilityTextureName"            "nullifier2"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-	
-        "AbilityCastPoint"				"0.0"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemPurchasable"               "1"
-		"ItemStackable"                 "1"
-		"ItemInitialCharges"            "0"
-		"ItemDisplayCharges"            "1"
-		"ItemRequiresCharges"           "1"
-		"IsTempestDoubleClonable"       "0"
-		"ShouldBeInitiallySuggested"    "1"
-		//"ItemPermanent"					"1"
-		//"ItemKillable"                  "1"
-		//"ItemSellable"                  "0"
-		//"ItemDroppable"                 "1"
-		//"ItemPurchasable"				"1"
-		//"ItemInitialCharges"			"1"
-	
-		"AbilityValues"
-		{
-			"charge_primary_attribute"	"3"
-			"all_damage_def_per_charge"	"3"
-			"hand_damage_per_charge"	"5"
-			"spell_amp_pre_charge"		"7"
-		}
-	}
+	//"item_unknown_amulet"
+	//{
+	//	"BaseClass"                     "item_lua"
+    //    "ScriptFile"                    "items/item_unknown_amulet"
+    //    "AbilityTextureName"            "nullifier2"
+    //    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	//
+    //    "AbilityCastPoint"				"0.0"
+	//	"ItemKillable"                  "1"
+	//	"ItemSellable"                  "1"
+	//	"ItemDroppable"                 "1"
+	//	"ItemPurchasable"               "1"
+	//	"ItemStackable"                 "1"
+	//	"ItemInitialCharges"            "0"
+	//	"ItemDisplayCharges"            "1"
+	//	"ItemRequiresCharges"           "1"
+	//	"IsTempestDoubleClonable"       "0"
+	//	"ShouldBeInitiallySuggested"    "1"
+	//	//"ItemPermanent"					"1"
+	//	//"ItemKillable"                  "1"
+	//	//"ItemSellable"                  "0"
+	//	//"ItemDroppable"                 "1"
+	//	//"ItemPurchasable"				"1"
+	//	//"ItemInitialCharges"			"1"
+	//
+	//	"AbilityValues"
+	//	{
+	//		"charge_primary_attribute"	"3"
+	//		"all_damage_def_per_charge"	"3"
+	//		"hand_damage_per_charge"	"5"
+	//		"spell_amp_pre_charge"		"7"
+	//	}
+	//}
 //"item_unknown_amulet"
 //{       
 //	// General
