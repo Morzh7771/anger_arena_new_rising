@@ -42,25 +42,58 @@
 
 
 
-LinkLuaModifier("modifier_item_unknown_amulet", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_unknown_amulet_active", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_unknown_amulet_stats", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_unknown_amulet_abilites", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_unknown_amulet = class({
-	GetIntrinsicModifierName = function (self) return "modifier_item_unknown_amulet" end,
-	 OnChargeCountChanged = function (self)
-	 	if self:GetCurrentCharges() == 0 then self:GetCaster():RemoveModifierByName("modifier_item_unknown_amulet") return end
-	 	if not self:GetCaster():HasModifier("modifier_item_unknown_amulet") then self:AddNewModifier(self:GetCaster(), self:GetCaster(), "modifier_item_unknown_amulet", {}) end
-	 	self:GetCaster():SetModifierStackCount("modifier_item_unknown_amulet", self, self:GetCurrentCharges())
-	 	self:GetCaster():CalculateStatBonus(true)
-    	print(self:GetCurrentCharges())
+	GetIntrinsicModifierName = function (self) return "modifier_item_unknown_amulet_stats" end,
+	OnSpellStart = function (self)
+        if not IsServer() then return end
+        self:GetCaster():RemoveAllModifiersByName("modifier_item_unknown_amulet_abilites")
+        if self:GetSecondaryCharges() > 3 then
+            self:SetSecondaryCharges(1)
+        else self:SetSecondaryCharges(self:GetSecondaryCharges() + 1)
+        end
+        self:GetCaster():AddNewModifier(self:GetCaster(), self:GetCaster(), "modifier_item_unknown_amulet_abilites",{})
+        print(self:GetSecondaryCharges())
     end,
 })
 
-modifier_item_unknown_amulet_active = class({})
-
-modifier_item_unknown_amulet = class({
-	IsPassive = function() return false end,
+modifier_item_unknown_amulet_abilites = class({
     IsHidden = function() return false end,
+    IsPurgable = function() return false end,
+    DestroyOnExpire = function() return false end,
+    DeclareFunctions = function(self) return {
+       MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+    } end,
+    OnCreated = function (self)
+        if not IsServer() then return end
+        self.charges = self:GetAbility():GetSecondaryCharges()
+        self.ef_hp = 0
+        self:StartIntervalThink(0.3)
+    end,
+    GetModifierIncomingDamage_Percentage = function (self)
+        if self.charges == 1 then
+            return -100
+        else
+            return 0 
+        end
+    end,
+
+    OnDestroy = function (self)
+        print("Destroy")
+    end,
+    --OnIntervalThink = function (self)
+    --    if self:GetParent():GetSecondaryCharges() == 0 then
+    --        self.ef_hp = (self:GetParent():GetCurrentCharges() * 0.1 * self:GetParent():GetMaxHealth()) + self:GetParent():GetMaxHealth()
+    --    end
+    --    print(self.ef_hp)
+    --end,
+})
+
+modifier_item_unknown_amulet_stats = class({
+	IsPassive = function() return false end,
+    IsHidden = function() return true end,
     IsPurgable = function() return false end,
     DestroyOnExpire = function() return false end,
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
@@ -76,30 +109,28 @@ modifier_item_unknown_amulet = class({
 	OnIntervalThink = function (self)
 		if not IsServer() then return end
 		self.primary_attribute_pct = self:GetAbility():GetSpecialValueFor("charge_primary_attribute") * self:GetAbility():GetCurrentCharges()
-    	self.str_bonus = self.primary_attribute_pct
-    	self.agi_bonus = self.primary_attribute_pct
-    	self.int_bonus = self.primary_attribute_pct
+        self.mode = self:GetAbility():GetSecondaryCharges()
     	self:GetParent():CalculateStatBonus(true)
 	end,
 	GetModifierBonusStats_Strength = function (self)
-		if self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
-    	    return self.str_bonus
-    	elseif self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
-    	    return self.str_bonus / 3
+		if self.mode == 1 then
+    	    return self.primary_attribute_pct
+    	elseif self.mode == 4 then
+    	    return self.primary_attribute_pct / 3
     	end
 	end,
 	GetModifierBonusStats_Agility = function (self)
-		if self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY  then
-    	    return self.agi_bonus
-    	elseif self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
-    	    return self.agi_bonus / 3
+		if self.mode == 2  then
+    	    return self.primary_attribute_pct
+    	elseif self.mode == 4 then
+    	    return self.primary_attribute_pct / 3
     	end
 	end,
 	GetModifierBonusStats_Intellect = function (self)
-		if self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT  then
-    	    return self.int_bonus
-    	elseif self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
-    	    return self.int_bonus / 3 
+		if self.mode == 3  then
+    	    return self.primary_attribute_pct
+    	elseif self.mode == 4 then
+    	    return self.primary_attribute_pct / 3 
     	end
 	end,
 })
