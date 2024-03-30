@@ -148,7 +148,7 @@ modifier_talisman_of_heal_2_active = class({
     RemoveOnDeath  = function(self) return true end,
 	DestroyOnExpire = function(self) return true end,
     GetStatusEffectName = function(self) return "particles/status_fx/status_effect_blur.vpcf" end,
-    GetTexture  = function(self) return "talisman_of_heal_2" end,
+    GetTexture  = function(self) return "item_talisman_of_heal" end,
     OnDestroy = function(self)
         if not IsServer() then return end
         ParticleManager:DestroyParticle(self.particleDamnedEye, false)

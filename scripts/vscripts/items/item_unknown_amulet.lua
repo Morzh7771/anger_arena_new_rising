@@ -117,7 +117,7 @@ modifier_item_unknown_amulet_stats = class({
     	self:GetParent():CalculateStatBonus(true)
 	end,
     OnDestroy = function (self)
-        self:GetAbility():RemoveAllModifiersOfName("modifier_item_unknown_amulet_abilites")
+        self:GetParent():RemoveAllModifiersOfName("modifier_item_unknown_amulet_abilites")
         print("Destroy__2")
     end,
 	GetModifierBonusStats_Strength = function (self)
