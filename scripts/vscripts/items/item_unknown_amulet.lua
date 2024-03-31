@@ -112,7 +112,6 @@ modifier_item_unknown_amulet_stats = class({
         if self:GetAbility():GetSecondaryCharges() == 2 then
             return self.hand_damage
         end 
-
     end,
     GetModifierSpellAmplify_Percentage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 3 then
