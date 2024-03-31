@@ -1,47 +1,3 @@
---function StrangeAmuletStart( event )
---	local caster = event.caster
---	local ability = event.ability
---	local radius = event.Radius
---	local charges = caster:GetStrength() 
---	local duration = event.Duration
---	ability:SetCurrentCharges(ability:GetCurrentCharges() + 1)
---	if ability:GetCurrentCharges() == 0 then return end
---	
---	while(caster:HasModifier("modifier_strange_amulet_activate_str")) do
---		caster:RemoveModifierByName("modifier_strange_amulet_activate_str")
---	end
---	
---	ability:ApplyDataDrivenModifier(caster, caster, "modifier_strange_amulet_activate_str", { duration = duration })	
---	caster:SetModifierStackCount("modifier_strange_amulet_activate_str", ability, charges)
---	caster:CalculateStatBonus(true)
---end
---
---function CheckCharges(event)
---	local caster = event.caster
---	local ability = event.ability
---	local charges = ability:GetCurrentCharges()
---	if charges == 0 then 
---		caster:RemoveModifierByName("modifier_strange_amulet_bonus")
---		return
---	end
---	if not caster:HasModifier("modifier_strange_amulet_bonus") then
---		ability:ApplyDataDrivenModifier(caster, caster, "modifier_strange_amulet_bonus", {})
---	end
---	caster:SetModifierStackCount("modifier_strange_amulet_bonus", ability, charges)
---	caster:CalculateStatBonus(true)	
---end
-
-
-
-
-
-
-
-
-
-
-
-
 LinkLuaModifier("modifier_item_unknown_amulet_stats", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_unknown_amulet_abilites", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
 
@@ -73,21 +29,24 @@ modifier_item_unknown_amulet_stats = class({
     DestroyOnExpire = function() return false end,
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_PERMANENT end,
     DeclareFunctions = function(self) return {
-        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
-        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
     } end,
     OnCreated = function (self,kv)
         self.ef_hp = 0
         self.def = 0
         self.hand_damage = 0
         self.spell_amp = 0
+        self.base_damage = 0
         self.all_damage_def_per_charge = self:GetAbility():GetSpecialValueFor("all_damage_def_per_charge") / 100
         self.hand_damage_per_charge = self:GetAbility():GetSpecialValueFor("hand_damage_per_charge")
         self.spell_amp_pre_charge = self:GetAbility():GetSpecialValueFor("spell_amp_pre_charge")
+        self.stat_damage =  self:GetAbility():GetSpecialValueFor("stat_damage") / 100
     	self:StartIntervalThink(0.3)
 	end,
 	OnIntervalThink = function (self)
@@ -99,34 +58,40 @@ modifier_item_unknown_amulet_stats = class({
         if self:GetAbility():GetSecondaryCharges() == 1 then
             self.ef_hp = (self:GetAbility():GetCurrentCharges() * self.all_damage_def_per_charge * self:GetParent():GetMaxHealth()) + self:GetParent():GetMaxHealth()
             self.def = ((self:GetParent():GetMaxHealth() / self.ef_hp) - 1) * 100
+            print(self.def)
         end
         --Agility Mode
         if self:GetAbility():GetSecondaryCharges() == 2 then
             self.hand_damage = self:GetAbility():GetCurrentCharges() *  self.hand_damage_per_charge
+            print(self.hand_damage)
         end
         --Intellect Mode
         if self:GetAbility():GetSecondaryCharges() == 3 then
             self.spell_amp = self:GetAbility():GetCurrentCharges() * self.spell_amp_pre_charge
+            print(self.spell_amp)
         end
         --Univ Mode
         if self:GetAbility():GetSecondaryCharges() == 4 then
+            self.base_damage = (self:GetParent():GetStrength() + self:GetParent():GetAgility() + self:GetParent():GetIntellect()) * self.stat_damage * self:GetAbility():GetCurrentCharges()
+            print(self.base_damage)
         end
-        print(self.item_stats)
 	end,
 	GetModifierBonusStats_Strength = function (self)
 		if self.mode == 1 then
     	    return self.primary_attribute_pct + self.item_stats
-    	elseif self.mode == 4 then
+    	    elseif self.mode == 4 then
     	    return self.item_stats + self.primary_attribute_pct / 3
-            else return self.item_stats
+            else 
+                return self.item_stats
     	   end
 	end,
 	GetModifierBonusStats_Agility = function (self)
 		if self.mode == 2  then
     	    return self.primary_attribute_pct + self.item_stats
-    	elseif self.mode == 4 then
-    	    return self.item_stats + self.primary_attribute_pct / 3
-            else return self.item_stats
+    	    elseif self.mode == 4 then
+    	        return self.item_stats + self.primary_attribute_pct / 3
+            else   
+                return self.item_stats
     	end
 	end,
 	GetModifierBonusStats_Intellect = function (self)
@@ -134,29 +99,29 @@ modifier_item_unknown_amulet_stats = class({
     	    return self.primary_attribute_pct + self.item_stats
     	elseif self.mode == 4 then
     	    return self.item_stats + self.primary_attribute_pct / 3 
-        else return self.item_stats
+        else 
+            return self.item_stats
     	end
 	end,
     GetModifierIncomingDamage_Percentage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 1 then
             return self.def
-            elseif self:GetAbility():GetSecondaryCharges() == 4 then
-                return self.def / 3 
-            end
+        end
     end,  
-    GetModifierBaseDamageOutgoing_Percentage = function (self)
+    GetModifierDamageOutgoing_Percentage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 2 then
             return self.hand_damage
-            elseif self:GetAbility():GetSecondaryCharges() == 4 then 
-                return self.hand_damage / 3 
-            end 
+        end 
 
     end,
     GetModifierSpellAmplify_Percentage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 3 then
             return self.spell_amp 
-            elseif self:GetAbility():GetSecondaryCharges() == 4 then 
-                return self.spell_amp / 3 
-            end 
+         end 
+    end,
+    GetModifierBaseAttack_BonusDamage = function (self)
+        if self:GetAbility():GetSecondaryCharges() == 4 then
+            return self.base_damage
+        end
     end,
 })
