@@ -151,7 +151,7 @@ function RepickMenu:PickHero(player, newHeroName)
 
 	-- if hero already picked, ignore second pick
 	if self.gods_data[newHeroName]['picked'] ~= 0 then 
-		return true 
+		return false 
 	end
 
 	local checkFunction = function()
@@ -165,11 +165,11 @@ function RepickMenu:PickHero(player, newHeroName)
 	local oldHeroName = hero:GetUnitName()
 
 	-- say to everybody: that player now owns a new hero
-	self.gods_data[newHeroName]['picked'] = 0
+	self.gods_data[newHeroName]['picked'] = 1
 
 	CustomGameEventManager:Send_ServerToAllClients("aa_repick_menu_set_hero_picked", { 
 		["hero_name"] = newHeroName, 
-		["picked"]    = 0, 
+		["picked"]    = 1, 
 	})
 	print("1")
 
