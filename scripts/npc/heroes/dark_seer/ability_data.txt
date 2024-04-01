@@ -53,7 +53,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16 14 12 10"
+		"AbilityCooldown"				"16"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ DOTAAbilities
 		{
 			"radius"
 			{
-				"value"		"400 450 500 550 600 650 700"
+				"value"		"300 350 400 450 500 550 600"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_2"
 			}
 			"duration"				"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
@@ -267,6 +267,43 @@ DOTAAbilities
 				"RequiresScepter"		"1"
 			}
 			"wall_damage"				"20 50 80 110 140 170 200"
+		}
+	}
+	"special_bonus_unique_dark_seer_13"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"20"
+				"ad_linked_abilities"			"dark_seer_wall_of_replica"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}"special_bonus_unique_dark_seer_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"50"
+				"ad_linked_abilities"			"dark_seer_vacuum"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
 		}
 	}
 }
