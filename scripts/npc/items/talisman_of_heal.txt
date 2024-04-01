@@ -1,35 +1,5 @@
 "DOTAAbilities"
 {    
-    "item_recipe_talisman_of_heal"
-    {
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-
-        "ItemCost"                      "0"
-        "ItemShopTags"                  ""
-
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_talisman_of_heal"
-        "ItemRequirements"
-        {
-            "01"                        "item_circlet;item_talisman_of_mastery;item_fluffy_hat;item_sobi_mask"
-        }
-    }
-    "item_recipe_talisman_of_heal_2"
-    {
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-
-        "ItemCost"                      "550"
-        "ItemShopTags"                  ""
-
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_talisman_of_heal_2"
-        "ItemRequirements"
-        {
-            "01"                        "item_talisman_of_heal;item_bracer_custom"
-        }
-    }
     "item_talisman_of_mastery"
     {
         // General
@@ -64,6 +34,37 @@
             "min_exp_melee"         "15"
         }
     }
+    "item_recipe_talisman_of_heal"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_talisman_of_heal"
+        "ItemRequirements"
+        {
+            "01"                        "item_circlet;item_talisman_of_mastery;item_fluffy_hat;item_sobi_mask"
+        }
+    }
+    "item_recipe_talisman_of_heal_2"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_recipe_arcane_boots"
+
+        "ItemCost"                      "550"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_talisman_of_heal_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_talisman_of_heal;item_bracer_custom"
+        }
+    }
+    
     "item_talisman_of_heal"
     {
         // General
@@ -95,15 +96,15 @@
             "bonus_mp_regen"        "1.5 3"
             "bonus_health"          "150 250"
 
-            "damage_to_exp_ranged"  "25 40"
-            "damage_to_exp_melee"   "30 45"
-            "min_exp_melee"         "18 25"
+            "damage_to_exp_ranged"  "25 30"
+            "damage_to_exp_melee"   "30 35"
+            "min_exp_melee"         "18 22"
             "minder_cd"             "1"
 
-            "replenish_health"      "15 20"
-            "replenish_mana"        "15 20"
-            "buff_health"           "3 4.5"
-            "buff_mana"             "3 4.5"
+            "replenish_health"      "15"
+            "replenish_mana"        "15"
+            "buff_health"           "3"
+            "buff_mana"             "3"
 
             "duration"              "5"
         }
@@ -142,21 +143,21 @@
             "bonus_mp_regen"        "1.5 3"
             "bonus_health"          "150 250"
 
-            "damage_to_exp_ranged"  "25 40"
-            "damage_to_exp_melee"   "30 45"
-            "min_exp_melee"         "18 25"
+            "damage_to_exp_ranged"  "25 30"
+            "damage_to_exp_melee"   "30 35"
+            "min_exp_melee"         "18 22"
             "minder_cd"             "1"
 
-            "replenish_health"      "15 20"
-            "replenish_mana"        "15 20"
-            "buff_health"           "3 4.5"
-            "buff_mana"             "3 4.5"
+            "replenish_health"      "15"
+            "replenish_mana"        "15"
+            "buff_health"           "3"
+            "buff_mana"             "3"
 
             "duration"              "5"
 
             "duration_active"	        "8"
             "heal_per_main_stat"        "4"
-            "heal_const"                "250"
+            "heal_const"                "180"
         }
     }
 }
