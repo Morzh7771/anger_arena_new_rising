@@ -2291,7 +2291,7 @@
 		"DOTA_Tooltip_modifier_item_glimmer_cape_2_fade"		"Glimmer Cape 2"
 		"DOTA_Tooltip_modifier_item_glimmer_cape_2_fade_Description"    "Поглощает магический урон. Передвижение ускорено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 
-        "DOTA_Tooltip_ability_item_glimmer_cape_2"                      "GLIMMER CAPE 3"
+        "DOTA_Tooltip_ability_item_glimmer_cape_3"                      "GLIMMER CAPE 3"
         "DOTA_Tooltip_ability_item_glimmer_cape_3_Description"		"<h1>Активное: Glimmer</h1> После задержки в %initial_fade_delay% сек. даёт владельцу или выбранному союзнику невидимость, +%active_movement_speed% к скорости передвижения и барьер, поглощающий до %barrier_block% магического урона. Действует %duration% сек. <br><br>Дальность применения: %abilitycastrange%<br><br>Не останавливает прерываемые способности."
 		"DOTA_Tooltip_ability_item_glimmer_cape_3_movement_speed"	"+$move_speed"
 		"DOTA_Tooltip_ability_item_glimmer_cape_3_bonus_magical_armor"	"%+$spell_resist"
@@ -3237,6 +3237,8 @@
 		"DOTA_Tooltip_ability_item_vladmir_2"							"Vladmir's Offering 2"
 		"DOTA_Tooltip_ability_item_vladmir_2_Description"							"<h1>Пассивное: Vladmir's Aura</h1>Увеличивает вампиризм союзников на %lifesteal_aura%%%, их урон на %damage_aura%%%, броню на %armor_aura% и восстановление маны на %mana_regen_aura%. Вампиризм от крипов слабее на %creep_lifesteal_reduction_pct%%%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_vladmir_2_Lore"								"Жуткая маска, проклятая злобой павшего вампира."
+		"DOTA_Tooltip_ability_item_vladmir_2_armor"								"+$armor"
+		"DOTA_Tooltip_ability_item_vladmir_2_mana_regen"							"+$mana_regen"
 
 
 		"DOTA_Tooltip_ability_special_bonus_all_stats_420"		"+{s:value} ко всем атрибутам"
