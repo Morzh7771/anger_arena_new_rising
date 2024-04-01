@@ -10,7 +10,6 @@ end
 
 function item_explosive_mantle_of_intelligence:OnSpellStart()
 	local pre_explode_duration = self:GetSpecialValueFor("pre_explode_duration")
-
 	self:GetCaster():AddNewModifier(caster, self, "modifier_explosive_mantle_of_intelligence_active_channel", { duration = pre_explode_duration })
     self:GetCaster():AddNewModifier(caster, self, "modifier_explosive_mantle_of_intelligence_active_finish", { duration = pre_explode_duration })
     Timers:CreateTimer("time_until_happiness_" .. tostring(self:GetCaster():entindex()), {
@@ -20,7 +19,8 @@ function item_explosive_mantle_of_intelligence:OnSpellStart()
                EmitSoundOn("Hero_Techies.StickyBomb.Priming", self:GetCaster())
                return 1
             end
-         })         
+         })
+                
 end
 
 
@@ -33,29 +33,48 @@ modifier_explosive_mantle_of_intelligence = class({
 
     DeclareFunctions = function(self)
         local funcs = {
-            MODIFIER_PROPERTY_STATS_INTELLECT_BONUS
+            MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         }
         return funcs
     end,
 
-    GetModifierBonusStats_Intellect = function(self) return self:GetAbility():GetSpecialValueFor("bonus_int") end
+    GetModifierBonusStats_Intellect = function(self) return self:GetAbility():GetSpecialValueFor("bonus_int") end,
 })
 
 modifier_explosive_mantle_of_intelligence_active_channel = class({
 	IsBuff = function (self) return true end,
 	IsPurgable = function (self) return false end,
-
+    DeclareFunctions = function(self) return{
+         MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
+         MODIFIER_PROPERTY_MODEL_CHANGE,
+    } end, 
 	CheckState = function (self)
         return {
             [MODIFIER_STATE_DISARMED] = true,
             [MODIFIER_STATE_SILENCED] = true,
-            [MODIFIER_STATE_STUNNED] = true,
+            [MODIFIER_STATE_HEXED] = true,
         }
     end,
     OnCreated = function(self)
+    self.base_speed = 700
+    self.model = "models/items/hex/sheep_hex/sheep_hex.vmdl"
 		self:StartIntervalThink(0)
-
-	end
+    end,
+    OnRefresh = function(self)
+        self.base_speed = 700
+        if IsServer() then
+            -- play effects
+            self:PlayEffects( true )
+        end
+    end,
+    OnDestroy = function(self)
+        if IsServer() then
+            -- play effects
+         self:PlayEffects( false )
+        end
+    end,
+     GetModifierMoveSpeed_Absolute = function(self) return self.base_speed end,
+     GetModifierModelChange = function(self) return  self.model end,
 })
 
 function modifier_explosive_mantle_of_intelligence_active_channel:OnIntervalThink()

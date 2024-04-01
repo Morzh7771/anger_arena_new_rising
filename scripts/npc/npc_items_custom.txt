@@ -976,7 +976,7 @@
     "item_explosive_mantle_of_intelligence"
     {
         "BaseClass"                     "item_lua"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES"
         "AbilityTextureName"            "explosive_mantle_of_intellect"
