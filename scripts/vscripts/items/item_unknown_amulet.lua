@@ -43,9 +43,6 @@ modifier_item_unknown_amulet_stats = class({
     OnCreated = function (self,kv)
         self.ef_hp = 0
         self.def = 0
-        self.hand_damage = 0
-        self.spell_amp = 0
-        self.base_damage = 0
         self.all_damage_def_per_charge = self:GetAbility():GetSpecialValueFor("all_damage_def_per_charge") / 100
         self.hand_damage_per_charge = self:GetAbility():GetSpecialValueFor("hand_damage_per_charge")
         self.spell_amp_pre_charge = self:GetAbility():GetSpecialValueFor("spell_amp_pre_charge")
@@ -94,9 +91,9 @@ modifier_item_unknown_amulet_stats = class({
     end,  
     GetModifierTotalDamageOutgoing_Percentage = function(self,kv) 
         if self:GetAbility():GetSecondaryCharges() == 2 then
-        if kv.attacker ~= self:GetParent() then return end
-        if kv.damage_type ~= DAMAGE_TYPE_PHYSICAL then return end
-        return self:GetAbility():GetCurrentCharges() *  self.hand_damage_per_charge
+            if kv.attacker ~= self:GetParent() then return end
+            if kv.damage_type ~= DAMAGE_TYPE_PHYSICAL then return end
+            return self:GetAbility():GetCurrentCharges() *  self.hand_damage_per_charge
         end
     end,
     GetModifierSpellAmplify_Percentage = function (self)
