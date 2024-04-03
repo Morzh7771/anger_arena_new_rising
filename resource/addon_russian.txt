@@ -3355,14 +3355,12 @@
 
 
         "DOTA_Tooltip_ability_item_unknown_amulet"    						"Unknown Amulet"
-        "DOTA_Tooltip_ability_item_unknown_amulet_Description"				"<h1>Активная: Swap Bonus</h1> Переключает состояние амулета. Каждый из вариантов (сила/ловкость/интеллект) даёт %charge_primary_attribute% стата на выбранный атрибут. Универсальный вариант разделяет этот бонус на 3, на все атрибуты.<br><br><b><font color='#eb4034'>Сила</font></b> - За каждый заряд владелец получает по %all_damage_def_per_charge%%% снижения входящего урона.<br><br><b><font color='#53ea48'>Ловкость</font></b> - За каждый заряд владелец получает +%hand_damage_per_charge%%% урона с руки, от базы.<br><br><b><font color='#1722eb'>Интеллект</font></b> - За каждый заряд владелец получает %spell_amp_pre_charge%%% усиления заклинаний.<br><br><b><font color='#e5e619'>Универсальный</font></b> - Владелец получает %stat_damage%%% базового урона от суммы всех статов.\n\n<h1>Пассивная: Rune Power</h1> Амулет пополняет заряды от поднятых рун. Если зарядов 10 и больше, то амулет получит лишь один заряд, в ином случае - два."
+        "DOTA_Tooltip_ability_item_unknown_amulet_Description"				"<h1>Активная: Swap Bonus</h1> Переключает состояние амулета. Каждый из вариантов (сила/ловкость/интеллект) даёт %charge_primary_attribute% стата на выбранный атрибут. Универсальный вариант разделяет этот бонус на 3, на все атрибуты.<br><br><b><font color='#eb4034'>Сила</font></b> - За каждый заряд владелец получает по %all_damage_def_per_charge%%% снижения входящего урона.<br><br><b><font color='#53ea48'>Ловкость</font></b> - За каждый заряд владелец снимает -%charge_disarmor% брони с цели.<br><br><b><font color='#1722eb'>Интеллект</font></b> - За каждый заряд владелец получает %spell_amp_pre_charge%%% усиления заклинаний.<br><br><b><font color='#e5e619'>Универсальный</font></b> - Владелец получает %stat_damage%%% базового урона от суммы всех статов.\n\n<h1>Пассивная: Rune Power</h1> Амулет пополняет заряды от поднятых рун. Если зарядов 10 и больше, то амулет получит лишь один заряд, в ином случае - два. Заряды в рюкзаке не повышаются. При смерти забиратеся 25% зарядов."
         "DOTA_Tooltip_ability_item_unknown_amulet_stats"					"+$all"
         "DOTA_Tooltip_ability_item_unknown_amulet_Note0"					"Заряды защиты, в режиме силы, считаются по закону убывающей полезности."
 
         "DOTA_Tooltip_modifier_item_unknown_amulet_stats"					"Unknown Amulet"
-        "DOTA_Tooltip_modifier_item_unknown_amulet_stats_Description"		"<b><font color='#eb4034'>Сила</font></b> -  %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% снижения вродящего урона.
-		<br><br><b><font color='#53ea48'>Ловкость</font></b> -  %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% исходящего физического урона.
-		<br><br><b><font color='#1722eb'>Интеллект</font></b> -  %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% усиления заклинаний. <br><br><b><font color='#e5e619'>Универсальный</font></b> - получает %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% базового урона."
+        "DOTA_Tooltip_modifier_item_unknown_amulet_stats_Description"		"<b><font color='#eb4034'>Сила</font></b> -  %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% снижения вродящего урона."
 	
 	}  
 }
