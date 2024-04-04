@@ -416,3 +416,4 @@ function snapfire_scatterblast(keys)
 	return (percent_damage * caster:GetAgility()) + (percent_damage * caster:GetStrength()) + (percent_damage * caster:GetIntellect())
 end
 PercentDamage:_init();
+

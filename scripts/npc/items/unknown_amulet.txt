@@ -1,50 +1,50 @@
 "DOTAAbilities"
 {
-	//"item_recipe_unknown_amulet"
-	//{
-	//	"Model"							"models/props_gameplay/recipe.vmdl"
-	//	"BaseClass"						"item_recipe_arcane_boots"
-	//	// Item Info
-	//	//-------------------------------------------------------------------------------------------------------------
-	//	"ItemCost"						"1600"	
-	//	"ItemShopTags"					""
-	//	
-	//	// Recipe
-	//	//-------------------------------------------------------------------------------------------------------------
-	//	"ItemRecipe"					"1"
-	//	"ItemResult"					"item_unknown_amulet"
-	//	"ItemRequirements"
-	//	{
-	//		"01"						"item_ultimate_orb;item_diadem;item_crown;item_bottle;"
-	//	}
-	//}
-	//"item_unknown_amulet"
-	//{
-	//	"BaseClass"                     "item_lua"
-    //    "ScriptFile"                    "items/item_unknown_amulet"
-    //    "AbilityTextureName"            "unknown_amulet4"
-    //    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-	//	"AbilityCooldown"				"5"
-    //    "AbilityCastPoint"				"0.0"
-	//	"ItemKillable"                  "1"
-	//	"ItemSellable"                  "1"
-	//	"ItemDroppable"                 "1"
-	//	"ItemPurchasable"               "1"
-	//	"ItemStackable"                 "1"
-	//	"ItemInitialCharges"            "0"
-	//	"ItemDisplayCharges"            "1"
-	//	"ItemRequiresCharges"           "1"
-	//	"IsTempestDoubleClonable"       "0"
-	//	"ShouldBeInitiallySuggested"    "1"
-	//
-	//	"AbilityValues"
-	//	{	
-	//		"stats"						"25"
-	//		"charge_primary_attribute"	"3"
-	//		"all_damage_def_per_charge"	"2"
-	//		"hand_damage_per_charge"	"10"
-	//		"spell_amp_pre_charge"		"7"
-	//		"stat_damage"				"5"
-	//	}
-	//}
+	"item_recipe_unknown_amulet"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_unknown_amulet"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_diadem;item_crown;item_bottle;"
+		}
+	}
+	"item_unknown_amulet"
+	{
+		"BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_unknown_amulet"
+        "AbilityTextureName"            "unknown_amulet4"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityCooldown"				"5"
+        "AbilityCastPoint"				"0.0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemPurchasable"               "1"
+		"ItemStackable"                 "1"
+		"ItemInitialCharges"            "0"
+		"ItemDisplayCharges"            "1"
+		"ItemRequiresCharges"           "1"
+		"IsTempestDoubleClonable"       "0"
+		"ShouldBeInitiallySuggested"    "1"
+	
+		"AbilityValues"
+		{	
+			"stats"						"25"
+			"charge_primary_attribute"	"3"
+			"all_damage_def_per_charge"	"2"
+			"hand_damage_per_charge"	"10"
+			"spell_amp_pre_charge"		"7"
+			"stat_damage"				"5"
+		}
+	}
 }

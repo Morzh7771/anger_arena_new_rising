@@ -101,7 +101,7 @@
         "AbilityTextureName"            "phase_boots_2"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
         "AbilityCastRange"              "99999"
-        "AbilityCooldown"               "6"
+        "AbilityCooldown"               "8"
         "ItemBaseLevel"                 "2"
         "AbilitySharedCooldown"         "phase"
         // Item Info
@@ -125,7 +125,7 @@
             "bonus_armor"                   "5 5 10"
             "bonus_health"                  "0 300 500"
             "bonus_mana_regen"              "0 2.5 4"
-            "range"                         "340"  
+            "range"                         "300"  
             "duration"                      "0.18" 
         }
     } 
@@ -138,7 +138,7 @@
         "AbilityTextureName"            "phase_boots_3"                                                 // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
         "AbilityCastRange"              "99999"
-        "AbilityCooldown"               "6"
+        "AbilityCooldown"               "8"
         "ItemBaseLevel"                 "3"
         "AbilitySharedCooldown"         "phase"
         // Item Info
@@ -154,15 +154,15 @@
         "AbilityValues"
         {
             "bonus_movement_speed"          "60 70 80"
-            "bonus_damage_melee"            "20 60 120"
-            "bonus_damage_range"            "15 45 100"
+            "bonus_damage_melee"            "20 40 80"
+            "bonus_damage_range"            "15 35 70"
             "phase_movement_speed"          "20 30 40"
             "phase_movement_speed_range"    "10 20 30"
             "phase_duration"                "3.0 4.0 5.0"
             "bonus_armor"                   "5 5 10"
             "bonus_health"                  "0 200 325"
             "bonus_mana_regen"              "0 2.5 3.75"
-            "range"                         "0 340 380"   
+            "range"                         "300"   
             "duration"                      "0.18" 
         }
     }

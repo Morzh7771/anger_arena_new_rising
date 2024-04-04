@@ -27,6 +27,7 @@ modifier_item_unknown_amulet_stats = class({
     IsHidden = function() return false end,
     IsPurgable = function() return false end,
     DestroyOnExpire = function() return false end,
+    OnTooltip = function(self) return self:GetCaster():GetNetworkableEntityInfo("talik") end,
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_PERMANENT end,
     DeclareFunctions = function(self) return {
         MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
@@ -39,7 +40,6 @@ modifier_item_unknown_amulet_stats = class({
         MODIFIER_PROPERTY_TOOLTIP,
     } end,
     GetAbilityTextureName = function (self) return "unknown_amulet4" end,
-    OnTooltip = function(self) return self.def end,
     OnCreated = function (self,kv)
         self.ef_hp = 0
         self.def = 0
@@ -93,7 +93,10 @@ modifier_item_unknown_amulet_stats = class({
         if self:GetAbility():GetSecondaryCharges() == 2 then
             if kv.attacker ~= self:GetParent() then return end
             if kv.damage_type ~= DAMAGE_TYPE_PHYSICAL then return end
+            self:GetCaster():SetNetworkableEntityInfo("talik",self:GetAbility():GetCurrentCharges() *  self.hand_damage_per_charge)
             return self:GetAbility():GetCurrentCharges() *  self.hand_damage_per_charge
+        else
+            self:GetCaster():SetNetworkableEntityInfo("talik",0)
         end
     end,
     GetModifierSpellAmplify_Percentage = function (self)

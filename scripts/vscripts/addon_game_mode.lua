@@ -276,7 +276,7 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier("modifier_duel_vision", 'modifiers/modifier_duel_vision', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_repick", 'modifiers/modifier_repick', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier('modifier_bat', 'modifiers/modifier_bat', LUA_MODIFIER_MOTION_NONE)
-
+	LinkLuaModifier("modifier_dissapear", 'modifiers/modifier_dissapear', LUA_MODIFIER_MOTION_NONE)
 
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
 	GameMode:SetRuneSpawnFilter(Safe_Wrap(AngelArena, "ModifierRuneSpawn"), self)
