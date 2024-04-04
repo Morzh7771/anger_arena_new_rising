@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_item_unknown_amulet_stats", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_unknown_amulet_abilites", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_unknown_amulet_disarmor", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_unknown_amulet = class({
 	GetIntrinsicModifierName = function (self) return "modifier_item_unknown_amulet_stats" end,
@@ -27,18 +28,20 @@ modifier_item_unknown_amulet_stats = class({
     IsHidden = function() return false end,
     IsPurgable = function() return false end,
     DestroyOnExpire = function() return false end,
-    OnTooltip = function(self) return self:GetCaster():GetNetworkableEntityInfo("talik") end,
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_PERMANENT end,
     DeclareFunctions = function(self) return {
-        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+        --MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+        --MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_PROPERTY_TOOLTIP,
     } end,
+    OnTooltip = function(self) return self.def end,
     GetAbilityTextureName = function (self) return "unknown_amulet4" end,
     OnCreated = function (self,kv)
         self.ef_hp = 0
@@ -55,6 +58,7 @@ modifier_item_unknown_amulet_stats = class({
         self.mode = self:GetAbility():GetSecondaryCharges()
     	self:GetParent():CalculateStatBonus(true)
 	end,
+
 	GetModifierBonusStats_Strength = function (self)
 		if self.mode == 1 then
     	    return self.primary_attribute_pct + self.item_stats
@@ -77,7 +81,7 @@ modifier_item_unknown_amulet_stats = class({
 		if self.mode == 3  then
     	    return self.primary_attribute_pct + self.item_stats
     	elseif self.mode == 4 then
-    	    return self.item_stats + self.primary_attribute_pct / 3 
+    	    return self.item_stats + self.primary_attribute_pct / 3
         else 
             return self.item_stats
     	end
@@ -89,14 +93,25 @@ modifier_item_unknown_amulet_stats = class({
             return self.def
         end
     end,  
-    GetModifierTotalDamageOutgoing_Percentage = function(self,kv) 
+    OnAttackLanded = function (self, kv)
         if self:GetAbility():GetSecondaryCharges() == 2 then
-            if kv.attacker ~= self:GetParent() then return end
-            if kv.damage_type ~= DAMAGE_TYPE_PHYSICAL then return end
-            self:GetCaster():SetNetworkableEntityInfo("talik",self:GetAbility():GetCurrentCharges() *  self.hand_damage_per_charge)
-            return self:GetAbility():GetCurrentCharges() *  self.hand_damage_per_charge
-        else
-            self:GetCaster():SetNetworkableEntityInfo("talik",0)
+        if self:GetParent() ~= kv.attacker then return end
+        local polus = 1
+        local charge_disarmor =  ((100 - self:GetAbility():GetSpecialValueFor("charge_disarmor"))/100)^self:GetAbility():GetCurrentCharges()
+        local target_ef_hp =  kv.target:GetPhysicalArmorValue(false) * 0.06 * kv.target:GetMaxHealth()
+        local working = target_ef_hp * charge_disarmor
+        local magatron  = (working/kv.target:GetMaxHealth())*(50/3)
+        local final = kv.target:GetPhysicalArmorValue(false) - magatron
+        if kv.target:GetPhysicalArmorValue(false) < 0 then 
+            polus = -1
+        end
+            if kv.target:HasModifier("modifier_item_unknown_amulet_disarmor") then 
+                local modifier = kv.target:FindModifierByName("modifier_item_unknown_amulet_disarmor")
+                modifier:ForceRefresh() 
+            else  
+                kv.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_unknown_amulet_disarmor", {duration = self:GetAbility():GetSpecialValueFor("duration")})
+                kv.target:SetModifierStackCount("modifier_item_unknown_amulet_disarmor",kv.attacker,final*polus)
+               end
         end
     end,
     GetModifierSpellAmplify_Percentage = function (self)
@@ -109,5 +124,15 @@ modifier_item_unknown_amulet_stats = class({
             return (self:GetParent():GetStrength() + self:GetParent():GetAgility() + self:GetParent():GetIntellect()) * self.stat_damage * self:GetAbility():GetCurrentCharges()
         end
     end,
-    
+})
+
+modifier_item_unknown_amulet_disarmor = class({ 
+    IsHidden = function (self) return false end,
+    IsPurgable = function (self) return true end,
+    DestroyOnExpire = function (self) return true end,
+    GetAttributes = function (self) return  MODIFIER_ATTRIBUTE_PERMANENT end,
+    DeclareFunctions = function (self) return {
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+    }end,
+    GetModifierPhysicalArmorBonus = function (self) return -self:GetStackCount() end,
 })
