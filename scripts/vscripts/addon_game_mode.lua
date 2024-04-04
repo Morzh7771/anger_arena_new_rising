@@ -230,7 +230,7 @@ function AngelArena:InitGameMode()
 		GameMode:SetDraftingHeroPickSelectTimeOverride(60)
 		GameRules:SetPreGameTime(60)
 	end
-
+	GameRules:SetSameHeroSelectionEnabled(true)
 	GameRules:SetGoldPerTick(GOLD_PER_TICK)
 	GameRules:SetHeroRespawnEnabled(true)
 	GameRules:SetPostGameTime(30)
