@@ -80,7 +80,7 @@ modifier_item_unknown_amulet_stats = class({
 		if self.mode == 3  then
     	    return self.primary_attribute_pct + self.item_stats
     	elseif self.mode == 4 then
-    	    return self.item_stats + self.primary_attribute_pct / 3 
+    	    return self.item_stats + self.primary_attribute_pct / 3
         else 
             return self.item_stats
     	end
@@ -94,36 +94,25 @@ modifier_item_unknown_amulet_stats = class({
     end,  
     OnAttackLanded = function (self, kv)
         if self:GetAbility():GetSecondaryCharges() == 2 then
-            if self:GetParent() ~= kv.attacker then return end 
-            
-            local charge_disarmor = self:GetAbility():GetCurrentCharges() * self:GetAbility():GetSpecialValueFor("charge_disarmor")
-
+        if self:GetParent() ~= kv.attacker then return end
+        local polus = 1
+        local charge_disarmor =  ((100 - self:GetAbility():GetSpecialValueFor("charge_disarmor"))/100)^self:GetAbility():GetCurrentCharges()
+        local target_ef_hp =  kv.target:GetPhysicalArmorValue(false) * 0.06 * kv.target:GetMaxHealth()
+        local working = target_ef_hp * charge_disarmor
+        local magatron  = (working/kv.target:GetMaxHealth())*(50/3)
+        local final = kv.target:GetPhysicalArmorValue(false) - magatron
+        if kv.target:GetPhysicalArmorValue(false) < 0 then 
+            polus = -1
+        end
             if kv.target:HasModifier("modifier_item_unknown_amulet_disarmor") then 
                 local modifier = kv.target:FindModifierByName("modifier_item_unknown_amulet_disarmor")
                 modifier:ForceRefresh() 
-            else 
-                kv.target:AddNewModifier(
-                self:GetParent(),
-                self:GetAbility(),
-                "modifier_item_unknown_amulet_disarmor",
-                {duration = self:GetAbility():GetSpecialValueFor("duration")}
-                )
-            end
-            kv.target:SetModifierStackCount("modifier_item_unknown_amulet_disarmor",kv.attacker,charge_disarmor)
+            else  
+                kv.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_unknown_amulet_disarmor", {duration = self:GetAbility():GetSpecialValueFor("duration")})
+                kv.target:SetModifierStackCount("modifier_item_unknown_amulet_disarmor",kv.attacker,final*polus)
+               end
         end
     end,
-    --GetModifierDamageOutgoing_Percentage  = function(self) 
-    --    if self:GetAbility():GetSecondaryCharges() == 2 then
-    --        return self:GetAbility():GetCurrentCharges() *  self:GetAbility():GetSpecialValueFor("hand_damage_per_charge")
-    --    end
-    --end,
-    --GetModifierTotalDamageOutgoing_Percentage = function(self,kv) 
-    --    if self:GetAbility():GetSecondaryCharges() == 2 then
-    --        if kv.attacker ~= self:GetParent() then return end
-    --        if kv.damage_type ~= DAMAGE_TYPE_PHYSICAL then return end
-    --        return self:GetAbility():GetCurrentCharges() *  self:GetAbility():GetSpecialValueFor("hand_damage_per_charge")
-    --    end
-    --end,
     GetModifierSpellAmplify_Percentage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 3 then
             return self:GetAbility():GetCurrentCharges() * self.spell_amp_pre_charge
@@ -140,7 +129,7 @@ modifier_item_unknown_amulet_disarmor = class({
     IsHidden = function (self) return false end,
     IsPurgable = function (self) return true end,
     DestroyOnExpire = function (self) return true end,
-    GetAttributes = function (self) return (MODIFIER_ATTRIBUTE_MULTIPLE + MODIFIER_ATTRIBUTE_PERMANENT) end,
+    GetAttributes = function (self) return  MODIFIER_ATTRIBUTE_PERMANENT end,
     DeclareFunctions = function (self) return {
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     }end,
