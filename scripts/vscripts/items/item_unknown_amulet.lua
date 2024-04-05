@@ -97,11 +97,12 @@ modifier_item_unknown_amulet_stats = class({
         if self:GetAbility():GetSecondaryCharges() == 2 then
         if self:GetParent() ~= kv.attacker then return end
         local polus = 1
+        local charge_disarmor_const = self:GetAbility():GetSpecialValueFor("charge_disarmor_const") * self:GetAbility():GetCurrentCharges()
         local charge_disarmor =  ((100 - self:GetAbility():GetSpecialValueFor("charge_disarmor"))/100)^self:GetAbility():GetCurrentCharges()
         local target_ef_hp =  kv.target:GetPhysicalArmorValue(false) * 0.06 * kv.target:GetMaxHealth()
         local working = target_ef_hp * charge_disarmor
         local magatron  = (working/kv.target:GetMaxHealth())*(50/3)
-        local final = kv.target:GetPhysicalArmorValue(false) - magatron
+        local final = (kv.target:GetPhysicalArmorValue(false) - magatron) + charge_disarmor_const
         if kv.target:GetPhysicalArmorValue(false) < 0 then 
             polus = -1
         end
