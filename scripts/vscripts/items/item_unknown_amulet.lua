@@ -9,7 +9,6 @@ item_unknown_amulet = class({
             self:SetSecondaryCharges(1)
         else self:SetSecondaryCharges(self:GetSecondaryCharges() + 1)
         end
-        print(self:GetSecondaryCharges())
     end,
     GetAbilityTextureName = function (self)
         if self:GetSecondaryCharges() == 0 then
