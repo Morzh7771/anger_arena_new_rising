@@ -57,8 +57,7 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"				"14 13 12 11 10 9 8"
-				"special_bonus_unique_ursa_2"			"-2"
+				"value"				"9"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -176,7 +175,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{			
-			"damage_reduction"			"65"
+			"damage_reduction"			"70"
 			"status_resistance"
 			{
 				"value"							"50"
@@ -189,7 +188,7 @@ DOTAAbilities
 			}
 			"cooldown_scepter"
 			{
-				"value"						"30 28 26 24 22 20 18"
+				"value"						"32 30 28 26 24 22 20 "
 				"RequiresScepter"			"1"
 			}
 			"aoe_radius"
