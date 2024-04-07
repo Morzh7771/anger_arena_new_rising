@@ -3122,5 +3122,16 @@
         "DOTA_Tooltip_ability_item_unknown_amulet_stats"					"+$all"
         "DOTA_Tooltip_ability_item_unknown_amulet_Note0"					"Strength and Agility charges follow the law of diminishing returns."
 
+        "DOTA_Tooltip_ability_item_magic_splash"                            "Aura Flash"
+        "DOTA_Tooltip_ability_item_magic_splash_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_int"            "+$int"
+
+        "DOTA_Tooltip_ability_item_magic_splash_2"                            "Aura Flash 2"
+        "DOTA_Tooltip_ability_item_magic_splash_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_2_int"            "+$int"
+
+        "DOTA_Tooltip_ability_item_magic_splash_3"                            "Aura Flash 3"
+        "DOTA_Tooltip_ability_item_magic_splash_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_3_int"            "+$int"
 	}
 }

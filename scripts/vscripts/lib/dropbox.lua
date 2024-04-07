@@ -115,7 +115,7 @@ function ItemDestroyer:start()
 	if not self.items then return end
 
 	Timers:CreateTimer( ITEM_DESTROY_TIME, function()
-		print("Starting destroy items")
+		--print("Starting destroy items")
 		for _, data in pairs(self.items) do
 			local item = data[1]
 			local drop = data[2]
@@ -129,12 +129,12 @@ function ItemDestroyer:start()
 			end
 		end
 
-		print("End destroy items")
+		--print("End destroy items")
 	end)
 end
 
 function DropBox:DropAtPos(pos, radius, manualLifetime)
-	print("[DropBox] Starting drop", self.identifier)
+	--print("[DropBox] Starting drop", self.identifier)
 
 	local items = self:GetItemNames()
 
@@ -185,7 +185,7 @@ function DropBox:DropAtPos(pos, radius, manualLifetime)
 		child:DropAtPos(pos, radius)
 	end
 
-	print("[DropBox] Stop dropping items")
+	--print("[DropBox] Stop dropping items")
 
 	if not manualLifetime then
 		return ItemDestroyer:LaunchCountdown( result )
