@@ -3348,11 +3348,8 @@
         "DOTA_Tooltip_modifier_talisman_of_heal_2_buff"                        "Bliss"
         "DOTA_Tooltip_modifier_talisman_of_heal_2_buff_Description"            "Востановления здоровья и маны"
 
-
 		"DOTA_Tooltip_modifier_talisman_of_heal_2_active"                        "Extencive Heal"
         "DOTA_Tooltip_modifier_talisman_of_heal_2_active_Description"            "Осталось восстановить здоровья"
-
-
 
         "DOTA_Tooltip_ability_item_unknown_amulet"    						"Unknown Amulet"
         "DOTA_Tooltip_ability_item_unknown_amulet_Description"				"<h1>Активная: Swap Bonus</h1> Переключает состояние амулета. Каждый из вариантов (сила/ловкость/интеллект) даёт %charge_primary_attribute% стата на выбранный атрибут. Универсальный вариант разделяет этот бонус на 3, на все атрибуты.<br><br><b><font color='#eb4034'>Сила</font></b> - За каждый заряд владелец получает по %all_damage_def_per_charge%%% снижения входящего урона.<br><br><b><font color='#53ea48'>Ловкость</font></b> - За каждый заряд владелец снимает - %charge_disarmor_const% + %charge_disarmor%%% брони с цели.<br><br><b><font color='#1722eb'>Интеллект</font></b> - За каждый заряд владелец получает %spell_amp_pre_charge%%% усиления заклинаний.<br><br><b><font color='#e5e619'>Универсальный</font></b> - Владелец получает %stat_damage%%% базового урона от суммы всех статов.\n\n<h1>Пассивная: Rune Power</h1> Амулет пополняет заряды от поднятых рун. Если зарядов 8 и больше, то амулет получит лишь один заряд, в ином случае - два. Заряды в рюкзаке не повышаются. При смерти забирается 30% зарядов."
@@ -3361,6 +3358,17 @@
 
         "DOTA_Tooltip_modifier_item_unknown_amulet_stats"					"Unknown Amulet"
         "DOTA_Tooltip_modifier_item_unknown_amulet_stats_Description"		"<b><font color='#eb4034'>Сила</font></b> -  %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% снижения вродящего урона."
-	
+
+	    "DOTA_Tooltip_ability_item_magic_splash"                            "Aura Flash"
+        "DOTA_Tooltip_ability_item_magic_splash_Description"                "<h1>Пассивная: Aura Flash</h1> Наносит процент от урона заклинаний владельца всем врагам в радиусе %splash_aoe% вокруг основной цели.<br><br>• Урон героям: %splash_pct_hero%%%<br>• Урон иллюзиям: %splash_pct_illusion%%%<br>• Урон крипам: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_int"            "+$int"
+
+        "DOTA_Tooltip_ability_item_magic_splash_2"                            "Aura Flash 2"
+        "DOTA_Tooltip_ability_item_magic_splash_2_Description"                "<h1>Пассивная: Aura Flash</h1> Наносит процент от урона заклинаний владельца всем врагам в радиусе %splash_aoe% вокруг основной цели.<br><br>• Урон героям: %splash_pct_hero%%%<br>• Урон иллюзиям: %splash_pct_illusion%%%<br>• Урон крипам: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_2_int"            "+$int"
+
+        "DOTA_Tooltip_ability_item_magic_splash_3"                            "Aura Flash 3"
+        "DOTA_Tooltip_ability_item_magic_splash_3_Description"                "<h1>Пассивная: Aura Flash</h1> Наносит процент от урона заклинаний владельца всем врагам в радиусе %splash_aoe% вокруг основной цели.<br><br>• Урон героям: %splash_pct_hero%%%<br>• Урон иллюзиям: %splash_pct_illusion%%%<br>• Урон крипам: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_3_int"            "+$int"
 	}  
 }

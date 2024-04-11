@@ -109,7 +109,7 @@ function modifier_item_trisula:OnAttackLanded(params)
 		if x ~= params.target or x:IsIllusion() then
 		    local dmg = 0
 		    local cleave_physical_pierce = self:GetAbility():GetSpecialValueFor('cleave_physical_pierce')
-		    local result_armor = target:GetPhysicalArmorValue(false) / 100 * (100 - cleave_physical_pierce)
+		    local result_armor = x:GetPhysicalArmorValue(false) / 100 * (100 - cleave_physical_pierce)
 		    local dmg_ref = params.original_damage * Util:ArmorDamageReductionByNumber(result_armor)
 
 			if x:IsCreep() then

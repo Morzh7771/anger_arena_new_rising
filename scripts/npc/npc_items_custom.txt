@@ -1010,6 +1010,135 @@
             "int_dmg_mlp"               "0.25"
         }
     }
+    "item_recipe_magic_splash"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "recipe"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"1000"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_magic_splash"
+        "ItemRequirements"
+        {
+            "01"						"item_mantle;item_robe;item_staff_of_wizardry;item_mystic_staff"
+        }
+    }
+    "item_magic_splash"
+    {
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"				"1"
+        "ItemBaseLevel"					"1"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "magic_splash"
+        "ScriptFile"                    "items/item_magic_splash"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemPurchasable"				"1"
+        "AbilityValues"
+        {
+            "int"			        "45 60 75"
+
+            "splash_aoe"	        "300"
+            "splash_pct_creep"      "10 20 30"
+            "splash_pct_hero"       "10 20 30"
+            "splash_pct_illusion"   "10 20 30"
+            "magic_pierce"          "20 25 30"
+        }
+    }
+    "item_recipe_magic_splash_2"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "recipe"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_magic_splash_2"
+        "ItemRequirements"
+        {
+            "01"						"item_magic_splash;item_magic_splash"
+        }
+    }
+    "item_magic_splash_2"
+    {
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"				"1"
+        "ItemBaseLevel"					"2"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "magic_splash_2"
+        "ScriptFile"                    "items/item_magic_splash"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemPurchasable"				"1"
+        "AbilityValues"
+        {
+            "int"			        "45 60 75"
+
+            "splash_aoe"	        "300"
+            "splash_pct_creep"      "10 20 30"
+            "splash_pct_hero"       "10 20 30"
+            "splash_pct_illusion"   "10 20 30"
+            "magic_pierce"          "20 25 30"
+        }
+    }
+    "item_recipe_magic_splash_3"
+    {
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "recipe"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_magic_splash_3"
+        "ItemRequirements"
+        {
+            "01"						"item_magic_splash_2;item_magic_splash_2;item_boss_soul"
+        }
+    }
+    "item_magic_splash_3"
+    {
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"				"1"
+        "ItemBaseLevel"					"3"
+        "BaseClass"                     "item_lua"
+        "AbilityTextureName"            "magic_splash_3"
+        "ScriptFile"                    "items/item_magic_splash"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemPurchasable"				"1"
+        "AbilityValues"
+        {
+            "int"			        "45 60 75"
+
+            "splash_aoe"	        "300"
+            "splash_pct_creep"      "10 20 30"
+            "splash_pct_hero"       "10 20 30"
+            "splash_pct_illusion"   "10 20 30"
+            "magic_pierce"          "20 25 30"
+        }
+    }
     //"item_recipe_infinite_branch"
     //{
     //    "Model"                         "models/props_gameplay/recipe.vmdl"
