@@ -1264,4 +1264,26 @@
             }
         }
     }
+    "neutral_upgrade"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "MaxLevel"                      "1"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"  
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+                "max_level"             "1000"
+                "increase_time"         "300"
+                "increase_damage"       "10"
+                "increase_aspd"         "10"
+                "increase_health"       "50"
+                "increase_armor"        "0.5"
+                "increase_gold"         "10"
+                "increase_xp"           "1"
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+    }
 }
