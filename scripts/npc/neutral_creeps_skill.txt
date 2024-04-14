@@ -1286,6 +1286,29 @@
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
+    "neutral_upgrade_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "MaxLevel"                      "1"
+        "BaseClass"                     "neutral_upgrade"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"  
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+                "max_level"             "1000"
+                "increase_time"         "15"
+                "increase_damage"       "10"
+                "increase_aspd"         "10"
+                "increase_health"       "50"
+                "increase_armor"        "0.5"
+                "increase_gold"         "10"
+                "increase_xp"           "1"
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+    }
     "satyr_soulstealer_mana_burn"
     {
         // General
@@ -1825,7 +1848,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "MaxLevel"                      "1"
+        "MaxLevel"                      "10"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         
 
@@ -1858,6 +1881,7 @@
         "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "MaxLevel"                      "10"
 
 
         // Time     
@@ -1887,6 +1911,7 @@
         "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        "MaxLevel"                      "10"
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -1912,6 +1937,7 @@
         "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "MaxLevel"                      "10"
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -1931,6 +1957,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"                      "10"
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -1952,6 +1979,7 @@
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"    
         "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+        "MaxLevel"                      "10"
                 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -1986,6 +2014,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"                      "10"
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
