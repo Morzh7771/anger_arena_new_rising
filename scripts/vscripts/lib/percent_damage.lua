@@ -80,6 +80,8 @@ function PercentDamage:_init()
 		"riki_blink_strike",
 		"hoodwink_bushwhack",
 		"hoodwink_sharpshooter",
+		"meepo_poof",
+		"meepo_ransack",
 	}
 	local MagicalDamageFromInt = {
 		"lich_chain_frost",
