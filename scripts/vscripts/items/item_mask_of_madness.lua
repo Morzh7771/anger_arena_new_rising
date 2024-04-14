@@ -14,7 +14,8 @@ item_mask_of_madness_aa_2 = item_mask_of_madness_aa
 item_mask_of_madness_aa_3 = item_mask_of_madness_aa
 
 modifier_item_mask_of_madness_aa = class({
-    IsHidden = function(self) return false end,
+    IsHidden = function(self) return true end,
+    IsPurgable = function(self) return false end,
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
     GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
     DeclareFunctions = function(self) return {
