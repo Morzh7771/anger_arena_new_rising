@@ -807,6 +807,239 @@
 			"bonus_damage"			"10"
 		}
 	}
+		//=================================================================================================================
+	// Recipe: Necronomicon
+	//=================================================================================================================
+	"item_recipe_necronomicon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1250"	
+		"ItemShopTags"					""
+
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"0"
+        "IsObsolete"                    "1"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_necronomicon"
+		"ItemRequirements"
+		{
+			"01"						"item_sobi_mask;item_sobi_mask;item_belt_of_strength"
+		}
+	}
+
+	"item_recipe_necronomicon_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemBaseLevel"					"2"
+
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"0"
+        "IsObsolete"                    "1"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_necronomicon_2"
+		"ItemRequirements"
+		{
+			"01"						"item_necronomicon*;item_recipe_necronomicon"
+		}
+	}
+
+	"item_recipe_necronomicon_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemBaseLevel"					"3"
+
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"0"
+        "IsObsolete"                    "1"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_necronomicon_3"
+		"ItemRequirements"
+		{
+			"01"						"item_necronomicon_2*;item_recipe_necronomicon"
+		}
+	}
+	
+	//=================================================================================================================
+	// Necronomicon
+	//=================================================================================================================
+	"item_necronomicon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"80.0"
+		"AbilityManaCost"				"150"
+		"AbilitySharedCooldown"			"necronomicon"
+		"FightRecapLevel"				"1"
+
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"0"
+        "IsObsolete"                    "1"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2050"
+		"ItemShopTags"					"int;str;hard_to_tag;see_invis"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"necronomicon 1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+
+		"UpgradesItems"					"item_necronomicon;item_necronomicon_2"
+		"UpgradeRecipe"					"item_recipe_necronomicon"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_strength"		"6 12 18"
+				"bonus_mana_regen"		"2 3 4"
+				"summon_duration"		"60"
+				"warrior_health_tooltip"	"800 1200 1600"
+				"warrior_damage_tooltip"	"25 45 65"
+				"warrior_mana_feedback"	"30 40 50"
+				"warrior_mana_break_tooltip"	"30 40 50"
+				"explosion"				"600 700 800"
+				"warrior_truesight"		"400 800 1200"
+				"archer_health_tooltip"	"800 1200 1600"
+				"archer_damage_tooltip"	"37 57 75"
+				"archer_mana_burn"		"125 175 225"
+				"archer_aura_radius_tooltip"	"1200"
+				"archer_move_speed"	"5 7 9"
+		}
+	}
+
+	"item_necronomicon_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"80.0"
+		"AbilityManaCost"				"150"
+		"AbilitySharedCooldown"			"necronomicon"
+		"FightRecapLevel"				"1"
+
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"0"
+        "IsObsolete"                    "1"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3300"
+		"ItemShopTags"					"int;str;hard_to_tag;see_invis"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"necronomicon 2"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"2"
+	
+		"UpgradesItems"					"item_necronomicon_2"
+		"UpgradeRecipe"					"item_recipe_necronomicon"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_strength"		"6 12 18"
+				"bonus_mana_regen"		"2 3 4"
+				"summon_duration"		"60"
+				"warrior_health_tooltip"	"800 1200 1600"
+				"warrior_damage_tooltip"	"25 45 65"
+				"warrior_mana_feedback"	"30 40 50"
+				"warrior_mana_break_tooltip"	"30 40 50"
+				"explosion"				"600 700 800"
+				"warrior_truesight"		"400 800 1200"
+				"archer_health_tooltip"	"800 1200 1600"
+				"archer_damage_tooltip"	"37 57 75"
+				"archer_mana_burn"		"125 175 225"
+				"archer_aura_radius_tooltip"	"1200"
+				"archer_move_speed"	"5 7 9"
+		}
+	}
+
+	"item_necronomicon_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"80.0"
+		"AbilityManaCost"				"150"
+		"AbilitySharedCooldown"			"necronomicon"
+		"FightRecapLevel"				"1"
+
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"0"
+        "IsObsolete"                    "1"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4550"
+		"ItemShopTags"					"int;str;hard_to_tag;see_invis"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"necronomicon 3"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_strength"		"6 12 18"
+				"bonus_mana_regen"		"2 3 4"
+				"summon_duration"		"60"
+				"warrior_health_tooltip"	"800 1200 1600"
+				"warrior_damage_tooltip"	"25 45 65"
+				"warrior_mana_feedback"	"30 40 50"
+				"warrior_mana_break_tooltip"	"30 40 50"
+				"explosion"				"600 700 800"
+				"warrior_truesight"		"400 800 1200"
+				"archer_health_tooltip"	"800 1200 1600"
+				"archer_damage_tooltip"	"37 57 75"
+				"archer_mana_burn"		"125 175 225"
+				"archer_aura_radius_tooltip"	"1200"
+				"archer_move_speed"	"5 7 9"
+		}
+	}
 }
 	
 

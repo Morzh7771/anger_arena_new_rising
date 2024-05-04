@@ -540,6 +540,8 @@
 		"dota_tooltip_modifier_juggernaut_blade_dance_lua_mortal" "Mortal Wound"
 		"dota_tooltip_modifier_juggernaut_blade_dance_lua_mortal_description" "Upon expiration, you will receive <b><font color='#ff0000'>%dMODIFIER_PROPERTY_TOOLTIP%</font></b> pure damage."
 
+		"npc_aa_creep_centaur_big"																"It's not a Bear"
+
 		//Talents
 		"DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_1"                                 "+{s:value}% to Magic Amp per Intellect unit"
 		"DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_9"                               "+{s:value}% to Magic Amp per Intellect unit"
@@ -1714,7 +1716,7 @@
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description"	"The ability Guard 2 does not affect creatures on which it was recently applied."
 
 		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence"							"Explosive Mantle of Intelligence"
-		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Description"				"<h1>Active: Explode</h1>Makes you helpless when used. When activated, deals damage equal to your maximum health every second to you and all enemies in a %radius%. Kills you after %pre_explode_duration% seconds, dealing damage to enemies based on your current health. Final damage is increased by your intelligence."
+		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Description"				"<h1>Active: Explode</h1>Makes you a happy sheep. When activated, deals damage equal to your maximum health every second to you and all enemies in a %radius%. Kills you after %pre_explode_duration% seconds, dealing damage to enemies based on your current health. Final damage is increased by your intelligence."
 		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_bonus_int"					+$int"
 		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_burn_hp_to_damage"			"%Damage from Predetonation:"
 		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_explosive_damage_per_hp"	"%Damage from Detonation:"
