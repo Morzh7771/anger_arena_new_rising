@@ -1018,7 +1018,7 @@
         "AbilityTextureName"            "recipe"
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1000"
+        "ItemCost"						"0"
         "ItemShopTags"					""
 
         // Recipe
@@ -1027,7 +1027,7 @@
         "ItemResult"					"item_magic_splash"
         "ItemRequirements"
         {
-            "01"						"item_mantle;item_robe;item_staff_of_wizardry;item_mystic_staff"
+            "01"						"item_mantle;item_robe;item_mystic_staff"
         }
     }
     "item_magic_splash"
