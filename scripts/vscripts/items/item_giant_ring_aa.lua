@@ -42,7 +42,7 @@ modifier_giant_ring_aa_active = class({
 		self:StartIntervalThink(self.interval) 
 		self.bonus_str = self:GetParent():GetStrength() * self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")/100
 		self.bonus_agi = self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")/100
-		self.bonus_int = self:GetParent():GetIntellect() * self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")/100
+		self.bonus_int = self:GetParent():GetIntellect(false) * self:GetAbility():GetSpecialValueFor("bonus_all_stats_pct")/100
 	end,
 	DeclareFunctions = function(self) 
 		return {
@@ -90,7 +90,7 @@ function modifier_giant_ring_aa_active:OnIntervalThink()
             }
             if IsServer() then
                 local damage_stat = self:GetAbility():GetSpecialValueFor('stat_damage_per_sec') / 100 * self.interval
-                damageTable.damage = (caster:GetStrength() + caster:GetAgility() + caster:GetIntellect()) * damage_stat
+                damageTable.damage = (caster:GetStrength() + caster:GetAgility() + caster:GetIntellect(false)) * damage_stat
                 ApplyDamage(damageTable)
             end
             

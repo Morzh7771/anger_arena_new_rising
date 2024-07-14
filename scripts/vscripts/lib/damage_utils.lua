@@ -126,7 +126,7 @@ function Util:DealDamageFromStats(victim, attacker, damage_type, str_damage, agi
 	agi_damage = agi_damage or 0
 	int_damage = int_damage or 0
 
-	damage = attacker:GetStrength()*str_damage + attacker:GetAgility()*agi_damage + attacker:GetIntellect()*int_damage
+	damage = attacker:GetStrength()*str_damage + attacker:GetAgility()*agi_damage + attacker:GetIntellect(false)*int_damage
 
 	if (not spell_amp) then
 		damage = Util:DisableSpellAmp(attacker, damage)

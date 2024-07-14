@@ -55,6 +55,11 @@ DOTAAbilities
 					"value"				"320 395 470 545 620 695 770"
 					"special_bonus_unique_broodmother_7" "+130"
 				}
+				"slow_duration"	
+				{
+					"value"		"4"
+				}
+				"movement_speed" "25 30 35 40 45 50 55"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -123,7 +128,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"				"1200"
+			"radius"				
+			{
+				"value"		"1200"
+				"affected_by_aoe_increase"	"1"
+			}
 			"count"					
 			{
 				"value"				"3 5 7 9 11 13 15"
@@ -131,8 +140,7 @@ DOTAAbilities
 			}
 			"health_regen"			
 			{
-				"value"				"7 13 19 26 32 38 44"
-				"special_bonus_unique_broodmother_web_hpregen" "+16"
+				"value"				"0"
 			}
 			"bonus_movespeed"		"10 16 22 28 34 40 46"
 			"AbilityChargeRestoreTime"	
@@ -141,9 +149,36 @@ DOTAAbilities
 				"special_bonus_unique_broodmother_5" "-7"
 			}
 			"bonus_turn_rate"	"0.2"
+			"degen"
+			{
+				"special_bonus_facet_broodmother_necrotic_webs"	"=10 =15 =20 =25 =30 =35 =40"
+			}
 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"broodmother_spiders_milk"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"broodmother_spiders_milk"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"kill_heal_heroes"						"2"
+			"kill_creeps_penalty"						"40"
+			"kill_heal_aoe"							
+			{
+				"value"			"600"
+				"affected_by_aoe_increase"	"1"
+			}
+			"kill_heal_duration"					"3"
+			"tick_rate"								"0.5"
+
+		}
+	
 	}
 	"broodmother_silken_bola"
 	{
@@ -193,6 +228,10 @@ DOTAAbilities
 				"special_bonus_unique_broodmother_2"	"+400"
 			}
 			"duration"				"6"
+			"roots"
+			{
+				"value"	"0"
+			}
 			"projectile_speed"	"1200"
 			"impact_damage"			
 			{
@@ -223,22 +262,23 @@ DOTAAbilities
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"miss_chance"			
 			{
-				"var_type"				"FIELD_INTEGER"
-				"miss_chance"			"30 40 50 60"
+				"value"		"30 40 50 60"
+				"special_bonus_unique_broodmother_4"	"+30"
 			}
-			"02"
+			"bonus_movespeed"		
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"		"-20 -30 -40 -50"
+				"value"		"-15 -20 -25 -30"
+				"special_bonus_unique_broodmother_4"	"-30"
 			}
-			"03"
+			"duration"				"2.0 2.0 2.0 2.0"
+			"attack_damage"			
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"			"2.0 2.0 2.0 2.0"
+				"value"				"2 4 6 8"					
+				"special_bonus_unique_broodmother_2"	"+10"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -276,6 +316,7 @@ DOTAAbilities
 			{
 				"value"				"40 50 60 70 80 90 100"
 			}
+			"creep_lifesteal_reduction_pct"		"40"
 			"duration"				
 			{
 				"value"		"8 9 10 11 12 13 14"
@@ -293,8 +334,14 @@ DOTAAbilities
 			}
 			"shard_damage_tick_interval"
 			{
-					"value"				"1"
-					"RequiresShard"		"1"
+				"value"				"1"
+				"RequiresShard"		"1"
+			}
+			"aura_radius"		
+			{
+				"value"				"0"
+				"special_bonus_facet_broodmother_feeding_frenzy"					"=800"
+				"affected_by_aoe_increase"	"1"
 			}
 		}
 	}

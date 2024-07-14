@@ -124,43 +124,79 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"abyssal_underlord_atrophy_aura"
-		"MaxLevel"		"7"
+		"BaseClass"						"abyssal_underlord_atrophy_aura"
+		"MaxLevel"						"8"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"Innate"						"1"		
+		"RequiredLevel"					"-1"
 
 		"AbilityValues"
 		{
-			"radius"						"900"
+			"radius"						
+			{
+				"value"				"900"
+				"affected_by_aoe_increase"	"1"		
+			}
+
 			"damage_reduction_pct"
 			{
-				"value"		"5 10 15 20 25 30 35"
-				"special_bonus_unique_underlord_3"	"+15"
+				"value"		"0 5 10 15 20 25 30 35"
+				"special_bonus_unique_underlord_3"	"+10"
 				"CalculateSpellDamageTooltip"		"0"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
 			}
 			"bonus_damage_from_creep"
 			{
-				"value"							"5 10 15 20 25 30 35"
+				"value"							"2 5 8 12 15 18 21 24"
+				"special_bonus_unique_underlord_3"	"+10%"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"bonus_damage_from_hero"
 			{
-				"value"							"40 50 60 70 80 90 100"
+				"value"							"20 40 50 60 70 80 90 100"
+				"special_bonus_unique_underlord_3"	"+10%"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"bonus_damage_duration"
 			{
-				"value"							"20 30 40 50 60 70 80"
+				"value"							"10 18 26 34 42 50 58 66"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
 			"bonus_shared_by_allies_pct"
 			{
-				"special_bonus_unique_underlord_9"	"+75"
+				"value"							"0"
+			}
+			"cleave_damage_pct"
+			{
+				"value"				"0"
+				"special_bonus_facet_abyssal_underlord_demons_reach"	"+20 24 28 32 36 40 44 48"				
+			}
+			"cleave_starting_width"
+			{
+				"value"					"0"
+				"special_bonus_facet_abyssal_underlord_demons_reach"	"+150"				
+					"affected_by_aoe_increase"	"1"
+			}
+			"cleave_angle"
+			{
+				"value"					"0"
+				"special_bonus_facet_abyssal_underlord_demons_reach"	"+75"				
+			}
+			"cleave_distance_base"
+			{
+				"value"					"0"
+				"special_bonus_facet_abyssal_underlord_demons_reach"	"+20"				
+				"affected_by_aoe_increase"	"1"
+			}
+			"cleave_distance_per_stack"
+			{
+				"value"					"0"
+				"special_bonus_facet_abyssal_underlord_demons_reach"	"+1"				
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -240,10 +276,6 @@ DOTAAbilities
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.45"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90 85 80 75 70 65 60"
-		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"350"
@@ -252,17 +284,46 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCooldown"				
+				{
+					"value"			"90 85 80 75 70 65 60"
+					"special_bonus_scepter"	"-10"
+				}
 				"duration"				"15"
-				"damage_reduction"		"30"
-				"bonus_ms"				"10 15 20 25 30 35 40"
+				"damage_reduction"		
+				{
+					"value"		"20"
+					"special_bonus_unique_underlord_7"	"+10"
+				}
+				"bonus_ms"				
+				{
+					"value"			"10 15 20 25 30 35 40"
+					"special_bonus_unique_underlord_7"	"+10"
+				}
 				"buff_duration"			"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
-				"minimum_distance"		"2000"
+				"minimum_distance"		"1200"
+				"buff_duration"			"5.0"
 				"spawn_pit_on_cast"
 				{
 					"special_bonus_scepter"	"+1"
 				}
-				"warp_channel_duration"			"2.0"
-				"distance_from_fountain"		"1200"
+				"warp_channel_duration"			"3.5"
+				"distance_from_fountain"		"1425"
+				"dps"							
+				{
+					"special_bonus_unique_underlord_9"	"+200"					
+				}
+				"radius"
+				{
+					"special_bonus_unique_underlord_9"	"+700"					
+					"affected_by_aoe_increase"	"1"
+				}
+				"underling_building_damage_reduction_tooltip"		
+				{
+					"value"			"50"
+					"special_bonus_facet_abyssal_underlord_demons_reach"	"=50"				
+				}
+
 		}
 	}
 	"abyssal_underlord_portal_warp"
@@ -288,6 +349,48 @@ DOTAAbilities
 
 			"animation_rate"		"0.8"
 			"stop_distance"			"100"
+		}
+	}
+	"abyssal_underlord_abyssal_horde"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"abyssal_underlord_abyssal_horde"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"7"
+		"DependentOnAbility"			"abyssal_underlord_dark_portal"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"warrior_health"	"400 600 800 1000 1200 1400 1600"	
+			"warrior_damage"	"18 32 46 50 64 78 92"
+
+			"warrior_mana_feedback"	"10 20 30 40 50 60 70"
+			"warrior_mana_break_tooltip"	"10 20 30 40 50 60 70"
+			
+			"explosion"				"300 400 500 600 700 800 900"
+
+			"archer_health"			"400 600 800 1000 1200 1400 1600"
+			"archer_damage"			"25 40 55 70 85 100 115"
+
+			"archer_aura_radius_tooltip"	"1200"
+			"archer_move_speed"	"5"
+
+
+			"underling_spawn_interval"		"2"
+			"underling_search_radius"		
+			{
+				"value"		"1200"
+				"affected_by_aoe_increase"	"1"
+			}
+			
+
+			"hull_radius"				"8"
+			"gold_bounty"				"20 30 40 50 60 70 80"
+			"xp_bounty"					"20 30 40 50 60 70 80"
+
 		}
 	}
 }

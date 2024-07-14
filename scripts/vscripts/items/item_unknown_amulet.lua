@@ -121,7 +121,7 @@ modifier_item_unknown_amulet_stats = class({
     end,
     GetModifierBaseAttack_BonusDamage = function (self)
         if self:GetAbility():GetSecondaryCharges() == 4 then
-            return (self:GetParent():GetStrength() + self:GetParent():GetAgility() + self:GetParent():GetIntellect()) * self.stat_damage * self:GetAbility():GetCurrentCharges()
+            return (self:GetParent():GetStrength() + self:GetParent():GetAgility() + self:GetParent():GetIntellect(false)) * self.stat_damage * self:GetAbility():GetCurrentCharges()
         end
     end,
 })

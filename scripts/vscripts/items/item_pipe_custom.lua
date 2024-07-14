@@ -17,7 +17,7 @@ function item_pipe_custom:OnSpellStart()
 		
 	for _, unit in pairs(units) do
 		unit:RemoveModifierByName("modifier_item_pipe_custom_shield")
-		unit:AddNewModifier(self:GetCaster(), self, "modifier_item_pipe_custom_shield", {duration = self:GetSpecialValueFor("barrier_duration"),bonus = self:GetCaster():GetIntellect()})
+		unit:AddNewModifier(self:GetCaster(), self, "modifier_item_pipe_custom_shield", {duration = self:GetSpecialValueFor("barrier_duration"),bonus = self:GetCaster():GetIntellect(false)})
 	end
 end
 

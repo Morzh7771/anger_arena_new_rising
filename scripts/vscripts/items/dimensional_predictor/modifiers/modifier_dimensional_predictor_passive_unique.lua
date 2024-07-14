@@ -69,24 +69,24 @@ function modifier_dimensional_predictor_passive_unique:OnAttackLanded( kv )
 			if IsValidEntity(owner) then
 				owner = owner:GetAssignedHero() 
 				if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
-					damage = ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect())/3 * self.dmg)
+					damage = ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect(false))/3 * self.dmg)
 				elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
 					damage = (self:GetCaster():GetStrength() * self.dmg)
 				elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
 					damage = (self:GetCaster():GetAgility() * self.dmg)
 				elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
-					damage = (self:GetCaster():GetIntellect() * self.dmg)
+					damage = (self:GetCaster():GetIntellect(false) * self.dmg)
 				end
 			end 
 		else 
 			if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
-				damage = ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect())/3 * self.dmg)
+				damage = ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect(false))/3 * self.dmg)
 			elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
 				damage = (self:GetCaster():GetStrength() * self.dmg)
 			elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
 				damage = (self:GetCaster():GetAgility() * self.dmg)
 			elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
-				damage = (self:GetCaster():GetIntellect() * self.dmg)
+				damage = (self:GetCaster():GetIntellect(false) * self.dmg)
 			end
 		end
 

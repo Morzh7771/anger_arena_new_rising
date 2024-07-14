@@ -28,7 +28,7 @@ function modifier_item_apex_aa:OnIntervalThink()
     self.agi_bonus = 0
     self.agi_bonus = self:GetParent():GetAgility() / 100 * self.primary_attribute_pct
     self.int_bonus = 0
-    self.int_bonus = self:GetParent():GetIntellect() / 100 * self.primary_attribute_pct
+    self.int_bonus = self:GetParent():GetIntellect(false) / 100 * self.primary_attribute_pct
     self:GetParent():CalculateStatBonus(true)
 end
 

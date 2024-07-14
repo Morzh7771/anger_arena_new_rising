@@ -44,16 +44,18 @@ DOTAAbilities
 			"bonus_armor"	
 			{
 				"value"							"20 25 30 35 40 45 50"
-				"special_bonus_unique_axe_7"	"+25"
+				"special_bonus_facet_axe_call_out"			"+25"
+				"special_bonus_unique_axe_7"	"+15"
 			}
 			"duration"				"1.2 1.5 1.8 2.1 2.4 2.7 3.0"
-			"scepter_cooldown_reduction"
-			{
-				"special_bonus_scepter" "+4.0"
-			}
 			"applies_battle_hunger"
 			{
-				"special_bonus_scepter" "+2"
+				"special_bonus_shard" "+1"
+			}
+			"bonus_attack_speed"
+			{
+				"value"					"0"
+				"special_bonus_facet_axe_call_out"				"60"
 			}
 		}
 	}
@@ -116,14 +118,14 @@ DOTAAbilities
 					"value"			"1 1 1 2 2 2 2"
 					"special_bonus_unique_axe"	"x2"
 				}
-				"scepter_armor_change"
-				{
-					"special_bonus_scepter"				"+10"
-				}
 				"speed_bonus"
 				{
 					"value"			"0"
 					"special_bonus_unique_axe_8"	"+10"
+				}
+				"should_stack"
+				{
+					"special_bonus_shard"	"1"
 				}
 		}		
 	}
@@ -138,7 +140,7 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Axe.CounterHelix"
 
-        "HasShardUpgrade"               "1"
+        "HasScepterUpgrade"                              "1"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -158,17 +160,21 @@ DOTAAbilities
 				"special_bonus_shard"	"-0.3"
 			}
 			
-			"shard_debuff_duration"
+			"debuff_duration"
 			{
 				"special_bonus_shard"		"+4.0"
 			}
-			"shard_damage_reduction"
+			"damage_reduction"
 			{
 				"special_bonus_shard"		"+10"
 			}
-			"shard_max_stacks"
+			"max_stacks"
 			{
 				"special_bonus_shard"		"+6"	
+			}
+			"attacks_increase_counter"
+			{
+				"special_bonus_scepter"		"1"
 			}
 			"damage_pct"					"3"
 		}
@@ -236,10 +242,43 @@ DOTAAbilities
 			"charge_speed"				"1200"
 			"armor_per_stack"			
 			{
-				"value"					"1 1.5 2 2.5 3 3.5 4"
-				"special_bonus_unique_axe_3"	"+1.5"
+				"value"					"0"
 			}
-			"damage_pct" "4 5 6 7 8 9 10"
+			"damage_pct"  "5 5.5 6 6.5 7 7.5 8"
 		}
 	}	
+	"axe_one_man_army"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"axe_one_man_army"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"armor_pct_as_strength"			"50"
+			"radius"					"700"
+			"bonus_linger_duration"		"3"
+		}
+
+	}
+
+	"axe_coat_of_blood"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"axe_coat_of_blood"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"8"
+		"Innate"						"1"
+		"DependentOnAbility"			"axe_culling_blade"
+
+		"AbilityValues"
+		{
+			"armor_per_kill"						"0.125 0.25 0.375 0.5 0.625 0.75 0.875 1"
+			"culling_blade_multiplier"				"4"		// only supports int values currently
+		}
+	
+	}
 }

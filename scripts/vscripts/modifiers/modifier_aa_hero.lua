@@ -28,8 +28,7 @@ end
 
 function modifier_aa_hero:OnCreated()
 	self.limit = 700
-	self.int = 0
-    self:StartIntervalThink(1.0)
+	self:StartIntervalThink(1.0)
 	if not self:GetParent():IsIllusion() then  
 		self:GetParent():AddNewModifier(self:GetParent(),nil,'bonus_str_tome',{duration = -1})
 		self:GetParent():AddNewModifier(self:GetParent(),nil,'bonus_agi_tome',{duration = -1})
@@ -99,7 +98,7 @@ function modifier_aa_hero:GetModifierMoveSpeedBonus_Percentage()
 	end
 end
 function modifier_aa_hero:OnIntervalThink()
-    local int = self:GetParent():GetIntellect()
+    local int = self:GetParent():GetIntellect(false)
 	if int ~= self.int then
 		self.int = int
 		local resist = 0.1 * int

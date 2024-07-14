@@ -8,7 +8,7 @@ function GetMainStatValue(unit)
         local stats_massive = {}
         stats_massive[0] = unit:GetStrength()
         stats_massive[1] = unit:GetAgility()
-        stats_massive[2] = unit:GetIntellect()
+        stats_massive[2] = unit:GetIntellect(v)
         return stats_massive[main_stat]
     else
         return 0

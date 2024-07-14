@@ -3035,19 +3035,27 @@
 
 		"dota_hud_error_astral_step_aa_no_charges"							"Нет зарядов Astral Step"
 
-		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua"				"Aphotic Shield"
-		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Description"	"Окружает союзника барьером из тёмной энергии, который поглощает некоторое количество урона. Если барьер пропадёт или его уничтожат, он взорвётся и нанесёт врагам вокруг урон, равный здоровью барьера. Применение снимает с цели оглушение и большинство отрицательных эффектов.\n\nТИП РАЗВЕИВАНИЯ: сильное"
-		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Lore"			"Сила чёрного тумана поглощает удары так же, как он сам поглощает дневной свет."
-		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_duration"		"ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_damage_absorb"	"ЗДОРОВЬЕ БАРЬЕРА:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua"					"Aphotic Shield"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Description"		"Окружает союзника барьером из тёмной энергии, который поглощает некоторое количество урона. Если барьер пропадёт или его уничтожат, он взорвётся и нанесёт врагам вокруг урон, равный здоровью барьера. Применение снимает с цели оглушение и большинство отрицательных эффектов.\n\nТИП РАЗВЕИВАНИЯ: сильное"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Lore"				"Сила чёрного тумана поглощает удары так же, как он сам поглощает дневной свет."
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_duration"			"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_damage_absorb"		"ЗДОРОВЬЕ БАРЬЕРА:"
 		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_damage_absorb_pct"	"%ЗДОРОВЬЕ БАРЬЕРА ОТ ЗДОРОВЬЯ ГЕРОЯ:"
-		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_radius"		"РАДИУС ВЗРЫВА:"
-		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Note0"			"Взрыв наносит максимальный урон вне зависимости от того, сколько урона поглотил барьер."
-		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Note1"			"Взрыв щита не наносит урон существам в тумане войны."
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_radius"			"РАДИУС ВЗРЫВА:"
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Note0"				"Взрыв наносит максимальный урон вне зависимости от того, сколько урона поглотил барьер."
+		"DOTA_Tooltip_ability_abaddon_aphotic_shield_lua_Note1"				"Взрыв щита не наносит урон существам в тумане войны."
+		
+		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_damage_absorb_pct"		"+{s:bonus_damage_absorb_pct}% от здоровья героя к барьеру от Aphotic Shield."
+	
+		"DOTA_Tooltip_ability_abaddon_frostmourne_facet_abaddon_mephitic_shroud"	"Добовляет к урону от способности урон от всех аттрибутов."
+		"DOTA_Tooltip_ability_abaddon_frostmourne_damage_pct"					"%ДОП. УРОН ОТ ВСЕХ АТТРИБУТОВ:"
+
+		"DOTA_Tooltip_ability_ancient_apparition_death_rime_damage_pct"							"%УРОН ОТ ИНТЕЛЛЕКТА ЗА ЕФФЕКТ:"
+
+		"DOTA_Tooltip_facet_abaddon_mephitic_shroud"							"Curse Attack"
+		"DOTA_Tooltip_facet_abaddon_mephitic_shroud_Description"				"Добовляет к урону от способности урон от всех аттрибутов."
 
 		
-		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_damage_absorb_pct"		"+{s:bonus_damage_absorb_pct}% от здоровья героя к барьеру от Aphotic Shield"
-	
 		"npc_dota_hero_charon"												"Charon"
 
 		"DOTA_Tooltip_ability_charon_soul_drain"							"Soul Drain"

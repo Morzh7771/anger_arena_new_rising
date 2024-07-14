@@ -136,7 +136,7 @@ modifier_explosive_mantle_of_intelligence_active_finish = class({
 function modifier_explosive_mantle_of_intelligence_active_finish:OnIntervalThink()
     local radius = self:GetAbility():GetSpecialValueFor("radius")
     local caster = self:GetParent()
-    local int_dmg_mlp = (self:GetAbility():GetSpecialValueFor("int_dmg_mlp") / 100) * caster:GetIntellect() + 1
+    local int_dmg_mlp = (self:GetAbility():GetSpecialValueFor("int_dmg_mlp") / 100) * caster:GetIntellect(false) + 1
     local final_explode = caster:GetHealth() / 100 * self:GetAbility():GetSpecialValueFor("explosive_damage_per_hp") * int_dmg_mlp
     if IsServer() and caster:IsAlive() then
         local effect_cast = ParticleManager:CreateParticle(

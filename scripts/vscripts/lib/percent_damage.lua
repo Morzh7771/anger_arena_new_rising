@@ -13,6 +13,8 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("axe_culling_blade",						axe_culling_blade )
 	PercentDamage:ListenAbilityCallback("lion_mana_drain",						lion_mana_drain )
 	PercentDamage:ListenAbilityCallback("beastmaster_drums_of_slom",						beastmaster_drums_of_slom )
+	PercentDamage:ListenAbilityCallback("ancient_apparition_death_rime",						ancient_apparition_death_rime )
+
 
 	local MagicalDamageFromStr = {
 		"ogre_magi_fireblast",
@@ -136,15 +138,16 @@ function PercentDamage:_init()
 		"grimstroke_dark_artistry",
 		"disruptor_thunder_strike",
 		"disruptor_static_storm",
-		"ancient_apparition_chilling_touch",
-		"ancient_apparition_ice_vortex",
-		"ancient_apparition_cold_feet",
 		"skywrath_mage_concussive_shot",
 		"skywrath_mage_mystic_flare",
 		"enchantress_enchant",
 		"witch_doctor_maledict",
 		"lich_frost_nova"
 	}
+	--"ancient_apparition_chilling_touch",
+	--"ancient_apparition_ice_vortex",
+	--"ancient_apparition_cold_feet",
+
 	local MagicalDamageFromAll = {
 		"mirana_arrow",
 		"mirana_starfall",
@@ -191,7 +194,8 @@ function PercentDamage:_init()
 		"lina_dragon_slave",
 		"lina_light_strike_array",
 		"lina_laguna_blade",
-		"magnataur_shockwave"
+		"magnataur_shockwave",
+		"abaddon_frostmourne"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
@@ -221,11 +225,30 @@ function LifeDrain( keys )
 	
 	if target:IsMagicImmune() then return end 
 	
-	Util:DealPercentDamageOfMaxHealth(target, caster, DAMAGE_TYPE_MAGICAL, caster:GetIntellect() * percent_damage, 0)
+	Util:DealPercentDamageOfMaxHealth(target, caster, DAMAGE_TYPE_MAGICAL, caster:GetIntellect(false) * percent_damage, 0)
 
-	local heal = caster:GetIntellect() * percent_damage
+	local heal = caster:GetIntellect(false) * percent_damage
 	
 	caster:Heal(heal, caster) 
+end
+function ancient_apparition_death_rime( keys )
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+
+	local percent_damage = ability:GetSpecialValueFor("damage_pct") / 100 * target:FindModifierByName("modifier_ancient_apparition_death_rime"):GetStackCount()
+	if target:IsMagicImmune() then return end 
+
+	Util:DealPercentDamage(target, caster, DAMAGE_TYPE_MAGICAL, caster:GetIntellect(false) * percent_damage, 0)
+
+	--local modifier_count = target:GetModifierCount()
+	--for i = 0, modifier_count - 1 do
+        --local modifier_name = target:GetModifierNameByIndex(i)
+        --print("Modifier " .. i .. ": " .. modifier_name)
+    --end 
+
+  
 end
 function beastmaster_drums_of_slom( keys )
 	local ability 			= keys.ability
@@ -237,9 +260,9 @@ function beastmaster_drums_of_slom( keys )
 	
 	if target:IsMagicImmune() then return end 
 
-	Util:DealPercentDamage(target, caster, DAMAGE_TYPE_MAGICAL,(caster:GetStrength()+caster:GetAgility()+caster:GetIntellect()) * percent_damage, 0)
+	Util:DealPercentDamage(target, caster, DAMAGE_TYPE_MAGICAL,(caster:GetStrength()+caster:GetAgility()+caster:GetIntellect(false)) * percent_damage, 0)
 
-	local heal = (caster:GetStrength()+caster:GetAgility()+caster:GetIntellect()) * percent_damage * (ability:GetSpecialValueFor("heal_pct")/100)
+	local heal = (caster:GetStrength()+caster:GetAgility()+caster:GetIntellect(false)) * percent_damage * (ability:GetSpecialValueFor("heal_pct")/100)
 
 	SendOverheadEventMessage(caster, OVERHEAD_ALERT_HEAL , caster, heal,nil)
 	caster:Heal(heal, caster) 
@@ -289,7 +312,7 @@ function DamageFromAll(keys)
 	
 	local percent_damage = ability:GetSpecialValueFor("damage_pct") / 100
 	
-	return (percent_damage * caster:GetAgility()) + (percent_damage * caster:GetStrength()) + (percent_damage * caster:GetIntellect())
+	return (percent_damage * caster:GetAgility()) + (percent_damage * caster:GetStrength()) + (percent_damage * caster:GetIntellect(false))
 end
 function DamageFromAgi(keys)
 	local ability 			= keys.ability
@@ -327,7 +350,7 @@ function DamageFromInt(keys)
 	
 	local percent_damage = ability:GetSpecialValueFor("damage_pct") / 100
 	
-	return percent_damage * caster:GetIntellect()
+	return percent_damage * caster:GetIntellect(false)
 end 
 
 function Radiance( keys )
@@ -378,7 +401,7 @@ function BaneBrainSap( keys )
 	local ability 			= keys.ability
 	local multipler 		= (ability:GetSpecialValueFor("damage_pct") or 0) /100
 
-	local int = caster:GetIntellect() * multipler
+	local int = caster:GetIntellect(false) * multipler
 	caster:Heal(int, ability)
 end
 function PudgeRot(keys)
@@ -415,7 +438,7 @@ function snapfire_scatterblast(keys)
 	
 	local percent_damage = ability:GetSpecialValueFor("damage_pct_stat") / 100
 	
-	return (percent_damage * caster:GetAgility()) + (percent_damage * caster:GetStrength()) + (percent_damage * caster:GetIntellect())
+	return (percent_damage * caster:GetAgility()) + (percent_damage * caster:GetStrength()) + (percent_damage * caster:GetIntellect(false))
 end
 PercentDamage:_init();
 

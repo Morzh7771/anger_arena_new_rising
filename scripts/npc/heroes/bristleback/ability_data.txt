@@ -35,7 +35,11 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"projectile_speed"		"1200"
-			"radius"			"700"
+			"radius"			
+			{
+				"value"		"700"
+				"affected_by_aoe_increase"	"1"
+			}
 			"quill_stacks"		"4"
 			"goo_stacks"		"4"
 		}
@@ -74,7 +78,7 @@ DOTAAbilities
 		{
 			"goo_speed"				"1000"
 			"goo_duration"			"5.0"
-			"base_armor"			"2"
+			"base_armor"			"2 2 2 3 3 3 3"
 			"armor_per_stack"
 			{
 				"value"		"1.5 2.0 2.5 3.0 3.5 4.0 4.5"
@@ -84,7 +88,7 @@ DOTAAbilities
 			"move_slow_per_stack"	"3 5 7 9 12 15 18"
 			"stack_limit"
 			{
-				"value"			"4"
+				"value"			"5"
 				"special_bonus_shard"	"+3"
 			}
 			"goo_duration_creep"			"10.0"
@@ -127,12 +131,16 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"				"700"
+			"radius"				
+			{
+				"value"			"700"
+				"affected_by_aoe_increase"	"1"
+			}
 			"quill_base_damage"		"25 45 65 85 105 125 145"
 			"quill_stack_damage"
 			{
-				"value"				"25 30 35 40 45 50 55"
-				"LinkedSpecialBonus"	"special_bonus_unique_bristleback_2"
+				"value"									"25 30 35 40 45 50 55"
+				"special_bonus_unique_bristleback_2" 	"+20"
 			}
 			"quill_stack_duration"	"15.0"
 			"max_damage"			"2500.0"
@@ -170,15 +178,24 @@ DOTAAbilities
 			}
 			"side_angle"							"110"
 			"back_angle"							"70"
-			"quill_release_threshold"				"300"
+			"quill_release_threshold"				
+			{
+				"value"		"300"				
+			}
 			"quill_release_interval"				"0.05"
-
+			"goo_radius"
+			{
+				"value"								"0"
+				"special_bonus_facet_bristleback_snot_rocket"		"+900"				
+				"affected_by_aoe_increase"	"1"
+			}
 			"activation_cooldown"					"20"
 			"activation_manacost"					"100"
 			"activation_delay"						"0.5"
 			"activation_num_quill_sprays"			"4 5 6 7 8 9 10"
 			"activation_spray_interval"				"0.35"
 			"activation_angle"						"55"
+
 			"cast_range_bonus"						"4"
 			"activation_movement_speed_pct"			"0"
 			"activation_turn_rate_pct"				"-100"
@@ -206,29 +223,22 @@ DOTAAbilities
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage_per_stack"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_per_stack"					"15 20 25 30 35 40 45"
-				"LinkedSpecialBonus"	"special_bonus_unique_bristleback_3"
+				"value"					"5 15 20 25 30 35 40 45"
+				"special_bonus_facet_bristleback_berserk"	"=5"
+				"special_bonus_unique_bristleback_3"	"+18"
 			}
-			"02"
+			"aspd_per_stack"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"move_speed_per_stack"				"2 3 4 5 6 7 8"
+				"value"					"0"
+				"special_bonus_facet_bristleback_berserk"	"=5 =10 =15 =20 =25 =30 =35"				
 			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"stack_duration"				"16.0 18.0 20.0 24.0 28.0 32.0 36.0"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"max_stacks"					"8 9 10 11 12 13 14"
-			}
+			"move_speed_per_stack"		"2 3 4 5 6 7 8"
+			"stack_duration"				"16.0 18.0 20.0 24.0 28.0 32.0 36.0"
+			"max_stacks"					"6 8 9 10 11 12 13 14"
 		}
 	}
 	"special_bonus_unique_bristleback_quill_spray_str_dmg_pct"

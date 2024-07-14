@@ -25,11 +25,13 @@ modifier_item_mask_of_madness_aa = class({
         }end,
     GetModifierPhysicalArmorBonus = function (self) return self:GetAbility():GetSpecialValueFor("bonus_armor") end,
     GetModifierPreAttack_BonusDamage = function (self) return self:GetAbility():GetSpecialValueFor("bonus_damage") end,
-    OnAttackLanded = function (self,keys) 
+     OnAttackLanded = function (self,keys) 
         if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then return end
         if keys.attacker == self:GetParent() then
+            local dmg_ref = keys.original_damage * Util:ArmorDamageReductionByNumber(keys.target:GetPhysicalArmorValue(false))
+            print(dmg_ref)
             local vampirism_pct = self:GetAbility():GetSpecialValueFor("bonus_lifesteal")
-            local damage = keys.damage * vampirism_pct / 100
+            local damage = dmg_ref * vampirism_pct / 100
             self:GetParent():Heal(damage, self:GetAbility())
 
             local particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())

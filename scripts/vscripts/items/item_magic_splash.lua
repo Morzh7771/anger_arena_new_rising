@@ -47,6 +47,7 @@ function modifier_item_magic_splash:OnTakeDamage(params)
     if params.damage_flags and Util:testflag(params.damage_flags, DOTA_DAMAGE_FLAG_MAGIC_SPLASH) then return end
     if params.damage_flags and Util:testflag(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then return end
     if params.inflictor:GetName() == "batrider_sticky_napalm" then return end
+    if params.inflictor:GetName() == "item_piercing_blade" or "item_piercing_blade2" or "item_piercing_blade3" then return end
 
     local caster = params.attacker
     local target = params.unit

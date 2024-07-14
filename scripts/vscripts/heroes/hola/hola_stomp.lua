@@ -28,7 +28,7 @@ function hola_stomp:OnSpellStart( ... )
 
 	local allies = FindUnitsInRadius( caster:GetTeamNumber(), caster:GetOrigin(), caster, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 	for _,ally in pairs(allies) do
-		local hola_int = caster:GetIntellect()
+		local hola_int = caster:GetIntellect(false)
 		ally:Heal(hola_int*heal_percent, caster)
 		SendOverheadEventMessage(caster, OVERHEAD_ALERT_HEAL, caster, hola_int*heal_percent, nil)
 	end

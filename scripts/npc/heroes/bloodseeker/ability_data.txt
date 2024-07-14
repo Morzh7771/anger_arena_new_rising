@@ -133,11 +133,19 @@ DOTAAbilities
 			"bonus_movement_speed"
 			{
 				"value"		"16 24 32 40 48 56 64"
-				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
+				"special_bonus_unique_bloodseeker_4"		"16"
 			}			
-			"hero_kill_heal"		"3 6 9 12 15 18 21 24"
-			"creep_kill_heal"		"25"
-			"half_bonus_aoe"		"250"
+			"active_movement_speed"
+			{
+				"value"									"0"
+				"special_bonus_facet_bloodseeker_bloodrush"				"4 8 12 16 20 24 28"
+			}
+			"active_duration"						
+			{
+				"value"				"0"
+				"special_bonus_facet_bloodseeker_bloodrush"				"5"
+			}
+			"creep_lifesteal_reduction_pct"		"40"
 			"max_bonus_pct"				"15"
 			"visibility_threshold_pct"	"35"
 			"invis_threshold_pct"	"15"
@@ -185,7 +193,12 @@ DOTAAbilities
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
+		{	
+			"AbilityCooldown"				
+			{
+				"value"			"60"
+				"special_bonus_unique_bloodseeker_rupture_charges"	"=0.25"
+			}
 			"duration"					"10 10 11 11 12 12 13"
 			"movement_damage_pct"		
 			{
@@ -204,6 +217,16 @@ DOTAAbilities
 				"value"			"200"
 				"CalculateSpellDamageTooltip"	"0"
 			}
+			"knockback"	
+			{
+				"value"		"0"
+				"special_bonus_facet_bloodseeker_arterial_spray" "75"
+			}
+			"knockback_duration"
+			{
+				"value"		"0"
+				"special_bonus_facet_bloodseeker_arterial_spray"	"0.1"
+			}
 			"AbilityCastRange"			
 			{
 				"value"			"800"
@@ -213,6 +236,11 @@ DOTAAbilities
 			{
 				"value"			"0"
 				"special_bonus_unique_bloodseeker_rupture_charges"	"+2"
+			}
+			"AbilityChargeRestoreTime"		
+			{
+				"value"			"0"
+				"special_bonus_unique_bloodseeker_rupture_charges"	"=60"
 			}
 		}
 	}
@@ -255,6 +283,29 @@ DOTAAbilities
 			"radius"				"450"
 			"movement_slow"			"20"
 			"thirst_bonus_pct"		"50"
+		}
+	}
+	"bloodseeker_sanguivore"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityCastPoint"				"0.3"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"base_heal"							"25"
+			"heal_hp_pct_per_level"				"0.45"
+			"creep_lifesteal_reduction_pct"		"40"
+			"half_bonus_aoe"		
+			{
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 	}
 }

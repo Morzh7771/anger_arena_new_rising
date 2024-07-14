@@ -72,8 +72,10 @@ modifier_assault_aa_aura_friend = class({
     OnAttackLanded = function (self,keys) 
         if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then return end
         if keys.attacker == self:GetParent() then
+            local dmg_ref = keys.original_damage * Util:ArmorDamageReductionByNumber(keys.target:GetPhysicalArmorValue(false))
+            print(dmg_ref)
             local vampirism_pct = self:GetAbility():GetSpecialValueFor("lifesteal_aura")
-            local damage = keys.damage * vampirism_pct / 100
+            local damage = dmg_ref * vampirism_pct / 100
             self:GetParent():Heal(damage, self:GetAbility())
 
             local particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())

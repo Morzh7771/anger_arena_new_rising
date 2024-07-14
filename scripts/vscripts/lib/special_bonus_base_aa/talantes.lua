@@ -62,7 +62,7 @@ modifier_int = class({
     OnIntervalThink = function (self)
       if not IsServer() then return end
       self.value = 0
-      if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetIntellect() * self.KvPercent / 100 else self.value = self.kvValue end
+      if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetIntellect(false) * self.KvPercent / 100 else self.value = self.kvValue end
       self:GetParent():CalculateStatBonus(true)
     end,
 })
@@ -94,7 +94,7 @@ modifier_all = class({
     self.int = 0
     if self.KvPercent ~= nil or self.KvPercent == 0 then self.str = self.kvValue + self:GetParent():GetStrength() * self.KvPercent / 100 else self.str = self.kvValue end
     if self.KvPercent ~= nil or self.KvPercent == 0 then self.agi = self.kvValue + self:GetParent():GetAgility() * self.KvPercent / 100 else self.agi = self.kvValue end
-    if self.KvPercent ~= nil or self.KvPercent == 0 then self.int = self.kvValue + self:GetParent():GetIntellect() * self.KvPercent / 100 else self.int = self.kvValue end
+    if self.KvPercent ~= nil or self.KvPercent == 0 then self.int = self.kvValue + self:GetParent():GetIntellect(false) * self.KvPercent / 100 else self.int = self.kvValue end
     self:GetParent():CalculateStatBonus(true)
   end,
 
@@ -321,7 +321,7 @@ modifier_intSpell = class({
     
   end,
   OnIntervalThink = function (self)
-    self.value = self:GetParent():GetIntellect() * self.kvValue
+    self.value = self:GetParent():GetIntellect(false) * self.kvValue
   end,
 })
 modifier_attackSpeed = class({

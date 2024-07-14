@@ -130,7 +130,7 @@ function joe_black_face_of_death:OnProjectileHit(hTarget, vLocation)
 	local team = caster:GetTeamNumber()
 
 	local damage_pct = self:GetSpecialValueFor( "heal_percent") / 100
-	local heal 		 = self:GetSpecialValueFor( "damage" ) + caster:GetIntellect()*damage_pct
+	local heal 		 = self:GetSpecialValueFor( "damage" ) + caster:GetIntellect(false)*damage_pct
 
 	local damage_table = {
 		victim 		= hTarget,

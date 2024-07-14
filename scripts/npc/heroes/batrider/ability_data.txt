@@ -15,12 +15,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -30,11 +25,18 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.5"	// Works by boosting damage
 
-
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"
+			{
+				"value"			"3.0"
+			}
+			"AbilityCastRange"
+			{
+				"value"				"600"
+			}
 			"damage"
 			{
 				"value"	"7 10 13 16 19 22 25"
@@ -50,13 +52,38 @@ DOTAAbilities
 			"movement_speed_pct"		"-1.5 -2.25 -3.0 -3.75 -4.5 -5.25 -6.0"			
 			"turn_rate_pct"			"-10 -20 -30 -40 -50 -60 -70"
 			"max_stacks"			"4"
-			"creep_damage_pct"			"50"
+			"creep_damage_pct"			"30"
 			"shard_napalm_on_attack_chance_pct"		
 			{
 				"value"			"50"
 				"RequiresShard"			"1"
 			}
 			"application_damage"	"7 10 13 16 19 22 25"
+			"is_passive"
+			{
+				"value"						"0"
+				"special_bonus_facet_1"	"0"
+			}
+			"base_applications_every_attack"
+			{
+				"value"						"0"
+				"special_bonus_facet_1"	"0"				
+			}
+			"bonus_applications_every_other_attack"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"+1"
+			}
+			"attacks_apply_napalm_in_aoe"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"0"				
+			}
+			"building_damage_pct"
+			{
+				"value"					"0"
+				"special_bonus_facet_batrider_arsonist"			"+35"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -73,6 +100,37 @@ DOTAAbilities
 		"MaxLevel"						"1"
 
 	}	
+	"batrider_smoldering_resin"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"total_ticks"			"2"
+			"tick_rate"				"1"
+			"tick_attack_damage_pct"		"15"
+		}
+	}
+	"batrider_stoked"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"8"
+		"DependentOnAbility"			"batrider_flaming_lasso"
+
+		"AbilityValues"
+		{
+			"duration"					"7.0"
+			"movement_speed_pct"		"4 6 8 10 12 14 16 18"
+			"spell_amplification"		"2 4 6 8 10 12 14 16"
+		}
+
+	}
 	"batrider_flamebreak"
 	{
 		// General
@@ -196,6 +254,7 @@ DOTAAbilities
 			}
 			"tick_interval"			"0.5"
 			"tree_radius"			"150"
+			"bonus_slow_resistance"		"0"
 		}
 	}
 	"batrider_flaming_lasso"

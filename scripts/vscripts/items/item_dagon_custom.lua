@@ -31,13 +31,13 @@ function item_dagon_custom:OnSpellStart()
     if self:GetCursorTarget():IsCreep() and not self:GetCursorTarget():IsAncient() and not self:GetCursorTarget():IsBoss() then self:GetCursorTarget():Kill(self, self:GetCaster()) end
 
     if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
-        damage = ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect())/3 * int)
+        damage = ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect(false))/3 * int)
     elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH then
         damage = (self:GetCaster():GetStrength() * int)
     elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
         damage = (self:GetCaster():GetAgility() * int)
     elseif self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
-        damage = (self:GetCaster():GetIntellect() * int)
+        damage = (self:GetCaster():GetIntellect(false) * int)
     end
 
     damage = (damage * difference_lvl) + damage_kv    
