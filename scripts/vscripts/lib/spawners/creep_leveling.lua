@@ -50,7 +50,7 @@ function CreepLeveling:Init()
 			local drops = spawner_info['drops']
 
 			local newDrops = {}
-
+			print(drops)
 			for key, chance in pairs(drops) do
 				chance = tonumber(chance)
 				local box = DropBox:GetDropbox(key)
@@ -114,7 +114,7 @@ function CreepLeveling:OnSpawnCallback( event )
 	if elite then
 		AMPLIFY_STAT_ELITE = 2
 		AMPLIFY_BOUNTY_ELITE = 2.2
-		AMPLIFY_STAT_ELITE_HEALTH = 1.3
+		AMPLIFY_STAT_ELITE_HEALTH = 1.1
 		AMPLIFY_STAT_ELITE_DAMAGE = 0.8
 		creep:AddNewModifier(nil,nil,"modifier_creep_elite",{duration = -1})
 	end
@@ -127,7 +127,7 @@ function CreepLeveling:OnSpawnCallback( event )
 	creep:SetMaxMana( seek_spawn_info.mp * AMPLIFY_STAT_ELITE * AMPLIFY_STAT_ELITE_HEALTH)
 
 	creep:SetPhysicalArmorBaseValue( seek_spawn_info.armor * AMPLIFY_STAT_ELITE)
-	creep:SetBaseAttackTime( seek_spawn_info.bat / AMPLIFY_STAT_ELITE * AMPLIFY_STAT_ELITE_DAMAGE)
+	creep:SetBaseAttackTime( seek_spawn_info.bat * AMPLIFY_STAT_ELITE_DAMAGE)
 	creep:SetBaseDamageMin( seek_spawn_info.dmg_min * AMPLIFY_STAT_ELITE * AMPLIFY_STAT_ELITE_DAMAGE)
 	creep:SetBaseDamageMax( seek_spawn_info.dmg_max * AMPLIFY_STAT_ELITE * AMPLIFY_STAT_ELITE_DAMAGE)
 

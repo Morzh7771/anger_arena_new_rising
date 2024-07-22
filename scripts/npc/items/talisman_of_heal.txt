@@ -90,10 +90,10 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_attack"          "5 15"
+            "bonus_attack"          "5 10"
             "bonus_all"             "4 9"
-            "bonus_hp_regen"        "1.5 3"
-            "bonus_mp_regen"        "1.5 3"
+            "bonus_hp_regen"        "1.5 2.5"
+            "bonus_mp_regen"        "1.5 2.5"
             "bonus_health"          "150 250"
 
             "damage_to_exp_ranged"  "25 30"
@@ -101,8 +101,8 @@
             "min_exp_melee"         "18 22"
             "minder_cd"             "1"
 
-            "replenish_health"      "15"
-            "replenish_mana"        "15"
+            "replenish_health"      "10"
+            "replenish_mana"        "10"
             "buff_health"           "3"
             "buff_mana"             "3"
 
@@ -137,10 +137,10 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_attack"          "5 15"
+            "bonus_attack"          "5 10"
             "bonus_all"             "4 9"
-            "bonus_hp_regen"        "1.5 3"
-            "bonus_mp_regen"        "1.5 3"
+            "bonus_hp_regen"        "1.5 2.5"
+            "bonus_mp_regen"        "1.5 2.5"
             "bonus_health"          "150 250"
 
             "damage_to_exp_ranged"  "25 30"
@@ -148,15 +148,15 @@
             "min_exp_melee"         "18 22"
             "minder_cd"             "1"
 
-            "replenish_health"      "15"
-            "replenish_mana"        "15"
+            "replenish_health"      "10"
+            "replenish_mana"        "10"
             "buff_health"           "3"
             "buff_mana"             "3"
 
             "duration"              "5"
 
             "duration_active"	        "8"
-            "heal_per_main_stat"        "2"
+            "heal_per_str"              "1.6"
             "heal_const"                "180"
         }
     }

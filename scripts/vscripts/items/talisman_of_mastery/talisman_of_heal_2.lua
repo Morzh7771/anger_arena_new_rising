@@ -168,8 +168,7 @@ function modifier_talisman_of_heal_2_active:OnCreated(kv)
         if not IsValidEntity(caster) then return end
         caster = caster:GetAssignedHero()
     end
-    local heal_stat = caster:GetPrimaryStatValue() * self:GetAbility():GetSpecialValueFor("heal_per_main_stat") 
-    if caster:GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then heal_stat = heal_stat / 3 end
+    local heal_stat = caster:GetStrength() * self:GetAbility():GetSpecialValueFor("heal_per_str") 
     self.allHeal = heal_stat + self:GetAbility():GetSpecialValueFor("heal_const")
     caster = self:GetParent()
     self:SetStackCount(self.allHeal)

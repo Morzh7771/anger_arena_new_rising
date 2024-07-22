@@ -111,15 +111,10 @@ DOTAAbilities
 				"value"			"100"
 				"CalculateSpellDamageTooltip" "1"
 			}
-			"creep_damage_per_second"		"200"
+			"creep_multiplier"							"4"
 			"duration"
 			{
 				"value"										"1.0 1.4 1.8 2.2 2.6 3.0 3.4"
-				"special_bonus_unique_crystal_maiden_1"		"+1.6"
-			}
-			"creep_duration"
-			{
-				"value"										"10"
 				"special_bonus_unique_crystal_maiden_1"		"+1.6"
 			}
 			"tick_interval"					"0.20"
@@ -217,9 +212,16 @@ DOTAAbilities
 			"AbilityCooldown"				"80"
 			"AbilityDuration"				"10.0"
 			"AbilityManaCost"				"200 300 400 500 600 700"
-			"radius"						"810"
-			"explosion_radius"				"350"
-			"bonus_armor"					"20"
+			"radius"						
+			{
+				"value"		"810"
+				"affected_by_aoe_increase"	"1"
+			}
+			"explosion_radius"				
+			{
+				"value"		"320"
+				"affected_by_aoe_increase"	"1"
+			}
 			"explosion_interval"			"0.1"
 			"movespeed_slow"				"-40"
 			"attack_slow"					"-100"
@@ -253,6 +255,17 @@ DOTAAbilities
 			{
 				"value"						"0"
 				"special_bonus_scepter"		"+1"
+			}
+			"self_cast_range_bonus"
+			{
+				"value"													"0"
+				"special_bonus_facet_crystal_maiden_frozen_expanse"		"75 100 125 150 175 200 225"
+			}
+
+			"aoe_bonus"
+			{
+				"value"													"0"
+				"special_bonus_facet_crystal_maiden_frozen_expanse"		"6 8 10 12 14 16 18"
 			}
 		}
 	}

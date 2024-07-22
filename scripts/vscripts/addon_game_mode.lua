@@ -399,7 +399,7 @@ function AngelArena:OnRuneActivate(event)
 		item = hero:GetItemInSlot(i)
 		if item and item:GetPurchaser() == hero then
 			if item and (item:GetName() == "item_unknown_amulet")then
-				if item:GetCurrentCharges() < 8 then
+				if item:GetCurrentCharges() < 4 then
 					item:SetCurrentCharges(item:GetCurrentCharges() + 2)
 				else
 					item:SetCurrentCharges(item:GetCurrentCharges() + 1)

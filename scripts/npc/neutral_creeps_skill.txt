@@ -1276,13 +1276,13 @@
         "AbilityValues"
         {
                 "max_level"             "1000"
-                "increase_time"         "180"
-                "increase_damage"       "8"
+                "increase_time"         "120"
+                "increase_damage"       "6"
                 "increase_aspd"         "5"
-                "increase_health"       "80"
-                "increase_armor"        "0.5"
-                "increase_gold"         "10"
-                "increase_xp"           "5"
+                "increase_health"       "50"
+                "increase_armor"        "0.3"
+                "increase_gold"         "3"
+                "increase_xp"           "1.5"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -1299,13 +1299,13 @@
         "AbilityValues"
         {
                 "max_level"             "1000"
-                "increase_time"         "60"
+                "increase_time"         "120"
                 "increase_damage"       "10"
                 "increase_aspd"         "10"
                 "increase_health"       "150"
                 "increase_armor"        "0.5"
-                "increase_gold"         "25"
-                "increase_xp"           "15"
+                "increase_gold"         "10"
+                "increase_xp"           "6"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }

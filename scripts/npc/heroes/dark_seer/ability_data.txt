@@ -229,7 +229,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70"
+		"AbilityCooldown"				"80"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -267,6 +267,41 @@ DOTAAbilities
 				"RequiresScepter"		"1"
 			}
 			"wall_damage"				"20 50 80 110 140 170 200"
+		}
+	}
+	"dark_seer_quick_wit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"dark_seer_quick_wit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+
+		"AbilityValues"
+		{
+			"int_to_atkspd"				".5"
+		}
+	}
+	//=================================================================================================================
+	// Dark Seer Innate Inertia
+	//=================================================================================================================
+	"dark_seer_heart_of_battle"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"dark_seer_heart_of_battle"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"radius"		
+			{
+				"value"			"1600"
+				"affected_by_aoe_increase"	"1"
+			}
+			"movement_speed_pct"	"7"
 		}
 	}
 	"special_bonus_unique_dark_seer_13"

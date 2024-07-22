@@ -19,14 +19,6 @@ DOTAAbilities
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.2"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9 8 7 6 5 4 3"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 135 170 205 240 275 310"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75"		
@@ -35,6 +27,16 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"damage"
+			{
+				"value"													"100 135 170 205 240 275 310"
+				"special_bonus_unique_death_prophet_crypt_swarm_damage"	"+50"
+			}
+			"AbilityCooldown"
+			{
+				"value"									"9 8 7 6 5 4 3"
+				"special_bonus_unique_death_prophet_2"	"-2.5"
+			}
 			"start_radius"				
 			{
 				"value"			"110"
@@ -50,12 +52,10 @@ DOTAAbilities
 			"slow_percent"
 			{
 				"value"				"0"
-				"special_bonus_unique_death_prophet_crypt_swarm_slow"	"-50"
 			}
 			"slow_duration"
 			{
 				"value"				"0"
-				"special_bonus_unique_death_prophet_crypt_swarm_slow"	"+1"
 			}
 			"damage_pct"				"30"
 		}
@@ -102,6 +102,16 @@ DOTAAbilities
 				"value"				"10 15 20 25 30 35 40"
 				"special_bonus_unique_death_prophet_silence_slow"		"+15"
 			}
+			"damage_per_second"
+			{
+				"value"						"0"
+				//"special_bonus_facet_death_prophet_suppress"	"+30"
+			}
+			"tick_interval"
+			{
+				"value"						"0"
+				//"special_bonus_facet_death_prophet_suppress"	"+0.5"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
@@ -112,19 +122,14 @@ DOTAAbilities
 		"BaseClass"			"death_prophet_witchcraft"
 		"MaxLevel"		"4"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-				
+		"Innate"						"1"
+		"DependentOnAbility"			"death_prophet_exorcism"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_movement_speed"	"5 10 15 20"
-			"carrion_swarm_mana_cost_adjust"	"-10 -15 -20 -25"
-			"carrion_swarm_cooldown_adjust"		"-1.0 -2.0 -3.0 -4.0"
-			"silence_mana_cost_adjust"			"-10 -15 -20 -25"
-			"silence_cooldown_adjust"			"-1.0 -2.0 -3.0 -4.0"
-			"exorcism_1_extra_spirits"			"3 4 5 6"
-			"exorcism_2_extra_spirits"			"3 4 5 6"
-			"exorcism_3_extra_spirits"			"3 4 5 6"
+			"movement_speed_pct_per_level"		"0.40 0.45 0.50 0.55 0.60 0.65 0.7 0.75"
+			"cooldown_reduction_pct_per_level"	"0.05 0.1 0.15 0.2 0.25 0.30 0.35 0.40"
 		}
 	}
 	"death_prophet_spirit_siphon"
@@ -228,44 +233,57 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"radius"				"700"
-				"spirits"				
-				{
-					"value"					"8 12 16 20 24 28 32"
-					"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
-				}
-				"spirit_speed"			"525"
-				"max_distance"			"2000"
-				"give_up_distance"		"1200"
-				"min_damage"			"75"
-				"max_damage"			"80"
-				"heal_percent"			"25"
-				"average_damage"		"77"
-				"ghost_spawn_rate"	"0.25"
-				"scepter_movespeed_slow"
-				{
-					"value"				"100"
-					"RequiresScepter"			"1"
-				}
-				"scepter_movespeed_debuff_duration"	
-				{
-					"value"				"0.3"
-					"RequiresScepter"			"1"
-				}
-				"scepter_spirit_life_duration"	
-				{
-					"value"				"20"
-					"RequiresScepter"			"1"
-				}
-				"scepter_spirit_bonus_damage"	
-				{	
-					"value"					"50"
-					"RequiresScepter"			"1"
-					"CalculateSpellDamageTooltip"	"0"
-				}	
-				"movement_base"					"12 14 16 18 20 22 24"
-				"movement_bonus"				"8 10 12 14 16 18 20"
-				"damage_pct"			"20"
+			"radius"				
+			{
+				"value"	"700 700 700"
+				"affected_by_aoe_increase"	"1"
+			}
+			"spirits"				
+			{
+				"value"					"8 12 16 20 24 28 32"
+				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
+			}
+			"spirit_speed"			"525"
+			"max_distance"			"2000"
+			"give_up_distance"		"1200"
+			"min_damage"			"75"
+			"max_damage"			"80"
+			"hero_spirit_min_damage"
+			{
+				"value"										"0"
+				"special_bonus_facet_death_prophet_ghosts"	"=84 =92 =100 =108 =116 =124 =132"
+			}
+			"hero_spirit_max_damage"
+			{
+				"value"										"0"
+				"special_bonus_facet_death_prophet_ghosts"	"=90 =98 =106 =114 =122 =130 =138"
+			}
+			"heal_percent"			"25"
+			"average_damage"		"77"
+			"ghost_spawn_rate"	"0.25"
+			"scepter_movespeed_slow"
+			{
+				"value"				"100"
+				"RequiresScepter"			"1"
+			}
+			"scepter_movespeed_debuff_duration"	
+			{
+				"value"				"0.3"
+				"RequiresScepter"			"1"
+			}
+			"scepter_spirit_life_duration"	
+			{
+				"value"				"20"
+				"RequiresScepter"			"1"
+			}
+			"scepter_spirit_bonus_damage"	
+			{	
+				"value"					"50"
+				"RequiresScepter"			"1"
+				"CalculateSpellDamageTooltip"	"0"
+			}	
+			"movement_bonus"				"8 10 12 14 16 18 20"
+			"damage_pct"			"20"
 		}
 	}	
 }
