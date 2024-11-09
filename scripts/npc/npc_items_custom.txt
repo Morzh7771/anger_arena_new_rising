@@ -186,33 +186,13 @@
         "AbilitySharedCooldown"			"travel"
         
         //special
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"130"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"2"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_hp_regen"		"5"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_stats"			"20"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "teleport_mod_time"		"2"
-            }
+            "bonus_speed"			"130"
+            "bonus_armor"			"2"
+            "bonus_hp_regen"		"5"
+            "bonus_stats"			"20"
+            "teleport_mod_time"		"2"
         }
         
         "OnAbilityPhaseStart"
@@ -974,6 +954,25 @@
             "regen_tick_per_sec"        "10"
 		}
 	}
+    "item_recipe_explosive_mantle_of_intelligence"
+    {
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "BaseClass"                     "item_datadriven"
+        "AbilityTextureName"            "recipe"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "240"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_explosive_mantle_of_intelligence"
+        "ItemRequirements"
+        {
+            "01"                        "item_mantle"
+        }
+    }
     "item_explosive_mantle_of_intelligence"
     {
         "BaseClass"                     "item_lua"

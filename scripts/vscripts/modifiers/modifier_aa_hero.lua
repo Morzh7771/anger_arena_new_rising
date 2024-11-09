@@ -80,7 +80,7 @@ function modifier_aa_hero:GetModifierBonusStats_Intellect() if self:GetParent():
 
 function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
 	if self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness") 
-	or self:GetParent():HasModifier("modifier_bloodseeker_thirst_speed") 
+	or self:GetParent():HasModifier("modifier_bloodseeker_thirst") 
 	or self:GetParent():HasModifier("modifier_primal_beast_trample")
 	or self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze") 
 	or self:GetParent():HasModifier("modifier_weaver_shukuchi") 
