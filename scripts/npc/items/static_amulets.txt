@@ -132,48 +132,16 @@
         "AbilitySharedCooldown"			"static_amulet"
         
         //special
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"5 14"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_int"				"25 85"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_stats"			"10 24"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "spell_amplify_by_cast"	"8.0 16.0"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "buff_duration"			"6.0 7.0"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "debuff_duration"		"3.5 4.5"
-            }
-            "07"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "debuff_speed"			"1200 1600"
-            }
-            "08"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cast_range"			"600 900"
-            }
+            "bonus_armor"			"5 14"
+            "bonus_int"				"25 85"
+            "bonus_stats"			"10 24"
+            "spell_amplify_by_cast"	"8.0 16.0"
+            "buff_duration"			"6.0 7.0"
+            "debuff_duration"		"3.5 4.5"
+            "debuff_speed"			"1200 1600"
+            "cast_range"			"600 900"
         }
     }
     "item_recipe_static_amulet_old"
@@ -228,48 +196,16 @@
         "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
             
         //special
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"5 14"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_int"				"25 85"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_stats"			"10 24"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "spell_amplify_by_cast"	"8.0 16.0"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "buff_duration"			"6.0 7.0"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "debuff_duration"		"3.5 4.5"
-            }
-            "07"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "debuff_speed"			"1200 1600"
-            }
-            "08"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cast_range"			"600 900"
-            }
+            "bonus_armor"			"5 14"
+            "bonus_int"				"25 85"
+            "bonus_stats"			"10 24"
+            "spell_amplify_by_cast"	"8.0 16.0"
+            "buff_duration"			"6.0 7.0"
+            "debuff_duration"		"3.5 4.5"
+            "debuff_speed"			"1200 1600"
+            "cast_range"			"600 900"
         }
     }
 }
