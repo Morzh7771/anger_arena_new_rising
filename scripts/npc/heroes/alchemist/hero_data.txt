@@ -3,13 +3,13 @@
 	"npc_dota_hero_alchemist"
 	{
 		"override_hero"		"npc_dota_hero_alchemist"
-		"Ability1"		"alchemist_acid_spray"
-		"Ability2"		"alchemist_unstable_concoction"
-		"Ability3"		"alchemist_corrosive_weaponry"
-		"Ability4"		"alchemist_berserk_potion"
-		"Ability5"		"alchemist_goblins_greed"
-		"Ability6"		"alchemist_chemical_rage"
-		"Ability7"		"alchemist_unstable_concoction_throw"
+		"Ability1"      "alchemist_acid_spray"
+        "Ability2"      "alchemist_unstable_concoction"
+        "Ability3"      "alchemist_corrosive_weaponry"
+        "Ability4"      "alchemist_berserk_potion"
+        "Ability5"      "alchemist_goblins_greed"
+        "Ability6"      "alchemist_chemical_rage"
+        "Ability7"      "alchemist_unstable_concoction_throw"   
 		"Ability10"		"special_bonus_unique_alchemist_5"
 		"Ability11"		"special_bonus_unique_alchemist"
 		"Ability12"		"special_bonus_unique_alchemist_3"
@@ -18,6 +18,24 @@
 		"Ability15"		"special_bonus_unique_alchemist_2"
 		"Ability16"		"special_bonus_unique_alchemist_6"
 		"Ability17"		"special_bonus_unique_alchemist_4"
+
+		"Facets"
+        {
+            "alchemist_seed_money"
+            {
+                "Icon"              "gold"
+                "Color"             "Yellow"
+                "GradientID"        "0"
+            }
+
+            "alchemist_mixologist"      
+            {
+                "Icon"              "cooldown"
+                "Color"             "Purple"
+                "GradientID"        "2"
+            }
+        }
+        
 		"AbilityDraftIgnoreCount"		"7"
 		"ArmorPhysical"		"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

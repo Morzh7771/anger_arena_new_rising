@@ -125,14 +125,13 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"abyssal_underlord_atrophy_aura"
-		"MaxLevel"						"8"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"Innate"						"1"		
-		"RequiredLevel"					"-1"
+		"MaxLevel"						"7"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "IsBreakable"                   "1"
 
 		"AbilityValues"
 		{
@@ -144,26 +143,26 @@ DOTAAbilities
 
 			"damage_reduction_pct"
 			{
-				"value"		"0 5 10 15 20 25 30 35"
+				"value"		"5 10 15 20 25 30 35"
 				"special_bonus_unique_underlord_3"	"+10"
 				"CalculateSpellDamageTooltip"		"0"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
 			}
 			"bonus_damage_from_creep"
 			{
-				"value"							"2 5 8 12 15 18 21 24"
+				"value"							"2 5 8 12 15 18 21"
 				"special_bonus_unique_underlord_3"	"+10%"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"bonus_damage_from_hero"
 			{
-				"value"							"20 40 50 60 70 80 90 100"
+				"value"							"20 40 50 60 70 80 90"
 				"special_bonus_unique_underlord_3"	"+10%"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"bonus_damage_duration"
 			{
-				"value"							"10 18 26 34 42 50 58 66"
+				"value"							"10 18 26 34 42 50 58"
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
@@ -174,7 +173,7 @@ DOTAAbilities
 			"cleave_damage_pct"
 			{
 				"value"				"0"
-				"special_bonus_facet_abyssal_underlord_demons_reach"	"+20 24 28 32 36 40 44 48"				
+				"special_bonus_facet_abyssal_underlord_demons_reach"	"+20 24 28 32 36 40 44"				
 			}
 			"cleave_starting_width"
 			{
@@ -190,7 +189,7 @@ DOTAAbilities
 			"cleave_distance_base"
 			{
 				"value"					"0"
-				"special_bonus_facet_abyssal_underlord_demons_reach"	"+20"				
+				"special_bonus_facet_abyssal_underlord_demons_reach"	"+100"				
 				"affected_by_aoe_increase"	"1"
 			}
 			"cleave_distance_per_stack"
@@ -393,4 +392,197 @@ DOTAAbilities
 
 		}
 	}
+	"abyssal_underlord_raid_boss"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "MaxLevel"                      "4"
+        "Innate"                        "1"
+        "DependentOnAbility"            "abyssal_underlord_dark_portal"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "damage_reduction"      
+            {
+                "value"     "4 6 8 10 12 14 16"
+                "special_bonus_unique_underlord_7"  "+4"
+            }
+            "bonus_ms"              
+            {
+                "value"         "5 10 15 20 25 30 35"
+                "special_bonus_unique_underlord_7"  "+5"
+            }
+            "dark_portal_multiplier"            "2"
+            "buff_duration"         "5.0"
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_underlord"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "abyssal_underlord_pit_of_malice"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_underlord_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "abyssal_underlord_atrophy_aura"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_underlord_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "abyssal_underlord_firestorm"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_underlord_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "abyssal_underlord_firestorm"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_underlord_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "abyssal_underlord_pit_of_malice"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_underlord_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_underlord_8"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "abyssal_underlord_firestorm"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_underlord_9"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "abyssal_underlord_atrophy_aura"
+    }
+
+    //=================================================================================================================
+    // Ability:  Abyssal Underling last will
+    //=================================================================================================================
+    "abyssal_underling_warrior_last_will"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "IsBreakable"                   "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            
+            "explosion"             "300 400 500 600 700 800 900"
+
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
+    }
+
+    //=================================================================================================================
+    // Ability: Necronomicon Warrior's Mana Burn
+    //=================================================================================================================
+    "abyssal_underling_warrior_mana_burn"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        "IsBreakable"                   "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "burn_amount"           "10 20 30 40 50 60 70"
+            "burn_damage_conversion"    "50"
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+    }
+    //=================================================================================================================
+    // Ability: Necronomicon Archer's AoE
+    //=================================================================================================================
+    "abyssal_underling_archer_aoe"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "IsBreakable"                   "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "radius"                
+            {
+                "value"     "1200"
+                "affected_by_aoe_increase"  "1"
+            }
+            "ms_bonus"          "5"
+            "as_bonus"          "10 15 20 25 30 35 40"
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+    }
 }
