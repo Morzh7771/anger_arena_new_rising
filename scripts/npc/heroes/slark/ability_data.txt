@@ -226,6 +226,31 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+	"slark_essence_shift_aa"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"ScriptFile"                    "heroes/slark/slark_essence_shift_aa"  
+    	"AbilityTextureName"            "slark_essence_shift"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"agi_gain"				"1 2 2 3 3 4 4"
+			"stat_loss"				"1 1 2 2 2 3 3"
+			"duration"				"30"
+			"perma_agi"             "1"
+			"duration_creeps"       "10"
+			"steal_radius"     		"500"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 	"slark_shadow_dance"
 	{
 		// General

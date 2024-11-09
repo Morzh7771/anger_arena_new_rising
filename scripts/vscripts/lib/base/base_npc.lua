@@ -11,6 +11,14 @@
 require("lib/base/player")
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
+function CDOTA_BaseNPC:IsValidKill(killer)
+
+    if killer:GetTeamNumber() == self:GetTeamNumber() then return false end
+    if not self:IsRealHero() or self:IsTempestDouble() then return false end
+    if self:IsReincarnating() then return false end 
+    
+    return true
+end 
 
 function CDOTA_BaseNPC:IsPlayerAbandoned()
     local playerid = self:GetPlayerOwnerID()

@@ -28,63 +28,63 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"range_tooltip"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"range_tooltip"         "600"
+				"value"        			"600"
 			}
-			"02"
+			"duration_tooltip"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_tooltip"      "2.0"
-				"LinkedSpecialBonus"	"charon_soul_drain_cast_time_fast_bonus_const_tallent"
+				"value"      			"2.0"
+				"charon_soul_drain_cast_time_fast_bonus_const_tallent"	"1.5"
 			}
-			"03"
+			"manaburn"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"manaburn"              "5 6 7 8 9 10 11"
+				"value"              	"5 6 7 8 9 10 11"
 			}
-			"04"
+			"manaburn_pct"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"manaburn_pct"          "0.3 0.4 0.5 0.6 0.7 0.8 0.9"
+				"value"          		"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
 			}
-			"05"
+			"manaburn_tooltip"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manaburn_tooltip"      "50 60 70 80 90 100 110"
+				"value"      			"50 60 70 80 90 100 110"
 			}
-			"06"
+			"manaburn_pct_tooltip"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"manaburn_pct_tooltip"  "3.0 4.0 5.0 6.0 7.0 8.0 9.0"
+				"value"  				"3.0 4.0 5.0 6.0 7.0 8.0 9.0"
 			}
-			"07"
+			"damage"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"                "5 10 15 20 25 30 35"
+				"value"                	"5 10 15 20 25 30 35"
 			}
-			"08"
+			"damage_pct"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pct"            "0"
+				"value"            		"0"
 			}
-			"09"
+			"damage_tooltip"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_tooltip"        "50 100 150 200 250 300 350"
+				"value"        			"50 100 150 200 250 300 350"
 			}
-			"10"
+			"damage_pct_tooltip"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pct_tooltip"    "0"
+				"value"    				"0"
 			}
-			"11"
+			"interval"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"interval"              "0.1"
+				"value"              	"0.1"
 			}
 		}
 	}
@@ -170,7 +170,7 @@
 			{
 				"var_type"				        "FIELD_FLOAT"
 				"value"                 "10 13 16 19 22 25 28"
-				"LinkedSpecialBonus"	        "charon_overload_manacost_reduction_percent_tallent"
+				"charon_overload_manacost_reduction_percent_tallent"	"+0.5"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"projectile_speed"
@@ -222,47 +222,47 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius"				"500"
+				"value"					"500"
 			}
-			"02"
+			"manaburn_min"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"manaburn_min"	        "10"
+				"value"	        		"10"
 			}
-			"03"
+			"manaburn_max"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"manaburn_max"	        "30"
+				"value"	        		"30"
 			}
-			"04"
+			"damage_per_mana_burn"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana_burn"	"1.2 1.4 1.6 1.8 2.0 2.2 2.4"
+				"value"					"1.2 1.4 1.6 1.8 2.0 2.2 2.4"
 			}
-			"05"
+			"duration_inside"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_inside"	    "2.5 3.0 3.5 4.0 4.5 5.0 5.5"
+				"value"	    			"2.5 3.0 3.5 4.0 4.5 5.0 5.5"
 			}
-			"06"
+			"duration_outside"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_outside"		"0.3"
+				"value"					"0.3"
 			}
-			"07"
+			"radius_out"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius_out"		    "500"
+				"value"		    		"500"
 			}
-			"08"
+			"tick_time_mana_burn"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_time_mana_burn"	"0.1"
+				"value"					"0.1"
 			}
 		}
 	}
@@ -276,11 +276,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"1.5"
-			}
 		}
 	}
 
