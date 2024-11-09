@@ -3,20 +3,40 @@
 	"npc_dota_hero_antimage"
 	{
 		"override_hero"		"npc_dota_hero_antimage"
-		"Ability1"		"antimage_mana_break"
-		"Ability2"		"antimage_blink"
-		"Ability3"		"antimage_counterspell"
-		"Ability4"		"antimage_mana_overload"
-		"Ability5"		"antimage_counterspell_ally"
-		"Ability6"		"antimage_mana_void"
-		"Ability10"		"special_bonus_strength_9"
-		"Ability11"		"special_bonus_unique_antimage"
-		"Ability12"		"special_bonus_unique_antimage_7"
-		"Ability13"		"special_bonus_unique_antimage_manavoid_aoe"
-		"Ability14"		"special_bonus_unique_antimage_6"
-		"Ability15"		"special_bonus_unique_antimage_3"
-		"Ability16"		"special_bonus_unique_antimage_4"
-		"Ability17"		"special_bonus_unique_antimage_2"
+		"Ability1"      "antimage_mana_break"
+        "Ability2"      "antimage_blink"
+        "Ability3"      "antimage_counterspell"
+        "Ability4"      "antimage_counterspell_ally"
+        "Ability5"      "antimage_persectur"
+        "Ability6"      "antimage_mana_void"
+
+		"Ability10"     "special_bonus_hp_regen_3"
+        "Ability11"     "special_bonus_unique_antimage_manavoid_aoe"
+
+        "Ability12"     "special_bonus_unique_antimage_7"
+        "Ability13"     "special_bonus_unique_antimage_5"
+
+        "Ability14"     "special_bonus_unique_antimage_6"
+        "Ability15"     "special_bonus_unique_antimage_8"
+
+        "Ability16"     "special_bonus_unique_antimage_3"
+        "Ability17"     "special_bonus_unique_antimage_2"
+
+        "Facets"
+        {
+            "antimage_magebanes_mirror" 
+            {
+                "Icon"              "ricochet"
+                "Color"             "Purple"
+                "GradientID"        "1"
+            }
+            "antimage_mana_thirst" 
+            {
+                "Icon"              "mana"
+                "Color"             "Blue"
+                "GradientID"        "3"
+            }
+        }
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
