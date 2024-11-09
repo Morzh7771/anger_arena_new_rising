@@ -37,34 +37,13 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"manaburn"				"100 150 200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"status_resist_debuff"	"7.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"heal_decrease_debuff"	"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"800"
-			}
-
+			"manaburn"				"100 150 200 250 300 350 400"
+			"status_resist_debuff"	"7.5"
+			"heal_decrease_debuff"	"15"
+			"debuff_duration"		"10"
+			"projectile_speed"		"800"
 		}
 	}
 
@@ -102,34 +81,17 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"damage"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"35 45 55 65 75 85 95"
+				"value"				"35 45 55 65 75 85 95"
 				"LinkedSpecialBonus"	"shadowsong_special_bonus_absorbtion"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"interval"				"1.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_duration_hero"	"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_duration_creep"	"2.5"
-			}
+			"duration"				"6"
+			"interval"				"1.0"
+			"bonus_duration_hero"	"10"
+			"bonus_duration_creep"	"2.5"
 		}
 	}
 
@@ -147,23 +109,11 @@
 		"MaxLevel"						"7"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen"				"7 11 15 19 23 27 31"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_speed"			"6 9 12 15 18 21 24"
-			}
+			"aura_radius"			"1200"
+			"hp_regen"				"7 11 15 19 23 27 31"
+			"bonus_speed"			"6 9 12 15 18 21 24"
 		}
 
 		"Modifiers"
@@ -231,13 +181,9 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.5 1.7 1.9 2.1 2.3 2.5 2.7"
-			}
+			"stun_duration"			"1.5 1.7 1.9 2.1 2.3 2.5 2.7"
 		}
 	}
 	"shadowsong_talent_magic_fire_aoe"
@@ -246,13 +192,9 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 
@@ -262,13 +204,9 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"4"
-			}
+			"value"						"4"
 		}
 	}
 
@@ -280,13 +218,9 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"125"
-			}
+			"value"						"125"
 		}
 	}
 
@@ -298,13 +232,9 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"50"
-			}
+			"value"						"50"
 		}
 	}
 
@@ -316,13 +246,9 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"5"
-			}
+			"value"						"5"
 		}
 	}
 
@@ -334,13 +260,9 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 }

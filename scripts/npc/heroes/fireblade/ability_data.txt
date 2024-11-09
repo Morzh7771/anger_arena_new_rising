@@ -114,23 +114,11 @@
 			"particle"					"particles/units/heroes/hero_ember_spirit/ember_spirit_hit.vpcf"
 		}
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 160 250 350 450 500 575"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"900"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"abilitycastrange"			""
-			}
+			"damage"					"100 160 250 350 450 500 575"
+			"speed"						"900"
+			"abilitycastrange"			""
 		}
 	}
 	
@@ -162,18 +150,10 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage"					"20 35 50 65 80 95 100"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_with_item_pct"		"25"
-			}
+			"damage"					"20 35 50 65 80 95 100"
+			"damage_with_item_pct"		"25"
 		}
 	}
 	
@@ -233,13 +213,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 	
@@ -251,13 +227,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 	
@@ -269,13 +241,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"1.0"
-			}
+			"value"						"1.0"
 		}
 	}
 	
@@ -287,13 +255,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 	
@@ -305,13 +269,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 	
@@ -323,13 +283,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 	
@@ -341,18 +297,10 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"1.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"cooldown"					"4.0"
-			}
+			"value"						"1.0"
+			"cooldown"					"4.0"
 		}
 	}
 	
@@ -364,13 +312,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 }

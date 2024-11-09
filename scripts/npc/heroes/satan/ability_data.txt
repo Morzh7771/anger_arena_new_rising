@@ -30,54 +30,21 @@
 		
 		"AbilityManaCost"				"75 90 105 120 135 150 165"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"start_radius"			"150"
+			"end_radius"			"250"
+			"range"					"650"
+			"speed"					"1050"
+			"damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"start_radius"			"150"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"end_radius"			"250"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"650"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1050"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 15 20 25 30 35 40"
+				"value"				"10 15 20 25 30 35 40"
 				"LinkedSpecialBonus"	"satan_special_bonus_breath_damage"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"creep_multipler"		"3"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0"
-			}		
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"think_time"			"0.2"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_pct"		"5"
-			}
+			"creep_multipler"		"3"
+			"duration"				"3.0"
+			"think_time"			"0.2"
+			"damage_pct"		"5"
 		}
 	}
 
@@ -100,23 +67,11 @@
 		
 		"AbilityCooldown"		"4"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"chance"			"10 12 14 15 16 18 20"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.2"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}
+			"chance"			"10 12 14 15 16 18 20"
+			"stun_duration"		"0.2"
+			"radius"			"300"
 		}
 	}
 
@@ -145,23 +100,17 @@
 		"AbilityCooldown"				"60.0"
 		"AbilityManaCost"				"250"	
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"health_lose"			"20"
+			"damage_get"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"health_lose"			"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_get"			"10 13 16 19 22 25 27"
+				"value"			"10 13 16 19 22 25 27"
 				"LinkedSpecialBonus"	"satan_special_bonus_trade_damage"
 			}
-			"03"
+			"duration"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"12"
+				"value"				"12"
 				"LinkedSpecialBonus"	"satan_special_bonus_trade_duration"
 			}
 		}
@@ -190,23 +139,11 @@
 		"AbilityCooldown"				"30.0 28.0 26.0 24.0 20.0 18.0 16.0"
 		"AbilityManaCost"				"50 90 130 170 210 250 290"	
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"4.8"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_decrease"	"-50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"hp_regen"			"5"
-			}
+			"duration"			"4.8"
+			"damage_decrease"	"-50"
+			"hp_regen"			"5"
 		}
 	}
 
@@ -249,18 +186,10 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"duration"		"3 3.5 4 4.5 5 5.5 6"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"slow"			"-10000"
-			}
+			"duration"		"3 3.5 4 4.5 5 5.5 6"
+			"slow"			"-10000"
 		}
 	}
 
@@ -272,13 +201,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"23"
-			}
+			"value"						"23"
 		}
 	}
 
@@ -290,13 +215,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"15"
-			}
+			"value"						"15"
 		}
 	}
 
@@ -308,13 +229,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"40"
-			}
+			"value"						"40"
 		}
 	}
 
@@ -326,13 +243,9 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
-			}
+			"value"						"1"
 		}
 	}
 }
