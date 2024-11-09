@@ -176,31 +176,34 @@
 		}
 	}
 	"item_philosophers_stone"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
-		"DisplayOverheadAlertOnReceived" "0"
-		"ItemPurchasable"				"0"
-		"ItemSellable"				"1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+            
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemIsNeutralDrop"             "1"
+        "DisplayOverheadAlertOnReceived" "0"
+        "ItemPurchasable"               "0"
+        "ItemSellable"              "0"
+        "ItemInitialCharges"            "99999"
+        "ItemPermanent"                 "0"
+        "Model"                         "models/props_gameplay/neutral_box.vmdl"
+        
 
-		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-				"bonus_gpm"			"750"
-				"bonus_mana"		"250"
-				"bonus_damage"		"0"
-		}
-	}
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+                "bonus_gpm"         "750"
+                "bonus_mana"        "200"
+                "bonus_damage"      "0"
+                "gold_on_expire"        "1000"
+                "charges_tooltip"       "0"
+        }
+    }
 	"item_force_boots"
 	{
 		// General

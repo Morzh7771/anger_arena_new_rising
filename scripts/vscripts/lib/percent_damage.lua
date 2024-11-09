@@ -142,7 +142,8 @@ function PercentDamage:_init()
 		"skywrath_mage_mystic_flare",
 		"enchantress_enchant",
 		"witch_doctor_maledict",
-		"lich_frost_nova"
+		"lich_frost_nova",
+		"silencer_last_word",
 	}
 	--"ancient_apparition_chilling_touch",
 	--"ancient_apparition_ice_vortex",
