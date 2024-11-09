@@ -55,33 +55,13 @@
         "AbilityManaCost"               "200"
         
         //special
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_FLOAT"
-                "astral_duration"       "2.5"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "bonus_speed"           "25"
-            }
-            "03"
-            {
-                "var_type"              "FIELD_FLOAT"
-                "bonus_manaregen"       "10.0"
-            }
-            "04"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "bonus_int"             "30"
-            }
-            "05"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "hp_regen_pct"          "8"
-            }
+            "astral_duration"       "2.5"
+            "bonus_speed"           "25"
+            "bonus_manaregen"       "10.0"
+            "bonus_int"             "30"
+            "hp_regen_pct"          "8"
         }
         
         "OnSpellStart"
