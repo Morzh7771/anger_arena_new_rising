@@ -54,21 +54,18 @@ end
 
 function mod:OnTakeDamage( params )
 	if not IsServer() then return end
-
 	local parent = params.unit
 
 	if parent ~= self:GetParent() then return end
-	
 	if not parent or parent:IsNull() then return end
-
 	local attacker = params.attacker
 
 	if not attacker or attacker:IsNull() then return end
-
 	local damage = params.damage
 
 	if not attacker or (attacker:GetAbsOrigin() - parent:GetAbsOrigin()):Length() > self.radius then
 		parent:SetHealth( parent:GetHealth() + damage )
+		print("5")
 	end
 
 	-- Marshall to AI info about taking some damage
