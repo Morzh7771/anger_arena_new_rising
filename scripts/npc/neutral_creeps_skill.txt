@@ -27,19 +27,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "duration"					"6.0"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_movespeed"			"-25"
-            }
-        }
+            "duration"					"6.0"
+            "bonus_movespeed"			"-25"
+         }
     }
 
     //-------------------------------------------------------------------------------------------------------------
@@ -71,23 +63,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "damage"					"250"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "range"						"700"
-            }
-            "03"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "speed"						"80"
-            }
+            "damage"					"250"
+            "range"						"700"
+            "speed"						"80"
         }
     }
 
@@ -110,28 +90,12 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "chance"					"30.0"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_movespeed"			"-12"
-            }
-            "03"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "bonus_attackspeed"			"-30"
-            }
-            "04"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "duration"					"3.0"
-            }
+            "chance"					"30.0"
+            "bonus_movespeed"			"-12"
+            "bonus_attackspeed"			"-30"
+            "duration"					"3.0"
         }
     }
     // File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\ability_override\creeps\map creeps\creep_ghost_big.kv' end
@@ -173,23 +137,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "damage_main"				"300.0"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "damage_second"				"175.0"
-            }
-            "03"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "radius"					"325"
-            }
+            "damage_main"				"300.0"
+            "damage_second"				"175.0"
+            "radius"					"325"
         }
     }
 
@@ -229,18 +181,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "magical_resist_pct"		"-15.0"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "duration"					"3.0"
-            }
+            "magical_resist_pct"		"-15.0"
+            "duration"					"3.0"
         }
     }
 
@@ -264,18 +208,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "radius"					"700.0"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_movespeed"			"12"
-            }
+            "radius"					"700.0"
+            "bonus_movespeed"			"12"
         }
     }
     // File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\ability_override\creeps\map creeps\creep_ghost_small_blue.kv' end
@@ -314,23 +250,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "radius"					"650.0"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_movespeed"			"40"
-            }
-            "03"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "duration"					"3"
-            }
+            "radius"					"650.0"
+            "bonus_movespeed"			"40"
+            "duration"					"3"
         }
     }
 
@@ -365,23 +289,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "bonus_attack_speed"		"50"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "bonus_armor"				"8.0"
-            }
-            "03"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "duration"					"4"
-            }
+            "bonus_attack_speed"		"50"
+            "bonus_armor"				"8.0"
+            "duration"					"4"
         }
     }
 
@@ -403,18 +315,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "radius"					"700.0"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_attack_speed"		"40"
-            }
+            "radius"					"700.0"
+            "bonus_attack_speed"		"40"
         }
     }
     // File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\ability_override\creeps\map creeps\creep_ghost_small_green.kv' end
@@ -456,13 +360,9 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "mana_burn"					"300.0"
-            }
+            "mana_burn"					"300.0"
         }
     }
 
@@ -497,18 +397,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "damage"					"100"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "duration"					"3.0"
-            }
+            "damage"					"100"
+            "duration"					"3.0"
         }
     }
 
@@ -532,18 +424,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "radius"					"700.0"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_mag_damage"			"15"
-            }
+            "radius"					"700.0"
+            "bonus_mag_damage"			"15"
         }
     }
     "megacreep_ancient_golem_fireball"
@@ -581,19 +465,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "fireball_speed"		"1250"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "fireball_damage"		"400"
-            }
-            
+            "fireball_speed"		"1250"
+            "fireball_damage"		"400"            
         }
     }
 
@@ -629,28 +504,12 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			"FIELD_INTEGER"
-                "radius"			"400"		
-            }
-            "02"
-            {
-                "var_type"			"FIELD_INTEGER"
-                "duration"			"5"
-            }
-            "03"
-            {
-                "var_type"			"FIELD_INTEGER"
-                "tickrate"			"1"
-            }
-            "04"
-            {
-                "var_type"			"FIELD_FLOAT"
-                "TotalDmg"			"800"
-            }
+            "radius"			"400"		
+            "duration"			"5"
+            "tickrate"			"1"
+            "TotalDmg"			"800"
         }
     }
 
@@ -680,28 +539,12 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityManaCost"				"100"
         
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"						"FIELD_INTEGER"
-                "contact_damage"	           	"300"
-            }	
-            "02"
-            {
-                "var_type"						"FIELD_INTEGER"
-                "wave_speed"	               	"1200"
-            }
-            "03"
-            {
-                "var_type"						"FIELD_INTEGER"
-                "wave_width"	               	"300"
-            }
-            "04"
-            {
-                "var_type"						"FIELD_INTEGER"
-                "distance"	         	      	"2000"
-            }
+            "contact_damage"	           	"300"
+            "wave_speed"	               	"1200"
+            "wave_width"	               	"300"
+            "distance"	         	      	"2000"
         }
     }
 
@@ -731,17 +574,10 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityManaCost"				"100"
         
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"						"FIELD_INTEGER"
-                "damage"	           			"700"
-            }	
-            "02"
-            {
-                "var_type"						"FIELD_INTEGER"
-                "radius"	               		"500"
+            "damage"	           			"700"
+            "radius"	               		"500"
             }
         }
     }
@@ -756,13 +592,9 @@
         "AbilityTextureName"			"custom/megacreep_ancient_golem_fire_fist"
         "ScriptFile"					"creeps/abilities/megacreep_golem/megacreep_ancient_golem_fire_fist" 
         
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"						"FIELD_INTEGER"
-                "hit_damage"	        		"120"
-            }	
+            "hit_damage"	        		"120"
         }
     }
     "megacreep_beast_stomp"
@@ -791,33 +623,13 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_INTEGER"
-                "radius"		        "350"
-            }
-            "02"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "duration"		        "1.2"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "damage"				"375"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "damage_from_hp"		"0.2"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cast_offset"			"160"
-            }
+            "radius"		        "350"
+            "duration"		        "1.2"
+            "damage"				"375"
+            "damage_from_hp"		"0.2"
+            "cast_offset"			"160"
         }
     }
 
@@ -852,23 +664,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "duration"		        "1.0"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "damage"				"250"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "damage_from_hp"		"0.2"
-            }
+            "duration"		        "1.0"
+            "damage"				"250"
+            "damage_from_hp"		"0.2"
         }
     }
 
@@ -899,18 +699,10 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "duration"		        "3.5"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "radius"				"900"
-            }
+            "duration"		        "3.5"
+            "radius"				"900"
         }
     }
 
@@ -943,28 +735,12 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "radius"		        "300"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "damage"				"250"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "damage_from_hp"		"0.1"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cast_offset"			"-210"
-            }
+            "radius"		        "300"
+            "damage"				"250"
+            "damage_from_hp"		"0.1"
+            "cast_offset"			"-210"
         }
     }
 
@@ -1002,28 +778,12 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "range"		        	"650"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "duration"				"4"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "damage"				"150"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "damage_from_hp"		"0.1"
-            }
+            "range"		        	"650"
+            "duration"				"4"
+            "damage"				"150"
+            "damage_from_hp"		"0.1"
         }
     }
 
@@ -1054,18 +814,10 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "attackspeed"	       	"99999"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "duration"				"2"
-            }
+            "attackspeed"	       	"99999"
+            "duration"				"2"
         }
     }
     // File 'E:\projects\AngelArenaReborn\Repos\Angel Arena\configs\ability_override\creeps\map creeps\megacreep_beast.kv' end
@@ -1105,28 +857,12 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_INTEGER"
-                "abilitycastrange"		""
-            }
-            "02"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "damage"		        "125"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "abilityduration"		""
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "projectile_speed"		"1200"
-            }
+            "abilitycastrange"		""
+            "damage"		        "125"
+            "abilityduration"		""
+            "projectile_speed"		"1200"
         }
     }
 
@@ -1160,18 +896,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "abilitycastrange"		""
-            }
-            "02"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "speed"					"3000"
-            }
+            "abilitycastrange"		""
+            "speed"					"3000"
         }
     }
 
@@ -1202,23 +930,11 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"			    "FIELD_FLOAT"
-                "abilityduration"		""
-            }
-            "02"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "abilitycastrange"		""
-            }
-            "03"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "resist_per_hero"		"15"
-            }
+            "abilityduration"		""
+            "abilitycastrange"		""
+            "resist_per_hero"		"15"
         }
     }
 
@@ -1255,13 +971,9 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "attack_count"			"3"
-            }
+            "attack_count"			"3"
         }
     }
     "neutral_upgrade"
@@ -1364,18 +1076,10 @@
     
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"                  "FIELD_INTEGER"
-                "crit_chance"               "20 20 20 20 20 20 20 20 20 30"
-            }
-            "02"
-            {
-                "var_type"                  "FIELD_INTEGER"
-                "crit_mult"                 "125 150 175 200 225 250 275 300 325 400"
-            }
+            "crit_chance"               "20 20 20 20 20 20 20 20 20 30"
+            "crit_mult"                 "125 150 175 200 225 250 275 300 325 400"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -1401,10 +1105,10 @@
             "radius"
             {
                 "value"                     "300 350 400 450 500 550 600 650 700 800"
-                "affected_by_aoe_increase"      "1"
+                "affected_by_aoe_increase"  "1"
             }
             "damage_reduction"              "50 50 50 50 50 50 50 50 50 75"
-            "duration"          "4.0 4 4 4 4 4 4 4 4 5"
+            "duration"                      "4.0 4 4 4 4 4 4 4 4 5"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
     }
@@ -1417,18 +1121,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "bonus_movement_speed"  "12 13 14 15 16 17 18 19 20 25"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "radius"                "1200"
-            }
+            "bonus_movement_speed"  "12 13 14 15 16 17 18 19 20 25"
+            "radius"                "1200"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -1445,13 +1141,9 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01" 
-            {
-                "var_type"              "FIELD_INTEGER"
-                "duration"              "1.5 1.75 2.0 2.25 2.5 2.75 3.0 3.25 3.5 5"
-            }
+            "duration"              "1.5 1.75 2.0 2.25 2.5 2.75 3.0 3.25 3.5 5"
         }
     }
     "kobold_tunneler_prospecting"
@@ -1464,18 +1156,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "gpm_aura"  "100 200 300 400 500 600 700 800 900 2000"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "radius"    "1200 1200 1200 1200 1200 1200 1200 1200 1200 2400"
-            }
+            "gpm_aura"  "100 200 300 400 500 600 700 800 900 2000"
+            "radius"    "1200 1200 1200 1200 1200 1200 1200 1200 1200 2400"
         }
     }
     "berserker_troll_break"
@@ -1487,13 +1171,9 @@
         "AbilityCooldown"       "10 9.5 9 8.5 8 7.5 7 6.5 6 4"
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_FLOAT"
-                "duration"              "1.5 1.75 2.0 2.25 2.5 2.75 3.0 3.25 3.5 5"
-            }                       
+            "duration"              "1.5 1.75 2.0 2.25 2.5 2.75 3.0 3.25 3.5 5"
         }
     }
     "black_dragon_fireball"
@@ -1544,18 +1224,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {           
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "bonus_armor"           "2 3 4 5 6 7 8 9 10 15"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "radius"                    "1200"
-            }
+            "bonus_armor"           "2 3 4 5 6 7 8 9 10 15"
+            "radius"                    "1200"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
     }
@@ -1636,18 +1308,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"          "FIELD_FLOAT"
-                "bonus_hp"          "15 16 17 18 19 20 21 22 23 30"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "radius"            "1200"
-            }
+            "bonus_hp"          "15 16 17 18 19 20 21 22 23 30"
+            "radius"            "1200"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -1706,23 +1370,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {           
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "bonus_magical_armor"   "10 11 12 13 14 15 16 17 18 20"
-            }   
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "bonus_magical_armor_creeps"    "20 22 24 26 28 30 32 34 36 40"
-            }
-            "03"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "radius"                    "1200"
-            }
+            "bonus_magical_armor"   "10 11 12 13 14 15 16 17 18 20"
+            "bonus_magical_armor_creeps"    "20 22 24 26 28 30 32 34 36 40"
+            "radius"                    "1200"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -1747,16 +1399,14 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-                "radius"                        
-                {
-
-                    "value"         "200 210 220 230 240 250 260 270 280 300"
-                    "affected_by_aoe_increase"      "1"
-                }
-
-                "damage"                        "200 300 400 500 600 700 800 900 1000 1500"
-                "damage_pct"                    "8 10 12 14 16 18 20 22 24 30"
-                "hero_stun_duration"            "3.0"
+            "radius"                        
+            {
+                "value"         "200 210 220 230 240 250 260 270 280 300"
+                "affected_by_aoe_increase"      "1"
+            }
+            "damage"                        "200 300 400 500 600 700 800 900 1000 1500"
+            "damage_pct"                    "8 10 12 14 16 18 20 22 24 30"
+            "hero_stun_duration"            "3.0"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
     }
@@ -1801,23 +1451,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "bonus_dmg_pct" "30 40 50 60 70 80 90 100 110 150"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_FLOAT"
-                "duration"  "5"
-            }
-            "03"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "radius"    "700"
-            }
+            "bonus_dmg_pct" "30 40 50 60 70 80 90 100 110 150"
+            "duration"  "5"
+            "radius"    "700"
         }
     }
     "centaur_khan_endurance_aura"
@@ -1829,18 +1467,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "bonus_attack_speed"    "25 35 45 55 65 75 85 95 105 150"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "radius"                "900"
-            }
+            "bonus_attack_speed"    "25 35 45 55 65 75 85 95 105 150"
+            "radius"                "900"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
     }
@@ -1854,23 +1484,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "bonus_aspd"    "50 75 100 125 150 175 200 225 250 300"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_FLOAT"
-                "duration"  "5"
-            }
-            "03"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "radius"    "700"
-            }
+            "bonus_aspd"    "50 75 100 125 150 175 200 225 250 300"
+            "duration"  "5"
+            "radius"    "700"
         }
     }
     "warpine_raider_seed_shot"
@@ -1915,18 +1533,10 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "burn_amount"           "50 100 150 200 250 300 350 400 450 600"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "burn_damage_conversion"    "50 50 50 50 50 50 50 50 50 100"
-            }
+            "burn_amount"           "50 100 150 200 250 300 350 400 450 600"
+            "burn_damage_conversion"    "50 50 50 50 50 50 50 50 50 100"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -1941,13 +1551,9 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "explosion"             "600 700 800 900 1000 1100 1200 1300 1400 2000"
-            }
+            "explosion"             "600 700 800 900 1000 1100 1200 1300 1400 2000"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
     }
@@ -1961,13 +1567,9 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "radius"                "1000 1000 1000 1000 1000 1000 1000 1000 1000 1800"
-            }
+            "radius"                "1000 1000 1000 1000 1000 1000 1000 1000 1000 1800"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
     }
@@ -1993,18 +1595,10 @@
                 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "purge_rate"        "5"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_FLOAT"
-                "duration"              "4.0"
-            }
+            "purge_rate"        "5"
+            "duration"              "4.0"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -2018,23 +1612,11 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "radius"                "1200"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "ms_bonus"              "15 18 21 24 27 30 33 36 39 45"
-            }
-            "03"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "as_bonus"              "25 45 65 85 105 125 145 165 185 250"
-            }
+            "radius"                "1200"
+            "ms_bonus"              "15 18 21 24 27 30 33 36 39 45"
+            "as_bonus"              "25 45 65 85 105 125 145 165 185 250"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -2049,28 +1631,12 @@
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"                      "FIELD_INTEGER"
-                "damage_per_second"             "0 20 40 80 100 120 140 160 180 250"
-            }
-            "02"
-            {
-                "var_type"                      "FIELD_FLOAT"
-                "non_hero_duration"             "20.0"
-            }
-            "03"
-            {
-                "var_type"                      "FIELD_FLOAT"
-                "hero_duration"                 "2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4 3.6 4"
-            }
-            "04"
-            {
-                "var_type"                      "FIELD_INTEGER"
-                "regen_reduction"               "50 55 60 65 70 75 80 85 90 100"
-            }
+            "damage_per_second"             "0 20 40 80 100 120 140 160 180 250"
+            "non_hero_duration"             "20.0"
+            "hero_duration"                 "2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4 3.6 4"
+            "regen_reduction"               "50 55 60 65 70 75 80 85 90 100"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -2085,23 +1651,11 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "movespeed_slow"        "-15 -17.5 -20 -22.5 -25 -27.5 -30 -32.5 -35 -40"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "attackspeed_slow"      "-15 -30 -45 -60 -75 -90 -105 -120 -135 -180"
-            }           
-            "03"
-            {
-                "var_type"              "FIELD_FLOAT"
-                "duration"              "1.0"
-            }
+            "movespeed_slow"        "-15 -17.5 -20 -22.5 -25 -27.5 -30 -32.5 -35 -40"
+            "attackspeed_slow"      "-15 -30 -45 -60 -75 -90 -105 -120 -135 -180"
+            "duration"              "1.0"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -2121,18 +1675,10 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"          "FIELD_INTEGER"
-                "move_speed_penalty"    "50 45 40 35 30 25 20 15 10 0"
-            }
-            "02"
-            {
-                "var_type"          "FIELD_FLOAT"
-                "cost_per_second"   "4 3.6 3.2 2.8 2.4 2.0 1.6 1.2 0.8 0"
-            }
+            "move_speed_penalty"    "50 45 40 35 30 25 20 15 10 0"
+            "cost_per_second"   "4 3.6 3.2 2.8 2.4 2.0 1.6 1.2 0.8 0"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
@@ -2158,33 +1704,13 @@
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "initial_damage"        "140 180 220 260 300 340 380 420 460 600"
-            }
-            "02"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "jump_range"            "500"
-            }
-            "03"
-            {
-                "var_type"              "FIELD_FLOAT"
-                "jump_delay"            "0.20"
-            }
-            "04"
-            {
-                "var_type"              "FIELD_FLOAT"
-                "damage_percent_loss"   "0"
-            }
-            "05"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "max_targets"           "4 4 4 4 4 4 4 4 4 20"
-            }
+            "initial_damage"        "140 180 220 260 300 340 380 420 460 600"
+            "jump_range"            "500"
+            "jump_delay"            "0.20"
+            "damage_percent_loss"   "0"
+            "max_targets"           "4 4 4 4 4 4 4 4 4 20"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
