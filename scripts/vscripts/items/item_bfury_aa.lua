@@ -145,9 +145,8 @@ function modifier_item_bfury_aa:OnAttackLanded( params )
 
 	if not units_in_radius then return end
 
-	CreateParticleForCleave("particles/econ/items/faceless_void/faceless_void_weapon_bfury/faceless_void_weapon_bfury_cleave_c.vpcf", radius, target)
+	CreateParticleForCleave("particles/units/heroes/hero_magnataur/magnataur_empower_cleave_effect.vpcf", radius, target)
 
-    print()
 
 	for _,x in pairs(units_in_radius) do
 		if x ~= params.target or x:IsIllusion() then

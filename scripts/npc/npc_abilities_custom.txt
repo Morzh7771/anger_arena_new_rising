@@ -884,13 +884,11 @@
 		"AbilityTextureName"			"custom/keymaster_dodge_mastery"
 		"ScriptFile"					"creeps/boss/keymaster/keymaster_dodge_mastery" 
 		
-		"AbilityCastRange"				"700"
-		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"abilitycastrange"		""
+			"AbilityCastRange"		"700"
 			"aspeed_per_hp_pct"		"8"
 		}
 	}

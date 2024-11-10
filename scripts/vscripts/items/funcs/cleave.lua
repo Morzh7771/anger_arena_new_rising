@@ -79,7 +79,7 @@ local vectors = {
 
 function CreateParticleForCleave(particle_name, radius, target)	
 	local particle = ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN_FOLLOW, target)
-
+	print('gey')
 	for i = 1, 16 do 
 		ParticleManager:SetParticleControl(particle, i, target:GetAbsOrigin() + vectors[i - 1]*radius/2  )
 	end 
