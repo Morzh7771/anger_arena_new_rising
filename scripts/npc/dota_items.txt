@@ -78,18 +78,10 @@
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"8.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"30"
-			}			
+			"mana_regen"			"8.5"
+			"buff_duration"			"30"		
 		}
 	}
 	"item_gem"
@@ -323,11 +315,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"minimun_distance"		"70"
-				"maximum_distance"		"800"
-				"vision_radius"			"200"
-				"tooltip_channel_time"	"3.0"
-				"AbilityChannelTime"	"3.0"
+			"minimun_distance"		"70"
+			"maximum_distance"		"800"
+			"vision_radius"			"200"
+			"tooltip_channel_time"	"3.0"
+			"AbilityChannelTime"	"3.0"
 		}
 	}
 	"item_recipe_soul_ring"
@@ -380,10 +372,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"		"6"
-				"bonus_armor"			"2"
-				"mana_gain"				"250"
-				"duration"				"10"
+			"bonus_strength"		"6"
+			"bonus_armor"			"2"
+			"mana_gain"				"250"
+			"duration"				"10"
 		}
 	}
 	"item_enchanted_mango"
@@ -419,8 +411,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"hp_regen"		"0.6"
-				"replenish_amount"		"250"
+			"hp_regen"		"0.6"
+			"replenish_amount"		"250"
 		}
 	}
 	"item_faerie_fire"
@@ -458,8 +450,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"5"
-				"hp_restore"			"125"
+			"bonus_damage"			"5"
+			"hp_restore"			"125"
 		}
 	}
 	"item_bottle"
@@ -706,8 +698,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"corruption_armor"		"-3"
-				"corruption_duration"	"8.0"
+			"corruption_armor"		"-3"
+			"corruption_duration"	"8.0"
 		}
 	}
 	"item_recipe_aether_lens"
@@ -750,9 +742,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_mana"			"300"
-				"bonus_mana_regen"		"2.5"
-				"cast_range_bonus"		"175"
+			"bonus_mana"			"300"
+			"bonus_mana_regen"		"2.5"
+			"cast_range_bonus"		"175"
 		}
 	}
 	
@@ -807,7 +799,7 @@
 			"bonus_damage"			"10"
 		}
 	}
-		//=================================================================================================================
+	//=================================================================================================================
 	// Recipe: Necronomicon
 	//=================================================================================================================
 	"item_recipe_necronomicon"
@@ -923,20 +915,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"		"6 12 18"
-				"bonus_mana_regen"		"2 3 4"
-				"summon_duration"		"60"
-				"warrior_health_tooltip"	"800 1200 1600"
-				"warrior_damage_tooltip"	"25 45 65"
-				"warrior_mana_feedback"	"30 40 50"
-				"warrior_mana_break_tooltip"	"30 40 50"
-				"explosion"				"600 700 800"
-				"warrior_truesight"		"400 800 1200"
-				"archer_health_tooltip"	"800 1200 1600"
-				"archer_damage_tooltip"	"37 57 75"
-				"archer_mana_burn"		"125 175 225"
-				"archer_aura_radius_tooltip"	"1200"
-				"archer_move_speed"	"5 7 9"
+			"bonus_strength"		"6 12 18"
+			"bonus_mana_regen"		"2 3 4"
+			"summon_duration"		"60"
+			"warrior_health_tooltip"	"800 1200 1600"
+			"warrior_damage_tooltip"	"25 45 65"
+			"warrior_mana_feedback"	"30 40 50"
+			"warrior_mana_break_tooltip"	"30 40 50"
+			"explosion"				"600 700 800"
+			"warrior_truesight"		"400 800 1200"
+			"archer_health_tooltip"	"800 1200 1600"
+			"archer_damage_tooltip"	"37 57 75"
+			"archer_mana_burn"		"125 175 225"
+			"archer_aura_radius_tooltip"	"1200"
+			"archer_move_speed"	"5 7 9"
 		}
 	}
 
@@ -975,20 +967,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"		"6 12 18"
-				"bonus_mana_regen"		"2 3 4"
-				"summon_duration"		"60"
-				"warrior_health_tooltip"	"800 1200 1600"
-				"warrior_damage_tooltip"	"25 45 65"
-				"warrior_mana_feedback"	"30 40 50"
-				"warrior_mana_break_tooltip"	"30 40 50"
-				"explosion"				"600 700 800"
-				"warrior_truesight"		"400 800 1200"
-				"archer_health_tooltip"	"800 1200 1600"
-				"archer_damage_tooltip"	"37 57 75"
-				"archer_mana_burn"		"125 175 225"
-				"archer_aura_radius_tooltip"	"1200"
-				"archer_move_speed"	"5 7 9"
+			"bonus_strength"		"6 12 18"
+			"bonus_mana_regen"		"2 3 4"
+			"summon_duration"		"60"
+			"warrior_health_tooltip"	"800 1200 1600"
+			"warrior_damage_tooltip"	"25 45 65"
+			"warrior_mana_feedback"	"30 40 50"
+			"warrior_mana_break_tooltip"	"30 40 50"
+			"explosion"				"600 700 800"
+			"warrior_truesight"		"400 800 1200"
+			"archer_health_tooltip"	"800 1200 1600"
+			"archer_damage_tooltip"	"37 57 75"
+			"archer_mana_burn"		"125 175 225"
+			"archer_aura_radius_tooltip"	"1200"
+			"archer_move_speed"	"5 7 9"
 		}
 	}
 
@@ -1024,20 +1016,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"		"6 12 18"
-				"bonus_mana_regen"		"2 3 4"
-				"summon_duration"		"60"
-				"warrior_health_tooltip"	"800 1200 1600"
-				"warrior_damage_tooltip"	"25 45 65"
-				"warrior_mana_feedback"	"30 40 50"
-				"warrior_mana_break_tooltip"	"30 40 50"
-				"explosion"				"600 700 800"
-				"warrior_truesight"		"400 800 1200"
-				"archer_health_tooltip"	"800 1200 1600"
-				"archer_damage_tooltip"	"37 57 75"
-				"archer_mana_burn"		"125 175 225"
-				"archer_aura_radius_tooltip"	"1200"
-				"archer_move_speed"	"5 7 9"
+			"bonus_strength"		"6 12 18"
+			"bonus_mana_regen"		"2 3 4"
+			"summon_duration"		"60"
+			"warrior_health_tooltip"	"800 1200 1600"
+			"warrior_damage_tooltip"	"25 45 65"
+			"warrior_mana_feedback"	"30 40 50"
+			"warrior_mana_break_tooltip"	"30 40 50"
+			"explosion"				"600 700 800"
+			"warrior_truesight"		"400 800 1200"
+			"archer_health_tooltip"	"800 1200 1600"
+			"archer_damage_tooltip"	"37 57 75"
+			"archer_mana_burn"		"125 175 225"
+			"archer_aura_radius_tooltip"	"1200"
+			"archer_move_speed"	"5 7 9"
 		}
 	}
 }

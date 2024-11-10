@@ -1,0 +1,105 @@
+"DOTAHeroes"
+{    
+    "npc_dota_hero_kez"
+    {
+        "Model"     "models/heroes/kez/kez_base.vmdl"
+        "IdleExpression"        "scenes/kez/kez_exp_idle_01.vcd"
+        "SoundSet"      "Hero_Kez"
+        "Enabled"       "1"
+        "RandomEnabled"     "0"
+        "BotImplemented"        "0"
+        "HeroUnlockOrder"       "1"
+        "Complexity"    "3"
+        "Role"          "Carry,Escape,Disabler"
+        "Rolelevels"    "3,2,1"
+        "Team"      "Good"
+        "HeroID"        "145"
+        "ModelScale"        "1.0"
+        "LoadoutScale"      "1.10"
+        "HeroGlowColor"     "154 97 133"
+        "PickSound"     "kez_kez_battlebegins_07"
+        "BanSound"      "kez_kez_anger_05"
+        "NameAliases"       "bird samurai;kestrel"
+        "CMEnabled"     "0"
+        "workshop_guide_name"       "Kez"
+        "LastHitChallengeRival"     "npc_dota_hero_invoker"
+        "HeroSelectSoundEffect"     "Hero_Kez.Pick"
+        "Ability1"                  "kez_echo_slash"
+        "Ability2"                  "kez_grappling_claw"
+        "Ability3"                  "kez_kazurai_katana"
+        "Ability4"                  "kez_switch_weapons"
+        "Ability5"                  "generic_hidden"
+        "Ability6"                  "kez_raptor_dance"
+        "Ability7"                  "kez_falcon_rush"
+        "Ability8"                  "kez_talon_toss"
+        "Ability9"                  "kez_shodo_sai"
+        "Ability10"                 "kez_ravens_veil"
+        "Ability11"                 "kez_shodo_sai_parry_cancel"
+        "Ability12"                 "special_bonus_magic_resistance_12"
+        "Ability13"                 "special_bonus_mp_regen_150"
+        "Ability14"                 "special_bonus_unique_kez_falcon_rush_duration"
+        "Ability15"                 "special_bonus_unique_kez_raptor_dance_radius"
+        "Ability16"                 "special_bonus_unique_kez_kazura_katana_bleed_damage"
+        "Ability17"                 "special_bonus_unique_kez_falcon_rush_evasion"
+        "Ability18"                 "special_bonus_unique_kez_mark_damage"
+        "Ability19"                 "special_bonus_unique_kez_echo_slash_strike_count"
+        "AbilityTalentStart"        "12"
+
+        "AbilityDraftAbilities"
+        {
+            "Ability1"      "kez_echo_slash"
+            "Ability2"      "kez_grappling_claw"
+            "Ability3"      "kez_kazurai_katana"
+            "Ability6"      "kez_raptor_dance"
+        }
+
+        "Facets"
+        {   
+            "kez_default"   
+            {
+                "Icon"              "kez"
+                "Color"             "Blue"
+                "GradientID"        "3"
+            }
+        }
+
+        "ArmorPhysical"     "2"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "23"
+        "AttackDamageMax"       "29"
+        "AttackRate"        "2.0"
+        "AttackAnimationPoint"      "0.35"
+        "AttackAcquisitionRange"        "600"
+        "AttackRange"       "225"
+        "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"     "19"
+        "AttributeStrengthGain"     "2.6"
+        "AttributeBaseAgility"      "26"
+        "AttributeAgilityGain"      "3.5"
+        "AttributeBaseIntelligence"     "18"
+        "AttributeIntelligenceGain"     "1.7"
+        "StatusHealthRegen"             "1.0"
+        "MovementSpeed"     "320"
+        "AttackSpeedActivityModifiers"
+        {
+            "fast"      "150"
+            "faster"    "200"
+        }
+        "MovementTurnRate"      "1.0"
+        "HasAggressiveStance"       "1"
+        "RenderablePortrait"
+        {
+            "Particles"
+            {
+                "particles/units/heroes/hero_phantom_assassin/phantom_assassin_loadout.vpcf"
+                {
+                    "0"
+                    {
+                        "type"      "follow_origin"
+                        "location"      "attach_hitloc"
+                    }
+                }
+            }
+        }
+    }
+}
