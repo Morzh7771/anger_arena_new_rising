@@ -149,7 +149,7 @@ DOTAAbilities
 				"lifesteal"					
 				{
 					"value"					"20 24 28 32 36 40 42"
-					"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_6"
+					"special_bonus_unique_chaos_knight_6"	"+10"
 				}
 
 				"creep_multiplier"					"1.7"
@@ -257,18 +257,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                        "special_bonus_unique_earth_spirit"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"value"							"10"
-				"ad_linked_abilities"			"chaos_knight_chaos_strike"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"                        "special_bonus_base"
 	}
 	"special_bonus_unique_chaos_knight_2"
 	{
@@ -276,36 +265,6 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"250"
-				"ad_linked_abilities"			"chaos_knight_reality_rift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-	"special_bonus_unique_chaos_knight_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"-75"
-				"ad_linked_abilities"			"chaos_knight_phantasm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"                        "special_bonus_base"
 	}
 }

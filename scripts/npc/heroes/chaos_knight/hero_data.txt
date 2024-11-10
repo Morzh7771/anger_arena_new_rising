@@ -3,20 +3,46 @@
 	"npc_dota_hero_chaos_knight"
 	{
 		"override_hero"		"npc_dota_hero_chaos_knight"
-		"Ability1"		"chaos_knight_chaos_bolt"
-		"Ability2"		"chaos_knight_reality_rift"
-		"Ability3"		"chaos_knight_chaos_strike"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"chaos_knight_reins_of_chaos"
-		"Ability6"		"chaos_knight_phantasm"
-		"Ability10"		"special_bonus_unique_chaos_knight_6"
-		"Ability11"		"special_bonus_unique_chaos_knight_2"
-		"Ability12"		"special_bonus_unique_chaos_knight_8"
-		"Ability13"		"special_bonus_strength_10"
-		"Ability14"		"special_bonus_unique_chaos_knight_3"
-		"Ability15"		"special_bonus_unique_chaos_knight"
-		"Ability16"		"special_bonus_unique_chaos_knight_5"
-		"Ability17"		"special_bonus_unique_chaos_knight_4"
+		"Ability1"      "chaos_knight_chaos_bolt"
+        "Ability2"      "chaos_knight_reality_rift"
+        "Ability3"      "chaos_knight_chaos_strike"
+        "Ability4"      "generic_hidden"
+        "Ability5"      "chaos_knight_reins_of_chaos"
+        "Ability6"      "chaos_knight_phantasm"
+		"Ability10"     "special_bonus_unique_chaos_knight_6"
+        "Ability11"     "special_bonus_unique_chaos_knight_2"
+        "Ability12"     "special_bonus_unique_chaos_knight_8"
+        "Ability13"     "special_bonus_strength_10"
+        "Ability14"     "special_bonus_unique_chaos_knight_3"
+        "Ability15"     "special_bonus_unique_chaos_knight"
+        "Ability16"     "special_bonus_unique_chaos_knight_5"
+        "Ability17"     "special_bonus_unique_chaos_knight_4"
+
+        "Facets"
+        {
+            "chaos_knight_strong_illusions"
+            {
+                "Icon"              "illusion"
+                "Color"             "Red"
+                "GradientID"        "1"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "chaos_knight_phantasmagoria"
+                    }
+                }
+            }
+
+            "chaos_knight_irrationality" 
+            {
+                "Icon"              "rng"
+                "Color"             "Gray"
+                "GradientID"        "0"
+            }
+        }
+        
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"29"
