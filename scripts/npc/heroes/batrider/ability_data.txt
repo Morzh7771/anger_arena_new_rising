@@ -6,11 +6,13 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"batrider_sticky_napalm"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
 		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"HasShardUpgrade"			"1"
 
 		// Casting
@@ -88,33 +90,38 @@ DOTAAbilities
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"batrider_sticky_napalm_application_damage"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"batrider_sticky_napalm_application_damage"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
-		"MaxLevel"						"1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "AbilitySound"                  "Hero_Batrider.StickyNapalm.Impact"
+        "MaxLevel"                      "1"
 
-	}	
+    }  
 	"batrider_smoldering_resin"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
-		"MaxLevel"						"1"
-		"Innate"						"1"
-		"AbilityValues"
-		{
-			"total_ticks"			"2"
-			"tick_rate"				"1"
-			"tick_attack_damage_pct"		"15"
-		}
-	}
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "AbilitySound"                  "Hero_Batrider.StickyNapalm.Impact"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "total_ticks"           
+            {
+                "value"     "2"
+                "special_bonus_unique_batrider_smoldering_resin_ticks"  "+2"
+            }
+            "tick_rate"             "1"
+            "tick_attack_damage_pct"        "15"
+        }
+
+    }
 	"batrider_stoked"
 	{
 		// General

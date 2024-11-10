@@ -3,20 +3,45 @@
 	"npc_dota_hero_batrider"
 	{
 		"override_hero"		"npc_dota_hero_batrider"
-		"Ability1"		"batrider_sticky_napalm"
-		"Ability2"		"batrider_flamebreak"
-		"Ability3"		"batrider_firefly"
-		"Ability4"		"batrider_sticky_napalm_application_damage"
-		"Ability5"		"batrider_smoldering_resin"
-		"Ability6"		"batrider_flaming_lasso"
-		"Ability10"		"special_bonus_unique_batrider_7"
-		"Ability11"		"special_bonus_unique_batrider_3"
-		"Ability12"		"special_bonus_movement_speed_20"
-		"Ability13"		"special_bonus_unique_batrider_6"
-		"Ability14"		"special_bonus_unique_batrider_1"
-		"Ability15"		"special_bonus_unique_batrider_5"
-		"Ability16"		"special_bonus_unique_batrider_4"
-		"Ability17"		"special_bonus_unique_batrider_2"
+		"Ability1"      "batrider_sticky_napalm"
+        "Ability2"      "batrider_flamebreak"
+        "Ability3"      "batrider_firefly"
+        "Ability4"      "batrider_sticky_napalm_application_damage"
+        "Ability5"      "batrider_smoldering_resin"
+        "Ability6"      "batrider_flaming_lasso"
+		"Ability10"     "special_bonus_unique_batrider_7"
+        "Ability11"     "special_bonus_unique_batrider_3"
+        "Ability12"     "special_bonus_movement_speed_20"
+        "Ability13"     "special_bonus_unique_batrider_6"
+        "Ability14"     "special_bonus_unique_batrider_smoldering_resin_ticks"
+        "Ability15"     "special_bonus_unique_batrider_5"
+        "Ability16"     "special_bonus_unique_batrider_4"
+        "Ability17"     "special_bonus_unique_batrider_2"
+
+        "Facets"
+        {
+            "batrider_buff_on_displacement" 
+            {
+                "Icon"              "speed"
+                "Color"             "Yellow"
+                "GradientID"        "1"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "batrider_stoked"
+                    }
+                }
+            }
+            "batrider_arsonist" 
+            {
+                "Icon"              "siege"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+        }
+        
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"-4"
