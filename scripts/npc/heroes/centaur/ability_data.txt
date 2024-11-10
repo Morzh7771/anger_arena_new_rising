@@ -16,7 +16,7 @@ DOTAAbilities
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"18 17 16 15 14 13 12"
+		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"100 110 120 130 140 150 160"
 		
 		// Special
@@ -35,7 +35,7 @@ DOTAAbilities
 				"value"						"1.6 1.7 1.8 1.9 2.0 2.1 2.2"
 				"special_bonus_unique_centaur_2" "+0.8"
 			}
-			"windup_time"	"0.5"
+			"windup_time"	"0.75"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -146,7 +146,15 @@ DOTAAbilities
 					"CalculateSpellDamageTooltip"	"1"
 				}
 				"return_damage_str"			"20 30 40 60 70 80 90"
-				"aura_radius"				"1200"
+				"aura_radius"               
+                {
+                    "value"     "1200"
+                    "affected_by_aoe_increase"  "1"
+                }
+                "aura_enabled"
+                {
+                    "special_bonus_unique_centaur_1"    "=1"
+                }
 		}
 	}
 	"centaur_stampede"
@@ -245,11 +253,26 @@ DOTAAbilities
 		{
 			"duration"					"8"
 			"melee_attack_range"		"200"
-			"air_duration"		"0.5"
-			"air_height"		"450"
-			"break_distance"		"600"
+			"air_duration"				"0.5"
+			"air_height"				"450"
+			"break_distance"			"600"
 		}
 	}
+	"centaur_horsepower"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI "
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "AbilityValues"
+        {
+            "strength_to_movement_pct"          "30"
+            "move_speed_limit"                  "800"
+            "base_move_speed_penalty"           "0"
+        }
+    }
 	"centaur_mount"
 	{
 		// General
@@ -299,7 +322,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"health_per_upgrade"		"45"
-			"upgrade_rate"				"60.0"
+			"upgrade_rate"				"45.0"
 		}
 	}
 	"centaur_overrun"

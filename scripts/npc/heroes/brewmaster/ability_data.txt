@@ -214,21 +214,21 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"dodge_chance"		"14 18 20 22 24 26 28 30"
+			"dodge_chance"		"18 20 22 24 26 28 30"
 			"crit_chance"				"24"
 			"active_multiplier"			
 			{
 				"value"						"3"
 				"special_bonus_unique_brewmaster_8"		"+1"
 			}
-			"crit_multiplier"			"125 145 165 185 205 225 245 260"
-			"attack_speed"				"5 10 25 40 55 70 85 100"
-			"magic_resist"				"2.5 5 7.5 10 12.5 15 17.5 20"
-			"armor"						"2.5 5 7 11 13 17 19 23"
-			"movespeed"					"3.5 7 9 11 13 15 17 19"
+			"crit_multiplier"			"145 165 185 205 225 245 260"
+			"attack_speed"				"10 25 40 55 70 85 100"
+			"magic_resist"				"5 7.5 10 12.5 15 17.5 20"
+			"armor"						"5 7 11 13 17 19 23"
+			"movespeed"					"7 9 11 13 15 17 19"
 			"slow_duration"				"2"
-			"bonus_move_speed"			"3 5 7 11 13 17 19 23"
-			"bonus_status_resist"		"2.5 5 7.5 10 12.5 15 17.5 20"
+			"bonus_move_speed"			"5 7 11 13 17 19 23"
+			"bonus_status_resist"		"5 7.5 10 12.5 15 17.5 20"
 			
 		}
 	}
@@ -266,20 +266,20 @@ DOTAAbilities
 			
 			"duration"					
 			{
-				"value"			"12 14 16 18 20 22 24"
-				"special_bonus_shard"		"+12"
+				"value"			"18 20 22 24 26 28 30"
+				"special_bonus_shard"		"+10"
 			}
 			
 			"split_duration"			"0.8"
 			"tooltip_earth_brewling_hp"				
 			{
-				"value"										"1000 2000 3000 4000 5000 6000 7000"				
-				"special_bonus_unique_brewmaster"			"+2000"
+				"value"										"1200 2400 3600 4800 6000 7200 8400"				
+				"special_bonus_unique_brewmaster"			"+2400"
 			}
 			"tooltip_storm_brewling_hp"				
 			{
-				"value"							"1000 2000 3000 4000 5000 6000 7000"
-				"special_bonus_unique_brewmaster"			"+2000"
+				"value"							"900 1800 2700 3600 4500 5400 6300"
+				"special_bonus_unique_brewmaster"			"+1800"
 			}
 			"tooltip_fire_brewling_hp"
 			{
@@ -299,8 +299,13 @@ DOTAAbilities
 			"bonus_damage"
 			{
 				"value"									"0"
-				"special_bonus_unique_brewmaster_2"		"+50"
+				"special_bonus_unique_brewmaster_2"		"+75"
 			}
+			"give_brawler_passive"
+            {
+                "value"                 "0"
+                "special_bonus_unique_brewmaster_6"             "=1"
+            }
 		}
 	}
 	"brewmaster_primal_split_cancel"
@@ -366,9 +371,6 @@ DOTAAbilities
 		{
 			"cooldown_on_death"				"70"
 			"cooldown_on_take_damage"		"3"
-			"disable_distance"				"1600"
-			"cooldown_penalty_pct"			"100"
-			"movement_slow_when_out_of_range"		"50"
 		}
 	}
 	"brewmaster_earth_hurl_boulder"
@@ -398,23 +400,11 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"50 100 150 200 250 300 350"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.2 1.5 1.8 2.1 2.4 2.7 3.0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"speed"						"800"
-			}
+			"damage"					"50 100 150 200 250 300 350"
+			"duration"					"1.2 1.5 1.8 2.1 2.4 2.7 3.0"
+			"speed"						"800"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -440,24 +430,21 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"500"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"2.5"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow"						"20 30 40 50 60 70 80"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius"
+            {
+                "value" "500"
+            }
+            "duration"
+            {
+                "value" "2.5"
+            }
+            "slow"
+            {
+                "value" "20 30 40 50 60 70 80"
+            }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"brewmaster_earth_spell_immunity"
@@ -486,13 +473,9 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_building_damage"		"90 180 270 360 450 540 630"
-			}
+			"bonus_building_damage"		"90 180 270 360 450 540 630"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -520,18 +503,10 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"1000"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"600"
-			}
+			"damage"					"1000"
+			"radius"					"600"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -560,19 +535,17 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration_hero"				"5.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration_unit"				"16 16 16 16"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration_hero"
+            {
+                "value" "3 4 5 6 7 8 9"
+            }
+            "duration_unit"
+            {
+                "value" "16 16 16 16"
+            }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}
 	"brewmaster_storm_wind_walk"
@@ -595,28 +568,12 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"140 200 260 320 380 440 500"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speeed"		"50 50 50 50"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"20.0 20.0 20.0 20.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_time"					"0.6 0.6 0.6 0.6"
-			}
+			"bonus_damage"				"150 300 450 600 750 900 1050"
+			"bonus_movement_speeed"		"50 50 50 50"
+			"duration"					"20.0 20.0 20.0 20.0"
+			"fade_time"					"0.6 0.6 0.6 0.6"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -633,18 +590,10 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"25 50 75 100 125 150 175"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"325"
-			}
+			"damage"					"30 60 90 120 150 180 210"
+			"radius"					"350"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -699,9 +648,9 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"AbilityCastRange"			"150"
+			"AbilityCastRange"			"175"
 			"damage"					"50"
-			"pull_distance"				"300 400 500 600 700 800 900"
+			"pull_distance"				"300 500 700 900 1200 1500 1800"
 			"pull_duration"				"0.5"
 		}
 	}
