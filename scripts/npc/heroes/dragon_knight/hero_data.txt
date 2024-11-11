@@ -3,20 +3,45 @@
 	"npc_dota_hero_dragon_knight"
 	{
 		"override_hero"		"npc_dota_hero_dragon_knight"
-		"Ability1"		"dragon_knight_breathe_fire"
-		"Ability2"		"dragon_knight_dragon_tail"
-		"Ability3"		"dragon_knight_dragon_blood"
-		"Ability4"		"dragon_knight_fireball"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"dragon_knight_elder_dragon_form"
-		"Ability10"		"special_bonus_attack_damage_15"
-		"Ability11"		"special_bonus_unique_dragon_knight_3"
-		"Ability12"		"special_bonus_unique_dragon_knight_2"
-		"Ability13"		"special_bonus_hp_400"
-		"Ability14"		"special_bonus_unique_dragon_knight_7"
-		"Ability15"		"special_bonus_unique_dragon_knight_9"
-		"Ability16"		"special_bonus_unique_dragon_knight"
-		"Ability17"		"special_bonus_unique_dragon_knight_8"
+		"Ability1"      "dragon_knight_breathe_fire"
+        "Ability2"      "dragon_knight_dragon_tail"
+        "Ability3"      "dragon_knight_dragon_blood"
+        "Ability4"      "dragon_knight_fireball"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "dragon_knight_elder_dragon_form"
+        "Ability7"      "dragon_knight_inherited_vigor"
+		"Ability10"     "special_bonus_attack_damage_15"
+        "Ability11"     "special_bonus_unique_dragon_knight_3"
+        "Ability12"     "special_bonus_unique_dragon_knight_2"
+        "Ability13"     "special_bonus_hp_300"
+        "Ability14"     "special_bonus_unique_dragon_knight_7"
+        "Ability15"     "special_bonus_unique_dragon_knight_9"
+        "Ability16"     "special_bonus_unique_dragon_knight"
+        "Ability17"     "special_bonus_unique_dragon_knight_8"
+
+        "Facets"
+        {
+            "dragon_knight_fire_dragon" 
+            {
+                "Icon"              "dragon_fire"
+                "Color"             "Red"
+                "GradientID"        "1"
+            }
+            "dragon_knight_corrosive_dragon" 
+            {
+                "Icon"              "dragon_poison"
+                "Color"             "Green"
+                "GradientID"        "0"
+            }
+
+            "dragon_knight_frost_dragon" 
+            {
+                "Icon"              "dragon_frost"
+                "Color"             "Blue"
+                "GradientID"        "0"
+            }
+        }
+        
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"dragon_knight_breathe_fire"
