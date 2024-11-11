@@ -44,13 +44,14 @@ DOTAAbilities
 			"radius"						
 			{
 				"value" 					"240"
+				"affected_by_aoe_increase"  "1"
 				"special_bonus_unique_disruptor_3" "+100"
 			}
 
 			"strikes"
 			{
 				"value"						"5"
-				"special_bonus_shard"		"+2"
+				"special_bonus_shard"		"+3"
 			}
 
 			"strike_interval"				"1.0"
@@ -298,11 +299,12 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
-		"Innate"						"1"
-		"AbilityCooldown"				"4"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "AbilityCooldown"               "4"
+        "IsBreakable"                   "1"
 		
 		"AbilityValues"
 		{

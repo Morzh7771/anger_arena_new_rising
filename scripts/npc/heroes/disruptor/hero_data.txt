@@ -3,20 +3,48 @@
 	"npc_dota_hero_disruptor"
 	{
 		"override_hero"		"npc_dota_hero_disruptor"
-		"Ability1"		"disruptor_thunder_strike"
-		"Ability2"		"disruptor_glimpse"
-		"Ability3"		"disruptor_kinetic_field"
-		"Ability4"		"disruptor_electromagnetic_repulsion"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"disruptor_static_storm"
-		"Ability10"		"special_bonus_unique_disruptor_2"
-		"Ability11"		"special_bonus_unique_disruptor_consecutive_strike_damage"
-		"Ability12"		"special_bonus_unique_disruptor_9"
-		"Ability13"		"special_bonus_unique_disruptor_7"
-		"Ability14"		"special_bonus_unique_disruptor_5"
-		"Ability15"		"special_bonus_unique_disruptor"
-		"Ability16"		"special_bonus_unique_disruptor_4"
-		"Ability17"		"special_bonus_unique_disruptor_8"
+		"Ability1"      "disruptor_thunder_strike"
+        "Ability2"      "disruptor_glimpse"
+        "Ability3"      "disruptor_kinetic_field"
+        "Ability4"      "disruptor_electromagnetic_repulsion"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "disruptor_static_storm"
+		"Ability10"     "special_bonus_unique_disruptor_2"
+        "Ability11"     "special_bonus_unique_disruptor_consecutive_strike_damage"
+        "Ability12"     "special_bonus_unique_disruptor_9"
+        "Ability13"     "special_bonus_unique_disruptor_7"
+        "Ability14"     "special_bonus_unique_disruptor_5"
+        "Ability15"     "special_bonus_unique_disruptor"
+        "Ability16"     "special_bonus_unique_disruptor_4"
+        "Ability17"     "special_bonus_unique_disruptor_8"
+
+        "Facets"
+        {
+            "disruptor_thunderstorm"
+            {
+                "Icon"              "area_of_effect"
+                "Color"             "Red"
+                "GradientID"        "1"
+            }
+
+            "disruptor_line_walls"
+            {
+                "Icon"              "fence"
+                "Color"             "Blue"
+                "GradientID"        "1"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "disruptor_kinetic_fence"
+                        "ReplaceAbility"    "disruptor_kinetic_field"
+                        "AutoLevelAbility"  "false"
+                    }
+                }
+            }
+        }
+        
 		"ArmorPhysical"		"0.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"27"
