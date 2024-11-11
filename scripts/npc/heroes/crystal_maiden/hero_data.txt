@@ -22,10 +22,27 @@
 		
 		"Ability16"			"special_bonus_unique_crystal_maiden_1"
 		"Ability17"			"special_bonus_unique_crystal_maiden_2"
+
+		"Facets"
+        {
+            "crystal_maiden_frozen_expanse"
+            {
+                "Icon"              "area_of_effect"
+                "Color"             "Gray"
+                "GradientID"        "1"
+            }
+
+            "crystal_maiden_cold_comfort"
+            {
+                "Icon"              "mana"
+                "Color"             "Blue"
+                "GradientID"        "2"
+            }
+        }
  
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"		"-1"
+		"ArmorPhysical"		"0"
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------

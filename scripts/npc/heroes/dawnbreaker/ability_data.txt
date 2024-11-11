@@ -33,7 +33,7 @@ DOTAAbilities
 			"AbilityCooldown"				
 			{
 				"value"					"20 19 18 17 16 15 14"
-				"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"			"-9"
+				"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"			"-4"
 			}
 			"duration"					"0.5"
 			"swipe_radius"				"300"					
@@ -322,23 +322,40 @@ DOTAAbilities
 		//"AbilityChannelAnimation"	"ACT_DOTA_CAST_ABILITY_4"
 	}
 	"dawnbreaker_land"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"dawnbreaker_land"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"		
-		"LinkedAbility"					"dawnbreaker_solar_guardian"
-		"MaxLevel"						"1"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"2"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			
-		}
-	}
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"      
+        "LinkedAbility"                 "dawnbreaker_solar_guardian"
+        "MaxLevel"                      "1"
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "2"
+    }
+    "dawnbreaker_break_of_dawn"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "AbilityValues"
+        {
+                "reveal_duration"               "6"
+                "think_interval"                "0.1"
+                "reveal_linger"             "1"
+                "reveal_radius"             "20000"
+                "conceal_duration"          "1"
+        }
+    }
+    "dawnbreaker_unbreakable"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "MaxLevel"                      "1"
+    }
 }

@@ -115,7 +115,7 @@ modifier_crystal_maiden_brilliance_aura_aa_shield = class({
     OnIntervalThink = function(self)
     	local mana_regen_to_shield = self:GetAbility():GetSpecialValueFor("mana_regen_to_shield")
         local addbonus = self:GetStackCount() + self:GetCaster():GetManaRegen() * mana_regen_to_shield / 4
-        local manaregen = self:GetCaster():GetManaRegen() * mana_regen_to_shield * 10
+        local manaregen = self:GetCaster():GetManaRegen() * 10
             if addbonus > manaregen then
                 self:GetStackCount()
             else

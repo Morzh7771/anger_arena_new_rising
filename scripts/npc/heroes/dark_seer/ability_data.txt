@@ -240,11 +240,15 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"				"20.0"
-			"replica_damage_outgoing"	"-20 -10 0 10 20 30 40"
+			"replica_damage_outgoing"	
+			{
+                "value"             "-20 -10 0 10 20 30 40"
+                "special_bonus_unique_dark_seer_7"      "+20"
+            }
 			"tooltip_outgoing"
 			{
 				"value"	"80 90 100 110 120 130 140"
-				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_7"
+				"special_bonus_unique_dark_seer_7" 		"+20"
 			}
 			"replica_damage_incoming"	"100 95 90 85 80 75 70"
 			"tooltip_replica_total_damage_incoming"
@@ -253,14 +257,17 @@ DOTAAbilities
 				"CalculateSpellDamageTooltip"	"0"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}				
-			"width"					"1300"
+			"width"                 
+            {
+                "value"     "1300"
+                "affected_by_aoe_increase"  "1"
+            }
 			"replica_scale"	"0"
 			"movement_slow"					"50"
-			"slow_duration"
-			{
-				"value"				"1"
-				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_12"
-			}	
+			"slow_duration"             
+            {
+                "value"     "1"
+            }	
 			"scepter_length_multiplier"	
 			{
 				"value"			"2"
@@ -304,41 +311,128 @@ DOTAAbilities
 			"movement_speed_pct"	"7"
 		}
 	}
-	"special_bonus_unique_dark_seer_13"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"20"
-				"ad_linked_abilities"			"dark_seer_wall_of_replica"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}"special_bonus_unique_dark_seer_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-				"ad_linked_abilities"			"dark_seer_vacuum"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
+	"dark_seer_mental_fortitude"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_NONE"  
+
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "AbilityValues"
+        {
+            "str_agi_average_tooltip"
+            {
+                "dynamic_value"     "true"
+            }
+        }
+    }
+	"special_bonus_unique_dark_seer"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_dark_seer_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_dark_seer_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "350"
+                "ad_linked_abilities" "dark_seer_surge"
+                "affected_by_aoe_increase"  "1"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_dark_seer_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_dark_seer_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_dark_seer_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_dark_seer_13"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "40"
+                "ad_linked_abilities" "dark_seer_wall_of_replica"
+            }
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_dark_seer_14"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }
