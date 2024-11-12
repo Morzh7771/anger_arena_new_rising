@@ -3,12 +3,12 @@
 	"npc_dota_hero_enigma"
 	{
 		"override_hero"		"npc_dota_hero_enigma"
-		"Ability1"		"enigma_malefice"
-		"Ability2"		"enigma_demonic_conversion"
-		"Ability3"		"enigma_midnight_pulse"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"enigma_black_hole"
+		"Ability1"      "enigma_malefice"
+        "Ability2"      "enigma_demonic_conversion"
+        "Ability3"      "enigma_midnight_pulse"
+        "Ability4"      "enigma_gravity_well"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "enigma_black_hole"
 		"Ability10"		"special_bonus_unique_enigma_4"
 		"Ability11"		"special_bonus_unique_enigma_6"
 		"Ability12"		"special_bonus_hp_250"
@@ -17,6 +17,39 @@
 		"Ability15"		"special_bonus_unique_enigma_3"
 		"Ability16"		"special_bonus_unique_enigma_2"
 		"Ability17"		"special_bonus_unique_enigma"
+		
+		"Facets"
+        {
+            "enigma_gravity"
+            {
+                "Icon"              "slow"
+                "Color"             "Gray"
+                "GradientID"        "3"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "enigma_event_horizon"
+                    }
+                }
+            }
+            "enigma_fragment"
+            {
+                "Icon"              "summons"
+                "Color"             "Purple"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "enigma_splitting_image"
+                    }
+                }
+            }
+        }
+
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"27"

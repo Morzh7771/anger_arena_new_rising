@@ -91,21 +91,34 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"3000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"3000"
-			}
-		}
+		"AbilityValues"
+        {
+                "buff_duration"         "3000"
+                "speed"                 "3000"
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+	"faceless_void_distortion_field"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "MaxLevel"                      "7"
+        "Innate"                        "1"
+        "DependentOnAbility"            "faceless_void_chronosphere"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "attack_projectile_slow"        "20 25 30 35 40 45 50"
+            "slow_distance_max"             
+            {
+                "value"         "600"
+                "affected_by_aoe_increase"  "1"
+            }
+        }
+    }
 	"faceless_void_backtrack"
 	{
 		// General
@@ -116,14 +129,10 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"		"0 0 0 0 0 0 100"
-			}
-		}
+		"AbilityValues"
+        {
+            "dodge_chance_pct"      "20"
+        }
 	}
 	"faceless_void_time_lock"
 	{
@@ -146,12 +155,12 @@ DOTAAbilities
 		"AbilityValues"
 		{
 				"duration"				"0.3"	
-				"duration_creep"		"1.0"
+				"duration_creep"		"0.5"
 				"chance_pct"			"8 10 12 14 16 18 20"
 				"bonus_damage"			
 				{
 					"value"				"30 50 70 90 110 130 150"
-					"LinkedSpecialBonus"	"special_bonus_unique_faceless_void_3"
+					"special_bonus_unique_faceless_void_3" "+30"
 				}
 				"delay"			"0.4"
 				"damage_pct"
@@ -182,14 +191,18 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"				"775"
+			"radius"                
+            {
+                "value"     "775"
+                "affected_by_aoe_increase"  "1"
+            }
 			"duration"				"8 8.5 9 9.5 10 10.5 11"
 			"slow"						
 			{	
 				"value"					"10"
 				"special_bonus_unique_faceless_void_8"					"+10"
 			}			
-			"cooldown_percentage"	"60"
+			"cooldown_percentage"	"10 15 20 25 30 35"
 			"base_damage"			"0"
 			"damage_per_stack"		
 			{
@@ -234,17 +247,271 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"
-			{
-				"value"				"500"
-				"LinkedSpecialBonus"	"special_bonus_unique_faceless_void_2"
-			}
+			"radius"                
+            {
+                "value"     "500"
+                "affected_by_aoe_increase"  "1"
+            "special_bonus_unique_faceless_void_2" "+140"
+            }
 			"duration"				"3.0 3.25 3.5 3.75 4.0 4.25 4.5"
-			"vision_radius"			"475"
+			"vision_radius"         
+            {
+                "value" "475"
+                "affected_by_aoe_increase"  "1"
+            }
 			"bonus_attack_speed"
+            {                   
+                "value" "0"
+            "special_bonus_unique_faceless_void" "+80"
+            }
+		}
+	}
+	"faceless_void_time_zone"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"faceless_void_time_zone"
+        "MaxLevel"						"7"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "FightRecapLevel"               "2"
+        "AbilitySound"                  "Hero_FacelessVoid.Chronosphere"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "625"
+        "AbilityCastPoint"              "0.35 0.35 0.35"
+        "AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_4"
+
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "160 150 140 130 120 110 100"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "150 225 300 375 450 525 600"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportBonus"       "50"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "radius"                
+            {
+                "value"     "900"
+                "affected_by_aoe_increase"  "1"
+                "special_bonus_unique_faceless_void_2" "+200"
+            }
+            "duration"              
+            {
+                "value"         "6"               
+            }
+            "vision_radius"         
+            {
+                "value" "675"               
+                "affected_by_aoe_increase"  "1"
+
+            }
+            "bonus_attack_speed"
+            {                   
+                "value" "70 110 150 190 230 270 310"                
+                "special_bonus_unique_faceless_void" "+80"
+            }
+            "bonus_move_speed"
+            {                   
+                "value" "40  45 50 55 60 65 70"              
+            }
+            "bonus_cast_speed"
+            {                   
+                "value" "30 35 40 45 50 55 60"  
+            }
+            "bonus_turn_speed"
+            {                   
+                "value" "30 35 40 45 50 55 60"
+            }
+            "bonus_projectile_speed"
+            {                   
+                "value" "20 25 30 35 40 45 50"
+            }
+            "yaw"               "45"
+        }
+    }
+    "special_bonus_unique_faceless_void"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_faceless_void_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_faceless_void_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_faceless_void_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "dodge_chance_pct"
+            {
+                "value" "20"
+                "ad_linked_abilities" "special_bonus_inherent"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_faceless_void_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"        
+
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_faceless_void_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_faceless_void_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"        
+
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_faceless_void_8"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+	"special_bonus_base_aa_agi_faceless_void1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"pct"				"7"
+			"value"				"0"
+		}
+	}
+	"special_bonus_base_aa_agi_faceless_void2" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"25"
+			"pct"				"0"
+		}
+	}
+	"special_bonus_base_aa_agiLevel_faceless_void3" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"0.75"
+			"pct"				"0"
+		}
+	}
+	"special_bonus_unique_faceless_void_time_lock_agi_dmg_pct"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+	}
+	"special_bonus_unique_faceless_void_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 			{
-				"value"	"0"
-				"LinkedSpecialBonus"	"special_bonus_unique_faceless_void"
+				"var_type"					"FIELD_INTEGER"
+				"value"				"140"
+				"ad_linked_abilities"			"faceless_void_chronosphere"
 			}
 		}
 	}
