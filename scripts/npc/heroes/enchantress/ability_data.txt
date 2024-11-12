@@ -15,20 +15,18 @@ DOTAAbilities
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_attack_speed"		"-120 -160 -200 -240 -280 -320 -360"
-				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_duration"			"4"
-			}
-		}
+		"AbilityValues"
+        {
+            "slow_attack_speed"
+            {
+                "value" "-100 -150 -200 -250 -300 -350 -400"
+                "special_bonus_unique_enchantress_3" "-50"
+            }
+            "slow_duration"
+            {
+                "value" "2"
+            }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"enchantress_bunny_hop"
@@ -58,34 +56,14 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hop_distance"				"500"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"hop_duration"				"0.4"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hop_height"				"150"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_targets"			"3"
-			}		
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"300"
-			}					
-		}
+		"AbilityValues"
+        {
+            "hop_distance"              "500"
+            "hop_duration"              "0.4"
+            "hop_height"                "150"
+            "attack_targets"            "2"     
+            "bonus_attack_range"        "100"               
+        }
 	}
 	"enchantress_little_friends"
 	{
@@ -120,12 +98,19 @@ DOTAAbilities
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
-			"duration"					"6"
-			"bonus_attack_speed"		"350"
-			"bonus_move_speed"			"100"
-			"radius"					"1200"
-		}
+        {
+            "duration"                  "6"
+            "bonus_attack_speed"        "100"
+            "bonus_move_speed"          "100"
+            "radius"                    
+            {
+                "value"     "1200"
+                "affected_by_aoe_increase"  "1"
+            }
+            "root_base_duration"    "2.0"
+            "root_per_target"       "0.5"
+            "max_root"      "5"
+        }
 	}
 	"enchantress_enchant"
 	{
@@ -145,7 +130,6 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500 550 600 650"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		
 		// Time		
@@ -160,18 +144,26 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCastRange"
+            {
+                "value"                     "500 550 600 650 700 750 800"
+                "special_bonus_facet_enchantress_spellbound"    "50 100 150 200 250 300 350"
+            }
 			"slow_movement_speed"		"-15 -17 -19 -21 -23 -25 -27"
 			"slow_duration"				"4"
 			"damage"					"30 50 70 90 110 130 150"
-			"damage_pct"				"25"
+			"attack_range_bonus"
+            {
+                "value"                     "0"
+                "special_bonus_facet_enchantress_spellbound"    "50 100 150 200 250 300 350"
+                "RequiresFacet"         "enchantress_spellbound"
+            }
 			"dominate_duration"			"180"
 			"enchant_health"			
 			{
 				"value" 				"200 300 500 800 1200 1700 2300"
-				"special_bonus_unique_enchantress_enchant_health_damage"		"+45%"
 			}
-			
-			"enchant_armor"			
+			"enchant_armor"				
 			{
 				"value" 				"4 8 12 16 20 24 28"
 				"special_bonus_unique_enchantress_enchant_armor"		"+12"
@@ -179,7 +171,6 @@ DOTAAbilities
 			"enchant_damage"			
 			{
 				"value" 				"25 65 105 145 185 225 265"
-				"special_bonus_unique_enchantress_enchant_health_damage"		"+45%"
 			}
 			"level_req"					"10"
 			"max_creeps"
@@ -187,6 +178,21 @@ DOTAAbilities
 				"value"					"2"
 				"special_bonus_scepter"	"+2"
 			}
+			"bonus_health"
+            {
+                "value"         "0"
+                "special_bonus_unique_enchantress_enchant_health_damage"        "+200 +300 +500 +800 +1200 +1700 +2300"
+            }
+            "bonus_damage"
+            {
+                "value"         "0"
+                "special_bonus_unique_enchantress_enchant_health_damage"        "+25 +50 +75 +100 +125 +150 +175"
+            }
+            "bonus_attackspeed"
+            {
+                "value"         "0"
+                "special_bonus_unique_enchantress_enchant_attackspeed"      "+30 +60 +90 +120 +150 +180 +210"
+            } 
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -209,7 +215,6 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35"
-		"AbilityDuration"				"12"
 
 		
 		// Cost
@@ -220,23 +225,53 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"heal_duration"         "12"
 			"heal_interval"			"0.5"
 			"heal"					
 			{
 				"value"				"4 8 12 16 20 24 28"
-				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_5"
+				"special_bonus_unique_enchantress_5"    "+12"
 			}
-			"radius"				"275 275 275 275"
+			"radius"                
+            {
+                "value"     "275 275 275 275"
+                "affected_by_aoe_increase"  "1"
+            }
 			"wisp_count"			
 			{
 				"value"				"8"
-				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_2"
+				"special_bonus_unique_enchantress_2"    "+12"
 			}
 			"movespeed"
 			{
 				"value"			"0"
 				"special_bonus_unique_enchantress_6"	"+30"
 			}
+			"overprotective_damage_threshold"
+            {
+                "value"             "0"
+                "special_bonus_facet_enchantress_overprotective_wisps"          "=275"
+            }
+            "overprotective_damage_reset_interval"
+            {
+                "value"             "0"
+                "special_bonus_facet_enchantress_overprotective_wisps"          "=7"
+            }
+            "overprotective_wisp_duration"
+            {
+                "value"             "0"
+                "special_bonus_facet_enchantress_overprotective_wisps"          "=4"
+            }
+            "overprotective_wisp_count"
+            {
+                "value"             "0"
+                "special_bonus_facet_enchantress_overprotective_wisps"          "=1"
+            }
+            "overprotective_max_wisps"
+            {
+                "value"             "0"
+                "special_bonus_facet_enchantress_overprotective_wisps"          "=4"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -282,4 +317,121 @@ DOTAAbilities
 			"creep_multiplier"		"2"
 		}
 	}
+	"enchantress_rabblerouser"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "IsBreakable"                   "1"
+        
+        "AbilityValues"
+        {
+            "base_damage_amp"           "10"
+            "damage_amp_per_level"      "3"
+            "damage_increase_tooltip"
+            {
+                "dynamic_value"         "true"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_enchantress_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_enchantress_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_enchantress_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "enchantress_impetus"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        
+        
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_enchantress_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_enchantress_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_enchantress_enchant_health_damage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_enchantress_enchant_armor"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_enchantress_enchant_attackspeed"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

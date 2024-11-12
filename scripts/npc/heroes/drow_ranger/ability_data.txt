@@ -116,8 +116,7 @@ DOTAAbilities
 		"AbilityChannelTime"			"1.75"
 
 		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"26 25 24 23 22 21 20"
+		//-------------------------------------------------------------------------------------------------------------		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -144,6 +143,16 @@ DOTAAbilities
 			"arrow_range_multiplier"	"1.75"
 			"arrow_angle"					"50"
             "bypass_block"              "1"
+            "AbilityCooldown"           
+            {
+                "value"                                         "26 24 22 20 18 16 14"
+                "special_bonus_unique_drow_ranger_6"            "-4"
+            }
+            "multishot_movespeed"                       
+            {
+                "value"                                     "0"
+                "special_bonus_facet_drow_ranger_sidestep"          "25"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
 	}
@@ -178,14 +187,10 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"silence_radius"			"300"
-			}
-		}
+		"AbilityValues"
+        {
+                "silence_radius"            "300"
+        }
 	}
 	"drow_ranger_wave_of_silence"
 	{
@@ -205,8 +210,7 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.25"
 
 		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"19 18 17 16 15 14 13"
+		//-------------------------------------------------------------------------------------------------------------		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -232,6 +236,19 @@ DOTAAbilities
 					"value"					"10"
 					"special_bonus_unique_drow_ranger_gust_selfmovespeed"		"+15"
 				}
+				"AbilityCooldown"
+                {
+                    "value"                                         "19 18 17 16 15 14 13"
+                    "special_bonus_unique_drow_ranger_7"            "-3"
+                }
+                "miss_chance"
+                {
+                    "value"                 "0"
+                }
+                "gust_reveals_invis"
+                {
+                    "value"                                         "1"
+                }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -240,37 +257,28 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"drow_ranger_trueshot"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityCastGestureSlot"		"ABSOLUTE"
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0 0 0 0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100"
-		"AbilityDuration"				"30.0"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Innate"                        "1"
+        "MaxLevel"                      "1"
+        "IsBreakable"                   "1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"trueshot_ranged_damage"	"10 20 30 40"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"						"1200"
-			}
-		}
+		"AbilityValues"
+        {
+            "trueshot_agi_bonus_self"   "1"
+            "trueshot_agi_bonus_allies" "0.5"
+            "trueshot_aspd_bonus_creeps"    
+            {
+                "value"         "0"
+                "special_bonus_facet_1" "+3"
+            }
+            "radius"                        
+            {
+                "value"         "1200"
+                "affected_by_aoe_increase"  "1"
+            }
+        }
 	}
 	"drow_ranger_marksmanship"
 	{
@@ -368,4 +376,111 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+	"drow_ranger_creep_rally"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+    }
+    //=================================================================================================================
+    // Drow Ranger: Drow Ranger: High Ground
+    //=================================================================================================================
+    "drow_ranger_vantage_point"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "IsBreakable"                   "1"
+        "AbilityValues"
+        {
+            "damage_bonus"      "20"
+            "bonus_miss_chance"     "0"
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_drow_ranger_1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_drow_ranger_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_drow_ranger_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_drow_ranger_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_drow_ranger_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_drow_ranger_8"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_drow_ranger_gust_selfmovespeed"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

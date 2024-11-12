@@ -3,20 +3,37 @@
 	"npc_dota_hero_enchantress"
 	{
 		"override_hero"		"npc_dota_hero_enchantress"
-		"Ability1"		"enchantress_impetus"
-		"Ability2"		"enchantress_enchant"
-		"Ability3"		"enchantress_natures_attendants"
-		"Ability4"		"enchantress_bunny_hop"
-		"Ability5"		"enchantress_little_friends"
-		"Ability6"		"enchantress_untouchable"
-		"Ability10"		"special_bonus_magic_resistance_8"
-		"Ability11"		"special_bonus_unique_enchantress_6"
-		"Ability12"		"special_bonus_attack_damage_45"
-		"Ability13"		"special_bonus_unique_enchantress_2"
-		"Ability14"		"special_bonus_unique_enchantress_3"
-		"Ability15"		"special_bonus_unique_enchantress_enchant_health_damage"
-		"Ability16"		"special_bonus_unique_enchantress_4"
-		"Ability17"		"special_bonus_unique_enchantress_5"
+		"Ability1"      "enchantress_impetus"
+        "Ability2"      "enchantress_enchant"
+        "Ability3"      "enchantress_natures_attendants"
+        "Ability4"      "enchantress_bunny_hop"
+        "Ability5"      "enchantress_little_friends"
+        "Ability6"      "enchantress_untouchable"
+        "Ability7"      "enchantress_rabblerouser"
+		"Ability10"     "special_bonus_unique_enchantress_enchant_armor"
+        "Ability11"     "special_bonus_unique_enchantress_6"
+        "Ability12"     "special_bonus_unique_enchantress_enchant_attackspeed"
+        "Ability13"     "special_bonus_unique_enchantress_5"
+        "Ability14"     "special_bonus_unique_enchantress_3"
+        "Ability15"     "special_bonus_unique_enchantress_enchant_health_damage"
+        "Ability16"     "special_bonus_unique_enchantress_4"
+        "Ability17"     "special_bonus_unique_enchantress_2"
+        
+        "Facets"
+        {
+            "enchantress_overprotective_wisps" 
+            {
+                "Icon"              "healing"
+                "Color"             "Green"
+                "GradientID"        "0"
+            }
+            "enchantress_spellbound" 
+            {
+                "Icon"              "range"
+                "Color"             "Yellow"
+                "GradientID"        "2"
+            }
+        }
 
 		"ArmorPhysical"		"1.00000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
