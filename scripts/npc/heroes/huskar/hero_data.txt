@@ -3,12 +3,12 @@
 	"npc_dota_hero_huskar"
 	{
 		"override_hero"		"npc_dota_hero_huskar"
-		"Ability1"		"huskar_inner_fire"
-		"Ability2"		"huskar_burning_spear"
-		"Ability3"		"huskar_berserkers_blood"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"huskar_life_break"
+		"Ability1"      "huskar_inner_fire"
+        "Ability2"      "huskar_burning_spear"
+        "Ability3"      "huskar_berserkers_blood"
+        "Ability4"      "huskar_blood_magic"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "huskar_life_break"
 		"Ability10"		"special_bonus_unique_huskar_3"
 		"Ability11"		"special_bonus_unique_huskar_4"
 		"Ability12"		"special_bonus_unique_huskar_2"
@@ -17,6 +17,29 @@
 		"Ability15"		"special_bonus_unique_huskar_7"
 		"Ability16"		"special_bonus_unique_huskar"
 		"Ability17"		"special_bonus_unique_huskar_5"
+
+		"Facets"
+        {
+            "huskar_bloodbath" 
+            {
+                "Icon"              "area_of_effect"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+            "huskar_nothl_transfusion" 
+            {
+                "Icon"              "healing"
+                "Color"             "Blue"
+                "GradientID"        "2"
+            }
+            "huskar_nothl_conflagration" 
+            {
+                "Icon"              "damage"
+                "Color"             "Yellow"
+                "GradientID"        "0"
+            }
+        }
+
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"21"
@@ -34,6 +57,7 @@
 		"AttributeAgilityGain"		"1.90000"
 		"AttributeBaseIntelligence"		"18"
 		"AttributeIntelligenceGain"		"1.500000"
+		"StatusMana"        "0"
 		"MovementSpeed"		"295"
 		"HasAggressiveStance"		"1"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"

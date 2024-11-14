@@ -3,21 +3,40 @@
 	"npc_dota_hero_gyrocopter"
 	{
 		"override_hero"		"npc_dota_hero_gyrocopter"
-		"Ability1"		"gyrocopter_rocket_barrage"
-		"Ability2"		"gyrocopter_homing_missile"
-		"Ability3"		"gyrocopter_flak_cannon"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"gyrocopter_call_down"
-		"Ability10"		"special_bonus_unique_gyrocopter_4"
-		"Ability11"		"special_bonus_unique_gyrocopter_2"
-		"Ability12"		"special_bonus_unique_gyrocopter_6"
+		"Ability1"      "gyrocopter_rocket_barrage"
+        "Ability2"      "gyrocopter_homing_missile"
+        "Ability3"      "gyrocopter_flak_cannon"
+        "Ability4"      "gyrocopter_chop_shop"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "gyrocopter_call_down"
+        "Ability7"      "generic_hidden"
+        "Ability8"      "generic_hidden"
+		"Ability10"     "special_bonus_unique_gyrocopter_homing_missile_damage"
+        "Ability11"     "special_bonus_hp_175"
+        "Ability12"     "special_bonus_unique_gyrocopter_6"
 		"Ability13"		"special_bonus_unique_gyrocopter_barrage_agi_dmg_pct"
 		"Ability14"		"special_bonus_unique_gyrocopter_flak_cannon_bonus_damage"
 		"Ability15"		"special_bonus_unique_gyrocopter_3"
 		"Ability16"		"special_bonus_unique_gyrocopter_1"
 		"Ability17"		"special_bonus_unique_gyrocopter_5"
 
+		"Facets"
+        {
+            "gyrocopter_secondary_strikes"
+            {
+                "Icon"              "nuke"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+            
+            "gyrocopter_afterburner"
+            {
+                "Icon"              "speed"
+                "Color"             "Yellow"
+                "GradientID"        "1"
+            }
+        }
+        
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"gyrocopter_rocket_barrage"
