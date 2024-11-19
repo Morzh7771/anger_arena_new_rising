@@ -1344,6 +1344,7 @@
         "DOTA_Tooltip_Ability_item_snake_boots_bonus_armor"						"+$armor"
         "DOTA_Tooltip_Ability_item_snake_boots_bonus_hp_regen"					"+$hp_regen"
         "DOTA_Tooltip_Ability_item_snake_boots_bonus_stats"						"+$all"
+        "DOTA_Tooltip_Ability_item_snake_boots_Lore"							"Даже самый косолапые, надев эту обувь, могут соревноваться в прыти с быстрейшими существами."
 
         "DOTA_Tooltip_modifier_snake_boots_teleport"							"Teleporting"
 
@@ -2578,8 +2579,9 @@
         "DOTA_Tooltip_modifier_item_wraith_band_custom_speed_Description"       "Скорость атаки увеличена на <b><font color='#53ea48'>%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%</font></b>"
 
         "DOTA_Tooltip_Ability_item_wraith_band_custom"			"Wraith Band"
-        "DOTA_Tooltip_ability_item_wraith_band_custom_Description"	"<h1>Активное: Zeal</h1>Увеличивает вашу скорость атаки на %speed_buf% за каждый Wraith Band.<br><br>Длительность: %duration% секунд\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
+        "DOTA_Tooltip_ability_item_wraith_band_custom_Description"	"<h1>Активное: Zeal</h1>Увеличивает вашу скорость атаки на %speed_buf% за каждый Wraith Band.<br><br>Длительность: %duration% секунд\n\n<h1>Пассивное: Practice makes Perfect</h1>Усиливается на 100% от базовых значений каждые 10 минут."
         "DOTA_Tooltip_ability_item_wraith_band_custom_Lore"		"Project B.R.U.S.K.I."
+        "DOTA_Tooltip_ability_item_wraith_band_custom_Note0"	"Усиливаются со временем и статы от предмета, и дополнительная скорость атаки от активной способности."
         "DOTA_Tooltip_ability_item_wraith_band_custom_agi"		"+$agi"
         "DOTA_Tooltip_ability_item_wraith_band_custom_str"		"+$str"
         "DOTA_Tooltip_ability_item_wraith_band_custom_int"		"+$int"
@@ -2590,8 +2592,9 @@
         "DOTA_Tooltip_modifier_item_null_talisman_custom_mana_Description"	"Восстанавливает <b><font color='#53ea48'>%dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%</font></b> маны в секунду"
 
         "DOTA_Tooltip_Ability_item_null_talisman_custom"		"Null Talisman"
-        "DOTA_Tooltip_ability_item_null_talisman_custom_Description"	"<h1>Активное: Regen</h1>Восстанавливает %mana% маны за %duration% секунд за каждый Null Talisman.\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
+        "DOTA_Tooltip_ability_item_null_talisman_custom_Description"	"<h1>Активное: Regen</h1>Восстанавливает %mana% маны за %duration% секунд за каждый Null Talisman.\n\n<h1>Пассивное: Practice makes Perfect</h1>Усиливается на 100% от базовых значений каждые 10 минут."
         "DOTA_Tooltip_ability_item_null_talisman_custom_Lore"		"Project B.R.U.S.K.I."
+        "DOTA_Tooltip_ability_item_null_talisman_custom_Note0"		"Усиливаются со временем и статы от предмета, и регенерация маны от активной способности."
         "DOTA_Tooltip_ability_item_null_talisman_custom_int"		"+$int"
         "DOTA_Tooltip_ability_item_null_talisman_custom_str"		"+$str"
         "DOTA_Tooltip_ability_item_null_talisman_custom_agi"		"+$agi"
@@ -2602,8 +2605,9 @@
         "DOTA_Tooltip_modifier_item_bracer_custom_heal_Description"	"Восстанавливает <b><font color='#53ea48'>%dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%</font></b> здоровья в секунду"
 
         "DOTA_Tooltip_Ability_item_bracer_custom"			"Bracer"
-        "DOTA_Tooltip_ability_item_bracer_custom_Description"		"<h1>Активное: Regen</h1>Восстанавливает %heal% здоровья за %duration% секунд за каждый Bracer.\n\n<h1>Пассивное: Practice makes Perfect</h1>Дает на 100% больше базовых бонусов каждые 10 минут."
+        "DOTA_Tooltip_ability_item_bracer_custom_Description"		"<h1>Активное: Regen</h1>Восстанавливает %heal% здоровья за %duration% секунд за каждый Bracer.\n\n<h1>Пассивное: Practice makes Perfect</h1>Усиливается на 100% от базовых значений каждые 10 минут."
         "DOTA_Tooltip_ability_item_bracer_custom_Lore"			"Project B.R.U.S.K.I."
+        "DOTA_Tooltip_Ability_item_bracer_custom_Note0"			"Усиливаются со временем и статы от предмета, и регенерация здоровья от активной способности."
         "DOTA_Tooltip_ability_item_bracer_custom_str"			"+$str"
         "DOTA_Tooltip_ability_item_bracer_custom_int"			"+$int"
         "DOTA_Tooltip_ability_item_bracer_custom_agi"			"+$agi"
@@ -2766,7 +2770,7 @@
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_mp_regen"				"+$mana_regen"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_cast_range"			"+$cast_range"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_spell_damage"			"%+к урону от заклинаний"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_Lore"			"Творение чародей, который желал заглянуть как можно дальше за пределы сущего."
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_Lore"			"Творение чародея, который желал заглянуть как можно дальше за пределы сущего."
 
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_2"						"Seer stone 2"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_Description"	 		"<h1>Активная: Reveal</h1> Раскрывает туман войны в указанной области карты радусом %active_radius% на %active_duration% секунд."
@@ -2775,7 +2779,7 @@
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_mp_regen"			"+$mana_regen"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_cast_range"			"+$cast_range"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_spell_damage"		"%+к урону от заклинаний"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_Lore"			"Творение чародей, который желал заглянуть как можно дальше за пределы сущего."
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_2_Lore"			"Творение чародея, который желал заглянуть как можно дальше за пределы сущего."
 
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_3"							"Seer stone 3"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_Description"			 "<h1>Активная: Reveal</h1> Раскрывает туман войны в указанной области карты радусом %active_radius% на %active_duration% секунд."
@@ -2784,7 +2788,7 @@
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_mp_regen"			"+$mana_regen"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_cast_range"			"+$cast_range"
 		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_spell_damage"		"%+к урону от заклинаний"
-		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_Lore"			"Творение чародей, который желал заглянуть как можно дальше за пределы сущего."
+		"DOTA_Tooltip_Ability_item_custom_seer_stone_3_Lore"			"Творение чародея, который желал заглянуть как можно дальше за пределы сущего."
 		
 		"DOTA_Tooltip_Ability_item_refresher"									"Refresher Orb"
 		"DOTA_Tooltip_ability_item_refresher_Description"						"<h1>Активное: Reset</h1> Сбрасывает перезарядку всех предметов и способностей. Имеет общую перезарядку с предметом Refresher Shard. Перезарядка этого предмета происходит, только когда он находится в основном инвентаре героя."
@@ -3490,7 +3494,7 @@
 		"DOTA_Tooltip_modifier_dimensional_predictor_active"							"Скрыт с миникарты"
 
 		"DOTA_Tooltip_ability_item_talisman_of_heal"                            "Talisman of Heal"
-        "DOTA_Tooltip_ability_item_talisman_of_heal_Description"                "<h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя.\n\n <h1>Пассивная: Bliss</h1>При получения уровня востанавливает %replenish_health%% здоровья и %replenish_mana%%  маны. Дополнительно, дает увеличение востановления здоровья на %buff_health%% и маны на %buff_mana%% .<br> Длительность %duration% секунд.  <br>Восстановление прекращается, если получить урон от вражеского героя."
+        "DOTA_Tooltip_ability_item_talisman_of_heal_Description"                "<h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя.\n\n <h1>Пассивная: Bliss</h1>При получения уровня восстанавливает %replenish_health%% здоровья и %replenish_mana%%  маны за %duration% секунд. Дополнительно мгновенно восстанавливает %buff_health%%  здоровья и %buff_mana%%  маны.<br>Восстановление прекращается, если получить урон от вражеского героя."
         "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_attack"            "+$damage"
         "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_all"                "+$all"
         "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_health"            "+$health"
@@ -3500,7 +3504,7 @@
         "DOTA_Tooltip_modifier_talisman_of_heal_buff_Description"            "Востановления здоровья и маны"
 
 		"DOTA_Tooltip_ability_item_talisman_of_heal_2"                            "Talisman of Heal 2"
-        "DOTA_Tooltip_ability_item_talisman_of_heal_2_Description"                "<h1>Активная: Extencive Heal</h1> Восстанавливает %heal_const% + %heal_per_str% * на вашу силу за %duration_active% сек. \n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя. Перезарядка: %minder_cd% сек. \n\n <h1>Пассивная: Bliss</h1>При получения уровня востанавливает %replenish_health%% здоровья и %replenish_mana%%  маны. Дополнительно, дает увеличение востановления здоровья и маны %buff_health%%.<br> Длительность %duration% секунд.  <br>Восстановление прекращается, если получить урон от вражеского героя."
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_Description"                "<h1>Активная: Extencive Heal</h1> Восстанавливает %heal_const% + %heal_per_str% * на вашу силу за %duration_active% сек. \n\n <h1>Пассивная: Minder</h1> За любой нанесенный урон по героям владелец получает дополнительный опыт в зависимости от нанесенного урона, в размере %damage_to_exp_melee%%  для героев ближнего боя и %damage_to_exp_ranged%%  для героев дальнего боя, но не менее чем %min_exp_melee% для героев ближнего боя и %min_exp_ranged% для героев дальнего боя. Перезарядка: %minder_cd% сек. \n\n <h1>Пассивная: Bliss</h1>При получения уровня восстанавливает %replenish_health%% здоровья и %replenish_mana%%  маны за %duration% секунд. Дополнительно мгновенно восстанавливает %buff_health%%  здоровья и %buff_mana%%  маны.<br>Восстановление прекращается, если получить урон от вражеского героя."
         "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_attack"            "+$damage"
         "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_all"                "+$all"
         "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_health"            "+$health"
