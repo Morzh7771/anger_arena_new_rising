@@ -47,6 +47,8 @@ function modifier_item_magic_splash:OnTakeDamage(params)
     if params.damage_flags and Util:testflag(params.damage_flags, DOTA_DAMAGE_FLAG_MAGIC_SPLASH) then return end
     if params.damage_flags and Util:testflag(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then return end
     if params.inflictor:GetName() == "batrider_sticky_napalm" then return end
+    if params.inflictor:GetName() == "lina_combustion" then return end 
+    if params.inflictor:GetName() == "jakiro_liquid_ice" then return end
 
     if params.inflictor:GetName() == "item_piercing_blade" then return end
     if params.inflictor:GetName() == "item_piercing_blade2" then return end

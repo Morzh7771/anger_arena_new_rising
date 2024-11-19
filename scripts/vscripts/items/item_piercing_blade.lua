@@ -72,7 +72,10 @@ function mod:OnTakeDamage(params)
 	if params.unit:GetTeamNumber() == params.attacker:GetTeamNumber() then return end
 	if params.unit == self:GetParent() then return end
     if params.inflictor ~= nil then
-        if params.inflictor:GetAbilityName() == "batrider_sticky_napalm" then return end
+        if params.inflictor:GetAbilityName() == "batrider_sticky_napalm" 
+        or params.inflictor:GetAbilityName() == "jakiro_liquid_ice"
+        or params.inflictor:GetAbilityName() == "jakiro_liquid_fire"
+        or params.inflictor:GetAbilityName() == "lina_combustion" then return end
     end
     if BossSpawner:IsBoss(params.unit) == nil then if not params.unit:IsRealHero() then return end end 
 	if params.inflictor == self:GetAbility() then return end

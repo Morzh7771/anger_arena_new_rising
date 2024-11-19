@@ -3,20 +3,58 @@
 	"npc_dota_hero_jakiro"
 	{
 		"override_hero"		"npc_dota_hero_jakiro"
-		"Ability1"		"jakiro_dual_breath"
-		"Ability2"		"jakiro_ice_path"
-		"Ability3"		"jakiro_liquid_fire"
-		"Ability4"		"jakiro_liquid_ice"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"jakiro_macropyre"
+		"Ability1"      "jakiro_dual_breath"
+        "Ability2"      "jakiro_ice_path"
+        "Ability3"      "generic_hidden"
+        "Ability4"      "generic_hidden"
+        "Ability5"      "jakiro_double_trouble"
+        "Ability6"      "jakiro_macropyre"
 		"Ability10"		"special_bonus_attack_range_275"
 		"Ability11"		"special_bonus_unique_jakiro_dualbreath_slow"
 		"Ability12"		"special_bonus_unique_jakiro_4"
-		"Ability13"		"special_bonus_hp_325"
+		"Ability13"		"special_bonus_unique_jakiro_6"
 		"Ability14"		"special_bonus_unique_jakiro"
 		"Ability15"		"special_bonus_unique_jakiro_7"
 		"Ability16"		"special_bonus_unique_jakiro_2"
-		"Ability17"		"special_bonus_unique_jakiro_6"
+		"Ability17"		"special_bonus_unique_jakiro_3"
+
+		"Facets"
+        {
+            "jakiro_fire"
+            {
+                "Icon"              "nuke"
+                "Color"             "Red"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "jakiro_liquid_fire"
+                        "AbilityIndex"  "2"
+                        "AutoLevelAbility"  "false"
+                    }
+                }
+            }
+
+            "jakiro_ice"
+            {
+                "Icon"              "snowflake"
+                "Color"             "Blue"
+                "GradientID"        "1"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "jakiro_liquid_ice"
+                        "AbilityIndex"  "2"
+                        "AutoLevelAbility"  "false"
+                    }
+                }
+            }
+        }
+        
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"27"
