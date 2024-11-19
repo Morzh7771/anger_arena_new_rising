@@ -38,20 +38,32 @@ DOTAAbilities
 				"special_bonus_unique_keeper_of_the_light"		"+285"
 			}
 			"max_channel_time"		"3"
-			"radius"				"400"
+			"radius"                
+            {
+                "value"     "400"
+                "affected_by_aoe_increase"  "1"
+            }
 			"range"					"1550"
 			"speed"					"1100.0"
-			"vision_radius"			"800 800 800 800"
+			"vision_radius"         
+            {
+                "value"     "800 800 800 800"
+                "affected_by_aoe_increase"  "1"
+            }
 			"vision_duration"		"3.34 3.34 3.34 3.34"
 			"AbilityCooldown"				
 			{
 				"value"					"13"
 				"special_bonus_unique_keeper_of_the_light_illuminate_cooldown"			"-2"
 			}
-			"channel_vision_radius"	"400"
+			"channel_vision_radius"
+            {
+                "value" "400"
+                "affected_by_aoe_increase"  "1"
+            }
 			"channel_vision_interval"	"0.5"
 			"channel_vision_duration"	"10.34"
-			"channel_vision_step"		"150 180 210 240"
+			"channel_vision_step"		"150 180 210 240 270 300 330"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -86,24 +98,21 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"mana_leak_pct"				"5.0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.5 1.8 2.1 2.4 2.7 3.0 3.3"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration"
+            {
+                "value" "4.0 4.5 5.0 5.5 6.0 6.5 7.0"
+            }
+            "mana_leak_pct"
+            {
+                "value" "5"
+            }
+            "stun_duration"
+            {
+                "value" "1.5 1.75 2.0 2.25 2.5 2.75 3.0"
+            }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
 	"keeper_of_the_light_radiant_bind"
@@ -127,7 +136,6 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -139,24 +147,31 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"6"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow"						"10"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"magic_resistance"			"35"
-			}
-		}
+		"AbilityValues"
+        {
+                "duration"                  "6"
+                "slow"                      "10"
+                "magic_resistance"          "10 15 20 25 30 35 40"
+                "stun_duration"         
+                {
+                    "value"         "0"
+                }
+                "AbilityCooldown"           
+                {
+                    "value"                 "14"
+                    "special_bonus_shard"       "=0"
+                }
+                "AbilityChargeRestoreTime"          
+                {
+                    "value"                 "0"
+                    "special_bonus_shard"       "=14"
+                }
+                "AbilityCharges"
+                {
+                    "value"                 "0"
+                    "special_bonus_shard"       "=2"
+                }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
 	"keeper_of_the_light_will_o_wisp"
@@ -194,49 +209,22 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"on_count"					"5"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"725"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hit_count"					"7"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"off_duration"				"1.65"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"on_duration"				"1.1"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"off_duration_initial"		"0.9"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"fixed_movement_speed"		"60"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bounty"		"100"
-			}
-		}
+		"AbilityValues"
+        {
+            "on_count"                  "5"
+            "radius"                    
+            {
+                "value"                 "725"
+                "affected_by_aoe_increase"  "1"
+            }
+            "hit_count"                 "7"
+            "wisp_damage"               "75"
+            "off_duration"              "1.85"
+            "on_duration"               "1.0"
+            "off_duration_initial"      "1.0"
+            "fixed_movement_speed"      "60"
+            "bounty"        "100"
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
 	"keeper_of_the_light_chakra_magic"
@@ -258,7 +246,6 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 15 14 13 12 11 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -276,11 +263,17 @@ DOTAAbilities
 			"mana_restore"
 			{
 				"value"			"80 160 240 320 400 480 560"
-				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light_2"
+				"special_bonus_unique_keeper_of_the_light_2"    "+200"
 			}						
 			"cooldown_reduction"	"3 3 4 4 5 5 6"
-			"mana_leak_pct"	"4.5 5 5.5 6.0"
+			"mana_leak_pct"	"4.5 4.75 5 5.25 5.5 5.75 6.0"
 			"duration"	"5"
+			"AbilityCooldown"
+            {
+                "value"         "16 15 14 13 12 11 10"
+                "special_bonus_unique_keeper_of_the_light_7"    "-2"
+            }   
+            "self_bonus"                "25"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -333,30 +326,21 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{ 
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"40.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light_11"
-			}
-			"02"
-			{ 
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"15 17.5 20 22.5 25 27.5 30.0" 
-			}
-			"03"
-			{ 
-				"var_type"					"FIELD_INTEGER"
-				"cast_range"			"75 125 175 225 275 325 375" 
-			}
-			"04"
-			{ 
-				"var_type"					"FIELD_INTEGER"
-				"illuminate_heal"			"40 50 60 70 80 90 100" 
-			}
-		}
+		"AbilityValues"
+        {
+            "duration"
+            {
+                "value"             "40.0 40.0 40.0"
+                "special_bonus_unique_keeper_of_the_light_11"   "+15"
+            }
+            "movement_speed"            "15 17.5 20 22.5 25 27.5 30" 
+            "cast_range"            "125 175 225 275 325 375 425" 
+            "illuminate_heal"           
+            {
+                "value"                 "50 55 60 65 70 75 80" 
+                "special_bonus_shard"       "+20"
+            }
+        }
 	}
 	"keeper_of_the_light_recall"
 	{
@@ -370,7 +354,6 @@ DOTAAbilities
 		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"1"
 		"AbilitySound"					"Hero_KeeperOfTheLight.Recall.Cast"
 
 		"IsGrantedByShard"				"1"
@@ -391,14 +374,33 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"teleport_delay"		"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "teleport_delay"    
+            {
+                "value"                         "6 5.5 5 4.5 4 3.5 3"
+            }
+            "movespeed_bonus_duration"          "4"
+            "ally_movespeed_pct"
+            {
+                "value"                         "4 8 12 16 20 24 28"  
+            }
+            "AbilityCooldown"           
+            {
+                "value"                         "23 21 19 17 15 13 11"
+                "special_bonus_shard"           "=0"
+            }
+            "AbilityChargeRestoreTime"          
+            {
+                "value"                         "0 0 0"
+                "special_bonus_shard"           "23 21 19 17 15 13 11"
+            }
+            "AbilityCharges"
+            {
+                "value"                         "0"
+                "special_bonus_shard"           "=2"
+            }
+        }
 	}
 	"keeper_of_the_light_blinding_light"
 	{
@@ -421,7 +423,6 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"26 24 22 20 18 16 14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -435,17 +436,29 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"miss_rate"				
-				{
-					"value"				"40"
-					"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light_8"
-				}
-				"duration"				"4"
-				"radius"				"400 425 450 475 500 525 550"
-				"knockback_duration"	"0.6"
-				"knockback_distance"	"400"
-				"damage"				"85 130 175 220 265 310 355"
-			
+			"miss_rate"				
+			{
+				"value"				"40"
+				"special_bonus_unique_keeper_of_the_light_8" "+40"
+			}
+			"duration"				"4"		
+			"radius"                
+            {
+                "value"        "400 425 450 475 500 525 550"
+                "affected_by_aoe_increase"  "1"
+            }
+			"knockback_duration"	"0.6"
+			"knockback_distance"    
+            {
+                "value"     "400"
+                "affected_by_aoe_increase"  "1"
+            }
+			"damage"				"85 130 175 220 265 310 355"
+			"AbilityCooldown"
+            {
+                "value"                                         "26 24 22 20 18 16 14"
+                "special_bonus_unique_keeper_of_the_light_5"    "-4"
+            }			
 		}
 	}
 	"keeper_of_the_light_illuminate_end"
@@ -461,6 +474,24 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
  		"AbilityCastAnimation"			"ACT_INVALID"
 	}
+	"keeper_of_the_light_mana_magnifier"
+    {
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+
+        "AbilityValues"
+        {
+            "aura_radius"   
+            {
+                "value"     "900"
+                "affected_by_aoe_increase"  "1"
+            }
+            "bonus_mana_pct"    "15"
+        }
+    }
 	"keeper_of_the_light_spirit_form_illuminate"
 	{
 		// General
@@ -523,4 +554,117 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
  		"AbilityCastAnimation"			"ACT_INVALID"
 	}
+	"special_bonus_unique_keeper_of_the_light"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_keeper_of_the_light_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "200"
+                "ad_linked_abilities" "keeper_of_the_light_chakra_magic"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_keeper_of_the_light_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_keeper_of_the_light_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "3"
+                "ad_linked_abilities" "keeper_of_the_light_chakra_magic"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_keeper_of_the_light_8"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_keeper_of_the_light_11"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_keeper_of_the_light_14"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "0"
+                "ad_linked_abilities" "keeper_of_the_light_chakra_magic"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_keeper_of_the_light_illuminate_cooldown"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

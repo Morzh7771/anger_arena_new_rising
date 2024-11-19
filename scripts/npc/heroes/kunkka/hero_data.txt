@@ -3,21 +3,39 @@
 	"npc_dota_hero_kunkka"
 	{
 		"override_hero"		"npc_dota_hero_kunkka"
-		"Ability1"		"kunkka_torrent"
-		"Ability2"		"kunkka_tidebringer"
-		"Ability3"		"kunkka_x_marks_the_spot"
-		"Ability4"		"kunkka_torrent_storm"
-		"Ability5"		"kunkka_tidal_wave"
-		"Ability6"		"kunkka_ghostship"
-		"Ability7"		"kunkka_return"
-		"Ability10"		"special_bonus_unique_kunkka_tidebringer_slow"
-		"Ability11"		"special_bonus_unique_kunkka_6"
-		"Ability12"		"special_bonus_unique_kunkka_torrent_cooldown"
-		"Ability13"		"special_bonus_unique_kunkka_7"
-		"Ability14"		"special_bonus_unique_kunkka"
-		"Ability15"		"special_bonus_unique_kunkka_4"
-		"Ability16"		"special_bonus_unique_kunkka_3"
-		"Ability17"		"special_bonus_unique_kunkka_5"
+		"Ability1"      "kunkka_torrent"
+        "Ability2"      "kunkka_tidebringer"
+        "Ability3"      "kunkka_x_marks_the_spot"
+        "Ability4"      "kunkka_admirals_rum"
+        "Ability5"      "kunkka_tidal_wave"
+        "Ability6"      "kunkka_ghostship"
+        "Ability7"      "kunkka_return"
+		"Ability10"     "special_bonus_unique_kunkka_tidebringer_slow"
+        "Ability11"     "special_bonus_unique_kunkka_6"
+        "Ability12"     "special_bonus_unique_kunkka_7"
+        "Ability13"     "special_bonus_unique_kunkka_2"
+        "Ability14"     "special_bonus_unique_kunkka_torrent_cooldown"
+        "Ability15"     "special_bonus_unique_kunkka_rum"
+        "Ability16"     "special_bonus_spell_aoe_100"
+        "Ability17"     "special_bonus_unique_kunkka_4"
+
+        "Facets"
+        {
+            "kunkka_high_tide"  
+            {
+                "Icon"              "cooldown"
+                "Color"             "Blue"
+                "GradientID"        "2"
+            }
+            "kunkka_grog"   
+            {
+                "Icon"              "armor"
+                "Color"             "Yellow"
+                "GradientID"        "2"
+            }
+
+        }
+        
 		"AbilityDraftIgnoreCount"		"7"
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

@@ -3,20 +3,37 @@
 	"npc_dota_hero_legion_commander"
 	{
 		"override_hero"		"npc_dota_hero_legion_commander"
-		"Ability1"		"legion_commander_overwhelming_odds"
-		"Ability2"		"legion_commander_press_the_attack"
-		"Ability3"		"legion_commander_moment_of_courage"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"legion_commander_duel"
-		"Ability10"		"special_bonus_unique_legion_commander_9"
-		"Ability11"		"special_bonus_unique_legion_commander"
-		"Ability12"		"special_bonus_unique_legion_commander_6"
-		"Ability13"		"special_bonus_unique_legion_commander_4"
-		"Ability14"		"special_bonus_unique_legion_commander_5"
-		"Ability15"		"special_bonus_unique_legion_commander_3"
-		"Ability16"		"special_bonus_unique_legion_commander_7"
-		"Ability17"		"special_bonus_unique_legion_commander_8"
+		"Ability1"      "legion_commander_overwhelming_odds"
+        "Ability2"      "legion_commander_press_the_attack"
+        "Ability3"      "legion_commander_moment_of_courage"
+        "Ability4"      "legion_commander_outfight_them"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "legion_commander_duel"
+		"Ability10"     "special_bonus_unique_legion_commander_9"
+        "Ability11"     "special_bonus_unique_legion_commander_pta_movespeed"
+        "Ability12"     "special_bonus_unique_legion_commander_6"
+        "Ability13"     "special_bonus_unique_legion_commander_4"
+        "Ability14"     "special_bonus_unique_legion_commander_5"
+        "Ability15"     "special_bonus_unique_legion_commander_3"
+        "Ability16"     "special_bonus_unique_legion_commander_7"
+        "Ability17"     "special_bonus_unique_legion_commander_8"
+
+        "Facets"
+        {
+            "legion_commander_stonehall_plate" 
+            {
+                "Icon"              "armor"
+                "Color"             "Yellow"
+                "GradientID"        "1"
+            }
+            "legion_commander_spoils_of_war" 
+            {
+                "Icon"              "damage"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+        }
+        
 		"ArmorPhysical"		"0.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"33"
