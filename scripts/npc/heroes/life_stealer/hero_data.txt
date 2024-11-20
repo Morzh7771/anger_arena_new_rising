@@ -3,21 +3,73 @@
 	"npc_dota_hero_life_stealer"
 	{
 		"override_hero"		"npc_dota_hero_life_stealer"
-		"Ability1"		"life_stealer_rage"
-		"Ability2"		"life_stealer_feast_aa"
-		"Ability3"		"life_stealer_ghoul_frenzy"
-		"Ability4"		"life_stealer_open_wounds"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"life_stealer_infest"
-		"Ability7"		"life_stealer_consume"
-		"Ability10"		"special_bonus_unique_lifestealer_infest_damage"
-		"Ability11"		"special_bonus_unique_lifestealer_2"
-		"Ability12"		"special_bonus_hp_325"
-		"Ability13"		"special_bonus_attack_damage_25"
-		"Ability14"		"special_bonus_unique_lifestealer_infest_target_bonus"
-		"Ability15"		"special_bonus_unique_lifestealer_6"
-		"Ability16"		"special_bonus_unique_lifestealer_3"
-		"Ability17"		"special_bonus_unique_lifestealer"
+		"Ability1"      "generic_hidden"
+        "Ability2"      "life_stealer_ghoul_frenzy"
+        "Ability3"      "life_stealer_open_wounds"
+        "Ability4"      "life_stealer_feast_aa"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "life_stealer_infest"
+        "Ability7"      "life_stealer_consume"
+		"Ability10"     "special_bonus_unique_lifestealer_infest_damage"
+        "Ability11"     "special_bonus_unique_lifestealer_2"
+        "Ability12"     "special_bonus_unique_lifestealer_5"
+        "Ability13"     "special_bonus_unique_lifestealer_4"
+        "Ability14"     "special_bonus_unique_lifestealer_infest_target_bonus"
+        "Ability15"     "special_bonus_unique_lifestealer_6"
+        "Ability16"     "special_bonus_unique_lifestealer_3"
+        "Ability17"     "special_bonus_unique_lifestealer"
+
+        "Facets"
+        {
+            "life_stealer_maxhp_gain"
+            {
+                "Icon"              "armor"
+                "Color"             "Yellow"
+                "GradientID"        "3"
+                "Deprecated"        "true"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "life_stealer_corpse_eater"
+                    }
+                }
+            }
+            "life_stealer_rage"
+            {
+                "Icon"              "lifestealer_rage"
+                "Color"             "Yellow"
+                "GradientID"        "3"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "life_stealer_rage"
+                        "AbilityIndex"  "0"
+                        "AutoLevelAbility"  "false"
+                    }
+                }
+            }
+            "life_stealer_rage_dispell" 
+            {
+                "Icon"              "broken_chain"
+                "Color"             "Red"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "life_stealer_unfettered"
+                        "AbilityIndex"  "0"
+                        "AutoLevelAbility"  "false"
+                    }                   
+                }
+            }
+        }
+
 		"AbilityDraftIgnoreCount" "9"
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
