@@ -3,20 +3,45 @@
 	"npc_dota_hero_luna"
 	{
 		"override_hero"		"npc_dota_hero_luna"
-		"Ability1"		"luna_lucent_beam"
-		"Ability2"		"luna_moon_glaive"
-		"Ability3"		"luna_lunar_blessing"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"luna_eclipse"
-		"Ability10"		"special_bonus_unique_luna_7"
-		"Ability11"		"special_bonus_unique_luna_4"
-		"Ability12"		"special_bonus_unique_luna_2"
-		"Ability13"		"special_bonus_unique_luna_6"
-		"Ability14"		"special_bonus_unique_luna_8"
-		"Ability15"		"special_bonus_unique_luna_1"
-		"Ability16"		"special_bonus_unique_luna_bounces"
-		"Ability17"		"special_bonus_unique_luna_5"
+		"Ability1"      "luna_lucent_beam"
+        "Ability2"      "luna_lunar_orbit"
+        "Ability3"      "luna_moon_glaive"
+        "Ability4"      "luna_lunar_blessing"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "luna_eclipse"
+        "Ability7"      "generic_hidden"
+		"Ability10"     "special_bonus_unique_luna_7"
+        "Ability11"     "special_bonus_unique_luna_4"
+        "Ability12"     "special_bonus_unique_luna_lunar_orbit_glaive_count"
+        "Ability13"     "special_bonus_unique_luna_6"
+        "Ability14"     "special_bonus_unique_luna_1"
+        "Ability15"     "special_bonus_unique_luna_2"
+        "Ability16"     "special_bonus_unique_luna_3"
+        "Ability17"     "special_bonus_unique_luna_5"
+
+        "Facets"
+        {
+            "luna_lunar_orbit" 
+            {
+                "Icon"              "armor"
+                "Color"             "Gray"
+                "GradientID"        "3"
+                "Deprecated"        "true"
+            }
+            "luna_moonshield" 
+            {
+                "Icon"              "armor"
+                "Color"             "Gray"
+                "GradientID"        "3"
+            }
+            "luna_moonstorm" 
+            {
+                "Icon"              "damage"
+                "Color"             "Blue"
+                "GradientID"        "1"
+            }
+        }
+        
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"luna_lucent_beam"
@@ -27,8 +52,8 @@
 
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"26"
-		"AttackDamageMax"		"32"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"29"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.35000"
 		"AttackAcquisitionRange"		"800"

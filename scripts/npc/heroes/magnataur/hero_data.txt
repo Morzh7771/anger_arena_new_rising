@@ -3,12 +3,12 @@
 	"npc_dota_hero_magnataur"
 	{
 		"override_hero"		"npc_dota_hero_magnataur"
-		"Ability1"		"magnataur_shockwave"
-		"Ability2"		"magnataur_empower"
-		"Ability3"		"magnataur_skewer"
-		"Ability4"		"magnataur_horn_toss"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"magnataur_reverse_polarity"
+		"Ability1"      "magnataur_shockwave"
+        "Ability2"      "magnataur_empower"
+        "Ability3"      "magnataur_skewer"
+        "Ability4"      "magnataur_horn_toss"
+        "Ability5"      "magnataur_solid_core"
+        "Ability6"      "magnataur_reverse_polarity"
 		"Ability10"		"special_bonus_unique_magnus_4"
 		"Ability11"		"special_bonus_unique_magnus_6"
 		"Ability12"		"special_bonus_unique_magnus_reverse_polarity_stats"
@@ -17,6 +17,34 @@
 		"Ability15"		"special_bonus_unique_magnus_3"
 		"Ability16"		"special_bonus_unique_magnus_2"
 		"Ability17"		"special_bonus_unique_magnus_5"
+
+		"Facets"
+        {
+            "magnataur_run_through" 
+            {
+                "Icon"              "movement"
+                "Color"             "Gray"
+                "GradientID"        "3"
+                "Deprecated"        "true"  
+            }
+            "magnataur_reverse_polarity" 
+            {
+                "Icon"              "vortex_in"
+                "Color"             "Gray"
+                "GradientID"        "3"
+            }
+            "magnataur_reverse_reverse_polarity" 
+            {
+                "Icon"              "vortex_out"
+                "Color"             "Gray"
+                "GradientID"        "0"
+                "AbilityIconReplacements"
+                {
+                    "magnataur_reverse_polarity"    "magnataur_reversed_reverse_polarity"
+                }
+            }
+        }
+        
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"9"

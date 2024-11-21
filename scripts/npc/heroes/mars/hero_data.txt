@@ -3,20 +3,37 @@
 	"npc_dota_hero_mars"
 	{
 		"override_hero"		"npc_dota_hero_mars"
-		"Ability1"		"mars_spear"
-		"Ability2"		"mars_gods_rebuke"
-		"Ability3"		"mars_bulwark"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"mars_arena_of_blood"
-		"Ability10"		"special_bonus_unique_mars_rebuke_radius"
-		"Ability11"		"special_bonus_unique_mars_bulwark_redirect_chance"
-		"Ability12"		"special_bonus_unique_mars_rebuke_cooldown"
-		"Ability13"		"special_bonus_unique_mars_spear_bonus_damage"
-		"Ability14"		"special_bonus_unique_mars_bulwark_damage_reduction"
-		"Ability15"		"special_bonus_unique_mars_spear_stun_duration"
-		"Ability16"		"special_bonus_unique_mars_gods_rebuke_extra_crit"
-		"Ability17"		"special_bonus_unique_mars_arena_of_blood_hp_regen"
+		"Ability1"      "mars_spear"
+        "Ability2"      "mars_gods_rebuke"
+        "Ability3"      "mars_bulwark"
+        "Ability4"      "mars_dauntless"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "mars_arena_of_blood"
+		"Ability10"     "special_bonus_unique_mars_rebuke_radius"
+        "Ability11"     "special_bonus_unique_mars_bulwark_damage_reduction"
+        "Ability12"     "special_bonus_unique_mars_rebuke_cooldown"
+        "Ability13"     "special_bonus_unique_mars_spear_bonus_damage"
+        "Ability14"     "special_bonus_unique_mars_arena_cooldown"
+        "Ability15"     "special_bonus_unique_mars_spear_stun_duration"
+        "Ability16"     "special_bonus_unique_mars_gods_rebuke_extra_crit"
+        "Ability17"     "special_bonus_unique_mars_arena_of_blood_hp_regen"
+
+        "Facets"
+        {
+            "mars_victory_feast" 
+            {
+                "Icon"              "healing"
+                "Color"             "Red"
+                "GradientID"        "2"
+            }
+            "mars_arena" 
+            {
+                "Icon"              "no_vision"
+                "Color"             "Yellow"
+                "GradientID"        "0"
+            }
+        }
+        
 		"ArmorPhysical"		"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"26"

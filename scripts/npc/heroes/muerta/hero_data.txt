@@ -3,23 +3,51 @@
 	"npc_dota_hero_muerta"
 	{
 		"override_hero"		"npc_dota_hero_muerta"
-		"Ability1"		"muerta_dead_shot"
-		"Ability2"		"muerta_the_calling"
-		"Ability3"		"muerta_gunslinger"
-		"Ability4"		"muerta_parting_shot"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"muerta_pierce_the_veil"
-		"Ability7"		"generic_hidden"
-		"Ability8"		"generic_hidden"
-		"Ability9"		"generic_hidden"
-		"Ability10"		"special_bonus_unique_muerta_dead_shot_damage"
-		"Ability11"		"special_bonus_strength_8"
-		"Ability12"		"special_bonus_unique_muerta_dead_shot_range"
-		"Ability13"		"special_bonus_attack_damage_35"
-		"Ability14"		"special_bonus_unique_muerta_dead_shot_charges"
-		"Ability15"		"special_bonus_unique_muerta_gunslinger_double_shot_chance"
-		"Ability16"		"special_bonus_unique_muerta_the_calling_num_revenants"
-		"Ability17"		"special_bonus_magic_resistance_25"
+		"Ability1"      "muerta_dead_shot"
+        "Ability2"      "muerta_the_calling"
+        "Ability3"      "muerta_gunslinger"
+        "Ability4"      "muerta_parting_shot"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "muerta_pierce_the_veil"
+        "Ability7"      "muerta_supernatural"
+        "Ability8"      "generic_hidden"
+        "Ability9"      "generic_hidden"
+
+		"Ability10"     "special_bonus_unique_muerta_dead_shot_range"
+        "Ability11"     "special_bonus_unique_muerta_calling_hp_regen"
+        "Ability12"     "special_bonus_unique_muerta_dead_shot_damage"
+        "Ability13"     "special_bonus_unique_muerta_gunslinger_bonus_damage"
+        "Ability14"     "special_bonus_unique_muerta_dead_shot_charges"
+        "Ability15"     "special_bonus_unique_muerta_the_calling_num_revenants"
+        "Ability16"     "special_bonus_unique_muerta_gunslinger_double_shot_chance"
+        "Ability17"     "special_bonus_magic_resistance_25"
+
+        "Facets"
+        {
+            "muerta_dance_of_the_dead" 
+            {
+                "Icon"              "spirit"
+                "Color"             "Green"
+                "GradientID"        "1"
+            }
+
+            "muerta_ofrenda"
+            {
+                "Icon"              "teleport"
+                "Color"             "Yellow"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "muerta_ofrenda"
+                        "AbilityIndex"  "4"
+                    }
+                }
+            }
+        }
+        
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"30"

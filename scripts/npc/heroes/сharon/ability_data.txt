@@ -32,58 +32,47 @@
 		{
 			"range_tooltip"
 			{
-				"var_type"				"FIELD_FLOAT"
 				"value"        			"600"
 			}
 			"duration_tooltip"
 			{
-				"var_type"				"FIELD_FLOAT"
 				"value"      			"2.0"
-				"charon_soul_drain_cast_time_fast_bonus_const_tallent"	"1.5"
+				"charon_soul_drain_cast_time_fast_bonus_const_tallent"	"+1.5"
 			}
 			"manaburn"
 			{
-				"var_type"				"FIELD_FLOAT"
 				"value"              	"5 6 7 8 9 10 11"
 			}
 			"manaburn_pct"
 			{
-				"var_type"				"FIELD_FLOAT"
 				"value"          		"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
 			}
 			"manaburn_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
 				"value"      			"50 60 70 80 90 100 110"
 			}
 			"manaburn_pct_tooltip"
 			{
-				"var_type"				"FIELD_FLOAT"
 				"value"  				"3.0 4.0 5.0 6.0 7.0 8.0 9.0"
 			}
 			"damage"
 			{
-				"var_type"				"FIELD_FLOAT"
 				"value"                	"5 10 15 20 25 30 35"
 			}
 			"damage_pct"
 			{
-				"var_type"				"FIELD_INTEGER"
 				"value"            		"0"
 			}
 			"damage_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
 				"value"        			"50 100 150 200 250 300 350"
 			}
 			"damage_pct_tooltip"
 			{
-				"var_type"				"FIELD_INTEGER"
 				"value"    				"0"
 			}
 			"interval"
 			{
-				"var_type"				"FIELD_FLOAT"
 				"value"              	"0.1"
 			}
 		}
@@ -268,15 +257,9 @@
 	}
 	"charon_soul_drain_cast_time_fast_bonus_const_tallent"
 	{
-		"BaseClass"						"special_bonus_unique_earth_spirit"
+		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-		}
 	}
 
 	"charon_last_word_bonus_slow_per_mana_tallent"
