@@ -101,7 +101,7 @@ function modifier_item_trisula:OnAttackLanded(params)
 
 	if not units_in_radius then return end
 
-	CreateParticleForCleave("particles/units/heroes/hero_magnataur/magnataur_empower_cleave_effect.vpcf", radius, target)
+	CreateParticleForCleave("particles/econ/items/faceless_void/faceless_void_weapon_bfury/faceless_void_weapon_bfury_cleave.vpcf", radius, target)
 
     print()
 

@@ -43,6 +43,6 @@ end
 
 function modifier_creep_elite:OnCreated(event)
 	local hero = self:GetParent()
-	self.particle = ParticleManager:CreateParticle("particles/econ/events/fall_2022/agh/agh_aura_fall2022_lvl2.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	self.particle = ParticleManager:CreateParticle("particles/econ/items/omniknight/omni_crimson_witness_2021/omniknight_crimson_witness_2021_degen_aura_debuff.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 	ParticleManager:SetParticleControl(self.particle, 0, hero:GetAbsOrigin())
 end
