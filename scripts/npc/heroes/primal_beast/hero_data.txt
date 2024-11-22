@@ -3,27 +3,38 @@
 	"npc_dota_hero_primal_beast"
 	{
 		"override_hero"		"npc_dota_hero_primal_beast"
-		"Ability1"				"primal_beast_onslaught"
-		"Ability2"				"primal_beast_trample"
-		"Ability3"				"primal_beast_uproar"
-		"Ability4"				"primal_beast_rock_throw"
-		"Ability5"				"primal_beast_onslaught_release"
-		"Ability6"				"primal_beast_pulverize"
-		"Ability10"				"special_bonus_unique_primal_beast_onslaught_damage"
-		"Ability11"				"special_bonus_unique_primal_beast_trample_magic_resist"
-		"Ability12"				"special_bonus_unique_primal_beast_trample_cooldown"
-		"Ability13"				"special_bonus_unique_primal_beast_roar_dispells"
-		"Ability14"				"special_bonus_unique_primal_beast_trample_attack_damage"
-		"Ability15"				"special_bonus_unique_primal_beast_uproar_armor"
-		"Ability16"				"special_bonus_unique_primal_beast_trample_unslowable"
-		"Ability17"				"special_bonus_unique_primal_beast_pulverize_duration"
-		"AbilityDraftAbilities"
-		{
-			"Ability1"		"primal_beast_onslaught"
-			"Ability2"		"primal_beast_trample"
-			"Ability3"		"primal_beast_uproar"
-			"Ability6"		"primal_beast_pulverize"
-		}		
+		"Ability1"              "primal_beast_onslaught"
+        "Ability2"              "primal_beast_trample"
+        "Ability3"              "primal_beast_uproar"
+        "Ability4"              "primal_beast_rock_throw"
+        "Ability5"              "primal_beast_onslaught_release"
+        "Ability6"              "primal_beast_pulverize"
+        "Ability7"              "primal_beast_colossal"
+        "Ability10"             "special_bonus_unique_primal_beast_onslaught_damage"
+        "Ability11"             "special_bonus_unique_primal_beast_trample_magic_resist"
+        "Ability12"             "special_bonus_unique_primal_beast_trample_cooldown"
+        "Ability13"             "special_bonus_unique_primal_beast_roar_dispells"
+        "Ability14"             "special_bonus_unique_primal_beast_trample_attack_damage"
+        "Ability15"             "special_bonus_unique_primal_beast_uproar_armor"
+        "Ability16"             "special_bonus_unique_primal_beast_trample_unslowable"
+        "Ability17"             "special_bonus_unique_primal_beast_pulverize_duration"
+        
+        "Facets"
+        {
+            "primal_beast_romp_n_stomp"     
+            {
+                "Icon"              "speed"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+            "primal_beast_ferocity"
+            {
+                "Icon"              "area_of_effect"
+                "Color"             "Yellow"
+                "GradientID"        "3"
+            }
+        }
+        	
 		"ArmorPhysical"				"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"36"

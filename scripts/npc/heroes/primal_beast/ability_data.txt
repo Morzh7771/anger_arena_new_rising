@@ -35,9 +35,18 @@ DOTAAbilities
 		{
 			"charge_speed"				"1200 1400 1600 1800 2000 2200 2400"
 			"chargeup_time"				"2"
-			"knockback_radius"			"190"
+			"knockback_radius"          
+            {
+                "value" "190"
+                "affected_by_aoe_increase"  "1" 
+
+            }
 			"max_distance"				"1500 1750 2000 2250 2500 2750 3000"
-			"knockback_distance"		"200"
+			"knockback_distance"        
+            {
+                "value"         "200"
+                "affected_by_aoe_increase"  "1" 
+            }
 			"knockback_damage"
 			{
 				"value"					"95 190 285 380 475 570 665"
@@ -103,7 +112,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"effect_radius"				"250"
+			"effect_radius"             
+            {
+                "value"     "230"
+                "affected_by_aoe_increase"  "1" 
+            }
 			"step_distance"				"120"
 			"base_damage"
 			{
@@ -132,8 +145,29 @@ DOTAAbilities
 				"value"				"0"
 				"special_bonus_unique_primal_beast_trample_unslowable"	"+1"
 			}
-			
-			
+			"proc_attack_modifiers"
+            {
+                "value"             "0"
+            }
+            "bonus_movespeed_pct_self"
+            {
+                "value"                 "0"
+                "special_bonus_facet_primal_beast_romp_n_stomp"         "=10"
+                "RequiresFacet"             "light_footed"
+            }
+            "bonus_movespeed_pct_allies"
+            {
+                "value"             "0"
+                "special_bonus_facet_primal_beast_romp_n_stomp" "=5"
+                "RequiresFacet"             "light_footed"
+            }
+            "aura_radius"
+            {
+                "value"                         "0"
+                "affected_by_aoe_increase"  "1"
+                "special_bonus_facet_primal_beast_romp_n_stomp"         "=1200"
+                "RequiresFacet"             "light_footed"
+            }
 		}
 	}
 	"primal_beast_uproar"
@@ -164,7 +198,11 @@ DOTAAbilities
 			"slow_duration"				"3.0"
 			"damage_min"				"20"
 			"damage_max"				"2000"
-			"radius"					"900"
+			"radius"                    
+            {
+                "value"         "900"
+                "affected_by_aoe_increase"  "1" 
+            }
 			"roared_bonus_attack_speed"	"0"
 			"roared_bonus_armor"
 			{
@@ -274,7 +312,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"splash_radius"				"600"
+			"splash_radius"             
+            {
+                "value"     "600"
+                "affected_by_aoe_increase"  "1" 
+            }
 			"interval"					"0.6"
 			"ministun"					"0.15"
 			"cast_range"				"200"
@@ -283,6 +325,16 @@ DOTAAbilities
 			{
 				"value"						"125 175 225 275 325 375 425"
 			}
+			"bonus_aoe_duration"
+            {
+                "value"                         "0"
+                "special_bonus_facet_primal_beast_ferocity" "+10"
+            }
+            "bonus_aoe_pct_per_hit"
+            {
+                "value"                                 "0"
+                "special_bonus_facet_primal_beast_ferocity" "+20"
+            }
 			"channel_time"
 			{
 				"value"					"2.65"
@@ -342,16 +394,160 @@ DOTAAbilities
 				"value"					"325"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-            "impact_radius"             "350"    
+            "impact_radius"             
+            {
+                "value" "225"    
+                "affected_by_aoe_increase"  "1" 
+            }    
             "min_range"               "225"
             "min_travel_time"                 "0.225"
             "max_travel_time"                  "1.7"
             "bounce_travel_time"                  "0.6"
             "stun_duration"                  "1.7"
 			"fragment_impact_distance"    "450"
-            "fragment_impact_radius"                  "225"
+            "fragment_impact_radius"
+            {
+                "value"                     "185"
+                "affected_by_aoe_increase"  "1" 
+            }
 			"damage_pct"    "250"      
 
         }
+    } 
+    "primal_beast_colossal"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "Innate"                        "1"
+        "MaxLevel"                      "1"
+        "IsBreakable"                   "1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_building_damage"             "40"
+        }
+    }
+    "primal_beast_innate_slow_resistance_per_time"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "MaxLevel"                      "1"
+        "AbilityValues"
+        {
+            "slow_resistance_per_upgrade"       "1"
+            "upgrade_rate"                      "120.0"
+        }
+    }
+
+    //=================================================================================================================
+    // Primal Beast: Innate Status Resistance Per Time
+    //=================================================================================================================
+    "primal_beast_innate_status_resistance_per_time"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "MaxLevel"                      "1"
+        "AbilityValues"
+        {
+            "status_resistance_per_upgrade"     "1"
+            "upgrade_rate"                      "360.0"
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Primal Beast Uproar Dispels
+    //=================================================================================================================
+    "special_bonus_unique_primal_beast_roar_dispells"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Onslaught knockback damage
+    //=================================================================================================================
+    "special_bonus_unique_primal_beast_onslaught_damage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Primal Beast Trample Damage
+    //=================================================================================================================
+    "special_bonus_unique_primal_beast_trample_attack_damage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Primal Beast Pulverize Duration
+    //=================================================================================================================
+    "special_bonus_unique_primal_beast_pulverize_duration"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }           
+    //=================================================================================================================
+    // Ability: Primal Beast Uproar Armor
+    //=================================================================================================================
+    "special_bonus_unique_primal_beast_uproar_armor"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }   
+    //=================================================================================================================
+    // Ability: Primal Beast Uproar Armor
+    //=================================================================================================================
+    "special_bonus_unique_primal_beast_trample_magic_resist"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }   
+    //=================================================================================================================
+    // Ability: Primal Beast Uproar Armor
+    //=================================================================================================================
+    "special_bonus_unique_primal_beast_trample_cooldown"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }   
+    //=================================================================================================================
+    // Ability: Primal Beast Uproar Armor
+    //=================================================================================================================
+    "special_bonus_unique_primal_beast_trample_unslowable"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
     } 
 }
