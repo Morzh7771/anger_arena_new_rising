@@ -244,9 +244,17 @@ DOTAAbilities
 		{
 			"agi_gain"				"1 2 2 3 3 4 4"
 			"stat_loss"				"1 1 2 2 2 3 3"
-			"duration"				"30"
-			"perma_agi"             "1"
-			"duration_creeps"       "10"
+			"duration"
+			{
+				"value"				"30"
+				"special_bonus_slark_essence_shift_aa_duration"	"+40"
+			}
+			"duration_creeps"
+			{
+				"value"				"10"
+				"special_bonus_slark_essence_shift_aa_duration"	"20"
+			}
+			//таланты хардкод
 			"steal_radius"     		"500"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -294,6 +302,14 @@ DOTAAbilities
 			"activation_delay"			"0.5"
 			"neutral_disable"			"2.0"
 		}
+	}
+	"special_bonus_slark_essence_shift_aa_duration"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"special_bonus_base"
 	}
 	"special_bonus_unique_slark_4"
 	{

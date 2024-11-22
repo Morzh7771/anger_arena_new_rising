@@ -30,9 +30,10 @@ modifier_base_butterfly = class({
     GetModifierBonusStats_Agility = function (self) return self:GetAbility():GetSpecialValueFor("bonus_agi") end,
     GetModifierIncomingDamage_Percentage = function (self)
         if RollPercentage(self:GetAbility():GetSpecialValueFor("absorb_chance")) then
-            local backtrack_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
+            local backtrack_fx = ParticleManager:CreateParticle("particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_backtrack.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
             ParticleManager:SetParticleControl(backtrack_fx, 0, self:GetCaster():GetAbsOrigin())
             ParticleManager:ReleaseParticleIndex(backtrack_fx)
+            SendOverheadEventMessage(nil, OVERHEAD_ALERT_EVADE, self:GetCaster(), 0,nil)
             return -100
         end
     end,

@@ -36,8 +36,8 @@
 			}
 			"duration_tooltip"
 			{
-				"value"      			"2.0"
-				"charon_soul_drain_cast_time_fast_bonus_const_tallent"	"+1.5"
+				"value"      					"2.0"
+				"LinkedSpecialBonus"			"charon_soul_drain_cast_time_fast_bonus_const_tallent"
 			}
 			"manaburn"
 			{
@@ -260,6 +260,10 @@
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityValues"
+		{
+			"value"						"1.5"
+		}
 	}
 
 	"charon_last_word_bonus_slow_per_mana_tallent"

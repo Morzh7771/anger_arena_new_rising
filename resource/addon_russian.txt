@@ -711,7 +711,7 @@
         "DOTA_Tooltip_Ability_slark_dark_pact_damage_pct"                                       				"%УРОН ОТ ЛОВКОСТИ"
 
 		"DOTA_Tooltip_ability_slark_essence_shift_aa"								"Essence Shift"
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Description"					"Герой крадёт атаками жизненную сущность вражеских героев, выкачивая все их атрибуты и превращая их в дополнительную ловкость для себя. Владелец этой способности навсегда крадёт %stat_loss% ловкости, если убивает жертву под этим эффектом."		
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Description"					"Герой крадёт атаками жизненную сущность вражеских героев, выкачивая все их атрибуты и превращая их в дополнительную ловкость для себя. Владелец этой способности навсегда получает 1 заряд способности, если рядом умирает враг в радиусе %steal_radius%."		
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_Lore"							"Чем больше бьёшь по врагу, тем больше узнаёшь о его слабостях."
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note0"						"Атрибуты не могут упасть ниже значения в единицу."
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note1"						"Украденные у жертвы атрибуты возвращаются к ней при её смерти, но они не исчезают у владельца способности."
@@ -723,6 +723,9 @@
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration"						"ДЛИТЕЛЬНОСТЬ НА ГЕРОЯХ:"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration_creeps"						"ДЛИТЕЛЬНОСТЬ НА КРИПАХ:"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_steal_radius"					"РАДИУС КРАЖИ:"
+
+		"DOTA_Tooltip_Ability_special_bonus_slark_essence_shift_aa_duration"                  						"+{s:bonus_duration} сек. действия Essence Shift на врагах и +{s:bonus_duration_creeps} сек. на крипах  "
+
 
 
         //Slardar--------------------------------------------------------------------------------------------------------------
@@ -2576,6 +2579,7 @@
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_status_res"		"%+к сопротивлению эффектам"
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_heal_amp_pct"	"%+к здоровью от восстановления и вампиризма"
 		"DOTA_Tooltip_Ability_item_trident_aa_bonus_spell_lifesteal_amp_pct"	"%+к усилению вампиризма от заклинаний"
+		"DOTA_Tooltip_Ability_item_trident_aa_bonus_cast_time"		"%+к скорости применения заклинаний"
 		"DOTA_Tooltip_Ability_item_trident_aa_Lore"                          "Одно Меч, чтоб править всеми, Он главнее всех, Он соберёт всех вместе И заключит во Тьме"
 		
 
@@ -2592,6 +2596,7 @@
         "DOTA_Tooltip_Ability_item_trisula_bonus_ms"	                "%+$move_speed"
         "DOTA_Tooltip_Ability_item_trisula_bonus_status_res"		"%+к сопротивлению эффектам"
         "DOTA_Tooltip_Ability_item_trisula_bonus_heal_amp_pct"	"%+к здоровью от восстановления и вампиризма"
+		"DOTA_Tooltip_Ability_item_trisula_bonus_cast_time"		"%+к скорости применения заклинаний"
         "DOTA_Tooltip_Ability_item_trisula_bonus_spell_lifesteal_amp_pct"	"%+к усилению вампиризма от заклинаний"
 
         "DOTA_Tooltip_modifier_item_wraith_band_custom_speed"		"Wraith Band"

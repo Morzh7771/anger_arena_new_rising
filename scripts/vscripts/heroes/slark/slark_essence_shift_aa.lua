@@ -15,6 +15,7 @@ modifier_slark_essence_shift_aa = class({
     DeclareFunctions = function() return {
         MODIFIER_PROPERTY_PROCATTACK_FEEDBACK,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_EVENT_ON_DEATH,
     } end,
     GetModifierBonusStats_Agility = function(self) return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("agi_gain") end,
 })
@@ -50,6 +51,7 @@ function modifier_slark_essence_shift_aa:AddStackEnemy(target,duration)
 end
 function modifier_slark_essence_shift_aa:GetModifierProcAttack_Feedback( params )
 	if IsServer() and (not self:GetParent():PassivesDisabled()) then
+        if self:GetParent():PassivesDisabled() then return end
 		if params.target:IsIllusion() then return end
         if params.attacker ~= self:GetParent() then return end
         local duration = 1
@@ -61,6 +63,24 @@ function modifier_slark_essence_shift_aa:GetModifierProcAttack_Feedback( params 
         self:AddStackSelf(duration)
         self:AddStackEnemy(params.target,duration)
 		self:PlayEffects( params.target )
+	end
+end
+function modifier_slark_essence_shift_aa:OnDeath(params)
+    local hVictim = params.unit
+    local hKiller = params.attacker
+	if hVictim == nil or hKiller == nil then return	end
+	if hVictim:IsIllusion() then return end
+    if hVictim:IsCreep() then return end
+
+	if hVictim:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() then
+		local vToCaster = self:GetParent():GetOrigin() - hVictim:GetOrigin()
+		local flDistance = vToCaster:Length2D()
+		if hKiller == self:GetParent() or self:GetAbility():GetSpecialValueFor( "steal_radius" ) >= flDistance then
+            self:AddStackSelf(-1)
+			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetCaster() )
+			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 0, 0 ) )
+			ParticleManager:ReleaseParticleIndex( nFXIndex )
+		end
 	end
 end
 function modifier_slark_essence_shift_aa:PlayEffects( target )

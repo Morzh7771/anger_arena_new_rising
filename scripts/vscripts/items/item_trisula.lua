@@ -46,7 +46,9 @@ function modifier_item_trisula:OnCreated(params)
 	self.bonus_spell_amp 				= self:GetAbility():GetSpecialValueFor("bonus_spell_amp")
 	self.bonus_spell_lifesteal_amp_pct 	= self:GetAbility():GetSpecialValueFor("bonus_spell_lifesteal_amp_pct")
 	self.bonus_heal_amp_pct 			= self:GetAbility():GetSpecialValueFor("bonus_heal_amp_pct")
+	self.bonus_cast_time				= self:GetAbility():GetSpecialValueFor("bonus_cast_time")
 
+	
 	self.cleave_damage_creep 			= self:GetAbility():GetSpecialValueFor('cleave_damage_creep')
 	self.cleave_damage_hero 			= self:GetAbility():GetSpecialValueFor('cleave_damage_hero')
 	self.cleave_range 					= self:GetAbility():GetSpecialValueFor('cleave_range')
@@ -160,7 +162,11 @@ function modifier_item_trisula:DeclareFunctions()
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
+		MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
 	}
+end
+function modifier_item_trisula:GetModifierPercentageCasttime()
+	return self.bonus_cast_time
 end
 function modifier_item_trisula:GetModifierStatusResistance()
 	return self.bonus_status_res

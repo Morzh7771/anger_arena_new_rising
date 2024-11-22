@@ -162,7 +162,7 @@ if IsClient() then
 
 	    local modname = MOD_NAME .. index;
 
-	    local data = ability_data[1]['AbilitySpecial']
+	    local data = ability_data[1]['AbilityValues']
 
 	    local values = {}
 

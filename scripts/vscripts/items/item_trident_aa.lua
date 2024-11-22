@@ -24,7 +24,7 @@ function modifier_item_trident_aa:OnCreated(params)
 	self.bonus_spell_amp = self:GetAbility():GetSpecialValueFor("bonus_spell_amp")
 	self.bonus_spell_lifesteal_amp_pct = self:GetAbility():GetSpecialValueFor("bonus_spell_lifesteal_amp_pct")
 	self.bonus_heal_amp_pct = self:GetAbility():GetSpecialValueFor("bonus_heal_amp_pct")
-	     
+	self.bonus_cast_time				= self:GetAbility():GetSpecialValueFor("bonus_cast_time")     
 	if IsServer() then
 	end
 end
@@ -48,7 +48,11 @@ function modifier_item_trident_aa:DeclareFunctions()
 		MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
 	}
+end
+function modifier_item_trident_aa:GetModifierPercentageCasttime()
+	return self.bonus_cast_time
 end
 function modifier_item_trident_aa:GetModifierStatusResistance()
 	return self.bonus_status_res
