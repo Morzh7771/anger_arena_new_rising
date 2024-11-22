@@ -3,20 +3,47 @@
 	"npc_dota_hero_night_stalker"
 	{
 		"override_hero"		"npc_dota_hero_night_stalker"
-		"Ability1"		"night_stalker_void"
-		"Ability2"		"night_stalker_crippling_fear"
-		"Ability3"		"night_stalker_hunter_in_the_night"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"night_stalker_darkness"
-		"Ability10"		"special_bonus_unique_night_stalker_4"
-		"Ability11"		"special_bonus_unique_night_stalker_7"
-		"Ability12"		"special_bonus_unique_night_stalker_3"
-		"Ability13"		"special_bonus_unique_night_stalker_hunter_status_resist"
-		"Ability14"		"special_bonus_unique_night_stalker_6"
-		"Ability15"		"special_bonus_strength_20"
-		"Ability16"		"special_bonus_unique_night_stalker_2"
-		"Ability17"		"special_bonus_unique_night_stalker"
+		"Ability1"      "night_stalker_void"
+        "Ability2"      "night_stalker_crippling_fear"
+        "Ability3"      "night_stalker_hunter_in_the_night"
+        "Ability4"      "generic_hidden"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "night_stalker_darkness"
+        "Ability7"      "night_stalker_heart_of_darkness"
+
+		"Ability10"     "special_bonus_unique_night_stalker_4"
+        "Ability11"     "special_bonus_unique_night_stalker_7"
+        "Ability12"     "special_bonus_unique_night_stalker_3"
+        "Ability13"     "special_bonus_unique_night_stalker_hunter_status_resist"
+        "Ability14"     "special_bonus_unique_night_stalker_crippling_fear_damage"
+        "Ability15"     "special_bonus_base_aa_str_75"
+        "Ability16"     "special_bonus_unique_night_stalker_2"
+        "Ability17"     "special_bonus_unique_night_stalker"
+
+        "Facets"
+        {
+            "night_stalker_blinding_void" 
+            {
+                "Icon"              "no_vision"
+                "Color"             "Blue"
+                "GradientID"        "0"
+            }
+            "night_stalker_dayswap" 
+            {
+                "Icon"              "moon"
+                "Color"             "Gray"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "night_stalker_night_reign"
+                    }
+                }
+            }
+        }
+        
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"40"

@@ -33,24 +33,21 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"projectile_multiplier"		"175"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"ethereal_duration"		"2.5"
-			}	
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"magic_resistance_reduction"		"25"
-			}					
-		}
+		"AbilityValues"
+        {
+            "projectile_multiplier"
+            {
+                "value" "175"
+            }
+            "ethereal_duration"
+            {
+                "value" "2.5"
+            }
+            "magic_resistance_reduction"
+            {
+                "value" "25"
+            }
+        }
 	}
 	"necrolyte_death_pulse"
 	{
@@ -87,11 +84,15 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"area_of_effect"		"500"
+			"area_of_effect"        
+            {
+                "value"     "500"
+                "affected_by_aoe_increase"  "1"
+            }
 			"heal"
 			{
 				"value"					"55 80 105 130 155 180 205"
-				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
+				"special_bonus_unique_necrophos_4" "+55"
 			}
 			"projectile_speed"		"600"
 			"damage_pct"		"100"
@@ -111,31 +112,23 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
 		"HasScepterUpgrade"			"1"	
+		"IsBreakable"                   "1"
 		
 
 		"AbilityValues"
 		{
-			"aura_radius"			"800"		
+			"aura_radius"           
+            {
+                "value"     "800"       
+                "affected_by_aoe_increase"  "1"
+            }		
 			"aura_damage"
 			{
 				"value"		"0.6 0.9 1.2 1.5 1.8 2.1 2.4" 
 				"special_bonus_unique_necrophos_2"		"+0.6"
 				"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
 				"CalculateSpellDamageTooltip"	"0"
-			} 	
-			"health_regen"	"4 5 6 7 8 9 10"
-			"mana_regen"	"4 5 6 7 8 9 10"
-			"hero_multiplier" "6"
-			"regen_duration"		
-			{
-				"value"						 "8"
-				"special_bonus_unique_necrophos_heartstopper_regen_duration"							"+2"
 			}
-			"scepter_multiplier"
-			{
-				"value"					"2" 
-				"RequiresScepter"		"1"
-			} 
 			"heal_reduction_pct"
 			{
 				"value"					"0"
@@ -156,10 +149,13 @@ DOTAAbilities
 		"BaseClass"			"necrolyte_sadist"
 		"MaxLevel"		"7"
 		
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Necrolyte.SpiritForm.Cast"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"Innate"                        "1"
+        "DependentOnAbility"            "necrolyte_reapers_scythe"
+        "IsBreakable"                   "1"
 
 		"HasScepterUpgrade"			"0"
 
@@ -177,27 +173,80 @@ DOTAAbilities
 		
 		"AbilityValues"
 		{
-			"duration"		"3.0 3.25 3.5 3.75 4.0 4.25 4.5"
-			"heal_bonus"
-			{	
-				"value"			"45 50 55 60 65 70 75"
-				"special_bonus_unique_necrophos_sadist_heal_bonus"		"+15"
-			}			
-			"movement_speed"
-			{
-				"value"			"15.0 17.5 20.0 22.5 25.0 27.5 30.0"
-				"special_bonus_unique_necrophos_3"		"+20"
-			}			
-			"slow_aoe"		"750"
-			"bonus_damage" "-25"
-			"AbilityCooldown"
-			{
-				"value"						"12"
-				"special_bonus_scepter"		"-4" 
-			} 	
+			"health_regen"  "3 4.5 6 7.5 9 10.5 12"
+            "mana_regen"    "3 4.5 6 7.5 9 10.5 12"
+            "bonus_aoe"
+            {
+                "value"         "0"
+                "special_bonus_facet_necrolyte_profane_potency" "+40"
+            }
+            "bonus_spell_amp"
+            {
+                "value"     "0"
+            }
+            "hero_multiplier" "6"
+            "regen_duration"        
+            {
+                "value"                      "8"
+                "special_bonus_unique_necrophos_heartstopper_regen_duration"                            "+2"
+            }
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+	"necrolyte_ghost_shroud"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"		"7"
+        "AbilitySound"                  "Hero_Necrolyte.SpiritForm.Cast"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0"
+
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "75"
+        
+        
+        "AbilityValues"
+        {
+            "duration"      "3 3.25 3.5 3.75 4 4.25 4.5"
+            "heal_bonus"
+            {   
+                "value"         "45 55 65 75 85 95 105"
+                "special_bonus_unique_necrophos_sadist_heal_bonus"      "+15"
+            }           
+            "movement_speed"
+            {
+                "value"         "14 16 18 20 22 24 26"
+                "special_bonus_unique_necrophos_3"      "+14"
+            }
+            "movement_transfer"
+            {
+                "value"         "0"
+                "special_bonus_facet_necrolyte_rapid_decay" "50"                
+            }
+            "slow_aoe"      
+            {
+                "value"     "750"
+                "affected_by_aoe_increase"  "1"
+            }
+            "bonus_damage" "-20"
+            "AbilityCooldown"
+            {
+                "value"                     "16"
+            }   
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
+    }
 	"necrolyte_sadist_stop"
 	{
 		// General
@@ -258,4 +307,101 @@ DOTAAbilities
 			}
 		}
 	}
+	"special_bonus_unique_necrophos"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "2.5"
+                "ad_linked_abilities" "necrolyte_death_pulse"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_necrophos_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_necrophos_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_necrophos_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_necrophos_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_necrophos_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_necrophos_heartstopper_regen_duration"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_necrophos_sadist_heal_bonus"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }   
 }

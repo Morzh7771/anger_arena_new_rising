@@ -3,12 +3,12 @@
 	"npc_dota_hero_necrolyte"
 	{
 		"override_hero"		"npc_dota_hero_necrolyte"
-		"Ability1"		"necrolyte_death_pulse"
-		"Ability2"		"necrolyte_sadist"
-		"Ability3"		"necrolyte_heartstopper_aura"
-		"Ability4"		"necrolyte_death_seeker"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"necrolyte_reapers_scythe"
+		"Ability1"      "necrolyte_death_pulse"
+        "Ability2"      "necrolyte_ghost_shroud"
+        "Ability3"      "necrolyte_heartstopper_aura"
+        "Ability4"      "necrolyte_death_seeker"
+        "Ability5"      "necrolyte_sadist"
+        "Ability6"      "necrolyte_reapers_scythe"
 		"Ability10"		"special_bonus_unique_necrophos_6"
 		"Ability11"		"special_bonus_unique_necrophos_heartstopper_regen_duration"
 		"Ability12"		"special_bonus_unique_necrophos_3"
@@ -17,6 +17,23 @@
 		"Ability15"		"special_bonus_unique_necrophos_5"
 		"Ability16"		"special_bonus_unique_necrophos_2"
 		"Ability17"		"special_bonus_unique_necrophos"
+
+		"Facets"
+        {
+            "necrolyte_profane_potency" 
+            {
+                "Icon"              "area_of_effect"
+                "Color"             "Yellow"
+                "GradientID"        "2"
+            }
+            "necrolyte_rapid_decay" 
+            {
+                "Icon"              "speed"
+                "Color"             "Green"
+                "GradientID"        "3"
+            }
+        }
+        
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"26"

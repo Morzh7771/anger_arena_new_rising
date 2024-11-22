@@ -1,27 +1,41 @@
 DOTAAbilities
 {
 	"ogre_magi_dumb_luck"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
-		"BaseClass"			"ogre_magi_dumb_luck"
-		"MaxLevel"						"1"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_NONE"  
 
-		"AbilityValues"
-		{
-			"mana_per_str"				
-			{ 
-				"value"					"6"
-				"special_bonus_unique_ogre_magi_dumb_luck_mana"			"+2"
-			}
-			"mana_regen_per_str"		
-			{ 
-				"value"			"0.01"
-				"special_bonus_unique_ogre_magi_dumb_luck_mana"			"+0.01"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
 
-			}
-		}
-	}
+        "AbilityValues"
+        {
+            "mana_per_str"              
+            { 
+                "value"                 "6"
+                "special_bonus_unique_ogre_magi_dumb_luck_mana"         "+2"
+            }
+
+            "mana_regen_per_str"        
+            { 
+                "value"         "0.02"
+                "special_bonus_unique_ogre_magi_dumb_luck_mana"         "+0.01"
+
+            }
+
+            "level_one_ability_points"
+            {
+                "value"             "1"
+                "special_bonus_facet_ogre_magi_learning_curve" "=0"
+            }
+
+            "level_two_ability_points"
+            {
+                "value"             "1"
+                "special_bonus_facet_ogre_magi_learning_curve" "=3"
+            }
+        }
+    }
 	"ogre_magi_fireblast"
 	{
 		// General
@@ -64,78 +78,65 @@ DOTAAbilities
 				"value"			"70 130 190 250 310 370 430"
 				"special_bonus_unique_ogre_magi_2"	"+240"
 			}
+			"required_level"
+            {
+                "value"                     "1"
+                "special_bonus_facet_ogre_magi_learning_curve"  "-1"
+            }
 			"damage_pct"		"100"			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"ogre_magi_smash"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ogre_magi_smash"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"1"
-		"FightRecapLevel"				"1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "MaxLevel"                      "1"
+        "FightRecapLevel"               "1"
 
-		"IsGrantedByShard"				"1"
+        "IsGrantedByShard"              "1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.2"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
-		
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "600"
+        "AbilityCastPoint"              "0.2"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
+        
+        
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "15"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"250"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attacks"		"4"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"		"25"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_fireshield_aoe"			"1000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"1400"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_absorb_pct"		"85"
-				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
-			}
-		}
-	}
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "50"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+          	"damage"        "160"
+          	"attacks"       "3"
+          	"duration"      "25"
+          	"multicast_fireshield_aoe"          
+          	{
+          	    "value"         "1000"
+          	    "affected_by_aoe_increase"  "1"
+          	}
+          	"projectile_speed"      "1400"
+          	"damage_absorb_pct"     
+          	{
+          	    "value"             "85"
+          	    "DamageTypeTooltip"     "DAMAGE_TYPE_NONE"
+          	}
+        }
+    }
 	"ogre_magi_unrefined_fireblast"
 	{
 		// General
@@ -220,115 +221,253 @@ DOTAAbilities
 			"burn_damage"	
 			{
 				"value"	"20 30 40 50 60 70 80"
-				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi_4"
+				"special_bonus_unique_ogre_magi_4" "+20"
 			}		
 			"slow_movement_speed_pct"		"-10 -13 -16 -19 -22 -25 -27"
 			"projectile_speed"		"1000"
 			"multicast_delay"	"0.6"
-			"ignite_multicast_aoe"	"1400"
+			"ignite_multicast_aoe"  
+            {
+                "value"         "1400"
+                "affected_by_aoe_increase"  "1"
+            }
+            "required_level"
+            {
+                "value"                     "1"
+                "special_bonus_facet_ogre_magi_learning_curve"  "-1"
+            } 
 			"damage_pct"		"15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"ogre_magi_bloodlust"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"ogre_magi_bloodlust"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ALLIES_YES"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilitySound"					"Hero_OgreMagi.Bloodlust.Target"
+        "AbilitySound"                  "Hero_OgreMagi.Bloodlust.Target"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.45"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12"
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "600"
+        "AbilityCastPoint"              "0.45"
+        
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "12"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 55 60 65 70 75 80"
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "40 50 60 70 80 90 100"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"modelscale"		"25"
-			}	
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"		"5 7 9 11 13 15 17"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"30 40 50 60 70 80 90"
-				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"self_bonus"	"30 50 70 90 110 130 150"
-				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_bloodlust_aoe"			"900"
-			}
-			
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	}
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "modelscale"                "0 5 10 15 20 25 30"
+            "bonus_movement_speed"      "7 9 11 13 15 17 19"
+            "bonus_attack_speed"
+            {
+                "value"                 "35 50 65 80 95 110 125"
+                "special_bonus_unique_ogre_magi" "+35"
+            }
+            "self_bonus"
+            {
+                "value"                 "40 60 80 100 120 140 160"
+                "special_bonus_unique_ogre_magi" "+70"
+            }
+            "duration"                  "30"
+            "multicast_bloodlust_aoe"
+            {
+                "value"                     "700"
+                "affected_by_aoe_increase"  "1"
+            }
+
+            "required_level"
+            {
+                "value"                     "1"
+                "special_bonus_facet_ogre_magi_learning_curve"  "-1"
+            }
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
+    }
 	"ogre_magi_multicast"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"ogre_magi_multicast"
-		"MaxLevel"		"3"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCastAnimation"			"ACT_INVALID"
-		"LevelsBetweenUpgrades"		"18"
-		"RequiredLevel"			"6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityCastAnimation"          "ACT_INVALID"
+        "LevelsBetweenUpgrades"			"18"
+        "IsBreakable"                   "1"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times"		"60 60 60"
-			}
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "multicast_2_times"
+            {
+                "value"     "75"
+                // Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
+                "special_bonus_facet_ogre_magi_fat_chance" "+0"
+                "dynamic_value"     "true"
+            }
 
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times"		"0 30 30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times"		"0 0 15"
-			}
-		}
-	}
+            "multicast_3_times"
+            {
+                "value"     "0 30 30"
+                // Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
+                "special_bonus_facet_ogre_magi_fat_chance" "+0"
+                "dynamic_value"     "true"
+            }
+
+            "multicast_4_times"
+            {
+                "value"     "0 0 15"
+                // Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
+                "special_bonus_facet_ogre_magi_fat_chance" "+0"
+                "dynamic_value"     "true"
+            }
+
+            "strength_mult"
+            {
+                "value"                     "0"
+                "special_bonus_facet_ogre_magi_fat_chance"  "=0.02"
+            }
+
+            "required_level"
+            {
+                "value"                     "6"
+                "special_bonus_facet_ogre_magi_learning_curve"  "-1"
+            }
+        }
+    }
+    "ogre_magi_frost_armor"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "MaxLevel"                      "1"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+
+        // Unit Targeting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "800"
+        "AbilityCastPoint"              "0.56"
+        "AbilityCooldown"               "5.0"
+        "AbilityManaCost"               "40"
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityValues"
+        {
+            "armor_bonus"
+            {
+                "value" "4 5 6 8"
+            }
+            "duration"
+            {
+                "value" "45"
+            }
+            "movespeed_slow"
+            {
+                "value" "-22 -24 -26 -30"
+            }
+            "attackspeed_slow"
+            {
+                "value" "-22 -24 -26 -30"
+            }
+            "slow_duration"
+            {
+                "value" "5"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_ogre_magi"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_ogre_magi_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_ogre_magi_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "17"
+                "ad_linked_abilities" "ogre_magi_fireblast"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_ogre_magi_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_ogre_magi_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_ogre_magi_dumb_luck_mana"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

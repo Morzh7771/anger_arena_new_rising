@@ -33,20 +33,28 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"width"				"150"
+			"width"             
+            {
+                "value"         "150"
+                "affected_by_aoe_increase"  "1"
+            }
 			"duration"
 			{	
 				"value"			"1.1 1.25 1.4 1.55 1.7 1.85 2.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_nyx_4"
+				"special_bonus_unique_nyx_4" "+0.20"
 			}
 			"length"			"750"
 			"speed"				"1600"
 			"impale_damage"	
 			{
 				"value"			"100 160 220 280 340 400 460"
-				"LinkedSpecialBonus"	"special_bonus_unique_nyx_2"
+				"special_bonus_unique_nyx_2" "+20%"
 			}
-			"damage_pct"			"100"
+			"damage_pct"			
+			{
+				"value"				"100"
+				"special_bonus_unique_nyx_2" "+20%"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -82,20 +90,6 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"float_multiplier"		
-			{
-				"value"		"2.3 3.2 4.1 5"
-				"special_bonus_unique_nyx_5"			"+0.5"
-			}
-			"aoe"
-			{
-				"value"		"0"
-				"special_bonus_unique_nyx"		"+300"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"nyx_assassin_jolt"
 	{
@@ -112,7 +106,7 @@ DOTAAbilities
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"    
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -121,7 +115,6 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12 10 8 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -131,16 +124,21 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"float_multiplier"		
-			{
-				"value"		"2 2.5 3 3.5 4 4.5 5"
-				"special_bonus_unique_nyx_5"			"+0.75"
-			}
+			"AbilityCooldown"
+            {
+                "value"         "18 16 14 12 10 8 6"
+                "special_bonus_unique_nyx_jolt_cooldown"            "-3"
+            }
+			"max_mana_as_damage_pct"        
+            {
+                "value"     "5 10 15 20 25 30 35"
+            }
 			"aoe"
-			{
-				"value"		"0"
-				"special_bonus_unique_nyx"		"+350"
-			}
+            {
+                "value"     "0"
+                "special_bonus_unique_nyx"      "+600"
+                "affected_by_aoe_increase"  "1"
+            }
 			"damage_echo_duration"		"20"
 			"damage_echo_pct"			"30"
 		}
@@ -161,7 +159,7 @@ DOTAAbilities
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16 14 12 10"
+		"AbilityCooldown"				"20 18 16 14 12 10 8"
 		"AbilityCastPoint"				"0 0 0 0"
 
 		// Cost
@@ -208,29 +206,43 @@ DOTAAbilities
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			
+			"AbilityCooldown"               
+            {
+                "value"     "60"
+            }
+            "AbilityManaCost"               
+            {
+                "value"             "200"
+            }
 			"duration"				"30"
 			"fade_time"				"0.0"
 			"movement_speed"		"20"
 			"bonus_damage"					
 			{
 				"value"					"300 450 600 750 900 1050 1200"
+				"special_bonus_unique_nyx_vendetta_damage"      "+10%"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"damage_pct"				"200"
+			"damage_pct"				
+			{
+				"value"				"200"
+				"special_bonus_unique_nyx_vendetta_damage"      "+10%"
+			}
 			"health_regen_rate_scepter"		"3"
 			"mana_regen_rate_scepter"		"3"
-			"break_duration"		"6.0"
+			"break_duration"        
+            {
+                "value"                     "0"
+                "special_bonus_shard"       "+6"
+            }
 			"shard_debuff_duration"	
 			{
 				"value" 			"6.0"
@@ -246,7 +258,18 @@ DOTAAbilities
 				"value" 			"25"
 				"RequiresShard"		"1"
 			}
-			"mana_removal_pct"		"50"
+			"free_pathing_duration"
+            {
+                "value"             "0"
+                "special_bonus_facet_nyx_assassin_scuttle" "=15"
+            }
+            "free_pathing_movement_speed_bonus"
+            {
+                "value"             "0"
+                "special_bonus_facet_nyx_assassin_scuttle" "=200"
+            }           
+            "attack_animation_bonus"    "70"
+            "attack_range_bonus"        "75"
 		}
 	}
 	"nyx_assassin_burrow"
@@ -278,8 +301,12 @@ DOTAAbilities
 			"damage_reduction"			"45"
 			"impale_bonus_cast_range"			"600"
 			"jolt_bonus_cast_range"			"600"
-			"impale_cooldown_reduction"			"6.0"
-			"carapace_radius"			"300"
+			"cooldown_reduction"            "25"
+			"carapace_radius"           
+            {
+                "value"         "400"
+                "affected_by_aoe_increase"  "1"
+            }
 		}
 	}
 	"nyx_assassin_unburrow"
@@ -306,4 +333,157 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 	}
+	"nyx_assassin_nyxth_sense"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "radius"    
+            {   
+                "value"     "375"
+                "affected_by_aoe_increase"  "1"
+            }
+        }
+    }
+    "nyx_assassin_innate_mana_burn"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "mana_pct"      "15"
+        }
+    }
+
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "75"
+                "ad_linked_abilities" "nyx_assassin_jolt"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "nyx_assassin_jolt"             // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        
+        
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "0.6"
+                "ad_linked_abilities" "nyx_assassin_spiked_carapace"
+            }
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx_carapace_reflect_duration"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx_vendetta_damage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx_vendetta_cd_manacost"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_nyx_jolt_cooldown"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

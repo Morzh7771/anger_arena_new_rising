@@ -62,6 +62,7 @@ function PercentDamage:_init()
 		"luna_lucent_beam",
 		"slark_dark_pact",
 		"naga_siren_rip_tide",
+		"naga_siren_deluge",
 		"gyrocopter_rocket_barrage",
 		"sniper_shrapnel",
 		"sniper_assassinate",

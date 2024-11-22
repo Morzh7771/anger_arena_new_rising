@@ -545,6 +545,8 @@
         "DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_1"                               				"Магическое усиление заклинаний за интеллект"
         "DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_0_5_Description"                 				"+{s:value}% за единицу интеллекта"
         "DOTA_Tooltip_ability_special_bonus_base_aa_intSpell_0_0_5"                             				"Магическое усиление заклинаний за интеллект"
+        "DOTA_Tooltip_ability_special_bonus_base_aa_str_75"														"+{s:value} к силе"
+        "DOTA_Tooltip_ability_special_bonus_base_aa_all_20pct"													"+{s:pct}% ко всем атрибутам"
 
         //Abaddon
         "DOTA_Tooltip_ability_abaddon_aphotic_shield_lua"														"Aphotic Shield"
@@ -771,6 +773,8 @@
 		//Nyx
 		"DOTA_Tooltip_Ability_nyx_assassin_impale_damage_pct"													"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_nyx_assassin_vendetta_damage_pct"													"%УРОН ОТ ИНТЕЛЛЕКТА"
+		"DOTA_Tooltip_ability_special_bonus_unique_nyx_2"   													"+{s:bonus_impale_damage}% к урону от Impale"
+		"DOTA_Tooltip_ability_special_bonus_unique_nyx_vendetta_damage"                 						"+{s:bonus_bonus_damage}% к урону от Vendetta"
 
 
 		//Ogre Magi
@@ -892,6 +896,7 @@
 
 		//Naga Siren
 		"DOTA_Tooltip_Ability_naga_siren_rip_tide_damage_pct"													"%УРОН ОТ ЛОВКОСТИ"
+		"DOTA_Tooltip_Ability_naga_siren_deluge_damage_pct"														"%УРОН ОТ ЛОВКОСТИ"
 
 
 		//Spectre

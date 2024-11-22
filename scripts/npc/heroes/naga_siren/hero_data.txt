@@ -3,21 +3,57 @@
 	"npc_dota_hero_naga_siren"
 	{
 		"override_hero"		"npc_dota_hero_naga_siren"
-		"Ability1"		"naga_siren_mirror_image"
-		"Ability2"		"naga_siren_ensnare"
-		"Ability3"		"naga_siren_rip_tide"
-		"Ability4"		"naga_siren_reel_in"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"naga_siren_song_of_the_siren"
-		"Ability7"		"naga_siren_song_of_the_siren_cancel"
-		"Ability10"		"special_bonus_unique_naga_siren_net_cooldown"
-		"Ability11"		"special_bonus_unique_naga_siren_2"
-		"Ability12"		"special_bonus_unique_naga_siren_4"
-		"Ability13"		"special_bonus_strength_15"
-		"Ability14"		"special_bonus_unique_naga_siren_5"
-		"Ability15"		"special_bonus_unique_naga_siren"
-		"Ability16"		"special_bonus_unique_naga_siren_6"
-		"Ability17"		"special_bonus_unique_naga_siren_3"
+		"Ability1"      "naga_siren_mirror_image"
+        "Ability2"      "naga_siren_ensnare"
+        "Ability3"      "generic_hidden"
+        "Ability4"      "naga_siren_reel_in"
+        "Ability5"      "naga_siren_eelskin"
+        "Ability6"      "naga_siren_song_of_the_siren"
+        "Ability7"      "naga_siren_song_of_the_siren_cancel"
+        "Ability10"     "special_bonus_unique_naga_siren_net_cooldown"
+        "Ability11"     "special_bonus_unique_naga_siren_2"
+        "Ability12"     "special_bonus_unique_naga_siren_4"
+        "Ability13"     "special_bonus_unique_naga_siren_3"
+        "Ability14"     "special_bonus_unique_naga_siren_5"
+        "Ability15"     "special_bonus_unique_naga_siren"
+        "Ability16"     "special_bonus_unique_naga_siren_6"
+        "Ability17"     "special_bonus_unique_naga_siren_net_breaks"
+
+        "Facets"
+        {
+            "naga_siren_passive_riptide"    
+            {
+                "Icon"              "armor_broken"
+                "Color"             "Yellow"
+                "GradientID"        "2"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "naga_siren_rip_tide"
+                        "AbilityIndex"  "2"
+                        "AutoLevelAbility" "false"
+                    }
+                }
+            }
+            "naga_siren_active_riptide"     
+            {
+                "Icon"              "nuke"
+                "Color"             "Green"
+                "GradientID"        "2"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "naga_siren_deluge"
+                        "AbilityIndex"  "2"
+                        "AutoLevelAbility" "false"
+                    }
+                }
+            }
+        }
 		"AbilityDraftIgnoreCount" "7"
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

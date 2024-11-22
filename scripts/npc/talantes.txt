@@ -202,6 +202,22 @@
 	//str
 	//int
 	//all
+	"special_bonus_base_aa_all_20pct"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"0"
+			"pct"				"20"
+		}
+	}
 	//hp
 	//damage
 	//baseDamage
@@ -235,6 +251,22 @@
 	//bash
 	//crit
 
+	"special_bonus_base_aa_str_75"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					    "special_bonus_base"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"value"				"75"
+			"pct"				"0"
+		}
+	}
 	//faceless_void
 	
 	"special_bonus_base_aa_hpRegen_3" 
