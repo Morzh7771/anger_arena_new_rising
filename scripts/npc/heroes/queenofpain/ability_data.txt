@@ -45,7 +45,7 @@ DOTAAbilities
 			"damage_interval"		
 			{
 				"value"					"3.0"
-				"special_bonus_unique_queen_of_pain_4"		"-0.7"
+				"special_bonus_unique_queen_of_pain_4"		"-1"
 			}
 			"duration_heal"		"10 20 30 40 50 60 70"
 			"generate_scream"
@@ -57,6 +57,7 @@ DOTAAbilities
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+400"
+				"affected_by_aoe_increase"  "1"
 			}
 			"duration"						"15"
 		}
@@ -107,6 +108,7 @@ DOTAAbilities
 				{
 					"RequiresShard"				"1"
 					"value"						"300"
+					"affected_by_aoe_increase"  "1"
 				}
 		}
 	}
@@ -137,7 +139,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"area_of_effect"									"550"
+			"area_of_effect"                                    
+            {
+                "value"     "600"
+                "affected_by_aoe_increase"  "1"
+            }
 			"projectile_speed"									"900"
 			"damage_pct"										"100"
 			"damage"										
@@ -180,24 +186,180 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"starting_aoe"		"100"
-				"distance"			"900"
-				"final_aoe"			"450"
-				"speed"				"900"
-				"damage_pct"		"16"
-				"damage"			
-				{
-					"value"											"310 430 550 670 890 1010 1130"
-					"special_bonus_unique_queen_of_pain_7"			"+270"
-				}
-				"knockback_distance"	"350"
-				"knockback_duration" 	"1.4"
-				"AbilityCooldown"
-				{	
-					"value"											"60"
-					"special_bonus_unique_queen_of_pain_3"			"-30"
-				}
-
+			"starting_aoe"		"100"
+			"distance"			"900"
+			"final_aoe"         
+            {
+                "value" "450"
+                "affected_by_aoe_increase"      "1"
+            }
+			"speed"				"900"
+			"damage_pct"		"16"
+			"damage"			
+			{
+				"value"											"310 430 550 670 890 1010 1130"
+				"special_bonus_unique_queen_of_pain_7"			"+270"
+			}
+			"tick_rate" "0.1"
+			"knockback_distance"    
+            {
+                "value"     "350"
+                "affected_by_aoe_increase"  "1"
+            }
+			"knockback_duration" 	"1.4"
+			"AbilityCooldown"
+			{	
+				"value"											"60"
+				"special_bonus_unique_queen_of_pain_3"			"-30"
+			}
 		}
 	}
+	"queenofpain_masochist"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"                      "1"
+        "AbilityValues"
+        {
+            "spell_amplification"           "30"
+            "spell_amplification_per_level" "0.0"
+            "damage_reflected_to_self"      "21.0"
+        }
+    }
+
+    //=================================================================================================================
+    // Queen of Pain: Innate Seduction
+    //=================================================================================================================
+    "queenofpain_succubus"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"                      "1"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "spell_lifesteal"           "12.0"
+            "close_radius"              
+            {
+                "value"     "300"
+                "affected_by_aoe_increase"  "1"
+            }
+            "max_radius"                
+            {
+                "value" "800"
+                "affected_by_aoe_increase"  "1"
+            }
+            "spell_lifesteal_close"     "18.0"
+        }
+    }
+
+    //=================================================================================================================
+    // Queen of Pain: Innate Spell Reflect
+    //=================================================================================================================
+    "queenofpain_bondage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "spell_reflect_pct"         "15.0"
+            "radius"                    
+            {
+                "value"         "1200"
+                "affected_by_aoe_increase"  "1"
+            }
+        }
+    }
+
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_queen_of_pain_1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_queen_of_pain_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_queen_of_pain_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_queen_of_pain_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_queen_of_pain_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "2"
+                "ad_linked_abilities" "queenofpain_blink"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_queen_of_pain_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

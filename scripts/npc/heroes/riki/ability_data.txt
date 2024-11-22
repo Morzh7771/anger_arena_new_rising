@@ -82,10 +82,11 @@ DOTAAbilities
 			}
 
 			"radius"
-			{
-				"value"					"375"
-				"LinkedSpecialBonus"	"special_bonus_unique_riki_7"
-			}
+            {
+                "value"                 "425"
+                "special_bonus_unique_riki_7"   "+50"
+                "affected_by_aoe_increase"  "1"
+            }
 			"miss_rate"					"40 45 50 55 60 65 70"
 
 			"block_targeting"
@@ -168,15 +169,7 @@ DOTAAbilities
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
-			"damage_multiplier"				
-			{
-				"value"		"0.6 0.8 1.0 1.25 1.5 1.75 2.0"
-				"LinkedSpecialBonus"		"special_bonus_unique_riki_1"
-				"CalculateSpellDamageTooltip"	"0"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
-			}
-		
+		{		
 			"backstab_angle"				"120 120 120"
 			"fade_delay"					"6 5.5 5 4.5 4 3.5 3"
 			"bonus_xp_kill"					"75 110 150 190 220 260 300"
@@ -184,35 +177,59 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+	"riki_innate_backstab"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "MaxLevel"          "8"
+        "Innate"            "1"
+        "DependentOnAbility"    "riki_backstab"
+
+        "AbilityValues"
+        {
+            "damage_multiplier"             
+            {
+                "value"     "0.6 0.8 1.0 1.25 1.5 1.75 2.0 2.25"
+                "special_bonus_unique_riki_1"       "+0.25"
+                "CalculateSpellDamageTooltip"   "0"
+                "DamageTypeTooltip"         "DAMAGE_TYPE_NONE"
+            }
+        
+            "backstab_angle"                "105 105 105 105"
+
+            "bonus_xp_kill"
+            {
+                "value"                         "0"
+                "special_bonus_facet_riki_contract_killer"  "25 150 250 350 450 550 650 750"
+            }
+            "bonus_xp_assist"               
+            {
+                "value"                         "0"
+                "special_bonus_facet_riki_contract_killer"  "25 100 150 200 250 300 350 400"
+            }
+        }           
+    }
 	"riki_permanent_invisibility"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"riki_permanent_invisibility"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"fade_delay"					"5 4.5 4 3.5 3 2.5 2"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"20 30 40 50 60"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	}
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"  
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "IsBreakable"                   "1"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "fade_delay"                    "4 3 2"
+            "movement_speed"                "20 40 60"
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
+    }
 	"riki_tricks_of_the_trade"
 	{
 		// General
@@ -253,7 +270,6 @@ DOTAAbilities
 			"radius"
 			{
 				"value"		"650"
-				"LinkedSpecialBonus"		"special_bonus_unique_riki_4"
 			}
 			"attack_count"	"5 5 6 6 7 7 8"
 			"damage_pct"	"45 47.5 50 52.5 55 57.5 60"
@@ -282,44 +298,123 @@ DOTAAbilities
 				"value"				"0"
 				"special_bonus_unique_riki_5"	"+1"
 			}
-		}
-	}
-	"special_bonus_unique_riki_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"300"
-				"ad_linked_abilities"			"riki_tricks_of_the_trade"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
+			"creep_agility_multiplier"
+            {
+                "value"         "1"
+                "special_bonus_facet_riki_exterminator" "=4.5"
+            }
 		}
 	}
 	"special_bonus_unique_riki_1"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.2"
-				"ad_linked_abilities"			"riki_backstab"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_riki_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "riki_tricks_of_the_trade"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_riki_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "3"
+                "ad_linked_abilities" "riki_smoke_screen"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_riki_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ad_linked_abilities"           "riki_tricks_of_the_trade"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        
+        
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_riki_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_riki_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_riki_8"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "8"
+                "ad_linked_abilities" "riki_backstab"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_riki_9"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        
+    }
 }

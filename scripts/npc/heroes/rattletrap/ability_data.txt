@@ -28,29 +28,25 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_speed"		"20"
-			}
-			"02"
-			{	
-				"var_type"			"FIELD_INTEGER"
-				"turn_rate"			"75"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"height"			"250"
-			}
-			"04"
-			{	
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"6"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_speed"
+            {
+                "value" "20"
+            }
+            "turn_rate"
+            {
+                "value" "75"
+            }
+            "height"
+            {
+                "value" "250"
+            }
+            "duration"
+            {
+                "value" "6"
+            }
+        }
 	}
 	"rattletrap_overclocking"
 	{
@@ -135,7 +131,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"			"275 275 275 275"
+			"radius"            
+            {
+                "value"     "275 275 275 275"
+                "affected_by_aoe_increase"  "1"
+            }
 			"duration"					"10.5 10.5 10.5 10.5"
 			"interval"
 			{	
@@ -190,9 +190,10 @@ DOTAAbilities
 				"value"				"50 80 110 140 170 200 230"
 				"special_bonus_unique_clockwerk_8"		"+70"
 			}
+			"mana_burn_as_damage_pct"               "50"
 			"magic_barrier"
 			{
-				"value"				"50 100 150 200 250 300 350"
+				"value"				"0"
 			}
 			"attacks_to_destroy"	
 			{
@@ -200,9 +201,27 @@ DOTAAbilities
 				"special_bonus_unique_clockwerk_5"		"+2"
 			}
 			"push_length"		"300"
-			"push_duration"		"0.8"
-			"cogs_radius"			"215"
-			"trigger_distance"			"185"
+			"push_duration"     
+            {
+                "value"                     "0.8"
+                "special_bonus_facet_rattletrap_expanded_armature"  "=0.6"
+            }
+			"cogs_radius"
+            {
+                "value"                     "215"
+                "special_bonus_facet_rattletrap_expanded_armature"  "+115"
+            }
+            "cogs_pullin"
+            {
+                "value"         "0"
+                "special_bonus_facet_rattletrap_expanded_armature"  "+1"
+            }
+			"trigger_distance"          
+            {
+                "value"     "185"
+                "special_bonus_facet_rattletrap_expanded_armature"  "-70"
+                
+            }
 			"extra_pull_buffer"			"-10"
 			"bonus_armor"		"0"
 			"leash"			
@@ -215,7 +234,8 @@ DOTAAbilities
 				"value"			"15"
 				"special_bonus_unique_clockwerk_9"		"-3"
 			}
-
+			"projectile_distance"                       "1000"
+            "projectile_speed"                          "1000"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -250,7 +270,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"			"600"
+			"radius"            
+            {
+                "value"     "600"
+                "affected_by_aoe_increase"  "1"
+            }
 			"duration"			"6.0"
 			"speed"				"2250"
 			"damage"
@@ -268,6 +292,9 @@ DOTAAbilities
 			"slow_pct"		"100"
 			"slow_duration"	"0.4"
 			"damage_pct"		"100"
+			"projectile_vision_radius"      "250"
+            "projectile_vision_duration"    "1.0"
+            "projectile_vision_tick_rate"   "0.15"
 		}	
 	}
 	"rattletrap_hookshot"
@@ -306,11 +333,178 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"latch_radius"		"125 125 125"
-			"stun_radius"		"175 175 175"
+			"stun_radius"       
+            {
+                "value"     "175"
+                "affected_by_aoe_increase"  "1"
+            }
+            "stun_radius_ally"
+            {
+                "value" "175"
+                "affected_by_aoe_increase"  "1"
+                "special_bonus_facet_rattletrap_hookup" "=300"
+            }
+            "cooldown_refund_ally"
+            {
+                "value"     "0"
+                "special_bonus_facet_rattletrap_hookup" "75"
+            }
+            "ally_shield_duration"
+            {
+                "special_bonus_facet_rattletrap_hookup" "4"
+            }
+            "allied_armor_bonus"
+            {
+                "special_bonus_facet_rattletrap_hookup" "15 20 25"
+            }
 			"duration"			"1.0 1.2 1.4 1.6 1.8 2.0 2.2"
 			"speed"				"6000"
-			"damage"			"75 175 275 375 475 575 675"
+			"damage"			
+			{
+				"value"			"75 175 275 375 475 575 675"
+				"special_bonus_unique_clockwerk_hookshot_damage"        "+150"
+			}
 			"damage_pct"			"200"
 		}
 	}
+	"rattletrap_armor_power"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "damage_per_armor"          "0.25"
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    }
+
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "24"
+                "ad_linked_abilities" "rattletrap_battery_assault"
+            }
+        }
+    }
+
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "0"
+                "ad_linked_abilities" "rattletrap_rocket_flare"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+        "ad_linked_abilities"           "rattletrap_power_cogs"             // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk_9"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }   
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk_flare_damage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }   
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_clockwerk_hookshot_damage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    } 
 }

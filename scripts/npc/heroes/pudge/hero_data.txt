@@ -3,20 +3,36 @@
 	"npc_dota_hero_pudge"
 	{
 		"override_hero"		"npc_dota_hero_pudge"
-		"Ability1"		"pudge_meat_hook"
-		"Ability2"		"pudge_rot"
-		"Ability3"		"pudge_flesh_heap"
-		"Ability4"		"pudge_eject"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"pudge_dismember"
-		"Ability10"		"special_bonus_armor_4"
-		"Ability11"		"special_bonus_unique_pudge_4"
-		"Ability12"		"special_bonus_spell_lifesteal_8"
-		"Ability13"		"special_bonus_unique_pudge_7"
-		"Ability14"		"special_bonus_unique_pudge_6"
-		"Ability15"		"special_bonus_unique_pudge_5"
-		"Ability16"		"special_bonus_unique_pudge_3"
-		"Ability17"		"special_bonus_unique_pudge_1"
+		"Ability1"      "pudge_meat_hook"
+        "Ability2"      "pudge_rot"
+        "Ability3"      "pudge_flesh_heap"
+        "Ability4"      "pudge_eject"
+        "Ability5"      "pudge_innate_graft_flesh"
+        "Ability6"      "pudge_dismember"
+		"Ability10"     "special_bonus_armor_5"
+        "Ability11"     "special_bonus_unique_pudge_4"
+        "Ability12"     "special_bonus_spell_lifesteal_8"
+        "Ability13"     "special_bonus_unique_pudge_7"
+        "Ability14"     "special_bonus_unique_pudge_6"
+        "Ability15"     "special_bonus_unique_pudge_5"
+        "Ability16"     "special_bonus_unique_pudge_3"
+        "Ability17"     "special_bonus_unique_pudge_1"
+        
+        "Facets"
+        {
+            "pudge_fresh_meat" 
+            {
+                "Icon"              "meat"
+                "Color"             "Green"
+                "GradientID"        "3"
+            }
+            "pudge_flayers_hook" 
+            {
+                "Icon"              "pudge_hook"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+        }
 
 		"ArmorPhysical"		"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
