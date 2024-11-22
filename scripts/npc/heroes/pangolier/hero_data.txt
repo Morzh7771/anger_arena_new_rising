@@ -3,21 +3,41 @@
 	"npc_dota_hero_pangolier"
 	{
 		"override_hero"		"npc_dota_hero_pangolier"
-		"Ability1"					"pangolier_swashbuckle"
-		"Ability2"					"pangolier_shield_crash"
-		"Ability3"					"pangolier_lucky_shot"
-		"Ability4"					"pangolier_rollup"
-		"Ability5"					"pangolier_rollup_stop"
-		"Ability6"					"pangolier_gyroshell"
-		"Ability7"					"pangolier_gyroshell_stop"
-		"Ability10"					"special_bonus_unique_pangolier_luckyshot_armor"
-		"Ability11"					"special_bonus_unique_pangolier"
-		"Ability12"					"special_bonus_unique_pangolier_shield_crash_radius"
-		"Ability13"					"special_bonus_unique_pangolier_6"
-		"Ability14"					"special_bonus_unique_pangolier_3"
-		"Ability15"					"special_bonus_unique_pangolier_shield_crash_herostacks"
-		"Ability16"					"special_bonus_unique_pangolier_4"
-		"Ability17"					"special_bonus_unique_pangolier_5"
+		"Ability1"                  "pangolier_swashbuckle"
+        "Ability2"                  "pangolier_shield_crash"
+        "Ability3"                  "pangolier_lucky_shot"
+        "Ability4"                  "pangolier_fortune_favors_the_bold"
+        "Ability5"                  "pangolier_rollup"
+        "Ability6"                  "pangolier_gyroshell"
+        "Ability7"                  "pangolier_gyroshell_stop"
+        "Ability8"                  "pangolier_rollup_stop"
+
+		"Ability10"                 "special_bonus_unique_pangolier_luckyshot_armor"
+        "Ability11"                 "special_bonus_unique_pangolier"
+        "Ability12"                 "special_bonus_unique_pangolier_6"
+        "Ability13"                 "special_bonus_unique_pangolier_shield_crash_herostacks"
+        "Ability14"                 "special_bonus_unique_pangolier_3"
+        "Ability15"                 "special_bonus_unique_pangolier_shield_crash_radius"
+        "Ability16"                 "special_bonus_unique_pangolier_4"
+        "Ability17"                 "special_bonus_unique_pangolier_5"
+
+        "Facets"
+        {
+            "pangolier_double_jump" 
+            {
+                "Icon"              "double_bounce"
+                "Color"             "Red"
+                "GradientID"        "1"
+            }
+            "pangolier_thunderbolt" 
+            {
+                "Icon"              "speed"
+                "Color"             "Yellow"
+                "GradientID"        "1"
+            }
+
+        }
+        
 		"AbilityDraftIgnoreCount"	"7"
 		"ArmorPhysical"				"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

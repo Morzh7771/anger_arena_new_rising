@@ -3,23 +3,49 @@
 	"npc_dota_hero_phoenix"
 	{
 		"override_hero"		"npc_dota_hero_phoenix"
-		"Ability1"		"phoenix_icarus_dive"
-		"Ability2"		"phoenix_fire_spirits"
-		"Ability3"		"phoenix_sun_ray"
-		"Ability4"		"phoenix_sun_ray_toggle_move"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"phoenix_supernova"
-		"Ability7"		"phoenix_launch_fire_spirit"
-		"Ability8"		"phoenix_icarus_dive_stop"
-		"Ability9"		"phoenix_sun_ray_stop"
-		"Ability10"		"special_bonus_unique_phoenix_6"
-		"Ability11"		"special_bonus_spell_amplify_10"
-		"Ability12"		"special_bonus_unique_phoenix_3"
-		"Ability13"		"special_bonus_hp_500"
-		"Ability14"		"special_bonus_unique_phoenix_5"
-		"Ability15"		"special_bonus_unique_phoenix_2"
-		"Ability16"		"special_bonus_unique_phoenix_1"
-		"Ability17"		"special_bonus_unique_phoenix_4"
+		"Ability1"      "phoenix_icarus_dive"
+        "Ability2"      "phoenix_fire_spirits"
+        "Ability3"      "phoenix_sun_ray"
+        "Ability4"      "phoenix_sun_ray_toggle_move"
+        "Ability5"      "phoenix_blinding_sun"
+        "Ability6"      "phoenix_supernova"
+        "Ability7"      "phoenix_launch_fire_spirit"
+        "Ability8"      "phoenix_icarus_dive_stop"
+        "Ability9"      "phoenix_sun_ray_stop"
+        "Ability10"     "special_bonus_unique_phoenix_6"
+        "Ability11"     "special_bonus_unique_phoenix_dive_damage"
+        "Ability12"     "special_bonus_unique_phoenix_3"
+        "Ability13"     "special_bonus_hp_regen_20"
+        "Ability14"     "special_bonus_unique_phoenix_5"
+        "Ability15"     "special_bonus_unique_phoenix_2"
+        "Ability16"     "special_bonus_unique_phoenix_1"
+        "Ability17"     "special_bonus_unique_phoenix_4"
+        
+        "Facets"
+        {
+            "phoenix_facet_immolate"
+            {
+                "Icon"              "barrier"
+                "Color"             "Red"
+                "GradientID"        "2"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "phoenix_dying_light"
+                    }
+                }
+            }
+
+            "phoenix_hotspot" 
+            {
+                "Icon"              "nuke"
+                "Color"             "Red"
+                "GradientID"        "1"
+            }
+        }
+        
 		"AbilityDraftIgnoreCount" "9"
 		"AbilityDraftAbilities"
 		{

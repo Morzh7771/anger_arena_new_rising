@@ -33,17 +33,29 @@ DOTAAbilities
 			"dash_length"	
 			{
 				"value"		"1100 1150 1200 1250 1300 1350 1400" 
-				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_4"
+				"special_bonus_unique_phoenix_4" "+1000"
 			}
-			"dash_width"			"500"
-			"hit_radius"			"200"
+			"dash_width"            
+            {
+                "value" "500"
+                "affected_by_aoe_increase"  "1"     
+            }
+			"hit_radius"            
+            {
+                "value"         "200"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"burn_duration"			"4"
-			"damage_per_second"		"15 35 55 75 95 115 135"
+			"damage_per_second"     
+            {
+                "value"             "20 40 60 80 100 120 140"
+                "special_bonus_unique_phoenix_dive_damage"      "+20"
+            }
 			"burn_tick_interval"	"0.2"
 			"slow_movement_speed_pct"
 			{
 				"value"	"16 17.5 19 20.5 22 23.5 25"
-				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_6"
+				"special_bonus_unique_phoenix_6" "+25"
 			}
 			"dive_duration"			"2.0"
 			"damage_pct"			"7"
@@ -96,14 +108,18 @@ DOTAAbilities
 		{
 			"hp_cost_perc"		"15"
 			"spirit_duration"	"20"
-			"spirit_speed"		"900 900 900 900"
-			"radius"			"200"
+			"spirit_speed"		"1000"
+			"radius"            
+            {
+                "value"     "200"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"duration"			"4.0"
 			"attackspeed_slow"	"-80 -100 -120 -140 -160 -180 -200"
 			"damage_per_second"
 			{
 				"value"				"20 40 60 80 100 120 140"
-				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
+				"special_bonus_unique_phoenix_3" "+20"
 			}
 			"spirit_count"		"5"
 			"tick_interval"		"0.2"
@@ -148,11 +164,15 @@ DOTAAbilities
 			"hp_perc_damage"
 			{
 				"value"		"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_5"
+				"special_bonus_unique_phoenix_5" "+1.5"
 			}
 			"base_heal"			"7 10 13 16 19 22 25"
 			"hp_perc_heal"			"0.5 1.0 1.5 2.0 2.5 3.0 3.5"
-			"radius"			"130"
+			"radius"            
+            {
+                "value" "130"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"tick_interval"		"0.2"
 			"forward_move_speed"	"250"
 			"turn_rate_initial"			"250"
@@ -163,8 +183,21 @@ DOTAAbilities
 				"RequiresShard"				"1"
 			}
 			"damage_pct"		"10"
-			"blind_per_second"	"10"
-			"blind_duration"	"5"	
+			"focal_point_max_multiplier"                    // 0 disables
+            {
+                "value"                                     "0"
+                "special_bonus_facet_phoenix_hotspot"   "150"
+            }
+            "focal_point_start_length_pct"
+            {
+                "value"                                     "0"
+                "special_bonus_facet_phoenix_hotspot"   "50"
+            }
+            "focal_point_full_length_tooltip_only"
+            {
+                "value"                                     "0"
+                "special_bonus_facet_phoenix_hotspot"   "1200"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -232,23 +265,27 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"aura_radius"		"1200"
+			"aura_radius"       
+            {
+                "value" "1200"
+                "affected_by_aoe_increase"  "1"
+            }
 			"damage_per_sec"	"60 90 120 150 180 210 240"
 			"tick_interval"		"0.2"
 			"stun_duration"	
 			{
 				"value"	"1.6 1.8 2 2.2 2.4 2.6 2.8"
-				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_2"
+				"special_bonus_unique_phoenix_2" "+0.5"
 			}
 			"max_hero_attacks"
 			{
 				"value"	"9 10 11 12 13 14 15"
-				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
+				"special_bonus_unique_phoenix_1" "+2"
 			}
 			"max_hero_attacks_scepter"
 			{
 				"value"	"12 13 14 15 16 17 18"
-				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
+				"special_bonus_unique_phoenix_1" "+2"
 				"RequiresScepter"	"1"
 			}
 			"cast_range_tooltip_scepter"
@@ -291,18 +328,141 @@ DOTAAbilities
 		{
 			"hp_cost_perc"		"15"
 			"spirit_duration"	"20"
-			"spirit_speed"		"900 900 900 900"
-			"radius"			"200"
+			"spirit_speed"		"1000"
+			"radius"            
+            {
+                "value"     "200"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"duration"			"4.0"
 			"attackspeed_slow"	"-80 -100 -120 -140 -160 -180 -200"
 			"damage_per_second"
 			{
 				"value"				"20 40 60 80 100 120 140"
-				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
+				"special_bonus_unique_phoenix_3" "+20"
 			}
 			"spirit_count"		"5"
 			"tick_interval"		"0.2"
 			"damage_pct"		"7"
 		}
 	}
+	"phoenix_dying_light"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "IsBreakable"                   "1"
+        "AbilityValues"
+        {
+            "radius"                    
+            {
+                "value"         "400"
+                "affected_by_aoe_increase"  "1"
+            }
+            "damage_pct"                "4.5"
+        }
+    }
+    //=================================================================================================================
+    // Phoenix Innate Blinding Sun
+    //=================================================================================================================
+    "phoenix_blinding_sun"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_NONE"  
+
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "blind_per_second"  "2"
+            "blind_duration"    "4" 
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_phoenix_1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_phoenix_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_phoenix_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_phoenix_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_phoenix_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_phoenix_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_phoenix_dive_damage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }
