@@ -3,20 +3,58 @@
 	"npc_dota_hero_skeleton_king"
 	{
 		"override_hero"		"npc_dota_hero_skeleton_king"
-		"Ability1"		"skeleton_king_hellfire_blast"
-		"Ability2"		"skeleton_king_vampiric_aura"
-		"Ability3"		"skeleton_king_mortal_strike"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"skeleton_king_reincarnation"
-		"Ability10"		"special_bonus_unique_wraith_king_2"
-		"Ability11"		"special_bonus_unique_wraith_king_vampiric_skeleton_duration"
-		"Ability12"		"special_bonus_unique_wraith_king_11"
-		"Ability13"		"special_bonus_unique_wraith_king_6"
-		"Ability14"		"special_bonus_cleave_25"
-		"Ability15"		"special_bonus_unique_wraith_king_5"
-		"Ability16"		"special_bonus_unique_wraith_king_crit"
-		"Ability17"		"special_bonus_unique_wraith_king_4"
+		"Ability1"      "skeleton_king_hellfire_blast"
+        "Ability2"      "generic_hidden"
+        "Ability3"      "skeleton_king_mortal_strike"
+        "Ability4"      "skeleton_king_vampiric_spirit"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "skeleton_king_reincarnation"
+        "Ability10"     "special_bonus_unique_wraith_king_2"
+        "Ability11"     "special_bonus_unique_wraith_king_3"
+        "Ability12"     "special_bonus_unique_wraith_king_11"
+        "Ability13"     "special_bonus_hp_400"
+        "Ability14"     "special_bonus_cleave_40"
+        "Ability15"     "special_bonus_attack_speed_60"
+        "Ability16"     "special_bonus_unique_wraith_king_10"
+        "Ability17"     "special_bonus_unique_wraith_king_4"
+
+        "Facets"
+        {
+            "skeleton_king_facet_bone_guard" 
+            {
+                "Icon"              "summons"
+                "Color"             "Yellow"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "skeleton_king_bone_guard"
+                        "AbilityIndex"  "1"
+                        "AutoLevelAbility"  "false"
+                    }
+                }
+            }
+
+            "skeleton_king_facet_cursed_blade"
+            {
+                "Icon"              "damage"
+                "Color"             "Red"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "skeleton_king_spectral_blade"
+                        "AbilityIndex"  "1"
+                        "AutoLevelAbility"  "false"
+                    }
+                }
+            }
+        }
+        
 		"ArmorPhysical"		"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"38"

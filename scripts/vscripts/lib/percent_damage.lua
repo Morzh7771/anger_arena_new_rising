@@ -14,6 +14,7 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("lion_mana_drain",						lion_mana_drain )
 	PercentDamage:ListenAbilityCallback("beastmaster_drums_of_slom",						beastmaster_drums_of_slom )
 	PercentDamage:ListenAbilityCallback("ancient_apparition_death_rime",						ancient_apparition_death_rime )
+	PercentDamage:ListenAbilityCallback("shadow_shaman_shackles",					shadow_shaman_shackles )
 
 
 	local MagicalDamageFromStr = {
@@ -121,7 +122,6 @@ function PercentDamage:_init()
 		"invoker_sun_strike",
 		"invoker_chaos_meteor",
 		"shadow_shaman_ether_shock",
-		"shadow_shaman_shackles",
 		"zuus_heavenly_jump",
 		"zuus_lightning_bolt",
 		"witch_doctor_voodoo_restoration",
@@ -145,6 +145,7 @@ function PercentDamage:_init()
 		"witch_doctor_maledict",
 		"lich_frost_nova",
 		"silencer_last_word",
+		"silencer_curse_of_the_silent",
 	}
 	--"ancient_apparition_chilling_touch",
 	--"ancient_apparition_ice_vortex",
@@ -185,6 +186,7 @@ function PercentDamage:_init()
 		"shredder_timber_chain",
 		"shredder_chakram",
 		"shredder_chakram_2",
+		"shredder_twisted_chakram",
 		"night_stalker_crippling_fear",
 		"night_stalker_void",
 		"beastmaster_primal_roar",
@@ -216,6 +218,22 @@ function PercentDamage:_init()
 		PercentDamage:ListenAbilityCallback(skillname, DamageFromAll)
 	end 
 end	
+
+function shadow_shaman_shackles( keys )
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+
+	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
+
+	Util:DealPercentDamageOfMaxHealth(target, caster, DAMAGE_TYPE_MAGICAL, caster:GetIntellect(false) * percent_damage, 0)
+
+	local heal = caster:GetIntellect(false) * percent_damage
+
+	caster:Heal(heal, caster)
+end
+
 function LifeDrain( keys )
 	local ability 			= keys.ability
 	local caster 			= keys.caster

@@ -968,6 +968,7 @@
 
         //Silencer
         "DOTA_Tooltip_Ability_silencer_last_word_damage_pct"													"%УРОН ОТ ИНТЕЛЛЕКТА"
+        "DOTA_Tooltip_Ability_silencer_curse_of_the_silent_damage_pct"											"%УРОН ОТ ИНТЕЛЛЕКТА"
 
 
 		//Tusk
@@ -1131,6 +1132,8 @@
         "DOTA_Tooltip_Ability_shredder_whirling_death_damage_pct"           									"%УРОН ОТ ВСЕХ АТРИБУТОВ"
         "DOTA_Tooltip_Ability_shredder_timber_chain_damage_pct"             									"%УРОН ОТ ВСЕХ АТРИБУТОВ"
         "DOTA_Tooltip_Ability_shredder_chakram_damage_pct"                  									"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        "DOTA_Tooltip_Ability_shredder_twisted_chakram_damage_pct"												"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        "DOTA_Tooltip_Ability_shredder_twisted_chakram"															"Twisted Chakram"
 
 
         //Kunkka
@@ -1996,7 +1999,7 @@
 		"DOTA_Tooltip_modifier_item_pavise_2_shield_Description"	"Поглощает физический урон."
 
 		"DOTA_Tooltip_ability_item_crimson_guard_2"                     "CRIMSON GUARD 2"
-        "DOTA_Tooltip_ability_item_crimson_guard_2_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %strength_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
+        "DOTA_Tooltip_ability_item_crimson_guard_2_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %max_hp_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
 		"DOTA_Tooltip_ability_item_crimson_guard_2_Lore"		"Кираса, изначально выкованная для защиты от ужасающего Годня."
 		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health_regen"	"+$hp_regen"
@@ -2016,7 +2019,7 @@
 		"DOTA_Tooltip_modifier_item_crimson_guard_2_nostack_Description""Способность Guard 2 не действует на существ, на которых ее недавно применяли."
 
         "DOTA_Tooltip_ability_item_crimson_guard_3"                     "CRIMSON GUARD 3"
-        "DOTA_Tooltip_ability_item_crimson_guard_3_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %strength_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
+        "DOTA_Tooltip_ability_item_crimson_guard_3_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %max_hp_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_Lore"		"Кираса, изначально выкованная для защиты от ужасающего Годня."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health_regen"	"+$hp_regen"
