@@ -713,25 +713,28 @@
 		"DOTA_Tooltip_ability_slark_essence_shift_aa"								"Essence Shift"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_Description"					"Герой крадёт атаками жизненную сущность вражеских героев, выкачивая все их атрибуты и превращая их в дополнительную ловкость для себя. Владелец этой способности навсегда получает 1 заряд способности, если рядом умирает враг в радиусе %steal_radius%."		
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_Lore"							"Чем больше бьёшь по врагу, тем больше узнаёшь о его слабостях."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note0"						"Атрибуты не могут упасть ниже значения в единицу."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note1"						"Украденные у жертвы атрибуты возвращаются к ней при её смерти, но они не исчезают у владельца способности."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note2"						"Чтобы украсть ловкость навсегда, нужно нанести жертве смертельный удар или чтобы она находилась в радиусе кражи и под действием этой способности."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note3"						"Временная кража ловкости отключается истощением, а постоянная — нет."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note4"						"Уже украденная ловкость не отключаются истощением."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note0"							"Атрибуты не могут упасть ниже значения в единицу."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note1"							"Украденные у жертвы атрибуты возвращаются к ней при её смерти, но они не исчезают у владельца способности."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note2"							"Чтобы украсть ловкость навсегда, нужно нанести жертве смертельный удар или чтобы она находилась в радиусе кражи и под действием этой способности."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note3"							"Временная кража ловкости отключается истощением, а постоянная — нет."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note4"							"Уже украденная ловкость не отключаются истощением."
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_agi_gain"						"ДАЁТ ЛОВКОСТИ:"
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_stat_loss"					"ЗАБИРАЕТ ХАРАКТЕРИСТИК:"
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_stat_loss"						"ЗАБИРАЕТ ХАРАКТЕРИСТИК:"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration"						"ДЛИТЕЛЬНОСТЬ НА ГЕРОЯХ:"
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration_creeps"						"ДЛИТЕЛЬНОСТЬ НА КРИПАХ:"
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration_creeps"				"ДЛИТЕЛЬНОСТЬ НА КРИПАХ:"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_steal_radius"					"РАДИУС КРАЖИ:"
-
-		"DOTA_Tooltip_Ability_special_bonus_slark_essence_shift_aa_duration"                  						"+{s:bonus_duration} сек. действия Essence Shift на врагах и +{s:bonus_duration_creeps} сек. на крипах  "
+		"DOTA_Tooltip_modifier_slark_essence_shift_aa"								"Essense Shift"
+		"DOTA_Tooltip_modifier_slark_essence_shift_aa_Description"					"Дополнительная ловкость"
+		"DOTA_Tooltip_modifier_slark_essence_shift_aa_enemy"						"Essense Shift"
+		"DOTA_Tooltip_modifier_slark_essence_shift_aa_enemy_Description"			"Вы потеряли свои атрибуты"
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_4" 						"+{s:bonus_duration}% длительности действия Essence Shift"
 
 
 
         //Slardar--------------------------------------------------------------------------------------------------------------
-        "DOTA_Tooltip_Ability_slardar_bash_damage_pct"                                  						"%УРОН ОТ СИЛЫ"
+        "DOTA_Tooltip_Ability_slardar_slithereen_crush_damage_pct"                                  						"%УРОН ОТ СИЛЫ"
 
-        "DOTA_Tooltip_Ability_special_bonus_unique_slardar_bashStrDmg"                  						"+{s:bonus_damage_pct}% к урону от силы у Bash of the Deep"
+        "DOTA_Tooltip_Ability_special_bonus_unique_slardar_bashStrDmg"                  						"+{s:bonus_damage_pct}% к урону от силы у Slithereen Crush"
 
         "DOTA_Tooltip_ability_slardar_bash"																		"Bash of the Deep"
 		"DOTA_Tooltip_ability_slardar_bash_Description"															"После каждых %attack_count% атак герой оглушит и нанесёт дополнительный урон своей следующей атакой. Урон крипам вдвое больше. Пассивно увеличивает урон от атак владельца, когда тот находится в воде.<br><font color='#A52A2A'>Не проходит сквозь Невосприимчивость к Эффектам.</font>"

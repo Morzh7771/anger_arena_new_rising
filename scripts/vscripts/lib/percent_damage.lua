@@ -55,7 +55,7 @@ function PercentDamage:_init()
 		"primal_beast_rock_throw",
 		"primal_beast_pulverize",
 		"primal_beast_onslaught",
-		"slardar_bash",
+		"slardar_slithereen_crush",
 		"tidehunter_ravage",
 		"tidehunter_gush",
 	}

@@ -3,23 +3,41 @@
 	"npc_dota_hero_slardar"
 	{
 		"override_hero"		"npc_dota_hero_slardar"
-		"Ability1"		"slardar_sprint"
-		"Ability2"		"slardar_slithereen_crush"
-		"Ability3"		"slardar_bash"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"slardar_amplify_damage"
-		"Ability10"		"special_bonus_unique_slardar_7"
-		"Ability11"		"special_bonus_unique_slardar_2"
+		"Ability1"      "slardar_sprint"
+        "Ability2"      "slardar_slithereen_crush"
+        "Ability3"      "slardar_bash"
+        "Ability4"      "slardar_seaborn_sentinel"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "slardar_amplify_damage"
 
-		"Ability12"		"special_bonus_unique_slardar"
-		"Ability13"		"special_bonus_unique_slardar_5"
+		"Ability10"     "special_bonus_unique_slardar_7"
+        "Ability11"     "special_bonus_unique_slardar_slithereen_crush_stun"
 
-		"Ability14"		"special_bonus_unique_slardar_bashStrDmg"
-		"Ability15"		"special_bonus_unique_slardar_4"
-		
-		"Ability16"		"special_bonus_unique_slardar_slithereen_crush_stun"
-		"Ability17"		"special_bonus_unique_slardar_3"
+        "Ability12"     "special_bonus_hp_300"
+        "Ability13"     "special_bonus_unique_slardar_2"
+
+        "Ability14"     "special_bonus_unique_slardar_bashStrDmg"
+        "Ability15"     "special_bonus_unique_slardar_5"
+        
+        "Ability16"     "special_bonus_unique_slardar_4"
+        "Ability17"     "special_bonus_unique_slardar_3"
+
+        "Facets"
+        {
+            "slardar_leg_day"
+            {
+                "Icon"              "speed"
+                "Color"             "Red"
+                "GradientID"        "2"
+            }
+            "slardar_brineguard"
+            {
+                "Icon"              "armor"
+                "Color"             "Purple"
+                "GradientID"        "1"
+            }
+        }
+
 		"ArmorPhysical"		"3"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"30"

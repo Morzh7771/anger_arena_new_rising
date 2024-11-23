@@ -122,9 +122,9 @@ modifier_slark_essence_shift_aa_enemy = class({
     } end,
     OnCreated = function(self) self:StartIntervalThink(0.1) end,
     OnIntervalThink = function (self) if not IsServer() then return end self:SetStackCount(#self:GetParent():FindAllModifiersByName("modifier_slark_essence_shift_aa_tinker_enemy")) end,
-    GetModifierBonusStats_Strength = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss") end,
-    GetModifierBonusStats_Agility = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss") end,
-    GetModifierBonusStats_Intellect = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss") end,
+    GetModifierBonusStats_Strength = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss_str") end,
+    GetModifierBonusStats_Agility = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss_agi") end,
+    GetModifierBonusStats_Intellect = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss_int") end,
 })
 
 
