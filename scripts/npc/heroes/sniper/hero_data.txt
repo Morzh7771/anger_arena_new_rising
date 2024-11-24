@@ -3,20 +3,38 @@
 	"npc_dota_hero_sniper"
 	{
 		"override_hero"		"npc_dota_hero_sniper"
-		"Ability1"		"sniper_shrapnel"
-		"Ability2"		"sniper_headshot"
-		"Ability3"		"sniper_take_aim"
-		"Ability4"		"sniper_concussive_grenade"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"sniper_assassinate"
-		"Ability10"		"special_bonus_unique_sniper_4"
-		"Ability11"		"special_bonus_unique_sniper_headshot_damage"
-		"Ability12"		"special_bonus_attack_speed_30"
-		"Ability13"		"special_bonus_unique_sniper_5"
-		"Ability14"		"special_bonus_unique_sniper_3"
-		"Ability15"		"special_bonus_unique_sniper_1"
-		"Ability16"		"special_bonus_attack_range_100"
-		"Ability17"		"special_bonus_unique_sniper_2"
+		"Ability1"      "sniper_shrapnel"
+        "Ability2"      "sniper_headshot"
+        "Ability3"      "sniper_take_aim"
+        "Ability4"      "sniper_concussive_grenade"
+        "Ability5"      "sniper_keen_scope"
+        "Ability6"      "sniper_assassinate"
+		"Ability10"     "special_bonus_unique_sniper_5"
+        "Ability11"     "special_bonus_unique_sniper_headshot_damage"
+        "Ability12"     "special_bonus_attack_speed_30"
+        "Ability13"     "special_bonus_unique_sniper_4"
+        "Ability14"     "special_bonus_unique_sniper_take_aim_armor"
+        "Ability15"     "special_bonus_unique_sniper_shrapnel_damage"
+        "Ability16"     "special_bonus_unique_sniper_2"
+        "Ability17"     "special_bonus_unique_sniper_3"
+
+        "Facets"
+        {
+            "sniper_ghillie_suit" 
+            {
+                "Icon"              "vision"
+                "Color"             "Yellow"
+                "GradientID"        "0"
+            }
+
+            "sniper_scattershot"    
+            {
+                "Icon"              "nuke"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+        }
+        
 		"ArmorPhysical"		"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"13"
