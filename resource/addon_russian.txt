@@ -930,8 +930,7 @@
 		//Spirit Breaker
 		"DOTA_Tooltip_Ability_spirit_breaker_greater_bash_damage_pct"											"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_spirit_breaker_nether_strike_damage_pct"											"%УРОН ОТ СИЛЫ"
-        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_status_res"   								"+{s:bonus_status_resistance}% к сопративлению эффектам от Bulldoze"
-        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_2"            								"-{s:bonus_AbilityCooldown} сек. перезарядки Bulldoze"
+		"DOTA_Tooltip_ability_special_bonus_unique_spirit_breaker_2"    										"–{s:value} сек. перезарядки Bulldoze"
 
 
 		//Shadow Demon
@@ -1050,7 +1049,7 @@
         //Storm Spirit
 		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"													"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_storm_spirit_static_remnant_damage_pct"											"%УРОН ОТ ИНТЕЛЛЕКТА"
-        "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_5"              								"+{s:bonus_static_remnant_damage} к урону от Static Remnant"
+        "DOTA_Tooltip_ability_special_bonus_unique_storm_spirit_5"  											"+{s:bonus_static_remnant_damage}% к урону от Static Remnant"
         "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_remnant_dmg_pct" 								"+{s:bonus_damage_pct}% к урону от интеллекта на Static Remnant"
 
 

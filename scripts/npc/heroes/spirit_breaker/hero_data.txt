@@ -3,20 +3,37 @@
 	"npc_dota_hero_spirit_breaker"
 	{
 		"override_hero"		"npc_dota_hero_spirit_breaker"
-		"Ability1"		"spirit_breaker_charge_of_darkness"
-		"Ability2"		"spirit_breaker_bulldoze"
-		"Ability3"		"spirit_breaker_greater_bash"
-		"Ability4"		"spirit_breaker_planar_pocket"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"spirit_breaker_nether_strike"
-		"Ability10"		"special_bonus_night_vision_500"
-		"Ability11"		"special_bonus_unique_spirit_breaker_2"
-		"Ability12"		"special_bonus_armor_10"
-		"Ability13"		"special_bonus_attack_damage_40"
-		"Ability14"		"special_bonus_unique_spirit_breaker_1"
-		"Ability15"		"special_bonus_unique_spirit_breaker_4"
-		"Ability16"		"special_bonus_unique_spirit_breaker_3"
-		"Ability17"		"special_bonus_unique_spirit_breaker_shield"
+		"Ability1"      "spirit_breaker_charge_of_darkness"
+        "Ability2"      "spirit_breaker_bulldoze"
+        "Ability3"      "spirit_breaker_greater_bash"
+        "Ability4"      "spirit_breaker_planar_pocket"
+        "Ability5"      "spirit_breaker_herd_mentality"
+        "Ability6"      "spirit_breaker_nether_strike"
+		"Ability10"     "special_bonus_night_vision_500"
+        "Ability11"     "special_bonus_armor_5"
+        "Ability12"     "special_bonus_unique_spirit_breaker_2"
+        "Ability13"     "special_bonus_attack_damage_45"
+        "Ability14"     "special_bonus_unique_spirit_breaker_1"
+        "Ability15"     "special_bonus_unique_spirit_breaker_shield"
+        "Ability16"     "special_bonus_unique_spirit_breaker_3"
+        "Ability17"     "special_bonus_unique_spirit_breaker_4"
+
+        "Facets"
+        {
+            "spirit_breaker_bull_rush" 
+            {
+                "Icon"              "speed"
+                "Color"             "Red"
+                "GradientID"        "1"
+            }
+            "spirit_breaker_imbalanced" 
+            {
+                "Icon"              "movement"
+                "Color"             "Blue"
+                "GradientID"        "2"
+            }
+        }
+
 		"ArmorPhysical"		"1.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"31"
