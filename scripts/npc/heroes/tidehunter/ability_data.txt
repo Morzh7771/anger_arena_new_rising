@@ -37,20 +37,19 @@ DOTAAbilities
 			"gush_damage"
 			{
 				"value"		"130.0 205.0 280.0 355.0 430.0 505.0 580.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_2"
+				"special_bonus_unique_tidehunter_2" "+120"
 			}
 			"projectile_speed"	"2500"
 			"movement_speed"
 			{
 				"value"	"-40"
-				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_5"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+				"special_bonus_unique_tidehunter_5" "-15"
 			}
 			"negative_armor"
 			{
 
 				"value"		"6 8 10 12 14 16 18"
-				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter"
+				"special_bonus_unique_tidehunter" "+4"
 			}
 			"speed_scepter"
 			{
@@ -61,6 +60,7 @@ DOTAAbilities
 			{
 				"value"	"260"
 				"RequiresScepter"		"1"
+				"affected_by_aoe_increase"  "1"
 			}
 			"cooldown_scepter"
 			{
@@ -88,25 +88,18 @@ DOTAAbilities
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
-			"damage_reduction"
-			{
-				"value"				"22.0 45.0 68.0 91.0 114.0 137.0 160.0"
-				
-			}
-			"damage_cleanse"
-			{
-				"value"		"600 575 550 525 500 475 450"
-				"special_bonus_unique_tidehunter_6"	"-100"
-
-			}
-			"damage_reset_interval"	"7.0"
-			"bonus_reduction_per_stack"
-			{
-				"value"				"0"
-				"special_bonus_unique_tidehunter_4"	"+10"
-			}				
-		}
+        {
+            "damage_reduction"
+            {
+                "value"             "22.0 45.0 68.0 91.0 114.0 137.0 160.0"
+            }
+            "bonus_reduction_per_kill"
+            {
+                "value" "0"
+                "special_bonus_facet_tidehunter_kraken_swell"  "1 2 2 3 3 3 4"                
+            }               
+            
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"tidehunter_anchor_smash"
@@ -153,7 +146,11 @@ DOTAAbilities
 				"DamageTypeTooltip"							"DAMAGE_TYPE_NONE"
 			}
 			"reduction_duration"							"4"
-			"radius"										"375"
+			"radius"                                        
+            {
+                "value" "375"
+                "affected_by_aoe_increase"  "1"
+            }
 			"targets_buildings"
 			{
 				"value"										"0"
@@ -201,7 +198,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"			"1300"
+			"radius"            
+            {
+                "value"     "1250"
+                "affected_by_aoe_increase"  "1"
+            }
 			"speed"				"725"
 			"duration"			
 			{
@@ -299,4 +300,169 @@ DOTAAbilities
 			"projectile_speed"				"1000"
 		}
 	}
+	"tidehunter_krill_eater"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "AbilityValues"
+        {
+            "model_scale_base"              "-35"
+            "model_scale_per_level"         "1"
+            
+            "attack_range_base"             "-50"
+            "attack_range_per_level"        "2"
+
+            "anchor_smash_radius_base"      "-50"
+            "anchor_smash_radius_per_level" "2"
+
+            "health_bar_offset_base"        "160"
+            "health_bar_offset_per_level"   "2"
+
+            "base_strength_tooltip"         "22"
+            "strength_gain_tooltip"         "4.0"
+
+            "attack_range_tooltip"
+            {
+                "dynamic_value"             "true"
+            }
+            "anchor_smash_range_tooltip"
+            {
+                "dynamic_value"             "true"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Tidehunter: Defishency
+    //=================================================================================================================
+    "tidehunter_blubber"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "Innate"                        "1"
+        "MaxLevel"                      "1"
+        "IsBreakable"                   "1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "damage_cleanse"
+            {
+                "value"     "450"
+            }
+            "damage_reset_interval" "7.0"
+        
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
+    }
+    
+
+
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_tidehunter"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_tidehunter_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_tidehunter_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_tidehunter_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_tidehunter_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_tidehunter_8"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "1"
+                "ad_linked_abilities" "tidehunter_anchor_smash"
+            }
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_tidehunter_9"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_tidehunter_10"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

@@ -3,20 +3,61 @@
 	"npc_dota_hero_techies"
 	{
 		"override_hero"		"npc_dota_hero_techies"
-		"Ability1"		"techies_sticky_bomb"
-		"Ability2"		"techies_reactive_tazer"
-		"Ability3"		"techies_suicide"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"techies_minefield_sign"
-		"Ability6"		"techies_land_mines"
-		"Ability10"		"special_bonus_magic_resistance_20"
-		"Ability11"		"special_bonus_unique_techies_3"
-		"Ability12"		"special_bonus_unique_techies"
-		"Ability13"		"special_bonus_mp_regen_3"
-		"Ability14"		"special_bonus_unique_techies_2"
-		"Ability15"		"special_bonus_unique_techies_5"
-		"Ability16"		"special_bonus_attack_damage_252"
-		"Ability17"		"special_bonus_unique_techies_4"
+		"Ability1"      "techies_sticky_bomb"
+        "Ability2"      "techies_reactive_tazer"
+        "Ability3"      "techies_suicide"
+        "Ability4"      "techies_reactive_tazer_stop"
+        "Ability5"      "techies_minefield_sign"
+        "Ability6"      "techies_land_mines"
+        "Ability10"     "special_bonus_magic_resistance_20"
+        "Ability11"     "special_bonus_unique_techies_3"
+        "Ability12"     "special_bonus_unique_techies"
+        "Ability13"     "special_bonus_mp_regen_3"
+        "Ability14"     "special_bonus_unique_techies_2"
+        "Ability15"     "special_bonus_unique_techies_5"
+        "Ability16"     "special_bonus_attack_damage_252"
+        "Ability17"     "special_bonus_unique_techies_4"
+
+        "Facets"
+        {
+            "techies_atk_range"
+            {
+                "Icon"              "range"
+                "Color"             "Gray"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "techies_squees_scope"
+                    }
+                }
+            }
+
+            "techies_spleens_secret_sauce" 
+            {
+                "Icon"              "nuke"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+
+            "techies_backpack"
+            {
+                "Icon"              "item"
+                "Color"             "Blue"
+                "GradientID"        "1"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "techies_spoons_stash"
+                    }
+                }
+            }
+        }
+        
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"techies_sticky_bomb"
