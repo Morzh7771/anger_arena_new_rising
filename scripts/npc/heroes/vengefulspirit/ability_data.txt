@@ -45,6 +45,12 @@ DOTAAbilities
 				"value"						"650"
 				"special_bonus_unique_vengeful_spirit_missile_castrange"				"+125"
 			}
+			"bounce_range_pct"          "100"
+            "damage_per_lasthit"
+            {
+                "value" "0"
+                "special_bonus_facet_vengefulspirit_avenging_missile"   "+5"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -71,9 +77,13 @@ DOTAAbilities
 			"bonus_base_damage"
 			{
 				"value"	"10 15 20 25 30 35 40"
-				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_2"
+				"special_bonus_unique_vengeful_spirit_2" "+10"
 			}
-			"aura_radius"		"1200"
+			"aura_radius"
+            {
+                "value" "1200"
+                "affected_by_aoe_increase"  "1"
+            }
 			"scepter_illusion_damage_out_pct"
 			{
 				"value"	"150"
@@ -133,7 +143,7 @@ DOTAAbilities
 			"armor_reduction"	
 			{
 				"value"			"-3 -5 -7 -9 -11 -13 -15"
-				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_4"
+				"special_bonus_unique_vengeful_spirit_4" "+-5"
 			}
 			"attack_reduction"		"15 17.5 20 22.5 25 27.5 30"
 			"vision_aoe"		
@@ -189,7 +199,6 @@ DOTAAbilities
 			{
 				"value"					"0"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
-				"special_bonus_unique_vengeful_spirit_swap_damage_reduction"		"+60"
 			}
 			"damage_reduction_duration"	
 			{
@@ -199,46 +208,155 @@ DOTAAbilities
 			"damage"
 			{	
 				"value"							"100 250 400 550 700 850 1000"
-				"special_bonus_unique_vengeful_spirit_swap_damage"			"+150"
+				"special_bonus_unique_vengeful_spirit_swap_damage"			"+250"
 			}
 		}
 	}
-	"special_bonus_unique_vengeful_spirit_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"-6"
-				"ad_linked_abilities"			"vengefulspirit_wave_of_terror"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-	"special_bonus_unique_vengeful_spirit_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"20"
-				"ad_linked_abilities"			"vengefulspirit_command_aura"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
+	"vengefulspirit_soul_strike"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+
+        "AbilityValues"
+        {
+            "bat_tooltip"               "1.5"
+        }
+    }   
+
+    //=================================================================================================================
+    // Vengeful Spirit Revenge Innate
+    //=================================================================================================================
+    "vengefulspirit_retribution"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "AbilityValues"
+        {
+            "bonus_damage"          "10"
+        }
+    }   
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_vengeful_spirit_1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "200"
+                "ad_linked_abilities" "vengefulspirit_magic_missile"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_vengeful_spirit_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_vengeful_spirit_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_vengeful_spirit_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "2"
+                "ad_linked_abilities" "vengefulspirit_magic_missile"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_vengeful_spirit_9"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "18"
+                "ad_linked_abilities" "vengefulspirit_nether_swap"
+            }
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_vengeful_spirit_missile_castrange"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }   
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_vengeful_spirit_swap_damage"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }       
+    
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_vengeful_spirit_wave_of_terror_steal"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }   
 }

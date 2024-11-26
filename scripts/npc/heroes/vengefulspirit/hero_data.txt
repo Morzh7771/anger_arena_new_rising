@@ -3,20 +3,50 @@
 	"npc_dota_hero_vengefulspirit"
 	{
 		"override_hero"		"npc_dota_hero_vengefulspirit"
-		"Ability1"		"vengefulspirit_magic_missile"
-		"Ability2"		"vengefulspirit_wave_of_terror"
-		"Ability3"		"vengefulspirit_command_aura"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"vengefulspirit_nether_swap"
-		"Ability10"		"special_bonus_unique_vengeful_spirit_swap_damage"
-		"Ability11"		"special_bonus_unique_vengeful_spirit_missile_castrange"
-		"Ability12"		"special_bonus_unique_vengeful_spirit_4"
-		"Ability13"		"special_bonus_unique_vengeful_spirit_5"
-		"Ability14"		"special_bonus_unique_vengeful_spirit_1"
-		"Ability15"		"special_bonus_unique_vengeful_spirit_wave_of_terror_steal"
-		"Ability16"		"special_bonus_unique_vengeful_spirit_2"
-		"Ability17"		"special_bonus_unique_vengeful_spirit_swap_damage_reduction"
+		"Ability1"      "vengefulspirit_magic_missile"
+        "Ability2"      "vengefulspirit_wave_of_terror"
+        "Ability3"      "vengefulspirit_command_aura"
+        "Ability4"      "vengefulspirit_retribution"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "vengefulspirit_nether_swap"
+		"Ability10"     "special_bonus_unique_vengeful_spirit_swap_damage"
+        "Ability11"     "special_bonus_unique_vengeful_spirit_missile_castrange"
+        "Ability12"     "special_bonus_unique_vengeful_spirit_4"
+        "Ability13"     "special_bonus_unique_vengeful_spirit_1"
+        "Ability14"     "special_bonus_unique_vengeful_spirit_5"
+        "Ability15"     "special_bonus_unique_vengeful_spirit_wave_of_terror_steal"
+        "Ability16"     "special_bonus_unique_vengeful_spirit_2"
+        "Ability17"     "special_bonus_unique_vengeful_spirit_9"
+
+        "Facets"
+        {
+            "vengefulspirit_avenging_missile" 
+            {
+                "Icon"              "nuke"
+                "Color"             "Purple"
+                "GradientID"        "2"
+            }
+
+            "vvengefulspirit_melee"
+            {
+                "Icon"              "fist"
+                "Color"             "Blue"
+                "GradientID"        "1"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "vengefulspirit_soul_strike"
+                    }
+                }
+                "KeyValueOverrides"
+                {
+                    "AttackRate"        "1.5"
+                }
+            }
+        }
+        
 		"AbilityDraftIgnoreCount"		"6"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

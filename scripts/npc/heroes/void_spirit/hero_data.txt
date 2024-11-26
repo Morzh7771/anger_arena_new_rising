@@ -3,12 +3,12 @@
 	"npc_dota_hero_void_spirit"
 	{
 		"override_hero"		"npc_dota_hero_void_spirit"
-		"Ability1"					"void_spirit_aether_remnant"
-		"Ability2"					"void_spirit_dissimilate"
-		"Ability3"					"void_spirit_resonant_pulse"
-		"Ability4"					"generic_hidden"
-		"Ability5"					"generic_hidden"
-		"Ability6"					"void_spirit_astral_step_aa"
+		"Ability1"                  "void_spirit_aether_remnant"
+        "Ability2"                  "void_spirit_dissimilate"
+        "Ability3"                  "void_spirit_resonant_pulse"
+        "Ability4"                  "void_spirit_intrinsic_edge"
+        "Ability5"                  "generic_hidden"
+        "Ability6"                  "void_spirit_astral_step_aa"
 		"Ability10"					"special_bonus_mp_regen_150"
 		"Ability11"					"special_bonus_unique_void_spirit_2"
 		"Ability12"					"special_bonus_unique_void_spirit_7"
@@ -17,6 +17,39 @@
 		"Ability15"					"special_bonus_unique_void_spirit_1"
 		"Ability16"					"special_bonus_unique_void_spirit_8"
 		"Ability17"					"special_bonus_unique_void_spirit_3"
+
+		"Facets"
+        {
+            "void_spirit_sanctuary" 
+            {
+                "Icon"              "armor"
+                "Color"             "Purple"
+                "GradientID"        "1"
+            }           
+            "void_spirit_phys_barrier"
+            {
+                "Icon"              "nuke"
+                "Color"             "Gray"
+                "GradientID"        "3"
+                "Deprecated"        "true"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "void_spirit_symmetry"
+                    }
+                }
+            }
+            "void_spirit_aether_artifice"
+            {
+                "Icon"              "illusion"
+                "Color"             "Gray"
+                "GradientID"        "3"
+            }
+
+        }
+        
 		"ArmorPhysical"				"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"4"

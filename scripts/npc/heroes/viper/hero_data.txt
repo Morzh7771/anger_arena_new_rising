@@ -3,20 +3,37 @@
 	"npc_dota_hero_viper"
 	{
 		"override_hero"		"npc_dota_hero_viper"
-		"Ability1"		"viper_poison_attack"
-		"Ability2"		"viper_nethertoxin"
-		"Ability3"		"viper_corrosive_skin"
-		"Ability4"		"viper_nose_dive"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"viper_viper_strike"
-		"Ability10"		"special_bonus_unique_viper_4"
-		"Ability11"		"special_bonus_unique_viper_1"
-		"Ability12"		"special_bonus_unique_viper_3"
-		"Ability13"		"special_bonus_unique_viper_6"
-		"Ability14"		"special_bonus_unique_viper_2"
-		"Ability15"		"special_bonus_unique_viper_7"
-		"Ability16"		"special_bonus_unique_viper_5"
-		"Ability17"		"special_bonus_unique_viper_8"
+		"Ability1"      "viper_poison_attack"
+        "Ability2"      "viper_nethertoxin"
+        "Ability3"      "viper_corrosive_skin"
+        "Ability4"      "viper_nose_dive"
+        "Ability5"      "viper_predator"
+        "Ability6"      "viper_viper_strike"
+		"Ability10"     "special_bonus_unique_viper_4"
+        "Ability11"     "special_bonus_unique_viper_1"
+        "Ability12"     "special_bonus_unique_viper_3"
+        "Ability13"     "special_bonus_unique_viper_7"
+        "Ability14"     "special_bonus_unique_viper_2"
+        "Ability15"     "special_bonus_unique_viper_predator_damage"
+        "Ability16"     "special_bonus_unique_viper_5"
+        "Ability17"     "special_bonus_unique_viper_8"
+
+        "Facets"        
+        {
+            "viper_poison_burst"            
+            {
+                "Icon"              "area_of_effect"
+                "Color"             "Green"
+                "GradientID"        "0"
+            }
+            "viper_caustic_bath"    
+            {
+                "Icon"              "armor"
+                "Color"             "Yellow"
+                "GradientID"        "2"
+            }
+        }
+        
 		"ArmorPhysical"		"-2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"27"

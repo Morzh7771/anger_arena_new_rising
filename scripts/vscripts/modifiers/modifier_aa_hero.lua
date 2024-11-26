@@ -87,6 +87,8 @@ function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
 	or self:GetParent():HasModifier("modifier_weaver_shukuchi")
 	or self:GetParent():HasModifier("modifier_dark_seer_surge")  then
     	return 99999999
+	elseif self:GetParent():HasModifier("modifier_windrunner_easy_breezy") then
+		return 750
 	else 
 		return 700
 	end

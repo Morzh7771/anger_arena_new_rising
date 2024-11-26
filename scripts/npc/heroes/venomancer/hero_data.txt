@@ -3,20 +3,37 @@
 	"npc_dota_hero_venomancer"
 	{
 		"override_hero"		"npc_dota_hero_venomancer"
-		"Ability1"		"venomancer_venomous_gale"
-		"Ability2"		"venomancer_poison_sting"
-		"Ability3"		"venomancer_plague_ward"
-		"Ability4"		"venomancer_latent_poison"
-		"Ability5"		"venomancer_poison_nova"
-		"Ability6"		"venomancer_noxious_plague"
-		"Ability10"		"special_bonus_unique_venomancer_3"
-		"Ability11"		"special_bonus_unique_venomancer_poisonsting_regen_reduction"
-		"Ability12"		"special_bonus_unique_venomancer_8"
-		"Ability13"		"special_bonus_unique_venomancer_2"
-		"Ability14"		"special_bonus_unique_venomancer_4"
-		"Ability15"		"special_bonus_unique_venomancer_gale_plagueward"
-		"Ability16"		"special_bonus_unique_venomancer_5"
-		"Ability17"		"special_bonus_unique_venomancer"
+		"Ability1"      "venomancer_venomous_gale"
+        "Ability2"      "venomancer_poison_sting"
+        "Ability3"      "venomancer_plague_ward"
+        "Ability4"      "venomancer_sepsis"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "venomancer_noxious_plague"
+		"Ability10"     "special_bonus_unique_venomancer_3"
+        "Ability11"     "special_bonus_unique_venomancer_poisonsting_regen_reduction"
+        "Ability12"     "special_bonus_unique_venomancer_8"
+        "Ability13"     "special_bonus_unique_venomancer_2"
+        "Ability14"     "special_bonus_unique_venomancer_4"
+        "Ability15"     "special_bonus_unique_venomancer_gale_plagueward"
+        "Ability16"     "special_bonus_unique_venomancer_5"
+        "Ability17"     "special_bonus_unique_venomancer"
+        
+        "Facets"
+        {
+            "venomancer_patient_zero"   
+            {
+                "Icon"              "snot"
+                "Color"             "Green"
+                "GradientID"        "0"
+            }
+            "venomancer_plague_carrier"     
+            {
+                "Icon"              "summons"
+                "Color"             "Yellow"
+                "GradientID"        "0"
+            }
+        }
+        
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"25"
