@@ -264,19 +264,19 @@ DOTAAbilities
 			"AbilityCooldown"
 			{	
 				"value"					  	  "30"
-				"special_bonus_unique_riki_6" "-5"
+				"special_bonus_unique_riki_6" "-8"
 			}
 			"AbilityChannelTime"			"2.0"
 			"radius"
 			{
 				"value"		"650"
 			}
-			"attack_count"	"5 5 6 6 7 7 8"
-			"damage_pct"	"45 47.5 50 52.5 55 57.5 60"
+			"attack_count"	"5 6 6 7 7 7 8"
+			"damage_pct"	"30 35 40 45 50 55 60"
 			"agility_pct"
 			{
-				"value" 				"70 75 80 85 90 95 100"
-				"special_bonus_unique_riki_2" "+25"
+				"value" 				"70 100 130 160 190 220 250"
+				"special_bonus_unique_riki_2" "+50"
 			}
 			"scepter_duration"				
 			{
@@ -285,7 +285,7 @@ DOTAAbilities
 			}
 			"scepter_attacks"
 			{
-				"value"		"7 7 8 8 9 9 10"
+				"value"		"7 8 8 9 9 9 10"
 				"RequiresScepter"		"1"
 			}
 			"scepter_cast_range"
