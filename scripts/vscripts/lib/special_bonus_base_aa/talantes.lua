@@ -383,7 +383,6 @@ modifier_bash = class({
     self.bash_duration = self:GetAbility():GetSpecialValueFor("bash_duration")
   end,
   OnAttack = function (self,keys)
-    print("gey")
     if keys.attacker == self:GetParent() and
     not self:GetParent():HasModifier("modifier_talant_bash_cd") and
     not keys.attacker:IsIllusion() and
