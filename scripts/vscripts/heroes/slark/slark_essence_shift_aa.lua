@@ -115,10 +115,12 @@ modifier_slark_essence_shift_aa_enemy = class({
     IsHidden = function() return false end,
     IsPurgable = function() return false end,
     IsDebuff = function() return true end,
+    OnTooltip = function(self) return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("stat_loss") end,
     DeclareFunctions = function() return {
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_TOOLTIP,
     } end,
     OnCreated = function(self) self:StartIntervalThink(0.1) end,
     OnIntervalThink = function (self) if not IsServer() then return end self:SetStackCount(#self:GetParent():FindAllModifiersByName("modifier_slark_essence_shift_aa_tinker_enemy")) end,

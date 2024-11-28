@@ -724,9 +724,12 @@
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration_creeps"						"ДЛИТЕЛЬНОСТЬ НА КРИПАХ:"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_steal_radius"					"РАДИУС КРАЖИ:"
 
-		"DOTA_Tooltip_Ability_special_bonus_slark_essence_shift_aa_duration"                  						"+{s:bonus_duration} сек. действия Essence Shift на врагах и +{s:bonus_duration_creeps} сек. на крипах  "
-
-
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_essence_shift_aa_bonus_agi"	"+{s:bonus_agi_gain} к краже ловкости за эффект Essence Shift"
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_essence_shift_aa_bonus_duration"	"+{s:bonus_duration} сек. действия Essence Shift на врагах и +{s:bonus_duration_creeps} сек. на крипах"
+		"DOTA_Tooltip_modifier_slark_essence_shift_aa"							"Essence Shift"					
+		"DOTA_Tooltip_modifier_slark_essence_shift_aa_Description"				"Похищает %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% ловкости."
+		"DOTA_Tooltip_modifier_slark_essence_shift_aa_enemy"			"Essence Shift"
+		"DOTA_Tooltip_modifier_slark_essence_shift_aa_enemy_Description"	"Теряет %dMODIFIER_PROPERTY_TOOLTIP% ед. каждого атрибута."
 
         //Slardar--------------------------------------------------------------------------------------------------------------
         "DOTA_Tooltip_Ability_slardar_bash_damage_pct"                                  						"%УРОН ОТ СИЛЫ"
