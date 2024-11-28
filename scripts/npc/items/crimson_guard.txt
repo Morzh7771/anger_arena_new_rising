@@ -92,11 +92,15 @@
 			"block_chance"			"60 70 80"
 
 			"duration"				"6 8 10"
-			"bonus_aoe_radius"		"1200"
+			"bonus_aoe_radius"      
+            {
+                "value"         "1200"
+                "affected_by_aoe_increase"  "1"
+            }
 			"block_damage_active"	"70 110 200"
 			"block_chance_active"	"100"
 			"tooltip_reapply_time"	"10"
-			"strength_pct"			"50 60 70"
+			"max_hp_pct"			"2.2 2.6 3.0"
 		}
 	}
 
@@ -138,11 +142,15 @@
 			"block_chance"			"60 70 80"
 
 			"duration"				"6 8 10"
-			"bonus_aoe_radius"		"1200"
+			"bonus_aoe_radius"      
+            {
+                "value"         "1200"
+                "affected_by_aoe_increase"  "1"
+            }
 			"block_damage_active"	"70 110 200"
 			"block_chance_active"	"100"
 			"tooltip_reapply_time"	"10"
-			"strength_pct"			"50 60 70"
+			"max_hp_pct"			"2.2 2.6 3.0"
 		}
 	}
     "item_crimson_guard_3"
@@ -183,11 +191,15 @@
 			"block_chance"			"60 70 80"
 
 			"duration"				"6 8 10"
-			"bonus_aoe_radius"		"1200"
+			"bonus_aoe_radius"      
+            {
+                "value"         "1200"
+                "affected_by_aoe_increase"  "1"
+            }
 			"block_damage_active"	"70 110 200"
 			"block_chance_active"	"100"
 			"tooltip_reapply_time"	"10"
-			"strength_pct"			"50 60 70"
+			"max_hp_pct"			"2.2 2.6 3.0"
 		}
 	}
 }

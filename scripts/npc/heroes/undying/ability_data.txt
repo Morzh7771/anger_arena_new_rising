@@ -38,8 +38,8 @@ DOTAAbilities
 			"damage_pct"		"75"
 			"decay_damage"
 			{
-				"value"		"0 40 80 120 160 200 240"
-				"special_bonus_unique_undying_8" "+60"
+				"value"		"10 50 90 130 170 210 250"
+				"special_bonus_unique_undying_8" "+50"
 			}
 
 			"str_steal"
@@ -56,6 +56,7 @@ DOTAAbilities
 			"radius"
 			{
 				"value"		"325"
+				"affected_by_aoe_increase"  "1"
 			}
 
 			"str_scale_up"	"2"
@@ -103,11 +104,30 @@ DOTAAbilities
 			"damage_per_unit"
 			{
 				"value"			"15 25 35 45 55 65 75"
-				"LinkedSpecialBonus"			"special_bonus_unique_undying_6"
+				"special_bonus_unique_undying_6" "+25"
 			}			
 			"max_units"					"10"
-			"radius"					"1300"
+			"radius"                    
+            {
+                "value"         "1300"
+                "affected_by_aoe_increase"  "1"
+            }
 			"tombstone_heal"			"4 6 8 10 12 14 16"
+			"strength_share_percent"
+           	{
+           	    "value"                     "0"
+           	    "special_bonus_facet_undying_ripped"    "+10"
+           	}
+           	"strength_share_duration"
+           	{
+           	    "value"                     "0"
+           	    "special_bonus_facet_undying_ripped"    "+10"
+           	}
+           	"strength_share_model_scale"
+           	{
+           	    "value"                     "0"
+           	    "special_bonus_facet_undying_ripped"    "+15"
+           	}
 		}
 	}	
 	"undying_tombstone"
@@ -175,13 +195,17 @@ DOTAAbilities
 
 			"bunker_units"				"1"
 			"bunker_heal_pct"			"0"
-			"tombstone_grab_radius"		"350"
-			"tombstone_bunker_cd"		"3"
-
-			"zombie_damage_interval"
-			{
-				"value"					"0"
-			}
+			"tombstone_grab_radius"     
+            {
+                "value" "350"
+                "affected_by_aoe_increase"  "1"
+            }
+            "tombstone_bunker_cd"       "2"
+            "tombstone_stun_penalty"    "2"
+            "zombie_damage_interval"
+            {
+                "value"                 "0"
+            }
 		}
 	}
 	"undying_tombstone_zombie_aura"
@@ -195,24 +219,22 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600 700 800 900 1000 1100 1200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_threshold"		"100 200 300 400 500 600 700"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"zombie_interval"		"3.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius"
+            {
+                "value" "600 700 800 900 1000 1100 1200"
+                "affected_by_aoe_increase"  "1"
+            }
+            "health_threshold"
+            {
+                "value" "100 200 300 400 500 600 700"
+            }
+            "zombie_interval"
+            {
+                "value" "3"
+            }
+        }
 	}
 	"undying_tombstone_zombie_deathstrike"
 	{
@@ -231,39 +253,35 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_threshold_pct"	"40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_move_speed"			"35 40 45 50 55 60 65"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"			"50 60 70 80 90 100 110"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1200"
-			}
-		}
+		"AbilityValues"
+        {
+            "slow"
+            {
+                "value" "-5"
+            }
+            "health_threshold_pct"
+            {
+                "value" "40"
+            }
+            "duration"
+            {
+                "value" "2.5"
+            }
+            "bonus_move_speed"
+            {
+                "value" "35 40 45 50 55 60 65"
+            }
+            "bonus_attack_speed"
+            {
+                "value" "50 60 70 80 90 100 110"
+            }
+            "radius"
+            {
+                "value" "1200"
+                "affected_by_aoe_increase"  "1"
+
+            }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"undying_flesh_golem"
@@ -293,23 +311,32 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"slow"						"40 42 44 46 48 50 52"
-				"damage_amp"				
-				{
-					"value"					"20 23 26 29 32 35 38"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
-				}
-				"slow_duration"					"6"
-				"str_percentage"			
-				{
-					"value"					"35 40 45 50 55 60 65"
-				"special_bonus_unique_undying_4" "+60"
+			"slow"						"40 42 44 46 48 50 52"
+			"damage_amp"				
+			{
+				"value"					"20 23 26 29 32 35 38"
+			"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
+			}
+			"slow_duration"					"3"
+			"str_percentage"			
+			{
+				"value"					"35 40 45 50 55 60 65"
+			"special_bonus_unique_undying_4" "+35"
 
-				}
-				"duration"					"40"
-				"movement_bonus"			"30 35 40 45 50 55 60"
-				
-			
+			}
+			"duration"					"40"
+			"movement_bonus"			"30 35 40 45 50 55 60"
+			"spawn_zombie_on_attack"
+            {
+                "value"                     "0"
+                "special_bonus_facet_undying_rotting_mitts" "+1"
+            }
+            "zombie_duration"
+            {
+                "value"                     "0"
+                "special_bonus_facet_undying_rotting_mitts" "+15"
+            }
+            "zombie_spawn_padding"          "36"			
 		}
 	}
 	"undying_tombstone_grab"
@@ -355,4 +382,204 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"10"
 	}
+	"undying_zombie_master"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilitySound"                  "Hero_Undying.Tombstone"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"  
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+        "HasShardUpgrade"               "1"
+        "IsBreakable"                   "1"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "150"
+        "AbilityCastPoint"              "0.0"
+
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "AbilityCooldown"
+            {
+                "value"                 "3 2 1 0"
+            }
+            "zombie_health"
+            {
+                "value"                             "2"
+                "special_bonus_unique_undying_5"    "+2"
+            }
+            "duration"
+            {
+                "value"                             "6 9 12 15"
+                "special_bonus_unique_undying_3"    "+20"
+            }
+            "infinite_lifetime"
+            {
+                "value"                             "0"
+            }
+            "zombies_per_hit"
+            {
+                "value"                     "1"
+                "special_bonus_shard"       "+1"
+            }
+            "zombie_spawn_padding"          "36"
+            "health_threshold_pct_tooltip"  "40"
+            "zombie_damage_tooltip"
+            {
+                "value"                 "34"
+                "special_bonus_unique_undying" "+20"
+                "CalculateSpellDamageTooltip"   "0"
+            }
+        }
+    }
+    "undying_ceaseless_dirge"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "AbilityCooldown"               "30"
+
+        "AbilityValues"
+        {
+            "respawn_delay"             "1.0"
+        }
+    }   
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_undying"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "20"
+                "ad_linked_abilities" "undying_tombstone"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_undying_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "2"
+                "ad_linked_abilities" "undying_decay"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_undying_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "1"
+                "ad_linked_abilities" "undying_tombstone"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_undying_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_undying_5"
+    {
+        // Gener
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "6"
+                "ad_linked_abilities" "undying_tombstone"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_undying_6"
+    {
+        // Gener
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_undying_7"
+    {
+        // Gener
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+
+        "AbilityValues"
+        {
+            "zombie_master_flesh_golem_cooldown"    "20"
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_undying_8"
+    {
+        // Gener
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

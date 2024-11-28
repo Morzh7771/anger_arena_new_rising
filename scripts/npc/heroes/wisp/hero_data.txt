@@ -3,13 +3,14 @@
 	"npc_dota_hero_wisp"
 	{
 		"override_hero"		"npc_dota_hero_wisp"
-		"Ability1"		"wisp_tether"
-		"Ability2"		"wisp_spirits"		
-		"Ability3"		"wisp_overcharge"
-		"Ability4"		"wisp_spirits_in"
-		"Ability5"		"wisp_spirits_out"
-		"Ability6"		"wisp_relocate"
-		"Ability7"		"wisp_tether_break"
+		"Ability1"      "wisp_tether"
+        "Ability2"      "wisp_spirits"      
+        "Ability3"      "wisp_overcharge"
+        "Ability4"      "wisp_spirits_in"
+        "Ability5"      "wisp_spirits_out"
+        "Ability6"      "wisp_relocate"
+        "Ability7"      "wisp_tether_break"
+        "Ability8"      "wisp_sight_seer"
 		"Ability10"		"special_bonus_unique_wisp_11"
 		"Ability11"		"special_bonus_unique_wisp_8"
 		"Ability12"		"special_bonus_unique_wisp_3"
@@ -18,6 +19,23 @@
 		"Ability15"		"special_bonus_unique_wisp_6"
 		"Ability16"		"special_bonus_unique_wisp_9"
 		"Ability17"		"special_bonus_unique_wisp_4"
+
+		"Facets"
+        {
+            "wisp_kritzkrieg" 
+            {
+                "Icon"              "damage"
+                "Color"             "Blue"
+                "GradientID"        "3"
+            }
+            "wisp_medigun" 
+            {
+                "Icon"              "armor"
+                "Color"             "Gray"
+                "GradientID"        "3"
+            }
+        }
+        
 		"AbilityDraftIgnoreCount" "8"
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

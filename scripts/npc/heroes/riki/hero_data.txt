@@ -6,17 +6,35 @@
 		"Ability1"		"riki_smoke_screen"
 		"Ability2"		"riki_blink_strike"
 		"Ability3"		"riki_backstab"
-		"Ability4"		"generic_hidden"
+		"Ability4"		"riki_innate_backstab"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"riki_tricks_of_the_trade"
-		"Ability10"		"special_bonus_unique_riki_7"
-		"Ability11"		"special_bonus_unique_riki_8"
-		"Ability12"		"special_bonus_unique_riki_2"
-		"Ability13"		"special_bonus_unique_riki_3"
-		"Ability14"		"special_bonus_unique_riki_1"
-		"Ability15"		"special_bonus_unique_riki_9"
-		"Ability16"		"special_bonus_unique_riki_6"
-		"Ability17"		"special_bonus_unique_riki_5"
+		"Ability10"     "special_bonus_unique_riki_7"
+        "Ability11"     "special_bonus_unique_riki_8"
+        "Ability12"     "special_bonus_unique_riki_2"
+        "Ability13"     "special_bonus_unique_riki_3"
+        "Ability14"     "special_bonus_unique_riki_1"
+        "Ability15"     "special_bonus_unique_riki_9"
+        "Ability16"     "special_bonus_unique_riki_6"
+        "Ability17"     "special_bonus_unique_riki_5"
+
+        "Facets"
+        {
+            "riki_contract_killer"  
+            {
+                "Icon"              "xp"
+                "Color"             "Gray"
+                "GradientID"        "3"
+            }           
+            "riki_exterminator" 
+            {
+                "Icon"              "agility"
+                "Color"             "Purple"
+                "GradientID"        "2"
+            }
+
+        }
+        
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"41"

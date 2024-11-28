@@ -3,20 +3,46 @@
 	"npc_dota_hero_razor"
 	{
 		"override_hero"		"npc_dota_hero_razor"
-		"Ability1"		"razor_plasma_field"
-		"Ability2"		"razor_static_link"
-		"Ability3"		"razor_unstable_current"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"razor_eye_of_the_storm"
-		"Ability10"		"special_bonus_unique_razor_4"
-		"Ability11"		"special_bonus_agility_14"
-		"Ability12"		"special_bonus_unique_razor"
-		"Ability13"		"special_bonus_strength_14"
-		"Ability14"		"special_bonus_unique_razor_storm_surge_damage_and_slow"
-		"Ability15"		"special_bonus_unique_razor_2"
-		"Ability16"		"special_bonus_unique_razor_plasmafield_second_ring"
-		"Ability17"		"special_bonus_unique_razor_static_link_aspd"
+		"Ability1"      "razor_plasma_field"
+        "Ability2"      "razor_static_link"
+        "Ability3"      "razor_storm_surge"
+        "Ability4"      "razor_unstable_current"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "razor_eye_of_the_storm"
+		"Ability10"     "special_bonus_unique_razor_4"
+        "Ability11"     "special_bonus_spell_lifesteal_10"
+        "Ability12"     "special_bonus_unique_razor"
+        "Ability13"     "special_bonus_strength_12"
+        "Ability14"     "special_bonus_unique_razor_storm_surge_damage_and_slow"
+        "Ability15"     "special_bonus_unique_razor_2"
+        "Ability16"     "special_bonus_unique_razor_plasmafield_second_ring"
+        "Ability17"     "special_bonus_unique_razor_static_link_aspd"
+
+        "Facets"
+        {
+            "razor_thunderhead"
+            {
+                "Icon"              "barrier"
+                "Color"             "Gray"
+                "GradientID"        "0"
+            }
+
+            "razor_spellamp"
+            {
+                "Icon"              "nuke"
+                "Color"             "Blue"
+                "GradientID"        "0"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "razor_dynamo"
+                    }
+                }
+            }
+        }
+        
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"23"
 		"AttackDamageMax"		"25"

@@ -44,17 +44,23 @@ DOTAAbilities
 				"value"							"600"
 				"special_bonus_unique_sniper_grenade_range"		"+250"
 			}
-			"radius"		"375"
+			"radius"        
+            {
+                    "value"     "375"
+                    "affected_by_aoe_increase"  "1"
+            }
 			"slow"		"50"
 			"debuff_duration"		"3"
 			"knockback_height"		"100"
-			"knockback_distance"		"475"
+			"knockback_distance"        
+            {
+                "value"     "475"
+                    "affected_by_aoe_increase"  "1"
+            }
 			"knockback_duration"		"0.4"
 			"self_push"					
 			{
 				"value"			"1"
-				"special_bonus_unique_sniper_grenade_self_push"		"+1"
-
 			}
 		}
 	}
@@ -79,7 +85,6 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-		"AbilityChargeRestoreTime"		"25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -93,27 +98,57 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityChargeRestoreTime"      
+            {
+                "value"             "35"
+                "special_bonus_unique_sniper_2" "-30"
+            }
 			"slow_movement_speed"
 			{
 				"value"		"-10.0 -15.0 -20.0 -25.0 -30.0 -35.0 -40.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_sniper_5"
+				"special_bonus_facet_sniper_scattershot"    "=-30 =-37.5 =-45 =-52.5 =-60 =-67.5 =-75"
+                "special_bonus_unique_sniper_5" "-10"
 			}
-			"radius"				"400 425 450 475 500 525 550"
+			"radius"				
+			{
+				"value"		"400 425 450 475 500 525 550"
+				"affected_by_aoe_increase"  "1"
+			}
 			"shrapnel_damage"
 			{
 				"value"			"20.0 40.0 60.0 80.0 100.0 120.0 140.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_sniper_1"
+				"special_bonus_facet_sniper_scattershot"    "=60 =120 =180 =240 =300 =360 =420"
+                "special_bonus_unique_sniper_shrapnel_damage"       "+30%"
 			}
-			"duration"				"10.0"
-			"damage_delay"			"1.2"
-			"slow_duration"			"2.0"
+			"duration"              
+            {
+                "value"     "10.0"
+                "special_bonus_facet_sniper_scattershot"    "=1"
+            }
+			"damage_delay"          
+            {
+                "value"     "1.2"
+                "special_bonus_facet_sniper_scattershot"    "=0.8"
+            }
+			"slow_duration"         
+            {
+                "value"     "2"
+                "special_bonus_facet_sniper_scattershot"    "=2"
+            }
 			"AbilityCharges"
 			{
 				"value"			"3"
-				"LinkedSpecialBonus"	"special_bonus_unique_sniper_2"
 			}
-				"damage_pct"		"35"
+			"fast_tick"
+            {
+                "special_bonus_facet_sniper_scattershot"    "=1"
+            }
+			"damage_pct"		
+			{
+				"value"		"35"
+				//"special_bonus_facet_sniper_scattershot"	"=105"
 			}
+		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"sniper_headshot"
@@ -141,7 +176,7 @@ DOTAAbilities
 			"proc_chance"					"40"
 			"knockback_distance"
 			{
-				"value"					"0"
+				"value"					"15"
 				"special_bonus_unique_sniper_3"			"+15"
 			}
 			"slow"			"-100"
@@ -155,8 +190,10 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"sniper_take_aim"
 		"MaxLevel"						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 	
 		// Casting
@@ -175,36 +212,44 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_range"			"75 110 145 180 215 250 285"
-				"LinkedSpecialBonus"			"special_bonus_unique_sniper_6"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"5"
-				"LinkedSpecialBonus"			"special_bonus_unique_sniper_4"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"slow"							"55.0 50.83 46.67 42.5 38.33 34.17 30.0"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"headshot_chance"				"100"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"active_attack_range_bonus"		"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration"
+            {
+                "value"                 "3"
+                "special_bonus_unique_sniper_4" "+1"
+            }
+
+            "slow"                      
+            {
+                "value"                             "65"                
+            }
+            "headshot_chance"           "100"
+            "active_attack_range_bonus"
+            {
+                "value"                 "200"               
+            }
+            "bonus_armor"       
+            {
+                "value"                                             "5 10 15 20 25 30 35"
+                "special_bonus_unique_sniper_take_aim_armor"        "+15"
+            }
+                
+            "does_root"
+            {
+                "value"     "0"         
+            }
+
+            "require_target"
+            {
+                "value"     "0"             
+            }
+
+            "no_reveal"
+            {
+                "special_bonus_facet_sniper_ghillie_suit"   "1"
+            }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	"sniper_assassinate"
@@ -245,7 +290,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 250 350 450 550 650 750"
+		"AbilityManaCost"				"150 200 250 300 350 400 450"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -289,7 +334,20 @@ DOTAAbilities
 				"RequiresShard"	"1"
 			}
 			"cooldown_reduction_on_kill"		"15"
-				"damage_pct"		"75 100 125 150 175 200 225"
+			//"damage_pct"		"75 100 125 150 175 200 225"
 		}		
 	}
+	"sniper_keen_scope"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "MaxLevel"                      "8"     
+        "Innate"                        "1"
+        "DependentOnAbility"            "sniper_assassinate"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "bonus_range"               "160 210 260 310 360 410 460"
+        }
+    }
 }

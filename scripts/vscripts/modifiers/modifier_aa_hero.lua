@@ -83,10 +83,13 @@ function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
 	or self:GetParent():HasModifier("modifier_bloodseeker_thirst") 
 	or self:GetParent():HasModifier("modifier_primal_beast_trample")
 	or self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze") 
-	or self:GetParent():HasModifier("modifier_centaur_horsepower") 
 	or self:GetParent():HasModifier("modifier_weaver_shukuchi")
-	or self:GetParent():HasModifier("modifier_dark_seer_surge")  then
-    	return 99999999
+	or self:GetParent():HasModifier("modifier_dark_seer_surge") then
+    	return 10000
+    elseif self:GetParent():HasModifier("modifier_centaur_horsepower") then 
+    	return 800
+	elseif self:GetParent():HasModifier("modifier_windrunner_easy_breezy") then
+		return 750
 	else 
 		return 700
 	end

@@ -609,7 +609,7 @@
         //Riki
         "DOTA_Tooltip_Ability_riki_blink_strike_damage_pct"														"%УРОН ОТ ЛОВКОСТИ"
 
-        "DOTA_Tooltip_ability_riki_backstab_Description"														"Герой уходит в тень, становясь невидимым. Каждая его атака со спины наносит дополнительный урон, который зависит от ловкости и <b><font color='#53ea48'>удавивается по существам, не являющимся героями</font></b>. При совершении атаки невидимость пропадает. Увеличивает опыт за участие в убийствах."
+        //"DOTA_Tooltip_ability_riki_backstab_Description"														"Герой уходит в тень, становясь невидимым. Каждая его атака со спины наносит дополнительный урон, который зависит от ловкости и <b><font color='#53ea48'>удавивается по существам, не являющимся героями</font></b>. При совершении атаки невидимость пропадает. Увеличивает опыт за участие в убийствах."
 
 
        	//Axe
@@ -713,28 +713,28 @@
 		"DOTA_Tooltip_ability_slark_essence_shift_aa"								"Essence Shift"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_Description"					"Герой крадёт атаками жизненную сущность вражеских героев, выкачивая все их атрибуты и превращая их в дополнительную ловкость для себя. Владелец этой способности навсегда получает 1 заряд способности, если рядом умирает враг в радиусе %steal_radius%."		
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_Lore"							"Чем больше бьёшь по врагу, тем больше узнаёшь о его слабостях."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note0"						"Атрибуты не могут упасть ниже значения в единицу."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note1"						"Украденные у жертвы атрибуты возвращаются к ней при её смерти, но они не исчезают у владельца способности."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note2"						"Чтобы украсть ловкость навсегда, нужно нанести жертве смертельный удар или чтобы она находилась в радиусе кражи и под действием этой способности."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note3"						"Временная кража ловкости отключается истощением, а постоянная — нет."
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note4"						"Уже украденная ловкость не отключаются истощением."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note0"							"Атрибуты не могут упасть ниже значения в единицу."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note1"							"Украденные у жертвы атрибуты возвращаются к ней при её смерти, но они не исчезают у владельца способности."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note2"							"Чтобы украсть ловкость навсегда, нужно нанести жертве смертельный удар или чтобы она находилась в радиусе кражи и под действием этой способности."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note3"							"Временная кража ловкости отключается истощением, а постоянная — нет."
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_Note4"							"Уже украденная ловкость не отключаются истощением."
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_agi_gain"						"ДАЁТ ЛОВКОСТИ:"
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_stat_loss"					"ЗАБИРАЕТ ХАРАКТЕРИСТИК:"
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_stat_loss"						"ЗАБИРАЕТ ХАРАКТЕРИСТИК:"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration"						"ДЛИТЕЛЬНОСТЬ НА ГЕРОЯХ:"
-		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration_creeps"						"ДЛИТЕЛЬНОСТЬ НА КРИПАХ:"
+		"DOTA_Tooltip_ability_slark_essence_shift_aa_duration_creeps"				"ДЛИТЕЛЬНОСТЬ НА КРИПАХ:"
 		"DOTA_Tooltip_ability_slark_essence_shift_aa_steal_radius"					"РАДИУС КРАЖИ:"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_slark_essence_shift_aa_bonus_agi"	"+{s:bonus_agi_gain} к краже ловкости за эффект Essence Shift"
-		"DOTA_Tooltip_ability_special_bonus_unique_slark_essence_shift_aa_bonus_duration"	"+{s:bonus_duration} сек. действия Essence Shift на врагах и +{s:bonus_duration_creeps} сек. на крипах"
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_essence_shift_aa_bonus_duration"	"+{s:bonus_duration}% сек. действия Essence Shift на врагах и +{s:bonus_duration_creeps} сек. на крипах"
 		"DOTA_Tooltip_modifier_slark_essence_shift_aa"							"Essence Shift"					
 		"DOTA_Tooltip_modifier_slark_essence_shift_aa_Description"				"Похищает %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% ловкости."
 		"DOTA_Tooltip_modifier_slark_essence_shift_aa_enemy"			"Essence Shift"
 		"DOTA_Tooltip_modifier_slark_essence_shift_aa_enemy_Description"	"Теряет %dMODIFIER_PROPERTY_TOOLTIP% ед. каждого атрибута."
 
         //Slardar--------------------------------------------------------------------------------------------------------------
-        "DOTA_Tooltip_Ability_slardar_bash_damage_pct"                                  						"%УРОН ОТ СИЛЫ"
+        "DOTA_Tooltip_Ability_slardar_slithereen_crush_damage_pct"                                  						"%УРОН ОТ СИЛЫ"
 
-        "DOTA_Tooltip_Ability_special_bonus_unique_slardar_bashStrDmg"                  						"+{s:bonus_damage_pct}% к урону от силы у Bash of the Deep"
+        "DOTA_Tooltip_Ability_special_bonus_unique_slardar_bashStrDmg"                  						"+{s:bonus_damage_pct}% к урону от силы у Slithereen Crush"
 
         "DOTA_Tooltip_ability_slardar_bash"																		"Bash of the Deep"
 		"DOTA_Tooltip_ability_slardar_bash_Description"															"После каждых %attack_count% атак герой оглушит и нанесёт дополнительный урон своей следующей атакой. Урон крипам вдвое больше. Пассивно увеличивает урон от атак владельца, когда тот находится в воде.<br><font color='#A52A2A'>Не проходит сквозь Невосприимчивость к Эффектам.</font>"
@@ -930,8 +930,7 @@
 		//Spirit Breaker
 		"DOTA_Tooltip_Ability_spirit_breaker_greater_bash_damage_pct"											"%УРОН ОТ СИЛЫ"
 		"DOTA_Tooltip_Ability_spirit_breaker_nether_strike_damage_pct"											"%УРОН ОТ СИЛЫ"
-        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_status_res"   								"+{s:bonus_status_resistance}% к сопративлению эффектам от Bulldoze"
-        "DOTA_Tooltip_Ability_special_bonus_unique_spirit_breaker_2"            								"-{s:bonus_AbilityCooldown} сек. перезарядки Bulldoze"
+		"DOTA_Tooltip_ability_special_bonus_unique_spirit_breaker_2"    										"–{s:value} сек. перезарядки Bulldoze"
 
 
 		//Shadow Demon
@@ -971,6 +970,7 @@
 
         //Silencer
         "DOTA_Tooltip_Ability_silencer_last_word_damage_pct"													"%УРОН ОТ ИНТЕЛЛЕКТА"
+        "DOTA_Tooltip_Ability_silencer_curse_of_the_silent_damage_pct"											"%УРОН ОТ ИНТЕЛЛЕКТА"
 
 
 		//Tusk
@@ -1049,7 +1049,7 @@
         //Storm Spirit
 		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"													"%УРОН ОТ ИНТЕЛЛЕКТА"
 		"DOTA_Tooltip_Ability_storm_spirit_static_remnant_damage_pct"											"%УРОН ОТ ИНТЕЛЛЕКТА"
-        "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_5"              								"+{s:bonus_static_remnant_damage} к урону от Static Remnant"
+        "DOTA_Tooltip_ability_special_bonus_unique_storm_spirit_5"  											"+{s:bonus_static_remnant_damage}% к урону от Static Remnant"
         "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_remnant_dmg_pct" 								"+{s:bonus_damage_pct}% к урону от интеллекта на Static Remnant"
 
 
@@ -1134,6 +1134,8 @@
         "DOTA_Tooltip_Ability_shredder_whirling_death_damage_pct"           									"%УРОН ОТ ВСЕХ АТРИБУТОВ"
         "DOTA_Tooltip_Ability_shredder_timber_chain_damage_pct"             									"%УРОН ОТ ВСЕХ АТРИБУТОВ"
         "DOTA_Tooltip_Ability_shredder_chakram_damage_pct"                  									"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        "DOTA_Tooltip_Ability_shredder_twisted_chakram_damage_pct"												"%УРОН ОТ ВСЕХ АТРИБУТОВ"
+        "DOTA_Tooltip_Ability_shredder_twisted_chakram"															"Twisted Chakram"
 
 
         //Kunkka
@@ -1142,6 +1144,7 @@
 
         //Sven
         "DOTA_Tooltip_Ability_special_bonus_unique_sven_10"                  									"+{s:bonus_great_cleave_damage}% к урону и +{s:bonus_strength_bonus} к силе от  Greater Cleave"
+        "DOTA_Tooltip_ability_sven_warcry_barrier_per_strength"                          						"%ЗДОРОВЬЕ ФИЗИЧЕСКОГО БАРЬЕРА ЗА СИЛУ:"
 
 
         //Huskar
@@ -1242,6 +1245,10 @@
         "DOTA_Tooltip_ability_special_bonus_unique_troll_warlord_berserkers_rage_bat"           				"Уменьшение задержки перед атакой от Berserkers Rage на {s:bonus_base_attack_time}"
 
         "DOTA_Tooltip_ability_fervor_aa_shard_Description"														"Даёт владельцу шанс совершить дополнительную атаку по цели атаки. Шанс дополнительной атаки: %chance%%% + %chance_per_stack%%% за эффект Fervor не может быть выше 50%"
+
+        "DOTA_Tooltip_ability_troll_warlord_switch_stance"                      								"Battle Stance"
+        "DOTA_Tooltip_ability_troll_warlord_switch_stance_Description"          								"Герой переходит из дальнего боя в ближний, отчего снижается его базовый интервал атак."
+        "DOTA_Tooltip_ability_troll_warlord_switch_stance_base_attack_time"										"БАЗОВЫЙ ИНТЕРВАЛ АТАК:"
 
 
         //Hoodwink
@@ -1999,7 +2006,7 @@
 		"DOTA_Tooltip_modifier_item_pavise_2_shield_Description"	"Поглощает физический урон."
 
 		"DOTA_Tooltip_ability_item_crimson_guard_2"                     "CRIMSON GUARD 2"
-        "DOTA_Tooltip_ability_item_crimson_guard_2_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %strength_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
+        "DOTA_Tooltip_ability_item_crimson_guard_2_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %max_hp_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
 		"DOTA_Tooltip_ability_item_crimson_guard_2_Lore"		"Кираса, изначально выкованная для защиты от ужасающего Годня."
 		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health_regen"	"+$hp_regen"
@@ -2019,7 +2026,7 @@
 		"DOTA_Tooltip_modifier_item_crimson_guard_2_nostack_Description""Способность Guard 2 не действует на существ, на которых ее недавно применяли."
 
         "DOTA_Tooltip_ability_item_crimson_guard_3"                     "CRIMSON GUARD 3"
-        "DOTA_Tooltip_ability_item_crimson_guard_3_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %strength_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
+        "DOTA_Tooltip_ability_item_crimson_guard_3_Description"		"<h1>Активное: Guard</h1> На %duration% сек. даёт героям и постройкам поблизости шанс в %block_chance_active%%% заблокировать урон от каждой атаки в размере %block_damage_active% + %max_hp_pct%%% от силы владельца. <br>Способность действует на одно и то же существо не чаще, чем раз в %tooltip_reapply_time% секунд.<br><br>Радиус: %bonus_aoe_radius%\n\n<h1>Пассивное: Damage Block</h1> С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_Lore"		"Кираса, изначально выкованная для защиты от ужасающего Годня."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health_regen"	"+$hp_regen"

@@ -3,20 +3,37 @@
 	"npc_dota_hero_treant"
 	{
 		"override_hero"		"npc_dota_hero_treant"
-		"Ability1"		"treant_natures_grasp"
-		"Ability2"		"treant_leech_seed"
-		"Ability3"		"treant_living_armor"
-		"Ability4"		"treant_eyes_in_the_forest"
-		"Ability5"		"treant_natures_guise"
-		"Ability6"		"treant_overgrowth"
-		"Ability10"		"special_bonus_unique_treant_8"
-		"Ability11"		"special_bonus_unique_treant_12"
-		"Ability12"		"special_bonus_unique_treant_3"
-		"Ability13"		"special_bonus_unique_treant_9"
-		"Ability14"		"special_bonus_unique_treant_13"
-		"Ability15"		"special_bonus_unique_treant_2"
-		"Ability16"		"special_bonus_unique_treant_14"
-		"Ability17"		"special_bonus_unique_treant_7"
+		"Ability1"      "treant_natures_grasp"
+        "Ability2"      "treant_leech_seed"
+        "Ability3"      "treant_living_armor"
+        "Ability4"      "treant_eyes_in_the_forest"
+        "Ability5"      "treant_natures_guise"
+        "Ability6"      "treant_overgrowth"
+        "Ability7"      "treant_innate_attack_damage"
+        "Ability10"     "special_bonus_unique_treant_8"
+        "Ability11"     "special_bonus_unique_treant_12"
+        "Ability12"     "special_bonus_unique_treant_3"
+        "Ability13"     "special_bonus_unique_treant_9"
+        "Ability14"     "special_bonus_unique_treant_13"
+        "Ability15"     "special_bonus_unique_treant_2"
+        "Ability16"     "special_bonus_unique_treant_14"
+        "Ability17"     "special_bonus_unique_treant_7"
+        
+        "Facets"
+        {
+            "treant_primeval_power" 
+            {
+                "Icon"              "damage"
+                "Color"             "Yellow"
+                "GradientID"        "2"
+            }
+            "treant_sapling"        
+            {
+                "Icon"              "tree"
+                "Color"             "Green"
+                "GradientID"        "2"
+            }
+        }
 
 		"AbilityDraftAbilities"
 		{

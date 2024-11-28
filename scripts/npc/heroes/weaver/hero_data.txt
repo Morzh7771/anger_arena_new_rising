@@ -3,20 +3,40 @@
 	"npc_dota_hero_weaver"
 	{
 		"override_hero"		"npc_dota_hero_weaver"
-		"Ability1"		"weaver_the_swarm"
-		"Ability2"		"weaver_shukuchi"
-		"Ability3"		"weaver_geminate_attack"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"weaver_time_lapse"
-		"Ability10"		"special_bonus_unique_weaver_1"
-		"Ability11"		"special_bonus_strength_9"
-		"Ability12"		"special_bonus_mana_break_20"
-		"Ability13"		"special_bonus_unique_weaver_4"
-		"Ability14"		"special_bonus_unique_weaver_2"
-		"Ability15"		"special_bonus_unique_weaver_3"
-		"Ability16"		"special_bonus_unique_weaver_6"
-		"Ability17"		"special_bonus_unique_weaver_5"
+		"Ability1"      "weaver_the_swarm"
+        "Ability2"      "weaver_shukuchi"
+        "Ability3"      "weaver_geminate_attack"
+        "Ability4"      "generic_hidden"
+        "Ability5"      "generic_hidden"
+        "Ability6"      "weaver_time_lapse"
+        "Ability7"      "weaver_rewoven"
+		"Ability10"     "special_bonus_unique_weaver_1"
+        "Ability11"     "special_bonus_strength_7"
+        "Ability12"     "special_bonus_mana_break_20"
+        "Ability13"     "special_bonus_unique_weaver_4"
+        "Ability14"     "special_bonus_unique_weaver_2"
+        "Ability15"     "special_bonus_unique_weaver_3"
+        "Ability16"     "special_bonus_unique_weaver_6"
+        "Ability17"     "special_bonus_unique_weaver_5"
+
+        "Facets"
+        {
+            "weaver_skitterstep"
+            {
+                "Icon"              "speed"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }           
+            "weaver_hivemind"
+            {
+                "Icon"              "xp"
+                "Color"             "Blue"
+                "GradientID"        "1"
+            }
+
+
+        }
+        
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"37"

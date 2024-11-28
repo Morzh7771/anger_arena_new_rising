@@ -20,7 +20,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"38 34 30 26 22 18 14"
+		"AbilityCooldown"				"20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"				"7 8 9 10 11 12 13"
+				"duration"				"8"
 				"attack_range_bonus"	"350 400 450 500 550 600 650"
 				"percent_damage"		"4 6 8 10 12 14 16"
 				"tick_rate"				"1.0"
@@ -38,21 +38,21 @@ DOTAAbilities
 				{
 					"value"			"5.0"
 					"CalculateSpellDamageTooltip"	"0"
-					"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_6"
+					"special_bonus_unique_winter_wyvern_6" "+3"
 					"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 				}
 				"move_slow"				
 				{
 					"value"			"16 20 24 28 32 36 40"
-					"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_1"
+					"special_bonus_unique_winter_wyvern_1" "+10"
 				}
 				"night_vision_bonus"	"400"
 				"projectile_speed_bonus"	"500"
 				"tree_destruction_radius"
-				{
-					"value"						"175"
-					"affected_by_aoe_increase"	"1"	
-				}
+                {
+                    "value"                     "175"
+                    "affected_by_aoe_increase"  "1" 
+                }
 				"attack_point"			"0.1"
 				"max_attacks"			"5"
 				"mana_cost_scepter"		
@@ -99,13 +99,14 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"projectile_speed"		"650"
+			"projectile_speed"		"1200"
 			"projectile_max_time"	"1.0"
-			"split_radius"	
-			{
-				"value"			"500"
-				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_2"
-			}
+			"split_radius"          
+            {
+                "value"     "500"
+                "affected_by_aoe_increase"  "1" 
+                "special_bonus_unique_winter_wyvern_2" "+400"
+            }
 			"bonus_movespeed"		"-30"
 			"movespeed_slow_tooltip"		"30"
 			"duration"				"4.0"
@@ -113,8 +114,13 @@ DOTAAbilities
 			"damage"
 			{
 				"value"					"100 170 240 410 580 650 720"
-				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_7"
+				"special_bonus_unique_winter_wyvern_7" "+100"
 			}
+			"stun_duration"             
+            {
+                "value"     "0"
+                "special_bonus_unique_winter_wyvern_4" "+1.5"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -156,7 +162,7 @@ DOTAAbilities
 			"heal_additive"
 			{	
 				"value"		"30 35 40 45 50 55 60"
-				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_5"
+				"special_bonus_unique_winter_wyvern_5" "+25"
 			}
 			"heal_percentage"	"2.0 2.5 3.0 3.5 4.0 4.5 5.0"
 			"shard_cooldown_reduction"
@@ -165,10 +171,11 @@ DOTAAbilities
 				"RequiresShard"				"1"
 			}
 			"shard_splinter_range"
-			{
-				"value"			"1200"	
-				"RequiresShard"				"1"
-			}
+                {
+                    "value"     "1150"  
+                    "RequiresShard"             "1"
+                    "affected_by_aoe_increase"  "1" 
+                }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -205,16 +212,158 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"			"700"
+			"radius"            
+            {
+                "value" "525"
+                "affected_by_aoe_increase"  "1" 
+            }
 			"damage_reduction"	"100"
-			"damage_amplification"	"0"
-			"bonus_attack_speed"	"150"
+			"damage_amplification"	"30"
+			"bonus_attack_speed"    
+            {
+                "value"     "65"
+                "special_bonus_unique_winter_wyvern_3"  "+55"
+            }
 			"duration"
 			{	
-				"value"			"4.0 4.25 4.5 4.75 5.0 5.25 5.5"
-				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_3"
+				"value"			"2"
 			}
-			"early_out_timer"	"3.5"
+			"max_duration"  "4.0 4.25 4.5 4.75 5.0 5.25 5.5"
+            "bonus_duration_per_hero"   "1"
+            "bonus_duration_per_creep"  "0.25"
 		}
 	}
+	"winter_wyvern_eldwurm_scholar"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+
+        "AbilityValues"
+        {
+            "share_percentage"          "20"
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_winter_wyvern_1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_winter_wyvern_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_winter_wyvern_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_winter_wyvern_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_winter_wyvern_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_winter_wyvern_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_winter_wyvern_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Frozen Blood (Convert overheal into mana)
+    //=================================================================================================================
+    "winter_wyvern_essence_of_the_blueheart"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "AbilityValues"
+        {
+            "restore_pct"           "24"
+        }
+    }   
+    //=================================================================================================================
+    // Bookwyrm
+    //=================================================================================================================
+    "winter_wyvern_dragon_sight"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "8"
+        "DependentOnAbility"            "winter_wyvern_winters_curse"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "attack_range_per_damage"           "40 30 20 10 8 6 5 4"
+            "damage_per_ten_attack_range_tooltip"   "0.25 0.33 0.5 1.0 1.25 1.66 2 2.5"
+            "attack_range_min"                  "400"
+        }
+    }   
 }

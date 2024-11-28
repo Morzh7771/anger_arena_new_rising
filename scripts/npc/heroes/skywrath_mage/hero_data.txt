@@ -3,23 +3,56 @@
 	"npc_dota_hero_skywrath_mage"
 	{
 		"override_hero"		"npc_dota_hero_skywrath_mage"
-		"Ability1"		"skywrath_mage_arcane_bolt"
-		"Ability2"		"skywrath_mage_concussive_shot"
-		"Ability3"		"skywrath_mage_ancient_seal"
-		"Ability4"		"skywrath_mage_shield_of_the_scion"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"skywrath_mage_mystic_flare"
-		"Ability10"		"special_bonus_hp_200"
-		"Ability11"		"special_bonus_unique_skywrath_arcane_bolt_lifesteal"
+		"Ability1"      "skywrath_mage_arcane_bolt"
+        "Ability2"      "skywrath_mage_concussive_shot"
+        "Ability3"      "skywrath_mage_ancient_seal"
+        "Ability4"      "generic_hidden"    // RESERVED FOR FACET ABILITY
+        "Ability5"      "skywrath_mage_ruin_and_restoration"
+        "Ability6"      "skywrath_mage_mystic_flare"
+        
+		"Ability10"     "special_bonus_mp_regen_150"
+        "Ability11"     "special_bonus_unique_skywrath_2"
+        "Ability12"     "special_bonus_unique_skywrath"
+        "Ability13"     "special_bonus_unique_skywrath_concussive_shot_slow"
+        "Ability14"     "special_bonus_unique_skywrath_4"
+        "Ability15"     "special_bonus_unique_skywrath_3"
+        "Ability16"     "special_bonus_unique_skywrath_6"
+        "Ability17"     "special_bonus_base_aa_intSpell_0_1"
 
-		"Ability12"		"special_bonus_unique_skywrath"
-		"Ability13"		"special_bonus_unique_skywrath_4"
+        "Facets"
+        {
+            "skywrath_mage_shield"
+            {
+                "Icon"              "armor"
+                "Color"             "Blue"
+                "GradientID"        "0"
 
-		"Ability14"		"special_bonus_unique_skywrath_5"
-		"Ability15"		"special_bonus_unique_skywrath_3"
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "skywrath_mage_shield_of_the_scion"
+                        "AbilityIndex"  "3"
+                    }
+                }
+            }
 
-		"Ability16"		"special_bonus_unique_skywrath_6"
-		"Ability17"		"special_bonus_base_aa_intSpell_0_1"
+            "skywrath_mage_staff"
+            {
+                "Icon"              "cooldown"
+                "Color"             "Yellow"
+                "GradientID"        "2"
+
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "skywrath_mage_staff_of_the_scion"
+                        "AbilityIndex"  "3"
+                    }
+                }
+            }
+        }
 		"ArmorPhysical"		"-2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"16"

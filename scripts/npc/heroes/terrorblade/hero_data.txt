@@ -3,12 +3,13 @@
 	"npc_dota_hero_terrorblade"
 	{
 		"override_hero"		"npc_dota_hero_terrorblade"
-		"Ability1"		"terrorblade_reflection"
-		"Ability2"		"terrorblade_conjure_image"
-		"Ability3"		"terrorblade_metamorphosis"
-		"Ability4"		"terrorblade_demon_zeal"
-		"Ability5"		"terrorblade_terror_wave"
-		"Ability6"		"terrorblade_sunder"
+		"Ability1"      "terrorblade_reflection"
+        "Ability2"      "terrorblade_conjure_image"
+        "Ability3"      "terrorblade_metamorphosis"
+        "Ability4"      "terrorblade_demon_zeal"
+        "Ability5"      "terrorblade_terror_wave"
+        "Ability6"      "terrorblade_sunder"
+        "Ability7"      "terrorblade_dark_unity"
 		"Ability10"		"special_bonus_unique_terrorblade_2"
 		"Ability11"		"special_bonus_unique_terrorblade_4"
 		"Ability12"		"special_bonus_unique_terrorblade_metamorphosis_cooldown"
@@ -17,6 +18,24 @@
 		"Ability15"		"special_bonus_unique_terrorblade_5"
 		"Ability16"		"special_bonus_unique_terrorblade"
 		"Ability17"		"special_bonus_unique_terrorblade_3"
+
+		"Facets"
+        {
+            "terrorblade_condemned"     
+            {
+                "Icon"              "twin_hearts"
+                "Color"             "Gray"
+                "GradientID"        "0"
+            }
+            "terrorblade_soul_fragment"     
+            {
+                "Icon"              "illusion"
+                "Color"             "Blue"
+                "GradientID"        "2"
+            }
+
+        }
+        
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"terrorblade_reflection"

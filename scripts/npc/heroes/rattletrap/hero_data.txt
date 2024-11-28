@@ -3,20 +3,39 @@
 	"npc_dota_hero_rattletrap"
 	{
 		"override_hero"		"npc_dota_hero_rattletrap"
-		"Ability1"		"rattletrap_battery_assault"
-		"Ability2"		"rattletrap_power_cogs"
-		"Ability3"		"rattletrap_rocket_flare"
-		"Ability4"		"rattletrap_overclocking"
-		"Ability5"		"rattletrap_jetpack"
-		"Ability6"		"rattletrap_hookshot"
-		"Ability10"		"special_bonus_unique_clockwerk_7"
-		"Ability11"		"special_bonus_unique_clockwerk_9"
-		"Ability12"		"special_bonus_unique_clockwerk_5"
-		"Ability13"		"special_bonus_unique_clockwerk_3"
-		"Ability14"		"special_bonus_unique_clockwerk_4"
-		"Ability15"		"special_bonus_unique_clockwerk_flare_damage"
-		"Ability16"		"special_bonus_unique_clockwerk_6"
-		"Ability17"		"special_bonus_unique_clockwerk"
+		"Ability1"      "rattletrap_battery_assault"
+        "Ability2"      "rattletrap_power_cogs"
+        "Ability3"      "rattletrap_rocket_flare"
+        "Ability4"      "rattletrap_overclocking"
+        "Ability5"      "rattletrap_jetpack"
+        "Ability6"      "rattletrap_hookshot"
+        "Ability7"      "rattletrap_armor_power"
+		"Ability10"     "special_bonus_unique_clockwerk_7"
+        "Ability11"     "special_bonus_unique_clockwerk_hookshot_damage"
+        "Ability12"     "special_bonus_unique_clockwerk_5"
+        "Ability13"     "special_bonus_unique_clockwerk_3"
+        "Ability14"     "special_bonus_unique_clockwerk_4"
+        "Ability15"     "special_bonus_unique_clockwerk_flare_damage"
+        "Ability16"     "special_bonus_unique_clockwerk_6"
+        "Ability17"     "special_bonus_unique_clockwerk"
+        
+        "Facets"
+        {
+            "rattletrap_hookup" 
+            {
+                "Icon"              "cooldown"
+                "Color"             "Gray"
+                "GradientID"        "2"
+            }
+
+            "rattletrap_expanded_armature" 
+            {
+                "Icon"              "area_of_effect"
+                "Color"             "Red"
+                "GradientID"        "2"
+            }
+        }
+        
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"StatusHealthRegen"		"0.5"

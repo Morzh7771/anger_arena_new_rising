@@ -33,17 +33,38 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"start_radius"				"90"
-			"end_radius"				"90"
-			"radius"					"300"
+			"start_radius"              
+            {
+                "value" "90"
+                "affected_by_aoe_increase"  "1"     
+            }
+            "end_radius"                
+            {
+                "value" "90"
+                "affected_by_aoe_increase"  "1"     
+            }
+            "radius"                    
+            {
+                "value"     "300"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"projectile_speed"			"900"
 			"remnant_watch_distance"
 			{
 				"value"		"450"
+                "affected_by_aoe_increase"  "1"     
 				"special_bonus_shard"		"+150"
 			}
-			"remnant_watch_radius"		"130"
-			"watch_path_vision_radius"	"200"
+			"remnant_watch_radius"      
+            {
+                "value"     "130"
+                "affected_by_aoe_increase"  "1"     
+            }
+            "watch_path_vision_radius"  
+            {
+                "value"     "200"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"activation_delay"		"0.4"
 			"impact_damage"
 			{
@@ -64,7 +85,26 @@ DOTAAbilities
 				"value"							"11 10.5 10 9.5 9 8.5 8"
 				"special_bonus_shard"			"-0.5"
 			}
-			
+			"damage_tick_rate"              
+            {
+                "value"                     "0"
+                "special_bonus_shard"       "+1"
+            }
+            "creep_damage_pct"                  
+            {
+                "value"                     "0"
+                "special_bonus_shard"       "+30"
+            }
+            "artifice_duration_override"
+            {
+                "value"                                             "0"
+                "special_bonus_facet_void_spirit_aether_artifice"   "+4.0"      // artifice_duration_override_tooltip
+            }
+            "artifice_pct_effectiveness"
+            {
+                "value"                                             "0"
+                "special_bonus_facet_void_spirit_aether_artifice"   "+70.0"     // artifice_pct_effectiveness_tooltip
+            }			
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -106,16 +146,48 @@ DOTAAbilities
 		{
 			"damage_pct"			"35"
 			"phase_duration"		"1.0"
-			"destination_fx_radius"	"183" // proportional to distance_offset
+			"destination_fx_radius" // proportional to distance_offset
+            {
+                "value"                     "183"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"portals_per_ring"		"6"
 			"angle_per_ring_portal"	"60"
-			"first_ring_distance_offset"	"520"
-			"damage_radius"			"275" // proportional to distance_offset
+			"first_ring_distance_offset"    
+            {
+                "value"     "520"
+                "affected_by_aoe_increase"  "1"     
+            }
+            "damage_radius" // proportional to distance_offset
+            {
+                "value"                     "275"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"has_outer_ring"
 			{
 				"value"				"0"
 				"special_bonus_unique_void_spirit_dissimilate_outerring"			"+1"
 			}
+			"aether_remnant_count"
+            {
+                "value"                                             "0"
+                "special_bonus_facet_void_spirit_aether_artifice"   "+3"            // NOTE: Only works for +3 currently
+            }
+            "artifice_duration_override_tooltip"
+            {
+                "value"                                             "0"
+                "special_bonus_facet_void_spirit_aether_artifice"   "+4.0"          // TOOLTIP ONLY
+            }
+            "artifice_pct_effectiveness_tooltip"
+            {
+                "value"                                             "0"
+                "special_bonus_facet_void_spirit_aether_artifice"   "+70.0"         // TOOLTIP ONLY
+            }
+            "artifice_extra_offset"     // extra offset, in addition to remnant_watch_distance, from the vector drawn from center of middle portal to center of outer portal. Used to spread out remnants a bit so they don't "double pull"
+            {
+                "value"                                             "0"
+                "special_bonus_facet_void_spirit_aether_artifice"   "+125"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -161,7 +233,7 @@ DOTAAbilities
 				"max_travel_distance"	"700.0 800.0 900.0 1000.0 1100.0 1200.0 1300.0"
 				"pop_damage_delay"		
 				{
-					"value"	"1.0"
+					"value"	"1.25"
 					"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 				}
 				"pop_damage"			
@@ -218,7 +290,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"				"170"
+			"radius"                
+            {
+                "value" "170"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"AbilityCharges"			"3"
 			"AbilityChargeRestoreTime"	
 			{
@@ -237,9 +313,10 @@ DOTAAbilities
 				"value"					"100.0 130.0 160.0 190.0 220.0 250.0 280.0"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"movement_slow_pct"		"10 20 30 40 50 60 70"
+			"movement_slow_pct"		"12 15 18 21 24 27 30"
 			"damage_hp_pct"			"5 8 11 14 17 20 23"
 		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"void_spirit_resonant_pulse"
 	{
@@ -274,16 +351,29 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"				"500"
+			"radius"
+            {
+                "value" "500"
+                "affected_by_aoe_increase"  "1"     
+            }
 			"speed"					"1200"
 			"damage"
 			{
 				"value"					"120.0 160.0 200.0 240.0 280.0 320.0 360.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_4"
+				"special_bonus_unique_void_spirit_4"    "+140"
 			}
 			"buff_duration"			"6"
 			"base_absorb_amount"	"80.0 120.0 160.0 200.0 240.0 280.0 320.0"
-			"absorb_per_hero_hit"	"30.0 60.0 90.0 120.0 150.0 180.0 210.0"
+			"absorb_per_hero_hit"   
+            {
+                "value"                                             "30.0 60.0 90.0 120.0 150.0 180.0 210.0"
+                "special_bonus_facet_void_spirit_sanctuary"         "+15 +20 +25 +30 +35 +40 +45"
+            }
+            "is_all_barrier"
+            {
+                "value"                                             "0"
+                "special_bonus_facet_void_spirit_sanctuary"         "+1"
+            }
 			"return_projectile_speed"	"900"
 			"max_charges"
 			{
@@ -303,4 +393,152 @@ DOTAAbilities
 			"damage_pct"			"35"
 		}
 	}
+	"void_spirit_symmetry"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "MaxLevel"                      "1"
+        // Casting
+        "AbilityValues"
+        {
+            "buff_duration"         "20.0"
+            "refresh_duration"      "10"
+            "absorb_per_damage_pct" "40"
+            "return_projectile_speed"           "900"
+
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
+    }
+
+    //=================================================================================================================
+    // Intrinsic Edge (innate)
+    //=================================================================================================================
+    "void_spirit_intrinsic_edge"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_NONE"  
+
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+
+        "AbilityValues"
+        {
+            "secondary_stat_bonus_pct"  "25"
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus Start
+    //=================================================================================================================
+    "special_bonus_unique_void_spirit_1"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        
+        
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus 
+    //=================================================================================================================
+    "special_bonus_unique_void_spirit_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus (Dissimilate Stuns)
+    //=================================================================================================================
+    "special_bonus_unique_void_spirit_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "2"
+                "ad_linked_abilities" "void_spirit_dissimilate"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus (Pulse Damage)
+    //=================================================================================================================
+    "special_bonus_unique_void_spirit_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "70"
+                "ad_linked_abilities" "void_spirit_resonant_pulse"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus (Remnant provides truesight)
+    //=================================================================================================================
+    "special_bonus_unique_void_spirit_7"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "475"
+                "affected_by_aoe_increase"  "1"
+
+                "ad_linked_abilities" "void_spirit_aether_remnant"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_void_spirit_8"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "140"
+                "ad_linked_abilities" "void_spirit_astral_step"
+            }
+        }
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_void_spirit_dissimilate_outerring"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE" 
+        "BaseClass"                     "special_bonus_base"
+    }   
 }

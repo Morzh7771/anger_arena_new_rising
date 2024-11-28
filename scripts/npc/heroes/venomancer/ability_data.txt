@@ -1,47 +1,40 @@
 DOTAAbilities
 {
 	"venomancer_area_poison"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"venomancer_area_poison"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"  
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"               "1"
+        "MaxLevel"                      "1"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_5"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
-		"AbilityCastRange"				"900"
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "60"
+        "AbilityCastRange"              "900"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"		"15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"		"650"
-			}
-		}
-	}
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "150"
+        "AbilityValues"
+        {
+            "duration"
+            {
+                "value" "15"
+            }
+            "radius"
+            {
+                "value" "650"
+            }
+        }
+    }
 	"venomancer_venomous_gale"
 	{
 		// General
@@ -88,7 +81,11 @@ DOTAAbilities
 			}
 			"tick_interval"			"3.0 3.0 3.0 3.0"
 			"movement_slow"			"-50 -50 -50 -50"
-			"radius"				"125"
+			"radius"                
+            {
+                "value"     "125"
+                "affected_by_aoe_increase"  "1"
+            }
 			"speed"					"1200 1200 1200 1200"
 			"create_wards"
 			{
@@ -100,6 +97,14 @@ DOTAAbilities
 				"value"												"21 20 19 18 17 16 15"
 				"special_bonus_unique_venomancer_3"					"-5"
 			}
+			"explosion_damage"      
+            {
+                "special_bonus_shard"   "300"
+            }
+            "explosion_stun_duration"   
+            {
+                "special_bonus_shard"   "1.6"
+            }
 		}
 	}
 	"venomancer_poison_sting"
@@ -162,46 +167,75 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"21 24 27 30 33 36 39"
 		
-		// Special	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"40.0"
-				"LinkedSpecialBonus"		"special_bonus_unique_venomancer_7"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ward_hp_tooltip"		"120 230 340 450 560 670 780"
-				"LinkedSpecialBonus"	"special_bonus_unique_venomancer"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ward_damage_tooltip"	"13 22 31 40 49 58 67"
-				"LinkedSpecialBonus"	"special_bonus_unique_venomancer"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
-			}
-			"04" // For special bonus at level 25
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ward_hp"		"240 460 680 900 1120 1340 1560"
-			}
-			"05" // For special bonus at level 25
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ward_damage"	"26 44 62 80 98 116 134"
-			}
-		}
+		"AbilityValues"
+        {
+            "AbilityCooldown"
+            {
+                "value"         "5.0"
+                "special_bonus_unique_venomancer_8"         "-1"
+            }
+            "can_target"
+            {
+                "value"         "0"
+                "special_bonus_facet_venomancer_plague_carrier" "=1"
+            }
+            "gold_bounty_pct"
+            {
+                "value"         "100"
+                "special_bonus_facet_venomancer_plague_carrier" "=20"
+            }
+
+            "max_charges"
+            {
+                "value"         "0"
+                "special_bonus_facet_venomancer_plague_carrier" "=3"
+            }
+
+            "duration"
+            {
+                "value"         "40.0"
+            }
+
+            "ward_multiplier"
+            {
+                "value"                             "1.0"
+                "special_bonus_unique_venomancer"   "x2.5"
+            }
+            "ward_model_scale"
+            {
+                "value"                             "1.0"
+                "special_bonus_unique_venomancer"   "x1.5"
+            }
+            "ward_hp_tooltip"
+            {
+                "value"                         "120 230 340 450 560 670 780"
+                "special_bonus_unique_venomancer" "x2.5"
+            }
+            "ward_damage_tooltip"
+            {
+                "value"                         "13 22 31 40 49 58 67"
+                "special_bonus_unique_venomancer" "x2.5"
+            }
+            "threshold"                         
+            {
+                "value"                         "100 125 150 175 200 225 250"
+                "special_bonus_unique_venomancer" "x2.5"
+                "RequiresFacet"                 "venomancer_plague_carrier"
+
+            }
+            "threshold_max_hp_pct"                          
+            {
+                "value"                         "1.5 1.75 2 2.25 2.5 2.75 3"
+                "special_bonus_unique_venomancer" "x2.5"
+                "RequiresFacet"                 "venomancer_plague_carrier"             
+            }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	"venomancer_noxious_plague"
 	{
-		"ID"			"1105"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"BaseClass"			"venomancer_noxious_plague"
 		"MaxLevel"		"7"
@@ -215,7 +249,7 @@ DOTAAbilities
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 110 100 90 80 70 60"
+		"AbilityCooldown"				"100 95 90 85 80 75 70"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -230,13 +264,17 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"debuff_duration"			"5"
-			"impact_damage"				"150 250 350 450 550 650 750"
+			"impact_damage"				"225 300 375 450 525 600 675"
 			"health_damage"
 			{
 				"value"							"4 4.5 5 5.5 6 6.5 7"
-				"special_bonus_unique_venomancer_4" "1.5"
+				"special_bonus_unique_venomancer_4" "+1.5"
 			}
-			"debuff_radius"				"800"
+			"debuff_radius"             
+            {
+                "value"     "800"
+                "affected_by_aoe_increase"  "1"
+            }
 			"movement_slow_max"			"50"
 			"attack_slow"
 			{
@@ -244,7 +282,18 @@ DOTAAbilities
 				"special_bonus_unique_venomancer_5"	"+200"
 			}
 
-			"projectile_speed"			"1200"		
+			"spread_count"
+            {
+                "value"                 "1"
+                "special_bonus_facet_venomancer_patient_zero"   "+1"
+            }
+
+            "impact_damage_reduce"
+            {
+                "special_bonus_facet_venomancer_patient_zero" "100"
+            }
+
+            "projectile_speed"          "1200"    
 		}
 	}
 	"venomancer_poison_nova"
@@ -266,15 +315,19 @@ DOTAAbilities
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
-			"radius"					"900"
-			"start_radius"				"255"
-			"duration"					"10"
-			"damage"					"3"
-			"magic_resist"				"-20"
-			"speed"						"550"
-			"trigger_cd"				"10"
-		}
+        {
+            "radius"                    
+            {
+                "value"     "900"
+                "affected_by_aoe_increase"  "1"
+            }
+            "start_radius"              "255"
+            "duration"                  "10"
+            "damage"                    "3"
+            "magic_resist"              "-20"
+            "speed"                     "550"
+            "trigger_cd"                "10"
+        }
 	}
 	"venomancer_latent_poison"
 	{
@@ -326,4 +379,133 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
 	}
+	"venomancer_sepsis"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "MaxLevel"                      "1"
+        "Innate"                        "1"
+        "HasScepterUpgrade"             "1"
+        "IsBreakable"                   "1"
+
+        "AbilityValues"
+        {
+            "bonus_dmg_per_debuff_pct"
+            {
+                "value"                     "10"
+                "special_bonus_scepter"     "+10"
+                "DamageTypeTooltip"         "DAMAGE_TYPE_MAGICAL"
+            }
+            "apply_from_ward_attacks"
+            {
+                "value"                     "0"
+                "special_bonus_scepter"     "=1"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_venomancer"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass" "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_venomancer_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_venomancer_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_venomancer_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_venomancer_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value"
+            {
+                "value" "2"
+                "ad_linked_abilities" "venomancer_poison_nova"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_venomancer_8"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                 "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_venomancer_poisonsting_regen_reduction"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_venomancer_gale_plagueward"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
 }

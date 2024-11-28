@@ -28,6 +28,7 @@ end
 function modifier_fervor_aa_effect:OnCreated( kv )
     self.damage = self:GetAbility():GetSpecialValueFor( "damage" )
     self.attack_speed = self:GetAbility():GetSpecialValueFor( "attack_speed" )
+    self.armor = self:GetAbility():GetSpecialValueFor( "armor" )
 end
 
 --------------------------------------------------------------------------------
@@ -40,6 +41,7 @@ function modifier_fervor_aa_effect:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     }
     return funcs
 end
@@ -52,8 +54,10 @@ end
 
 --------------------------------------------------------------------------------
 function modifier_fervor_aa_effect:GetModifierAttackSpeedBonus_Constant( params )
-	local attack_speed_by_talent = self:GetCaster():GetTalentSpecialValueFor("special_bonus_unique_troll_warlord_5")
-    return (self.attack_speed + attack_speed_by_talent) * self:GetStackCount()
+    return self.attack_speed * self:GetStackCount()
 end
 
 --------------------------------------------------------------------------------
+function modifier_fervor_aa_effect:GetModifierPhysicalArmorBonus( params )
+    return self.armor * self:GetStackCount()
+end

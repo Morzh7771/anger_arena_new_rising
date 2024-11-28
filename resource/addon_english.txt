@@ -647,6 +647,11 @@
 		//Lion
 		"DOTA_Tooltip_Ability_lion_finger_of_death_damage_pct"				"%INTELLIGENCE DAMAGE"
 
+		//Slardar
+		"DOTA_Tooltip_Ability_slardar_slithereen_crush_damage_pct"          "%STRENGTH DAMAGE"
+        "DOTA_Tooltip_Ability_special_bonus_unique_slardar_bashStrDmg"      "+{s:bonus_damage_pct}% strength damage for Slithereen Crush"
+
+
 		//Luna
 		"DOTA_Tooltip_Ability_luna_lucent_beam_damage_pct"					"%AGILITY DAMAGE"
 		"DOTA_Tooltip_Ability_slark_dark_pact_damage_pct"					"%AGILITY DAMAGE"
@@ -811,6 +816,7 @@
 
         //Silencer
         "DOTA_Tooltip_Ability_silencer_last_word_damage_pct"													"%INTELLIGENCE DAMAGE"
+        "DOTA_Tooltip_Ability_silencer_curse_of_the_silent_damage_pct"											"%INTELLIGENCE DAMAGE"
 
 		//Spectre
 		"DOTA_Tooltip_Ability_spectre_desolate_damage_pct"						"%AGILITY DAMAGE"	
@@ -881,7 +887,7 @@
         //Storm Spirit
 		"DOTA_Tooltip_Ability_storm_spirit_overload_damage_pct"			"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_storm_spirit_static_remnant_damage_pct"			"%INTELLIGENCE DAMAGE"
-        "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_5"              "+{s:bonus_static_remnant_damage} to Static Remnant damage"
+        "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_5"              "+{s:bonus_static_remnant_damage}% to Static Remnant damage"
         "DOTA_Tooltip_Ability_special_bonus_unique_storm_spirit_remnant_dmg_pct" "+{s:bonus_damage_pct}% to Intelligence damage on Static Remnant"
 
         //Leshrac
@@ -923,16 +929,19 @@
 		"DOTA_Tooltip_Ability_death_prophet_exorcism_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
 
         //Timbersaw
-        "DOTA_Tooltip_Ability_shredder_flamethrower_damage_pct"             "%ALL ATTRIBUTES DAMAGE"
-        "DOTA_Tooltip_Ability_shredder_whirling_death_damage_pct"           "%ALL ATTRIBUTES DAMAGE"
-        "DOTA_Tooltip_Ability_shredder_timber_chain_damage_pct"             "%ALL ATTRIBUTES DAMAGE"
-        "DOTA_Tooltip_Ability_shredder_chakram_damage_pct"                  "%ALL ATTRIBUTES DAMAGE"
+        "DOTA_Tooltip_Ability_shredder_flamethrower_damage_pct"             			"%ALL ATTRIBUTES DAMAGE"
+        "DOTA_Tooltip_Ability_shredder_whirling_death_damage_pct"           			"%ALL ATTRIBUTES DAMAGE"
+        "DOTA_Tooltip_Ability_shredder_timber_chain_damage_pct"             			"%ALL ATTRIBUTES DAMAGE"
+        "DOTA_Tooltip_Ability_shredder_chakram_damage_pct"                  			"%ALL ATTRIBUTES DAMAGE"
+        "DOTA_Tooltip_Ability_shredder_twisted_chakram_damage_pct"						"%ALL ATTRIBUTES DAMAGE"
+        "DOTA_Tooltip_Ability_shredder_twisted_chakram"									"Twisted Chakram"
 
         //Kunkka
         "DOTA_Tooltip_Ability_kunkka_torrent_damage_pct"                    "%STRENGTH DAMAGE"
 
         //Sven
-        "DOTA_Tooltip_Ability_special_bonus_unique_sven_10"                  "+{s:bonus_great_cleave_damage}% to damage and +{s:bonus_strength_bonus} to strength from Greater Cleave"
+        "DOTA_Tooltip_Ability_special_bonus_unique_sven_10"                  			"+{s:bonus_great_cleave_damage}% to damage and +{s:bonus_strength_bonus} to strength from Greater Cleave"
+        "DOTA_Tooltip_ability_sven_warcry_barrier_per_strength"                          "%PHYSICAL BARRIER AMOUNT PER STRENGTH:"
 
         //Huskar
         "DOTA_Tooltip_Ability_special_bonus_unique_huskar_2"                "+{s:bonus_burn_damage} to Burning Spear damage per second"
@@ -1700,8 +1709,28 @@
 		"DOTA_Tooltip_modifier_item_pavise_2_shield"	"Pavise 2"
 		"DOTA_Tooltip_modifier_item_pavise_2_shield_Description"	"Absorbs physical damage."
 		
-		"DOTA_Tooltip_ability_item_crimson_guard_3"	"CRIMSON GUARD 2"
-		"DOTA_Tooltip_ability_item_crimson_guard_3_Description"	"<h1>Active: Guard</h1> Gives nearby heroes and buildings a %block_chance_active%%% chance to block damage from each attack for %duration% seconds, equal to %block_damage_active% + %strength_pct%%% of the owner's strength. <br>The ability can only affect the same unit once every %tooltip_reapply_time% seconds.<br><br>Radius: %bonus_aoe_radius%\n\n<h1>Passive: Damage Block</h1> Has a %block_chance%%% chance to block %block_damage_melee% damage if the owner is a melee hero, or %block_damage_ranged% damage if the hero is ranged."
+		"DOTA_Tooltip_ability_item_crimson_guard_2"	"CRIMSON GUARD 2"
+		"DOTA_Tooltip_ability_item_crimson_guard_2_Description"	"<h1>Active: Guard</h1> Gives nearby heroes and buildings a %block_chance_active%%% chance to block damage from each attack for %duration% seconds, equal to %block_damage_active% + %max_hp_pct%%% of the owner's strength. <br>The ability can only affect the same unit once every %tooltip_reapply_time% seconds.<br><br>Radius: %bonus_aoe_radius%\n\n<h1>Passive: Damage Block</h1> Has a %block_chance%%% chance to block %block_damage_melee% damage if the owner is a melee hero, or %block_damage_ranged% damage if the hero is ranged."
+		"DOTA_Tooltip_ability_item_crimson_guard_2_Lore"	"Armor, originally forged to protect against the terrifying Godnya."
+		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health"	"+$health"
+		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health_regen"	"+$hp_regen"
+		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_armor"	"+$armor"
+
+		"DOTA_Tooltip_ability_item_crimson_guard_2_Note0"	"The effects of multiple abilities that block damage do not combine."
+		
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_aura"	"Armor from Crimson Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_aura_Description"	"Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_effect"	"Armor from Crimson Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_effect_Description"	"Armor increased by %MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_extra"	"Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_extra_Description"	"Has a 100% chance to block %dMODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK% damage from attacks."
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_nostack"	"Reload Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_2_nostack_Description"	"The ability Guard 3 does not affect creatures on which it was recently applied."
+
+		"DOTA_Tooltip_ability_item_crimson_guard_3"	"CRIMSON GUARD 3"
+		"DOTA_Tooltip_ability_item_crimson_guard_3_Description"	"<h1>Active: Guard</h1> Gives nearby heroes and buildings a %block_chance_active%%% chance to block damage from each attack for %duration% seconds, equal to %block_damage_active% + %max_hp_pct%%% of the owner's strength. <br>The ability can only affect the same unit once every %tooltip_reapply_time% seconds.<br><br>Radius: %bonus_aoe_radius%\n\n<h1>Passive: Damage Block</h1> Has a %block_chance%%% chance to block %block_damage_melee% damage if the owner is a melee hero, or %block_damage_ranged% damage if the hero is ranged."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_Lore"	"Armor, originally forged to protect against the terrifying Godnya."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health_regen"	"+$hp_regen"
@@ -1709,16 +1738,16 @@
 
 		"DOTA_Tooltip_ability_item_crimson_guard_3_Note0"	"The effects of multiple abilities that block damage do not combine."
 		
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_aura"	"Armor from Crimson Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_aura"	"Armor from Crimson Guard 3"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_aura_Description"	"Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_effect"	"Armor from Crimson Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_effect"	"Armor from Crimson Guard 3"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_effect_Description"	"Armor increased by %MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra"	"Guard 2"
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra"	"Guard 3"
 		"DOTA_Tooltip_modifier_item_crimson_guard_3_extra_Description"	"Has a 100% chance to block %dMODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK% damage from attacks."
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack"	"Reload Guard 2"
-		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description"	"The ability Guard 2 does not affect creatures on which it was recently applied."
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack"	"Reload Guard 3"
+		"DOTA_Tooltip_modifier_item_crimson_guard_3_nostack_Description"	"The ability Guard 3 does not affect creatures on which it was recently applied."
 
 		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence"							"Explosive Mantle of Intelligence"
 		"DOTA_Tooltip_ability_item_explosive_mantle_of_intelligence_Description"				"<h1>Active: Explode</h1>Makes you a happy sheep. When activated, deals damage equal to your maximum health every second to you and all enemies in a %radius%. Kills you after %pre_explode_duration% seconds, dealing damage to enemies based on your current health. Final damage is increased by your intelligence."
@@ -3123,6 +3152,20 @@
         "DOTA_Tooltip_ability_item_talisman_of_heal_bonus_mp_regen"            "+$mana_regen"
         "DOTA_Tooltip_modifier_talisman_of_heal_buff"                        "Bliss"
         "DOTA_Tooltip_modifier_talisman_of_heal_buff_Description"            "Restoring health and mana"
+
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2"                            "Healing Pendant 2"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_Description"                "<h1>Активная: Extencive Heal</h1> Restore %heal_const% + %heal_per_str% * str, in  %duration_active% sec. \n\n "<h1>Passive: Minder</h1> The owner receives additional experience for any damage dealt to heroes, depending on the damage dealt, in the amount of %damage_to_exp_melee%% for melee heroes and %damage_to_exp_ranged%% for ranged heroes, but not less than %min_exp_melee% for melee heroes and %min_exp_ranged% for ranged heroes.\n\n <h1>Passive: Bliss</h1>By gaining a level, restores %replenish_health%% health and %replenish_mana%% mana. Additionally, it gives an increase in health recovery by %buff_health%% and mana by %buff_mana%% . Duration %duration% seconds.  <br>If the unit is attacked by an enemy hero or Roshan, the effect is lost."
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_attack"            "+$damage"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_all"                "+$all"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_health"            "+$health"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_hp_regen"            "+$hp_regen"
+        "DOTA_Tooltip_ability_item_talisman_of_heal_2_bonus_mp_regen"            "+$mana_regen"
+
+        "DOTA_Tooltip_modifier_talisman_of_heal_2_buff"                        "Bliss"
+        "DOTA_Tooltip_modifier_talisman_of_heal_2_buff_Description"            "Restoring health and mana"
+
+		"DOTA_Tooltip_modifier_talisman_of_heal_2_active"                        "Extencive Heal"
+        "DOTA_Tooltip_modifier_talisman_of_heal_2_active_Description"            "Remains is to restore health."
 
         "DOTA_Tooltip_ability_item_unknown_amulet"    						"Unknown Amulet"
         "DOTA_Tooltip_ability_item_unknown_amulet_Description"				"<h1>Active: Swap Bonus</h1> Switches the state of the amulet. Each of the options (Strength/Agility/Intelligence) gives %charge_primary_attribute% stats for the selected attribute per charge. The Universal option divides this bonus by 3, across all attributes.<br><br><b><font color='#eb4034'>Strength</font></b> - For each charge, the owner receives a %all_damage_def_per_charge%%% reduction incoming damage.<br><br><b><font color='#53ea48'>Agility</font></b> - For each charge, the owner removes - %charge_disarmor_const% + %charge_disarmor%%% armor from the target.<br><br><b><font color='#1722eb'>Intelligence</font></b> - For each charge, the owner receives %spell_amp_pre_charge%%% spell amplify.<br><br><b>Universal</b> - The owner receives %stat_damage%%% of the base damage from the sum of all stats.n\n<h1>Passive: Rune Power</h1> The amulet replenishes charges from raised runes. If there are 8 or more charges, then the amulet will receive only one charge, otherwise - two. Charges in the backpack do not increase. Upon death, 30% of the charges are taken away."
