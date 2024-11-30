@@ -46,8 +46,8 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"								"24 22 20 18 16 14 12"
-				"special_bonus_unique_clinkz_4"		"-6"
+				"value"								"16"
+				"special_bonus_unique_clinkz_4"		"-4"
 
 			}
 			"strafe_skeleton_radius"					
@@ -298,7 +298,7 @@ DOTAAbilities
 			"skeleton_duration"					"15"
 			"skeletons_spawned"			
 			{
-				"value"				"1 1 1 1 1 2 2"
+				"value"				"1 1 1 1 1 1 2"
 			}	
 			"spawn_skeleton_on_origin"
 			{
@@ -320,7 +320,7 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Clinkz.DeathPact"
 		"AbilityDraftUltScepterAbility" "clinkz_burning_army"
-		"MaxLevel"						"4"
+		"MaxLevel"						"8"
 		"Innate"						"1"
 		"HasScepterUpgrade"				"1"
 
@@ -347,7 +347,7 @@ DOTAAbilities
 		{						
 			"skeleton_duration"					
 			{
-				"value"						"15 20 25 30 35 40 45"
+				"value"						"15 20 25 30 35 40 45 50"
 			}
 			
 			"skeleton_health"
@@ -363,7 +363,7 @@ DOTAAbilities
 
 			}
 			"skeleton_building_damage_reduction"			"25"
-			"attack_rate"			"1.6 1.55 1.5 1.45 1.40 1.35 1.30"
+			"attack_rate"			"1.6 1.55 1.5 1.45 1.40 1.35 1.30 1.25"
 			"damage_percent"		
 			{
 				"value"					"40"

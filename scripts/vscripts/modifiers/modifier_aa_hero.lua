@@ -79,12 +79,14 @@ function modifier_aa_hero:GetModifierBonusStats_Agility() if self:GetParent():Ha
 function modifier_aa_hero:GetModifierBonusStats_Intellect() if self:GetParent():HasModifier("bonus_int_tome") and self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() > 1 then return self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() end end
 
 function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
-	if self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness") 
-	or self:GetParent():HasModifier("modifier_bloodseeker_thirst") 
-	or self:GetParent():HasModifier("modifier_primal_beast_trample")
-	or self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze") 
-	or self:GetParent():HasModifier("modifier_weaver_shukuchi")
-	or self:GetParent():HasModifier("modifier_dark_seer_surge") then
+	if     self:GetParent():HasModifier("modifier_rune_haste") then 
+		return 700
+	elseif self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness") 
+	or 	   self:GetParent():HasModifier("modifier_bloodseeker_thirst") 
+	or 	   self:GetParent():HasModifier("modifier_primal_beast_trample")
+	or 	   self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze") 
+	or 	   self:GetParent():HasModifier("modifier_weaver_shukuchi")
+	or 	   self:GetParent():HasModifier("modifier_dark_seer_surge") then
     	return 10000
     elseif self:GetParent():HasModifier("modifier_centaur_horsepower") then 
     	return 800
