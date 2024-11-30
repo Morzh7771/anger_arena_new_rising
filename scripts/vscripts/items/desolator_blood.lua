@@ -56,9 +56,12 @@ function modifier_item_desolator_lua_2:GetModifierProcAttack_Feedback(data)
 end
 
 function modifier_item_desolator_lua_3:GetModifierProcAttack_Feedback(data)
+    local chance = self:GetAbility():GetSpecialValueFor("chance")
+    local illusion_reduction_chance = self:GetAbility():GetSpecialValueFor("illusion_reduction_chance")
+    if self:GetParent():IsIllusion() then chance = chance / illusion_reduction_chance end
     if data.target:HasModifier("modifier_curruption_armor_debuff_1") then data.target:RemoveModifierByName("modifier_curruption_armor_debuff_1") end
     if data.target:HasModifier("modifier_curruption_armor_debuff_2") then data.target:RemoveModifierByName("modifier_curruption_armor_debuff_2") end
-    if RollPseudoRandomPercentage(self:GetAbility():GetSpecialValueFor("chance"),12,self:GetParent()) then
+    if RollPseudoRandomPercentage(chance,12,self:GetParent()) then
         data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_blood_count", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration")})
         data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_blood", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration")})
     end

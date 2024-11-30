@@ -1301,7 +1301,7 @@
 		"DOTA_Tooltip_ability_item_desolator_aa_2_bonus_damage"					"+$damage"
 
 		"DOTA_Tooltip_ability_item_desolator_aa_3"                              "Desolator 3"
-		"DOTA_Tooltip_ability_item_desolator_aa_3_Description"						"<h1>Passive: Corruption</h1> Attacks reduce the target's armor by %corruption_armor%. Lasts for %corruption_duration% seconds.\n\n<h1>Passive: Bleeding</h1>Each attack has a %chance%% chance to cause a wound that deals %damage_pct%% of the target's maximum health as damage over %corruption_duration% seconds. The damage is divided into <font color='#D8AF54'>pure</font>, <font color='#FF453C'>physical</font>, and <font color='#9AC9FF'>magical</font>, dealing damage 2 times per second."
+		"DOTA_Tooltip_ability_item_desolator_aa_3_Description"						"<h1>Passive: Corruption</h1> Attacks reduce the target's armor by %corruption_armor%. Lasts for %corruption_duration% seconds.\n\n<h1>Passive: Bleeding</h1>Each attack has a %chance%% chance to cause a wound that deals %damage_pct%% of the target's maximum health as damage over %corruption_duration% seconds. The damage is divided into <font color='#D8AF54'>pure</font>, <font color='#FF453C'>physical</font>, and <font color='#9AC9FF'>magical</font>, dealing damage 2 times per second. <br> Illusions have %illusion_reduction_chance% times less chance to cause wound. \n\n <h1>Passive: True Strike</h1> Attacks never miss."
 		"DOTA_Tooltip_ability_item_desolator_aa_3_Lore"							"This unholy weapon has been used on political criminals."
 		"DOTA_Tooltip_ability_item_desolator_aa_3_Note0"							"The armor reduction affects buildings."
 		"DOTA_Tooltip_ability_item_desolator_aa_3_bonus_damage"					"+$damage"

@@ -1525,7 +1525,7 @@
 
         
 		"DOTA_Tooltip_modifier_item_meteor_hammer_oaa_channel"						"Channeling Meteor Hammer"
-		"DOTA_Tooltip_modifier_item_meteor_hammer_oaa_channel_Description"			"Мы не смогли придумать как сделать так что-бы ченел был нормальным так что жуйте модифаер хули)! "
+		//"DOTA_Tooltip_modifier_item_meteor_hammer_oaa_channel_Description"			"Мы не смогли придумать как сделать так что-бы ченел был нормальным так что жуйте модифаер хули)! "
 
 		
 		"DOTA_Tooltip_ability_item_meteor_hammer_aa_2"                             "Meteor Hammer 2"
@@ -1597,7 +1597,7 @@
 		"DOTA_Tooltip_ability_item_desolator_aa_2_bonus_damage"					"+$damage"
 
         "DOTA_Tooltip_ability_item_desolator_aa_3"                                 "Desolator 3"
-        "DOTA_Tooltip_ability_item_desolator_aa_3_Description"						"<h1>Пассивное: Corruption</h1> Атаки уменьшают броню цели на %corruption_armor%. Эффект длится %corruption_duration% сек.\n\n<h1>Пассивное: Bleeding</h1>Каждая атака с вероятностью %chance%%  вызовет ранение которое за %corruption_duration% секунд длительности нанест %damage_pct%%  от максимально здоровья жертвы урон равно делится между <font color='#D8AF54'>чистым</font>, <font color='#FF453C'>физическим</font> и <font color='#9AC9FF'>магическим</font> наносит урон 2 раза в секунду \n\n <h1>Пассивная: True Strike</h1> Ваши атаки больше не могут промахнуться"
+        "DOTA_Tooltip_ability_item_desolator_aa_3_Description"						"<h1>Пассивное: Corruption</h1> Атаки уменьшают броню цели на %corruption_armor%. Эффект длится %corruption_duration% сек.\n\n<h1>Пассивное: Bleeding</h1>Каждая атака с вероятностью %chance%%  вызовет ранение, которое за %corruption_duration% секунд длительности нанесёт %damage_pct%%  от максимального здоровья жертвы. <br> Урон равно делится между <font color='#D8AF54'>чистым</font>, <font color='#FF453C'>физическим</font> и <font color='#9AC9FF'>магическим</font>, и наносится 2 раза в секунду. <br> Иллюзии имеют в %illusion_reduction_chance% раз меньший шанс вызвать ранение. \n\n <h1>Пассивное: True Strike</h1> Ваши атаки больше не могут промахнуться."
 		"DOTA_Tooltip_ability_item_desolator_aa_3_Lore"								"Этим нечистым оружием пытали политических преступников."
 		"DOTA_Tooltip_ability_item_desolator_aa_3_Note0"							"Снижение брони действует на постройки."
 		"DOTA_Tooltip_ability_item_desolator_aa_3_bonus_damage"						"+$damage"
@@ -2219,7 +2219,7 @@
         "DOTA_Tooltip_modifier_center_of_peace_active_finish_Description" "Увеличивает восстановление маны на 15 и уменьшает её расход на 15%%."
 
         "DOTA_Tooltip_ability_item_void_stick"				"Void Scepter"
-        "DOTA_Tooltip_ability_item_void_stick_Description"		"<h1>Активная: Void Astral</h1> ПРЕРЫВАЕМАЯ — При применении на себя скрывает вас с карты на %astral_duration% секунды постепенно восстанавливая %astral_regen%%  здоровья и маны в секунду. При полном прочтении заклинания, владелец получает положительный эффект на %after_cast_bonus_duration%  секунд, увеличивая восстановление маны на  %after_cast_mana_regen% и уменьшая ее расход на %after_cast_reduce_manacost_pct%%.."
+        "DOTA_Tooltip_ability_item_void_stick_Description"		"<h1>Активная: Void Astral</h1> ПРЕРЫВАЕМАЯ — Скрывает героя из мира на %astral_duration% секунды, даруя регенерацию здоровья и маны в размере %astral_regen%%  от максимума в секунду. При полном прочтении заклинания, владелец получает положительный эффект на %after_cast_bonus_duration%  секунд, увеличивая восстановление маны на  %after_cast_mana_regen% и уменьшая ее расход на %after_cast_reduce_manacost_pct%%.."
         "DOTA_Tooltip_Ability_item_void_stick_bonus_int"		"+$int"
         "DOTA_Tooltip_ability_item_void_stick_bonus_hp"			"+$health"
         "DOTA_Tooltip_ability_item_void_stick_bonus_mana"		"+$mana"
@@ -2238,12 +2238,10 @@
 
 
         "DOTA_Tooltip_Ability_item_charon"				"Charon's Scepter"
-        "DOTA_Tooltip_Ability_item_charon_Description"			"<h1>Активируемая: Disappear</h1> Юнит уходит в астрал, где получает регенерацию жизней."
+        "DOTA_Tooltip_Ability_item_charon_Description"			"<h1>Активное: Disappear</h1> Скрывает героя из мира на %astral_duration% секунды, даруя регенерацию здоровья в размере %hp_regen_pct%%  от максимума в секунду."
         "DOTA_Tooltip_Ability_item_charon_bonus_speed"			"+$move_speed"
         "DOTA_Tooltip_Ability_item_charon_bonus_int"			"+$int"
         "DOTA_Tooltip_Ability_item_charon_bonus_manaregen"		"+$mana_regen"
-        "DOTA_Tooltip_Ability_item_charon_hp_regen_pct"			"%РЕГЕН В АСТРАЛЕ:"
-        "DOTA_Tooltip_Ability_item_charon_astral_duration"		"ДЛИТЕЛЬНОСТЬ АСТРАЛА:"
         "DOTA_Tooltip_Ability_item_charon_Lore"					"Посох, имеющий возможность отправит вас в незабываемое путешествие на пляжи Стикса."
 
         "DOTA_Tooltip_modifier_charon"	                                "Регенерирует"
@@ -2490,7 +2488,7 @@
 		"DOTA_Tooltip_modifier_item_mage_slayer_debuff_Description"		"Это существо наносит на 20%% меньше урона заклинаниями и получает периодический урон."
 
         "DOTA_Tooltip_ability_item_glimmer_cape_2"                      "GLIMMER CAPE 2"
-        "DOTA_Tooltip_ability_item_glimmer_cape_2_Description"		"<h1>Активное: Glimmer</h1> После задержки в %initial_fade_delay% сек. даёт владельцу или выбранному союзнику невидимость, +%active_movement_speed% к скорости передвижения и барьер, поглощающий до %barrier_block% магического урона. Действует %duration% сек. <br><br>Дальность применения: %abilitycastrange%<br><br>Не останавливает прерываемые способности."
+        "DOTA_Tooltip_ability_item_glimmer_cape_2_Description"		"<h1>Активное: Glimmer</h1> После задержки в %initial_fade_delay% сек. даёт владельцу или выбранному союзнику невидимость, + %active_movement_speed% к скорости передвижения и барьер, поглощающий до %barrier_block% магического урона. Действует %duration% сек. <br><br>Дальность применения: %abilitycastrange%<br><br>Не останавливает прерываемые способности."
 		"DOTA_Tooltip_ability_item_glimmer_cape_2_movement_speed"	"+$move_speed"
 		"DOTA_Tooltip_ability_item_glimmer_cape_2_bonus_magical_armor"	"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_glimmer_cape_2_Lore"			"Украденная накидка великого иллюзиониста."
@@ -2498,7 +2496,7 @@
 		"DOTA_Tooltip_modifier_item_glimmer_cape_2_fade_Description"    "Поглощает магический урон. Передвижение ускорено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 
         "DOTA_Tooltip_ability_item_glimmer_cape_3"                      "GLIMMER CAPE 3"
-        "DOTA_Tooltip_ability_item_glimmer_cape_3_Description"		"<h1>Активное: Glimmer</h1> После задержки в %initial_fade_delay% сек. даёт владельцу или выбранному союзнику невидимость, +%active_movement_speed% к скорости передвижения и барьер, поглощающий до %barrier_block% магического урона. Действует %duration% сек. <br><br>Дальность применения: %abilitycastrange%<br><br>Не останавливает прерываемые способности."
+        "DOTA_Tooltip_ability_item_glimmer_cape_3_Description"		"<h1>Активное: Glimmer</h1> После задержки в %initial_fade_delay% сек. даёт владельцу или выбранному союзнику невидимость, + %active_movement_speed% к скорости передвижения и барьер, поглощающий до %barrier_block% магического урона. Действует %duration% сек. <br><br>Дальность применения: %abilitycastrange%<br><br>Не останавливает прерываемые способности."
 		"DOTA_Tooltip_ability_item_glimmer_cape_3_movement_speed"	"+$move_speed"
 		"DOTA_Tooltip_ability_item_glimmer_cape_3_bonus_magical_armor"	"%+$spell_resist"
 		"DOTA_Tooltip_ability_item_glimmer_cape_3_Lore"			"Украденная накидка великого иллюзиониста."
@@ -2707,11 +2705,8 @@
 		"DOTA_Tooltip_ability_item_talisman_of_mastery_Lore"				"Только бывалые воины знают, что отточить свои навыки можно только в бою."
 		
 		"DOTA_Tooltip_ability_item_fury_shield"									"Fury Shield"
-		"DOTA_Tooltip_ability_item_fury_shield_Description"						"<h1>Активируемая: Protection</h1> Владелец получает %active_bonus_aspeed% дополнительной скорость атаки и %block_damage% едениц блокирования входящих физического урона на %shield_duration% секунды."
+		"DOTA_Tooltip_ability_item_fury_shield_Description"						"<h1>Активируемая: Protection</h1> Владелец получает %active_bonus_aspeed% скорость атаки и %block_damage% единиц блокирования входящего урона от атак на %shield_duration% секунды."
 		"DOTA_Tooltip_ability_item_fury_shield_bonus_stats"						"+$all"
-		"DOTA_Tooltip_ability_item_fury_shield_active_bonus_aspeed"				"СКОРОСТЬ АТАКИ:"
-		"DOTA_Tooltip_ability_item_fury_shield_shield_duration"					"ДЛИТЕЛЬНОСТЬ:"
-		"DOTA_Tooltip_ability_item_fury_shield_block_damage"					"БЛОКИРОВАНИЯ ФИЗ. АТАК:"
 		"DOTA_Tooltip_ability_item_fury_shield_Lore"							"Небольшой и удобный щит, позволяющий без стеснения движений защищаться даже самому неопытному бойцу."
 
 		"DOTA_Tooltip_ability_item_piercing_blade"								"Piercing Blade"
@@ -2753,32 +2748,32 @@
 		"DOTA_Tooltip_ability_item_chest_of_midas_Lore"							"Этот примечательный нагрудник отлично себя зарекомендовал на закрытых празднествах Высшего Света."
 		
 		"DOTA_Tooltip_ability_item_dagon_custom"									"Dagon"
-		"DOTA_Tooltip_ability_item_dagon_custom_Description"						"<h1>Активное: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и всем противникам в <b><font color='#53ea48'>радиусе %aoe_radius%</font></b>.  Исцеляет на %active_heal%%% от нанесенного урона основной цели<br><br>Урон: %damage%<br>Урон от основного атрибута: %stat_primary_damage_pct%%%<br>Дальность применения: %abilitycastrange%<br>Расход маны: %mana_cost_tooltip%
-                <h1>Пассивное: Suffocation Protection</h1> Конечный урон от основного атрибута зависит от разницы в уровне владельца и цели."
+		"DOTA_Tooltip_ability_item_dagon_custom_Description"						"<h1>Активное: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий магический урон выбранному вражескому существу и всем противникам в <b><font color='#53ea48'>радиусе %aoe_radius%</font></b>.  Исцеляет на %active_heal%%% от нанесенного урона основной цели.<br><br>Урон: %damage%<br>Урон от основного атрибута: %stat_primary_damage_pct%%%<br>Дальность применения: %abilitycastrange%<br>Расход маны: %mana_cost_tooltip%"
+		//<h1>Пассивное: Suffocation Protection</h1> Конечный урон от основного атрибута зависит от разницы в уровне владельца и цели.
 		"DOTA_Tooltip_ability_item_dagon_custom_Lore"								"Волшебная палочка, которая со временем становится лишь сильнее, наделяет владельца магией на кончиках пальцев."
 		"DOTA_Tooltip_ability_item_dagon_custom_Note0"								"Мгновенно убивает иллюзии и не-древних крипов."
 		"DOTA_Tooltip_ability_item_dagon_custom_Note1"								"Урон от атрибутов для универсалов = Сумма всех статов / 3."
-                "DOTA_Tooltip_ability_item_dagon_custom_Note2"                                                          "Разница в уроне равна 'уровень цели' / 'уровень владельца'."          
-                "DOTA_Tooltip_ability_item_dagon_custom_Note3"                                                          "Максимальный исходящий урон от разницы в уровне равен %max_dif_multiplier%%%."
+        //"DOTA_Tooltip_ability_item_dagon_custom_Note2"                                                          "Разница в уроне равна 'уровень цели' / 'уровень владельца'."          
+        //"DOTA_Tooltip_ability_item_dagon_custom_Note3"                                                          "Максимальный исходящий урон от разницы в уровне равен %max_dif_multiplier%%%."
 		"DOTA_Tooltip_ability_item_dagon_custom_bonus_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_dagon_custom_spell_lifesteal"					"%+$spell_lifesteal"
 
 		"DOTA_Tooltip_ability_item_static_amulet"									"Static Amulet"
-		"DOTA_Tooltip_ability_item_static_amulet_Description"						"<h1>Пассивная: Static Amulet</h1>При касте наносит дополнительный урон в размере %damage% + %damage_pct%%  от их текущего здоровья всем врагам в радиусе %radius% от кастера"
+		"DOTA_Tooltip_ability_item_static_amulet_Description"						"<h1>Пассивная: Static Amulet</h1>Произнесение заклинаний заставляет врагов в радиусе %radius% получать урон в размере %damage% + %damage_pct%%  от их текущего здоровья."
 		"DOTA_Tooltip_ability_item_static_amulet_bonus_armor"						"+$armor"
 		"DOTA_Tooltip_ability_item_static_amulet_bonus_int"							"+$int"
 		"DOTA_Tooltip_ability_item_static_amulet_bonus_all_att"						"+$all"
 		"DOTA_Tooltip_ability_item_static_amulet_Lore"								"От одного слова обладателя этим... 'Предметом', хочется вывернуть себя наизнанку."
 
 		"DOTA_Tooltip_ability_item_slice_amulet"									"Static Amulet"
-		"DOTA_Tooltip_ability_item_slice_amulet_Description"						"<h1>Пассивная: Static Amulet</h1>При касте наносит дополнительный урон в размере %damage% + %damage_pct%%  от их текущего здоровья всем врагам в радиусе %radius% от кастера"
+		"DOTA_Tooltip_ability_item_slice_amulet_Description"						"<h1>Пассивная: Static Amulet</h1>Произнесение заклинаний заставляет врагов в радиусе %radius% получать урон в размере %damage% + %damage_pct%%  от их текущего здоровья."
 		"DOTA_Tooltip_ability_item_slice_amulet_bonus_armor"						"+$armor"
 		"DOTA_Tooltip_ability_item_slice_amulet_bonus_int"							"+$int"
 		"DOTA_Tooltip_ability_item_slice_amulet_bonus_all_att"						"+$all"
 		"DOTA_Tooltip_ability_item_slice_amulet_Lore"								"От одного слова обладателя этим... 'Предметом', хочется вывернуть себя наизнанку."
 
 		"DOTA_Tooltip_Ability_item_static_amulet_old"						"Magic Singularity"
-		"DOTA_Tooltip_Ability_item_static_amulet_old_Description"			"<h1>Активируемая: Disarm</h1>Запрещает врагу атаковать на %debuff_duration%.\n<h1>Пассивная: Magic Singularity</h1> Использование любой способности даст 1 заряд увеличивающий урон от заклинаний на %spell_amplify_by_cast%%  заряд длится %buff_duration% секунд"
+		"DOTA_Tooltip_Ability_item_static_amulet_old_Description"			"<h1>Активируемая: Disarm</h1>Запрещает врагу атаковать на %debuff_duration%.\n<h1>Пассивная: Magic Singularity</h1> Использование любой способности даст 1 заряд, увеличивающий урон от заклинаний на %spell_amplify_by_cast%% . Заряд длится %buff_duration% секунд."
 		"DOTA_Tooltip_Ability_item_static_amulet_old_bonus_armor"			"+$armor"
 		"DOTA_Tooltip_Ability_item_static_amulet_old_bonus_int"				"+$int"
 		"DOTA_Tooltip_Ability_item_static_amulet_old_bonus_stats"			"+$all"
@@ -2791,7 +2786,7 @@
 		"DOTA_Tooltip_modifier_static_disarm_Description"					"Disarmed"
 
 		"DOTA_Tooltip_Ability_item_slice_amulet_old"						"Magic Singularity"
-		"DOTA_Tooltip_Ability_item_slice_amulet_old_Description"			"<h1>Активируемая: Disarm</h1>Запрещает врагу атаковать на %debuff_duration%.\n<h1>Пассивная: Magic Singularity</h1> Использование любой способности даст 1 заряд увеличивающий урон от заклинаний на %spell_amplify_by_cast%%  заряд длится %buff_duration% секунд"
+		"DOTA_Tooltip_Ability_item_slice_amulet_old_Description"			"<h1>Активируемая: Disarm</h1>Запрещает врагу атаковать на %debuff_duration%.\n<h1>Пассивная: Magic Singularity</h1> Использование любой способности даст 1 заряд, увеличивающий урон от заклинаний на %spell_amplify_by_cast%% .  Заряд длится %buff_duration% секунд."
 		"DOTA_Tooltip_Ability_item_slice_amulet_old_bonus_armor"			"+$armor"
 		"DOTA_Tooltip_Ability_item_slice_amulet_old_bonus_int"				"+$int"
 		"DOTA_Tooltip_Ability_item_slice_amulet_old_bonus_stats"			"+$all"
@@ -3386,7 +3381,7 @@
 
 
 		"DOTA_Tooltip_ability_item_mjolnir_aa_1"									"Mjollnir"
-		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Description"						"<h1>Активное: Static Charge</h1> На %active_duration% сек. окружает выбранное существо заряженным щитом, который с вероятностью в %active_chance%%% может нанести %active_arc_damage% магического урона атакующему врагу и %active_jump_count% другим.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chance%%% может создать разряд цепной молнии, которая до %jump_count% раз перескакивает по случайным противникам в радиусе %radius%, нанося каждому %arc_damage% + %bonus_damage_per_base_damage%%% от базового урона героя магическим уроном. От атаки с цепной молнией нельзя уклониться."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Description"						"<h1>Активное: Static Charge</h1> На %active_duration% сек. окружает выбранное существо заряженным щитом, который с вероятностью в %active_chance%%% может нанести %active_arc_damage% магического урона атакующему врагу и %active_jump_count% другим.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chance%%% может создать разряд цепной молнии, которая до %jump_count% раз перескакивает по случайным противникам в радиусе %radius%, нанося каждому %arc_damage% + %bonus_damage_per_base_damage%%% от <b><font color='#738092'>базового урона героя</font></b> магическим уроном. От атаки с цепной молнией нельзя уклониться."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Lore"								"Магический молот Тора, выкованный для него гномами по имени Брок и Эйтри."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Note0"								"Срабатывает не чаще, чем раз в секунду."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_1_Note1"								"Молнии от Static Charge не срабатывают на невидимых или скрытых в тумане войны героев."
@@ -3394,7 +3389,7 @@
 		"DOTA_Tooltip_ability_item_mjolnir_aa_1_bonus_attack_speed"					"+$attack"		
 
 		"DOTA_Tooltip_ability_item_mjolnir_aa_2"									"Mjollnir 2"
-		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Description"						"<h1>Активное: Static Charge</h1> На %active_duration% сек. окружает выбранное существо заряженным щитом, который с вероятностью в %active_chance%%% может нанести %active_arc_damage% магического урона атакующему врагу и %active_jump_count% другим.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chance%%% может создать разряд цепной молнии, которая до %jump_count% раз перескакивает по случайным противникам в радиусе %radius%, нанося каждому %arc_damage% + %bonus_damage_per_base_damage%%% от базового урона героя магическим уроном. От атаки с цепной молнией нельзя уклониться."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Description"						"<h1>Активное: Static Charge</h1> На %active_duration% сек. окружает выбранное существо заряженным щитом, который с вероятностью в %active_chance%%% может нанести %active_arc_damage% магического урона атакующему врагу и %active_jump_count% другим.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chance%%% может создать разряд цепной молнии, которая до %jump_count% раз перескакивает по случайным противникам в радиусе %radius%, нанося каждому %arc_damage% + %bonus_damage_per_base_damage%%% от <b><font color='#738092'>базового урона героя</font></b> магическим уроном. От атаки с цепной молнией нельзя уклониться."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Lore"								"Магический молот Тора, выкованный для него гномами по имени Брок и Эйтри."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Note0"								"Срабатывает не чаще, чем раз в секунду."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_2_Note1"								"Молнии от Static Charge не срабатывают на невидимых или скрытых в тумане войны героев."
@@ -3402,7 +3397,7 @@
 		"DOTA_Tooltip_ability_item_mjolnir_aa_2_bonus_attack_speed"					"+$attack"	
 
 		"DOTA_Tooltip_ability_item_mjolnir_aa_3"									"Mjollnir 3"
-		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Description"						"<h1>Активное: Static Charge</h1> На %active_duration% сек. окружает выбранное существо заряженным щитом, который с вероятностью в %active_chance%%% может нанести %active_arc_damage% магического урона атакующему врагу и %active_jump_count% другим.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chance%%% может создать разряд цепной молнии, которая до %jump_count% раз перескакивает по случайным противникам в радиусе %radius%, нанося каждому %arc_damage% + %bonus_damage_per_base_damage%%% от базового урона героя магическим уроном. От атаки с цепной молнией нельзя уклониться."
+		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Description"						"<h1>Активное: Static Charge</h1> На %active_duration% сек. окружает выбранное существо заряженным щитом, который с вероятностью в %active_chance%%% может нанести %active_arc_damage% магического урона атакующему врагу и %active_jump_count% другим.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chance%%% может создать разряд цепной молнии, которая до %jump_count% раз перескакивает по случайным противникам в радиусе %radius%, нанося каждому %arc_damage% + %bonus_damage_per_base_damage%%% от <b><font color='#738092'>базового урона героя</font></b> магическим уроном. От атаки с цепной молнией нельзя уклониться."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Lore"								"Магический молот Тора, выкованный для него гномами по имени Брок и Эйтри."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Note0"								"Срабатывает не чаще, чем раз в секунду."
 		"DOTA_Tooltip_ability_item_mjolnir_aa_3_Note1"								"Молнии от Static Charge не срабатывают на невидимых или скрытых в тумане войны героев."
@@ -3411,7 +3406,7 @@
 
 
 		"DOTA_Tooltip_ability_item_maelstorm_aa"									"Maelstorm"
-		"DOTA_Tooltip_ability_item_maelstorm_aa_Description"						"<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chance%%% может создать разряд цепной молнии, которая до %jump_count% раз перескакивает по случайным противникам в радиусе %radius%, нанося каждому %arc_damage% + %bonus_damage_per_base_damage%%% от базового урона героя магическим уроном. От атаки с цепной молнией нельзя уклониться."
+		"DOTA_Tooltip_ability_item_maelstorm_aa_Description"						"<h1>Пассивное: Chain Lightning</h1> Каждая атака с вероятностью в %chance%%% может создать разряд цепной молнии, которая до %jump_count% раз перескакивает по случайным противникам в радиусе %radius%, нанося каждому %arc_damage% + %bonus_damage_per_base_damage%%% от <b><font color='#738092'>базового урона героя</font></b> магическим уроном. От атаки с цепной молнией нельзя уклониться."
 		"DOTA_Tooltip_ability_item_maelstorm_aa_Lore"								"Магический молот Тора, выкованный для него гномами по имени Брок и Эйтри."
 		"DOTA_Tooltip_ability_item_maelstorm_aa_Note0"								"Срабатывает не чаще, чем раз в секунду."
 		"DOTA_Tooltip_ability_item_maelstorm_aa_Note1"								"Молнии от Static Charge не срабатывают на невидимых или скрытых в тумане войны героев."
@@ -3424,7 +3419,7 @@
         "DOTA_Tooltip_modifier_item_rattlecage_slow_Description"                    "Существо замедлено"
 		
 		"DOTA_Tooltip_ability_item_assault_3"							"Assault Cuirass 3"
-		"DOTA_Tooltip_ability_item_assault_3_Description"				"<h1>Пассивное: Assault Aura</h1> Увеличивает броню союзных существ на %aura_positive_armor%,скорость атаки на %aura_attack_speed% вампиризм союзников на %lifesteal_aura%%%, их урон на %damage_aura%%%,и восстановление маны на %mana_regen_aura%. Снижает броню врагов на %aura_negative_armor%.<br><br>Радиус: %aura_radius%"
+		"DOTA_Tooltip_ability_item_assault_3_Description"				"<h1>Пассивное: Assault Aura</h1> Увеличивает броню союзных существ на %aura_positive_armor%, скорость атаки на %aura_attack_speed%, вампиризм союзников на %lifesteal_aura%%%, их урон на %damage_aura%%%, и восстановление маны на %mana_regen_aura%. Снижает броню врагов на %aura_negative_armor%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_assault_3_Lore"						"Этот жуткий доспех, выкованный в кузнях нижних пределов, способен укрепить и ускорить целую армию."
 		"DOTA_Tooltip_ability_item_assault_3_bonus_attack_speed"		"+$attack"
 		"DOTA_Tooltip_ability_item_assault_3_bonus_armor"				"+$armor"

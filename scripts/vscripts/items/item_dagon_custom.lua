@@ -17,16 +17,16 @@ function item_dagon_custom:OnSpellStart()
     print(self:GetCaster():GetStrength())
     local radius = self:GetSpecialValueFor("aoe_radius")
     local damage_kv = self:GetSpecialValueFor("damage")
-    local max_dif_multiplier = self:GetSpecialValueFor("max_dif_multiplier") / 100
-    local caster_lvl = self:GetCaster():GetLevel()
-    local target_lvl = self:GetCursorTarget():GetLevel()
-    local difference_lvl = 1
+    --local max_dif_multiplier = self:GetSpecialValueFor("max_dif_multiplier") / 100
+    --local caster_lvl = self:GetCaster():GetLevel()
+    --local target_lvl = self:GetCursorTarget():GetLevel()
+    --local difference_lvl = 1
     local damage = 0
 
-    if target_lvl - caster_lvl > 10 or -10 then
-        difference_lvl = target_lvl / caster_lvl
-        if difference_lvl >= max_dif_multiplier then difference_lvl = max_dif_multiplier end
-    end
+    --if target_lvl - caster_lvl > 10 or -10 then
+    --    difference_lvl = target_lvl / caster_lvl
+    --    if difference_lvl >= max_dif_multiplier then difference_lvl = max_dif_multiplier end
+    --end
     
     if self:GetCursorTarget():IsCreep() and not self:GetCursorTarget():IsAncient() and not self:GetCursorTarget():IsBoss() then self:GetCursorTarget():Kill(self, self:GetCaster()) end
 
@@ -40,7 +40,8 @@ function item_dagon_custom:OnSpellStart()
         damage = (self:GetCaster():GetIntellect(false) * int)
     end
 
-    damage = (damage * difference_lvl) + damage_kv    
+    damage = damage + damage_kv
+    --damage = (damage * difference_lvl) + damage_kv    
     
 
     self:GetCaster():EmitSound("DOTA_Item.Dagon.Activate")
