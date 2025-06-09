@@ -1155,40 +1155,42 @@
 			"damage_inc_inc"		"75"
 		}
 	}
-	"miniboss_unyielding_shield"
+	"tormentor_reflect_aa"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"1"
-		"BaseClass"						"miniboss_unyielding_shield"
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"     		"miniboss_reflect"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"ScriptFile"			 		"creeps/boss/tormentor/tormentor_reflect_aa"
+        "MaxLevel"               		"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage_absorb"		"20000"
-				"absorb_bonus_per_interval"	"100"
-				"regen_per_second"	"100"
-				"regen_bonus_per_interval"	"30"
+				"passive_reflection_pct"					"50"
+				"passive_reflection_bonus_per_interval"		"1.5"
+				"radius"									"1000"
+				"illusion_damage_pct"						"500"
 		}
 	}
-	"miniboss_reflect"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"						"1"
-		"BaseClass"						"miniboss_reflect"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-				"passive_reflection_pct"			"60"
-				"passive_reflection_bonus_per_interval"		"3"
-		}
-	}
+	"tormentor_unyielding_shielda_aa"
+    {
+        "BaseClass"              "ability_lua"
+        "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"     "miniboss_unyielding_shield"
+		"ScriptFile"			 "creeps/boss/tormentor/tormentor_unyielding_shielda_aa"
+        "MaxLevel"               "1"
+        "AbilityValues"
+        {
+			"damage_absorb"				"20000"
+			"absorb_bonus_per_interval"	"100"
+			"regen_per_second"			"100"
+			"regen_bonus_per_interval"	"30"
+			"min_armor" 				"0"
+        }
+    }
 }
