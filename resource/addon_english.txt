@@ -3088,6 +3088,17 @@
 		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_leech_percent" 	"%Lifesteal from Max Health:"
 		"DOTA_Tooltip_ability_life_stealer_feast_aa_hp_damage_percent"	"%Damage from Max Health:"
 
+
+		"DOTA_Tooltip_modifier_modifier_tormentor_unyielding_shielda_aa_Tooltip"      "Maximum Shield Value"
+		"DOTA_Tooltip_modifier_modifier_tormentor_unyielding_shielda_aa_Tooltip2"     "Current Shield Regeneration per Second"
+
+		"DOTA_Tooltip_modifier_modifier_tormentor_unyielding_shielda_aa"              "Unyielding Shield"
+		"DOTA_Tooltip_Ability_tormentor_unyielding_shielda_aa"                        "Unyielding Shield"
+		"DOTA_Tooltip_Ability_tormentor_unyielding_shielda_aa_Description"            "The creature is surrounded by a protective barrier that absorbs all types of damage. The base shield value is %damage_absorb%, and it increases by %absorb_bonus_per_interval% every minute. The shield regenerates at a base rate of %regen_per_second% per second, increasing by %regen_bonus_per_interval% every minute. The creature's armor cannot fall below 0."
+
+		"DOTA_Tooltip_Ability_tormentor_reflect_aa"                                   "Reflect"
+		"DOTA_Tooltip_Ability_tormentor_reflect_aa_Description"                       "%passive_reflection_pct%% of the incoming damage is reflected equally to all enemy heroes within a %radius% radius. Every minute, the reflection increases by %passive_reflection_bonus_per_interval%%. The attacker receives the reflected damage even if they are outside the radius."
+
 		"DOTA_Tooltip_ability_divine_intervention"                                       "Divine Intervention"
 
 		"DOTA_Tooltip_ability_item_shield_of_immortality"                                       "Sheep of Immortality"

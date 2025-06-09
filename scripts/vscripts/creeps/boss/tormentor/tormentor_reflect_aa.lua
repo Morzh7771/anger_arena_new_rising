@@ -13,10 +13,14 @@ modifier_tormentor_reflect_aa = class ({
         if not IsServer() then return end
         self.parent = self:GetParent()
         self.ability = self:GetAbility()
-
+    
         self.radius = self.ability:GetSpecialValueFor("radius")
         self.illusion_damage_pct = self.ability:GetSpecialValueFor("illusion_damage_pct")
-
+        self.base_reflection = self.ability:GetSpecialValueFor("passive_reflection_pct")
+        self.bonus_per_minute = self.ability:GetSpecialValueFor("passive_reflection_bonus_per_interval")
+    
+        self.reflection = self.base_reflection -- initial value
+    
         self.pfx_name = {}
         self.pfx_name[DOTA_TEAM_GOODGUYS] = {
             shield = "particles/neutral_fx/miniboss_shield.vpcf",
@@ -24,20 +28,28 @@ modifier_tormentor_reflect_aa = class ({
             impact = "particles/neutral_fx/miniboss_damage_impact.vpcf",
             death = "particles/neutral_fx/miniboss_death.vpcf",
         }
-
+    
         self.pfx_name[DOTA_TEAM_BADGUYS] = {
             shield = "particles/neutral_fx/miniboss_shield_dire.vpcf",
             reflect = "particles/neutral_fx/miniboss_damage_reflect_dire.vpcf",
             impact = "particles/neutral_fx/miniboss_dire_damage_impact.vpcf",
             death = "particles/neutral_fx/miniboss_death_dire.vpcf",
         }
-        self.minute = math.floor(GameRules:GetDOTATime( false, false ) / 60)
-        self.bonusReflectionPerInterval = self.ability:GetSpecialValueFor("passive_reflection_bonus_per_interval") * self.minute
-        self.reflection = self.ability:GetSpecialValueFor("passive_reflection_pct") + self.bonusReflectionPerInterval
-
+    
         self.shield_pfx = ParticleManager:CreateParticle(self.pfx_name[DOTA_TEAM_GOODGUYS].shield, PATTACH_ABSORIGIN_FOLLOW, self.parent)
-
+    
         self:SetHasCustomTransmitterData(true)
+    
+        self:StartIntervalThink(1) -- Обновлять reflection каждую секунду
+    end,
+    OnIntervalThink = function(self)
+        local minutes = math.floor(GameRules:GetDOTATime(false, false) / 60)
+        local new_reflection = self.base_reflection + minutes * self.bonus_per_minute
+    
+        if new_reflection ~= self.reflection then
+            self.reflection = new_reflection
+            self:SendBuffRefreshToClients()
+        end
     end,
     DeclareFunctions = function (self)
         return {
