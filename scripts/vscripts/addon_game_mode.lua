@@ -39,6 +39,16 @@ function Precache( context )
 			PrecacheResource( "particle", "*.vpcf", context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
+
+	local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
+
+	for unitname, unit_kv in pairs(units_kv) do
+		if type(unit_kv) == "table" and unit_kv.Model then
+			print('unit')
+			PrecacheModel(unit_kv.Model, context)
+		end
+		PrecacheUnitByNameSync(unitname, context)
+	end
 	DuelController:Precache(context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_items.vsndevts", context )
@@ -216,7 +226,7 @@ function AngelArena:InitGameMode()
 	GameMode:SetBuybackEnabled(true)
 	GameMode:SetStashPurchasingDisabled(false)
 	GameMode:SetLoseGoldOnDeath(true)
-
+	GameRules:GetGameModeEntity():SetFriendlyBuildingMoveToEnabled(true);
 	if GameRules:IsCheatMode() then
 		GameRules:SetHeroSelectionTime(90)
 		GameRules:SetStrategyTime(1)
@@ -604,11 +614,11 @@ function AngelArena:OnGameStateChange()
 			local spawnpoint = Entities:FindByName( nil, name )
 			self.creep = nil
 			if number <= 2 then
-				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS)
+				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), false, nil, nil, DOTA_TEAM_GOODGUYS)
 				self.creep:SetMaterialGroup("0")
 			end
 			if number >= 3 then
-				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), false, nil, nil, DOTA_TEAM_BADGUYS)
 				self.creep:SetMaterialGroup("1")
 			end
 			AddFOWViewer(DOTA_TEAM_GOODGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
@@ -627,16 +637,20 @@ function AngelArena:OnGameStateChange()
 		Bounty:Init()
 		PauseGame(true)
 		local towers = Entities:FindAllByClassname("npc_dota_tower")
-		print('tower')
 		for _, tower in pairs(towers) do
-			print('1')
+			--print('1')
 			tower:RemoveModifierByName("modifier_invulnerable")
-			local ability
-			for _,v in ipairs(tower:FindAllModifiers()) do
-				print(v:GetName())
-			end
+			--local ability
+			--for _,v in ipairs(tower:FindAllModifiers()) do
+			--	print(v:GetName())
+			--end
 		end
-		print('abset')
+		local teleports = Entities:FindAllByClassname("npc_dota_unit_twin_gate")
+		print('telepooooooooort')
+		for _, teleport in pairs(teleports) do
+			print('telepooooooooort')
+			teleport:RemoveModifierByName("modifier_invulnerable")
+		end
 	end
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -701,6 +715,9 @@ function AngelArena:OnNPCSpawned(keys)
 		if npc:IsRealHero()then
 			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
 			npc:AddAbility("divine_intervention")
+			if npc:HasAbility("twin_gate_portal_warp") == true then
+                npc:RemoveAbility("twin_gate_portal_warp");
+            end
 			--npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
 		end
 		if npc:IsIllusion() then

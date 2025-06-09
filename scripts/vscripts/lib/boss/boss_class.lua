@@ -87,6 +87,8 @@ function BossClass:Create( name, description, allTables )
 end
 
 function BossClass:Spawn()
+	print("[BossClass] Boss", self.name, "try to spawn")
+	
 	local unit = CreateUnitByName(self.unitName, self.point, true, nil, nil, DOTA_TEAM_NEUTRALS)
 
 	if not unit then

@@ -10,6 +10,9 @@ return
   [MODIFIER_STATE_NO_HEALTH_BAR] = true,
   [MODIFIER_STATE_MAGIC_IMMUNE] = true,
   [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
+  [MODIFIER_STATE_DEBUFF_IMMUNE] = true,
+  [MODIFIER_STATE_CANNOT_BE_MOTION_CONTROLLED] = true,
+  [MODIFIER_STATE_LOW_ATTACK_PRIORITY] = true,
 }
 end
 
@@ -20,6 +23,8 @@ return {
   MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
   MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
   MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
+  MODIFIER_PROPERTY_MIN_HEALTH,
+  MODIFIER_PROPERTY_STATUS_RESISTANCE,
 }
 end
 
@@ -27,6 +32,9 @@ end
 function modifier_mid_teleport:GetAbsoluteNoDamagePhysical() return 1 end
 function modifier_mid_teleport:GetAbsoluteNoDamageMagical() return 1 end
 function modifier_mid_teleport:GetAbsoluteNoDamagePure() return 1 end
+function modifier_mid_teleport:GetMinHealth() return 1 end
+function modifier_mid_teleport:CanParentBeAutoAttacked() return false end
+function modifier_mid_teleport:GetModifierStatusResistance() return 100 end
 
 
 

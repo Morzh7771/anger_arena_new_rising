@@ -44,6 +44,7 @@ local blocked_abilities = {
     ["courier_take_stash_and_transfer_items"] = 1,
     ["courier_shield"] = 1,
     ["courier_burst"] = 1,
+    ["courier_autodeliver"] = 1,
     ["riki_blink_strike"] = 1,
     ["courier_morph"] = 1,
     ["leshrac_pulse_nova"] = 1,

@@ -6,6 +6,8 @@ LinkLuaModifier("modifier_mid_teleport_cast", "abilities/mid_teleport", LUA_MODI
 LinkLuaModifier("modifier_mid_teleport_speed", "abilities/mid_teleport", LUA_MODIFIER_MOTION_NONE)
 
 function mid_teleport:GetChannelTime() return 3 end
+
+function mid_teleport:IsCosmetic() return true end
 function mid_teleport:OnSpellStart()
 	local hero = self:GetCaster()
 	self.portal = nil

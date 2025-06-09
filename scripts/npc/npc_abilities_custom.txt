@@ -1155,4 +1155,40 @@
 			"damage_inc_inc"		"75"
 		}
 	}
+	"miniboss_unyielding_shield"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"BaseClass"						"miniboss_unyielding_shield"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"damage_absorb"		"20000"
+				"absorb_bonus_per_interval"	"100"
+				"regen_per_second"	"100"
+				"regen_bonus_per_interval"	"30"
+		}
+	}
+	"miniboss_reflect"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"BaseClass"						"miniboss_reflect"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"passive_reflection_pct"			"60"
+				"passive_reflection_bonus_per_interval"		"3"
+		}
+	}
 }
