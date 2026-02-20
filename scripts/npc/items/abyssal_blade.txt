@@ -13,7 +13,7 @@
 		"ItemResult"					"item_abyssal_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_basher;item_vanguard"
+			"01"						"item_basher;item_sange"
 		}
 	}
 	"item_recipe_abyssal_blade_2"
@@ -65,19 +65,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"30 100"
-				"bonus_health"			"250 750"
-				"bonus_health_regen"	"10 30"
-				"block_damage_melee"	"70 120"
-				"block_damage_ranged"	"35 90"
-				"block_chance"			"60 70"
-				"bonus_strength"		"10 40"
-				"bash_chance_melee"		"20 25"
-				"bash_chance_ranged"	"10 15"
-				"bash_duration"			"1.2 1.5"
-				"bash_cooldown"			"3 3"
-				"bonus_chance_damage"	"120 250"
-				"stun_duration"			"1.6 2"
+			"bonus_damage"			"30 100"
+			"hp_regen_amp"          "20 35"
+			"slow_resistance"       "20 45"
+			"bonus_strength"		"20 60"
+			"bash_chance_melee"		"20 25"
+			"bash_chance_ranged"	"10 15"
+			"bash_duration"			"1.2 1.5"
+			"bash_cooldown"			"3 3"
+			"bonus_chance_damage"	"120 250"
+			"stun_duration"			"1.6 2"
 		}
 	}
 	"item_abyssal_blade_2"
@@ -115,19 +112,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
     	{
-        "bonus_damage"      "30 100"
-        "bonus_health"      "250 750"
-        "bonus_health_regen"  "10 30"
-        "block_damage_melee"  "70 120"
-        "block_damage_ranged" "35 90"
-        "block_chance"      "60 70"
-        "bonus_strength"    "10 40"
-        "bash_chance_melee"   "20 25"
-        "bash_chance_ranged"  "10 15"
-        "bash_duration"     "1.2 1.5"
-        "bash_cooldown"     "3 3"
-        "bonus_chance_damage" "120 250"
-        "stun_duration"     "1.6 2"
+        	"bonus_damage"			"30 100"
+        	"hp_regen_amp"          "20 35"
+        	"slow_resistance"       "20 45"
+			"bonus_strength"		"20 60"
+			"bash_chance_melee"		"20 25"
+			"bash_chance_ranged"	"10 15"
+			"bash_duration"			"1.2 1.5"
+			"bash_cooldown"			"3 3"
+			"bonus_chance_damage"	"120 250"
+			"stun_duration"			"1.6 2"
     	}
 	}
 }

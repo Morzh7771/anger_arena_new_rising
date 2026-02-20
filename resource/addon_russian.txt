@@ -82,16 +82,16 @@
 		"Dota_tooltip_modifier_edible_gem_aura"		        				"Edible Gem"
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6"								"Книга ИНТЕЛЛЕКТА (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6_Description"					"Дает герою навсегда 5 надежнего интеллекта и 5 ненадежнего. Каждую смерть вы будете терять 20% ненадежного интеллекта."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_INT_6_Description"					"Дает герою, навсегда, 5 надёжного интеллекта и 5 не надёжного. Каждую смерть вы будете терять 20% не надёжного интеллекта."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6"								"Книга ловкости(+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6_Description"					"Дает герою навсегда 5 надежной силы и 5 не надежнего. Каждую смерть вы будете терять 20% ненадежной ловкости."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_AGI_6_Description"					"Дает герою, навсегда, 5 надёжной ловкости и 5 не надёжной. Каждую смерть вы будете терять 20% не надёжной ловкости."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6"								"Книга силы (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6_Description"					"Дает герою навсегда 5 надежной силы и 5 не надежнего. Каждую смерть вы будете терять 20% ненадежной силы."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_STR_6_Description"					"Дает герою навсегда 5 надёжной силы и 5 не надёжной. Каждую смерть вы будете терять 20% не надёжной силы."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6"								"Книга богов (+10)"
-		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"					"Дает герою навсегда 5 всех надежный атрибутов и 5 не надежнех. Каждую смерть вы будете терять 20% ненадежных атрибутов."
+		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_UN_6_Description"					"Дает герою, навсегда, 5 всех надёжных атрибутов и 5 не надёжных. Каждую смерть вы будете терять 20% не надёжных атрибутов."
 
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED"								"Медицинский трактат"
 		"DOTA_TOOLTIP_ABILITY_ITEM_TOME_MED_Description"					"Навсегда увеличивает здоровье вашего персонажа на 400 и ману на 200"
@@ -1130,16 +1130,6 @@
 		"DOTA_Tooltip_Ability_death_prophet_carrion_swarm_damage_pct"											"%УРОН ОТ ВСЕХ АТРИБУТОВ"
 		"DOTA_Tooltip_Ability_death_prophet_exorcism_damage_pct"												"%УРОН ОТ ВСЕХ АТРИБУТОВ"
         "DOTA_Tooltip_Ability_death_prophet_spirit_siphon_damage_pct"          									"%УРОН ОТ МАКС. ЗДОРОВЬЯ ЦЕЛИ"
-        "DOTA_Tooltip_ability_special_bonus_unique_death_prophet_5" 											"–{s:value} сек. восстановления заряда Spirit Siphon"
-
-        "DOTA_Tooltip_Ability_death_prophet_mourning_ritual"                            "Insomnia"
-        "DOTA_Tooltip_Ability_death_prophet_mourning_ritual_Description"                "Герой не получает часть своей силы, в силу непреодолимых сил."
-        "DOTA_Tooltip_Ability_death_prophet_mourning_ritual_Note0"                      ""
-        "DOTA_Tooltip_Ability_death_prophet_mourning_ritual_delay_pct"                  ""
-        "DOTA_Tooltip_Ability_death_prophet_mourning_ritual_delay_time"                 ""
-        "DOTA_Tooltip_ability_death_prophet_mourning_ritual_damage_interval"            ""
-        "DOTA_Tooltip_modifier_death_prophet_mourning_ritual"                           ""
-        "DOTA_Tooltip_modifier_death_prophet_mourning_ritual_Description"               ""
 
 
         //Timbersaw
@@ -1425,24 +1415,26 @@
 		"DOTA_Tooltip_modifier_greater_crit_crippled"					"Crippled"
 		"DOTA_Tooltip_modifier_greater_crit_crippled_Description"		"Ваша скорость передвижения равна %cripple_ms% и её нельзя изменить а так же вы не можете нажимать предметы"
         
-		"DOTA_Tooltip_Ability_item_power_treads_2"								"Power Treads 2 "
-        "DOTA_Tooltip_ability_item_power_treads_2_Description"					"<h1>Активируемая: Switch Attribute</h1> Меняет значение выбранного параметра между силой, ловкостью и интеллектом.\n\nPower Treads могут быть собраны с помощью Belt of Strength, Band of Elvenskin или Robe of the Magi. Основные бонусы к скорости передвижения от нескольких пар ботинок не складываются. Бонусы к скорости атаки от нескольких Power Treads не складываются."
+		"DOTA_Tooltip_Ability_item_power_treads_2"								"Power Treads 2"
+        "DOTA_Tooltip_ability_item_power_treads_2_Description"					"<h1>Активное: Switch Attribute</h1>Меняет атрибут, который получает бонус: +%bonus_stat% к силе, ловкости или интеллекту.\nБонусы к скорости передвижения и скорости атаки от нескольких ботинок не складываются."
+        "DOTA_Tooltip_ability_item_power_treads_2_Note0"                        "Power Treads можно собрать, используя Belt of Strength, Band of Elvenskin или Robe of the Magi."
         "DOTA_Tooltip_ability_item_power_treads_2_Lore"							"Ты повторяешься."
-        "DOTA_Tooltip_ability_item_power_treads_2_bonus_movement_speed_ranged"	"+ к скорость передвижения в дальнем бою"
-        "DOTA_Tooltip_ability_item_power_treads_2_bonus_movement_speed_melee"	"+ к скорость передвижения в ближнем бою"
+        "DOTA_Tooltip_ability_item_power_treads_2_bonus_movement_speed_ranged"	"+к скорости передвижения (ДАЛЬНИЙ БОЙ)"
+        "DOTA_Tooltip_ability_item_power_treads_2_bonus_movement_speed_melee"	"+к скорости передвижения (БЛИЖНИЙ БОЙ)"
         "DOTA_Tooltip_ability_item_power_treads_2_bonus_stat"					"+$selected_attrib"
         "DOTA_Tooltip_ability_item_power_treads_2_bonus_attack_speed"			"+$attack"
 
         "DOTA_Tooltip_Ability_item_power_treads_3"								"Power Treads 3"
-        "DOTA_Tooltip_ability_item_power_treads_3_Description"					"<h1>Активируемая: Switch Attribute</h1> Меняет значение выбранного атрибута между силой, ловкостью и интеллектом. Выбранный атрибут получает 100% бонуса а остальные 50%.\n\nPower Treads могут быть собраны с помощью Belt of Strength, Band of Elvenskin или Robe of the Magi. Основные бонусы к скорости передвижения от нескольких пар ботинок не складываются. Бонусы к скорости атаки от нескольких Power Treads не складываются."
+        "DOTA_Tooltip_ability_item_power_treads_3_Description"					"<h1>Активное: Switch Attribute</h1>Меняет атрибут, который получает бонус: +%bonus_stat% к силе, ловкости или интеллекту. Остальные атрибуты получают 50% от бонуса.\nБонусы к скорости передвижения и скорости атаки от нескольких ботинок не складываются."
+        "DOTA_Tooltip_ability_item_power_treads_3_Note0"                        "Power Treads можно собрать, используя Belt of Strength, Band of Elvenskin или Robe of the Magi."
         "DOTA_Tooltip_ability_item_power_treads_3_Lore"							"Еще что впаришь?"
-        "DOTA_Tooltip_ability_item_power_treads_3_bonus_movement_speed_ranged"	"+ к скорость передвижения в дальнем бою"
-        "DOTA_Tooltip_ability_item_power_treads_3_bonus_movement_speed_melee"	"+ к скорость передвижения в ближнем бою"
+        "DOTA_Tooltip_ability_item_power_treads_3_bonus_movement_speed_ranged"	"+к скорости передвижения (ДАЛЬНИЙ БОЙ)"
+        "DOTA_Tooltip_ability_item_power_treads_3_bonus_movement_speed_melee"	"+к скорости передвижения (БЛИЖНИЙ БОЙ)"
         "DOTA_Tooltip_ability_item_power_treads_3_bonus_stat"		        	"+$selected_attrib"
         "DOTA_Tooltip_ability_item_power_treads_3_bonus_attack_speed"			"+$attack"
 
         "DOTA_Tooltip_ability_item_skadi_2"										"EYE OF SKADI 2"
-		"DOTA_Tooltip_ability_item_skadi_2_Description"							"<h1>Пассивное: Cold Attack</h1> Каждая атака на %cold_duration% сек. замедляет передвижение и атаку цели, а также уменьшает её лечение, восстановление здоровья, вампиризм и вампиризм заклинаниями на %heal_reduction%%%. Замедление зависит от типа атаки жертвы: у существ дальнего боя замедляет передвижение на %cold_slow_ranged%%%, атаку — на %cold_attack_slow_ranged%%%. У существ ближнего боя замедляет передвижение на %cold_slow_melee%%%, атаку — на %cold_attack_slow_melee%%%."
+		"DOTA_Tooltip_ability_item_skadi_2_Description"							"<h1>Пассивное: Cold Attack</h1> Добавляет к атакам владельца замедляющий эффект, действующий %cold_duration% сек. Скорость атаки жертвы снижается на %cold_attack_slow_melee%%%, а замедление передвижения зависит от её типа атаки: у существ ближнего боя оно составляет %cold_slow_melee%%%, а у существ дальнего боя — %cold_slow_ranged%%%. Также уменьшает жертвам пополнение здоровья на %restoration_reduction%%%, а получаемое лечение — на %heal_reduction%%%."
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_all_stats"						"+$all"
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_health"						"+$health"
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_mana"							"+$mana"
@@ -1469,7 +1461,8 @@
 		"DOTA_Tooltip_ability_item_dark_edge_Lore"						"Повергнув несправедливого правителя, этот клинок лишь развязал гражданскую войну."
 
         "DOTA_Tooltip_ability_item_satanic_2"									"Satanic 2"
-		"DOTA_Tooltip_ability_item_satanic_2_Description"						"<h1>Активное: Unholy Rage</h1> Увеличивает эффект вампиризма до %unholy_lifesteal_total_tooltip%%% на %unholy_duration%сек. \n\n<h1>Пассивное: Lifesteal</h1> Наделяет атаки владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
+		"DOTA_Tooltip_ability_item_satanic_2_Description"						"<h1>Активное: Unholy Rage</h1> Увеличивает эффект вампиризма до %unholy_lifesteal_total_tooltip%%% на %unholy_duration% сек.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span> \n\n<h1>Пассивное: Lifesteal</h1>Излечивает владельца на долю от физического урона, который наносят его атаки."
+
 		"DOTA_Tooltip_ability_item_satanic_2_bonus_strength"					"+$str"
 		"DOTA_Tooltip_ability_item_satanic_2_bonus_damage"						"+$damage"
 		"DOTA_Tooltip_ability_item_satanic_2_lifesteal_percent"					"%+$lifesteal"
@@ -1478,7 +1471,8 @@
 		"DOTA_Tooltip_modifier_item_satanic_2_unholy_Description"				"Вампиризм увеличен на %dMODIFIER_PROPERTY_TOOLTIP%%%."
 
         "DOTA_Tooltip_ability_item_satanic_3"									"Satanic 3"
-		"DOTA_Tooltip_ability_item_satanic_3_Description"						"<h1>Активное: Unholy Rage</h1> Увеличивает эффект вампиризма до %unholy_lifesteal_total_tooltip%%% на %unholy_duration%сек. \n\n<h1>Пассивное: Lifesteal</h1> Наделяет атаки владельца вампризмом, отчего они восстанавливают здоровье в размере доли от нанесённого урона."
+		"DOTA_Tooltip_ability_item_satanic_3_Description"						"<h1>Активное: Unholy Rage</h1> Увеличивает эффект вампиризма до %unholy_lifesteal_total_tooltip%%% на %unholy_duration% сек.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span> \n\n<h1>Пассивное: Lifesteal</h1>Излечивает владельца на долю от физического урона, который наносят его атаки."
+
 		"DOTA_Tooltip_ability_item_satanic_3_bonus_strength"					"+$str"
 		"DOTA_Tooltip_ability_item_satanic_3_bonus_damage"						"+$damage"
 		"DOTA_Tooltip_ability_item_satanic_3_lifesteal_percent"					"%+$lifesteal"
@@ -1570,7 +1564,7 @@
 		"DOTA_Tooltip_modifier_item_meteor_hammer_3_burn_Description"			"Существо замедлено. Получает %dMODIFIER_PROPERTY_TOOLTIP% урона раз в %dMODIFIER_PROPERTY_TOOLTIP2% сек."
 
         "DOTA_Tooltip_ability_item_armlet_2"				        			"Armlet of Mordiggian 2"
-        "DOTA_Tooltip_ability_item_armlet_2_Description"						"<h1>Переключаемая: Unholy Strength</h1>Если включена, увеличивает урон на %unholy_bonus_damage%, силу на %unholy_bonus_strength%, сопротивление замедлениям на %unholy_bonus_slow_resistance%%% и броню на %unholy_bonus_armor%, но отнимает %unholy_health_drain_per_second% здоровья в секунду.<br><br>Вы не можете умереть ни от потери здоровья из-за способности, ни от спада бонуса к силе после её выключения."
+        "DOTA_Tooltip_ability_item_armlet_2_Description"						"<h1>Переключаемая: Unholy Strength</h1>Если включена, увеличивает урон на %unholy_bonus_damage%, силу на %unholy_bonus_strength% и броню на %unholy_bonus_armor%, но отнимает %unholy_health_drain_per_second% здоровья в секунду.<br><br>Вы не можете умереть ни от потери здоровья из-за способности, ни от спада бонуса к силе после её выключения."
 		"DOTA_Tooltip_ability_item_armlet_2_Lore"								"Это оружие, горячо любимое дикарями, забирает жизненные силы владельца, взамен наделяя его безмерной силой и мощью."
 		"DOTA_Tooltip_ability_item_armlet_2_Note0"								"Изменение силы действует и на текущий, и на максимальный уровень здоровья, но от него нельзя умереть."
 		"DOTA_Tooltip_ability_item_armlet_2_Note1"								"Изменение силы происходит спустя 0,6 секунды."
@@ -1584,7 +1578,7 @@
 		"DOTA_Tooltip_modifier_item_armlet_2_unholy_strength_Description"		"Урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.\nСила увеличена на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%.\nБроня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.\nКаждую секунду теряет %dMODIFIER_PROPERTY_TOOLTIP% здоровья."
 
         "DOTA_Tooltip_ability_item_armlet_3"				        			"Armlet of Mordiggian 3"
-        "DOTA_Tooltip_ability_item_armlet_3_Description"						"<h1>Переключаемая: Unholy Strength</h1>Если включена, увеличивает урон на %unholy_bonus_damage%, силу на %unholy_bonus_strength%, сопротивление замедлениям на %unholy_bonus_slow_resistance%%% и броню на %unholy_bonus_armor%, но отнимает %unholy_health_drain_per_second% здоровья в секунду.<br><br>Вы не можете умереть ни от потери здоровья из-за способности, ни от спада бонуса к силе после её выключения."
+        "DOTA_Tooltip_ability_item_armlet_3_Description"						"<h1>Переключаемая: Unholy Strength</h1>Если включена, увеличивает урон на %unholy_bonus_damage%, силу на %unholy_bonus_strength% и броню на %unholy_bonus_armor%, но отнимает %unholy_health_drain_per_second% здоровья в секунду.<br><br>Вы не можете умереть ни от потери здоровья из-за способности, ни от спада бонуса к силе после её выключения."
 		"DOTA_Tooltip_ability_item_armlet_3_Lore"								"Это оружие, горячо любимое дикарями, забирает жизненные силы владельца, взамен наделяя его безмерной силой и мощью."
 		"DOTA_Tooltip_ability_item_armlet_3_Note0"								"Изменение силы действует и на текущий, и на максимальный уровень здоровья, но от него нельзя умереть."
 		"DOTA_Tooltip_ability_item_armlet_3_Note1"								"Изменение силы происходит спустя 0,6 секунды."
@@ -1644,16 +1638,20 @@
 		"DOTA_Tooltip_modifier_item_assault_2_negative_buildings_aura_Description""Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
         "DOTA_Tooltip_ability_item_heart_2"                                     "Heart of Tarrasque 2"
-        "DOTA_Tooltip_ability_item_heart_2_Lore"				"Сохранившееся сердце вымершего монстра, которое укрепляет стойкость владельца."
+        "DOTA_Tooltip_ability_item_heart_2_Description"  			"<h1>Пассивное: Behemoth's Blood</h1>Восстановление здоровья увеличивается на %missing_health_regen%%% от недостающего здоровья."
+        "DOTA_Tooltip_ability_item_heart_2_Note0"                   "Эффекты от нескольких заклинаний Behemoth's Blood не складываются."
+        "DOTA_Tooltip_ability_item_heart_2_Lore"					"Сохранившееся сердце вымершего монстра, которое укрепляет стойкость владельца."
 		"DOTA_Tooltip_ability_item_heart_2_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_heart_2_bonus_health"			"+$health"
-		"DOTA_Tooltip_ability_item_heart_2_health_regen_pct"			"%+макс. здоровья в секунду"
+		"DOTA_Tooltip_ability_item_heart_2_hp_regen"		"%+макс. здоровья в секунду"
 
         "DOTA_Tooltip_ability_item_heart_3"                                     "Heart of Tarrasque 3"
-        "DOTA_Tooltip_ability_item_heart_3_Lore"				"Сохранившееся сердце вымершего монстра, которое укрепляет стойкость владельца."
+        "DOTA_Tooltip_ability_item_heart_3_Description"  			"<h1>Пассивное: Behemoth's Blood</h1>Восстановление здоровья увеличивается на %missing_health_regen%%% от недостающего здоровья."
+        "DOTA_Tooltip_ability_item_heart_3_Note0"                   "Эффекты от нескольких заклинаний Behemoth's Blood не складываются."
+        "DOTA_Tooltip_ability_item_heart_3_Lore"					"Сохранившееся сердце вымершего монстра, которое укрепляет стойкость владельца."
 		"DOTA_Tooltip_ability_item_heart_3_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_heart_3_bonus_health"			"+$health"
-		"DOTA_Tooltip_ability_item_heart_3_health_regen_pct"			"%+макс. здоровья в секунду"
+		"DOTA_Tooltip_ability_item_heart_3_hp_regen"		"%+макс. здоровья в секунду"
 
         "DOTA_Tooltip_ability_item_blade_mail_2"				"Blade Mail 2"
         "DOTA_Tooltip_ability_item_blade_mail_2_Description"			"<h1>Активное: Damage Return</h1>Увеличивает возвращение урона от всех источников на %active_reflection_pct%%%. Длится %duration% сек.\n\n<h1>Пассивное: Damage Return</h1>Возвращает %passive_reflection_constant% + %passive_reflection_pct%%% урона от каждой атаки атакующим вас существам."
@@ -1680,27 +1678,27 @@
 		"DOTA_Tooltip_modifier_item_blade_mail_3_reflect_Description"		"Возвращает урон атакующим существам."
 
         "DOTA_Tooltip_ability_item_shivas_guard_2"                              "Shiva's Guard 2"
-        "DOTA_Tooltip_ability_item_shivas_guard_2_Description"					"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая на %resist_debuff_duration% секунд увеличивает получаемый противниками урон от заклинаний на %spell_amp%%%, наносит им %blast_damage% магического урона и на %blast_debuff_duration% сек. снижает их скорость передвижения на %blast_movement_speed%%%. Наносит иллюзиям %illusion_multiplier_pct%%% урона.<br><br>Радиус: %blast_radius%\n\n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их лечение, восстановление здоровья и вампиризм — на %hp_regen_degen_aura%%%.<br><br>Радиус: %aura_radius%"
+        "DOTA_Tooltip_ability_item_shivas_guard_2_Description"					"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая на %resist_debuff_duration% секунд увеличивает получаемый противниками урон от заклинаний на %spell_amp%%%, наносит им %blast_damage% магического урона и на %blast_debuff_duration% сек. снижает их скорость передвижения на %blast_movement_speed%%%.<br><br>Радиус: %blast_radius%\n\n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их пополнение здоровья и получаемое лечение — на %restoration_reduction_aura%%%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Lore"							"Говорят, когда-то этот артефакт принадлежал богине, и он не теряет былого могущества по сей день."
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Note0"							"Волна распространяется со скоростью в %blast_speed% до максимального размера в %blast_radius%."
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Note1"							"Морозная волна следует за владельцем."
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Note2" 							"Эффект от нескольких Freezing Aura не складывается."
-		"DOTA_Tooltip_ability_item_shivas_guard_2_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_ability_item_shivas_guard_2_bonus_intellect"					"+$int"
 		"DOTA_Tooltip_ability_item_shivas_guard_2_bonus_agility"					"+$agi"
 		"DOTA_Tooltip_ability_item_shivas_guard_2_bonus_strength"					"+$str"
-		"DOTA_Tooltip_ability_item_shivas_guard_2_bonus_armor"					"+$armor"
+		"DOTA_Tooltip_ability_item_shivas_guard_2_bonus_armor"						"+$armor"
 		"DOTA_Tooltip_ability_item_shivas_guard_2_bonus_hp_regen"					"+$hp_regen"
 	
         "DOTA_Tooltip_ability_item_shivas_guard_3"                              "Shiva's Guard 3"
-        "DOTA_Tooltip_ability_item_shivas_guard_3_Description"					"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая на %resist_debuff_duration% секунд увеличивает получаемый противниками урон от заклинаний на %spell_amp%%%, наносит им %blast_damage% магического урона и на %blast_debuff_duration% сек. снижает их скорость передвижения на %blast_movement_speed%%%. Наносит иллюзиям %illusion_multiplier_pct%%% урона.<br><br>Радиус: %blast_radius%\n\n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их лечение, восстановление здоровья и вампиризм — на %hp_regen_degen_aura%%%.<br><br>Радиус: %aura_radius%"
+        "DOTA_Tooltip_ability_item_shivas_guard_3_Description"					"<h1>Активное: Arctic Blast</h1> Выпускает морозную волну, которая на %resist_debuff_duration% секунд увеличивает получаемый противниками урон от заклинаний на %spell_amp%%%, наносит им %blast_damage% магического урона и на %blast_debuff_duration% сек. снижает их скорость передвижения на %blast_movement_speed%%%.<br><br>Радиус: %blast_radius%\n\n<h1>Пассивное: Freezing Aura</h1>Снижает скорость атаки противников на %aura_attack_speed%, а их пополнение здоровья и получаемое лечение — на %restoration_reduction_aura%%%.<br><br>Радиус: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Lore"							"Говорят, когда-то этот артефакт принадлежал богине, и он не теряет былого могущества по сей день."
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Note0"							"Волна распространяется со скоростью в %blast_speed% до максимального размера в %blast_radius%."
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Note1"							"Морозная волна следует за владельцем."
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Note2" 							"Эффект от нескольких Freezing Aura не складывается."
-		"DOTA_Tooltip_ability_item_shivas_guard_3_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_ability_item_shivas_guard_3_bonus_intellect"					"+$int"
 		"DOTA_Tooltip_ability_item_shivas_guard_3_bonus_agility"					"+$agi"
 		"DOTA_Tooltip_ability_item_shivas_guard_3_bonus_strength"					"+$str"
-		"DOTA_Tooltip_ability_item_shivas_guard_3_bonus_armor"					"+$armor"
+		"DOTA_Tooltip_ability_item_shivas_guard_3_bonus_armor"						"+$armor"
 		"DOTA_Tooltip_ability_item_shivas_guard_3_bonus_hp_regen"					"+$hp_regen"
 
         "DOTA_Tooltip_ability_item_pipe_custom"                                      "Pipe of Insight"
@@ -1883,7 +1881,7 @@
         "DOTA_Tooltip_ability_item_manaflare_lens_custom_Lore"				"Странная эссенция, позволяющая небольшой силой воли ломать судьбы многих."
 
         "DOTA_Tooltip_ability_item_lotus_orb_2"                                 "LOTUS ORB 2"
-        "DOTA_Tooltip_ability_item_lotus_orb_2_Description"			"<h1>Активное: Echo Shell</h1> Создаёт вокруг цели щит, отражающий большинство направленных заклинаний обратно во врага. Действует %active_duration% сек.<br><br>Не блокирует эффекты вражеских заклинаний. <br><br>Дальность применения: %abilitycastrange%<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
+        "DOTA_Tooltip_ability_item_lotus_orb_2_Description"			"<h1>Активное: Echo Shell</h1> Создаёт вокруг цели щит, отражающий большинство направленных заклинаний обратно во врага. Действует %active_duration% сек.<br><br>Не блокирует эффекты вражеских заклинаний.<br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"
 		"DOTA_Tooltip_ability_item_lotus_orb_2_bonus_armor"			"+$armor"
 		"DOTA_Tooltip_ability_item_lotus_orb_2_bonus_health_regen"		"+$hp_regen"
 		"DOTA_Tooltip_ability_item_lotus_orb_2_bonus_mana_regen"		"+$mana_regen"
@@ -2144,7 +2142,7 @@
 		"DOTA_Tooltip_ability_item_helm_of_the_overlord_2_bonus_regen"				"+$hp_regen"
 
         "DOTA_Tooltip_ability_item_ethereal_blade_2"                    "ETHEREAL BLADE 2"
-		"DOTA_Tooltip_ability_item_ethereal_blade_2_Description"					"<h1>Активное: Ether Blast</h1> Придаёт цели бесплотный облик, который полностью защищает от физического урона, но не позволяет атаковать и увеличивает получаемый магический урон на %ethereal_damage_bonus%%%.<br><br>Если целью выбран противник, он также замедляется на %blast_movement_slow%%% и получает магический урон в размере %blast_agility_multiplier% * его основной атрибут + %blast_damage_base%.<br><br>Дальность применения: %abilitycastrange%<br>Длительность: %duration% сек."
+		"DOTA_Tooltip_ability_item_ethereal_blade_2_Description"					"<h1>Активное: Ether Blast</h1> Придаёт цели бесплотный облик, который полностью защищает от физического урона, но не позволяет атаковать и увеличивает получаемый магический урон на %ethereal_damage_bonus%%%.<br><br>Если целью выбран противник, он также замедляется на %blast_movement_slow%%% и получает магический урон в размере %blast_stat_multiplier% * сумма ваших атрибутов + %blast_damage_base%.<br>Длительность: %duration% сек."
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_Note0"						"Имеет общее время перезарядки с Ghost Scepter."
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_Note1"						"Существа в бесплотном облике получают на %ethereal_damage_bonus%%% больше магического урона."
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_Note2"						"У универсальных героев за основной атрибут считаются 60%% от суммы всех трёх атрибутов."
@@ -2162,7 +2160,7 @@
 		"DOTA_Tooltip_modifier_item_ethereal_blade_2_slow_Description"	"Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
         "DOTA_Tooltip_ability_item_ethereal_blade_3"                    "ETHEREAL BLADE 3"
-        "DOTA_Tooltip_ability_item_ethereal_blade_3_Description"					"<h1>Активное: Ether Blast</h1> Придаёт цели бесплотный облик, который полностью защищает от физического урона, но не позволяет атаковать и увеличивает получаемый магический урон на %ethereal_damage_bonus%%%.<br><br>Если целью выбран противник, он также замедляется на %blast_movement_slow%%% и получает магический урон в размере %blast_agility_multiplier% * его основной атрибут + %blast_damage_base%.<br><br>Дальность применения: %abilitycastrange%<br>Длительность: %duration% сек."
+        "DOTA_Tooltip_ability_item_ethereal_blade_3_Description"					"<h1>Активное: Ether Blast</h1> Придаёт цели бесплотный облик, который полностью защищает от физического урона, но не позволяет атаковать и увеличивает получаемый магический урон на %ethereal_damage_bonus%%%.<br><br>Если целью выбран противник, он также замедляется на %blast_movement_slow%%% и получает магический урон в размере %blast_stat_multiplier% * сумма ваших атрибутов + %blast_damage_base%.<br>Длительность: %duration% сек."
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_Note0"						"Имеет общее время перезарядки с Ghost Scepter."
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_Note1"						"Существа в бесплотном облике получают на %ethereal_damage_bonus%%% больше магического урона."
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_Note2"						"У универсальных героев за основной атрибут считаются 60%% от суммы всех трёх атрибутов."
@@ -2369,7 +2367,7 @@
 		"DOTA_Tooltip_modifier_item_hurricane_pike_aa_active_caster_Description"		"Может атаковать цель без ограничений дальности."
 
 		"DOTA_Tooltip_ability_item_bloodthorn_2"                  "BLOODTHORN 2"
-		"DOTA_Tooltip_ability_item_bloodthorn_2_Description"                      "<h1>Активное: Soul Rend</h1> Запрещает цели использовать способности на %silence_duration% сек. По окончании эффекта жертве наносится магический урон в размере %silence_damage_percent%%% от урона, полученного за время действия.<br><br>Все атаки героев дополнительно наносят цели %proc_damage_heroes% магического урона, а атаки существ, не являющихся героями, — %proc_damage_creeps%. Этими атаками нельзя промахнуться.\n\n<h1>Пассивное: Pierce</h1>Каждая атака может с вероятностью в %proc_chance%%% пройти сквозь уклонение и нанести %passive_proc_damage% магического урона."
+		"DOTA_Tooltip_ability_item_bloodthorn_2_Description"                      "<h1>Активное: Soul Rend</h1> Запрещает цели использовать способности на %silence_duration% сек. По окончании эффекта жертве наносится магический урон в размере %silence_damage_percent%%% от урона, полученного за время действия.<br><br>Все атаки героев дополнительно наносят цели %proc_damage_heroes% магического урона, а атаки существ, не являющихся героями, — %proc_damage_creeps%. Владелец предмета и подконтрольные ему существа не могут промахнуться по жертве.\n\n<h1>Пассивное: Pierce</h1>Каждая атака может с вероятностью в %proc_chance%%% пройти сквозь уклонение и нанести %passive_proc_damage% магического урона."
 		"DOTA_Tooltip_ability_item_bloodthorn_2_Lore"                             "Этот ненавистный клинок впивается в тело извивающейся жертвы сильнее с каждым её предсмертным движением."
 		"DOTA_Tooltip_ability_item_bloodthorn_2_bonus_intellect"                  "+$int"
 		"DOTA_Tooltip_ability_item_bloodthorn_2_bonus_attack_speed"               "+$attack"
@@ -2387,7 +2385,7 @@
 		"DOTA_Tooltip_modifier_bloodthorn_2_debuff_Description"           "Это существо не может применять способности, а в конце действия ему нанесётся магический урон в размере 60%% от полученного урона.\nВсе атаки по этому существу наносят дополнительный урон и не промахиваются."
 
         "DOTA_Tooltip_ability_item_bloodthorn_3"                  "BLOODTHORN 3"
-		"DOTA_Tooltip_ability_item_bloodthorn_3_Description"                      "<h1>Активное: Soul Rend</h1> Запрещает цели использовать способности на %silence_duration% сек. По окончании эффекта жертве наносится магический урон в размере %silence_damage_percent%%% от урона, полученного за время действия.<br><br>Все атаки героев дополнительно наносят цели %proc_damage_heroes% магического урона, а атаки существ, не являющихся героями, — %proc_damage_creeps%. Этими атаками нельзя промахнуться.\n\n<h1>Пассивное: Pierce</h1>Каждая атака может с вероятностью в %proc_chance%%% пройти сквозь уклонение и нанести %passive_proc_damage% магического урона."
+		"DOTA_Tooltip_ability_item_bloodthorn_3_Description"                      "<h1>Активное: Soul Rend</h1> Запрещает цели использовать способности на %silence_duration% сек. По окончании эффекта жертве наносится магический урон в размере %silence_damage_percent%%% от урона, полученного за время действия.<br><br>Все атаки героев дополнительно наносят цели %proc_damage_heroes% магического урона, а атаки существ, не являющихся героями, — %proc_damage_creeps%. Владелец предмета и подконтрольные ему существа не могут промахнуться по жертве.\n\n<h1>Пассивное: Pierce</h1>Каждая атака может с вероятностью в %proc_chance%%% пройти сквозь уклонение и нанести %passive_proc_damage% магического урона."
 		"DOTA_Tooltip_ability_item_bloodthorn_3_Lore"                             "Этот ненавистный клинок впивается в тело извивающейся жертвы сильнее с каждым её предсмертным движением."
 		"DOTA_Tooltip_ability_item_bloodthorn_3_bonus_intellect"                  "+$int"
 		"DOTA_Tooltip_ability_item_bloodthorn_3_bonus_attack_speed"               "+$attack"
@@ -2423,11 +2421,12 @@
 		"DOTA_Tooltip_ability_item_disperser_aa_3_bonus_damage"			"+$damage"
 
         "DOTA_Tooltip_ability_item_nullifier_2"                         "NULLIFIER 2"
-        "DOTA_Tooltip_ability_item_nullifier_2_Description"             "<h1>Активное: Nullify</h1> Развеивает положительные эффекты с цели в момент применения и следующие %mute_duration% сек.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"		
+        "DOTA_Tooltip_ability_item_nullifier_2_Description"             "<h1>Активное: Nullify</h1>Подавляет цель: замедляет её и непрерывно развеивает с неё положительные эффекты. Длительность: %mute_duration% сек.<br><br>Тип развеивания: <span class=\"GameplayValues GameplayVariable\">нормальное</span>"		
 		"DOTA_Tooltip_ability_item_nullifier_2_lore"                    "Опасное оружие, выкраденное из обратного измерения."		
 		"DOTA_Tooltip_ability_item_nullifier_2_bonus_damage"		"+$damage"
 		"DOTA_Tooltip_ability_item_nullifier_2_bonus_armor"		"+$armor"
 		"DOTA_Tooltip_ability_item_nullifier_2_bonus_regen"		"+$hp_regen"
+		"DOTA_Tooltip_ability_item_nullifier_2_slow_pct"              "%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
 			
 		"DOTA_Tooltip_ability_item_nullifier_2_Note0"			"Можно применять на неуязвимых существ."
 		"DOTA_Tooltip_ability_item_nullifier_2_Note1"			"Проходит сквозь невосприимчивость к магии."
@@ -2437,12 +2436,11 @@
 		"DOTA_Tooltip_modifier_item_nullifier_2_slow"			"Замедление от Nullifier 2"
 		"DOTA_Tooltip_modifier_item_nullifier_2_slow_Description"	"Передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
-        "DOTA_Tooltip_ability_item_heavens_halberd_Description"                                                 "<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.<br><br>Дальность: %abilitycastrange%"
+        "DOTA_Tooltip_ability_item_heavens_halberd_Description"                                                 "<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.\n\n<h1>Пассивное: Damage Block</h1>С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона от атак, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
         "DOTA_Tooltip_ability_item_heavens_halberd_Lore"                                                                "Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы."
-        "DOTA_Tooltip_ability_item_heavens_halberd_bonus_evasion"               "%+$evasion"
-        "DOTA_Tooltip_ability_item_heavens_halberd_bonus_strength"              "+$str"
-        "DOTA_Tooltip_ability_item_heavens_halberd_status_resistance"           "%+к сопротивлению эффектам"
-        "DOTA_Tooltip_ability_item_heavens_halberd_hp_regen_amp"                "%+к здоровью от восстановления и вампиризма"
+        "DOTA_Tooltip_ability_item_heavens_halberd_bonus_health"                        "+$health"
+        "DOTA_Tooltip_ability_item_heavens_halberd_bonus_health_regen"                  "+$hp_regen"
+        "DOTA_Tooltip_ability_item_heavens_halberd_bonus_all_stats"                     "+$all" 
 
         "DOTA_Tooltip_modifier_heavens_halberd_buff"                            "Maim"
         "DOTA_Tooltip_modifier_heavens_halberd_buff_Description"                "Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
@@ -2450,12 +2448,11 @@
         "DOTA_Tooltip_modifier_heavens_halberd_debuff_Description"                      "Обезоружен артефактом Heaven's Halberd, не может атаковать."
 
         "DOTA_Tooltip_ability_item_heavens_halberd_2"                   "HEAVENS HALBERD 2"
-        "DOTA_Tooltip_ability_item_heavens_halberd_2_Description"		"<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.<br><br>Дальность: %abilitycastrange%"
+        "DOTA_Tooltip_ability_item_heavens_halberd_2_Description"		"<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.\n\n<h1>Пассивное: Damage Block</h1>С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона от атак, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
 		"DOTA_Tooltip_ability_item_heavens_halberd_2_Lore"		"Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы."
-		"DOTA_Tooltip_ability_item_heavens_halberd_2_bonus_evasion"	"%+$evasion"
-		"DOTA_Tooltip_ability_item_heavens_halberd_2_bonus_strength"	"+$str"
-		"DOTA_Tooltip_ability_item_heavens_halberd_2_status_resistance"	"%+к сопротивлению эффектам"
-		"DOTA_Tooltip_ability_item_heavens_halberd_2_hp_regen_amp"	"%+к здоровью от восстановления и вампиризма"
+		"DOTA_Tooltip_ability_item_heavens_halberd_2_bonus_health"                        "+$health"
+        "DOTA_Tooltip_ability_item_heavens_halberd_2_bonus_health_regen"                  "+$hp_regen"
+        "DOTA_Tooltip_ability_item_heavens_halberd_2_bonus_all_stats"                     "+$all" 
 
 		"DOTA_Tooltip_modifier_heavens_halberd_2_buff"			"Maim"
 		"DOTA_Tooltip_modifier_heavens_halberd_2_buff_Description"	"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
@@ -2463,12 +2460,11 @@
 		"DOTA_Tooltip_modifier_heavens_halberd_2_debuff_Description"	"Обезоружен артефактом Heaven's Halberd, не может атаковать."
 
         "DOTA_Tooltip_ability_item_heavens_halberd_3"                   "HEAVENS HALBERD 3"
-        "DOTA_Tooltip_ability_item_heavens_halberd_3_Description"	"<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.<br><br>Дальность: %abilitycastrange%"
+        "DOTA_Tooltip_ability_item_heavens_halberd_3_Description"	"<h1>Активное: Disarm</h1>Лишает существо сил, отчего оно не может атаковать. Длительность бессилия зависит от типа атаки жертвы: %disarm_melee% сек. в ближнем бою и %disarm_range% сек. в дальнем бою.\n\n<h1>Пассивное: Damage Block</h1>С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона от атак, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
 		"DOTA_Tooltip_ability_item_heavens_halberd_3_Lore"		"Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы."
-		"DOTA_Tooltip_ability_item_heavens_halberd_3_bonus_evasion"	"%+$evasion"
-		"DOTA_Tooltip_ability_item_heavens_halberd_3_bonus_strength"	"+$str"
-		"DOTA_Tooltip_ability_item_heavens_halberd_3_status_resistance"	"%+к сопротивлению эффектам"
-		"DOTA_Tooltip_ability_item_heavens_halberd_3_hp_regen_amp"	"%+к здоровью от восстановления и вампиризма"
+		"DOTA_Tooltip_ability_item_heavens_halberd_3_bonus_health"                        "+$health"
+        "DOTA_Tooltip_ability_item_heavens_halberd_3_bonus_health_regen"                  "+$hp_regen"
+        "DOTA_Tooltip_ability_item_heavens_halberd_3_bonus_all_stats"                     "+$all" 
 
 		"DOTA_Tooltip_modifier_heavens_halberd_3_buff"			"Maim"
 		"DOTA_Tooltip_modifier_heavens_halberd_3_buff_Description"	"Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
@@ -2477,15 +2473,16 @@
 		"DOTA_Tooltip_modifier_heavens_halberd_3_debuff_Description"	"Обезоружен артефактом Heaven's Halberd, не может атаковать."
 
         "DOTA_Tooltip_ability_item_abyssal_blade_2"                     "ABYSSAL BLADE 2"
-        "DOTA_Tooltip_ability_item_abyssal_blade_2_Description"		"<h1>Активное: Overwhelm</h1> Оглушает выбранного противника на %stun_duration% сек. <br><br>Проходит сквозь невосприимчивость к магии.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Bash</h1> Каждая атака может оглушить цель на %bash_duration% сек. и нанести %bonus_chance_damage% физического урона. Вероятность зависит от типа атаки владельца: %bash_chance_melee%%% в ближнем бою, %bash_chance_ranged%%% — в дальнем.\n\n<h1>Пассивное: Damage Block</h1>С вероятностью в %block_chance%%% блокирует %block_damage_melee% урона от атак, если владелец — герой ближнего боя, или %block_damage_ranged% урона, если герой дальнего боя."
+        "DOTA_Tooltip_ability_item_abyssal_blade_2_Description"		"<h1>Активное: Overwhelm</h1> Оглушает выбранного противника на %stun_duration% сек. <br><br>Проходит сквозь невосприимчивость к магии.<br><br>Дальность применения: %abilitycastrange%\n\n<h1>Пассивное: Bash</h1> Каждая атака может оглушить цель на %bash_duration% сек. и нанести %bonus_chance_damage% физического урона. Вероятность зависит от типа атаки владельца: %bash_chance_melee%%% в ближнем бою, %bash_chance_ranged%%% — в дальнем."
 		"DOTA_Tooltip_ability_item_abyssal_blade_2_Lore"		"Острие потерянного клинка Повелителя бездны впивается врагу прямо в душу."
 		"DOTA_Tooltip_ability_item_abyssal_blade_2_Note0"		"Оглушение наносится на дистанции ближнего боя."
 		"DOTA_Tooltip_ability_item_abyssal_blade_2_Note1"		"Способность Bash не работает у клонов героев и копии Arc Warden. Эффекты от нескольких таких способностей не складываются."
-		"DOTA_Tooltip_ability_item_abyssal_blade_2_Note2"		"Эффекты нескольких способностей, блокирующих урон, не сочетаются."
-		"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_damage"	"+$damage"
-		"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_health"	"+$health"
-		"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_health_regen"	"+$hp_regen"
-		"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_strength"	"+$str"
+        
+        
+		"DOTA_Tooltip_ability_item_abyssal_blade_2_slow_resistance"         "%+к сопротивлению замедлениям"
+		"DOTA_Tooltip_ability_item_abyssal_blade_2_hp_regen_amp"            "%+$restoration_amp"
+		"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_abyssal_blade_2_bonus_strength"			"+$str"
 
 		"DOTA_Tooltip_Ability_item_mage_slayer"			"Mage Slayer"
 		"DOTA_Tooltip_ability_item_mage_slayer_Description"				"<h1>Пассивное: Mage Slayer</h1>Атакуемые враги получают %dps% урона в секунду и наносят на %spell_amp_debuff%%% меньше урона заклинаниями. Действует %duration% сек."
@@ -2844,7 +2841,7 @@
 		
 		
 		"DOTA_Tooltip_Ability_item_rebels_sword"							"Rebels Sword"
-		"DOTA_Tooltip_Ability_item_rebels_sword_Description"				"<h1>Пассивная: Corrosive Armor</h1> Снимает броню врага за каждый удар по нему.\n После снижения %max_disarmor_pct%%  брони, дополнительно снижает броню на %disarmor_const% за удар."
+		"DOTA_Tooltip_Ability_item_rebels_sword_Description"				"<h1>Пассивная: Corrosive Armor</h1> За каждый удар по противнику, снижает его броню.\n После снижения %max_disarmor_pct%%  брони, снижает только на %disarmor_const% за удар."
 		"DOTA_Tooltip_Ability_item_rebels_sword_Lore"                       "Орудие пылающего легиона"
 		"DOTA_Tooltip_Ability_item_rebels_sword_bonus_damage"				"+$damage"
 		"DOTA_Tooltip_Ability_item_rebels_sword_bonus_all_stats"			"+$all"

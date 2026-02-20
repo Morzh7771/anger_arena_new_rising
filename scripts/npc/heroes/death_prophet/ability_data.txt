@@ -118,7 +118,8 @@ DOTAAbilities
 	}	
 	"death_prophet_witchcraft"
 	{
-		// General
+
+
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"death_prophet_witchcraft"
 		"MaxLevel"		"8"
@@ -126,22 +127,21 @@ DOTAAbilities
         "MaxLevel"                      "1"
         "Innate"                        "1"
         "IsBreakable"                   "1"
-		"DependentOnAbility"			"death_prophet_exorcism"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"movement_speed_pct_per_level"		"0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8"
-			"cooldown_reduction_pct_per_level"	"0.05 0.1 0.15 0.2 0.25 0.30 0.35 0.40"
-			"movement_speed_tooltip"
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "movement_speed_pct_per_level"
             {
-                "dynamic_value"                 "true"
+                "value"             "0.8"
+                "hero_levelup"      "+0.8"
             }
-            "cooldown_reduction_tooltip"
+            "cooldown_reduction_pct_per_level"
             {
-                "dynamic_value"                 "true"
+                "value"             "0.40"
+                "hero_levelup"      "+0.40"
             }
-		}
+        }
 	}
 	"death_prophet_spirit_siphon"
 	{
@@ -193,21 +193,6 @@ DOTAAbilities
 				"value"					"25"
 				"special_bonus_unique_death_prophet_5" "-5"
 			}
-			"shard_bonus_charges"			
-			{
-				"value"	"1"
-				"RequiresShard"				"1"
-			}
-			"shard_fear_duration"			
-			{
-				"value"		"1.5"
-				"RequiresShard"				"1"
-			}
-			"shard_consecutive_siphon_duration"			
-			{
-				"value"		"3"
-				"RequiresShard"				"1"
-			}
 		}
 	}
 	"death_prophet_exorcism"
@@ -250,8 +235,8 @@ DOTAAbilities
 			}
 			"spirits"				
 			{
-				"value"					"8 12 16 20 24 28 32"
-				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
+				"value"									"8 12 16 20 24 28 32"
+				"special_bonus_unique_death_prophet" 	"+8"
 			}
 			"spirit_speed"			"525"
 			"max_distance"			"2000"
@@ -302,7 +287,6 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "death_prophet_exorcism"                // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
         "BaseClass"                     "special_bonus_base"
     }
 
@@ -315,7 +299,6 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "death_prophet_carrion_swarm"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
         "BaseClass"                     "special_bonus_base"
     }
 
@@ -328,7 +311,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        
+        "BaseClass"                     "special_bonus_base"
     }
 
     //=================================================================================================================
@@ -340,14 +323,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "5"
-                "ad_linked_abilities" "death_prophet_spirit_siphon"
-            }
-        }
+        "BaseClass"                     "special_bonus_base"
     }
     //=================================================================================================================
     // Ability: Special Bonus
@@ -358,7 +334,6 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "death_prophet_carrion_swarm"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
         "BaseClass"                     "special_bonus_base"
     }
     
@@ -401,27 +376,23 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "death_prophet_carrion_swarm"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
         "BaseClass"                     "special_bonus_base"
     }
-    
-    //=================================================================================================================
-    // Death Prophet Unholy Vitality
-    //=================================================================================================================
     "death_prophet_mourning_ritual"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-        "MaxLevel"                      "1"
+        "MaxLevel"                      "4"
+        "DependentOnAbility"            "death_prophet_exorcism"
         "Innate"                        "1"
         "IsBreakable"                   "1"
 
         "AbilityValues"
         {
-            "delay_pct"                 ""
-            "delay_time"                ""
-            "damage_interval"           ""
+            "delay_pct"                 "15 20 25 30 35 40 45"
+            "delay_time"                "3"
+            "damage_interval"           "1"
         }
     }
 }

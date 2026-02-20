@@ -79,11 +79,11 @@ DOTAAbilities
         {
                 "duration"      
                 {
-                    "value"     "3"
+                    "value"     "2.5"
                 }
                 "radius"        
                 {
-                    "value"         "250"
+                    "value"         "300"
                     "affected_by_aoe_increase"  "1"
                 }
         }
@@ -107,7 +107,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12.0 11.0 10.0 9.0 8.0 7.0 6.0"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -131,8 +131,12 @@ DOTAAbilities
 			}
 			"total_pulses"			"10"
 			"pulse_interval"		"0.1"
-			"self_damage_pct"			"30"
-			"damage_pct"			"20"						
+			"self_damage_pct"		"30"
+			"damage_pct"			"20"	
+			"AbilityCooldown"				
+			{
+				"value"				"12.0 11.0 10.0 9.0 8.0 7.0 6.0"
+			}					
 		}
 	}
 	"slark_pounce_aa"
@@ -210,7 +214,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 20.0 18.0 16.0 14.0 12.0 10.0"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -220,11 +224,21 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"pounce_damage"			"0"
-			"pounce_distance"		"700"
-			"pounce_speed"			"933.33"
-			"pounce_acceleration"	"7000.0"
-			"pounce_radius"			"120"
+			"pounce_damage"         "0"
+            "pounce_distance"       
+            {
+                "value"             "700"
+            }
+
+            "pounce_speed"          
+            {
+                "value"                 "933.33"
+            }
+            "pounce_acceleration"   "7000.0"
+            "pounce_radius"         
+            {
+                "value"     "120"
+            }
 			"leash_duration"		
 			{
 				"value"			"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
@@ -233,23 +247,26 @@ DOTAAbilities
 			"leash_radius"			"400"
 			"max_charges"			
 			{
-				"value"	"2"
-				"RequiresScepter"	"1"
+				"value"	"0"
+				"RequiresScepter"           "1"
 			}
 			"charge_restore_time"
 			{
-				"value"	"12"
-				"RequiresScepter"	"1"
+				"value"	"-2"
+				"RequiresScepter"           "1"
 			}
 			"pounce_distance_scepter"		
 			{
-				"value"		"900"
-				"RequiresScepter"	"1"
+				"value"		"0"
+				"RequiresScepter"           "1"
 			}
 			"essence_stacks"
             {
-                "value"                     "0"
-                "special_bonus_facet_slark_leeching_leash"  "1 1 2 2 3 3 4"               
+                "value"                     "2 3 3 4 4 5 6"       
+            }
+            "AbilityCooldown"				
+            {
+            	"value"						"22.0 20.0 18.0 16.0 14.0 12.0 10.0"
             }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -294,6 +311,46 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+	"slark_essence_shift"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "MaxLevel"                      "1"
+        "IsBreakable"                   "1"
+        "Innate"                        "1"
+        
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "agi_gain"
+            {
+                "value"                 "3"
+                "special_bonus_unique_slark_5" "+1"
+            }
+            "stat_loss"                 "1"
+            "duration"
+            {
+                "value"                 "15"
+                "hero_levelup"          "+2.5"
+                "special_bonus_unique_slark_4"  "+35"
+            }
+            "steal_radius"          
+            {
+                "value"     "300"
+                "affected_by_aoe_increase"  "1"
+            }
+            "max_stacks_per_hero"
+            {
+                "value"                     "0"
+            }
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
+    }
 	"slark_barracuda"
     {
         // General
@@ -371,6 +428,38 @@ DOTAAbilities
 			"neutral_disable"			"2.0"
 		}
 	}
+	"slark_saltwater_shiv"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"  
+        "MaxLevel"						"7"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "AbilitySound"                  "Hero_DoomBringer.InfernalBlade.Target"
+
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "4"
+        "AbilityManaCost"               "20"
+        "AbilityCastRange"              "150"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+        
+        "AbilityValues"
+        {
+            "duration"                      "12"
+            "agi_bonus_damage_factor"       "0"
+            "base_health_rest_steal"        "0"
+            "health_rest_steal"             "2 3 4 5 6 7 8"
+            "regen_steal"                   "2 3 4 5 6 7 8"
+            "ms_steal"                      "2 3 4 5 6 7 8"
+            "melee_range_buffer"            "0"
+        }
+    }
 	"special_bonus_unique_slark_essence_shift_aa_duration"
 	{
 		// General

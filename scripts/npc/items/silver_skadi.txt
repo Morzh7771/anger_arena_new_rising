@@ -243,6 +243,7 @@
 			"cold_slow_ranged"			"-40 -50 -60"
 			"cold_attack_slow_ranged"	"-35 -45 -55"
 			"cold_duration"				"3.0"
+			"restoration_reduction" 	"40 45 "
 			"heal_reduction"			"30 40 50"
 		}
 	}
@@ -276,7 +277,7 @@
 			"heal_reduction"			"30 40 50"
 		}
 	}
-	    "item_dark_edge"
+	"item_dark_edge"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------

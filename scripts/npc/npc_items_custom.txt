@@ -189,9 +189,6 @@
         "AbilityValues"
         {
             "bonus_speed"			"130"
-            "bonus_armor"			"2"
-            "bonus_hp_regen"		"5"
-            "bonus_stats"			"20"
             "teleport_mod_time"		"2"
         }
         
@@ -248,11 +245,6 @@
                 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
-                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"			"%bonus_hp_regen"
-                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_stats"
-                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%bonus_stats"
-                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_stats"
                     "MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"			"%bonus_speed"
                 }		
             }

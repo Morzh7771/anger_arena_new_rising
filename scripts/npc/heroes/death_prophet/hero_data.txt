@@ -30,6 +30,7 @@
                 "Icon"              "slow"
                 "Color"             "Purple"
                 "GradientID"        "2"
+                "Deprecated"        "true"
             }
             "death_prophet_ghosts"
             {
@@ -45,6 +46,21 @@
                     }
                 }
             }
+            "death_prophet_delayed_damage"
+            {
+                "Icon"              "healing"
+                "Color"             "Red"
+                "GradientID"        "1"
+                "Abilities"
+                {
+                    "Ability1"
+                    {
+                        "AbilityName"   "death_prophet_mourning_ritual"
+                        "AutoLevelAbility"  "false"
+                    }
+                }
+            }
+
         }
 
 		"ArmorPhysical"		"1"

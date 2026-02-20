@@ -5,18 +5,18 @@
 		"override_hero"		"npc_dota_hero_slark"
 		"Ability1"      "slark_dark_pact"
         "Ability2"      "slark_pounce"
-        "Ability3"      "slark_essence_shift_aa"
+        "Ability3"      "slark_saltwater_shiv"
         "Ability4"      "slark_depth_shroud"
-        "Ability5"      "slark_barracuda"
+        "Ability5"      "slark_essence_shift"
         "Ability6"      "slark_shadow_dance"
-		"Ability10"		"special_bonus_unique_slark_6"
-		"Ability11"		"special_bonus_unique_slark"
-		"Ability12"		"special_bonus_unique_slark_2"
-		"Ability13"		"special_bonus_unique_slark_8"
-		"Ability14"		"special_bonus_unique_slark_essence_shift_aa_bonus_agi"
-		"Ability15"		"special_bonus_unique_slark_7"
-		"Ability16"		"special_bonus_unique_slark_3"
-		"Ability17"		"special_bonus_unique_slark_4"
+		"Ability10"     "special_bonus_unique_slark_6"
+        "Ability11"     "special_bonus_unique_slark"
+        "Ability12"     "special_bonus_unique_slark_2"
+        "Ability13"     "special_bonus_unique_slark_8"
+        "Ability14"     "special_bonus_unique_slark_5"
+        "Ability15"     "special_bonus_unique_slark_7"
+        "Ability16"     "special_bonus_unique_slark_3"
+        "Ability17"     "special_bonus_unique_slark_4"
 
 		"Facets"
         {
@@ -25,11 +25,20 @@
                 "Icon"              "agility"
                 "Color"             "Green"
                 "GradientID"        "2"
+                "Deprecated"        "true"
             }
             
             "slark_dark_reef_renegade"
             {
                 "Icon"              "cooldown"
+                "Color"             "Blue"
+                "GradientID"        "2"
+                "Deprecated"        "true"
+            }
+            
+            "slark_slark"
+            {
+                "Icon"              "broken_chain"
                 "Color"             "Blue"
                 "GradientID"        "2"
             }

@@ -58,7 +58,6 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -71,11 +70,15 @@ DOTAAbilities
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{
+		{	
+			"AbilityCooldown"
+			{
+				"value"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
+			}				
 			"fail_stun_duration"	"0.6"
 			"stun_duration"
 			{
-				"value"			"1.5 1.75 2.0 2.25 2.5 2.75 3.0"
+				"value"				"1.5 1.75 2.0 2.25 2.5 2.75 3.0"
 				"special_bonus_unique_windranger_6" "+0.5"
 			}
 			"shackle_distance"		"600"
@@ -125,9 +128,12 @@ DOTAAbilities
 				"slow"	
 				{
 					"value"				"15 17.5 20 22.5 25 27.5 30"
-					"special_bonus_unique_windranger_powershot_slow"				"+20"
 				}
-				"slow_duration"			"4"
+				"slow_duration"			
+				{
+					"value"				"3"
+					"special_bonus_unique_windranger_powershot_slow"                "+1"
+				}
 				"damage_pct"			"45"
 				"damage_reduction"		
 				{
@@ -175,7 +181,6 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"21.0 20.0 19.0 18.0 17.0 16.0 15.0"
 		"AbilityDuration"				"3.0 3.3 3.6 3.9 4.2 4.5 4.8"
 	
 		// Cost
@@ -222,6 +227,11 @@ DOTAAbilities
                 "special_bonus_facet_windrunner_tailwind"   "=15"               
             }
 			"duration"					"3.0 3.3 3.6 3.9 4.2 4.5 4.8"
+			"AbilityCooldown"
+            {
+                "value"                                 "21.0 20.0 19.0 18.0 17.0 16.0 15.0"
+                "special_bonus_unique_windranger_4"     "-2"
+            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -282,7 +292,11 @@ DOTAAbilities
 			{
 				"value"						"-24 -20 -16 -12 -8 -4 0"
 				"special_bonus_facet_windrunner_whirlwind" "-5"
-				"LinkedSpecialBonus"		"special_bonus_unique_windranger_8"
+				"special_bonus_unique_windranger_8"     "+10"
+
+				// "damage" in attribute name but it's a percentage-based effect
+                "CalculateSpellDamageTooltip"   "0"
+                "DamageTypeTooltip" "DAMAGE_TYPE_NONE"
 			}
 			"focusfire_fire_on_the_move"	"1"
 			"process_procs"
@@ -305,7 +319,6 @@ DOTAAbilities
             {
                 "value"     "0"
                 "special_bonus_unique_windranger_2"     "+8"
-                "RequiresFacet"     "windrunner_focusfire"  
             }
             "bonus_range"
             {
@@ -333,14 +346,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "18"
-                "ad_linked_abilities" "windrunner_focusfire"
-            }
-        }
+        "BaseClass"                     "special_bonus_base"
     }
 
     //=================================================================================================================
@@ -352,7 +358,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "windrunner_powershot"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass"                     "special_bonus_base"
         
         
     }
@@ -366,14 +372,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "windrunner_windrun"                // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "2.0"
-            }
-        }
+        "BaseClass"                     "special_bonus_base"
     }
 
     //=================================================================================================================

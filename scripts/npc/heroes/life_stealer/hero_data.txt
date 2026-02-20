@@ -3,7 +3,7 @@
 	"npc_dota_hero_life_stealer"
 	{
 		"override_hero"		"npc_dota_hero_life_stealer"
-		"Ability1"      "generic_hidden"
+		"Ability1"      "life_stealer_rage"
         "Ability2"      "life_stealer_ghoul_frenzy"
         "Ability3"      "life_stealer_open_wounds"
         "Ability4"      "life_stealer_feast_aa"
@@ -41,6 +41,7 @@
                 "Icon"              "lifestealer_rage"
                 "Color"             "Yellow"
                 "GradientID"        "3"
+                "Deprecated"        "true"
 
                 "Abilities"
                 {
@@ -57,6 +58,7 @@
                 "Icon"              "broken_chain"
                 "Color"             "Red"
                 "GradientID"        "0"
+                "Deprecated"        "true"
 
                 "Abilities"
                 {
@@ -67,6 +69,20 @@
                         "AutoLevelAbility"  "false"
                     }                   
                 }
+            }
+
+            "life_stealer_fleshfeast"
+            {
+                "Icon"              "full_heart"
+                "Color"             "Gray"
+                "GradientID"        "0"
+            }
+
+            "life_stealer_gorestorm"
+            {
+                "Icon"              "area_of_effect"
+                "Color"             "Red"
+                "GradientID"        "0"
             }
         }
 

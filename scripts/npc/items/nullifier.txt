@@ -60,12 +60,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage"			"75 300"
-			"bonus_armor"			"10 30"
-			"bonus_regen"			"6 15"
-			"mute_duration"			"4 4.5"
-			"projectile_speed"		"1800 1800"
-			"slow_pct"				"70 90"
+			"bonus_damage"				"75 300"
+			"bonus_armor"				"10 30"
+			"bonus_regen"				"6 15"
+			"mute_duration"				"4 5"
+			"projectile_speed"			"1800 1800"
+			"slow_pct"					"50 70"
 			"slow_interval_duration"	"0.5 0.3"
 		}
 	}
@@ -97,14 +97,14 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-        {
-            "bonus_damage"			    "75 300"
-			"bonus_armor"			    "10 30"
-            "bonus_regen"               "6 15"
-            "mute_duration"             "4 4.5"
-            "projectile_speed"          "1800 1800"
-            "slow_pct"                  "70 90"
-            "slow_interval_duration"    "0.5 0.3"
+        {	
+            "bonus_damage"				"75 300"
+			"bonus_armor"				"10 30"
+			"bonus_regen"				"6 15"
+			"mute_duration"				"4 5"
+			"projectile_speed"			"1800 1800"
+			"slow_pct"					"50 70"
+			"slow_interval_duration"	"0.5 0.3"
         }
 	}
 }
