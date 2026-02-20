@@ -2,6 +2,10 @@ LinkLuaModifier("modifier_item_mask_of_madness_aa", "items/item_mask_of_madness"
 LinkLuaModifier("modifier_item_mask_of_madness_aa_active", "items/item_mask_of_madness", LUA_MODIFIER_MOTION_NONE)
 
 item_mask_of_madness_aa = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/items_fx/mask_of_madness.vpcf", context)
+        PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context)
+    end,
     GetIntrinsicModifierName = function(self) return 'modifier_item_mask_of_madness_aa' end,
     OnSpellStart = function (self)
         EmitSoundOn("DOTA_Item.MaskOfMadness.Activate", self:GetCaster())

@@ -3,6 +3,9 @@ LinkLuaModifier( "modifier_slardar_corrosive_haze_lua", "heroes/slardar/slardar_
 
 --------------------------------------------------------------------------------
 -- Ability Start
+function slardar_corrosive_haze_lua:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_slardar/slardar_amp_damage.vpcf", context)
+end
 function slardar_corrosive_haze_lua:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()

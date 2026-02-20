@@ -8,6 +8,15 @@ function item_explosive_mantle_of_intelligence:GetIntrinsicModifierName()
     return "modifier_explosive_mantle_of_intelligence"
 end
 
+function item_explosive_mantle_of_intelligence:Precache(context)
+    PrecacheResource("particle", "particles/units/heroes/hero_techies/techies_blast_off_ringmodel.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_techies/techies_blast_off.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_doom_bringer/doom_infernal_blade_impact.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf", context)
+
+end
+
 function item_explosive_mantle_of_intelligence:OnSpellStart()
 	local pre_explode_duration = self:GetSpecialValueFor("pre_explode_duration")
 	self:GetCaster():AddNewModifier(caster, self, "modifier_explosive_mantle_of_intelligence_active_channel", { duration = pre_explode_duration })

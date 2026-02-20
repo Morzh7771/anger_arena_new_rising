@@ -12,6 +12,12 @@ function void_spirit_astral_step_aa:GetCastRange(vLocation, hTarget)
         return
     end
 -- Ability Start
+function void_spirit_astral_step_aa:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_impact.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_debuff.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_dmg.vpcf", context)
+end
 function void_spirit_astral_step_aa:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()

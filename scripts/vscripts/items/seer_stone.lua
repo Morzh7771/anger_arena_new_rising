@@ -8,6 +8,9 @@ LinkLuaModifier("modifier_item_custom_seer_stone", "items/seer_stone", LUA_MODIF
 function item_custom_seer_stone:GetIntrinsicModifierName()
     return "modifier_item_custom_seer_stone"
 end
+function item_custom_seer_stone:Precache(context)
+    PrecacheResource("particle", "particles/items4_fx/seer_stone.vpcf", context)
+end
 function item_custom_seer_stone:GetAOERadius()
     return self:GetSpecialValueFor('active_radius')
 end

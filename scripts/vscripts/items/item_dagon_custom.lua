@@ -1,6 +1,10 @@
 LinkLuaModifier("modifier_item_dagon_custom", "items/item_dagon_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_dagon_custom = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/items_fx/dagon.vpcf", context)
+        PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self) return "modifier_item_dagon_custom" end,
     GetAOERadius = function (self) return self:GetSpecialValueFor("aoe_radius") end,
 })

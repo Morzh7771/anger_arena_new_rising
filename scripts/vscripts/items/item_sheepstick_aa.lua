@@ -1,6 +1,8 @@
 item_sheepstick_aa = class({})
 
-
+function item_sheepstick_aa:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf", context)
+end
 LinkLuaModifier( "modifier_item_sheepstick_aa", "items/item_sheepstick_aa.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_sheepstick_hex", "items/item_sheepstick_aa.lua", LUA_MODIFIER_MOTION_NONE )
 

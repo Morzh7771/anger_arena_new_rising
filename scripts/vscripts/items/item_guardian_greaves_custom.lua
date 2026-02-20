@@ -8,7 +8,10 @@ LinkLuaModifier( "modifier_guardian_greaves_custom_aura", "items/item_guardian_g
 function item_guardian_greaves_custom:GetIntrinsicModifierName()
 	return "modifier_item_guardian_greaves_custom"
 end
-
+function item_guardian_greaves_custom:Precache(context)
+    PrecacheResource("particle", "particles/items3_fx/warmage.vpcf", context)
+    PrecacheResource("particle", "particles/items3_fx/warmage_recipient.vpcf", context)
+end
 function item_guardian_greaves_custom:OnSpellStart()
 	if not IsServer() then return end
 	local heal_amount = self:GetSpecialValueFor("replenish_health")*self:GetCaster():GetMaxHealth()/100 + self:GetSpecialValueFor("base_health")

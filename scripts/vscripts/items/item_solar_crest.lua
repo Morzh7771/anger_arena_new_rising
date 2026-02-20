@@ -18,6 +18,27 @@ LinkLuaModifier("modifier_solar_crest_debuff_3", "items/item_solar_crest.lua", L
 
 LinkLuaModifier("modifier_item_sollar_shield", "items/item_solar_crest.lua", LUA_MODIFIER_MOTION_NONE)
 
+function item_solar_crest_1:Precache(context)
+    PrecacheResource("particle", "particles/item/solar_crest/star_emblem.vpcf", context)
+    PrecacheResource("particle", "particles/items3_fx/star_emblem_friend_shield.vpcf", context)
+    PrecacheResource("particle", "particles/items3_fx/star_emblem_friend.vpcf", context)
+    PrecacheResource("particle", "particles/items2_fx/pavise_friend.vpcf", context)
+end
+
+function item_solar_crest_2:Precache(context)
+    PrecacheResource("particle", "particles/item/solar_crest/star_emblem.vpcf", context)
+    PrecacheResource("particle", "particles/items3_fx/star_emblem_friend_shield.vpcf", context)
+    PrecacheResource("particle", "particles/items3_fx/star_emblem_friend.vpcf", context)
+    PrecacheResource("particle", "particles/items2_fx/pavise_friend.vpcf", context)
+end
+
+function item_solar_crest_3:Precache(context)
+    PrecacheResource("particle", "particles/item/solar_crest/star_emblem.vpcf", context)
+    PrecacheResource("particle", "particles/items3_fx/star_emblem_friend_shield.vpcf", context)
+    PrecacheResource("particle", "particles/items3_fx/star_emblem_friend.vpcf", context)
+    PrecacheResource("particle", "particles/items2_fx/pavise_friend.vpcf", context)
+end
+
 function item_solar_crest_1:GetIntrinsicModifierName() return "modifier_solar_crest_passive_1" end
 function item_solar_crest_1:OnSpellStart()
 	local caster = self:GetCaster()

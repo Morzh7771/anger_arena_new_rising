@@ -3,6 +3,10 @@ LinkLuaModifier('item_mjolnir_modifier_tinkerer', 'items/item_mjolnir', LUA_MODI
 LinkLuaModifier('modifier_item_mjolnir_shield', 'items/item_mjolnir', LUA_MODIFIER_MOTION_NONE)
 
 item_mjolnir_aa_1 = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/items2_fx/mjollnir_shield.vpcf", context)
+        PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self) return "item_mjolnir_modifier" end
 })
 item_mjolnir_aa_2 = item_mjolnir_aa_1

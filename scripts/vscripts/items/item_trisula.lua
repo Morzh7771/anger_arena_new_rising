@@ -13,6 +13,10 @@ LinkLuaModifier( "modifier_item_trisula", "items/item_trisula.lua", LUA_MODIFIER
 if item_trisula == nil then
 	item_trisula = class({})
 end
+function item_trisula:Precache(context)
+	PrecacheResource("particle", "particles/econ/items/faceless_void/faceless_void_weapon_bfury/faceless_void_weapon_bfury_cleave.vpcf", context)
+end
+
 function item_trisula:GetIntrinsicModifierName()
 	return "modifier_item_trisula"
 end

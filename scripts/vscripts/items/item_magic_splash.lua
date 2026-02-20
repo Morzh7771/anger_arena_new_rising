@@ -10,6 +10,9 @@ DOTA_DAMAGE_FLAG_MAGIC_SPLASH = 1048576
 LinkLuaModifier( "modifier_item_magic_splash", "items/item_magic_splash.lua", LUA_MODIFIER_MOTION_NONE )
 
 item_magic_splash = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/units/heroes/hero_warlock/warlock_fatal_bonds_pulse.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self)
     	return "modifier_item_magic_splash"
     end,

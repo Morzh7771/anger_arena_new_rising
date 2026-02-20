@@ -1,4 +1,7 @@
 BaseClass = class({
+	Precache = function (self, context) 
+		PrecacheResource("particle", "particles/items2_fx/hand_of_midas.vpcf", context)
+	end,
 	GetIntrinsicModifierName = function (self) return "modifier_item_midas" end
 })
 item_advanced_midas = BaseClass

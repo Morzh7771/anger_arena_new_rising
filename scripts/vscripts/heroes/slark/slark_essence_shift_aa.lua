@@ -5,6 +5,10 @@ LinkLuaModifier("modifier_slark_essence_shift_aa_tinker_enemy", "heroes/slark/sl
 
 
 slark_essence_shift_aa = class({
+    Precache = function(self, context)
+        PrecacheResource("particle", "particles/units/heroes/hero_slark/slark_essence_shift.vpcf", context)
+        PrecacheResource("particle", "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", context)
+    end,
     GetIntrinsicModifierName = function() return "modifier_slark_essence_shift_aa" end,
 })
 

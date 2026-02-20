@@ -2,6 +2,10 @@ LinkLuaModifier("modifier_item_khanda_custom", "items/item_khanda_custom", LUA_M
 LinkLuaModifier("modifier_item_khanda_custom_debuff", "items/item_khanda_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_khanda = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/items_fx/khanda.vpcf", context)
+        PrecacheResource("particle", "particles/items_fx/khanda_target.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self) return "modifier_item_khanda_custom" end
 })
 

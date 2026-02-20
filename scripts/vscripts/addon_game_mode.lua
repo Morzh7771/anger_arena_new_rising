@@ -31,33 +31,59 @@ function CEntityInstance:SetNetworkableEntityInfo(key, value)
     t[key] = value
     CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), t)
 end
-function Precache( context )
-	--[[
-		Precache things we know we'll use.  Possible file types include (but not limited to):
-			PrecacheResource( "model", "*.vmdl", context )
-			PrecacheResource( "soundfile", "*.vsndevts", context )
-			PrecacheResource( "particle", "*.vpcf", context )
-			PrecacheResource( "particle_folder", "particles/folder", context )
-	]]
+local function forPrecache(kv, context)
+    if type(kv) ~= "table" then return end
 
-	local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
+    for unitname, unit_kv in pairs(kv) do
+        if type(unit_kv) == "table" and unit_kv.Model then
+            PrecacheModel(unit_kv.Model, context)
+        end
 
-	for unitname, unit_kv in pairs(units_kv) do
-		if type(unit_kv) == "table" and unit_kv.Model then
-			print('unit')
-			PrecacheModel(unit_kv.Model, context)
-		end
-		PrecacheUnitByNameSync(unitname, context)
-	end
-	DuelController:Precache(context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_items.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_axe.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context )
-	--ItemPrecache:Precache(context)
+        -- unitname тут ключ из KV: npc_xxx
+        if type(unitname) == "string" then
+            PrecacheUnitByNameSync(unitname, context)
+        end
+    end
+end
+
+function Precache(context)
+    -- Партиклы
+    --PrecacheResource("particle_folder", "particles", context)
+
+    -- Юниты/герои
+    local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
+    local hero_kv  = LoadKeyValues("scripts/npc/npc_heroes_custom.txt") or {}
+
+    forPrecache(units_kv, context)
+    forPrecache(hero_kv, context)
+
+    -- Остальное
+    DuelController:Precache(context)
+    PrecacheResource("soundfile", "soundevents/game_sounds.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_items.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/voscripts/game_sounds_vo_axe.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context)
+	
+
+	PrecacheResource("particle", "particles/items2_fx/teleport_end.vpcf", context)
+	PrecacheResource("particle", "particles/new_charone/charone_spepcter.vpcf", context)
+
+	precacheResource("model", "models/props_gameplay/donkey.vmdl", context)
+	precacheResource("model", "models/props_gameplay/dummy/dummy.vmdl", context)
+	precacheResource("model", "models/props_gameplay/dummy/dummy_large.vmdl", context)
+	PrecacheResource("model", "models/items/hex/sheep_hex/sheep_hex_gold.vmdl", context)
+	PrecacheResource("model", "models/items/hex/sheep_hex/sheep_hex.vmdl", context)
+	precacheResource("model", "models/props_gameplay/donkey.vmdl", context)
+	PrecacheResource("model", "models/tomes/tome_agi.vmdl", context)
+	PrecacheResource("model", "models/tomes/tome_int.vmdl", context)
+	PrecacheResource("model", "models/tomes/tome_str.vmdl", context)
+	PrecacheResource("model", "models/tomes/tome_all.vmdl", context)
+	PrecacheResource("model", "models/tomes/tome_level.vmdl", context)
+	PrecacheResource("model", "models/tomes/tome_medical.vmdl", context)
+		
 end
 local hero_table = require('lib/hero_table')
 local postRequireList = {

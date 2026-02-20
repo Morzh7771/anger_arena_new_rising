@@ -1,4 +1,7 @@
 item_bloodstone_1 = class({
+    Precache = function (self, context)
+        PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self) return 'modifier_bloodstone' end
 })
 

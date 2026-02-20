@@ -13,6 +13,10 @@ LinkLuaModifier("modifier_item_bfury_aa", "items/item_bfury_aa", LUA_MODIFIER_MO
 item_bfury_aa = class({})
 item_bfury_aa_2 = item_bfury_aa
 
+function item_bfury_aa:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_magnataur/magnataur_empower_cleave_effect.vpcf", context)
+end
+
 function item_bfury_aa:GetIntrinsicModifierName()
 	return "modifier_item_bfury_aa"
 end

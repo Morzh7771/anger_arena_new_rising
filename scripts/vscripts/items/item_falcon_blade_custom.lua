@@ -2,6 +2,11 @@ LinkLuaModifier("modifier_item_falcon_blade_custom", "items/item_falcon_blade_cu
 LinkLuaModifier("modifier_item_falcon_blade_custom_active", "items/item_falcon_blade_custom", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 item_falcon_blade_custom = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/falcon_blade_charge.vpcf", context)
+        PrecacheResource("particle", "particles/items_fx/force_staff.vpcf", context)
+        PrecacheResource("particle", "particles/status_fx/status_effect_forcestaff.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self) return "modifier_item_falcon_blade_custom"end,
     GetCastRange = function (self) if IsClient() then return self:GetSpecialValueFor("range") end return 99999 end,
     OnSpellStart =  function (self)

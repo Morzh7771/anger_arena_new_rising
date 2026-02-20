@@ -5,6 +5,9 @@ LinkLuaModifier('modifier_drum_of_endurance_active', 'items/drum_and_base/item_d
 item_drum_of_endurance = class({
     GetIntrinsicModifierName = function (self) return 'modifier_drum_of_endurance' end
 })
+function item_drum_of_endurance:Precache(context)
+    PrecacheResource("particle", "particles/items_fx/drum_of_endurance_buff.vpcf", context)
+end
 
 function item_drum_of_endurance:OnSpellStart()
     EmitSoundOn("DOTA_Item.DoE.Activate", self:GetCaster())

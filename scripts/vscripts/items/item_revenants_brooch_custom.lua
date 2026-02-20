@@ -2,7 +2,12 @@ LinkLuaModifier("modifier_revenants_brooch_custom", "items/item_revenants_brooch
 LinkLuaModifier("modifier_revenants_brooch_custom_counter", "items/item_revenants_brooch_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_revenants_brooch_custom = class({
-     GetIntrinsicModifierName = function (self) return "modifier_revenants_brooch_custom" end
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/items5_fx/revenant_brooch.vpcf", context)
+        PrecacheResource("particle", "particles/items_fx/octarine_core_lifesteal.vpcf", context)
+        PrecacheResource("particle", "particles/items_fx/misery_projectile.vpcf", context)
+    end,
+    GetIntrinsicModifierName = function (self) return "modifier_revenants_brooch_custom" end
 })
 
 function item_revenants_brooch_custom:GetManaCost(level)

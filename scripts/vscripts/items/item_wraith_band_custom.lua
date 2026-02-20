@@ -2,7 +2,9 @@ LinkLuaModifier("modifier_item_wraith_band_custom", "items/item_wraith_band_cust
 LinkLuaModifier("modifier_item_wraith_band_custom_speed", "items/item_wraith_band_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_wraith_band_custom = class({})
-
+function item_wraith_band_custom:Precache(context)
+    PrecacheResource("particle", "particles/wb_bif.vpcf", context)
+end
 function item_wraith_band_custom:GetIntrinsicModifierName()
 	return "modifier_item_wraith_band_custom"
 end

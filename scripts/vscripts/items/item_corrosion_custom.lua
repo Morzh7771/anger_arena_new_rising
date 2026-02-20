@@ -3,6 +3,11 @@ LinkLuaModifier("modifier_item_corrosion_custom_active_slow", "items/item_corros
 LinkLuaModifier("modifier_item_corrosion_custom_passive_slow", "items/item_corrosion_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_corrosion_custom = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/corrosion_custom.vpcf", context)
+        PrecacheResource("particle", "particles/status_fx/status_effect_poison_dazzle.vpcf", context)
+        PrecacheResource("particle", "particles/units/heroes/hero_dazzle/dazzle_poison_debuff.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self) return "modifier_item_corrosion_custom" end,
     OnSpellStart = function (self) 
     if not IsServer() then return end

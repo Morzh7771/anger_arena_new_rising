@@ -2,7 +2,10 @@ LinkLuaModifier("modifier_item_manaflare_lens_custom", "items/item_manaflare_len
 LinkLuaModifier("modifier_item_manaflare_lens_custom_debuff", "items/item_manaflare_lens_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_manaflare_lens_custom = class({})
-
+item_manaflare_lens_custom:Precache = function (self, context) 
+	PrecacheResource("particle", "particles/items_fx/phylactery_target.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/phylactery.vpcf", context)
+end
 function item_manaflare_lens_custom:GetIntrinsicModifierName()
 	return "modifier_item_manaflare_lens_custom"
 end

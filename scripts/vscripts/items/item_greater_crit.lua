@@ -1,4 +1,8 @@
 item_greater_crit = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/items/azrael_crossbow/azrael_crossbow_bolt.vpcf", context)
+        PrecacheResource("particle", "particles/hw_fx/greevil_orange_lava_puddle_impact_burst.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self) return 'modifier_greater_crit' end
 })
 
@@ -36,31 +40,44 @@ function item_greater_crit:OnSpellStart()
 
     ProjectileManager:CreateTrackingProjectile( info )
 
-    EmitSoundOnLocationWithCaster(self:GetCaster():GetAbsOrigin(), "sounds/weapons/hero/mirana/miranaarrowlaunch1.vsnd", self:GetCaster())
+    EmitSoundOn("Hero_Mirana.ArrowCast", caster)
+    --EmitSoundOnLocationWithCaster(self:GetCaster():GetAbsOrigin(), "sounds/weapons/hero/mirana/miranaarrowlaunch1.vsnd", self:GetCaster())
 end
 
 function item_greater_crit:OnProjectileHit(target, location)
+    if not IsServer() then return end
     if not target then return end
 
-    local dmg = self:GetParent():GetAverageTrueAttackDamage(self:GetParent()) / 100 * self:GetSpecialValueFor('crit_multiplier')
+    local caster = self:GetCaster()
+    if not caster or caster:IsNull() then return end
 
-    ApplyDamage({ victim = target,
-                  attacker = self:GetParent(),
-                  damage = dmg,
-                  damage_type = DAMAGE_TYPE_PHYSICAL,
-        --damage_flags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR,
-                  ability = self}) --deal damage-
+    local dmg = caster:GetAverageTrueAttackDamage(caster) * self:GetSpecialValueFor('crit_multiplier') / 100
 
+    ApplyDamage({
+        victim = target,
+        attacker = caster,
+        damage = dmg,
+        damage_type = DAMAGE_TYPE_PHYSICAL,
+        ability = self,
+    })
 
-    EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "DOTA_Item.HeavensHalberd.Activate", self:GetCaster())
+    EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "DOTA_Item.HeavensHalberd.Activate", caster)
 
-    local particle = ParticleManager:CreateParticle("particles/hw_fx/greevil_orange_lava_puddle_impact_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-    ParticleManager:SetParticleControl(particle, 3, target:GetAbsOrigin())
+    local p = ParticleManager:CreateParticle(
+        "particles/hw_fx/greevil_orange_lava_puddle_impact_burst.vpcf",
+        PATTACH_ABSORIGIN_FOLLOW,
+        target
+    )
+    ParticleManager:SetParticleControl(p, 3, target:GetAbsOrigin())
+    ParticleManager:ReleaseParticleIndex(p)
 
-    SendOverheadEventMessage(target, OVERHEAD_ALERT_CRITICAL, target, dmg,nil)
+    SendOverheadEventMessage(nil, OVERHEAD_ALERT_CRITICAL, target, dmg, nil)
+
     if target:IsMagicImmune() then return end
 
-    target:AddNewModifier(self:GetParent(), self, "modifier_greater_crit_crippled", { duration=self:GetSpecialValueFor("cripple_duration") * (1-target:GetStatusResistance()) })
+    target:AddNewModifier(caster, self, "modifier_greater_crit_crippled", {
+        duration = self:GetSpecialValueFor("cripple_duration") * (1 - target:GetStatusResistance())
+    })
 end
 
 -------------------------------------------------------------------

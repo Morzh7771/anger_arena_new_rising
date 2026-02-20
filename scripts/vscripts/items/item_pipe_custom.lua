@@ -10,6 +10,10 @@ function item_pipe_custom:GetIntrinsicModifierName()
 	return "modifier_item_pipe_custom"
 end
 
+function item_pipe_custom:Precache(context)
+    PrecacheResource("particle", "particles/items2_fx/pipe_of_insight_v2.vpcf", context)
+end
+
 function item_pipe_custom:OnSpellStart()
     local radius = self:GetSpecialValueFor("barrier_radius")
 

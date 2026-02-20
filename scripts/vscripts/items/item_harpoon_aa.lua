@@ -7,10 +7,16 @@ require('lib/second_attacks')
 
 MeleeSecondAttack:RegisterSecondAttack("modifier_item_harpoon_custom_cd")
 
-item_harpoon_aa_1 = class({})
-
+item_harpoon_aa_1 = item_harpoon_aa_1 or class({})
 item_harpoon_aa_3 = item_harpoon_aa_1
 item_harpoon_aa_2 = item_harpoon_aa_1
+
+function item_harpoon_aa_1:Precache(context)
+    PrecacheResource("particle", "particles/items_fx/harpoon_projectile.vpcf", context)
+    PrecacheResource("particle", "particles/items_fx/harpoon_pull.vpcf", context)
+    PrecacheResource("particle", "particles/status_fx/status_effect_forcestaff.vpcf", context)
+end
+
 function item_harpoon_aa_1:GetIntrinsicModifierName()
     return "modifier_item_harpoon_custom"
 end

@@ -2,6 +2,9 @@ LinkLuaModifier("modifier_item_raindrop_aa_off", "items/item_raindrop_aa", LUA_M
 LinkLuaModifier("modifier_item_raindrop_aa", "items/item_raindrop_aa", LUA_MODIFIER_MOTION_NONE)
 
 item_raindrop_aa = class({
+    Precache = function (self, context) 
+        PrecacheResource("particle", "particles/items2_fx/pipe_of_insight_v2.vpcf", context)
+    end,
     GetIntrinsicModifierName = function(self) return "modifier_item_raindrop_aa" end,
 })
 modifier_item_raindrop_aa_off = class({

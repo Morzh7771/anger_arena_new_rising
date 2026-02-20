@@ -14,3 +14,7 @@ function item_talisman_of_ambition:OnSpellStart()
 	end
 	original_target:AddNewModifier(self:GetCaster(), self, "modifier_talisman_of_ambition_active", {duration = self:GetSpecialValueFor("duration")})
 end
+
+function item_talisman_of_ambition:Precache()
+	PrecacheResource("particle", "particles/status_fx/status_effect_blur.vpcf", context)
+end

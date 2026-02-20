@@ -5,6 +5,15 @@ LinkLuaModifier("modifier_item_meteor_hammer_oaa_stun", "items/item_meteor_hamme
 LinkLuaModifier("modifier_item_meteor_hammer_oaa_channel", "items/item_meteor_hammer_aa.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_meteor_hammer = class({})
+
+function item_meteor_hammer:Precache(context)
+  PrecacheResource("particle", "particles/items4_fx/meteor_hammer_cast.vpcf", context)
+  PrecacheResource("particle", "particles/items4_fx/meteor_hammer_aoe.vpcf", context)
+  PrecacheResource("particle", "particles/items4_fx/meteor_hammer_spell.vpcf", context)
+  PrecacheResource("particle", "particles/items4_fx/meteor_hammer_spell_debuff.vpcf", context)
+  PrecacheResource("particle", "particles/generic_gameplay/generic_stunned.vpcf", context)
+end
+
 item_meteor_hammer_aa = item_meteor_hammer
 item_meteor_hammer_aa_2 = item_meteor_hammer
 item_meteor_hammer_aa_3 = item_meteor_hammer

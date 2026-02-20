@@ -7,6 +7,10 @@ LinkLuaModifier('modifier_boots_of_bearing_aa_unslowable', 'items/drum_and_base/
 item_boots_of_bearing_aa = class({
     GetIntrinsicModifierName = function (self) return 'modifier_boots_of_bearing_aa' end
 })
+function item_boots_of_bearing_aa:Precache(context)
+    PrecacheResource("particle", "particles/items_fx/drum_of_endurance_buff.vpcf", context)
+end
+
 function item_boots_of_bearing_aa:OnSpellStart()
     EmitSoundOn("DOTA_Item.DoE.Activate", self:GetCaster())
 

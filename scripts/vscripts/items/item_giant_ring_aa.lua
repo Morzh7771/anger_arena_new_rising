@@ -9,6 +9,10 @@ function item_giant_ring_aa:OnSpellStart()
     local caster = self:GetCaster()
     caster:AddNewModifier( caster, self, "modifier_giant_ring_aa_active", {duration = self:GetSpecialValueFor("duration")} )
 end
+function item_giant_ring_aa:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_sandking/sandking_epicenter.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_sandking/sandking_epicenter_ring.vpcf", context)
+end
 
 modifier_giant_ring_aa = class({ 
 	IsBuff = function(self)return true end,

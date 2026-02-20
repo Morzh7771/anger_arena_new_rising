@@ -1,6 +1,11 @@
 LinkLuaModifier('modifier_mirror_shield_aa', 'items/item_mirror_shield_aa', LUA_MODIFIER_MOTION_NONE)
 
 item_mirror_shield_aa = class({
+	Precache = function (self, context) 
+		PrecacheResource("particle", "particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf", context)
+		PrecacheResource("particle", "particles/items/reflection_shard/immunity_sphere_yellow.vpcf", context)
+		PrecacheResource("particle", "particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", context)
+	end,
 	GetIntrinsicModifierName = function (self) return 'modifier_mirror_shield_aa' end
 	})
 

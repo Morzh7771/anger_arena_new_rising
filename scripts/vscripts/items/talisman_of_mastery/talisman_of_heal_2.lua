@@ -1,5 +1,10 @@
 item_talisman_of_heal_2 = item_talisman_of_heal_2 or class({})
 
+function item_talisman_of_heal_2:Precache(context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_blur.vpcf", context)
+	PrecacheResource("particle", "particles/damned_eye/damned_eye.vpcf", context)
+end
+
 LinkLuaModifier( "modifier_talisman_of_heal_2_cd", 'items/talisman_of_mastery/talisman_of_heal_2', LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_talisman_of_heal_2", 'items/talisman_of_mastery/talisman_of_heal_2', LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_talisman_of_heal_2_buff", 'items/talisman_of_mastery/talisman_of_heal_2', LUA_MODIFIER_MOTION_NONE )
@@ -16,6 +21,8 @@ modifier_talisman_of_heal_2_cd = class({
 modifier_talisman_of_heal_2 = CommonAbilities:ConstructModifier( modifier_talisman_of_heal_2, CommonAbilities.DamageToExp )
 
 local mod = modifier_talisman_of_heal_2
+
+
 
 function mod:IsHidden()         return true  end
 function mod:IsPurgable()       return false end

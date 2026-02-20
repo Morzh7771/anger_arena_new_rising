@@ -2,6 +2,9 @@ LinkLuaModifier( "modifier_base_butterfly", "items/item_butterfly", LUA_MODIFIER
 LinkLuaModifier( "modifier_burning_butterfly", "items/item_butterfly", LUA_MODIFIER_MOTION_NONE )
 
 item_sacred_butterfly = class({
+    Precache = function (self, context)
+        PrecacheResource("particle", "particles/econ/items/faceless_void/faceless_void_bracers_of_aeons/fv_bracers_of_aeons_backtrack.vpcf", context)
+    end,
     GetIntrinsicModifierName = function (self) return "modifier_base_butterfly" end
 })
 

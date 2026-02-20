@@ -9,6 +9,7 @@ item_assault_3 = class({
 
 
 modifier_assault_aa = class({
+    Precache = function (self, context) PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context) end,
     IsHidden = function (self) return true end,
     IsAura = function (self) return true end,
     GetAuraRadius = function (self) return self:GetAbility():GetSpecialValueFor("aura_radius") end,
