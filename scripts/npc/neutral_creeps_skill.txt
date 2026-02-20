@@ -982,7 +982,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "MaxLevel"                      "1"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"  
+        "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"  
         // Special
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
@@ -1005,7 +1005,7 @@
         "MaxLevel"                      "1"
         "BaseClass"                     "neutral_upgrade"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"  
+        "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"  
         // Special
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
@@ -1181,7 +1181,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "MaxLevel"                      "10"
-        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityType"                   "ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
         "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
@@ -1526,7 +1526,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityType"                   "ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
         "MaxLevel"                      "10"
@@ -1544,7 +1544,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityType"                   "ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
         "MaxLevel"                      "10"
@@ -1561,7 +1561,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityType"                   "ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "MaxLevel"                      "10"
         
@@ -1606,7 +1606,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityType"                   "ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "MaxLevel"                      "10"
         
@@ -1645,7 +1645,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "MaxLevel"                      "1"
-        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityType"                   "ABILITY_TYPE_BASIC"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
 

@@ -143,7 +143,7 @@ DOTAAbilities
 		"BaseClass"			"muerta_gunslinger"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityType"					"ABILITY_TYPE_BASIC"
 		//"AbilitySound"					"Hero_PhantomAssassin.CoupDeGrace"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
@@ -172,7 +172,7 @@ DOTAAbilities
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Muerta.PierceTheVeil.Cast"
@@ -278,7 +278,7 @@ DOTAAbilities
 	"muerta_grave_tracker"
     {
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityType"                   "ABILITY_TYPE_BASIC"
     }
 	"muerta_grave_visitation"
 	{

@@ -104,7 +104,7 @@ local cheat = false
 local is_game_start = false
 local is_game_end = false
 local game_start_for_courier = false
-
+local had_players_on_both_teams = false
 KILL_LIMIT_CONST = 120
 GOLD_PER_TICK = 0
 
@@ -130,45 +130,46 @@ function Activate()
 end
 
 function UpdatePlayersCount()
-	if is_game_end then return end
+    if is_game_end then return end
 
-	local teamsData =
-	{
-		[DOTA_TEAM_GOODGUYS] = 0,
-		[DOTA_TEAM_BADGUYS]  = 0,
-	}
+    local teamsData = {
+        [DOTA_TEAM_GOODGUYS] = 0,
+        [DOTA_TEAM_BADGUYS]  = 0,
+    }
 
-	local nPlayersConnected = 0
+    local nPlayersConnected = 0
 
-	TeamHelper:ApplyForPlayers(nil, function(playerid)
-		if IsAbadonedPlayerID(playerid) then return end
+    TeamHelper:ApplyForPlayers(nil, function(playerid)
+        if IsAbadonedPlayerID(playerid) then return end
 
-		local team = PlayerResource:GetTeam(playerid)
+        local team = PlayerResource:GetTeam(playerid)
+        if team == 0 then return end -- invalid
 
-		-- ignore invalid team
-		if team == 0 then return end
+        teamsData[team] = (teamsData[team] or 0) + 1
+        nPlayersConnected = nPlayersConnected + 1
+    end)
 
-		teamsData[team] = (teamsData[team] or 0) + 1
-		nPlayersConnected = nPlayersConnected + 1
-	end)
+    local nRadiants = teamsData[DOTA_TEAM_GOODGUYS]
+    local nDire     = teamsData[DOTA_TEAM_BADGUYS]
 
-	local nRadiants = teamsData[DOTA_TEAM_GOODGUYS]
-	local nDire = teamsData[DOTA_TEAM_BADGUYS]
+    if nRadiants > 0 and nDire > 0 then
+        had_players_on_both_teams = true
+    end
 
-	if nPlayersConnected == 0 or (nRadiants == 0 or nDire == 0 and not GameRules:IsCheatMode()) then
-		local team
-		if nPlayersConnected == 0 then
-			team = DOTA_TEAM_NEUTRALS -- creeps is the best
-		elseif nRadiants == 0 then
-			team = DOTA_TEAM_BADGUYS
-		else
-			team = DOTA_TEAM_GOODGUYS
-		end
+    if nPlayersConnected == 0 then
+        DuelController:SetFreezeTimer(true)
+        GameEnder:StartGameEnd(DOTA_TEAM_NEUTRALS)
+        is_game_end = true
+        return
+    end
 
-		DuelController:SetFreezeTimer( true )
-		GameEnder:StartGameEnd( team )
-		is_game_end = true
-	end
+    local cheat = GameRules:IsCheatMode()
+    if had_players_on_both_teams and (not cheat) and (nRadiants == 0 or nDire == 0) then
+        local team = (nRadiants == 0) and DOTA_TEAM_BADGUYS or DOTA_TEAM_GOODGUYS
+        DuelController:SetFreezeTimer(true)
+        GameEnder:StartGameEnd(team)
+        is_game_end = true
+    end
 end
 function BackPlayersToMap()
 	local heroes = HeroList:GetAllHeroes()
@@ -667,7 +668,7 @@ function AngelArena:OnGameStateChange()
 				AngelArena:SaveGold(0)
 				return 0.5
 			end)
-			Timers:CreateTimer(10, function() -- таймер для шаринга голды
+			Timers:CreateTimer(10, function()
 				AngelArena:ShareGold()
 				UpdatePlayersCount()
 				return 10
@@ -678,11 +679,20 @@ function AngelArena:OnGameStateChange()
 				return 0.5
 			end)
 
-			DuelController:OnGameStart(function(winnerTeam)
-				is_game_end = true
-				DuelController:SetFreezeTimer(true)
-				GameEnder:ForceEnd(winnerTeam)
-			end)
+			local rad, dire, total = GetActivePlayersPerTeam()
+
+			had_players_on_both_teams = (rad > 0 and dire > 0)
+
+			if (not duel_inited) and had_players_on_both_teams then
+				DuelController:OnGameStart(function(winnerTeam)
+					is_game_end = true
+					DuelController:SetFreezeTimer(true)
+					GameEnder:ForceEnd(winnerTeam)
+				end)
+				duel_inited = true
+			else
+				print(string.format("[Duel] not started: rad=%d dire=%d total=%d", rad, dire, total))
+			end
 
 			is_game_start = true
 		end
@@ -1136,4 +1146,27 @@ function AngelArena:OnPlayerUsedAbility(event)
 		end)
 	end
 end
+
+local function GetActivePlayersPerTeam()
+    local rad = 0
+    local dire = 0
+    local total = 0
+
+    TeamHelper:ApplyForPlayers(nil, function(playerid)
+        if IsAbadonedPlayerID(playerid) then return end
+        if not PlayerResource:IsConnected(playerid) then return end
+
+        local team = PlayerResource:GetTeam(playerid)
+        if team == DOTA_TEAM_GOODGUYS then
+            rad = rad + 1
+            total = total + 1
+        elseif team == DOTA_TEAM_BADGUYS then
+            dire = dire + 1
+            total = total + 1
+        end
+    end)
+
+    return rad, dire, total
+end
+
 _G.inited = true
