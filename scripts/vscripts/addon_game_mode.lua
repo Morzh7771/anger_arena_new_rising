@@ -3,59 +3,77 @@ _G.inited = false
 if AngelArena == nil then
 	_G.AngelArena = class({})
 end
-require('tp_s')
-require('lib/utils')
-require('lib/teleport')
-require('lib/duel/duel_controller')
-require('lib/gpm_lib')
-require('lib/percent_damage')
-require('lib/boss/boss_spawner')
-require('lib/panorama_pings')
-require('lib/spawners/creep_spawner')
-require('lib/spawners/creep_leveling')
-require('lib/timers')
-require('lib/attentions')
-require('lib/team_helper')
-require('lib/chat_listener')
-require('lib/comeback_system')
-require('lib/move_limiter')
-require('lib/spawners/bear_spawner')
-require('lib/bounty')
-require('lib/game_ender')
-require('lib/repick_menu')
-require('lib/special_bonus_base_aa/Special_bonus_base_aa')
---require('lib/events_protector')
+print("[AA] addon_game_mode loaded (top of file)")
+
+local function safe_require(name)
+    local ok, res = xpcall(function()
+        return require(name)
+    end, function(msg)
+        print("!!! safe_require FAILED:", name)
+        print(tostring(msg))
+        print(debug.traceback("Traceback:", 2))
+        return msg
+    end)
+
+    if not ok then
+        error("safe_require failed: " .. name)
+    end
+    return res
+end
+
+safe_require('tp_s')
+safe_require('lib/utils')
+safe_require('lib/teleport')
+safe_require('lib/duel/duel_controller')
+safe_require('lib/gpm_lib')
+safe_require('lib/percent_damage')
+safe_require('lib/boss/boss_spawner')
+safe_require('lib/panorama_pings')
+safe_require('lib/spawners/creep_spawner')
+safe_require('lib/spawners/creep_leveling')
+safe_require('lib/timers')
+safe_require('lib/attentions')
+safe_require('lib/team_helper')
+safe_require('lib/chat_listener')
+safe_require('lib/comeback_system')
+safe_require('lib/move_limiter')
+safe_require('lib/spawners/bear_spawner')
+safe_require('lib/bounty')
+safe_require('lib/game_ender')
+safe_require('lib/repick_menu')
+safe_require('lib/special_bonus_base_aa/Special_bonus_base_aa')
+--safe_require('lib/events_protector')
 
 function CEntityInstance:SetNetworkableEntityInfo(key, value)
     local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
     t[key] = value
     CustomNetTables:SetTableValue("custom_entity_values", tostring(self:GetEntityIndex()), t)
 end
-local function forPrecache(kv, context)
-    if type(kv) ~= "table" then return end
+-- local function forPrecache(kv, context)
+--     if type(kv) ~= "table" then return end
 
-    for unitname, unit_kv in pairs(kv) do
-        if type(unit_kv) == "table" and unit_kv.Model then
-            PrecacheModel(unit_kv.Model, context)
-        end
+--     for unitname, unit_kv in pairs(kv) do
+--         if type(unit_kv) == "table" and unit_kv.Model then
+--             PrecacheModel(unit_kv.Model, context)
+--         end
 
-        -- unitname тут ключ из KV: npc_xxx
-        if type(unitname) == "string" then
-            PrecacheUnitByNameSync(unitname, context)
-        end
-    end
-end
+--         -- unitname тут ключ из KV: npc_xxx
+--         if type(unitname) == "string" then
+--             PrecacheUnitByNameSync(unitname, context)
+--         end
+--     end
+-- end
 
 function Precache(context)
     -- Партиклы
     --PrecacheResource("particle_folder", "particles", context)
 
     -- Юниты/герои
-    local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
-    local hero_kv  = LoadKeyValues("scripts/npc/npc_heroes_custom.txt") or {}
+    -- local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
+    -- local hero_kv  = LoadKeyValues("scripts/npc/npc_heroes_custom.txt") or {}
 
-    forPrecache(units_kv, context)
-    forPrecache(hero_kv, context)
+    -- forPrecache(units_kv, context)
+    -- forPrecache(hero_kv, context)
 
     -- Остальное
     DuelController:Precache(context)
@@ -68,25 +86,25 @@ function Precache(context)
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context)
 	
 
-	PrecacheResource("particle", "particles/items2_fx/teleport_end.vpcf", context)
-	PrecacheResource("particle", "particles/new_charone/charone_spepcter.vpcf", context)
+	-- PrecacheResource("particle", "particles/items2_fx/teleport_end.vpcf", context)
+	-- PrecacheResource("particle", "particles/new_charone/charone_spepcter.vpcf", context)
 
-	precacheResource("model", "models/props_gameplay/donkey.vmdl", context)
-	precacheResource("model", "models/props_gameplay/dummy/dummy.vmdl", context)
-	precacheResource("model", "models/props_gameplay/dummy/dummy_large.vmdl", context)
-	PrecacheResource("model", "models/items/hex/sheep_hex/sheep_hex_gold.vmdl", context)
-	PrecacheResource("model", "models/items/hex/sheep_hex/sheep_hex.vmdl", context)
-	precacheResource("model", "models/props_gameplay/donkey.vmdl", context)
-	PrecacheResource("model", "models/tomes/tome_agi.vmdl", context)
-	PrecacheResource("model", "models/tomes/tome_int.vmdl", context)
-	PrecacheResource("model", "models/tomes/tome_str.vmdl", context)
-	PrecacheResource("model", "models/tomes/tome_all.vmdl", context)
-	PrecacheResource("model", "models/tomes/tome_level.vmdl", context)
-	PrecacheResource("model", "models/tomes/tome_medical.vmdl", context)
+	-- precacheResource("model", "models/props_gameplay/donkey.vmdl", context)
+	-- precacheResource("model", "models/props_gameplay/dummy/dummy.vmdl", context)
+	-- precacheResource("model", "models/props_gameplay/dummy/dummy_large.vmdl", context)
+	-- PrecacheResource("model", "models/items/hex/sheep_hex/sheep_hex_gold.vmdl", context)
+	-- PrecacheResource("model", "models/items/hex/sheep_hex/sheep_hex.vmdl", context)
+	-- precacheResource("model", "models/props_gameplay/donkey.vmdl", context)
+	-- PrecacheResource("model", "models/tomes/tome_agi.vmdl", context)
+	-- PrecacheResource("model", "models/tomes/tome_int.vmdl", context)
+	-- PrecacheResource("model", "models/tomes/tome_str.vmdl", context)
+	-- PrecacheResource("model", "models/tomes/tome_all.vmdl", context)
+	-- PrecacheResource("model", "models/tomes/tome_level.vmdl", context)
+	-- PrecacheResource("model", "models/tomes/tome_medical.vmdl", context)
 		
 end
-local hero_table = require('lib/hero_table')
-local postRequireList = {
+local hero_table = safe_require('lib/hero_table')
+local postsafe_requireList = {
 	'lib/base/player',
 	'lib/base/base_npc'
 }
@@ -124,8 +142,8 @@ local forbidden_items_for_clones = {
 	["item_recovery_orb"] = 1,
 	["item_devour_helm"] = 1,
 }
-local armor_table = require('creeps/armor_table_summon') -- armor to units
-local Constants = require('consts')
+local armor_table = safe_require('creeps/armor_table_summon') -- armor to units
+local Constants = safe_require('consts')
 local cheat = false
 local is_game_start = false
 local is_game_end = false
@@ -145,6 +163,7 @@ _G.KILL_LIMIT = KILL_LIMIT
 
 RESPAWN_MODIFER = 0.135
 function Activate()
+	print("[AA] Activate() called")
 	GameRules.AngelArena = AngelArena()
 	GameRules.AngelArena:InitGameMode()
 	local fountains = Entities:FindAllByClassname('ent_dota_fountain')
@@ -226,8 +245,8 @@ function BackPlayersToMap()
 	end
 end
 function AngelArena:InitGameMode()
-	for _, moduleName in pairs(postRequireList) do
-		require(moduleName)
+	for _, moduleName in pairs(postsafe_requireList) do
+		safe_require(moduleName)
 	end
 	local GameMode = GameRules:GetGameModeEntity()
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 100)
@@ -338,7 +357,7 @@ function AngelArena:InitGameMode()
 	AngelArena:OnGameStateChange()
 
 	if GameRules:IsCheatMode() then
-		require('lib/debug/keyexec')
+		safe_require('lib/debug/keyexec')
 		KeyExec:Init()
 	end
 
@@ -520,11 +539,6 @@ function AngelArena:OnPlayerBuyItem(event)
 
 	AngelArena:SaveGoldForPlayerId(playerid,0)
 end
-function AngelArena:OnPlayerBuyItem(event)
-	local playerid = event.PlayerID
-
-	AngelArena:SaveGoldForPlayerId(playerid,0)
-end
 function AngelArena:SaveGold(gold)
 	TeamHelper:ApplyForPlayers( nil, function(pid)
 		AngelArena:SaveGoldForPlayerId(pid,gold)
@@ -607,19 +621,6 @@ function AngelArena:ShareGold()
 	end)
 end
 function AngelArena:OnGameStateChange()
-	if GetMapName() ~= "map_5x5_cm" then
-		if GameRules:State_Get() == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
-
-			TeamHelper:ApplyForPlayers(team, function(ply_id)
-				local player = PlayerResource:GetPlayer(ply_id)
-
-				if player and PlayerResource:IsValidPlayer(ply_id) and PlayerResource:GetSelectedHeroName(ply_id) == "" then
-					player:MakeRandomHeroSelection()
-				end
-			end)
-		end
-	end
-
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		print('DOTA_GAMERULES_STATE_PRE_GAME')
 		local portals = {

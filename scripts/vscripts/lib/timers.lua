@@ -1,102 +1,45 @@
-require('debug')
-
-TIMERS_VERSION = "1.03"
-
---[[
-  -- A timer running every second that starts immediately on the next frame, respects pauses
-  Timers:CreateTimer(function()
-      print ("Hello. I'm running immediately and then every second thereafter.")
-      return 1.0
-    end
-  )
-  -- A timer which calls a function with a table context
-  Timers:CreateTimer(GameMode.someFunction, GameMode)
-  -- A timer running every second that starts 5 seconds in the future, respects pauses
-  Timers:CreateTimer(5, function()
-      print ("Hello. I'm running 5 seconds after you called me and then every second thereafter.")
-      return 1.0
-    end
-  )
-  -- 10 second delayed, run once using gametime (respect pauses)
-  Timers:CreateTimer({
-    endTime = 10, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-    callback = function()
-      print ("Hello. I'm running 10 seconds after when I was started.")
-    end
-  })
-  -- 10 second delayed, run once regardless of pauses
-  Timers:CreateTimer({
-    useGameTime = false,
-    endTime = 10, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-    callback = function()
-      print ("Hello. I'm running 10 seconds after I was started even if someone paused the game.")
-    end
-  })
-  -- A timer running every second that starts after 2 minutes regardless of pauses
-  Timers:CreateTimer("uniqueTimerString3", {
-    useGameTime = false,
-    endTime = 120,
-    callback = function()
-      print ("Hello. I'm running after 2 minutes and then every second thereafter.")
-      return 1
-    end
-  })
-  -- A timer using the old style to repeat every second starting 5 seconds ahead
-  Timers:CreateTimer("uniqueTimerString3", {
-    useOldStyle = true,
-    endTime = GameRules:GetGameTime() + 5,
-    callback = function()
-      print ("Hello. I'm running after 5 seconds and then every second thereafter.")
-      return GameRules:GetGameTime() + 1
-    end
-  })
-]]
-
-
+TIMERS_VERSION = "1.04_fixed"
 
 TIMERS_THINK = 0.01
 
 if Timers == nil then
-  print ( '[Timers] creating Timers' )
+  print('[Timers] creating Timers')
   Timers = {}
   Timers.__index = Timers
   Timers._timeLimit = 5.0
 end
 
-function Timers:new( o )
+---------------------------------------------------------------------
+-- SAFE ERROR HANDLER
+---------------------------------------------------------------------
+local function timer_err(err)
+  err = tostring(err)
+  return debug.traceback(err, 2)
+end
+
+---------------------------------------------------------------------
+-- CONSTRUCTOR
+---------------------------------------------------------------------
+function Timers:new(o)
   o = o or {}
-  setmetatable( o, Timers )
+  setmetatable(o, Timers)
   return o
 end
 
-function Timers:_xpcall (f, ...)
-  print(f)
-  print({...})
-  PrintTable({...})
-  local result = xpcall (function () return f(unpack(arg)) end,
-    function (msg)
-      -- build the error message
-      return msg..'\n'..debug.traceback()..'\n'
-    end)
-
-  print(result)
-  PrintTable(result)
-  if not result[1] then
-    -- throw an error
-  end
-  -- remove status code
-  table.remove (result, 1)
-  return unpack (result)
-end
-
+---------------------------------------------------------------------
+-- START
+---------------------------------------------------------------------
 function Timers:start()
   Timers = self
   self.timers = {}
-  
-  local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
+
+  local ent = Entities:CreateByClassname("info_target")
   ent:SetThink("Think", self, "timers", TIMERS_THINK)
 end
 
+---------------------------------------------------------------------
+-- THINK LOOP
+---------------------------------------------------------------------
 function Timers:Think()
   if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
     return
@@ -105,170 +48,145 @@ function Timers:Think()
   local profileStart = GetSystemTimeMS()
   local profileFunctions = {}
 
-  -- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
-  local now = GameRules:GetGameTime()
+  for k, v in pairs(Timers.timers) do
+    local useGameTime = (v.useGameTime ~= false)
+    local oldStyle = (v.useOldStyle == true)
 
-  -- Process timers
-  for k,v in pairs(Timers.timers) do
-    local bUseGameTime = true
-    if v.useGameTime ~= nil and v.useGameTime == false then
-      bUseGameTime = false
-    end
-    local bOldStyle = false
-    if v.useOldStyle ~= nil and v.useOldStyle == true then
-      bOldStyle = true
-    end
-
-    local now = GameRules:GetGameTime()
-    if not bUseGameTime then
-      now = Time()
-    end
+    local now = useGameTime and GameRules:GetGameTime() or Time()
 
     if v.endTime == nil then
       v.endTime = now
     end
-    -- Check if the timer has finished
+
     if now >= v.endTime then
-      -- Remove from timers list
       Timers.timers[k] = nil
-      
-      -- Run the callback
 
       local funcTime = GetSystemTimeMS()
 
-      local status, nextCall
-      if v.context then
-        status, nextCall = xpcall(function() return v.callback(v.context, v) end, function (msg)
-                                    return msg..'\n'..debug.traceback()..'\n'
-                                  end)
-      else
-        status, nextCall = xpcall(function() return v.callback(v) end, function (msg)
-                                    return msg..'\n'..debug.traceback()..'\n'
-                                  end)
-      end
+      local status, nextCall = xpcall(function()
+        if v.context then
+          return v.callback(v.context, v)
+        end
+        return v.callback(v)
+      end, timer_err)
 
-      table.insert( profileFunctions, { v.callback, GetSystemTimeMS() - funcTime } )
+      table.insert(profileFunctions, {v.callback, GetSystemTimeMS() - funcTime})
 
-      -- Make sure it worked
       if status then
-        -- Check if it needs to loop
         if nextCall then
-          -- Change its end time
-
-          if bOldStyle then
+          if oldStyle then
             v.endTime = v.endTime + nextCall - now
           else
             v.endTime = v.endTime + nextCall
           end
-
           Timers.timers[k] = v
         end
-
-        -- Update timer data
-        --self:UpdateTimerData()
       else
-        -- Nope, handle the error
-        Timers:HandleEventError('Timer', k, nextCall)
+        self:HandleEventError("Timer", k, nextCall)
       end
     end
   end
 
   local profileTime = GetSystemTimeMS() - profileStart
 
-  local nFuncs = #profileFunctions
+  if profileTime > Timers._timeLimit and #profileFunctions > 0 then
+    print("[Warning.Timers] slow frame:", profileTime, "ms")
 
-  if profileTime > Timers._timeLimit and nFuncs > 0 then
-    print("[Warning.Timers] bad perfomance on timers, processed ", nFuncs, " timers took", profileTime, "ms")
+    for _, data in pairs(profileFunctions) do
+      local funcObj = data[1]
+      local funcTime = data[2]
 
-    for _, funcData in pairs(profileFunctions) do
-      local funcObj = funcData[1]
-      local funcTime = funcData[2]
-
-      if funcObj ~= nil then
-        local funcInfo = debug.getinfo(funcObj)
-
-        print( "[Warning.Timers]Function ", funcInfo.short_src, ":", funcInfo.linedefined, " took ", funcTime, "ms" )
+      if funcObj then
+        local info = debug.getinfo(funcObj)
+        print("[Warning.Timers] Function",
+          info.short_src, ":", info.linedefined,
+          "took", funcTime, "ms")
       end
     end
-
   end
 
   return TIMERS_THINK
 end
 
+---------------------------------------------------------------------
+-- ERROR HANDLER
+---------------------------------------------------------------------
 function Timers:HandleEventError(name, event, err)
-  print(err)
+  print("========== TIMER ERROR ==========")
+  print("Name:", tostring(name))
+  print("Event:", tostring(event))
+  print(tostring(err))
+  print("=================================")
 
-  -- Ensure we have data
-  name = tostring(name or 'unknown')
-  event = tostring(event or 'unknown')
-  err = tostring(err or 'unknown')
-
-  -- Tell everyone there was an error
-  --Say(nil, name .. ' threw an error on event '..event, false)
-  --Say(nil, err, false)
-
-  -- Prevent loop arounds
   if not self.errorHandled then
-    -- Store that we handled an error
     self.errorHandled = true
   end
 end
 
+---------------------------------------------------------------------
+-- CREATE TIMER
+---------------------------------------------------------------------
 function Timers:CreateTimer(name, args, context)
   if type(name) == "function" then
-    if args ~= nil then
-      context = args
-    end
+    context = args
     args = {callback = name}
     name = DoUniqueString("timer")
+
   elseif type(name) == "table" then
     args = name
     name = DoUniqueString("timer")
+
   elseif type(name) == "number" then
     args = {endTime = name, callback = args}
     name = DoUniqueString("timer")
   end
-  if not args.callback then
-    print("Invalid timer created: "..name)
+
+  if not args or not args.callback then
+    print("Invalid timer:", tostring(name))
     return
   end
 
-
   local now = GameRules:GetGameTime()
-  if args.useGameTime ~= nil and args.useGameTime == false then
+  if args.useGameTime == false then
     now = Time()
   end
 
   if args.endTime == nil then
     args.endTime = now
-  elseif args.useOldStyle == nil or args.useOldStyle == false then
+  elseif not args.useOldStyle then
     args.endTime = now + args.endTime
   end
 
   args.context = context
 
-  Timers.timers[name] = args 
-
+  Timers.timers[name] = args
   return name
 end
 
+---------------------------------------------------------------------
+-- REMOVE TIMER
+---------------------------------------------------------------------
 function Timers:RemoveTimer(name)
   Timers.timers[name] = nil
 end
 
 function Timers:RemoveTimers(killAll)
-  local timers = {}
+  local newTimers = {}
 
   if not killAll then
-    for k,v in pairs(Timers.timers) do
+    for k, v in pairs(Timers.timers) do
       if v.persist then
-        timers[k] = v
+        newTimers[k] = v
       end
     end
   end
 
-  Timers.timers = timers
+  Timers.timers = newTimers
 end
 
-if not Timers.timers then Timers:start() end
+---------------------------------------------------------------------
+-- INIT
+---------------------------------------------------------------------
+if not Timers.timers then
+  Timers:start()
+end

@@ -1,0 +1,413 @@
+> dota_launch_custom_game anger_arena_new_rising new
+[Console] Loading custom game "anger_arena_new_rising" with map "new"
+[HostStateManager] CHostStateMgr::QueueNewRequest( Loading (new), 10 )
+[HostStateManager] Discarding pending request 'Loading (new), 9'
+[HostStateManager] HostStateRequest::Start(HSR_GAME):  loop(levelload) id(10) addons(anger_arena_new_rising) desc(Loading (new))
+[EngineServiceManager] SwitchToLoop levelload requested:  id [10] addons [anger_arena_new_rising]
+[Server] SV:  Server shutting down: NETWORK_DISCONNECT_LOOPSHUTDOWN (54)
+[Server] CNetworkGameServerBase::SetServerState (ss_loading -> ss_dead)
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 24.859723ms
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 20.414288ms
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 21.452465ms
+[Server] CSteam3ServerS1::ShutdownGameServer
+[Networking] CNetworkSystem::ShutdownGameServer
+[Networking] Closing 'server' UDP listen socket
+[Networking] Closing 'server' P2P listen socket
+[Networking] Closing 'server' poll group
+[Server] CSource2Server::GameServerSteamAPIDeactivated()
+[stringtables] SV: CNetworkStringTableContainer::RemoveAllTables:  removing 29 tables
+[stringtables] CL: CNetworkStringTableContainer::RemoveAllTables:  removing 29 tables
+CPlayerVoiceListener::GameShutdown()
+[Server] SV:  CGameRulesGameSystem::GameShutdown uninstalled game rules
+[Server] SV:  CGameRules::CGameRules destructed
+ChangeGameUIState: DOTA_GAME_UI_STATE_LOADING_SCREEN -> DOTA_GAME_UI_DOTA_INGAME
+[Client] LoadingDisplay changed from LOADING to NONE (map="")
+ChangeGameUIState: DOTA_GAME_UI_DOTA_INGAME -> DOTA_GAME_UI_STATE_LOADING_SCREEN
+[Client] LoadingDisplay changed from NONE to LOADING (map="")
+[Client] CL:  CLoopModeLevelLoad::MaybeSwitchToGameLoop switching to "game" loopmode with addons (anger_arena_new_rising)
+[EngineServiceManager] SwitchToLoop game requested:  id [10] addons [anger_arena_new_rising]
+[Filesystem] Unknown read error 21
+[Server] SteamGameServer_Init()
+void ResetBreakpadAppId(bool): Universe is 1 (k_EUniversePublic)
+void ResetBreakpadAppId(bool): Setting non standard break pad app id: 373300
+[Server] SteamGameServer_Init() OK, logging on to Steam
+[Networking] CNetworkSystem::InitGameServer: SteamGameServerNetworking() OK
+[Server] CNetworkGameServerBase::SetServerState (ss_dead -> ss_waitingforgamesessionmanifest)
+[Server] SV:  maxplayers set to 64
+[Networking] Created poll group for socket 'server'
+[Networking] Network socket 'server' opened on port 27015
+KeyValues Error: LoadFromBuffer: expected '{', found '<NULL>' in file scripts/npc/neutral_creeps_skill.txt
+(*harpy_storm_chain_lightning*), (*AbilityCastAnimation*), (*AbilityValues*), (*max_targets*), (*radius*), 
+Failed to load. pName='DOTANeutralItems', bIncrementVersion=true, list: 
+scripts/npc/npc_neutral_items_custom.txt
+Found
+Initializing script VM...
+...done
+[VScript] [PreloadCache] Load KV 'scripts/npc/npc_heroes_custom.txt'
+[VScript] [PreloadCache] Load KV 'scripts/npc/npc_abilities_custom.txt'
+KeyValues Error: LoadFromBuffer: expected '{', found '<NULL>' in file scripts/npc/neutral_creeps_skill.txt
+(*harpy_storm_chain_lightning*), (*AbilityCastAnimation*), (*AbilityValues*), (*max_targets*), (*radius*), 
+[VScript] [special_bonus_base_aa] created special_bonus_base_aa
+[Server] SV:  Executing server defaults
+[Server] SV:  Executing listen server config file
+KeyValues Error: LoadFromBuffer: expected '{', found '<NULL>' in file scripts/npc/neutral_creeps_skill.txt
+(*harpy_storm_chain_lightning*), (*AbilityCastAnimation*), (*AbilityValues*), (*max_targets*), (*radius*), 
+Failed to load. pName='DOTANeutralItems', bIncrementVersion=true, list: 
+scripts/npc/npc_neutral_items_custom.txt
+Found
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_INIT'
+[Server] SV:  CGameRulesGameSystem::GameInit installed game rules
+CPlayerVoiceListener::GameInit()
+[Server] SV:  Connection to Steam servers successful.
+[Server] SV:  ServerSteamID=[A:1:62091286:48884] (90281947790798870).
+[GCClient] Logged on to Steam, set GC connection state to NO_SESSION
+[GCClient] Send msg 4007 (k_EMsgGCServerHello), 74 bytes
+[GCClient] OnSteamServersConnected()
+[Server] SV:  VAC secure mode disabled.
+[GCClient] Recv msg 4005 (k_EMsgGCServerWelcome), 26 bytes
+[GCClient] Received server welcome from GC.
+[SOCache] CMsgClientWelcome subscribed: 0 up-to-date, 0 out-of-date
+GC Connection established for server version 6714
+Server:  Inactive
+Client:  Disconnected
+[EngineServiceManager] ----- Status -----
+[EngineServiceManager]   Queued   :  game
+[EngineServiceManager] @ Current  :  levelload
+[Client] CL:  CGameClientConnectPrerequisite status
+[Client] CL:  sequential     :  'CGameClientConnectPrerequisite'
+[Client] CL:  pending        :  1/6 [302.520 msec]
+[Client] CL:  prerequisite   :  .'CWaitForGameServerStartupPrerequisite'
+[Client] CL:  waiting        :  ..waiting for IsServerRunning()
+[Client] CL:  pending        :  2/6 [not started]
+[Client] CL:  prerequisite   :  .'CCreateGameClientPrerequisite'
+[Client] CL:  pending        :  3/6 [not started]
+[Client] CL:  prerequisite   :  .'CConnectGameClientPrerequisite'
+[Client] CL:  pending        :  4/6 [not started]
+[Client] CL:                 :  .'CLoadStartupResourcePrerequisite'
+[Client] CL:  waiting        :  ..waiting for startup resource list
+[Client] CL:  pending        :  5/6 [not started]
+[Client] CL:  prerequisite   :  .'CLoadSpawnGroupsPrerequisite'
+[Client] CL:  firstspawngroup:  ..waiting for first spawn group
+[Client] CL:  pending        :  6/6 [not started]
+[Client] CL:  prerequisite   :  .'CFinalizeConnectionPrerequisite'
+[Client] ---
+[ResourceSystem] Failed loading resource "materials/particle/particle_ring_blurry_generic_projected.vmat_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "materials/models/heroes/statuseffects/electric_detail2_psd_23fa1fb3.vtex_c" (ERROR_FILEOPEN: File not found)
+[AnimResource]  models/particle/explosion/fx_explosion_capped_sphere.vmdl : Animations loaded but no animation data found
+[Server] SV:  Spawn Server: new
+[Server] CNetworkGameServerBase::SetServerState (ss_waitingforgamesessionmanifest -> ss_loading)
+[VScript] [AA] addon_game_mode loaded (top of file)
+CCustomGameEventManager::Script_RegisterListener - Registered MouseCursor:CursorPositionReport
+[VScript] [Timers] creating Timers
+CCustomGameEventManager::Script_RegisterListener - Registered on_kill_limit_click
+CCustomGameEventManager::Script_RegisterListener - Registered on_duel_timer_click
+[VScript] table: 0x445b6870
+[VScript] table: 0x445b6770
+[VScript] table: 0x445b6440
+[VScript] table: 0x445b68f0
+[VScript] table: 0x445b6540
+[VScript] table: 0x445b6308
+[VScript] table: 0x445b6eb0
+[VScript] table: 0x445b6670
+[VScript] table: 0x445b69f0
+[VScript] table: 0x445b6af0
+[VScript] table: 0x445b6bf0
+[VScript] table: 0x445b6870
+[VScript] table: 0x445b6770
+[VScript] table: 0x445b6440
+[VScript] table: 0x445b68f0
+[VScript] table: 0x445b6540
+[VScript] table: 0x445b6308
+[VScript] table: 0x445b6eb0
+[VScript] table: 0x445b6670
+[VScript] table: 0x445b69f0
+[VScript] table: 0x445b6af0
+[VScript] table: 0x445b6bf0
+[VScript] table: 0x445b6870
+[VScript] table: 0x445b6770
+[VScript] table: 0x445b6440
+[VScript] table: 0x445b68f0
+[VScript] table: 0x445b6540
+[VScript] table: 0x445b6308
+[VScript] table: 0x445b6eb0
+[VScript] table: 0x445b6670
+[VScript] table: 0x445b69f0
+[VScript] table: 0x445b6af0
+[VScript] table: 0x445b6bf0
+[VScript] table: 0x445b6870
+[VScript] table: 0x445b6770
+[VScript] table: 0x445b6440
+[VScript] table: 0x445b68f0
+[VScript] table: 0x445b6540
+[VScript] table: 0x445b6308
+[VScript] table: 0x445b6eb0
+[VScript] table: 0x445b6670
+[VScript] table: 0x445b69f0
+[VScript] table: 0x445b6af0
+[VScript] table: 0x445b6bf0
+[VScript] table: 0x445b6870
+[VScript] table: 0x445b6770
+[VScript] table: 0x445b6440
+[VScript] table: 0x445b68f0
+[VScript] table: 0x445b6540
+[VScript] table: 0x445b6308
+[VScript] table: 0x445b6eb0
+[VScript] table: 0x445b6670
+[VScript] table: 0x445b69f0
+[VScript] table: 0x445b6af0
+[VScript] table: 0x445b6bf0
+[VScript] [ChatListener] created ChatListener
+[VScript] !!! safe_require FAILED:	lib/chat_listener
+[VScript] scripts/vscripts/lib/output_redirect.lua:2: module 'debug' not found:
+	no field package.preload['debug']Failed to find scripts/vscripts/debug.lua
+[VScript] Script Runtime Error: error in error handling
+[VScript] Error running script named addon_game_mode
+[Server] CNetworkGameServerBase::SetServerState (ss_loading -> ss_active)
+[Client] CL:  CWaitForGameServerStartupPrerequisite done waiting for server
+[Client] CL:  CCreateGameClientJob creating client connection to 'loopback'
+[Networking] Created poll group for socket 'client'
+[Networking] Connected loopback client=1ec94b5f@loopback:1 <-> server=af9c97bc@loopback:0
+[Client] Tick packet desired receive margin now 5.0ms.  cl_tickpacket_recvmargin_desired=5  cl_tickpacket_desired_queuelength=0.  engine_frametime_warnings_enable=1, cl_async_usercmd_send=1
+[NetSteamConn] Associating NetChan DJ НАЗА� @ loopback:0 (loopback:0) with Steam Net Connection handle #2946275260 (userdata 0)
+[NetSteamConn] Associating NetChan server @ loopback:1 (loopback:1) with Steam Net Connection handle #516508511 (userdata 1)
+[Client] CL:  Connected to 'loopback:1'
+ClientPutInServer create new player controller [DJ НАЗАР ШИШКА]
+[Server] Client 0 'DJ НАЗАР ШИШКА' setting rate to 80000
+[Client] Game: "Dota 2"
+[Client] Map: "new"
+[Client] Players: 1 (0 bots) / 64 humans
+[Client] Build: 10682 (revision 10466614)
+[Client] Server Number: 10
+[SignonState] CL:  CNetworkGameClient::ProcessServerInfo
+KeyValues Error: LoadFromBuffer: expected '{', found '<NULL>' in file scripts/npc/neutral_creeps_skill.txt
+(*harpy_storm_chain_lightning*), (*AbilityCastAnimation*), (*AbilityValues*), (*max_targets*), (*radius*), 
+Failed to load. pName='DOTANeutralItems', bIncrementVersion=true, list: 
+scripts/npc/npc_neutral_items_custom.txt
+Found
+Initializing script VM...
+...done
+[VScript] [PreloadCache] Load KV 'scripts/npc/npc_heroes_custom.txt'
+[VScript] [PreloadCache] Load KV 'scripts/npc/npc_abilities_custom.txt'
+KeyValues Error: LoadFromBuffer: expected '{', found '<NULL>' in file scripts/npc/neutral_creeps_skill.txt
+(*harpy_storm_chain_lightning*), (*AbilityCastAnimation*), (*AbilityValues*), (*max_targets*), (*radius*), 
+[VScript] [special_bonus_base_aa] created special_bonus_base_aa
+KeyValues Error: LoadFromBuffer: expected '{', found '<NULL>' in file scripts/npc/neutral_creeps_skill.txt
+(*harpy_storm_chain_lightning*), (*AbilityCastAnimation*), (*AbilityValues*), (*max_targets*), (*radius*), 
+Failed to load. pName='DOTANeutralItems', bIncrementVersion=true, list: 
+scripts/npc/npc_neutral_items_custom.txt
+Found
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_INIT'
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_INIT
+[Client] CDOTA_Hud_Main::DeleteGameEndScreen deleted GameEndContainer
+[Client] CL:  CGameRulesGameSystem::GameInit installed game rules
+ReadSteamRemoteStorageFile( bufOut, "voice_ban.dt" ) -> 0.001559 seconds
+[Server] SV:  "DJ НАЗАР ШИШКА<0><[U:1:960329385]><>" STEAM USERID validated
+[GCClient] Recv msg 24 (k_ESOMsg_CacheSubscribed), 37698 bytes
+[GCClient] Recv msg 24 (k_ESOMsg_CacheSubscribed), 42 bytes
+[Client] CNetworkGameClient::ProcessClassInfo: create on client true
+[Client] CNetworkGameClient::ProcessClassInfo: creating client serializers from local server serializers (crc 0, server api exists)
+[Client] Client missing networkable entity class CPhysMagnet
+[Client] Client missing networkable entity class CSpotlightEnd
+[Client] CNetworkGameClientBase::LinkClasses took 77.703 msec
+[ResourceSystem] Failed loading resource "panorama/images/items/potion_immune_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/heroes/icons/npc_dota_hero_announcer_killing_spree_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/heroes/icons/npc_dota_hero_announcer_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/unknown_amulet4_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/dimensional_predictor_1_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/blaze_rod_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/revenants_brooch_custom_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/holy_book_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/shield_of_immortality_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/magic_splash_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/manaflare_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/static_amulet2_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/center_of_peace_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/seer_stone1_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/slice_amulet_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/charon_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/chest_of_midas_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/talisman_of_ambition_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/boots_of_bearing_aa_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/fury_shield_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/explosive_mantle_of_intellect_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/talisman_of_mastery_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/tome_un_6_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/tome_int_6_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/tome_agi_6_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/tome_str_6_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/tome_lvlup_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/items/tome_med_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "particles/miketest/mangotest.vpcf_c" (ERROR_FILEOPEN: File not found)
+[Client] CL:  CGameClientConnectPrerequisite connection succeeded
+ChangeGameUIState: DOTA_GAME_UI_STATE_LOADING_SCREEN -> DOTA_GAME_UI_DOTA_INGAME
+[Server] SV:  IGameSystem::LoopActivateAllSystems {
+[Host] HO:  IGameSystem::LoopActivateAllSystems {
+[Host] HO:  } IGameSystem::LoopActivateAllSystems done
+[RESPONSE_RULES] CResponseSystem:  failed to load scripts/talker/response_rules_custom.txt
+[Server] SV:  } IGameSystem::LoopActivateAllSystems done
+[Server] Created physics for new
+[Server] SV:  64 player server started
+[Server] SV:  addon='anger_arena_new_rising'
+[Server] CSource2Server::GameServerSteamAPIActivated()
+[Client] CL:  IGameSystem::LoopActivateAllSystems {
+ReadSteamRemoteStorageFile( bufOut, "scripts/control_groups.txt" ) -> 0.001795 seconds
+ReadSteamRemoteStorageFile( bufOut, "scripts/item_suggest_preference.txt" ) -> 0.000769 seconds
+[Client] CL:  } IGameSystem::LoopActivateAllSystems done
+[HostStateManager] Host activate: Loading (new)
+[SignonState] CL:  CNetworkGameClient::OnSwitchLoopModeFinished( game : success )
+[Server] SV:  Sending full update to client DJ НАЗАР ШИШКА (reason:  initial update)
+[Client] CNetworkGameClientBase::OnReceivedUncompressedPacket(), received full update
+[Prediction] Resetting prediction state because we received a full update
+[Client] Receiving 7.3K non-incremental update from server
+[Client] Created physics for new
+DOTABaseGameMode::Spawn()
+KeyValues Error: LoadFromBuffer: expected '{', found '<NULL>' in file scripts/npc/neutral_creeps_skill.txt
+(*harpy_storm_chain_lightning*), (*AbilityCastAnimation*), (*AbilityValues*), (*max_targets*), (*radius*), 
+Failed to load. pName='DOTANeutralItems', bIncrementVersion=true, list: 
+scripts/npc/npc_neutral_items_custom.txt
+Found
+[Networking] server @ loopback:1:  NetChan Setting Timeout to 30.00 seconds
+[Client] CL:  Signon traffic "server":  incoming 143.621 KB [473 netframes], outgoing 6.638 KB [472 netframes]
+[Prediction] Added prediction for player slot 0 ()
+[Localization System] virtual const char *CLocalize::FindSafe(const char *) failed to localize: invalid index
+[Networking] DJ НАЗА� @ loopback:0:  NetChan Setting Timeout to 20.00 seconds
+[Server] CDOTA_PlayerResource: Adding player SteamID 76561198920595113 to PlayerID 0 FakeClient=0, preferred PlayerID = -1
+[Server] PR:OnFullyJoinedServer 0:[U:1:960329385]
+[Server] PR:SetLeaverStatus 0:[U:1:960329385] DOTA_LEAVER_NONE
+[Server] PR:SetConnectionState 0:[U:1:960329385] DOTA_CONNECTION_STATE_CONNECTED NETWORK_DISCONNECT_INVALID
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP'
+--- Sent CMsgGameServerInfo to GC
+server_public_ip_addr: 2953053845
+server_private_ip_addr: 2130706433
+server_port: 27015
+server_tv_port: 0
+server_key: ""
+server_hibernation: false
+server_type: GAME
+server_region: 0
+server_loadavg: 3.56884766
+server_tv_broadcast_time: -120
+server_game_time: 54.8000031
+relay_slots_max: 0
+relays_connected: 0
+relay_clients_connected: 0
+tv_secret_code: 15084777598854378939
+server_version: 6714
+server_cluster: 0
+assigned_server_tv_port: 27020
+allow_custom_games: BOTH
+build_version: 6714
+
+---
+[Server] PR:SetPlusSubscriptionStatus 0:[U:1:960329385] IsPlusSubscriber:No
+[Server] PR:SetWasMVPLastGame 0:[U:1:960329385] WasMVPLastGame:No
+[Server] PR:SetFavoriteTeamPacked 0:[U:1:960329385] unFavTeamPacked:0
+[Localization System] virtual const char *CLocalize::FindSafe(const char *) failed to localize: invalid index
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP'
+[Client] LoadingDisplay changed from LOADING to CUSTOM_GAME_SETUP (map="new")
+[PanoramaScript] game_rules_state_change{"splitscreenplayer":0}
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP
+[GCClient] Send msg 4508 (k_EMsgGCGameServerInfo), 82 bytes
+[Filesystem] Unknown read error 21
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 18.600486ms
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 20.395260ms
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 21.057760ms
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_HERO_SELECTION'
+Muted Players: 
+[GCClient] Send msg 8870 (k_EMsgServerToGCLobbyInitialized), 8 bytes
+--- Sent CMsgGameServerInfo to GC
+server_public_ip_addr: 2953053845
+server_private_ip_addr: 2130706433
+server_port: 27015
+server_tv_port: 0
+server_key: ""
+server_hibernation: false
+server_type: GAME
+server_region: 0
+server_loadavg: 4.16357422
+server_tv_broadcast_time: -120
+server_game_time: 62.1333351
+relay_slots_max: 0
+relays_connected: 0
+relay_clients_connected: 0
+tv_secret_code: 15084777598854378939
+server_version: 6714
+server_cluster: 0
+assigned_server_tv_port: 27020
+allow_custom_games: BOTH
+build_version: 6714
+
+---
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_HERO_SELECTION'
+[Client] LoadingDisplay changed from CUSTOM_GAME_SETUP to NONE (map="new")
+[PanoramaScript] game_rules_state_change{"splitscreenplayer":0}
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_HERO_SELECTION
+[Client] PregameHud - eGameState is now DOTA_GAMERULES_STATE_HERO_SELECTION
+[Client] PregameHud - SetPreGameVisible 1
+[SndOperators] Operator Error: Event valve_ti8.music.ui_hero_select: CSosOperatorConvar
+[SndOperators] Warning: Unable to acquire convar value: dota_music_enable_spectator_mode
+[GCClient] Send msg 4508 (k_EMsgGCGameServerInfo), 82 bytes
+Job EconItemSearch has spent >3.000ms without yielding: 23.168ms
+Excessive frame time of 140.63ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 1.40s ago)
+Job EconItemSearch has spent >3.000ms without yielding: 4.175ms
+Excessive frame time of 121.99ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 1.52s ago)
+Job EconItemSearch has spent >3.000ms without yielding: 4.173ms
+Excessive frame time of 126.14ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 1.64s ago)
+[Server] PR:SetPossibleHeroSelection 0:[U:1:960329385] npc_dota_hero_templar_assassin(46)
+Excessive frame time of 106.68ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 2.05s ago)
+[Server] PR:SetPossibleHeroSelection 0:[U:1:960329385] none
+[Server] PR:SetPossibleHeroSelection 0:[U:1:960329385] npc_dota_hero_spirit_breaker(71)
+[Server] PR:SetPossibleHeroSelection 0:[U:1:960329385] npc_dota_hero_riki(32)
+[Localization System] virtual const char *CLocalize::ConstructString(CBufferString *, const char *, const ILocVariableSource *, bool) failed to localize: #DOTA_Tooltip_Ability_riki_blink_strike_SummaryDescription
+[Localization System] virtual const char *CLocalize::ConstructString(CBufferString *, const char *, const ILocVariableSource *, bool) failed to localize: #DOTA_Tooltip_Ability_riki_blink_strike_SummaryDescription_LevelUp
+[Localization System] virtual const char *CLocalize::ConstructString(CBufferString *, const char *, const ILocVariableSource *, bool) failed to localize: #DOTA_Tooltip_Ability_riki_backstab_SummaryDescription
+[Localization System] virtual const char *CLocalize::ConstructString(CBufferString *, const char *, const ILocVariableSource *, bool) failed to localize: #DOTA_Tooltip_Ability_riki_backstab_SummaryDescription_LevelUp
+Excessive frame time of 210.19ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 4.39s ago)
+[Localization System] virtual const char *CLocalize::ConstructString(CBufferString *, const char *, const ILocVariableSource *, bool) failed to localize: #DOTA_Tooltip_Ability_riki_blink_strike_SummaryDescription
+[Localization System] virtual const char *CLocalize::ConstructString(CBufferString *, const char *, const ILocVariableSource *, bool) failed to localize: #DOTA_Tooltip_Ability_riki_blink_strike_SummaryDescription_LevelUp
+[Localization System] virtual const char *CLocalize::ConstructString(CBufferString *, const char *, const ILocVariableSource *, bool) failed to localize: #DOTA_Tooltip_Ability_riki_smoke_screen_SummaryDescription
+[Localization System] virtual const char *CLocalize::ConstructString(CBufferString *, const char *, const ILocVariableSource *, bool) failed to localize: #DOTA_Tooltip_Ability_riki_smoke_screen_SummaryDescription_LevelUp
+[InputSystem] Processing SDL events took 29.5ms
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 45.958090ms
+Excessive frame time of 119.88ms clamped.  Acting as if the frame only took 100.00ms
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 40.025972ms
+Excessive frame time of 110.06ms clamped.  Acting as if the frame only took 100.00ms
+[Server] PR:SetSelectedHero 0:[U:1:960329385] npc_dota_hero_riki(32)
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_STRATEGY_TIME'
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_STRATEGY_TIME'
+[PanoramaScript] game_rules_state_change{"splitscreenplayer":0}
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_STRATEGY_TIME
+[Client] PregameHud - eGameState is now DOTA_GAMERULES_STATE_STRATEGY_TIME
+[GCClient] Send msg 8330 (k_EMsgServerToGCRequestPlayerRecentAccomplishments), 25 bytes
+Excessive frame time of 215.58ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 2.31s ago)
+[Server] PR:SetPossibleHeroFacet 0:[U:1:960329385] (npc_dota_hero_riki:riki_riki)
+Excessive frame time of 157.70ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 2.46s ago)
+Excessive frame time of 173.54ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 2.64s ago)
+[GCClient] Recv msg 8331 (k_EMsgServerToGCRequestPlayerRecentAccomplishmentsResponse), 127 bytes
+[GCClient] Send msg 8729 (k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch), 212 bytes
+[GCClient] Recv msg 8730 (k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse), 430 bytes
+[Server] PR:SetSelectedHeroFacet 0:[U:1:960329385] (npc_dota_hero_riki:riki_riki)
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD'
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_PRE_GAME'
+m_flPreGameStartTime set to 79.13
+m_flStateTransitionTime set to 169.13
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_PRE_GAME'
+[PanoramaScript] game_rules_state_change{"splitscreenplayer":0}
+[PanoramaScript] riki
+[PanoramaScript] riki
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_PRE_GAME
+[Client] PregameHud - eGameState is now DOTA_GAMERULES_STATE_PRE_GAME
+**** Panel Hint has fill-parent-flow for width, but isn't in a flowing right layout
+Excessive frame time of 304.86ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 4.15s ago)
+[InputSystem] Processing SDL events took 15.4ms
+Excessive frame time of 193.35ms clamped.  Acting as if the frame only took 100.00ms.  (Last amnesty was 'ConsoleVisible', 4.34s ago)
+[InputSystem] Processing SDL events took 12.0ms
+[InputSystem] Processing SDL events took 7.7ms
+Excessive frame time of 109.37ms clamped.  Acting as if the frame only took 100.00ms
+[Entity System] Entity hero_camera [point_camera]: unrecognized parent "loadout_camera_model"
+[SndOperators] Operator Error: Event valve_ti8.music.ui_hero_select: CSosOperatorConvar
+[SndOperators] Warning: Unable to acquire convar value: dota_music_enable_spectator_mode
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "" for entity "npc_dota_hero_riki"
+[SpawnGroup] WARNING: Received SpawnGroup_LoadCompleted for an unknown spawngrouphandle(2) from client 'DJ НАЗАР ШИШКА'
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 29.297187ms
+[Client] PregameHud - SetPreGameVisible 0

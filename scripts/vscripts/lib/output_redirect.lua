@@ -1,5 +1,4 @@
 require('lib/admins')
-require('debug')
 
 OutputRedirection = OutputRedirection or class({})
 OutputRedirection._data = OutputRedirection._data or {}
@@ -32,12 +31,18 @@ local function _outputData(playerid, sData, isError)
 	return true
 end
 
-if not IsInToolsMode() then 
-	debug._originalTraceback = debug._originalTraceback or debug.traceback
-	_G._originalPrint = _G._originalPrint or _G.print 
+if not IsInToolsMode() then
+	-- В VScript debug может быть nil. Делаем безопасно.
+	_G._originalPrint = _G._originalPrint or _G.print
+	local _print = _G._originalPrint
 
-	local _print 	 = _G._originalPrint
-	local _traceback = debug._originalTraceback
+	-- Безопасный traceback: если debug отсутствует — просто вернём строку.
+	local function _safe_traceback()
+		if debug and debug.traceback then
+			return debug.traceback()
+		end
+		return "[traceback unavailable: debug library is nil]"
+	end
 
 	function print_wrapper(...)
 		local result = _print(...)
@@ -47,11 +52,11 @@ if not IsInToolsMode() then
 			local myStr = ""
 
 			for i = 1, nArgs do
-				myStr = myStr .. tostring( select(i, ...) )
+				myStr = myStr .. tostring(select(i, ...))
 			end
 
 			for playerid, _ in pairs(OutputRedirection._data) do
-				if not _outputData( playerid, myStr, false ) then break end
+				if not _outputData(playerid, myStr, false) then break end
 			end
 		end
 
@@ -59,11 +64,11 @@ if not IsInToolsMode() then
 	end
 
 	function traceback_wrapper()
-		local result = _traceback()
+		local result = _safe_traceback()
 
 		if OutputRedirection._count > 0 then
 			for playerid, _ in pairs(OutputRedirection._data) do
-				if not _outputData( playerid, result, true ) then break end
+				if not _outputData(playerid, result, true) then break end
 			end
 		end
 
@@ -71,5 +76,9 @@ if not IsInToolsMode() then
 	end
 
 	_G["print"] = print_wrapper
-	debug.traceback = traceback_wrapper
+
+	if debug then
+		debug._originalTraceback = debug._originalTraceback or debug.traceback
+		debug.traceback = traceback_wrapper
+	end
 end

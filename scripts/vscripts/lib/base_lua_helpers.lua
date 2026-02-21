@@ -64,23 +64,31 @@ function force_print_player( player, ... )
 	CustomGameEventManager:Send_ServerToPlayer(player, "DebugMessage", { msg = text })
 end
 
+local _unpack = unpack or table.unpack
+
+local function _err_handler(err)
+    err = tostring(err)
+	return debug.traceback(err, 2)
+end
+
 function SafeCall(func, ...)
-	local arg = {...}
+    local ok, res = xpcall(func, _err_handler, ...)
 
-	local status, result = xpcall(function() return func(unpack(arg)) end, 
-								  function (msg) return msg .. '\n' .. debug.traceback() .. '\n' end)
+    if not ok then
+        print("========== VSCRIPT ERROR ==========")
+        print(res) -- res уже traceback string
+        print("===================================")
+        return nil
+    end
 
-	return result
+    return res
 end
 
 function Safe_Wrap(mt, name)
-	local func = Dynamic_Wrap(mt, name)
-
-	local result = function(...)
-		return SafeCall( func, ... )
-	end
-
-	return result
+    local func = Dynamic_Wrap(mt, name)
+    return function(...)
+        return SafeCall(func, ...)
+    end
 end
 
 function table_contains(tbl, x)
