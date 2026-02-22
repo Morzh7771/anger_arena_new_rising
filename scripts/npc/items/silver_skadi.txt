@@ -127,12 +127,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage" "20"
-			"bonus_attack_speed"	"35"
-			"windwalk_duration"		"6.0"
+			"bonus_damage" 				"20"
+			"bonus_attack_speed"		"35"
+			"windwalk_duration"			"6.0"
 			"windwalk_movement_speed"	"20"
-			"windwalk_fade_time"	"0.3"
-			"windwalk_bonus_damage"	"175"
+			"windwalk_fade_time"		"0.3"
+			"windwalk_bonus_damage"		"175"
 		}
 	}
 	"item_silver_edge"
@@ -165,14 +165,13 @@
 			"bonus_strength"			"0"
 			"bonus_intellect"			"0"
 			"bonus_mana_regen"			"0"
-			"windwalk_duration"			"14.0 14.0 14.0"
-			"windwalk_movement_speed"	"25 30 35"
-			"windwalk_fade_time"		"0.3 0.3 0.3"
-			"windwalk_bonus_damage"		"175 250 400"
+			"windwalk_duration"			"8 8 8"
+			"windwalk_movement_speed"	"25 30 40"
+			"windwalk_fade_time"		"0.3 0.3 0.2"
+			"windwalk_bonus_damage"		"300 450 700"
 			"backstab_duration"			"5 6 7"
-			"crit_chance"				"25 30 35"
-			"crit_multiplier"			"150 200 250"
-			"tooltip_crit_damage"		"50 100 150"
+			"max_movement_speed"    	"200"
+			"visibility_radius"     	"1025"
 		}
 	}
 	"item_silver_edge_2"
@@ -208,14 +207,13 @@
 			"bonus_strength"			"0"
 			"bonus_intellect"			"0"
 			"bonus_mana_regen"			"0"
-			"windwalk_duration"			"14.0 14.0 14.0"
-			"windwalk_movement_speed"	"25 30 35"
-			"windwalk_fade_time"		"0.3 0.3 0.3"
-			"windwalk_bonus_damage"		"175 250 400"
+			"windwalk_duration"			"8 8 8"
+			"windwalk_movement_speed"	"25 30 40"
+			"windwalk_fade_time"		"0.3 0.3 0.2"
+			"windwalk_bonus_damage"		"300 450 700"
 			"backstab_duration"			"5 6 7"
-			"crit_chance"				"25 30 35"
-			"crit_multiplier"			"150 200 250"
-			"tooltip_crit_damage"		"50 100 150"
+			"max_movement_speed"    	"200"
+			"visibility_radius"     	"1025"
 		}
 	}
 	"item_skadi"
@@ -313,12 +311,14 @@
 			"bonus_health"				"220 500 1000"
 			"bonus_mana"				"220 500 1000"
 
-			"windwalk_duration"			"8"
-			"windwalk_movement_speed"	"25 30 35"
-			"windwalk_fade_time"		"0.3 0.3 0.3"
-			"windwalk_bonus_damage"		"175 250 400"
+			"windwalk_duration"			"8 8 8"
+			"windwalk_movement_speed"	"25 30 40"
+			"windwalk_fade_time"		"0.3 0.3 0.2"
+			"windwalk_bonus_damage"		"300 450 700"
 
 			"backstab_duration"			"5 6 7"
+			"max_movement_speed"    	"200"
+			"visibility_radius"     	"1025"
 
 			"cold_slow_melee"			"-20 -30 -40"
 			"cold_attack_slow_melee"	"-25 -35 -45"
@@ -329,3 +329,4 @@
 		}
     }
 }
+			

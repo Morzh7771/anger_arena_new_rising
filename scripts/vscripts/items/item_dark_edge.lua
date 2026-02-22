@@ -13,7 +13,8 @@ modifier_item_dark_edge = class({
     IsHidden = function(self) return true end,
     GetAttributes = function(self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
     GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
-    DeclareFunctions = function(self) return {
+    DeclareFunctions = function(self) return 
+        {
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
             MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
             MODIFIER_EVENT_ON_ATTACK_LANDED,
@@ -23,7 +24,8 @@ modifier_item_dark_edge = class({
             MODIFIER_PROPERTY_HEALTH_BONUS,
             MODIFIER_PROPERTY_MANA_BONUS,
             MODIFIER_EVENT_ON_ATTACK_LANDED,
-        }end,
+        }
+    end,
     GetModifierPreAttack_BonusDamage = function (self) return self:GetAbility():GetSpecialValueFor("bonus_damage") end,
     GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end,
     GetModifierBonusStats_Strength = function (self) return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end,

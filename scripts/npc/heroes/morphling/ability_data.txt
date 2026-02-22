@@ -470,7 +470,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "morphling_waveform"                // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
                 
     }
 
@@ -483,14 +483,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "1"
-                "ad_linked_abilities" "morphling_waveform"
-            }
-        }
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -502,7 +495,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "BaseClass" "special_bonus_base"
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -514,14 +507,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "0"
-                "ad_linked_abilities" "morphling_morph_agi"
-            }
-        }
+        "BaseClass" 					"special_bonus_base"
     }
     //=================================================================================================================
     // Ability: Special Bonus

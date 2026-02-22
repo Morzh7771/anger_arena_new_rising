@@ -368,7 +368,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "luna_lucent_beam"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -380,7 +380,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "luna_lucent_beam"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -392,7 +392,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "luna_lunar_blessing"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -404,7 +404,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "luna_lucent_beam"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -416,7 +416,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "luna_eclipse"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -428,7 +428,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "luna_eclipse"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -440,7 +440,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "luna_moon_glaive"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -452,7 +452,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "luna_lucent_beam && luna_moon_glaive"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -465,6 +465,5 @@ DOTAAbilities
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
-        "ad_linked_abilities"           "luna_lunar_orbit"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
     }
 }

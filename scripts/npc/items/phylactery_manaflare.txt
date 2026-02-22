@@ -73,9 +73,12 @@
             "bonus_health"              "200 500 750"
             "bonus_mana"                "200 500 750"
             "bonus_all_stats"           "7 15 25"
-            "slow"						"50 50 50"
+            "slow"						"-50 -50 -50"
             "bonus_spell_damage"		"250 350 450"
             "slow_duration"				"1.5 2 2.5"
+
+            "bonus_health_regen"        "0"
+            "bonus_mana_regen"          "0"
         }
     }
     "item_phylactery_2"
@@ -100,9 +103,9 @@
             "bonus_health"              "200 500 750"
             "bonus_mana"                "200 500 750"
             "bonus_all_stats"           "7 15 25"
-            "slow"						"50 50 50"
+            "slow"                      "-50 -50 -50"
             "bonus_spell_damage"        "250 350 450"
-            "slow_duration"			    "1.5 2 2.5"
+            "slow_duration"             "1.5 2 2.5"
         }
     }
     "item_manaflare_lens_custom"
