@@ -90,8 +90,8 @@
 		"AbilityCooldown"				"0.0"
 		"AbilitySharedCooldown"			"magicwand"
 
-		"AbilityCharges"				"20 25 30"
-		"AbilityChargeRestoreTime"		"8"
+		"AbilityCharges"				"25 35 50"
+		"AbilityChargeRestoreTime"		"10"
 		"ItemInitialCharges"			"1"
 		"ItemRequiresCharges"			"1"
 		"ItemDisplayCharges"			"1"
@@ -109,15 +109,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_health"			"0"
-			"bonus_mana"			"0"
-			"heal_increase"			"30 35 40"
-			"max_charges"			"20 25 30"
-			"charge_radius"			"1200 1200 1200"
-			"bonus_all_stats"		"10 20 50"
-			"restore_per_charge"	"15 25 50"
-			"charge_gain_timer"		"20 15 10"
-			"use_cooldown"			"13"
+			"bonus_health"				"0"
+			"bonus_mana"				"0"
+			"heal_increase_passive"		"20 25 30"
+			"max_charges"				"25 35 50"
+			"charge_radius"         
+            {   
+                "value"     			"1200 1300 1500"
+                "affected_by_aoe_increase"  "1"
+            }
+			"bonus_all_stats"				"7 14 50"
+			"health_restore_per_charge"		"17 34 100"
+			"mana_restore_per_charge"   	"15 30 80"
+
+			"incoming_heal_increase_active" "10 15 20"
+			"active_buff_duration"          "4.0"
+
+			"charge_gain_timer"				"10"
+			"use_cooldown"					"13"
 		}
 	}
 	"item_holy_locket_2"
@@ -145,8 +154,8 @@
 		"AbilityCooldown"				"0.0"
 		"AbilitySharedCooldown"			"magicwand"
 
-		"AbilityCharges"				"20 25 30"
-		"AbilityChargeRestoreTime"		"8"
+		"AbilityCharges"				"25 35 50"
+		"AbilityChargeRestoreTime"		"10"
 		"ItemInitialCharges"			"1"
 		"ItemRequiresCharges"			"1"
 		"ItemDisplayCharges"			"1"
@@ -164,15 +173,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_health"			"0"
-			"bonus_mana"			"0"
-			"heal_increase"			"30 35 40"
-			"max_charges"			"20 25 30"
-			"charge_radius"			"1200 1200 1200"
-			"bonus_all_stats"		"10 20 50"
-			"restore_per_charge"	"15 25 50"
-			"charge_gain_timer"		"20 15 10"
-			"use_cooldown"			"13"
+			"bonus_health"				"0"
+			"bonus_mana"				"0"
+			"heal_increase_passive"		"20 25 30"
+			"max_charges"				"25 35 50"
+			"charge_radius"         
+            {   
+                "value"     			"1200 1300 1500"
+                "affected_by_aoe_increase"  "1"
+            }
+			"bonus_all_stats"				"7 14 50"
+			"health_restore_per_charge"		"17 34 100"
+			"mana_restore_per_charge"   	"15 30 80"
+
+			"incoming_heal_increase_active" "10 15 20"
+			"active_buff_duration"          "4.0"
+
+			"charge_gain_timer"				"10"
+			"use_cooldown"					"13"
 		}
 	}
 	"item_holy_locket_3"
@@ -201,8 +219,8 @@
 		"AbilityCooldown"				"0.0"
 		"AbilitySharedCooldown"			"magicwand"
 
-		"AbilityCharges"				"20 25 30"
-		"AbilityChargeRestoreTime"		"8"
+		"AbilityCharges"				"25 35 50"
+		"AbilityChargeRestoreTime"		"10"
 		"ItemInitialCharges"			"1"
 		"ItemRequiresCharges"			"1"
 		"ItemDisplayCharges"			"1"
@@ -220,15 +238,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_health"			"0"
-			"bonus_mana"			"0"
-			"heal_increase"			"30 35 40"
-			"max_charges"			"20 25 30"
-			"charge_radius"			"1200 1200 1200"
-			"bonus_all_stats"		"10 20 50"
-			"restore_per_charge"	"15 25 50"
-			"charge_gain_timer"		"20 15 10"
-			"use_cooldown"			"13"
+			"bonus_health"				"0"
+			"bonus_mana"				"0"
+			"heal_increase_passive"		"20 25 30"
+			"max_charges"				"25 35 50"
+			"charge_radius"         
+            {   
+                "value"     			"1200 1300 1500"
+                "affected_by_aoe_increase"  "1"
+            }
+			"bonus_all_stats"				"7 14 50"
+			"health_restore_per_charge"		"17 34 100"
+			"mana_restore_per_charge"   	"15 30 80"
+
+			"incoming_heal_increase_active" "10 15 20"
+			"active_buff_duration"          "4.0"
+
+			"charge_gain_timer"				"10"
+			"use_cooldown"					"13"
 		}
 	}
 }

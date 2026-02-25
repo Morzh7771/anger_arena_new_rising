@@ -45,7 +45,7 @@ DOTAAbilities
 			"wolf_duration"             
             {
                 "value"                 "50"
-                "special_bonus_facet_lycan_spirit_wolves"       "=25"
+                "special_bonus_facet_lycan_spirit_wolves"       "=20"
             }
 			"wolf_bat"					
 			{
@@ -73,6 +73,9 @@ DOTAAbilities
 			{
 				"value"			"0"
 				"special_bonus_unique_lycan_3"	"+30"
+
+				"CalculateSpellDamageTooltip"   "0"
+                "DamageTypeTooltip" "DAMAGE_TYPE_PHYSICAL"
 			}
 			"bonus_armor"
             {
@@ -118,9 +121,8 @@ DOTAAbilities
             }
             "damage_per_wolf"               
             {
-                "value"                 "12 24 36 48 60 72 84"    
+                "value"                 		"12 24 36 48 60 72 84"    
                 "special_bonus_unique_lycan_3"  "+12"
-                "RequiresFacet"                 "lycan_spirit_wolves"
             }
             "death_fx_time"
             {
@@ -277,11 +279,6 @@ DOTAAbilities
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AbilityDraftUltScepterAbility"		"lycan_wolf_bite"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90"
-
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"		
@@ -292,8 +289,8 @@ DOTAAbilities
 		{
 			"duration"
 			{
-				"value"				"25"
-				"special_bonus_unique_lycan_1"	"+6"
+				"value"				"20"
+				"special_bonus_unique_lycan_1"	"+5"
 			}
 			"speed"				"750"
 			"bonus_night_vision"		"1000"
@@ -313,6 +310,11 @@ DOTAAbilities
             {
                 "value"             "0"
                 "special_bonus_facet_lycan_pack_leader"         "+5"
+            }
+            "AbilityCooldown"
+            {
+                "value"                         "110 105 100 95 90 85 80"
+                "special_bonus_unique_lycan_8"  "-10"
             }
 		}
 	}
@@ -432,7 +434,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "lycan_shapeshift"              // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+        "BaseClass"                     "special_bonus_base"
     }
 
     //=================================================================================================================
@@ -444,9 +446,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "lycan_summon_wolves"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-        
-        
+        "BaseClass"                     "special_bonus_base"        
     }
 
     //=================================================================================================================
@@ -458,9 +458,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "lycan_summon_wolves"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-        
-        
+        "BaseClass"                     "special_bonus_base"
     }
 
     //=================================================================================================================
@@ -472,9 +470,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "lycan_feral_impulse"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-        
-        
+        "BaseClass"                     "special_bonus_base"
     }
 
     //=================================================================================================================
@@ -486,9 +482,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "lycan_howl"                // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-        
-        
+        "BaseClass"                     "special_bonus_base"
     }
 
     //=================================================================================================================
@@ -500,9 +494,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ad_linked_abilities"           "lycan_summon_wolves"               // this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-        
-        
+        "BaseClass"                     "special_bonus_base"
     }
     
     //=================================================================================================================
@@ -514,14 +506,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "15"
-                "ad_linked_abilities" "lycan_shapeshift"
-            }
-        }
+        "BaseClass"                     "special_bonus_base"
     }
 
     //=================================================================================================================

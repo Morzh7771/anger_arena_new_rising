@@ -55,7 +55,6 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
-		"AbilityOvershootCastRange"     "960"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"15.0"
 		"AbilityManaCost"				"0"
@@ -80,13 +79,13 @@
 			"bonus_strength"		"25 70"
 			"radius"		
 			{
-				"value"	"800 900"
+				"value"				"800 900"
 				"affected_by_aoe_increase"	"1"
 			}
-			"movement_slow"		"50 70"
-			"attack_slow"		"50 90"
-			"duration"		"5 6"
-			"damage_base"			"100 250"
+			"movement_slow"				"50 70"
+			"attack_slow"				"50 90"
+			"duration"					"6"
+			"damage_base"				"100 250"
 			"damage_pct_instant"		"50 100"
 			"damage_pct_over_time"		"100 200"
 		}
@@ -98,7 +97,6 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
-		"AbilityOvershootCastRange"     "960"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"15.0"
 		"AbilityManaCost"				"0"
@@ -114,7 +112,7 @@
 		"ItemAliases"					"blink dagger"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+    	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -126,13 +124,13 @@
 			"bonus_strength"		"25 70"
 			"radius"		
 			{
-				"value"	"800 900"
+				"value"				"800 900"
 				"affected_by_aoe_increase"	"1"
 			}
-			"movement_slow"		"50 70"
-			"attack_slow"		"50 90"
-			"duration"		"5 6"
-			"damage_base"			"100 250"
+			"movement_slow"				"50 70"
+			"attack_slow"				"50 90"
+			"duration"					"6"
+			"damage_base"				"100 250"
 			"damage_pct_instant"		"50 100"
 			"damage_pct_over_time"		"100 200"
 		}
@@ -144,7 +142,6 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
-		"AbilityOvershootCastRange"     "960"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"15.0"
 		"AbilityManaCost"				"0"
@@ -180,7 +177,6 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
-		"AbilityOvershootCastRange"     "960"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"15.0"
 		"AbilityManaCost"				"0"
@@ -219,7 +215,6 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1400"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
-		"AbilityOvershootCastRange"     "1120"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"7.0"
 		"AbilityManaCost"				"0"
@@ -258,7 +253,6 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1400"			// If updating this, update AbilityOvershootCastRange to 4/5 of this value
-		"AbilityOvershootCastRange"     "1120"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"7.0"
 		"AbilityManaCost"				"0"

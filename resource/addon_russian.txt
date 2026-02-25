@@ -2552,27 +2552,32 @@
 		"DOTA_Tooltip_modifier_item_eternal_shroud_3_barrier"		"Shroud 3"
 		"DOTA_Tooltip_modifier_item_eternal_shroud_3_barrier_Description"       "Волшебный щит, который может заблокировать и превратить в ману до %dMODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT% полученного магического урона."
 
-        "DOTA_Tooltip_ability_item_holy_locket_2"                       "HOLY LOCKET 3"
-        "DOTA_Tooltip_ability_item_holy_locket_2_Description"				"<h1>Активное: Energy Charge</h1>Мгновенно восстанавливает выбранному союзному существу %restore_per_charge% здоровья и маны за каждый имеющийся заряд.<br><br> Получает один заряд каждые %AbilityChargeRestoreTime% сек. и каждый раз, когда видимый враг в радиусе %charge_radius% использует способность.\n\n<h1>Пассивное: Holy Blessing</h1>Все лечащие заклинания владельца восстанавливают на %heal_increase%%% больше здоровья."
+        "DOTA_Tooltip_ability_item_holy_locket_2"                       "HOLY LOCKET 2"
+        "DOTA_Tooltip_ability_item_holy_locket_2_Description"		"<h1>Активное: Energy Charge</h1>Применяет на союзника эффект, который на %active_buff_duration% сек. увеличивает получаемое им лечение на %incoming_heal_increase_active%%% и мгновенно восстанавливает ему %health_restore_per_charge% здоровья и %mana_restore_per_charge% маны за каждый заряд.<br><br>Получает один заряд каждые %AbilityChargeRestoreTime% сек. и каждый раз, когда видимый враг в радиусе %charge_radius% использует способность.\n\n<h1>Пассивное: Holy Blessing</h1>Все лечащие заклинания владельца восстанавливают на %heal_increase_passive%%% больше здоровья."
 		"DOTA_Tooltip_ability_item_holy_locket_2_bonus_all_stats"	"+$all"
+		"DOTA_Tooltip_ability_item_holy_locket_2_use_cooldown"      "ПЕРЕЗАРЯДКА:"
 		"DOTA_Tooltip_ability_item_holy_locket_2_Lore"		        "Заветная реликвия, которая долгое время считалась утерянной в неудавшемся походе."
 
 		"DOTA_Tooltip_modifier_item_holy_locket_2_aura"			"Аура от Holy Locket"
 		"DOTA_Tooltip_modifier_item_holy_locket_2_aura_Description"	"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
+		"DOTA_Tooltip_modifier_holy_locket_2_active_buff"                         "Усиление лечения от Holy Locket"
+        "DOTA_Tooltip_modifier_holy_locket_2_active_buff_Description"             "Это существо получает на %dMODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET%%% больше лечения."
 
         "DOTA_Tooltip_ability_item_holy_locket_3"                       "HOLY LOCKET 3"
-        "DOTA_Tooltip_ability_item_holy_locket_3_Description"				"<h1>Активное: Energy Charge</h1>Мгновенно восстанавливает выбранному союзному существу %restore_per_charge% здоровья и маны за каждый имеющийся заряд.<br><br> Получает один заряд каждые %AbilityChargeRestoreTime% сек. и каждый раз, когда видимый враг в радиусе %charge_radius% использует способность.\n\n<h1>Пассивное: Holy Blessing</h1>Все лечащие заклинания владельца восстанавливают на %heal_increase%%% больше здоровья."
+        "DOTA_Tooltip_ability_item_holy_locket_3_Description"		"<h1>Активное: Energy Charge</h1>Применяет на союзника эффект, который на %active_buff_duration% сек. увеличивает получаемое им лечение на %incoming_heal_increase_active%%% и мгновенно восстанавливает ему %health_restore_per_charge% здоровья и %mana_restore_per_charge% маны за каждый заряд.<br><br>Получает один заряд каждые %AbilityChargeRestoreTime% сек. и каждый раз, когда видимый враг в радиусе %charge_radius% использует способность.\n\n<h1>Пассивное: Holy Blessing</h1>Все лечащие заклинания владельца восстанавливают на %heal_increase_passive%%% больше здоровья."
 		"DOTA_Tooltip_ability_item_holy_locket_3_bonus_all_stats"	"+$all"
+		"DOTA_Tooltip_ability_item_holy_locket_3_use_cooldown"      "ПЕРЕЗАРЯДКА:"
 		"DOTA_Tooltip_ability_item_holy_locket_3_Lore"		        "Заветная реликвия, которая долгое время считалась утерянной в неудавшемся походе."
 
 		"DOTA_Tooltip_modifier_item_holy_locket_3_aura"			"Аура от Holy Locket"
 		"DOTA_Tooltip_modifier_item_holy_locket_3_aura_Description"	"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
+		"DOTA_Tooltip_modifier_holy_locket_3_active_buff"                         "Усиление лечения от Holy Locket"
+        "DOTA_Tooltip_modifier_holy_locket_3_active_buff_Description"             "Это существо получает на %dMODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET%%% больше лечения."
 
         "DOTA_Tooltip_ability_item_overwhelming_blink_2"                		"OVERWHELMING BLINK 2"
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"			    "<h1>Активное: Overwhelming Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения мгновенно наносит всем врагам в радиусе %radius% урон, равный 100 + %damage_pct_instang%%% от силы владельца, и постепенно наносит им урон, равный %damage_pct_over_time%%% силы владельца. Также замедляет передвижение врагов на %movement_slow%%%, а атаку — на %attack_slow%. Замедление действует %duration% сек.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
+        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"			    "<h1>Активное: Overwhelming Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения мгновенно наносит всем врагам в радиусе %radius% урон, равный %damage_base% + %damage_pct_instant%%% от силы владельца, и постепенно наносит им урон, равный %damage_pct_over_time%%% силы владельца. Также замедляет передвижение врагов на %movement_slow%%%, а атаку — на %attack_slow%. Замедление действует %duration% сек.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
         "DOTA_Tooltip_ability_item_overwhelming_blink_2_Lore"                    "Редкий смертный удержит в руках этот ужасающий книжал, выкованный в чреве хаоса."
         "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note0"                    "Если применить на себя, переместит в сторону союзного фонтана."
-        "DOTA_Tooltip_ability_item_overwhelming_blink_2_Note1"					"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
         "DOTA_Tooltip_ability_item_overwhelming_blink_2_bonus_strength"			"+$str"
 
         "DOTA_Tooltip_modifier_item_overwhelming_blink_2_debuff"			        "Overwhelming Blink"
@@ -2582,7 +2587,6 @@
 		"DOTA_Tooltip_ability_item_swift_blink_2_Description"           "<h1>Активное: Swift Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>После перемещения владелец на %duration% сек. получает +%bonus_movement%%% к скорости передвижения, +%bonus_agi_active% к ловкости и может проходить сквозь существ.<br><br>Предмет нельзя использовать, если последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
         "DOTA_Tooltip_ability_item_swift_blink_2_Lore"                  "Лезвие искусной работы, способное предсказывать движения владельца и помогать ему."
         "DOTA_Tooltip_ability_item_swift_blink_2_Note0"                 "Если применить на себя, переместит в сторону союзного фонтана."
-        "DOTA_Tooltip_ability_item_swift_blink_2_Note1"			"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
         "DOTA_Tooltip_ability_item_swift_blink_2_bonus_agility"		"+$agi"
 
 		"DOTA_Tooltip_modifier_item_swift_blink_2_buff"         	"Swift Blink 2"
@@ -2592,7 +2596,6 @@
 		"DOTA_Tooltip_ability_item_arcane_blink_2_Description"         	"<h1>Активное: Arcane Blink</h1> Мгновенно перемещает к указанной точке на расстоянии до %blink_range%.<br><br>Перемещение восстанавливает владельцу %heal_amount% здоровья и %mana_amount% маны.<br><br>Предмет нельзя использовать, если в последние %blink_damage_cooldown% сек. его владелец получал урон от вражеских героев или Рошана."
         "DOTA_Tooltip_ability_item_arcane_blink_2_Lore"                 "Живительный инструмент, который поможет вытерпеть затраты магической мощи."
         "DOTA_Tooltip_ability_item_arcane_blink_2_Note0"                "Если применить на себя, переместит в сторону союзного фонтана."
-        "DOTA_Tooltip_ability_item_arcane_blink_2_Note1"      			"Если применить предмет дальше, чем позволяет способность, дальность перемещения составит 4/5 от максимально возможной."
         "DOTA_Tooltip_ability_item_arcane_blink_2_bonus_intellect"      "+$int"
 
 		"DOTA_Tooltip_modifier_item_arcane_blink_2_buff"         	"Arcane Blink 2"

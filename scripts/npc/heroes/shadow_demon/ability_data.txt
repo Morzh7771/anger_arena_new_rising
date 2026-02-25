@@ -32,6 +32,21 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"disruption_duration"		
+			{
+				"value"		"2.75"
+			}
+			"illusion_duration"			"8 9 10 11 12 13 14"
+			"illusion_outgoing_damage"	"-75.0 -65.0 -55.0 -45.0 -35.0 -25.0 -15.0"
+			"illusion_outgoing_tooltip"	"25.0 35.0 45.0 55.0 65.0 75.0 85.0"
+			"illusion_flat_damage"				
+			{
+				"value"					"50 75 100 125 150 200 225"
+				"CalculateSpellDamageTooltip"   "0"
+                "DamageTypeTooltip"             "DAMAGE_TYPE_PHYSICAL"
+			}
+			"illusion_incoming_damage"	"175"
+			"tooltip_total_illusion_incoming_damage"	"275"
 			"AbilityCooldown"               
             {
                 "value"         "20 19 18 17 16 15 14"
@@ -42,23 +57,9 @@ DOTAAbilities
 				"value"				""
 				"special_bonus_unique_shadow_demon_7" "+2"
 			}
-			"disruption_duration"		
-			{
-				"value"		"2.75"
-			}
-			"illusion_duration"			"8 9 10 11 12 13 14"
-			"illusion_outgoing_damage"	"-75.0 -65.0 -55.0 -45.0 -35.0 -25.0 -15.0"
-			"illusion_outgoing_tooltip"	"25.0 35.0 45.0 55.0 65.0 75.0 85.0"
-			"illusion_flat_damage"				"50 75 100 125 150 200 225"
-			"illusion_incoming_damage"	"175"
-			"tooltip_total_illusion_incoming_damage"	"275"
+			"AbilityChargeRestoreTime"      "20 19 18 17 16 15 14"
 			"illusion_bounty_base"		"0"
 			"illusion_bounty_growth"	"2"
-			"can_cast"
-            {
-                "value"         "0"
-                "special_bonus_facet_shadow_demon_disruption_cast"          "+1"
-            }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -148,7 +149,6 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDuration"				"10"
-		"AbilityCooldown"				"2.5"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -197,6 +197,11 @@ DOTAAbilities
 				"value"			"30 40 50 60 70 80 90"
 				"special_bonus_unique_shadow_demon_4" "+15%"
 			}
+			"AbilityCooldown"
+            {
+                "value"                                 "2.5"
+                "special_bonus_unique_shadow_demon_3"   "-1"
+            }
 			"damage_pct"			"35"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -242,7 +247,6 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDuration"				"7.0"
-		"AbilityCooldown"				"60"
 
 
 		// Casting
@@ -259,6 +263,16 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
+            "AbilityCooldown"
+            {
+                "value"                                 "60"
+                "special_bonus_unique_shadow_demon_9"   "-30"
+            }
+            "charge_restore_time"
+            {
+                "special_bonus_scepter" "60"
+                "special_bonus_unique_shadow_demon_9"   "-30"
+            }
             "purge_damage"
             {
                 "value" "300 450 600 750 900 1050 1200"
@@ -266,18 +280,7 @@ DOTAAbilities
             }
             "max_charges"
             {
-                "value" "2"
-                "RequiresScepter" "1"
-            }
-            "charge_restore_time"
-            {
-                "value" "60"
-                "RequiresScepter" "1"
-            }
-            "charge_restore_time_tooltip_scepter"
-            {
-                "value" "60"
-                "RequiresScepter" "1"
+                "special_bonus_scepter" "2"
             }
             "max_slow"
             {
@@ -327,27 +330,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"purge_damage"		
-				{
-					"value"	"300 450 600 750 900 1050"
-					"special_bonus_unique_shadow_demon_1" "+150"
-				}
-				"max_charges"		
-				{	
-					"value"					"2"
-					"RequiresScepter"			"1"
-				}
-				"charge_restore_time"		
-				{
-					"value"				"60"
-					"RequiresScepter"			"1"
-				}
-				"charge_restore_time_tooltip_scepter"		
-				{
-					"value"				"60"
-					"RequiresScepter"			"1"
-				}
-				"heal_pct"				"1000"
+			"purge_damage"		
+			{
+				"value"	"300 450 600 750 900 1050"
+				"special_bonus_unique_shadow_demon_1" "+150"
+			}
 		}
 	}
 	"shadow_demon_disseminate"
@@ -388,7 +375,7 @@ DOTAAbilities
 			"damage_reflection_pct"	
 			{
 				"value"						"20 22.5 25 27.5 30 32.5 35"
-				"special_bonus_unique_shadow_demon_disseminate_damage"		"+10"
+				"special_bonus_unique_shadow_demon_disseminate_damage"		"+15"
 			}
 			"radius"                    
             {
@@ -412,7 +399,7 @@ DOTAAbilities
         "AbilityValues"
         {
             "stack"         "2"
-            "duration"      "8"
+            "duration"      "4"
         }
     }
     "special_bonus_unique_shadow_demon_1"
@@ -421,7 +408,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "BaseClass" "special_bonus_base"
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -433,14 +420,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "1"
-                "ad_linked_abilities" "shadow_demon_shadow_poison"
-            }
-        }
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -452,7 +432,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "BaseClass" "special_bonus_base"
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -464,7 +444,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "BaseClass" "special_bonus_base"
+        "BaseClass" 					"special_bonus_base"
     }
 
     //=================================================================================================================
@@ -476,14 +456,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "30"
-                "ad_linked_abilities" "shadow_demon_demonic_purge"
-            }
-        }
+        "BaseClass" 					"special_bonus_base"
     }
     //=================================================================================================================
     // Ability: Special Bonus
@@ -494,6 +467,6 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "BaseClass"                         "special_bonus_base"
+        "BaseClass"                     "special_bonus_base"
     }
 }
