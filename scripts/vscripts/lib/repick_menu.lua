@@ -78,6 +78,37 @@ function HasUpgrade(kv, kind)
 
 	return false
 end
+-- KV хранит дробные числа во float: "0.8" приходит сюда как 0.800000011920929,
+-- и tostring печатает "0.80000001192093" - так в дереве талантов вылезло
+-- "через 0.80000001192093 сек.". Округляем до 4 знаков и срезаем нули в хвосте.
+local function CleanNumber(word)
+	local n = tonumber(word)
+
+	if n == nil then return word end
+
+	local text = string.format("%.4f", n)
+
+	text = text:gsub("0+$", "")
+	text = text:gsub("%.$", "")
+
+	return text
+end
+
+-- Дота показывает значения по уровням через слэш: "60/70/80". Из KV они
+-- приходят строкой "60 70 80". Все числа, которые меню вставляет в текст,
+-- проходят здесь - и только здесь, чтобы float больше нигде не протёк.
+local function FormatAbilityValue(text)
+	local parts = {}
+
+	-- знак ("+", "-", "=") в описании уже стоит своим текстом, из числа его
+	-- убираем; уровни дота пишет через слэш
+	for word in tostring(text):gmatch("%S+") do
+		table.insert(parts, CleanNumber((word:gsub("^[%+%-=]", ""))))
+	end
+
+	return table.concat(parts, "/")
+end
+
 -- Числа талантов лежат не в самом таланте (у special_bonus_* в KV пусто), а в
 -- AbilityValues той способности, которую талант улучшает:
 --
@@ -104,15 +135,7 @@ local function CollectLinkedTalentValues(ability_data, ability_names, out)
 						if type(key) == "string" and type(bonus) ~= "table" and string.find(key, "special_bonus", 1, true) then
 							-- знак ("+", "-", "=") уже стоит в строке перевода, а
 							-- многоуровневые бонусы дота пишет через слэш
-							local text = ""
-
-							for word in tostring(bonus):gmatch("%S+") do
-								word = (word:gsub("^[%+%-=]", ""))
-
-								if #text > 0 then text = text .. "/" end
-
-								text = text .. word
-							end
+							local text = FormatAbilityValue(bonus)
 
 							out[key] = out[key] or {}
 							if out[key]["value"] == nil then out[key]["value"] = text end
@@ -125,20 +148,6 @@ local function CollectLinkedTalentValues(ability_data, ability_names, out)
 			end
 		end
 	end
-end
-
--- Дота показывает значения по уровням через слэш: "60/70/80". Из KV они
--- приходят строкой "60 70 80".
-local function FormatAbilityValue(text)
-	local parts = {}
-
-	-- знак ("+", "-", "=") в описании уже стоит своим текстом, из числа его
-	-- убираем; уровни дота пишет через слэш
-	for word in tostring(text):gmatch("%S+") do
-		table.insert(parts, (word:gsub("^[%+%-=]", "")))
-	end
-
-	return table.concat(parts, "/")
 end
 
 -- Плоский список значений способности: и новый формат AbilityValues, и старый
