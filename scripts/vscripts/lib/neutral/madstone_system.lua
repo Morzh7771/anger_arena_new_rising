@@ -34,6 +34,14 @@ local TIERS_PATH  = "scripts/npc/neutral_items.txt"
 local MADSTONE_ITEM = "item_madstone_aa"
 local NET_TABLE = "madstone_progress"
 
+-- Нейтралки, чей эффект в доте делает её крафт - у нас его делаем сами.
+-- Модификаторы - modifiers/modifier_aa_neutral_potency.lua, линкуются в
+-- addon_init.lua (нужны и клиенту).
+local CURIO_ITEM       = "item_dormant_curio"
+local BAUBLE_ITEM      = "item_enchanters_bauble"
+local POTENCY_MODIFIER = "modifier_aa_neutral_potency"
+local BAUBLE_MODIFIER  = "modifier_aa_enchanters_bauble"
+
 -- слоты нейтралки: предмет и чара
 local SLOT_ITEM        = DOTA_ITEM_NEUTRAL_ACTIVE_SLOT or 16
 local SLOT_ENHANCEMENT = DOTA_ITEM_NEUTRAL_PASSIVE_SLOT or 17
@@ -52,6 +60,7 @@ function MadstoneSystem:Init()
 	self.madstones     = {}
 	self.offers        = {}
 	self.craftedTier   = {}	-- [playerID] = разряд, на котором уже был крафт
+	self.baubleCrafts  = {}	-- [playerID] = сколько раз создавал Enchanter's Bauble
 
 	self:_LoadConfig()
 	self:_LoadTiers()
@@ -838,7 +847,15 @@ function MadstoneSystem:OnCraftRequest(event)
 	-- дальше на этом разряде - уже реролл
 	self.craftedTier[playerID] = tier
 
+	-- Dormant Curio: артефакт, который её заменит, получает скрытый
+	-- потенциал. Смотрим до замены - потом курио в слоте уже не будет.
+	local potency = wantedItem ~= CURIO_ITEM and self:_GetCurioPotency(hero) or 0
+
 	self:_EquipNeutral(hero, wantedItem, nil, SLOT_ITEM)
+
+	if potency > 0 then
+		self:_ApplyCurio(hero, potency)
+	end
 
 	-- Fundamental Forging: чару за игрока катает рандом, зато из всего разряда
 	if forging then
@@ -854,9 +871,90 @@ function MadstoneSystem:OnCraftRequest(event)
 		self:_EquipNeutral(hero, wantedEnh, enhLevel, SLOT_ENHANCEMENT)
 	end
 
+	-- Enchanter's Bauble: чары сильнее, и с каждым её созданием ещё сильнее
+	self:_UpdateBauble(hero, playerID, wantedItem)
+
 	-- хватает ещё на один крафт - сразу катим новые варианты
 	self:_TryMakeOffer(playerID)
 	self:_Push(playerID)
+end
+
+-- сколько процентов даёт курио, если она сейчас надета
+function MadstoneSystem:_GetCurioPotency(hero)
+	local old = hero:GetItemInSlot(SLOT_ITEM)
+
+	if not old or old:GetAbilityName() ~= CURIO_ITEM then return 0 end
+
+	return old:GetSpecialValueFor("item_potency") or 0
+end
+
+-- Какие свойства артефакта усиливает курио - в доте это ключи с флагом
+-- apply_curio_bonus в KV предмета. Читаем KV один раз на имя.
+function MadstoneSystem:_CurioKeys(itemName)
+	self.curioKeys = self.curioKeys or {}
+
+	if self.curioKeys[itemName] == nil then
+		local kv = GetAbilityKeyValuesByName(itemName)
+		local keys = {}
+
+		for key, entry in pairs(kv and kv["AbilityValues"] or {}) do
+			if type(entry) == "table" and tonumber(entry["apply_curio_bonus"]) == 1 then
+				table.insert(keys, key)
+			end
+		end
+
+		table.sort(keys)
+
+		self.curioKeys[itemName] = table.concat(keys, ";")
+	end
+
+	return self.curioKeys[itemName]
+end
+
+-- Вешаем скрытый потенциал на только что надетый артефакт. Список ключей
+-- кладём в custom_entity_values предмета: модификатор читает его и на
+-- клиенте, чтобы тултип показывал усиленные числа.
+function MadstoneSystem:_ApplyCurio(hero, potency)
+	local item = hero:GetItemInSlot(SLOT_ITEM)
+
+	if not item then return end
+
+	local keys = self:_CurioKeys(item:GetAbilityName())
+
+	-- у предмета нет свойств под курио - как и в доте, усиливать нечего
+	if keys == "" then return end
+
+	local id = tostring(item:GetEntityIndex())
+	local info = CustomNetTables:GetTableValue("custom_entity_values", id) or {}
+
+	info.curio_keys = keys
+	CustomNetTables:SetTableValue("custom_entity_values", id, info)
+
+	hero:AddNewModifier(hero, item, POTENCY_MODIFIER, { potency = potency })
+end
+
+-- Enchanter's Bauble: пока она надета, чары сильнее на enchantment_bonus_base
+-- процентов, и за каждое повторное её создание - ещё на
+-- enchantment_bonus_growth. Созданием считается и "оставил свою" на реролле.
+-- Процент пересчитываем после каждого крафта: рост мог усилить курио.
+function MadstoneSystem:_UpdateBauble(hero, playerID, craftedItem)
+	hero:RemoveModifierByName(BAUBLE_MODIFIER)
+
+	local bauble = hero:GetItemInSlot(SLOT_ITEM)
+
+	if not bauble or bauble:GetAbilityName() ~= BAUBLE_ITEM then return end
+
+	if craftedItem == BAUBLE_ITEM then
+		self.baubleCrafts[playerID] = (self.baubleCrafts[playerID] or 0) + 1
+	end
+
+	local crafts = math.max(1, self.baubleCrafts[playerID] or 1)
+	local bonus = bauble:GetSpecialValueFor("enchantment_bonus_base")
+		+ bauble:GetSpecialValueFor("enchantment_bonus_growth") * (crafts - 1)
+
+	if bonus > 0 then
+		hero:AddNewModifier(hero, bauble, BAUBLE_MODIFIER, { potency = math.floor(bonus + 0.5) })
+	end
 end
 
 -- кладём предмет в слот нейтралки, старый оттуда убираем - это и есть
@@ -864,14 +962,20 @@ end
 function MadstoneSystem:_EquipNeutral(hero, itemName, level, slot)
 	local old = hero:GetItemInSlot(slot)
 
-	-- Оставил своё - не пересоздаём: иначе сбрасывались бы кулдаун и заряды.
-	-- Чару того же имени только поднимаем до уровня разряда.
+	-- Оставил своё - не пересоздаём: иначе сбрасывались бы кулдаун, заряды и
+	-- усиление от курио. Чару того же имени только поднимаем до уровня разряда.
 	if old and old:GetAbilityName() == itemName then
 		if level and level > old:GetLevel() then
 			old:SetLevel(level)
 		end
 
 		return
+	end
+
+	-- усиления от курио и безделушки жили на старом артефакте - уходят с ним
+	if slot == SLOT_ITEM then
+		hero:RemoveModifierByName(POTENCY_MODIFIER)
+		hero:RemoveModifierByName(BAUBLE_MODIFIER)
 	end
 
 	if old then

@@ -48,8 +48,9 @@
 				"item_kobold_cup"					"1"
 				"item_chipped_vest"					"1"
 				"item_polliwog_charm"			  	"1"
-				// item_dormant_curio убран: её эффект (усилить следующую
-				// нейтралку) делает дотовский крафт, а у нас крафт свой
+				// её эффект делает дотовский крафт - у нас его повторяет
+				// lib/neutral/madstone_system.lua (_ApplyCurio)
+				"item_dormant_curio"				"1"
 				"item_duelist_gloves"				"1"
 				"item_weighted_dice"				"1"
 				"item_ash_legion_shield"			"1"
