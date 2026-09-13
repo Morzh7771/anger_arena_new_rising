@@ -702,6 +702,12 @@ function creep_spawner_on_start_touch(trigger, data)
 	local activator = data.activator
 	if not activator then return end
 
+	-- невидимые юниты-иконки миникарты (lib/minimap_spots.lua) стоят прямо в
+	-- кемпе: без этого кемп считался занятым посторонним и не спавнился
+	-- (по имени тоже: касание может прийти раньше, чем навесится модификатор)
+	if activator.HasModifier and activator:HasModifier("modifier_hidden_from_map") then return end
+	if activator.GetUnitName and activator:GetUnitName():sub(1, 15) == "npc_aa_minimap_" then return end
+
 	if not activator.IsCreature or not activator.IsHero or not activator.IsCourier or not activator.IsOther then return end
 	if activator:IsCourier() then return end
 
@@ -719,6 +725,12 @@ function creep_spawner_on_end_touch(trigger, data)
 	local spawnName = trigger:GetName()
 	local activator = data.activator
 	if not activator then return end
+
+	-- невидимые юниты-иконки миникарты (lib/minimap_spots.lua) стоят прямо в
+	-- кемпе: без этого кемп считался занятым посторонним и не спавнился
+	-- (по имени тоже: касание может прийти раньше, чем навесится модификатор)
+	if activator.HasModifier and activator:HasModifier("modifier_hidden_from_map") then return end
+	if activator.GetUnitName and activator:GetUnitName():sub(1, 15) == "npc_aa_minimap_" then return end
 
 	if not activator.IsCreature or not activator.IsHero or not activator.IsCourier or not activator.IsCourier or not activator.IsOther then return end
 	if activator:IsCourier() then return end
