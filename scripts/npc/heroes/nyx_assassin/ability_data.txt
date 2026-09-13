@@ -77,16 +77,16 @@ DOTAAbilities
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 600 600 600"
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 15 10 5"
+		"AbilityCooldown"				"20 17.5 15 12.5 10 7.5 5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"70 80 90 100 110 120 130"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -141,6 +141,7 @@ DOTAAbilities
             }
 			"damage_echo_duration"		"20"
 			"damage_echo_pct"			"30"
+			"mana_burn_pct"				"9 12 15 18 21 24 27"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -160,7 +161,7 @@ DOTAAbilities
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20 18 16 14 12 10 8"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -180,7 +181,11 @@ DOTAAbilities
 				"value"					"0.4 0.6 0.8 1.0 1.2 1.4 1.6"
 				"special_bonus_unique_nyx_6"	"+0.6"
 			}
-			"damage_reflect_pct"				"125"
+			"damage_reflect_pct"
+			{
+				"value"				"125"
+				"special_bonus_unique_nyx_4"				"+25"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -214,60 +219,46 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"AbilityCooldown"               
+			"AbilityCooldown"
             {
                 "value"     "60"
+                "special_bonus_shard"		"-10"
             }
-            "AbilityManaCost"               
+            "AbilityManaCost"
             {
                 "value"             "200"
             }
 			"duration"				"30"
 			"fade_time"				"0.0"
 			"movement_speed"		"20"
-			"bonus_damage"					
+			"bonus_damage"
 			{
 				"value"					"300 450 600 750 900 1050 1200"
 				"special_bonus_unique_nyx_vendetta_damage"      "+10%"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"damage_pct"				
+			"damage_pct"
 			{
 				"value"				"200"
 				"special_bonus_unique_nyx_vendetta_damage"      "+10%"
 			}
 			"health_regen_rate_scepter"		"3"
 			"mana_regen_rate_scepter"		"3"
-			"break_duration"        
+			"break_duration"
             {
                 "value"                     "0"
                 "special_bonus_shard"       "+6"
             }
-			"shard_debuff_duration"	
-			{
-				"value" 			"6.0"
-				"RequiresShard"		"1"
-			}
-			"shard_magic_resist_reduction"	
-			{
-				"value" 			"25"
-				"RequiresShard"		"1"
-			}
-			"shard_movement_speed_bonus"	
-			{
-				"value" 			"25"
-				"RequiresShard"		"1"
-			}
 			"free_pathing_duration"
             {
                 "value"             "0"
-                "special_bonus_facet_nyx_assassin_scuttle" "=15"
+                "special_bonus_shard"		"+15"
             }
             "free_pathing_movement_speed_bonus"
             {
                 "value"             "0"
-                "special_bonus_facet_nyx_assassin_scuttle" "=200"
-            }           
+                "special_bonus_shard" 					"200"
+            }
             "attack_animation_bonus"    "70"
             "attack_range_bonus"        "75"
 		}
@@ -277,10 +268,9 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"nyx_assassin_burrow"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"AbilitySound"					"Hero_NyxAssassin.Burrow.In"
@@ -307,6 +297,7 @@ DOTAAbilities
                 "value"         "400"
                 "affected_by_aoe_increase"  "1"
             }
+			"cast_range"				"500"
 		}
 	}
 	"nyx_assassin_unburrow"
@@ -314,9 +305,8 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"nyx_assassin_unburrow"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"LinkedAbility"					"nyx_assassin_burrow"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
@@ -372,6 +362,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_nyx"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -415,6 +406,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_nyx_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -429,6 +421,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_nyx_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -486,4 +479,17 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	"nyx_assassin_neuro_sting"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_NO"
+		"IsBreakable"				"1"
+		"Innate"				"1"
+		"AbilityValues"
+		{
+			"mana_burn_pct"				"12"
+		}
+	}
 }

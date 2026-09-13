@@ -1,0 +1,78 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_ringmaster"
+	{
+		"override_hero"		"npc_dota_hero_ringmaster"
+		"Ability9"		"generic_hidden"
+		"Ability8"		"generic_hidden"
+		"Ability1"		"ringmaster_tame_the_beasts"
+		"Ability2"		"ringmaster_the_box"
+		"Ability3"		"ringmaster_impalement"
+		"Ability4"		"ringmaster_empty_souvenir"
+		"Ability5"		"ringmaster_spotlight"
+		"Ability6"		"ringmaster_wheel"
+		"Ability7"		"ringmaster_tame_the_beasts_crack"
+		"Ability10"		"special_bonus_unique_ringmaster_dagger_charge"
+		"Ability11"		"special_bonus_unique_ringmaster_whip_radius"
+		"Ability12"		"special_bonus_unique_ringmaster_dagger_penetrates"
+		"Ability13"		"special_bonus_unique_ringmaster_whip_debuff_immunity"
+		"Ability14"		"special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration"
+		"Ability15"		"special_bonus_unique_ringmaster_whip_damage"
+		"Ability16"		"special_bonus_unique_ringmaster_wheel_radius"
+		"Ability17"		"special_bonus_unique_ringmaster_the_box_strong_dispel_and_flying"
+		"Ability18"		"ringmaster_dark_carnival_souvenirs"
+		"Ability19"		"ringmaster_funhouse_mirror"
+		"Ability20"		"ringmaster_strongman_tonic"
+		"Ability21"		"ringmaster_whoopee_cushion"
+		"Ability22"		"ringmaster_summon_unicycle"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.50000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"575"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"150"
+		}
+		"ProjectileModel"		"particles/units/heroes/hero_ringmaster/ringmaster_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.1"
+		"AttributeBaseAgility"		"11"
+		"AttributeAgilityGain"		"1.6"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.0"
+		"MovementSpeed"		"310"
+		"HasAggressiveStance"		"1"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"340"
+		}
+		"MovementTurnRate"		"0.600000"
+		"animation_transitions"
+		{
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"0.300000"
+				"aggressive"		"0.3"
+			}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.40000"
+				"aggressive"		"0.3"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_ringmaster"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_ringmaster.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_ringmaster.vsndevts"
+		"RenderablePortrait"
+		{
+		}
+
+	}
+}

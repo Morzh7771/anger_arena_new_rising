@@ -11,6 +11,7 @@ function _makeParticle(unit)
 	local idx = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_purifyingflames_head_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
 
 	ParticleManager:SetParticleControlEnt( idx, 3, unit, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", pos, true)
+	ParticleManager:ReleaseParticleIndex(idx)
 end
 
 function ability:OnSpellStart()

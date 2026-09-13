@@ -5,16 +5,14 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"dazzle_rain_of_vermin"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"HasScepterUpgrade"				"1"
-		"MaxLevel"						"1"
 		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -80,7 +78,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650 700 750 800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -100,12 +98,12 @@ DOTAAbilities
 		{
 			"start_radius"				
 			{
-				"value"		"200 200 200 200 200 200 200"
+				"value"		"200"
 					"affected_by_aoe_increase"	"1"
 			}
 			"end_radius"				
 			{
-				"value"		"300 300 300 300 300 300 300"
+				"value"		"300"
 				"affected_by_aoe_increase"	"1"
 			}
 			"end_distance"				
@@ -140,19 +138,15 @@ DOTAAbilities
 			"split_radius"			
 			{
 				"value"				"0"
-				"special_bonus_facet_dazzle_poison_bloom"			"=450"				
 			}
 			"split_damage"				
 			{
 				"value"				"0"
-				"special_bonus_facet_dazzle_poison_bloom"			"=25 =50 =75 =100 =125 =150 =175"
 				"special_bonus_unique_dazzle_3"	"+60"
-				"RequiresFacet"						"dazzle_poison_bloom"
 			}			
 			"attacks_to_split"	
 			{
 				"value"				"0"
-				"special_bonus_facet_dazzle_poison_bloom"			"=4"				
 			}
 
 		}
@@ -204,6 +198,11 @@ DOTAAbilities
 			{
 				"value" "2 3 4 5 6 7 8"
 			}
+			"AbilityCooldown"
+			{
+				"value"				"30 28 26 24 22 20 18"
+				"special_bonus_unique_dazzle_shallow_grave_cooldown"				"-3"
+			}
 		}
 	}
 	"dazzle_shadow_wave"
@@ -222,7 +221,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -254,6 +253,7 @@ DOTAAbilities
 			{
 				"value"			"90 120 150 180 210 240 270"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_2"
+				"special_bonus_unique_dazzle_2"				"+45"
 			}
 			"scepter_heal_pct"		"175"
 			"scepter_cd_increase"	"2"
@@ -277,26 +277,26 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"2000"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40 40 40"
+		"AbilityCooldown"				"40"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 100 100"
+		"AbilityManaCost"				"100"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"					"575 575 575"
+			"radius"					"575"
 			"vision"					"800"
 			"armor_per_second"
 			{	
-				"value"			"0.75 1 1.25"
+				"value"			"0.75 1 1.25 1.5 1.75 2 2.25"
 				"special_bonus_unique_dazzle_4" "+3"
 			}
 			"duration"					"24.0"
@@ -362,7 +362,7 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"MaxLevel"						"1"
 		"Innate"						"1"
 		"BaseClass"						"dazzle_innate_weave"
@@ -380,6 +380,13 @@ DOTAAbilities
 			"affects_enemies"			"1"
 			"heal_reduction"			"0"
 			"ultimate_always_applies"	"0"
+			"heal_amplification_pct"				"0"
+			"ally_multiplier"				"0"
+			"enemy_multiplier"				"0"
+			"ally_heal"
+			{
+				"special_bonus_shard"				"60"
+			}
 		}
 	}
 	"dazzle_good_juju"
@@ -392,7 +399,7 @@ DOTAAbilities
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"Innate"						"1"
+		"Innate"						"0"
 		"HasScepterUpgrade"				"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -424,5 +431,45 @@ DOTAAbilities
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "special_bonus_base"
+	}
+
+	"dazzle_nothl_projection"
+	{
+		"MaxLevel"					"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType"				"ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"				"Hero_Dazzle.Weave"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastGestureSlot"				"DEFAULT"
+		"AbilityCooldown"				"70 67 63 60 57 53 50"
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
+		"AbilityCastRange"				"450"
+		"AbilityValues"
+		{
+			"min_duration"				"5"
+			"max_duration"
+			{
+				"value"				"12"
+				"special_bonus_unique_dazzle_nothl_projection_duration"				"+5"
+			}
+			"initial_travel_speed"				"1200"
+			"soul_return_time"				"0.75"
+			"soul_return_min_speed"				"500"
+			"leash_start"				"1600"
+			"base_leash_pull"				"50"
+			"leash_increase"				"1.5"
+			"poison_touch_hex"				"1.4 1.6 1.8 2 2.2 2.4 2.6"
+			"shallow_grave_heal"				"225 300 375 450 525 600 675"
+			"shadow_wave_cdr"				"30 40 50 60 70 80 90"
+		}
+	}
+	"dazzle_nothl_projection_end"
+	{
+		"MaxLevel"					"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"DependentOnAbility"				"dazzle_nothl_projection"
 	}
 }

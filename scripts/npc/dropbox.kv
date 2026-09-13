@@ -1,6 +1,25 @@
 "root"
 {
-	
+	// Пустышка. Раньше на её месте в creep_stats.kv стояли боксы
+	// box_neutral_items_tierN - своя система дропа нейтралок с мобов.
+	// Систему выключили, вместо нейтралок теперь падают безумруды
+	// (scripts/vscripts/lib/neutral/madstone_system.lua), а бокс оставлен,
+	// чтобы не поехали веса остальных дропов в WeightedList.
+	// chance "-1" - не выпадает никогда.
+	"box_none"
+	{
+		"type"		"uniform_list"
+		"chance"	"-1"
+
+		"items"
+		{
+			"item_tome_of_knowledge"			"1"
+		}
+	}
+
+	// СТАРЫЕ БОКСЫ НЕЙТРАЛОК (не используются, оставлены как справка):
+	//   box_neutral_items_tier1_old ... box_neutral_items_tier5_old
+
 	"box_boss_miniboss"
 	{
 		"type"		"garant_list"
@@ -48,7 +67,7 @@
 			"item_boss_soul"					"1"
 		}
 	}
-	"box_neutral_items_tier1"
+	"box_neutral_items_tier1_old"
 	{
 		"type"		"uniform_list"
 		"chance"	"15"
@@ -71,7 +90,7 @@
 		}
 	}
 	
-	"box_neutral_items_tier2"
+	"box_neutral_items_tier2_old"
 	{
 		"type"		"uniform_list"
 		"chance"	"12"
@@ -96,7 +115,7 @@
 			"item_gossamer_cape"				"1"
 		}
 	}
-	"box_neutral_items_tier3"
+	"box_neutral_items_tier3_old"
 	{
 		"type"		"uniform_list"
 		"chance"	"10"
@@ -115,7 +134,7 @@
 			"item_ogre_seal_totem"				"1"
 		}
 	}
-	"box_neutral_items_tier4"
+	"box_neutral_items_tier4_old"
 	{
 		"type"		"uniform_list"
 		"chance"	"8"
@@ -136,7 +155,7 @@
 			"item_martyrs_plate"			  	"1"
 		}
 	}
-	"box_neutral_items_tier5"
+	"box_neutral_items_tier5_old"
 	{
 		"type"		"uniform_list"
 		"chance"	"10"

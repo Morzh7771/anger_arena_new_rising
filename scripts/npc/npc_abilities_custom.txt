@@ -48,6 +48,7 @@
 #base heroes/keeper_of_the_light/ability_data.txt
 #base heroes/kez/ability_data.txt
 #base heroes/kunkka/ability_data.txt
+#base heroes/largo/ability_data.txt
 #base heroes/legion_commander/ability_data.txt
 #base heroes/leshrac/ability_data.txt
 #base heroes/lich/ability_data.txt
@@ -87,6 +88,7 @@
 #base heroes/queenofpain/ability_data.txt
 #base heroes/razor/ability_data.txt
 #base heroes/riki/ability_data.txt
+#base heroes/ringmaster/ability_data.txt
 #base heroes/rubick/ability_data.txt
 #base heroes/sand_king/ability_data.txt
 #base heroes/shadow_demon/ability_data.txt
@@ -138,6 +140,7 @@
 {
     "divine_intervention"
     {
+    	"ID"					"15151"
         "BaseClass"							"ability_lua"
         "AbilityTextureName" 				"you_shall_never_see_it"
         "AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_HIDDEN"
@@ -145,6 +148,7 @@
     }
 	"summon_cleave"
 	{
+		"ID"					"15150"
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -183,6 +187,7 @@
 	}
 	"angel_arena_fountain"
 	{
+		"ID"					"15149"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
@@ -227,6 +232,7 @@
 	}
 	"fountain_attack"
 	{
+		"ID"					"15148"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"		
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -240,6 +246,7 @@
 	}
 	"mid_teleport"
 	{
+		"ID"					"15147"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"	
 		"BaseClass"             		"ability_lua"
 		"ScriptFile"					"abilities/mid_teleport"
@@ -249,6 +256,7 @@
 	}
 	"ability_hidden_from_map"
 	{
+		"ID"					"15146"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"ability_lua"
@@ -258,6 +266,7 @@
 	}
 	"ability_tree_thinker"
 	{
+		"ID"					"15145"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"ability_lua"
@@ -267,6 +276,7 @@
 	}
 	"ability_shrine_restore"
 	{
+		"ID"					"15144"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
@@ -289,6 +299,7 @@
 	}
 	"soul_guardian_heroes_ring"
 	{
+		"ID"					"15143"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -319,6 +330,7 @@
 
 	"soul_guardian_heavy_strike"
 	{
+		"ID"					"15142"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -346,6 +358,7 @@
 
 	"soul_guardian_pure_heal"
 	{
+		"ID"					"15141"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -370,6 +383,7 @@
 
 	"soul_guardian_damage_steal"
 	{
+		"ID"					"15140"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -401,6 +415,7 @@
 
 	"soul_guardian_holy_rage"
 	{
+		"ID"					"15139"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -428,6 +443,7 @@
 
 	"abyss_warrior_death_link"
 	{
+		"ID"					"15138"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -475,6 +491,7 @@
 	// pull selected unit, if unit has lesser health - kill unit, else silence and disarm unit
 	"abyss_warrior_domination"
 	{
+		"ID"					"15137"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -526,6 +543,7 @@
 	// charged attack deal additional damage that stun all enemies in aoe. every stunned enemy gives linken sphere effect
 	"abyss_warrior_charged_attack"
 	{
+		"ID"					"15136"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -563,6 +581,7 @@
 	// purge all debuffs every #X seconds
 	"abyss_warrior_fallen_hero"
 	{
+		"ID"					"15135"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -589,6 +608,7 @@
 	// for every 5% losed health get X attack speed and Y hp/reg. After all death got +W% health and damage
 	"abyss_warrior_immortal"
 	{
+		"ID"					"15134"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -611,6 +631,7 @@
 	//  a little time and heal self for taken damage
 	"abyss_warrior_ethereal_charge"
 	{
+		"ID"					"15133"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -648,6 +669,7 @@
 	// that is used for status effect particle
 	"abyss_warrior_hidden"
 	{
+		"ID"					"15132"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
@@ -664,6 +686,7 @@
 
 	"keymaster_howl"
 	{
+		"ID"					"15131"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -713,6 +736,7 @@
 
 	"keymaster_bite"
 	{
+		"ID"					"15130"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -763,6 +787,7 @@
 
 	"keymaster_shadow_support"
 	{
+		"ID"					"15129"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -799,6 +824,7 @@
 
 	"keymaster_damned_souls"
 	{
+		"ID"					"15128"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -843,6 +869,7 @@
 
 	"keymaster_interception"
 	{
+		"ID"					"15127"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -876,6 +903,7 @@
 	}
 	"keymaster_dodge_mastery"
 	{
+		"ID"					"15126"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -895,6 +923,7 @@
 
 	"possessed_magma_trails"
 	{
+		"ID"					"15125"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -944,6 +973,7 @@
 
 	"possessed_fallen_sword"
 	{
+		"ID"					"15124"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -981,6 +1011,7 @@
 
 	"possessed_rebel"
 	{
+		"ID"					"15123"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -1004,6 +1035,7 @@
 	}
 	"disarmor_boss"
 	{
+		"ID"					"15122"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -1027,6 +1059,7 @@
 
 	"possessed_devil_stomp"
 	{
+		"ID"					"15121"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -1065,6 +1098,7 @@
 
 	"possessed_curse"
 	{
+		"ID"					"15120"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -1106,6 +1140,7 @@
 
 	"possessed_hellshield"
 	{
+		"ID"					"15119"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -1139,6 +1174,7 @@
 	}
 	"tower_ability"
 	{
+		"ID"					"15118"
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"					"lib/tower/tower_base"
 		"AbilityTextureName"			"custom/possessed_hellshield"
@@ -1157,6 +1193,7 @@
 	}
 	"tormentor_reflect_aa"
 	{
+		"ID"					"15117"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"1"
@@ -1179,6 +1216,7 @@
 	}
 	"tormentor_unyielding_shielda_aa"
     {
+    	"ID"					"15116"
         "BaseClass"              "ability_lua"
         "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"     "miniboss_unyielding_shield"

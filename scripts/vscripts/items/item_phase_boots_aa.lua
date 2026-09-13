@@ -2,6 +2,7 @@ LinkLuaModifier("modifier_item_phase_boots_aa", "items/item_phase_boots_aa", LUA
 LinkLuaModifier("modifier_item_phase_boots_aa_active", "items/item_phase_boots_aa", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 item_phase_boots_aa = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items_fx/force_staff.vpcf", context)
         PrecacheResource("particle", "particles/falcon_blade_charge.vpcf", context)
@@ -40,6 +41,15 @@ item_phase_boots_aa = class({
     end,
 
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_phase_boots_aa:Precache(context)
+	PrecacheResource("particle", "particles/falcon_blade_charge.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/force_staff.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_forcestaff.vpcf", context)
+end
 
 item_phase_boots_aa_2 = item_phase_boots_aa
 

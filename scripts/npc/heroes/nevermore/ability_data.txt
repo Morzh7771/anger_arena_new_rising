@@ -62,13 +62,11 @@ DOTAAbilities
 			}
 			"movement_speed_debuff"
             {
-                "value"                                         "0 0 0 0"
-                "special_bonus_facet_nevermore_shadowmire"      "=5 =6 =7 =8 =9 =10 =11"
+                "value"                                         "0"
             }
             "attack_speed_debuff"
             {
-                "value"                                         "0 0 0 0"
-                "special_bonus_facet_nevermore_shadowmire"      "=5 =6 =7 =8 =9 =10 =11"
+                "value"                                         "0"
             }
 			"turn_rate_pct"								"0"
 			"AbilityCooldown"				
@@ -81,7 +79,8 @@ DOTAAbilities
                 "special_bonus_shard"   "+2.0"
             }
 			"damage_pct"					"50"
-		}
+					"damage_per_soul"			"3"
+}
 	}
 	"nevermore_shadowraze2"
 	{
@@ -140,13 +139,11 @@ DOTAAbilities
 			}
 			"movement_speed_debuff"
             {
-                "value"                                         "0 0 0 0"
-                "special_bonus_facet_nevermore_shadowmire"      "=5 =6 =7 =8 =9 =10 =11=5 =6 =7 =8 =9 =10 =11"
+                "value"                                         "0"
             }
             "attack_speed_debuff"
             {
-                "value"                                         "0 0 0 0"
-                "special_bonus_facet_nevermore_shadowmire"      "=5 =6 =7 =8 =9 =10 =11"
+                "value"                                         "0"
             }
 			"turn_rate_pct"								"0"
 			"AbilityCooldown"				
@@ -159,7 +156,8 @@ DOTAAbilities
                 "special_bonus_shard"   "+2.0"
             }
 			"damage_pct"					"50"
-		}
+					"damage_per_soul"			"3"
+}
 	}
 	"nevermore_shadowraze3"
 	{
@@ -219,13 +217,11 @@ DOTAAbilities
 			}
 			"movement_speed_debuff"
             {
-                "value"                                         "0 0 0 0"
-                "special_bonus_facet_nevermore_shadowmire"      "=5 =6 =7 =8 =9 =10 =11"
+                "value"                                         "0"
             }
             "attack_speed_debuff"
             {
-                "value"                                         "0 0 0 0"
-                "special_bonus_facet_nevermore_shadowmire"      "=5 =6 =7 =8 =9 =10 =11"
+                "value"                                         "0"
             }
 			"turn_rate_pct"								"0"
 			"AbilityCooldown"				
@@ -238,13 +234,14 @@ DOTAAbilities
                 "special_bonus_shard"   "+2.0"
             }
 			"damage_pct"					"50"
-		}
+					"damage_per_soul"			"3"
+}
 	}
 	"nevermore_necromastery"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "HasScepterUpgrade"             "1"
         "MaxLevel"                      "8"
         "DependentOnAbility"            "nevermore_requiem"
@@ -288,9 +285,13 @@ DOTAAbilities
            "max_soul_increase_on_hero_kill"
            {
                "value"                                             "0"
-               "special_bonus_facet_nevermore_lasting_presence"    "1"
            }
-        }
+                	"souls_per_hero_kill"			"4"
+        	"current_max_souls_tooltip"
+        	{
+        		"value"			"0"
+        	}
+}
     }
 	"nevermore_dark_lord"
 	{
@@ -324,12 +325,10 @@ DOTAAbilities
 			"bonus_armor_per_stack"
             {
                 "value"                     "0"
-                "special_bonus_facet_nevermore_lasting_presence"    "+2"
             }
 			"kill_buff_duration"
             {
                 "value"                     "0"
-                "special_bonus_facet_nevermore_lasting_presence"    "+60"
             }
 		}
 	}
@@ -405,7 +404,24 @@ DOTAAbilities
             }
             "duration"              "8"
             "soul_cost"             "5"
-        }
+                	"bonus_move_speed"
+        	{
+        		"value"			"4 6 8 10 12 14 16"
+        	}
+        	"max_collection_count"
+        	{
+        		"value"			"4 6 8 10 12 14 16"
+        	}
+        	"soul_collection_per_interval"			"2"
+        	"soul_collection_radius"			"600"
+        	"soul_collection_interval"			"0.5"
+        	"soul_collection_per_hero"
+        	{
+        		"value"			"3"
+        	}
+        	"soul_collection_per_creep"			"1"
+        	"linger_duration"			"8"
+}
     }
 	"nevermore_requiem"
 	{
@@ -470,19 +486,14 @@ DOTAAbilities
 					"LinkedSpecialBonus"		"special_bonus_unique_nevermore_6"
 					"LinkedSpecialBonusField"		"value2"
 				}
-				"requiem_reduction_radius"	"700 700 700"
+				"requiem_reduction_radius"	"700"
 				"requiem_soul_conversion"	"1"
 				"requiem_line_width_start"  
                 {
                     "value"     "125"
                     "affected_by_aoe_increase"  "1"
                 }
-				"requiem_line_width_start"  
-                {
-                    "value"     "125"
-                    "affected_by_aoe_increase"  "1"
-                }
-				"requiem_line_speed"	"700 700 700"
+				"requiem_line_speed"	"700"
 				"soul_death_release"	"0.5"
 				"requiem_heal_pct_scepter"	
 				{
@@ -496,7 +507,17 @@ DOTAAbilities
 					"CalculateSpellDamageTooltip"	"0"
 				}
 				"damage_pct"					"17"
-		}
+					"requiem_line_width_end"
+			{
+				"value"			"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"max_soul_release"
+			{
+				"value"			"20"
+				"special_bonus_scepter"	"+5"
+			}
+}
 	}
 	"special_bonus_unique_nevermore_1"
     {

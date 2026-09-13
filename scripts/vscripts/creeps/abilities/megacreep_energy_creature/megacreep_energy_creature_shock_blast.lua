@@ -1,5 +1,14 @@
 megacreep_energy_creature_shock_blast = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_energy_creature_shock_blast:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile_hit_ring.vpcf", context)
+end
+
+
 function megacreep_energy_creature_shock_blast:IsHiddenWhenStolen() return false end
 
 function megacreep_energy_creature_shock_blast:OnSpellStart( ... )
@@ -51,4 +60,5 @@ function megacreep_energy_creature_shock_blast:OnProjectileHit(hTarget, vLocatio
 
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile_hit_ring.vpcf", PATTACH_ABSORIGIN , hTarget)
 	ParticleManager:SetParticleControlEnt( particle, 1, hTarget, PATTACH_POINT, "attach_hitloc", hTarget:GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(particle)
 end

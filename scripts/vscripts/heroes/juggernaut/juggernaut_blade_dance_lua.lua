@@ -1,6 +1,15 @@
 juggernaut_blade_dance_lua = class({
+
     GetIntrinsicModifierName = function(self) return "modifier_juggernaut_blade_dance_lua" end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function juggernaut_blade_dance_lua:Precache(context)
+	PrecacheResource("particle", "particles/items3_fx/iron_talon_active.vpcf", context)
+	PrecacheResource("particle", "particles/jugg_legendary_proc_d.vpcf", context)
+end
 LinkLuaModifier( "modifier_juggernaut_blade_dance_lua", "heroes/juggernaut/juggernaut_blade_dance_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_juggernaut_blade_dance_lua_mortal", "heroes/juggernaut/juggernaut_blade_dance_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_juggernaut_blade_dance_castil", "heroes/juggernaut/juggernaut_blade_dance_lua", LUA_MODIFIER_MOTION_NONE )
@@ -36,7 +45,7 @@ function modifier_juggernaut_blade_dance_lua:GetModifierProcAttack_Feedback( par
 	if IsServer() then
 		if self.record and self.record == params.record then
 			self.record = nil
-            print(self:GetParent():GetAverageTrueAttackDamage(self:GetParent()))
+            -- отладочный print убран: горячий путь (каждый удар/лечение)
             self:GetCaster():SetNetworkableEntityInfo("mortal_pizdec",self:GetCaster():GetAverageTrueAttackDamage(self:GetCaster()))
             params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_juggernaut_blade_dance_lua_mortal", { duration = self:GetAbility():GetSpecialValueFor("mortal_duration")*(1 - params.target:GetStatusResistance())})
 			local sound_cast = "Hero_Juggernaut.BladeDance"
@@ -76,7 +85,7 @@ function modifier_juggernaut_blade_dance_lua_mortal:OnDestroy()
     if not IsServer() then return end
         local parent = self:GetParent()
 
-        local trail_pfx2 = ParticleManager:CreateParticle("particles/jugg_legendary_proc_.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+        local trail_pfx2 = ParticleManager:CreateParticle("particles/jugg_legendary_proc_d.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
         ParticleManager:DestroyParticle(trail_pfx2, false)
         ParticleManager:ReleaseParticleIndex(trail_pfx2)
 

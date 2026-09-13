@@ -3,11 +3,11 @@
 	"npc_dota_hero_nyx_assassin"
 	{
 		"override_hero"		"npc_dota_hero_nyx_assassin"
-		"Ability1"      "nyx_assassin_impale"
-        "Ability2"      "nyx_assassin_jolt"
-        "Ability3"      "nyx_assassin_spiked_carapace"
+		"Ability1"		"nyx_assassin_impale"
+		"Ability2"		"nyx_assassin_jolt"
+		"Ability3"		"nyx_assassin_spiked_carapace"
         "Ability4"      "nyx_assassin_burrow"
-        "Ability5"      "nyx_assassin_nyxth_sense"
+        "Ability5"      "nyx_assassin_neuro_sting"
         "Ability6"      "nyx_assassin_vendetta"
         "Ability7"      "nyx_assassin_unburrow"
 		"Ability10"     "special_bonus_unique_nyx_vendetta_damage"
@@ -19,30 +19,7 @@
         "Ability16"     "special_bonus_unique_nyx"
         "Ability17"     "special_bonus_base_aa_all_20pct"
 
-        "Facets"
-        {
-            "nyx_assassin_burn_mana"
-            {
-                "Icon"              "nuke"
-                "Color"             "Blue"
-                "GradientID"        "3"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "nyx_assassin_innate_mana_burn"
-                    }
-                }
-            }
-
-            "nyx_assassin_scuttle" 
-            {
-                "Icon"              "speed"
-                "Color"             "Red"
-                "GradientID"        "2"
-            }
-        }
 
 		"AbilityDraftIgnoreCount" "7"
 		"AbilityDraftAbilities"
@@ -50,7 +27,6 @@
 			"Ability1"		"nyx_assassin_impale"
 			"Ability2"		"nyx_assassin_jolt"
 			"Ability3"		"nyx_assassin_spiked_carapace"
-			"Ability4"		"nyx_assassin_vendetta"
 		}
 
 

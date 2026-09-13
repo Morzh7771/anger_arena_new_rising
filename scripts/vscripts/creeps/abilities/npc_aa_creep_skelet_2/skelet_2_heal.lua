@@ -25,6 +25,7 @@ function skelet_2_heal:OnSpellStart()
     local particle = ParticleManager:CreateParticle("particles/skelet_2_heal/skelet_2_heal.vpcf", PATTACH_CUSTOMORIGIN, nil)
     ParticleManager:SetParticleControl(particle, 0, target:GetOrigin())
     ParticleManager:SetParticleControl(particle, 2, target:GetOrigin())
+    ParticleManager:ReleaseParticleIndex(particle)
 end
 
 --------------------------------------------------------------------------------

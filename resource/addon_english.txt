@@ -19,8 +19,29 @@
 
 		"AA_REPICK_MENU_PICK_GOD"							"CHANGE HERO"
 		"AA_REPICK_MENU_ALREADY_PICKED"						"HERO ALREADY PICKED"
+		"AA_REPICK_TALENT_TREE"								"TALENT TREE"
+		"AA_REPICK_UPGRADE"									"Upgrade"
+		"AA_REPICK_NEW_ABILITY"								"New ability"
+		"AA_REPICK_INNATE"									"Innate ability"
+		"AA_REPICK_SHARD"									"Aghanim's Shard"
+		"AA_REPICK_SCEPTER"									"Aghanim's Scepter"
+		"AA_RUNE_POWER"										"Power rune"
+		"AA_RUNE_BOUNTY"									"Bounty rune"
+		"AA_RUNE_WISDOM"									"Wisdom rune"
+		"AA_REPICK_MENU_BANNED"									"HERO IS BANNED"
 		"AA_REPICK_MENU_NO_SHARD"							"NO MATCHED SHARD"
 		"AA_REPICK_MENU_DUEL_SOON"							"DUEL WILL BE SOON"
+		"AA_REPICK_MENU_TITLE"								"Hero repick"
+		"AA_REPICK_SEARCH"									"Search hero..."
+		"AA_REPICK_ATTR_STR"								"Strength"
+		"AA_REPICK_ATTR_AGI"								"Agility"
+		"AA_REPICK_ATTR_INT"								"Intelligence"
+		"AA_REPICK_ATTR_ALL"								"Universal"
+		"AA_REPICK_ABILITIES"								"Abilities"
+		"AA_REPICK_NO_UPGRADES"								"No upgrades"
+		"AA_REPICK_MELEE"									"Melee"
+		"AA_REPICK_RANGED"									"Ranged"
+		"AA_REPICK_CUSTOM_HERO"								"Anger Arena hero"
 		"midteleport_distance" "Too far"
 		"midteleport_cd" "Reload..."
 
@@ -55,11 +76,49 @@
 		"duel_end_win_radiant"									"The angels triumph over the fallens"
 		"duel_end_win_demons"									"The fallens triumph over the angels"
 
+		"aa_madstone_tier_2"    "<font color='#8FC7FF'>[NEUTRALS]</font> Tier 2 neutral items unlocked"
+		"aa_madstone_tier_1"    "<font color='#8FC7FF'>[NEUTRALS]</font> Tier 1 neutral items unlocked"
+		"aa_madstone_tier_3"    "<font color='#8FC7FF'>[NEUTRALS]</font> Tier 3 neutral items unlocked"
+		"aa_madstone_tier_4"    "<font color='#8FC7FF'>[NEUTRALS]</font> Tier 4 neutral items unlocked"
+		"aa_madstone_tier_5"    "<font color='#8FC7FF'>[NEUTRALS]</font> Tier 5 neutral items unlocked"
+		"aa_madstone_unlimited"    "<font color='#8FC7FF'>[NEUTRALS]</font> Madstone limit lifted - farm as much as you want"
+		"aa_madstone_menu_hint"    "Pick an item and an enhancement. What you already wear is preselected - you can keep it."
+		"aa_madstone_menu_enhancements"    "ENHANCEMENTS"
+		"aa_madstone_menu_items"    "ITEMS"
+		"aa_madstone_menu_cost"    "Cost:"
+		"aa_madstone_menu_title"    "Craft a neutral item"
+		"aa_madstone_shop_desc"    "Kill every creep in a neutral camp to earn madstones: 2 for whoever cleared it and 1 for a random ally. With no enemies nearby they count instantly, otherwise they drop on the ground and can be contested. Midas on a neutral grants madstones too.
+
+Once you have enough for a tier, the craft hammer lights up next to your neutral slot. In the menu you pick an item and an enhancement: 6 madstones for tier 1, 10 for the rest. While a tier is current you can craft as many times as you want, and whatever you already wear is always in the list - you can keep it.
+
+Tiers unlock by duels, not by match time: tier 1 after the first duel, tier 2 after the second and so on."
+		"DOTA_Tooltip_Ability_item_madstone_aa_Lore"    "Tiers unlock after duels: tier 1 after the first duel, tier 2 after the second and so on."
+		"DOTA_Tooltip_Ability_item_madstone_aa_Description"    "Drops from a fully cleared neutral camp. Picks itself up and counts immediately: gather enough and the craft button lights up next to your neutral slot."
+		"DOTA_Tooltip_Ability_item_madstone_aa"    "Madstone"
+		"aa_madstone_panel_locked"    "Tier unlocks after a duel"
+		"aa_madstone_tip_tier_5"    "Tier 5"
+		"aa_madstone_tip_tier_4"    "Tier 4"
+		"aa_madstone_tip_tier_3"    "Tier 3"
+		"aa_madstone_tip_tier_2"    "Tier 2"
+		"aa_madstone_tip_tier_1"    "Tier 1"
+		"aa_madstone_tip_footer"    "Drop from a fully cleared neutral camp and from Midas on a neutral."
+		"aa_madstone_tip_have"    "Collected:"
+		"aa_madstone_tip_title"    "Madstones"
+		"aa_madstone_menu_take"    "Take"
+		"aa_madstone_limit"    "You already earned this tier's madstones - more after the next duel"
+		"aa_neutral_tier_1_unlock"                                    "After duel 1"
+		"aa_neutral_tier_2_unlock"                                    "After duel 2"
+		"aa_neutral_tier_3_unlock"                                    "After duel 3"
+		"aa_neutral_tier_4_unlock"                                    "After duel 4"
+		"aa_neutral_tier_5_unlock"                                    "After duel 5"
+
 		"game_ends_on_30_sec"									"Game ends in 30sec.!"
 
 		"aa_last_duel_coming"									"Next duel will be decisive "
 
         "angel_arena_kill_limit_click"							"We need to do %s kills for the victory, but enemy needs %s kills for the victory!"
+
+        "aa_rune_click_hint"									"%s spawns in %s"
 
         "on_boss_die_miniboss"									"Someone kill the <font color='#58ACFA'>Tormentor</font>!"
 
@@ -427,6 +486,8 @@
 		"DOTA_Tooltip_modifier_abyss_warrior_ethereal_charge_stun"					"Ethernal Charge Stun"
 
 		"npc_dota_hero_guardian_of_the_ancients"							"Guardian of the Ancients"
+		"npc_dota_hero_guardian_of_the_ancients_hype"		"Hold the line. Become the line."
+		"npc_dota_hero_guardian_of_the_ancients_bio"		"It was raised out of stone, set at the edge of the sacred ground, and told to stay. Centuries of standing taught it that speed is a lie - one blow, placed correctly, settles more arguments than a hundred hurried ones. When the ground shakes, it is because the Guardian has decided where the enemy may not walk. And when they come in numbers it does not give way: it roots itself, rises into a tower of grim old rock, and makes the reach of the ancients its own."
 
         "npc_aa_keymaster_radiant"											"Keymaster"
         "npc_aa_keymaster_dire"												"Keymaster"
@@ -580,7 +641,7 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_3"	"+{s:bonus_hp_leech_percent}% Feast Lifesteal and +{s:bonus_hp_damage_percent}% Damage"
 		//Magnus
         "DOTA_Tooltip_Ability_magnataur_shockwave_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
-        
+        "DOTA_Tooltip_ability_wisp_spirits_damage_pct"				"%ALL ATTRIBUTES DAMAGE"
 		//Riki
         "DOTA_Tooltip_Ability_riki_blink_strike_damage_pct"					"%AGILITY DAMAGE"
         
@@ -841,6 +902,11 @@
 		//Invoker
 		"DOTA_Tooltip_Ability_invoker_sun_strike_damage_pct"				"%INTELLIGENCE DAMAGE"
 		"DOTA_Tooltip_Ability_invoker_chaos_meteor_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_invoker_cold_snap_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_invoker_tornado_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_invoker_emp_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_invoker_ice_wall_damage_pct"				"%INTELLIGENCE DAMAGE"
+		"DOTA_Tooltip_Ability_invoker_deafening_blast_damage_pct"				"%INTELLIGENCE DAMAGE"
 
 		//Phantom Lancer
 		"DOTA_Tooltip_Ability_phantom_lancer_spirit_lance_damage_pct"			"%AGILITY DAMAGE"
@@ -1021,6 +1087,40 @@
 
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_stop"           "Command Height Stop"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_command_height_stop_Description" "Stops the Command Height action."
+		"DOTA_Tooltip_ability_charon_bottomless_vessel"							"Bottomless Vessel"
+		"DOTA_Tooltip_ability_charon_bottomless_vessel_Description"				"Charon draws power from the size of his mana pool, and the emptier the vessel, the faster it refills."
+		"DOTA_Tooltip_ability_charon_bottomless_vessel_spell_amp_per_mana"		"%SPELL AMPLIFICATION PER %mana_step% MANA:"
+		"DOTA_Tooltip_ability_charon_bottomless_vessel_max_bonus_regen"			"MAX BONUS MANA REGEN:"
+		"DOTA_Tooltip_ability_fireblade_molten_blood"							"Molten Blood"
+		"DOTA_Tooltip_ability_fireblade_molten_blood_Description"				"The closer Fireblade is to death, the hotter his blood burns. Attack damage and spell damage scale with missing health."
+		"DOTA_Tooltip_ability_fireblade_molten_blood_max_bonus_damage_pct"		"%MAX ATTACK DAMAGE:"
+		"DOTA_Tooltip_ability_fireblade_molten_blood_max_spell_amp"				"%MAX SPELL AMPLIFICATION:"
+		"DOTA_Tooltip_ability_satan_blood_debt"									"Blood Debt"
+		"DOTA_Tooltip_ability_satan_blood_debt_Description"						"Satan stores part of the damage he takes as debt, and collects it back as attack damage. The debt decays if he goes unhurt."
+		"DOTA_Tooltip_ability_satan_blood_debt_debt_pct"							"%DAMAGE STORED AS DEBT:"
+		"DOTA_Tooltip_ability_satan_blood_debt_debt_per_damage"					"DEBT PER 1 ATTACK DAMAGE:"
+		"DOTA_Tooltip_ability_satan_blood_debt_max_bonus_damage"					"MAX ATTACK DAMAGE:"
+		"DOTA_Tooltip_ability_satan_blood_debt_decay_delay"						"DECAY STARTS AFTER:"
+		"DOTA_Tooltip_ability_satan_curse_scepter_Description"					"When a cursed target dies, the curse jumps to every enemy nearby."
+		"DOTA_Tooltip_ability_satan_breath_shard_Description"					"Devil's Breath leaves burning ground behind it, searing enemies that stand in it."
+		"DOTA_Tooltip_ability_shadowsong_shadow_echo"							"Shadow Echo"
+		"DOTA_Tooltip_ability_shadowsong_shadow_echo_Description"				"Every point of mana Shadowsong burns echoes back to her as health. She also drains life from her spell damage."
+		"DOTA_Tooltip_ability_shadowsong_shadow_echo_heal_per_mana"				"%HEAL PER MANA BURNED:"
+		"DOTA_Tooltip_ability_shadowsong_shadow_echo_spell_lifesteal_pct"		"%SPELL LIFESTEAL:"
+		"DOTA_Tooltip_ability_shadowsong_dark_reflection_scepter_Description"	"Enemies around the target are swapped and stunned as well."
+		"DOTA_Tooltip_ability_shadowsong_absorption_shard_Description"			"Absorption also slows enemies inside it, and shares its lifesteal with nearby allied heroes."
+		"DOTA_Tooltip_ability_huntress_hunter_instinct"							"Hunter's Instinct"
+		"DOTA_Tooltip_ability_huntress_hunter_instinct_Description"				"Huntress hits harder when her prey is cut off from its allies."
+		"DOTA_Tooltip_ability_huntress_hunter_instinct_isolation_radius"			"ISOLATION RADIUS:"
+		"DOTA_Tooltip_ability_huntress_hunter_instinct_isolated_damage_pct"		"%DAMAGE VS ISOLATED:"
+		"DOTA_Tooltip_ability_huntress_hunter_instinct_alone_damage_pct"			"%DAMAGE VS ALONE:"
+		"DOTA_Tooltip_ability_huntress_curse_arrow_scepter_Description"			"Curse Arrow bursts on impact, and mutes the items of everyone it catches."
+		"DOTA_Tooltip_ability_huntress_owl_shard_Description"					"More owls, and every owl sees through invisibility."
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ancient_charge"              "Ancient Charge"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ancient_charge_Description"  "Every %charge_interval% seconds the Guardian gathers a charge, up to %max_charges%. Each charge increases his attack damage by %damage_pct%%%. One charge is spent on every attack."
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ancient_charge_charge_interval"  "CHARGE EVERY:"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ancient_charge_max_charges"      "MAX CHARGES:"
+		"DOTA_Tooltip_ability_guardian_of_the_ancients_ancient_charge_damage_pct"       "%DAMAGE PER CHARGE:"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many"              "One Against Many"
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_Description"  "Gains attack speed bonus for each enemy in a %radius% radius."
 		"DOTA_Tooltip_ability_guardian_of_the_ancients_one_against_many_hero_bonus"   "HERO BONUS:"
@@ -1098,7 +1198,7 @@
 		"DOTA_Tooltip_modifier_snake_boots_teleport"	"Teleporting"
 		
 		"DOTA_Tooltip_Ability_item_manta_2"                                    "Manta Style 2"
-        "DOTA_Tooltip_ability_item_manta_2_Description"                   "<h1>Active: Mirror Image</h1> Creates %images_count% illusions of your hero that last %tooltip_illusion_duration% seconds.<br><br>Illusions take %tooltip_damage_incoming_total_pct%%% damage, and the damage they deal depends on the owner's attack type: melee illusions deal %tooltip_damage_outgoing_melee%%% damage, while ranged illusions deal %tooltip_damage_outgoing_ranged%%%. <br><br>Dispersion Type: <span class=\"GameplayValues GameplayVariable\">normal</span>"
+        "DOTA_Tooltip_ability_item_manta_2_Description"                   "<h1>Active: Mirror Image</h1>Creates %images_count% images of your hero that last %illusion_duration% seconds. <br><br>Melee images deal %tooltip_damage_outgoing_melee%%% damage, while Ranged images deal %tooltip_damage_outgoing_ranged%%%. Illusions take %tooltip_damage_incoming_total_pct%%% damage. <br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
         "DOTA_Tooltip_ability_item_manta_2_Note0"                            "The item is used for %invuln_duration% seconds during which its owner is invulnerable."
         "DOTA_Tooltip_ability_item_manta_2_Note1"                            "Usage dispels many effects."
         "DOTA_Tooltip_ability_item_manta_2_Note2"                            "Bonuses to speed from multiple Yasha-based items do not stack."
@@ -1110,7 +1210,7 @@
 		"DOTA_Tooltip_ability_item_manta_2_Lore"                           "The axe of the great Oximinog, whose unfortunate fate as a tripolar was his most powerful weapon."
 
         "DOTA_Tooltip_Ability_item_manta_3"                                "Manta Style 3"
-        "DOTA_Tooltip_ability_item_manta_3_Description"                   "<h1>Active: Mirror Image</h1> Creates %images_count% illusions of your hero that last %tooltip_illusion_duration% seconds.<br><br>Illusions take %tooltip_damage_incoming_total_pct%%% damage, and the damage they deal depends on the owner's attack type: melee illusions deal %tooltip_damage_outgoing_melee%%% damage, while ranged illusions deal %tooltip_damage_outgoing_ranged%%%. <br><br>Dispersion Type: <span class=\"GameplayValues GameplayVariable\">normal</span>"
+        "DOTA_Tooltip_ability_item_manta_3_Description"                   "<h1>Active: Mirror Image</h1>Creates %images_count% images of your hero that last %illusion_duration% seconds. <br><br>Melee images deal %tooltip_damage_outgoing_melee%%% damage, while Ranged images deal %tooltip_damage_outgoing_ranged%%%. Illusions take %tooltip_damage_incoming_total_pct%%% damage. <br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>"
         "DOTA_Tooltip_ability_item_manta_3_Note0"                            "The item is used for %invuln_duration% seconds during which its owner is invulnerable."
         "DOTA_Tooltip_ability_item_manta_3_Note1"                            "Usage dispels many effects."
         "DOTA_Tooltip_ability_item_manta_3_Note2"                            "Bonuses to speed from multiple Yasha-based items do not stack."
@@ -1146,7 +1246,7 @@
 		"DOTA_Tooltip_ability_item_power_treads_3_bonus_attack_speed"	"+$attack"
 		
 		"DOTA_Tooltip_ability_item_skadi_2"	"EYE OF SKADI 2"
-		"DOTA_Tooltip_ability_item_skadi_2_Description"	"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement by %cold_slow_melee%%% if they are melee and %cold_slow_ranged%%% if they are ranged, as well as their attack speed by %cold_attack_slow_melee%%% if they are melee and %cold_attack_slow_ranged%%% if they are ranged. Additionally it reduces all healing, lifesteal and regen by %heal_reduction%%% Lasts for %cold_duration% seconds."
+		"DOTA_Tooltip_ability_item_skadi_2_Description"	"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement by %cold_slow_melee%%% if they are melee and %cold_slow_ranged%%% if they are ranged, as well as their attack speed by %cold_attack_slow_melee%%% if they are melee and %cold_attack_slow_ranged%%% if they are ranged. Additionally it reduces all healing, lifesteal and regen by %restoration_reduction%%% Lasts for %cold_duration% seconds."
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_all_stats"	"+$all"
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_skadi_2_bonus_mana"	"+$mana"
@@ -1370,7 +1470,7 @@
 		"DOTA_Tooltip_modifier_item_blade_mail_3_reflect_Description"	"Returns damage to attacking creatures."
 		
 		"DOTA_Tooltip_ability_item_shivas_guard_2"                              "Shiva's Guard 2"
-		"DOTA_Tooltip_ability_item_shivas_guard_2_Description"					"<h1>Active: Arctic Blast</h1> Releases a frosty wave that, for %resist_debuff_duration% seconds, increases the spell damage taken by enemies by %spell_amp%%, deals %blast_damage% magical damage to them, and, for %blast_debuff_duration% seconds, reduces their movement speed by %blast_movement_speed%%. Deals %illusion_multiplier_pct%%% damage to illusions.<br><br>Radius: %blast_radius%\n\n<h1>Passive: Freezing Aura</h1> Reduces the attack speed of enemies by %aura_attack_speed%, and their healing, health regeneration, and lifesteal by %hp_regen_degen_aura%%%.<br><br>Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_shivas_guard_2_Description"					"<h1>Active: Arctic Blast</h1> Emits a freezing wave that deals %blast_damage% magical damage to enemies and slows their movement by %blast_movement_speed%%% for %blast_debuff_duration% seconds.<br><br>Radius: %blast_radius%\n\n<h1>Passive: Freezing Aura</h1> Reduces the attack speed of all enemies by %aura_attack_speed%. <br><br>Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Lore"							"Legend has it that this artifact once belonged to a goddess, and it retains its former power to this day."
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Note0"							"The wave travels at a speed of %blast_speed% to a maximum size of %blast_radius%."
 		"DOTA_Tooltip_ability_item_shivas_guard_2_Note1"							"The frosty wave follows the owner."
@@ -1382,7 +1482,7 @@
 		"DOTA_Tooltip_ability_item_shivas_guard_2_bonus_hp_regen"					"+$hp_regen"
 
 		"DOTA_Tooltip_ability_item_shivas_guard_3"                              "Shiva's Guard 3"
-		"DOTA_Tooltip_ability_item_shivas_guard_3_Description"					"<h1>Active: Arctic Blast</h1> Releases a frosty wave that, for %resist_debuff_duration% seconds, increases the spell damage taken by enemies by %spell_amp%%, deals %blast_damage% magical damage to them, and, for %blast_debuff_duration% seconds, reduces their movement speed by %blast_movement_speed%%. Deals %illusion_multiplier_pct%%% damage to illusions.<br><br>Radius: %blast_radius%\n\n<h1>Passive: Freezing Aura</h1> Reduces the attack speed of enemies by %aura_attack_speed%, and their healing, health regeneration, and lifesteal by %hp_regen_degen_aura%%%.<br><br>Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_shivas_guard_3_Description"					"<h1>Active: Arctic Blast</h1> Emits a freezing wave that deals %blast_damage% magical damage to enemies and slows their movement by %blast_movement_speed%%% for %blast_debuff_duration% seconds.<br><br>Radius: %blast_radius%\n\n<h1>Passive: Freezing Aura</h1> Reduces the attack speed of all enemies by %aura_attack_speed%. <br><br>Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Lore"							"Legend has it that this artifact once belonged to a goddess, and it retains its former power to this day."
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Note0"							"The wave travels at a speed of %blast_speed% to a maximum size of %blast_radius%."
 		"DOTA_Tooltip_ability_item_shivas_guard_3_Note1"							"The frosty wave follows the owner."
@@ -1710,7 +1810,7 @@
 		"DOTA_Tooltip_modifier_item_pavise_2_shield_Description"	"Absorbs physical damage."
 		
 		"DOTA_Tooltip_ability_item_crimson_guard_2"	"CRIMSON GUARD 2"
-		"DOTA_Tooltip_ability_item_crimson_guard_2_Description"	"<h1>Active: Guard</h1> Gives nearby heroes and buildings a %block_chance_active%%% chance to block damage from each attack for %duration% seconds, equal to %block_damage_active% + %max_hp_pct%%% of the owner's strength. <br>The ability can only affect the same unit once every %tooltip_reapply_time% seconds.<br><br>Radius: %bonus_aoe_radius%\n\n<h1>Passive: Damage Block</h1> Has a %block_chance%%% chance to block %block_damage_melee% damage if the owner is a melee hero, or %block_damage_ranged% damage if the hero is ranged."
+		"DOTA_Tooltip_ability_item_crimson_guard_2_Description"	"<h1>Active: Guard</h1> For %duration% seconds, grant nearby allied heroes and buildings a %block_chance_active%%% chance to block damage equal to %block_damage_active% plus %max_hp_pct%%% of the caster's max health value from each incoming attack.<br><br>Radius: %bonus_aoe_radius%\n\n<h1>Passive: Damage Block</h1> Grants a %block_chance%%% chance to block %block_damage_melee% damage from incoming attacks on melee heroes, and %block_damage_ranged% damage on ranged."
 		"DOTA_Tooltip_ability_item_crimson_guard_2_Lore"	"Armor, originally forged to protect against the terrifying Godnya."
 		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_crimson_guard_2_bonus_health_regen"	"+$hp_regen"
@@ -1730,7 +1830,7 @@
 		"DOTA_Tooltip_modifier_item_crimson_guard_2_nostack_Description"	"The ability Guard 3 does not affect creatures on which it was recently applied."
 
 		"DOTA_Tooltip_ability_item_crimson_guard_3"	"CRIMSON GUARD 3"
-		"DOTA_Tooltip_ability_item_crimson_guard_3_Description"	"<h1>Active: Guard</h1> Gives nearby heroes and buildings a %block_chance_active%%% chance to block damage from each attack for %duration% seconds, equal to %block_damage_active% + %max_hp_pct%%% of the owner's strength. <br>The ability can only affect the same unit once every %tooltip_reapply_time% seconds.<br><br>Radius: %bonus_aoe_radius%\n\n<h1>Passive: Damage Block</h1> Has a %block_chance%%% chance to block %block_damage_melee% damage if the owner is a melee hero, or %block_damage_ranged% damage if the hero is ranged."
+		"DOTA_Tooltip_ability_item_crimson_guard_3_Description"	"<h1>Active: Guard</h1> For %duration% seconds, grant nearby allied heroes and buildings a %block_chance_active%%% chance to block damage equal to %block_damage_active% plus %max_hp_pct%%% of the caster's max health value from each incoming attack.<br><br>Radius: %bonus_aoe_radius%\n\n<h1>Passive: Damage Block</h1> Grants a %block_chance%%% chance to block %block_damage_melee% damage from incoming attacks on melee heroes, and %block_damage_ranged% damage on ranged."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_Lore"	"Armor, originally forged to protect against the terrifying Godnya."
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_crimson_guard_3_bonus_health_regen"	"+$hp_regen"
@@ -1834,7 +1934,7 @@
 		"DOTA_Tooltip_ability_item_helm_of_the_overlord_2_bonus_regen"				"+$hp_regen"
 		
 		"DOTA_Tooltip_ability_item_ethereal_blade_2"                    "ETHEREAL BLADE 2"
-		"DOTA_Tooltip_ability_item_ethereal_blade_2_Description"	"<h1>Active: Ether Blast</h1> Grants the target a ghostly form that renders them immune to physical damage, prevents them from attacking, and increases the magical damage they take by %ethereal_damage_bonus%%%.<br><br>If used on an enemy, it also slows their movement speed by %blast_movement_slow%%% and deals magical damage equal to %blast_agility_multiplier% * their primary attribute + %blast_damage_base%.<br><br>Cast Range: %abilitycastrange%<br>Duration: %duration% seconds."
+		"DOTA_Tooltip_ability_item_ethereal_blade_2_Description"	"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br>  Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_stat_multiplier%x the sum of all your attributes + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds"
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_Note0"	"Shares a cooldown with Ghost Scepter."
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_Note1"	"Creatures in ghostly form take %ethereal_damage_bonus%%% more magical damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_2_Note2"	"For universal heroes, the primary attribute is considered to be 60% of the sum of all three attributes."
@@ -1852,7 +1952,7 @@
 		"DOTA_Tooltip_modifier_item_ethereal_blade_2_slow_Description"	"Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 		"DOTA_Tooltip_ability_item_ethereal_blade_3"                    "ETHEREAL BLADE 3"
-		"DOTA_Tooltip_ability_item_ethereal_blade_3_Description"	"<h1>Active: Ether Blast</h1> Grants the target a ghostly form that renders them immune to physical damage, prevents them from attacking, and increases the magical damage they take by %ethereal_damage_bonus%%%.<br><br>If used on an enemy, it also slows their movement speed by %blast_movement_slow%%% and deals magical damage equal to %blast_agility_multiplier% * their primary attribute + %blast_damage_base%.<br><br>Cast Range: %abilitycastrange%<br>Duration: %duration% seconds."
+		"DOTA_Tooltip_ability_item_ethereal_blade_3_Description"	"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.<br><br>  Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_stat_multiplier%x the sum of all your attributes + %blast_damage_base% as magical damage.<br>Duration: %duration% seconds"
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_Note0"	"Shares a cooldown with Ghost Scepter."
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_Note1"	"Creatures in ghostly form take %ethereal_damage_bonus%%% more magical damage."
 		"DOTA_Tooltip_ability_item_ethereal_blade_3_Note2"	"For universal heroes, the primary attribute is considered to be 60% of the sum of all three attributes."
@@ -1891,7 +1991,7 @@
 		"DOTA_Tooltip_ability_item_revenants_brooch_custom_3_spell_lifesteal" "%+$spell_lifesteal"
 
 		"DOTA_Tooltip_ability_item_gungir_2"                            "GLEIPNIR 2"
-		"DOTA_Tooltip_ability_item_gungir_2_Description"						"<h1>Active: Eternal Chains</h1>Roots all enemies in a target %radius% radius for %duration% seconds and deals %active_damage% damage.<br><br>Range: %abilitycastrange% \n\n<h1>Passive: Chain Lightning</h1>Grants a %chain_chance%%% chance on attack to release a bolt of electricity that leaps between %chain_strikes% targets within a %chain_radius% radius, dealing %chain_damage% magical damage to each. Lightning proc pierces evasion. Deals %illusion_multiplier_pct%%% damage to illusions."
+		"DOTA_Tooltip_ability_item_gungir_2_Description"						"<h1>Active: Eternal Chains</h1>Roots all enemies in a %radius_tooltip% radius for %duration% seconds."
 		"DOTA_Tooltip_ability_item_gungir_2_Lore"								"Bindings forged by impossible means to leash an ancient evil."
 		"DOTA_Tooltip_ability_item_gungir_2_bonus_damage"						"+$damage"
 		"DOTA_Tooltip_ability_item_gungir_2_bonus_attack_speed"				"+$attack"
@@ -1899,7 +1999,7 @@
 		"DOTA_Tooltip_ability_item_gungir_2_bonus_hp"							"+$health"
 
 		"DOTA_Tooltip_ability_item_gungir_3"                            "GLEIPNIR 3"
-		"DOTA_Tooltip_ability_item_gungir_3_Description"						"<h1>Active: Eternal Chains</h1>Roots all enemies in a target %radius% radius for %duration% seconds and deals %active_damage% damage.<br><br>Range: %abilitycastrange% \n\n<h1>Passive: Chain Lightning</h1>Grants a %chain_chance%%% chance on attack to release a bolt of electricity that leaps between %chain_strikes% targets within a %chain_radius% radius, dealing %chain_damage% magical damage to each. Lightning proc pierces evasion. Deals %illusion_multiplier_pct%%% damage to illusions."
+		"DOTA_Tooltip_ability_item_gungir_3_Description"						"<h1>Active: Eternal Chains</h1>Roots all enemies in a %radius_tooltip% radius for %duration% seconds."
 		"DOTA_Tooltip_ability_item_gungir_3_Lore"								"Bindings forged by impossible means to leash an ancient evil."
 		"DOTA_Tooltip_ability_item_gungir_3_bonus_damage"						"+$damage"
 		"DOTA_Tooltip_ability_item_gungir_3_bonus_attack_speed"				"+$attack"
@@ -1974,7 +2074,7 @@
 		"DOTA_Tooltip_modifier_sheepstick_hex_Description"	"You are a pig. You cannot attack or use spells, your passive abilities are disabled."
 		
 		"DOTA_Tooltip_ability_item_spirit_vessel_2"	"SPIRIT VESSEL 2"
-		"DOTA_Tooltip_ability_item_spirit_vessel_2_Description"	"<h1>Active: Soul Release</h1>The effect depends on the selected target. If used on an enemy, they will lose %enemy_hp_drain%%% of their current health pool and receive %hp_regen_reduction_enemy%%% less health from any healing, regeneration, and vampirism. In addition, the ability deals %soul_damage_amount% damage per second. <br><br>If used on an ally, it increases their health regeneration by %soul_heal_amount% per second. <br><br>Lasts %duration% seconds.<br><br>Gains charges each time an enemy hero dies within %soul_radius% radius. Only the closest item to the deceased hero will receive a charge.<br><br>Cast Range: %abilitycastrange%"
+		"DOTA_Tooltip_ability_item_spirit_vessel_2_Description"	"<h1>Active: Soul Release</h1>The effect depends on the selected target. If used on an enemy, they will lose %enemy_hp_drain%%% of their current health pool and receive %restoration_reduction_enemy%%% less health from any healing, regeneration, and vampirism. In addition, the ability deals %soul_damage_amount% damage per second. <br><br>If used on an ally, it increases their health regeneration by %soul_heal_amount% per second. <br><br>Lasts %duration% seconds.<br><br>Gains charges each time an enemy hero dies within %soul_radius% radius. Only the closest item to the deceased hero will receive a charge.<br><br>Cast Range: %abilitycastrange%"
 		"DOTA_Tooltip_ability_item_spirit_vessel_2_lore"	"Created by a god, desiring to capture the souls of others."
 		"DOTA_Tooltip_ability_item_spirit_vessel_2_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_spirit_vessel_2_bonus_mana_regen"	"+$mana_regen"
@@ -1992,7 +2092,7 @@
 		"DOTA_Tooltip_modifier_item_spirit_vessel_2_aura_Description"	"Healing reduced by %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%"
 		
 		"DOTA_Tooltip_ability_item_spirit_vessel_3"	"SPIRIT VESSEL 3"
-		"DOTA_Tooltip_ability_item_spirit_vessel_3_Description"	"<h1>Active: Soul Release</h1>The effect depends on the selected target. If used on an enemy, they will lose %enemy_hp_drain%%% of their current health pool and receive %hp_regen_reduction_enemy%%% less health from any healing, regeneration, and vampirism. In addition, the ability deals %soul_damage_amount% damage per second. <br><br>If used on an ally, it increases their health regeneration by %soul_heal_amount% per second. <br><br>Lasts %duration% seconds.<br><br>Gains charges each time an enemy hero dies within %soul_radius% radius. Only the closest item to the deceased hero will receive a charge.<br><br>Cast Range: %abilitycastrange%"
+		"DOTA_Tooltip_ability_item_spirit_vessel_3_Description"	"<h1>Active: Soul Release</h1>The effect depends on the selected target. If used on an enemy, they will lose %enemy_hp_drain%%% of their current health pool and receive %restoration_reduction_enemy%%% less health from any healing, regeneration, and vampirism. In addition, the ability deals %soul_damage_amount% damage per second. <br><br>If used on an ally, it increases their health regeneration by %soul_heal_amount% per second. <br><br>Lasts %duration% seconds.<br><br>Gains charges each time an enemy hero dies within %soul_radius% radius. Only the closest item to the deceased hero will receive a charge.<br><br>Cast Range: %abilitycastrange%"
 		"DOTA_Tooltip_ability_item_spirit_vessel_3_lore"	"Created by a god, desiring to capture the souls of others."
 		"DOTA_Tooltip_ability_item_spirit_vessel_3_bonus_health"	"+$health"
 		"DOTA_Tooltip_ability_item_spirit_vessel_3_bonus_mana_regen"	"+$mana_regen"
@@ -2058,7 +2158,7 @@
 
 		
 		"DOTA_Tooltip_ability_item_bloodthorn_2"                  "BLOODTHORN 2"
-		"DOTA_Tooltip_ability_item_bloodthorn_2_Description"                      "<h1>Active: Soul Rend</h1> Prevents the target from using abilities for %silence_duration% seconds. At the end of the effect, the target takes magical damage equal to %silence_damage_percent%%% of the damage received during the duration.<br><br>All attacks against the target deal %proc_damage% magical damage and cannot miss.<br><br>Cast Range: %abilitycastrange%\n\n<h1>Passive: Pierce</h1>Each attack has a %proc_chance%%% chance to pierce evasion and deal %proc_damage% magical damage."
+		"DOTA_Tooltip_ability_item_bloodthorn_2_Description"                      "<h1>Active: Soul Rend</h1> Silences a target for %silence_duration% seconds. At the end of the silence, an additional %silence_damage_percent%%% of all damage taken during the silence will be dealt to the target as magical damage.<br><br>All attacks on the silenced target will deal additional damage equal to %proc_damage_heroes% if the attacker is a hero, and %proc_damage_creeps%, if the attacker is a creep. Provides True Strike for your attacks and attacks from your controlled units against the silenced target.\n\n<h1>Passive: Pierce</h1>Grants each attack a %proc_chance%%% chance to pierce through evasion and deal %passive_proc_damage% bonus magical damage."
 		"DOTA_Tooltip_ability_item_bloodthorn_2_Lore"                             "This hateful blade buries itself deeper with each final twist of its victim."
 		"DOTA_Tooltip_ability_item_bloodthorn_2_bonus_intellect"                  "+$int"
 		"DOTA_Tooltip_ability_item_bloodthorn_2_bonus_attack_speed"               "+$attack"
@@ -2076,7 +2176,7 @@
 		"DOTA_Tooltip_modifier_bloodthorn_2_debuff_Description"           "This unit is silenced and, at the end of the duration, takes magical damage equal to 60% of the damage taken. All attacks against this unit deal additional damage and cannot miss."
 
         "DOTA_Tooltip_ability_item_bloodthorn_3"                  "BLOODTHORN 3"
-		"DOTA_Tooltip_ability_item_bloodthorn_3_Description"                      "<h1>Active: Soul Rend</h1> Prevents the target from using abilities for %silence_duration% seconds. At the end of the effect, the target takes magical damage equal to %silence_damage_percent%%% of the damage received during the duration.<br><br>All attacks against the target deal %proc_damage% magical damage and cannot miss.<br><br>Cast Range: %abilitycastrange%\n\n<h1>Passive: Pierce</h1>Each attack has a %proc_chance%%% chance to pierce evasion and deal %proc_damage% magical damage."
+		"DOTA_Tooltip_ability_item_bloodthorn_3_Description"                      "<h1>Active: Soul Rend</h1> Silences a target for %silence_duration% seconds. At the end of the silence, an additional %silence_damage_percent%%% of all damage taken during the silence will be dealt to the target as magical damage.<br><br>All attacks on the silenced target will deal additional damage equal to %proc_damage_heroes% if the attacker is a hero, and %proc_damage_creeps%, if the attacker is a creep. Provides True Strike for your attacks and attacks from your controlled units against the silenced target.\n\n<h1>Passive: Pierce</h1>Grants each attack a %proc_chance%%% chance to pierce through evasion and deal %passive_proc_damage% bonus magical damage."
 		"DOTA_Tooltip_ability_item_bloodthorn_3_Lore"                             "This hateful blade buries itself deeper with each final twist of its victim."
 		"DOTA_Tooltip_ability_item_bloodthorn_3_bonus_intellect"                  "+$int"
 		"DOTA_Tooltip_ability_item_bloodthorn_3_bonus_attack_speed"               "+$attack"
@@ -2155,7 +2255,7 @@
 		"DOTA_Tooltip_modifier_heavens_halberd_3_debuff_Description"	"Disarmed by the Heaven's Halberd artifact, unable to attack."
 		
 		"DOTA_Tooltip_ability_item_abyssal_blade_2"	"ABYSSAL BLADE 2"
-		"DOTA_Tooltip_ability_item_abyssal_blade_2_Description"	"<h1>Active: Overwhelm</h1> Stuns the selected enemy for %stun_duration% seconds. <br><br>Passes through magic immunity.<br><br>Cast Range: %abilitycastrange%\n\n<h1>Passive: Bash</h1> Each attack has a chance to stun the target for %bash_duration% seconds and deal %bonus_chance_damage% physical damage. The chance depends on the owner's attack type: %bash_chance_melee%%% for melee attacks, %bash_chance_ranged%%% for ranged attacks.\n\n<h1>Passive: Damage Block</h1> Has a %block_chance%%% chance to block %block_damage_melee% damage from attacks if the owner is a melee hero, or %block_damage_ranged% damage if the hero is ranged."
+		"DOTA_Tooltip_ability_item_abyssal_blade_2_Description"	"<h1>Active: Overwhelm</h1> Stuns a target enemy unit for %stun_duration% seconds. <br><br>Pierces Debuff Immunity.\n\n<h1>Passive: Bash</h1> Grants melee heroes a %bash_chance_melee%%% chance on hit to stun the target for %bash_duration% seconds and deal %bonus_chance_damage% bonus physical damage.  Bash chance for ranged heroes is %bash_chance_ranged%%%."
 		"DOTA_Tooltip_ability_item_abyssal_blade_2_Lore"	"The lost blade's edge pierces the enemy right into their soul."
 		"DOTA_Tooltip_ability_item_abyssal_blade_2_Note0"	"Stunning is applied at close range."
 		"DOTA_Tooltip_ability_item_abyssal_blade_2_Note1"	"The Bash ability does not work on hero clones and copies of Arc Warden. The effects of multiple such abilities do not stack."
@@ -2226,7 +2326,7 @@
 		"DOTA_Tooltip_modifier_item_holy_locket_3_aura_Description"	"Restores %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second."
 		
 		"DOTA_Tooltip_ability_item_overwhelming_blink_2"	"OVERWHELMING BLINK 2"
-		"DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"	"<h1>Active: Overwhelming Blink</h1> Instantly teleports to the target point within %blink_range%.<br><br>After teleporting, deals damage equal to 100 + %damage_pct%%% of the owner's strength to all enemies within %radius% and slows their movement by %movement_slow%%%, and their attack by %attack_slow%. The slow lasts for %duration% seconds.<br><br>This item cannot be used if its owner has taken damage from enemy heroes or Roshan in the last %blink_damage_cooldown% seconds."
+		"DOTA_Tooltip_ability_item_overwhelming_blink_2_Description"	"<h1>Active: Overwhelming Blink</h1> Teleport to a target point up to %blink_range% units away.<br><br>After teleportation, all enemies in a %radius% AoE take damage equal to %damage_base% + %damage_pct_instant%%% of your strength and an additional %damage_pct_over_time%%% over time, and have %movement_slow%%% movement speed slow and %attack_slow% attack speed slow for %duration% seconds. <br><br>Overwhelming Blink cannot be used for %blink_damage_cooldown% seconds after taking damage from an enemy hero or Roshan."
 		"DOTA_Tooltip_ability_item_overwhelming_blink_2_Lore"	"Rare mortal will hold in his hands this terrifying dagger, forged in the womb of chaos."
 		"DOTA_Tooltip_ability_item_overwhelming_blink_2_Note0"	"If applied to oneself, it will move towards the allied fountain."
 		"DOTA_Tooltip_ability_item_overwhelming_blink_2_Note1"	"If you use the item beyond the ability, the movement range will be 4/5 of the maximum possible."
@@ -2762,6 +2862,8 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_damage_absorb_pct"					"+%{s:bonus_damage_absorb_pct} of hero health to Aphotic Shield's barrier health."
 		
 		"npc_dota_hero_charon"												"Charon"
+		"npc_dota_hero_charon_hype"		"The ferryman takes no coin. He takes whatever is keeping you upright."
+		"npc_dota_hero_charon_bio"		"Charon has poled the black water for longer than the shore has had a name, and he learned long ago that a soul weighs exactly as much as the power still left in it. He drags the living close, drains them dry, and turns their stolen strength into the blow that breaks them. Those he leaves behind stagger on empty, far too spent to run. That suits him. He is patient. The river always comes back around."
 
 		"DOTA_Tooltip_ability_charon_soul_drain"							"Soul Drain"
 		"DOTA_Tooltip_ability_charon_soul_drain_Description"	"Charon stuns himself and the target, draining its mana. If the hero possesses either <b><font color='#af72cd'>Charon's Scepter</font></b> or <b><font color='#1a887d'>Void Scepter</font></b>, he will deal damage to the target based on the mana burned and base damage."
@@ -2808,6 +2910,8 @@
 		"DOTA_Tooltip_ability_charon_collapse_bonus_radius_tallent"                               "+250 to Collapse Radius"
 
 		"npc_dota_hero_satan"											"Satan"
+		"npc_dota_hero_satan_hype"		"A tyrant who pays for every scrap of power in his own blood - and collects the debt from everyone else."
+		"npc_dota_hero_satan_bio"		"The pit did not make Satan cruel; it only taught him the exchange rate. Every ounce of strength he wields was bought with his own burning flesh, and he has never once thought the price too high. He answers a raised blade with a broken jaw, breathes ruin across the front line, and lays a curse on anyone who would rather run than settle up. Where he walks, the ground remembers the heat."
 
 		"DOTA_Tooltip_ability_satan_might"										"Satan's Might"
 		"DOTA_Tooltip_ability_satan_might_Description"							"Chance to stun attackers or return tdamage to them."
@@ -2860,6 +2964,8 @@
 		"DOTA_Tooltip_ability_satan_special_bonus_breath_damage"				"+100 damage to Satan's Breath"
 
 		"npc_dota_hero_shadowsong"												"Shadowsong"
+		"npc_dota_hero_shadowsong_hype"		"A song sung over the dying, and it always reaches the last note."
+		"npc_dota_hero_shadowsong_bio"		"Shadowsong is what remains when a voice outlives the throat that carried it. Her fire does not burn - it thins, hollowing out the will and the magic that hold a body together until the lightest touch is enough. Around her the air itself takes a toll from the living, and the longer the dying lasts, the longer she lingers. Step toward her and you may find you have traded places, standing exactly where the song ends."
 
 		"DOTA_Tooltip_ability_shadowsong_magic_fire" 							"Magic Fire"
 		"DOTA_Tooltip_ability_shadowsong_magic_fire_Description"				"Launch a projectile that burn target mana and deal damage. Also applies effect that decrease status effect and health regen. All new projectile that hit the target with that effect multiply mana burn, damage and effect values."
@@ -2907,6 +3013,8 @@
 		"DOTA_Tooltip_ability_shadowsong_special_bonus_reflection_teammate"		"Allow Dark Reflection on allies"
 
 		"npc_dota_hero_fireblade"											"Fireblade"
+		"npc_dota_hero_fireblade_hype"		"Every swing feeds the fire. Every fire makes the next swing worse."
+		"npc_dota_hero_fireblade_bio"		"Fireblade was a swordsman before he was a furnace. The blade came first, then the ember that would not go out, and by the time he understood what he had swallowed there was nothing left to give back. Now the heat answers his arm: it runs down the steel, races ahead of him in a burning tide, and grows hungrier with every enemy it touches. He does not put it out. He aims it."
 
 		"DOTA_Tooltip_ability_fireblade_fiery_stream_shard_Description"	"Reduces cooldown by %AbilityCooldown% seconds and increases damage taken by the victim from attacks by %damage_steel_pct%%."
 
@@ -2965,6 +3073,8 @@
 		"DOTA_Tooltip_ability_fireblade_talent_scorched_blades_spellimmune"		"Scorched Blades ignores magic immune"
 
 		"npc_dota_hero_huntress"												"Huntress"
+		"npc_dota_hero_huntress_hype"		"She has already chosen the place where you will stop running."
+		"npc_dota_hero_huntress_bio"		"The forest hides nothing from her; it simply steps aside. She sets her owl in the high branches and the whole hunt opens up - every stride her quarry takes was one she allowed. Her arrows do not so much hit as arrive: one to cripple, one to strip away whatever borrowed magic was holding them together, and one that never needs a second. By the time the trees close again, the only thing left to find is the arrow."
 
 		//===========================================================================================
 		"DOTA_Tooltip_ability_huntress_aim_shot"							"Aim Shot"
@@ -3074,7 +3184,7 @@
 		"DOTA_Tooltip_modifier_assault_aa_aura_enemy_Description"           "Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
 		"DOTA_Tooltip_ability_item_vladmir_2"                               "Vladmir's Offering 2"
-		"DOTA_Tooltip_ability_item_vladmir_2_Description"                   "<h1>Passive: Vladmir's Aura</h1> Increases lifesteal of allies by %lifesteal_aura%%%, their damage by %damage_aura%%%, armor by %armor_aura%, and mana regeneration by %mana_regen_aura%. Creep lifesteal is reduced by %creep_lifesteal_reduction_pct%%%.<br><br>Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_vladmir_2_Description"                   "<h1>Passive: Vladmir's Aura</h1>Grants %lifesteal_aura%%% lifesteal, %damage_aura%%% bonus damage, %mana_regen_aura% mana regeneration, and %armor_aura% armor to nearby allies.<br><br>Radius: %aura_radius%"
 		"DOTA_Tooltip_ability_item_vladmir_2_Lore"                          "A sinister mask, cursed with the malice of a fallen vampire."
 
 		"DOTA_Tooltip_ability_item_ultimate_scepter_Description"			"<h1>Passive: Ability Upgrade</h1> Upgrades the hero's ultimate ability and some other abilities. \n\nThe consumable version drops from Tormentor."
@@ -3184,15 +3294,15 @@
         "DOTA_Tooltip_ability_item_unknown_amulet_Note0"					"Strength and Agility charges follow the law of diminishing returns."
 
         "DOTA_Tooltip_ability_item_magic_splash"                            "Aura Flash"
-        "DOTA_Tooltip_ability_item_magic_splash_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>Damage you deal to a target is accumulated and splashed once every 0.2 seconds, like a burn effect, instead of on every single damage tick. The total damage is the same.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%<br>• Magic resistance pierced: %magic_pierce%%%<br>• Damage dealt by items splashes at %item_damage_pct%%% strength"
         "DOTA_Tooltip_ability_item_magic_splash_int"            "+$int"
 
         "DOTA_Tooltip_ability_item_magic_splash_2"                            "Aura Flash 2"
-        "DOTA_Tooltip_ability_item_magic_splash_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_2_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>Damage you deal to a target is accumulated and splashed once every 0.2 seconds, like a burn effect, instead of on every single damage tick. The total damage is the same.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%<br>• Magic resistance pierced: %magic_pierce%%%<br>• Damage dealt by items splashes at %item_damage_pct%%% strength"
         "DOTA_Tooltip_ability_item_magic_splash_2_int"            "+$int"
 
         "DOTA_Tooltip_ability_item_magic_splash_3"                            "Aura Flash 3"
-        "DOTA_Tooltip_ability_item_magic_splash_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%"
+        "DOTA_Tooltip_ability_item_magic_splash_3_Description"                "<h1>Passive: Aura Flash</h1> Deals percent of abilities damage in a circle with radius %splash_aoe% around main target.<br><br>Damage you deal to a target is accumulated and splashed once every 0.2 seconds, like a burn effect, instead of on every single damage tick. The total damage is the same.<br><br>• Damage to heroes: %splash_pct_hero%%%<br>• Damage to illusions: %splash_pct_illusion%%%<br>• Damage to creeps: %splash_pct_creep%%%<br>• Magic resistance pierced: %magic_pierce%%%<br>• Damage dealt by items splashes at %item_damage_pct%%% strength"
         "DOTA_Tooltip_ability_item_magic_splash_3_int"            "+$int"
 	}
 }

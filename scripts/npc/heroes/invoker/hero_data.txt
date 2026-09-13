@@ -19,33 +19,17 @@
         "Ability14"     "invoker_forge_spirit"
         "Ability15"     "invoker_ice_wall"
         "Ability16"     "invoker_deafening_blast"
-        "Ability25"     "invoker_mastermind"
 
 		"Ability17"     "special_bonus_unique_invoker_ice_wall_dps"
         "Ability18"     "special_bonus_unique_invoker_3"
-        "Ability19"     "special_bonus_unique_invoker_11"
+        "Ability19"     "special_bonus_unique_invoker_5"
         "Ability20"     "special_bonus_unique_invoker_9"
         "Ability21"     "special_bonus_unique_invoker_additional_chaos_meteors"
-        "Ability22"     "special_bonus_unique_invoker_5"
+        "Ability22"     "special_bonus_unique_invoker_forged_spirit_armor_reduction"
         "Ability23"     "special_bonus_unique_invoker_2"
         "Ability24"     "special_bonus_unique_invoker_13"
 
-		"Facets"
-        {
-            "invoker_agnostic"
-            {
-                "Icon"              "invoker_passive"
-                "Color"             "Purple"
-                "GradientID"        "0"
-            }           
-            "invoker_elitist"
-            {
-                "Icon"              "invoker_active"
-                "Color"             "Gray"
-                "GradientID"        "0"
-            }
 
-        }
 
 		"AbilityDraftDisabled"		"0"
 		"ArmorPhysical"		"0"
@@ -58,12 +42,12 @@
 		"AttackRange"		"600"
 		"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"		"19"
-		"AttributeStrengthGain"		"2.400000"
+		"AttributeStrengthGain"		"2.500000"
 		"AttributeBaseAgility"		"14"
-		"AttributeAgilityGain"		"1.900000"
-		"AttributeBaseIntelligence"		"15"
+		"AttributeAgilityGain"		"2.000000"
+		"AttributeBaseIntelligence"		"22"
 		"AttributeIntelligenceGain"		"4.600000"
 		"MovementSpeed"		"285"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_invoker.vsndevts"

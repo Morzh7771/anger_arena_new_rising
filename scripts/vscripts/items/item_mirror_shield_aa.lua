@@ -1,6 +1,7 @@
 LinkLuaModifier('modifier_mirror_shield_aa', 'items/item_mirror_shield_aa', LUA_MODIFIER_MOTION_NONE)
 
 item_mirror_shield_aa = class({
+
 	Precache = function (self, context) 
 		PrecacheResource("particle", "particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf", context)
 		PrecacheResource("particle", "particles/items/reflection_shard/immunity_sphere_yellow.vpcf", context)
@@ -8,6 +9,16 @@ item_mirror_shield_aa = class({
 	end,
 	GetIntrinsicModifierName = function (self) return 'modifier_mirror_shield_aa' end
 	})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_mirror_shield_aa:Precache(context)
+	PrecacheResource("particle", "particles/items/reflection_shard/immunity_sphere_yellow.vpcf", context)
+	PrecacheResource("particle", "particles/items/reflection_shard/reflection_shield.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf", context)
+end
 
 modifier_mirror_shield_aa = class({
 	IsHidden = 			function (self) return true end,
@@ -65,6 +76,18 @@ function modifier_mirror_shield_aa:OnCreated(params)
 		  parent.stored_reflected_spells = {}
 		end
 	  end
+end
+
+-- Партикл щита висел вечно: модификатор снимался (продали предмет, сменили
+-- героя), а эффект оставался у клиента навсегда.
+function modifier_mirror_shield_aa:OnDestroy()
+	if not IsServer() then return end
+
+	if self.nPreviewFX then
+		ParticleManager:DestroyParticle(self.nPreviewFX, false)
+		ParticleManager:ReleaseParticleIndex(self.nPreviewFX)
+		self.nPreviewFX = nil
+	end
 end
 
 function modifier_mirror_shield_aa:GetReflectSpell(kv)
@@ -194,6 +217,7 @@ end
 		self:GetAbility():UseResources(false, false, false, true)
 		local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(part, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(part)
 		caster:EmitSound("Item.LotusOrb.Activate")
 		return 1
 	end

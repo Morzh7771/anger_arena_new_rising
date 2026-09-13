@@ -3,11 +3,13 @@
 	"npc_dota_hero_dark_seer"
 	{
 		"override_hero"		"npc_dota_hero_dark_seer"
+		"Ability9"      "generic_hidden"
+		"Ability8"      "generic_hidden"
 		"Ability1"      "dark_seer_vacuum"
         "Ability2"      "dark_seer_ion_shell"
         "Ability3"      "dark_seer_surge"
         "Ability4"      "dark_seer_normal_punch"
-        "Ability5"      "dark_seer_mental_fortitude"
+        "Ability5"      "dark_seer_aggrandize"
         "Ability6"      "dark_seer_wall_of_replica"
 		"Ability10"		"special_bonus_unique_dark_seer_7"
 		"Ability11"		"special_bonus_unique_dark_seer_5"
@@ -18,43 +20,7 @@
 		"Ability16"		"special_bonus_unique_dark_seer_14"
 		"Ability17"		"special_bonus_unique_dark_seer_3"
 
-		"Facets"
-        {
-            "dark_seer_atkspd"
-            {
-                "Icon"              "damage"
-                "Color"             "Gray"
-                "GradientID"        "3"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "dark_seer_quick_wit"
-                    }
-                }
-            }
-
-            "dark_seer_movespd"
-            {
-                "Icon"              "speed"
-                "Color"             "Purple"
-                "GradientID"        "2"
-
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "dark_seer_heart_of_battle"
-                    }
-                    
-                }
-                "KeyValueOverrides"
-                {
-                    "MovementSpeed"     "270"
-                }
-            }
-        }
 
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

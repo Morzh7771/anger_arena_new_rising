@@ -2,6 +2,7 @@ LinkLuaModifier("modifier_revenants_brooch_custom", "items/item_revenants_brooch
 LinkLuaModifier("modifier_revenants_brooch_custom_counter", "items/item_revenants_brooch_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_revenants_brooch_custom = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items5_fx/revenant_brooch.vpcf", context)
         PrecacheResource("particle", "particles/items_fx/octarine_core_lifesteal.vpcf", context)
@@ -9,6 +10,16 @@ item_revenants_brooch_custom = class({
     end,
     GetIntrinsicModifierName = function (self) return "modifier_revenants_brooch_custom" end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_revenants_brooch_custom:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/misery_projectile.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/octarine_core_lifesteal.vpcf", context)
+	PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
+	PrecacheResource("particle", "particles/items5_fx/revenant_brooch.vpcf", context)
+end
 
 function item_revenants_brooch_custom:GetManaCost(level)
     if self and self:GetCaster() and self:GetCaster():HasModifier("modifier_revenants_brooch_custom_counter") then return 0 end
@@ -147,7 +158,7 @@ function modifier_revenants_brooch_custom:OnTakeDamage(params)
     local lifesteal = self.lifesteal*params.damage
     if not IsServer() then return end
     self:GetParent():Heal(lifesteal, self:GetAbility())
-    print(lifesteal)
+    -- отладочный print убран: горячий путь (каждый удар/лечение)
     local particle = ParticleManager:CreateParticle( "particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
     ParticleManager:ReleaseParticleIndex( particle )
 end

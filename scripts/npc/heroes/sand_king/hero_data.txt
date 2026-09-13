@@ -18,24 +18,7 @@
         "Ability16"     "special_bonus_unique_sand_king"
         "Ability17"     "special_bonus_unique_sand_king_4"
         
-        "Facets"
-        {
-            "sand_king_sandshroud" 
-            {
-                //Sandstorm invisibility, doesn't move 
-                "Icon"              "vision"
-                "Color"             "Gray"
-                "GradientID"        "3"
-            }
-            "sand_king_dust_devil" 
-            {
-                //sandstorm follows 
-                "Icon"              "speed"
-                "Color"             "Yellow"
-                "GradientID"        "1"
-            } 
-            
-        }
+
         
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

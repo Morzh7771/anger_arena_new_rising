@@ -2,12 +2,21 @@ LinkLuaModifier("modifier_item_khanda_custom", "items/item_khanda_custom", LUA_M
 LinkLuaModifier("modifier_item_khanda_custom_debuff", "items/item_khanda_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_khanda = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items_fx/khanda.vpcf", context)
         PrecacheResource("particle", "particles/items_fx/khanda_target.vpcf", context)
     end,
     GetIntrinsicModifierName = function (self) return "modifier_item_khanda_custom" end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_khanda:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/khanda.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/khanda_target.vpcf", context)
+end
 
 item_khanda_2 = item_khanda
 item_khanda_3 = item_khanda

@@ -18,32 +18,7 @@
 		"Ability16"		"special_bonus_unique_magnus_2"
 		"Ability17"		"special_bonus_unique_magnus_5"
 
-		"Facets"
-        {
-            "magnataur_run_through" 
-            {
-                "Icon"              "movement"
-                "Color"             "Gray"
-                "GradientID"        "3"
-                "Deprecated"        "true"  
-            }
-            "magnataur_reverse_polarity" 
-            {
-                "Icon"              "vortex_in"
-                "Color"             "Gray"
-                "GradientID"        "3"
-            }
-            "magnataur_reverse_reverse_polarity" 
-            {
-                "Icon"              "vortex_out"
-                "Color"             "Gray"
-                "GradientID"        "0"
-                "AbilityIconReplacements"
-                {
-                    "magnataur_reverse_polarity"    "magnataur_reversed_reverse_polarity"
-                }
-            }
-        }
+
         
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -68,7 +43,6 @@
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
 		"particle_folder"		"particles/units/heroes/hero_magnataur"
-		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_magnataur.vsndevts"
 		"RenderablePortrait"
 		{

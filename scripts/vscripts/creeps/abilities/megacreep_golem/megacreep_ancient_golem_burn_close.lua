@@ -1,4 +1,13 @@
 megacreep_ancient_golem_burn_close = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_ancient_golem_burn_close:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_batrider/batrider_firefly_startflash.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_batrider/batrider_flamebreak_explosion.vpcf", context)
+end
+
 LinkLuaModifier("modifier_megacreep_ancient_golem_burn_close","creeps/abilities/megacreep_golem/modifiers/modifier_megacreep_ancient_golem_burn_close", LUA_MODIFIER_MOTION_NONE)
 
 function megacreep_ancient_golem_burn_close:OnSpellStart()

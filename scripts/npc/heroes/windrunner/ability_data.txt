@@ -5,7 +5,7 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT |  DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
-        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"     
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
 
         "MaxLevel"                      "1"
         "IsShardUpgrade"                "1"
@@ -14,22 +14,22 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastPoint"              "0.2"
         "AbilityCastRange"              "1500"
-        
-        // Time     
+
+        // Time
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"               "30"
-        
+
         // Cost
         //-------------------------------------------------------------------------------------------------------------
         "AbilityManaCost"               "100"
-        
+
         // Special
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
             "duration"          "3.5"
             "wind_strength"     "240"
-            "radius"            
+            "radius"
             {
                 "value"     "1000"
                 "affected_by_aoe_increase"  "1"
@@ -70,21 +70,40 @@ DOTAAbilities
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-		{	
+		{
 			"AbilityCooldown"
 			{
 				"value"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
-			}				
-			"fail_stun_duration"	"0.6"
+			}
+			"fail_stun_duration"
+			{
+				"value" "0.6"
+			}
 			"stun_duration"
 			{
-				"value"				"1.5 1.75 2.0 2.25 2.5 2.75 3.0"
+				"value" "1.5 1.75 2.0 2.25 2.5 2.75 3.0"
 				"special_bonus_unique_windranger_6" "+0.5"
 			}
-			"shackle_distance"		"600"
-			"arrow_speed"			"1650"
-			"shackle_count"			"1"
-			"shackle_angle"			"25"
+			"shackle_distance"
+			{
+				"value" "600"
+			}
+			"arrow_speed"
+			{
+				"value" "1650"
+			}
+			"shackle_count"
+			{
+				"value" 									"1"
+			}
+			"shackle_angle"
+			{
+				"value" "25"
+			}
+
+			"bonus_damage_per_hero"				"0"
+			"bonus_damage_per_other_pct"				"0"
+			"damage_buff_duration"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -120,46 +139,62 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"powershot_damage"			
+				"powershot_damage"
 				{
 					"value"				"175 275 375 475 575 675 775"
 					"CalculateSpellDamageTooltip"	"1"
 				}
-				"slow"	
+				"slow"
 				{
 					"value"				"15 17.5 20 22.5 25 27.5 30"
 				}
-				"slow_duration"			
+				"slow_duration"
 				{
 					"value"				"3"
 					"special_bonus_unique_windranger_powershot_slow"                "+1"
 				}
-				"damage_pct"			"45"
-				"damage_reduction"		
+				"damage_reduction"
 				{
 					"value"				"15"
 					"special_bonus_unique_windranger_3"		"-15"
 					"CalculateSpellDamageTooltip"	"0"
 					"DamageTypeTooltip"	"DAMAGE_TYPE_NONE"
 				}
-				"arrow_width"           
+				"arrow_width"
                 {
-                    "value"     "125 125 125 125"
+                    "value"     "125"
                     "affected_by_aoe_increase"  "1"
                 }
-				"arrow_range"			"3000"
-				"arrow_speed"			"3000.0 3000.0 3000.0 3000.0"
+				"arrow_range"
+				{
+					"value"		"3000"
+				}
+
+				"arrow_speed"			"3000.0"
 				"tree_width"
                 {
                     "value"                     "50.0"
                     "affected_by_aoe_increase"  "1"
                 }
-                "vision_radius"         
-                {
-                    "value"         "400"
-                    "affected_by_aoe_increase"  "1"
-                }
+                "vision_radius"
+				{
+					"value"			"400"
+					"affected_by_aoe_increase"	"1"
+				}
+
 				"vision_duration"		"3.5"
+
+				"min_execute_threshold"
+				{
+					"value"								"0"
+					"special_bonus_unique_windranger_7"	"+10"
+				}
+
+				"max_execute_threshold"
+				{
+					"value"								"0"
+					"special_bonus_unique_windranger_7"	"+16"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -203,7 +238,6 @@ DOTAAbilities
 			}
 			"radius"                    
             {   
-                "special_bonus_facet_windrunner_tailwind"           "700"
                 "affected_by_aoe_increase"  "1"
             }
 			"scepter_movespeed_bonus_pct"			
@@ -224,7 +258,6 @@ DOTAAbilities
 			"ally_movespeed_bonus_pct"
 			{
                 "value"             "0"
-                "special_bonus_facet_windrunner_tailwind"   "=15"               
             }
 			"duration"					"3.0 3.3 3.6 3.9 4.2 4.5 4.8"
 			"AbilityCooldown"
@@ -232,6 +265,11 @@ DOTAAbilities
                 "value"                                 "21.0 20.0 19.0 18.0 17.0 16.0 15.0"
                 "special_bonus_unique_windranger_4"     "-2"
             }
+			"AbilityDuration"
+			{
+				"value"				"3 4 5 6 7 8 9"
+				"special_bonus_unique_windranger_4"				"+0.75"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -272,26 +310,19 @@ DOTAAbilities
 			"AbilityCooldown"
             {
                 "value"         "30"
-                "special_bonus_facet_windrunner_whirlwind" "=50"
             }
             "AbilityDuration"               
             {
                 "value"     "15"
-                "special_bonus_facet_windrunner_whirlwind"  "=8.0"          
             }
 			"bonus_attack_speed"            
             {
                 "value"     "500"
-                "special_bonus_facet_windrunner_whirlwind" "=0"             
             }
-            "attacks_per_second"
-            {
-                "special_bonus_facet_windrunner_whirlwind"              "6 7 8 9 10 11 12"                
-            }
+            "attacks_per_second"				"0"
 			"focusfire_damage_reduction"	
 			{
 				"value"						"-24 -20 -16 -12 -8 -4 0"
-				"special_bonus_facet_windrunner_whirlwind" "-5"
 				"special_bonus_unique_windranger_8"     "+10"
 
 				// "damage" in attribute name but it's a percentage-based effect
@@ -306,13 +337,11 @@ DOTAAbilities
             "is_unfocused"
             {
                 "value"     "0"
-                "special_bonus_facet_windrunner_whirlwind"          "=1"
             }
             "duration_increase_per_kill"
             {
                 "value"     "0"
                 "special_bonus_unique_windranger_2"     "+2"
-                "RequiresFacet"     "windrunner_whirlwind"  
 
             }
             "cooldown_reduction_per_kill"
@@ -323,7 +352,6 @@ DOTAAbilities
             "bonus_range"
             {
                 "value"             "0"
-                "special_bonus_facet_windrunner_whirlwind"      "+125"
             }
             "unfocused_cancel_initial_cooldown"     "0.5"
 		}
@@ -337,7 +365,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 	}
 	"special_bonus_unique_windranger_2"
@@ -404,6 +432,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_windranger_9"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -462,4 +491,40 @@ DOTAAbilities
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
     }
+
+	"windrunner_tailwind"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_YES"
+		"Innate"				"1"
+		"HasScepterUpgrade"				"1"
+		"AbilityValues"
+		{
+			"movespeed_bonus"
+			{
+				"value"				"35"
+			}
+			"duration"
+			{
+				"value"				"2.5"
+				"special_bonus_scepter"				"+1.0"
+			}
+			"max_movespeed"
+			{
+				"value"				"600"
+				"special_bonus_unique_windranger_5"				"+40"
+			}
+			"applies_on_attack"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"+1"
+			}
+			"undispellable"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"+1"
+			}
+		}
+	}
 }

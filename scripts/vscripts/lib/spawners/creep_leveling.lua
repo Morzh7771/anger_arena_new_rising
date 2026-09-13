@@ -49,8 +49,15 @@ function CreepLeveling:Init()
 
 			local drops = spawner_info['drops']
 
+			-- после отключения старой системы нейтралок у части уровней в
+			-- creep_stats.kv может не остаться ни одного бокса, тогда движок
+			-- отдаёт сюда не таблицу
+			if type(drops) ~= "table" then
+				drops = {}
+			end
+
 			local newDrops = {}
-			print(drops)
+
 			for key, chance in pairs(drops) do
 				chance = tonumber(chance)
 				local box = DropBox:GetDropbox(key)

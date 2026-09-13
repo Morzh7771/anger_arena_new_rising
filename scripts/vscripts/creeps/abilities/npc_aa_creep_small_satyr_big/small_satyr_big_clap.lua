@@ -25,6 +25,7 @@ function small_satyr_big_clap:OnSpellStart()
 
 	local pid = ParticleManager:CreateParticle("particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf", PATTACH_POINT, caster)
 	ParticleManager:SetParticleControl(pid, 0, caster:GetAbsOrigin())
+	ParticleManager:ReleaseParticleIndex(pid)
 	caster:EmitSound("Hero_Brewmaster.ThunderClap")
 
     if not units or #units == 0 then return end 

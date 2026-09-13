@@ -44,6 +44,7 @@ end
 
 function modifier_npc_aa_creep_salamander_small_buff_armor_lua:OnDestroy ( params )
     ParticleManager:DestroyParticle(self.particlearm,false)
+    ParticleManager:ReleaseParticleIndex(self.particlearm)
 end
 
 -------------------------------------------------------------------------------

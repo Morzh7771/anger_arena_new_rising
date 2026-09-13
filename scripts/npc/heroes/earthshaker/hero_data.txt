@@ -9,7 +9,7 @@
         "Ability4"      "generic_hidden"
         "Ability5"      "generic_hidden"
         "Ability6"      "earthshaker_echo_slam"
-        "Ability7"      "earthshaker_spirit_cairn"
+        "Ability7"      "earthshaker_slugger"
 		"Ability10"     "special_bonus_attack_base_damage_30"
         "Ability11"     "special_bonus_unique_earthshaker_4"
         "Ability12"     "special_bonus_unique_earthshaker_3"
@@ -19,28 +19,7 @@
         "Ability16"     "special_bonus_unique_earthshaker_echo_cd"
         "Ability17"     "special_bonus_unique_earthshaker"
 
-        "Facets"
-        {
-            "earthshaker_tectonic_buildup" 
-            {
-                "Icon"              "area_of_effect"
-                "Color"             "Red"
-                "GradientID"        "1"
-            }
-            "earthshaker_slugger" 
-            {
-                "Icon"              "movement"
-                "Color"             "Yellow"
-                "GradientID"        "1"
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "earthshaker_slugger"
-                    }
-                }
-            }
-        }
+
         
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

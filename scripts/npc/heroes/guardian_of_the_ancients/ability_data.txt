@@ -2,6 +2,7 @@
 {
 	"guardian_of_the_ancients_ficle_ground"
 	{
+		"ID"					"15171"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/ficle_ground"
 		"AbilityTextureName"			"elder_titan_echo_stomp"
@@ -45,6 +46,7 @@
 	}
 	"guardian_of_the_ancients_guardians_step"
 	{
+		"ID"					"15170"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/guardians_step"
 		"AbilityTextureName"			"crystal_maiden_crystal_clone"
@@ -90,8 +92,27 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+	"guardian_of_the_ancients_ancient_charge"
+	{
+		"ID"					"15169"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/guardian_of_the_ancients/ancient_charge"
+		"AbilityTextureName"			"custom/hola_stunhammer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"charge_interval"			"5"
+			"max_charges"				"5"
+			"damage_pct"				"12"
+		}
+	}
 	"guardian_of_the_ancients_confident_stance"
 	{
+		"ID"					"15168"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/confident_stance"
 		"AbilityTextureName"			"custom/hola_stunhammer"
@@ -99,7 +120,6 @@
  		"AbilityCastAnimation"			"ACT_INVALID"
 		"AbilityCooldown"				"2"
 		"MaxLevel"						"1"
-		"Innate"						"1"
 		"HasShardUpgrade"				"1"
 		"HasScepterUpgrade"				"1"
 		"AbilityValues"
@@ -121,6 +141,7 @@
 	}
 	"guardian_of_the_ancients_command_height"
 	{
+		"ID"					"15167"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/command_height"
 		"AbilityTextureName"			"lone_druid_spirit_bear_demolish"
@@ -167,6 +188,7 @@
 
 	"guardian_of_the_ancients_one_against_many"
 	{
+		"ID"					"15166"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/one_against_many"
 		"AbilityTextureName"			"custom/reaver_lord_attract"
@@ -181,6 +203,7 @@
 	}
 	"guardian_of_the_ancients_command_height_stop"
 	{
+		"ID"					"15165"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/command_height"
 		"AbilityTextureName"			"lone_druid_spirit_bear_demolish"

@@ -69,6 +69,14 @@ DOTAAbilities
 				"special_bonus_shard"				"+25"
 			}			
 			
+			"movespeed_bonus_radius"				"0"
+			"movespeed_bonus_self_max"				"0"
+			"movespeed_bonus_ally_max"				"0"
+			"movespeed_bonus_duration"				"0"
+			"immunity_resist"
+			{
+				"special_bonus_shard"				"50"
+			}
 		}	
 	}
 	"dawnbreaker_celestial_hammer"
@@ -126,7 +134,6 @@ DOTAAbilities
 			"pause_duration"						
 			{
 				"value"						"2"
-				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"+2"
 			}
 			"hammer_aoe_radius"						"200"
 			"travel_speed_pct"						"100"
@@ -139,15 +146,14 @@ DOTAAbilities
 			"hammer_solar_guardian_radius"			
 			{
 				"value"											"0"
-				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"+250"
 				"affected_by_aoe_increase"	"1"
 
 			}
 			"hammer_solar_guardian_effectiveness_pct"
 			{
 				"value"											"0"
-				"special_bonus_facet_dawnbreaker_gleaming_hammer"			"=50 =45 =40 =35 =30 =25 =20"
 			}
+			"targets_allies"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -161,7 +167,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 
 
@@ -173,16 +179,11 @@ DOTAAbilities
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"375"
-		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.25"
 		"AbilityManaCost"				"0"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-								
-		}
 	}	
 	"dawnbreaker_luminosity"
 	{
@@ -198,7 +199,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 
 		// Special
@@ -219,24 +220,23 @@ DOTAAbilities
 			{
 				"value"			"125 150 175 200 250 275 325"
 				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_crit"
+				"special_bonus_unique_dawnbreaker_luminosity_crit"				"+25"
 			}	
 			"proc_cooldown"				"0.00"
 			"allied_healing_pct"		"50"		
 			"cooldown_reduction"		
 			{
 				"value"									"0"
-				"special_bonus_facet_dawnbreaker_solar_charged"		"0.8"				
 			}
 			"attackspeed_bonus_max"
 			{
 				"value"					"0"
-				"special_bonus_facet_dawnbreaker_solar_battery"		"+50"					
 			}
 			"movespeed_bonus_max"
 			{
 				"value"					"0"
-				"special_bonus_facet_dawnbreaker_solar_battery"		"+20"					
 			}
+			"triggered_by_celestial_hammer"				"0"
 		}
 	}
 	"dawnbreaker_solar_guardian"
@@ -258,7 +258,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastPoint"				"0.1"
 		"AbilityChannelTime"			"1.7"
 
 		// Time		
@@ -282,6 +282,7 @@ DOTAAbilities
 			{
 				"value"	"500"
 				"LinkedSpecialBonus"	"special_bonus_unique_dawnbreaker_solar_guardian_radius"
+				"special_bonus_unique_dawnbreaker_solar_guardian_radius"				"+150"
 			}
 			"base_damage"
 			{
@@ -317,6 +318,16 @@ DOTAAbilities
 				"RequiresScepter"			"1"
 			}
 			"airtime_scepter_movement_speed"				"200"
+			"AbilityCooldown"
+			{
+				"value"				"110 107 103 100 97 93 90"
+				"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"				"-20"
+			}
+			"scepter_aura_duration"
+			{
+				"special_bonus_scepter"				"2"
+			}
+			"daytime_duration"				"6"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		//"AbilityChannelAnimation"	"ACT_DOTA_CAST_ABILITY_4"
@@ -338,7 +349,7 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
         "MaxLevel"                      "1"
         "Innate"                        "1"
         "AbilityValues"
@@ -348,6 +359,26 @@ DOTAAbilities
                 "reveal_linger"             "1"
                 "reveal_radius"             "20000"
                 "conceal_duration"          "1"
+        	"day_threshold"				"0.006"
+        	"max_dmg_pct"
+        	{
+        		"value"				"8"
+        		"hero_levelup"				"+1"
+        	}
+        	"max_vision_pct"				"20"
+        	"current_dmg_tooltip"
+        	{
+        		"dynamic_value"				"true"
+        	}
+        	"current_vision_tooltip"
+        	{
+        		"dynamic_value"				"true"
+        	}
+        	"heal_amp"
+        	{
+        		"value"				"0"
+        		"special_bonus_scepter"				"1"
+        	}
         }
     }
     "dawnbreaker_unbreakable"

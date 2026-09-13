@@ -3,6 +3,7 @@
 	"npc_dota_hero_leshrac"
 	{
 		"override_hero"		"npc_dota_hero_leshrac"
+		"Ability7"      "generic_hidden"
 		"Ability1"      "leshrac_split_earth"
         "Ability2"      "leshrac_diabolic_edict"
         "Ability3"      "leshrac_lightning_storm"
@@ -18,29 +19,7 @@
         "Ability16"     "special_bonus_unique_leshrac_pulse_nova_lightning"
         "Ability17"     "special_bonus_unique_leshrac_1"
 
-        "Facets"
-        {
-            "leshrac_attacks_mana" 
-            {
-                "Icon"              "mana"
-                "Color"             "Blue"
-                "GradientID"        "1"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "leshrac_chronoptic_nourishment"
-                    }
-                }
-            }
-            "leshrac_misanthropy" 
-            {
-                "Icon"              "nuke"
-                "Color"             "Purple"
-                "GradientID"        "0"
-            }
-        }
         
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

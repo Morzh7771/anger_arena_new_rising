@@ -17,8 +17,8 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000 1100 1200 1300"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"1000 1100 1200 1300 1400 1500 1600"
+		"AbilityCastPoint"				"0.3"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -36,7 +36,6 @@ DOTAAbilities
 				"placement_count"		
 				{
 					"value"				"8"
-					"special_bonus_facet_dark_willow_thorny_thicket"	"+4"
 				}
 				"placement_duration"		"15"
 				"extra_brambles_placement_duration"		"4.0"
@@ -50,7 +49,6 @@ DOTAAbilities
 				"spell_amp"
 				{
 					"value"					"0"
-					"special_bonus_facet_dark_willow_thorny_thicket"	"0"				
 				}
 				"latch_creation_interval"		"0.075"
 				"latch_creation_delay"		"0.1"
@@ -69,7 +67,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"dark_willow_bedlam"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -98,6 +96,7 @@ DOTAAbilities
 			{
 				"value"						"100 175 250 320 400 475 550"
 				"LinkedSpecialBonus"		"special_bonus_unique_dark_willow_4"
+				"special_bonus_unique_dark_willow_4"				"+30"
 			}
 			"attack_interval"		"0.25"
 			"attack_radius"			
@@ -112,7 +111,11 @@ DOTAAbilities
 				"affected_by_aoe_increase"	"1"		
 			}
 			"roaming_seconds_per_rotation"				"1.5"
-			"roaming_duration"		"5.0"
+			"roaming_duration"
+			{
+				"value"				"5.0"
+				"special_bonus_unique_dark_willow_6"				"+1.0"
+			}
 			"pierces_magic_immunity"
 			{
 				"value"		"0"
@@ -124,6 +127,8 @@ DOTAAbilities
 				"special_bonus_unique_dark_willow_bedlam_targets" "+2"	
 			}
 			"travel_speed"		"1800"
+			"unit_targetable"				"0"
+			"damage_reduction_pct"				"0"
 		}
 	}
 	"dark_willow_terrorize"
@@ -166,6 +171,15 @@ DOTAAbilities
 				"return_travel_speed"	"600"
 				"starting_height"		"300"
 				"telegraph_to_enemies"		"0"
+			"AbilityCooldown"
+			{
+				"value"				"100 97 93 90 87 83 80"
+				"special_bonus_unique_dark_willow_7"				"-20"
+			}
+			"impact_damage"
+			{
+				"special_bonus_unique_dark_willow_2"				"+500"
+			}
 		}
 	}
 	"dark_willow_shadow_realm"
@@ -218,18 +232,15 @@ DOTAAbilities
 			"aura_radius"
 			{
 				"value"					"0"
-				"special_bonus_facet_dark_willow_throwing_shade"			"=600"
 				"affected_by_aoe_increase"	"1"
 			}
 			"aura_linger"
 			{
 				"value"					"0"
-				"special_bonus_facet_dark_willow_throwing_shade"			"=0.75"
 			}
 			"aura_damage_pct"
 			{
 				"value"					"0"
-				"special_bonus_facet_dark_willow_throwing_shade"			"=30"
 			}
 		}
 	}
@@ -291,6 +302,13 @@ DOTAAbilities
 					"value"	"175"
 					"RequiresShard"					"1"
 				}	
+			"accumulated_damage_pct"				"0"
+			"accumulated_damage_pct_ally"				"0"
+			"AbilityCooldown"
+			{
+				"value"				"17 16 15 14 13 12 11"
+				"special_bonus_shard"				"-1.5"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -308,6 +326,9 @@ DOTAAbilities
 		{
 			"hp_regen"			"100"
 			"mana_regen_amp"	"100"
+			"hp_regen_amp"				"20"
+			"hp_regen_amp_out_of_world"				"100"
+			"mana_regen_amp_out_of_world"				"100"
 		}
 	}
 }

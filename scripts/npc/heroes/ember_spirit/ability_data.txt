@@ -49,13 +49,11 @@ DOTAAbilities
 			"unit_count"
 			{
 				"value"					"3"
-				"special_bonus_facet_ember_spirit_chain_gang"               "+1"
 			}		
 			"remnant_chains"                    
             {
             
                 "value"                     "0"
-                "special_bonus_facet_ember_spirit_chain_gang"                       "=1"
             }
 			"damage_pct"				"20"
 		}
@@ -121,12 +119,10 @@ DOTAAbilities
             "min_enemies_for_double_sleight"
             {
                 "value"                                     "0"
-                "special_bonus_facet_ember_spirit_double_impact"            "=2"
             }
             "second_attack_damage_penalty"
             {
                 "value"                 "0"
-                "special_bonus_facet_ember_spirit_double_impact"            "=50"
             }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -185,6 +181,7 @@ DOTAAbilities
 			"damage_pct"			"20"
 			"blind_pct"				"50"
 			"shield_pct_absorb"		"70"
+			"linger_duration"				"0.5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -297,6 +294,11 @@ DOTAAbilities
                 "RequiresShard"             "1"
                 "affected_by_aoe_increase"  "1"
             }
+			"apply_immolation_to_remnant"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1"
+			}
 		}
 	}
 	"ember_spirit_activate_fire_remnant"
@@ -307,7 +309,6 @@ DOTAAbilities
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityType"					"ABILITY_TYPE_BASIC"
-		"MaxLevel"						"7"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"

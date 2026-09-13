@@ -13,7 +13,7 @@ function OnTakeDamage( keys )
 
 	ability.attacks = ability.attacks + 1
 
-	print("DAMAGE ATTACK!")
+	-- отладочный print убран: горячий путь (каждый удар/лечение)
 
 	if ability.attacks >= ability:GetSpecialValueFor("attack_count") then
 		keys.caster:RemoveModifierByName("modifier_boss_stoneform_regen")

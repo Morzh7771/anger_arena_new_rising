@@ -1,0 +1,50 @@
+"DOTAUnits"
+{
+	"npc_dota_largo_frogling"
+	{
+		"BaseClass"					"npc_dota_largo_frogling"
+		"Model"						"models/heroes/bard/bard_frogling.vmdl"
+		"SoundSet"					"0"
+		"Level"						"1"
+		"ModelScale"				"1.0"
+
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		"ArmorPhysical"				"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.0"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		"RingRadius"				"80"
+		"HealthBarOffset"			"200"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+		"BountyXP"					"10"
+		"BountyGoldMin"				"10"
+		"BountyGoldMax"				"10"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"1.0"
+		"FollowRange"				"-100"
+
+		"StatusHealth"				"100"
+		"StatusHealthRegen"			"0.0"
+
+		"VisionDaytimeRange"		"200"
+		"VisionNighttimeRange"		"200"
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+}

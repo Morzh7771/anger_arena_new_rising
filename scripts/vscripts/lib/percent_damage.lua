@@ -121,6 +121,11 @@ function PercentDamage:_init()
 		"techies_sticky_bomb",
 		"invoker_sun_strike",
 		"invoker_chaos_meteor",
+		"invoker_cold_snap",
+		"invoker_tornado",
+		"invoker_emp",
+		"invoker_ice_wall",
+		"invoker_deafening_blast",
 		"shadow_shaman_ether_shock",
 		"zuus_heavenly_jump",
 		"zuus_lightning_bolt",
@@ -199,7 +204,8 @@ function PercentDamage:_init()
 		"lina_light_strike_array",
 		"lina_laguna_blade",
 		"magnataur_shockwave",
-		"abaddon_frostmourne"
+		"abaddon_frostmourne",
+		"wisp_spirits"
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
@@ -307,7 +313,6 @@ function axe_counter_helix(keys)
 	if not ability then return end
 	
 	local percent_damage = ability:GetSpecialValueFor("damage_pct")
-	print(caster:GetPhysicalArmorValue(false))
 	return (percent_damage * caster:GetPhysicalArmorValue(false))
 end
 function axe_culling_blade(keys)
@@ -319,7 +324,6 @@ function axe_culling_blade(keys)
 	if not ability then return end
 	
 	local percent_damage = ability:GetSpecialValueFor("damage_pct")
-	print(caster:GetPhysicalArmorValue(false))
 	return (percent_damage * caster:GetPhysicalArmorValue(false))
 end
 function DamageFromAll(keys)
@@ -343,9 +347,8 @@ function DamageFromAgi(keys)
 	if not ability then return end
 	
 	local percent_damage = ability:GetSpecialValueFor("damage_pct") / 100
-	print(percent_damage * caster:GetAgility())
 	return percent_damage * caster:GetAgility()
-end 
+end
 
 function DamageFromStr(keys)
 	local ability 			= keys.ability
@@ -386,17 +389,13 @@ function Radiance( keys )
 	
 	local pct 				= ability:GetSpecialValueFor("aura_damage_stats")
 
-	print("radiance damage 1")
-
 	if not ability or not caster or not target or not damage or not pct then return end
 
 	if not caster:IsRealHero() and not caster:IsIllusion() then
 		caster = caster:GetPlayerOwner()
 		if not IsValidEntity(caster) then return end
-		caster = caster:GetAssignedHero() 
+		caster = caster:GetAssignedHero()
 	end
-
-	print("radiance damage 2")
 
 	Util:DealDamageFromStats(target, caster, DAMAGE_TYPE_MAGICAL, pct, pct, pct, false)
 end
@@ -436,7 +435,14 @@ function PudgeRot(keys)
 	
 	local damage = percent_damage * caster:GetPrimaryStatValue() 
 
-	--if caster == target then return end
+	-- Rot бьёт и по самому Пуджу: урон от силы по себе оставляем, но убивать он не должен.
+	-- Одного NON_LETHAL мало, поэтому ещё и режем урон так, чтобы всегда оставалось минимум 1 HP.
+	if caster == target then
+		local max_self_damage = caster:GetHealth() - 1
+
+		if max_self_damage <= 0 then return end
+		if damage > max_self_damage then damage = max_self_damage end
+	end
 
 	ApplyDamage({ 	victim = target,
 					attacker = caster,

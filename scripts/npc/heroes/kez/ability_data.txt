@@ -6,7 +6,7 @@ DOTAAbilities
 	"kez_switch_weapons"
 	{
 		"BaseClass"					"kez_switch_weapons"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE"
 		"Innate" 						"1"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"kez_switch_weapons_sai"
@@ -28,6 +28,30 @@ DOTAAbilities
 			"sai_base_attack_time"								"1.5"
 			"cooldown_reduction_per_level"						"0.2"
 			"scepter_cooldown_timer"							"3"
+			"katana_base_ms"				"0"
+			"katana_agility_bonus_base_damage"
+			{
+				"value"				"12"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+				"CalculateSpellDamageTooltip"				"0"
+			}
+			"katana_swap_bonus_damage"
+			{
+				"value"				"12"
+				"special_bonus_unique_kez_switch_weapons_swap_bonus"				"+6"
+			}
+			"sai_base_ms"				"0"
+			"sai_swap_bonus_movement_speed"
+			{
+				"value"				"12"
+				"special_bonus_unique_kez_switch_weapons_swap_bonus"				"+6"
+			}
+			"sai_swap_duration"				"2"
+			"AbilityCooldown"
+			{
+				"value"				"8"
+				"hero_levelup"				"-0.25"
+			}
 		}
 	}
 
@@ -147,8 +171,9 @@ DOTAAbilities
 			"lifesteal_pct"					"100"
 			"creep_lifesteal_reduction_pct"				"40"
 			"katana_ms_slow_pct"			"80"		
+			"max_distance_break"				"2000"
+			"debuff_duration"				"0.7 0.8 0.9 1 1.1 1.2 1.3"
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
 	//=================================================================================================================
@@ -160,12 +185,12 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"kez_kazurai_katana"
 		"MaxLevel"						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC" 
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"LinkedAbility"					"kez_shodo_sai"
 		"HasShardUpgrade"				"1"
@@ -182,41 +207,50 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"katana_attack_range"							"225"
-			"katana_base_attack_time"						"2.0"
-			"katana_bonus_damage"							"20"
 			"katana_bleed_duration"							"5.0 5.5 6.0 6.5 7.0 7.5 8.0"
 			"katana_bleed_attack_damage_pct"						
 			{
-				"value" 														"1 1.25 1.5 1.75 2 2.25 2.5"   
+				"value" 														"3 6 9 12 15 18 21"   
 				"DamageTypeTooltip"												"DAMAGE_TYPE_PHYSICAL"	
-				"special_bonus_unique_kez_kazura_katana_bleed_damage"			"+1.5"
+				"special_bonus_unique_kez_kazura_katana_bleed_damage"			"+4.0"
 			}	
-			"heal_reduction_pct"												"10 12.5 15 17.5 20 22.5 25"
 	
+			// Active impale (base ability since the katana rework)
+			"AbilityCooldown"				"24 21 18 15 12 9 6"
+			"AbilityManaCost"				"40"
+
 			// Shard
-			"AbilityCooldown"				
-			{
-				"value"						"0"
-				"special_bonus_shard"		"5"
-			}
-			"AbilityManaCost"				
-			{
-				"value"						"0"
-				"special_bonus_shard"		"50"
-			}
-			"stun_duration"					
+			"stun_duration"
 			{
 				"value"						"0"
 				"special_bonus_shard"		"0.6"
-				"RequiresShard"				"1"
 			}
 			"bleed_as_rupture_pct"			
 			{
 				"value"						"0"
 				"special_bonus_shard"		"100"
-				"RequiresShard"				"1"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
+			}
+			"impale_duration"				"0.5"
+			"lifesteal_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+100"
+			}
+			"creep_lifesteal_reduction_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+40"
+			}
+			"max_stacks"
+			{
+				"value"				"500"
+				"special_bonus_shard"				"+500"
+			}
+			"backstab_angle"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+105"
 			}
 		}
 	}
@@ -264,7 +298,11 @@ DOTAAbilities
 			}
 			
 			"strike_interval"										"0.25"
-			"strikes"												"2 2 3 3 4 4 5"
+			"strikes"
+			{
+				"value"				"2 2 3 3 4 4 5"
+				"special_bonus_unique_kez_raptor_dance_strikes"				"+1"
+			}
 			"radius"						
 			{
 				"value"												"450"
@@ -284,6 +322,9 @@ DOTAAbilities
 			"lifesteal_pct"		"100"
 			"magic_resist"		"100"
 			"hard_dispel"		"1"
+			"illusion_lifesteal_pct"				"20"
+			"invuln_period"				"0.2"
+			"basic_dispel"				"1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 	}
@@ -353,6 +394,15 @@ DOTAAbilities
 				"value"					"100"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_PHYSICAL"
 			}
+			"base_echo_damage"
+			{
+				"value"				"30 35 40 45 50 55 60"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+			}
+			"slow_resist"				"15 30 45 60 75 90 105"
+			"break_range"				"825"
+			"bonus_attack_speed"		"0"
+			"echo_proc_chance_reduction"				"50"
 		}
 	}
 
@@ -403,6 +453,7 @@ DOTAAbilities
 			}
 			"speed"						"2000"
 			"silence_duration"			"1 1.25 1.5 1.75 2.0 2.25 2.5"
+			"attack_factor"				"0"
 		}
 	}
 
@@ -431,7 +482,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"30 25 20 15 10 5 0"
+		"AbilityManaCost"				"30 26 22 18 14 10 6"
 		"AbilityCooldown"				"20 17 15 12 10 7 5"
 
 		// Special
@@ -468,6 +519,11 @@ DOTAAbilities
 			"parry_duration"										"2.0"
 			"parry_bonus_crit"										"25 37 50 67 75 83 100"
 			"parry_stun_duration"									"0.5"
+			"parry_bonus_stun_duration"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+0.2"
+			}
 		}
 	}
 
@@ -537,8 +593,30 @@ DOTAAbilities
 			"basic_dispel"											"1"										
 			"fade_delay"											"0.0"
 			"apply_parry_bonus"										"1"
+			"slow"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+
+	//=================================================================================================================
+	// Kez: Shadowhawk Passive
+	//=================================================================================================================
+	"kez_shadowhawk_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"kez_shadowhawk_passive"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"7"
+		"DependentOnAbility"			"kez_ravens_veil"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"invis_bonus_duration"				"1"
+			"invis_bonus_crit"					"30 45 60 75 90 105 120"
+		}
 	}
 }

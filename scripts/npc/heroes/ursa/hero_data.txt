@@ -10,7 +10,7 @@
         "Ability5"      "generic_hidden"
         "Ability6"      "ursa_enrage"
         "Ability10"     "special_bonus_unique_ursa_4"
-        "Ability11"     "special_bonus_mp_regen_175"
+        "Ability11"     "special_bonus_unique_ursa_maul_health"
         "Ability12"     "special_bonus_unique_ursa"
         "Ability13"     "special_bonus_unique_ursa_7"
         "Ability14"     "special_bonus_unique_ursa_2"
@@ -18,30 +18,7 @@
         "Ability16"     "special_bonus_unique_ursa_3"
         "Ability17"     "special_bonus_unique_ursa_8"
 
-        "Facets"
-        {
-            "ursa_grudge_bearer" 
-            {
-                "Icon"              "damage"
-                "Color"             "Red"
-                "GradientID"        "0"
-            }
-            
-            "ursa_debuff_reduce"
-            {
-                "Icon"              "cooldown"
-                "Color"             "Blue"
-                "GradientID"        "0"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "ursa_bear_down"
-                    }
-                }
-            }
-        }
 
 		"AbilityDraftAbilities"
 		{

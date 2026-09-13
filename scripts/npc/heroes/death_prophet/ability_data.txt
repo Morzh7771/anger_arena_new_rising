@@ -47,8 +47,8 @@ DOTAAbilities
 				"value"			"300"
 				"affected_by_aoe_increase"	"1"
 			}
-			"range"						"810 810 810 810"
-			"speed"						"1100 1100 1100 1100"
+			"range"						"810"
+			"speed"						"1100"
 			"slow_percent"
 			{
 				"value"				"0"
@@ -122,9 +122,8 @@ DOTAAbilities
 
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"death_prophet_witchcraft"
-		"MaxLevel"		"8"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
-        "MaxLevel"                      "1"
+		"MaxLevel"		"1"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "Innate"                        "1"
         "IsBreakable"                   "1"
         // Special
@@ -141,6 +140,15 @@ DOTAAbilities
                 "value"             "0.40"
                 "hero_levelup"      "+0.40"
             }
+        	"movement_speed_pct"
+        	{
+        		"value"				"0.5"
+        		"hero_levelup"				"+0.75"
+        	}
+        	"cooldown_reduction_pct"
+        	{
+        		"hero_levelup"				"+0.75"
+        	}
         }
 	}
 	"death_prophet_spirit_siphon"
@@ -193,6 +201,18 @@ DOTAAbilities
 				"value"					"25"
 				"special_bonus_unique_death_prophet_5" "-5"
 			}
+			"shard_bonus_charges"
+			{
+				"special_bonus_shard"				"1"
+			}
+			"shard_fear_duration"
+			{
+				"special_bonus_shard"				"1.0"
+			}
+			"shard_consecutive_siphon_duration"
+			{
+				"special_bonus_shard"				"3"
+			}
 		}
 	}
 	"death_prophet_exorcism"
@@ -212,7 +232,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -222,7 +242,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 300 400 500 600 700"
+		"AbilityManaCost"				"200 300 400 500 600 700 800"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -230,7 +250,7 @@ DOTAAbilities
 		{
 			"radius"				
 			{
-				"value"	"700 700 700"
+				"value"	"700"
 				"affected_by_aoe_increase"	"1"
 			}
 			"spirits"				
@@ -246,12 +266,10 @@ DOTAAbilities
 			"hero_spirit_min_damage"
 			{
 				"value"										"0"
-				"special_bonus_facet_death_prophet_ghosts"	"=84 =92 =100 =108 =116 =124 =132"
 			}
 			"hero_spirit_max_damage"
 			{
 				"value"										"0"
-				"special_bonus_facet_death_prophet_ghosts"	"=90 =98 =106 =114 =122 =130 =138"
 			}
 			"heal_percent"			"25"
 			"average_damage"		"77"
@@ -279,6 +297,7 @@ DOTAAbilities
 			}	
 			"movement_bonus"				"8 10 12 14 16 18 20"
 			"damage_pct"			"20"
+			"duration_increase_per_kill"				"0"
 		}
 	}
 	"special_bonus_unique_death_prophet"
@@ -390,7 +409,7 @@ DOTAAbilities
 
         "AbilityValues"
         {
-            "delay_pct"                 "15 20 25 30 35 40 45"
+            "delay_pct"                 "15 20 25 30"
             "delay_time"                "3"
             "damage_interval"           "1"
         }

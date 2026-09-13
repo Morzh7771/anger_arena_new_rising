@@ -51,7 +51,11 @@ DOTAAbilities
 				"special_bonus_unique_batrider_7"	"+75"
 			}
 			"duration" 			"6"
-			"movement_speed_pct"		"-1.5 -2.25 -3.0 -3.75 -4.5 -5.25 -6.0"			
+			"movement_speed_pct"
+			{
+				"value"				"-1.5 -2.25 -3.0 -3.75 -4.5 -5.25 -6.0"
+				"special_bonus_unique_batrider_7"				"-0.75"
+			}
 			"turn_rate_pct"			"-10 -20 -30 -40 -50 -60 -70"
 			"max_stacks"			"4"
 			"creep_damage_pct"			"30"
@@ -64,12 +68,10 @@ DOTAAbilities
 			"is_passive"
 			{
 				"value"						"0"
-				"special_bonus_facet_1"	"0"
 			}
 			"base_applications_every_attack"
 			{
 				"value"						"0"
-				"special_bonus_facet_1"	"0"				
 			}
 			"bonus_applications_every_other_attack"
 			{
@@ -84,8 +86,21 @@ DOTAAbilities
 			"building_damage_pct"
 			{
 				"value"					"0"
-				"special_bonus_facet_batrider_arsonist"			"+35"
 			}
+			"max_level"				"7"
+			"max_level_tooltip"		"7"
+			"stacks_per_cast"				"2"
+			"unlimited_stacks"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"1"
+			}
+			"napalm_stacks_on_attack"
+			{
+				"value"				"0"
+				"special_bonus_unique_batrider_6"				"+1"
+			}
+			"napalm_stacks_on_attack_tooltip"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -127,14 +142,14 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"8"
+		"MaxLevel"						"7"
 		"DependentOnAbility"			"batrider_flaming_lasso"
 
 		"AbilityValues"
 		{
 			"duration"					"7.0"
-			"movement_speed_pct"		"4 6 8 10 12 14 16 18"
-			"spell_amplification"		"2 4 6 8 10 12 14 16"
+			"movement_speed_pct"		"4 6 8 10 12 14 16"
+			"spell_amplification"		"2 4 6 8 10 12 14"
 		}
 
 	}
@@ -154,7 +169,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1300"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -193,15 +208,15 @@ DOTAAbilities
 				"CalculateSpellDamageTooltip" "0"
 			}
 			"explosion_radius"		"550"
-			"collision_radius"		"100 100 100 100 100 100 100"
-			"stun_duration"			"0.5 0.5 0.5 0.5 0.5 0.5 0.5"
+			"collision_radius"		"100"
+			"stun_duration"			"0.5"
 			"speed"					"1500"
 			"knockback_distance"	
 			{
 				"value"				"250"
 				"special_bonus_unique_batrider_3"	"+50"
 			}
-			"knockback_height"		"100 100 100 100 100 100 100"
+			"knockback_height"		"100"
 			"knockback_duration"	"0.35"
 			"napalm_stacks"
 			{
@@ -215,6 +230,11 @@ DOTAAbilities
 			}
 			"slow"	"10 13 16 19 22 25 27"			
 						
+			"AbilityCooldown"
+			{
+				"value"				"22 20 19 18 16 14 13"
+				"special_bonus_unique_batrider_5"				"-6"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -233,7 +253,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -252,6 +272,7 @@ DOTAAbilities
 			{
 				"value"			"30 60 90 120 150 180 210"
 				"CalculateSpellDamageTooltip" "1"
+				"special_bonus_unique_batrider_4"				"+30"
 			}
 			"radius"				"225"
 			"duration"				
@@ -262,6 +283,11 @@ DOTAAbilities
 			"tick_interval"			"0.5"
 			"tree_radius"			"150"
 			"bonus_slow_resistance"		"0"
+			"movement_speed_pct_total"
+			{
+				"value"				"12 18 24 30 36 42 48"
+				"special_bonus_unique_batrider_3"				"+5"
+			}
 		}
 	}
 	"batrider_flaming_lasso"
@@ -302,7 +328,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"				"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
-			"drag_distance"			"300 300 300 300 300 300 300"
+			"drag_distance"			"300"
 			"break_distance"		"425"
 			"damage"
 			{

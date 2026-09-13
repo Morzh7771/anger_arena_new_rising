@@ -20,6 +20,7 @@ function DamagePerTimerate(caster, parent, dmgToDeal, tickrate, Ability)
 			ApplyDamage(damage)
 			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_batrider/batrider_firefly_startflash.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 			ParticleManager:SetParticleControlEnt(part, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
+			ParticleManager:ReleaseParticleIndex(part)
 			if not parent:IsAlive() then return nil end
 			return tickrate
 		end

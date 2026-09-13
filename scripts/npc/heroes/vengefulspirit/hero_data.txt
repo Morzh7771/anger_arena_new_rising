@@ -18,34 +18,7 @@
         "Ability16"     "special_bonus_unique_vengeful_spirit_2"
         "Ability17"     "special_bonus_unique_vengeful_spirit_9"
 
-        "Facets"
-        {
-            "vengefulspirit_avenging_missile" 
-            {
-                "Icon"              "nuke"
-                "Color"             "Purple"
-                "GradientID"        "2"
-            }
 
-            "vvengefulspirit_melee"
-            {
-                "Icon"              "fist"
-                "Color"             "Blue"
-                "GradientID"        "1"
-
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "vengefulspirit_soul_strike"
-                    }
-                }
-                "KeyValueOverrides"
-                {
-                    "AttackRate"        "1.5"
-                }
-            }
-        }
         
 		"AbilityDraftIgnoreCount"		"6"
 

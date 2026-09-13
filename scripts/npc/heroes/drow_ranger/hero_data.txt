@@ -11,36 +11,14 @@
         "Ability6"      "drow_ranger_marksmanship"
 		"Ability10"     "special_bonus_unique_drow_ranger_7"
         "Ability11"     "special_bonus_unique_drow_ranger_2"
-        "Ability12"     "special_bonus_unique_drow_ranger_gust_invis"
+        "Ability12"     "special_bonus_attack_range_75"
         "Ability13"     "special_bonus_unique_drow_ranger_6"
         "Ability14"     "special_bonus_unique_drow_ranger_1"
         "Ability15"     "special_bonus_unique_drow_ranger_gust_selfmovespeed"
         "Ability16"     "special_bonus_unique_drow_ranger_3"
         "Ability17"     "special_bonus_unique_drow_ranger_8"
 
-        "Facets"
-        {
-            "drow_ranger_high_ground"
-            {
-                "Icon"              "damage"
-                "Color"             "Gray"
-                "GradientID"        "1"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "drow_ranger_vantage_point"
-                    }
-                }
-            }
-            "drow_ranger_sidestep" 
-            {
-                "Icon"              "multi_arrow"
-                "Color"             "Blue"
-                "GradientID"        "1"
-            }
-        }
 		
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -76,7 +54,6 @@
 				"particles/units/heroes/hero_drow/drow_loadout.vpcf"		"loadout"
 			}
 		}
-		"HasAggressiveStance"		"1"
 		"AttackSpeedActivityModifiers"		
 		{
 			"fast"		"150"
@@ -125,7 +102,6 @@
 				//"item_mask_of_madness"		"ITEM_DERIVED | ITEM_SELLABLE"
 
 				"item_blade_of_alacrity"	"ITEM_CORE"
-				"item_boots_of_elves"		"ITEM_EXTENSION"
 				"item_recipe_yasha"			"ITEM_EXTENSION"
 				"item_yasha"				"ITEM_DERIVED"
 

@@ -2,6 +2,7 @@ LinkLuaModifier("modifier_item_falcon_blade_custom", "items/item_falcon_blade_cu
 LinkLuaModifier("modifier_item_falcon_blade_custom_active", "items/item_falcon_blade_custom", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 item_falcon_blade_custom = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/falcon_blade_charge.vpcf", context)
         PrecacheResource("particle", "particles/items_fx/force_staff.vpcf", context)
@@ -29,6 +30,15 @@ item_falcon_blade_custom = class({
 
     end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_falcon_blade_custom:Precache(context)
+	PrecacheResource("particle", "particles/falcon_blade_charge.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/force_staff.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_forcestaff.vpcf", context)
+end
 
 modifier_item_falcon_blade_custom_active = class({
     IsDebuff = function (self) return false end,

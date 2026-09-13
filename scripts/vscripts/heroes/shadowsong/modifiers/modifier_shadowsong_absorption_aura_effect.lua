@@ -32,9 +32,10 @@ function mod:OnDestroy( kv )
 	end
 end
 
-function mod:DeclareFunctions() return 
+function mod:DeclareFunctions() return
 {
 	MODIFIER_EVENT_ON_DEATH,
+	MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 }
 end
 
@@ -90,4 +91,15 @@ end
 
 function mod:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
+end
+
+function mod:GetModifierMoveSpeedBonus_Percentage()
+	local ability = self:GetAbility()
+	if not ability then return 0 end
+
+	local shard_slow = ability:GetSpecialValueFor("shard_slow_pct")
+	if shard_slow <= 0 then return 0 end
+
+	-- Враги замедляются (отрицательное значение скорости)
+	return -shard_slow
 end

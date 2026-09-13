@@ -2,6 +2,7 @@
 {
 	"charon_soul_drain"
 	{
+		"ID"					"15216"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -80,6 +81,7 @@
 
 	"charon_last_word"
 	{
+		"ID"					"15215"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_HERO"
@@ -125,6 +127,7 @@
 
 	"charon_overload"
 	{
+		"ID"					"15214"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -180,6 +183,7 @@
 	}
 	"charon_collapse"
 	{
+		"ID"					"15213"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityType"			        "ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -257,6 +261,7 @@
 	}
 	"charon_soul_drain_cast_time_fast_bonus_const_tallent"
 	{
+		"ID"					"15212"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -268,6 +273,7 @@
 
 	"charon_last_word_bonus_slow_per_mana_tallent"
 	{
+		"ID"					"15211"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -282,6 +288,7 @@
 
 	"charon_overload_manacost_reduction_percent_tallent"
 	{
+		"ID"					"15210"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -296,6 +303,7 @@
 
 	"charon_collapse_bonus_duration_tallent"
 	{
+		"ID"					"15209"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -310,6 +318,7 @@
 
 	"charon_collapse_bonus_radius_tallent"
 	{
+		"ID"					"15208"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -319,6 +328,41 @@
 		"AbilityValues"
 		{
 			"value"				       "250"
+		}
+	}
+
+	"charon_bottomless_vessel"
+	{
+		"ID"					"15207"
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/charon/charon_bottomless_vessel"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityType"				"ABILITY_TYPE_PASSIVE"
+		"MaxLevel"					"1"
+		"Innate"					"1"
+		"IsBreakable"				"1"
+		"AbilityTextureName"		"custom/charon/charon_overload"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"spell_amp_per_mana"
+			{
+				"value"				"0.02"
+			}
+			"mana_step"
+			{
+				"value"				"100"
+			}
+			"max_bonus_regen"
+			{
+				"value"				"8"
+			}
+			"check_interval"
+			{
+				"value"				"0.25"
+			}
 		}
 	}
 }

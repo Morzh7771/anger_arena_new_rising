@@ -32,6 +32,7 @@ function DuelDoors:MakeParticles()
 
 	local particle = ParticleManager:CreateParticle("particles/econ/events/fall_major_2015/teleport_start_fallmjr_2015_dust.vpcf", PATTACH_CUSTOMORIGIN, door)
 	ParticleManager:SetParticleControlEnt(particle, 0, door, PATTACH_CUSTOMORIGIN, "start_at_customorigin", pos, false)
+	ParticleManager:ReleaseParticleIndex(particle)
 	door:EmitSound("BARNDOORS_OPEN")
 end
 

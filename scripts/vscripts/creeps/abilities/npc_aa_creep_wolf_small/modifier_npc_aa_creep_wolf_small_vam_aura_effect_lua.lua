@@ -38,6 +38,7 @@ function mod:OnAttackLanded(params)
         params.attacker:Heal(steal, self)
         local particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_OVERHEAD_FOLLOW, params.attacker)
         ParticleManager:SetParticleControl(particle, 0, params.attacker:GetAbsOrigin())
+        ParticleManager:ReleaseParticleIndex(particle)
         SendOverheadEventMessage(params.unit, OVERHEAD_ALERT_HEAL, params.attacker, steal, nil)
     end
 end

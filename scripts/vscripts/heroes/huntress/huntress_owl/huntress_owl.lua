@@ -1,4 +1,14 @@
 huntress_owl = huntress_owl or class({})
+
+-- Юнит совы создаётся из lua через CreateUnitByName, движок сам его не грузит:
+-- в Precache() карты юнит не входит (там только то, что стоит на карте с первой
+-- секунды), и без этого вместо птицы была error-модель. Метод зовётся движком
+-- при прекеше самой Хантресс - на пике и на репике, - так что остальных героев
+-- это не грузит.
+function huntress_owl:Precache(context)
+    PrecacheUnitByNameSync("npc_aa_huntess_owl_unit", context)
+end
+
 LinkLuaModifier("huntress_owl_modifier_current_value", "heroes/huntress/huntress_owl/huntress_owl_modifier_current_value", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier("modifier_huntress_owl_unit_vision", "heroes/huntress/huntress_owl/huntress_owl_unit/huntress_owl_unit_vision/modifier_huntress_owl_unit_vision", LUA_MODIFIER_MOTION_NONE)
@@ -6,6 +16,8 @@ LinkLuaModifier("modifier_huntress_owl_unit_vision_effect", "heroes/huntress/hun
 
 LinkLuaModifier("modifier_huntress_owl_aura_true_strike", "heroes/huntress/huntress_owl/huntress_owl_unit/huntress_owl_aura_true_strike/modifier_huntress_owl_aura_true_strike", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_huntress_owl_aura_true_strike_effect_lua", "heroes/huntress/huntress_owl/huntress_owl_unit/huntress_owl_aura_true_strike/modifier_huntress_owl_aura_true_strike_effect_lua", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_huntress_owl_shard_true_sight", "heroes/huntress/huntress_owl/modifier_huntress_owl_shard_true_sight", LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
 function huntress_owl:CreateOwl()
@@ -23,6 +35,12 @@ function huntress_owl:CreateOwl()
         owl:MoveToPosition(position)
         owl:AddNewModifier(self:GetCaster(), self, "modifier_huntress_owl_unit_vision", { duration = -1 })
         owl:AddNewModifier(self:GetCaster(), self, "modifier_huntress_owl_aura_true_strike", { duration = -1 })
+
+        -- Shard upgrade: add true sight aura
+        if self:GetCaster():HasShard() then
+            owl:AddNewModifier(self:GetCaster(), self, "modifier_huntress_owl_shard_true_sight", { duration = -1 })
+        end
+
         return nil
     end)
 

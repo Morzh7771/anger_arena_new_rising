@@ -1,3 +1,20 @@
 DOTAAbilities
 {
+
+	"monkey_king_transfiguration"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES "
+		"AbilityCastAnimation"				"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"				"DEFAULT"
+		"AbilityCastPoint"				"0.3"
+		"DependentOnAbility"				"monkey_king_wukongs_command"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+		"AbilityValues"
+		{
+			"transfiguration_duration"				"1.5"
+			"initial_cooldown"				"1.0"
+		}
+	}
 }

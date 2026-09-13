@@ -15,16 +15,16 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 18 14 10"
-		"AbilityDuration"				"16 16 16 16"
+		"AbilityCooldown"				"22 20 18 16 14 12 10"
+		"AbilityDuration"				"16"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140 150 160 170"
+		"AbilityManaCost"				"140 150 160 170 180 190 200"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -41,11 +41,11 @@ DOTAAbilities
             }
             "attrib_bonus"
             {
-                "value" "0.05 0.1 0.15 0.20"
+                "value" "0.05 0.1 0.15 0.2 0.25 0.3 0.35"
             }
             "hurt_attrib_bonus"
             {
-                "value" "0.2 0.4 0.6 0.8"
+                "value" "0.2 0.4 0.6 0.8 1 1.2 1.4"
             }
             "hurt_percent"
             {
@@ -53,11 +53,11 @@ DOTAAbilities
             }
             "tooltip_attrib_bonus"
             {
-                "value" "6 8 10 12"
+                "value" "6 8 10 12 14 16 18"
             }
             "tooltip_hurt_attrib_bonus"
             {
-                "value" "22 30 38 46"
+                "value" "22 30 38 46 54 62 70"
             }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -135,6 +135,8 @@ DOTAAbilities
 				"RequiresShard"			"1"
 			}
 
+			"min_knockback_distance"				"25"
+			"min_knockback_duration"				"0.4"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -155,15 +157,15 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"450"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0 0"
+		"AbilityManaCost"				"0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -173,13 +175,11 @@ DOTAAbilities
 			{
 				"value"							"3"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
-				"special_bonus_facet_huskar_nothl_conflagration"    "=0"
 			}
 			"max_health_cost"
             {
                 "value"                                             "0"
                 "DamageTypeTooltip"                                 "DAMAGE_TYPE_MAGICAL"
-                "special_bonus_facet_huskar_nothl_conflagration"    "=4"
             }
 			"burn_damage"
 			{
@@ -189,7 +189,6 @@ DOTAAbilities
 			"burn_damage_max_pct"                   
             {
                 "value"                                             "0"
-                "special_bonus_facet_huskar_nothl_conflagration"    "+.75"
             }
 			"duration"                      
             {
@@ -232,6 +231,31 @@ DOTAAbilities
 			}
 			"hp_threshold_max"				"10"
 
+			"activatable"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1"
+			}
+			"activation_healthcost_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+30.0"
+			}
+			"activation_cooldown"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+20.0"
+			}
+			"activation_delay"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+3.0"
+			}
+			"activation_heal_pct_per_debuff"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+3.0"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -256,7 +280,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -265,7 +289,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0"		
+		"AbilityManaCost"				"0"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -296,7 +320,7 @@ DOTAAbilities
 				"CalculateSpellDamageTooltip"		"1"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_MAGICAL"
 			}
-			"movespeed"					"-60 -60 -60"
+			"movespeed"					"-60"
 			"attack_speed"				"60 80 100 120 140 160 180"
 			"AbilityDuration" // Life Break uses AbilityDuration for slow duration
             {
@@ -310,31 +334,34 @@ DOTAAbilities
 			}
 			"taunt_duration"
 			{
-				"value"		"2.0"
-				"RequiresScepter"		"1"
+				"value"					"0.0"
+				"special_bonus_scepter"	"+2.0"
 			}
 			"cast_range_bonus"
 			{
-				"value"		"250"
-				"RequiresScepter"		"1"
+				"value"					"0"
+				"special_bonus_scepter"	"+250"
 			}
 			"splash_radius"
             {
                 "value"                     "0"
-                "special_bonus_facet_huskar_bloodbath"  "=500"
                 "affected_by_aoe_increase"  "1"
-                "RequiresFacet"         "huskar_bloodbath"
             }
             "life_break_heal_radius"
             {
                 "value"                     "0"
-                "special_bonus_facet_huskar_nothl_transfusion"      "=550"
                 "affected_by_aoe_increase"  "1"
             }
             "life_break_heal_pct"
             {
                 "value"                     "0"
             }
+			"AbilityCooldown"
+			{
+				"value"				"16 15 15 14 13 13 12"
+				"special_bonus_unique_huskar_7"				"-5"
+			}
+			"immunity_resist"				"60"
 		}
 	}
 	"special_bonus_unique_huskar"
@@ -355,6 +382,7 @@ DOTAAbilities
     }
     "special_bonus_unique_huskar_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -382,6 +410,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_huskar_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -400,6 +429,7 @@ DOTAAbilities
     }
     "special_bonus_unique_huskar_7"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

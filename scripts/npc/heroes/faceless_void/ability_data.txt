@@ -11,8 +11,6 @@ DOTAAbilities
 		"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
 		"HasScepterUpgrade"			"1"
 
-		"HasShardUpgrade"               "1"
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
@@ -38,7 +36,7 @@ DOTAAbilities
 			"range"					
 			{
 				"value"				"600 650 700 750 800 850 900"
-				"special_bonus_shard"		"+150"
+				"special_bonus_unique_faceless_void_8"				"+125"
 			}
 			"AbilityCooldown"
 			{
@@ -55,8 +53,12 @@ DOTAAbilities
 				"value"								"0"
 				"special_bonus_scepter"				"+400"
 				"affected_by_aoe_increase"			"1"
-				"RequiresScepter"					"1"
 			}
+			"backtrack_time_walk_duration"
+			{
+				"value"				"0"
+			}
+			"dodge_chance_pct"				"100"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -65,12 +67,11 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"faceless_void_time_walk_reverse"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
-		"MaxLevel"						"1"
-		"IsGrantedByShard"				"1"
+		"IsGrantedByScepter"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -117,6 +118,7 @@ DOTAAbilities
                 "value"         "600"
                 "affected_by_aoe_increase"  "1"
             }
+        	"friendly_hero_distance"				"1200"
         }
     }
 	"faceless_void_backtrack"
@@ -145,6 +147,7 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilitySound"					"Hero_FacelessVoid.TimeLockImpact"
+		"IsBreakable"					"1"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -182,6 +185,7 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_FacelessVoid.TimeDilation.Cast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"HasShardUpgrade"				"1"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"28 26 24 22 20 18 16"
 		"AbilityManaCost"				"60 70 80 90 100 110 120"
@@ -202,12 +206,31 @@ DOTAAbilities
 				"value"					"10"
 				"special_bonus_unique_faceless_void_8"					"+10"
 			}			
-			"cooldown_percentage"	"10 15 20 25 30 35"
+			"cooldown_percentage"	"10 15 20 25 30 35 40"
 			"base_damage"			"0"
 			"damage_per_stack"		
 			{
 				"value"				"7 9 11 13 15 17 19"
 				"special_bonus_unique_faceless_void_6" "+6"
+			}
+			"attack_slow_tooltip_only"
+			{
+				"value"				"4 5 6 7 8 9 10"
+				"special_bonus_shard"				"+5"
+			}
+			"self_movespeed_tooltip"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"=9 =10 =11 =12"
+			}
+			"self_attackspeed_tooltip"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"=9 =10 =11 =12"
+			}
+			"self_buff"
+			{
+				"special_bonus_shard"				"+1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -228,7 +251,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -282,7 +305,7 @@ DOTAAbilities
         // Casting
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastRange"              "625"
-        "AbilityCastPoint"              "0.35 0.35 0.35"
+        "AbilityCastPoint"              "0.35"
         "AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_4"
 
         // Time     
@@ -339,6 +362,7 @@ DOTAAbilities
                 "value" "20 25 30 35 40 45 50"
             }
             "yaw"               "45"
+        	"cooldown_acceleration"				"200"
         }
     }
     "special_bonus_unique_faceless_void"
@@ -353,14 +377,6 @@ DOTAAbilities
     //=================================================================================================================
     // Ability: Special Bonus
     //=================================================================================================================
-    "special_bonus_unique_faceless_void_2"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "BaseClass" "special_bonus_base"
-    }
 
     //=================================================================================================================
     // Ability: Special Bonus
@@ -379,6 +395,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_faceless_void_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -498,6 +515,7 @@ DOTAAbilities
 	}
 	"special_bonus_unique_faceless_void_2"
 	{
+		"BaseClass"					"special_bonus_base"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -505,13 +523,12 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
 				"value"				"140"
-				"ad_linked_abilities"			"faceless_void_chronosphere"
+				"ad_linked_abilities"				"faceless_void_chronosphere"
 			}
 		}
 	}

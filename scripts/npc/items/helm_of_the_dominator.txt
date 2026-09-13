@@ -16,7 +16,7 @@
 		"ItemResult"					"item_helm_of_the_dominator"
 		"ItemRequirements"
 		{
-			"01"						"item_helm_of_iron_will"
+			"01"					"item_helm_of_iron_will;item_crown"
 		}
 	}
 	"item_recipe_helm_of_the_overlord"
@@ -104,6 +104,8 @@
 			"model_scale"						"0"
 			"count_limit"						"1"
 			"creep_ability_level_increase"		"0"
+			"creep_damage_taken_cooldown"				"3"
+			"bounty_pct"				"50"
 		}
 	}
 	"item_helm_of_the_overlord"
@@ -147,6 +149,9 @@
 			"model_scale"						"20"
 			"count_limit"						"1 2 3"
 			"creep_ability_level_increase"		"1"
+			"is_overlord"				"1"
+			"creep_damage_taken_cooldown"				"3"
+			"bounty_pct"				"100"
 		}
 	}
 	"item_helm_of_the_overlord_2"
@@ -192,6 +197,9 @@
 			"model_scale"						"20"
 			"count_limit"						"1 2 3"
 			"creep_ability_level_increase"		"1"
+			"is_overlord"				"1"
+			"creep_damage_taken_cooldown"				"3"
+			"bounty_pct"				"100"
 		}
 	}
 	"item_helm_of_the_overlord_3"
@@ -238,6 +246,9 @@
 			"model_scale"						"20"
 			"count_limit"						"1 2 3"
 			"creep_ability_level_increase"		"1"
+			"is_overlord"				"1"
+			"creep_damage_taken_cooldown"				"3"
+			"bounty_pct"				"100"
 		}
 	}
 }

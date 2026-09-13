@@ -2,6 +2,7 @@
 {
 	"shadowsong_magic_fire"
 	{
+		"ID"					"15206"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -49,16 +50,18 @@
 
 	"shadowsong_absorption"
 	{
+		"ID"					"15205"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"custom/shadowsong_absorption"
-		"ScriptFile"					"heroes/shadowsong/shadowsong_absorption" 
+		"ScriptFile"					"heroes/shadowsong/shadowsong_absorption"
+		"HasShardUpgrade"				"1"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -92,11 +95,22 @@
 			"interval"				"1.0"
 			"bonus_duration_hero"	"10"
 			"bonus_duration_creep"	"2.5"
+			"shard_slow_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"	"20"
+			}
+			"shard_ally_lifesteal_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"	"3"
+			}
 		}
 	}
 
 	"angel_arena_death_aura"
 	{
+		"ID"					"15204"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
@@ -147,6 +161,7 @@
 
 	"shadowsong_dark_reflection"
 	{
+		"ID"					"15203"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -157,7 +172,8 @@
 		"MaxLevel"						"7"
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"custom/shadowsong_dark_reflection"
-		"ScriptFile"					"heroes/shadowsong/shadowsong_dark_reflection" 
+		"ScriptFile"					"heroes/shadowsong/shadowsong_dark_reflection"
+		"HasScepterUpgrade"				"1"
 		 "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"precache"
@@ -171,7 +187,7 @@
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.5"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20 19 18 17 16 15 14"
 
@@ -184,10 +200,21 @@
 		"AbilityValues"
 		{
 			"stun_duration"			"1.5 1.7 1.9 2.1 2.3 2.5 2.7"
+			"scepter_radius"
+			{
+				"value"				"0"
+				"special_bonus_scepter"	"400"
+			}
+			"scepter_stun_duration"
+			{
+				"value"				"0"
+				"special_bonus_scepter"	"1.5"
+			}
 		}
 	}
 	"shadowsong_talent_magic_fire_aoe"
 	{
+		"ID"					"15202"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -200,6 +227,7 @@
 
 	"shadowsong_talent_magic_fire_cd_decrease"
 	{
+		"ID"					"15201"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -212,6 +240,7 @@
 
 	"shadowsong_special_bonus_absorbtion"
 	{
+		"ID"					"15200"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -226,6 +255,7 @@
 
 	"shadowsong_special_bonus_absorbtion_kill_bonus"
 	{
+		"ID"					"15199"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -240,6 +270,7 @@
 
 	"shadowsong_special_bonus_reflection_magic_immune"
 	{
+		"ID"					"15198"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -254,6 +285,7 @@
 
 	"shadowsong_special_bonus_reflection_teammate"
 	{
+		"ID"					"15197"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -263,6 +295,29 @@
 		"AbilityValues"
 		{
 			"value"						"1"
+		}
+	}
+
+	"shadowsong_shadow_echo"
+	{
+		"ID"					"15196"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/shadowsong/shadowsong_shadow_echo"
+		"AbilityTextureName"			"custom/shadowsong_absorption"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"heal_per_mana"				"15"
+			"spell_lifesteal_pct"		"5"
 		}
 	}
 }

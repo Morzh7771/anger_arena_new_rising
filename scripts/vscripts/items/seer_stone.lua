@@ -35,6 +35,14 @@ function item_custom_seer_stone:OnSpellStart()
 end
 
 modifier_item_custom_seer_stone = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function modifier_item_custom_seer_stone:Precache(context)
+	PrecacheResource("particle", "particles/items4_fx/seer_stone.vpcf", context)
+end
+
 function modifier_item_custom_seer_stone:IsDebuff() return false end
 function modifier_item_custom_seer_stone:IsHidden() return true end
 function modifier_item_custom_seer_stone:IsPurgable() return false end

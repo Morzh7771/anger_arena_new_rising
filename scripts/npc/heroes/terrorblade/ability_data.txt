@@ -34,6 +34,7 @@ DOTAAbilities
 			"illusion_duration"			
 			{
 				"value"		"5"					
+				"special_bonus_unique_terrorblade_2"				"+1"
 			}
 			"illusion_outgoing_damage"	
 			{
@@ -69,6 +70,7 @@ DOTAAbilities
             {
                 "value"                     "0"
             }
+        	"AbilityManaCost"				"60 65 70 75 80 85 90"
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -130,14 +132,20 @@ DOTAAbilities
             "hp_cost_perc"
             {
                 "value"                                     "0"
-                "special_bonus_facet_terrorblade_soul_fragment" "=15"
-                "RequiresFacet"                         "terrorblade_soul_fragment"
             }
             "illusions_spawn_with_full_hp"
             {
                 "value"                                     "0"
-                "special_bonus_facet_terrorblade_soul_fragment" "+1"
             }
+			"AbilityCooldown"
+			{
+				"value"				"16"
+				"special_bonus_unique_terrorblade_4"				"-2"
+			}
+			"AbilityManaCost"
+			{
+				"value"				"50 60 70 80 90 100 110"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -308,23 +316,30 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120.0 100.0 80.0 60.0 40.0 20.0 0.0"
+		"AbilityManaCost"				"120 100 80 60 50 40 30"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-                "hit_point_minimum_pct"         "30"
+                "hit_point_minimum_pct"
+                {
+                	"value"				"30"
+                	"special_bonus_unique_terrorblade_sunder_hp_threshold"				"-25"
+                }
                 "ignore_minimum_pct_for_enemies"
                 {
                     "value"                     "0"
-                    "special_bonus_facet_terrorblade_condemned" "+1"
                 }
                 "ignore_minimum_pct_for_enemies_tooltip"
                 {
                     "value"                     "1"
-                    "special_bonus_facet_terrorblade_condemned" "=0"
                 }
+        	"AbilityCooldown"
+        	{
+        		"value"				"110 98.33 86.67 75 63.33 51.67 40"
+        		"special_bonus_unique_terrorblade"				"-30"
+        	}
         }
 	}
 	"terrorblade_dark_unity"
@@ -351,6 +366,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_terrorblade"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

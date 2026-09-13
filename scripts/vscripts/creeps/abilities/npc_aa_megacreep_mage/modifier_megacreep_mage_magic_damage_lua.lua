@@ -41,6 +41,7 @@ function modifier_megacreep_mage_magic_damage_lua:OnAttackLanded(params)
             ApplyDamage(info)
             local particle = ParticleManager:CreateParticle("particles/units/heroes/heroes_underlord/au_darkrift_target_oh_e3.vpcf", PATTACH_CUSTOMORIGIN, caster)
             ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+            ParticleManager:ReleaseParticleIndex(particle)
         end
     end
 end

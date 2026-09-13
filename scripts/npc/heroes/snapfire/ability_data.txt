@@ -36,7 +36,6 @@ DOTAAbilities
 			"AbilityCastRange"              
             {
                 "value"     "800"
-                "special_bonus_facet_snapfire_full_bore"    "=1300"
             }
 			"damage"
 			{
@@ -47,13 +46,11 @@ DOTAAbilities
 			"blast_width_initial"       
             {
                 "value"     "225"
-                "special_bonus_facet_snapfire_full_bore"    "=75"
                 "affected_by_aoe_increase"  "1"     
             }
 			"blast_width_end"
             {
                 "value"     "400"
-                "special_bonus_facet_snapfire_full_bore"    "=270"
                 "affected_by_aoe_increase"  "1"     
             }
 			"debuff_duration"			"1.0"
@@ -62,13 +59,11 @@ DOTAAbilities
 			"point_blank_range"         
             {
                 "value" "450"
-                "special_bonus_facet_snapfire_full_bore"    "=650"
             }
 			"point_blank_dmg_bonus_pct"	"50.0"
 			"bonus_applies_at_long_range"
             {
                 "value"         "0"
-                "special_bonus_facet_snapfire_full_bore"    "=1"
             }
 			"shard_knockback_distance"
 			{
@@ -98,6 +93,7 @@ DOTAAbilities
 				"RequiresShard"				"1"
 			}
 				"damage_pct_stat"						"35"
+			"point_blank_debuff_duration_pct"				"50"
 		}
 	}
 	"snapfire_mortimer_kisses"
@@ -135,7 +131,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 150 175 200 225 250"
+		"AbilityManaCost"				"125 150 175 200 225 250 275"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -188,6 +184,10 @@ DOTAAbilities
 			"delay_after_last_projectile"	"0.5"
 			"burn_linger_duration"	"1.0"
 			"damage_pct"						"20"
+			"has_bonus_projectile"
+			{
+				"special_bonus_unique_snapfire_1"				"1"
+			}
 		}
 	}
 	"snapfire_gobble_up"
@@ -195,11 +195,10 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"snapfire_gobble_up"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
@@ -235,13 +234,12 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"snapfire_spit_creep"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
@@ -362,7 +360,7 @@ DOTAAbilities
 					"value"					"70 140 210 280 350 420 490"
 					"CalculateSpellDamageTooltip"	"1"
 				}
-				"impact_stun_duration"	"1.0 1.2 1.4 1.6 1.8 2"
+				"impact_stun_duration"	"1 1.2 1.4 1.6 1.8 2 2.2"
 				"self_cast_delay"		"0.3"
 				"target_heal"			
 				{
@@ -371,13 +369,15 @@ DOTAAbilities
 				}
 				"shard_damage_multiplier_tooltip" "50"
 				"damage_pct"						"50"
+			"AbilityCharges"				"0"
+			"AbilityChargeRestoreTime"				"21 20 19 18 17 16 15"
 		}
 	}
 	"snapfire_buckshot"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
         "MaxLevel"                      "1"
         "Innate"                        "1"
             
@@ -388,12 +388,10 @@ DOTAAbilities
             "split_shot"
             {
                 "value" "0"
-                "special_bonus_facet_snapfire_ricochet_ii"      "+2"
             }
             "split_shot_damage_pct"
             {
                 "value"     "0"
-                "special_bonus_facet_snapfire_ricochet_ii"      "=75"
             }
             "glancing_shot_damage_pct"  "60"
         }
@@ -479,6 +477,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_snapfire_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"               "ABILITY_TYPE_ATTRIBUTES"
@@ -492,6 +491,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_snapfire_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"               "ABILITY_TYPE_ATTRIBUTES"
@@ -505,6 +505,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_snapfire_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"               "ABILITY_TYPE_ATTRIBUTES"
@@ -536,6 +537,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_snapfire_8"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"               "ABILITY_TYPE_ATTRIBUTES"
@@ -557,4 +559,31 @@ DOTAAbilities
         "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                         "special_bonus_base"
     }
+
+	"snapfire_boomstick"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"Innate"				"1"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
+		{
+			"damage_amp_min"
+			{
+				"value"				"0"
+				"dynamic_value"				"true"
+			}
+			"damage_amp_max"				"35"
+			"distance_threshold_max"
+			{
+				"value"				"495"
+				"hero_levelup"				"5"
+			}
+			"distance_threshold_min"
+			{
+				"value"				"50"
+				"hero_levelup"				"5"
+			}
+		}
+	}
 }

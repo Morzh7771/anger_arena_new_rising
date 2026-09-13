@@ -19,16 +19,16 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"625"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"0.0"
 		"AbilityDuration"				"1.5"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
+		"AbilityDamage"					"0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -94,6 +94,11 @@ DOTAAbilities
 				"special_bonus_scepter"				"+12"
 				"RequiresScepter"					"1"
 			}
+			"AbilityManaCost"
+			{
+				"value"				"9 10 11 12 13 14 15"
+				"special_bonus_unique_drow_ranger_7"				"-18%"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -130,12 +135,18 @@ DOTAAbilities
 			{
 				"value"				"3"
 				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_8"
+				"special_bonus_unique_drow_ranger_8"				"+2"
 			}			
-			"arrow_count_per_wave"				"4"
+			"arrow_count_per_wave"
+			{
+				"value"				"4"
+				"special_bonus_unique_drow_ranger_2"				"+1"
+			}
 			"arrow_damage_pct"
 			{
 				"value"			"100 110 120 130 140 150 160"
 				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_1"
+				"special_bonus_unique_drow_ranger_1"				"+25"
 			}
 			"arrow_slow_duration"		"1.25 1.5 1.75 2 2.25 2.5 2.75"
 			"arrow_width"					"90"
@@ -151,8 +162,8 @@ DOTAAbilities
             "multishot_movespeed"                       
             {
                 "value"                                     "0"
-                "special_bonus_facet_drow_ranger_sidestep"          "25"
             }
+			"arrow_range_base"				"475"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
 	}
@@ -170,7 +181,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -179,11 +190,11 @@ DOTAAbilities
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
+		"AbilityDamage"					"0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 90 90 90"
+		"AbilityManaCost"				"90"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -249,6 +260,8 @@ DOTAAbilities
                 {
                     "value"                                         "1"
                 }
+			"knockback_duration_min"				"0.4"
+			"AbilityManaCost"				"55"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -257,7 +270,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"drow_ranger_trueshot"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
         "Innate"                        "1"
         "MaxLevel"                      "1"
         "IsBreakable"                   "1"
@@ -271,13 +284,18 @@ DOTAAbilities
             "trueshot_aspd_bonus_creeps"    
             {
                 "value"         "0"
-                "special_bonus_facet_1" "+3"
             }
             "radius"                        
             {
                 "value"         "1200"
                 "affected_by_aoe_increase"  "1"
             }
+        	"trueshot_agi_bonus"
+        	{
+        		"value"				"10"
+        		"hero_levelup"				"+1"
+        	}
+        	"trueshot_agi_bonus_allies_pct"				"50"
         }
 	}
 	"drow_ranger_marksmanship"
@@ -328,7 +346,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"drow_ranger_glacier"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -336,13 +354,12 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"IsGrantedByShard"              "1"
-		"MaxLevel"						"1"
 		"AbilitySound"					"Hero_Tusk.IceShards"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"400"
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -373,6 +390,7 @@ DOTAAbilities
 				"knockback_distance"		"175"
 				"knockback_height"			"50"
 				"z_speed_override"			"800"
+			"damage_bonus"				"25"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

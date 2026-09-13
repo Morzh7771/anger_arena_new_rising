@@ -7,10 +7,16 @@ local forbidden_modifiers = {
 
 DOTA_DAMAGE_FLAG_MAGIC_SPLASH = 1048576
 
+-- Единственная оптимизация: урон не сплэшится на каждый входящий тик, а
+-- копится по цели и выплёскивается раз в SPLASH_INTERVAL, как горение
+-- радианса. Всё остальное (поиск целей, формула урона, партиклы) осталось
+-- ровно таким же, как было.
+local SPLASH_INTERVAL = 0.2
+
 LinkLuaModifier( "modifier_item_magic_splash", "items/item_magic_splash.lua", LUA_MODIFIER_MOTION_NONE )
 
 item_magic_splash = class({
-    Precache = function (self, context) 
+    Precache = function (self, context)
         PrecacheResource("particle", "particles/units/heroes/hero_warlock/warlock_fatal_bonds_pulse.vpcf", context)
     end,
     GetIntrinsicModifierName = function (self)
@@ -20,6 +26,13 @@ item_magic_splash = class({
 
     end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_magic_splash:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_warlock/warlock_fatal_bonds_pulse.vpcf", context)
+end
 
 item_magic_splash_2 = item_magic_splash
 item_magic_splash_3 = item_magic_splash
@@ -39,6 +52,14 @@ modifier_item_magic_splash = class({
     end
 })
 
+function modifier_item_magic_splash:OnCreated()
+    if not IsServer() then return end
+
+    self.pending     = {}   -- [entindex цели] = { unit, dmg_ability, dmg_item, ability }
+    self.has_pending = false
+    self:StartIntervalThink(-1)
+end
+
 function modifier_item_magic_splash:OnTakeDamage(params)
     if self:GetParent():IsIllusion() then return end
     if params.attacker ~= self:GetParent() then return end
@@ -49,17 +70,18 @@ function modifier_item_magic_splash:OnTakeDamage(params)
     if not ((params.damage_type == DAMAGE_TYPE_MAGICAL) or (params.damage_type == DAMAGE_TYPE_PURE)) then return end
     if params.damage_flags and Util:testflag(params.damage_flags, DOTA_DAMAGE_FLAG_MAGIC_SPLASH) then return end
     if params.damage_flags and Util:testflag(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then return end
-    if params.inflictor:GetName() == "batrider_sticky_napalm" then return end
-    if params.inflictor:GetName() == "lina_combustion" then return end 
-    if params.inflictor:GetName() == "jakiro_liquid_ice" then return end
 
-    if params.inflictor:GetName() == "item_piercing_blade" then return end
-    if params.inflictor:GetName() == "item_piercing_blade2" then return end
-    if params.inflictor:GetName() == "item_piercing_blade3" then return end
+    local inflictor_name = params.inflictor:GetName()
+    if inflictor_name == "batrider_sticky_napalm" then return end
+    if inflictor_name == "lina_combustion" then return end
+    if inflictor_name == "jakiro_liquid_ice" then return end
+
+    if inflictor_name == "item_piercing_blade" then return end
+    if inflictor_name == "item_piercing_blade2" then return end
+    if inflictor_name == "item_piercing_blade3" then return end
 
     local caster = params.attacker
     local target = params.unit
-    local radius = self:GetAbility():GetSpecialValueFor( "splash_aoe" )
 
     if not IsValidEntity(caster) or not IsValidEntity(target) then return end
     if not target:IsCreep() and not target:IsHero() then return end
@@ -67,6 +89,57 @@ function modifier_item_magic_splash:OnTakeDamage(params)
     for _, modifier_name in pairs(forbidden_modifiers) do
         if caster:HasModifier(modifier_name) then return end
     end
+
+    -- Здесь только копим урон. Сам сплэш - в OnIntervalThink.
+    self.pending = self.pending or {}
+
+    local key   = target:entindex()
+    local entry = self.pending[key]
+    if not entry then
+        entry = { unit = target, dmg_ability = 0, dmg_item = 0, ability = params.ability }
+        self.pending[key] = entry
+    end
+
+    if string.sub(inflictor_name, 1, 5) == "item_" then
+        entry.dmg_item = entry.dmg_item + params.original_damage
+    else
+        entry.dmg_ability = entry.dmg_ability + params.original_damage
+    end
+    entry.ability = params.ability or entry.ability
+
+    if not self.has_pending then
+        self.has_pending = true
+        self:StartIntervalThink(SPLASH_INTERVAL)
+    end
+end
+
+function modifier_item_magic_splash:OnIntervalThink()
+    if not IsServer() then return end
+
+    local pending    = self.pending or {}
+    self.pending     = {}
+    self.has_pending = false
+    self:StartIntervalThink(-1)   -- вне боя таймер не крутится вхолостую
+
+    local item_pct = self:GetAbility():GetSpecialValueFor("item_damage_pct")
+    if not item_pct or item_pct <= 0 then item_pct = 50 end
+
+    for _, entry in pairs(pending) do
+        local damage = entry.dmg_ability + entry.dmg_item * item_pct / 100
+        if damage > 0 then
+            self:DoSplash(entry.unit, damage, entry.ability)
+        end
+    end
+end
+
+-- Тело один в один как в старой версии, только исходный урон приходит
+-- аргументом (накопленный за интервал), а не из params.
+function modifier_item_magic_splash:DoSplash(target, original_damage, damage_ability)
+    local caster = self:GetParent()
+
+    if not IsValidEntity(caster) or not IsValidEntity(target) then return end
+
+    local radius = self:GetAbility():GetSpecialValueFor( "splash_aoe" )
 
     local team = caster:GetTeamNumber()
     local position = target:GetAbsOrigin()
@@ -84,38 +157,44 @@ function modifier_item_magic_splash:OnTakeDamage(params)
     local splash_damage_creep = self:GetAbility():GetSpecialValueFor("splash_pct_creep")
     local splash_damage_hero = self:GetAbility():GetSpecialValueFor("splash_pct_hero")
     local splash_damage_illusion = self:GetAbility():GetSpecialValueFor("splash_pct_illusion")
+    local magic_pierce = self:GetAbility():GetSpecialValueFor('magic_pierce')
 
     for _,x in pairs(units_in_radius) do
-        if x ~= params.target or x:IsIllusion() then
-            local dmg = 0
-            local magic_pierce = self:GetAbility():GetSpecialValueFor('magic_pierce')
-            local dmg_ref = params.original_damage / 100 * (100 - (x:GetBaseMagicalResistanceValue() / 100 * (100 - magic_pierce)))
+        local dmg = 0
+        local dmg_ref = original_damage / 100 * (100 - (x:GetBaseMagicalResistanceValue() / 100 * (100 - magic_pierce)))
 
-            if x:IsCreep() then
-                dmg = dmg_ref / 100 * splash_damage_creep
-            end
-            if x:IsIllusion() then
-                dmg = dmg_ref / 100 * splash_damage_illusion
-            end
-            if x:IsHero() then
-                dmg = dmg_ref / 100 * splash_damage_hero
-            end
-            if x:GetUnitName() == "npc_tree_thinker" then
-                return
-            end
-            ApplyDamage({ victim = x,
-                          attacker = caster,
-                          damage = dmg,
-                          damage_type = DAMAGE_TYPE_MAGICAL,
-                          damage_flags = DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR + DOTA_DAMAGE_FLAG_MAGIC_SPLASH,
-                          ability = params.ability}) --deal damage
-
-            local magic_splash_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_fatal_bonds_pulse.vpcf", PATTACH_RENDERORIGIN_FOLLOW, self:GetCaster())
-            ParticleManager:SetParticleControlEnt(magic_splash_pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_attack1", target:GetAbsOrigin(), false)
-            ParticleManager:SetParticleControlEnt(magic_splash_pfx, 1, x, PATTACH_POINT_FOLLOW, "attach_hitloc", x:GetAbsOrigin(), false)
-            ParticleManager:SetParticleControl(magic_splash_pfx, 2, Vector(damage, 0, 0))
-            ParticleManager:SetParticleControl(magic_splash_pfx, 3, Vector(0.3, 0, 0))
-            ParticleManager:ReleaseParticleIndex(magic_splash_pfx)
+        if x:IsCreep() then
+            dmg = dmg_ref / 100 * splash_damage_creep
         end
+        if x:IsIllusion() then
+            dmg = dmg_ref / 100 * splash_damage_illusion
+        end
+        if x:IsHero() then
+            dmg = dmg_ref / 100 * splash_damage_hero
+        end
+        if x:GetUnitName() == "npc_tree_thinker" then
+            return
+        end
+        ApplyDamage({ victim = x,
+                      attacker = caster,
+                      damage = dmg,
+                      damage_type = DAMAGE_TYPE_MAGICAL,
+                      damage_flags = DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR + DOTA_DAMAGE_FLAG_MAGIC_SPLASH,
+                      ability = damage_ability}) --deal damage
+
+        local magic_splash_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_fatal_bonds_pulse.vpcf", PATTACH_RENDERORIGIN_FOLLOW, self:GetCaster())
+        ParticleManager:SetParticleControlEnt(magic_splash_pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_attack1", target:GetAbsOrigin(), false)
+        ParticleManager:SetParticleControlEnt(magic_splash_pfx, 1, x, PATTACH_POINT_FOLLOW, "attach_hitloc", x:GetAbsOrigin(), false)
+        ParticleManager:SetParticleControl(magic_splash_pfx, 2, Vector(damage, 0, 0))
+        ParticleManager:SetParticleControl(magic_splash_pfx, 3, Vector(0.3, 0, 0))
+        ParticleManager:ReleaseParticleIndex(magic_splash_pfx)
     end
+end
+
+function modifier_item_magic_splash:OnDestroy()
+    if not IsServer() then return end
+
+    self.pending     = {}
+    self.has_pending = false
+    self:StartIntervalThink(-1)
 end

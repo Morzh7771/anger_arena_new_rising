@@ -4,10 +4,11 @@
 	{
 		"override_hero"		"npc_dota_hero_grimstroke"
 		"Ability1"              "grimstroke_dark_artistry"
+		"Ability8"		"grimstroke_return"
         "Ability2"              "grimstroke_ink_creature"
         "Ability3"              "grimstroke_spirit_walk"
         "Ability4"              "grimstroke_dark_portrait"
-        "Ability5"              "grimstroke_return"
+        "Ability5"              "generic_hidden"
         "Ability6"              "grimstroke_soul_chain"
         "Ability7"              "grimstroke_ink_trail"
 		"Ability10"             "special_bonus_unique_grimstroke_8"
@@ -19,22 +20,7 @@
         "Ability16"             "special_bonus_unique_grimstroke_1"
         "Ability17"             "special_bonus_unique_grimstroke_3"
         
-        "Facets"
-        {
 
-            "grimstroke_inkstigate" 
-            {
-                "Icon"              "area_of_effect"
-                "Color"             "Gray"
-                "GradientID"        "0"
-            }
-            "grimstroke_fine_art" 
-            {
-                "Icon"              "brush"
-                "Color"             "Red"
-                "GradientID"        "1"
-            }
-        }
 
 
 		"ArmorPhysical"				"0"

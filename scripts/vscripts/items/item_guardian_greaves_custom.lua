@@ -32,6 +32,7 @@ function item_guardian_greaves_custom:OnSpellStart()
 
 	local particle_2 = ParticleManager:CreateParticle("particles/items3_fx/warmage_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
 	ParticleManager:SetParticleControl(particle_2, 0, self:GetCaster():GetAbsOrigin())
+	ParticleManager:ReleaseParticleIndex(particle_2)
 
     local nearby_allied_units = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetCaster():GetAbsOrigin(), 
 			nil, radius,DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
@@ -53,6 +54,7 @@ function item_guardian_greaves_custom:OnSpellStart()
 
             local particle_2 = ParticleManager:CreateParticle("particles/items3_fx/warmage_recipient.vpcf", PATTACH_ABSORIGIN_FOLLOW, nearby_ally)
             ParticleManager:SetParticleControl(particle_2, 0, nearby_ally:GetAbsOrigin())
+            ParticleManager:ReleaseParticleIndex(particle_2)
         end
 	end
 end

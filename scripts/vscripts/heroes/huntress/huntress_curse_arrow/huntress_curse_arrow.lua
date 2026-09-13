@@ -1,6 +1,8 @@
 huntress_curse_arrow = huntress_curse_arrow or class({})
 local debuffModifier = "modifier_huntress_curse_arrow"
+local scepterMuteModifier = "modifier_huntress_curse_arrow_scepter_mute"
 LinkLuaModifier(debuffModifier, "heroes/huntress/huntress_curse_arrow/" .. debuffModifier, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier(scepterMuteModifier, "heroes/huntress/huntress_curse_arrow/" .. scepterMuteModifier, LUA_MODIFIER_MOTION_NONE)
 
 function huntress_curse_arrow:OnSpellStart()
 	if not IsServer() then return end
@@ -42,8 +44,35 @@ end
 
 function huntress_curse_arrow:OnProjectileHit(target)
 	if not self then return end
+	local caster = self:GetCaster()
 	local duration = self.channelTime / self:GetChannelTime() * (self.max_duration - self.min_duration) + self.min_duration
-	target:AddNewModifier(self:GetCaster(), self, debuffModifier, { duration = duration })
+	target:AddNewModifier(caster, self, debuffModifier, { duration = duration })
+
+	-- Scepter upgrade: area effect with mute
+	if caster:HasScepter() then
+		local scepter_radius = self:GetSpecialValueFor("scepter_radius")
+		local scepter_mute_duration = self:GetSpecialValueFor("scepter_mute_duration")
+
+		if scepter_radius > 0 then
+			local nearby_enemies = FindUnitsInRadius(
+				caster:GetTeamNumber(),
+				target:GetAbsOrigin(),
+				nil,
+				scepter_radius,
+				DOTA_UNIT_TARGET_TEAM_ENEMY,
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+				DOTA_UNIT_TARGET_FLAG_NONE,
+				FIND_ANY_ORDER,
+				false
+			)
+
+			for _, enemy in pairs(nearby_enemies) do
+				if enemy ~= target then
+					enemy:AddNewModifier(caster, self, scepterMuteModifier, { duration = scepter_mute_duration })
+				end
+			end
+		end
+	end
 end
 
 function huntress_curse_arrow:OnInventoryContentsChanged()

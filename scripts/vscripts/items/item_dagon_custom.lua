@@ -1,6 +1,7 @@
 LinkLuaModifier("modifier_item_dagon_custom", "items/item_dagon_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_dagon_custom = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items_fx/dagon.vpcf", context)
         PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
@@ -8,6 +9,14 @@ item_dagon_custom = class({
     GetIntrinsicModifierName = function (self) return "modifier_item_dagon_custom" end,
     GetAOERadius = function (self) return self:GetSpecialValueFor("aoe_radius") end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_dagon_custom:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/dagon.vpcf", context)
+	PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
+end
 
 function item_dagon_custom:OnSpellStart()
     if not IsServer() then return end
@@ -101,7 +110,7 @@ function modifier_item_dagon_custom:OnTakeDamage(params)
 
     local lifesteal = self.lifesteal
 
-    print(params.damage)
+    -- отладочный print убран: горячий путь (каждый удар/лечение)
     local heal = params.damage * lifesteal
 
 

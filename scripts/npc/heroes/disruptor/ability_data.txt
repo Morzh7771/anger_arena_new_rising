@@ -21,7 +21,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_THUNDER_STRIKE"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+		"AbilityCastPoint"				"0.05"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -74,7 +74,6 @@ DOTAAbilities
 			"hits_units_inside_kinetic"
 			{
 				"value"										"0"
-				"special_bonus_facet_disruptor_thunderstorm"	"+1"
 			}
 		}
 	}
@@ -96,7 +95,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+		"AbilityCastPoint"				"0.05"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------	
@@ -113,7 +112,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"backtrack_time"			"4.0 4.0 4.0 4.0"
+			"backtrack_time"			"4.0"
 			"cast_range"				"600 800 1000 1200 1400 1600 1800"
 			"silence_duration"			"0"
 			"AbilityCooldown"
@@ -128,6 +127,16 @@ DOTAAbilities
 				"special_bonus_unique_disruptor_9"				"275"
 			}
 			"max_distance"					"1400"
+			"damage_to_distance_pct"
+			{
+				"value"				"20 25 30 35 40 45 50"
+				"special_bonus_unique_disruptor_9"				"+15"
+			}
+			"AbilityCharges"
+			{
+				"value"				"0"
+				"special_bonus_unique_disruptor_4"				"+2"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
@@ -146,7 +155,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_KINETIC_FIELD"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+		"AbilityCastPoint"				"0.05"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -181,6 +190,18 @@ DOTAAbilities
 				"special_bonus_unique_disruptor_5" 	"+2"
 			}
 			"damage_per_second"			"0"
+			"wall_thickness"				"100"
+			"tick_rate"				"0.1"
+			"cooldown_share"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"=0"
+			}
+			"strike_on_touch"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"0"
+			}
 		}
 	}	
 	"disruptor_kinetic_fence"
@@ -233,6 +254,24 @@ DOTAAbilities
 				"value"			"1200"
 				"affected_by_aoe_increase"	"1"
 			}
+			"wall_thickness"				"100"
+			"AbilityCooldown"
+			{
+				"value"				"14"
+				"special_bonus_unique_disruptor_2"				"-3"
+			}
+			"damage_per_second"				"0"
+			"tick_rate"				"0.1"
+			"cooldown_share"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"=0"
+			}
+			"strike_on_touch"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"0"
+			}
 		}
 
 	}
@@ -256,7 +295,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_STATIC_STORM"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+		"AbilityCastPoint"				"0.05"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -285,7 +324,11 @@ DOTAAbilities
 				"value"								"20 22 24 26 28 30 32"
 				"special_bonus_unique_disruptor_7" 	"+6"
 			}
-			"damage_max"				"200 275 350 425 500 575 650"
+			"damage_max"
+			{
+				"value"				"200 275 350 425 500 575 650"
+				"special_bonus_unique_disruptor"				"+60"
+			}
 			"duration"
 			{
 				"value"				"4.0"
@@ -299,7 +342,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
         "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
         "MaxLevel"                      "1"
         "Innate"                        "1"
@@ -321,6 +364,8 @@ DOTAAbilities
 			}
 			"knockback_duration"		".2"
 			"damage_reset_interval"		"7"
+			"distance_per_int"				"0"
+			"damage_per_int"				"1.5"
 		}
 	}
 	"special_bonus_unique_disruptor_7"

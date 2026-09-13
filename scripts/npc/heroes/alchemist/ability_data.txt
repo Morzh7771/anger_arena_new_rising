@@ -42,7 +42,6 @@ DOTAAbilities
 			"chemical_rage_cooldown_reduction_pct"
 			{
 				"value"					"0"
-				"special_bonus_facet_alchemist_mixologist"				"=50"
 			}
 
 		}
@@ -145,7 +144,6 @@ DOTAAbilities
 			"chemical_rage_cooldown_reduction_pct"
 			{
 				"value"					"0"
-				"special_bonus_facet_alchemist_mixologist"				"=30"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -199,12 +197,11 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"alchemist_goblins_greed"
-		"MaxLevel"						"8"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_SELF"
-        "MaxLevel"                      "1"
         "Innate"                        "1"
         "IsBreakable"                   "1"
 		
@@ -232,10 +229,31 @@ DOTAAbilities
 			"starting_gold_bonus"
             {
                 "value"             "0"
-                "special_bonus_facet_alchemist_seed_money"  "=300"
             }
+			"bonus_gold_tooltip"
+			{
+				"value"				"2"
+				"special_bonus_scepter"				"+0"
+				"dynamic_value"				"true"
+			}
+			"bonus_gold_per_scepter"				"3"
+			"bonus_gold_cap_tooltip"
+			{
+				"value"				"16"
+				"special_bonus_scepter"				"+0"
+				"dynamic_value"				"true"
+			}
+			"scepter_bonus_damage"				"15"
+			"scepter_bonus_damage_tooltip"
+			{
+				"special_bonus_scepter"				"+0"
+				"dynamic_value"				"true"
+			}
+			"scepter_spell_amp"
+			{
+				"special_bonus_scepter"				"0"
+			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	"alchemist_chemical_rage"
 	{
@@ -327,6 +345,13 @@ DOTAAbilities
 				"slow_per_stack"		"4 5 6 7 8 9 10"
 				"attack_damage_per_stack"		"3 3.5 4 4.5 5 5.5 6"
 
+			"attack_dmg_per_stack"
+			{
+				"value"				"2.5 3 3.5 4 4.5 5 5.5"
+				"display_type"				"kDebuffPercentage"
+			}
+			"stacks_per_attack"				"2"
+			"one_tooltip"				"1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}

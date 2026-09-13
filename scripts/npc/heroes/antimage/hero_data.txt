@@ -4,13 +4,14 @@
 	{
 		"override_hero"		"npc_dota_hero_antimage"
 		"Ability1"      "antimage_mana_break"
+		"Ability7"		"antimage_counterspell_ally"
         "Ability2"      "antimage_blink"
         "Ability3"      "antimage_counterspell"
-        "Ability4"      "antimage_counterspell_ally"
+        "Ability4"      "generic_hidden"
         "Ability5"      "antimage_persectur"
         "Ability6"      "antimage_mana_void"
 
-		"Ability10"     "special_bonus_hp_regen_3"
+		"Ability10"     "special_bonus_unique_antimage"
         "Ability11"     "special_bonus_unique_antimage_manavoid_aoe"
 
         "Ability12"     "special_bonus_unique_antimage_7"
@@ -22,21 +23,7 @@
         "Ability16"     "special_bonus_unique_antimage_3"
         "Ability17"     "special_bonus_unique_antimage_2"
 
-        "Facets"
-        {
-            "antimage_magebanes_mirror" 
-            {
-                "Icon"              "ricochet"
-                "Color"             "Purple"
-                "GradientID"        "1"
-            }
-            "antimage_mana_thirst" 
-            {
-                "Icon"              "mana"
-                "Color"             "Blue"
-                "GradientID"        "3"
-            }
-        }
+
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------

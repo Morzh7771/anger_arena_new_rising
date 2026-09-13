@@ -75,6 +75,7 @@ function modifier_demon_warrior_rupture:OnDestroy(params)
     if not IsServer() then return end
     Timers:RemoveTimer("npc_aa_demon_warrior_rupture" .. tostring(self.target:entindex()))
     ParticleManager:DestroyParticle(self.particleRupture, false)
+    ParticleManager:ReleaseParticleIndex(self.particleRupture)
 end
 
 -------------------------------------------------------------------------------

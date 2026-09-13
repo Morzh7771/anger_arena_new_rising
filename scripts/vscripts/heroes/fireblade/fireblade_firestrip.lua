@@ -20,6 +20,7 @@ function ability:OnSpellStart( keys )
 
 	Timers:CreateTimer(0.001, function()
 		ParticleManager:DestroyParticle(particle, false)
+		ParticleManager:ReleaseParticleIndex(particle)
 	end)
 
 	EmitSoundOn( "Hero_EmberSpirit.SleightOfFist.Cast", caster )

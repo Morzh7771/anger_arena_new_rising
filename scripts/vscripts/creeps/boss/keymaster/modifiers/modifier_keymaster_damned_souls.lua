@@ -82,6 +82,7 @@ function mod:Launch(caster, target, speed, ability)
 
 	local idx = ParticleManager:CreateParticle( "particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_initial_explode_ti5.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster )
 	ParticleManager:SetParticleControlEnt( idx, 3, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(idx)
 end
 
 function mod:OnTick()

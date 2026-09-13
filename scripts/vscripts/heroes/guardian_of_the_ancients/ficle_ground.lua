@@ -1,4 +1,13 @@
 BaseClass = class ({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function BaseClass:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_sandking/sandking_epicenter.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_sandking/sandking_epicenter_ring.vpcf", context)
+end
+
 guardian_of_the_ancients_ficle_ground = BaseClass
 
 LinkLuaModifier( "modifier_slow", "heroes/guardian_of_the_ancients/ficle_ground", LUA_MODIFIER_MOTION_NONE )

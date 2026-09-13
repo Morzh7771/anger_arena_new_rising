@@ -1,9 +1,17 @@
 item_bloodstone_1 = class({
+
     Precache = function (self, context)
         PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
     end,
     GetIntrinsicModifierName = function (self) return 'modifier_bloodstone' end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_bloodstone_1:Precache(context)
+	PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
+end
 
 item_bloodstone_2 = item_bloodstone_1
 item_bloodstone_3 = item_bloodstone_1

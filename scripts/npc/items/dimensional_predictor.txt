@@ -17,7 +17,7 @@
         "ItemResult"                    "item_mage_slayer"
         "ItemRequirements"
         {
-            "01"                        "item_cloak;item_oblivion_staff"
+        	"01"					"item_pers;item_cloak;item_blades_of_attack;item_orb_of_venom"
         }
     }
     "item_recipe_dimensional_predictor_1"
@@ -112,12 +112,12 @@
         "AbilityValues"
         {
             "bonus_magical_armor"       "20"
-            "bonus_attack_speed"        "45"
             "bonus_mana_regen"          "2"
-            "bonus_intellect"           "10"
             "duration"                  "3"
             "spell_amp_debuff"          "20"
             "dps"                       "25"
+        	"bonus_health_regen"				"5.5"
+        	"bonus_damage"				"12"
         }
     }
     "item_dimensional_predictor_1"

@@ -43,7 +43,7 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
         "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
-        "MaxLevel"                      "4"
+        "MaxLevel"                      "7"
         "Innate"                        "1"
         "DependentOnAbility"            "antimage_mana_void"
         "IsBreakable"                   "1"
@@ -52,7 +52,7 @@ DOTAAbilities
         {
             "move_slow_min"
             {
-                "value"                             "12.5 15.0 17.5 20 22.5 25 27.5"
+                "value"                             "12.5 15 17.5 20 22.5 25 27.5"
                 "special_bonus_unique_antimage_5"   "+2.5"
             }
             "move_slow_max"
@@ -76,7 +76,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4 0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.4"
 		
 
 		// Time		
@@ -132,18 +132,10 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"spell_shield_resistance"		"12 18 24 30 36 42 48"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_cooldown"		"12"
-			}
+			"spell_shield_resistance"				"12 18 24 30 36 42 48"
+			"scepter_cooldown"				"12"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -161,7 +153,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -187,17 +179,16 @@ DOTAAbilities
 			"does_reflect"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_magebanes_mirror"	"=1"
 			}
 			"reflected_spell_amp"
 			{
 				"value"											"0"
-				"special_bonus_facet_antimage_magebanes_mirror"	"+20"
 			}
 			"AbilityCooldown"
 			{
 				"value"						"15 13 11 9 7 5 3"
 			}
+			"heal_pct"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -248,12 +239,10 @@ DOTAAbilities
 			"does_reflect"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_magebanes_mirror"	"=1"
 			}
 			"reflected_spell_amp"
 			{
 				"value"											"0"
-				"special_bonus_facet_antimage_magebanes_mirror"	"+20"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -279,7 +268,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -287,7 +276,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 200 300 400 500 600"
+		"AbilityManaCost"				"100 200 300 400 500 600 700"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -310,6 +299,7 @@ DOTAAbilities
 			"mana_void_ministun"			
 			{
 				"value"					"0.8"
+				"special_bonus_unique_antimage_8"				"+0.8"
 			}			
 			"mana_void_aoe_radius"			
 			{
@@ -320,40 +310,33 @@ DOTAAbilities
 			"thirst_enabled"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+1"
 			}
 			"thirst_range"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+2500"
 				"affected_by_aoe_increase"	"1"				
 			}
 			"threshold_pct"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+15"
 			}
 			"min_bonus_pct"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+60"
 			}
 			"max_bonus_pct"
 			{
 				"value"						"0"
-				"special_bonus_facet_antimage_mana_thirst"	"+15"
 			}
 			"bonus_attack_damage"
 			{
 				"value"								"30 60 90 120 150 180 210"
-				"RequiresFacet"						"antimage_mana_thirst"
 				"CalculateSpellDamageTooltip"		"0"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_PHYSICAL"
 			}
 			"linger_duration"
 			{
 				"value"						"4.0"
-				"RequiresFacet"			"antimage_mana_thirst"
 			}
 		}
 	}
@@ -362,13 +345,12 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"antimage_mana_overload"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
 		

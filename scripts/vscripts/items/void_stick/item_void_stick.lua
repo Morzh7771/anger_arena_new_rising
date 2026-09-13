@@ -29,6 +29,7 @@ end
 -- Item
 --------------------------------------------------------------------------------
 item_void_stick = class({
+
 	GetIntrinsicModifierName = function(self) return "modifier_item_void_stick" end,
 
 	Precache = function(self, context)
@@ -104,6 +105,14 @@ item_void_stick = class({
 		self:_EndAstral()
 	end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_void_stick:Precache(context)
+	PrecacheResource("particle", "particles/void_stick/void_stick_astral.vpcf", context)
+	PrecacheResource("particle", "particles/void_stick/void_stick_finish.vpcf", context)
+end
 
 --------------------------------------------------------------------------------
 -- Astral modifier (out of game + regen)

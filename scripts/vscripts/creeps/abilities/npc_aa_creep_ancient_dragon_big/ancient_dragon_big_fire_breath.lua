@@ -59,6 +59,7 @@ function ancient_dragon_big_fire_breath:OnSpellStart()
     Timers:CreateTimer(self.breath_distance / self.breath_speed, function()
         Timers:RemoveTimer("ancient_dragon_big_fire_breath" .. tostring(caster:entindex()))
         ParticleManager:DestroyParticle(breath_pfx, false)
+        ParticleManager:ReleaseParticleIndex(breath_pfx)
         return nil
     end)
 

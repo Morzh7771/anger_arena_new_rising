@@ -37,9 +37,14 @@ if not IsInToolsMode() then
 	local _print = _G._originalPrint
 
 	-- Безопасный traceback: если debug отсутствует — просто вернём строку.
-	local function _safe_traceback()
+	-- Аргументы обязательно прокидываем дальше: вызовы вида
+	-- debug.traceback(err, 2) иначе теряли и сообщение, и уровень.
+	local function _safe_traceback(...)
+		if debug and debug._originalTraceback then
+			return debug._originalTraceback(...)
+		end
 		if debug and debug.traceback then
-			return debug.traceback()
+			return debug.traceback(...)
 		end
 		return "[traceback unavailable: debug library is nil]"
 	end
@@ -63,8 +68,8 @@ if not IsInToolsMode() then
 		return result
 	end
 
-	function traceback_wrapper()
-		local result = _safe_traceback()
+	function traceback_wrapper(...)
+		local result = _safe_traceback(...)
 
 		if OutputRedirection._count > 0 then
 			for playerid, _ in pairs(OutputRedirection._data) do

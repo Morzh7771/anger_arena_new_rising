@@ -1,4 +1,13 @@
 soul_guardian_damage_steal = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function soul_guardian_damage_steal:Precache(context)
+	PrecacheResource("particle", "particles/bosses/soul_guardian/soul_guardian_damage_steal/soul_guardian_damage_steal.vpcf", context)
+	PrecacheResource("particle", "particles/bosses/soul_guardian/soul_guardian_damage_steal/soul_guardian_damage_steal_delay.vpcf", context)
+end
+
 local damageStealModifierName = "modifier_soul_guardian_damage_steal"
 local modifierInCaster = "modifier_soul_guardian_damage_in_caster"
 LinkLuaModifier(damageStealModifierName, "creeps/boss/soul_guardian/soul_guardian_damage_steal/"..damageStealModifierName, LUA_MODIFIER_MOTION_NONE)
@@ -57,7 +66,9 @@ function soul_guardian_damage_steal:OnSpellStart()
 			else
 				caster.channelDamageSteal = false
 				ParticleManager:DestroyParticle(particleDelay, false)
+				ParticleManager:ReleaseParticleIndex(particleDelay)
 				ParticleManager:DestroyParticle(particleStealDamage, false)
+				ParticleManager:ReleaseParticleIndex(particleStealDamage)
 				return nil
 			end
 		end)

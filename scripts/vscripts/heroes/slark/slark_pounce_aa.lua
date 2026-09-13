@@ -5,6 +5,17 @@ LinkLuaModifier("modifier_aa_slark_pounce_leash", "heroes/slark/slark_pounce_aa"
 LinkLuaModifier("modifier_aa_slark_pounce_charge_counter", "heroes/slark/slark_pounce_aa", LUA_MODIFIER_MOTION_NONE)
 
 slark_pounce_aa = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function slark_pounce_aa:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_slark/slark_pounce_ground.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_slark/slark_pounce_leash.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_slark/slark_pounce_start.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_slark/slark_pounce_trail.vpcf", context)
+end
+
 modifier_aa_slark_pounce = class({})
 modifier_aa_slark_pounce_leash = class({})
 modifier_aa_slark_pounce_charge_counter = class({})
@@ -163,7 +174,7 @@ function modifier_aa_slark_pounce:UpdateHorizontalMotion(me, dt)
 			
 			self:GetParent():MoveToTargetToAttack(enemy)
 			
-			-- IMBAfication: β/Remnants of Pounce
+			-- IMBAfication: ОІ/Remnants of Pounce
 			self:GetParent():PerformAttack(enemy, true, true, true, false, false, false, false)
 			
 			self:Destroy()

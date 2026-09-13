@@ -1,10 +1,20 @@
 local DMG
 BaseClass = class ({
+
     ResetToggleOnRespawn = function(self) return true end,
     IsHiddenWhenStolen = function(self) return false end,
     IsRefreshable = function(self) return true end,
     IsNetherWardStealable = function(self) return false end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function BaseClass:Precache(context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_gods_strength.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_sven/sven_gods_strength_hero_effect.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_sven/sven_spell_gods_strength_ambient.vpcf", context)
+end
 guardian_of_the_ancients_confident_stance = BaseClass
 LinkLuaModifier( "guardian_of_the_ancients_confident_stance_on", "heroes/guardian_of_the_ancients/confident_stance", LUA_MODIFIER_MOTION_NONE)    
 

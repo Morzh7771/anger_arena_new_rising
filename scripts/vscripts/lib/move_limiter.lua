@@ -2,6 +2,28 @@ require('lib/queue_t')
 
 move_limiter = move_limiter or class({})
 
+-- Куски имён модификаторов, во время которых юнит намеренно находится в воздухе
+-- или вне карты. Пока висит такой модификатор, лимитер не трогает юнита:
+-- Interrupt + FindClearSpaceForUnit посреди полёта отменяют способность
+-- и возвращают героя обратно на арену.
+local IGNORED_MODIFIER_PARTS = {
+	"solar_guardian",	-- Dawnbreaker (Valora), полёт ульты
+}
+
+function IsMoveLimiterIgnored(unit)
+	for _, modifier in pairs( unit:FindAllModifiers() ) do
+		local name = modifier:GetName()
+
+		for _, part in pairs(IGNORED_MODIFIER_PARTS) do
+			if string.find(name, part, 1, true) then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
 function MakeMoveLimiter(unit, checkfunc, nHistorySteps, checkLen, basePosition)
 	local res = move_limiter()
 	res:init(unit, checkfunc, nHistorySteps, checkLen, basePosition)
@@ -34,6 +56,10 @@ end
 function move_limiter:tick()
 	local unit 		= self.unit
 	local queue 	= self.queue
+
+	-- юнит летит: его позиция сейчас не является нормальной позицией на земле,
+	-- ни проверять её, ни записывать в историю нельзя
+	if IsMoveLimiterIgnored(unit) then return end
 
 	local unitPos = unit:GetAbsOrigin()
 	local lastPos = queue:see()

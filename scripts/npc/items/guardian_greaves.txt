@@ -16,7 +16,7 @@
 		"ItemResult"					"item_arcane_boots"
 		"ItemRequirements"
 		{
-			"01"						"item_boots*;item_ring_of_basilius"
+			"01"					"item_boots*;item_ring_of_basilius;item_wizard_hat"
 		}
 	}
 	"item_recipe_guardian_greaves_custom"
@@ -92,6 +92,13 @@
 				"bonus_mana"			"250"
 				"replenish_amount"		"250"
 				"replenish_radius"		"1200"
+			"mana_regen"				"0.25"
+			"aura_mana_regen"				"1"
+			"aura_radius"
+			{
+				"value"				"1200"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 	}
 	"item_guardian_greaves_custom"

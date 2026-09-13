@@ -47,7 +47,7 @@ DOTAAbilities
             }
             "AbilityCharges"                    
             {
-                "value"                                                 "0 0 0 0 0 0 0"
+                "value"                                                 "0"
                 "special_bonus_unique_silencer_arcane_curse_charges"  	"3"
             }  
 			"application_damage"				"30 60 90 120 150 180 210"
@@ -66,7 +66,11 @@ DOTAAbilities
                 "value"                     "2"
                 "special_bonus_unique_silencer_arcane_curse_duration"       "+1"
             }
-			"penalty_duration"					"2"
+			"penalty_duration"
+			{
+				"value"				"2"
+				"special_bonus_unique_silencer_arcane_curse_duration"				"+1"
+			}
 			"movespeed"							"-16 -19 -22 -25 -28 -31 -34"
 			"penalty_multiplier"				"1.5"
 			"undispellable"
@@ -95,7 +99,7 @@ DOTAAbilities
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"0.0 0.0 0.0 0.0"
+		"AbilityDuration"				"0.0"
 		"AbilityCastRange"				"600"
 		
 		// Time		
@@ -139,12 +143,13 @@ DOTAAbilities
 			"stacks_for_silence"
             {
                 "value"     "+4"
-            } 						
+            }
 			"silence_duration"
             {
                 "value"     "+2.5"
             }
             "debuff_linger_duration"        "3 4 5 6 7 8 9"
+			"pure_pierce_debuff"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -180,12 +185,17 @@ DOTAAbilities
                     "value"             "6 9 12 15 18 21 24"
                     "special_bonus_unique_silencer_4"                   "+6"
                 }
-                "radius"                        
+                "radius"
                 {
-                    "value" "1200"
+                    "value" "0"
                     "affected_by_aoe_increase"  "1"
+                    "special_bonus_unique_silencer_4"				"+250"
                 }
 
+        	"damage"				"120 160 200 240 280 320 360"
+        	"int_multiplier"				"1 1.5 2 2.5 3 3.5 4"
+        	"debuff_duration"				"4"
+        	"duration"				"3 4 5 6 7 8 9"
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -229,28 +239,23 @@ DOTAAbilities
             "AbilityDuration"
             {
                 "value"                 "4.5 4.75 5.0 5.25 5.5 5.75 6.0"
-                "special_bonus_facet_silencer_reverberating_silence"    "=0"
             }
             
-            "apply_twice"
-            {
-                "special_bonus_facet_silencer_reverberating_silence" "1"
-            }
+            "apply_twice"				"0"
 
-            "first_duration"
-            {
-                "special_bonus_facet_silencer_reverberating_silence" "2.5 2.75 3 3.25 3.5 3.75 4"
-            }
+            "first_duration"				"0"
 
-            "second_duration"
-            {
-                "special_bonus_facet_silencer_reverberating_silence" "2"
-            }
+            "second_duration"				"0"
 
             "applies_curse"
             {
                 "special_bonus_scepter"     "+1"
             }
+        	"AbilityCooldown"
+        	{
+        		"value"				"120"
+        		"special_bonus_unique_silencer_7"				"-15"
+        	}
         }
 	}
 	"silencer_brain_drain"
@@ -274,6 +279,13 @@ DOTAAbilities
                 "value"                     "2"
                 "special_bonus_shard"       "+2"
             }   
+        	"silenced_bonus_int_steal_amount"				"1"
+        	"damage_pct"
+        	{
+        		"value"				"5"
+        		"hero_levelup"				"+0.5"
+        		"special_bonus_unique_silencer_brain_drain_damage"				"+7"
+        	}
         }
     }
     //=================================================================================================================
@@ -306,6 +318,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_silencer_2"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -333,6 +346,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_silencer_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -352,6 +366,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_silencer_7"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

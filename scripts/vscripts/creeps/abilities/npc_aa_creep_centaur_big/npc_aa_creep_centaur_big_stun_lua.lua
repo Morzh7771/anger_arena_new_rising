@@ -8,6 +8,7 @@ function npc_aa_creep_centaur_big_stun_lua:OnSpellStart()
 
     local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", PATTACH_CUSTOMORIGIN, caster )
     ParticleManager:SetParticleControl( particle, 0, self:GetCaster():GetOrigin() )
+    ParticleManager:ReleaseParticleIndex(particle)
 
     if #enemies > 0 then
         for _,enemy in pairs(enemies) do

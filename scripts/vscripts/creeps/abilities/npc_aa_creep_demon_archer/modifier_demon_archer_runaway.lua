@@ -39,6 +39,7 @@ function mod:OnTakeDamage(params)
 
     local part = ParticleManager:CreateParticle("particles/generic_hero_status/status_invisibility_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
     ParticleManager:SetParticleControlEnt(part, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
+    ParticleManager:ReleaseParticleIndex(part)
 
     parent:AddNewModifier(parent, self, "modifier_invisible", { duration = self.duration })
     parent:AddNewModifier(parent, self, "mod_effect", { duration = self.duration, bonus_movespeed = self.bonus_movespeed })

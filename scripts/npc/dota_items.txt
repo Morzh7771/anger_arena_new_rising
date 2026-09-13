@@ -46,7 +46,6 @@
 		"AbilityValues"
 		{
 			"lifesteal_percent"		"18"
-			"creep_lifesteal_reduction_pct"	"0"
 		}
 	}
 	"item_clarity"
@@ -315,11 +314,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"minimun_distance"		"70"
 			"maximum_distance"		"800"
 			"vision_radius"			"200"
 			"tooltip_channel_time"	"3.0"
 			"AbilityChannelTime"	"3.0"
+			"minimum_distance"				"70"
 		}
 	}
 	"item_recipe_soul_ring"
@@ -766,7 +765,7 @@
 		"ItemResult"					"item_refresher"
 		"ItemRequirements"
 		{
-			"01"						"item_cornucopia;item_ring_of_tarrasque;item_tiara_of_selemene"
+			"01"					"item_ring_of_tarrasque;item_tiara_of_selemene"
 		}
 	}
 	"item_refresher"
@@ -797,6 +796,9 @@
 			"bonus_health_regen"	"18"
 			"bonus_mana_regen"		"8.0"
 			"bonus_damage"			"10"
+			"max_level"				"1"
+			"cooldown_duration"				"180"
+			"refresh_items"				"0"
 		}
 	}
 	//=================================================================================================================

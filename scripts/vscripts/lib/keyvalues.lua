@@ -59,7 +59,7 @@ end
 
 local split = function(inputstr, sep)
 	if sep == nil then sep = "%s" end
-	local t={} ; i=1
+	local t={} ; local i=1 -- было без local, каждый вызов писал в глобал _G.i
 	for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
 		t[i] = str
 		i = i + 1
@@ -313,7 +313,7 @@ function GetAbilitySpecials(name)
 
 			if AbilityValues then
 				for value_name, value in pairs(AbilityValues) do
-					if value_name ~= "var_type" and value_name ~= "LinkedSpecialBonus" and value_name ~= "RequiresScepter" and i ~= "CalculateSpellDamageTooltip" then
+					if value_name ~= "var_type" and value_name ~= "LinkedSpecialBonus" and value_name ~= "RequiresScepter" and value_name ~= "CalculateSpellDamageTooltip" then
 						-- if type(value) == "table" then
 							-- for i, j in pairs(value) do
 								-- table.insert(ability_specials, {value_name, value})

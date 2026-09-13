@@ -16,11 +16,11 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17 15 13 11"
+		"AbilityCooldown"				"17 16 15 14 13 12 11"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -32,28 +32,23 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"chill_duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"chill_duration"			"6"
+				"value"				"6"
+				"special_bonus_unique_visage_grave_chill_duration"				"+2"
 			}
-			"02"
+			"movespeed_bonus"				"15 20 25 30 35 40 45"
+			"attackspeed_bonus"				"25 40 55 70 85 100 115"
+			"radius"				"900"
+			"AbilityCooldown"				"17 16 15 14 13 12 11"
+			"target_radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"movespeed_bonus"				"15 20 25 30"
+				"value"				"0"
+				"affected_by_aoe_increase"				"1"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attackspeed_bonus"				"25 40 55 70"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"900"
-			}
+			"penalty"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}	
@@ -73,7 +68,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -89,54 +84,39 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"bolt_speed"				"1000"
+			"soul_base_damage"				"20"
+			"soul_charge_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bolt_speed"				"1000"
+				"value"				"70"
+				"LinkedSpecialBonus"				"special_bonus_unique_visage_4"
+				"special_bonus_unique_visage_4"				"+30"
 			}
-			"02"
+			"stack_limit"				"3 4 5 6 7 8 9"
+			"stack_duration"				"6.0"
+			"damage_limit"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"soul_base_damage"			"20"
+				"value"				"100"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 			}
-			"03"
+			"radius"				"1800"
+			"damage_min"				"2.0"
+			"damage_max"				"3000.0"
+			"AbilityCooldown"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"soul_charge_damage"		"70"
-				"LinkedSpecialBonus"		"special_bonus_unique_visage_4"
+				"value"				"4"
+				"special_bonus_unique_visage_soul_assumption_cooldown"				"-1"
 			}
-			"04"
+			"soul_charge_gold"				"0"
+			"gold_creep_pct"				"0"
+			"gold_grace_period_hero"				"0"
+			"gold_max_tooltip"				"0"
+			"target_count"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"stack_limit"				"3 4 5 6"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stack_duration"			"6.0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_limit"				"100"
-				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"1800"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_min"				"2.0"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_max"				"3000.0"
+				"value"				"1"
+				"special_bonus_unique_visage_3"				"=3"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -153,56 +133,34 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"max_layers"				"4"
+			"damage_reduction"				"8 12 16 20 24 28 32"
+			"recovery_time"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"max_layers"						"4"
+				"value"				"6 6 5 4 4 4 3"
+				"special_bonus_unique_visage_cloak_recovery_time"				"-2"
 			}
-			"02"
+			"minimum_damage"				"40"
+			"radius"				"900"
+			"max_damage_reduction"				"80"
+			"shard_hp_restoration_pct"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"damage_reduction"					"8 12 16 20"
+				"value"				"25"
+				"RequiresShard"				"1"
 			}
-			"03"
+			"shard_cooldown"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"recovery_time"						"6 5 4 3"
+				"value"				"65"
+				"RequiresShard"				"1"
 			}
-			"04"
+			"shard_manacost"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"minimum_damage"					"40"
+				"value"				"125"
+				"RequiresShard"				"1"
 			}
-			"05"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"radius"							"900"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"max_damage_reduction"					"80"
-			}
-			"07"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"shard_hp_restoration_pct"				"25"
-				"RequiresShard"						"1"
-			}	
-			"08"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"shard_cooldown"				"65"
-				"RequiresShard"						"1"
-			}
-			"09"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"shard_manacost"				"125"
-				"RequiresShard"						"1"
-			}		
+			"minimum_damage_familiars"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -222,49 +180,85 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0"
+		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130 120 110"
+		"AbilityCooldown"				"130 127 123 120 117 113 110"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 150 150"
+		"AbilityManaCost"				"150"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"familiar_hp"				"500 600 700 800 900 1000 1100"
+			"familiar_armor"				"0 2 4 6 8 10 12"
+			"familiar_speed"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"familiar_hp"				"500 600 700"
+				"value"				"430"
+				"LinkedSpecialBonus"				"special_bonus_unique_visage_2"
 			}
-			"02"
+			"familiar_attack_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"familiar_armor"			"0 2 4"
+				"value"				"25 50 75 100 125 150 175"
+				"LinkedSpecialBonus"				"special_bonus_unique_visage_7"
+				"CalculateSpellDamageTooltip"				"0"
+				"special_bonus_unique_visage_7"				"+6"
 			}
-			"03"
+			"tooltip_familiar_count"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"familiar_speed"			"430"
-				"LinkedSpecialBonus"		"special_bonus_unique_visage_2"
+				"value"				"2"
+				"LinkedSpecialBonus"				"special_bonus_unique_visage_6"
 			}
-			"04"
+			"familiar_attack_range"				"180"
+			"familiar_base_movespeed"				"430"
+			"familiar_bounty"				"100"
+			"bonus_movement_speed"				"0"
+			"visage_base_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"familiar_attack_damage"	"25 50 75"
-				"LinkedSpecialBonus"		"special_bonus_unique_visage_7"
-				"CalculateSpellDamageTooltip"	"0"
+				"value"				"0"
+				"special_bonus_unique_visage_7"				"+6"
 			}
-			"05"
+			"bonus_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_familiar_count"	"2"
-				"LinkedSpecialBonus"		"special_bonus_unique_visage_6"
+				"value"				"0"
+				"special_bonus_unique_visage_7"				"0"
+				"CalculateSpellDamageTooltip"				"0"
+			}
+			"familiar_count"
+			{
+				"value"				"2"
+				"special_bonus_unique_visage_6"				"+1"
+			}
+			"armor_reduction_per_hit"
+			{
+				"value"				"0"
+				"special_bonus_unique_visage_1"				"+1"
+			}
+			"armor_reduction_duration"
+			{
+				"value"				"0"
+				"special_bonus_unique_visage_1"				"+10"
+			}
+			"in_formation"				"0"
+			"back_distance"				"75"
+			"side_distance"				"75"
+			"return_distance"				"1200"
+			"recall_duration"				"4"
+			"max_distance"
+			{
+				"value"				"3500"
+				"affected_by_aoe_increase"				"1"
+			}
+			"attack_range_buffer"				"200"
+			"additional_target_search_radius"
+			{
+				"value"				"300"
+				"affected_by_aoe_increase"				"1"
 			}
 		}
 	}
@@ -273,11 +267,11 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"visage_silent_as_the_grave"
-		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"MaxLevel"		"1"
+		"Innate"		"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
 
 		"IsGrantedByScepter"			"1"
 
@@ -298,28 +292,32 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"bonus_duration"				"4"
+			"bonus_damage"				"25"
+			"invis_duration"				"35.0"
+			"movespeed_bonus"				"20"
+			"AbilityCooldown"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_duration"						"4"
+				"value"				"45.75"
+				"hero_levelup"				"-0.75"
 			}
-			"02"
+			"flight_duration"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_damage"						"25"
+				"value"				"20"
+				"special_bonus_scepter"				"+10"
 			}
-			"03"
+			"invis"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"invis_duration"					"35.0"
+				"value"				"0"
+				"special_bonus_scepter"				"=1"
 			}
-			"04"
+			"fly_timer"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"movespeed_bonus"					"20"
-			}			
+				"value"				"0"
+				"special_bonus_scepter"				"0"
+			}
 		}
 	}
 	"visage_stone_form_self_cast"
@@ -331,7 +329,6 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"3"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -347,38 +344,15 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"stun_radius"						"375"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stun_delay"						"0.55"
-			}			
-			"03"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"stun_damage"						"60 100 140"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stun_duration"						"0.8 1.0 1.2"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stone_duration"					"6.0"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"hp_regen"							"150 175 200"
-			}
+			"stun_radius"				"375"
+			"stun_delay"				"0.55"
+			"stun_damage"				"60 100 140 180 220 260 300"
+			"stun_duration"				"0.8 1 1.2 1.4 1.6 1.8 2"
+			"stone_duration"				"6.0"
+			"hp_regen"				"150 175 200 225 250 275 300"
+			"AbilityCastRange"				"0"
 		}
 	}
 	"visage_summon_familiars_stone_form"
@@ -393,7 +367,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilityCastRange"				"160"
 		"AbilityCastPoint"				"0.0"
-		"MaxLevel"						"3"
 		"AbilitySound"					"Visage_Familiar.StoneForm.Cast"
 
 		// Time		
@@ -402,38 +375,14 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"stun_radius"						"375"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stun_delay"						"0.55"
-			}			
-			"03"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"stun_damage"						"60 100 140"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stun_duration"						"0.8 1.0 1.2"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"stone_duration"					"6.0"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"hp_regen"							"150 175 200"
-			}
+			"stun_radius"				"375"
+			"stun_delay"				"0.55"
+			"stun_damage"				"60 100 140 180 220 260 300"
+			"stun_duration"				"0.8 1 1.2 1.4 1.6 1.8 2"
+			"stone_duration"				"6.0"
+			"hp_regen"				"150 175 200 225 250 275 300"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}

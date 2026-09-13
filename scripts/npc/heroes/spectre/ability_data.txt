@@ -45,9 +45,9 @@ DOTAAbilities
 					"value"			"10 14 18 22 26 30 34"
 					"special_bonus_unique_spectre_3" "+12"
 				}
-				"dagger_path_duration"	"12.0 12.0 12.0 12.0"
-				"hero_path_duration"	"7.0 7.0 7.0 7.0"
-				"buff_persistence"		"4.0 4.0 4.0 4.0"
+				"dagger_path_duration"	"12.0"
+				"hero_path_duration"	"7.0"
+				"buff_persistence"		"4.0"
 				"dagger_radius"			
 				{
 					"value"			"125"
@@ -65,11 +65,13 @@ DOTAAbilities
 				}
 				"speed"					"800"
 				"dagger_grace_period"	"1.0"
-				"applies_desolate"
-                {
-                    "special_bonus_facet_spectre_forsaken"  "=1"                    
-                }
+				"applies_desolate"				"0"
 				"damage_pct" "80"
+			"AbilityCooldown"
+			{
+				"value"				"22 21 20 19 18 17 16"
+				"special_bonus_unique_spectre"				"-3"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -78,11 +80,13 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"spectre_desolate"
-		"MaxLevel"						"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Spectre.Desolate"
+		"IsBreakable"					"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -90,7 +94,8 @@ DOTAAbilities
 		{
 			"bonus_damage"
 			{
-				"value"									"50.0 65.0 80.0 95.0 110.0 135.0 160.0"
+				"value"									"25"
+				"hero_levelup"							"+0.25"
 				"special_bonus_unique_spectre_2"		"+40"
 			}
 			"radius"
@@ -101,12 +106,15 @@ DOTAAbilities
 			"only_creep_allies_damage_pct"
             {
                 "value"                     "0"
-                "special_bonus_facet_spectre_forsaken"  "+60"
             }
 			"damage_pct"			
 			{
 				"value"	"2"
 				"special_bonus_unique_spectre_desolate_agi_dmg_pct" "+3"
+			}
+			"illusion_damage_outgoing"
+			{
+				"special_bonus_unique_spectre_4"				"+12"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -121,6 +129,7 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
         "HasShardUpgrade"               "1"
+		"IsBreakable"					"1"
 
 
 		// Special
@@ -170,12 +179,12 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"spectre_haunt"
-		"MaxLevel"						"1"
+		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Spectre.Haunt"
-		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"				"1"
 
 		"AbilityDraftPreAbility"		"spectre_reality"
 
@@ -184,9 +193,8 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -205,8 +213,28 @@ DOTAAbilities
 			"destroy_if_target_is_dead"
             {
                 "value"                                     "1"
-                "special_bonus_facet_spectre_twist_the_knife"   "=0"
             }
+			"AbilityCooldown"
+			{
+				"value"				"160 157 153 150 147 143 140"
+				"special_bonus_scepter"				"-20"
+			}
+			"scepter_cooldown_reduction_tooltip"				"20"
+			"fear_duration"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"=2.0"
+			}
+			"fear_aoe"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"=400"
+			}
+			"fear_movespeed_slow"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"50"
+			}
 		}
 	}
 	"spectre_haunt_single"
@@ -214,7 +242,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"spectre_haunt_single"
-		"MaxLevel"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -252,7 +280,6 @@ DOTAAbilities
 			"destroy_if_target_is_dead"
             {
                 "value"                                     "1"
-                "special_bonus_facet_spectre_twist_the_knife"   "=0"
             }
 		}
 	}
@@ -277,13 +304,14 @@ DOTAAbilities
             "cast_dagger_on_target"
             {
                 "value"                     "0"
-                "special_bonus_facet_spectre_twist_the_knife"   "+1"
             }
             "AbilityCooldown"
             {
                 "value"                                     "3.0"
-                "special_bonus_facet_spectre_twist_the_knife"   "=1.0"
             }
+        	"may_target_shadow_step"				"1"
+        	"travel_time"				"0.2"
+        	"min_speed"				"1500"
         }
     }
     "spectre_spectral"
@@ -292,12 +320,24 @@ DOTAAbilities
 
         "MaxLevel"                      "1"
         "Innate"                        "1"
+
+        "AbilityValues"
+        {
+            "radius"                    "40"
+            "linger_time"               "0.3"
+            "speed_bonus"
+            {
+                "value"                 "40"
+                "hero_levelup"          "10"
+            }
+        }
     }
     //=================================================================================================================
     // Ability: Special Bonus
     //=================================================================================================================
     "special_bonus_unique_spectre"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -341,6 +381,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_spectre_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -360,6 +401,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_spectre_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -401,5 +443,48 @@ DOTAAbilities
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                        "special_bonus_base"
+	}
+
+	"spectre_shadow_step"
+	{
+		"MaxLevel"					"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"LinkedAbility"				"spectre_reality"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"24 22 21 20 18 16 15"
+		"AbilityManaCost"				"60 65 70 75 80 85 90"
+		"AbilityValues"
+		{
+			"AbilityCastRange"
+			{
+				"value"				"1000"
+			}
+			"duration"
+			{
+				"value"				"3.5 4 4.5 5 5.5 6 6.5"
+				"special_bonus_unique_spectre_shadow_step_duration"				"+1.0"
+			}
+			"illusion_damage_incoming"				"75"
+			"tooltip_illusion_total_damage_incoming"
+			{
+				"value"				"175"
+				"CalculateSpellDamageTooltip"				"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+			}
+			"illusion_outgoing_damage"
+			{
+				"value"				"35 40 45 50 55 60 65"
+				"CalculateSpellDamageTooltip"				"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+			}
+			"move_speed"				"900"
+			"bonus_move_speed_illusion_pct"				"35"
+		}
 	}
 }

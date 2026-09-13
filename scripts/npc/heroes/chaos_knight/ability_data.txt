@@ -69,6 +69,7 @@ DOTAAbilities
 				"value"							"0"
 				"special_bonus_shard"			"=30"
 			}
+			"bounce_range_pct"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -120,8 +121,8 @@ DOTAAbilities
 			"additional_debuff_duration_percent"
 			{
 				"value"						"0"
-				"special_bonus_facet_chaos_knight_irrationality"		"=50"
 			}
+			"additional_debuff_duration_tooltip"				"0"
 		}
 	}
 	"chaos_knight_chaos_strike"
@@ -143,6 +144,7 @@ DOTAAbilities
 				{
 						"value"				"33.33"
 						"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_5"
+					"special_bonus_unique_chaos_knight_5"				"+10"
 				}
 				"crit_min"				"125"
 				"crit_max"				"140 175 210 245 280 315 350"
@@ -176,7 +178,7 @@ DOTAAbilities
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.4"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -218,6 +220,16 @@ DOTAAbilities
 			{
 				"value"						"0"
 			}
+			"bonus_illusion_chance"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"50"
+			}
+			"bonus_illusion_count"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"1"
+			}
 		}
 	}
 	"chaos_knight_phantasmagoria"
@@ -242,7 +254,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"chaos_knight_reins_of_chaos"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"MaxLevel"						"1"
 		"Innate"						"1"
 		"AbilityValues"
@@ -266,5 +278,13 @@ DOTAAbilities
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                        "special_bonus_base"
+	}
+
+	"chaos_knight_fundamental_forging"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"Innate"				"1"
+		"AbilityValues"				"0"
 	}
 }

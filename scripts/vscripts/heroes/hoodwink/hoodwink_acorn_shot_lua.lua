@@ -429,7 +429,7 @@ function modifier_hoodwink_acorn_shot_lua_thinker:OnIntervalThink()
 			local trees = GridNav:GetAllTreesAroundPoint( self.target:GetAbsOrigin(), self.range, false )
 			local bestTree = mainTree
 			for _,tree in pairs(trees) do
-				print(self.target:GetUnitName())
+				-- отладочный print убран: горячий путь (каждый удар/лечение)
 				if (tree:GetAbsOrigin() - self.target:GetAbsOrigin()):Length2D() < (bestTree:GetAbsOrigin() - self.target:GetAbsOrigin()):Length2D() then
 					bestTree = tree
 				end

@@ -10,8 +10,16 @@ LinkLuaModifier( "modifier_blood", "items/desolator_blood.lua", LUA_MODIFIER_MOT
 LinkLuaModifier( "modifier_blood_count", "items/desolator_blood.lua", LUA_MODIFIER_MOTION_NONE )
 
 item_desolator_aa_1 = class({
+
     GetIntrinsicModifierName = function (self) return "modifier_item_desolator_lua_1" end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_desolator_aa_1:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/desolator_projectile.vpcf", context)
+end
 item_desolator_aa_2 = class({
     GetIntrinsicModifierName = function (self) return "modifier_item_desolator_lua_2" end
 })
@@ -36,9 +44,21 @@ modifier_item_desolator_lua_1 = class({
     CheckState = function (self)
         if self:GetAbility():GetName() == "item_desolator_aa_3" then return {[MODIFIER_STATE_CANNOT_MISS] = true,} end
     end,
-    GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end,
+    -- геттеры движок дёргает на каждый пересчёт статов и на каждую атаку,
+    -- поэтому значения из KV берём один раз
+    OnCreated = function (self) self:CacheValues() end,
+    OnRefresh = function (self) self:CacheValues() end,
+    CacheValues = function (self)
+        local ability = self:GetAbility()
+
+        if not ability then return end
+
+        self.bonus_attack_speed = ability:GetSpecialValueFor("bonus_attack_speed")
+        self.bonus_damage       = ability:GetSpecialValueFor("bonus_damage")
+    end,
+    GetModifierAttackSpeedBonus_Constant = function (self) return self.bonus_attack_speed or 0 end,
     GetModifierProjectileName = function (self) return "particles/items_fx/desolator_projectile.vpcf" end,
-    GetModifierPreAttack_BonusDamage = function (self) return self:GetAbility():GetSpecialValueFor("bonus_damage")  end,
+    GetModifierPreAttack_BonusDamage = function (self) return self.bonus_damage or 0 end,
 })
 
 modifier_item_desolator_lua_2 = modifier_item_desolator_lua_1
@@ -75,7 +95,14 @@ modifier_curruption_armor_debuff_1 = class({
     DeclareFunctions= function (self) return {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
 	}end,
-    GetModifierPhysicalArmorBonus = function (self) return self:GetAbility():GetSpecialValueFor("corruption_armor") * -1 end,
+    OnCreated = function (self) self:CacheValues() end,
+    OnRefresh = function (self) self:CacheValues() end,
+    CacheValues = function (self)
+        local ability = self:GetAbility()
+
+        if ability then self.corruption_armor = ability:GetSpecialValueFor("corruption_armor") end
+    end,
+    GetModifierPhysicalArmorBonus = function (self) return -(self.corruption_armor or 0) end,
     GetTexture = function (self) return "item_desolator" end
 })
 modifier_curruption_armor_debuff_2 = modifier_curruption_armor_debuff_1
@@ -105,6 +132,13 @@ modifier_blood = ({
 modifier_blood_count = ({
     IsHidden = function (self) return false end,
     GetTexture = function (self) return "../spellicons/crit_blood" end,
-    OnCreated = function (self) return self:StartIntervalThink(0.1) end,
-    OnIntervalThink = function (self) if not IsServer() then return end self:SetStackCount(#self:GetParent():FindAllModifiersByName("modifier_blood")) end,
+    OnCreated = function (self) return self:StartIntervalThink(0.25) end,
+    OnIntervalThink = function (self)
+        if not IsServer() then return end
+
+        -- SetStackCount рассылается клиентам, поэтому только при изменении
+        local count = #self:GetParent():FindAllModifiersByName("modifier_blood")
+
+        if self:GetStackCount() ~= count then self:SetStackCount(count) end
+    end,
 })

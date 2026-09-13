@@ -157,8 +157,10 @@ function ChangeHero(player, oldHero, newHeroName, successCallback, failedCallbac
 		end
 
 		local gold = oldHero:GetGold() or 0
+		-- Четвёртый аргумент - опыт. С нулём терялись уровень и статы.
+		local xp = oldHero:GetCurrentXP() or 0
 
-		local hero = PlayerResource:ReplaceHeroWith( playerid, newHeroName, gold, 0 )
+		local hero = PlayerResource:ReplaceHeroWith( playerid, newHeroName, gold, xp )
 		
 		UTIL_Remove(oldHero)
 
@@ -191,5 +193,5 @@ function ChangeHero(player, oldHero, newHeroName, successCallback, failedCallbac
 
 		successCallback()
 		hero:AddNewModifier(nil,nil,'modifier_repick',{duration = -1})
-	end)
+	end, playerid)
 end

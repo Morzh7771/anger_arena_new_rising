@@ -1,5 +1,14 @@
 megacreep_beast_stomp = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_beast_stomp:Precache(context)
+	PrecacheResource("particle", "particles/econ/items/centaur/centaur_ti6/centaur_ti6_warstomp.vpcf", context)
+	PrecacheResource("particle", "particles/generic_gameplay/generic_stunned.vpcf", context)
+end
+
+
 LinkLuaModifier("modifier_megacreep_beast_stomp_stun", "creeps/abilities/megacreep_beast/modifiers/modifier_megacreep_beast_stomp_stun", LUA_MODIFIER_MOTION_NONE)
 
 ---------------------------------------------------------------------------

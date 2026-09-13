@@ -9,31 +9,16 @@
         "Ability4"      "phantom_lancer_illusory_armaments"
         "Ability5"      "generic_hidden"
         "Ability6"      "phantom_lancer_juxtapose"
-		"Ability10"     "special_bonus_unique_phantom_lancer_lance_damage"
-        "Ability11"     "special_bonus_unique_phantom_lancer_phantom_rush_agility"
-        "Ability12"     "special_bonus_unique_phantom_lancer_2"
-        "Ability13"     "special_bonus_unique_phantom_lancer_5"
-        "Ability14"     "special_bonus_unique_phantom_lancer"
-        "Ability15"     "special_bonus_unique_phantom_lancer_6"
+		"Ability10"     "special_bonus_unique_phantom_lancer_lance_slow_duration"
+        "Ability11"     "special_bonus_unique_phantom_lancer_juxtapose_illusio_proc_chance"
+        "Ability12"     "special_bonus_unique_phantom_lancer_illusion_lances"
+        "Ability13"     "special_bonus_unique_phantom_lancer_doppelwalk_cast_range"
+        "Ability14"     "special_bonus_unique_phantom_lancer_lance_damage"
+        "Ability15"     "special_bonus_unique_phantom_lancer_juxtapose_damage_in"
         "Ability16"     "special_bonus_unique_phantom_lancer_4"
-        "Ability17"     "special_bonus_unique_phantom_lancer_illusory_armaments_dmg"
+        "Ability17"     "special_bonus_unique_phantom_lancer_illusory_armaments_duration"
 
-        "Facets"
-        {
-            "phantom_lancer_convergence" 
-            {
-                "Icon"              "illusion"
-                "Color"             "Yellow"
-                "GradientID"        "1"
 
-            }
-            "phantom_lancer_divergence" 
-            {
-                "Icon"              "summons"
-                "Color"             "Blue"
-                "GradientID"        "2"
-            }
-        }
         
 		"ArmorPhysical"		"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

@@ -5,7 +5,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"treant_natures_guise"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"1"
 		"AbilitySound"					"Hero_Treant.NaturesGuise.On"
@@ -50,6 +50,7 @@ DOTAAbilities
 			{
 				"value"							"15"
 				"special_bonus_shard"						"+20"
+				"special_bonus_unique_treant_12"				"+2.5"
 			}
 			"shard_cooldown"
 			{
@@ -57,6 +58,12 @@ DOTAAbilities
 				"RequiresShard"						"1"
 			}
 			
+			"AbilityCooldown"
+			{
+				"value"				"36"
+				"hero_levelup"				"-1"
+				"levelup_interval"				"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -65,14 +72,13 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 
         "MaxLevel"                      "1"
-        "Innate"                        "1"
+        "Innate"                        "0"
 
         "AbilityValues"
         {
             "attack_damage_per_level"               
             { 
                 "value"                     "0"
-                "special_bonus_facet_treant_primeval_power" "+6"
             }
         }
     }
@@ -125,23 +131,26 @@ DOTAAbilities
                 "value"             "150"
                 "affected_by_aoe_increase"  "1"
             }
+			"creep_penalty"				"35"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 	"treant_leech_seed"
 	{
 		"ID"					"5435"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"BaseClass"			"treant_leech_seed"
 		"MaxLevel"		"7"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Treant.LeechSeed.Cast"
+		"IsBreakable"					"1"
 
 		"AbilityCastPoint"				"0.3"
-		"AbilityCastRange"				"400 450 500 550"
+		"AbilityCastRange"				"400 450 500 550 600 650 700"
 		"FightRecapLevel"				"1"
 		
 		// Time		
@@ -177,14 +186,25 @@ DOTAAbilities
 			"can_target_ground"             
             {
                 "value"             "0"
-                "special_bonus_facet_treant_sapling"    "=1"
             }
             "creep_damage_reduction_pct"            
             {
                 "value"             "0"
-                "special_bonus_facet_treant_sapling"    "=0"
             }
             "creep_heal_reduction_pct"              "0"
+			"flat_heal"				"15 25 35 45 55 65 75"
+			"leech_heal"
+			{
+				"value"				"20"
+				"special_bonus_unique_treant_3"				"+10"
+			}
+			"max_heal_units"				"5"
+			"AbilityCooldown"
+			{
+				"value"				"15 14 12 10 9 8 6"
+				"special_bonus_unique_treant_14"				"-3"
+			}
+			"healing_pulse_count"				"2"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -227,6 +247,22 @@ DOTAAbilities
 			}
 			"duration"			"12.0 15.0 18.0 21.0 24.0 27.0 30.0"
 
+			"aoe_radius"
+			{
+				"special_bonus_unique_treant_7"				"450"
+				"affected_by_aoe_increase"				"1"
+			}
+			"damage_block_base"
+			{
+				"value"				"60 80 100 120 140 160 180"
+				"special_bonus_unique_treant_13"				"+20"
+			}
+			"passive_reset_cd"
+			{
+				"special_bonus_shard"				"0"
+			}
+			"damage_block_loss"				"20"
+			"damage_block_threshold"				"20"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -247,8 +283,6 @@ DOTAAbilities
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
 		"FightRecapLevel"				"2"
-
-		"AbilityDraftUltScepterAbility"		"treant_eyes_in_the_forest"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -294,6 +328,27 @@ DOTAAbilities
 					"value"						"75"
 				}
 			
+			"bloom_duration"
+			{
+				"special_bonus_scepter"				"16"
+			}
+			"strength_bonus"
+			{
+				"special_bonus_scepter"				"100"
+			}
+			"splash_pct"
+			{
+				"special_bonus_scepter"				"60"
+			}
+			"splash_radius"
+			{
+				"special_bonus_scepter"				"300"
+				"affected_by_aoe_increase"				"1"
+			}
+			"movement_speed"
+			{
+				"special_bonus_scepter"				"345"
+			}
 		}
 	}
 	"treant_eyes_in_the_forest"
@@ -305,8 +360,8 @@ DOTAAbilities
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
-		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
+		"IsGrantedByShard"				"1"
+		"HasShardUpgrade"				"1"
 		"AbilitySound"					"Hero_Treant.Eyes.Cast"
 
 		// Casting
@@ -345,6 +400,9 @@ DOTAAbilities
                     "value"     "10"
                     "RequiresScepter"               "1"
                 }
+        	"hits_to_kill"				"2"
+        	"duration"				"360"
+        	"max_eyes"				"0"
         }
 	}
 	"treant_lifebomb_explode"
@@ -355,6 +413,42 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE "
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
     }
+	"treant_super_bloom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"treant_super_bloom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"				"1"
+		"AbilitySound"					"Hero_Treant.Eyes.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					"15"
+			"strength_bonus"			"120"
+			"splash_pct"				"60"
+			"splash_radius"				"300"
+			"movement_speed"			"310"
+		}
+	}
     "special_bonus_unique_treant_2"
     {
         // General
@@ -381,6 +475,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_treant_7"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -425,6 +520,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_treant_12"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

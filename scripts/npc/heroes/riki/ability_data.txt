@@ -5,14 +5,13 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"riki_poison_dart"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByShard"              "1"
 
@@ -100,6 +99,11 @@ DOTAAbilities
 				"value"					"0"
 				"special_bonus_shard"	"8"
 			}
+			"AbilityCooldown"
+			{
+				"value"				"15 14 14 14 13 12 12"
+				"special_bonus_unique_riki_3"				"-3"
+			}
 		}
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -147,6 +151,17 @@ DOTAAbilities
 				"special_bonus_unique_riki_9" "-4"				
 			}
 			"slow"						"0.5"
+			"AbilityCastRange"
+			{
+				"value"				"600 700 800 900 1000 1100 1200"
+				"special_bonus_unique_riki_9"				"+500"
+			}
+			"AbilityCooldown"
+			{
+				"value"				"13 12 10 8 7 6 4"
+				"special_bonus_unique_riki_5"				"-1"
+			}
+			"slow_pct_tooltip"				"100"
 		}
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -170,10 +185,14 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{		
-			"backstab_angle"				"120 120 120"
+			"backstab_angle"				"120"
 			"fade_delay"					"6 5.5 5 4.5 4 3.5 3"
 			"bonus_xp_kill"					"75 110 150 190 220 260 300"
 			"bonus_xp_assist"				"35 55 75 95 110 130 150"
+			"invis_movespeed_bonus_percent"
+			{
+				"special_bonus_unique_riki_8"				"10"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -181,7 +200,7 @@ DOTAAbilities
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "MaxLevel"          "8"
         "Innate"            "1"
         "DependentOnAbility"    "riki_backstab"
@@ -196,18 +215,21 @@ DOTAAbilities
                 "DamageTypeTooltip"         "DAMAGE_TYPE_NONE"
             }
         
-            "backstab_angle"                "105 105 105 105"
+            "backstab_angle"                "105"
 
             "bonus_xp_kill"
             {
                 "value"                         "0"
-                "special_bonus_facet_riki_contract_killer"  "25 150 250 350 450 550 650 750"
             }
             "bonus_xp_assist"               
             {
                 "value"                         "0"
-                "special_bonus_facet_riki_contract_killer"  "25 100 150 200 250 300 350 400"
             }
+        	"ally_multiplier"				"30"
+        	"bonus_xp_assist_other"
+        	{
+        		"value"				"0"
+        	}
         }           
     }
 	"riki_permanent_invisibility"
@@ -301,9 +323,38 @@ DOTAAbilities
 			"creep_agility_multiplier"
             {
                 "value"         "1"
-                "special_bonus_facet_riki_exterminator" "=4.5"
             }
-		}
+			"AbilityCastRange"
+			{
+				"value"				"400"
+				"special_bonus_scepter"				"+500"
+			}
+			"speed_per_attack"				"180"
+			"interval_targets"				"2"
+			"attack_damage"				"25 50 75 100 125 150 175"
+			"pocket_riki_enabled"
+			{
+				"special_bonus_scepter"				"=1"
+			}
+			"scepter_movespeed"
+			{
+				"special_bonus_scepter"				"15"
+			}
+			"scepter_bonus_duration"
+			{
+				"special_bonus_scepter"				"1"
+			}
+			"scepter_bonus_attacks"
+			{
+				"special_bonus_scepter"				"2"
+			}
+			"cd_per_kill"				"0"
+			"cooldown_reduction_per_creep_kill"				"0"
+					"base_attack_damage_pct"
+			{
+				"value"			"0"
+			}
+}
 	}
 	"special_bonus_unique_riki_1"
     {
@@ -319,6 +370,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_riki_2"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -332,6 +384,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_riki_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -351,6 +404,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_riki_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -365,6 +419,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_riki_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -380,6 +435,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_riki_7"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -392,6 +448,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_riki_8"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -411,6 +468,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_riki_9"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

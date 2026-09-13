@@ -43,6 +43,7 @@ end
 
 function modifier_npc_aa_creep_centaur_big_mage_resist_lua:OnDestroy ( params )
     ParticleManager:DestroyParticle(self.particle,false)
+    ParticleManager:ReleaseParticleIndex(self.particle)
 end
 
 -------------------------------------------------------------------------------

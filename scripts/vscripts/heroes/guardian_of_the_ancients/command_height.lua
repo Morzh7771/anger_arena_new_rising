@@ -1,4 +1,12 @@
 BaseClass = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function BaseClass:Precache(context)
+	PrecacheResource("model", "models/props_structures/tower_good.vmdl", context)
+end
+
 guardian_of_the_ancients_command_height = BaseClass
 guardian_of_the_ancients_command_height_stop = class({})
 LinkLuaModifier( "modifier_guardian_of_the_ancients_command_height", "heroes/guardian_of_the_ancients/command_height", LUA_MODIFIER_MOTION_NONE)
@@ -58,11 +66,15 @@ function modifier_guardian_of_the_ancients_command_height:PlayEffects()
     self.nParticle2 = ParticleManager:CreateParticle( sParticle2, PATTACH_CUSTOMORIGIN, hParent )
     ParticleManager:SetParticleControlEnt( self.nParticle2, 0, hParent, PATTACH_POINT_FOLLOW, 'attach_hitloc', hParent:GetOrigin(), false )
     ParticleManager:SetParticleControl( self.nParticle2, 15, Vector( 110, 181, 203 ) )
+    ParticleManager:ReleaseParticleIndex( self.nParticle2 )
 
     local sParticle1 = 'particles/econ/world/towers/ti10_radiant_tower/ti10_radiant_tower_destruction_sparkle.vpcf'
     self.nParticle1 = ParticleManager:CreateParticle( sParticle1, PATTACH_CUSTOMORIGIN, hParent )
     ParticleManager:SetParticleControlEnt( self.nParticle1, 0, hParent, PATTACH_POINT_FOLLOW, 'attach_hitloc', hParent:GetOrigin(), false )
     ParticleManager:SetParticleControl( self.nParticle1, 15, Vector( 110, 181, 203 ) )
+    -- PlayEffects зовётся и на OnCreated, и на OnDestroy, то есть по два
+    -- индекса за каждое включение способности, и ни один не освобождался
+    ParticleManager:ReleaseParticleIndex( self.nParticle1 )
 end
 
 function guardian_of_the_ancients_command_height_stop:OnSpellStart()

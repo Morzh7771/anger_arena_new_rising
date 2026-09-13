@@ -9,6 +9,7 @@ function makeParticle(from, to)
 
 	ParticleManager:SetParticleControlEnt( idx, 0, from, PATTACH_OVERHEAD_FOLLOW, "attach_hitloc", from:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt( idx, 1, to, PATTACH_OVERHEAD_FOLLOW, "attach_hitloc", to:GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(idx)
 end
 
 function ability:OnSpellStart()

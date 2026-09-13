@@ -3,7 +3,7 @@
 	"npc_dota_hero_luna"
 	{
 		"override_hero"		"npc_dota_hero_luna"
-		"Ability1"      "luna_lucent_beam"
+        "Ability1"      "luna_lucent_beam"
         "Ability2"      "luna_lunar_orbit"
         "Ability3"      "luna_moon_glaive"
         "Ability4"      "luna_lunar_blessing"
@@ -19,35 +19,11 @@
         "Ability16"     "special_bonus_unique_luna_3"
         "Ability17"     "special_bonus_unique_luna_5"
 
-        "Facets"
-        {
-            "luna_lunar_orbit" 
-            {
-                "Icon"              "armor"
-                "Color"             "Gray"
-                "GradientID"        "3"
-                "Deprecated"        "true"
-            }
-            "luna_moonshield" 
-            {
-                "Icon"              "armor"
-                "Color"             "Gray"
-                "GradientID"        "3"
-            }
-            "luna_moonstorm" 
-            {
-                "Icon"              "damage"
-                "Color"             "Blue"
-                "GradientID"        "1"
-            }
-        }
+
         
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"luna_lucent_beam"
-			"Ability2"		"luna_moon_glaive"
-			"Ability3"		"luna_lunar_blessing"
-			"Ability4"		"luna_eclipse"
 		}
 
 		"ArmorPhysical"		"2"

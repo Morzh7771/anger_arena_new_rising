@@ -106,7 +106,6 @@ DOTAAbilities
 			"slow_movement_speed"
 			{
 				"value"		"-10.0 -15.0 -20.0 -25.0 -30.0 -35.0 -40.0"
-				"special_bonus_facet_sniper_scattershot"    "=-30 =-37.5 =-45 =-52.5 =-60 =-67.5 =-75"
                 "special_bonus_unique_sniper_5" "-10"
 			}
 			"radius"				
@@ -117,32 +116,25 @@ DOTAAbilities
 			"shrapnel_damage"
 			{
 				"value"			"20.0 40.0 60.0 80.0 100.0 120.0 140.0"
-				"special_bonus_facet_sniper_scattershot"    "=60 =120 =180 =240 =300 =360 =420"
                 "special_bonus_unique_sniper_shrapnel_damage"       "+30%"
 			}
 			"duration"              
             {
                 "value"     "10.0"
-                "special_bonus_facet_sniper_scattershot"    "=1"
             }
 			"damage_delay"          
             {
                 "value"     "1.2"
-                "special_bonus_facet_sniper_scattershot"    "=0.8"
             }
 			"slow_duration"         
             {
                 "value"     "2"
-                "special_bonus_facet_sniper_scattershot"    "=2"
             }
 			"AbilityCharges"
 			{
 				"value"			"3"
 			}
-			"fast_tick"
-            {
-                "special_bonus_facet_sniper_scattershot"    "=1"
-            }
+			"fast_tick"				"0"
 			"damage_pct"		
 			{
 				"value"		"35"
@@ -199,7 +191,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -245,10 +237,15 @@ DOTAAbilities
                 "value"     "0"             
             }
 
-            "no_reveal"
-            {
-                "special_bonus_facet_sniper_ghillie_suit"   "1"
-            }
+            "no_reveal"				"0"
+        	"passive_attack_range_bonus"
+        	{
+        		"value"				"160 240 320 400 480 560 640"
+        		"special_bonus_unique_sniper_5"				"+50"
+        	}
+        	"bonus_vision"				"500 750 1000 1250 1500 1750 2000"
+        	"view_restrict"				"140"
+        	"attack_speed"				"0"
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -300,7 +297,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"projectile_speed"			"2500 2500 2500"
+			"projectile_speed"			"2500"
 			"scepter_stun_duration"			
 			{
 				"value" "0.6 0.7 0.8 0.9 1.0 1.1 1.2"
@@ -335,6 +332,9 @@ DOTAAbilities
 			}
 			"cooldown_reduction_on_kill"		"15"
 			//"damage_pct"		"75 100 125 150 175 200 225"
+			"damage"				"300 400 500 600 700 800 900"
+			"attack_factor"				"0"
+			"attack_factor_tooltip"				"100"
 		}		
 	}
 	"sniper_keen_scope"
@@ -348,6 +348,12 @@ DOTAAbilities
         "AbilityValues"
         {
             "bonus_range"               "110 160 210 260 310 360 410 460"
+        	"bonus_damage_for_range"
+        	{
+        		"value"				"1.50"
+        		"hero_levelup"				"+0.05"
+        	}
+        	"bonus_damage_distance"				"100"
         }
     }
 }

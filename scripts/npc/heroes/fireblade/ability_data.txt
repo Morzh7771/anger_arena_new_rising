@@ -2,6 +2,7 @@
 {
 	"fireblade_fiery_stream"
 	{
+		"ID"					"15164"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -85,6 +86,7 @@
 	
 	"fireblade_burn_offering"
 	{
+		"ID"					"15163"
 		"BaseClass"						"ability_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -125,6 +127,7 @@
 	
 	"fireblade_scorched_blades"
 	{
+		"ID"					"15162"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"							"ability_lua"
@@ -159,6 +162,7 @@
 	
 	"fireblade_firestrip"
 	{
+		"ID"					"15161"
 		"BaseClass"							"ability_lua"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"	
@@ -206,6 +210,7 @@
 	
 	"fireblade_talent_fire_stream_blink"
 	{
+		"ID"					"15160"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -220,6 +225,7 @@
 	
 	"fireblade_talent_burn_offering_heal"
 	{
+		"ID"					"15159"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -234,6 +240,7 @@
 	
 	"fireblade_talent_firestrip_stun"
 	{
+		"ID"					"15158"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -248,6 +255,7 @@
 	
 	"fireblade_talent_firestrip_spellimmune"
 	{
+		"ID"					"15157"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -262,6 +270,7 @@
 	
 	"fireblade_talent_burn_offering_aoe"
 	{
+		"ID"					"15156"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -276,6 +285,7 @@
 	
 	"fireblade_talent_burn_offering_attack_dmg"
 	{
+		"ID"					"15155"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -290,6 +300,7 @@
 	
 	"fireblade_talent_scorched_blades_silence"
 	{
+		"ID"					"15154"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -305,15 +316,47 @@
 	
 	"fireblade_talent_scorched_blades_spellimmune"
 	{
+		"ID"					"15153"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"value"						"1"
+		}
+	}
+
+	"fireblade_molten_blood"
+	{
+		"ID"					"15152"
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/fireblade/fireblade_molten_blood"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityType"				"ABILITY_TYPE_PASSIVE"
+		"MaxLevel"					"1"
+		"Innate"					"1"
+		"IsBreakable"				"1"
+		"AbilityTextureName"		"custom/fireblade_burn_offering"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"max_bonus_damage_pct"
+			{
+				"value"				"80"
+			}
+			"max_spell_amp"
+			{
+				"value"				"60"
+			}
+			"check_interval"
+			{
+				"value"				"0.25"
+			}
 		}
 	}
 }

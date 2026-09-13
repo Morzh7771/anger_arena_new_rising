@@ -1,5 +1,15 @@
 shadowsong_magic_fire = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function shadowsong_magic_fire:Precache(context)
+	PrecacheResource("particle", "particles/econ/items/abaddon/abaddon_alliance/abaddon_death_coil_alliance.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/antimage/antimage_weapon_basher_ti5/antimage_manavoid_explode_b_basher_cast.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/antimage/antimage_weapon_basher_ti5_gold/antimage_manavoid_ti_5_gold.vpcf", context)
+end
+
+
 local ability 		= shadowsong_magic_fire
 local talentNameAOE	= "shadowsong_talent_magic_fire_aoe"
 local talentNameCD  = "shadowsong_talent_magic_fire_cd_decrease"
@@ -43,6 +53,17 @@ function ability:OnProjectileHit(target, targetPos)
 	target:Script_ReduceMana(burnAmmount,self)
 
 	SendOverheadEventMessage(caster, OVERHEAD_ALERT_MANA_LOSS, target, burnAmmount, nil)
+
+	-- Врождёнка: Эхо теней - лечение за сожжённую ману
+	local shadowEchoAbility = caster:FindAbilityByName("shadowsong_shadow_echo")
+	if shadowEchoAbility then
+		local healPerMana = shadowEchoAbility:GetSpecialValueFor("heal_per_mana")
+		local healAmount = burnAmmount * healPerMana / 100
+		if healAmount > 0 then
+			caster:Heal(healAmount, caster)
+			SendOverheadEventMessage(caster, OVERHEAD_ALERT_HEAL, caster, healAmount, nil)
+		end
+	end
 
 	ApplyDamage({
 		victim 		= target,

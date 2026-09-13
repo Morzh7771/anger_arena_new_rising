@@ -65,7 +65,7 @@ function mod:OnTakeDamage( params )
 
 	if not attacker or (attacker:GetAbsOrigin() - parent:GetAbsOrigin()):Length() > self.radius then
 		parent:SetHealth( parent:GetHealth() + damage )
-		print("5")
+		-- отладочный print убран: горячий путь (каждый удар/лечение)
 	end
 
 	-- Marshall to AI info about taking some damage

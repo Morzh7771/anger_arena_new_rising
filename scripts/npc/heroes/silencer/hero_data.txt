@@ -4,13 +4,14 @@
 	{
 		"override_hero"		"npc_dota_hero_silencer"
 		"Ability1"      "silencer_curse_of_the_silent"
+		"Ability7"		"generic_hidden"
         "Ability2"      "silencer_glaives_of_wisdom"
         "Ability3"      "silencer_last_word"
         "Ability4"      "silencer_brain_drain"
         "Ability5"      "generic_hidden"
         "Ability6"      "silencer_global_silence"
 		"Ability10"     "special_bonus_unique_silencer"
-        "Ability11"     "special_bonus_attack_speed_20"
+        "Ability11"     "special_bonus_unique_silencer_brain_drain_damage"
         "Ability12"     "special_bonus_unique_silencer_7"
         "Ability13"     "special_bonus_unique_silencer_arcane_curse_duration"
         "Ability14"     "special_bonus_unique_silencer_glaives_bounces"
@@ -18,30 +19,7 @@
         "Ability16"     "special_bonus_unique_silencer_3"
         "Ability17"     "special_bonus_unique_silencer_arcane_curse_charges"
 
-        "Facets"
-        {
-            "silencer_irrepressible"
-            {
-                "Icon"              "silencer"
-                "Color"             "Purple"
-                "GradientID"        "1"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "silencer_irrepressible"
-                    }
-                }
-            }
-
-            "silencer_reverberating_silence" 
-            {
-                "Icon"              "debuff"
-                "Color"             "Gray"
-                "GradientID"        "3"
-            }
-        }
 
 		"ArmorPhysical"		"0"
 		"BaseAttackSpeed"		"100"

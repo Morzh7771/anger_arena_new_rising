@@ -3,38 +3,24 @@
 	"npc_dota_hero_hoodwink"
 	{
 		"override_hero"				"npc_dota_hero_hoodwink"
+		"Ability2"					"hoodwink_bushwhack"
+		"Ability3"					"hoodwink_scurry"
 		"Ability1"					"hoodwink_acorn_shot_lua"
-		"Ability2"                  "hoodwink_bushwhack"
-        "Ability3"                  "hoodwink_scurry"
         "Ability4"                  "hoodwink_decoy"
         "Ability5"                  "hoodwink_hunters_boomerang"
-        "Ability6"                  "hoodwink_mistwoods_wayfarer"
-        "Ability7"                  "hoodwink_sharpshooter"
-        "Ability8"                  "hoodwink_sharpshooter_release"  
-		"Ability10"					"special_bonus_unique_hoodwink_scurry_evasion"
+        "Ability6"                  "hoodwink_sharpshooter"
+        "Ability7"                  "hoodwink_sharpshooter_release"
+        "Ability8"                  "hoodwink_mistwoods_wayfarer"  
+		"Ability10"					"special_bonus_unique_hoodwink_scurry_charges"
 		"Ability11"					"special_bonus_unique_hoodwink_bushwhack_cooldown"
 		"Ability12"					"special_bonus_unique_hoodwink_bushwhack_damage"
 		"Ability13"					"special_bonus_unique_hoodwink_acorn_shot_bounces_custom"
 		"Ability14"					"special_bonus_unique_hoodwink_sharpshooter_damage"
-		"Ability15"					"special_bonus_corruption_4"
+		"Ability15"					"special_bonus_unique_hoodwink_sharpshooter_vision"
 		"Ability16"					"special_bonus_unique_hoodwink_acorn_shot_charges_custom"
 		"Ability17"					"special_bonus_unique_hoodwink_sharpshooter_pure_damage"
 
-		"Facets"
-        {
-            "hoodwink_hunter" 
-            {
-                "Icon"              "range"
-                "Color"             "Yellow"
-                "GradientID"        "0"
-            }
-            "hoodwink_treebounce_trickshot" 
-            {
-                "Icon"              "tree"
-                "Color"             "Green"
-                "GradientID"        "0"
-            }
-        }
+
 		
 		"AbilityDraftIgnoreCount"   "7"
 		"AbilityDraftAbilities"
@@ -42,7 +28,6 @@
 			"Ability1"		"hoodwink_acorn_shot"
 			"Ability2"		"hoodwink_bushwhack"
 			"Ability3"		"hoodwink_scurry"
-			"Ability4"		"hoodwink_sharpshooter"
 		}		
 		
 		

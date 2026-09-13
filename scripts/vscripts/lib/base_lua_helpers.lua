@@ -66,9 +66,19 @@ end
 
 local _unpack = unpack or table.unpack
 
+-- На боевом сервере (не tools mode) библиотеки debug нет вообще: debug == nil.
+-- Раньше обработчик ошибок сам падал на debug.traceback, xpcall возвращал
+-- "error in error handling", и от реальной ошибки в логе не оставалось ничего.
+function SafeTraceback(msg)
+	if debug and debug.traceback then
+		return debug.traceback(msg, 3)
+	end
+
+	return msg
+end
+
 local function _err_handler(err)
-    err = tostring(err)
-	return debug.traceback(err, 2)
+	return SafeTraceback(tostring(err))
 end
 
 function SafeCall(func, ...)

@@ -89,11 +89,30 @@ function DuelController:OnGameStart(endCallback)
 	self.endCallback = endCallback
 end
 
+-- Сколько "циклов дуэли" уже прошло: реальные дуэли + пропущенные из-за
+-- нехватки игроков. От этого числа считаются и интервал таймера, и тиры
+-- нейтралок - иначе при игре одному цикл всегда был бы первым (30 секунд),
+-- а тиры нейтралок не открывались бы вообще.
+function DuelController:GetDuelCycle()
+	return DuelLibrary:GetDuelCount() + ( self.skippedDuels or 0 )
+end
+
 function DuelController:_StartDuel()
 	self:_CancelDuels()
 
 	local radiantHeroes = TeamHelper:GetHeroes(DOTA_TEAM_GOODGUYS)
 	local direHeroes 	= TeamHelper:GetHeroes(DOTA_TEAM_BADGUYS)
+
+	-- Считаем игроков ДО сброса кулдаунов: если драться не с кем, ничего не
+	-- рефрешим, просто пишем "недостаточно игроков" и живём дальше по таймеру.
+	-- Проверяем именно общее число подключённых героев, а не живых - живых
+	-- добирает RespawnHeroes ниже.
+	local _, nConnectedRadiants, _, nConnectedDires = DuelLibrary:GetMaximumHeroes( radiantHeroes, direHeroes, false )
+
+	if nConnectedRadiants == 0 or nConnectedDires == 0 then
+		self:_OnDuelSkipped()
+		return false
+	end
 
 	local no_refresh_skill = {
 		["faceless_void_chronosphere"] = 15,
@@ -147,10 +166,11 @@ function DuelController:_StartDuel()
 	local nUnits = min(nTotalRadiants, nTotalDires)
 
 	if nRadiants == 0 or nDires == 0 then
-		Attentions:SendChatMessage("#duel_error")
-		if GameRules:IsCheatMode() then
-			DuelController:SetFreezeTimer( true )
-		end
+		-- Страховка: кто-то так и не встал после RespawnHeroes.
+		-- Таймер всё равно продолжает идти и зайдёт сюда снова.
+		-- Раньше в чит-режиме здесь замораживался таймер, и следующего цикла
+		-- не наступало никогда.
+		self:_OnDuelSkipped()
 		return false
 	end
 
@@ -174,8 +194,27 @@ function DuelController:_ForceTick( isEnd, wantFreeze )
 	self.freeze = wasFreeze
 end
 
+-- Дуэль не состоялась (нет противников). Ничего не рефрешим и не морозим:
+-- пишем в чат и считаем цикл пройденным, чтобы соло-игра всё равно
+-- открывала тиры нейтралок и не сваливалась в 30-секундный интервал.
+function DuelController:_OnDuelSkipped()
+	self.skippedDuels = ( self.skippedDuels or 0 ) + 1
+
+	Attentions:SendChatMessage("#duel_error")
+
+	if MadstoneSystem then
+		MadstoneSystem:OnDuelEnd( self:GetDuelCycle() )
+	end
+end
+
 function DuelController:_OnDuelEnd(winnerTeam)
 	local duelCount = DuelLibrary:GetDuelCount()
+
+	-- открытие следующего тира нейтралок и снятие лимита безумрудов
+	-- завязано именно на конец дуэли
+	if MadstoneSystem then
+		MadstoneSystem:OnDuelEnd( self:GetDuelCycle() )
+	end
 
 	local allowedTeams = {
 		[DOTA_TEAM_GOODGUYS] = "#duel_end_win_radiant",
@@ -233,7 +272,9 @@ end
 
 function DuelController:_StartDuelTimer(toDuel)
 	local interval
-	local duelCount = DuelLibrary:GetDuelCount()
+	-- считаем и пропущенные циклы, иначе соло-игра вечно висела бы
+	-- на "первом" 30-секундном интервале
+	local duelCount = self:GetDuelCycle()
     
 	if toDuel then
 		if duelCount == 0 then
@@ -349,6 +390,7 @@ function DuelController:_Init()
 	self.duelEndTeams	 = self.duelEndTeams or {}
 	self.endCallback	 = self.endCallback or nil
 	self.delayedLastDuel = self.delayedLastDuel or {}
+	self.skippedDuels	 = self.skippedDuels or 0
 end
 
 DuelController:_Init()

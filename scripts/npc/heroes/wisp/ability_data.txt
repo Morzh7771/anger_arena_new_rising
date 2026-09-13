@@ -15,7 +15,7 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"LinkedAbility"					"wisp_tether_break"
-
+		"HasShardUpgrade"               "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40"
+		"AbilityManaCost"				"40 40 40 40"
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,36 +38,49 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"radius"                    
-                {
-                    "value"     "1000"
-                    "affected_by_aoe_increase"  "1"
-                }
+				"radius"					
+				{
+					"value"		"1200"
+					"affected_by_aoe_increase"	"1"
+				}
 				"movespeed"					
 				{
 					"value"				"6 8 10 12 14 16 18"
 					"special_bonus_unique_wisp_3"	"+6"
 				}
-				"latch_distance"			"700 700 700 700"
-				"latch_speed"				"1000 1000 1000 1000"
+				"latch_distance"			
+				{
+					"value"		"700"
+				}
+				"latch_speed"				"1000"
 				"tether_heal_amp"			"70 80 90 100 110 120 130"
+				"tether_mana_amp"				"55 75 95 115 135 155 175"
 				"self_bonus"				"0"
 				"slow"				
 				{
-					"value"			"15 20 25 30 35 40 45"
-					"special_bonus_unique_wisp_11"			"+15"
+					"value"			"15 25 35 40 55 60 75"
+					//"special_bonus_unique_wisp_11"			"+15"
 				}
-				"slow_duration"				"0.5"
-				"shard_bonus_spell_lifesteal"
+				"slow_duration"				"0.2"
+				"damage"
 				{
-					"value"			"20"
-					"RequiresShard"	"1"
+					"value"					"0"
+					"special_bonus_shard"	"+120"
 				}
-				"tick_rate"         "0.5"
-                "tether_attack_damage_pct"
-                {
-                    "special_bonus_unique_wisp_4" "=75"
-                }
+				"damage_to_heal"
+				{
+					"value"					"0"
+					"special_bonus_shard"	"50"
+				}
+				"tick_rate"			"0.2"
+				"tether_attack_damage_pct"
+				{
+					"special_bonus_unique_wisp_4" "=80"
+				}
+				"tethered_unit_damage"
+				{
+					"value"					"0"
+				}
 		}
 	}
 	"wisp_spirits"
@@ -93,7 +106,11 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			
-			"creep_damage"						"35 40 45 50 55 60 65"
+			"creep_damage"
+			{
+				"value"				"35 40 45 50 55 60 65"
+				"special_bonus_unique_wisp"				"+50%"
+			}
 			"hero_damage"
 			{
 				"value"							"30 50 70 90 110 130 150"
@@ -139,6 +156,9 @@ DOTAAbilities
 				"value"							"30 28 26 24 22 20 18"
 				"special_bonus_scepter"			"-50%"
 			}
+			"default_radius"				"425"
+			"spirit_spawn_time"				"1.0"
+			"damage_pct"					"10"
 		}
 	}	
 
@@ -149,21 +169,18 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"						"7"
-		"BaseClass"						"wisp_overcharge"
-		"ID"							"5487"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-        "HasShardUpgrade"               "1"
-
+		"MaxLevel"						"7"
+		"BaseClass"						"wisp_overcharge"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0"
+		"AbilityCastPoint"				"0 0 0 0"
    		"AbilityCastAnimation"			"ACT_INVALID"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"25 22 19 16 13 10 7"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -173,41 +190,41 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_attack_speed"        
-                {
-                    "value"     "0"
-                    "special_bonus_facet_wisp_kritzkrieg" "30 60 90 120 150 180 210"
-                }
-				"bonus_spell_amp"       
-                {
-                    "value"             "0"
-                    "special_bonus_facet_wisp_kritzkrieg" "5 10 15 20 25 30 35"
-                }
-                "bonus_armor"
-                {
-                    "value"             "0"
-                    "special_bonus_facet_wisp_medigun" "4 7 10 13"
-                }
-                "bonus_mres"
-                {
-                    "value"             "0"
-                    "special_bonus_facet_wisp_medigun" "12 18 24 30"
-                }
+				"bonus_attack_speed"		
+				{
+					"value"							"35 50 65 80 95 110 125"
+					"special_bonus_unique_wisp_8"	"+40"
+				}
+				"bonus_spell_amp"		
+				{
+					"value"				"8 10 12 14 16 18 20"
+				}
+				"bonus_armor"
+				{
+					"value"				"0"
+				}
+				"bonus_mres"
+				{
+					"value"				"0"
+				}
 				"hp_regen"			
 				{
 					"value"			"0.4 0.6 0.8 1.0 1.2 1.4 1.6"
 					"special_bonus_unique_wisp_10"	"+0.4"
 				}
-				"duration"			"5"
-				"shard_bonus_slow_resistance"
-                {
-                    "value"                 "0"
-                    "special_bonus_shard"   "+30"
-                }
-				"shard_bonus_spell_lifesteal"
+				"duration"		
 				{
-					"value"			"20"
-					"RequiresShard"	"1"
+					"value"			"8"
+					"special_bonus_unique_wisp_overcharge_duration"		"+1.5"
+				}
+				"spell_lifesteal"
+				{
+					"value"			"0"
+				}
+				"unslowable"
+				{
+					"value"							"0"
+					"special_bonus_unique_wisp_9"	"+1"
 				}
 		}
 	}	
@@ -251,8 +268,13 @@ DOTAAbilities
             }
             "return_time"
             {
-                "value" "12.0 12.0 12.0"
+                "value" "12.0"
             }
+        	"AbilityCooldown"
+        	{
+        		"value"				"90 87 83 80 77 73 70"
+        		"special_bonus_unique_wisp_6"				"-30"
+        	}
         }
 	}
 
@@ -333,7 +355,7 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
         "MaxLevel"                      "1"
-        "Innate"                        "1"     
+        "Innate"                        "0"     
         "AbilityValues"
         {
                 "bonus_vision"  "300"
@@ -354,6 +376,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_wisp_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -367,6 +390,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_wisp_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -386,6 +410,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_wisp_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -405,6 +430,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_wisp_8"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -424,6 +450,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_wisp_9"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -443,6 +470,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_wisp_10"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -460,4 +488,33 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	"wisp_equilibrium"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_NO"
+		"Innate"				"1"
+		"AbilityValues"
+		{
+			"damage_amplification"
+			{
+				"value"				"4"
+				"hero_levelup"				"+0.4"
+			}
+			"heal_amplification"
+			{
+				"value"				"4"
+				"hero_levelup"				"+0.4"
+			}
+			"current_damage_amp"
+			{
+				"dynamic_value"				"true"
+			}
+			"current_heal_amp"
+			{
+				"dynamic_value"				"true"
+			}
+		}
+	}
 }

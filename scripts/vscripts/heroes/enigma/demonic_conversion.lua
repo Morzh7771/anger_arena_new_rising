@@ -1,4 +1,12 @@
 enigma_demonic_conversion = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function enigma_demonic_conversion:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_enigma/enigma_demonic_conversion.vpcf", context)
+end
+
 LinkLuaModifier("modifier_eidolons_attack_counter","heroes/enigma/modifier_eidolons_attack_counter",LUA_MODIFIER_MOTION_NONE)
 
 function enigma_demonic_conversion:IsHiddenWhenStolen() 		return false end
@@ -32,6 +40,7 @@ function enigma_demonic_conversion:OnSpellStart()
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_enigma/enigma_demonic_conversion.vpcf",  PATTACH_POINT_FOLLOW, unit)
 	ParticleManager:SetParticleControlEnt(particle, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", pos, false)
 	ParticleManager:SetParticleControl(particle, 1, pos)
+	ParticleManager:ReleaseParticleIndex(particle)
 
 	local unitname = "npc_eidolon_".. tostring(ability_level)
 

@@ -22,7 +22,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -95,7 +95,7 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -113,7 +113,6 @@ DOTAAbilities
 			"sand_storm_radius"
 			{
 				"value"		"400 450 500 550 600 650 700"
-				"special_bonus_facet_sand_king_sandshroud"	"+125"
 				"affected_by_aoe_increase"  "1"
 			}
 			"sand_storm_damage"
@@ -121,25 +120,26 @@ DOTAAbilities
 				"value"		"25 45 65 85 105 125 145"
 				"special_bonus_unique_sand_king_2"	"25"
 			}
-			"fade_delay"        
+			"fade_delay"
             {
-                "value"             "-1"
-                "special_bonus_facet_sand_king_sandshroud"          "=0.7"
+                "value"             "0.7"
             }
 			"sand_storm_move_speed_pct"
             {
                 "value"     "0"
-                "special_bonus_facet_sand_king_dust_devil"  "+70"
             }
-            "sand_storm_max_distance_from_caster"
-            {
-                "special_bonus_facet_sand_king_dust_devil"  "+2500"
-            }               
-            "sand_storm_move_speed_bonus_when_outside_radius"
-            {
-                "special_bonus_facet_sand_king_dust_devil"  "+55"
-            }
+            "sand_storm_max_distance_from_caster"				"0"
+            "sand_storm_move_speed_bonus_when_outside_radius"				"0"
 			"damage_pct"			"25"
+			"blind_pct"
+			{
+				"special_bonus_unique_sand_king_4"				"35"
+			}
+			"blind_debuff_duration"				"0"
+			"sand_storm_slow"
+			{
+				"special_bonus_unique_sand_king_4"				"35"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -152,7 +152,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"8"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -172,6 +172,11 @@ DOTAAbilities
 			"caustic_finale_damage_base"        "15 35 55 75 95 115 135 155"
             "caustic_finale_damage_pct"     "4 8 12 16 20 24 28 32"
             "caustic_finale_duration"       "6"	
+			"caustic_finale_damage_flat"
+			{
+				"value"				"17"
+				"hero_levelup"				"+3"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -314,6 +319,11 @@ DOTAAbilities
                 "special_bonus_scepter"     "+1"
             }
 			"damage_pct"			"90"
+			"proc_passively"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1"
+			}
 		}
 	}
 	"sandking_scorpion_strike"
@@ -366,6 +376,8 @@ DOTAAbilities
                 "value"                 "10 11 12 13 14 15 16"
                 "special_bonus_unique_sand_king_3"  "+8"
             }
+        	"inner_radius_procs_caustic"				"0"
+        	"caustic_damage_pct"				"0"
         }
     }
     "special_bonus_unique_sand_king"
@@ -406,6 +418,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_sand_king_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -425,6 +438,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_sand_king_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

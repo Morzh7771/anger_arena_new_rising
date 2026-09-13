@@ -51,6 +51,7 @@ function mod:OnAttacked( params )
 		})
 
 		local particle = ParticleManager:CreateParticle("particles/econ/events/ti7/phase_boots_ti7_splash.vpcf",  PATTACH_POINT_FOLLOW, target)
+		ParticleManager:ReleaseParticleIndex(particle)
 
 		EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "Hero_Razor.UnstableCurrent.Target", caster)
 	end

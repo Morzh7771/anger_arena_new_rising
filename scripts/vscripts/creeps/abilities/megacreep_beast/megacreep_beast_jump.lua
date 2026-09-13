@@ -1,5 +1,13 @@
 megacreep_beast_jump = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_beast_jump:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf", context)
+end
+
+
 LinkLuaModifier("modifier_megacreep_beast_jump", "creeps/abilities/megacreep_beast/modifiers/modifier_megacreep_beast_jump", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 ---------------------------------------------------------------------------

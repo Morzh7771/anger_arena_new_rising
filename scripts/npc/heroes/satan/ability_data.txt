@@ -2,20 +2,22 @@
 {
 	"satan_breath"
 	{
+		"ID"					"15195"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"				   
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"custom/satan_breath"
 		"MaxLevel"						"7"
 		"ScriptFile"					"heroes/satan/satan_breath.lua"
-		
+		"HasShardUpgrade"				"1"
+
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -27,9 +29,9 @@
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 		"AbilityCooldown"				"16.0"
-		
+
 		"AbilityManaCost"				"75 90 105 120 135 150 165"
-		
+
 		"AbilityValues"
 		{
 			"start_radius"			"150"
@@ -45,12 +47,28 @@
 			"duration"				"3.0"
 			"think_time"			"0.2"
 			"damage_pct"		"5"
+			"shard_enabled"
+			{
+				"value"					"0"
+				"special_bonus_shard"	"1"
+			}
+			"shard_ground_duration"
+			{
+				"value"					"0"
+				"special_bonus_shard"	"5"
+			}
+			"shard_ground_damage"
+			{
+				"value"					"0"
+				"special_bonus_shard"	"15"
+			}
 		}
 	}
 
 
 	"satan_might"
 	{
+		"ID"					"15194"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_lua"
@@ -77,6 +95,7 @@
 
 	"satan_trade"
 	{
+		"ID"					"15193"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -118,6 +137,7 @@
 
 	"satan_overpain"
 	{
+		"ID"					"15192"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
@@ -149,6 +169,7 @@
 
 	"satan_curse"
 	{
+		"ID"					"15191"
 	// General
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"7"
@@ -162,27 +183,28 @@
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"custom/satan_curse"
-		"ScriptFile"					"heroes/satan/satan_curse.lua" 
+		"ScriptFile"					"heroes/satan/satan_curse.lua"
+		"HasScepterUpgrade"				"1"
 
 		"precache"
 		{
 			"soundfile"	"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
 			"particle"	"particles/units/heroes/hero_shadow_demon/shadow_demon_demonic_purge_debuff.vpcf"
 		}
-		
+
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"720"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.55"
 
-		// Time		
+		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"95"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 225 300 375 450 525 600"	
+		"AbilityManaCost"				"150 225 300 375 450 525 600"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -190,11 +212,27 @@
 		{
 			"duration"		"3 3.5 4 4.5 5 5.5 6"
 			"slow"			"-10000"
+			"scepter_enabled"
+			{
+				"value"					"0"
+				"special_bonus_scepter"	"1"
+			}
+			"scepter_jump_radius"
+			{
+				"value"					"0"
+				"special_bonus_scepter"	"800"
+			}
+			"scepter_jump_duration"
+			{
+				"value"					"0"
+				"special_bonus_scepter"	"4"
+			}
 		}
 	}
 
 	"satan_special_bonus_trade_damage"
 	{
+		"ID"					"15190"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -209,6 +247,7 @@
 
 	"satan_special_bonus_trade_duration"
 	{
+		"ID"					"15189"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -223,6 +262,7 @@
 
 	"satan_special_bonus_breath_damage"
 	{
+		"ID"					"15188"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -237,15 +277,47 @@
 
 	"satan_special_bonus_might_nocd"
 	{
+		"ID"					"15187"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"value"						"1"
+		}
+	}
+
+	"satan_blood_debt"
+	{
+		"ID"					"15186"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		// Тут стоял тип ATTRIBUTES. Движок считает талантом любую способность
+		// такого типа: у сатаны их выходило девять при восьми слотах в
+		// ванильной панели талантов, и клиент падал насмерть с
+		// "Unable to find child 'UpgradeName9'" при наведении на героя.
+		// У остальных кастомных героев инейты объявлены так же - PASSIVE.
+		"AbilityType"					"ABILITY_TYPE_PASSIVE"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"custom/satan_curse"
+		"ScriptFile"					"heroes/satan/satan_blood_debt"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"debt_pct"					"5"
+			"debt_per_damage"			"50"
+			"max_bonus_damage"			"30"
+			"decay_per_second"			"0.2"
+			"decay_delay"				"3.0"
 		}
 	}
 }

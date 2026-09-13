@@ -38,14 +38,15 @@ DOTAAbilities
 		"BaseClass"			"pudge_meat_hook"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Pudge.AttackHookExtend"
+		"HasShardUpgrade"			"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -58,23 +59,20 @@ DOTAAbilities
 			"damage"
 			{
 				"value"										"150 220 290 360 430 500 570"
-				"special_bonus_facet_pudge_flayers_hook"    "=80 =120 =160 =200 =240 =280 =320"
 				"special_bonus_unique_pudge_7"			"+180"
 			}
 			"damage_pct"								
 			{
 				"value"				"100"
-				"special_bonus_facet_pudge_flayers_hook"	"=10"
 			}
 			"hook_speed"								"1600.0"
 			"hook_width"								"100"
 			"AbilityCastRange"                              
             {
                 "value"                     "1300"
-                "special_bonus_facet_pudge_flayers_hook"    "+15%"
             }
-			"vision_radius"		"500 500 500 500"
-			"vision_duration"	"4.0 4.0 4.0 4.0"
+			"vision_radius"		"500"
+			"vision_duration"	"4.0"
 			"reveal_duration"   "00"
 			"AbilityCooldown"				
 			{
@@ -86,20 +84,18 @@ DOTAAbilities
 				"value"								"0"
 				
 			}
-			"distance_to_damage"
-            {
-                "special_bonus_facet_pudge_flayers_hook" "12 18 24 30 36 42 48"              
-            }
+			"distance_to_damage"				"0"
 
-            "min_distance_damage"
-            {
-                "special_bonus_facet_pudge_flayers_hook" "10"
-            }
+            "min_distance_damage"				"0"
             
             "self_stun_duration_percent"
             {
                 "value"                                 "65"
             }
+			"cooldown_reduction_pct_allied_hook"
+			{
+				"special_bonus_shard"				"50"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -117,7 +113,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 
 		// Special
@@ -155,10 +151,9 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"pudge_eject"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Enchantress.EnchantCreep"
 
@@ -179,15 +174,14 @@ DOTAAbilities
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"2"
 		"AbilityDraftPreAbility"		"pudge_eject"
-		"HasShardUpgrade"			"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"200"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 
@@ -197,7 +191,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 130 170 200 230 260"
+		"AbilityManaCost"				"100 132 164 196 228 260 292"
 		
 		"AbilityValues"
 		{
@@ -223,7 +217,7 @@ DOTAAbilities
 			"animation_rate"		"1.5"
 			"AbilityChannelTime"			
 			{
-				"value"				"2.75 2.75 2.75"
+				"value"				"2.75"
 				"special_bonus_unique_pudge_6"	"+0.75"
 			}
 			"AbilityCooldown"				
@@ -249,12 +243,10 @@ DOTAAbilities
 			"gluttony_strength_bonus"
             {
                 "value"                 "0"
-                "special_bonus_facet_pudge_fresh_meat"          "1 3 5"             
             }
             "glutton_strength_stack_duration"
             {
                 "value"                 "0"
-                "special_bonus_facet_pudge_fresh_meat"          "12"                
             }
 		}
 	}
@@ -262,7 +254,7 @@ DOTAAbilities
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
         "MaxLevel"                      "8"
         "Innate"                        "1"
         "DependentOnAbility"            "pudge_dismember"
@@ -284,6 +276,7 @@ DOTAAbilities
     }
     "special_bonus_unique_pudge_1"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -298,6 +291,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_pudge_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -336,6 +330,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_pudge_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

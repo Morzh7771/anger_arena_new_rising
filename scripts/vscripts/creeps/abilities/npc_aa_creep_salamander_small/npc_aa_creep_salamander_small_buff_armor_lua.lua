@@ -8,6 +8,7 @@ function npc_aa_creep_salamander_small_buff_armor_lua:OnSpellStart()
         local alliance = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetCursorPosition(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
         local particle = ParticleManager:CreateParticle( "particles/wave_armor/wave_armor.vpcf", PATTACH_CUSTOMORIGIN, caster )
         ParticleManager:SetParticleControl( particle, 0, self:GetCaster():GetCursorPosition() )
+        ParticleManager:ReleaseParticleIndex(particle)
 
         if #alliance > 0 then
             for _,alli in pairs(alliance) do

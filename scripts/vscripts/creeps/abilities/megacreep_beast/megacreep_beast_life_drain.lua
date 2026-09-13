@@ -1,5 +1,14 @@
 megacreep_beast_life_drain = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_beast_life_drain:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_pugna/pugna_lifedrain_drainfield.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_pugna/pugna_lifedrain_innerglow_give.vpcf", context)
+end
+
+
 ---------------------------------------------------------------------------
 
 function megacreep_beast_life_drain:OnAbilityPhaseStart()
@@ -43,6 +52,8 @@ end
 
 function megacreep_beast_life_drain:OnChannelFinish(bInterrupted)
 	ParticleManager:DestroyParticle(self.p1, false)
+	ParticleManager:ReleaseParticleIndex(self.p1)
 	ParticleManager:DestroyParticle(self.p2, false)
+	ParticleManager:ReleaseParticleIndex(self.p2)
 end
 

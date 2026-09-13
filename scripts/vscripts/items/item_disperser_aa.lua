@@ -58,7 +58,7 @@ modifier_item_disperser_aa = class({
 function modifier_item_disperser_aa:OnAttackLanded(params)
     if params.attacker == self:GetParent() then
     	if params.no_attack_cooldown then return end
-        print(params.target:GetMaxMana())
+        -- отладочный print убран: горячий путь (каждый удар/лечение)
     	if self:GetParent():FindAllModifiersByName("modifier_item_disperser_aa")[1] ~= self then return end
 			local damage_per_burn = self:GetAbility():GetSpecialValueFor("damage_per_burn")
 			local mana_burn_illusion = self:GetAbility():GetSpecialValueFor("ilusion_mana_burn")

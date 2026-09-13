@@ -41,6 +41,7 @@ end
 
 function modifier_npc_aa_creep_salamander_small_buff_as_lua:OnDestroy ( params )
     ParticleManager:DestroyParticle(self.particleSpd,false)
+    ParticleManager:ReleaseParticleIndex(self.particleSpd)
 end
 
 -------------------------------------------------------------------------------

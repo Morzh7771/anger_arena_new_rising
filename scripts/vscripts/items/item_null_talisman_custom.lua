@@ -3,6 +3,14 @@ LinkLuaModifier("modifier_item_null_talisman_custom_mana", "items/item_null_tali
 
 item_null_talisman_custom = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_null_talisman_custom:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/healing_clarity.vpcf", context)
+end
+
+
 function item_null_talisman_custom:GetIntrinsicModifierName()
 	return "modifier_item_null_talisman_custom"
 end

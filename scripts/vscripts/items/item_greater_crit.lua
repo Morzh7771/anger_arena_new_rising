@@ -1,10 +1,19 @@
 item_greater_crit = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items/azrael_crossbow/azrael_crossbow_bolt.vpcf", context)
         PrecacheResource("particle", "particles/hw_fx/greevil_orange_lava_puddle_impact_burst.vpcf", context)
     end,
     GetIntrinsicModifierName = function (self) return 'modifier_greater_crit' end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_greater_crit:Precache(context)
+	PrecacheResource("particle", "particles/hw_fx/greevil_orange_lava_puddle_impact_burst.vpcf", context)
+	PrecacheResource("particle", "particles/items/azrael_crossbow/azrael_crossbow_bolt.vpcf", context)
+end
 
 item_greater_crit_2 = item_greater_crit
 

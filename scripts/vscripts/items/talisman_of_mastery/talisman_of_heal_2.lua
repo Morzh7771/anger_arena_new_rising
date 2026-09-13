@@ -13,10 +13,19 @@ LinkLuaModifier( "modifier_talisman_of_heal_2_active", 'items/talisman_of_master
 require('lib/common_abilities/damage_to_exp')
 
 modifier_talisman_of_heal_2_cd = class({
+
     GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
     IsDebuff = function (self) return false end,
     IsHidden = function (self) return false end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function modifier_talisman_of_heal_2_cd:Precache(context)
+	PrecacheResource("particle", "particles/damned_eye/damned_eye.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_blur.vpcf", context)
+end
 
 modifier_talisman_of_heal_2 = CommonAbilities:ConstructModifier( modifier_talisman_of_heal_2, CommonAbilities.DamageToExp )
 
@@ -159,6 +168,7 @@ modifier_talisman_of_heal_2_active = class({
     OnDestroy = function(self)
         if not IsServer() then return end
         ParticleManager:DestroyParticle(self.particleDamnedEye, false)
+        ParticleManager:ReleaseParticleIndex(self.particleDamnedEye)
         Timers:RemoveTimer("item_talisman_of_heal_2" .. tostring(self:GetParent():entindex()))
     end,
 })

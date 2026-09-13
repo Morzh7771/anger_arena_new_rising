@@ -2,12 +2,21 @@ LinkLuaModifier("modifier_item_phylactery_custom", "items/item_phylactery_custom
 LinkLuaModifier("modifier_item_phylactery_custom_debuff", "items/item_phylactery_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_phylactery = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items_fx/phylactery_target.vpcf", context)
         PrecacheResource("particle", "particles/items_fx/phylactery.vpcf", context)
     end,
     GetIntrinsicModifierName = function (self) return "modifier_item_phylactery_custom" end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_phylactery:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/phylactery.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/phylactery_target.vpcf", context)
+end
 
 item_phylactery_2 = item_phylactery
 

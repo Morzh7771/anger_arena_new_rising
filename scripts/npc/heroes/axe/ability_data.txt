@@ -26,7 +26,7 @@ DOTAAbilities
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
+		"AbilityDamage"					"0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,6 @@ DOTAAbilities
 			"bonus_armor"	
 			{
 				"value"							"20 25 30 35 40 45 50"
-				"special_bonus_facet_axe_call_out"			"+25"
 				"special_bonus_unique_axe_7"	"+15"
 			}
 			"duration"				"1.2 1.5 1.8 2.1 2.4 2.7 3.0"
@@ -55,7 +54,6 @@ DOTAAbilities
 			"bonus_attack_speed"
 			{
 				"value"					"0"
-				"special_bonus_facet_axe_call_out"				"60"
 			}
 		}
 	}
@@ -112,6 +110,7 @@ DOTAAbilities
 				{
 					"value"			"15 25 35 45 55 65 75"
 					"CalculateSpellDamageTooltip" "1"
+					"special_bonus_unique_axe"				"+8"
 				}
 				"armor_multiplier"			
 				{
@@ -177,6 +176,7 @@ DOTAAbilities
 				"special_bonus_scepter"		"1"
 			}
 			"damage_pct"					"3"
+			"helix_lifesteal"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -212,7 +212,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"		
+		"AbilityManaCost"				"100 125 150 175 200 225 250"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -255,11 +255,16 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
+		"Innate"						"1"
 		"AbilityValues"
 		{
 			"armor_pct_as_strength"			"50"
 			"radius"					"700"
 			"bonus_linger_duration"		"3"
+			"current_max_str_bonus"
+			{
+				"dynamic_value"				"true"
+			}
 		}
 
 	}

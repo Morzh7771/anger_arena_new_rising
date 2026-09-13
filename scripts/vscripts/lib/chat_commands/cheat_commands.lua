@@ -10,6 +10,9 @@ Cheat lobby commands
  -agi 100					-- set base hero agility to 100
  -int 100					-- set base hero intellect to 100 
  -cb 
+ -perf                  -- счётчики нагрузки: крипы, лагеря, таймеры
+ -wipeCreeps, -wc       -- убить всех крипов лагерей (A/B тест по фпс)
+ -campsleep 0|1         -- вкл/выкл сон лагерей
 ]]
 
 Commands = Commands or class({})
@@ -28,6 +31,7 @@ require('lib/attentions')
 require('lib/utils')
 require('lib/duel/duel_controller')
 require("lib/spawners/creep_spawner")
+require("lib/spawners/camp_sleep")
 require('lib/boss/boss_spawner')
 
 function Commands:ds(player, arg)
@@ -246,11 +250,31 @@ function Commands:nofog(player, arg)
 	GameMode:SetFogOfWarDisabled(true)
 end
 
+-- ReplaceHeroWith без прекеша даёт error-модель и способности без партиклов:
+-- ресурсы нового героя на этот момент ещё не загружены. Ждём PrecacheUnitByNameAsync,
+-- как это уже сделано в lib/hero_change.lua
+local function _SwitchHeroPrecached(player, heroName)
+	if not player then return end
+
+	local hero = player:GetAssignedHero()
+
+	if not hero or hero:IsNull() then return end
+
+	local playerid = player:GetPlayerID()
+	local gold = hero:GetGold()
+	-- Четвёртый аргумент ReplaceHeroWith - опыт: без него герой первого уровня.
+	local xp = hero:GetCurrentXP() or 0
+
+	PrecacheUnitByNameAsync(heroName, function()
+		PlayerResource:ReplaceHeroWith( playerid, heroName, gold, xp )
+	end, playerid)
+end
+
 function Commands:sh(player, arg)
-	PlayerResource:ReplaceHeroWith( player:GetPlayerID(), "npc_dota_hero_" .. arg[1], player:GetAssignedHero():GetGold(), 0 )
+	_SwitchHeroPrecached( player, "npc_dota_hero_" .. arg[1] )
 end
 function Commands:switchhero(player, arg)
-	PlayerResource:ReplaceHeroWith( player:GetPlayerID(), "npc_dota_hero_" .. arg[1], player:GetAssignedHero():GetGold(), 0 )
+	_SwitchHeroPrecached( player, "npc_dota_hero_" .. arg[1] )
 end
 
 function Commands:fog(player, arg)
@@ -283,4 +307,75 @@ function Commands:cb(player, arg)
 		target:SetControllableByPlayer( hero:GetPlayerOwnerID(), false )
 		target:AddExperience(999999,0,true,true)
 	end)
+end
+------------------------------------------------------------------------------------------------------------
+-- ЗАМЕРЫ ПРОИЗВОДИТЕЛЬНОСТИ
+--
+-- Нужны, чтобы не гадать, откуда просадка. Порядок работы:
+--   1) доиграть до момента, когда фпс просел (обычно 8-10 минута);
+--   2) -perf   - записать числа;
+--   3) -wc     - выпилить всех крипов лагерей и посмотреть на фпс;
+--   4) если фпс вернулся - виноваты крипы, дальше крутим -campsleep;
+--      если нет - копать надо не там, крипы ни при чём.
+------------------------------------------------------------------------------------------------------------
+
+function Commands:perf(player, arg)
+	local aliveCreeps = 0
+
+	for idx, _ in pairs(CreepSpawner._unitMetaByEntindex or {}) do
+		local u = EntIndexToHScript(idx)
+		if u and not u:IsNull() and u:IsAlive() then
+			aliveCreeps = aliveCreeps + 1
+		end
+	end
+
+	local timers = 0
+	for _, _ in pairs(Timers.timers or {}) do timers = timers + 1 end
+
+	local camps, sleeping, tracked, asleepUnits = CampSleep:GetStats()
+
+	force_print("[perf] ---------------------------------------")
+	force_print("[perf] время:", string.format("%.1f", GameRules:GetDOTATime(false, false) / 60), "мин")
+	force_print("[perf] живых крипов лагерей:", aliveCreeps)
+	force_print("[perf] лагерей под учётом:", camps, "из них спят:", sleeping)
+	force_print("[perf] крипов под учётом:", tracked, "из них спят:", asleepUnits)
+	force_print("[perf] активных lua-таймеров:", timers)
+	force_print("[perf] сон лагерей включён:", tostring(CampSleep:GetEnabled()))
+	force_print("[perf] ---------------------------------------")
+end
+
+-- убить всех крипов лагерей: A/B-тест "виноваты ли крипы"
+function Commands:wipe_creeps(player, arg)
+	-- снимок индексов: ForceKill дёргает entity_killed, который правит
+	-- ту самую таблицу, по которой мы идём
+	local indexes = {}
+	for idx, _ in pairs(CreepSpawner._unitMetaByEntindex or {}) do
+		indexes[#indexes + 1] = idx
+	end
+
+	local killed = 0
+	for _, idx in pairs(indexes) do
+		local u = EntIndexToHScript(idx)
+		if u and not u:IsNull() and u:IsAlive() then
+			u:ForceKill(false)
+			killed = killed + 1
+		end
+	end
+
+	force_print("[perf] убито крипов лагерей:", killed)
+end
+
+function Commands:wc(player, arg) self:wipe_creeps(player, arg); end
+
+-- -campsleep 0 / -campsleep 1
+function Commands:campsleep(player, arg)
+	local val = arg and arg[1]
+
+	if val == nil then
+		CampSleep:SetEnabled(not CampSleep:GetEnabled())
+	else
+		CampSleep:SetEnabled(val ~= "0" and val ~= "false")
+	end
+
+	force_print("[perf] сон лагерей:", tostring(CampSleep:GetEnabled()))
 end

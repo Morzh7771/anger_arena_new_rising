@@ -28,6 +28,9 @@ end
 
 function modifier_aa_hero:OnCreated()
 	self.limit = 700
+	-- OnCreated и тик идут и на клиенте, а у клиентской копии юнита нет
+	-- AddNewModifier и SetBaseMagicalResistanceValue - там сыпались ошибки
+	if not IsServer() then return end
 	self:StartIntervalThink(1.0)
 	if not self:GetParent():IsIllusion() then  
 		self:GetParent():AddNewModifier(self:GetParent(),nil,'bonus_str_tome',{duration = -1})
@@ -104,6 +107,7 @@ function modifier_aa_hero:GetModifierMoveSpeedBonus_Percentage()
 	end
 end
 function modifier_aa_hero:OnIntervalThink()
+	if not IsServer() then return end
     local int = self:GetParent():GetIntellect(false)
 	if int ~= self.int then
 		self.int = int

@@ -25,19 +25,17 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"tooltip_scepter_cooldown"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_scepter_cooldown"	"60"
-				"RequiresScepter"			"1"
+				"value"				"60"
+				"RequiresScepter"				"1"
 			}
-			"02"
+			"tooltip_scepter_manacost"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_scepter_manacost"	"100"
-				"RequiresScepter"			"1"
+				"value"				"100"
+				"RequiresScepter"				"1"
 			}
 		}
 	}
@@ -82,29 +80,31 @@ DOTAAbilities
 				"damage_per_second"				
 				{
 					"value"		"15 30 45 60 75 90 105"
-					"RequiresFacet"				"arc_warden_order"
 				}
 				"move_speed_slow_pct"				
 				{
 					"value" 					"14 21 28 35 42 48 55"
-					"RequiresFacet"				"arc_warden_order"
+					"special_bonus_unique_arc_warden_4"				"+20"
 				}
 
 				"tempest_damage_per_second"				
 				{
 					"value"		"20 45 70 95 120 145 170"
-					"RequiresFacet"				"arc_warden_disorder"
 				}
 				"tempest_move_speed_slow_pct"
 				{
 					"value"						"6 10 14 18 20 22 24"
-					"RequiresFacet"				"arc_warden_disorder"
 				}		
 				"AbilityCastRange"			
 				{
 					"value"				"500 550 600 650 700 750 800"
 					"special_bonus_unique_arc_warden_5"	"+200"
 				}
+			"applies_silence"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -161,35 +161,29 @@ DOTAAbilities
 			"duration"					
 			{
 				"value"						"3.5 4.5 5.5 6.5 7.0 7.5 8.0"
-				"RequiresFacet"				"arc_warden_order"
 			}
 			"attack_speed_bonus"		
 			{
 				"value" 				"50 70 90 110 130 150 170"
 				"special_bonus_unique_arc_warden_3" 		"+80"
-				"RequiresFacet"				"arc_warden_order"
 			}
 			"evasion_chance"			
 			{
 				"value"					"100"
-				"RequiresFacet"			"arc_warden_order"
 			}
 			"tempest_duration"
 			{
 				"value"					"5 6 7 8 9 10 11"
-				"RequiresFacet"			"arc_warden_disorder"
 			}
 			"attack_range_bonus"				
 			{
 				"value"					"250"			
-				"RequiresFacet"			"arc_warden_disorder"
 			}
 			
 			"attack_damage_bonus"
 			{
 				"value"								"40 45 50 55 60 65 70"
 				"special_bonus_unique_arc_warden_3" 		"+30"
-				"RequiresFacet"			"arc_warden_disorder"
 			}
 			"attack_magic_damage"				
 			{
@@ -206,6 +200,12 @@ DOTAAbilities
 				"value"			"0"
 				"special_bonus_unique_arc_warden_7"	"=1"
 			}
+			"knockback_enemies"				"0"
+			"rune_pull_strength"				"100"
+			"rune_pull_max_speed_as_multiplier_of_pull_strength"				"4.0"
+			"rune_pull_falloff_multiplier"				"3.0"
+			"rune_pull_radius"				"800 1200 1600 2000 2400 2800 3200"
+			"rune_activate_radius_buffer"				"30"
 		}
 	}
 	"arc_warden_spark_wraith"
@@ -242,12 +242,15 @@ DOTAAbilities
 				"value"			"400"
 				"affected_by_aoe_increase"	"1"
 			}
-			"duration"									"30"
+			"duration"
+			{
+				"value"				"30"
+				"special_bonus_unique_arc_warden_7"				"+30"
+			}
 			"move_speed_slow_pct"						"100"
 			"base_activation_delay"							
 			{
 				"value"									"2.0"
-				"RequiresFacet"			"arc_warden_order"
 			}
 
 			"spark_damage_base"
@@ -255,23 +258,19 @@ DOTAAbilities
 			
 				"value"									"100 180 260 340 420 500 580"
 				"special_bonus_unique_arc_warden"		"+40%"
-				"RequiresFacet"			"arc_warden_order"
 			}
 			"wraith_speed_base"
 			{			
 				"value"									"500"
-				"RequiresFacet"							"arc_warden_order"
 			}
 			"ministun_duration"							
 			{
 				"value"									"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
-				"RequiresFacet"							"arc_warden_order"
 			}
 
 			"tempest_activation_delay"
 			{
 				"value"									"1.0"
-				"RequiresFacet"							"arc_warden_disorder"
 			}
 			
 			"spark_damage_tempest"
@@ -279,17 +278,14 @@ DOTAAbilities
 			
 				"value"									"75 135 195 255 315 375 435"
 				"special_bonus_unique_arc_warden"		"+40%"
-				"RequiresFacet"							"arc_warden_disorder"
 			}			
 			"wraith_speed_tempest"
 			{
 				"value"									"1000"
-				"RequiresFacet"							"arc_warden_disorder"
 			}
 			"ministun_duration_tempest"
 			{
 				"value"									"0.6 0.8 1.0 1.2 1.4 1.6 1.8"
-				"RequiresFacet"							"arc_warden_disorder"
 			}
 			"think_interval"							"0.2"
 			"wraith_vision_radius"						
@@ -315,6 +311,9 @@ DOTAAbilities
 				"RequiresScepter"						"1"
 			}
 			"creep_damage_bonus_pct"					"40"
+			"maximum_targets"				"1"
+			"second_wraith_damage_pct"				"0"
+			"second_wraith_speed_pct"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -361,11 +360,45 @@ DOTAAbilities
 				"special_bonus_unique_arc_warden_8"		"+1"
 			}
 			"incoming_damage_penalty"				"60"
+			"AbilityCastRange"				"700"
+			"bounty_gold"
+			{
+				"value"				"70"
+				"hero_levelup"				"+10"
+			}
+			"bounty_xp"
+			{
+				"value"				"70"
+				"hero_levelup"				"+10"
+			}
+			"max_blind_chance"				"35.0"
+			"max_slow"				"35.0"
+			"has_debuff"				"1"
+			"rune_duration"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"=12"
+			}
+			"invis_rune"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1"
+			}
+			"arcane_rune"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1"
+			}
+			"haste_rune"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1"
+			}
 		}
 	}
 	"arc_warden_runic_infusion"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"arc_warden_scepter"
 		"BaseClass"			"arc_warden_runic_infusion"
 		"MaxLevel"						"1"
@@ -376,6 +409,12 @@ DOTAAbilities
 			"regeneration_effect"		"1"
 			"duration"					"4.0"
 			"water_bounty_rune_duration_pct"	"100"
+			"bonus_stacks_per_rune_pickup"				"1"
+			"all_attribute_bonus_per_stack"
+			{
+				"value"				"1.5"
+				"special_bonus_unique_arc_warden_8"				"+1.0"
+			}
 		}
 	}
 }

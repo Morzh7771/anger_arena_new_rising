@@ -46,11 +46,14 @@ function modifier_slardar_corrosive_haze_lua:IsStunDebuff()
 	return false
 end
 
+-- Было "else if" (два слова) и не хватало одного end - из-за этого весь файл
+-- не компилировался. Логику сохраняем как была: 0 -> true, 1 -> false.
 function modifier_slardar_corrosive_haze_lua:IsPurgable()
     if self:GetAbility():GetSpecialValueFor("undispellable") == 0 then
-	return true
-    else if self:GetAbility():GetSpecialValueFor("undispellable") == 1 then
-    return false
+        return true
+    elseif self:GetAbility():GetSpecialValueFor("undispellable") == 1 then
+        return false
+    end
 end
 
 --------------------------------------------------------------------------------

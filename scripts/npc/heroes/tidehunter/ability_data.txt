@@ -19,7 +19,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -96,10 +96,20 @@ DOTAAbilities
             "bonus_reduction_per_kill"
             {
                 "value" "0"
-                "special_bonus_facet_tidehunter_kraken_swell"  "1 2 2 3 3 3 4"                
             }               
             
-        }
+        	"AbilityCooldown"				"30"
+        	"creep_reduction_penalty_pct"				"50.0"
+        	"active_pct_effectiveness"				"200.0"
+        	"active_move_speed_penalty_pct"				"40"
+        	"active_duration"				"4.0"
+        	"damage_cleanse"				"600 575 550 525 500 475 450"
+        	"damage_reset_interval"				"7.0"
+                	"smash_on_purge"
+        	{
+        		"value"			"0"
+        	}
+}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"tidehunter_anchor_smash"
@@ -157,6 +167,20 @@ DOTAAbilities
 				"special_bonus_unique_tidehunter_10"			"+1"
 			}
 			
+			"building_pct_damage"
+			{
+				"value"				"0"
+				"special_bonus_unique_tidehunter_10"				"+50"
+			}
+			"smash_on_attack"
+			{
+				"special_bonus_unique_tidehunter_8"				"1"
+			}
+			"additional_range"
+			{
+				"value"				"225"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -210,6 +234,7 @@ DOTAAbilities
 				"special_bonus_unique_tidehunter_7"	"+0.5"
 			}
 			"damage_pct"		"150"
+			"AbilityCooldown"				"150 148.33 146.67 145 143.33 141.67 140"
 		}
 	}
 	"tidehunter_arm_of_the_deep"
@@ -358,7 +383,11 @@ DOTAAbilities
             }
             "damage_reset_interval" "7.0"
         
-        }
+                	"smash_on_purge"
+        	{
+        		"value"			"0"
+        	}
+}
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
     }
     
@@ -430,6 +459,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_tidehunter_8"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -465,4 +495,48 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	"tidehunter_leviathans_catch"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_NO"
+		"Innate"				"1"
+		"AbilityValues"
+		{
+			"model_scale"
+			{
+				"value"				"0"
+			}
+			"attack_range"
+			{
+				"value"				"0"
+			}
+			"anchor_smash_radius"
+			{
+				"value"				"0"
+			}
+			"fish_duration"				"30"
+			"fish_strength_gain"				"0"
+			"fish_attack_range"				"2"
+			"fish_damage_block"				"1"
+			"fish_health_bonus"				"3"
+			"fish_model_scale"				"1.1"
+			"max_fish_spawn_distance"				"200"
+			"health_bar_offset_base"				"160"
+			"health_bar_offset_per_level"				"5"
+			"permanent_health_gain"
+			{
+				"dynamic_value"				"true"
+			}
+			"permanent_attack_range_gain"
+			{
+				"dynamic_value"				"true"
+			}
+			"permanent_damage_block_gain"
+			{
+				"dynamic_value"				"true"
+			}
+		}
+	}
 }

@@ -19,7 +19,7 @@ DOTAAbilities
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+        "AbilityCastPoint"				"0.3"
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
@@ -41,10 +41,16 @@ DOTAAbilities
                 "value"	    "-12 -16 -20 -24 -28 -32 -36"
                 "LinkedSpecialBonus"	"special_bonus_unique_chen_8"
                 "LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+            	"special_bonus_unique_chen_8"				"-15"
             }    
             "bonus_attack_speed"	"60 80 100 120 140 160 180"
             "self_attack_range_bonus"           "50 100 150 200 250 300 350"
             
+        	"damage"
+        	{
+        		"value"				"50 100 150 200 250 300 350"
+        		"special_bonus_unique_chen_11"				"+75"
+        	}
         }
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
     }
@@ -81,28 +87,12 @@ DOTAAbilities
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "damage_min"			"50 100 150 200"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "damage_max"			"100 200 300 400"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "heal_min"			"25 50 75 100"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "heal_max"			"50 100 150 200"
-            }
+        	"damage_min"				"50 100 150 200"
+        	"damage_max"				"100 200 300 400"
+        	"heal_min"				"25 50 75 100"
+        	"heal_max"				"50 100 150 200"
         }
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
     }
@@ -135,33 +125,17 @@ DOTAAbilities
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "armor"					"3 6 9 12 15 18 21"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "heal_rate"					"6 12 18 24 30 36 42"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "aura_radius"		"1200"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "teleport_delay"		"4"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "creep_bonus"			"3"
-            }
+        	"armor"				"3 6 9 12 15 18 21"
+        	"heal_rate"				"6 12 18 24 30 36 42"
+        	"aura_radius"				"1200"
+        	"teleport_delay"				"4"
+        	"creep_bonus"				"3"
+        	"AbilityCastRange"				"1200"
+        	"duration"				"6"
+        	"bonus_armor"				"5 10 15 20 25 30 35"
+        	"heal_amp"				"5 10 15 20 25 30 35"
         }
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
     }
@@ -196,13 +170,9 @@ DOTAAbilities
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "hero_teleport_delay"	"6.0 5.0 4.0 3.0"
-            }
+        	"hero_teleport_delay"				"6.0 5.0 4.0 3.0"
         }
     }
 
@@ -223,7 +193,7 @@ DOTAAbilities
         "MaxLevel"		"7"
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+        "AbilityCastPoint"				"0.3"
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
@@ -267,6 +237,10 @@ DOTAAbilities
                 "special_bonus_shard"			"=2"
             }
 
+        	"gold_pct"				"25 50 75 100 125 150 175"
+        	"current_hp_pct_tooltip"				"0"
+        	"unsummon_time"				"3.0"
+        	"unsummon_cooldown_reduction"				"12.0"
         }
         "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
     }
@@ -307,6 +281,10 @@ DOTAAbilities
         "AbilityValues"
         {
 
+        	"speed"				"1000"
+        	"current_hp_pct"				"20.0"
+        	"base_value"				"25"
+        	"heal_factor"				"50"
         }
     }
 
@@ -329,7 +307,7 @@ DOTAAbilities
         "MaxLevel"		"7"
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"				"0.3 0.3 0.3"
+        "AbilityCastPoint"				"0.3"
         "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
         // Time
@@ -366,6 +344,32 @@ DOTAAbilities
                 "special_bonus_unique_chen_12"		"+1"
 
             }
+        	"AbilityCooldown"
+        	{
+        		"value"				"150 143 137 130 123 117 110"
+        		"special_bonus_scepter"				"-40"
+        	}
+        	"full_heal_on_chen_and_creeps"
+        	{
+        		"special_bonus_unique_chen_2"				"=1"
+        	}
+        	"AbilityChannelTime"
+        	{
+        		"special_bonus_scepter"				"=6"
+        	}
+        	"debuff_immune_radius"
+        	{
+        		"special_bonus_scepter"				"=800"
+        		"affected_by_aoe_increase"				"1"
+        	}
+        	"debuff_immune_resist"
+        	{
+        		"special_bonus_scepter"				"60"
+        	}
+        	"nearby_hot_boost"
+        	{
+        		"special_bonus_scepter"				"200"
+        	}
         }
     }
     "special_bonus_unique_chen_7"
@@ -378,13 +382,12 @@ DOTAAbilities
 		"BaseClass"                        "special_bonus_unique_earth_spirit"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
 				"value"				"20"
-				"ad_linked_abilities"			"chen_hand_of_god"
+				"ad_linked_abilities"				"chen_hand_of_god"
 			}
 		}
 	}

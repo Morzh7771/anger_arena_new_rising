@@ -16,7 +16,7 @@
         "ItemResult"                    "item_butterfly"
         "ItemRequirements"
         {
-            "01"                        "item_eagle;item_talisman_of_evasion;item_broadsword"
+        	"01"					"item_eagle;item_claymore;item_talisman_of_evasion"
         }
     }
     "item_recipe_sacred_butterfly"
@@ -45,7 +45,7 @@
         
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"                            "1118"                      
+        "ID"                            "15016"                      
         "Model"                         "models/props_gameplay/recipe.vmdl"
         "BaseClass"                     "item_recipe_arcane_boots"
         

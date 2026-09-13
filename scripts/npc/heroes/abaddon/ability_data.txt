@@ -124,6 +124,27 @@ DOTAAbilities
 
 
 
+			"self_damage_enemy_target"
+			{
+				"value"				"40"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PURE"
+				"CalculateSpellDamageTooltip"				"0"
+			}
+			"damage_heal"
+			{
+				"value"				"95 170 245 320 395 470 545"
+				"special_bonus_unique_abaddon_2"				"+35"
+			}
+			"perform_attack"
+			{
+				"value"				"0"
+				"special_bonus_unique_abaddon_2"				"0"
+			}
+			"damage_percentage_on_perform_attack"
+			{
+				"value"				"0"
+				"special_bonus_unique_abaddon_2"				"0"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -179,6 +200,20 @@ DOTAAbilities
 				"special_bonus_unique_abaddon_7"		"+15"
 
 			}
+			"AbilityCooldown"				"12 11 10 9 8 7 6"
+			"absorb_to_damage"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"75"
+			}
+			"absorb_damage_aoe"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"675"
+				"affected_by_aoe_increase"				"1"
+				"CalculateSpellDamageTooltip"				"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -222,7 +257,6 @@ DOTAAbilities
 			"damage_pct"					
 			{
 				"value" "0"
-				"special_bonus_facet_abaddon_mephitic_shroud"	"2 4 6 8 10 12 14"
 			}
 			"tower_dps_pct"				"70"
 			"curse_interval"			"0.4"
@@ -256,7 +290,7 @@ DOTAAbilities
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
         "MaxLevel"                      "1"
         "Innate"                        "1"
         "IsBreakable"                   "1"
@@ -266,6 +300,8 @@ DOTAAbilities
             "hp_threshold_pct"      "40.0"
             "heal_reduction_pct"    "35"
             "duration"              "5.0"
+        	"cooldown_reduction_creeps"				"0"
+        	"cooldown_reduction_heroes"				"0"
         }
     }
 	"abaddon_borrowed_time"
@@ -287,7 +323,6 @@ DOTAAbilities
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"ABSOLUTE"
 
-		"HasScepterUpgrade"			"1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------

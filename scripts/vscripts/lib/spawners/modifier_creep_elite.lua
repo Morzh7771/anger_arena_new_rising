@@ -46,3 +46,17 @@ function modifier_creep_elite:OnCreated(event)
 	self.particle = ParticleManager:CreateParticle("particles/items4_fx/spirit_vessel_damage.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 	ParticleManager:SetParticleControl(self.particle, 0, hero:GetAbsOrigin())
 end
+
+-- Партикл зацикленный. Раньше его никто не гасил: модификатор снимается по
+-- смерти крипа (RemoveOnDeath), а эффект оставался жить у клиента навсегда.
+-- Элитники сыпятся с каждого респавна лагеря всю игру, поэтому такие сироты
+-- копились непрерывно - к десятой минуте их уже сотни, и клиент просто тонет.
+function modifier_creep_elite:OnDestroy()
+	if not IsServer() then return end
+
+	if self.particle then
+		ParticleManager:DestroyParticle(self.particle, false)
+		ParticleManager:ReleaseParticleIndex(self.particle)
+		self.particle = nil
+	end
+end

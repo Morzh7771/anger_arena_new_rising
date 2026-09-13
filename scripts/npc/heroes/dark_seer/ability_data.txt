@@ -5,12 +5,11 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"dark_seer_normal_punch"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"MaxLevel"						"1"
 		
 		//"IsShardUpgrade"				"1"
 		"IsGrantedByScepter"				"1"
@@ -67,6 +66,7 @@ DOTAAbilities
 			{
 				"value"		"300 350 400 450 500 550 600"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_2"
+				"special_bonus_unique_dark_seer_2"				"+75"
 			}
 			"duration"				"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
 			"damage"				"150 200 250 300 350 400 450"
@@ -92,7 +92,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -205,6 +205,16 @@ DOTAAbilities
 				"value" 				"0.5"
 				"RequiresShard"			"1"
 			}
+			"AbilityCooldown"
+			{
+				"value"				"24 22 19 16 14 12 9"
+				"special_bonus_unique_dark_seer_6"				"-1.5"
+			}
+			"aoe_radius"
+			{
+				"special_bonus_unique_dark_seer_3"				"350"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -274,6 +284,10 @@ DOTAAbilities
 				"RequiresScepter"		"1"
 			}
 			"wall_damage"				"20 50 80 110 140 170 200"
+			"cooldown_reduction"
+			{
+				"special_bonus_unique_dark_seer_13"				"40"
+			}
 		}
 	}
 	"dark_seer_quick_wit"
@@ -284,10 +298,15 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
+		"Innate"						"1"
 
 		"AbilityValues"
 		{
 			"int_to_atkspd"				".5"
+			"attack_speed_tooltip"
+			{
+				"dynamic_value"				"true"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -316,7 +335,7 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_NONE"  
 
         "MaxLevel"                      "1"
@@ -355,6 +374,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_dark_seer_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -375,6 +395,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_dark_seer_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -411,6 +432,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_dark_seer_13"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -435,4 +457,26 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	"dark_seer_aggrandize"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_NONE"
+		"Innate"				"1"
+		"IsBreakable"				"1"
+		"AbilityValues"
+		{
+			"int_to_atkspd"				"1.0"
+			"attack_speed_tooltip"
+			{
+				"dynamic_value"				"true"
+			}
+			"heal_pct"
+			{
+				"value"				"8.5"
+				"hero_levelup"				"+1.5"
+			}
+		}
+	}
 }

@@ -137,6 +137,7 @@ function mod:OnDestroy()
 
 	if self.inCasterParticle then
 		ParticleManager:DestroyParticle(self.inCasterParticle, true)
+		ParticleManager:ReleaseParticleIndex(self.inCasterParticle)
 		self.inCasterParticle = nil
 	end
 
@@ -144,6 +145,7 @@ function mod:OnDestroy()
 
 	local particle = ParticleManager:CreateParticle("particles/charon/charon_collapse/charon_collapse_5.vpcf", PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControl(particle, 0, self.caster_position)
+	ParticleManager:ReleaseParticleIndex(particle)
 
 	
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)

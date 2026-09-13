@@ -3,6 +3,7 @@ LinkLuaModifier("modifier_crystal_maiden_brilliance_aura_aa_emitter", "heroes/cr
 LinkLuaModifier("modifier_crystal_maiden_brilliance_aura_aa_shield", "heroes/crystal_maiden/crystal_maiden_brilliance_aura_aa.lua", LUA_MODIFIER_MOTION_NONE)
 
 crystal_maiden_brilliance_aura_aa = class({
+
 	GetIntrinsicModifierName = function (self) return "modifier_crystal_maiden_brilliance_aura_aa_emitter" end,
 	OnSpellStart = 			function (self)
         if not IsServer() then return end
@@ -13,6 +14,13 @@ crystal_maiden_brilliance_aura_aa = class({
         EmitSoundOn("Hero_Lich.SinisterGaze.Cast.TI10", self:GetCaster())
     end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function crystal_maiden_brilliance_aura_aa:Precache(context)
+	PrecacheResource("particle", "particles/crystal_maiden/immunity_sphere_buff.vpcf", context)
+end
 
 
 modifier_crystal_maiden_brilliance_aura_aa_emitter = class({

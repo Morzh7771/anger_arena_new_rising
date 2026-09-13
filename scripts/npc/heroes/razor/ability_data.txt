@@ -18,7 +18,7 @@ DOTAAbilities
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -55,7 +55,11 @@ DOTAAbilities
                 "value"                                                             "25 27.5 30 32.5 35 37.5 40"
                 "special_bonus_unique_razor_plasmafield_max_slow"                   "+20"
             }
-			"slow_duration"				"1.5"
+			"slow_duration"
+			{
+				"value"				"1.5"
+				"special_bonus_unique_razor_4"				"+0.75"
+			}
 			"second_ring_delay"
 			{
 				"value"						"0"
@@ -84,7 +88,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -110,30 +114,28 @@ DOTAAbilities
 				"special_bonus_unique_razor"	"+25"
 			}
 			"drain_range_buffer"	"250"
-			"radius"				"200 200 200 200"
-			"speed"					"900 900 900 900"
-			"vision_radius"			"800 800 800 800"
-			"vision_duration"		"3.34 3.34 3.34 3.34"
+			"radius"				"200"
+			"speed"					"900"
+			"vision_radius"			"800"
+			"vision_duration"		"3.34"
 			"attack_speed_factor"
 			{
 				"value"						"0"
 				"special_bonus_unique_razor_static_link_aspd"				"+1"
 			}
-			"pull_speed"            
+			"pull_speed"
             {
                 "value"                 "0"
-                "special_bonus_shard"       "+75"
             }
             "min_pull_range"
                         {
                 "value"                 "0"
-                "special_bonus_shard"       "+175"
             }
             "AbilityCastRange"
             {
                 "value"             "550"
-                "special_bonus_shard"       "+150"
             }   
+			"move_speed_factor"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -145,6 +147,7 @@ DOTAAbilities
 		"MaxLevel"						"7"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
         "IsBreakable"                   "1"
+		"HasShardUpgrade"				"1"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -177,19 +180,19 @@ DOTAAbilities
             "strike_cd_reduction_during_storm"
             {
                 "value"                                     "0"
-                "special_bonus_facet_razor_thunderhead"         "=2.5"
+                "special_bonus_shard"			"=2.0"
             }
 
 
             "hit_targets_inside_eye_of_the_storm"
             {
                 "value"     "0"
-                "special_bonus_facet_razor_thunderhead"         "=1"
+                "special_bonus_shard"			"=1"
             }
             "eye_of_the_storm_chance_multiplier"
             {
                 "value"             "0"
-                "special_bonus_facet_razor_thunderhead"         "=2"
+                "special_bonus_shard"			"=2"
             }
 
         }
@@ -212,6 +215,10 @@ DOTAAbilities
             {
                 "dynamic_value"                     "true"
             }
+        	"movespeed_pct"
+        	{
+        		"hero_levelup"				"+1"
+        	}
         }
     }
 	"razor_eye_of_the_storm"
@@ -316,6 +323,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_razor_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -335,6 +343,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_razor_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

@@ -3,6 +3,7 @@ LinkLuaModifier("modifier_item_corrosion_custom_active_slow", "items/item_corros
 LinkLuaModifier("modifier_item_corrosion_custom_passive_slow", "items/item_corrosion_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_corrosion_custom = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/corrosion_custom.vpcf", context)
         PrecacheResource("particle", "particles/status_fx/status_effect_poison_dazzle.vpcf", context)
@@ -38,6 +39,15 @@ item_corrosion_custom = class({
         hTarget:EmitSound("Hero_Dazzle.Poison_Touch")
     end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_corrosion_custom:Precache(context)
+	PrecacheResource("particle", "particles/corrosion_custom.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_poison_dazzle.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_dazzle/dazzle_poison_debuff.vpcf", context)
+end
 
 modifier_item_corrosion_custom_active_slow = class({
     IsHidden = function (self) return false end,

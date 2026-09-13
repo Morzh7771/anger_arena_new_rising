@@ -1,5 +1,13 @@
 megacreep_ancient_golem_meteor_rain = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_ancient_golem_meteor_rain:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/heroes_underlord/underlord_firestorm_pre.vpcf", context)
+end
+
+
 function megacreep_ancient_golem_meteor_rain:GetAOERadius()
 	return self:GetSpecialValueFor("radius")
 end

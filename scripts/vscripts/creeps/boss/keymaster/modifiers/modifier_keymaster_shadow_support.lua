@@ -69,6 +69,7 @@ if IsServer() then
 
 		local idx = ParticleManager:CreateParticle("particles/econ/items/nyx_assassin/nyx_ti9_immortal/nyx_ti9_carapace_crimson_hit_blood.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		ParticleManager:SetParticleControlEnt( idx, 1, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(idx)
 
 		target:EmitSound("Boss_Keymaster.ShadowSupport.Damage")
 	end

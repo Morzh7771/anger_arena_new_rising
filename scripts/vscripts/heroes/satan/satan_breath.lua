@@ -1,5 +1,15 @@
 satan_breath = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function satan_breath:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf", context)
+end
+
+LinkLuaModifier("modifier_satan_breath_ground", "heroes/satan/modifier_satan_breath_ground", LUA_MODIFIER_MOTION_NONE)
+
+
 
 function satan_breath:OnSpellStart()
 	local caster = self:GetCaster()
@@ -70,4 +80,47 @@ function satan_breath:OnProjectileHit(hTarget, vLocation)
 		damage_table.damage = damage * creep_mult
 	end
 	ApplyDamage(damage_table)
+
+	-- Шард: горящая земля наносит урон врагам в зоне
+	local shard_enabled = self:GetSpecialValueFor("shard_enabled")
+	if shard_enabled == 1 then
+		local shard_duration = self:GetSpecialValueFor("shard_ground_duration")
+		local shard_damage = self:GetSpecialValueFor("shard_ground_damage")
+		if shard_duration > 0 and shard_damage > 0 then
+			-- Запускаем таймер для нанесения урона врагам в зоне
+			local tick_count = 0
+			Timers:CreateTimer(0, function()
+				tick_count = tick_count + 1
+				local elapsed = tick_count * 1.0
+
+				local enemies = FindUnitsInRadius(
+					caster:GetTeamNumber(),
+					vLocation,
+					nil,
+					200,
+					DOTA_UNIT_TARGET_TEAM_ENEMY,
+					DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+					DOTA_UNIT_TARGET_FLAG_NONE,
+					FIND_ANY_ORDER,
+					false
+				)
+
+				for _, enemy in ipairs(enemies) do
+					local dmg = {
+						victim = enemy,
+						attacker = caster,
+						damage = shard_damage,
+						damage_type = DAMAGE_TYPE_MAGICAL,
+						ability = self
+					}
+					ApplyDamage(dmg)
+				end
+
+				if elapsed >= shard_duration then
+					return nil
+				end
+				return 1.0
+			end)
+		end
+	end
 end

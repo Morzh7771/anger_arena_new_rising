@@ -15,7 +15,7 @@
 		"ItemResult"					"item_sphere"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_cornucopia"
+			"01"					"item_pers;item_ultimate_orb;"
 		}
 	}
 	"item_recipe_sphere_2"
@@ -69,7 +69,6 @@
 				"block_cooldown"		        "14.0 12.0"
 				"upgrade_absorb_duration"		"10.0"
 				"damage_absorb"				    "300 300"
-				"bonus_damage"				    "10 130"
 		}
 	}
 	"item_sphere_2"
@@ -106,7 +105,6 @@
 			"block_cooldown"				"14.0 12.0"
 			"upgrade_absorb_duration"		"10.0"
 			"damage_absorb"					"300 300"
-			"bonus_damage"					"10 130"
 		}
 	}
 }

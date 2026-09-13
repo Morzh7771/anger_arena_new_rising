@@ -18,7 +18,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"525"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ DOTAAbilities
         // Casting
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastPoint"              "0.1"
-        "AbilityManaCost"               "70 80 90 100"
+        "AbilityManaCost"               "70 80 90 100 110 120 130"
         "AbilityCooldown"               "50"
 
 
@@ -109,6 +109,8 @@ DOTAAbilities
             "skeleton_building_damage_reduction"        "35"    
             "skeleton_bonus_hero_damage"                "25"
 
+        	"AbilityCooldown"				"42"
+        	"skeleton_charges_per_hero_multiplier"				"4"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_2"
     }
@@ -206,6 +208,7 @@ DOTAAbilities
 			"AbilityCooldown"
 			{
 				"value"		"7.0 6.5 6.0 5.5 5.0 4.5 4.0"
+				"special_bonus_unique_wraith_king_10"				"-2"
 			}
 			"wraith_cd_mult"
             {
@@ -216,6 +219,18 @@ DOTAAbilities
                 "value"                 "0"
                 "special_bonus_shard"   "+50"
             }
+			"curse_damage_pct"
+			{
+				"special_bonus_shard"				"75"
+			}
+			"curse_delay"
+			{
+				"special_bonus_shard"				"3"
+			}
+			"curse_cooldown"
+			{
+				"special_bonus_shard"				"0"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -251,7 +266,7 @@ DOTAAbilities
 
 		"AbilityValues"
         {
-            "reincarnate_time"      "3.0 3.0 3.0"
+            "reincarnate_time"      "3.0"
             "slow_radius"           
             {
                 "value"     "900"
@@ -269,13 +284,11 @@ DOTAAbilities
             "clear_curse"
             {
                 "value"                     "0"
-                "special_bonus_facet_skeleton_king_facet_cursed_blade"  "=1"
             }
 
             "shard_skeleton_count"      
             {
                 "value"                     "0"
-                "special_bonus_facet_skeleton_king_facet_bone_guard" "2 3 3 4 4 4 5"                
             }
 
             "AbilityCooldown"
@@ -283,6 +296,10 @@ DOTAAbilities
                 "value"                         "120 115 110 105 100 95 90"
                 "special_bonus_scepter"         "-15"
             }
+        	"trigger_wraithfire_blast"
+        	{
+        		"special_bonus_unique_wraith_king_4"				"=1"
+        	}
         }
 	}
 	"special_bonus_unique_wraith_king_2"
@@ -309,6 +326,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_wraith_king_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -328,6 +346,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_wraith_king_10"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

@@ -102,6 +102,7 @@ function charon_soul_drain:OnChannelFinish(bInterrupted)
     end
     self.done = true
     ParticleManager:DestroyParticle(self.particle, false)
+    ParticleManager:ReleaseParticleIndex(self.particle)
     local caster = self:GetCaster()
 
     StopSoundOn(LOOP_SOUND, caster)

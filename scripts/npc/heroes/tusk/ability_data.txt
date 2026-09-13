@@ -18,7 +18,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -54,17 +54,20 @@ DOTAAbilities
 				{
 					"value"					"40"
 					"RequiresShard"			"1"
+					"special_bonus_unique_tusk_shard_dps"				"50"
 				}
 				"aghs_shard_damage"			
 				{
 					"value"					"135"
 					"RequiresShard"			"1"
+					"special_bonus_unique_tusk_shard_dps"				"110"
 				}
 				"aghs_shard_depth"			
 				{
 					"value"						"300"
 					"RequiresShard"				"1"
 				}
+			"AbilityCooldown"				"23 22 20 18 17 16 14"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -77,7 +80,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 	}
 	"tusk_snowball"
 	{
@@ -97,7 +100,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -144,6 +147,12 @@ DOTAAbilities
             }
 			"snowball_speed_bonus"		"50"
 			"damage_pct"		"150"
+			"stun_duration_bonus"				"0.2"
+			"AbilityCooldown"
+			{
+				"value"				"21 20 19 18 17 16 15"
+				"special_bonus_unique_tusk_6"				"-6"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -157,7 +166,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 	}
 		
@@ -248,7 +257,11 @@ DOTAAbilities
 			}
 			"movement_slow"				"75"
 			"slow_duration"				"0.5"
-			"debuff_duration"			"5"
+			"debuff_duration"
+			{
+				"value"				"5"
+				"special_bonus_unique_tusk_3"				"+2"
+			}
 			"radius"                
             {
                 "value" "350"
@@ -260,7 +273,7 @@ DOTAAbilities
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET| DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -271,7 +284,7 @@ DOTAAbilities
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0.1 0.1 0.1 0.1"
+        "AbilityCastPoint"              "0.1"
         "AbilityCastAnimation"          "ACT_DOTA_OVERRIDE_ABILITY_3"
         "AbilityCastGestureSlot"        "DEFAULT"
 
@@ -301,6 +314,7 @@ DOTAAbilities
                 "value"                             "20 45 70 95 120 145 170"
                 "special_bonus_unique_tusk_3"       "+30"
             }
+        	"armor_bonus"				"7"
         }
     }
 
@@ -309,10 +323,10 @@ DOTAAbilities
     //=================================================================================================================
     "tusk_bitter_chill"
     {
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "AbilityTextureName"            "tusk_frozen_sigil"
 
-        "MaxLevel"                      "8"
+        "MaxLevel"                      "1"
         "DependentOnAbility"            "tusk_walrus_punch"
         "Innate"                        "1"
 
@@ -377,6 +391,10 @@ DOTAAbilities
 				"slow_duration"				"1.75 2.0 2.25 2.5 2.75 3.0 3.25"
 				"move_slow"					"30"
 				"push_length"				"1000"
+			"proc_chance"
+			{
+				"special_bonus_unique_tusk_4"				"12"
+			}
 		}
 	}
 	"tusk_walrus_kick"
@@ -470,6 +488,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_tusk_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -489,6 +508,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_tusk_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -508,6 +528,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_tusk_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

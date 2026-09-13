@@ -142,18 +142,24 @@ DOTAAbilities
 			{
 				"value"				"0"
 			}
-			"bonus_movespeed"		"10 16 22 28 34 40 46"
+			"bonus_movespeed"
+			{
+				"value"				"10 16 22 28 34 40 46"
+				"special_bonus_unique_broodmother_web_speed"				"+7"
+			}
 			"AbilityChargeRestoreTime"	
 			{
 				"value"				"17"
 				"special_bonus_unique_broodmother_5" "-7"
 			}
 			"bonus_turn_rate"	"0.2"
-			"degen"
-			{
-				"special_bonus_facet_broodmother_necrotic_webs"	"=10 =15 =20 =25 =30 =35 =40"
-			}
+			"degen"				"0"
 
+			"break_move_cap"
+			{
+				"value"				"0"
+				"special_bonus_unique_broodmother_web_speed"				"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -162,7 +168,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"broodmother_spiders_milk"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"MaxLevel"						"1"
 		"Innate"						"1"
 		"AbilityValues"
@@ -274,7 +280,7 @@ DOTAAbilities
 				"value"		"-5 -10 -15 -20 -25 -30 -35"
 				"special_bonus_unique_broodmother_4"	"-15"
 			}
-			"duration"				"2.0 2.0 2.0 2.0"
+			"duration"				"2.0"
 			"attack_damage"			
 			{
 				"value"				"6 8 10 12 14 16 18"					
@@ -297,7 +303,7 @@ DOTAAbilities
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AbilityCooldown"				"25"
@@ -315,6 +321,7 @@ DOTAAbilities
 			"lifesteal_pct"			
 			{
 				"value"				"40 50 60 70 80 90 100"
+				"special_bonus_unique_broodmother_6"				"+20"
 			}
 			"creep_lifesteal_reduction_pct"		"40"
 			"duration"				
@@ -340,7 +347,6 @@ DOTAAbilities
 			"aura_radius"		
 			{
 				"value"				"0"
-				"special_bonus_facet_broodmother_feeding_frenzy"					"=800"
 				"affected_by_aoe_increase"	"1"
 			}
 		}
@@ -350,7 +356,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"broodmother_sticky_snare"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_CHANNELLED "
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -358,7 +364,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
 		"HasScepterUpgrade"				"1"
 		"IsGrantedByScepter"			"1"
 
@@ -402,9 +407,8 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"broodmother_spin_web_destroy"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"MaxLevel"						"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -422,6 +426,7 @@ DOTAAbilities
 	}
 	"special_bonus_unique_broodmother_1"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -436,6 +441,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_broodmother_2"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -449,6 +455,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_broodmother_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -461,6 +468,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_broodmother_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -473,6 +481,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_broodmother_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

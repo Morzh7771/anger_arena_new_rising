@@ -18,30 +18,7 @@
         "Ability16"     "special_bonus_unique_razor_plasmafield_second_ring"
         "Ability17"     "special_bonus_unique_razor_static_link_aspd"
 
-        "Facets"
-        {
-            "razor_thunderhead"
-            {
-                "Icon"              "barrier"
-                "Color"             "Gray"
-                "GradientID"        "0"
-            }
 
-            "razor_spellamp"
-            {
-                "Icon"              "nuke"
-                "Color"             "Blue"
-                "GradientID"        "0"
-
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "razor_dynamo"
-                    }
-                }
-            }
-        }
         
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"23"

@@ -4,8 +4,16 @@ LinkLuaModifier("modifier_assault_aa_aura_enemy_finder", "items/item_assault_aa"
 LinkLuaModifier("modifier_assault_aa_aura_enemy", "items/item_assault_aa", LUA_MODIFIER_MOTION_NONE)
 
 item_assault_3 = class({
+
     GetIntrinsicModifierName = function (self) return "modifier_assault_aa" end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_assault_3:Precache(context)
+	PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context)
+end
 
 
 modifier_assault_aa = class({

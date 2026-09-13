@@ -7,7 +7,7 @@
         "Ability2"      "juggernaut_healing_ward"
         "Ability3"      "juggernaut_blade_dance_lua"
         "Ability4"      "juggernaut_swift_slash"
-        "Ability5"      "juggernaut_duelist"
+        "Ability5"      "juggernaut_bladeform"
         "Ability6"      "juggernaut_omni_slash"
 		"Ability10"     "special_bonus_unique_juggernaut_5"
         "Ability11"     "special_bonus_unique_juggernaut_3"
@@ -18,29 +18,7 @@
         "Ability16"     "special_bonus_unique_juggernaut_omnislash_duration"
 		"Ability17"		"special_bonus_unique_juggernaut_2"
 
-		"Facets"
-        {
-            "juggernaut_bladestorm" 
-            {
-                "Icon"              "spinning"
-                "Color"             "Yellow"
-                "GradientID"        "1"
-            }
-            "juggernaut_agigain"
-            {
-                "Icon"              "agility"
-                "Color"             "Red"
-                "GradientID"        "2"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "juggernaut_bladeform"
-                    }
-                }
-            }
-        }
         
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

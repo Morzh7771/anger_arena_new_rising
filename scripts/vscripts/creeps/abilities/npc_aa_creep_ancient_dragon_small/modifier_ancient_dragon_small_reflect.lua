@@ -58,6 +58,7 @@ function modifier_ancient_dragon_small_reflect:GetReflectSpell(params)
 
     local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
     ParticleManager:SetParticleControlEnt(part, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+    ParticleManager:ReleaseParticleIndex(part)
 
 
     if params.ability.spell_shield_reflect then

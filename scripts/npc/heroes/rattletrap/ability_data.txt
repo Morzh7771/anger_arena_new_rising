@@ -5,10 +5,9 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"rattletrap_jetpack"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByShard"  			"1"
 		"HasShardUpgrade"     			"1"
@@ -53,11 +52,10 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"rattletrap_overclocking"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
@@ -96,6 +94,11 @@ DOTAAbilities
 
 			"jetpack_bonus_speed"			"40"
 			"jetpack_turn_rate"				"75"
+			"bonus_armor_pct"				"25"
+			"battery_assault_radius"				"330"
+			"cogs_radius"				"330"
+			"rocket_flare_duration_pct"				"35"
+			"rocket_flare_damage_pct"				"35"
 		}
 	}
 	"rattletrap_battery_assault"
@@ -133,10 +136,10 @@ DOTAAbilities
 		{
 			"radius"            
             {
-                "value"     "275 275 275 275"
+                "value"     "275"
                 "affected_by_aoe_increase"  "1"
             }
-			"duration"					"10.5 10.5 10.5 10.5"
+			"duration"					"10.5"
 			"interval"
 			{	
 				"value"								"0.7"
@@ -149,6 +152,11 @@ DOTAAbilities
 			}
 			"creep_damage_multiplier"					"2"
 			"damage_pct"							"35"
+			"overclocking_radius"
+			{
+				"value"				"330"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -204,22 +212,18 @@ DOTAAbilities
 			"push_duration"     
             {
                 "value"                     "0.8"
-                "special_bonus_facet_rattletrap_expanded_armature"  "=0.6"
             }
 			"cogs_radius"
             {
                 "value"                     "215"
-                "special_bonus_facet_rattletrap_expanded_armature"  "+115"
             }
             "cogs_pullin"
             {
                 "value"         "0"
-                "special_bonus_facet_rattletrap_expanded_armature"  "+1"
             }
 			"trigger_distance"          
             {
                 "value"     "185"
-                "special_bonus_facet_rattletrap_expanded_armature"  "-70"
                 
             }
 			"extra_pull_buffer"			"-10"
@@ -236,6 +240,14 @@ DOTAAbilities
 			}
 			"projectile_distance"                       "1000"
             "projectile_speed"                          "1000"
+			"inside_cogs_distance_reduction"				"50"
+			"debuff_immune_inside_cogs"
+			{
+				"special_bonus_unique_clockwerk_6"				"1"
+			}
+			"push_duration_overclock"				"0.6"
+			"cogs_radius_overclock"				"330"
+			"trigger_distance_overclock"				"115"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -253,7 +265,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"ABSOLUTE"
@@ -290,11 +302,21 @@ DOTAAbilities
 			}
 
 			"slow_pct"		"100"
-			"slow_duration"	"0.4"
+			"slow_duration"
+			{
+				"value"				"0.4"
+				"special_bonus_unique_clockwerk_7"				"+0.4"
+			}
 			"damage_pct"		"100"
 			"projectile_vision_radius"      "250"
             "projectile_vision_duration"    "1.0"
             "projectile_vision_tick_rate"   "0.15"
+			"true_sight"
+			{
+				"special_bonus_unique_clockwerk_4"				"1"
+			}
+			"AbilityCharges"				"0"
+			"AbilityChargeRestoreTime"				"20 19 18 17 16 15 14"
 		}	
 	}
 	"rattletrap_hookshot"
@@ -316,7 +338,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"1250 1500 1750 2000 2250 2500 2750"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
@@ -332,7 +354,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"latch_radius"		"125 125 125"
+			"latch_radius"		"125"
 			"stun_radius"       
             {
                 "value"     "175"
@@ -342,21 +364,13 @@ DOTAAbilities
             {
                 "value" "175"
                 "affected_by_aoe_increase"  "1"
-                "special_bonus_facet_rattletrap_hookup" "=300"
             }
             "cooldown_refund_ally"
             {
                 "value"     "0"
-                "special_bonus_facet_rattletrap_hookup" "75"
             }
-            "ally_shield_duration"
-            {
-                "special_bonus_facet_rattletrap_hookup" "4"
-            }
-            "allied_armor_bonus"
-            {
-                "special_bonus_facet_rattletrap_hookup" "15 20 25"
-            }
+            "ally_shield_duration"				"0"
+            "allied_armor_bonus"				"0"
 			"duration"			"1.0 1.2 1.4 1.6 1.8 2.0 2.2"
 			"speed"				"6000"
 			"damage"			
@@ -365,6 +379,16 @@ DOTAAbilities
 				"special_bonus_unique_clockwerk_hookshot_damage"        "+150"
 			}
 			"damage_pct"			"200"
+			"radius_ally"
+			{
+				"value"				"175"
+				"affected_by_aoe_increase"				"1"
+			}
+			"AbilityCooldown"
+			{
+				"value"				"60 55 50 45 40 35 30"
+				"special_bonus_unique_clockwerk_5"				"-8"
+			}
 		}
 	}
 	"rattletrap_armor_power"
@@ -380,6 +404,15 @@ DOTAAbilities
         "AbilityValues"
         {
             "damage_per_armor"          "0.25"
+        	"damage_tooltip"
+        	{
+        		"dynamic_value"				"true"
+        	}
+        	"can_consume_chainmail"				"1"
+        	"armor_per_chainmail"				"4"
+        	"model_scale_per_chainmail"				"5"
+        	"model_scale_maximum"				"125"
+        	"health_bar_offset_per_stack"				"6"
         }
     }
     //=================================================================================================================
@@ -387,6 +420,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_clockwerk"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -400,6 +434,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_clockwerk_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -420,6 +455,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_clockwerk_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -507,4 +543,13 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     } 
+
+	"rattletrap_jetpack_toggle"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"				"ACT_INVALID"
+		"AbilityCooldown"				"1.0"
+	}
 }

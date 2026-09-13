@@ -1,5 +1,68 @@
 LinkLuaModifier("modifier_talant_bash_cd", "lib/special_bonus_base_aa/special", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_talant_bash", "lib/special_bonus_base_aa/special", LUA_MODIFIER_MOTION_NONE)
+
+--[[
+	Пересчёт талантов.
+
+	Бонусы талантов считаются от текущих статов героя, поэтому пересчитывать их
+	нужно каждый тик - иначе после смены статов значение отстанет. Проблема была
+	не в самом пересчёте, а в том, что КАЖДЫЙ талант отдельно дёргал
+	CalculateStatBonus(true) - полный пересчёт статов с сетевым апдейтом. На
+	десяток изученных талантов у десяти героев это сотни полных пересчётов
+	в секунду.
+
+	Теперь так:
+	- на героя вешается один modifier_talant_stat_refresher; он раз в тик
+	  вызывает Recompute() у всех талантов героя и ОДИН раз - CalculateStatBonus.
+	  Частота пересчёта прежняя, но пересчёт один на героя, а не на каждый талант;
+	- Recompute() только считает число, движок при этом не трогается;
+	- таланты, которые не зависят от статов (от уровня и т.п.), Recompute не
+	  имеют вообще - их значение считается прямо в геттере, и общий пересчёт
+	  подхватывает его сам.
+]]
+local TALANT_REFRESH_INTERVAL = 0.1
+
+-- по именам, а не по наличию метода: FindAllModifiers возвращает и нативные
+-- модификаторы, у них произвольные поля лучше не трогать
+local RECOMPUTE_MODIFIERS = {
+	["modifier_agi"]        = true,
+	["modifier_str"]        = true,
+	["modifier_int"]        = true,
+	["modifier_all"]        = true,
+	["modifier_hp"]         = true,
+	["modifier_damage"]     = true,
+	["modifier_baseDamage"] = true,
+}
+
+modifier_talant_stat_refresher = class({
+	IsHidden        = function(self) return true end,
+	RemoveOnDeath   = function(self) return false end,
+	IsPurgable      = function(self) return false end,
+	OnCreated = function(self)
+		if not IsServer() then return end
+		self:StartIntervalThink(TALANT_REFRESH_INTERVAL)
+	end,
+	OnRefresh = function(self)
+		if not IsServer() then return end
+		self:StartIntervalThink(TALANT_REFRESH_INTERVAL)
+	end,
+	OnIntervalThink = function(self)
+		if not IsServer() then return end
+
+		local parent = self:GetParent()
+
+		if not parent or parent:IsNull() then return end
+
+		for _, mod in pairs(parent:FindAllModifiers()) do
+			if RECOMPUTE_MODIFIERS[mod:GetName()] then
+				mod:Recompute()
+			end
+		end
+
+		parent:CalculateStatBonus(true)
+	end,
+})
+
 modifier_agi = class({
     IsHidden = function(self) return true end,
     DeclareFunctions = function(self) return {
@@ -13,13 +76,11 @@ modifier_agi = class({
       self.value = 0
       self.kvValue = self:GetAbility():GetSpecialValueFor("value")
       self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
-      self:StartIntervalThink(0.1)
+      self:Recompute()
     end,
-    OnIntervalThink = function (self)
-      if not IsServer() then return end
-      self.value = 0
-      if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetAgility() * self.KvPercent / 100 else self.value = self.kvValue end
-      self:GetParent():CalculateStatBonus(true)
+    -- только считает значение, пересчёт статов делает modifier_talant_stat_refresher
+    Recompute = function (self)
+      self.value = self.kvValue + self:GetParent():GetAgility() * self.KvPercent / 100
     end,
 })
 modifier_str = class({
@@ -35,13 +96,10 @@ modifier_str = class({
       self.value = 0
       self.kvValue = self:GetAbility():GetSpecialValueFor("value")
       self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
-      self:StartIntervalThink(0.1)
+      self:Recompute()
     end,
-    OnIntervalThink = function (self)
-      if not IsServer() then return end
-      self.value = 0
-      if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetStrength() * self.KvPercent / 100 else self.value = self.kvValue end
-      self:GetParent():CalculateStatBonus(true)
+    Recompute = function (self)
+      self.value = self.kvValue + self:GetParent():GetStrength() * self.KvPercent / 100
     end,
 })
 modifier_int = class({
@@ -57,13 +115,10 @@ modifier_int = class({
       self.value = 0
       self.kvValue = self:GetAbility():GetSpecialValueFor("value")
       self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
-      self:StartIntervalThink(0.1)
+      self:Recompute()
     end,
-    OnIntervalThink = function (self)
-      if not IsServer() then return end
-      self.value = 0
-      if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetIntellect(false) * self.KvPercent / 100 else self.value = self.kvValue end
-      self:GetParent():CalculateStatBonus(true)
+    Recompute = function (self)
+      self.value = self.kvValue + self:GetParent():GetIntellect(false) * self.KvPercent / 100
     end,
 })
 modifier_all = class({
@@ -85,17 +140,15 @@ modifier_all = class({
     self.int = 0
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
-    self:StartIntervalThink(0.1)
+    self:Recompute()
   end,
-  OnIntervalThink = function (self)
-    if not IsServer() then return end
-    self.str = 0
-    self.agi = 0
-    self.int = 0
-    if self.KvPercent ~= nil or self.KvPercent == 0 then self.str = self.kvValue + self:GetParent():GetStrength() * self.KvPercent / 100 else self.str = self.kvValue end
-    if self.KvPercent ~= nil or self.KvPercent == 0 then self.agi = self.kvValue + self:GetParent():GetAgility() * self.KvPercent / 100 else self.agi = self.kvValue end
-    if self.KvPercent ~= nil or self.KvPercent == 0 then self.int = self.kvValue + self:GetParent():GetIntellect(false) * self.KvPercent / 100 else self.int = self.kvValue end
-    self:GetParent():CalculateStatBonus(true)
+  Recompute = function (self)
+    local parent = self:GetParent()
+    local pct = self.KvPercent / 100
+
+    self.str = self.kvValue + parent:GetStrength() * pct
+    self.agi = self.kvValue + parent:GetAgility() * pct
+    self.int = self.kvValue + parent:GetIntellect(false) * pct
   end,
 
 })
@@ -112,12 +165,14 @@ modifier_hp = class({
     self.value = 0
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
-    self:StartIntervalThink(0.1)
+    self:Recompute()
   end,
-  OnIntervalThink = function (self)
-    if not IsServer() then return end
-    if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetMaxHealth() * self.KvPercent / 100 - self.value else self.value = self.kvValue end
-    self:GetParent():CalculateStatBonus(true)
+  -- ВНИМАНИЕ: "- self.value" в формуле похоже на опечатку (GetMaxHealth и так
+  -- включает этот бонус, из-за вычитания талант в итоге даёт примерно половину
+  -- от "value + pct% от макс. хп"). Формулу не трогаю, чтобы не менять баланс;
+  -- если это баг - убрать вычитание.
+  Recompute = function (self)
+    self.value = self.kvValue + self:GetParent():GetMaxHealth() * self.KvPercent / 100 - self.value
   end,
 })
 modifier_damage = class({
@@ -133,12 +188,10 @@ modifier_damage = class({
       self.value = 0
       self.kvValue = self:GetAbility():GetSpecialValueFor("value")
       self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
-      self:StartIntervalThink(0.1)
+      self:Recompute()
   end,
-  OnIntervalThink = function (self)
-    self.value = 0
-    if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetDamageMax() * self.KvPercent / 100 else self.value = self.kvValue end
-    self:GetParent():CalculateStatBonus(true)
+  Recompute = function (self)
+    self.value = self.kvValue + self:GetParent():GetDamageMax() * self.KvPercent / 100
   end,
 })
 modifier_baseDamage = class({
@@ -154,13 +207,10 @@ modifier_baseDamage = class({
     self.value = 0
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
     self.KvPercent = self:GetAbility():GetSpecialValueFor("pct")
-    self:StartIntervalThink(0.1)
+    self:Recompute()
   end,
-  OnIntervalThink = function (self)
-    if not IsServer() then return end
-    self.value = 0
-    if self.KvPercent ~= nil or self.KvPercent == 0 then self.value = self.kvValue + self:GetParent():GetDamageMax() * self.KvPercent / 100 else self.value = self.kvValue end
-    self:GetParent():CalculateStatBonus(true)
+  Recompute = function (self)
+    self.value = self.kvValue + self:GetParent():GetDamageMax() * self.KvPercent / 100
   end,
 })
 modifier_miss = class({
@@ -220,15 +270,11 @@ modifier_agiLevel = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
-  GetModifierBonusStats_Agility = function(self) return self.value end,
+  -- от уровня, не от статов - обратной связи нет, считаем в геттере без тика
+  GetModifierBonusStats_Agility = function(self) return self:GetParent():GetLevel() * (self.kvValue or 0) end,
   OnCreated = function (self,kv)
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
-    self:StartIntervalThink(0.1)
-  end,
-  OnIntervalThink = function (self)
-    if not IsServer() then return end
-    self.value = self:GetParent():GetLevel() * self.kvValue
-    self:GetParent():CalculateStatBonus(true)
+    self:GetParent():CalculateStatBonus(true) -- один раз, чтобы бонус применился сразу
   end,
 })
 modifier_strLevel = class({
@@ -239,15 +285,11 @@ modifier_strLevel = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
-  GetModifierBonusStats_Strength = function(self) return self.value end,
+  -- от уровня, не от статов - обратной связи нет, считаем в геттере без тика
+  GetModifierBonusStats_Strength = function(self) return self:GetParent():GetLevel() * (self.kvValue or 0) end,
   OnCreated = function (self,kv)
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
-    self:StartIntervalThink(0.1)
-  end,
-  OnIntervalThink = function (self)
-    if not IsServer() then return end
-    self.value = self:GetParent():GetLevel() * self.kvValue
-    self:GetParent():CalculateStatBonus(true)
+    self:GetParent():CalculateStatBonus(true) -- один раз, чтобы бонус применился сразу
   end,
 })
 modifier_intLevel = class({
@@ -258,15 +300,11 @@ modifier_intLevel = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
-  GetModifierBonusStats_Intellect = function(self) return self.value end,
+  -- от уровня, не от статов - обратной связи нет, считаем в геттере без тика
+  GetModifierBonusStats_Intellect = function(self) return self:GetParent():GetLevel() * (self.kvValue or 0) end,
   OnCreated = function (self,kv)
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
-    self:StartIntervalThink(0.1)
-  end,
-  OnIntervalThink = function (self)
-    if not IsServer() then return end
-    self.value = self:GetParent():GetLevel() * self.kvValue
-    self:GetParent():CalculateStatBonus(true)
+    self:GetParent():CalculateStatBonus(true) -- один раз, чтобы бонус применился сразу
   end,
 })
 modifier_strHp = class({
@@ -277,14 +315,10 @@ modifier_strHp = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
-  GetModifierHealthBonus = function(self) return self.value end,
+  -- хп от силы: бонус хп на силу не влияет, обратной связи нет - считаем в геттере
+  GetModifierHealthBonus = function(self) return self:GetParent():GetStrength() * (self.kvValue or 0) end,
   OnCreated = function (self,kv)
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
-    self:StartIntervalThink(0.1)
-  end,
-  OnIntervalThink = function (self)
-    self.value = self:GetParent():GetStrength() * self.kvValue
-    self:GetParent():CalculateStatBonus(true)
   end,
 })
 modifier_agiArmor = class({
@@ -295,14 +329,10 @@ modifier_agiArmor = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
-  GetModifierPhysicalArmorBonus = function(self) return self.value end,
+  -- армор от агилити: армор на агилити не влияет, обратной связи нет
+  GetModifierPhysicalArmorBonus = function(self) return self:GetParent():GetAgility() * (self.kvValue or 0) end,
   OnCreated = function (self,kv)
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
-    self:StartIntervalThink(0.1)
-  end,
-  OnIntervalThink = function (self)
-    self.value = self:GetParent():GetAgility() * self.kvValue
-    self:GetParent():CalculateStatBonus(true)
   end,
 })
 modifier_intSpell = class({
@@ -313,15 +343,10 @@ modifier_intSpell = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   RemoveOnDeath = function (self) return false end,
   IsPurgable = function (self) return false end,
-  GetModifierSpellAmplify_Percentage = function(self) return self.value end,
+  -- усиление магии от интеллекта: на интеллект не влияет, обратной связи нет
+  GetModifierSpellAmplify_Percentage = function(self) return self:GetParent():GetIntellect(false) * (self.kvValue or 0) end,
   OnCreated = function (self,kv)
-    self.value = 0
     self.kvValue = self:GetAbility():GetSpecialValueFor("value")
-    self:StartIntervalThink(0.1)
-    
-  end,
-  OnIntervalThink = function (self)
-    self.value = self:GetParent():GetIntellect(false) * self.kvValue
   end,
 })
 modifier_attackSpeed = class({
@@ -445,8 +470,6 @@ modifier_bat = class({
   GetAttributes = function (self) return MODIFIER_ATTRIBUTE_MULTIPLE end,
   OnCreated = function (self,kv)
     self.value = kv.value
-    print(self.value)
-    print(self:GetParent():GetBaseAttackTime())
   end,
   GetModifierFixedAttackRate = function (self) return self:GetParent():GetBaseAttackTime() - 1.1 end,
 })

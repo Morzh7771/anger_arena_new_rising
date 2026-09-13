@@ -76,7 +76,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -130,6 +130,16 @@ DOTAAbilities
 				"special_bonus_shard"		"+35"
 			}
 			
+			"blade_fury_damage"				"85 115 145 175 205 235 265"
+			"blade_fury_damage_tick"
+			{
+				"value"				"0.2"
+				"CalculateSpellDamageTooltip"				"0"
+			}
+			"can_crit"				"0"
+			"blade_fury_outer_radius"				"0"
+			"attack_interval"				"0"
+			"immunity_resist"				"80"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -146,7 +156,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -215,7 +225,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -251,6 +261,7 @@ DOTAAbilities
 			{
 				"value"		"0"
 			}
+			"AbilityCooldown"				"120"
 		}
 	}
 	"juggernaut_swift_slash"
@@ -258,7 +269,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"juggernaut_swift_slash"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -266,7 +277,6 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
@@ -274,7 +284,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"550"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -297,7 +307,7 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 
         "MaxLevel"                      "1"
-        "Innate"                        "1"
+        "Innate"                        "0"
         "IsBreakable"                   "1"
 
         "AbilityValues"
@@ -315,13 +325,18 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
         "MaxLevel"                      "1"
+        "Innate"                      "1"
         "IsBreakable"                   "1"
         "AbilityValues"
         {
             "max_stacks"                "20"
-            "stack_gain_time"           "1.0"
+            "stack_gain_time"
+            {
+            	"value"				"1.0"
+            	"special_bonus_unique_juggernaut_3"				"-1.0"
+            }
             "agi_bonus_pct_per_stack"   "1.0"
             "movement_speed_pct_per_stack"      "0.5"
             "linger_duration"           "3"
@@ -439,4 +454,104 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	//=================================================================================================================
+	// Juggernaut: Trinity (Shard upgrade)
+	//=================================================================================================================
+	"juggernaut_trinity"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"juggernaut_trinity"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET  | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		"IsGrantedByShard"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"475"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"max_jumps"		"3"
+				"jump_speed"	"1300"
+				"jump_attack_radius"	"150"
+				"amplitude"				"75"
+				"attack_count"			"1"
+				"damage_pct"			"80"
+				"bladeform_stacks_granted"			"5"
+		}
+	}
+
+	//=================================================================================================================
+	// Juggernaut: Vaulted Strike (Shard upgrade)
+	//=================================================================================================================
+	"juggernaut_vaulted_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"juggernaut_vaulted_strike"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"IsGrantedByShard"			"1"
+		"MaxLevel"						"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"700"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60"
+		
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			
+			"jump_speed"						
+			{
+				"value"			"1200"
+			}
+			"jump_distance"						"260"
+			"start_height"						"0"
+			"start_offset_distance"				"150"
+			"slash_start_radius"				"60"
+			"slash_end_radius"					"160"
+			"slash_projectile_speed"			"900"
+			"end_distance"						"180"
+			"max_slashes"						"2"
+			"slashes_duration"					"0.37"
+			"jump_attack_radius"				"50"
+			"bladeform_stacks_granted"			"5"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_VIPER_DIVE"
+		"AbilityCastGestureSlot"	"DEFAULT"
+	}
 }

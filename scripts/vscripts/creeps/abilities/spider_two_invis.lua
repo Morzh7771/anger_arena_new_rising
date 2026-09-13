@@ -12,4 +12,5 @@ function spider_two_invis:OnSpellStart( keys )
 
 	local fx = ParticleManager:CreateParticle("particles/econ/items/dazzle/dazzle_darkclaw/dazzle_darkclaw_poison_touch_fade.vpcf", PATTACH_ABSORIGIN, nil)
 	ParticleManager:SetParticleControl(fx, 3, caster:GetAbsOrigin() )
+	ParticleManager:ReleaseParticleIndex(fx)
 end

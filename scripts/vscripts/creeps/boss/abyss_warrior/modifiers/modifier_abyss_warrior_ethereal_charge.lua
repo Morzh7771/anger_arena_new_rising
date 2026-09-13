@@ -30,8 +30,10 @@ function _OnHealUnit(unit, ammount)
 	ParticleManager:SetParticleControlEnt( idx, 4, unit, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", unitPos, true)
 
 	local idx2 = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_OVERHEAD_FOLLOW, unit)
+	ParticleManager:ReleaseParticleIndex(idx2)
 
 	ParticleManager:SetParticleControlEnt( idx, 0, unit, PATTACH_OVERHEAD_FOLLOW, "attach_hitloc", unitPos, true)
+	ParticleManager:ReleaseParticleIndex(idx)
 
 	SendOverheadEventMessage(unit, OVERHEAD_ALERT_HEAL, unit, ammount, nil)
 
@@ -79,6 +81,7 @@ function mod:OnDestroy()
 		local idx = ParticleManager:CreateParticle("particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_fire_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
 
 		ParticleManager:SetParticleControlEnt( idx, 3, unit, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(idx)
 	end
 end
 

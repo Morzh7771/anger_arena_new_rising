@@ -1,9 +1,24 @@
 LinkLuaModifier( "modifier_tormentor_reflect_aa", 'creeps/boss/tormentor/tormentor_reflect_aa', LUA_MODIFIER_MOTION_NONE )
 
 tormentor_reflect_aa = class({
+
     GetIntrinsicModifierName = function (self) return "modifier_tormentor_reflect_aa" end,
     Spawn = function (self) if IsServer() then return self:SetLevel(1) end end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function tormentor_reflect_aa:Precache(context)
+	PrecacheResource("particle", "particles/neutral_fx/miniboss_damage_impact.vpcf", context)
+	PrecacheResource("particle", "particles/neutral_fx/miniboss_damage_reflect.vpcf", context)
+	PrecacheResource("particle", "particles/neutral_fx/miniboss_damage_reflect_dire.vpcf", context)
+	PrecacheResource("particle", "particles/neutral_fx/miniboss_death.vpcf", context)
+	PrecacheResource("particle", "particles/neutral_fx/miniboss_death_dire.vpcf", context)
+	PrecacheResource("particle", "particles/neutral_fx/miniboss_dire_damage_impact.vpcf", context)
+	PrecacheResource("particle", "particles/neutral_fx/miniboss_shield.vpcf", context)
+	PrecacheResource("particle", "particles/neutral_fx/miniboss_shield_dire.vpcf", context)
+end
 
 modifier_tormentor_reflect_aa = class ({
     IsDebuff = function (self) return false end,
@@ -85,7 +100,26 @@ modifier_tormentor_reflect_aa = class ({
         ParticleManager:SetParticleControl(pfx, 0, self.parent:GetAbsOrigin())
         ParticleManager:ReleaseParticleIndex(pfx)
     end,
-    OnTakeDamage = function (self,keys)
+    -- Отражение реентерабельно: урон, который торм вернул герою, может тут же
+    -- прилететь обратно в торма (Dispersion спектры, Blade Mail, зеркальный щит),
+    -- снова войти в OnTakeDamage и снова отразиться. Цепочка раскручивается внутри
+    -- одного тика и убивает торма за один удар. Гейт не даёт войти повторно, пока
+    -- мы ещё внутри своего же отражения.
+    OnTakeDamage = function (self, keys)
+        if not IsServer() then return end
+        if keys.unit ~= self.parent then return end
+        if self.is_reflecting then return end
+
+        self.is_reflecting = true
+        local ok, err = pcall(self.DoReflect, self, keys)
+        self.is_reflecting = false
+
+        if not ok then
+            print("[tormentor_reflect_aa] DoReflect failed: " .. tostring(err))
+        end
+    end,
+
+    DoReflect = function (self,keys)
         if not IsServer() then return end
 
         local damage = keys.original_damage

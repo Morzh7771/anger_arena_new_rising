@@ -14,5 +14,6 @@ end
 function ShowUnit( event )
 	event.caster:RemoveNoDraw()
 	ParticleManager:DestroyParticle( event.caster.pfx, false )
+	ParticleManager:ReleaseParticleIndex(event.caster.pfx)
 	event.caster.pfx = nil
 end

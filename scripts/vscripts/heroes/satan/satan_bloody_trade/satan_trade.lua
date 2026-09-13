@@ -1,4 +1,14 @@
 satan_trade = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function satan_trade:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_doom_bringer/doom_bringer_doom_ring_b.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_doom_bringer/doom_infernal_blade_impact.vpcf", context)
+end
+
 LinkLuaModifier("modifier_satan_trade_attack", "heroes/satan/satan_bloody_trade/modifier_satan_trade_attack", LUA_MODIFIER_MOTION_NONE)
 
 function satan_trade:OnSpellStart()

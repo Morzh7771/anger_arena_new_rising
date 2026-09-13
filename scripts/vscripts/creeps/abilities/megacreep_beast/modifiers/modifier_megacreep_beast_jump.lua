@@ -86,6 +86,7 @@ function modifier_megacreep_beast_jump:OnDestroy()
     	if self.target and IsValidEntity(self.target) and self.target:IsAlive() then 
 	    	local pid = ParticleManager:CreateParticle("particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf", PATTACH_ABSORIGIN, self.target)
 	    	ParticleManager:SetParticleControl(pid, 0, self.target:GetAbsOrigin() )
+	    	ParticleManager:ReleaseParticleIndex(pid)
 
 	    	EmitSoundOn("Hero_Bloodseeker.BloodRite.Cast", self.target)
 

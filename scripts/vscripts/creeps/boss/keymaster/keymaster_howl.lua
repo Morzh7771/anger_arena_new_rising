@@ -12,6 +12,7 @@ function makePartilce(unit)
 
 	ParticleManager:SetParticleControlEnt( idx, 0, unit, PATTACH_OVERHEAD_FOLLOW, "attach_hitloc", pos, true)
 	ParticleManager:SetParticleControlEnt( idx, 1, unit, PATTACH_OVERHEAD_FOLLOW, "attach_hitloc", pos, true)
+	ParticleManager:ReleaseParticleIndex(idx)
 end
 
 function ability:OnSpellStart()
@@ -50,6 +51,7 @@ function ability:OnSpellStart()
 	ParticleManager:CreateParticle("particles/units/heroes/hero_drow/drow_silence_ice.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
 	
 	local idx = ParticleManager:CreateParticle("particles/econ/items/dazzle/dazzle_ti9/dazzle_shadow_wave_ti9_crimson_impact_damage_flash.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(idx)
 	
 	caster:EmitSound("Boss_Keymaster.Howl.Cast")
 end

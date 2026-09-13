@@ -109,7 +109,7 @@ function modifier_item_trisula:OnAttackLanded(params)
 
 	CreateParticleForCleave("particles/econ/items/faceless_void/faceless_void_weapon_bfury/faceless_void_weapon_bfury_cleave.vpcf", radius, target)
 
-    print()
+    -- отладочный print убран: горячий путь (каждый удар/лечение)
 
 	for _,x in pairs(units_in_radius) do
 		if x ~= params.target or x:IsIllusion() then

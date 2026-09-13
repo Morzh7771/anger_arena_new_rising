@@ -8,16 +8,35 @@ function item_octarine_core:GetIntrinsicModifierName()
     return "modifier_item_octarine_core"
 end
 
+-- Прекеш варда делаем ОДИН раз за матч.
+--
+-- Раньше PrecacheUnitByNameAsync стоял прямо в касте: каждое использование
+-- октарина докидывало ресурсы в список загруженных. Список у движка один на
+-- матч и индексируется unsigned short, то есть упирается в 32767 - в этот
+-- потолок мод уже упирался на старте карты (см. Precache в addon_game_mode).
+-- К поздней игре сотни кастов в сумме подтачивают тот же лимит.
+local wards_precached = false
+
 function item_octarine_core:OnSpellStart()
 	local point 	= self:GetCursorPosition()
 	local caster 	= self:GetCaster()
 	local duration 	= self:GetSpecialValueFor("duration")
 
-	PrecacheUnitByNameAsync("npc_dota_observer_wards", function(...)
+	local function PlantWard()
 		local cr = CreateUnitByName("npc_dota_observer_wards", point, true, caster, caster, caster:GetTeamNumber() )
 		cr:AddNewModifier(caster, nil, "modifier_kill", {duration = duration})
 		cr:AddNewModifier(caster, nil, "modifier_item_buff_ward", {duration = duration})
 		cr:AddNewModifier(caster, nil, "modifier_obs_ward_custom", {duration = duration})
+	end
+
+	if wards_precached then
+		PlantWard()
+		return
+	end
+
+	PrecacheUnitByNameAsync("npc_dota_observer_wards", function(...)
+		wards_precached = true
+		PlantWard()
 	end)
 end
 

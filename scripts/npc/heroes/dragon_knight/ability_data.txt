@@ -5,14 +5,12 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"dragon_knight_fireball"
-		"MaxLevel"		"7"
-		"MaxLevel"						"1"
+		"MaxLevel"		"1"
 		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
 		"IsGrantedByShard"			"1"
 		
 
@@ -82,12 +80,12 @@ DOTAAbilities
 		{
 			"start_radius"			
 			{
-				"value"		"150 150 150 150"
+				"value"		"150"
 				"affected_by_aoe_increase"	"1"
 			}
 			"end_radius"			
 			{
-				"value"	"250 250 250 250"
+				"value"	"250"
 				"affected_by_aoe_increase"	"1"
 			}
 			"range"					"750"
@@ -97,6 +95,7 @@ DOTAAbilities
 			{
 				"value"			"120 160 220 300 400 520 660"
 				"CalculateSpellDamageTooltip" "1"
+				"special_bonus_unique_dragon_knight_9"				"+220"
 			}
 			"reduction"
 			{
@@ -110,6 +109,11 @@ DOTAAbilities
 			}
 			"duration"				"11"
 			"damage_pct"			"50"
+			"AbilityCooldown"
+			{
+				"value"				"14 14 13 12 12 12 11"
+				"special_bonus_unique_dragon_knight_3"				"-2"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -131,7 +135,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"150"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -163,6 +167,11 @@ DOTAAbilities
                 "affected_by_aoe_increase"  "1"
             }
 			"damage_pct"				"50"
+			"aoe"
+			{
+				"value"				"50"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -170,9 +179,10 @@ DOTAAbilities
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE  |  DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
         "MaxLevel"						"7"
         "IsBreakable"                   "1"
+        "Innate"                        "1"
         
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -182,55 +192,44 @@ DOTAAbilities
             "is_green_dragon"
             {
                 "value"                         "0"
-                "special_bonus_facet_dragon_knight_corrosive_dragon"        "+1"
             }
             "corrosive_breath_damage"
             {
                 "value"                         "20 60 100 140 180 220 260"
-                "RequiresFacet"             "dragon_knight_corrosive_dragon"
             }
             "corrosive_breath_duration"
             {
                 "value"                         "3"
-                "RequiresFacet"             "dragon_knight_corrosive_dragon"
             }
             "corrosive_breath_armor_reduction"
             {
                 "value"                         "3 5 8 10 13 15 18"
-                "RequiresFacet"             "dragon_knight_corrosive_dragon"
             }
 
             // RED DRAGON
             "is_red_dragon"
             {
                 "value"                         "0"
-                "special_bonus_facet_dragon_knight_fire_dragon"     "+1"
             }
             "cleave_starting_width"
             {
                 "value"         "150"
                 // intentionally omitted affected_by_aoe_increase here because it warps the cleave box too much
-                "RequiresFacet"             "dragon_knight_fire_dragon"
                 "affected_by_aoe_increase"  "1"
             }
             "cleave_ending_width"
             {
                 "value"                         "260"
                 "affected_by_aoe_increase"      "1"
-                "RequiresFacet"             "dragon_knight_fire_dragon"
-                "affected_by_aoe_increase"  "1"
             }
             "cleave_distance"
             {
                 "value"                         "400"
                 "affected_by_aoe_increase"      "1"
-                "RequiresFacet"             "dragon_knight_fire_dragon"
-                "affected_by_aoe_increase"  "1"
             }
             "cleave_damage"
             {
                 "value"                         "30 35 40 45 50 55 60"
-                "RequiresFacet"             "dragon_knight_fire_dragon"
             }
 
 
@@ -238,63 +237,39 @@ DOTAAbilities
             "is_blue_dragon"
             {
                 "value"                         "0"
-                "special_bonus_facet_dragon_knight_frost_dragon"        "+1"
             }
             "frost_bonus_movement_speed"    
             {
                 "value"             "-14 -17 -21 -24 -28 -31 -35"
-                "RequiresFacet" "dragon_knight_frost_dragon"
             }
             "frost_bonus_attack_speed"      
             {
                 "value"             "-28 -42 -56 -70 -84 -98 -112"
-                "RequiresFacet" "dragon_knight_frost_dragon"
             }
             "frost_duration"
             {
-                "value"             "3.0 3.0 3.0 3.0"
-                "RequiresFacet" "dragon_knight_frost_dragon"
+                "value"             "3.0"
             }
             "frost_healing_reduction"       
             {
                 "value"             "14 17 21 25 28 31 35"
-                "RequiresFacet" "dragon_knight_frost_dragon"
             }
+
+            "health_regen"
+            {
+                "value"                                 "2"
+                "hero_levelup"                          "+0.5"
+                "special_bonus_unique_dragon_knight"    "+12"
+            }
+            "armor"
+            {
+                "value"                                 "2"
+                "hero_levelup"                          "+0.5"
+                "special_bonus_unique_dragon_knight"    "+12"
+            }
+            "regen_and_armor_multiplier_during_dragon_form" "50"
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
-    }
-    "dragon_knight_inherited_vigor"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE |  DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-        "MaxLevel"                      "1"
-        "Innate"                        "1"
-        "IsBreakable"                   "1"
-
-        
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityValues"
-        {
-            "base_health_regen"
-            {
-                "value"                         "2"
-                "special_bonus_unique_dragon_knight" "+12"
-                "dynamic_value"                 "true"
-            }
-            "base_armor"
-            {
-                "value"                         "2"
-                "special_bonus_unique_dragon_knight" "+12"
-                "dynamic_value"                 "true"
-            }
-            "level_mult"                    "0.75"
-            "regen_and_armor_multiplier_during_dragon_form"
-            {
-                "value"                         "2"
-            }
-        }
     }
 	"dragon_knight_elder_dragon_form"
 	{
@@ -358,17 +333,14 @@ DOTAAbilities
             "is_green_dragon"
             {
                 "value"                         "0"
-                "special_bonus_facet_dragon_knight_corrosive_dragon"        "+1"
             }
             "is_red_dragon"
             {
                 "value"                         "0"
-                "special_bonus_facet_dragon_knight_fire_dragon"     "+1"
             }
             "is_blue_dragon"
             {
                 "value"                         "0"
-                "special_bonus_facet_dragon_knight_frost_dragon"        "+1"
             }
             "ranged_splash_radius"              
             {
@@ -378,21 +350,26 @@ DOTAAbilities
             "frost_breath_effect_bonus"
             {
                 "value"             "0 0 0 0"
-                "special_bonus_facet_dragon_knight_frost_dragon"            "=20 =40 =60 =80"
-                "RequiresFacet"         "dragon_knight_frost_dragon"
             }
             "corrosive_breath_effect_bonus"
             {
                 "value"             "0 0 0 0"
-                "special_bonus_facet_dragon_knight_corrosive_dragon"            "=20 =40 =60 =80"
-                "RequiresFacet"         "dragon_knight_corrosive_dragon"
             }
             "fire_breath_effect_bonus"
             {
                 "value"             "0 0 0 0"
-                "special_bonus_facet_dragon_knight_fire_dragon"         "=20 =40 =60 =80"
-                "RequiresFacet"         "dragon_knight_fire_dragon"
             }               
+        	"bonus_ability_cast_range"				"350"
+        	"corrosive_duration"				"3"
+        	"corrosive_damage_per_second"				"25 25 25 35"
+        	"ranged_splash_damage_pct"				"0 75 75 100"
+        	"health_bar_offset"				"300"
+        	"flying_movement"				"0 0 0 1"
+        	"frost_duration"				"0 0 3 3"
+        	"frost_bonus_movement_speed"				"0 0 30 45"
+        	"frost_bonus_attack_speed"				"0 0 50 65"
+        	"frost_healing_reduction"				"0"
+        	"scepter_bonus_levels"				"1"
         }
 	}
 	"dragon_knight_frost_breath"
@@ -420,5 +397,32 @@ DOTAAbilities
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
   		"BaseClass"                     "special_bonus_base"
+	}
+
+	"dragon_knight_wyrms_wrath"
+	{
+		"MaxLevel"					"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"IsBreakable"				"1"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
+		{
+			"magic_damage"
+			{
+				"value"				"10 20 30 40 50 60 70"
+				"special_bonus_unique_dragon_knight_wyrms_wrath_damage"				"+50%"
+			}
+			"bonus_aoe"
+			{
+				"value"				"30 60 90 120 150 180 210"
+				"special_bonus_unique_dragon_knight_wyrms_wrath_damage"				"+50%"
+			}
+			"outgoing_damage_per_stack"
+			{
+				"value"				"0"
+				"special_bonus_unique_dragon_knight_8"				"+10"
+			}
+		}
 	}
 }

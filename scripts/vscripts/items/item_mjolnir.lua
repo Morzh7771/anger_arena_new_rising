@@ -3,12 +3,21 @@ LinkLuaModifier('item_mjolnir_modifier_tinkerer', 'items/item_mjolnir', LUA_MODI
 LinkLuaModifier('modifier_item_mjolnir_shield', 'items/item_mjolnir', LUA_MODIFIER_MOTION_NONE)
 
 item_mjolnir_aa_1 = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items2_fx/mjollnir_shield.vpcf", context)
         PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", context)
     end,
     GetIntrinsicModifierName = function (self) return "item_mjolnir_modifier" end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_mjolnir_aa_1:Precache(context)
+	PrecacheResource("particle", "particles/items2_fx/mjollnir_shield.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", context)
+end
 item_mjolnir_aa_2 = item_mjolnir_aa_1
 item_mjolnir_aa_3 = item_mjolnir_aa_1
 item_maelstorm_aa = item_mjolnir_aa_1
@@ -92,7 +101,7 @@ item_mjolnir_modifier_tinkerer = class({
 })
 function item_mjolnir_modifier_tinkerer:OnCreated(keys)
 	if not IsServer() or not self:GetAbility() then return end
-    print(self:GetParent():GetDamageMax())
+    -- отладочный print убран: горячий путь (каждый удар/лечение)
     if keys.self_casted == 0 then
         self.arc_damage			= self:GetAbility():GetSpecialValueFor('arc_damage') + self:GetParent():GetDamageMax() * self:GetAbility():GetSpecialValueFor('bonus_damage_per_base_damage') / 100
         self.radius				= self:GetAbility():GetSpecialValueFor('radius')

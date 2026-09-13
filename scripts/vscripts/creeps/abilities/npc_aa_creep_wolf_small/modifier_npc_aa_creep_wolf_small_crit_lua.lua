@@ -48,6 +48,7 @@ end
 
 function modifier_npc_aa_creep_wolf_small_crit_lua:OnDestroy ( params )
     ParticleManager:DestroyParticle(self.particleCrit,false)
+    ParticleManager:ReleaseParticleIndex(self.particleCrit)
 end
 
 -------------------------------------------------------------------------------

@@ -168,6 +168,7 @@ function modifier_wisp_spirits_aa_wisp:OnCreated(table)
 		local nfx = ParticleManager:CreateParticle(particle, PATTACH_POINT, caster)
 					ParticleManager:SetParticleControlEnt(nfx, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
 		self:AttachEffect(nfx)
+		ParticleManager:ReleaseParticleIndex(nfx)
 
 		self.maxDistance = self:GetAbility():GetTrueCastRange()
 

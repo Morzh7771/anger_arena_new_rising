@@ -1,4 +1,13 @@
 soul_guardian_heroes_ring = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function soul_guardian_heroes_ring:Precache(context)
+	PrecacheResource("particle", "particles/bosses/soul_guardian/soul_guardian_heroes_ring/soul_guardian_heroes_ring_1.vpcf", context)
+	PrecacheResource("particle", "particles/bosses/soul_guardian/soul_guardian_heroes_ring/soul_guardian_heroes_ring_2.vpcf", context)
+end
+
 local modifierInCaster = "modifier_soul_guardian_heroes_ring_in_caster"
 LinkLuaModifier(modifierInCaster, "creeps/boss/soul_guardian/soul_guardian_heroes_ring/"..modifierInCaster, LUA_MODIFIER_MOTION_NONE)
 --------------------------------------------------------------------------------
@@ -60,7 +69,9 @@ function soul_guardian_heroes_ring:OnSpellStart()
 
 		Timers:CreateTimer(circle_radius/(circle_radius*2.5)+0.07, function()
 			ParticleManager:DestroyParticle(self.particleFirstCircle, false)
+			ParticleManager:ReleaseParticleIndex(self.particleFirstCircle)
 			ParticleManager:DestroyParticle(self.particleSecondCircle, false)
+			ParticleManager:ReleaseParticleIndex(self.particleSecondCircle)
 			return nil
 		end)
 		return nil

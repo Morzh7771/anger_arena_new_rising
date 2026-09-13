@@ -39,6 +39,7 @@ function ability:OnSpellStart()
 
 		local idx = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_ti10_immortal_tail/medusa_ti10_impact_blood.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		ParticleManager:SetParticleControlEnt( idx, 3, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(idx)
 	end
 end
 

@@ -41,6 +41,7 @@ end
 
 function modifier_skelet_2_buff_hp:OnDestroy ( params )
     ParticleManager:DestroyParticle(self.particleSpd,false)
+    ParticleManager:ReleaseParticleIndex(self.particleSpd)
 end
 
 -------------------------------------------------------------------------------

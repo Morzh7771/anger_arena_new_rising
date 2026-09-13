@@ -29,8 +29,10 @@ function mod:OnDestroy()
 	
 	if ability.particleFirstCircle then
 		ParticleManager:DestroyParticle(ability.particleFirstCircle, false)
+		ParticleManager:ReleaseParticleIndex(ability.particleFirstCircle)
 	end
 	if ability.particleSecondCircle then
 		ParticleManager:DestroyParticle(ability.particleSecondCircle, false)
+		ParticleManager:ReleaseParticleIndex(ability.particleSecondCircle)
 	end
 end

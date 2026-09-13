@@ -7,7 +7,7 @@
         "Ability2"      "shadow_shaman_voodoo"
         "Ability3"      "shadow_shaman_shackles"
         "Ability4"      "shadow_shaman_fowl_play"
-        "Ability5"      "generic_hidden"
+        "Ability5"      "shadow_shaman_urnaconda"
         "Ability6"      "shadow_shaman_mass_serpent_ward"
 		"Ability10"     "special_bonus_unique_shadow_shaman_6"
         "Ability11"     "special_bonus_mp_regen_175"
@@ -18,22 +18,7 @@
         "Ability16"     "special_bonus_unique_shadow_shaman_3"
         "Ability17"     "special_bonus_unique_shadow_shaman_4"
         
-        "Facets"
-        {
-            "shadow_shaman_cluster_cluck"   
-            {
-                "Icon"              "chicken"
-                "Color"             "Yellow"
-                "GradientID"        "1"
-            }
-            "shadow_shaman_massive_serpent_ward"        
-            {
-                "Icon"              "snake"
-                "Color"             "Red"
-                "GradientID"        "1"
-            }
 
-        }
         
 		"ArmorPhysical"		"2"
 		"StatusHealthRegen"		"1"

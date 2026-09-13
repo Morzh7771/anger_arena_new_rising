@@ -16,7 +16,7 @@
 		"ItemResult"					"item_invis_sword"
 		"ItemRequirements"
 		{
-			"01"						"item_shadow_amulet*;item_blitz_knuckles;item_broadsword"
+			"01"					"item_claymore;item_blitz_knuckles;item_shadow_amulet*"
 		}
 	}
     "item_recipe_silver_edge"
@@ -62,7 +62,7 @@
 		"ItemResult"					"item_skadi"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster"
+			"01"					"item_ultimate_orb;item_ultimate_orb;item_orb_of_frost"
 		}
 	}
 	"item_recipe_skadi_2"
@@ -241,8 +241,7 @@
 			"cold_slow_ranged"			"-40 -50 -60"
 			"cold_attack_slow_ranged"	"-35 -45 -55"
 			"cold_duration"				"3.0"
-			"restoration_reduction" 	"40 45 "
-			"heal_reduction"			"30 40 50"
+			"restoration_reduction" 	"40 45"
 		}
 	}
 	"item_skadi_2"
@@ -272,7 +271,7 @@
 			"cold_slow_ranged"			"-40 -50 -60"
 			"cold_attack_slow_ranged"	"-35 -45 -55"
 			"cold_duration"				"3.0"
-			"heal_reduction"			"30 40 50"
+			"restoration_reduction"				"40 45"
 		}
 	}
 	"item_dark_edge"

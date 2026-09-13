@@ -2,7 +2,7 @@
 -- - убрал отдельные _projectileHit/_startSpell: всё внутри class({}) как методы
 -- - LinkLuaModifier -> на ЭТОТ файл
 -- - Precache: ТОЛЬКО реально используемые particles + модели (моделей нет)
---   Используемые particles здесь:
+--   РСЃРїРѕР»СЊР·СѓРµРјС‹Рµ particles Р·РґРµСЃСЊ:
 --     1) particles/items2_fx/skadi_projectile.vpcf (tracking projectile)
 --     2) particles/units/heroes/hero_pangolier/pangolier_luckyshot_disarm_debuff.vpcf (disarm debuff effect)
 --     3) particles/status_fx/status_effect_faceless_timewalk.vpcf (status effect на count моде)
@@ -39,6 +39,7 @@ local ABILITY_NOT_TRIGGER = {
 -- Base amulet class
 --------------------------------------------------------------------------------
 base_amulet_class = class({
+
 	Precache = function(self, context)
 		PrecacheResource("particle", "particles/items2_fx/skadi_projectile.vpcf", context)
 		PrecacheResource("particle", "particles/units/heroes/hero_pangolier/pangolier_luckyshot_disarm_debuff.vpcf", context)
@@ -87,6 +88,15 @@ base_amulet_class = class({
 		EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "DOTA_Item.HeavensHalberd.Activate", self:GetCaster())
 	end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function base_amulet_class:Precache(context)
+	PrecacheResource("particle", "particles/items2_fx/skadi_projectile.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_faceless_timewalk.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_pangolier/pangolier_luckyshot_disarm_debuff.vpcf", context)
+end
 
 --------------------------------------------------------------------------------
 -- Items using base class

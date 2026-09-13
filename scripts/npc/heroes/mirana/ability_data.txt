@@ -17,12 +17,12 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"3000"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		
-		"AbilityDuration"				"3.11 3.11 3.11 3.11"
+		"AbilityDuration"				"3.11"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -125,6 +125,7 @@ DOTAAbilities
 				"value"		"20"
 				"special_bonus_unique_mirana_5"     "+20"
 			}
+			"bonus_outgoing_damage_pct"				"9 12 15 18 21 24 27"
 		}
 	}
 	"mirana_solar_flare"
@@ -142,7 +143,7 @@ DOTAAbilities
         // Casting
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastRange"              "0"
-        "AbilityCastPoint"              "0.5 0.5 0.5"
+        "AbilityCastPoint"              "0.5"
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_4"
 
         // Time     
@@ -180,7 +181,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"mirana_leap"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES "
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Ability.Leap"
 
@@ -258,6 +259,11 @@ DOTAAbilities
 				"value"					"1200"
 				"RequiresShard"			"1"
 			}
+			"additional_charges"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -281,8 +287,8 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12.0 12.0 12.0 12.0"
-		"AbilityDuration"				"10.0 10.0 10.0 10.0"
+		"AbilityCooldown"				"12.0"
+		"AbilityDuration"				"10.0"
 
 
 		// Cost
@@ -310,6 +316,13 @@ DOTAAbilities
 				"special_bonus_unique_mirana_7"	"+275"						
 			}
 			"damage_pct"			"45"
+			"AbilityCooldown"
+			{
+				"value"				"12.0"
+				"special_bonus_unique_mirana_3"				"-2"
+			}
+			"starstruck_blind_pct"				"0"
+			"starstruck_duration"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -409,4 +422,59 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	"mirana_celestial_quiver"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"Innate"				"1"
+		"AbilityCastRange"				"630"
+		"AbilityChargeRestoreTime"				"6.0"
+		"IsBreakable"				"1"
+		"HasShardUpgrade"				"1"
+		"EnableChargeDisplayOverride"				"1"
+		"AbilityValues"
+		{
+			"AbilityCharges"
+			{
+				"value"				"2"
+				"hero_levelup"				"+1"
+				"levelup_interval"				"6"
+			}
+			"bonus_damage"
+			{
+				"value"				"5"
+				"hero_levelup"				"+3"
+				"special_bonus_unique_mirana_quiver_damage"				"+50"
+			}
+			"quiver_restore"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+3"
+			}
+		}
+	}
+	"mirana_nightveil"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"mirana_nightveil"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCharges"				"5"
+		"AbilityChargeRestoreTime"		"5"
+
+		"AbilityValues"
+		{
+			"fade_time"				"1.5"
+			"charges_per_level"		"0.5"
+		}
+	}
 }

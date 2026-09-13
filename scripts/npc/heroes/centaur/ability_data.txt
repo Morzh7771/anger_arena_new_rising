@@ -58,11 +58,11 @@ DOTAAbilities
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"4 3.7 3.4 3.1 2.8 2.5 2.2"
-		"AbilityCastRange"				"150 150 150 150"
+		"AbilityCastRange"				"150"
 		"AbilityCastPoint"				"0.25"
 
 		//------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0 0"
+		"AbilityManaCost"				"0"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -81,17 +81,14 @@ DOTAAbilities
 			"stack_duration"		
 			{
 				"value"				"0"
-				"special_bonus_facet_centaur_counter_strike"		"=6"
 			}
 			"pct_of_incoming_damage_as_bonus"  
 			{
 				"value"				"0"
-				"special_bonus_facet_centaur_counter_strike"		"=25"
 			}
 			"max_damage_increase_pct"
 			{
 				"value"				"0"
-				"special_bonus_facet_centaur_counter_strike"		"=200"
 			}
 			"radius"						
 			{
@@ -108,7 +105,7 @@ DOTAAbilities
 			}
 			"shard_max_stacks"
 			{
-				"special_bonus_shard"		"+15"
+				"special_bonus_shard"		"+9"		// overhead stack counter only renders one digit
 			}
 			"shard_movement_slow"
 			{
@@ -271,6 +268,10 @@ DOTAAbilities
             "strength_to_movement_pct"          "30"
             "move_speed_limit"                  "800"
             "base_move_speed_penalty"           "0"
+        	"current_speed"
+        	{
+        		"dynamic_value"				"true"
+        	}
         }
     }
 	"centaur_mount"
@@ -323,6 +324,10 @@ DOTAAbilities
 		{
 			"health_per_upgrade"		"45"
 			"upgrade_rate"				"45.0"
+			"bonus_hp_total"
+			{
+				"dynamic_value"				"true"
+			}
 		}
 	}
 	"centaur_overrun"
@@ -330,7 +335,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"centaur_overrun"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -339,8 +344,6 @@ DOTAAbilities
 		"AbilitySound"					"Hero_Centaur.Stampede"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"MaxLevel"						"1"
-		"FightRecapLevel"				"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -356,13 +359,9 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2.0"
-			}
+			"duration"				"2.0"
 		}
 	}
 	"centaur_khan_endurance_aura"
@@ -370,24 +369,15 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"centaur_khan_endurance_aura"
-		"MaxLevel"		"7"
-		"MaxLevel"				"1"
+		"MaxLevel"		"1"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"15 18 21 27"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1200"
-			}
+			"bonus_attack_speed"				"15 19 23 27 31 35 39"
+			"radius"				"1200"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -396,8 +386,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"centaur_khan_war_stomp"
-		"MaxLevel"		"7"
-		"MaxLevel"						"1"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
@@ -406,28 +395,16 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.4"
 		"AbilityCooldown"				"12.0"
-		"AbilityDamage"					"25 50 75 150"
+		"AbilityDamage"					"25 67 108 150 192 233 275"
 		"AbilityManaCost"				"50"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"250"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"non_hero_stun_duration"		"3.0"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"hero_stun_duration"			"1.6"
-			}
+			"radius"				"250"
+			"non_hero_stun_duration"				"3.0"
+			"hero_stun_duration"				"1.6"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

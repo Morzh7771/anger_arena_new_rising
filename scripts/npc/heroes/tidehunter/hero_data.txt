@@ -7,9 +7,8 @@
         "Ability2"      "tidehunter_kraken_shell"
         "Ability3"      "tidehunter_anchor_smash"
         "Ability4"      "tidehunter_dead_in_the_water"
-        "Ability5"      "generic_hidden"
         "Ability6"      "tidehunter_ravage"
-        "Ability7"      "tidehunter_blubber"	
+        "Ability7"      "tidehunter_leviathans_catch"	
 		"Ability10"     "special_bonus_unique_tidehunter_9"
         "Ability11"     "special_bonus_unique_tidehunter_5"
         "Ability12"     "special_bonus_unique_tidehunter_2"
@@ -19,34 +18,7 @@
         "Ability16"     "special_bonus_unique_tidehunter_7"
         "Ability17"     "special_bonus_unique_tidehunter_8"
 
-        "Facets"
-        {
-            "tidehunter_kraken_swell"
-            {
-                "Icon"              "armor"
-                "Color"             "Green"
-                "GradientID"        "2"
-            }
-            "tidehunter_sizescale"
-            {
-                "Icon"              "overshadow"
-                "Color"             "Green"
-                "GradientID"        "0"
 
-                "KeyValueOverrides"
-                {
-                    "AttributeBaseStrength"     "24"
-                    "AttributeStrengthGain"     "4.1"
-                }
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "tidehunter_krill_eater"
-                    }
-                }
-            }
-        }
         
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

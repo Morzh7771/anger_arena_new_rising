@@ -61,8 +61,14 @@ DOTAAbilities
 			{
 				"value"			"0"
 				
+				"special_bonus_unique_ancient_apparition_1"				"+450"
 			}
 			"damage_pct"		"3 10 17 24 31 38 45"		
+			"damage_per_second"
+			{
+				"value"				"25 45 65 85 105 125 145"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
+			}
 		}
 	}
 	"ancient_apparition_ice_vortex"
@@ -81,7 +87,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_ICE_VORTEX"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"1500 1500 1500 1500"
+		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0"
 
 		// Time		
@@ -115,7 +121,12 @@ DOTAAbilities
 			"vision_aoe"			"210 220 230 240 250 260 270"
 			"vortex_duration"		"6 8 10 12 14 16 18"
 			"frost_stacks"			"1 2 3 4 6 7 8"
-			"damage_pct"			"3 5 7 9 11 13 15 17"
+			"damage_pct"			"3 5 7 9 11 13 15"
+			"damage_per_second"
+			{
+				"value"				"10 20 30 40 50 60 70"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
+			}
 		}
 	}
 	"ancient_apparition_chilling_touch"
@@ -174,6 +185,7 @@ DOTAAbilities
 				"value"			"0"
 				"special_bonus_scepter" 					"25"
 			}
+			"slow_duration"				"0.7 0.8 0.9 1 1.1 1.2 1.3"
 		}
 	}
 	"ancient_apparition_death_rime"
@@ -212,7 +224,7 @@ DOTAAbilities
 			"strength_decrease"
 			{
 				"value"						"0"
-				"special_bonus_facet_ancient_apparition_bone_chill"		"0.5 0.75 1 1.25 1.5 1.75 2 2.25"
+				"special_bonus_unique_ancient_apparition_8"				"+1.0"
 			}
 		}
 	}
@@ -233,7 +245,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.01 0.01 0.01 0.01 0.01 0.01"
+		"AbilityCastPoint"				"0.01"
 		"AbilityCastRange"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
@@ -278,7 +290,7 @@ DOTAAbilities
 				"special_bonus_unique_ancient_apparition_ice_vortex_duration"			"+5"
 			}
 			"frost_stacks"	"3 6 9 12 15 18 21"
-			"speed"					"1500 1500 1500 1500 1500 1500 1500"
+			"speed"					"1500"
 			"kill_pct"
 			{	
 				"value"				"9 10 11 12 13 14 15"
@@ -291,7 +303,6 @@ DOTAAbilities
 			}
 			"cold_feet_aoe"
 			{
-				"special_bonus_facet_ancient_apparition_exposure"	"200 250 300 350 400 450 500"
 				"affected_by_aoe_increase"			"1"
 			}
 			"target_sight_radius"	
@@ -299,6 +310,7 @@ DOTAAbilities
 				"value"			"500"
 				"affected_by_aoe_increase"	"1"
 			}
+			"damage_per_second"				"12 24 36 48 60 72 84"
 		}
 	}
 	"ancient_apparition_ice_blast_release"
@@ -324,27 +336,26 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"ancient_apparition_ice_age"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT "
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Ancient_Apparition.ColdFeetCast"
-		"MaxLevel"						"1"
 	
 		"IsGrantedByShard"				"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
+		"AbilityCastPoint"				"0.01"
 		"AbilityCastRange"				"800"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
-		"AbilityDuration"				"4.0 4.0 4.0 4.0"
+		"AbilityDuration"				"4.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -358,6 +369,36 @@ DOTAAbilities
 			"duration"			"5"
 			"health_degen"		"100"
 			"radius"			"800"
+		}
+	}
+
+	"ancient_apparition_bone_chill"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"Innate"				"1"
+		"HasScepterUpgrade"				"1"
+		"AbilityValues"
+		{
+			"str_reduction"
+			{
+				"value"				".2"
+				"hero_levelup"				"0.1"
+				"levelup_interval"				"3"
+				"special_bonus_scepter"				"+0.8"
+			}
+			"tooltip_scepter_bonus"				"0.8"
+			"str_reduction_duration"
+			{
+				"value"				"4.0"
+			}
+			"movement_slow_pct"
+			{
+				"value"				"2"
+				"display_type"				"kDebuffPercentage"
+			}
 		}
 	}
 }

@@ -49,18 +49,32 @@ DOTAAbilities
             "spell_amp"             
             {
                 "value"     "15 20 25 30 35 40 45"
-                "special_bonus_unique_bloodseeker_6"    "+10"
             }
             "damage_pct"                
             {
                 "value"     "1.5"
                 "DamageTypeTooltip"         "DAMAGE_TYPE_MAGICAL"
+            	"special_bonus_unique_bloodseeker"				"-0.7"
             }
             "shard_max_health_dmg"  
             {
                 "value"         "100"
                 "RequiresShard"             "1"
             }
+			"max_health_dmg_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1.5"
+			}
+			"thirst_threshold_bonus"				"0"
+			"can_silence"							"0"
+			"base_damage_amp"
+			{
+				"value"				"0"
+				"CalculateSpellDamageTooltip"				"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+			}
+			"AbilityManaCost"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -94,14 +108,17 @@ DOTAAbilities
             "AbilityCooldown"               
             {
                 "value"         "13"
-                "special_bonus_unique_bloodseeker"  "-2.5"
             }
             "radius"
             {
                 "value"     "600"
                 "affected_by_aoe_increase"  "1"
             }
-            "silence_duration"          "3 3.5 4 4.5 5 5.5 6"
+            "silence_duration"
+            {
+            	"value"				"3 3.5 4 4.5 5 5.5 6"
+            	"special_bonus_unique_bloodseeker_7"				"+3.0"
+            }
             "damage"                    
             {
                 "value"         "110 190 270 350 440 530 620"
@@ -114,12 +131,10 @@ DOTAAbilities
             "heal"
             {
                 "value"         "0"
-                "special_bonus_facet_1" "50"
             }
             "strong_dispel_count"
             {
                 "value"         "0"
-                "special_bonus_facet_1" "3"
             }
             "delay"                     						"2.6 2.5 2.4 2.3 2.2 2.1 2"
             "delay_plus_castpoint_tooltip"                      "2.9 2.8 2.7 2.6 2.5 2.4 2.3"
@@ -148,18 +163,28 @@ DOTAAbilities
 			"active_movement_speed"
 			{
 				"value"									"0"
-				"special_bonus_facet_bloodseeker_bloodrush"				"20 35 50 65 80 95 110"
 			}
 			"active_duration"						
 			{
 				"value"				"0"
-				"special_bonus_facet_bloodseeker_bloodrush"				"10"
 			}
 			"creep_lifesteal_reduction_pct"		"0"
 			"max_bonus_pct"				"15"
 			"visibility_threshold_pct"	"35"
 			"invis_threshold_pct"	"15"
 			"linger_duration"			"6.0"
+			"AbilityManaCost"
+			{
+				"value"				"0"
+			}
+			"inactive_penalty_pct"
+			{
+				"value"				"0"
+			}
+			"sanguivore_multiplier"
+			{
+				"value"				"0"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -180,6 +205,7 @@ DOTAAbilities
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"hero_bloodseeker.rupture"
 		
+		"HasScepterUpgrade"				"1"
 		"AbilityDraftUltScepterAbility"		"bloodseeker_blood_mist"
 
 
@@ -187,10 +213,6 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.4"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -225,33 +247,19 @@ DOTAAbilities
 			"knockback"	
 			{
 				"value"		"0"
-				"special_bonus_facet_bloodseeker_arterial_spray" "75"
 			}
 			"knockback_duration"
 			{
 				"value"		"0"
-				"special_bonus_facet_bloodseeker_arterial_spray"	"0.1"
 			}
 			"AbilityCastRange"			
 			{
 				"value"			"800"
 				"special_bonus_unique_bloodseeker_3"		"+425"				
 			}
-			"AbilityCharges"		
-			{
-				"value"			"0"
-				"special_bonus_unique_bloodseeker_rupture_charges"	"+2"
-			}
-			"AbilityCooldown"				
-			{
-				"value"			"60"
-				"special_bonus_unique_bloodseeker_rupture_charges"	"=0.25"
-			}
-			"AbilityChargeRestoreTime"		
-			{
-				"value"			"0"
-				"special_bonus_unique_bloodseeker_rupture_charges"	"=60"
-			}
+			"AbilityCharges"				"1"
+			"AbilityCooldown"				"0.25"
+			"AbilityChargeRestoreTime"		"60"
 		}
 	}
 	"bloodseeker_blood_mist"
@@ -259,14 +267,13 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"bloodseeker_blood_mist"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
@@ -298,13 +305,14 @@ DOTAAbilities
 			"movement_slow"			"20"
 			"barrier_decay_pct"     "0.5"
 			"thirst_bonus_pct"		"50"
+			"voracity_bonus_pct"				"50"
 		}
 	}
 	"bloodseeker_sanguivore"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastPoint"				"0.3"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"1"
@@ -314,7 +322,6 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"base_heal"							"25"
-			"heal_hp_pct_per_level"				"0.45"
 			"creep_lifesteal_reduction_pct"		"40"
 			"deny_lifesteal_reduction_pct"      "0"
 			"half_bonus_aoe"		
@@ -322,14 +329,18 @@ DOTAAbilities
 				"value"		"300"
 				"affected_by_aoe_increase"	"1"
 			}
-			"max_hp_percent_heal_tooltip"
-            {
-                "dynamic_value"             "true"
-            }
+			"heal_hp_pct"
+			{
+				"hero_levelup"				"1.5"
+			}
+			"barrier_decay_pct"				"0"
+			"max_shield_pct"				"0"
+			"pure_damage_lifesteal_pct"				"0"
 		}
 	}
 	"special_bonus_unique_bloodseeker_2"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -355,6 +366,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_bloodseeker_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -368,6 +380,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_bloodseeker_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -381,6 +394,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_bloodseeker_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

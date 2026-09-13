@@ -11,6 +11,7 @@ function huntress_hunting_spirit:OnSpellStart()
 	local startskill = ParticleManager:CreateParticle("particles/huntress/huntress_hunting_spirit/huntress_hunting_spirit_reincarnation.vpcf", PATTACH_POINT_FOLLOW, caster)
 	
 	ParticleManager:SetParticleControlEnt(startskill, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(startskill)
 
 	caster:AddNewModifier(caster, self, "modifier_huntress_hunting_spirit", { duration = duration })
 

@@ -5,4 +5,5 @@ function small_satyr_little_invisible:OnSpellStart()
 	hTarget:AddNewModifier(self:GetCaster(), self, "modifier_invisible", { duration = self:GetSpecialValueFor("duration") })
 	local part = ParticleManager:CreateParticle("particles/generic_hero_status/status_invisibility_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget)
 	ParticleManager:SetParticleControlEnt(part, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", hTarget:GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(part)
 end

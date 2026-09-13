@@ -1,5 +1,13 @@
 megacreep_ancient_golem_fireball = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_ancient_golem_fireball:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf", context)
+end
+
+
 function megacreep_ancient_golem_fireball:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()

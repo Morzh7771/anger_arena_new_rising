@@ -1,4 +1,13 @@
 life_stealer_feast_aa = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function life_stealer_feast_aa:Precache(context)
+	PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context)
+	PrecacheResource("particle", "particles/string/here.vpcf", context)
+end
+
 LinkLuaModifier( "modifier_life_stealer_feast_aa", "heroes/life_stealer/life_stealer_feast_aa", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------

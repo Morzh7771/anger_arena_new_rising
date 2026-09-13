@@ -17,7 +17,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,12 +33,12 @@ DOTAAbilities
 		{
 			"start_radius"              
             {
-                "value"         "200 200 200 200"
+                "value"         "200"
                 "affected_by_aoe_increase"  "1"
             }
             "end_radius"                
             {
-                "value"         "300 300 300 300"
+                "value"         "300"
                 "affected_by_aoe_increase"  "1"
             }
             "end_distance"              
@@ -75,7 +75,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"550"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -99,33 +99,27 @@ DOTAAbilities
            	"can_target_allies"
            	{
            	    "value"                                     "0"
-           	    "special_bonus_facet_shadow_shaman_cluster_cluck"   "=1"
            	}
            	"ally_invuln_duration"
            	{
            	    "value"                                     "0.0"
-           	    "special_bonus_facet_shadow_shaman_cluster_cluck"   "=0.5"
            	}
            	"ally_voodoo_duration"
            	{
            	    "value"                                     "0.0"
-           	    "special_bonus_facet_shadow_shaman_cluster_cluck"   "=1.0"
            	}
            	"ally_invuln_vision_radius"
            	{
            	    "value"                                     "0"
            	    "affected_by_aoe_increase"  "1"
-           	    "special_bonus_facet_shadow_shaman_cluster_cluck"   "=1000"
            	}
            	"ally_chicken_images_count"
            	{
            	    "value"                                     "0"
-           	    "special_bonus_facet_shadow_shaman_cluster_cluck"   "+3"
            	}
            	"ally_chicken_images_take_damage_percent"
            	{
            	    "value"                                     "0"
-           	    "special_bonus_facet_shadow_shaman_cluster_cluck"   "=200"
            	}
            	"ally_chicken_movement_speed_bonus_pct"
            	{
@@ -134,7 +128,6 @@ DOTAAbilities
            	"tooltip_damage_incoming_total_pct"
            	{
            	    "value"                                     "0"
-           	    "special_bonus_facet_shadow_shaman_cluster_cluck"   "=300"
            	}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -158,7 +151,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"450"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -221,6 +214,31 @@ DOTAAbilities
                 "value"                     "100"
             }
 			"damage_pct"		"15"
+			"AbilityCastRange"
+			{
+				"value"				"450"
+				"special_bonus_scepter"				"+150"
+			}
+			"scepter_shock_pct"
+			{
+				"special_bonus_scepter"				"100"
+			}
+			"scepter_shock_radius"
+			{
+				"special_bonus_scepter"				"600"
+			}
+			"scepter_shock_interval"
+			{
+				"special_bonus_scepter"				"0.9"
+			}
+			"alt_cast_on_allies"
+			{
+				"special_bonus_scepter"				"1"
+			}
+			"ally_break_range"
+			{
+				"special_bonus_scepter"				"2000"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -261,7 +279,6 @@ DOTAAbilities
 			"damage_tooltip"
 			{
 				"value"			"50 130 210"
-				"special_bonus_facet_shadow_shaman_massive_serpent_ward"    "=500 =1300 =2100"
 				"special_bonus_unique_shadow_shaman_4" "+20%"
 				"CalculateSpellDamageTooltip"	"0"				
 			}
@@ -273,7 +290,7 @@ DOTAAbilities
             {
                 "special_bonus_unique_shadow_shaman_8" "+160"
             }
-			"duration"				"45.0 45.0 45.0"
+			"duration"				"45.0"
 			"spawn_radius"			"150"
 			"hits_to_destroy_tooltip"
             {
@@ -288,23 +305,28 @@ DOTAAbilities
             "is_mega_ward"
             {
                 "value"                     "0"
-                "special_bonus_facet_shadow_shaman_massive_serpent_ward"    "+1"
             }
             "mega_ward_multiplier_tooltip"
             {
                 "value"                     "0"
-                "special_bonus_facet_shadow_shaman_massive_serpent_ward"    "=10"
             }
             "mega_ward_health_tooltip"
             {
-                "special_bonus_facet_shadow_shaman_massive_serpent_ward"    "=10"
+            	"special_bonus_unique_shadow_shaman_1"				"50%"
             }
             "mega_ward_health_reduction_pct"
             {
                 "value"                 "0"
-                "special_bonus_facet_shadow_shaman_massive_serpent_ward"        "=0"
             }
             "mega_ward_model_scale_multiplier"          "2.3 3.0 3.5"
+			"bonus_attack_targets"
+			{
+				"special_bonus_unique_shadow_shaman_4"				"+1"
+			}
+			"ward_damage_tooltip"				"50 85 120"
+			"mega_ward_multiplier_damage"				"4"
+			"mega_ward_multiplier_health"				"4"
+			"mega_ward_damage_tooltip"				"200 340 480"
 		}
 	}
 	"shadow_shaman_serpentine"
@@ -351,7 +373,7 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "MaxLevel"                      "1"
         "Innate"                        "1"
         "AbilityCooldown"               "120"
@@ -364,6 +386,15 @@ DOTAAbilities
 
             "damage_reduction_duration" "1.5"
             "damage_reduction_pct"      "100"
+        	"total_chickens"
+        	{
+        		"value"				"1"
+        		"hero_levelup"				"+1"
+        		"levelup_interval"				"5"
+        	}
+        	"levels_per_chicken"				"6"
+        	"invuln_duration"				"0.1"
+        	"ally_chicken_images_take_damage_percent"				"200"
         }
     }
 
@@ -372,6 +403,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_shadow_shaman_1"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

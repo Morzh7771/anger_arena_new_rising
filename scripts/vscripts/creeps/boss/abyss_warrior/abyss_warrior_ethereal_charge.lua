@@ -20,6 +20,7 @@ function ability:OnSpellStart()
 	local idx = ParticleManager:CreateParticle("particles/econ/items/warlock/warlock_ti10_head/warlock_ti_10_fatal_bonds_cast.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
 
 	ParticleManager:SetParticleControlEnt( idx, 1, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", casterPos, true)
+	ParticleManager:ReleaseParticleIndex(idx)
 
 	caster:EmitSound("Hero_Warlock.FatalBonds")
 end

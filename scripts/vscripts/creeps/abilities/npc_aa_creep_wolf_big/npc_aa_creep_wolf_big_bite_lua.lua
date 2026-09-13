@@ -22,7 +22,9 @@ function npc_aa_creep_wolf_big_bite_lua:OnSpellStart()
                         local particle2 = ParticleManager:CreateParticle( "particles/units/heroes/hero_ursa/ursa_claw_right.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
                         ApplyDamage( info )
                         ParticleManager:SetParticleControlEnt( particle, 0, target, PATTACH_ABSORIGIN_FOLLOW   , "attach_hitloc", target:GetAbsOrigin(), true)
+                        ParticleManager:ReleaseParticleIndex(particle)
                         ParticleManager:SetParticleControlEnt( particle2, 0, target, PATTACH_ABSORIGIN_FOLLOW   , "attach_hitloc", target:GetAbsOrigin(), true)
+                        ParticleManager:ReleaseParticleIndex(particle2)
                 end
         )
 end

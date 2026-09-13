@@ -7,7 +7,6 @@
 		"Ability2"		"abaddon_aphotic_shield_lua"
 		"Ability3"		"abaddon_frostmourne"
 		"Ability4"      "abaddon_withering_mist"
-		"Ability5"		"generic_hidden"
 		"Ability6"		"abaddon_borrowed_time"
 		"Ability10"		"special_bonus_unique_abaddon_6"
 		"Ability11"		"special_bonus_unique_abaddon_7"
@@ -46,30 +45,7 @@
 		"particle_folder"		"particles/units/heroes/hero_abaddon"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_abaddon.vsndevts"
-		"Facets"
-		{
-			"abaddon_death_dude"
-			{
-				"Icon"				"cooldown"
-				"Color"				"Gray"
-				"GradientID"		"0"
 
-				"Abilities"
-				{
-					"Ability1"
-					{
-						"AbilityName"	"abaddon_the_quickening"
-					}
-				}
-			}
-
-			"abaddon_mephitic_shroud" 
-			{
-				"Icon"				"damage"
-				"Color"				"Blue"
-				"GradientID"		"0"
-			}
-		}
 		"RenderablePortrait"
 		{
 		}

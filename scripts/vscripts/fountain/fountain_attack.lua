@@ -22,7 +22,7 @@ function modifier_fountain_attack:DeclareFunctions()
 end
 function modifier_fountain_attack:OnAttack(event)
     if event.attacker == self:GetParent() then
-        print(event.target:GetMaxHealth()/100*self.bonusDmg)
+        -- отладочный print убран: горячий путь (каждый удар/лечение)
         local damageTable = {
             victim = event.target,
             attacker = self:GetCaster(),

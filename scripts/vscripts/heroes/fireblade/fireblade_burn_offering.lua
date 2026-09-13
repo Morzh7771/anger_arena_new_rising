@@ -28,6 +28,7 @@ function ability:OnProjectileHit(target, targetPos)
 		caster:Heal(heal, self)
 		local particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
     	ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
+    	ParticleManager:ReleaseParticleIndex(particle)
 	end
 
 	target:EmitSound("Hero_EmberSpirit.SearingChains.Target")
@@ -35,6 +36,7 @@ function ability:OnProjectileHit(target, targetPos)
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_hit.vpcf", PATTACH_POINT, target)
 
 	ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin() + Vector(0,0,1))
+	ParticleManager:ReleaseParticleIndex(particle)
 end
 
 
@@ -98,5 +100,6 @@ function ability:OnSpellStart( ... )
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_hit_warp.vpcf", PATTACH_POINT, caster)
 
 	ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin() + Vector(0,0,1))
+	ParticleManager:ReleaseParticleIndex(particle)
 	caster:EmitSound("Hero_EmberSpirit.SearingChains.Cast")
 end

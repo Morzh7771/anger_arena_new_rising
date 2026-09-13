@@ -1,5 +1,13 @@
 megacreep_beast_tail_stomp = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_beast_tail_stomp:Precache(context)
+	PrecacheResource("particle", "particles/econ/items/centaur/centaur_ti6/centaur_ti6_warstomp.vpcf", context)
+end
+
+
 ---------------------------------------------------------------------------
 
 function megacreep_beast_tail_stomp:CreateEffects(caster, position)

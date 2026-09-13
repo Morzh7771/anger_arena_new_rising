@@ -4,14 +4,15 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"doom_bringer_devour"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_DoomBringer.Devour"
+		"HasShardUpgrade"				"1"
+		"BaseClass"			"doom_bringer_devour"
+		"MaxLevel"		"7"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -20,11 +21,10 @@ DOTAAbilities
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300 300 300 300"
-		"AbilityCooldown"				"30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70 80 90 100"
+		"AbilityManaCost"				"40 50 60 70"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,15 +33,45 @@ DOTAAbilities
 			"bonus_gold"			
 			{
 				"value"				"40 80 120 160 200 240 280"
-				"LinkedSpecialBonus"	"special_bonus_unique_doom_3"
 			}
-			"armor"					"3 4 5 6 7 8 9"
 			"creep_level"			"100"
+			"ability_bonus_level"
+			{
+				"value"						"0"
+			}
 			"hero_ability_steal_time"	"99999"
 			"magic_resist"
 			{
 				"value"			"0"
-				"special_bonus_unique_doom_3"	"+15"
+			}
+			"AbilityCharges"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"+2"
+			}
+			"AbilityChargeRestoreTime"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"+66"
+			}
+			"AbilityCooldown"
+			{
+				"value"						"66.0"
+				"special_bonus_shard"		"=0.0"
+			}
+			"can_target_ancient"
+			{
+				"special_bonus_shard"		"=1"
+			}
+			"bonus_aoe_pct"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"15"
+			}
+			"bonus_spell_amp_pct"
+			{
+				"value"						"0"
+				"special_bonus_shard"		"40"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -51,15 +81,24 @@ DOTAAbilities
     // General
         //-------------------------------------------------------------------------------------------------------------
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_NONE"
-
+		"BaseClass"						"doom_bringer_lvl_pain"
         "MaxLevel"                      "1"
         "Innate"                        "1"
         "IsBreakable"                   "1"
         "AbilityValues"
         {
             "bonus_damage"  "15"
+        	"bonus_damage_pct_base"				"10"
+        	"damage_debuff_duration"				"2.5"
+        	"spread_radius"
+        	{
+        		"value"				"66"
+        		"affected_by_aoe_increase"				"1"
+        	}
+        	"level_multiplier"				"5"
+        	"bonus_at_level_pct"				"66"
         }
     }
 	"doom_bringer_scorched_earth"
@@ -81,30 +120,51 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 600 600 600"
-		"AbilityCooldown"				"35"
+		"AbilityCastRange"				"666 666 666 666"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 70 80 90 100 110 120"
+		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"damage_per_second"
+			"AbilityCooldown"
 			{
-				"value"	"20 35 50 65 80 95 105"
-				"LinkedSpecialBonus"	"special_bonus_unique_doom_4"				
+				"value"							"41 40 39 38 37 36 35"
+				"special_bonus_unique_doom_11"				"=2.5"
 			}
-			"radius"				"600 600 600 600"
-			"bonus_movement_speed_pct"
+			"AbilityManaCost"
 			{
-				"value"	"8 9 10 11 12 13 14"
-				"LinkedSpecialBonus"	"special_bonus_unique_doom_6"	
+				"value"							"60 70 80 90 100 110 120"
+				"special_bonus_unique_doom_11"				"-100%"
+
+			}	
+			"damage_per_second"		
+			{
+				"value"			"20 35 50 65 80 95 105"
 			}
-			"duration"				"10.0 11.0 12.0 13.0 14.0 15.0 16.0"
-			"damage_per_hero"		"0"
+			"bonus_health_regen"				
+			{ 
+				"value"			"6.66"
+			}
+			"radius"				
+			{
+				"value"			"666 666 666 666 666 666 666"
+				"affected_by_aoe_increase"	"1"
+			}
+			"bonus_movement_speed_pct"	
+			{
+				"value"			"8 9 10 11 12 13 14"
+				"special_bonus_unique_doom_6"	"+7"	
+			}
+			"duration"				"10.0 11.5 13.0 14.5 16.0 17.5 19.0"
+			"is_permanent"
+			{
+				"value"			"0"
+				"special_bonus_unique_doom_11"				"+1"
+			}
 			"damage_pct"		"30"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -129,7 +189,7 @@ DOTAAbilities
 		"AbilityCooldown"				"16 14 12 10 8 6 4"
 		"AbilityManaCost"				"40"
 		"AbilityCastRange"				"200"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -139,10 +199,14 @@ DOTAAbilities
 			"burn_damage_pct"
 			{
 				"value"		"1.5 2.0 2.5 3 3.5 4 4.5"
-				"special_bonus_unique_doom_1" "+2.5"
+				"special_bonus_unique_doom_1" "+2.16"
 			}
 			"burn_duration"			"4.0"
-			"ministun_duration"		"0.5"
+			"ministun_duration"
+			{
+				"value"				"0.5"
+				"special_bonus_unique_doom_4"				"+0.2"
+			}
 			"shard_ministun_duration"
 			{
 				"value"		"1.0"
@@ -161,12 +225,11 @@ DOTAAbilities
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+	
 	"doom_bringer_doom"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"doom_bringer_doom"
-		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -177,11 +240,13 @@ DOTAAbilities
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"FightRecapLevel"				"2"
 		"HasScepterUpgrade"			"1"
+		"BaseClass"			"doom_bringer_doom"
+		"MaxLevel"		"7"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.5"
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"400"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		// Time		
@@ -198,32 +263,49 @@ DOTAAbilities
 		{
 			"duration"				
 			{
-				"value"								"12.0"
-				"special_bonus_unique_doom_7"		"+3"
+				"value"												"12"
+				"special_bonus_unique_doom_11"						"+0"		// this is needed for talent tooltip to recognize that it's modifying this value
+				"dynamic_value"										"true"
 			}
-
 			"damage"
 			{
-				"value"								"30 45 60 75 90 105 120"
-				"special_bonus_unique_doom_5"		"+30"
+				"value"												"30 45 60 75 90 105 120"
 			}				
-			"deniable_pct"			"0"
+			"deniable_pct"			"25 25 25"
 			"AbilityCooldown"
 			{
 				"value"								"120"
-				"special_bonus_unique_doom_10"		"-45"
+				"special_bonus_unique_doom_9"		"-20"
+
 			}
 			"does_break"
 			{
 				"value"										"0"
-				"special_bonus_unique_doom_11"				"+1"
+				"special_bonus_scepter"						"+1"
+			}
+			"does_mute"
+			{
+				"value"										"0"
+				"special_bonus_unique_doom_10"				"+1"
 			}
 			"scepter_aura_radius"
 			{
 				"value"										"0"
-				"special_bonus_scepter"						"+300"
+				"special_bonus_scepter"						"+350"
+				"affected_by_aoe_increase"	"1"
 			}
-			
+			"applies_dispel_to_self"
+			{
+				"special_bonus_scepter"						"0"
+			}
+			"upgrade_interval"
+			{
+				"value"										"0.0"
+			}
+			"upgrade_amount"
+			{
+				"value"										"0.0"
+			}
 		}
 	}
 	"doom_bringer_empty1"
@@ -231,9 +313,8 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"doom_bringer_empty1"
-		"MaxLevel"		"7"
+		"MaxLevel"		"0"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	}
 	"doom_bringer_empty2"
@@ -241,13 +322,13 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"doom_bringer_empty2"
-		"MaxLevel"		"7"
+		"MaxLevel"		"0"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 	}
 	"doom_bringer_devils_bargain"
     {
+    	"Innate"					"1"
         // General
         //-------------------------------------------------------------------------------------------------------------
 
@@ -256,6 +337,8 @@ DOTAAbilities
         {
             "buyback_penalty"   "20"
             "item_sellback_percent" "90"
+        	"disable_buyback"				"0"
+        	"kill_assist_gold_bonus_percent"				"0"
         }
     }
 }

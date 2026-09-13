@@ -46,6 +46,7 @@ function mod:OnTakeDamage(params)
 
 		local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_explosion.vpcf", PATTACH_CUSTOMORIGIN, nil )
 		ParticleManager:SetParticleControl( particle, 3, parent:GetOrigin() )
+		ParticleManager:ReleaseParticleIndex(particle)
 	end
 end
 

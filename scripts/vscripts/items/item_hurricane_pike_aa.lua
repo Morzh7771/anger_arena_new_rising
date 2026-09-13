@@ -6,12 +6,21 @@ LinkLuaModifier("modifier_item_hurricane_pike_aa_active_caster", "items/item_hur
 LinkLuaModifier("modifier_item_hurricane_pike_aa_cd", "items/item_hurricane_pike_aa", LUA_MODIFIER_MOTION_NONE)
 
 item_hurricane_pike_aa_1 = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items_fx/force_staff.vpcf", context)
         PrecacheResource("particle", "particles/status_fx/status_effect_forcestaff.vpcf", context)
     end,
     GetIntrinsicModifierName = function(self)return "modifier_item_hurricane_pike_aa" end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_hurricane_pike_aa_1:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/force_staff.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_forcestaff.vpcf", context)
+end
 item_hurricane_pike_aa_2 = item_hurricane_pike_aa_1
 item_hurricane_pike_aa_3 = item_hurricane_pike_aa_1
 modifier_item_hurricane_pike_aa_cd = class({

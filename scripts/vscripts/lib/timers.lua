@@ -12,9 +12,53 @@ end
 ---------------------------------------------------------------------
 -- SAFE ERROR HANDLER
 ---------------------------------------------------------------------
+-- На боевом сервере (не tools mode) движок не отдаёт библиотеку debug: там
+-- debug == nil, и любой debug.traceback/debug.getinfo - хард-эррор.
+-- Из-за этого умирал сам Think: на первом же медленном кадре он уходил в
+-- debug.getinfo, падал и больше не перезапускался - вместе с ним разом
+-- вставали ВСЕ таймеры (дуэли, GPM, счётчик золота, респавн и стак лагерей,
+-- кулдауны шрайна и похвалы). В tools mode debug есть, поэтому в одиночку
+-- баг не воспроизводился.
+local function timer_traceback(msg)
+  if debug and debug.traceback then
+    return debug.traceback(msg, 3)
+  end
+
+  return msg
+end
+
+local function timer_func_location(func)
+  if not (debug and debug.getinfo) then
+    return "?"
+  end
+
+  local ok, info = pcall(debug.getinfo, func)
+
+  if not ok or not info then
+    return "?"
+  end
+
+  return tostring(info.short_src) .. ":" .. tostring(info.linedefined)
+end
+
 local function timer_err(err)
-  err = tostring(err)
-  return debug.traceback(err, 2)
+  return timer_traceback(tostring(err))
+end
+
+-- Раньше на каждый сработавший таймер аллоцировалось новое замыкание для xpcall.
+-- Здесь одна функция на весь модуль, а таймер передаётся через переменную:
+-- xpcall в Lua 5.1 не умеет прокидывать аргументы. Вложенных вызовов быть не
+-- может - Think дёргает движок, а не колбэки.
+local invokeTimer = nil
+
+local function timer_invoke()
+  local v = invokeTimer
+
+  if v.context then
+    return v.callback(v.context, v)
+  end
+
+  return v.callback(v)
 end
 
 ---------------------------------------------------------------------
@@ -40,19 +84,35 @@ end
 ---------------------------------------------------------------------
 -- THINK LOOP
 ---------------------------------------------------------------------
-function Timers:Think()
+function Timers:_Think()
   if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
     return
   end
 
   local profileStart = GetSystemTimeMS()
-  local profileFunctions = {}
+
+  -- время одинаково для всех таймеров в рамках одного тика, а вызовов тут
+  -- получалось по одному на каждый живой таймер 100 раз в секунду
+  local gameTime = GameRules:GetGameTime()
+  local realTime = Time()
+
+  -- худший вызов за тик; полную таблицу замеров раньше собирали каждый тик,
+  -- хотя нужна она только если кадр оказался медленным
+  local worstFunc = nil
+  local worstTime = 0
+
+  -- Сколько времени кадра реально съели наши колбэки и сколько их сработало.
+  -- Нужно, чтобы отличать "тормозит наш Lua" от "тормозит весь сервер, а наш
+  -- Think просто попал под раздачу": если fired мало и sum сильно меньше
+  -- общего времени кадра - причина снаружи (движок, GC, спавн моделей).
+  local callbackTime = 0
+  local callbackCount = 0
 
   for k, v in pairs(Timers.timers) do
     local useGameTime = (v.useGameTime ~= false)
     local oldStyle = (v.useOldStyle == true)
 
-    local now = useGameTime and GameRules:GetGameTime() or Time()
+    local now = useGameTime and gameTime or realTime
 
     if v.endTime == nil then
       v.endTime = now
@@ -63,14 +123,18 @@ function Timers:Think()
 
       local funcTime = GetSystemTimeMS()
 
-      local status, nextCall = xpcall(function()
-        if v.context then
-          return v.callback(v.context, v)
-        end
-        return v.callback(v)
-      end, timer_err)
+      invokeTimer = v
+      local status, nextCall = xpcall(timer_invoke, timer_err)
 
-      table.insert(profileFunctions, {v.callback, GetSystemTimeMS() - funcTime})
+      local elapsed = GetSystemTimeMS() - funcTime
+
+      callbackTime = callbackTime + elapsed
+      callbackCount = callbackCount + 1
+
+      if elapsed > worstTime then
+        worstTime = elapsed
+        worstFunc = v.callback
+      end
 
       if status then
         if nextCall then
@@ -89,23 +153,52 @@ function Timers:Think()
 
   local profileTime = GetSystemTimeMS() - profileStart
 
-  if profileTime > Timers._timeLimit and #profileFunctions > 0 then
-    print("[Warning.Timers] slow frame:", profileTime, "ms")
+  if profileTime > Timers._timeLimit then
+    print(string.format(
+      "[Warning.Timers] slow frame: %.2f ms | колбэков: %d, в них %.2f ms (%.0f%%), вне них %.2f ms",
+      profileTime,
+      callbackCount,
+      callbackTime,
+      profileTime > 0 and (callbackTime / profileTime * 100) or 0,
+      profileTime - callbackTime))
 
-    for _, data in pairs(profileFunctions) do
-      local funcObj = data[1]
-      local funcTime = data[2]
+    if worstFunc then
+      print(string.format("[Warning.Timers] худший колбэк: %s - %.2f ms",
+        timer_func_location(worstFunc), worstTime))
+    end
 
-      if funcObj then
-        local info = debug.getinfo(funcObj)
-        print("[Warning.Timers] Function",
-          info.short_src, ":", info.linedefined,
-          "took", funcTime, "ms")
-      end
+    -- "вне них" близко к общему времени = наш Lua ни при чём, тормозит сервер
+    if profileTime - callbackTime > profileTime * 0.5 then
+      print("[Warning.Timers] большая часть кадра ушла НЕ в наши таймеры - искать причину снаружи Lua")
     end
   end
 
   return TIMERS_THINK
+end
+
+-- Движок НЕ перезапускает Think, который кинул ошибку: один такой случай
+-- останавливал все таймеры мода до конца матча. Поэтому тело Think идёт
+-- через xpcall, и что бы внутри ни рвануло - тик продолжается.
+local thinkSelf = nil
+
+local function think_invoke()
+  return Timers._Think(thinkSelf)
+end
+
+function Timers:Think()
+  thinkSelf = self
+
+  local ok, res = xpcall(think_invoke, timer_err)
+
+  if not ok then
+    print("========== TIMERS THINK ERROR ==========")
+    print(tostring(res))
+    print("========================================")
+
+    return TIMERS_THINK
+  end
+
+  return res
 end
 
 ---------------------------------------------------------------------

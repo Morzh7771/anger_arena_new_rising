@@ -2,6 +2,7 @@
 {
 	"huntress_aim_shot"
 	{
+		"ID"					"15185"
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -39,6 +40,7 @@
 
 	"huntress_owl"
 	{
+		"ID"					"15184"
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -53,6 +55,8 @@
 
 	    "AbilityManaCost"				"30 50 70 90 110 130 150"
 
+	    "HasShardUpgrade"				"1"
+
 		"precache"
 		{
 			"particle"					"particles/huntress/huntress_owl/huntress_owl_unit_effect.vpcf"
@@ -63,18 +67,24 @@
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityValues"
 	    {
-	        "max_owl"             		"1 1 2 2 3 3 3"
+	        "max_owl"
+	        {
+	            "value"            		"1 1 2 2 3 3 3"
+	            "special_bonus_shard"	"2"
+	        }
 	        "health"             		"3"
-	        "radius" 
+	        "radius"
 	        {
 	            "value"            		"350 375 400 425 450 475 500"
 	            "LinkedSpecialBonus"	"huntress_huntress_owl_radius_aura_tallent"
 	        }
+	        "shard_true_sight_radius"	"600"
 	    }
 	}
 
 	"huntress_crippling_arrow"
 	{
+		"ID"					"15183"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -111,6 +121,7 @@
 	
 	"huntress_hunting_spirit"
 	{
+		"ID"					"15182"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -139,6 +150,7 @@
 	}
 	"huntress_curse_arrow"
 	{
+		"ID"					"15181"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -154,6 +166,7 @@
 		"AbilityManaCost"				"170"
 		"AbilityChannelTime"			"2.0"
 		"AbilityCastRange"				"1000"
+		"HasScepterUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -162,11 +175,22 @@
 			"min_duration"		    "1.5"
 			"max_duration"   		"4.5"
 			"projectile_speed"   	"1500"
+			"scepter_radius"
+			{
+				"value"					"0"
+				"special_bonus_scepter"	"400"
+			}
+			"scepter_mute_duration"
+			{
+				"value"					"0"
+				"special_bonus_scepter"	"3"
+			}
 		}
 		"AbilityCastAnimation" 		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	"huntress_aim_shot_bonus_crit_tallent"
 	{
+		"ID"					"15180"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -181,6 +205,7 @@
 
 	"huntress_aim_shot_bonus_bat_tallent"
 	{
+		"ID"					"15179"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -195,6 +220,7 @@
 
 	"huntress_huntress_owl_radius_aura_tallent"
 	{
+		"ID"					"15178"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -209,6 +235,7 @@
 
 	"huntress_huntress_owl_invisible_tallent"
 	{
+		"ID"					"15177"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -223,6 +250,7 @@
 
 	"huntress_crippling_arrow_chance_tallent"
 	{
+		"ID"					"15176"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -237,6 +265,7 @@
 
 	"huntress_crippling_arrow_duration_tallent"
 	{
+		"ID"					"15175"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -251,6 +280,7 @@
 
 	"huntress_hunting_spirit_heavy_arrow_tallent"
 	{
+		"ID"					"15174"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -265,6 +295,7 @@
 
 	"huntress_hunting_spirit_status_resist_tallent"
 	{
+		"ID"					"15173"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -274,6 +305,29 @@
 		"AbilityValues"
 		{
 			"value"						"10"
+		}
+	}
+
+	"huntress_hunter_instinct"
+	{
+		"ID"					"15172"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/huntress/huntress_hunter_instinct"
+		"AbilityTextureName"			"custom/huntress_aim_shot"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"isolation_radius"			"400"
+			"isolated_damage_pct"		"20"
+			"alone_damage_pct"			"40"
 		}
 	}
 }

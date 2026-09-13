@@ -67,7 +67,10 @@ function DropBox:GetDropbox( boxName )
 	local boxData = self.data[boxName]
 
 	if not boxData then
-		print("[DropBox] Failed to get box, there is no box named", boxName, debug.traceback() )
+		-- debug на боевом сервере nil: раньше вместо сообщения об отсутствующем
+		-- боксе тут прилетала ошибка индексации nil и рвался вызывающий код
+		local trace = (debug and debug.traceback) and debug.traceback() or "[debug library недоступна]"
+		print("[DropBox] Failed to get box, there is no box named", boxName, trace )
 		return nil
 	end
 

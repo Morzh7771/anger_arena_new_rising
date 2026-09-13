@@ -4,9 +4,9 @@
 	{
 		"override_hero"		"npc_dota_hero_venomancer"
 		"Ability1"      "venomancer_venomous_gale"
-        "Ability2"      "venomancer_poison_sting"
+        "Ability2"      "venomancer_snakebite"
         "Ability3"      "venomancer_plague_ward"
-        "Ability4"      "venomancer_sepsis"
+        "Ability4"      "venomancer_poison_sting"
         "Ability5"      "generic_hidden"
         "Ability6"      "venomancer_noxious_plague"
 		"Ability10"     "special_bonus_unique_venomancer_3"
@@ -18,21 +18,7 @@
         "Ability16"     "special_bonus_unique_venomancer_5"
         "Ability17"     "special_bonus_unique_venomancer"
         
-        "Facets"
-        {
-            "venomancer_patient_zero"   
-            {
-                "Icon"              "snot"
-                "Color"             "Green"
-                "GradientID"        "0"
-            }
-            "venomancer_plague_carrier"     
-            {
-                "Icon"              "summons"
-                "Color"             "Yellow"
-                "GradientID"        "0"
-            }
-        }
+
         
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

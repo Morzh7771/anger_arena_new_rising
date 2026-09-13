@@ -9,31 +9,17 @@
         "Ability4"      "templar_assassin_trap"
         "Ability5"      "templar_assassin_trap_teleport"
         "Ability6"      "templar_assassin_psionic_trap"
-        "Ability7"      "templar_assassin_third_eye"
-		"Ability10"		"special_bonus_unique_templar_assassin_refraction_damage"
+        "Ability7"      "templar_assassin_inner_peace"
+		"Ability10"		"special_bonus_unique_templar_assassin_meld_duration"
 		"Ability11"		"special_bonus_unique_templar_assassin_3"
-		"Ability12"		"special_bonus_unique_templar_assassin_refraction_disable_cast"
-		"Ability13"		"special_bonus_unique_templar_assassin_8"
+		"Ability12"		"special_bonus_unique_templar_assassin_meld_attack_range_bonus"
+		"Ability13"		"special_bonus_unique_templar_assassin_6"
 		"Ability14"		"special_bonus_unique_templar_assassin_4"
-		"Ability15"		"special_bonus_unique_templar_assassin_2"
+		"Ability15"		"special_bonus_unique_templar_assassin_8"
 		"Ability16"		"special_bonus_unique_templar_assassin_7"
 		"Ability17"		"special_bonus_unique_templar_assassin"
 
-		"Facets"
-        {
-            "templar_assassin_voidblades" 
-            {
-                "Icon"              "ricochet"
-                "Color"             "Gray"
-                "GradientID"        "3"
-            }
-            "templar_assassin_refractor" 
-            {
-                "Icon"              "damage"
-                "Color"             "Purple"
-                "GradientID"        "0"
-            }
-        }
+
         
 		"AbilityDraftAbilities"
 		{

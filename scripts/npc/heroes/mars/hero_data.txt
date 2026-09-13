@@ -18,21 +18,7 @@
         "Ability16"     "special_bonus_unique_mars_gods_rebuke_extra_crit"
         "Ability17"     "special_bonus_unique_mars_arena_of_blood_hp_regen"
 
-        "Facets"
-        {
-            "mars_victory_feast" 
-            {
-                "Icon"              "healing"
-                "Color"             "Red"
-                "GradientID"        "2"
-            }
-            "mars_arena" 
-            {
-                "Icon"              "no_vision"
-                "Color"             "Yellow"
-                "GradientID"        "0"
-            }
-        }
+
         
 		"ArmorPhysical"		"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

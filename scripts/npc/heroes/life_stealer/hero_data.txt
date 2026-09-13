@@ -3,10 +3,11 @@
 	"npc_dota_hero_life_stealer"
 	{
 		"override_hero"		"npc_dota_hero_life_stealer"
+		"Ability8"      "generic_hidden"
 		"Ability1"      "life_stealer_rage"
-        "Ability2"      "life_stealer_ghoul_frenzy"
-        "Ability3"      "life_stealer_open_wounds"
-        "Ability4"      "life_stealer_feast_aa"
+        "Ability2"      "life_stealer_open_wounds"
+        "Ability3"      "life_stealer_feast_aa"
+        "Ability4"      "life_stealer_ghoul_frenzy"
         "Ability5"      "generic_hidden"
         "Ability6"      "life_stealer_infest"
         "Ability7"      "life_stealer_consume"
@@ -19,72 +20,7 @@
         "Ability16"     "special_bonus_unique_lifestealer_3"
         "Ability17"     "special_bonus_unique_lifestealer"
 
-        "Facets"
-        {
-            "life_stealer_maxhp_gain"
-            {
-                "Icon"              "armor"
-                "Color"             "Yellow"
-                "GradientID"        "3"
-                "Deprecated"        "true"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "life_stealer_corpse_eater"
-                    }
-                }
-            }
-            "life_stealer_rage"
-            {
-                "Icon"              "lifestealer_rage"
-                "Color"             "Yellow"
-                "GradientID"        "3"
-                "Deprecated"        "true"
-
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "life_stealer_rage"
-                        "AbilityIndex"  "0"
-                        "AutoLevelAbility"  "false"
-                    }
-                }
-            }
-            "life_stealer_rage_dispell" 
-            {
-                "Icon"              "broken_chain"
-                "Color"             "Red"
-                "GradientID"        "0"
-                "Deprecated"        "true"
-
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "life_stealer_unfettered"
-                        "AbilityIndex"  "0"
-                        "AutoLevelAbility"  "false"
-                    }                   
-                }
-            }
-
-            "life_stealer_fleshfeast"
-            {
-                "Icon"              "full_heart"
-                "Color"             "Gray"
-                "GradientID"        "0"
-            }
-
-            "life_stealer_gorestorm"
-            {
-                "Icon"              "area_of_effect"
-                "Color"             "Red"
-                "GradientID"        "0"
-            }
-        }
 
 		"AbilityDraftIgnoreCount" "9"
 		"ArmorPhysical"		"1"

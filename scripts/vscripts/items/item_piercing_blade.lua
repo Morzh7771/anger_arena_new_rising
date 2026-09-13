@@ -160,10 +160,10 @@ modifier_piercing_blade_pure_damage = class({
 })
 
 function modifier_piercing_blade_pure_damage:GetModifierTotalDamageOutgoing_Percentage( params )
-    print(params.damage_type)
+    -- отладочный print убран: горячий путь (каждый удар/лечение)
     if params.attacker ~= self:GetParent() then return end
     if IsValidEntity(params.inflictor) and params.inflictor ~= self:GetAbility() or params.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK then 
-        print("...........................")  
+        -- отладочный print убран: горячий путь (каждый удар/лечение)
             local damage = self:GetAbility():GetSpecialValueFor("active_pure_dmg")/100 * params.original_damage
             if not params.target:IsMagicImmune() then
                 local damageTable = {

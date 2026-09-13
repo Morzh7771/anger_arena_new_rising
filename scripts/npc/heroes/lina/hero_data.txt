@@ -7,7 +7,7 @@
         "Ability2"      "lina_light_strike_array"
         "Ability3"      "lina_fiery_soul"
         "Ability4"      "lina_flame_cloak"
-        "Ability5"      "lina_combustion"
+        "Ability5"      "lina_slow_burn"
         "Ability6"      "lina_laguna_blade"
         
 
@@ -23,30 +23,7 @@
         "Ability16"     "special_bonus_unique_lina_7"
         "Ability17"     "special_bonus_unique_lina_crit_debuff"
 
-        "Facets"
-        {
-            "lina_supercharge"
-            {
-                // no burn
-                "Icon"              "damage"
-                "Color"             "Yellow"
-                "GradientID"        "0"
-            }
-            "lina_dot"
-            {
-                "Icon"              "nuke"
-                "Color"             "Red"
-                "GradientID"        "0"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "lina_slow_burn"
-                    }
-                }
-            }
-        }
        	
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

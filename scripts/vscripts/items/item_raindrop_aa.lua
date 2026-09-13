@@ -2,11 +2,19 @@ LinkLuaModifier("modifier_item_raindrop_aa_off", "items/item_raindrop_aa", LUA_M
 LinkLuaModifier("modifier_item_raindrop_aa", "items/item_raindrop_aa", LUA_MODIFIER_MOTION_NONE)
 
 item_raindrop_aa = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items2_fx/pipe_of_insight_v2.vpcf", context)
     end,
     GetIntrinsicModifierName = function(self) return "modifier_item_raindrop_aa" end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_raindrop_aa:Precache(context)
+	PrecacheResource("particle", "particles/items2_fx/pipe_of_insight_v2.vpcf", context)
+end
 modifier_item_raindrop_aa_off = class({
     IsHidden = function(self) return false end,
 })

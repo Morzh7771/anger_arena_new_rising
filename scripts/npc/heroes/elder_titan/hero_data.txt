@@ -3,16 +3,15 @@
 	"npc_dota_hero_elder_titan"
 	{
 		"BaseClass"		"npc_dota_hero_elder_titan"
-		"Ability1"      "elder_titan_echo_stomp"
+        "Ability1"      "elder_titan_echo_stomp"
         "Ability2"      "elder_titan_ancestral_spirit"
         "Ability3"      "elder_titan_natural_order"
         "Ability4"      "elder_titan_move_spirit"
-        "Ability5"      "generic_hidden"
+        "Ability5"      "elder_titan_momentum"
         "Ability6"      "elder_titan_earth_splitter"
         "Ability7"      "elder_titan_return_spirit"
-        "Ability8"      "elder_titan_tip_the_scales"
 		"Ability10"		"special_bonus_unique_elder_titan_bonus_spirit_speed"
-		"Ability11"		"special_bonus_attack_speed_25"
+		"Ability11"		"special_bonus_unique_elder_titan_momentum_attack_speed"
 		"Ability12"		"special_bonus_unique_elder_titan_2"
 		"Ability13"		"special_bonus_unique_elder_titan"
 		"Ability14"		"special_bonus_cleave_100"
@@ -20,29 +19,7 @@
 		"Ability16"		"special_bonus_unique_elder_titan_3"
 		"Ability17"		"special_bonus_unique_elder_titan_4"
 
-		"Facets"
-        {
-            "elder_titan_deconstruction" 
-            {
-                "Icon"              "armor_broken"
-                "Color"             "Blue"
-                "GradientID"        "2"
-            }
-            "elder_titan_boost_atkspd" 
-            {
-                "Icon"              "damage"
-                "Color"             "Yellow"
-                "GradientID"        "0"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "elder_titan_momentum"
-                    }
-                }
-            }
-        }
         
 		"AbilityDraftIgnoreCount" "7"
 		"AbilityDraftAbilities"
@@ -50,7 +27,6 @@
 			"Ability1"		"elder_titan_echo_stomp"
 			"Ability2"		"elder_titan_ancestral_spirit"
 			"Ability3"		"elder_titan_natural_order"
-			"Ability4"		"elder_titan_earth_splitter"
 		}
 		"ArmorPhysical"		"0.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

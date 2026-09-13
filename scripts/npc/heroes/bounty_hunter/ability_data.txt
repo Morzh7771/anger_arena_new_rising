@@ -19,7 +19,7 @@ DOTAAbilities
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"375 425 475 525"
+		"AbilityCastRange"				"375 425 475 525 575 625 675"
 		"AbilityCastPoint"				"0.3 0.3 0.2 0.2 0.1 0.1 0.1"
 		"AbilityCooldown"				"5"
 		"AbilityManaCost"				"60"
@@ -39,7 +39,7 @@ DOTAAbilities
 				"value"					"80 120 160 200 240 280 320"
 				"special_bonus_unique_bounty_hunter_2"	"+80"
 			}
-			"speed"					"1000 1000 1000 1000"
+			"speed"					"1000"
 			"bounce_aoe"			
 			{
 				"value"		"1200"
@@ -60,18 +60,19 @@ DOTAAbilities
 				"value"				"4"
 				"RequiresScepter"	"1"
 			}
-			"passthrough_damage"
-			{				
-				"special_bonus_facet_bounty_hunter_shuriken" "1"
-			}
+			"passthrough_damage"				"0"
 			"passthrough_width"
 			{
-				"special_bonus_facet_bounty_hunter_shuriken" "175"
 				"affected_by_aoe_increase"	"1"
 			}
 			"cast_range"			"550"
 			"slow"					"100"		
 			"damage_pct"			"60"
+			"AbilityCastRange"
+			{
+				"value"				"375 425 475 525 575 625 675"
+				"special_bonus_scepter"				"=600"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -85,15 +86,13 @@ DOTAAbilities
 		//"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
 		"AbilitySound"					"Hero_BountyHunter.Jinada"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 
 		"AbilityCastRange"				"150"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"		
+		"AbilityCastPoint"				"0.0"		
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -139,7 +138,7 @@ DOTAAbilities
 		"AbilityCastRange"				"650"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -177,6 +176,7 @@ DOTAAbilities
 				}
 
 
+			"bonus_move_speed_pct"				"11 14 17 20 23 26 29"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -262,8 +262,8 @@ DOTAAbilities
 					"value"		"75 150 225 300 375 150 525"
 					"special_bonus_unique_bounty_hunter_3"	"+175"
 				}
-				"duration"				"30.0 30.0 30.0"
-				"gold_steal"			"0.3 0.4 0.5"
+				"duration"				"30.0"
+				"gold_steal"			"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
 				"bonus_move_speed_pct"	"16 20 24 28 32 36 40"
 		}
 	}
@@ -272,13 +272,12 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"bounty_hunter_lookout"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_TemplarAssassin.Trap"
-		"MaxLevel"						"1"
 		"IsGrantedByShard"				"1"
 
 		// Casting
@@ -316,7 +315,7 @@ DOTAAbilities
 		"Innate"						"1"
 		"AbilityValues"
 		{
-			"gold_steal"					"8 16 24 32 40 48 56"
+			"gold_steal"					"8 16 24 32 40 48 56 64"
 		}
 	}
 	"bounty_hunter_big_game_hunter"
@@ -324,7 +323,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"bounty_hunter_big_game_hunter"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HAS_DETAILS_UI"
 		"MaxLevel"						"1"
 		"Innate"						"1"
 		// Special
@@ -332,6 +331,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"bonus_killstreak_bounty"				"50"
+			"kill_assist_gold_bonus_percent"				"20"
 		}
 	}
 }

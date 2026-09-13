@@ -1,6 +1,14 @@
 
 mid_teleport = class ({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function mid_teleport:Precache(context)
+	PrecacheResource("particle", "particles/generic_gameplay/rune_haste_owner.vpcf", context)
+end
+
+
 LinkLuaModifier("modifier_mid_teleport_cd", "abilities/mid_teleport", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mid_teleport_cast", "abilities/mid_teleport", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mid_teleport_speed", "abilities/mid_teleport", LUA_MODIFIER_MOTION_NONE)

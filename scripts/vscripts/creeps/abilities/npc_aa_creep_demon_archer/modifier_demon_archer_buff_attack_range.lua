@@ -38,6 +38,7 @@ end
 --------------------------------------------------------------------------------
 function modifier_demon_archer_buff_attack_range:OnDestroy(params)
     ParticleManager:DestroyParticle(self.particleAttackRangeArcher, false)
+    ParticleManager:ReleaseParticleIndex(self.particleAttackRangeArcher)
 end
 
 -------------------------------------------------------------------------------

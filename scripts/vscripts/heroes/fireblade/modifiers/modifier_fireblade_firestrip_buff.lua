@@ -16,6 +16,7 @@ function mod:OnCreated( kv )
 
 	if self.particle then
 		ParticleManager:DestroyParticle(self.particle, false)
+		ParticleManager:ReleaseParticleIndex(self.particle)
 	end
 
 	local parent = self:GetParent()
@@ -34,6 +35,7 @@ function mod:OnDestroy( kv )
 
 	if idx then
 		ParticleManager:DestroyParticle(idx, false)
+		ParticleManager:ReleaseParticleIndex(idx)
 		self.particle = nil
 	end
 end

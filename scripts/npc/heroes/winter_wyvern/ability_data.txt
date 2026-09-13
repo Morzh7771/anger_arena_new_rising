@@ -16,7 +16,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -121,6 +121,7 @@ DOTAAbilities
                 "value"     "0"
                 "special_bonus_unique_winter_wyvern_4" "+1.5"
             }
+			"slow_duration"				"4.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -157,7 +158,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-
+				"can_target_buildings"		"0"
 				"duration"			"4.0"
 			"heal_additive"
 			{	
@@ -176,6 +177,15 @@ DOTAAbilities
                     "RequiresShard"             "1"
                     "affected_by_aoe_increase"  "1" 
                 }
+			"tick_interval"				"0.25"
+			"damage_buff_pct"
+			{
+				"special_bonus_shard"				"=60"
+			}
+			"damage_buff_duration"
+			{
+				"special_bonus_shard"				"=6.0"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -231,6 +241,8 @@ DOTAAbilities
 			"max_duration"  "4.0 4.25 4.5 4.75 5.0 5.25 5.5"
             "bonus_duration_per_hero"   "1"
             "bonus_duration_per_creep"  "0.25"
+			"transfer_on_death"				"0"
+			"transfer_duration_pct"				"0"
 		}
 	}
 	"winter_wyvern_eldwurm_scholar"
@@ -243,6 +255,9 @@ DOTAAbilities
         "AbilityValues"
         {
             "share_percentage"          "20"
+        	"three_tooltip"				"0"
+        	"mana_to_xp_percentage"				"25"
+        	"xp_gain_range"				"1200"
         }
     }
 
@@ -355,15 +370,27 @@ DOTAAbilities
 
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
-        "MaxLevel"                      "8"
+        "MaxLevel"                      "7"
         "DependentOnAbility"            "winter_wyvern_winters_curse"
         "IsBreakable"                   "1"
 
         "AbilityValues"
         {
-            "attack_range_per_damage"           "40 30 20 10 8 6 5 4"
-            "damage_per_ten_attack_range_tooltip"   "0.25 0.33 0.5 1.0 1.25 1.66 2 2.5"
+            "attack_range_per_damage"           "40 30 20 10 8 6 5"
+            "damage_per_ten_attack_range_tooltip"   "0.25 0.33 0.5 1 1.25 1.66 2"
             "attack_range_min"                  "400"
         }
     }   
+
+	"winter_wyvern_eldwurms_edda"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"Innate"				"1"
+		"AbilityValues"
+		{
+			"tooltip_seconds"				"420"
+			"tooltip_int_pct"				"25"
+		}
+	}
 }

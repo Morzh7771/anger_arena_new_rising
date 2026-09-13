@@ -11,6 +11,7 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_TemplarAssassin.Refraction"
+		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -44,10 +45,7 @@ DOTAAbilities
 				"value"						"30 60 90 120 150 180 210"
 				"special_bonus_unique_templar_assassin_refraction_damage"		"+40"
 			}
-			"bonus_damage_per_instance_burn"
-            {
-                "special_bonus_facet_templar_assassin_refractor"    "+1"
-            }
+			"bonus_damage_per_instance_burn"				"0"
 			"duration"					"17.0"
 			"cast_while_disabled"
 			{
@@ -95,12 +93,23 @@ DOTAAbilities
 			{
 				"value"											"-3.0 -5.0 -7.0 -9.0 -11.0 -13.0 -15.0"
 				"special_bonus_unique_templar_assassin_2" 		"+-3"
+				"special_bonus_unique_templar_assassin_8"				"-4"
 			}
 			"bash_duration"
             {
                 "value"             "0"
                 "special_bonus_unique_templar_assassin_7"           "=1.0"
             }
+			"attack_range_bonus"
+			{
+				"value"					"0"
+				"special_bonus_unique_templar_assassin_meld_attack_range_bonus"		"225"
+			}
+			"debuff_duration"
+			{
+				"value"					"6"
+				"special_bonus_unique_templar_assassin_meld_duration"			"+1.5"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -137,7 +146,6 @@ DOTAAbilities
 				"meld_strike_spills"
                 {
                     "value"                                         "0.0"
-                    "special_bonus_facet_templar_assassin_voidblades"   "+1.0"
                 }
 
                 "spill_slow_duration"
@@ -193,11 +201,12 @@ DOTAAbilities
 					"value"		"400"
 					"affected_by_aoe_increase"	"1"
 				}
-				"trap_duration"				"5.0"			
-				"max_traps"					
+				"trap_duration"				"5.0"
+				"max_traps"
 				{
 					"value"		"5 6 7 8 9 10 11"
 					"special_bonus_shard"		"+4"
+					"special_bonus_unique_templar_assassin_6"		"+3"
 				}
 				"trap_fade_time"			"2.0 2.0 2.0 2.0 2.0 2.0 2.0"
 				"movement_speed_min"            
@@ -325,6 +334,7 @@ DOTAAbilities
     }
 	"special_bonus_unique_templar_assassin"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -362,6 +372,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_templar_assassin_4"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -421,5 +432,124 @@ DOTAAbilities
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
-    }   
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_templar_assassin_meld_duration"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_templar_assassin_meld_attack_range_bonus"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+    //=================================================================================================================
+    // Ability: Special Bonus
+    //=================================================================================================================
+    "special_bonus_unique_templar_assassin_6"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "special_bonus_base"
+    }
+
+	"templar_assassin_inner_peace"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"Innate"				"1"
+		"AbilityManaCost"				"0"
+		"AbilityModifierSupportValue"				"0.25"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityValues"
+		{
+			"max_attack_range"
+			{
+				"value"				"0"
+			}
+			"max_hp_regen"
+			{
+				"value"				"2.7"
+				"hero_levelup"				"+0.3"
+			}
+			"max_mana_regen"
+			{
+				"value"				"2.2"
+				"hero_levelup"				"+0.2"
+			}
+			"time_until_meditation"				"0.2"
+			"time_until_max_bonus"
+			{
+				"value"				"1.85"
+				"hero_levelup"				"-0.05"
+			}
+		}
+	}
+	"templar_assassin_third_eye"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_NO"
+		"Innate"				"1"
+	}
+
+	//=================================================================================================================
+	// Templar Assassin: Hidden Gates
+	//=================================================================================================================
+	"templar_assassin_hidden_gates"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"templar_assassin_hidden_gates"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL |  DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsCastableWhileHidden"			"1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
+		"AbilityChannelTime"			"3.0"
+		"AbilityManaCost"				"25"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"200"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"animation_rate"		"0.8"
+			"stop_distance"			"500"
+		}
+	}
+
+	//=================================================================================================================
+	// Templar Assassin: Meditation End
+	//=================================================================================================================
+	"templar_assassin_meditation_end"
+	{
+		"BaseClass"						"templar_assassin_meditation_end"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityCooldown"				"0.0"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"0"
+		"MaxLevel"						"1"
+		"LinkedAbility"					"templar_assassin_psi_blades"
+	}
 }

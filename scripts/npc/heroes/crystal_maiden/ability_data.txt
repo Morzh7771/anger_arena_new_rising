@@ -5,9 +5,8 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"crystal_maiden_let_it_go"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Rattletrap.Battery_Assault_Impact"
 
@@ -49,7 +48,7 @@ DOTAAbilities
 		{
 			"damage_pct"					"100"
 			"AbilityCastRange"				"700"
-			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+			"AbilityCastPoint"				"0.3"
 			"AbilityCooldown"
 			{
 				"value"										"12 11 10 9 8 7 6"
@@ -70,6 +69,9 @@ DOTAAbilities
 				"value"										"100 175 250 325 400 475 550"
 				"special_bonus_unique_crystal_maiden_2"		"+350"
 			}
+			"physical_barrier_amount"				"0"
+			"physical_barrier_self_amount"				"0"
+			"physical_barrier_duration"				"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
@@ -103,7 +105,7 @@ DOTAAbilities
 				"value"								"600"
 				"special_bonus_unique_crystal_maiden_frostbite_castrange" 		"+125"
 			}
-			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+			"AbilityCastPoint"				"0.3"
 			"AbilityCooldown"				"9"
 			"AbilityManaCost"				"75 85 95 105 115 125 135"
 			"damage_per_second"
@@ -152,6 +154,7 @@ DOTAAbilities
 			"self_factor"					"6"
 			"proximity_bonus_factor"		"3"
 			"proximity_bonus_radius"		"1200"
+			"mana_regen_amp"				"20 40 60 80 100 120 140"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -211,7 +214,7 @@ DOTAAbilities
 			"AbilityCastPoint"				"0"
 			"AbilityCooldown"				"80"
 			"AbilityDuration"				"10.0"
-			"AbilityManaCost"				"200 300 400 500 600 700"
+			"AbilityManaCost"				"200 300 400 500 600 700 800"
 			"radius"						
 			{
 				"value"		"810"
@@ -259,13 +262,11 @@ DOTAAbilities
 			"self_cast_range_bonus"
 			{
 				"value"													"0"
-				"special_bonus_facet_crystal_maiden_frozen_expanse"		"75 100 125 150 175 200 225"
 			}
 
 			"aoe_bonus"
 			{
 				"value"													"0"
-				"special_bonus_facet_crystal_maiden_frozen_expanse"		"6 8 10 12 14 16 18"
 			}
 		}
 	}
@@ -280,7 +281,7 @@ DOTAAbilities
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 
 		// Time		
@@ -292,7 +293,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"crystal_maiden_ice_rink"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -302,7 +303,6 @@ DOTAAbilities
 		"AbilityCastRange"				"675"
 		"AbilityCastPoint"				"0.45"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
 		
 		
 		// Time		
@@ -331,7 +331,7 @@ DOTAAbilities
         "AbilityTextureName"            "crystal_maiden_let_it_go"
 
         "MaxLevel"                      "1"
-        "Innate"                        "1"
+        "Innate"                        "0"
         "IsBreakable"                   "1"
 
 
@@ -340,7 +340,6 @@ DOTAAbilities
             "mana_regen_multiplier"
             {
                 "value"                                                 "50"
-                "special_bonus_facet_crystal_maiden_cold_comfort"       "+75"
             }
         }
     }
@@ -388,6 +387,7 @@ DOTAAbilities
 	}
 	"special_bonus_unique_crystal_maiden_1"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -400,6 +400,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_crystal_maiden_2"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -412,6 +413,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_crystal_maiden_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -424,6 +426,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_crystal_maiden_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -436,6 +439,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_crystal_maiden_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -453,4 +457,26 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	"crystal_maiden_glacial_guard"
+	{
+		"MaxLevel"					"1"
+		"AbilityType"				"ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"IsBreakable"				"1"
+		"Innate"				"1"
+		"AbilityValues"
+		{
+			"mana_multiplier"
+			{
+				"value"				"30"
+				"hero_levelup"				"+2"
+				"special_bonus_unique_crystal_maiden_glacial_guard_mana_multiplier"				"+20"
+			}
+			"barrier_duration"				"8"
+		}
+	}
 }

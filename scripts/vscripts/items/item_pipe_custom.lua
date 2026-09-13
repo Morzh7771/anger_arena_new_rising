@@ -26,6 +26,14 @@ function item_pipe_custom:OnSpellStart()
 end
 
 modifier_item_pipe_custom = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function modifier_item_pipe_custom:Precache(context)
+	PrecacheResource("particle", "particles/items2_fx/pipe_of_insight_v2.vpcf", context)
+end
+
 function modifier_item_pipe_custom:IsHidden()
 	return true
 end

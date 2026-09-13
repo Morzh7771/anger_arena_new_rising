@@ -93,6 +93,7 @@ function item_harpoon_aa_1:OnProjectileHit(hTarget, vLocation)
 end
 
 modifier_item_harpoon_custom = class({
+
     IsHidden = function(self)return true end,
     IsPurgable = function(self)return false end,
     RemoveOnDeath = function(self)return false end,
@@ -114,6 +115,15 @@ modifier_item_harpoon_custom = class({
     GetModifierBonusStats_Strength = function(self)return self:GetAbility():GetSpecialValueFor("bonus_strength") end,
     GetModifierBonusStats_Agility = function(self)return self:GetAbility():GetSpecialValueFor("bonus_agility") end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function modifier_item_harpoon_custom:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/harpoon_projectile.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/harpoon_pull.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_forcestaff.vpcf", context)
+end
 
 function modifier_item_harpoon_custom:OnAttackLanded(params)
     if not IsServer() then return end

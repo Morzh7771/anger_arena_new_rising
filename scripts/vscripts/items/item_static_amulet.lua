@@ -164,7 +164,7 @@ function modifier_item_static_amulet:DealDamageAroundCaster(caster, multiplier, 
     for _, x in pairs(units) do
         if x and caster and x:GetTeamNumber() ~= caster:GetTeamNumber() and IsValidEntity(x) and x:IsAlive() then
             local damage = x:GetHealth() * multiplier + damage_add
-            print(damage)
+            -- отладочный print убран: горячий путь (каждый удар/лечение)
             ApplyDamage({ victim = x, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = ability })
         end
     end

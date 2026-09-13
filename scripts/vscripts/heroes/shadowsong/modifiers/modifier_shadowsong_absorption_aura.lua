@@ -21,6 +21,8 @@ function mod:OnCreated( kv )
 	self.team 	  = ability:GetAbilityTargetTeam()
 	self.type 	  = ability:GetAbilityTargetType()
 	self.damage   = ability:GetSpecialValueFor("damage") + caster:GetTalentSpecialValueFor(talentName)
+	self.shard_slow_pct = ability:GetSpecialValueFor("shard_slow_pct")
+	self.shard_ally_lifesteal_pct = ability:GetSpecialValueFor("shard_ally_lifesteal_pct")
 
 	self:StartIntervalThink( ability:GetSpecialValueFor("interval") )
 
@@ -91,6 +93,7 @@ function mod:OnIntervalThink()
 
 		local part = ParticleManager:CreateParticle("particles/econ/items/lifestealer/lifestealer_immortal_backbone/lifestealer_immortal_backbone_rage_flek.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
 		ParticleManager:SetParticleControl(part, 2, unit:GetAbsOrigin())
+		ParticleManager:ReleaseParticleIndex(part)
 	end
 
 	if sumHeal ~= 0 then
@@ -98,6 +101,32 @@ function mod:OnIntervalThink()
 
 		ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_OVERHEAD_FOLLOW, parent)
     	SendOverheadEventMessage(parent, OVERHEAD_ALERT_HEAL, parent, sumHeal, nil)
+
+		-- Шард: союзные герои получают вампиризм
+		if self.shard_ally_lifesteal_pct > 0 then
+			local allyHeal = sumHeal * self.shard_ally_lifesteal_pct / 100
+
+			if allyHeal > 0 and not units then return end
+
+			local allies = FindUnitsInRadius(
+				parent:GetTeamNumber(),
+				parent:GetAbsOrigin(),
+				nil,
+				self.radius,
+				DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+				DOTA_UNIT_TARGET_HERO,
+				DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
+				FIND_ANY_ORDER,
+				false
+			)
+
+			for _, ally in pairs(allies) do
+				if ally ~= parent and ally:IsAlive() then
+					ally:Heal(allyHeal, parent)
+					SendOverheadEventMessage(ally, OVERHEAD_ALERT_HEAL, ally, allyHeal, nil)
+				end
+			end
+		end
 	end
 end
 

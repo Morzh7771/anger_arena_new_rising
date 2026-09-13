@@ -13,4 +13,5 @@ function ogre_big_heal:OnSpellStart( keys )
 	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) 
 	ParticleManager:SetParticleControl(fx, 0, target:GetAbsOrigin() )
 	ParticleManager:SetParticleControl(fx, 2, target:GetAbsOrigin() )
+	ParticleManager:ReleaseParticleIndex(fx)
 end

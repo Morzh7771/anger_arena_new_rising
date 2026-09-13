@@ -6,25 +6,43 @@ function item_repick:GetIntrinsicModifierName()
 end
 function item_repick:OnSpellStart()
     self.caster = self:GetCaster()
-    if hero_table[self.caster:GetUnitName()] then
+    local newHeroName = hero_table[self.caster:GetUnitName()]
+
+    if newHeroName then
         self.caster:FindItemInInventory("item_repick"):Destroy()
         local oldHero = self.caster
-		local hero = PlayerResource:ReplaceHeroWith( self.caster:GetPlayerID(), hero_table[self.caster:GetUnitName()], oldHero:GetGold(), 0 )
+        local playerid = oldHero:GetPlayerID()
+        local gold = oldHero:GetGold()
+        -- Четвёртый аргумент ReplaceHeroWith - это опыт. С нулём новый герой
+        -- приходит первого уровня, отсюда и терялись уровень со статами.
+        -- Читаем ДО прекеша: к моменту колбэка старого героя может уже не быть.
+        local xp = oldHero:GetCurrentXP() or 0
 
-        hero:FindAbilityByName("guardian_of_the_ancients_confident_stance"):SetLevel(1)
-        
-        local point = 0 
-        if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-            point = Entities:FindByName( nil, RADIANT_BASE_POINT ):GetAbsOrigin()
-        elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-            point = Entities:FindByName( nil, DIRE_BASE_POINT ):GetAbsOrigin()
-        end
-        
-        if point == 0 then return end
+        -- без прекеша новый герой появляется с error-моделью и без партиклов.
+        -- Третий аргумент - playerid: без него прекешится только дефолтный
+        -- набор, а надетая игроком косметика остаётся nonresident и вместо неё
+        -- рисуется error-модель.
+        PrecacheUnitByNameAsync(newHeroName, function()
+            local hero = PlayerResource:ReplaceHeroWith( playerid, newHeroName, gold, xp )
 
-        FindClearSpaceForUnit(hero, point, false)
+            if not hero or hero:IsNull() then return end
 
-        hero:Stop()
+            local stance = hero:FindAbilityByName("guardian_of_the_ancients_confident_stance")
+            if stance then stance:SetLevel(1) end
+
+            local point = 0
+            if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+                point = Entities:FindByName( nil, RADIANT_BASE_POINT ):GetAbsOrigin()
+            elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+                point = Entities:FindByName( nil, DIRE_BASE_POINT ):GetAbsOrigin()
+            end
+
+            if point == 0 then return end
+
+            FindClearSpaceForUnit(hero, point, false)
+
+            hero:Stop()
+        end, playerid)
     end
 end
 modifier_item_repick = class({

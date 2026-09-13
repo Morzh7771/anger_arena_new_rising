@@ -75,7 +75,7 @@
         
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"1538"						
+        "ID"							"15007"						
         "Model"							"models/props_gameplay/recipe.vmdl"
         "BaseClass"                     "item_recipe_arcane_boots"
         
@@ -98,7 +98,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_lua"
-        "ID"							"1535"
+        "ID"							"15008"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"			"boss_soul"
         "ScriptFile"					"items/boss_soul/boss_soul"
@@ -127,7 +127,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_lua"
-        "ID"							"1537"
+        "ID"							"15009"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"			"boss_soul_tooltip"
         "ScriptFile"					"items/boss_soul/boss_soul"
@@ -154,7 +154,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"1178"
+        "ID"							"15010"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
         
         "AbilityTextureName"	        "item_snake_boots"
@@ -286,7 +286,7 @@
         "AbilityTextureName" 				"item_recipe_snake_boots"
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"1177"						
+        "ID"							"15011"						
         "Model"							"models/props_gameplay/recipe.vmdl"
         "BaseClass"                     "item_recipe_arcane_boots"
         
@@ -536,7 +536,7 @@
         
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"1134"						
+        "ID"							"15012"						
         "Model"							"models/props_gameplay/recipe.vmdl"
         "BaseClass"                     "item_recipe_arcane_boots"
         
@@ -560,7 +560,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_lua"
-        "ID"							"1135"
+        "ID"							"15013"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -792,7 +792,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_lua"
-        "ID"							"1226"
+        "ID"							"15014"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"	        "rebels_sword"
         "ScriptFile"					"items/rebels_sword/rebels_sword.lua"
@@ -1046,6 +1046,7 @@
             "splash_pct_hero"       "10 20 30"
             "splash_pct_illusion"   "10 20 30"
             "magic_pierce"          "20 25 30"
+            "item_damage_pct"       "50"    // splash from item damage is halved
         }
     }
     "item_recipe_magic_splash_2"
@@ -1089,6 +1090,7 @@
             "splash_pct_hero"       "10 20 30"
             "splash_pct_illusion"   "10 20 30"
             "magic_pierce"          "20 25 30"
+            "item_damage_pct"       "50"    // splash from item damage is halved
         }
     }
     "item_recipe_magic_splash_3"
@@ -1132,6 +1134,7 @@
             "splash_pct_hero"       "10 20 30"
             "splash_pct_illusion"   "10 20 30"
             "magic_pierce"          "20 25 30"
+            "item_damage_pct"       "50"    // splash from item damage is halved
         }
     }
     //"item_recipe_infinite_branch"

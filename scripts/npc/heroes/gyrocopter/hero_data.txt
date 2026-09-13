@@ -3,11 +3,11 @@
 	"npc_dota_hero_gyrocopter"
 	{
 		"override_hero"		"npc_dota_hero_gyrocopter"
-		"Ability1"      "gyrocopter_rocket_barrage"
-        "Ability2"      "gyrocopter_homing_missile"
-        "Ability3"      "gyrocopter_flak_cannon"
-        "Ability4"      "gyrocopter_chop_shop"
-        "Ability5"      "generic_hidden"
+		"Ability1"		"gyrocopter_rocket_barrage"
+		"Ability2"		"gyrocopter_homing_missile"
+		"Ability3"		"gyrocopter_flak_cannon"
+        "Ability4"      "gyrocopter_afterburner"
+        "Ability5"      "gyrocopter_side_gunner_spawn_ability"
         "Ability6"      "gyrocopter_call_down"
         "Ability7"      "generic_hidden"
         "Ability8"      "generic_hidden"
@@ -20,29 +20,13 @@
 		"Ability16"		"special_bonus_unique_gyrocopter_1"
 		"Ability17"		"special_bonus_unique_gyrocopter_5"
 
-		"Facets"
-        {
-            "gyrocopter_secondary_strikes"
-            {
-                "Icon"              "nuke"
-                "Color"             "Red"
-                "GradientID"        "0"
-            }
-            
-            "gyrocopter_afterburner"
-            {
-                "Icon"              "speed"
-                "Color"             "Yellow"
-                "GradientID"        "1"
-            }
-        }
+
         
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"gyrocopter_rocket_barrage"
 			"Ability2"		"gyrocopter_homing_missile"
 			"Ability3"		"gyrocopter_flak_cannon"
-			"Ability4"		"gyrocopter_call_down"
 		}
 
 		"ArmorPhysical"		"2"

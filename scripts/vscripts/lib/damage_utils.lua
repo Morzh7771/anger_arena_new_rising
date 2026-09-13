@@ -133,7 +133,7 @@ function Util:DealDamageFromStats(victim, attacker, damage_type, str_damage, agi
 	end
 
 
-	print("[UTIL] DealDamageFromStats deal " .. damage .. " damage")
+	-- отладочный print убран: горячий путь (каждый удар/лечение)
 	local damage_table = {
 		victim 		= victim,
 		attacker 	= attacker,
@@ -225,7 +225,7 @@ function Util:_HealUnit(target, caster, heal_const, heal_pct, from_max_health)
 		heal = heal_const + target:GetHealth() * heal_pct / 100
 	end
 
-	print("[UTIL] _HealUnit heal pct = ", heal_pct, "heal = ", heal_const, "total heal = ", heal)
+	-- отладочный print убран: горячий путь (каждый удар/лечение)
 	target:Heal(heal, caster)
 end
 

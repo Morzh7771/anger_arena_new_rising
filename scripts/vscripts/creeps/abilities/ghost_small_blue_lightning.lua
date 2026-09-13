@@ -1,4 +1,13 @@
 ghost_small_blue_lightning = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function ghost_small_blue_lightning:Precache(context)
+	PrecacheResource("particle", "particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_trigger_beams.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_razor/razor_static_link_beam.vpcf", context)
+end
+
 --------------------------------------------------------------------------------
 
 function ghost_small_blue_lightning:OnSpellStart( keys )
@@ -45,6 +54,7 @@ function ghost_small_blue_lightning:OnSpellStart( keys )
 
 	local f = function()
 		ParticleManager:DestroyParticle(particle, false)
+		ParticleManager:ReleaseParticleIndex(particle)
 		return nil 
 	end 
 
@@ -54,4 +64,5 @@ function ghost_small_blue_lightning:OnSpellStart( keys )
 	
 	local particle2 = ParticleManager:CreateParticle("particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_trigger_beams.vpcf",  PATTACH_ABSORIGIN_FOLLOW, target)
 	ParticleManager:SetParticleControlEnt(particle2, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), false)
+	ParticleManager:ReleaseParticleIndex(particle2)
 end

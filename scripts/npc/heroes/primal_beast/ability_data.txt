@@ -152,21 +152,15 @@ DOTAAbilities
             "bonus_movespeed_pct_self"
             {
                 "value"                 "0"
-                "special_bonus_facet_primal_beast_romp_n_stomp"         "=10"
-                "RequiresFacet"             "light_footed"
             }
             "bonus_movespeed_pct_allies"
             {
                 "value"             "0"
-                "special_bonus_facet_primal_beast_romp_n_stomp" "=5"
-                "RequiresFacet"             "light_footed"
             }
             "aura_radius"
             {
                 "value"                         "0"
                 "affected_by_aoe_increase"  "1"
-                "special_bonus_facet_primal_beast_romp_n_stomp"         "=1200"
-                "RequiresFacet"             "light_footed"
             }
 		}
 	}
@@ -190,7 +184,7 @@ DOTAAbilities
 			"bonus_damage_per_stack"	"10 20 30 40 50 60 70"
 			"stack_limit"				
 			{
-				"value"						"3 5 7 9 11 13 15"
+				"value"						"5 6 7 8 9 10 11"
 			}
 			"damage_limit"				"1"
 			"stack_duration"			"20"
@@ -222,7 +216,7 @@ DOTAAbilities
 			}
             "projectile_distance"        
             {
-				"value"		"900"
+				"value"		"600"
 				"RequiresScepter"		"1"
 			}
             "projectile_width"           
@@ -239,7 +233,7 @@ DOTAAbilities
 			}
 			"damage_pct"          
             {
-				"value"		"20"
+				"value"		"15"
 				"RequiresScepter"		"1"
 				"CalculateSpellDamageTooltip"	"1"
 			}
@@ -255,7 +249,7 @@ DOTAAbilities
 			}
             "max_split_amount"                  
             {
-				"value"		"3"
+				"value"		"2"
 				"RequiresScepter"		"1"
 			}
             "split_delay"                	  
@@ -273,6 +267,7 @@ DOTAAbilities
 				"value"		"4"
 				"RequiresScepter"		"1"
 			}
+			"stack_count_increase_on_disable"				"0"
 		}
 	}	
 	"primal_beast_pulverize"
@@ -328,12 +323,10 @@ DOTAAbilities
 			"bonus_aoe_duration"
             {
                 "value"                         "0"
-                "special_bonus_facet_primal_beast_ferocity" "+10"
             }
             "bonus_aoe_pct_per_hit"
             {
                 "value"                                 "0"
-                "special_bonus_facet_primal_beast_ferocity" "+20"
             }
 			"channel_time"
 			{
@@ -354,13 +347,12 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
 		"BaseClass"		    "primal_beast_rock_throw"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
 		"IsGrantedByShard"			"1"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -428,6 +420,21 @@ DOTAAbilities
         "AbilityValues"
         {
             "bonus_building_damage"             "40"
+        	"hp_per_threshold"					"250"
+        	"base_slow_resist"					"10"
+        	"base_aoe"							"0"
+        	"slow_resistance_per_threshold"		"1"
+        	"aoe_per_threshold"					"0.2"
+        	"current_slow_resistance"
+        	{
+        		"dynamic_value"				"true"
+        	}
+        	"current_aoe"
+        	{
+        		"dynamic_value"				"true"
+        	}
+        	"trample_bonus"				"0"
+        	"model_scale_per_stack"				"1.1"
         }
     }
     "primal_beast_innate_slow_resistance_per_time"

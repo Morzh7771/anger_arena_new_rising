@@ -11,6 +11,7 @@ LinkLuaModifier("modifier_shield_of_immortality_hex", "items/shield_of_immortali
 -- Item
 --------------------------------------------------------------------------------
 item_shield_of_immortality = class({
+
 	GetIntrinsicModifierName = function(self) return "modifier_shield_of_immortality" end,
 
 	Precache = function(self, context)
@@ -22,6 +23,12 @@ item_shield_of_immortality = class({
 
 		local caster = self:GetCaster()
 		local dur = self:GetSpecialValueFor("barrier_duration")
+
+		-- У Медузы мана - это её здоровье через Mana Shield, поэтому активация
+		-- предмета ей ничего не стоит: движок уже снял ману, возвращаем её назад.
+		if caster:HasModifier("modifier_medusa_mana_shield") then
+			caster:GiveMana(self:GetManaCost(self:GetLevel() - 1))
+		end
 
 		caster:AddNewModifier(caster, self, "modifier_shield_of_immortality_hex", { duration = dur })
 
@@ -57,6 +64,22 @@ item_shield_of_immortality = class({
 	end
 })
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_shield_of_immortality:Precache(context)
+	PrecacheResource("model", "models/items/hex/sheep_hex/sheep_hex_gold.vmdl", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf", context)
+end
+
+--------------------------------------------------------------------------------
+-- Медуза: Mana Shield платит маной за урон, который щит и так съедает.
+-- Движок считает поглощение маны раньше нашего INCOMING_DAMAGE_CONSTANT, поэтому
+-- убрать списание нельзя - возвращаем ману после события урона, ровно в той доле,
+-- которую забрал барьер, и не больше, чем реально ушло с прошлой отметки.
+--------------------------------------------------------------------------------
+local MANA_SHIELD_MODIFIER = "modifier_medusa_mana_shield"
+
 --------------------------------------------------------------------------------
 -- Passive (barrier + stats)
 --------------------------------------------------------------------------------
@@ -73,6 +96,7 @@ modifier_shield_of_immortality = class({
 			MODIFIER_PROPERTY_MANA_BONUS,
 			MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 			MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK,
+			MODIFIER_EVENT_ON_TAKEDAMAGE,
 		}
 	end,
 
@@ -111,20 +135,53 @@ modifier_shield_of_immortality = class({
 			local mult = self:GetAbility():GetSpecialValueFor("barrier_percent") / 100
 			self:SetStackCount(self:GetStackCount() + mult * damage)
 
-			if IsServer() then return damage * -1 end
+			if IsServer() then
+				self.som_incoming = damage
+				self.som_absorbed = damage
+				return damage * -1
+			end
 			if IsClient() then return self:GetStackCount() end
 		end
 
 		-- вне хекса: барьер блокирует урон пока есть стаки
 		local blocked = self:GetStackCount()
+		if blocked > damage then blocked = damage end
 
 		self:SetStackCount(self:GetStackCount() - damage)
 		if self:GetStackCount() < 0 then
 			self:SetStackCount(0)
 		end
 
-		if IsServer() then return blocked * -1 end
+		if IsServer() then
+			self.som_incoming = damage
+			self.som_absorbed = blocked
+			return blocked * -1
+		end
 		if IsClient() then return self:GetStackCount() end
+	end,
+
+	-- Возврат маны Медузе за поглощённую барьером долю урона.
+	OnTakeDamage = function(self, params)
+		if not IsServer() then return end
+
+		local parent = self:GetParent()
+		if params.unit ~= parent then return end
+
+		local absorbed = self.som_absorbed or 0
+		local incoming = self.som_incoming or 0
+		self.som_absorbed = 0
+		self.som_incoming = 0
+
+		if absorbed > 0 and incoming > 0 and parent:HasModifier(MANA_SHIELD_MODIFIER) then
+			local lost = (self.som_mana_mark or parent:GetMana()) - parent:GetMana()
+			if lost > 0 then
+				local share = absorbed / incoming
+				if share > 1 then share = 1 end
+				parent:GiveMana(lost * share)
+			end
+		end
+
+		self.som_mana_mark = parent:GetMana()
 	end,
 
 	OnCreated = function(self)
@@ -133,12 +190,18 @@ modifier_shield_of_immortality = class({
 		local parent = self:GetParent()
 		local key = "som_decay" .. tostring(parent:entindex())
 
+		self.som_absorbed = 0
+		self.som_incoming = 0
+		self.som_mana_mark = parent:GetMana()
+
 		Timers:CreateTimer(key, {
 			useGameTime = true,
 			endTime = 0,
 			callback = function()
 				if not IsValidEntity(parent) then return nil end
 				if not self:GetAbility() then return nil end
+
+				self.som_mana_mark = parent:GetMana()
 
 				local decay_mult = self:GetAbility():GetSpecialValueFor("barrier_decay")
 				if parent:HasModifier("modifier_shield_of_immortality_hex") then

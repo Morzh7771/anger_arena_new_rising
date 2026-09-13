@@ -38,11 +38,14 @@ DOTAAbilities
 				"special_bonus_unique_clinkz_7"			"+60"
 			}
 	
-			"duration"						"5.5"
+			"duration"
+			{
+				"value"				"5.5"
+				"special_bonus_unique_clinkz_1"				"+1.0"
+			}
 			"attack_range_bonus"			
 			{
 				"value"												"200"
-				"special_bonus_facet_clinkz_suppressive_fire"			"+100"
 			}
 			"AbilityCooldown"				
 			{
@@ -59,12 +62,10 @@ DOTAAbilities
 			"debuff_duration"					
 			{
 				"value"							"0"
-				"special_bonus_facet_clinkz_suppressive_fire"			"=1.0"
 			}
 			"blind_pct"
 			{
 				"value"							"0"
-				"special_bonus_facet_clinkz_suppressive_fire"			"=5"
 			}
 		}
 	}
@@ -112,7 +113,6 @@ DOTAAbilities
 			}
 			"archers_use_barrage"		"0"
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"clinkz_searing_arrows"
 	{
@@ -131,11 +131,11 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -147,8 +147,14 @@ DOTAAbilities
 		{
 			"damage_bonus"
 			{
-				"value" "24 36 48 60"
+				"value" "24 36 48 60 72 84 96"
 			}
+			"has_multishot"
+			{
+				"special_bonus_unique_clinkz_3"				"1"
+			}
+			"skeleton_damage_pct"				"50"
+			"AbilityCastRange"				"600"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -165,7 +171,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -189,6 +195,12 @@ DOTAAbilities
 			}
 			"skeleton_offset"				"250"
 			"skeleton_offset_min"				"150"
+			"skeleton_duration"				"20 25 30 35 40 45 50"
+			"skeleton_health"				"8"
+			"skeleton_health_tooltip"				"2"
+			"skeleton_building_damage_reduction"				"75"
+			"attack_rate"				"1.6"
+			"damage_percent"				"20"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -197,15 +209,13 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"clinkz_burning_army"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
-		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Clinkz.DeathPact"
 
 		// Casting
@@ -236,9 +246,8 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"clinkz_scepter"
-		"MaxLevel"		"7"
+		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST  | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
-		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"			"1"
@@ -288,7 +297,7 @@ DOTAAbilities
 			"AbilityChargeRestoreTime"
 			{
 				"value"				"30"
-				"special_bonus_facet_clinkz_engulfing_step"				"-10"
+				"special_bonus_unique_clinkz_9"				"-10"
 			}
 			"health_gain"			
 			{
@@ -303,7 +312,6 @@ DOTAAbilities
 			"spawn_skeleton_on_origin"
 			{
 				"value"				"0"
-				"special_bonus_facet_clinkz_engulfing_step"				"1"
 			}
 			"skeleton_building_damage_reduction"			"25"
 			"attack_rate"			"1.2"
@@ -316,7 +324,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"clinkz_bone_and_arrow"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Clinkz.DeathPact"
 		"AbilityDraftUltScepterAbility" "clinkz_burning_army"
@@ -387,7 +395,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -439,9 +447,24 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"clinkz_empty1"
-		"MaxLevel"		"7"
+		"MaxLevel"		"0"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	}
+
+	"clinkz_infernal_shred"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_NO"
+		"AbilitySound"				"Hero_Clinkz.DeathPact"
+		"Innate"				"1"
+		"AbilityValues"
+		{
+			"duration"				"5"
+			"hero_stacks"				"3"
+			"skeleton_stacks"				"1"
+			"max_armor_piercing_pct"				"20"
+		}
 	}
 }

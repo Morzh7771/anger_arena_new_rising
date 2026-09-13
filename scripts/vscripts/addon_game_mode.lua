@@ -5,13 +5,28 @@ if AngelArena == nil then
 end
 print("[AA] addon_game_mode loaded (top of file)")
 
+-- То же, что в addon_init.lua: без библиотеки debug валвовский обработчик
+-- ошибок падает сам и вместо текста ошибки в консоль летит
+-- "error in error handling". Порядок загрузки двух файлов не гарантирован,
+-- поэтому заглушка стоит в обоих; rawget - чтобы не затереть настоящую.
+if not rawget(_G, "debug") then
+    _G.debug = {
+        traceback = function(msg, level) return msg end,
+        getinfo   = function() return nil end,
+    }
+end
+
 local function safe_require(name)
     local ok, res = xpcall(function()
         return require(name)
     end, function(msg)
         print("!!! safe_require FAILED:", name)
         print(tostring(msg))
-        print(debug.traceback("Traceback:", 2))
+        -- на боевом сервере debug == nil, и сам обработчик ошибки падал тут же,
+        -- съедая сообщение о том, какой файл на самом деле не загрузился
+        if debug and debug.traceback then
+            print(debug.traceback("Traceback:", 2))
+        end
         return msg
     end)
 
@@ -31,6 +46,8 @@ safe_require('lib/boss/boss_spawner')
 safe_require('lib/panorama_pings')
 safe_require('lib/spawners/creep_spawner')
 safe_require('lib/spawners/creep_leveling')
+safe_require('lib/spawners/camp_sleep')
+safe_require('lib/neutral/madstone_system')
 safe_require('lib/timers')
 safe_require('lib/attentions')
 safe_require('lib/team_helper')
@@ -41,6 +58,7 @@ safe_require('lib/spawners/bear_spawner')
 safe_require('lib/bounty')
 safe_require('lib/game_ender')
 safe_require('lib/repick_menu')
+safe_require('lib/tip_manager')
 safe_require('lib/special_bonus_base_aa/Special_bonus_base_aa')
 --safe_require('lib/events_protector')
 
@@ -64,16 +82,128 @@ end
 --     end
 -- end
 
+-- ДИАГНОСТИКА ЛИМИТА 32767.
+--
+-- true  - Precache() не грузит вообще ничего.
+-- false - обычное поведение.
+--
+-- Смысл: если с true карта запускается (пусть без эффектов и с error-моделями),
+-- значит лимит выбивает именно Precache и дальше режем его дальше. Если с true
+-- карта падает точно так же - Precache ни при чём, виноват сам контент карты
+-- или KV, и копать надо там. Без этой развилки любой следующий шаг - гадание.
+PRECACHE_MINIMAL = false
+
 function Precache(context)
-    -- Партиклы
-    --PrecacheResource("particle_folder", "particles", context)
+    if PRECACHE_MINIMAL then
+        print("[AA] PRECACHE_MINIMAL: прекеш пропущен целиком")
+        return
+    end
 
-    -- Юниты/герои
-    -- local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
-    -- local hero_kv  = LoadKeyValues("scripts/npc/npc_heroes_custom.txt") or {}
+    -- Партиклы.
+    --
+    -- Раньше тут было PrecacheResource("particle_folder", "particles", context) -
+    -- вся папка целиком, 501 система, каждая со своими детьми, материалами и
+    -- текстурами. Именно это выбивало лимит загружаемых ресурсов (32767) и роняло
+    -- карту на старте.
+    --
+    -- Теперь на старте грузим только то, что стоит на карте с первой секунды.
+    -- Геройское и предметное подтягивается само в момент, когда оно нужно:
+    --   - particles/units/heroes/hero_* лежат по ванильным путям и перекрывают
+    --     оригиналы, движок берёт их вместе с героем;
+    --   - остальное объявлено в методах <ability>:Precache(context) у самих
+    --     способностей - движок зовёт их, когда прекешит юнита с этой
+    --     способностью, то есть на пике и на репике через PrecacheUnitByNameAsync.
+    local PARTICLE_FOLDERS_AT_LOAD = {
+        "particles/basic_ambient",
+        "particles/basic_explosion",
+        "particles/basic_projectile",
+        "particles/basic_rope",
+        "particles/basic_trail",
+        "particles/creep_elite",
+        "particles/lane_creeps",
+        "particles/shrine_restore_radiant",
+        "particles/damned_eye",
+    }
 
-    -- forPrecache(units_kv, context)
-    -- forPrecache(hero_kv, context)
+    for _, folder in ipairs(PARTICLE_FOLDERS_AT_LOAD) do
+        PrecacheResource("particle_folder", folder, context)
+    end
+
+    -- Партиклы и модели, на которые ссылается только lua: смена модели через
+    -- MODIFIER_PROPERTY_MODEL_CHANGE/SetModel, econ-эффекты и партиклы чужих героев.
+    -- Ничего из этого движок сам не грузит - без прекеша получаются error-модели
+    -- (например башня у ульты guardian_of_the_ancients) и пропавшие эффекты.
+    -- не через safe_require: он кидает error, а падать в Precache нельзя
+    local ok, precacheList = pcall(require, 'lib/precache_list')
+
+    if not ok then
+        print("[AA] precache_list not loaded:", tostring(precacheList))
+        precacheList = nil
+    end
+
+    if precacheList then
+        -- ВНИМАНИЕ: список партиклов отсюда прекешить нельзя.
+        --
+        -- Движок держит загружаемые ресурсы в списке с индексом unsigned short,
+        -- то есть максимум 32767 штук. Одна только папка particles (~500 файлов)
+        -- съедает большую часть бюджета.
+        -- precacheList.particles добавляет 318 путей, из которых 124 ведут в
+        -- particles/units (ванильные геройские партиклы) и 59 в particles/econ -
+        -- каждый такой партикл тянет за собой дерево детей, материалов и текстур.
+        -- С ними карта падает на старте с
+        --   CUtlBlockVector<...CLoadingResource*...>::GrowCount:
+        --   unable to grow count by 1 (currently 32767)
+        --
+        -- Модели оставляем: их всего 21, они дешёвые и именно они чинили
+        -- error-модель (башня у ульты guardian_of_the_ancients).
+        for _, modelName in pairs(precacheList.models or {}) do
+            PrecacheResource("model", modelName, context)
+        end
+    end
+
+    -- Кастомные юниты.
+    --
+    -- Раньше тут синхронно прекешились ВСЕ юниты из npc_units_custom.txt (31
+    -- штука). Каждый тянет модель, все свои способности и их партиклы со
+    -- звуками - вместе с папкой particles это выбивало лимит загружаемых
+    -- ресурсов (32767) ещё до входа в игру.
+    --
+    -- Поэтому на старте грузим только то, что стоит на карте с первой секунды.
+    -- Остальное прекешится асинхронно по месту, и это уже написано:
+    --   боссы          - lib/boss/boss_class.lua:84
+    --   крипы          - lib/spawners/creep_spawner.lua:103
+    -- Некрономикон и сова появляются только после покупки/каста, им хватает
+    -- асинхронного прекеша в момент использования.
+    local PRECACHE_AT_LOAD = {
+        npc_dota_custom_tower = true,
+        npc_dota_watch_tower = true,
+        npc_aa_bulding_shrine_dire = true,
+        npc_aa_bulding_shrine_radiant = true,
+        npc_dota_lantern = true,
+        npc_tree_thinker = true,
+        npc_teleport = true,
+        npc_aa_minimap_ancient_stack = true,
+        npc_aa_minimap_big_stack = true,
+        npc_aa_minimap_mid = true,
+        npc_aa_minimap_portal = true,
+        npc_aa_minimap_boss = true,
+        npc_aa_minimap_cobold = true,
+        npc_aa_minimap_neutral_stack = true,
+    }
+
+    local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
+
+    for unitname, unit_kv in pairs(units_kv) do
+        if type(unit_kv) == "table" and type(unitname) == "string" and PRECACHE_AT_LOAD[unitname] then
+            PrecacheUnitByNameSync(unitname, context)
+        end
+    end
+
+    -- Модели дропа нейтралки: связка безумрудов и коробка, в которой лежат
+    -- сами нейтральные предметы. Обе кладём руками - на них ссылаются только
+    -- KV предметов (neutral_items_stat.txt), сами по себе они не подтянутся.
+    PrecacheResource("model", "models/props_gameplay/crystal_shards/crystal_shards.vmdl", context)
+    PrecacheResource("model", "models/props_gameplay/neutral_box.vmdl", context)
 
     -- Остальное
     DuelController:Precache(context)
@@ -201,6 +331,10 @@ function UpdatePlayersCount()
         had_players_on_both_teams = true
     end
 
+    -- Пока в игре ни разу не было двух команд, это одиночное лобби - завершать нечего.
+    -- Без этой проверки хост, зашедший один, получал конец игры через 30 секунд.
+    if not had_players_on_both_teams then return end
+
     if nPlayersConnected == 0 then
         DuelController:SetFreezeTimer(true)
         GameEnder:StartGameEnd(DOTA_TEAM_NEUTRALS)
@@ -258,6 +392,14 @@ function AngelArena:InitGameMode()
 
 	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepLeveling:OnSpawnCallback(arg); end)
 	CreepSpawner:RegisterOnDeathCallback(function(arg) CreepLeveling:OnDeathCallback(arg); end)
+
+	-- лагеря, рядом с которыми никого нет, перестают сканировать карту в
+	-- поисках цели: к 10 минуте таких почти все, а крипов на карте под 480
+	CampSleep:Init()
+	CreepSpawner:RegisterOnSpawnCallback(function(arg) CampSleep:OnCreepSpawned(arg); end)
+
+	-- безумруды с зачищенных кемпов + гейт тиров нейтралок по дуэлям
+	MadstoneSystem:Init()
 	if GameRules:IsCheatMode()then
 		cheat = true
 	end
@@ -375,6 +517,20 @@ function AngelArena:ModifierRuneSpawn(keys)
 
 	local Dotatime = GameRules:GetDOTATime(false, false)
 		keys.rune_type = runes[RandomInt(1, #runes)]
+
+	-- Фильтр срабатывает на каждом спавне руны усиления. Запоминаем, когда
+	-- будет следующая: интервал задан через GameRules:SetRuneSpawnTime(120).
+	-- Отсюда это читает lib/bounty.lua и кладёт в нет-таблицу rune_timers,
+	-- по которой панорама рисует кружки под таймером.
+	_G.NEXT_POWER_RUNE_TIME = Dotatime + 120
+
+	-- Заодно запоминаем сам спавнер: по нему alt-клик по кружку руны усиления
+	-- ставит пинги (lib/bounty.lua -> lib/panorama_pings.lua). До первой руны
+	-- точки ищутся по классу энтити, дальше берутся отсюда.
+	if Bounty then
+		Bounty:RememberPowerSpawner(keys.spawner_entindex_const)
+	end
+
 	return true
 end
 function AngelArena:OnRuneActivate(event)
@@ -529,9 +685,10 @@ function AngelArena:OnConnectFull(event)
 	PlayerResource:OnPlayerConnected(playerID, event.userid)
 end
 function AngelArena:GoldFilter(event)
-	print(event.gold)
 	ComebackSystem:OnGiveGold( event.player_id_const, event.gold, event.reliable, event.reason_const )
-	AngelArena:SaveGold(event.gold)
+	-- фильтр дёргается на каждый голд-тик и каждое убийство, так что обрабатываем
+	-- только того игрока, чьё золото изменилось, а не всех сразу
+	AngelArena:SaveGoldForPlayerId(event.player_id_const, event.gold)
 	return true
 end
 function AngelArena:OnPlayerBuyItem(event)
@@ -580,7 +737,11 @@ function AngelArena:SaveGoldForPlayerId(playerid,gold)
 
 	  	local total_gold = PlayerResource:GetGold(playerid) + tPlayers[playerid].gold -- почему не player_gold? потому что золото игрока изменилось, а эта переменная нет :c
 
-	  	CustomNetTables:SetTableValue("gold", "player_id_" .. playerid, { gold = total_gold })
+		-- неттейбл рассылается всем клиентам, поэтому пишем только при изменении
+		if tPlayers[playerid].netGold ~= total_gold then
+			tPlayers[playerid].netGold = total_gold
+			CustomNetTables:SetTableValue("gold", "player_id_" .. playerid, { gold = total_gold })
+		end
 	end
 end
 
@@ -637,6 +798,27 @@ function AngelArena:OnGameStateChange()
 			UTIL_Remove(spawner)
 		end
 		print('remove spawner')
+
+		-- Невидимые юниты-иконки (npc_aa_minimap_*) стоят на карте ради значков
+		-- кемпов, боссов и порталов на миникарте. Сквозь туман их показывает
+		-- modifier_hidden_from_map (PROVIDES_FOW_POSITION); он приходит
+		-- врождённой способностью, но на здания из Hammer она может и не
+		-- навеситься - поэтому проверяем и при нужде вешаем сами.
+		local icons = 0
+
+		for _, unit in pairs(Entities:FindAllByClassname("npc_dota_building")) do
+			local unitname = unit.GetUnitName and unit:GetUnitName() or ""
+
+			if unitname:sub(1, 15) == "npc_aa_minimap_" then
+				if not unit:HasModifier("modifier_hidden_from_map") then
+					unit:AddNewModifier(unit, nil, "modifier_hidden_from_map", {})
+				end
+
+				icons = icons + 1
+			end
+		end
+
+		print('[AA] minimap icons:', icons)
 
 		for number,name in pairs(portals) do
 			local spawnpoint = Entities:FindByName( nil, name )
@@ -706,19 +888,26 @@ function AngelArena:OnGameStateChange()
 				return 0.5
 			end)
 
-			local rad, dire, total = GetActivePlayersPerTeam()
-
-			had_players_on_both_teams = (rad > 0 and dire > 0)
-
-			if (not duel_inited) and had_players_on_both_teams then
+			-- Контроллер дуэлей запускаем всегда и первым делом. Раньше он
+			-- поднимался только если обе стороны заняты ровно в момент перехода
+			-- в GAME_IN_PROGRESS, а блок выполняется один раз - поэтому при игре
+			-- одному таймер дуэлей не шёл вообще, и вместе с ним не работали ни
+			-- сброс кулдаунов, ни репик-меню (оно смотрит GetTimeToDuel).
+			-- Нехватку противников разруливает сам _StartDuel: пишет
+			-- "недостаточно игроков" и тикает дальше.
+			if not duel_inited then
+				duel_inited = true
 				DuelController:OnGameStart(function(winnerTeam)
 					is_game_end = true
 					DuelController:SetFreezeTimer(true)
 					GameEnder:ForceEnd(winnerTeam)
 				end)
-				duel_inited = true
-			else
-				print(string.format("[Duel] not started: rad=%d dire=%d total=%d", rad, dire, total))
+			end
+
+			local ok, rad, dire = pcall(GetActivePlayersPerTeam)
+
+			if ok then
+				had_players_on_both_teams = (rad > 0 and dire > 0)
 			end
 
 			is_game_start = true
@@ -779,7 +968,13 @@ function AngelArena:OnNPCSpawned(keys)
 		if playerid ~= nil and playerid ~= -1 then
 			local original_hero = PlayerResource:GetSelectedHeroEntity( playerid )
 
-			if original_hero and not original_hero:IsNull() then
+			-- Копируем способности и статы только если иллюзия - копия САМОГО героя игрока.
+			-- Dark Portrait гримстроука и подобные делают иллюзию чужого героя: для них
+			-- эта ветка затирала бы способности и атрибуты копией владельца.
+			local is_self_copy = original_hero and not original_hero:IsNull()
+				and spawnedUnit:GetUnitName() == original_hero:GetUnitName()
+
+			if is_self_copy then
 				if not illusion_bug_crash[spawnedUnit:GetUnitName()] then
 					local ability
 					for i = 0, spawnedUnit:GetAbilityCount() - 1 do
@@ -793,13 +988,11 @@ function AngelArena:OnNPCSpawned(keys)
 					end
 				end
 
-				local str = original_hero:GetBaseStrength() - (original_hero:GetLevel() - 1) * original_hero:GetStrengthGain()
-				local agi = original_hero:GetBaseAgility() - (original_hero:GetLevel() - 1) * original_hero:GetAgilityGain()
-				local int = original_hero:GetBaseIntellect() - (original_hero:GetLevel() - 1) * original_hero:GetIntellectGain()
-
-				spawnedUnit:SetBaseStrength(str)
-				spawnedUnit:SetBaseIntellect(int)
-				spawnedUnit:SetBaseAgility(agi)
+				-- Раньше отсюда вычитался прирост за уровни, из-за чего иллюзия
+				-- получала атрибуты героя 1 уровня. Копируем базу как есть.
+				spawnedUnit:SetBaseStrength(original_hero:GetBaseStrength())
+				spawnedUnit:SetBaseIntellect(original_hero:GetBaseIntellect())
+				spawnedUnit:SetBaseAgility(original_hero:GetBaseAgility())
 				spawnedUnit:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
 				if original_hero.medical_tractates then
 					spawnedUnit.medical_tractates = original_hero.medical_tractates
@@ -1029,7 +1222,9 @@ function AngelArena:DamageFilter(event)
 	-----------------------------------------------------------------------------------------------------
 	------------------------------ Костыль для ланаи ----------------------------------------------------
 	-----------------------------------------------------------------------------------------------------
-	if attacker and victim:HasModifier("modifier_templar_assassin_refraction_absorb") then
+	-- victim обязательно проверять: раньше проверялся attacker, а разыменовывался
+	-- victim, и урон без жертвы ронял весь фильтр
+	if attacker and victim and victim:HasModifier("modifier_templar_assassin_refraction_absorb") then
 		if skill_name ~= "item_helm_of_the_undying" and skill_name ~= "skeleton_king_reincarnation" then
 			return
 		end
@@ -1039,7 +1234,7 @@ function AngelArena:DamageFilter(event)
 	--------------------------------- Procent damage enable for some skills -----------------------------
 	-----------------------------------------------------------------------------------------------------
 
-	if skill_name and _G.skill_callback and _G.skill_callback[skill_name] then
+	if attacker and skill_name and _G.skill_callback and _G.skill_callback[skill_name] then
 		if victim and (victim:IsHero() or victim:IsCreep() or victim:IsAncient()) then
 
 			for callback_id, callback in pairs(_G.skill_callback[skill_name]) do
@@ -1174,7 +1369,10 @@ function AngelArena:OnPlayerUsedAbility(event)
 	end
 end
 
-local function GetActivePlayersPerTeam()
+-- Не local: зовётся из OnGameRulesStateChange выше по файлу, где локальная
+-- версия ещё не в области видимости (был вызов nil - и весь блок старта игры
+-- падал с ошибкой, не доходя до запуска DuelController).
+function GetActivePlayersPerTeam()
     local rad = 0
     local dire = 0
     local total = 0

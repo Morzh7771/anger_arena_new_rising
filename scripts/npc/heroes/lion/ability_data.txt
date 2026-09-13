@@ -17,7 +17,7 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		
 
@@ -81,7 +81,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"625"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 
 		// Cost
@@ -126,7 +126,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"850"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityChannelTime"				"5.1"
 
 		// Time		
@@ -135,7 +135,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"10 10 10 10"
+		"AbilityManaCost"				"10"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -170,8 +170,6 @@ DOTAAbilities
 				"damage_pct"                    
                 {
                     "value"                 "0"     
-                    "special_bonus_facet_lion_essence_eater"    "+100"
-                    "RequiresFacet"     "lion_essence_eater"
                 }
 				"magic_resist"
 				{
@@ -182,8 +180,6 @@ DOTAAbilities
 				"mana_damage_pct"
 				{
 					"value"				"0"
-					"special_bonus_facet_lion_essence_eater"    "+2"
-					"RequiresFacet"     "lion_essence_eater"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -195,7 +191,7 @@ DOTAAbilities
 		"BaseClass"			"lion_finger_of_death"
 		"MaxLevel"		"7"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -208,7 +204,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -245,80 +241,53 @@ DOTAAbilities
 				"value"				"0.25"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"cooldown_scepter"			
-			{
-				"value"	"55.0 50.0 45.0 40.0 35.0 30.0 25.0"
-				"RequiresScepter"			"1"
-			}
-			"splash_radius_scepter"		
-			{
-				"value"		"325"
-				"RequiresScepter"			"1"
-				"affected_by_aoe_increase"  "1"
-			}
 			"punch_duration"
-            {
-                "value"                     "0"
-                "special_bonus_facet_lion_fist_of_death"    "+15"
-                "RequiresFacet"         "lion_fist_of_death"
-            }
-            "punch_attack_range"
-            {
-                "value"                     "0"
-                "special_bonus_facet_lion_fist_of_death"    "=250"
-                "RequiresFacet"         "lion_fist_of_death"
-            }
-            "punch_bonus_damage_base"
-            {
-                "value"                     "0"
-                "special_bonus_facet_lion_fist_of_death"    "+60"
-                "RequiresFacet"         "lion_fist_of_death"
-            }
-            "punch_bonus_damage_per_stack"
-            {
-                "value"                     "0"
-                "special_bonus_facet_lion_fist_of_death"    "+40"
-                "RequiresFacet"         "lion_fist_of_death"
-            }
-            "punch_grace_period"
-            {
-                "value"                     "0"
-                "special_bonus_facet_lion_fist_of_death"    "+5"
-                "RequiresFacet"         "lion_fist_of_death"
-            }
-            "cleave_starting_width"
-            {
-                "value"                     "0"
-                "special_bonus_facet_lion_fist_of_death"    "+150"
-                "affected_by_aoe_increase"  "1"
-                "RequiresFacet"         "lion_fist_of_death"
-            }
-            "cleave_ending_width"
-            {
-                "value"                     "0"
-                "special_bonus_facet_lion_fist_of_death"    "+360"
-                "affected_by_aoe_increase"  "1"
-                "RequiresFacet"         "lion_fist_of_death"
-            }
-            "cleave_distance"
-            {
-                "value"                     "0"
-                "special_bonus_facet_lion_fist_of_death"    "+650"
-                "affected_by_aoe_increase"  "1"
-                "RequiresFacet"         "lion_fist_of_death"
-            }
-            "cleave_damage"
-            {
-                "value"                         "0"
-                "special_bonus_facet_lion_fist_of_death"    "+50"
-                "RequiresFacet"                 "lion_fist_of_death"
-                "CalculateSpellDamageTooltip"   "0"
-                "DamageTypeTooltip"             "DAMAGE_TYPE_NONE"
-            }
+			{
+				"value"						"20"
+				"special_bonus_scepter"		"+10"
+			}
+			"punch_attack_range"			"250"
+			"punch_bonus_damage_base"
+			{
+				"value"							"20 30 40 50 60 70 80"
+				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+			}
+			"punch_bonus_damage_per_stack"	"40"
+			"punch_grace_period"			"5"
+			"cleave_damage"
+			{
+				"value"							"50"
+				"special_bonus_scepter"			"+25"
+				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+			}
+			"cleave_starting_width"
+			{
+				"value"						"150"
+				"affected_by_aoe_increase"	"1"
+			}
+			"cleave_ending_width"
+			{
+				"value"						"360"
+				"affected_by_aoe_increase"	"1"
+			}
+			"cleave_distance"
+			{
+				"value"						"650"
+				"affected_by_aoe_increase"	"1"
+			}
+			"punch_bonus_movespeed"				"30"
+			"splash_radius"
+			{
+				"special_bonus_scepter"				"325"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 	}
 	"special_bonus_unique_lion_2"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -330,6 +299,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_lion_3"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -353,6 +323,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_lion_5"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -364,6 +335,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_lion_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -376,6 +348,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_lion_8"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -388,6 +361,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_lion_10"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -399,6 +373,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_lion_11"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -428,8 +403,17 @@ DOTAAbilities
         "AbilityValues"
         {
             "duration"                  "120"
-            "spell_amp"                 "10"
-            "debuff_amp"                "30"
+            "spell_amp"
+            {
+            	"value"				"10"
+            	"special_bonus_unique_lion_11"				"+15"
+            }
+            "debuff_amp"
+            {
+            	"value"				"30"
+            	"special_bonus_unique_lion_11"				"+15"
+            }
+        	"damage_window"				"3.0"
         }
     }
 }

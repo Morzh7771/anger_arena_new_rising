@@ -64,6 +64,7 @@ end
 --------------------------------------------------------------------------------
 function modifier_zombie_walking_jump_active:OnHorizontalMotionInterrupted()
     ParticleManager:DestroyParticle(self.particleJump, false)
+    ParticleManager:ReleaseParticleIndex(self.particleJump)
     if IsServer() then
         self:Destroy()
     end

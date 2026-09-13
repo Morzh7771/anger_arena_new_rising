@@ -47,6 +47,7 @@ function mod:OnAttacked( params )
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_time_lock_bash_hit.vpcf",  PATTACH_POINT_FOLLOW, target)
 
 	ParticleManager:SetParticleControlEnt(particle, 0, target,  PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), false)
+	ParticleManager:ReleaseParticleIndex(particle)
 
 	target:EmitSound("DOTA_Item.SkullBasher") -- sounds/items/skull_basher.vsnd -- soundevents/game_sounds_items.vsndevts
 

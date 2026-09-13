@@ -279,7 +279,7 @@ function HeroSelection:SelectHero(playerId, hero)
 
 		self:GiveStartingHero(playerId, hero)
 --		print('Giving player ' .. playerId .. ' ' .. hero)
-	end)
+	end, playerId)
 end
 
 function HeroSelection:GiveStartingHero(playerId, heroName, dev)
@@ -422,7 +422,7 @@ end
 -- receive choise from players about their selection
 function HeroSelection:HeroSelected(event)
 	HeroSelection:UpdateTable(event.PlayerID, event.hero)
-	PrecacheUnitByNameAsync(event.hero, function(...) end)
+	PrecacheUnitByNameAsync(event.hero, function(...) end, event.PlayerID)
 end
 
 function HeroSelection:HeroPreview(event)

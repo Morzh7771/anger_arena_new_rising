@@ -117,15 +117,30 @@ function item_repick_hero:PickHero(player, newHeroName)
 		return false 
 	end
 
-    local newhero = PlayerResource:ReplaceHeroWith( hero:GetPlayerID(), newHeroName, hero:GetGold(), 0 )
-    local turn = 0
-    Timers:CreateTimer(0.1, function()
-        turn = turn + 1
-        if turn < 100 then
-            newhero:FindItemInInventory("item_repick_hero"):Destroy()
-            return 0.1
-        end
-    end)
+    local playerid = hero:GetPlayerID()
+    local gold = hero:GetGold()
+    -- Четвёртый аргумент ReplaceHeroWith - опыт. С нулём герой приходит первого
+    -- уровня. Читаем до прекеша: в колбэке старого героя уже может не быть.
+    local xp = hero:GetCurrentXP() or 0
+
+    -- без прекеша новый герой появляется с error-моделью и без партиклов у способностей
+    PrecacheUnitByNameAsync(newHeroName, function()
+        local newhero = PlayerResource:ReplaceHeroWith( playerid, newHeroName, gold, xp )
+
+        if not newhero or newhero:IsNull() then return end
+
+        local turn = 0
+        Timers:CreateTimer(0.1, function()
+            turn = turn + 1
+            if turn < 100 then
+                if newhero and not newhero:IsNull() then
+                    local item = newhero:FindItemInInventory("item_repick_hero")
+                    if item then item:Destroy() end
+                end
+                return 0.1
+            end
+        end)
+    end, playerid)
 
 	return true
 end

@@ -47,4 +47,5 @@ function ability:OnSpellStart()
 
 	local idx = ParticleManager:CreateParticle("particles/econ/items/centaur/centaur_ti6/centaur_ti6_warstomp.vpcf", PATTACH_ABSORIGIN, caster)
 	ParticleManager:SetParticleControl(idx, 1, Vector(radius, 0, 0) )
+	ParticleManager:ReleaseParticleIndex(idx)
 end

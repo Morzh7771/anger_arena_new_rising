@@ -2,12 +2,20 @@ LinkLuaModifier("modifier_item_bracer_custom", "items/item_bracer_custom", LUA_M
 LinkLuaModifier("modifier_item_bracer_custom_heal", "/items/item_bracer_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_bracer_custom = class({
+
     GetIntrinsicModifierName = function (self) return "modifier_item_bracer_custom" end,
     OnSpellStart = function (self) 
         self:GetParent():EmitSound("DOTA_Item.TranquilBoots.Activate")
         self:GetParent():AddNewModifier(self:GetParent(), self, "modifier_item_bracer_custom_heal", {duration = self:GetSpecialValueFor("duration")})
     end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_bracer_custom:Precache(context)
+	PrecacheResource("particle", "particles/items2_fx/tranquil_boots.vpcf", context)
+end
 
 modifier_item_bracer_custom = class({
     IsHidden = function (self) return true end,

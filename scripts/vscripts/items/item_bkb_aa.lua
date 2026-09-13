@@ -1,6 +1,14 @@
 item_bkb_aa_1 = class({
+
 	GetIntrinsicModifierName = function (self) return "modifier_item_bkb_aa" end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_bkb_aa_1:Precache(context)
+	PrecacheResource("particle", "particles/items_fx/black_king_bar_avatar.vpcf", context)
+end
 item_bkb_aa_2 = item_bkb_aa_1
 item_bkb_aa_3 = item_bkb_aa_1
 item_mini_bkb = class({

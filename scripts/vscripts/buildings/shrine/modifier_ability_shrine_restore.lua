@@ -58,13 +58,22 @@ end
 function modifier_ability_shrine_restore:OnCreated( kv )
 	local ability = self:GetAbility()
 	if not ability then return end
-	
+
+	-- У зданий шрайна в KV нет ключа "Level", поэтому абилка остаётся нулевого
+	-- уровня, а GetSpecialValueFor на нулевом уровне отдаёт 0. Радиус ауры
+	-- выходил нулевым - шрайн не лечил вообще никого. Если уровень уже есть,
+	-- ничего не меняется, значения в любом случае берутся из KV.
+	if IsServer() and ability:GetLevel() < 1 then
+		ability:SetLevel( 1 )
+	end
+
 	self.aura_radius = ability:GetSpecialValueFor( "aura_radius" )
 	local parent = self:GetParent()
 
 	local particle1 = ParticleManager:CreateParticle( "particles/shrine_restore_radiant/shrine_restore_radiant.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent )
 
 	ParticleManager:SetParticleControlEnt( particle1, 0, parent, PATTACH_POINT_FOLLOW  , "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(particle1)
 end
 
 -------------------------------------------------------------------------------

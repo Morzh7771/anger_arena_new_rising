@@ -18,27 +18,7 @@
 		"Ability16"		"special_bonus_unique_huskar"
 		"Ability17"		"special_bonus_unique_huskar_5"
 
-		"Facets"
-        {
-            "huskar_bloodbath" 
-            {
-                "Icon"              "area_of_effect"
-                "Color"             "Red"
-                "GradientID"        "0"
-            }
-            "huskar_nothl_transfusion" 
-            {
-                "Icon"              "healing"
-                "Color"             "Blue"
-                "GradientID"        "2"
-            }
-            "huskar_nothl_conflagration" 
-            {
-                "Icon"              "damage"
-                "Color"             "Yellow"
-                "GradientID"        "0"
-            }
-        }
+
 
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

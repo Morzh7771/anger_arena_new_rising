@@ -165,6 +165,7 @@ end
 function BaseClass_dash_buff:OnDestroy()
     if IsServer() then
         ParticleManager:DestroyParticle( self.nParticle2, true )
+        ParticleManager:ReleaseParticleIndex(self.nParticle2)
         self:GetParent():FadeGesture(ACT_DOTA_RUN)
     end
 end

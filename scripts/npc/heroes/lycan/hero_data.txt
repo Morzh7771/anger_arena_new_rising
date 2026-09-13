@@ -3,7 +3,7 @@
 	"npc_dota_hero_lycan"
 	{
 		"override_hero"		"npc_dota_hero_lycan"
-		"Ability1"      "lycan_summon_wolves"
+        "Ability1"      "lycan_summon_wolves"
         "Ability2"      "lycan_howl"
         "Ability3"      "lycan_feral_impulse"
         "Ability4"      "lycan_wolf_bite"
@@ -18,38 +18,13 @@
 		"Ability17"		"special_bonus_unique_lycan_2"
 		"Ability16"		"special_bonus_unique_lycan_5"
 
-		"Facets"
-        {
-            "lycan_pack_leader"
-            {
-                "Icon"              "summons"
-                "Color"             "Gray"
-                "GradientID"        "1"
-            }
-            "lycan_spirit_wolves"   
-            {
-                "Icon"              "spirit"
-                "Color"             "Red"
-                "GradientID"        "0"
-                "AbilityIconReplacements"
-                {
-                    "lycan_summon_wolves"   "lycan_summon_spirit_wolves"
-                }
-            }
-            "lycan_alpha_wolves"
-            {
-                "Icon"              "wolf"
-                "Color"             "Green"
-                "GradientID"        "2"
-            }
-        }
+
         
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"lycan_summon_wolves"
 			"Ability2"		"lycan_howl"
 			"Ability3"		"lycan_feral_impulse"
-			"Ability4"		"lycan_shapeshift"
 		}		
 
 		"ArmorPhysical"		"0"

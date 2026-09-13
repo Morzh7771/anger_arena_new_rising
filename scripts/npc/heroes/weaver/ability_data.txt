@@ -58,9 +58,7 @@ DOTAAbilities
 			}
 			"experience_gain"
             {
-                "value"                     "0 0 0 0"
-                "special_bonus_facet_weaver_hivemind"   "=5 =8 =11 =14 =17 =20 =23"
-                "RequiresFacet"         "weaver_hivemind"
+                "value"                     "0"
             }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -100,7 +98,7 @@ DOTAAbilities
 			"speed"					"400"
 			"radius"                
             {
-                "value"     "175 175 175 175"
+                "value"     "175"
                 "affected_by_aoe_increase"  "1"
             }
 			"fade_time"				"0.15"
@@ -113,8 +111,7 @@ DOTAAbilities
 			"min_movespeed_override"
             {
                 "value"                                 "0"
-                "special_bonus_facet_weaver_skitterstep"                "+800"
-                "RequiresFacet"                     "weaver_skitterstep"
+            	"special_bonus_unique_weaver_shukuchi_movespeed"				"+50"
             }
 			"geminate_attack_mark_duration"
             {
@@ -135,12 +132,10 @@ DOTAAbilities
             "slow_duration"
             {
                 "value"                                 "0"
-                "special_bonus_facet_weaver_skitterstep"                "+0.2"
             }
             "slow_percent"
             {
                 "value"                                             "0"
-                "special_bonus_facet_weaver_skitterstep"        "+100"
             }
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -180,6 +175,11 @@ DOTAAbilities
                 "affected_by_aoe_increase"  "1"
                 "RequiresShard" "1"
             }
+			"extra_attack"
+			{
+				"value"				"1"
+				"special_bonus_unique_weaver_5"				"+1"
+			}
 		}		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -194,27 +194,31 @@ DOTAAbilities
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"500"
 		"AbilitySound"					"Hero_Weaver.TimeLapse"
 
 		"FightRecapLevel"				"2"
 
 		"HasScepterUpgrade"			"1"
 
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"60.0 55.0 50.0 45.0 40.0 35.0 30.0"
-		"AbilityManaCost"				"180.0 150.0 120.0 90.0 60.0 30.0 0.0"	
+		"AbilityManaCost"				"150 130 110 90 70 50 30"	
 		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-            "cooldown_scepter"
-            {
-                "value" "40"
-                "RequiresScepter" "1"
-            }
+        	"AbilityCooldown"
+        	{
+        		"value"				"70 65 60 55 50 45 40"
+        		"special_bonus_scepter"				"-10"
+        	}
+        	"targets_allies"
+        	{
+        		"value"				"0"
+        		"special_bonus_scepter"				"+1"
+        	}
         }
 	}
 	"weaver_rewoven"
@@ -230,10 +234,12 @@ DOTAAbilities
         {
             "attack_range_increase_per_stack"   "60"
             "duration"                          "10.0"
+        	"experience_gain"				"6"
         }
     }
 	"special_bonus_mana_break_20"
 	{
+		"BaseClass"					"special_bonus_base"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"6987"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
@@ -252,6 +258,7 @@ DOTAAbilities
 	}
 	"special_bonus_unique_weaver_1"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
@@ -326,4 +333,31 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	"weaver_threads_of_fate"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"Innate"				"1"
+		"IsBreakable"				"1"
+		"AbilityValues"
+		{
+			"thread_setup_distance"				"700"
+			"thread_setup_time"				"1.5"
+			"established_thread_duration"				"6"
+			"established_thread_break_distance"
+			{
+				"value"				"890"
+				"hero_levelup"				"10"
+			}
+			"damage_per_thread_hero"				"10"
+			"damage_per_thread_creep"				"0"
+			"death_linger_duration"				"5"
+			"slow_duration"				"0.4"
+			"slow_percent"
+			{
+				"value"				"100"
+			}
+		}
+	}
 }

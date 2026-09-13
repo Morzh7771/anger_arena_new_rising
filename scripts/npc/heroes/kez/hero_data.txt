@@ -27,16 +27,16 @@
         "Ability1"                  "kez_echo_slash"
         "Ability2"                  "kez_grappling_claw"
         "Ability3"                  "kez_kazurai_katana"
+        "Ability6"                  "kez_raptor_dance"
         "Ability4"                  "kez_switch_weapons"
         "Ability5"                  "generic_hidden"
-        "Ability6"                  "kez_raptor_dance"
         "Ability7"                  "kez_falcon_rush"
         "Ability8"                  "kez_talon_toss"
         "Ability9"                  "kez_shodo_sai"
         "Ability10"                 "kez_ravens_veil"
         "Ability11"                 "kez_shodo_sai_parry_cancel"
-        "Ability12"                 "special_bonus_magic_resistance_12"
-        "Ability13"                 "special_bonus_mp_regen_150"
+        "Ability12"                 "special_bonus_unique_kez_switch_weapons_swap_bonus"
+        "Ability13"                 "special_bonus_unique_kez_raptor_dance_strikes"
         "Ability14"                 "special_bonus_unique_kez_falcon_rush_duration"
         "Ability15"                 "special_bonus_unique_kez_raptor_dance_radius"
         "Ability16"                 "special_bonus_unique_kez_kazura_katana_bleed_damage"
@@ -53,15 +53,7 @@
             "Ability6"      "kez_raptor_dance"
         }
 
-        "Facets"
-        {   
-            "kez_default"   
-            {
-                "Icon"              "kez"
-                "Color"             "Blue"
-                "GradientID"        "3"
-            }
-        }
+
 
         "ArmorPhysical"     "2"
         "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"

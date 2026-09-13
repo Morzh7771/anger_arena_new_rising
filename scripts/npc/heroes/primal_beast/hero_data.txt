@@ -19,21 +19,7 @@
         "Ability16"             "special_bonus_unique_primal_beast_trample_unslowable"
         "Ability17"             "special_bonus_unique_primal_beast_pulverize_duration"
         
-        "Facets"
-        {
-            "primal_beast_romp_n_stomp"     
-            {
-                "Icon"              "speed"
-                "Color"             "Red"
-                "GradientID"        "0"
-            }
-            "primal_beast_ferocity"
-            {
-                "Icon"              "area_of_effect"
-                "Color"             "Yellow"
-                "GradientID"        "3"
-            }
-        }
+
         	
 		"ArmorPhysical"				"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

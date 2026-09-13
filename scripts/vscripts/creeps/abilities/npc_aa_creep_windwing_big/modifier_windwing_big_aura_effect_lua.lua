@@ -41,6 +41,7 @@ if IsServer() then
 		local particle = ParticleManager:CreateParticle( "particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_OVERHEAD_FOLLOW, parent )
 		
 		ParticleManager:SetParticleControl( particle, 0, parent:GetAbsOrigin() )
+		ParticleManager:ReleaseParticleIndex(particle)
 
 		SendOverheadEventMessage( parent, OVERHEAD_ALERT_HEAL, parent, steal, nil )
 	end

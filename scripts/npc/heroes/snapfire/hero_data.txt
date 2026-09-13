@@ -3,13 +3,13 @@
 	"npc_dota_hero_snapfire"
 	{
 		"override_hero"		"npc_dota_hero_snapfire"
-		"Ability1"              "snapfire_scatterblast"
-        "Ability2"              "snapfire_firesnap_cookie"
-        "Ability3"              "snapfire_lil_shredder"
+		"Ability1"		"snapfire_scatterblast"
+		"Ability2"		"snapfire_firesnap_cookie"
+		"Ability3"		"snapfire_lil_shredder"
         "Ability4"              "snapfire_gobble_up"
         "Ability5"              "snapfire_spit_creep"
         "Ability6"              "snapfire_mortimer_kisses"
-        "Ability7"              "snapfire_buckshot"
+        "Ability7"              "snapfire_boomstick"
         "Ability10"             "special_bonus_unique_snapfire_7"
         "Ability11"             "special_bonus_unique_snapfire_5"
         "Ability12"             "special_bonus_unique_snapfire_2"
@@ -19,28 +19,13 @@
         "Ability16"             "special_bonus_unique_snapfire_6"
         "Ability17"             "special_bonus_unique_snapfire_1"
 
-        "Facets"
-        {
-            "snapfire_ricochet_ii" 
-            {
-                "Icon"              "ricochet"
-                "Color"             "Gray"
-                "GradientID"        "3"
-            }
-            "snapfire_full_bore" 
-            {
-                "Icon"              "range"
-                "Color"             "Red"
-                "GradientID"        "0"
-            }
-        }
+
         
 		"AbilityDraftAbilities"
 		{
 			"Ability1"				"snapfire_scatterblast"
 			"Ability2"				"snapfire_firesnap_cookie"
 			"Ability3"				"snapfire_lil_shredder"
-			"Ability4"				"snapfire_mortimer_kisses"
 		}		
 		"ArmorPhysical"				"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

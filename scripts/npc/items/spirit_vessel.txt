@@ -15,7 +15,7 @@
 		"ItemResult"					"item_spirit_vessel"
 		"ItemRequirements"
 		{
-			"01"						"item_urn_of_shadows*;item_vitality_booster"
+			"01"					"item_urn_of_shadows*;item_diadem"
 		}
 	}
 	"item_recipe_spirit_vessel_2"
@@ -100,8 +100,9 @@
 			"soul_heal_amount"			"40 100 200"
 			"soul_damage_amount"		"35 80 160"
 			"duration"					"8.0"
-			"hp_regen_reduction_enemy"	"40 45 50"
 			"enemy_hp_drain"			"4 5 6"
+			"restoration_reduction_enemy"				"40 45 50"
+			"enemy_slow_pct"				"0"
 		}
 	}
 	"item_spirit_vessel_2"
@@ -151,8 +152,9 @@
 			"soul_heal_amount"			"40 100 200"
 			"soul_damage_amount"		"35 80 160"
 			"duration"					"8.0"
-			"hp_regen_reduction_enemy"	"40 45 50"
 			"enemy_hp_drain"			"4 5 6"
+			"restoration_reduction_enemy"				"40 45 50"
+			"enemy_slow_pct"				"0"
 		}
 	}
 	"item_spirit_vessel_3"
@@ -202,8 +204,9 @@
 			"soul_heal_amount"			"40 100 200"
 			"soul_damage_amount"		"35 80 160"
 			"duration"					"8.0"
-			"hp_regen_reduction_enemy"	"40 45 50"
 			"enemy_hp_drain"			"4 5 6"
+			"restoration_reduction_enemy"				"40 45 50"
+			"enemy_slow_pct"				"0"
 		}
 	}
 }

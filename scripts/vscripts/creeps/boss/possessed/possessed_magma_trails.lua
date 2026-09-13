@@ -44,6 +44,7 @@ function ability:OnSpellStart()
 			ParticleManager:SetParticleControl(idx, 0, unitPos )
 			ParticleManager:SetParticleControl(idx, 1, Vector(trailRadius, 0, 0) )
 			ParticleManager:SetParticleControl(idx, 2, Vector(trailDelay, 0, 0) )
+			ParticleManager:ReleaseParticleIndex(idx)
 		end
 	end
 
@@ -76,6 +77,7 @@ function ability:OnSpellStart()
 
 			local idx = ParticleManager:CreateParticle("particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_linger.vpcf", PATTACH_ABSORIGIN, caster)
 			ParticleManager:SetParticleControl(idx, 0, position )
+			ParticleManager:ReleaseParticleIndex(idx)
 			EmitSoundOnLocationWithCaster(position, "Boss_Possessed.MagmaTrails.Trail", caster)
 		end
 	end)

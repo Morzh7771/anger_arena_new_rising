@@ -18,29 +18,7 @@
         "Ability16"     "special_bonus_unique_batrider_4"
         "Ability17"     "special_bonus_unique_batrider_2"
 
-        "Facets"
-        {
-            "batrider_buff_on_displacement" 
-            {
-                "Icon"              "speed"
-                "Color"             "Yellow"
-                "GradientID"        "1"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "batrider_stoked"
-                    }
-                }
-            }
-            "batrider_arsonist" 
-            {
-                "Icon"              "siege"
-                "Color"             "Red"
-                "GradientID"        "0"
-            }
-        }
         
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

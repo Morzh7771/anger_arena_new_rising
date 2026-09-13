@@ -70,6 +70,7 @@ end
 
 function modifier_windwing_big_cyclone_lua:OnDestroy(  )
     ParticleManager:DestroyParticle(self.particle, true)
+    ParticleManager:ReleaseParticleIndex(self.particle)
     if IsServer() then
         self.target:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_windwing_big_cyclone_dawn_lua", { duration = 1} )
         FindClearSpaceForUnit(self.target, self.vPointTarget, false)

@@ -122,6 +122,12 @@ DOTAAbilities
 				}
 				"projectile_speed"					"1150"
 				"shared_cooldown"					"0"
+			"stun_min"				"0.5"
+			"stun_max"				"1.4 1.8 2.2 2.6 3 3.4 3.8"
+			"knockback_min"				"50"
+			"knockback_max"				"350"
+			"knockback_duration"				"0.5"
+			"extra_targets"				"0"
 		}
 	}
 	"morphling_adaptive_strike_str"
@@ -163,7 +169,7 @@ DOTAAbilities
 		{
 			"AbilityCooldown"
             {
-                "value"                                 "16 14 12 10"
+                "value"                                 "16 15 14 13 12 11 10"
             }
 			
 			"stun_min"						
@@ -179,14 +185,10 @@ DOTAAbilities
 			"knockback_min"                 
             {
                 "value"                             "0"
-                "special_bonus_facet_morphling_agi"         "=100"
-                "RequiresFacet"                 "morphling_agi"
             }
 			"knockback_max"                 
             {
                 "value"                             "0"
-                "special_bonus_facet_morphling_agi"         "=500"
-                "RequiresFacet"                 "morphling_agi"
             }
 			"projectile_speed"					"1150"
 			"shared_cooldown"					"0"
@@ -231,6 +233,7 @@ DOTAAbilities
 				"value"	"0"
 				"special_bonus_shard"	"+1"
 			}
+			"morph_rate"				"4 8 12 16 20 24 28"
 		}
 	}
 	"morphling_morph_str"
@@ -266,6 +269,7 @@ DOTAAbilities
 				"value"	"0"
 				"special_bonus_shard"	"+1"
 			}
+			"morph_rate"				"4 8 12 16 20 24 28"
 		}
 	}
 	"morphling_ebb"
@@ -293,6 +297,12 @@ DOTAAbilities
             {
                 "dynamic_value"             "true"
             }
+        	"agi_per_one_spell_amp"				"4"
+        	"one_percent_tooltip"				"1"
+        	"spell_amp_tooltip"
+        	{
+        		"dynamic_value"				"true"
+        	}
         }
     }
 	"morphling_replicate"
@@ -336,43 +346,31 @@ DOTAAbilities
        		}
             "scepter_stat_steal"
        		{
-       			"value"						"20"
-       			"RequiresScepter"			"1"
+       			"special_bonus_scepter"			"20"
        		}
        		"scepter_spell_amplify"
        		{
-       			"value"						"25"
-       			"RequiresScepter"			"1"
+       			"special_bonus_scepter"			"25"
        		}
        		"scepter_attack_speed"
        		{
-       			"value"						"70"
-       			"RequiresScepter"			"1"
+       			"special_bonus_scepter"			"70"
        		}
        		"scepter_status_resist"
        		{
-       			"value"						"40"
-       			"RequiresScepter"			"1"
+       			"special_bonus_scepter"			"40"
        		}
        		"scepter_additional_stats"
        		{
-       			"value"						"20"
-       			"RequiresScepter"			"1"
-       		}
-       		"scepter_cooldown_reduction"
-       		{
-       			"value"						"0"
-       			"RequiresScepter"			"1"
+       			"special_bonus_scepter"			"20"
        		}
        		"scepter_illusion_outgoing"
        		{
-       			"value"						"100"
-       			"RequiresScepter"			"1"
+       			"special_bonus_scepter"			"100"
        		}
        		"scepter_illusion_incoming"
        		{
-       			"value"						"300"
-       			"RequiresScepter"			"1"
+       			"special_bonus_scepter"			"200"
        		}
         }
     }
@@ -422,21 +420,21 @@ DOTAAbilities
         {
             "illusion_damage_out_pct"
             {
-                "value" "-50 -50 -50"
+                "value" "-50"
                 "CalculateSpellDamageTooltip" "0"
             }
             "tooltip_illusion_damage_out_pct"
             {
-                "value" "50 50 50"
+                "value" "50"
                 "CalculateSpellDamageTooltip" "0"
             }
             "illusion_incoming_dmg_pct_tooltip"
             {
-                "value" "100 100 100"
+                "value" "100"
             }
             "illusion_damage_in_pct"
             {
-                "value" "0 0 0"
+                "value" "0"
                 "CalculateSpellDamageTooltip" "0"
             }
             "illusion_damage_out_pct_scepter"
@@ -455,13 +453,15 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 
         "MaxLevel"                      "1"
-        "Innate"                        "1"
+        "Innate"                        "0"
 
         "AbilityValues"
         {
             "percent_to_increment"          "50.0"
             "bonus_all_stats_per_level_of_attributes"   "8"     // if changing this, also change bonus_all_stats_pct_tooltip
             "bonus_all_stats_pct_tooltip"   "500"
+        	"bonus_primary_stat_per_level_of_attributes"				"3"
+        	"bonus_int_per_level_of_attributes"				"0"
         }
     }
     "special_bonus_unique_morphling_1"
@@ -519,5 +519,66 @@ DOTAAbilities
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
-    }   
+    }
+
+	"morphling_syntropy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"			"morphling_syntropy"
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"slow_duration"		"3"
+			"attack_range_bonus"		"75 125 175 225 275 325 375"
+			"movement_slow_max"			"20 25 30 35 40 45 50"
+			"movement_slow_min"			"10"
+			"attack_slow_max"			"35 45 55 65 75 85 95"
+			"attack_slow_min"			"10"
+			"AbilityManaCost"		"10 12 14 16 18 20 22"
+		}
+	}
+	"morphling_ebb_and_flow"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"Innate"				"1"
+		"AbilityValues"
+		{
+			"swell_up_duration"				"1.5"
+			"swell_down_duration"				"1.0"
+			"swell_duration"
+			{
+				"value"				"5.2"
+				"hero_levelup"				"+0.3"
+			}
+			"max_swell_duration"
+			{
+				"value"				"2.7"
+				"hero_levelup"				"+0.3"
+			}
+			"model_scale"				"40"
+			"stats_pct"
+			{
+				"value"				"25"
+			}
+			"attack_range_per_agi"				"25"
+			"move_speed_per_agi"				"15"
+			"cast_range_per_str"				"25"
+			"slow_resist_per_str"				"25"
+			"model_scale_min"				"0"
+			"model_scale_max"				"20"
+		}
+	}
 }

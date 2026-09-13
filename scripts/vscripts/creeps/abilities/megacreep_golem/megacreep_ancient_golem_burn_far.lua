@@ -1,5 +1,13 @@
 megacreep_ancient_golem_burn_far = class({})
 
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function megacreep_ancient_golem_burn_far:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_jakiro/jakiro_dual_breath_fire.vpcf", context)
+end
+
+
 --particles/units/heroes/hero_demonartist/demonartist_inkdemon_projectile.vpcf
 --particles/neutral_fx/black_dragon_fireball_projectile.vpcf
 

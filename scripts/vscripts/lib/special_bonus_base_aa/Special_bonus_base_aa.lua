@@ -18,6 +18,7 @@ LinkLuaModifier("modifier_attackSpeed", "lib/special_bonus_base_aa/talantes", LU
 LinkLuaModifier("modifier_bash", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_crit", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bat", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_talant_stat_refresher", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
 
 if Special_bonus_base_aa == nil then
 	print ( '[special_bonus_base_aa] created special_bonus_base_aa' )
@@ -27,7 +28,6 @@ end
 
 function Special_bonus_base_aa:OnAbilityLearned(event)
 	if string.match(event.abilityname, "^special_bonus_base_aa")then
-		print("modifier_"..string.match(event.abilityname, "^special_bonus_base_aa_(.-)_")) -- return special_bonus_base_aa_THISwOrd_2424
         local hero = PlayerResource:GetSelectedHeroEntity( event.PlayerID )
         local modifierName = "modifier_"..string.match(event.abilityname, "^special_bonus_base_aa_(.-)_")
         local abilityName = hero:FindAbilityByName(event.abilityname)
@@ -38,5 +38,9 @@ function Special_bonus_base_aa:OnAbilityLearned(event)
 			restore_time = abilityName:GetSpecialValueFor('restore_time'),
 			bash_duration = abilityName:GetSpecialValueFor('bash_duration')
 		})
+
+		-- один пересчёт статов на героя вместо отдельного тика у каждого таланта;
+		-- модификатор не MULTIPLE, повторное добавление его просто обновляет
+		hero:AddNewModifier(hero, nil, "modifier_talant_stat_refresher", { duration = -1 })
 	end
 end

@@ -87,7 +87,8 @@ function ancient_satyr_big_projectile:OnSpellStart()
         else 
             --TODO Boom particle 
             ParticleManager:DestroyParticle(particle_idx, false)
-            already_damaged = nil 
+            ParticleManager:ReleaseParticleIndex(particle_idx)
+            already_damaged = nil
             return nil 
         end 
     end )

@@ -31,6 +31,7 @@ if IsServer() then
 
 			local fx = ParticleManager:CreateParticle("particles/econ/items/luna/luna_lucent_ti5_gold/luna_eclipse_cast_moonlight_shaft03_ti_5_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
 			ParticleManager:SetParticleControl(fx, 0, unit:GetAbsOrigin() )
+			ParticleManager:ReleaseParticleIndex(fx)
 		end 
 	end
 

@@ -8,7 +8,7 @@
         "ItemResult"                    "item_heavens_halberd"
         "ItemRequirements"
         {
-            "01"                        "item_vanguard;item_crown"
+        	"01"					"item_talisman_of_evasion;item_splintmail;item_ring_of_health"
         }
     }
 	"item_recipe_heavens_halberd_2"
@@ -72,15 +72,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_health"          "275 550 1500"
             "bonus_health_regen"    "6 12 30"
-            "block_damage_melee"    "60 100 200"
-            "block_damage_ranged"   "30 50 100"
-            "block_chance"          "60 70 90"
-            "bonus_all_stats"       "5 10 25"
 
             "disarm_range"              "4.0 4.5 5.5"
             "disarm_melee"              "3.0 3.5 4.5"
+			"bonus_armor"				"9"
+			"bonus_evasion"				"25"
 		}
 	}
 	"item_heavens_halberd_2"
@@ -115,15 +112,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
     	{
-      		"bonus_health"          "275 550 1500"
             "bonus_health_regen"    "6 12 30"
-            "block_damage_melee"    "60 100 200"
-            "block_damage_ranged"   "30 50 100"
-            "block_chance"          "60 70 90"
-            "bonus_all_stats"       "5 10 25"
 
             "disarm_range"              "4.0 4.5 5.5"
             "disarm_melee"              "3.0 3.5 4.5"
+    		"bonus_armor"				"9"
+    		"bonus_evasion"				"25"
     	}
 	}
 	"item_heavens_halberd_3"
@@ -158,15 +152,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
     	{
-      		"bonus_health"          "275 550 1500"
             "bonus_health_regen"    "6 12 30"
-            "block_damage_melee"    "60 100 200"
-            "block_damage_ranged"   "30 50 100"
-            "block_chance"          "60 70 90"
-            "bonus_all_stats"       "5 10 25"
 
             "disarm_range"              "4.0 4.5 5.5"
             "disarm_melee"              "3.0 3.5 4.5"
+    		"bonus_armor"				"9"
+    		"bonus_evasion"				"25"
     	}
 	}
 }

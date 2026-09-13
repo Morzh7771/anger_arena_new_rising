@@ -5,12 +5,21 @@ LinkLuaModifier("modifier_slark_essence_shift_aa_tinker_enemy", "heroes/slark/sl
 
 
 slark_essence_shift_aa = class({
+
     Precache = function(self, context)
         PrecacheResource("particle", "particles/units/heroes/hero_slark/slark_essence_shift.vpcf", context)
         PrecacheResource("particle", "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", context)
     end,
     GetIntrinsicModifierName = function() return "modifier_slark_essence_shift_aa" end,
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function slark_essence_shift_aa:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_slark/slark_essence_shift.vpcf", context)
+end
 
 modifier_slark_essence_shift_aa = class({
     IsHidden = function() return false end,
@@ -21,7 +30,15 @@ modifier_slark_essence_shift_aa = class({
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_EVENT_ON_DEATH,
     } end,
-    GetModifierBonusStats_Agility = function(self) return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("agi_gain") end,
+    -- геттер вызывается на каждом пересчёте статов, KV читаем один раз
+    OnCreated = function(self) self:CacheValues() end,
+    OnRefresh = function(self) self:CacheValues() end,
+    CacheValues = function(self)
+        local ability = self:GetAbility()
+
+        if ability then self.agi_gain = ability:GetSpecialValueFor("agi_gain") end
+    end,
+    GetModifierBonusStats_Agility = function(self) return self:GetStackCount() * (self.agi_gain or 0) end,
 })
 function modifier_slark_essence_shift_aa:AddStackSelf(duration)
     local mod = self:GetParent():AddNewModifier(
@@ -119,18 +136,34 @@ modifier_slark_essence_shift_aa_enemy = class({
     IsHidden = function() return false end,
     IsPurgable = function() return false end,
     IsDebuff = function() return true end,
-    OnTooltip = function(self) return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("stat_loss") end,
+    OnTooltip = function(self) return self:GetStackCount() * (self.stat_loss or 0) end,
     DeclareFunctions = function() return {
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_TOOLTIP,
     } end,
-    OnCreated = function(self) self:StartIntervalThink(0.1) end,
-    OnIntervalThink = function (self) if not IsServer() then return end self:SetStackCount(#self:GetParent():FindAllModifiersByName("modifier_slark_essence_shift_aa_tinker_enemy")) end,
-    GetModifierBonusStats_Strength = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss") end,
-    GetModifierBonusStats_Agility = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss") end,
-    GetModifierBonusStats_Intellect = function(self) return self:GetStackCount() * -self:GetAbility():GetSpecialValueFor("stat_loss") end,
+    OnCreated = function(self)
+        self:CacheValues()
+        self:StartIntervalThink(0.25)
+    end,
+    OnRefresh = function(self) self:CacheValues() end,
+    CacheValues = function(self)
+        local ability = self:GetAbility()
+
+        if ability then self.stat_loss = ability:GetSpecialValueFor("stat_loss") end
+    end,
+    OnIntervalThink = function (self)
+        if not IsServer() then return end
+
+        -- SetStackCount рассылается клиентам, поэтому только при изменении
+        local count = #self:GetParent():FindAllModifiersByName("modifier_slark_essence_shift_aa_tinker_enemy")
+
+        if self:GetStackCount() ~= count then self:SetStackCount(count) end
+    end,
+    GetModifierBonusStats_Strength = function(self) return self:GetStackCount() * -(self.stat_loss or 0) end,
+    GetModifierBonusStats_Agility = function(self) return self:GetStackCount() * -(self.stat_loss or 0) end,
+    GetModifierBonusStats_Intellect = function(self) return self:GetStackCount() * -(self.stat_loss or 0) end,
 })
 
 

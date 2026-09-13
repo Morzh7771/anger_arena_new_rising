@@ -23,6 +23,7 @@ function windwing_small_blink_lua:OnSpellStart()
         local particle = ParticleManager:CreateParticle( "particles/econ/items/gyrocopter/hero_gyrocopter_atomic/gyro_rocket_barrage_atomic.vpcf", PATTACH_CUSTOMORIGIN, caster )
         ParticleManager:SetParticleControl( particle, 0, self:GetCaster():GetOrigin() )
         ParticleManager:SetParticleControl( particle, 1, vPosition )
+        ParticleManager:ReleaseParticleIndex(particle)
     end
 
     for i = 0, 3 do

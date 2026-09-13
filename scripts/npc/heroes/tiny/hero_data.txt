@@ -15,7 +15,7 @@
         "Ability2"      "tiny_toss"
         "Ability3"      "tiny_tree_grab"
         "Ability4"      "tiny_tree_channel"
-        "Ability5"      "tiny_craggy_exterior"
+        "Ability5"      "tiny_insurmountable"
         "Ability6"      "tiny_grow"
         "Ability7"      "tiny_toss_tree"
 		"Ability10"     "special_bonus_unique_tiny_4"
@@ -27,29 +27,7 @@
         "Ability16"     "special_bonus_unique_tiny_3"
         "Ability17"     "special_bonus_unique_tiny_2"
 
-        "Facets"
-        {
-            "tiny_crash_landing" 
-            {
-                "Icon"              "nuke"
-                "Color"             "Gray"
-                "GradientID"        "2"
-            }
-            "tiny_insurmountable" 
-            {
-                "Icon"              "armor"
-                "Color"             "Green"
-                "GradientID"        "4"
 
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "tiny_insurmountable"
-                    }
-                }
-            }
-        }
         
 		"AbilityDraftIgnoreCount"		"7"
 		"ArmorPhysical"		"1"

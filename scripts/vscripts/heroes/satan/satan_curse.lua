@@ -1,4 +1,12 @@
 satan_curse = class({})
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function satan_curse:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_shadow_demon/shadow_demon_demonic_purge_debuff.vpcf", context)
+end
+
 LinkLuaModifier("modifier_satan_curse", "heroes/satan/modifier_satan_curse", LUA_MODIFIER_MOTION_NONE)
 
 function satan_curse:IsHiddenWhenStolen() 		return false end

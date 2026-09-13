@@ -22,31 +22,7 @@
         "Ability16"     "special_bonus_unique_underlord"
         "Ability17"     "special_bonus_unique_underlord_9"
 
-        "Facets"
-        {
-            "abyssal_underlord_demons_reach" 
-            {
-                "Icon"              "area_of_effect"
-                "Color"             "Green"
-                "GradientID"        "0"
-            }
 
-            "abyssal_underlord_summons"
-            {
-                "Icon"              "summons"
-                "Color"             "Yellow"
-                "GradientID"        "3"
-
-                "Abilities"
-                {
-                    "Ability1"
-                    {
-                        "AbilityName"   "abyssal_underlord_abyssal_horde"
-                        "AutoLevelAbility"  "false"
-                    }
-                }
-            }
-        }
         
 		"AbilityDraftIgnoreCount" "7"
 		"ArmorPhysical"		"3.000000"
@@ -80,31 +56,5 @@
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_abyssal_underlord.vsndevts"
 		"VisionDaytimeRange"		"1800"
-		"particle_folder"		"particles/units/heroes/heroes_underlord"
-		"Facets"
-		{
-			"abyssal_underlord_demons_reach" 
-			{
-				"Icon"				"area_of_effect"
-				"Color"				"Green"
-				"GradientID"		"0"
-			}
-
-			"abyssal_underlord_summons"
-			{
-				"Icon"				"summons"
-				"Color"				"Yellow"
-				"GradientID"		"3"
-
-				"Abilities"
-				{
-					"Ability1"
-					{
-						"AbilityName"	"abyssal_underlord_abyssal_horde"
-						"AutoLevelAbility"	"false"
-					}
-				}
-			}
-		}
 	}
 }

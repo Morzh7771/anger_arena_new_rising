@@ -16,6 +16,7 @@ function skelet_1_blue_heal:OnSpellStart()
 
     local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_chen/chen_test_of_faith_b.vpcf", PATTACH_CUSTOMORIGIN, nil )
     ParticleManager:SetParticleControl( particle, 0, target:GetOrigin() )
+    ParticleManager:ReleaseParticleIndex(particle)
     target:Heal( heal, self )
     ApplyDamage(damageTable)
 end

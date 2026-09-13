@@ -60,6 +60,10 @@ DOTAAbilities
 				"affected_by_aoe_increase"  "1"
 			}
 			"duration"						"15"
+			"attack_speed"
+			{
+				"special_bonus_unique_queen_of_pain_1"				"+35"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -110,6 +114,11 @@ DOTAAbilities
 					"value"						"300"
 					"affected_by_aoe_increase"  "1"
 				}
+			"AbilityCooldown"
+			{
+				"value"				"12 11 10 9 8 7 6"
+				"special_bonus_unique_queen_of_pain_6"				"-2"
+			}
 		}
 	}
 	"queenofpain_scream_of_pain"
@@ -125,7 +134,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -152,6 +161,8 @@ DOTAAbilities
 				"special_bonus_unique_queen_of_pain_2" 			"+125"
 			}
 
+			"AbilityCooldown"				"7.5 7.25 7 6.75 6.5 6.25 6"
+			"damage_reflected_to_self"				"25.0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -172,7 +183,7 @@ DOTAAbilities
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.452 0.452 0.452"
+		"AbilityCastPoint"				"0.452"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -221,6 +232,7 @@ DOTAAbilities
 
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "MaxLevel"                      "1"
+        "Innate"                      "1"
         "AbilityValues"
         {
             "spell_amplification"           "30"
@@ -237,8 +249,9 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
         "MaxLevel"                      "1"
+        "Innate"                      "1"
         "IsBreakable"                   "1"
 
         "AbilityValues"
@@ -255,6 +268,7 @@ DOTAAbilities
                 "affected_by_aoe_increase"  "1"
             }
             "spell_lifesteal_close"     "18.0"
+        	"lifesteal_reflected"				"0"
         }
     }
 
@@ -265,7 +279,7 @@ DOTAAbilities
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
         "MaxLevel"                      "1"
         "Innate"                        "1"
@@ -337,6 +351,7 @@ DOTAAbilities
     //=================================================================================================================
     "special_bonus_unique_queen_of_pain_6"
     {
+    	"BaseClass"					"special_bonus_base"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"

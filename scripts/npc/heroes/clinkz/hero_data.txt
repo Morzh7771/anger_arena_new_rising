@@ -4,12 +4,12 @@
 	{
 		"override_hero"		"npc_dota_hero_clinkz"
 		"Ability1"      "clinkz_strafe"
-        "Ability2"      "clinkz_tar_bomb"
+        "Ability2"      "clinkz_searing_arrows"
         "Ability3"      "clinkz_death_pact"
         "Ability4"      "clinkz_burning_barrage"
         "Ability5"      "clinkz_burning_army"
         "Ability6"      "clinkz_wind_walk"
-        "Ability7"      "clinkz_bone_and_arrow"
+        "Ability7"      "clinkz_infernal_shred"
 		"Ability10"     "special_bonus_unique_clinkz_1"
         "Ability11"     "special_bonus_unique_clinkz_10"
         "Ability12"     "special_bonus_attack_range_75"
@@ -19,21 +19,7 @@
         "Ability16"     "special_bonus_unique_clinkz_4"
         "Ability17"     "special_bonus_unique_clinkz_3"
 
-        "Facets"
-        {
-            "clinkz_suppressive_fire" 
-            {
-                "Icon"              "no_vision"
-                "Color"             "Gray"
-                "GradientID"        "3"
-            }
-            "clinkz_engulfing_step" 
-            {
-                "Icon"              "teleport"
-                "Color"             "Yellow"
-                "GradientID"        "0"
-            }
-        }
+
         
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"

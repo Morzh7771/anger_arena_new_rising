@@ -2,6 +2,7 @@ LinkLuaModifier("modifier_item_mask_of_madness_aa", "items/item_mask_of_madness"
 LinkLuaModifier("modifier_item_mask_of_madness_aa_active", "items/item_mask_of_madness", LUA_MODIFIER_MOTION_NONE)
 
 item_mask_of_madness_aa = class({
+
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items_fx/mask_of_madness.vpcf", context)
         PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context)
@@ -12,6 +13,15 @@ item_mask_of_madness_aa = class({
         self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_item_mask_of_madness_aa_active", {duration = self:GetSpecialValueFor("berserk_duration")})
     end
 })
+
+-- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
+-- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
+-- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+function item_mask_of_madness_aa:Precache(context)
+	PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/mask_of_madness.vpcf", context)
+	PrecacheResource("particle", "particles/items2_fx/mask_of_madness.vpcf", context)
+end
 
 item_mask_of_madness_aa_1 = item_mask_of_madness_aa
 item_mask_of_madness_aa_2 = item_mask_of_madness_aa
@@ -62,6 +72,7 @@ modifier_item_mask_of_madness_aa_active = class({
     OnDestroy = function (self,kv) 
         if not IsServer() then return end
         ParticleManager:DestroyParticle(self.pfx, true)
+        ParticleManager:ReleaseParticleIndex(self.pfx)
     end,
     GetModifierPhysicalArmorBonus = function (self) return - self:GetAbility():GetSpecialValueFor("berserk_armor_reduction") end,
     GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("berserk_bonus_attack_speed") end,

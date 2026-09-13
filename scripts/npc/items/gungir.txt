@@ -85,14 +85,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage"			"30 60 120"
-			"bonus_attack_speed"	"40 80 160"
-			"chain_chance"			"30 35 40"
-			"chain_damage"			"160 200 300"
-			"chain_strikes"			"4 6 8"
-			"chain_radius"			"650 700 750"
-			"chain_delay"			"0.25 0.25 0.25"
-			"chain_cooldown"		"0.2 0.2 0.2"
 			"bonus_intellect"		"24 48 100"
 			"bonus_hp"              "275 550 1500"
 			"duration"				"2.0 2.5 3"
@@ -101,8 +93,13 @@
 				"value"				"350 400 450"
 				"affected_by_aoe_increase"  "1"
 			}
-			"active_damage"			"180 360 600"
-			"illusion_multiplier_pct"	"150"
+			"bonus_mana"				"200"
+			"bonus_aoe"				"75"
+			"radius_tooltip"
+			{
+				"value"				"400"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 	}
 	"item_gungir_2"
@@ -138,14 +135,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage"			"30 60 120"
-			"bonus_attack_speed"	"40 80 160"
-			"chain_chance"			"30 35 40"
-			"chain_damage"			"160 200 300"
-			"chain_strikes"			"4 6 8"
-			"chain_radius"			"650 700 750"
-			"chain_delay"			"0.25 0.25 0.25"
-			"chain_cooldown"		"0.2 0.2 0.2"
 			"bonus_intellect"		"24 48 100"
 			"bonus_hp"              "275 550 1500"
 			"duration"				"2.0 2.5 3"
@@ -154,8 +143,13 @@
 				"value"				"350 400 450"
 				"affected_by_aoe_increase"  "1"
 			}
-			"active_damage"			"180 360 600"
-			"illusion_multiplier_pct"	"150"
+			"bonus_mana"				"200"
+			"bonus_aoe"				"75"
+			"radius_tooltip"
+			{
+				"value"				"400"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 	}
 	"item_gungir_3"
@@ -192,14 +186,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage"			"30 60 120"
-			"bonus_attack_speed"	"40 80 160"
-			"chain_chance"			"30 35 40"
-			"chain_damage"			"160 200 300"
-			"chain_strikes"			"4 6 8"
-			"chain_radius"			"650 700 750"
-			"chain_delay"			"0.25 0.25 0.25"
-			"chain_cooldown"		"0.2 0.2 0.2"
 			"bonus_intellect"		"24 48 100"
 			"bonus_hp"              "275 550 1500"
 			"duration"				"2.0 2.5 3"
@@ -208,8 +194,13 @@
 				"value"				"350 400 450"
 				"affected_by_aoe_increase"  "1"
 			}
-			"active_damage"			"180 360 600"
-			"illusion_multiplier_pct"	"150"
+			"bonus_mana"				"200"
+			"bonus_aoe"				"75"
+			"radius_tooltip"
+			{
+				"value"				"400"
+				"affected_by_aoe_increase"				"1"
+			}
 		}
 	}
 }

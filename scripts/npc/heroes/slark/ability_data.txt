@@ -136,6 +136,7 @@ DOTAAbilities
 			"AbilityCooldown"				
 			{
 				"value"				"12.0 11.0 10.0 9.0 8.0 7.0 6.0"
+				"special_bonus_unique_slark_6"				"-0.75"
 			}					
 		}
 	}
@@ -177,7 +178,7 @@ DOTAAbilities
 			"pounce_radius"			"95"
 			"leash_duration"
 			{
-				"value"		"2 2.25 2.5 2.75 3 3.25"
+				"value"		"2 2.25 2.5 2.75 3 3.25 3.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark"
 			}
 			"leash_radius"			"400"
@@ -241,24 +242,26 @@ DOTAAbilities
             }
 			"leash_duration"		
 			{
-				"value"			"2.0 2.25 2.5 2.75 3.0 3.25 3.5"
-				"special_bonus_unique_slark" "+0.5"
+				"value"			"0"
 			}
-			"leash_radius"			"400"
+			"leash_radius"
+			{
+				"value"			"0"
+			}
 			"max_charges"			
 			{
-				"value"	"0"
-				"RequiresScepter"           "1"
+				"value"						"0"
+				"special_bonus_scepter"		"2"
 			}
 			"charge_restore_time"
 			{
-				"value"	"-2"
-				"RequiresScepter"           "1"
+				"value"						"0"
+				"special_bonus_scepter"		"12"
 			}
 			"pounce_distance_scepter"		
 			{
-				"value"		"0"
-				"RequiresScepter"           "1"
+				"value"						"0"
+				"special_bonus_scepter"		"900"
 			}
 			"essence_stacks"
             {
@@ -370,15 +373,9 @@ DOTAAbilities
                 "special_bonus_unique_slark_8"  "+50"
             }
             
-            "linger_search_radius"
-            {
-                "special_bonus_facet_slark_dark_reef_renegade" "900"
-            }
+            "linger_search_radius"				"0"
 
-            "linger_duration"
-            {
-                "special_bonus_facet_slark_dark_reef_renegade" "0.75 1 1.25 1.5 1.75 2 2.25 2.5"
-            }
+            "linger_duration"				"0"
             "activation_delay"          "0.5"
             "neutral_disable"           "2.0"
         }
@@ -426,6 +423,10 @@ DOTAAbilities
 			}
 			"activation_delay"			"0.5"
 			"neutral_disable"			"2.0"
+			"attack_speed"
+			{
+				"special_bonus_unique_slark_7"				"100"
+			}
 		}
 	}
 	"slark_saltwater_shiv"
@@ -457,7 +458,7 @@ DOTAAbilities
             "health_rest_steal"             "2 3 4 5 6 7 8"
             "regen_steal"                   "2 3 4 5 6 7 8"
             "ms_steal"                      "2 3 4 5 6 7 8"
-            "melee_range_buffer"            "0"
+            "melee_range_buffer"            "50"
         }
     }
 	"special_bonus_unique_slark_essence_shift_aa_duration"
