@@ -93,6 +93,7 @@ function Bounty:SpawnBounty()
         end
         CreateRune(entity:GetAbsOrigin(), DOTA_RUNE_BOUNTY )
     end
+    if MinimapSpots then MinimapSpots:OnRuneSpawn("bounty") end
     needTimeBounty = needTimeBounty + BOUNTY_INTERVAL
     Bounty:PublishTimers()
 end
@@ -104,6 +105,7 @@ function Bounty:SpawnWisdom()
         end
         CreateRune(entity:GetAbsOrigin(), DOTA_RUNE_XP )
     end
+    if MinimapSpots then MinimapSpots:OnRuneSpawn("wisdom") end
     needTimeWisdom = needTimeWisdom + WISDOM_INTERVAL
     Bounty:PublishTimers()
 end

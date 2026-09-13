@@ -56,6 +56,7 @@ safe_require('lib/comeback_system')
 safe_require('lib/move_limiter')
 safe_require('lib/spawners/bear_spawner')
 safe_require('lib/bounty')
+safe_require('lib/minimap_spots')
 safe_require('lib/game_ender')
 safe_require('lib/repick_menu')
 safe_require('lib/tip_manager')
@@ -189,6 +190,10 @@ function Precache(context)
         npc_aa_minimap_boss = true,
         npc_aa_minimap_cobold = true,
         npc_aa_minimap_neutral_stack = true,
+        -- иконки рун, их создаёт lib/minimap_spots.lua
+        npc_aa_minimap_rune_bounty = true,
+        npc_aa_minimap_rune_xp = true,
+        npc_aa_minimap_rune_unknown = true,
     }
 
     local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
@@ -530,6 +535,9 @@ function AngelArena:ModifierRuneSpawn(keys)
 	if Bounty then
 		Bounty:RememberPowerSpawner(keys.spawner_entindex_const)
 	end
+	if MinimapSpots then
+		MinimapSpots:OnRuneSpawn("power")
+	end
 
 	return true
 end
@@ -845,6 +853,7 @@ function AngelArena:OnGameStateChange()
 
 		Attentions:SetKillLimit( KILL_LIMIT )
 		Bounty:Init()
+		MinimapSpots:Init()
 		PauseGame(true)
 		local towers = Entities:FindAllByClassname("npc_dota_tower")
 		for _, tower in pairs(towers) do

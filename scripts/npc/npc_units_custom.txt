@@ -556,6 +556,7 @@
 	"npc_aa_minimap_big_stack"
 	{
 		"MinimapIcon"				"minimap_creepcamp_mid"
+		"MinimapDisableTint"		"1"
 		"MinimapIconSize"			"240"
 		// General
 		//
@@ -642,6 +643,7 @@
 	"npc_aa_minimap_mid"
 	{
 		"MinimapIcon"				"minimap_creepcamp_big"
+		"MinimapDisableTint"		"1"
 
 		// General
 		//
@@ -728,6 +730,7 @@
 	"npc_aa_minimap_portal"
 	{
 		"MinimapIcon"				"minimap_underlord_portal"
+		"MinimapDisableTint"		"1"
 		// General
 		//
 		"BaseClass"					"npc_dota_building"											// Class of entity of link to.
@@ -1073,6 +1076,7 @@
 	"npc_aa_minimap_cobold"
 	{
 		"MinimapIcon"				"minimap_death"
+		"MinimapDisableTint"		"1"
 
 		// General
 		//
@@ -1159,6 +1163,7 @@
 	"npc_aa_minimap_neutral_stack"
 	{
 		"MinimapIcon"				"minimap_creepcamp"
+		"MinimapDisableTint"		"1"
 
 		// General
 		//
@@ -2620,5 +2625,64 @@
 		// Inventory
 		//----------------------------------------------------------------
 		"HasInventory"				"1"
+	}
+
+	// Иконки рун на миникарте (lib/minimap_spots.lua). Невидимые юниты команд:
+	// у каждой команды свои, гаснут, когда команда видит спот пустым. Иконки -
+	// ванильные из атласа миникарты, схема подсмотрена у 1x6 (npc_bounty_thinker).
+	"npc_aa_minimap_rune_bounty"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"MinimapIcon"				"minimap_rune_bounty"
+		"MinimapIconSize"			"300"
+		"MinimapDisableTint"		"1"
+		"Ability1"					"ability_hidden_from_map"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"StatusHealth"				"1"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+	}
+	"npc_aa_minimap_rune_xp"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"MinimapIcon"				"minimap_rune_xp"
+		"MinimapIconSize"			"300"
+		"MinimapDisableTint"		"1"
+		"Ability1"					"ability_hidden_from_map"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"StatusHealth"				"1"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+	}
+	// руна усиления случайного типа - в доте на её спотах висит знак вопроса
+	"npc_aa_minimap_rune_unknown"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"MinimapIcon"				"minimap_rune_unknown"
+		"MinimapIconSize"			"300"
+		"MinimapDisableTint"		"1"
+		"Ability1"					"ability_hidden_from_map"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"StatusHealth"				"1"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
 	}
 }
