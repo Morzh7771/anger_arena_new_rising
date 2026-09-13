@@ -191,8 +191,8 @@ DOTAAbilities
 			"move_pct_cap"					"100"
 			"scepter_magic_immune_per_hero"	
 			{
-				"value"				"2"
-				"RequiresScepter"				"1"
+				"value"				"0"
+				"special_bonus_scepter"			"2"
 			}
 			"controllable"				"1"
 			"immunity_resist"				"50"

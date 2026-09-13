@@ -321,7 +321,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------		
@@ -369,7 +368,6 @@ DOTAAbilities
 			"shard_damage"
 			{
 				"value"					"0"
-				"special_bonus_shard"	"+300"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
 		}
@@ -519,7 +517,6 @@ DOTAAbilities
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
 
 		"MaxLevel"						"1"
-		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -561,15 +558,13 @@ DOTAAbilities
             }
 			"scepter_move_damage"
 			{
-				"value"					"0"
-				"special_bonus_scepter"	"+300"
+				"value"					"300"
 			}
 
 
 			"scepter_move_amt"
 			{
-				"value"					"0"
-				"special_bonus_scepter"	"+200"
+				"value"					"200"
 			}
 			"bonus_mine_damage_pct"
 			{

@@ -180,6 +180,7 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"duration"				"15.0"
@@ -339,7 +340,11 @@ DOTAAbilities
 				"value"								"60"
 			}
 			"hp_threshold"							"400 500 600 700 800 900 1000"
-			"duration"								"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+			"duration"
+			{
+				"value"				"3.0 3.5 4.0 4.5 5.0 5.5 6.0"
+				"special_bonus_scepter"			"+3"
+			}
 			"duration_scepter"
 			{
 				"value"								"4.0 4.5 5.0 5.5 6.0 6.5 7.0"
@@ -347,8 +352,8 @@ DOTAAbilities
 			}
 			"ally_threshold_scepter"
 			{
-				"value"								"900"
-				"RequiresScepter"						"1"
+				"value"								"0"
+				"special_bonus_scepter"			"900"
 			}
 			"redirect_range_scepter"
 			{

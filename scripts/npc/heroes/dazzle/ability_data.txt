@@ -73,7 +73,6 @@ DOTAAbilities
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Dazzle.Poison_Touch"
 
-        "HasShardUpgrade"               "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -128,7 +127,6 @@ DOTAAbilities
 			"hex_duration"
 			{	
 				"value"						"0"
-				"special_bonus_shard"			"+1.0"
 			}
 			"attack_range_bonus"		
 			{
@@ -368,6 +366,7 @@ DOTAAbilities
 		"BaseClass"						"dazzle_innate_weave"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"armor_change"			
@@ -417,8 +416,8 @@ DOTAAbilities
 				"cooldown_reduction"		"1"
 				"item_cooldown_reduction"		
 				{
-					"value"		"20"
-					"RequiresScepter"	"1"
+					"value"		"0"
+					"special_bonus_scepter"			"20"
 				}
 				"scepter_mana_cost"			"250"
 				"scepter_cooldown"			"180"

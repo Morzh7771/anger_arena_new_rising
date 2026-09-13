@@ -385,6 +385,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"arrow_speed"       
@@ -419,7 +420,11 @@ DOTAAbilities
 			"recoil_duration"			"0.4"
 			"max_slow_debuff_duration"	"5.0"
 			"misfire_time"				"5.0"
-			"slow_move_pct"				"30 35 40 45 50 55 60"
+			"slow_move_pct"
+			{
+				"value"				"30 35 40 45 50 55 60"
+				"special_bonus_scepter"			"+20"
+			}
 			"turn_rate"					"60"
 			"base_power"				"0.2"
 			"damage_pct"				"300"

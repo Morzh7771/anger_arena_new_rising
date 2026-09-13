@@ -65,6 +65,7 @@ DOTAAbilities
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"damage_pct"				"30"
@@ -86,11 +87,16 @@ DOTAAbilities
                 "value"     "125"
                 "affected_by_aoe_increase"  "1"
             }
-			"speed"					"1200"
+			"speed"
+			{
+				"value"				"1200"
+				"special_bonus_shard"			"+300"
+			}
 			"create_wards"
 			{
 				"value"					"0"
 				"special_bonus_unique_venomancer_gale_plagueward"		"+2"
+				"special_bonus_shard"			"+1"
 			}	
 			"AbilityCooldown"
 			{
@@ -277,6 +283,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200 300 400 500 600 700 800"
 
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"debuff_duration"			"5"
@@ -427,6 +434,7 @@ DOTAAbilities
         "HasScepterUpgrade"             "1"
         "IsBreakable"                   "1"
 
+        "HasShardUpgrade"			"1"
         "AbilityValues"
         {
             "bonus_dmg_per_debuff_pct"
@@ -438,7 +446,7 @@ DOTAAbilities
             "apply_from_ward_attacks"
             {
                 "value"                     "0"
-                "special_bonus_scepter"     "=1"
+                "special_bonus_shard"     "=1"
             }
         }
     }

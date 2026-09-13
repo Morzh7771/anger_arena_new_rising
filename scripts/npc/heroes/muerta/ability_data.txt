@@ -30,6 +30,7 @@ DOTAAbilities
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"damage_pct"				"45"
@@ -42,6 +43,7 @@ DOTAAbilities
 			{
 				"value"						"75 150 225 300 375 450 525"
 				"special_bonus_unique_muerta_dead_shot_damage"	"+125"
+				"special_bonus_scepter"			"+202"
 			}
 			"speed"							"2000"
 			"radius"                        
@@ -190,7 +192,6 @@ DOTAAbilities
 		"AbilitySound"					"Hero_Muerta.PierceTheVeil.Cast"
 		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"HasShardUpgrade"				"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -337,8 +338,8 @@ DOTAAbilities
 		{
 			"tooltip_channel_time"
 			{
-				"value"		"2.0"
-				"RequiresScepter"		"1"
+				"value"		"0"
+				"special_bonus_scepter"			"2.0"
 			}			
 		}
 	}
@@ -359,7 +360,6 @@ DOTAAbilities
 		"AbilitySound"					"Ability.Assassinate"
 		
 		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------

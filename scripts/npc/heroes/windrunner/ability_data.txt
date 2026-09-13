@@ -208,7 +208,6 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Ability.Windrun"
-		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -248,7 +247,6 @@ DOTAAbilities
 			"physical_damage_pct"
 			{
 				"value"				"0"
-				"special_bonus_scepter"		"-25"
 			}
 			"cannot_be_dispelled"
 			{

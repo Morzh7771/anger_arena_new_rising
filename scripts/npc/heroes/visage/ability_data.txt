@@ -147,18 +147,18 @@ DOTAAbilities
 			"max_damage_reduction"				"80"
 			"shard_hp_restoration_pct"
 			{
-				"value"				"25"
-				"RequiresShard"				"1"
+				"value"				"0"
+				"special_bonus_shard"			"25"
 			}
 			"shard_cooldown"
 			{
-				"value"				"65"
-				"RequiresShard"				"1"
+				"value"				"0"
+				"special_bonus_shard"			"65"
 			}
 			"shard_manacost"
 			{
-				"value"				"125"
-				"RequiresShard"				"1"
+				"value"				"0"
+				"special_bonus_shard"			"125"
 			}
 			"minimum_damage_familiars"				"0"
 		}
@@ -292,12 +292,25 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
-			"bonus_duration"				"4"
-			"bonus_damage"				"25"
+			"bonus_duration"
+			{
+				"value"				"4"
+				"special_bonus_scepter"			"+2"
+			}
+			"bonus_damage"
+			{
+				"value"				"25"
+				"special_bonus_scepter"			"+20"
+			}
 			"invis_duration"				"35.0"
-			"movespeed_bonus"				"20"
+			"movespeed_bonus"
+			{
+				"value"				"20"
+				"special_bonus_scepter"			"+20"
+			}
 			"AbilityCooldown"
 			{
 				"value"				"45.75"

@@ -53,8 +53,8 @@ DOTAAbilities
             }
 			"shard_cooldown_reduction"
 			{
-				"value"			"2"
-				"RequiresShard"		"1"
+				"value"			"0"
+				"special_bonus_shard"			"2"
 			}
 			"experience_gain"
             {
@@ -171,9 +171,9 @@ DOTAAbilities
 			}
 			"shard_beetle_search_range"
             {
-                "value" "1200"
+                "value" "0"
                 "affected_by_aoe_increase"  "1"
-                "RequiresShard" "1"
+                "special_bonus_shard"			"1200"
             }
 			"extra_attack"
 			{

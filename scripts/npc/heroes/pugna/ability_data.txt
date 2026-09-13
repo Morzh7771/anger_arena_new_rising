@@ -238,8 +238,8 @@ DOTAAbilities
 			"drain_buffer"				"200"
 			"shard_damage_pct_from_ward"
 			{
-				"value"				"75"
-				"RequiresShard"		"1"
+				"value"				"0"
+				"special_bonus_shard"			"75"
 			}
 			"bonus_heal_pct"
 			{

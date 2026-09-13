@@ -187,23 +187,23 @@ DOTAAbilities
 			}
 			"trail_duration"		
 			{
-				"value" 					"7"
-				"RequiresShard"			"1"
+				"value" 					"0"
+				"special_bonus_shard"			"7"
 			}
 			"trail_move_slow"		
 			{
-				"value" 					"-50"
-				"RequiresShard"			"1"
+				"value" 					"0"
+				"special_bonus_shard"			"-50"
 			}
 			"trail_damage"			
 			{
-				"value" 					"35"
-				"RequiresShard"			"1"
+				"value" 					"0"
+				"special_bonus_shard"			"35"
 			}
 			"trail_damage_interval"		
 			{
-				"value" 				"0.5"
-				"RequiresShard"			"1"
+				"value" 				"0"
+				"special_bonus_shard"			"0.5"
 			}
 			"AbilityCooldown"
 			{
@@ -280,8 +280,8 @@ DOTAAbilities
             }	
 			"scepter_length_multiplier"	
 			{
-				"value"			"2"
-				"RequiresScepter"		"1"
+				"value"			"0"
+				"special_bonus_scepter"			"2"
 			}
 			"wall_damage"				"20 50 80 110 140 170 200"
 			"cooldown_reduction"

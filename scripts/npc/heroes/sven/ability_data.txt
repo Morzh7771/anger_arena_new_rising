@@ -39,7 +39,11 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bolt_speed"			"1000"
+			"bolt_speed"
+			{
+				"value"				"1000"
+				"special_bonus_scepter"			"+25%"
+			}
 			"bolt_stun_duration"
 			{
 				"value"	"0.7 0.85 1.0 1.15 1.3 1.45 1.6"
@@ -161,6 +165,7 @@ DOTAAbilities
            	{
            	    "value"         "700"
            	    "affected_by_aoe_increase"  "1"
+           	    "special_bonus_shard"			"200"
            	}
 			"duration"      
             {
@@ -169,19 +174,19 @@ DOTAAbilities
             }
 			"shard_passive_armor"   
             {
-                "value"     "6"
-                "RequiresShard"         "1"
+                "value"     "0"
+                "special_bonus_shard"			"6"
             }
             "shard_passive_movespeed"   
             {
                 "value"     "0"
-                "RequiresShard"         "1"
+                "special_bonus_shard"			"0"
             }
             "shard_radius"          
             {
-                "value" "1200"
-                "RequiresShard"         "1"
+                "value" "0"
                 "affected_by_aoe_increase"  "1"
+                "special_bonus_shard"			"1200"
             }
             "base_barrier_amount"
             {

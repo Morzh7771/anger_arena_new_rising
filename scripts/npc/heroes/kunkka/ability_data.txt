@@ -58,7 +58,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Ability.Torrent"
-		"HasScepterUpgrade"			"1"
 		"AbilityDraftScepterAbility"    "kunkka_torrent_storm"
 
 		// Casting
@@ -141,24 +140,24 @@ DOTAAbilities
 		{
 				"torrent_interval"		
 				{
-					"value"				"0.25"
-					"RequiresScepter"	"1"
+					"value"				"0"
+					"special_bonus_scepter"			"0.25"
 				}
 				"torrent_duration"
 				{
-					"value"				"5.0"
-					"RequiresScepter"	"1"
+					"value"				"0"
+					"special_bonus_scepter"			"5.0"
 				}
 				"torrent_min_distance"		
 				{
-					"value"				"300"
-					"RequiresScepter"	"1"
+					"value"				"0"
+					"special_bonus_scepter"			"300"
 				}
 				"torrent_max_distance"		
 				{
-					"value"				"1100"
-					"RequiresScepter"	"1"
+					"value"				"0"
 					"affected_by_aoe_increase"  "1"
+					"special_bonus_scepter"			"1100"
 				}
 		}
 	}
@@ -352,6 +351,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"tooltip_delay"				"3.1"

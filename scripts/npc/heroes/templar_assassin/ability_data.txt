@@ -44,6 +44,7 @@ DOTAAbilities
 			{
 				"value"						"30 60 90 120 150 180 210"
 				"special_bonus_unique_templar_assassin_refraction_damage"		"+40"
+				"special_bonus_shard"			"+60"
 			}
 			"bonus_damage_per_instance_burn"				"0"
 			"duration"					"17.0"
@@ -51,6 +52,7 @@ DOTAAbilities
 			{
 				"value"					"0"
 				"special_bonus_unique_templar_assassin_refraction_disable_cast"				"+1"
+				"special_bonus_shard"			"+1"
 			}
 			"dispels"
             {
@@ -173,7 +175,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_TemplarAssassin.Trap"
 
-		"HasShardUpgrade"				"1"
 
 		"AbilityDraftPreAbility"			"templar_assassin_trap"
 		"AbilityDraftUltScepterAbility"		"templar_assassin_trap_teleport"
@@ -194,6 +195,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{	
 				"trap_radius"				
@@ -231,20 +233,17 @@ DOTAAbilities
 				"min_silence_duration"		
 				{
 					"value"										"0"
-					"special_bonus_shard"		"+1.5"
-					"RequiresShard"						"1"
+					"special_bonus_scepter"		"+1.5"
 				}
 				"max_silence_duration"		
 				{
 					"value"										"0"
-					"special_bonus_shard"		"+3.5"
-					"RequiresShard"						"1"
+					"special_bonus_scepter"		"+3.5"
 				}
 				"bonus_vision"			
 				{
 					"value"										"0"
-					"special_bonus_shard"						"+125"
-					"RequiresShard"						"1"
+					"special_bonus_scepter"						"+125"
 					"affected_by_aoe_increase"	"1"
 				}
 		}
@@ -257,7 +256,6 @@ DOTAAbilities
         "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
         "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
         "MaxLevel"                      "7"
-        "HasScepterUpgrade"         "1"
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -285,7 +283,6 @@ DOTAAbilities
         "FightRecapLevel"               "1"
         "IsGrantedByScepter"            "1"
 
-        "HasScepterUpgrade"         "1"
         "AbilityDraftPreAbility"        "templar_assassin_trap"
 
         // Casting

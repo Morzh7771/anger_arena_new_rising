@@ -28,8 +28,8 @@ DOTAAbilities
             }
             "puddle_status_resistance"          
             {
-                "value"                     "40"
-                "RequiresScepter"           "1"
+                "value"                     "0"
+                "special_bonus_scepter"			"40"
             }
             "river_speed_tooltip"           "18"
             "river_damage"                  "16 32 48 64 80 96 112"
@@ -51,7 +51,6 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Slardar.Sprint"
-		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -105,7 +104,6 @@ DOTAAbilities
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
 
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
@@ -137,7 +135,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Slardar.Slithereen_Crush"
-        "HasScepterUpgrade"			"1"
         "HasShardUpgrade"               "1"
 
 		// Casting
@@ -203,14 +200,14 @@ DOTAAbilities
 				}
 				"shard_amp_duration"			
 				{
-					"value"				"3.0"
-					"RequiresShard"					"1"
+					"value"				"0"
+					"special_bonus_shard"			"3.0"
 				}
 				"shard_bonus_radius"            
                 {
                     "value"             "0"
-                    "RequiresShard"                 "1"
                     // "affected_by_aoe_increase" explicitly removed here so shard aoe increase doesn't double dip with base radius increase
+                    "special_bonus_shard"			"0"
                 }
 			"AbilityCooldown"
 			{
@@ -306,10 +303,12 @@ DOTAAbilities
 			{
 				"value"			"100"
 				"affected_by_aoe_increase"  "1"
+				"special_bonus_scepter"			"x1.8"
 			}
 			"puddle_duration"
 			{
 				"value"			"8"
+				"special_bonus_scepter"			"+5"
 			}
 			"has_self_buff"
             {

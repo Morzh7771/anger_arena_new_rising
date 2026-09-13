@@ -193,6 +193,26 @@ Match the surrounding file: tabs for indentation, the existing `//---` separator
 value aligned in the same column style as neighbouring entries. Preserve existing comments. Do not
 reorder abilities. Do not reformat blocks you did not otherwise change.
 
+## Aghanim / Shard across all heroes — `sync_aghs.py`
+
+The one exception to "one hero per run": a narrow sync of scepter/shard data only, for every
+hero at once. Always dry-run first and read the report:
+
+```bash
+"C:/Users/admin/AppData/Local/Programs/Python/Python314/python.exe" .claude/skills/dota-ability-port/sync_aghs.py --all --dry-run
+```
+
+What it does to NATIVE abilities: `HasScepterUpgrade` / `HasShardUpgrade` exactly as in the patch;
+a bonus written under the wrong kind is renamed keeping the addon's number; the old format
+(`"value" "X"` + `RequiresScepter`) becomes the patch's `"value" "0"` + `special_bonus_scepter "X"`
+with the addon's X — in the modern patch format a missing `value` means 0; a patch bonus the addon
+lacks is imported and lifted to the addon's power level (x1..x2, never for durations, cooldowns,
+costs, counts, percents or negatives); a bonus on a key that exists only for the scepter/shard and
+that the patch writes without a bonus is folded into `value`. `AbilityCharges` keeps base 1 and
+gets whatever bonus makes the scepter total match the patch. Keys the addon made per-level while
+the patch has them scepter-only are left alone. `IsGrantedByScepter/Shard` are only reported —
+changing them changes the kit. Lua abilities: additive only (a missing flag is added).
+
 ## Finish — validate, then report
 
 Run the validator and fix everything it reports:

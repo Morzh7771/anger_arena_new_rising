@@ -115,14 +115,14 @@ DOTAAbilities
 			"shard_delay"
 			{
 				"value"						"0"
-				"RequiresShard"				"1"
+				"special_bonus_shard"			"1.0"
 			}
 			"shard_radius"
 			{
 
-				"value"				"700"
-				"RequiresShard"				"1"
+				"value"				"0"
 				"affected_by_aoe_increase"  "1"
+				"special_bonus_shard"			"700"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -139,7 +139,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Gyrocopter.FlackCannon"
-		"HasScepterUpgrade"				"1"
 
 		"AbilityDraftExtraAbilities"
 		{

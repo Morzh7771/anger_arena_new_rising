@@ -134,11 +134,13 @@ DOTAAbilities
 				"value"					"0"
 				"special_bonus_unique_silencer_glaives_bounces"					"+600"
 				"affected_by_aoe_increase"  "1"
+				"special_bonus_shard"			"450"
 			}
 			"bounce_count"
 			{
 				"value"															"0"
 				"special_bonus_unique_silencer_glaives_bounces"					"+2"
+				"special_bonus_shard"			"1"
 			}
 			"stacks_for_silence"
             {
@@ -265,7 +267,6 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
         "MaxLevel"                      "1"
         "Innate"                        "1"
-        "HasShardUpgrade"               "1"
 
         "AbilityValues"
         {

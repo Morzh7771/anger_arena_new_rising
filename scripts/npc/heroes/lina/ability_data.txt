@@ -150,7 +150,6 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"IsBreakable"					"1"
-		"HasShardUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -305,10 +304,12 @@ DOTAAbilities
 			"supercharge_duration"
             {
                 "value"                             "0"
+                "special_bonus_shard"			"+5"
             }
 			"supercharge_stacks"    
             {
                 "value"                     "0"
+                "special_bonus_shard"			"+12"
             }
             "barrier_pct"
             {

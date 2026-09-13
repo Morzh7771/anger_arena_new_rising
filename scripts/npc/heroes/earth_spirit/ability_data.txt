@@ -208,11 +208,19 @@ DOTAAbilities
 				"special_bonus_unique_earth_spirit_5"				"+250"
 			}
 			"duration"									"2.0 2.3 2.6 2.9 3.2 3.5 3.7"
-			"pull_units_per_second_heroes"				"600"
+			"pull_units_per_second_heroes"
+			{
+				"value"				"600"
+				"special_bonus_shard"			"+50%"
+			}
 			"pull_units_per_second"						"900"
 			"speed"										"800"
 			"total_pull_distance"						"1400"
-			"AbilityCooldown"							"10"
+			"AbilityCooldown"
+			{
+				"value"				"10"
+				"special_bonus_shard"			"-3"
+			}
 			"damage_pct"								"150"
 			"cast_range_heroes"
 			{

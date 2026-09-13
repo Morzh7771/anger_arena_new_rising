@@ -14,6 +14,7 @@ DOTAAbilities
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"percent_damage_per_burn"		"70.0"
@@ -22,6 +23,7 @@ DOTAAbilities
 			{
 				"value"		"0.8 1.6 2.0 2.4 2.8 3.2 3.6"
 				"special_bonus_unique_antimage_7"	"+0.4"
+				"special_bonus_scepter"			"+1.5"
 			}
 			"illusion_percentage"		"25.0"
 			"empowered_max_burn_pct"

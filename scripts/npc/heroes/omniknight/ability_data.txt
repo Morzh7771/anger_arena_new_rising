@@ -89,6 +89,7 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"heal"
@@ -270,7 +271,6 @@ DOTAAbilities
             "AbilityCastRange"              
             {
                 "value"     "600"   
-                "special_bonus_scepter"     "=0"
             }
             "radius"
             {

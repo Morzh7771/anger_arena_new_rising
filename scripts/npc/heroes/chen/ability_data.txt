@@ -188,7 +188,6 @@ DOTAAbilities
         "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
         "AbilitySound"					"Hero_Chen.HolyPersuasionCast"
-        "HasScepterUpgrade"			"1"
         "HasShardUpgrade"			"1"
         "MaxLevel"		"7"
         // Casting
@@ -320,6 +319,7 @@ DOTAAbilities
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
+        "HasScepterUpgrade"			"1"
         "AbilityValues"
         {
             "heal_amount"
@@ -335,8 +335,8 @@ DOTAAbilities
             }
             "ancient_creeps_scepter"
             {
-                "value"	"7"
-                "RequiresShard"			"1"
+                "value"	"0"
+                "special_bonus_shard"			"7"
             }
             "does_purge"
             {

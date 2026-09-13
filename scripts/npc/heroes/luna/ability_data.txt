@@ -137,7 +137,6 @@ DOTAAbilities
             "rotating_glaives_shard_speed_bonus_tooltip"
             {
                 "value"                             "0"
-                "special_bonus_shard"               "+50"   // TOOLTIP ONLY, change value above too
             }
 
             "AbilityCooldown"
@@ -153,6 +152,7 @@ DOTAAbilities
             "rotating_glaives_damage_reduction"
             {
                 "value"                                 "0"
+                "special_bonus_shard"			"+10"
             }
         	"rotating_glaives_movement_radius_expand_speed_scale"				"4"
         	"rotating_glaive_collision_speed_damage_tooltip"				"0"
@@ -173,7 +173,6 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Luna.MoonGlaive.Impact"
-		"HasShardUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

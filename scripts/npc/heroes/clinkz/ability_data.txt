@@ -215,7 +215,6 @@ DOTAAbilities
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Clinkz.DeathPact"
 
 		// Casting
@@ -267,7 +266,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Clinkz.DeathPact"
 		"AbilityDraftUltScepterAbility" "clinkz_burning_army"
-		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -330,7 +328,6 @@ DOTAAbilities
 		"AbilityDraftUltScepterAbility" "clinkz_burning_army"
 		"MaxLevel"						"8"
 		"Innate"						"1"
-		"HasScepterUpgrade"				"1"
 
 		"DependentOnAbility"			"clinkz_wind_walk"
 

@@ -49,50 +49,42 @@ DOTAAbilities
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+10"
-				"RequiresScepter"					"1"
 			}
 			"shard_bonus_damage_per_stack"
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+24"
-				"RequiresScepter"					"1"
 			}
 			"shard_stack_duration"
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+7.0"
-				"RequiresScepter"					"1"
 			}
 			"shard_burst_radius"
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+650"
-				"RequiresScepter"					"1"
 			}
 			"shard_burst_damage_per_stack"
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+90"
 				"DamageTypeTooltip"						"DAMAGE_TYPE_MAGICAL"
-				"RequiresScepter"					"1"
 			}
 			"shard_burst_move_slow_pct"
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+40"
-				"RequiresScepter"					"1"
 			}
 			"shard_burst_slow_duration"
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+2.0"
-				"RequiresScepter"					"1"
 			}
 			"shard_max_stacks"
 			{
 				"value"								"0"
 				"special_bonus_scepter"				"+12"
-				"RequiresScepter"					"1"
 			}
 			"AbilityManaCost"
 			{
@@ -331,7 +323,6 @@ DOTAAbilities
 			"split_count"
 			{		
 				"value"										"0"
-				"special_bonus_scepter"						"0"
 			}
 			"split_range"									"375"
 			"split_damage_reduction"						"50"

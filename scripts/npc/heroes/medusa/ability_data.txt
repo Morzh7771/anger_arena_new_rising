@@ -42,6 +42,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 				"damage_modifier"		
@@ -57,11 +58,13 @@ DOTAAbilities
 				"arrow_count"
                 {
                     "value"         "4"
+                    "special_bonus_scepter"			"+1"
                 }  
                 "process_procs"
                 {
                     "value"         "0"
                     "special_bonus_unique_medusa_4"     "+1"
+                    "special_bonus_scepter"			"+1"
                 }								
 				"split_shot_bonus_range"		"150"
 		}
@@ -82,7 +85,6 @@ DOTAAbilities
 		"AbilitySound"					"Hero_Medusa.MysticSnake.Cast"
 		
 		"AbilityDraftShardAbility"		"medusa_cold_blooded"
-		"HasScepterUpgrade"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -124,13 +126,13 @@ DOTAAbilities
 			"return_speed"						"800"
 			"stone_form_scepter_base"		
 			{
-				"value"							"0.6"
-				"RequiresScepter"				"1"
+				"value"							"0"
+				"special_bonus_shard"			"0.6"
 			}
 			"stone_form_scepter_increment"		
 			{
-				"value"							"0.1"
-				"RequiresScepter"				"1"
+				"value"							"0"
+				"special_bonus_scepter"			"0.1"
 			}
 			"movement_slow"						
 			{	

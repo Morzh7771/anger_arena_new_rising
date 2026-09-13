@@ -29,13 +29,13 @@ DOTAAbilities
 		{
 			"tooltip_scepter_cooldown"
 			{
-				"value"				"60"
-				"RequiresScepter"				"1"
+				"value"				"0"
+				"special_bonus_scepter"			"60"
 			}
 			"tooltip_scepter_manacost"
 			{
-				"value"				"100"
-				"RequiresScepter"				"1"
+				"value"				"0"
+				"special_bonus_scepter"			"100"
 			}
 		}
 	}
@@ -68,18 +68,21 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 				"duration"						
 				{
 					"value"			"6.0"
 					"special_bonus_unique_arc_warden_4"	"+1.5"
+					"special_bonus_scepter"			"+2.0"
 				}
 				"search_radius"					"225"
 				"think_interval"				"0.5"
 				"damage_per_second"				
 				{
 					"value"		"15 30 45 60 75 90 105"
+					"special_bonus_scepter"			"+50%"
 				}
 				"move_speed_slow_pct"				
 				{
@@ -119,7 +122,6 @@ DOTAAbilities
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_ArcWarden.MagneticField.Cast"
 
-        "HasShardUpgrade"               "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -151,7 +153,6 @@ DOTAAbilities
 			{
 				"value"		"0"
 				"RequiresShard"		"1"
-				"special_bonus_shard"	"+75"
 			}
 			"shard_slow_pct"
 			{
@@ -223,7 +224,6 @@ DOTAAbilities
 		"AbilityCastRange"				"2000"
 		"AbilityCastPoint"				"0.3"
 
-		"HasScepterUpgrade"               "1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -342,6 +342,7 @@ DOTAAbilities
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"AbilityCooldown"				

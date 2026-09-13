@@ -74,7 +74,6 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"   
 		"AbilitySound"					"Hero_Huskar.Inner_Vitality"
 
-		"HasShardUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -208,6 +207,7 @@ DOTAAbilities
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"maximum_attack_speed"					"160 210 260 310 360 410 460"

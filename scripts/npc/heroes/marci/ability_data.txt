@@ -116,8 +116,8 @@ DOTAAbilities
                 }
 				"scepter_cooldown_reduction"
 				{		
-					"value"					"15.0"
-					"RequiresScepter"		"1"
+					"value"					"0"
+					"special_bonus_scepter"			"15.0"
 				}
 				"dispel"			
 				{
@@ -197,6 +197,7 @@ DOTAAbilities
 			"impact_damage"			
 			{
 				"value"				"75 150 225 300 375 450 525"
+				"special_bonus_shard"			"+20%"
 			}
 			"debuff_duration"
 			{
@@ -220,13 +221,13 @@ DOTAAbilities
 			"target_abort_distance"		"700"
 			"scepter_heal"
 			{
-				"value"	"300"
-				"RequiresScepter"	"1"
+				"value"	"0"
+				"special_bonus_scepter"			"300"
 			}
 			"scepter_armor"
 			{
-				"value"	"15"
-				"RequiresScepter"	"1"
+				"value"	"0"
+				"special_bonus_scepter"			"15"
 			}
 			"ally_arc_offset"				"150"
 			"ally_impact_damage_pct"				"0"

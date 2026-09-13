@@ -48,7 +48,7 @@ DOTAAbilities
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
-		"HasScepterUpgrade"				"0"
+		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_OgreMagi.Fireblast.Cast"
 
 		// Casting
@@ -69,6 +69,7 @@ DOTAAbilities
 			{
 				"value"										"11 10.5 10 9.5 9 8.5 8"
 				"special_bonus_unique_ogre_magi_5"			"-1"
+				"special_bonus_scepter"			"-1"
 			}
 			"stun_duration"		"1.2"
 			"multicast_delay"	"0.6"

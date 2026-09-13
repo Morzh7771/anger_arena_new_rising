@@ -107,7 +107,6 @@ DOTAAbilities
 		"DisplayAdditionalHeroes"	"1"
 		"AbilitySound"					"Hero_LoneDruid.SpiritBear.Cast"
 
-		"HasScepterUpgrade"			"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -215,7 +214,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_LoneDruid.Rabid"
-		"HasScepterUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -292,23 +290,23 @@ DOTAAbilities
 				"only_affects_player_units"	"1"
 				"shard_radius"
 				{
-					"value"					"700"
-					"RequiresShard"				"1"
+					"value"					"0"
+					"special_bonus_shard"			"700"
 				}
 				"shard_movement_speed_pct"				
 				{
-					"value"					"15"
-					"RequiresShard"				"1"
+					"value"					"0"
+					"special_bonus_shard"			"15"
 				}
 				"shard_attack_speed"				
 				{
-					"value"				"40"
-					"RequiresShard"				"1"
+					"value"				"0"
+					"special_bonus_shard"			"40"
 				}
 				"shard_duration"				
 				{
-					"value"				"5.0"
-					"RequiresShard"				"1"
+					"value"				"0"
+					"special_bonus_shard"			"5.0"
 				}
 			"AbilityCooldown"
 			{
@@ -499,6 +497,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"channel_tooltip"				"3"

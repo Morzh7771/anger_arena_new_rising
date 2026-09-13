@@ -76,16 +76,15 @@ DOTAAbilities
 			"bonus_applications_every_other_attack"
 			{
 				"value"						"0"
-				"special_bonus_shard"		"+1"
 			}
 			"attacks_apply_napalm_in_aoe"
 			{
 				"value"						"0"
-				"special_bonus_shard"		"0"				
 			}
 			"building_damage_pct"
 			{
 				"value"					"0"
+				"special_bonus_shard"			"+20"
 			}
 			"max_level"				"7"
 			"max_level_tooltip"		"7"
@@ -337,8 +336,8 @@ DOTAAbilities
 			}
 			"grab_radius_scepter"
 			{
-				"value"		"650"
-				"RequiresScepter"		"1"
+				"value"		"0"
+				"special_bonus_scepter"			"+650"
 			}
 			"AbilityCooldown"				
 			{

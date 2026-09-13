@@ -84,9 +84,17 @@ DOTAAbilities
 				"value"								"0"
 				
 			}
-			"distance_to_damage"				"0"
+			"distance_to_damage"
+			{
+				"value"				"0"
+				"special_bonus_shard"			"32"
+			}
 
-            "min_distance_damage"				"0"
+            "min_distance_damage"
+            {
+            	"value"				"0"
+            	"special_bonus_shard"			"10"
+            }
             
             "self_stun_duration_percent"
             {
@@ -139,8 +147,8 @@ DOTAAbilities
 			}
 			"scepter_rot_regen_reduction_pct"
 			{
-				"value"				"20"
-				"RequiresScepter"				"1"
+				"value"				"0"
+				"special_bonus_scepter"			"20"
 			}
 			"damage_pct"			"15"
 		}
@@ -227,18 +235,18 @@ DOTAAbilities
 			}
 			"shard_regen_pct"			
 			{
-						"value"			"7.5"
-				"RequiresShard"			"1"
+						"value"			"0"
+						"special_bonus_shard"			"7.5"
 			}
 			"order_lock_duration"		
 			{
-				"value"				"2.75"
-				"RequiresShard"			"1"
+				"value"				"0"
+				"special_bonus_shard"			"2.75"
 			}
 			"shard_cast_range"		
 			{
-				"value"				"300"
-				"RequiresShard"			"1"
+				"value"				"0"
+				"special_bonus_shard"			"300"
 			}
 			"gluttony_strength_bonus"
             {

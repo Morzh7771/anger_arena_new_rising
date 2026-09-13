@@ -238,6 +238,7 @@ DOTAAbilities
 				"CalculateSpellDamageTooltip"	"0"
 				"special_bonus_unique_bloodseeker_7"		"+5"		
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PURE"		
+				"special_bonus_scepter"			"+5"
 			}
 			"damage_cap_amount"			
 			{
@@ -257,7 +258,11 @@ DOTAAbilities
 				"value"			"800"
 				"special_bonus_unique_bloodseeker_3"		"+425"				
 			}
-			"AbilityCharges"				"1"
+			"AbilityCharges"
+			{
+				"value"				"1"
+				"special_bonus_scepter"			"+1"
+			}
 			"AbilityCooldown"				"0.25"
 			"AbilityChargeRestoreTime"		"60"
 		}
