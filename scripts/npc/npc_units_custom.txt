@@ -2761,6 +2761,22 @@
 		"VisionDaytimeRange"		"0"
 		"VisionNighttimeRange"		"0"
 	}
+	// круг захвата руны богатства/мудрости (lib/capture_points): сам юнит
+	// невидимый, всё рисуют партиклы
+	"npc_aa_capture_point"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"StatusHealth"				"1"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+	}
 	"npc_aa_minimap_icon_death"
 	{
 		"BaseClass"					"npc_dota_creature"

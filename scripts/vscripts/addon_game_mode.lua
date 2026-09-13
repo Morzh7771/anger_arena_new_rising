@@ -56,7 +56,9 @@ safe_require('lib/comeback_system')
 safe_require('lib/move_limiter')
 safe_require('lib/spawners/bear_spawner')
 safe_require('lib/bounty')
+safe_require('lib/capture_points/capture_points')
 safe_require('lib/minimap_spots')
+safe_require('lib/shift_buy')
 safe_require('lib/game_ender')
 safe_require('lib/repick_menu')
 safe_require('lib/tip_manager')
@@ -124,6 +126,10 @@ function Precache(context)
         "particles/lane_creeps",
         "particles/shrine_restore_radiant",
         "particles/damned_eye",
+        -- круги захвата рун и круги респавна кемпов (lib/capture_points,
+        -- lib/spawners/camp_respawn_ring)
+        "particles/capture_point_ring",
+        "particles/capture_points",
     }
 
     for _, folder in ipairs(PARTICLE_FOLDERS_AT_LOAD) do
@@ -199,6 +205,8 @@ function Precache(context)
         npc_aa_minimap_icon_camp_mid = true,
         npc_aa_minimap_icon_camp_ancient = true,
         npc_aa_minimap_icon_death = true,
+        -- круг захвата руны, lib/capture_points
+        npc_aa_capture_point = true,
     }
 
     local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}

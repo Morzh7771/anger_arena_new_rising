@@ -23,9 +23,6 @@
 	Списки предметов и чар - scripts/npc/neutral_items.txt.
 ]]
 
--- усиление от Dormant Curio - см. OnCraftRequest
-LinkLuaModifier("modifier_aa_neutral_potency", "modifiers/modifier_aa_neutral_potency", LUA_MODIFIER_MOTION_NONE)
-
 if not IsServer() then return end
 
 require('lib/timers')
@@ -36,11 +33,6 @@ local CONFIG_PATH = "scripts/npc/neutral_madstone.kv"
 local TIERS_PATH  = "scripts/npc/neutral_items.txt"
 local MADSTONE_ITEM = "item_madstone_aa"
 local NET_TABLE = "madstone_progress"
-
--- Dormant Curio: нейтралка, которой её заменят при крафте, получает
--- item_potency процентов к своим числам
-local CURIO_ITEM       = "item_dormant_curio"
-local POTENCY_MODIFIER = "modifier_aa_neutral_potency"
 
 -- слоты нейтралки: предмет и чара
 local SLOT_ITEM        = DOTA_ITEM_NEUTRAL_ACTIVE_SLOT or 16
@@ -603,6 +595,49 @@ function MadstoneSystem:_TryMakeOffer(playerID)
 	}
 end
 
+-- Числа чары на её уровне - для строки "+15 к скорости передвижения" в меню,
+-- как у доты. Нулевые (свойство открывается на уровне повыше) не шлём.
+-- KV чары движковый: GetAbilityKeyValuesByName зовём один раз на имя - в
+-- цикле он забивает общую таблицу строк KeyValues (см. doc/repick_menu.md).
+function MadstoneSystem:_EnhancementStats(name, level)
+	self.enhancementKV = self.enhancementKV or {}
+
+	local kv = self.enhancementKV[name]
+
+	if kv == nil then
+		kv = GetAbilityKeyValuesByName(name) or false
+		self.enhancementKV[name] = kv
+	end
+
+	local values = kv and kv["AbilityValues"]
+
+	if type(values) ~= "table" then return "" end
+
+	local parts = {}
+
+	for key, entry in pairs(values) do
+		local text = type(entry) == "table" and entry["value"] or entry
+
+		if text ~= nil and type(text) ~= "table" then
+			local list = {}
+
+			for word in tostring(text):gmatch("%S+") do
+				table.insert(list, tonumber(word))
+			end
+
+			local value = list[math.max(1, math.min(level or 1, #list))]
+
+			if value and value ~= 0 then
+				table.insert(parts, key .. "=" .. string.format("%g", value))
+			end
+		end
+	end
+
+	table.sort(parts)
+
+	return table.concat(parts, ";")
+end
+
 -- какой уровень у этой чары в этом разряде
 function MadstoneSystem:_GetEnhancementLevel(tier, name)
 	for _, list in pairs(self.tierEnhancements[tier] or {}) do
@@ -803,19 +838,7 @@ function MadstoneSystem:OnCraftRequest(event)
 	-- дальше на этом разряде - уже реролл
 	self.craftedTier[playerID] = tier
 
-	-- Dormant Curio: нейтралка, которая её заменит, получает скрытый
-	-- потенциал. Смотрим до замены - потом курио в слоте уже не будет.
-	local potency = wantedItem ~= CURIO_ITEM and self:_GetCurioPotency(hero) or 0
-
 	self:_EquipNeutral(hero, wantedItem, nil, SLOT_ITEM)
-
-	if potency > 0 then
-		local item = hero:GetItemInSlot(SLOT_ITEM)
-
-		if item then
-			hero:AddNewModifier(hero, item, POTENCY_MODIFIER, { potency = potency })
-		end
-	end
 
 	-- Fundamental Forging: чару за игрока катает рандом, зато из всего разряда
 	if forging then
@@ -836,33 +859,19 @@ function MadstoneSystem:OnCraftRequest(event)
 	self:_Push(playerID)
 end
 
--- сколько процентов даёт курио, если она сейчас надета
-function MadstoneSystem:_GetCurioPotency(hero)
-	local old = hero:GetItemInSlot(SLOT_ITEM)
-
-	if not old or old:GetAbilityName() ~= CURIO_ITEM then return 0 end
-
-	return old:GetSpecialValueFor("item_potency") or 0
-end
-
 -- кладём предмет в слот нейтралки, старый оттуда убираем - это и есть
 -- дотовский реролл
 function MadstoneSystem:_EquipNeutral(hero, itemName, level, slot)
 	local old = hero:GetItemInSlot(slot)
 
-	-- Оставил своё - не пересоздаём: иначе сбрасывались бы кулдаун, заряды и
-	-- усиление от курио. Чару того же имени только поднимаем до уровня разряда.
+	-- Оставил своё - не пересоздаём: иначе сбрасывались бы кулдаун и заряды.
+	-- Чару того же имени только поднимаем до уровня разряда.
 	if old and old:GetAbilityName() == itemName then
 		if level and level > old:GetLevel() then
 			old:SetLevel(level)
 		end
 
 		return
-	end
-
-	-- усиление от курио жило на старом предмете - уходит вместе с ним
-	if slot == SLOT_ITEM then
-		hero:RemoveModifierByName(POTENCY_MODIFIER)
 	end
 
 	if old then
@@ -912,8 +921,10 @@ function MadstoneSystem:_Push(playerID)
 			table.insert(items, name)
 		end
 
+		-- "имя:уровень:ключ=число;ключ=число" - числа для строки статов в меню
 		for _, entry in pairs(offer.enhancements) do
-			table.insert(enhancements, entry[1] .. ":" .. tostring(entry[2]))
+			table.insert(enhancements, entry[1] .. ":" .. tostring(entry[2]) .. ":"
+				.. self:_EnhancementStats(entry[1], entry[2]))
 		end
 	end
 

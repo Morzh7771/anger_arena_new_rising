@@ -31,6 +31,7 @@ CreepSpawner = CreepSpawner or class({})
 LinkLuaModifier("modifier_dominate_protection", 'lib/spawners/modifier_dominate_protection', LUA_MODIFIER_MOTION_NONE)
 
 require("lib/timers")
+require("lib/spawners/camp_respawn_ring")
 
 local DEBUG = IsInToolsMode()
 local FORCE_DEBUG = false
@@ -181,6 +182,7 @@ end
 function CreepSpawner:StopSpawning()
 	Timers:RemoveTimer("CreepSpawner")
 	Timers:RemoveTimer(STACK_TICK_TIMER)
+	CampRespawnRing:StopAll()
 	self._stackTickerActive = false
 
 	if self.spawners then
@@ -405,6 +407,9 @@ function CreepSpawner:_ScheduleRespawn(spawner_info)
 
 	self._spawnerRespawnTimer[name] = true
 	local delay = RandomFloat(RESPAWN_MIN, RESPAWN_MAX)
+
+	-- серый круг на точке кемпа, заполнится ровно к респавну
+	CampRespawnRing:Start(name, spawner_info.pos, delay)
 
 	Timers:CreateTimer("CreepSpawnerRespawn_" .. name, {
 		useGameTime = true,

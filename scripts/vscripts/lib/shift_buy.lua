@@ -1,0 +1,143 @@
+if not IsServer() then return end
+
+--[[
+	Книги с зажатым Shift.
+
+	Купил книгу, держа Shift, - она сразу применяется, как если бы её купили и
+	тут же нажали. Касается всех предметов из scripts/npc/items/book_of_stats.txt,
+	которые при использовании зовут tome.lua: статы, книга богов, книга героев,
+	медицинский трактат.
+
+	КАК.
+	Нажат ли Shift, знает только клиент: panorama/scripts/custom_game/shift_buy.js
+	шлёт сюда каждую смену его состояния. Сама покупка идёт через движок как
+	обычно - списание золота, сток и событие покупки (на нём перенос золота
+	сверх 50к) не трогаем. После покупки находим книгу у героя и делаем то же,
+	что OnSpellStart из KV: зовём ту же функцию tome.lua с теми же ключами и
+	снимаем один заряд, как SpendCharge.
+
+	Мёртвому герою книга приходит обычным предметом: трактат вешает
+	модификатор, а на мёртвого он может и не встать - книга сгорела бы зря.
+]]
+
+require('lib/timers')
+require('tome')
+
+ShiftBuy = ShiftBuy or {}
+
+local TOMES_FILE = "scripts/npc/items/book_of_stats.txt"
+local TOME_SCRIPT = "tome.lua"
+
+-- ключи RunScript, которые разбирает сам движок, в функцию они не идут
+local RUNSCRIPT_SERVICE_KEYS = { Target = true, ScriptFile = true, Function = true }
+
+function ShiftBuy:Init()
+	if self._inited then return end
+	self._inited = true
+
+	self._shift = {}
+	self._tomes = self:_LoadTomes()
+
+	CustomGameEventManager:RegisterListener("aa_shift_state", function(_, event)
+		ShiftBuy:_OnShiftState(event)
+	end)
+
+	ListenToGameEvent("dota_item_purchased", function(event)
+		ShiftBuy:_OnPurchased(event)
+	end, nil)
+end
+
+-- Что считается книгой и что звать при использовании, берём прямо из KV:
+-- числа и функции живут в одном месте, и новая книга в том же файле сразу
+-- заработает с Shift.
+function ShiftBuy:_LoadTomes()
+	local tomes = {}
+
+	for itemName, data in pairs(LoadKeyValues(TOMES_FILE) or {}) do
+		local onSpell = type(data) == "table" and data.OnSpellStart
+		local run = type(onSpell) == "table" and onSpell.RunScript
+
+		if type(run) == "table" and run.ScriptFile == TOME_SCRIPT and run.Function then
+			local params = {}
+
+			for key, value in pairs(run) do
+				if not RUNSCRIPT_SERVICE_KEYS[key] then params[key] = value end
+			end
+
+			tomes[itemName] = { func = run.Function, params = params }
+		end
+	end
+
+	return tomes
+end
+
+function ShiftBuy:_OnShiftState(event)
+	local playerId = event and event.PlayerID
+	if playerId == nil then return end
+
+	self._shift[playerId] = tonumber(event.down) == 1
+end
+
+function ShiftBuy:_OnPurchased(event)
+	local playerId = event and event.PlayerID
+	local itemName = event and event.itemname
+	local tome = itemName and self._tomes[itemName]
+
+	if playerId == nil or not tome or not self._shift[playerId] then return end
+
+	-- книга может ещё не лечь в слот к моменту события - берём её тиком позже
+	Timers:CreateTimer(0, function()
+		ShiftBuy:_UseBought(playerId, itemName, tome)
+	end)
+end
+
+function ShiftBuy:_UseBought(playerId, itemName, tome)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	if not hero or hero:IsNull() or not hero:IsAlive() then return end
+
+	local item = self:_FindBought(hero, itemName)
+	if not item then return end
+
+	local func = _G[tome.func]
+
+	if type(func) ~= "function" then
+		print("[AA] shift_buy: нет функции " .. tostring(tome.func) .. " для " .. itemName)
+		return
+	end
+
+	local keys = { caster = hero, target = hero, ability = item }
+	for key, value in pairs(tome.params) do keys[key] = value end
+
+	local ok, err = pcall(func, keys)
+
+	if not ok then
+		-- книга остаётся у героя - её можно нажать руками
+		print("[AA] shift_buy: " .. itemName .. " не применилась: " .. tostring(err))
+		return
+	end
+
+	-- то же, что SpendCharge в KV: минус заряд, последний - вместе с предметом
+	local charges = item:GetCurrentCharges()
+
+	if charges > 1 then
+		item:SetCurrentCharges(charges - 1)
+	else
+		hero:RemoveItem(item)
+	end
+end
+
+-- Купленная книга лежит в инвентаре (у лавки) или в тайнике (вдали от неё).
+-- Если такие книги у героя уже были, покупка легла к ним в стак, и какой из
+-- стаков уменьшить - без разницы: книг останется столько же, сколько было до
+-- покупки. Книги, купленные союзником, не трогаем.
+function ShiftBuy:_FindBought(hero, itemName)
+	for slot = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
+		local item = hero:GetItemInSlot(slot)
+
+		if item and not item:IsNull() and item:GetAbilityName() == itemName and item:GetPurchaser() == hero then
+			return item
+		end
+	end
+
+	return nil
+end

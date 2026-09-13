@@ -237,6 +237,9 @@ function MinimapSpots:_HasContent(spot)
 		return false
 	end
 
+	-- богатство и мудрость теперь не лежат, а стоят кругом захвата
+	if CapturePoints and CapturePoints:HasZoneNear(spot.pos, RUNE_RADIUS) then return true end
+
 	return #Entities:FindAllByClassnameWithin("dota_item_rune", spot.pos, RUNE_RADIUS) > 0
 end
 

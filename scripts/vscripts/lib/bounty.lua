@@ -91,7 +91,7 @@ function Bounty:SpawnBounty()
         for _,entity in pairs(FindAll) do
             entity:RemoveSelf()
         end
-        CreateRune(entity:GetAbsOrigin(), DOTA_RUNE_BOUNTY )
+        Bounty:PlaceZone(entity, "bounty")
     end
     if MinimapSpots then MinimapSpots:OnRuneSpawn("bounty") end
     needTimeBounty = needTimeBounty + BOUNTY_INTERVAL
@@ -103,7 +103,7 @@ function Bounty:SpawnWisdom()
         for _,entity in pairs(FindAll) do
             entity:RemoveSelf()
         end
-        CreateRune(entity:GetAbsOrigin(), DOTA_RUNE_XP )
+        Bounty:PlaceZone(entity, "wisdom")
     end
     if MinimapSpots then MinimapSpots:OnRuneSpawn("wisdom") end
     needTimeWisdom = needTimeWisdom + WISDOM_INTERVAL
@@ -160,6 +160,16 @@ end
 -- Зовётся из фильтра спавна рун усиления (AngelArena:ModifierRuneSpawn):
 -- спавнер оттуда - самый точный источник координат, поиск по классу нужен
 -- только до первой руны.
+-- Вместо руны на споте встаёт круг захвата (lib/capture_points): встань в
+-- него, и руна достанется команде. Незахваченный прошлый круг сменяется
+-- новым - как раньше новая руна стирала лежащую.
+function Bounty:PlaceZone(entity, kind)
+    local pos = entity:GetAbsOrigin()
+
+    CapturePoints:RemoveZonesNear(pos, 80)
+    CapturePoints:SpawnZone(pos, kind)
+end
+
 function Bounty:RememberPowerSpawner(entindex)
     if not entindex then return end
 
