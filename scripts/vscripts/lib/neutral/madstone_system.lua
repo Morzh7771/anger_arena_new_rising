@@ -15,7 +15,9 @@
 		летят сами, есть - лежат на земле) -> набралось на цену разряда ->
 		у слота нейтралки загорелся молоточек -> открыл меню, выбрал один
 		предмет и одну чару из предложенных -> взял.
-		Пока разряд текущий, крафтить можно сколько угодно раз.
+		Пока разряд текущий, крафтить можно сколько угодно раз: первый крафт
+		разряда по полной цене, каждый следующий - реролл по своей цене.
+		Открылся новый разряд - накопленное сгорает, его надо фармить заново.
 
 	Настройки - scripts/npc/neutral_madstone.kv.
 	Списки предметов и чар - scripts/npc/neutral_items.txt.
@@ -49,6 +51,7 @@ function MadstoneSystem:Init()
 	self.duelsFinished = 0
 	self.madstones     = {}
 	self.offers        = {}
+	self.craftedTier   = {}	-- [playerID] = разряд, на котором уже был крафт
 
 	self:_LoadConfig()
 	self:_LoadTiers()
@@ -219,6 +222,19 @@ function MadstoneSystem:_LoadConfig()
 		self.costByTier[tonumber(tier)] = tonumber(cost)
 	end
 
+	-- Повторный крафт того же разряда - реролл, у него своя цена. Разряда
+	-- тут нет - берётся цена первого крафта.
+	self.rerollCostByTier = {}
+
+	for tier, cost in pairs(craft["reroll_cost_by_tier"] or {}) do
+		self.rerollCostByTier[tonumber(tier)] = tonumber(cost)
+	end
+
+	-- Новый разряд - безумруды копятся заново. Без этого накопленное на
+	-- старом разряде сразу оплачивало новый: молоток горел в момент
+	-- открытия, и новый разряд не надо было фармить.
+	self.resetOnNewTier = tonumber(craft["reset_on_new_tier"] or "1") == 1
+
 	-- Сколько НОВЫХ вариантов катать. То, что уже надето, показывается
 	-- сверх этого и идёт первым - как в доте, чтобы можно было оставить
 	-- своё. 0 - брать trinket_options и enhancement_options из
@@ -294,6 +310,23 @@ function MadstoneSystem:GetCraftCost(tier)
 	return self.costByTier[tier] or self.craftCost[tier] or 10
 end
 
+function MadstoneSystem:GetRerollCost(tier)
+	return self.rerollCostByTier[tier] or self:GetCraftCost(tier)
+end
+
+-- на этом разряде игрок уже крафтил - значит следующий крафт это реролл
+function MadstoneSystem:IsReroll(playerID, tier)
+	return self.craftedTier[playerID] == tier
+end
+
+function MadstoneSystem:GetPlayerCraftCost(playerID, tier)
+	if self:IsReroll(playerID, tier) then
+		return self:GetRerollCost(tier)
+	end
+
+	return self:GetCraftCost(tier)
+end
+
 -- зовётся из DuelController в конце каждой дуэли (в том числе пропущенной)
 function MadstoneSystem:OnDuelEnd(duelCount)
 	if not self.enabled then return end
@@ -309,6 +342,13 @@ function MadstoneSystem:OnDuelEnd(duelCount)
 
 		-- разряд сменился: старые предложения больше не годятся
 		self.offers = {}
+
+		-- и копить на него надо с нуля
+		if self.resetOnNewTier then
+			for playerID, _ in pairs(self.madstones) do
+				self.madstones[playerID] = 0
+			end
+		end
 
 		for playerID, _ in pairs(self.madstones) do
 			self:_TryMakeOffer(playerID)
@@ -486,7 +526,7 @@ function MadstoneSystem:_TryMakeOffer(playerID)
 		return
 	end
 
-	if self:GetMadstones(playerID) < self:GetCraftCost(tier) then
+	if self:GetMadstones(playerID) < self:GetPlayerCraftCost(playerID, tier) then
 		self.offers[playerID] = nil
 		return
 	end
@@ -672,7 +712,7 @@ function MadstoneSystem:OnCraftRequest(event)
 		return
 	end
 
-	local cost = self:GetCraftCost(tier)
+	local cost = self:GetPlayerCraftCost(playerID, tier)
 
 	if self:GetMadstones(playerID) < cost then return end
 
@@ -712,6 +752,9 @@ function MadstoneSystem:OnCraftRequest(event)
 
 	self.madstones[playerID] = self:GetMadstones(playerID) - cost
 	self.offers[playerID] = nil
+
+	-- дальше на этом разряде - уже реролл
+	self.craftedTier[playerID] = tier
 
 	self:_EquipNeutral(hero, wantedItem, nil, SLOT_ITEM)
 
@@ -794,7 +837,10 @@ function MadstoneSystem:_Push(playerID)
 	CustomNetTables:SetTableValue(NET_TABLE, tostring(playerID), {
 		madstones    = self:GetMadstones(playerID),
 		tier         = tier,
-		cost         = tier > 0 and self:GetCraftCost(tier) or 0,
+		cost         = tier > 0 and self:GetPlayerCraftCost(playerID, tier) or 0,
+		first_cost   = tier > 0 and self:GetCraftCost(tier) or 0,
+		reroll_cost  = tier > 0 and self:GetRerollCost(tier) or 0,
+		reroll       = (tier > 0 and self:IsReroll(playerID, tier)) and 1 or 0,
 		can_craft    = offer and 1 or 0,
 		items        = table.concat(items, "|"),
 		enhancements = table.concat(enhancements, "|"),
