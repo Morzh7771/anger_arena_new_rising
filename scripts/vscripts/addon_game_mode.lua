@@ -194,6 +194,11 @@ function Precache(context)
         npc_aa_minimap_rune_bounty = true,
         npc_aa_minimap_rune_xp = true,
         npc_aa_minimap_rune_unknown = true,
+        npc_aa_minimap_icon_camp = true,
+        npc_aa_minimap_icon_camp_big = true,
+        npc_aa_minimap_icon_camp_mid = true,
+        npc_aa_minimap_icon_camp_ancient = true,
+        npc_aa_minimap_icon_death = true,
     }
 
     local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt") or {}
@@ -808,10 +813,10 @@ function AngelArena:OnGameStateChange()
 		print('remove spawner')
 
 		-- Невидимые юниты-иконки (npc_aa_minimap_*) стоят на карте ради значков
-		-- кемпов, боссов и порталов на миникарте. Сквозь туман их показывает
-		-- modifier_hidden_from_map (PROVIDES_FOW_POSITION); он приходит
+		-- кемпов, боссов и порталов на миникарте. modifier_hidden_from_map приходит
 		-- врождённой способностью, но на здания из Hammer она может и не
-		-- навеситься - поэтому проверяем и при нужде вешаем сами.
+		-- навеситься - поэтому проверяем и при нужде вешаем сами. Сквозь туман
+		-- юнит показывает отдельный modifier_minimap_icon_fow.
 		local icons = 0
 
 		for _, unit in pairs(Entities:FindAllByClassname("npc_dota_building")) do
@@ -820,6 +825,12 @@ function AngelArena:OnGameStateChange()
 			if unitname:sub(1, 15) == "npc_aa_minimap_" then
 				if not unit:HasModifier("modifier_hidden_from_map") then
 					unit:AddNewModifier(unit, nil, "modifier_hidden_from_map", {})
+				end
+
+				-- видно сквозь туман; кемпы, которые перерисует lib/minimap_spots.lua,
+				-- его потом снимут
+				if not unit:HasModifier("modifier_minimap_icon_fow") then
+					unit:AddNewModifier(unit, nil, "modifier_minimap_icon_fow", {})
 				end
 
 				icons = icons + 1

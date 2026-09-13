@@ -11,9 +11,10 @@ if not IsServer() then return end
 -- только своя команда (NOT_ON_MINIMAP_FOR_ENEMIES), и гасим их по отдельности.
 -- Режимы - стак modifier_hidden_from_map, см. modifiers/modifier_hidden_from_map.lua.
 --
--- Кемпы: на карте из Hammer стоят нейтральные npc_aa_minimap_* - их гасим и
--- ставим вместо них копии команд. Руны: юниты npc_aa_minimap_rune_* создаём
--- сами, иконки ванильные (minimap_rune_bounty / _xp / _unknown).
+-- Кемпы: на карте из Hammer стоят нейтральные здания npc_aa_minimap_* - их
+-- удаляем (у здания значок не спрятать) и ставим вместо них копии команд на
+-- npc_aa_minimap_icon_*. Руны: юниты npc_aa_minimap_rune_* создаём сами,
+-- иконки ванильные (minimap_rune_bounty / _xp / _unknown).
 MinimapSpots = MinimapSpots or {}
 
 local TEAMS = { DOTA_TEAM_GOODGUYS, DOTA_TEAM_BADGUYS }
@@ -21,12 +22,17 @@ local TICK = 0.5
 
 -- юниты-иконки кемпов: их берём под свой контроль, остальные (боссы, порталы)
 -- так и живут обычными иконками
+--
+-- Значение - юнит-копия для команд с тем же значком. Копии на npc_dota_creature,
+-- а не на здании, как оригинал: у зданий NOT_ON_MINIMAP значок не гасит, и
+-- иконка кемпа не пропадала после фарма. Оригинал по той же причине не
+-- спрятать - его удаляем.
 local CAMP_ICON_UNITS = {
-	npc_aa_minimap_neutral_stack = true,
-	npc_aa_minimap_mid           = true,
-	npc_aa_minimap_big_stack     = true,
-	npc_aa_minimap_ancient_stack = true,
-	npc_aa_minimap_cobold        = true,
+	npc_aa_minimap_neutral_stack = "npc_aa_minimap_icon_camp",
+	npc_aa_minimap_mid           = "npc_aa_minimap_icon_camp_big",
+	npc_aa_minimap_big_stack     = "npc_aa_minimap_icon_camp_mid",
+	npc_aa_minimap_ancient_stack = "npc_aa_minimap_icon_camp_ancient",
+	npc_aa_minimap_cobold        = "npc_aa_minimap_icon_death",
 }
 
 -- какая иконка у какой руны. На точках богатства попеременно лежат богатство и
@@ -109,31 +115,54 @@ end
 
 function MinimapSpots:_CollectCamps()
 	local spawners = CreepSpawner and CreepSpawner._spawnerInfoByName or {}
+	local icons = {}
 
 	for _, unit in pairs(Entities:FindAllByClassname("npc_dota_building")) do
 		local unitname = unit.GetUnitName and unit:GetUnitName() or ""
 
 		if CAMP_ICON_UNITS[unitname] then
-			local pos = unit:GetAbsOrigin()
-			local linked = {}
-
-			for name, info in pairs(spawners) do
-				if (info.pos - pos):Length2D() <= CAMP_LINK_RADIUS then
-					table.insert(linked, name)
-				end
-			end
-
-			-- иконка без кемпа рядом - не наша забота, пусть остаётся обычной
-			if #linked > 0 then
-				-- крипы стоят с первой секунды, так что иконку сразу видят все
-				local spot = NewSpot("camp", "camp", pos, true, { camp = unitname })
-				spot.spawners = linked
-
-				IconModifier(unit, MINIMAP_ICON_REPLACED)
-				table.insert(self.spots, spot)
-			end
+			table.insert(icons, { unit = unit, pos = unit:GetAbsOrigin(), linked = {} })
 		end
 	end
+
+	-- Кемпы на арене стоят тесно: если брать все спавнеры в радиусе, к иконке
+	-- липли соседние кемпы, и пока жив хоть один сосед, иконка не гасла. Поэтому
+	-- каждый спавнер отдаём только ближайшей к нему иконке.
+	for name, info in pairs(spawners) do
+		local best, bestDist = nil, CAMP_LINK_RADIUS
+
+		for _, icon in pairs(icons) do
+			local dist = (info.pos - icon.pos):Length2D()
+
+			if dist <= bestDist then
+				best, bestDist = icon, dist
+			end
+		end
+
+		if best then table.insert(best.linked, name) end
+	end
+
+	local single, multi = 0, 0
+
+	for _, icon in pairs(icons) do
+		-- иконка без кемпа рядом - не наша забота, пусть остаётся обычной
+		if #icon.linked > 0 then
+			local copyName = CAMP_ICON_UNITS[icon.unit:GetUnitName()]
+
+			-- крипы стоят с первой секунды, так что иконку сразу видят все
+			local spot = NewSpot("camp", "camp", icon.pos, true, { camp = copyName })
+			spot.spawners = icon.linked
+
+			-- оригинал - здание, его значок не спрятать; нужен он был только
+			-- ради значка, так что просто убираем
+			UTIL_Remove(icon.unit)
+			table.insert(self.spots, spot)
+
+			if #icon.linked == 1 then single = single + 1 else multi = multi + 1 end
+		end
+	end
+
+	print("[AA] minimap camps: one camp", single, "several camps", multi)
 end
 
 function MinimapSpots:_CollectRunes()
