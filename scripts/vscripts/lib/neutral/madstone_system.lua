@@ -23,6 +23,9 @@
 	Списки предметов и чар - scripts/npc/neutral_items.txt.
 ]]
 
+-- усиление от Dormant Curio - см. OnCraftRequest
+LinkLuaModifier("modifier_aa_neutral_potency", "modifiers/modifier_aa_neutral_potency", LUA_MODIFIER_MOTION_NONE)
+
 if not IsServer() then return end
 
 require('lib/timers')
@@ -33,6 +36,11 @@ local CONFIG_PATH = "scripts/npc/neutral_madstone.kv"
 local TIERS_PATH  = "scripts/npc/neutral_items.txt"
 local MADSTONE_ITEM = "item_madstone_aa"
 local NET_TABLE = "madstone_progress"
+
+-- Dormant Curio: нейтралка, которой её заменят при крафте, получает
+-- item_potency процентов к своим числам
+local CURIO_ITEM       = "item_dormant_curio"
+local POTENCY_MODIFIER = "modifier_aa_neutral_potency"
 
 -- слоты нейтралки: предмет и чара
 local SLOT_ITEM        = DOTA_ITEM_NEUTRAL_ACTIVE_SLOT or 16
@@ -458,6 +466,18 @@ end
 function MadstoneSystem:_Grant(playerID, amount)
 	if amount <= 0 then return end
 
+	-- Копить впрок нельзя: набралось на крафт - молоток горит, и новые
+	-- безумруды не идут, пока не скрафтишь. Каждый крафт фармится заново.
+	local tier = self:GetAllowedTier()
+
+	if tier > 0 then
+		local room = self:GetPlayerCraftCost(playerID, tier) - self:GetMadstones(playerID)
+
+		amount = math.min(amount, room)
+	end
+
+	if amount <= 0 then return end
+
 	self.madstones[playerID] = (self.madstones[playerID] or 0) + amount
 
 	self:_TryMakeOffer(playerID)
@@ -681,12 +701,39 @@ function MadstoneSystem:_RollEnhancements(hero, tier, count, exclude, allGroups)
 	end
 
 	local result = {}
+	local taken = {}
 
-	while #result < count and #pool > 0 do
-		local index = RandomInt(1, #pool)
+	local function take(from)
+		while #result < count and #from > 0 do
+			local index = RandomInt(1, #from)
+			local entry = from[index]
 
-		table.insert(result, { pool[index][1], pool[index][2] })
-		table.remove(pool, index)
+			table.remove(from, index)
+
+			if not taken[entry[1]] then
+				taken[entry[1]] = true
+				table.insert(result, { entry[1], entry[2] })
+			end
+		end
+	end
+
+	take(pool)
+
+	-- На героя в разряде бывает всего 4 чары (2 общих + 2 атрибута), и
+	-- минус надетая выходило 3 новых вместо 4. Недостающие добираем из
+	-- остальных групп разряда - после своих и без повторов.
+	if #result < count then
+		local extra = {}
+
+		for _, list in pairs(groups) do
+			for _, entry in pairs(list) do
+				if entry[1] ~= exclude and not taken[entry[1]] then
+					table.insert(extra, entry)
+				end
+			end
+		end
+
+		take(extra)
 	end
 
 	return result
@@ -756,7 +803,19 @@ function MadstoneSystem:OnCraftRequest(event)
 	-- дальше на этом разряде - уже реролл
 	self.craftedTier[playerID] = tier
 
+	-- Dormant Curio: нейтралка, которая её заменит, получает скрытый
+	-- потенциал. Смотрим до замены - потом курио в слоте уже не будет.
+	local potency = wantedItem ~= CURIO_ITEM and self:_GetCurioPotency(hero) or 0
+
 	self:_EquipNeutral(hero, wantedItem, nil, SLOT_ITEM)
+
+	if potency > 0 then
+		local item = hero:GetItemInSlot(SLOT_ITEM)
+
+		if item then
+			hero:AddNewModifier(hero, item, POTENCY_MODIFIER, { potency = potency })
+		end
+	end
 
 	-- Fundamental Forging: чару за игрока катает рандом, зато из всего разряда
 	if forging then
@@ -777,10 +836,34 @@ function MadstoneSystem:OnCraftRequest(event)
 	self:_Push(playerID)
 end
 
+-- сколько процентов даёт курио, если она сейчас надета
+function MadstoneSystem:_GetCurioPotency(hero)
+	local old = hero:GetItemInSlot(SLOT_ITEM)
+
+	if not old or old:GetAbilityName() ~= CURIO_ITEM then return 0 end
+
+	return old:GetSpecialValueFor("item_potency") or 0
+end
+
 -- кладём предмет в слот нейтралки, старый оттуда убираем - это и есть
 -- дотовский реролл
 function MadstoneSystem:_EquipNeutral(hero, itemName, level, slot)
 	local old = hero:GetItemInSlot(slot)
+
+	-- Оставил своё - не пересоздаём: иначе сбрасывались бы кулдаун, заряды и
+	-- усиление от курио. Чару того же имени только поднимаем до уровня разряда.
+	if old and old:GetAbilityName() == itemName then
+		if level and level > old:GetLevel() then
+			old:SetLevel(level)
+		end
+
+		return
+	end
+
+	-- усиление от курио жило на старом предмете - уходит вместе с ним
+	if slot == SLOT_ITEM then
+		hero:RemoveModifierByName(POTENCY_MODIFIER)
+	end
 
 	if old then
 		hero:RemoveItem(old)
