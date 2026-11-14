@@ -1,8 +1,52 @@
+#base cosmetic_precache_units.txt
+#base heroes/bounty_hunter/unit.txt
+#base heroes/broodmother/unit.txt
+#base heroes/centaur/unit.txt
+#base heroes/chen/unit.txt
+#base heroes/clinkz/unit.txt
+#base heroes/dark_willow/unit.txt
+#base heroes/death_prophet/unit.txt
+#base heroes/earth_spirit/unit.txt
+#base heroes/elder_titan/unit.txt
+#base heroes/ember_spirit/unit.txt
+#base heroes/furion/unit.txt
+#base heroes/grimstroke/unit.txt
+#base heroes/gyrocopter/unit.txt
+#base heroes/invoker/unit.txt
+#base heroes/juggernaut/unit.txt
+#base heroes/keeper_of_the_light/unit.txt
+#base heroes/lich/unit.txt
+#base heroes/meepo/unit.txt
+#base heroes/phantom_assassin/unit.txt
+#base heroes/phoenix/unit.txt
+#base heroes/rattletrap/unit.txt
+#base heroes/razor/unit.txt
+#base heroes/ringmaster/unit.txt
+#base heroes/skeleton_king/unit.txt
+#base heroes/slark/unit.txt
+#base heroes/storm_spirit/unit.txt
+#base heroes/techies/unit.txt
+#base heroes/templar_assassin/unit.txt
+#base heroes/terrorblade/unit.txt
+#base heroes/tidehunter/unit.txt
+#base heroes/tinker/unit.txt
+#base heroes/treant/unit.txt
+#base heroes/troll_warlord/unit.txt
+#base heroes/tusk/unit.txt
+#base heroes/void_spirit/unit.txt
+#base heroes/warlock/unit.txt
+#base heroes/weaver/unit.txt
+#base heroes/wisp/unit.txt
+#base heroes/zuus/unit.txt
 // Units File
 #base heroes/largo/unit.txt
+#base units_vanilla_missing.txt
 #base heroes/lone_druid/unit.txt
 #base heroes/pugna/unit.txt
 #base heroes/venomancer/unit.txt
+#base heroes/monkey_king/unit.txt
+#base heroes/visage/unit.txt
+#base heroes/beastmaster/unit.txt
 #base heroes/brewmaster/unit.txt
 #base heroes/undying/unit.txt
 #base heroes/enigma/unit.txt
@@ -94,11 +138,12 @@
 		"Model"						"models/props_structures/tower_upgrade/tower_upgrade_dest.vmdl"
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower45"
-		"MinimapIconSize"			"320"
+		"MinimapIconSize"			"360"
 		"Level"						"1"
 
 		"Ability1"					"tower_ability"
 		"Ability2"					"ability_shrine_restore"
+		"Ability3"					"tower_capture_pool"
 
 		"ModelScale" 				"1"
 
@@ -445,7 +490,7 @@
 		"Level"						"0"
 		"ModelScale"					"1"
 		"MinimapIcon"				"minimap_misc_building"
-		"MinimapIconSize"			"200"
+		"MinimapIconSize"			"300"
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -476,7 +521,7 @@
 	"npc_aa_minimap_ancient_stack"
 	{
 		"MinimapIcon"				"minimap_creepcamp_ancient"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 		"MinimapDisableTint"        "1"
 		"BaseClass"					"npc_dota_building"											// Class of entity of link to.
 		"Model"						"models/development/invisiblebox.vmdl"						// Model.
@@ -557,7 +602,7 @@
 	{
 		"MinimapIcon"				"minimap_creepcamp_mid"
 		"MinimapDisableTint"		"1"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 		// General
 		//
 		"BaseClass"					"npc_dota_building"											// Class of entity of link to.
@@ -700,7 +745,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -786,7 +831,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"270"
+		"MinimapIconSize"			"335"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -873,7 +918,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"250"
+		"MinimapIconSize"			"325"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -959,7 +1004,7 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_FILLER"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"100"
 		"HealthBarOffset"			"260"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -1046,7 +1091,7 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_FILLER"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"100"
 		"HealthBarOffset"			"260"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -1133,7 +1178,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"300"
+		"MinimapIconSize"			"350"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -1220,7 +1265,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"0"
 		"HealthBarOffset"			"0"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -1257,6 +1302,8 @@
 		"GameSoundsFile"  			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
 		"vscripts"					"creeps/boss/possessed/possessed_ai.lua"
+		// инвентарь - витрина дропа (lib/boss/boss_class.lua, _ShowLoot)
+		"HasInventory"				"1"
 		
 		"ModelScale" 				"1.8" 
 		"Level" 					"100" 
@@ -1363,7 +1410,7 @@
 		"Ability6" 								"keymaster_interception"
 		"Ability7"								"disarmor_boss"
 		
-		"HasInventory" 							"0" 
+		"HasInventory" 							"1"
 		
 		"ArmorPhysical" 						"0"
 		"MagicalResistance" 					"35"
@@ -1442,7 +1489,7 @@
 		"Ability6" 								"keymaster_interception"
 		"Ability7"								"disarmor_boss"
 		
-		"HasInventory" 							"0" 
+		"HasInventory" 							"1"
 		
 		"ArmorPhysical" 						"0"
 		"MagicalResistance" 					"35"
@@ -1496,6 +1543,8 @@
 		"SoundSet"						"Hero_Omniknight"
 		"GameSoundsFile"  				"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
 		"vscripts"						"creeps/boss/soul_guardian/soul_guardian_ai.lua"
+		// инвентарь - витрина дропа (lib/boss/boss_class.lua, _ShowLoot)
+		"HasInventory"					"1"
 		"ConsideredHero"			"1"
 		"ModelScale" 					"2.0"
 		"Level" 						"100"
@@ -1601,7 +1650,7 @@
 		"Ability7" 								"keymaster_dodge_mastery"
 		"Ability8" 								""
 		
-		"HasInventory" 							"0" 
+		"HasInventory" 							"1"
 		
 		"ArmorPhysical" 						"0"
 		"MagicalResistance" 					"35"
@@ -2635,7 +2684,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/development/invisiblebox.vmdl"
 		"MinimapIcon"				"minimap_rune_bounty"
-		"MinimapIconSize"			"300"
+		"MinimapIconSize"			"350"
 		"MinimapDisableTint"		"1"
 		"Ability1"					"ability_hidden_from_map"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -2653,7 +2702,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/development/invisiblebox.vmdl"
 		"MinimapIcon"				"minimap_rune_xp"
-		"MinimapIconSize"			"300"
+		"MinimapIconSize"			"350"
 		"MinimapDisableTint"		"1"
 		"Ability1"					"ability_hidden_from_map"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -2672,7 +2721,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/development/invisiblebox.vmdl"
 		"MinimapIcon"				"minimap_rune_unknown"
-		"MinimapIconSize"			"300"
+		"MinimapIconSize"			"350"
 		"MinimapDisableTint"		"1"
 		"Ability1"					"ability_hidden_from_map"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -2694,7 +2743,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/development/invisiblebox.vmdl"
 		"MinimapIcon"				"minimap_creepcamp"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 		"MinimapDisableTint"		"1"
 		"Ability1"					"ability_hidden_from_map"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -2712,7 +2761,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/development/invisiblebox.vmdl"
 		"MinimapIcon"				"minimap_creepcamp_big"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 		"MinimapDisableTint"		"1"
 		"Ability1"					"ability_hidden_from_map"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -2730,7 +2779,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/development/invisiblebox.vmdl"
 		"MinimapIcon"				"minimap_creepcamp_mid"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 		"MinimapDisableTint"		"1"
 		"Ability1"					"ability_hidden_from_map"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -2748,7 +2797,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/development/invisiblebox.vmdl"
 		"MinimapIcon"				"minimap_creepcamp_ancient"
-		"MinimapIconSize"			"240"
+		"MinimapIconSize"			"320"
 		"MinimapDisableTint"		"1"
 		"Ability1"					"ability_hidden_from_map"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -2777,12 +2826,14 @@
 		"VisionDaytimeRange"		"0"
 		"VisionNighttimeRange"		"0"
 	}
-	"npc_aa_minimap_icon_death"
+	// Иконка босса для команд (lib/minimap_spots.lua): горит, только если
+	// команда видела босса живым или вышло максимальное время его респавна.
+	"npc_aa_minimap_icon_boss"
 	{
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/development/invisiblebox.vmdl"
-		"MinimapIcon"				"minimap_death"
-		"MinimapIconSize"			"300"
+		"MinimapIcon"				"minimap_roshancamp"
+		"MinimapIconSize"			"400"
 		"MinimapDisableTint"		"1"
 		"Ability1"					"ability_hidden_from_map"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -2794,5 +2845,82 @@
 		"BountyGoldMax"				"0"
 		"VisionDaytimeRange"		"0"
 		"VisionNighttimeRange"		"0"
+	}
+	"npc_aa_minimap_icon_death"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"MinimapIcon"				"minimap_death"
+		"MinimapIconSize"			"350"
+		"MinimapDisableTint"		"1"
+		"Ability1"					"ability_hidden_from_map"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"StatusHealth"				"1"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+	}
+	// пет премиум-косметики (lib/cosmetics/core.lua): как npc_dota_donate_pet в 1x6.
+	// Юнит рождается с НАСТОЯЩЕЙ моделью курьера (ослик): базовая анимация (стойка/бег)
+	// настраивается по модели при создании, с invisiblebox её не было вовсе. Потом SetModel
+	// ставит модель предмета, бег и стойку проигрывает движок сам (без StartGesture).
+	"npc_dota_aa_cosmetic_pet"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/props_gameplay/donkey.vmdl"
+		"ModelScale"				"1.0"
+		"Level"						"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"420"
+		"MovementTurnRate"			"400"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"				"16"
+		"HasInventory"				"0"
+		"CanBeDominated"			"0"
+		"StatusHealth"				"1"
+		"StatusHealthRegen"			"0"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+		"HealthBarOffset"			"250"
+	}
+	// невидимый юнит-кастер косметических умений (lib/cosmetics/caster.lua), как
+	// npc_dummy_cosmetic_caster в aaf: ходит за героем, на нём ванильные сезонные способности
+	"npc_dota_aa_cosmetic_caster"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"Level"						"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"RingRadius"				"0"
+		"HealthBarOffset"			"250"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"CanBeDominated"			"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"420"
+		"MovementTurnRate"			"0.6"
+		"StatusHealth"				"1"
+		"StatusMana"				"0"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
 	}
 }

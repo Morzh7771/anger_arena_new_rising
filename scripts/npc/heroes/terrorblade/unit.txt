@@ -1,0 +1,22 @@
+// Юниты героя. Юниты, которые есть в актуальной доте, - ванильные определения из
+// game/dota/pak01_dir.vpk (старая копия ломала суммонов). Уровни сверх дотовских
+// и свои юниты мода - наши, наследуют ванильные через include_keys_from.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
+"DOTAUnits"
+{
+	"npc_dota_metamorphosis_fear"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		// General
+		//
+		"BaseClass"					"npc_dota_base"	// Class of entity of link to.
+		"Model"						"models/development/invisiblebox.vmdl"	// Model.
+		"SoundSet"					"0"					// Name of sound set.
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		//"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		//"VisionNighttimeRange"		"800"		// Range of vision at night time.
+	}
+
+}

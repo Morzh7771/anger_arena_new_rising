@@ -2,9 +2,11 @@ item_piercing_blade = class({})
 item_piercing_blade2 = class({})
 item_piercing_blade3 = class({})
 require('lib/common_abilities/damage_to_exp')
+require('lib/summon_utils')
 LinkLuaModifier("modifier_item_piercing_blade", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_piercing_blade_debuf", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_piercing_blade_cd", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_piercing_blade_stack_lock", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_piercing_blade_pure_damage", "items/item_piercing_blade", LUA_MODIFIER_MOTION_NONE)
 
 function item_piercing_blade:GetIntrinsicModifierName()
@@ -19,21 +21,15 @@ function item_piercing_blade3:GetIntrinsicModifierName()
 	return "modifier_item_piercing_blade"
 end
 
-function item_piercing_blade:OnSpellStart()
-    if not self:GetCaster():HasModifier("modifier_piercing_blade_pure_damage") then
-        self:GetCaster():AddNewModifier(self:GetCaster(),self,'modifier_piercing_blade_pure_damage',{duration = self:GetSpecialValueFor("active_duration")})
-    end
+-- Pure power. Повторное применение обновляет длительность эффекта
+-- (AddNewModifier на уже висящий модификатор его рефрешит).
+local function PurePowerStart(item)
+    local caster = item:GetCaster()
+    caster:AddNewModifier(caster, item, 'modifier_piercing_blade_pure_damage', {duration = item:GetSpecialValueFor("active_duration")})
 end
-function item_piercing_blade2:OnSpellStart()
-    if not self:GetCaster():HasModifier("modifier_piercing_blade_pure_damage") then
-        self:GetCaster():AddNewModifier(self:GetCaster(),self,'modifier_piercing_blade_pure_damage',{duration = self:GetSpecialValueFor("active_duration")})
-    end
-end
-function item_piercing_blade3:OnSpellStart()
-    if not self:GetCaster():HasModifier("modifier_piercing_blade_pure_damage") then
-        self:GetCaster():AddNewModifier(self:GetCaster(),self,'modifier_piercing_blade_pure_damage',{duration = self:GetSpecialValueFor("active_duration")})
-    end
-end
+item_piercing_blade.OnSpellStart = PurePowerStart
+item_piercing_blade2.OnSpellStart = PurePowerStart
+item_piercing_blade3.OnSpellStart = PurePowerStart
 
 modifier_item_piercing_blade = CommonAbilities:ConstructModifier( modifier_item_piercing_blade, CommonAbilities.DamageToExp )
 local mod = modifier_item_piercing_blade
@@ -55,19 +51,87 @@ function mod:DeclareFunctions()
     }
     return func
 end
+-- Суммоны владельца получают копию этого же модификатора (caster - герой,
+-- ability - сам предмет): Pierce работает на них полностью как на герое
+-- (режет обычный урон, добавляет чистый, стаки, своя перезарядка), но статы
+-- копия не даёт. Раздаёт копии и снимает их модификатор героя.
+-- новые суммоны и так получают копию на спавне, это лишь страховка:
+-- обход всех юнитов карты дорогой (надгробие Андаинга плодит десятки зомби)
+local SUMMON_SYNC_INTERVAL = 2
+
+function mod:IsSummonCopy()
+    return self:GetParent() ~= self:GetCaster()
+end
+
 function mod:OnCreated()
     self.pure_dmg = self:GetAbility():GetSpecialValueFor("pure_dmg")
     self.pure_dmg_stack = self:GetAbility():GetSpecialValueFor("pure_dmg_stack")
     self.pure_dmg_duration = self:GetAbility():GetSpecialValueFor("pure_dmg_duration")
     self.pure_dmg_cd = self:GetAbility():GetSpecialValueFor("pure_dmg_cd")
     --self:CommonInitDamageToExp(  self:GetAbility(),  self:GetAbility():GetSpecialValueFor("pure_dmg_cd") )
+
+    if IsServer() and not self:IsSummonCopy() and self:GetParent():IsRealHero() then
+        self.summonCopies = {}
+        -- уже живые суммоны получают эффект сразу при покупке
+        self:OnIntervalThink()
+        -- страховка на случай, если суммон появился мимо npc_spawned
+        self:StartIntervalThink(SUMMON_SYNC_INTERVAL)
+    end
 end
+
+-- выдать копию одному суммону
+function mod:GiveCopy(summon)
+    if self:FindCopyOn(summon) then return end
+    local copy = summon:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_piercing_blade", {})
+    if copy then table.insert(self.summonCopies, copy) end
+end
+
+-- новые суммоны получают Pierce в момент спавна (lib/summon_power.lua)
+if IsServer() then
+    SummonUtils:OnSummonSpawned("piercing_blade", function(summon, hero)
+        for _, m in ipairs(hero:FindAllModifiersByName("modifier_item_piercing_blade")) do
+            if m.summonCopies then m:GiveCopy(summon) end
+        end
+    end)
+end
+
+-- копия от этого же предмета уже висит на юните?
+function mod:FindCopyOn(unit)
+    for _, m in ipairs(unit:FindAllModifiersByName("modifier_item_piercing_blade")) do
+        if m:GetAbility() == self:GetAbility() then return m end
+    end
+end
+
+function mod:OnIntervalThink()
+    local hero = self:GetParent()
+
+    -- копии с погибших суммонов выкидываем, иначе список растёт бесконечно
+    local alive = {}
+    for _, copy in ipairs(self.summonCopies) do
+        if copy and not copy:IsNull() then table.insert(alive, copy) end
+    end
+    self.summonCopies = alive
+
+    for _, summon in ipairs(SummonUtils:FindSummons(hero)) do
+        self:GiveCopy(summon)
+    end
+end
+
+function mod:OnDestroy()
+    if not IsServer() or not self.summonCopies then return end
+    -- предмет продали или выложили: копии с суммонов снимаем
+    for _, copy in ipairs(self.summonCopies) do
+        if copy and not copy:IsNull() then copy:Destroy() end
+    end
+    self.summonCopies = nil
+end
+
 function mod:GetModifierTotalDamageOutgoing_Percentage()
     return  - self.pure_dmg
 end
 function mod:OnTakeDamage(params)
     if not IsServer() then return end
-    if not self:GetParent():IsRealHero() then return end
+    if not self:GetParent():IsRealHero() and not self:IsSummonCopy() then return end
 	if params.attacker ~= self:GetParent() then return end
 	if params.unit:GetTeamNumber() == params.attacker:GetTeamNumber() then return end
 	if params.unit == self:GetParent() then return end
@@ -82,7 +146,11 @@ function mod:OnTakeDamage(params)
     if not params.attacker:IsAlive() then return end
     local modifier = params.unit:FindModifierByName("modifier_item_piercing_blade_debuf") or nil
     local stack = 0
-    if not self:GetParent():HasModifier("modifier_piercing_blade_cd") then
+    -- Стаки накладываются по одному: пока на цели висит блокировка от
+    -- прошлого стака, новый не вешается, сколько бы атакующих (герой и его
+    -- суммоны) ни било одновременно. Раньше перезарядка была своя у каждого
+    -- атакующего, и 4 собаки разом давали 4 стака.
+    if not params.unit:HasModifier("modifier_item_piercing_blade_stack_lock") then
         if modifier == nil then
             if BossSpawner:IsBoss(params.unit) == nil then
                 params.unit:AddNewModifier(self:GetCaster(),self:GetAbility(),"modifier_item_piercing_blade_debuf",{duration = self.pure_dmg_duration}):IncrementStackCount()
@@ -94,7 +162,7 @@ function mod:OnTakeDamage(params)
             modifier:ForceRefresh()
         end
         --self:ProcessDamageToExp( self:GetParent(), self:GetAbility(), params.damage )
-        self:GetParent():AddNewModifier(self:GetParent(),self:GetAbility(),'modifier_piercing_blade_cd',{duration = self.pure_dmg_cd})
+        params.unit:AddNewModifier(self:GetCaster(),self:GetAbility(),'modifier_item_piercing_blade_stack_lock',{duration = self.pure_dmg_cd})
     else
         if modifier == nil then
             stack = 0
@@ -110,31 +178,31 @@ end
 
 
 function mod:GetModifierManaBonus()
-	if self:GetAbility() then
+	if self:GetAbility() and not self:IsSummonCopy() then
 		return self:GetAbility():GetSpecialValueFor("bonus_mp")
 	end
 end
 
 function mod:GetModifierHealthBonus()
-	if self:GetAbility() then
+	if self:GetAbility() and not self:IsSummonCopy() then
 		return self:GetAbility():GetSpecialValueFor("bonus_hp")
 	end
 end
 
 function mod:GetModifierBonusStats_Strength()
-	if self:GetAbility() then
+	if self:GetAbility() and not self:IsSummonCopy() then
 		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
 	end
 end
 
 function mod:GetModifierBonusStats_Agility()
-	if self:GetAbility() then
+	if self:GetAbility() and not self:IsSummonCopy() then
 		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
 	end
 end
 
 function mod:GetModifierBonusStats_Intellect()
-	if self:GetAbility() then
+	if self:GetAbility() and not self:IsSummonCopy() then
 		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
 	end
 end
@@ -144,6 +212,15 @@ modifier_item_piercing_blade_debuf = class({
     IsDebuff = function (self) return true end,
     IsHidden = function (self) return false end,
     IsPurgable = function (self) return false end,
+})
+
+-- Блокировка стака на цели: пока висит, Pierce не добавляет новый стак
+-- (чистый урон по-прежнему идёт). Висит pure_dmg_cd сек.
+modifier_item_piercing_blade_stack_lock = class({
+    IsHidden = function (self) return true end,
+    IsDebuff = function (self) return true end,
+    IsPurgable = function (self) return false end,
+    GetAttributes = function (self) return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end,
 })
 
 modifier_piercing_blade_cd = class({

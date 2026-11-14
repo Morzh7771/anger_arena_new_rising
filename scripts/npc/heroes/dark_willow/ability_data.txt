@@ -58,6 +58,7 @@ DOTAAbilities
 					"value"					"22"
 					"special_bonus_unique_dark_willow_3"			"-7"
 				}
+			"damage_pct"		"15"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -116,11 +117,6 @@ DOTAAbilities
 				"value"				"5.0"
 				"special_bonus_unique_dark_willow_6"				"+1.0"
 			}
-			"pierces_magic_immunity"
-			{
-				"value"		"0"
-				"special_bonus_unique_dark_willow_2" "+1"	
-			}
 			"target_count"
 			{
 				"value"		"1"
@@ -129,6 +125,7 @@ DOTAAbilities
 			"travel_speed"		"1800"
 			"unit_targetable"				"0"
 			"damage_reduction_pct"				"0"
+			"damage_pct"		"12"
 		}
 	}
 	"dark_willow_terrorize"
@@ -181,6 +178,7 @@ DOTAAbilities
 				"special_bonus_unique_dark_willow_2"				"+500"
 			}
 		}
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
 	}
 	"dark_willow_shadow_realm"
 	{
@@ -242,6 +240,7 @@ DOTAAbilities
 			{
 				"value"					"0"
 			}
+			"damage_pct"		"60"
 		}
 	}
 	"dark_willow_cursed_crown"
@@ -324,7 +323,6 @@ DOTAAbilities
 		"Innate"						"1"
 		"AbilityValues"
 		{
-			"hp_regen"			"100"
 			"mana_regen_amp"	"100"
 			"hp_regen_amp"				"20"
 			"hp_regen_amp_out_of_world"				"100"

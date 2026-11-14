@@ -35,7 +35,7 @@ function mod:GetModifierPhysicalArmorBonus( params )
 
 	if not self.disarmor_per_tick then return 0 end
 	
-	self.extra_disarmor = math.floor(GameRules:GetGameTime() / (60*self.time_tick_minute)) * self.disarmor_per_tick
+	self.extra_disarmor = math.floor(math.max(0, GameRules:GetDOTATime(false, false)) / (60*self.time_tick_minute)) * self.disarmor_per_tick
 
 	return -(self.disarmor_start + self.extra_disarmor)
 end

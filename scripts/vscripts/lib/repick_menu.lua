@@ -567,7 +567,9 @@ local function IsDuelPossible()
 	local dire = 0
 
 	for _, hero in pairs(HeroList:GetAllHeroes()) do
-		if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+		if hero:IsTempestDouble() then
+			-- клоны и солдаты Wukong's Command - не игроки
+		elseif hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 			radiant = radiant + 1
 		elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 			dire = dire + 1
@@ -577,22 +579,36 @@ local function IsDuelPossible()
 	return radiant > 0 and dire > 0
 end
 
--- Репик запрещён, если: до дуэли меньше DUEL_CANT_PICK_PERIOD, босса ещё ни
--- разу не убили за игру, или он сейчас жив.
-function RepickMenu:CanPickNow()
-	if IsDuelPossible() and DuelController:GetTimeToDuel() <= DUEL_CANT_PICK_PERIOD then
-		return false
-	end
-
+-- Репик запрещён, если: босса ещё ни разу не убили за игру, он сейчас жив,
+-- или идёт дуэль / до неё меньше DUEL_CANT_PICK_PERIOD. Возвращает токен
+-- причины для красной строки ошибки, как у доты "нет маны"; nil - можно.
+function RepickMenu:GetBlockReason()
 	if BossSpawner:GetDeathCount(BOSS_FOR_REPICK) == 0 then
-		return false
+		return "#aa_repick_locked_boss_never"
 	end
 
 	if BossSpawner:IsBossAlive(BOSS_FOR_REPICK) then
-		return false
+		return "#aa_repick_locked_boss_alive"
 	end
 
-	return true
+	if IsDuelPossible() then
+		local timeToDuel = DuelController:GetTimeToDuel()
+
+		-- -1 - дуэль идёт прямо сейчас
+		if timeToDuel < 0 then
+			return "#aa_repick_locked_duel_active"
+		end
+
+		if timeToDuel <= DUEL_CANT_PICK_PERIOD then
+			return "#aa_repick_locked_duel"
+		end
+	end
+
+	return nil
+end
+
+function RepickMenu:CanPickNow()
+	return self:GetBlockReason() == nil
 end
 
 function RepickMenu:PickHero(player, newHeroName)
@@ -615,11 +631,27 @@ function RepickMenu:PickHero(player, newHeroName)
 	end
 
 	local checkFunction = function()
+		-- админ-панель открыла меню в обход запретов: один выбор без проверок
+		local pid = player:GetPlayerID()
+		if self.admin_bypass and self.admin_bypass[pid] then
+			self.admin_bypass[pid] = nil
+			return true
+		end
 		if not self:CanPickNow() then return false end
 		return true
 	end
 
-	if not checkFunction() then return false end
+	-- меню открыто, но пока выбирали, репик закрылся (босс встал, подошла
+	-- дуэль) - говорим почему
+	if not checkFunction() then
+		local reason = self:GetBlockReason()
+
+		if reason then
+			CustomGameEventManager:Send_ServerToPlayer(player, "CreateIngameErrorMessage", { message = reason })
+		end
+
+		return false
+	end
 
 	-- all is ok, lets inform all clients about it
 	local oldHeroName = hero:GetUnitName()
@@ -638,6 +670,9 @@ function RepickMenu:PickHero(player, newHeroName)
 
 	-- if repick was ok -> lets free old hero if someone can repick to it
 	local onSuccess = function()
+		-- телеметрия: смена героя, только наблюдение (lib/match_tracker.lua)
+		if MatchTracker then pcall(MatchTracker.OnHeroChanged, MatchTracker, player, newHeroName) end
+
 		if self.gods_data[oldHeroName] then
 			self.gods_data[oldHeroName]['picked'] = 0
 
@@ -671,8 +706,8 @@ function RepickMenu:GetData()
 	return self.gods_data
 end
 
-function RepickMenu:Open(player)
-	CustomGameEventManager:Send_ServerToPlayer(player, "aa_repick_menu_open", {} )
+function RepickMenu:Open(player, bypass)
+	CustomGameEventManager:Send_ServerToPlayer(player, "aa_repick_menu_open", { bypass = bypass and 1 or 0 } )
 	print('aa_repick_menu_open')
 end
 

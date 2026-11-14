@@ -22,6 +22,7 @@ modifier_item_chest_of_midas = class({
         if self:GetAbility():IsCooldownReady() == false then return end
         self:GetAbility():UseResources(false,false,false,true)
         self:GetParent():AddExperience(self:GetAbility():GetSpecialValueFor("xp"), 0, true, true) 
-        self:GetParent():ModifyGold( self:GetAbility():GetSpecialValueFor("gold"), true, 0) 
+        local parent, gold = self:GetParent(), self:GetAbility():GetSpecialValueFor("gold")
+        local _ = (AATagGold or function(_, f) f() end)("chest_midas", function() parent:ModifyGold(gold, true, 0) end)
     end
 })

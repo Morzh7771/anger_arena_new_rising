@@ -82,9 +82,12 @@ function DuelController:Precache(context)
 	DuelLibrary:Precache(context)
 end
 
-function DuelController:OnGameStart(endCallback)
-	self:_StartDuelTimer(true)
-	self:SetDoorsState( true )
+-- Вызывается из PRE_GAME. firstInterval - сколько секунд игрового времени до
+-- первой дуэли (обычно "до горна + 30"); без него первая дуэль через 30 с
+-- после старта таймера. Двери сюда намеренно НЕ переносим: они открываются в
+-- GAME_IN_PROGRESS, как и раньше (см. addon_game_mode.lua).
+function DuelController:OnGameStart(endCallback, firstInterval)
+	self:_StartDuelTimer(true, firstInterval)
 
 	self.endCallback = endCallback
 end
@@ -174,7 +177,9 @@ function DuelController:_StartDuel()
 		return false
 	end
 
-	Attentions:SendChatMessage("#duel_start") 
+	if KillFeed then KillFeed:DuelStart() end
+	-- звук дуэли легионки на старт
+	EmitGlobalSound("Hero_LegionCommander.Duel.Cast")
 
 	DuelLibrary:StartDuel(radiantHeroes, direHeroes, nUnits, 
 		function(winnerTeam) 
@@ -200,7 +205,7 @@ end
 function DuelController:_OnDuelSkipped()
 	self.skippedDuels = ( self.skippedDuels or 0 ) + 1
 
-	Attentions:SendChatMessage("#duel_error")
+	if KillFeed then KillFeed:DuelSkipped() end
 
 	if MadstoneSystem then
 		MadstoneSystem:OnDuelEnd( self:GetDuelCycle() )
@@ -216,6 +221,8 @@ function DuelController:_OnDuelEnd(winnerTeam)
 		MadstoneSystem:OnDuelEnd( self:GetDuelCycle() )
 	end
 
+	if EndGameStats then EndGameStats:OnDuelEnd(winnerTeam) end
+
 	local allowedTeams = {
 		[DOTA_TEAM_GOODGUYS] = "#duel_end_win_radiant",
 		[DOTA_TEAM_BADGUYS]  = "#duel_end_win_demons"
@@ -228,7 +235,7 @@ function DuelController:_OnDuelEnd(winnerTeam)
 		goldBonus = DUEL_FIRST_BONUS_GOLD
 		expBonus = DUEL_FIRST_BONUS_EXP
 	else
-		local minute = GameRules:GetGameTime() / 60
+		local minute = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 		goldBonus = DUEL_WINNER_GOLD_MULTIPLER * duelCount + DUEL_GOLD_PER_MINUTE * minute
 		expBonus  = DUEL_WINNER_EXP_MULTIPLER * minute
@@ -241,10 +248,19 @@ function DuelController:_OnDuelEnd(winnerTeam)
 			self.endCallback( winnerTeam )
 		end
 
-		Attentions:SendChatMessage(message)
+		if KillFeed then KillFeed:DuelWin(winnerTeam, goldBonus) end
+		-- звук победы в дуэли легионки
+		EmitGlobalSound("Hero_LegionCommander.Duel.Victory")
+		-- косметика премиума: эффект победы в дуэли (lib/cosmetics/events_fx.lua)
+		if AACosDuelWin then pcall(AACosDuelWin, winnerTeam) end
 
 		TeamHelper:ApplyForHeroes( winnerTeam, function(playerid, hero)
 			PlayerResource:ModifyGold(playerid, goldBonus, true, 0)
+			-- после конца дуэли героев переносят с арены: эффект, созданный
+			-- в этот же кадр, остаётся на старом месте и его не видно
+			Timers:CreateTimer(0.5, function()
+				AngelArena:ShowGoldPopup(playerid, goldBonus)
+			end)
 
 			if hero and IsValidEntity(hero) and hero:IsRealHero() and not hero:IsNull() then
 				hero:AddExperience(expBonus, 0, false, true)
@@ -252,7 +268,7 @@ function DuelController:_OnDuelEnd(winnerTeam)
 		end,
 		true)
 	else
-		Attentions:SendChatMessage("#duel_end") 
+		if KillFeed then KillFeed:DuelDraw() end
 	end
 
 	self.nCountdown = 0
@@ -270,15 +286,16 @@ function DuelController:_CancelDuels()
 	end
 end
 
-function DuelController:_StartDuelTimer(toDuel)
+function DuelController:_StartDuelTimer(toDuel, firstInterval)
 	local interval
 	-- считаем и пропущенные циклы, иначе соло-игра вечно висела бы
 	-- на "первом" 30-секундном интервале
 	local duelCount = self:GetDuelCycle()
-    
+
 	if toDuel then
 		if duelCount == 0 then
-			interval = 30
+			-- первый интервал может идти от старта PRE_GAME, тогда он длиннее 30
+			interval = firstInterval or 30
 	    elseif duelCount > 5 then
 			interval = DUEL_INTERVAL_AFTER
 		else
@@ -358,10 +375,36 @@ function DuelController:_OnTick( isEnd )
 	end
 end
 
+-- цвет таймера, когда дуэль решающая: цвет команды, набравшей лимит
+-- убийств, или жёлтый, если набрали обе
+local FINAL_COLORS = {
+	radiant = "#49C778",
+	dire    = "#D63837",
+	both    = "#FFD24A",
+}
+
+-- "radiant" | "dire" | "both" - если эта команда выиграет следующую (или
+-- идущую) дуэль, она выиграет игру; nil - дуэль обычная
+function DuelController:_GetFinalTeams()
+	local radiant = self.duelEndTeams[DOTA_TEAM_GOODGUYS] ~= nil
+	local dire    = self.duelEndTeams[DOTA_TEAM_BADGUYS] ~= nil
+
+	if radiant and dire then return "both" end
+	if radiant then return "radiant" end
+	if dire then return "dire" end
+
+	return nil
+end
+
 function DuelController:_UpdateCountdownUI()
 	local color, time = self:_FormatCountdown()
+	local final = self:_GetFinalTeams()
 
-	Attentions:SetTextMinimapText( self:_GetStateMessage(), color, { ["time"] = time } )
+	if final then
+		color = FINAL_COLORS[final]
+	end
+
+	Attentions:SetTextMinimapText( self:_GetStateMessage(final), color, { ["time"] = time }, final )
 end
 
 function DuelController:_FormatCountdown()
@@ -376,11 +419,11 @@ function DuelController:_FormatCountdown()
 	return textColor, MessageFormaters:FormatTime(t)
 end
 
-function DuelController:_GetStateMessage()
+function DuelController:_GetStateMessage(final)
 	if DuelLibrary:IsDuelActive() then
-		return "#duel_nobody_wins"
+		return final and "#duel_final_active" or "#duel_nobody_wins"
 	else
-		return "#duel_next_duel"
+		return final and "#duel_final_next" or "#duel_next_duel"
 	end
 end
 

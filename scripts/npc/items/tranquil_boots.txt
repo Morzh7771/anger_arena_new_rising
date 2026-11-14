@@ -1,0 +1,14 @@
+"DOTAAbilities"
+{
+    // Ванильный Tranquil Boots. Перекрываем только время, на которое урон
+    // снимает бонус (в доте 13 сек). Остальные значения движок берёт свои.
+    "item_tranquil_boots"
+    {
+        // в доте 13 сек; откат предмета и break_time - одно и то же время
+        "AbilityCooldown"               "6"
+        "AbilityValues"
+        {
+            "break_time"                "6"
+        }
+    }
+}

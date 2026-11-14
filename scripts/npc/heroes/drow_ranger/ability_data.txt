@@ -125,7 +125,7 @@ DOTAAbilities
 		{
 			"wave_count"
 			{
-				"value"				"3"
+				"value"				"4"
 				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_8"
 				"special_bonus_unique_drow_ranger_8"				"+2"
 			}			
@@ -136,9 +136,9 @@ DOTAAbilities
 			}
 			"arrow_damage_pct"
 			{
-				"value"			"100 110 120 130 140 150 160"
+				"value"			"100 130 160 190 220 250"
 				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_1"
-				"special_bonus_unique_drow_ranger_1"				"+25"
+				"special_bonus_unique_drow_ranger_1"				"+40"
 			}
 			"arrow_slow_duration"		"1.25 1.5 1.75 2 2.25 2.5 2.75"
 			"arrow_width"					"90"

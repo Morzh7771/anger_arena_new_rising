@@ -92,7 +92,7 @@ function mod:OnDestroy()
 	local caster  = self:GetCaster()
 
 	if hp < self.killLimit then
-		ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_fortune_aoe.vpcf", PATTACH_ABSORIGIN, parent)
+		ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_fortune_aoe.vpcf", PATTACH_ABSORIGIN, parent))
 
 		parent:EmitSound("Hero_Warlock.RainOfChaos_buildup")
 
@@ -102,7 +102,7 @@ function mod:OnDestroy()
 
 		parent:AddNewModifier(caster, ability, "modifier_abyss_warrior_domination_debuff", { duration = self.disableDuration })
 		
-		ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_fatesedict_disarm_ovrhead_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+		ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_fatesedict_disarm_ovrhead_burst.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent))
 	end
 end
 

@@ -1,0 +1,53 @@
+// Юниты героя (суммоны и т.п.). Все уровни прописаны здесь.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
+"DOTAUnits"
+{
+	"npc_aa_monkey_king_soldier"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/monkey_king/monkey_king.vmdl"
+		"SoundSet"					"Hero_MonkeyKing"
+		"ModelScale"				"0.86"
+		"Level"						"1"
+		"UnitLabel"					"monkey_king_soldier"
+		"ConsideredHero"			"0"
+		"HasInventory"				"1"	// копии предметов MK (эффекты предметов, как у солдат в доте)
+
+		"Ability1"					""
+
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1"
+		"AttackDamageMax"			"1"
+		"AttackRate"				"1.1"
+		"AttackAnimationPoint"		"0.45"
+		"AttackAcquisitionRange"	"300"
+		"AttackRange"				"300"
+
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"700"
+		"MovementTurnRate"			"1.0"
+
+		"StatusHealth"				"100"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+}

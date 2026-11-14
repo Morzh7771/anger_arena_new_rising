@@ -16,8 +16,13 @@ function modifier_demon_archer_runaway_effect:IsPurgable()
 end
 
 --------------------------------------------------------------------------------
+-- Бонус приходит в kv только на сервере. До клиента он раньше ехал через
+-- общую нет-таблицу, которую переписывали на каждый пересчёт скорости;
+-- теперь через стаки модификатора - они реплицируются сами.
 function modifier_demon_archer_runaway_effect:OnCreated(kv)
-        self.bonus_movespeed = kv.bonus_movespeed
+    if IsServer() then
+        self:SetStackCount(kv.bonus_movespeed or 0)
+    end
 end
 
 --------------------------------------------------------------------------------
@@ -31,17 +36,8 @@ end
 --------------------------------------------------------------------------------
 function modifier_demon_archer_runaway_effect:GetModifierMoveSpeedBonus_Constant(params)
     if self:GetParent():PassivesDisabled() then return 0 end
-    local net_table = CustomNetTables:GetTableValue("heroes", "skills_modifiers") or {}
-    local unicalUnitString = tostring(self:GetParent():entindex())
-    local bonus_speed
-    if not IsServer() then
-        bonus_speed = net_table[unicalUnitString .. "_bonusspeedarcher"]
-    else
-        bonus_speed = self.bonus_movespeed
-        net_table[unicalUnitString .. "_bonusspeedarcher"] = bonus_speed
-        CustomNetTables:SetTableValue("heroes", "skills_modifiers", net_table)
-    end
-    return bonus_speed or 0
+
+    return self:GetStackCount()
 end
 
 --------------------------------------------------------------------------------

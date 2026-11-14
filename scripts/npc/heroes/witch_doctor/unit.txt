@@ -1,7 +1,12 @@
+// Юниты героя. Юниты, которые есть в актуальной доте, - ванильные определения из
+// game/dota/pak01_dir.vpk (старая копия ломала суммонов). Уровни сверх дотовских
+// и свои юниты мода - наши, наследуют ванильные через include_keys_from.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
 "DOTAUnits"
 {
 	"npc_dota_witch_doctor_death_ward"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_witch_doctor_death_ward"	// Class of entity of link to.
@@ -9,6 +14,7 @@
 		"SoundSet"					"Hero_WitchDoctor_Ward"					// Name of sound set.
 		"Level"						"3"
 		"wearable"					"602"
+		"UnitToAbilityMap"			"witch_doctor_death_ward"			// Ability to show as in post game
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -17,7 +23,7 @@
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
-
+		"Ability20"					"summon_power_passive"
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
@@ -29,10 +35,11 @@
 		"AttackDamageMin"			"0"			// Damage range min.
 		"AttackDamageMax"			"0"			// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_Pure"
-		"AttackRate"				"0.22"		// Speed of attack.
+		"AttackRate"				"0.6"		// Speed of attack.
+		"BaseAttackSpeed"			"200"		// +100 к базовой скорости атаки (было 100 по умолчанию)
 		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
-		"AttackRange"				"700"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1000"		// Speed of projectile.
 
@@ -71,4 +78,5 @@
 		//Inventory
 		"HasInventory"				"0"
 	}
+
 }

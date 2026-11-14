@@ -28,7 +28,7 @@ function mod:OnCreated(kv)
 		if not parent:PassivesDisabled() then
 			ability:StartCooldown(cd)
 
-			ParticleManager:CreateParticle("particles/econ/items/ember_spirit/ember_spirit_ashes/ember_spirit_ashes_weapon_blur.vpcf", PATTACH_OVERHEAD_FOLLOW, parent)
+			ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/items/ember_spirit/ember_spirit_ashes/ember_spirit_ashes_weapon_blur.vpcf", PATTACH_OVERHEAD_FOLLOW, parent))
 
 			parent:Purge( false, true, false, true, true )
 

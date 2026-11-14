@@ -18,6 +18,7 @@ end
 --------------------------------------------------------------------------------
 function modifier_creep_bear_big_passive_anticreep_lua:OnAttackLanded(params)
     if IsServer() then
+        if params.attacker ~= self:GetParent() then return end
         if self:GetCaster():PassivesDisabled() then
             return 0
         end

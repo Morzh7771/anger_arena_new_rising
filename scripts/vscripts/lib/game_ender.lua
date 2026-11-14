@@ -7,12 +7,25 @@ local END_MESSAGE 		  = "#game_ends_on_30_sec"
 local END_MINIMAP_MESSAGE = "#game_ends_on_time"
 
 function GameEnder:_OnEnd(team)
+	-- телеметрия: итог матча уходит первым делом, чтобы ошибка ниже его не съела
+	-- (lib/match_tracker.lua, только наблюдение)
+	if MatchTracker then
+		local ok, err = pcall(MatchTracker.OnGameEnd, MatchTracker, team)
+		if not ok then print("[GameEnder] tracker: " .. tostring(err)) end
+	end
+
 	if team == DOTA_TEAM_GOODGUYS then
 	GameRules:SetCustomVictoryMessage("#aa_on_win_radiant_message")
 	end 
 	if team == DOTA_TEAM_BADGUYS then
 		GameRules:SetCustomVictoryMessage("#aa_on_win_dire_message")
 	end
+
+	-- финальный экран читает статистику, как только движок объявит
+	-- победителя, поэтому публикуем её до SetGameWinner
+	if EndGameStats then EndGameStats:Finalize(team) end
+
+
 	GameRules:SetGameWinner(team)
 end
 

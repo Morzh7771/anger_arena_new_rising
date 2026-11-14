@@ -47,12 +47,17 @@ end
 local BOUNTY_INTERVAL = 2
 local WISDOM_INTERVAL = 10
 
+-- Первая руна усиления по умолчанию в доте на 6:00. Это только для кружка в UI,
+-- сам спавн не трогаем: как только руна реально появится, фильтр спавна
+-- (AngelArena:ModifierRuneSpawn) выставит настоящее время и подменит это число.
+local POWER_FIRST_SPAWN_UI = 0     -- руны усиления у нас с 0:00 и каждые 2 минуты; дальше время ставит фильтр спавна
+
 function Bounty:PublishTimers()
     CustomNetTables:SetTableValue("rune_timers", "next", {
         -- в секундах игрового времени, клиент вычитает своё текущее
         bounty = needTimeBounty * 60,
         wisdom = needTimeWisdom * 60,
-        power  = _G.NEXT_POWER_RUNE_TIME or -1,
+        power  = _G.NEXT_POWER_RUNE_TIME or POWER_FIRST_SPAWN_UI,
     })
 end
 

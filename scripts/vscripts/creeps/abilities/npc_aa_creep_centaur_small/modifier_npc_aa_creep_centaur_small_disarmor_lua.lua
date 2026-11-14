@@ -29,6 +29,8 @@ end
 
 -------------------------------------------------------------------------------
 function modifier_npc_aa_creep_centaur_small_disarmor_lua:OnAttackLanded(params)
+    -- событие приходит на каждую атаку на карте - сначала "это моя атака?"
+    if params.attacker ~= self:GetParent() then return end
     if self:GetParent():PassivesDisabled() then return end
     if not IsServer() then return end
     local target = params.target

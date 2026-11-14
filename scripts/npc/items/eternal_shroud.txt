@@ -50,6 +50,10 @@
 	"item_eternal_shroud"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// в ванили предмет объявлен устаревшим и непокупаемым, а у нас он живой
+		// и лежит в магазине - без этих двух строк его нельзя было купить
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"0"
 		"ItemBaseLevel"					"1"
 		"ItemCost"						"3100"
 		"ItemShopTags"					"regen_health;magic_resist"

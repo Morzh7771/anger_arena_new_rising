@@ -2,6 +2,8 @@
 {
 	"npc_dota_hero_death_prophet_custom"
 	{
+		"MinimapIcon"				"minimap_icon_death_prophet_custom"
+		"MinimapIconSize"			"600"
 		"override_hero"		"npc_dota_hero_death_prophet"
 		"Ability7"      "death_prophet_mourning_ritual"
 		"Ability1"      "death_prophet_carrion_swarm"

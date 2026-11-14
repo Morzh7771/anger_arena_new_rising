@@ -100,8 +100,6 @@ function modifier_small_satyr_big_jump:UpdateVerticalMotion(me, dt)
     	offset = (1 - pct) * max_offset * 2
     end
 
-    print(offset)
-
     pos.z = pos.z + offset
 
     self:GetParent():SetAbsOrigin(pos)

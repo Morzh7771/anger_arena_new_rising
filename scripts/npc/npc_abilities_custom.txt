@@ -1,5 +1,7 @@
 // Dota Heroes File
 #base talantes.txt
+// косметические умения премиума: ванильные сезонные + спрей и хай-файв (lib/cosmetics/caster.lua)
+#base cosmetic_skills.txt
 #base neutral_creeps_skill.txt
 #base heroes/abaddon/ability_data.txt
 #base heroes/alchemist/ability_data.txt
@@ -1189,6 +1191,34 @@
 			"health_inc_inc"		"2500"
 			"damage_inc"			"300"
 			"damage_inc_inc"		"75"
+
+			// замедление атаки героя, бьющего вышку (lib/tower/tower_base.lua)
+			"slow_attack_rate"		"1.5"	// интервал атаки в начале серии, сек
+			"slow_ramp_time"		"3"		// за сколько секунд ударов замедление спадает полностью
+			"slow_grace"			"2"		// сколько живёт замедление после удара, сек (> slow_attack_rate)
+
+			// захват вышки
+			"capture_health_pct"	"50"	// с каким % здоровья вышка встаёт после захвата
+		}
+	}
+	// Лечащая лужа захваченной вышки. Включается из lib/tower/tower_base.lua
+	// в момент захвата, скрипт - lib/tower/tower_capture_pool.lua
+	"tower_capture_pool"
+	{
+		"ID"							"15152"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lib/tower/tower_capture_pool"
+		"AbilityTextureName"			"custom/possessed_hellshield"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+
+		"AbilityValues"
+		{
+			"duration"				"10"	// сколько секунд живёт лужа
+			"radius"				"600"	// радиус лечения
+			"heal_pct"				"1"		// лечение за тик, % от макс. здоровья героя
+			"heal_flat"				"10"	// лечение за тик, плоское
+			"interval"				"1"		// как часто лечит, сек
 		}
 	}
 	"tormentor_reflect_aa"
@@ -1206,12 +1236,11 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		// Логика как в 1х6: отражение чистым уроном атакующему
 		"AbilityValues"
 		{
-				"passive_reflection_pct"					"50"
-				"passive_reflection_bonus_per_interval"		"1.5"
-				"radius"									"1000"
-				"illusion_damage_pct"						"500"
+				"damage"			"25"	// % отражённого урона, чистый
+				"invun_damage"		"2"		// во сколько раз сильнее во время неуязвимости
 		}
 	}
 	"tormentor_unyielding_shielda_aa"
@@ -1224,11 +1253,33 @@
         "MaxLevel"               "1"
         "AbilityValues"
         {
+			// запас барьера - наш: базовый + за каждую минуту игры
 			"damage_absorb"				"20000"
 			"absorb_bonus_per_interval"	"200"
-			"regen_per_second"			"100"
-			"regen_bonus_per_interval"	"30"
 			"min_armor" 				"0"
+
+			// механика из 1х6
+			"radius"					"800"	// урон из-за радиуса не проходит
+			"health_1"					"66"	// пороги неуязвимости, % барьера
+			"health_2"					"33"	// на нём же появляется поле
+			"invun_duration"			"2"
+			"field_duration"			"6"
+			"field_cd"					"4"
+			"damage_reduce"				"-90"	// барьер теряет на 90% меньше, если рядом 2+ команды
+			"regen"						"10"	// % барьера в секунду, когда восстанавливается
+			"regen_delay"				"2"		// восстанавливается, если не били столько сек (или рядом нет врагов)
+			"death_heal"				"50"	// % ХП героям команды убийцы рядом
         }
     }
+
+	// Бафф суммонов от характеристик хозяина (modifiers/modifier_summon_power.lua).
+	// Прописана всем юнитам героев в heroes/*/unit.txt (Ability20).
+	"summon_power_passive"
+	{
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"abilities/summon_power_passive"
+		"AbilityTextureName"	"beastmaster_inner_beast"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"			"1"
+	}
 }

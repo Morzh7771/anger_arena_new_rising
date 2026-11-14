@@ -1,0 +1,35 @@
+// Косметические умения премиума (lib/cosmetics/caster.lua).
+//
+// Сезонные умения доты (снежок, снеговик, салют, хлопушки, ёлка) убраны 2026-11-12.
+//
+// aa_cos_spray и aa_cos_high_five - наши ability_lua на том же кастере: граффити (цель - точка,
+// прицел движковый) и "Дай пять". Логика - в lib/cosmetics/social.lua.
+"DOTAAbilities"
+{
+	"aa_cos_spray"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/aa_cos_spray"
+		"AbilityTextureName"			"aa_cos_spray"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"0"
+	}
+
+	"aa_cos_high_five"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/aa_cos_high_five"
+		"AbilityTextureName"			"consumables/seasonal_ti10_high_five"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+	}
+}

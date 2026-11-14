@@ -75,7 +75,7 @@ function ability:OnProjectileHit(target, targetPos)
 
 	target:EmitSound("Hero_Antimage.ManaVoid")
 
-	ParticleManager:CreateParticle("particles/econ/items/antimage/antimage_weapon_basher_ti5/antimage_manavoid_explode_b_basher_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/items/antimage/antimage_weapon_basher_ti5/antimage_manavoid_explode_b_basher_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, target))
 end
 
 function ability:LaunchProjectile( caster, target, speed )
@@ -129,7 +129,7 @@ function ability:OnSpellStart( ... )
 			self:LaunchProjectile(caster, target, speed)
 		end
 
-		ParticleManager:CreateParticle("particles/econ/items/antimage/antimage_weapon_basher_ti5_gold/antimage_manavoid_ti_5_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+		ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/items/antimage/antimage_weapon_basher_ti5_gold/antimage_manavoid_ti_5_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster))
 	end
 
 	caster:EmitSound("Hero_Antimage.ManaBreak")

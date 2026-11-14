@@ -112,11 +112,6 @@ DOTAAbilities
 					"CalculateSpellDamageTooltip" "1"
 					"special_bonus_unique_axe"				"+8"
 				}
-				"armor_multiplier"			
-				{
-					"value"			"1 1 1 2 2 2 2"
-					"special_bonus_unique_axe"	"x2"
-				}
 				"speed_bonus"
 				{
 					"value"			"0"
@@ -126,7 +121,8 @@ DOTAAbilities
 				{
 					"special_bonus_shard"	"1"
 				}
-		}		
+				"damage_pct"				"3"
+		}
 	}
 	"axe_counter_helix"
 	{

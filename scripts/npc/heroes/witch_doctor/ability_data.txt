@@ -6,6 +6,7 @@
 	//=================================================================================================================
 	"witch_doctor_paralyzing_cask"
 	{
+		"MaxLevel"						"7"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -31,7 +32,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 100 120 140"
+		"AbilityManaCost"				"80 100 120 140 160 180 200"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -43,7 +44,7 @@
 		{
 				"AbilityCooldown"
 				{
-					"value"									"20.0 18.0 16.0 14.0"
+					"value"									"20 19 18 17 16 15 14"
 					"special_bonus_unique_witch_doctor_6"	"-3.0"
 				}
 				"hero_duration"			"0.8"
@@ -55,12 +56,12 @@
 				}
 				"bounce_range"
 				{
-					"value"		"575 575 575 575"
+					"value"		"575"
 					"affected_by_aoe_increase"	"1"
 				}
 				"bounces"
 				{
-					"value"					"3 4 5 6"
+					"value"					"3 4 5 6 7 8 9"
 					"special_bonus_unique_witch_doctor_3"			"+6"
 				}
 				"speed"					"1200"
@@ -80,9 +81,15 @@
 	//=================================================================================================================
 	"witch_doctor_voodoo_restoration"
 	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/witch_doctor/witch_doctor_voodoo_restoration"
+		"AbilityTextureName"			"witch_doctor_voodoo_restoration"
+		"MaxLevel"						"7"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
@@ -90,7 +97,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -102,7 +109,7 @@
 		{
 				"mana_per_second"
 				{
-					"value"	"9 12 15 18"
+					"value"	"9 12 15 18 21 24 27"
 				"special_bonus_unique_witch_doctor_4" "x0.75"
 				}
 				"tooltip_mana_per_second"
@@ -116,10 +123,10 @@
 				}
 				"heal"
 				{
-					"value"			"20 30 40 50"
+					"value"			"20 30 40 50 60 70 80"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
 				}
-				"heal_interval"				"0.33 0.33 0.33 0.33"
+				"heal_interval"				"0.33"
 				"does_heal_all_allies"
 				{
 					"value"			"1"
@@ -130,11 +137,17 @@
 				}
 				"self_only_heal_percentage"		// NOTE: only works if does_heal_all_allies == 0
 				{
-					"value"													"0 0 0 0"
+					"value"													"0"
 				}
-				"bonus_heal_percent"
+				"heal_caster_hp_pct"
 				{
-					"special_bonus_unique_witch_doctor_2"		"1"
+					"value"	"0.5 1.1 1.7 2.3 2.8 3.4 4"
+					"special_bonus_unique_witch_doctor_2" "+1"
+				}
+				"damage_caster_hp_pct"		// ровно половина heal_caster_hp_pct
+				{
+					"value"	"0.25 0.55 0.85 1.15 1.4 1.7 2"
+					"special_bonus_unique_witch_doctor_2" "+0.5"
 				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -145,6 +158,7 @@
 	//=================================================================================================================
 	"witch_doctor_maledict"
 	{
+		"MaxLevel"						"7"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -158,19 +172,19 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 26 22 18"
+		"AbilityCooldown"				"30 28 26 24 22 20 18"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"18 22 26 30"
+		"AbilityDamage"					"18 22 26 30 34 38 42"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"105 110 115 120"
+		"AbilityManaCost"				"105 110 115 120 125 130 135"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -183,13 +197,19 @@
 				}
 				"bonus_damage"
 				{
-					"value"			"16 24 32 40"
+					"value"			"16 24 32 40 48 56 64"
 				}
 				"bonus_damage_threshold"	"100"
 				"ticks"
 				{
 					"value"		"3"
 					"special_bonus_unique_witch_doctor_7"	"+1"
+					"special_bonus_unique_witch_doctor_ticks"	"+1"
+				}
+				"damage_pct"		// % интеллекта за тик, считает lib/percent_damage.lua
+				{
+					"value"		"0"
+					"special_bonus_unique_witch_doctor_damage_pct"	"+20"
 				}
 				"AbilityDuration"
 				{
@@ -217,6 +237,7 @@
 	//=================================================================================================================
 	"witch_doctor_death_ward"
 	{
+		"MaxLevel"						"7"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -237,18 +258,18 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100 90 80"
+		"AbilityCooldown"				"100 97 93 90 87 83 80"
 		"AbilityChannelTime"			"8.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 200 200"
+		"AbilityManaCost"				"200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -256,19 +277,19 @@
 		{
 				"damage"
 				{
-					"value"		"60 90 120"
+					"value"		"60 90 120 150 180 210 240"
 					"special_bonus_unique_witch_doctor_5"	"+40"
 					"CalculateSpellDamageTooltip"	"0"
 				}
 				"attack_range_tooltip"
 				{
-					"value"		"600 625 650"
-					//"special_bonus_unique_witch_doctor_1"	"+75"
+					"value"		"600 625 650 675 700 725 750"
+					"special_bonus_unique_witch_doctor_1"	"+75"
 				}
 				"bonus_attack_range"
 				{
-					"value"					"0 25 50"
-					//"special_bonus_unique_witch_doctor_1"	"+75"
+					"value"					"0 25 50 75 100 125 150"
+					"special_bonus_unique_witch_doctor_1"	"+75"
 				}
 				"bounce_radius"
 				{
@@ -357,5 +378,17 @@
 			"death_gold_lost_reduction_pct_tooltip"		"100"
 			"gold_tick_interval_tooltip"		"3"
 		}
+	}
+	"special_bonus_unique_witch_doctor_ticks"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	"special_bonus_unique_witch_doctor_damage_pct"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
 	}
 }

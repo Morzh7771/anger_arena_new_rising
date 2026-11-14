@@ -43,7 +43,6 @@ modifier_item_mask_of_madness_aa = class({
         if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then return end
         if keys.attacker == self:GetParent() then
             local dmg_ref = keys.original_damage * Util:ArmorDamageReductionByNumber(keys.target:GetPhysicalArmorValue(false))
-            print(dmg_ref)
             local vampirism_pct = self:GetAbility():GetSpecialValueFor("bonus_lifesteal")
             local damage = dmg_ref * vampirism_pct / 100
             self:GetParent():Heal(damage, self:GetAbility())

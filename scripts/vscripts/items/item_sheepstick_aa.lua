@@ -67,7 +67,15 @@ function modifier_sheepstick_hex:IsPurgable()
 end
 function modifier_sheepstick_hex:OnCreated( kv )
 	self.base_speed = self:GetAbility():GetSpecialValueFor( "sheep_movement_speed" )
-	self.model = "models/items/hex/sheep_hex/sheep_hex.vmdl"
+	self.model = self.model or "models/items/hex/sheep_hex/sheep_hex.vmdl"   -- на клиенте могла прийти из transmitter
+
+	-- косметика премиума (слот hex_skin): модель превращения выбирает тот, кто кастует хекс.
+	-- Клиент модель не знает - отдаём её через transmitter-данные модификатора.
+	if IsServer() then
+		local item = AACosmeticItem and AACosmeticItem(self:GetCaster(), "hex_skin")
+		if item and item.model then self.model = item.model end
+		self:SetHasCustomTransmitterData(true)
+	end
 
 	if IsServer() then
 
@@ -138,4 +146,12 @@ function modifier_sheepstick_hex:PlayEffects( bStart )
 	if bStart then
 		EmitSoundOn( sound_cast, self:GetParent() )
 	end
+end
+
+function modifier_sheepstick_hex:AddCustomTransmitterData()
+	return { model = self.model }
+end
+
+function modifier_sheepstick_hex:HandleCustomTransmitterData(data)
+	if data and data.model then self.model = data.model end
 end

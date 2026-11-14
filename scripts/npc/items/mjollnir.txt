@@ -65,6 +65,11 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_mjolnir"
+        "precache"
+        {
+            "particle"                  "particles/items2_fx/mjollnir_shield.vpcf"
+            "particle"                  "particles/items_fx/chain_lightning.vpcf"
+        }
         "ItemBaseLevel"					"1"
         "AbilityTextureName"            "item_mjollnir"
 
@@ -114,6 +119,11 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_mjolnir"
+        "precache"
+        {
+            "particle"                  "particles/items2_fx/mjollnir_shield.vpcf"
+            "particle"                  "particles/items_fx/chain_lightning.vpcf"
+        }
         "ItemBaseLevel"					"2"
         "AbilityTextureName"            "mjollnir_2"
 
@@ -164,6 +174,11 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_mjolnir"
+        "precache"
+        {
+            "particle"                  "particles/items2_fx/mjollnir_shield.vpcf"
+            "particle"                  "particles/items_fx/chain_lightning.vpcf"
+        }
         "ItemBaseLevel"					"3"
         "AbilityTextureName"            "mjollnir_3"
 
@@ -235,6 +250,11 @@
     {
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_mjolnir"
+        "precache"
+        {
+            "particle"                  "particles/items2_fx/mjollnir_shield.vpcf"
+            "particle"                  "particles/items_fx/chain_lightning.vpcf"
+        }
         "ItemBaseLevel"					"1"
         "AbilityTextureName"            "item_maelstrom"
 

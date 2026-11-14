@@ -1,72 +1,81 @@
+// Юниты героя. Юниты, которые есть в актуальной доте, - ванильные определения из
+// game/dota/pak01_dir.vpk (старая копия ломала суммонов). Уровни сверх дотовских
+// и свои юниты мода - наши, наследуют ванильные через include_keys_from.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
 "DOTAUnits"
 {
-    "npc_dota_pugna_nether_ward"
-    {                                       
-        // General
-        //----------------------------------------------------------------
-        "Model"                     "models/heroes/pugna/pugna_ward.vmdl"   // Model.
-        "BaseClass"                 "npc_dota_base_additive"
-        "SoundSet"                  "Pugna_NetherWard"          // Name of sound set.
-        "Level"                     "0"
-        "ModelScale"                "1"
-        "wearable"              "8627"
-
-        // Abilities
-        //----------------------------------------------------------------
-        "Ability1"                  ""          // Ability 1
-        "Ability2"                  ""          // Ability 2
-        "Ability3"                  ""          // Ability 3
-        "Ability4"                  ""          // Ability 4
-
-        // Armor
-        //----------------------------------------------------------------
-        "ArmorPhysical"             "0"         // Physical protection.
-
-        // Attack
-        //----------------------------------------------------------------
-        "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
-        "AttackDamageMin"           "0"         // Damage range min.
-        "AttackDamageMax"           "0"         // Damage range max.    
-        "AttackRate"                "1.0"       // Speed of attack.
-        "AttackAnimationPoint"      "0.0"       // Normalized time in animation cycle to attack.
-        "AttackAcquisitionRange"    "0"         // Range within a target can be acquired.
-        "AttackRange"               "0"         // Range within a target can be attacked.
-        "ProjectileModel"           ""          // Particle system model for projectile.
-        "ProjectileSpeed"           "0"         // Speed of projectile.        
-
-        // Bounds
-        //----------------------------------------------------------------
-        "HealthBarOffset"           "145"                                   
-        "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"          // Hull type used for navigation/locomotion.
-
-        // Bounty
-        //----------------------------------------------------------------
-        "BountyXP"                  "0"         // Experience earn.
-        "BountyGoldMin"             "20"        // Gold earned min.
-        "BountyGoldMax"             "20"        // Gold earned max.
-
-        // Movement
-        //----------------------------------------------------------------
-        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
-        "MovementSpeed"             "0"     // Speed.
-
-        // Status
-        //----------------------------------------------------------------
-        "StatusHealth"              "16"        // Base health.
-        "StatusHealthRegen"         "0.0"       // Health regeneration rate.
-        
-        // Vision
-        //----------------------------------------------------------------
-        "VisionDaytimeRange"        "600"       // Range of vision during day light.
-        "VisionNighttimeRange"      "600"       // Range of vision at night time.
-
-        // Team
-        //----------------------------------------------------------------
-        "TeamName"                  "DOTA_TEAM_NEUTRALS"                            // Team name.
-        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-    }
-    "npc_dota_pugna_nether_ward_4"
+	"npc_dota_pugna_nether_ward"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
+		"BaseClass"					"npc_dota_base_additive"
+		"SoundSet"					"Pugna_NetherWard"			// Name of sound set.
+		"Level"						"0"
+		"ModelScale"				"1"
+ 		"wearable"				"8627"
+		"IgnoreAddSummonedToSelection"	"1"
+		"UnitToAbilityMap"			"pugna_nether_ward"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"145"							 		
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"			// Experience earn.
+		"BountyGoldMin"				"20"		// Gold earned min.
+		"BountyGoldMax"				"20"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"16"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"600"		// Range of vision during day light.
+		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	}
+
+	"npc_dota_pugna_nether_ward_4"
+	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
@@ -129,9 +138,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-	}	
-    "npc_dota_pugna_nether_ward_5"
+	}
+
+	"npc_dota_pugna_nether_ward_5"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
@@ -194,9 +205,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-	}	
-    "npc_dota_pugna_nether_ward_6"
+	}
+
+	"npc_dota_pugna_nether_ward_6"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
@@ -259,9 +272,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-	}	
-    "npc_dota_pugna_nether_ward_7"
+	}
+
+	"npc_dota_pugna_nether_ward_7"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
@@ -324,5 +339,207 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-	}	
+	}
+
+	"npc_dota_pugna_nether_ward_1"
+	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
+		"BaseClass"					"npc_dota_base_additive"
+		"SoundSet"					"Pugna_NetherWard"			// Name of sound set.
+		"Level"						"0"
+		"ModelScale"				"1"
+ 		"wearable"				"8627"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"145"							 		
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"			// Experience earn.
+		"BountyGoldMin"				"20"		// Gold earned min.
+		"BountyGoldMax"				"20"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"16"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"600"		// Range of vision during day light.
+		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	}
+
+	"npc_dota_pugna_nether_ward_2"
+	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
+		"BaseClass"					"npc_dota_base_additive"
+		"SoundSet"					"Pugna_NetherWard"			// Name of sound set.
+		"Level"						"0"
+		"ModelScale"				"1"
+ 		"wearable"				"8627"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"145"						 
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"			// Experience earn.
+		"BountyGoldMin"				"40"		// Gold earned min.
+		"BountyGoldMax"				"40"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"16"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"600"		// Range of vision during day light.
+		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	}
+
+	"npc_dota_pugna_nether_ward_3"
+	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
+		"BaseClass"					"npc_dota_base_additive"
+		"SoundSet"					"Pugna_NetherWard"			// Name of sound set.
+		"Level"						"0"
+		"ModelScale"				"1"
+ 		"wearable"				"8627"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"145"				   
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"			// Experience earn.
+		"BountyGoldMin"				"60"		// Gold earned min.
+		"BountyGoldMax"				"60"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"16"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"600"		// Range of vision during day light.
+		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	}
+
 }

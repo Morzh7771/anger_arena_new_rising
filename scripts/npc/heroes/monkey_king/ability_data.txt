@@ -1,5 +1,192 @@
 DOTAAbilities
 {
+	//=================================================================================================================
+	// Boundless Strike. Растянуто на 7 уровней с дотовским шагом.
+	//=================================================================================================================
+	"monkey_king_boundless_strike"
+	{
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"FightRecapLevel"				"1"
+		"AbilityCastAnimation"			"ACT_DOTA_MK_STRIKE"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.4"
+		"HasShardUpgrade"				"1"
+		"AbilityManaCost"				"85 90 95 100 105 110 115"
+		"AbilityValues"
+		{
+			"stun_duration"
+			{
+				"value"									"0.7 0.9 1.1 1.3 1.5 1.7 1.9"
+				"special_bonus_unique_monkey_king_9"	"+0.2"
+			}
+			"strike_crit_mult"
+			{
+				"value"									"120 140 160 180 200 220 240"
+				"DamageTypeTooltip"						"DAMAGE_TYPE_PHYSICAL"
+				"special_bonus_unique_monkey_king_10"	"+60"
+			}
+			"strike_flat_damage"				"20 40 60 80 100 120 140"
+			"AbilityCooldown"
+			{
+				"value"							"24 21 18 15 12 9 6"
+			}
+			"strike_radius"
+			{
+				"value"							"150"
+				"affected_by_aoe_increase"		"1"
+			}
+			"AbilityCastRange"
+			{
+				"value"							"1100"
+			}
+			"strike_cast_range"
+			{
+				"value"							"1100"
+			}
+			"soldier_spawn_duration"			"0"
+			"acceleration_z"					"5000"
+			"min_height_above_lowest"			"100"
+			"min_height_above_highest"			"150"
+			"max_horizontal_acceleration"		"30000"
+			"duration"							"0.2"
+			"spring_channel_pct"				"35"
+		}
+	}
+
+	//=================================================================================================================
+	// Tree Dance. 7 уровней (max_level тоже 7, иначе значения режутся на 4-м).
+	//=================================================================================================================
+	"monkey_king_tree_dance"
+	{
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilitySound"					"Hero_MonkeyKing.TreeJump.Cast"
+		"FightRecapLevel"				"1"
+		"RestrictValuesToMaxLevel"		"1"
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"0.9 0.9 0.9 0.6 0.6 0.3 0.3"
+		"AbilityManaCost"				"0"
+		"AbilityValues"
+		{
+			"leap_speed"				"600"
+			"spring_leap_speed"			"1300"
+			"give_up_distance"			"1850"
+			"ground_jump_distance"
+			{
+				"value"									"900"
+				"special_bonus_unique_monkey_king_7"	"+300"
+			}
+			"perched_jump_distance"
+			{
+				"value"									"900"
+				"special_bonus_unique_monkey_king_7"	"+300"
+			}
+			"jump_damage_cooldown"
+			{
+				"value"							"3.0"
+				"CalculateSpellDamageTooltip"	"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+			}
+			"perched_day_vision"			"700"
+			"perched_night_vision"			"500"
+			"perched_spot_height"			"192.0"
+			"unperched_stunned_duration"	"3.0"
+			"top_level_height"				"500"
+			"impact_damage_tooltip"			"110 200 290 380 470 560 650"
+			"impact_movement_slow_tooltip"	"30 40 50 60 70 80 90"
+			"range"							"900"
+			"max_level"						"7"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Primal Spring. Уровень идёт от Tree Dance, поэтому тоже 7.
+	//=================================================================================================================
+	"monkey_king_primal_spring"
+	{
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_MonkeyKing.Spring.Channel"
+		"DependentOnAbility"			"monkey_king_tree_dance"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"800"
+		"AbilityChannelTime"			"1.75"
+		"AbilityManaCost"				"100"
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"									"18 16 14 12 10 8 6"
+				"special_bonus_unique_monkey_king_8"	"=0"
+			}
+			"impact_damage"
+			{
+				"value"							"110 200 290 380 470 560 650"
+			}
+			"impact_movement_slow"			"30 40 50 60 70 80 90"
+			"impact_slow_duration"			"4.0"
+			"impact_radius"
+			{
+				"value"							"375"
+				"affected_by_aoe_increase"		"1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Jingu Mastery. 7 уровней.
+	//=================================================================================================================
+	"monkey_king_jingu_mastery"
+	{
+		"MaxLevel"						"7"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_MonkeyKing.IronCudgel"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"IsBreakable"					"1"
+		"AbilityCooldown"				"0"
+		"AbilityValues"
+		{
+			"required_hits"
+			{
+				"value"									"4"
+				"special_bonus_unique_monkey_king_11"	"-1"
+			}
+			"counter_duration"			"5.5 7 8.5 10 11.5 13 14.5"
+			"charges"					"4"
+			"bonus_damage"
+			{
+				"value"									"30 80 130 180 230 280 330"
+				"CalculateSpellDamageTooltip"			"0"
+				"special_bonus_unique_monkey_king_2"	"+110"
+			}
+			"lifesteal"					"20 40 60 80 100 120 140"
+			"max_duration"				"35"
+			"buff_is_undispellable"
+			{
+				"value"									"0"
+				"special_bonus_unique_monkey_king_3"	"+1"
+			}
+		}
+	}
 
 	"monkey_king_transfiguration"
 	{
@@ -15,6 +202,91 @@ DOTAAbilities
 		{
 			"transfiguration_duration"				"1.5"
 			"initial_cooldown"				"1.0"
+		}
+	}
+
+	//=================================================================================================================
+	// Wukong's Command - своя арена (vscripts/heroes/monkey_king/monkey_king_wukongs_command_aa.lua).
+	// По мотивам 1х6, но работает как дотовская: два кольца солдат, броня MK,
+	// пока он внутри; арена кончается, если MK умер или вышел за внешнее кольцо.
+	// Значения ванильные, растянуты с 3 на 7 уровней.
+	//=================================================================================================================
+	"monkey_king_wukongs_command_aa"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/monkey_king/monkey_king_wukongs_command_aa"
+		"AbilityTextureName"			"monkey_king_wukongs_command"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_MonkeyKing.FurArmy"
+		"MaxLevel"						"7"
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastRange"				"625"
+		"AbilityCastAnimation"			"ACT_INVALID"
+
+		"AbilityCooldown"				"100 97 93 90 87 83 80"
+		"AbilityManaCost"				"100"
+
+		"AbilityValues"
+		{
+			"first_radius"
+			{
+				"value"						"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"second_radius"
+			{
+				"value"						"750"
+				"affected_by_aoe_increase"	"1"
+			}
+			"third_radius"
+			{
+				"value"									"0"
+				"special_bonus_unique_monkey_king_6"	"=1100"
+				"affected_by_aoe_increase"				"1"
+			}
+			"num_first_soldiers"			"5"
+			"num_second_soldiers"			"9"
+			"num_third_soldiers"
+			{
+				"value"									"0"
+				"special_bonus_unique_monkey_king_6"	"=7"
+			}
+			"move_speed"					"700"
+			"bonus_armor"					"15 20 25 30 35 40 45"
+			"attack_speed"					"1.1"	// солдат бьёт раз в столько секунд
+			"duration"						"14"
+			"cast_range"
+			{
+				"value"									"625"
+				"special_bonus_unique_monkey_king_6"	"+350"
+			}
+			"end_on_leave"					"1"		// 1 - арена кончается, если MK вышел за внешнее кольцо
+			"leave_grace"					"0.5"	// сколько секунд можно пробыть снаружи (прыжки через край)
+
+			// аганим (Lua: modifier_monkey_king_wukongs_command_aa_scepter)
+			"cast_range_scepter"
+			{
+				"special_bonus_scepter"		"1550"
+			}
+			"cooldown_scepter"
+			{
+				"special_bonus_scepter"		"90 83 77 70 63 57 50"
+			}
+			"scepter_spawn_interval"
+			{
+				"special_bonus_scepter"		"4"
+			}
+			"scepter_spawn_duration"
+			{
+				"special_bonus_scepter"		"15"
+			}
+			"scepter_spawn_search"			"1200"	// солдат появляется, только если в этом радиусе от MK есть враг
 		}
 	}
 }

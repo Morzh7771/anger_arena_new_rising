@@ -6,7 +6,7 @@ function ogre_big_heal:OnSpellStart( keys )
 	local heal_const = self:GetSpecialValueFor("heal_const")
 	local heal_per_min = self:GetSpecialValueFor("heal_per_min")
 
-	local heal = heal_const + heal_per_min * ( GameRules:GetGameTime() / 60 )
+	local heal = heal_const + heal_per_min * ( (math.max(0, GameRules:GetDOTATime(false, false)) / 60) )
 
 	target:Heal(heal, self:GetCaster())
 

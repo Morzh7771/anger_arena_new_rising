@@ -2,520 +2,325 @@
 {
 	"consumables"
 	{
-		"item"		"item_tpscroll"
-		"item"		"item_clarity"	
-		"item"		"item_faerie_fire"				
-		"item"		"item_smoke_of_deceit"
 		"item"		"item_ward_observer"
-		"item"		"item_ward_sentry"
-		"item"		"item_enchanted_mango"
-		"item"		"item_flask"
-		"item"		"item_tango"
 		"item"		"item_blood_grenade"
-		"item"		"item_dust"	
+		"item"		"item_clarity"
+		"item"		"item_smoke_of_deceit"
+
+		"item"		"item_enchanted_mango"
+		"item"		"item_faerie_fire"
+		"item"		"item_ward_sentry"
+		"item"		"item_dust"
+
+		"item"		"item_tango"
+		"item"		"item_flask"
+		"item"		"item_tpscroll"
+		"item"		"item_mini_bkb"
+
 		"item"		"item_bottle"
-		"item"		"item_aghanims_shard"
-		"item" 		"item_mini_bkb"
-		
-		"item"		"item_tome_med"
-		//"item"		"item_tome_med_2"
+		"item"		"item_raindrop_aa"
 		"item"		"item_tome_lvlup"
-		"item"		"item_team_changer"
-		
+		"item"		"item_aghanims_shard"
+
+		"item"		"item_tome_med"
 	}
 
 	"attributes"
 	{
-
 		"item"		"item_gauntlets"
+		"item"		"item_mantle"
 		"item"		"item_slippers"
-		"item"		"item_mantle"	
-
 		"item"		"item_circlet"
 
 		"item"		"item_belt_of_strength"
 		"item"		"item_boots_of_elves"
+		"item"		"item_crown"
 		"item"		"item_robe"
 
-		"item"		"item_crown"
-
-		"item"		"item_ogre_axe"
 		"item"		"item_blade_of_alacrity"
-		"item"		"item_staff_of_wizardry"
 		"item"		"item_diadem"
-		"item"		"item_tome_str_6"
+		"item"		"item_ogre_axe"
+		"item"		"item_staff_of_wizardry"
+
+		"item"		"item_eagle"
+		"item"		"item_mystic_staff"
+		"item"		"item_reaver"
+		"item"		"item_ultimate_orb"
+
 		"item"		"item_tome_agi_6"
 		"item"		"item_tome_int_6"
+		"item"		"item_tome_str_6"
 		"item"		"item_tome_un_6"
-		//"item"		"item_tome_un_60"
-		//"item"		"item_tome_str_60"
-		//"item"		"item_tome_agi_60"
-		//"item"		"item_tome_int_60"
-		
 	}
 
 	"weapons_armor"
 	{
 		"item"		"item_quelling_blade_aa"
 		"item"		"item_ring_of_protection"
-		"item"		"item_raindrop_aa"
-		"item"		"item_talisman_of_mastery"	
-		"item"		"item_orb_of_venom"
 		"item"		"item_blight_stone"
+		"item"		"item_orb_of_venom"
+
+		"item"		"item_talisman_of_mastery"
 		"item"		"item_blades_of_attack"
 		"item"		"item_gloves"
 		"item"		"item_chainmail"
+
 		"item"		"item_quarterstaff"
-		"item"		"item_helm_of_iron_will"
 		"item"		"item_broadsword"
-		"item"		"item_blitz_knuckles"
 		"item"		"item_javelin"
-		"item"		"item_claymore"				
-		"item"		"item_mithril_hammer"	
+		"item"		"item_helm_of_iron_will"
+
+		"item"		"item_blitz_knuckles"
+		"item"		"item_talisman_of_evasion"
+		"item"		"item_claymore"
+		"item"		"item_platemail"
+
+		"item"		"item_mithril_hammer"
+		"item"		"item_hyperstone"
+		"item"		"item_demon_edge"
+		"item"		"item_relic"
 	}
-			
+
 	"misc"
 	{
 		"item"		"item_ring_of_regen"
 		"item"		"item_sobi_mask"
 		"item"		"item_magic_stick"
-		"item"		"item_fluffy_hat"
 		"item"		"item_wind_lace"
-		"item"		"item_cloak"
+
+		"item"		"item_fluffy_hat"
+		"item"		"item_explosive_mantle_of_intelligence"
 		"item"		"item_boots"
-		"item"		"item_gem"
+		"item"		"item_ring_of_health"
+
+		"item"		"item_void_stone"
+		"item"		"item_energy_booster"
 		"item"		"item_lifesteal"
+		"item"		"item_cloak"
+
+		"item"		"item_gem"
+		"item"		"item_shadow_amulet"
 		"item"		"item_voodoo_mask"
-		"item"		"item_shadow_amulet"	
+		"item"		"item_vitality_booster"
+
+		"item"		"item_point_booster"
+		"item"		"item_chasm_stone"
+		"item"		"item_rod_of_atos"
 		"item"		"item_ghost"
-		"item"		"item_blink"	
-	}	
-	
-	// Level 1 - Green Recipes
+		"item"		"item_blink"
+	}
+
+	// Level 1 - зелёные рецепты
 	"basics"
 	{
-		"item"		"item_bracer_custom"	
-		"item"		"item_wraith_band_custom"
+		"item"		"item_bracer_custom"
 		"item"		"item_null_talisman_custom"
+		"item"		"item_wraith_band_custom"
 		"item"		"item_fury_shield"
 
+		"item"		"item_chest_of_midas"
+		"item"		"item_soul_ring"
+		"item"		"item_corrosion_custom"
 		"item"		"item_power_treads"
+
 		"item"		"item_phase_boots"
-		"item"		"item_boots_of_bearing_aa"
+		"item"		"item_mask_of_madness_aa_1"
+		"item"		"item_midas_aa"
 		"item"		"item_travel_boots"
 
-		"item"		"item_guardian_greaves_custom"
 		"item"		"item_moon_shard"
-		"item"		"item_corrosion_custom"
- 		"item"		"item_mask_of_madness_aa_1"
-
-		"item"		"item_chest_of_midas"
-		"item"		"item_midas_aa"	
-		"item"		"item_helm_of_the_overlord"		
-		"item"		"item_soul_ring"
+		"item"		"item_boots_of_bearing_aa"
+		"item"		"item_guardian_greaves_custom"
+		"item"		"item_travel_boots_2"
+		"item"		"item_snake_boots"
+		"item"		"item_urn_of_shadows"
+		"item"		"item_bfury_mini"
+		"item"		"item_ranged_cleave_mini"
 	}
 
-	// Level 2 - Blue Recipes
+	// Level 2 - синие рецепты
 	"support"
 	{
-		"item"		"item_falcon_blade_custom"
 		"item"		"item_talisman_of_ambition"
+		"item"		"item_falcon_blade_custom"
 		"item"		"item_pavise"
-		"item"		"item_holy_locket"
-
-		"item"		"item_spirit_vessel"
-		"item"		"item_pipe_custom"
-		"item"		"item_solar_crest_1"
-		"item"		"item_vladmir"
+		"item"		"item_drum_of_endurance"
 
 		"item"		"item_mekansm"
-		"item"		"item_vision"
-		"item"		"item_refresher"
+		"item"		"item_solar_crest_1"
 		"item"		"item_glimmer_cape"
+		"item"		"item_vladmir"
 
+		"item"		"item_holy_locket"
+		"item"		"item_spirit_vessel"
+		"item"		"item_pipe_custom"
+		"item"		"item_refresher"
+
+		"item"		"item_vision"
 		"item"		"item_wind_waker"
-		"item" 		"item_necronomicon"
 	}
-				
-	"magics"			
+
+	// Магия
+	"magics"
 	{
-		"item"		"item_veil_of_discord"		
-		"item"		"item_sheepstick"
-		"item"		"item_ultimate_scepter"
+		"item"		"item_veil_of_discord"
+		"item"		"item_center_of_peace"
+		"item"		"item_force_staff"
 		"item"		"item_aether_lens"
 
+		"item"		"item_manaflare_lens_custom"
+		"item"		"item_charon"
+		"item"		"item_dagon"
 		"item"		"item_meteor_hammer_aa"
-		"item"		"item_force_staff"
+
+		"item"		"item_ultimate_scepter"
+		"item"		"item_magic_splash"
 		"item"		"item_octarine_core"
 		"item"		"item_ethereal_blade"
 
-		"item"		"item_gungir"
-		"item"		"item_charon"
-		"item"		"item_slice_amulet"
-		"item"		"item_custom_seer_stone"
-
-		"item"		"item_dagon"
-		"item"		"item_center_of_peace"	
 		"item"		"item_slice_amulet_old"
-		"item"		"item_manaflare_lens_custom"
+		"item"		"item_custom_seer_stone"
+		"item"		"item_sheepstick"
+		"item"		"item_gungir"
 
-		"item"      "item_magic_splash"
+		"item"		"item_slice_amulet"
 	}
-		
-	// Level 3 - Purple Recipes	
+
+	// Level 3 - фиолетовые рецепты
 	"defense"
 	{
 		"item"		"item_vanguard"
 		"item"		"item_blade_mail"
-		"item"		"item_aeon_disk"	
-		"item"		"item_eternal_shroud"
+		"item"		"item_aeon_disk"
+		"item"		"item_consecrated_wraps"
 
-		"item"		"item_crimson_guard"		
-		"item"		"item_bkb_aa_1"
+		"item"		"item_crimson_guard"
 		"item"		"item_lotus_orb"
-		"item"		"item_manta"
-
-		"item"		"item_heart"
-		"item"		"item_sphere"
-		"item"		"item_shivas_guard"
-		"item"		"item_assault"
-
-		"item"      "item_shield_of_immortality"
+		"item"		"item_bkb_aa_1"
 		"item"		"item_bloodstone_1"
 
-	}
-			
-	"weapons"
-	{		
-		
-		"item"		"item_armlet"
- 		"item"		"item_monkey_king_bar"
-		"item"		"item_devastator"
-		"item"		"item_bfury_aa"
+		"item"		"item_manta"
+		"item"		"item_sphere"
+		"item"		"item_shivas_guard"
+		"item"		"item_heart"
 
+		"item"		"item_assault"
+		"item"		"item_helm_of_the_overlord"
+		"item"		"item_shield_of_immortality"
+	}
+
+	// Оружие
+	"weapons"
+	{
+		"item"		"item_armlet"
+		"item"		"item_maelstorm_aa"
 		"item"		"item_desolator_aa_1"
+		"item"		"item_dimensional_predictor_1"
+
+		"item"		"item_bfury_aa"
+		"item"		"item_nullifier"
+		"item"		"item_piercing_blade"
+		"item"		"item_radiance"
+
+		"item"		"item_revenants_brooch_custom"
 		"item"		"item_butterfly"
-		"item"		"item_bloodthorn"
+		"item"		"item_monkey_king_bar"
 		"item"		"item_ranged_cleave"
 
 		"item"		"item_greater_crit"
 		"item"		"item_silver_edge"
-		"item"		"item_nullifier"
-		"item"		"item_radiance"
-
-		"item"		"item_abyssal_blade"	
-		"item"		"item_disperser_aa_1"
-		"item"		"item_revenants_brooch_custom"
-		"item"		"item_piercing_blade"
-
+		"item"		"item_devastator"
 		"item"		"item_rapier"
-		"item"		"item_dimensional_predictor_1"
-		
+
+		"item"		"item_disperser_aa_1"
+		"item"		"item_abyssal_blade"
+		"item"		"item_bloodthorn"
 	}
-		
-	// Level 4 - Orange / Orb / Artifacts				
+
+	// Level 4 - артефакты
 	"artifacts"
-	{	
+	{
+		"item"		"item_kaya"
 		"item"		"item_sange"
- 		"item"		"item_yasha"
- 		"item"		"item_kaya"		
- 		"item"		"item_phylactery"
+		"item"		"item_yasha"
+		"item"		"item_phylactery"
 
- 		"item"		"item_sange_and_yasha"
- 		"item"		"item_kaya_and_sange"
- 		"item"		"item_yasha_and_kaya"
- 		"item"		"item_mjolnir_aa_1"
+		"item"		"item_heavens_halberd"
+		"item"		"item_kaya_and_sange"
+		"item"		"item_sange_and_yasha"
+		"item"		"item_yasha_and_kaya"
 
- 		"item"		"item_overwhelming_blink"		
- 		"item"		"item_swift_blink"
-		"item"		"item_arcane_blink"
- 		"item"		"item_skadi" 
-
- 		"item"		"item_heavens_halberd"
- 		"item"		"item_satanic"		
-		"item"		"item_harpoon_aa_1"
 		"item"		"item_hurricane_pike_aa_1"
-		
+		"item"		"item_harpoon_aa_1"
+		"item"		"item_edible_gem"
+		"item"		"item_khanda"
+
+		"item"		"item_satanic"
+		"item"		"item_skadi"
+		"item"		"item_mjolnir_aa_1"
 		"item"		"item_unknown_amulet"
+
+		"item"		"item_arcane_blink"
+		"item"		"item_overwhelming_blink"
+		"item"		"item_swift_blink"
 	}
 
+	// Побочные лавки (тайной лавки нет - всё продаётся в обычном магазине)
 	"sideshop1"
 	{
+		"item"		"item_quelling_blade_aa"
 		"item"		"item_tpscroll"
 		"item"		"item_magic_stick"
-		"item"		"item_quelling_blade"
-		"item"		"item_boots"
-		"item"		"item_boots_of_elves"
 		"item"		"item_belt_of_strength"
-		"item"		"item_robe"
+
+		"item"		"item_boots_of_elves"
 		"item"		"item_crown"
+		"item"		"item_robe"
+		"item"		"item_boots"
 	}
 
 	"sideshop2"
 	{
 		"item"		"item_gloves"
 		"item"		"item_chainmail"
-		"item"		"item_cloak"
 		"item"		"item_void_stone"
-		"item"		"item_helm_of_iron_will"
 		"item"		"item_energy_booster"
-		"item"		"item_vitality_booster"
+
 		"item"		"item_lifesteal"
 		"item"		"item_broadsword"
+		"item"		"item_cloak"
+		"item"		"item_helm_of_iron_will"
+
+		"item"		"item_vitality_booster"
 		"item"		"item_blink"
 	}
-	
-	"secretshop"
-	{
-		"item"		"item_reaver"
-		"item"		"item_eagle"
-		"item"		"item_mystic_staff"
-		"item"		"item_ultimate_orb"
 
-		"item"		"item_ring_of_health"
-		"item"		"item_void_stone"
-		"item"		"item_cornucopia"
-		"item"		"item_talisman_of_evasion"
-
-		"item"		"item_vitality_booster"
-		"item"		"item_point_booster"
-		"item"		"item_energy_booster"
-		"item"		"item_platemail"
-
-		"item"		"item_hyperstone"
-		"item"		"item_demon_edge"		
-		"item"		"item_relic"
-		"item"		"item_explosive_mantle_of_intelligence"
-	}
-
+	// Лавка до начала игры
 	"pregame"
 	{
-		"item"		"item_talisman_of_mastery"
-		"item" 		"item_mini_bkb"
-		"item"		"item_quelling_blade"
-		"item"		"item_fury_shield"
-		"item"		"item_enchanted_mango"
-		"item"		"item_faerie_fire"
-		"item"		"item_clarity"
 		"item"		"item_ward_observer"
-		"item"		"item_ward_sentry"
 		"item"		"item_blood_grenade"
+		"item"		"item_clarity"
 		"item"		"item_smoke_of_deceit"
-		"item"		"item_orb_of_venom"
-		"item"		"item_blight_stone"
+
+		"item"		"item_enchanted_mango"
+		"item"		"item_faerie_fire"
+		"item"		"item_ward_sentry"
+		"item"		"item_quelling_blade_aa"
+
+		"item"		"item_mini_bkb"
 		"item"		"item_wind_lace"
+		"item"		"item_blight_stone"
+		"item"		"item_orb_of_venom"
+
+		"item"		"item_talisman_of_mastery"
 		"item"		"item_boots"
-		"item"		"item_soul_ring"
-		"item"		"item_bracer_custom"	
+		"item"		"item_bracer_custom"
+		"item"		"item_null_talisman_custom"
+
 		"item"		"item_wraith_band_custom"
-		"item"		"item_null_talisman_custom"		
-	}
-
-	"diretide2020_pregame"
-	{
-		"item"		"item_clarity"
-		"item"		"item_faerie_fire"
-		"item"		"item_enchanted_mango"
-		"item"		"item_tango"
-		"item"		"item_flask"
-		"item"		"item_smoke_of_deceit"
-		"item"		"item_dust"
-		"item"		"item_ward_observer"
-		"item"		"item_ward_sentry"
-		"item"		"item_branches"
-		"item"		"item_gauntlets"
-		"item"		"item_slippers"
-		"item"		"item_mantle"
-		"item"		"item_circlet"
-		"item"		"item_recipe_magic_wand"
-		"item"		"item_ring_of_protection"
-		"item"		"item_stout_shield"
-		"item"		"item_quelling_blade"
-		"item"		"item_blight_stone"
-		"item"		"item_orb_of_venom"
-		"item"		"item_wind_lace"
-		"item"		"item_magic_stick"
-		"item"		"item_sobi_mask"
-		"item"		"item_ring_of_regen"
-		
-		"item"		"item_boots"
-		"item"		"item_tranquil_boots"
-
-		"item"		"item_cloak"
-		"item"		"item_ring_of_tarrasque"
-		"item"		"item_lifesteal"
-		"item"		"item_voodoo_mask"
-		"item"		"item_shadow_amulet"	
-
-		"item"		"item_gloves"
-		"item"		"item_chainmail"
-		"item"		"item_quarterstaff"
-		"item"		"item_helm_of_iron_will"
-		"item"		"item_broadsword"
-		"item"		"item_blitz_knuckles"
-		
-		"item"		"item_crown"
-
-		"item"		"item_belt_of_strength"
-		"item"		"item_boots_of_elves"
-		"item"		"item_robe"
-
-		"item"		"item_ogre_axe"
-		"item"		"item_blade_of_alacrity"
-		"item"		"item_staff_of_wizardry"
-
-		"item"		"item_wraith_band"
-		"item"		"item_null_talisman"
-		"item"		"item_bracer"
-
+		"item"		"item_fury_shield"
 		"item"		"item_soul_ring"
-		"item"		"item_ring_of_health"
-
-		"item"		"item_blades_of_attack"
-
-		"item"		"item_ring_of_basilius"
-		"item"		"item_buckler"
-		"item"		"item_headdress"
-		
-		"item"		"item_bottle"
 	}
 
-	"nemestice_pregame"
-	{
-		"item"		"item_clarity"
-		"item"		"item_faerie_fire"
-		"item"		"item_enchanted_mango"
-		"item"		"item_tango"
-		"item"		"item_flask"
-		"item"		"item_smoke_of_deceit"
-		"item"		"item_dust"
-		"item"		"item_ward_observer"
-		"item"		"item_ward_sentry"
-		"item"		"item_branches"
-		"item"		"item_gauntlets"
-		"item"		"item_slippers"
-		"item"		"item_mantle"
-		"item"		"item_circlet"
-		"item"		"item_recipe_magic_wand"
-		"item"		"item_ring_of_protection"
-		"item"		"item_quelling_blade"
-		"item"		"item_fluffy_hat"
-		"item"		"item_blight_stone"
-		"item"		"item_orb_of_venom"
-		"item"		"item_wind_lace"
-		"item"		"item_magic_stick"
-		"item"		"item_sobi_mask"
-		"item"		"item_ring_of_regen"
-		
-		"item"		"item_boots"
-		"item"		"item_tranquil_boots"
-
-		"item"		"item_cloak"
-		"item"		"item_ring_of_tarrasque"
-		"item"		"item_lifesteal"
-		"item"		"item_voodoo_mask"
-		"item"		"item_shadow_amulet"	
-
-		"item"		"item_gloves"
-		"item"		"item_chainmail"
-		"item"		"item_quarterstaff"
-		"item"		"item_helm_of_iron_will"
-		"item"		"item_broadsword"
-		"item"		"item_blitz_knuckles"
-		
-		"item"		"item_crown"
-		
-		"item"		"item_belt_of_strength"
-		"item"		"item_boots_of_elves"
-		"item"		"item_robe"
-
-		"item"		"item_ogre_axe"
-		"item"		"item_blade_of_alacrity"
-		"item"		"item_staff_of_wizardry"
-
-		"item"		"item_wraith_band"
-		"item"		"item_null_talisman"
-		"item"		"item_bracer"
-
-		"item"		"item_soul_ring"
-		"item"		"item_ring_of_health"
-
-		"item"		"item_blades_of_attack"
-
-		"item"		"item_ring_of_basilius"
-		"item"		"item_buckler"
-		"item"		"item_headdress"
-		
-		"item"		"item_bottle"
-	}
-
-
-	"winter2022_pregame"
-	{
-		"item"		"item_clarity"
-		"item"		"item_faerie_fire"
-		"item"		"item_enchanted_mango"
-		"item"		"item_tango"
-		"item"		"item_flask"
-		"item"		"item_smoke_of_deceit"
-		"item"		"item_dust"
-		"item"		"item_ward_observer"
-		"item"		"item_ward_sentry"
-		"item"		"item_branches"
-		"item"		"item_gauntlets"
-		"item"		"item_slippers"
-		"item"		"item_mantle"
-		"item"		"item_circlet"
-		"item"		"item_magic_wand"
-		"item"		"item_ring_of_protection"
-		"item"		"item_quelling_blade"
-		"item"		"item_fluffy_hat"
-		"item"		"item_blight_stone"
-		"item"		"item_orb_of_venom"
-		"item"		"item_wind_lace"
-		"item"		"item_magic_stick"
-		"item"		"item_sobi_mask"
-		"item"		"item_ring_of_regen"
-		
-		"item"		"item_boots"
-		"item"		"item_tranquil_boots"
-
-		"item"		"item_urn_of_shadows"
-
-		"item"		"item_cloak"
-		"item"		"item_lifesteal"
-		"item"		"item_voodoo_mask"
-		"item"		"item_shadow_amulet"	
-
-		"item"		"item_gloves"
-		"item"		"item_chainmail"
-		"item"		"item_quarterstaff"
-		"item"		"item_helm_of_iron_will"
-		"item"		"item_broadsword"
-		"item"		"item_blitz_knuckles"
-		
-		"item"		"item_crown"
-		
-		"item"		"item_belt_of_strength"
-		"item"		"item_boots_of_elves"
-		"item"		"item_robe"
-
-		"item"		"item_ogre_axe"
-		"item"		"item_blade_of_alacrity"
-		"item"		"item_staff_of_wizardry"
-
-		"item"		"item_wraith_band"
-		"item"		"item_null_talisman"
-		"item"		"item_bracer"
-
-		"item"		"item_soul_ring"
-
-		"item"		"item_blades_of_attack"
-
-		"item"		"item_ring_of_basilius"
-		"item"		"item_buckler"
-		"item"		"item_headdress"
-		
-		"item"		"item_bottle"
-	}
 }

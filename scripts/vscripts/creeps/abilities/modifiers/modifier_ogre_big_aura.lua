@@ -43,7 +43,7 @@ end
 function modifier_ogre_big_aura:GetModifierPhysicalArmorBonus()
 	local armor = self.armor
 
-	armor = armor + self.armor_per_5_min * (GameRules:GetGameTime() / 60) / 5
+	armor = armor + self.armor_per_5_min * ((math.max(0, GameRules:GetDOTATime(false, false)) / 60)) / 5
 	
 	return armor
 end

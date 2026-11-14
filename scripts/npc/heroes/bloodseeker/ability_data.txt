@@ -263,7 +263,13 @@ DOTAAbilities
 				"value"				"1"
 				"special_bonus_scepter"			"+1"
 			}
-			"AbilityCooldown"				"0.25"
+			// с 1 зарядом движок режим зарядов не включает и берёт AbilityCooldown:
+			// без аганима это обычный кулдаун ульты, с аганимом (2 заряда) - пауза между зарядами
+			"AbilityCooldown"
+			{
+				"value"							"60"
+				"special_bonus_scepter"			"-59.75"
+			}
 			"AbilityChargeRestoreTime"		"60"
 		}
 	}

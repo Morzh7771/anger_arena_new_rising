@@ -27,6 +27,7 @@ function mod:DeclareFunctions()
 end
 
 function mod:OnAttackLanded(params)
+    if self:GetParent() ~= params.attacker then return end
     if self:GetParent():PassivesDisabled() then return end
 
     if not IsServer() then return end

@@ -26,7 +26,9 @@ function BaseClass:OnSpellStart(keys)
 		Caster = Caster:GetPlayerOwner():GetAssignedHero() 
 	end
 
-	Caster:ModifyGold(bonus_gold, true, 0)
+	local _ = (AATagGold or function(_, f) f() end)("midas", function() Caster:ModifyGold(bonus_gold, true, 0) end)
+
+	if EndGameStats then EndGameStats:OnMidas(Caster) end
 
 	if not Caster:IsTempestDouble() then
 		Caster:AddExperience(Target:GetDeathXP() * exp_mult, 0, false, false) 

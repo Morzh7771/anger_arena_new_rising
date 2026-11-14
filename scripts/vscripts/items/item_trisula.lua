@@ -167,6 +167,7 @@ function modifier_item_trisula:DeclareFunctions()
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
 		MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
+		MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL,
 	}
 end
 function modifier_item_trisula:GetModifierPercentageCasttime()
@@ -211,4 +212,16 @@ function modifier_item_trisula:GetModifierAttackRangeBonusUnique()
 	else
 		return 0
 	end
+end
+
+
+-- Бонус топорика по не-героям: Тризула собрана из War Fury / Hydra's Breath, в которых есть Quelling Blade.
+function modifier_item_trisula:GetModifierProcAttack_BonusDamage_Physical(keys)
+	if not IsServer() then return end
+	local ability = self:GetAbility()
+	local t = keys.target
+	if not ability or not t or t:IsHero() or t:IsOther() or t:IsBuilding() or t:GetTeamNumber() == self:GetParent():GetTeamNumber() then return end
+	local bonus = ability:GetSpecialValueFor("quelling_bonus") + self:GetParent():GetAverageTrueAttackDamage(self:GetParent()) * ability:GetSpecialValueFor("quelling_bonus_pct") / 100
+	if self:GetParent():IsRangedAttacker() then bonus = bonus * ability:GetSpecialValueFor("quelling_bonus_ranged_coef") / 100 end
+	return bonus
 end

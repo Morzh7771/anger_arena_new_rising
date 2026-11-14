@@ -17,7 +17,7 @@ DOTAAbilities
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"19"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -148,11 +148,11 @@ DOTAAbilities
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"          "SPELL_DISPELLABLE_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"DependentOnAbility"            "life_stealer_infest"
+		// качается сам, а не вместе с ультой
 		"Innate"                        "0"
 		"IsBreakable"                   "1"
 
@@ -269,12 +269,12 @@ DOTAAbilities
         {
             "movement_speed_bonus"
             {
-                "value"                     "2 4 6 8 10 12 14"
+                "value"                     "0"
                 "hero_levelup"              "+0.3"
             }
             "attack_speed_bonus"
             {
-                "value" "30 50 70 90 110 130 150"
+                "value"                     "0"
                 "hero_levelup"              "+4"
             }
         }
@@ -340,7 +340,7 @@ DOTAAbilities
 			"infest_duration_enemy"
 			{
 				"value"				"0"
-				"special_bonus_scepter"		"+5"
+				"special_bonus_scepter"		"+4"
 			}
 			"AbilityCastRange"
 			{

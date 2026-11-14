@@ -103,7 +103,7 @@ DOTAAbilities
 
             "rotating_glaives"
             {
-                "value"                             "4"
+                "value"                             "4 4 5 5 6 6 7 "
                 "special_bonus_unique_luna_lunar_orbit_glaive_count"                "+2"
             }
 
@@ -114,7 +114,7 @@ DOTAAbilities
 
             "rotating_glaives_hit_radius"
             {
-                "value"                             "150"
+                "value"                             "170"
                 "affected_by_aoe_increase"          "1"
             }
 
@@ -131,7 +131,7 @@ DOTAAbilities
 
             "rotating_glaives_speed"
             {
-                "value"                             "160"
+                "value"                             "200"
                 "special_bonus_shard"               "+50%"  // also change tooltip value below
             }
             "rotating_glaives_shard_speed_bonus_tooltip"
@@ -151,7 +151,7 @@ DOTAAbilities
 
             "rotating_glaives_damage_reduction"
             {
-                "value"                                 "0"
+                "value"                                 "8 10 12 14 16 18 20"
                 "special_bonus_shard"			"+10"
             }
         	"rotating_glaives_movement_radius_expand_speed_scale"				"4"

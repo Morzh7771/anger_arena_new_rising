@@ -313,10 +313,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"debt_pct"					"5"
-			"debt_per_damage"			"50"
-			"max_bonus_damage"			"30"
-			"decay_per_second"			"0.2"
+			"debt_pct"					"10"
+			"max_bonus_damage"			"150"
+			"decay_per_second"			"15"
 			"decay_delay"				"3.0"
 		}
 	}

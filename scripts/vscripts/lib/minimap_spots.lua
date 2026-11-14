@@ -32,7 +32,9 @@ local CAMP_ICON_UNITS = {
 	npc_aa_minimap_mid           = "npc_aa_minimap_icon_camp_big",
 	npc_aa_minimap_big_stack     = "npc_aa_minimap_icon_camp_mid",
 	npc_aa_minimap_ancient_stack = "npc_aa_minimap_icon_camp_ancient",
-	npc_aa_minimap_cobold        = "npc_aa_minimap_icon_death",
+	-- npc_aa_minimap_cobold (бесконечные крипы в центре) больше не кемп (2026-11-14): иконка
+	-- забирала себе ближайший спавнер и гасла, когда тот кемп зачищали, - значок центра пропадал.
+	-- Бесконечные стоят всегда, поэтому иконка остаётся постоянной, как у порталов.
 }
 
 -- какая иконка у какой руны. На точках богатства попеременно лежат богатство и
@@ -49,6 +51,13 @@ local CAMP_LINK_RADIUS = 700
 -- в каком радиусе от точки ищем лежащую руну
 local RUNE_RADIUS = 150
 
+-- Боссы: свои копии значка на команду, как у кемпов. Оригиналы с карты -
+-- npc_aa_minimap_boss, их значок не спрятать; те, что стоят рядом с точкой
+-- босса, удаляем.
+local BOSS_ICON_UNIT = "npc_aa_minimap_icon_boss"
+local BOSS_ICON_ORIGINAL = "npc_aa_minimap_boss"
+local BOSS_LINK_RADIUS = 900
+
 -- режимы объявлены в файле модификатора, но он грузится вместе со способностью
 -- юнита - на случай, если к нам доберутся раньше, держим те же числа тут
 MINIMAP_ICON_REPLACED = MINIMAP_ICON_REPLACED or 1
@@ -63,6 +72,8 @@ function MinimapSpots:Init()
 
 	self:_CollectCamps()
 	self:_CollectRunes()
+	self:_CollectBosses()
+	self:_CollectBears()
 
 	if CreepSpawner and CreepSpawner.RegisterOnSpawnCallback then
 		CreepSpawner:RegisterOnSpawnCallback(function(arg)
@@ -73,7 +84,7 @@ function MinimapSpots:Init()
 
 	local camps, runes = 0, 0
 	for _, spot in pairs(self.spots) do
-		if spot.kind == "camp" then camps = camps + 1 else runes = runes + 1 end
+		if spot.kind == "camp" then camps = camps + 1 elseif spot.kind == "rune" then runes = runes + 1 end
 	end
 	print("[AA] minimap spots: camps", camps, "runes", runes)
 
@@ -190,6 +201,46 @@ function MinimapSpots:_CollectRunes()
 	end
 end
 
+-- Боссы. Иконка горит, только если команда сама видела босса живым или
+-- вышло максимальное время его респавна - тогда он стоит точно. Когда босс
+-- может встать раньше, иконка молчит: мёртвого босса видно по кругу
+-- респавна на его точке (lib/spawners/camp_respawn_ring.lua).
+function MinimapSpots:_CollectBosses()
+	if not BossSpawner or not BossSpawner.bossClasses then return end
+
+	self.bossSpots = {}
+
+	local originals = {}
+
+	for _, classname in pairs({ "npc_dota_building", "npc_dota_creature" }) do
+		for _, unit in pairs(Entities:FindAllByClassname(classname)) do
+			if unit.GetUnitName and unit:GetUnitName() == BOSS_ICON_ORIGINAL then
+				table.insert(originals, unit)
+			end
+		end
+	end
+
+	for name, boss in pairs(BossSpawner.bossClasses) do
+		if boss.point then
+			for i = #originals, 1, -1 do
+				local unit = originals[i]
+
+				if IsValidEntity(unit) and (unit:GetAbsOrigin() - boss.point):Length2D() <= BOSS_LINK_RADIUS then
+					UTIL_Remove(unit)
+					table.remove(originals, i)
+				end
+			end
+
+			-- до первого спавна босса нет - и иконки тоже
+			local spot = NewSpot("boss", "boss", boss.point, false, { boss = BOSS_ICON_UNIT })
+			spot.bossName = name
+
+			table.insert(self.spots, spot)
+			self.bossSpots[name] = spot
+		end
+	end
+end
+
 -- спавн: иконка возвращается всем; кто спот сейчас видит, получит правду на
 -- ближайшем тике
 local function Reset(spot)
@@ -228,7 +279,33 @@ function MinimapSpots:OnCampSpawn(spawnerName)
 	end
 end
 
+-- вышло максимальное время респавна босса (BossSpawner:_ScheduleGuaranteed)
+function MinimapSpots:OnBossGuaranteed(bossName)
+	local spot = self.bossSpots and self.bossSpots[bossName]
+
+	if spot then Reset(spot) end
+end
+
+-- Бесконечные крипы в центре ("медведи", lib/spawners/bear_spawner.lua): стоят всегда,
+-- поэтому иконка горит постоянно. Своя копия на команду, как у кемпов.
+function MinimapSpots:_CollectBears()
+	local ent = Entities:FindByName(nil, "target_mark_spawner_jungle_type0")
+	if not ent then
+		print("[AA] minimap spots: нет точки бесконечных крипов target_mark_spawner_jungle_type0")
+		return
+	end
+
+	local spot = NewSpot("bears", "bears", ent:GetAbsOrigin(), true, { bears = "npc_aa_minimap_icon_death" })
+	self.spots[#self.spots + 1] = spot
+end
+
 function MinimapSpots:_HasContent(spot)
+	if spot.kind == "bears" then return true end
+
+	if spot.kind == "boss" then
+		return BossSpawner:IsBossAlive(spot.bossName)
+	end
+
 	if spot.kind == "camp" then
 		for _, name in pairs(spot.spawners) do
 			if CreepSpawner:_GetCampPopulation(name) > 0 then return true end

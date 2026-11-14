@@ -32,7 +32,7 @@ function mod:OnDestroy()
 
 	local target = self.target
 
-	ParticleManager:CreateParticle(	"particles/econ/wards/warlock/ward_warlock/warlock_ambient_ward_explosion.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle(	"particles/econ/wards/warlock/ward_warlock/warlock_ambient_ward_explosion.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent()))
 
 	if target and not target:IsNull() then
 		target:RemoveModifierByName("modifier_abyss_warrior_death_link")

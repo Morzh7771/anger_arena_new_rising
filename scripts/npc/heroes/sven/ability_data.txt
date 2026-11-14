@@ -237,7 +237,7 @@ DOTAAbilities
 		{
 			"gods_strength_damage"
 			{
-				"value"		"50 75 100 125 150 175 200"	
+				"value"		"110 125 140 155 175 190 205"	
 				"special_bonus_unique_sven_2"		"+100"	
 			}
 			"bonus_slow_resistance"
@@ -265,8 +265,11 @@ DOTAAbilities
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "bonus_damage_per_str"              "0.4 0.5 0.6 0.7"
-            "base_damage_reduction"             "20"
+			"bonus_damage_per_str"
+			{
+				"value"				"0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9"
+				"hero_levelup"		"0.01"
+			}
         	"current_bonus_damage_tooltip"
         	{
         		"dynamic_value"				"true"
@@ -361,19 +364,4 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
-
-	"sven_vanquisher"
-	{
-		"MaxLevel"					"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"Innate"				"1"
-		"IsBreakable"				"1"
-		"AbilityValues"
-		{
-			"bonus_damage_pct"
-			{
-				"value"				"20"
-			}
-		}
-	}
 }

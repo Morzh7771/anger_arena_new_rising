@@ -335,11 +335,11 @@ DOTAAbilities
 			"movement_bonus"			"30 35 40 45 50 55 60"
 			"spawn_zombie_on_attack"
             {
-                "value"                     "0"
+                "value"                     "1"
             }
             "zombie_duration"
             {
-                "value"                     "0"
+                "value"                     "15"
             }
             "zombie_spawn_padding"          "36"			
 			"AbilityCooldown"				"140"

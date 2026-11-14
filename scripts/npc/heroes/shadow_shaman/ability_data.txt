@@ -246,15 +246,17 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"shadow_shaman_mass_serpent_ward"
-		"MaxLevel"		"3"
+		// своя Lua-версия: ванильная умеет только 3 уровня змеек
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/shadow_shaman/shadow_shaman_mass_serpent_ward_aa"
+		"AbilityTextureName"	"shadow_shaman_mass_serpent_ward"
+		"MaxLevel"		"7"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_ShadowShaman.SerpentWard"
-		"LevelsBetweenUpgrades"		"12"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -268,7 +270,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 270 390"
+		"AbilityManaCost"				"150 270 390 510 630 750 870"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -277,7 +279,7 @@ DOTAAbilities
 			"ward_count"		"10"
 			"damage_tooltip"
 			{
-				"value"			"50 130 210"
+				"value"			"50 85 120 155 190 225 260"
 				"special_bonus_unique_shadow_shaman_4" "+20%"
 				"CalculateSpellDamageTooltip"	"0"				
 			}
@@ -317,15 +319,15 @@ DOTAAbilities
             {
                 "value"                 "0"
             }
-            "mega_ward_model_scale_multiplier"          "2.3 3.0 3.5"
+            "mega_ward_model_scale_multiplier"          "2.3 3.0 3.5 3.5 3.5 3.5 3.5"
 			"bonus_attack_targets"
 			{
 				"special_bonus_unique_shadow_shaman_4"				"+1"
 			}
-			"ward_damage_tooltip"				"50 85 120"
+			"ward_damage_tooltip"				"50 85 120 155 190 225 260"
 			"mega_ward_multiplier_damage"				"4"
 			"mega_ward_multiplier_health"				"4"
-			"mega_ward_damage_tooltip"				"200 340 480"
+			"mega_ward_damage_tooltip"				"200 340 480 620 760 900 1040"
 		}
 	}
 	"shadow_shaman_serpentine"

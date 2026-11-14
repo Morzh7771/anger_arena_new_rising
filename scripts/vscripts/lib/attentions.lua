@@ -4,12 +4,25 @@ function Attentions:SetKillLimit( nCount )
 	CustomNetTables:SetTableValue("game_info", "kill_limit", { kl = nCount })
 end
 
-function Attentions:SetTextMinimapText(text, color, formatters)
+-- final - чья следующая дуэль решающая ("radiant" | "dire" | "both"), для
+-- подсказки у таймера; у остальных таймеров пусто
+function Attentions:SetTextMinimapText(text, color, formatters, final)
 	if not formatters then
 		formatters = {}
 	end
 
-	CustomNetTables:SetTableValue("game_info", "timer", { text = text, formatters = formatters, color = color })
+	CustomNetTables:SetTableValue("game_info", "timer", { text = text, formatters = formatters, color = color, final = final or "" })
+end
+
+-- Убийства команд для полосок под таймером дуэли. Зовётся на смерть любого
+-- юнита, поэтому в нет-таблицу пишем только когда счёт сменился.
+function Attentions:SetTeamKills(radiant, dire)
+	if self.lastRadiantKills == radiant and self.lastDireKills == dire then return end
+
+	self.lastRadiantKills = radiant
+	self.lastDireKills = dire
+
+	CustomNetTables:SetTableValue("game_info", "kills", { radiant = radiant, dire = dire })
 end
 
 function Attentions:SendChatMessage( msg, plyid, count )

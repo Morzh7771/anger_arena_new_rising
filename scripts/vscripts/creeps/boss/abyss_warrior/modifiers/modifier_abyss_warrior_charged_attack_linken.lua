@@ -32,7 +32,7 @@ function mod:GetAbsorbSpell(keys)
 	local parent = self:GetParent()
 
 	parent:EmitSound("DOTA_Item.LinkensSphere.Activate")
-	ParticleManager:CreateParticle("particles/items_fx/immunity_sphere.vpcf", PATTACH_POINT_FOLLOW, parent)
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/items_fx/immunity_sphere.vpcf", PATTACH_POINT_FOLLOW, parent))
 
 	self:SetStackCount( stackCount )
 

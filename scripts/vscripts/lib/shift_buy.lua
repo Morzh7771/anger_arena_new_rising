@@ -1,23 +1,30 @@
 if not IsServer() then return end
 
 --[[
-	Книги с зажатым Shift.
+	Книги: покупка с зажатым Shift и книги из дропа крипов.
 
-	Купил книгу, держа Shift, - она сразу применяется, как если бы её купили и
-	тут же нажали. Касается всех предметов из scripts/npc/items/book_of_stats.txt,
-	которые при использовании зовут tome.lua: статы, книга богов, книга героев,
+	1) Купил книгу, держа Shift, - она сразу применяется, как если бы её
+	   купили и тут же нажали.
+	2) Книга, выпавшая с крипа, не падает на землю, а сразу применяется к
+	   тому, кто убил (зовёт lib/dropbox.lua через GiveTome).
+
+	Касается всех предметов из scripts/npc/items/book_of_stats.txt, которые
+	при использовании зовут tome.lua: статы, книга богов, книга героев,
 	медицинский трактат.
 
-	КАК.
-	Нажат ли Shift, знает только клиент: panorama/scripts/custom_game/shift_buy.js
-	шлёт сюда каждую смену его состояния. Сама покупка идёт через движок как
-	обычно - списание золота, сток и событие покупки (на нём перенос золота
-	сверх 50к) не трогаем. После покупки находим книгу у героя и делаем то же,
-	что OnSpellStart из KV: зовём ту же функцию tome.lua с теми же ключами и
-	снимаем один заряд, как SpendCharge.
+	КАК ПРИМЕНЯЕМ.
+	Делаем то же, что OnSpellStart из KV: зовём ту же функцию tome.lua с теми
+	же ключами. Так 5 надёжных + 5 ненадёжных статов и всё остальное остаются
+	ровно как при нажатии книги руками.
 
-	Мёртвому герою книга приходит обычным предметом: трактат вешает
-	модификатор, а на мёртвого он может и не встать - книга сгорела бы зря.
+	SHIFT.
+	Нажат ли он, знает только клиент: panorama/scripts/custom_game/shift_buy.js
+	шлёт сюда каждую смену состояния. Сама покупка идёт через движок как
+	обычно - списание золота, сток и событие покупки (на нём перенос золота
+	сверх 50к) не трогаем. После покупки находим книгу у героя, применяем и
+	снимаем один заряд, как SpendCharge. Мёртвому герою купленная книга
+	приходит обычным предметом: трактат вешает модификатор, а на мёртвого он
+	может и не встать - книга сгорела бы зря.
 ]]
 
 require('lib/timers')
@@ -36,7 +43,7 @@ function ShiftBuy:Init()
 	self._inited = true
 
 	self._shift = {}
-	self._tomes = self:_LoadTomes()
+	self:_GetTomes()
 
 	CustomGameEventManager:RegisterListener("aa_shift_state", function(_, event)
 		ShiftBuy:_OnShiftState(event)
@@ -47,10 +54,37 @@ function ShiftBuy:Init()
 	end, nil)
 end
 
+-- Книга из дропа крипа достаётся hero сразу, без предмета на земле.
+-- true - применили, ронять её не надо; false - не книга или не вышло, пусть
+-- падает как раньше.
+function ShiftBuy:GiveTome(hero, itemName, count)
+	local tome = self:_GetTomes()[itemName]
+
+	if not tome or not IsValidEntity(hero) or not hero:IsRealHero() then return false end
+
+	-- функции tome.lua читают из предмета цену - нужен сам предмет, хоть и
+	-- на мгновение
+	local item = CreateItem(itemName, hero, hero)
+	if not item then return false end
+
+	local given = 0
+
+	for _ = 1, math.max(1, tonumber(count) or 1) do
+		if not self:_Apply(hero, itemName, tome, item) then break end
+		given = given + 1
+	end
+
+	UTIL_Remove(item)
+
+	return given > 0
+end
+
 -- Что считается книгой и что звать при использовании, берём прямо из KV:
 -- числа и функции живут в одном месте, и новая книга в том же файле сразу
--- заработает с Shift.
-function ShiftBuy:_LoadTomes()
+-- заработает и с Shift, и из дропа.
+function ShiftBuy:_GetTomes()
+	if self._tomes then return self._tomes end
+
 	local tomes = {}
 
 	for itemName, data in pairs(LoadKeyValues(TOMES_FILE) or {}) do
@@ -68,7 +102,29 @@ function ShiftBuy:_LoadTomes()
 		end
 	end
 
+	self._tomes = tomes
+
 	return tomes
+end
+
+function ShiftBuy:_Apply(hero, itemName, tome, item)
+	local func = _G[tome.func]
+
+	if type(func) ~= "function" then
+		print("[AA] shift_buy: нет функции " .. tostring(tome.func) .. " для " .. itemName)
+		return false
+	end
+
+	local keys = { caster = hero, target = hero, ability = item }
+	for key, value in pairs(tome.params) do keys[key] = value end
+
+	local ok, err = pcall(func, keys)
+
+	if not ok then
+		print("[AA] shift_buy: " .. itemName .. " не применилась: " .. tostring(err))
+	end
+
+	return ok
 end
 
 function ShiftBuy:_OnShiftState(event)
@@ -81,7 +137,7 @@ end
 function ShiftBuy:_OnPurchased(event)
 	local playerId = event and event.PlayerID
 	local itemName = event and event.itemname
-	local tome = itemName and self._tomes[itemName]
+	local tome = itemName and self:_GetTomes()[itemName]
 
 	if playerId == nil or not tome or not self._shift[playerId] then return end
 
@@ -98,23 +154,8 @@ function ShiftBuy:_UseBought(playerId, itemName, tome)
 	local item = self:_FindBought(hero, itemName)
 	if not item then return end
 
-	local func = _G[tome.func]
-
-	if type(func) ~= "function" then
-		print("[AA] shift_buy: нет функции " .. tostring(tome.func) .. " для " .. itemName)
-		return
-	end
-
-	local keys = { caster = hero, target = hero, ability = item }
-	for key, value in pairs(tome.params) do keys[key] = value end
-
-	local ok, err = pcall(func, keys)
-
-	if not ok then
-		-- книга остаётся у героя - её можно нажать руками
-		print("[AA] shift_buy: " .. itemName .. " не применилась: " .. tostring(err))
-		return
-	end
+	-- не вышло - книга остаётся у героя, её можно нажать руками
+	if not self:_Apply(hero, itemName, tome, item) then return end
 
 	-- то же, что SpendCharge в KV: минус заряд, последний - вместе с предметом
 	local charges = item:GetCurrentCharges()

@@ -52,13 +52,14 @@ local armor_when_spawn_table = {
 	["npc_dota_warlock_golem_scepter_6"] 	= "modifier_warlock_golems",
 	["npc_dota_warlock_golem_scepter_7"] 	= "modifier_warlock_golems",
 
-	["npc_dota_necronomicon_warrior_1"] 	= "modifier_summon",
-	["npc_dota_necronomicon_warrior_2"] 	= "modifier_summon",
-	["npc_dota_necronomicon_warrior_3"] 	= "modifier_summon",
+	-- Некрономикон: без скейла от минуты (false - только сплэш summon_cleave)
+	["npc_dota_necronomicon_warrior_1"] 	= false,
+	["npc_dota_necronomicon_warrior_2"] 	= false,
+	["npc_dota_necronomicon_warrior_3"] 	= false,
 	
-	["npc_dota_necronomicon_archer_1"] 		= "modifier_summon",
-	["npc_dota_necronomicon_archer_2"] 		= "modifier_summon",
-	["npc_dota_necronomicon_archer_3"]		= "modifier_summon",
+	["npc_dota_necronomicon_archer_1"] 		= false,
+	["npc_dota_necronomicon_archer_2"] 		= false,
+	["npc_dota_necronomicon_archer_3"]		= false,
 
 	["npc_dota_invoker_forged_spirit"]		= "modifier_summon",
 
@@ -121,6 +122,7 @@ local armor_when_spawn_table = {
 	["npc_eidolon_6"] 			= "modifier_summon_eidolon",
 	["npc_eidolon_7"] 			= "modifier_summon_eidolon",
 
+	["npc_dota_venomancer_plague_ward"]   = "modifier_summon_plague_ward",
 	["npc_dota_venomancer_plague_ward_1"] = "modifier_summon_plague_ward",
 	["npc_dota_venomancer_plague_ward_2"] = "modifier_summon_plague_ward",
 	["npc_dota_venomancer_plague_ward_3"] = "modifier_summon_plague_ward",
@@ -132,6 +134,10 @@ local armor_when_spawn_table = {
 	["npc_dota_visage_familiar1"] 			= "modifier_visage_familiars",
 	["npc_dota_visage_familiar2"] 			= "modifier_visage_familiars",
 	["npc_dota_visage_familiar3"] 			= "modifier_visage_familiars",
+	["npc_dota_visage_familiar4"] 			= "modifier_visage_familiars",
+	["npc_dota_visage_familiar5"] 			= "modifier_visage_familiars",
+	["npc_dota_visage_familiar6"] 			= "modifier_visage_familiars",
+	["npc_dota_visage_familiar7"] 			= "modifier_visage_familiars",
 
 	["npc_dota_wraith_king_skeleton_warrior"] = "modifier_summon"
 

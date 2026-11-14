@@ -1,0 +1,117 @@
+"DOTAAbilities"
+{
+    // Травела мода.
+    //
+    // Имена ВАНИЛЬНЫЕ и это принципиально: движок узнаёт Boots of Travel только
+    // по именам item_travel_boots / item_travel_boots_2 и только им разрешает
+    // улучшать свиток телепортации. Кастомный предмет с тем же BaseClass он за
+    // травела не считает - проверено. Поэтому свои значения мы просто
+    // подкладываем в ванильные предметы.
+    //
+    // Что даёт движок сам, без единой строчки кода:
+    //   свиток перестаёт расходовать заряды;
+    //   перезарядка свитка берётся из tp_cooldown;
+    //   время телепортации - из tp_channel_time;
+    //   цели свитка расширяются на AbilityUnitTargetType этих ботинок.
+    //
+    // Значения AbilityUnitTargetType держим ровно ванильными: любое отклонение
+    // тут движок молча съедал, и телепорт на юнитов переставал работать.
+    //
+    //   item_travel_boots    - откат 30, свиток без зарядов, цели как в доте
+    //   item_travel_boots_2  - второй тир
+    //   Snake Boots - старые, датадривен в npc_items_custom.txt (items/teleport.lua)
+
+    //=================================================================================================================
+    // Recipe: Boots of Travel
+    //=================================================================================================================
+    "item_recipe_travel_boots"
+    {
+        "ItemCost"                      "2000"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_travel_boots"
+        "ItemRequirements"
+        {
+            "01"                        "item_boots"
+        }
+    }
+
+    //=================================================================================================================
+    // Boots of Travel - первый тир
+    //=================================================================================================================
+    "item_travel_boots"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+        "ItemCost"                      "2500"
+        "ItemShopTags"                  "teleport;move_speed;mobility"
+        "ItemQuality"                   "common"
+        "ItemAliases"                   "bot;boots of travel;tp"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+        "MaxUpgradeLevel"               "2"
+        "ItemBaseLevel"                 "1"
+        "SuggestLategame"               "1"
+        "SpeciallyBannedFromNeutralSlot"    "1"
+
+        "UpgradesItems"                 "item_travel_boots"
+        "UpgradeRecipe"                 "item_recipe_travel_boots"
+
+        "AbilityValues"
+        {
+            "bonus_movement_speed"      "90"
+            "maximum_distance"          "800"
+            "vision_radius"             "200"
+            "tp_cooldown"               "30"
+        }
+    }
+
+    //=================================================================================================================
+    // Recipe: Boots of Travel 2
+    //=================================================================================================================
+    "item_recipe_travel_boots_2"
+    {
+        "ItemCost"                      "2000"
+        "ItemShopTags"                  ""
+
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_travel_boots_2"
+        "ItemRequirements"
+        {
+            "01"                        "item_travel_boots"
+        }
+    }
+
+    //=================================================================================================================
+    // Boots of Travel 2 - второй тир
+    //=================================================================================================================
+    "item_travel_boots_2"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+        "ItemCost"                      "4500"
+        "ItemShopTags"                  "teleport;move_speed;mobility"
+        "ItemQuality"                   "common"
+        "ItemAliases"                   "bot;boots of travel;tp"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+        "MaxUpgradeLevel"               "2"
+        "ItemBaseLevel"                 "2"
+        "SuggestLategame"               "1"
+        "SpeciallyBannedFromNeutralSlot"    "1"
+
+        "AbilityValues"
+        {
+            "bonus_movement_speed"      "110"
+            "maximum_distance"          "800"
+            "vision_radius"             "200"
+            "tp_cooldown"               "30"
+        }
+    }
+
+}

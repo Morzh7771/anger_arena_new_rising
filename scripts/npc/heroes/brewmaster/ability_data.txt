@@ -117,7 +117,7 @@ DOTAAbilities
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"		
+		"AbilityManaCost"				"50 60 70 80 90 100 110"	// ваниль 50 60 70 80, тот же шаг +10		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -263,7 +263,7 @@ DOTAAbilities
 		"AbilitySound"					"Hero_Brewmaster.PrimalSplit.Spawn"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"			"0"	// аганим у Brewmaster отключён
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -344,23 +344,19 @@ DOTAAbilities
 			"primal_split_cancel"
 			{
 				"value"				"0"
-				"special_bonus_scepter"				"+1"
 			}
 			"AbilityCooldown"				"140 137 133 130 127 123 120"
 			"hp_per_attribute"
 			{
 				"value"				"0"
-				"special_bonus_scepter"				"0"
 			}
 			"dmg_per_attribute"
 			{
 				"value"				"0"
-				"special_bonus_scepter"				"0"
 			}
 			"attribute_share_pct"
 			{
 				"value"				"0"
-				"special_bonus_scepter"				"0"
 			}
 			"scepter_bonus_levels"				"1"
 		}
@@ -373,8 +369,8 @@ DOTAAbilities
 		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"FightRecapLevel"				"1"
-		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
+		"IsGrantedByScepter"			"0"
+		"HasScepterUpgrade"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		// Time		
@@ -404,7 +400,7 @@ DOTAAbilities
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Brewmaster.PrimalSplit.Spawn"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
-		"IsGrantedByScepter"			"1"
+		"IsGrantedByScepter"			"0"	// аганим отключён, в hero_data не подключена
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20"

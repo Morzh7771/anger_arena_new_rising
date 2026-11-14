@@ -19,13 +19,13 @@ function modifier_summon_undying:IsPurgable()
 end
 
 function modifier_summon_undying:GetModifierBaseAttack_BonusDamage(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 	return 0.176*math.pow(time,2) - 0.03*time
 end
 
 function modifier_summon_undying:GetModifierAttackSpeedBonus_Constant(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 	local attack_speed = 0.029*math.pow(time,2) + 2.66*time - 20
 	
 	if attack_speed < 0 then attack_speed = 0 end
@@ -34,7 +34,7 @@ function modifier_summon_undying:GetModifierAttackSpeedBonus_Constant(params)
 end
 
 function modifier_summon_undying:GetModifierPhysicalArmorBonus(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 	local armor = math.pow(math.sqrt(time - 15), (2.718*0.88))
 	
 	if time < 15 then armor = 0 end -- caused by sqrt(-15)

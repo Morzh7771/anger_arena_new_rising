@@ -63,7 +63,7 @@ end
 
 --------------------------------------------------------------------------------
 function angel_arena_fountain_aura:GetModifierBaseAttack_BonusDamage(params)
-    return GameRules:GetGameTime() / 60 * 10
+    return (math.max(0, GameRules:GetDOTATime(false, false)) / 60) * 10
 end
 
 -----------------------------------------------------------------------------

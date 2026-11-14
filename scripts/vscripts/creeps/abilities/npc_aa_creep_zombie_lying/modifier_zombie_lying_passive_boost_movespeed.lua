@@ -34,25 +34,22 @@ end
 -------------------------------------------------------------------------------
 function modifier_zombie_lying_passive_boost_movespeed:GetModifierMoveSpeedBonus_Percentage(params)
     if self:GetParent():PassivesDisabled() then return 0 end
-    local net_table = CustomNetTables:GetTableValue("heroes", "skills_modifiers") or {}
-    local unicalUnitString = tostring(self:GetParent():entindex())
-    local bonus_speed
-    if not IsServer() then
-        bonus_speed = net_table[unicalUnitString .. "_bonusspeedzomdie"]
-    else
-        local parent = self:GetParent()
-        local currentHP = parent:GetHealth()
-        local maxHP = parent:GetMaxHealth()
-        if maxHP / 100 * self.need_hp_pct >= currentHP then
-            bonus_speed = self.bonus_movespeed_pct
-            self.bonus = bonus_speed
-        else
-            bonus_speed = 0
-        end
-        net_table[unicalUnitString .. "_bonusspeedzomdie"] = bonus_speed
-        CustomNetTables:SetTableValue("heroes", "skills_modifiers", net_table)
+    if not self.need_hp_pct then return 0 end
+
+    -- Раньше сервер на КАЖДЫЙ пересчёт скорости переписывал общую нет-таблицу
+    -- heroes/skills_modifiers (ключ на каждого зомби за матч) и рассылал её
+    -- всем, а клиент каждый раз её разбирал - лаги росли со временем.
+    -- Здоровье и параметры способности клиент знает сам, считаем одинаково.
+    local parent = self:GetParent()
+    local bonus_speed = 0
+
+    if parent:GetMaxHealth() / 100 * self.need_hp_pct >= parent:GetHealth() then
+        bonus_speed = self.bonus_movespeed_pct
     end
-    return bonus_speed or 0
+
+    self.bonus = bonus_speed
+
+    return bonus_speed
 end
 
 ----------------------------------------------------------------------------

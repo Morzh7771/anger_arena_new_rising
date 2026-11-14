@@ -9,6 +9,7 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("bane_brain_sap",						BaneBrainSap)
 	PercentDamage:ListenAbilityCallback("pugna_life_drain",						LifeDrain )
 	PercentDamage:ListenAbilityCallback("axe_counter_helix",						axe_counter_helix )
+	PercentDamage:ListenAbilityCallback("axe_battle_hunger",						axe_battle_hunger )
 	PercentDamage:ListenAbilityCallback("snapfire_scatterblast",						snapfire_scatterblast )
 	PercentDamage:ListenAbilityCallback("axe_culling_blade",						axe_culling_blade )
 	PercentDamage:ListenAbilityCallback("lion_mana_drain",						lion_mana_drain )
@@ -18,6 +19,12 @@ function PercentDamage:_init()
 
 
 	local MagicalDamageFromStr = {
+		-- перенесены из урона от всех атрибутов
+		"dragon_knight_breathe_fire",
+		"dragon_knight_fireball",
+		"dragon_knight_dragon_tail",
+		"night_stalker_void",
+		"night_stalker_crippling_fear",
 		"ogre_magi_fireblast",
 		"ogre_magi_unrefined_fireblast",
 		"ogre_magi_ignite",
@@ -60,6 +67,12 @@ function PercentDamage:_init()
 		"tidehunter_gush",
 	}
 	local MagicalDamageFromAgi = {
+		-- перенесены из урона от всех атрибутов
+		"mirana_arrow",
+		"mirana_starfall",
+		"razor_plasma_field",
+		"razor_unstable_current",
+		"razor_eye_of_the_storm",
 		"luna_lucent_beam",
 		"slark_dark_pact",
 		"naga_siren_rip_tide",
@@ -88,6 +101,15 @@ function PercentDamage:_init()
 		"meepo_ransack",
 	}
 	local MagicalDamageFromInt = {
+		-- перенесены из урона от всех атрибутов / добавлены
+		"lina_dragon_slave",
+		"lina_light_strike_array",
+		"lina_laguna_blade",
+		"bane_enfeeble",
+		"bane_brain_sap",
+		"dark_willow_bramble_maze",
+		"dark_willow_shadow_realm",
+		"dark_willow_bedlam",
 		"lich_chain_frost",
 		"lion_finger_of_death",
 		"lion_impale",
@@ -97,11 +119,6 @@ function PercentDamage:_init()
 		"oracle_fortunes_end",
 		"oracle_purifying_flames",
 		"oracle_rain_of_destiny",
-		"phoenix_icarus_dive",
-		"phoenix_fire_spirits",
-		"phoenix_sun_ray",
-		"phoenix_supernova",
-		"phoenix_launch_fire_spirit",
 		"pugna_nether_blast",
 		"queenofpain_shadow_strike",
 		"queenofpain_scream_of_pain",
@@ -157,20 +174,14 @@ function PercentDamage:_init()
 	--"ancient_apparition_cold_feet",
 
 	local MagicalDamageFromAll = {
-		"mirana_arrow",
-		"mirana_starfall",
+		-- универсалы: урон от суммы атрибутов
+		"enigma_malefice",
+		"enigma_black_hole",
 		"pangolier_swashbuckle",
 		"pangolier_gyroshell",
-		"razor_plasma_field",
-		"razor_unstable_current",
-		"razor_eye_of_the_storm",
 		"doom_bringer_scorched_earth",
-		"dragon_knight_breathe_fire",
-		"dragon_knight_fireball",
-		"dragon_knight_dragon_tail",
 		"batrider_flamebreak",
 		"batrider_firefly",
-		"bane_brain_sap",
 		"muerta_dead_shot",
 		"vengefulspirit_magic_missile",
 		"void_spirit_dissimilate",
@@ -192,20 +203,23 @@ function PercentDamage:_init()
 		"shredder_chakram",
 		"shredder_chakram_2",
 		"shredder_twisted_chakram",
-		"night_stalker_crippling_fear",
-		"night_stalker_void",
 		"beastmaster_primal_roar",
-		"bane_enfeeble",
 		"brewmaster_cinder_brew",
 		"brewmaster_thunder_clap",
 		"furion_sprout",
 		"furion_wrath_of_nature",
-		"lina_dragon_slave",
-		"lina_light_strike_array",
-		"lina_laguna_blade",
 		"magnataur_shockwave",
 		"abaddon_frostmourne",
 		"wisp_spirits"
+	}
+
+	-- урон от максимального здоровья кастера, ключ max_health_damage_pct
+	local MagicalDamageFromMaxHealth = {
+		"phoenix_icarus_dive",
+		"phoenix_fire_spirits",
+		"phoenix_launch_fire_spirit",
+		"phoenix_sun_ray",
+		"phoenix_supernova",
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 
@@ -222,7 +236,11 @@ function PercentDamage:_init()
 
 	for _, skillname in pairs(MagicalDamageFromAll) do 
 		PercentDamage:ListenAbilityCallback(skillname, DamageFromAll)
-	end 
+	end
+
+	for _, skillname in pairs(MagicalDamageFromMaxHealth) do 
+		PercentDamage:ListenAbilityCallback(skillname, DamageFromMaxHealth)
+	end  
 end	
 
 function shadow_shaman_shackles( keys )
@@ -315,6 +333,15 @@ function axe_counter_helix(keys)
 	local percent_damage = ability:GetSpecialValueFor("damage_pct")
 	return (percent_damage * caster:GetPhysicalArmorValue(false))
 end
+function axe_battle_hunger(keys)
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+
+	if not ability then return end
+
+	local percent_damage = ability:GetSpecialValueFor("damage_pct")
+	return (percent_damage * caster:GetPhysicalArmorValue(false))
+end
 function axe_culling_blade(keys)
 	local ability 			= keys.ability
 	local caster 			= keys.caster
@@ -362,6 +389,17 @@ function DamageFromStr(keys)
 	
 	return percent_damage * caster:GetStrength()
 end 
+
+function DamageFromMaxHealth(keys)
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+
+	if not ability then return end
+
+	local percent_damage = ability:GetSpecialValueFor("max_health_damage_pct") / 100
+
+	return percent_damage * caster:GetMaxHealth()
+end
 
 function DamageFromInt(keys)
 	local ability 			= keys.ability
@@ -418,7 +456,7 @@ function BaneBrainSap( keys )
 	local target 			= keys.target
 	local damage 			= keys.damage
 	local ability 			= keys.ability
-	local multipler 		= (ability:GetSpecialValueFor("damage_pct") or 0) /100
+	local multipler 		= (ability:GetSpecialValueFor("heal_int_pct") or 0) /100
 
 	local int = caster:GetIntellect(false) * multipler
 	caster:Heal(int, ability)

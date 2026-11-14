@@ -55,7 +55,7 @@ function ability:OnSpellStart()
 		local newPos = target:GetAbsOrigin()
 
 		if (newPos - pos):Length() < penaltyLen then
-			ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_dmg.vpcf", PATTACH_ABSORIGIN, target)
+			ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_dmg.vpcf", PATTACH_ABSORIGIN, target))
 
 			target:EmitSound("Boss_Possessed.Curse.Penalty")
 
@@ -75,7 +75,7 @@ function ability:OnSpellStart()
 				target:AddNewModifier(caster, self, "modifier_possessed_curse_penalty", { duration = penaltyDebuff })
 			end
 		else
-			ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_heal.vpcf", PATTACH_ABSORIGIN, target)
+			ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_false_promise_heal.vpcf", PATTACH_ABSORIGIN, target))
 
 			target:EmitSound("Boss_Possessed.Curse.Saved")
 		end

@@ -22,7 +22,6 @@ end
 
 function modifier_small_satyr_little_slow:OnCreated( kv )
 	self.percent = self:GetAbility():GetSpecialValueFor( "percent" )
-	print(percent)
 end
 
 --------------------------------------------------------------------------------

@@ -45,11 +45,14 @@ function TeamHelper:ApplyForPlayers(iTeamNumber, functor)
 	end 
 end 
 
-function TeamHelper:GetPlayerCount(iteamNumber)
+-- Сколько игроков в команде (nil - во всех). Раньше параметр назывался
+-- iteamNumber, а проверялся iTeamNumber - глобальная, то есть nil, и функция
+-- всегда считала всех игроков, да ещё с лишним номером сверху.
+function TeamHelper:GetPlayerCount(iTeamNumber)
 	local res = 0
 
-	for playerid = 0, PlayerResource:GetPlayerCount() do
-		if iTeamNumber == nil or ( PlayerResource:GetTeam(playerid) == iTeamNumber ) then 
+	for playerid = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+		if PlayerResource:IsValidPlayerID(playerid) and ( iTeamNumber == nil or PlayerResource:GetTeam(playerid) == iTeamNumber ) then
 			res = res + 1
 		end
 	end

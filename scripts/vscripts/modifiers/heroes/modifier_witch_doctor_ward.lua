@@ -17,7 +17,7 @@ function modifier_witch_doctor_ward:IsPurgable()
 end
 
 function modifier_witch_doctor_ward:GetModifierBaseAttack_BonusDamage(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 	if time < 40 then
 		return 0.0354*math.pow(time,2) - 0.03*time

@@ -3,6 +3,7 @@ require('lib/teleport')
 require('lib/base_lua_helpers')
 require('lib/duel/doors')
 require('lib/connection_helpers')
+require('lib/summon_utils')
 
 DuelLibrary = DuelLibrary or class({})
 
@@ -10,6 +11,12 @@ DuelLibrary.DRAW_TEAM = 0
 
 local DUEL_TRIBUNE_MODIFIER = "modifier_full_disable_stun"
 local DUEL_START_MODIFIER 	= "modifier_godmode"
+
+-- эффекты дуэли легионки: кольцо на старте (держится DUEL_RING_TIME, пока
+-- действует стартовая неуязвимость), победа - на выживших победителях
+local DUEL_RING_PARTICLE    = "particles/units/heroes/hero_legion_commander/legion_duel_ring.vpcf"
+local DUEL_VICTORY_PARTICLE = "particles/units/heroes/hero_legion_commander/legion_commander_duel_victory.vpcf"
+local DUEL_RING_TIME = 1.5
 
 local DUEL_POINT_NAMES = {
 	[DOTA_TEAM_GOODGUYS] = {
@@ -148,7 +155,12 @@ end
 
 function DuelLibrary:_ValidatePositions()
 	for unit, limiter in pairs(self.backUnits) do
-		limiter:tick()
+		-- суммоны исчезают по таймеру: убираем их из присмотра
+		if not unit or unit:IsNull() then
+			self.backUnits[unit] = nil
+		elseif unit:IsAlive() then
+			limiter:tick()
+		end
 	end
 end
 
@@ -172,12 +184,20 @@ function DuelLibrary:EndDuel(teamNumber)
 		if hero and hero:IsRealHero() and hero:IsAlive() then
 			hero:SetHealth( hero:GetMaxHealth() )
 			hero:SetMana( hero:GetMaxMana() )
+
+			-- эффект победы в дуэли легионки
+			-- как в 1x6: над головой и с явной точкой CP0, иначе эффект не виден
+			local fx = ParticleManager:CreateParticle(DUEL_VICTORY_PARTICLE, PATTACH_OVERHEAD_FOLLOW, hero)
+			ParticleManager:SetParticleControl(fx, 0, hero:GetAbsOrigin())
+			ParticleManager:ReleaseParticleIndex(fx)
 		end
 	end
 
 	for team, units in pairs(self.teamHeroes) do
 		self:RemoveHeroesFromDuel(units)
 	end
+
+	self:_ReturnSummons()
 
 	self.duelActive = false
 	self.backUnits = {}
@@ -204,6 +224,17 @@ function DuelLibrary:_MoveToDuel( unit, point )
 	unit:RemoveModifierByName(DUEL_TRIBUNE_MODIFIER)
 	unit:AddNewModifier(unit, nil, DUEL_START_MODIFIER, { duration = 2 })
 
+	-- кольцо дуэли легионки под героем на старте
+	local ringPos = unit:GetAbsOrigin()
+	local ring = ParticleManager:CreateParticle(DUEL_RING_PARTICLE, PATTACH_ABSORIGIN_FOLLOW, unit)
+	ParticleManager:SetParticleControl(ring, 0, ringPos)
+	ParticleManager:SetParticleControl(ring, 7, ringPos)
+
+	Timers:CreateTimer(DUEL_RING_TIME, function()
+		ParticleManager:DestroyParticle(ring, false)
+		ParticleManager:ReleaseParticleIndex(ring)
+	end)
+
 	unit:SetHealth( unit:GetMaxHealth() )
 	unit:SetMana( unit:GetMaxMana() )
 
@@ -228,6 +259,8 @@ function DuelLibrary:_MoveToDuel( unit, point )
 	local limiter = MakeMoveLimiter(unit, IsAroundDuel, 20, 100, GetPointPositionByName("DUEL_ARENA_CENTER") )
 
 	self:_AddBackTimer( unit, limiter )
+
+	self:_MoveSummonsToDuel(unit, IsAroundDuel)
 
 	local heroTeam = unit:GetTeamNumber()
 
@@ -290,6 +323,8 @@ end
 
 function DuelLibrary:Precache( context )
 	DuelDoors:Precache( context )
+	PrecacheResource("particle", DUEL_RING_PARTICLE, context)
+	PrecacheResource("particle", DUEL_VICTORY_PARTICLE, context)
 end
 
 function DuelLibrary:IsDuelActive()
@@ -458,6 +493,11 @@ function DuelLibrary:DeathListener( event )
 
 	if DuelLibrary:IsDuelActive() and not killedUnit:IsReincarnating() then
 		print("on hero death on duel")
+
+		-- до _OnHeroDeathOnDuel: последняя смерть закрывает дуэль, и решающий
+		-- фраг, посчитанный позже, уже не попал бы в дуэльные
+		if EndGameStats then EndGameStats:OnDuelKill(killedUnit, hero) end
+
 	   self:_OnHeroDeathOnDuel( killedUnit )
 	end
 end
@@ -519,3 +559,50 @@ function DuelLibrary:SetDoorsState(state)
 end
 
 DuelLibrary:_Init()
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- Суммоны едут на дуэль вместе с героем и возвращаются на свои места после неё.
+-- Кто считается суммоном - lib/summon_utils.lua (варды, мины, тотемы, иллюзии
+-- и прочее неподвижное или "вредное" не едут).
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+function DuelLibrary:_MoveSummonsToDuel(hero, checkfunc)
+	if not SummonUtils then return end
+
+	self.duelSummons = self.duelSummons or {}
+
+	local center = hero:GetAbsOrigin()
+
+	for _, summon in ipairs(SummonUtils:FindSummons(hero)) do
+		self:_RecordPos(summon)
+
+		summon:Stop()
+		summon:InterruptMotionControllers(true)
+
+		local offset = RandomVector(RandomFloat(100, 200))
+
+		TeleportUnitToVector(summon, center + offset, true, false)
+
+		local limiter = MakeMoveLimiter(summon, checkfunc, 20, 100, GetPointPositionByName("DUEL_ARENA_CENTER"))
+
+		self:_AddBackTimer(summon, limiter)
+
+		self.duelSummons[summon] = true
+	end
+end
+
+function DuelLibrary:_ReturnSummons()
+	if not self.duelSummons then return end
+
+	for summon, _ in pairs(self.duelSummons) do
+		local point = self:_PopRecordedPos(summon)
+
+		if summon and not summon:IsNull() and IsValidEntity(summon) and summon:IsAlive() and point then
+			summon:InterruptMotionControllers(true)
+			TeleportUnitToVector(summon, point, true, false)
+		end
+
+		self:_RemoveBackTimer(summon)
+	end
+
+	self.duelSummons = {}
+end

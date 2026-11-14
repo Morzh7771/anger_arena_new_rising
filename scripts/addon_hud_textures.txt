@@ -1,0 +1,112 @@
+// Спрайты для миникарты. Иконку героя движок ищет по имени
+// minimap_heroicon_<имя героя>, у своих героев такого спрайта нет - добавляем.
+""
+{
+	"TextureData"
+	{
+		"minimap_icon_charon"
+		{
+			"file"	"materials/vgui/hud/minimap_charon.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_icon_fireblade"
+		{
+			"file"	"materials/vgui/hud/minimap_fireblade.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_icon_guardian_of_the_ancients"
+		{
+			"file"	"materials/vgui/hud/minimap_guardian_of_the_ancients.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_icon_huntress"
+		{
+			"file"	"materials/vgui/hud/minimap_huntress.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_icon_satan"
+		{
+			"file"	"materials/vgui/hud/minimap_satan.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_icon_shadowsong"
+		{
+			"file"	"materials/vgui/hud/minimap_shadowsong.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_icon_death_prophet_custom"
+		{
+			"file"	"materials/vgui/hud/minimap_death_prophet_custom.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_heroicon_npc_dota_hero_charon"
+		{
+			"file"	"materials/vgui/hud/minimap_npc_dota_hero_charon.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_heroicon_npc_dota_hero_fireblade"
+		{
+			"file"	"materials/vgui/hud/minimap_npc_dota_hero_fireblade.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_heroicon_npc_dota_hero_guardian_of_the_ancients"
+		{
+			"file"	"materials/vgui/hud/minimap_npc_dota_hero_guardian_of_the_ancients.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_heroicon_npc_dota_hero_huntress"
+		{
+			"file"	"materials/vgui/hud/minimap_npc_dota_hero_huntress.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_heroicon_npc_dota_hero_satan"
+		{
+			"file"	"materials/vgui/hud/minimap_npc_dota_hero_satan.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+		"minimap_heroicon_npc_dota_hero_shadowsong"
+		{
+			"file"	"materials/vgui/hud/minimap_npc_dota_hero_shadowsong.vmat"
+			"x"	"0"
+			"y"	"0"
+			"width"	"128"
+			"height"	"128"
+		}
+	}
+}

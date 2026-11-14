@@ -28,6 +28,25 @@ function item_harpoon_aa_1:OnSpellStart()
 
     self:GetCaster():EmitSound("Item.Harpoon.Cast")
 
+    -- Дерево не юнит: снаряд летит в пустой тинкер на его месте,
+    -- а по прилёту тянет только самого героя
+    if string.find(target:GetClassname(), "tree") then
+        local thinker = CreateModifierThinker(self:GetCaster(), self, nil, {}, target:GetAbsOrigin(), self:GetCaster():GetTeamNumber(), false)
+        thinker.harpoon_tree = true
+
+        ProjectileManager:CreateTrackingProjectile({
+            Target = thinker,
+            Source = self:GetCaster(),
+            Ability = self,
+            EffectName = "particles/items_fx/harpoon_projectile.vpcf",
+            iMoveSpeed = self:GetSpecialValueFor("projectile_speed"),
+            vSourceLoc = self:GetCaster():GetAbsOrigin(),
+            bDodgeable = false,
+            bProvidesVision = false
+        })
+        return
+    end
+
     if target:TriggerSpellAbsorb(self) then
         return nil
     end
@@ -50,6 +69,19 @@ function item_harpoon_aa_1:OnProjectileHit(hTarget, vLocation)
         return
     end
     if not IsServer() then
+        return
+    end
+
+    if hTarget.harpoon_tree then
+        local caster = self:GetCaster()
+        local duration = self:GetSpecialValueFor("pull_duration")
+        local dis = (hTarget:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
+
+        if dis > self:GetSpecialValueFor("min_distance") and caster:IsAlive() then
+            caster:AddNewModifier(caster, self, "modifier_item_harpoon_custom_pull", {duration = duration, target = hTarget:entindex(), to_target = 1})
+        end
+
+        UTIL_Remove(hTarget)
         return
     end
 
@@ -184,6 +216,16 @@ function modifier_item_harpoon_custom_pull:OnCreated(params)
         return
     end
     self.target = EntIndexToHScript(params.target)
+
+    -- Тяга к дереву: герой летит до самого ствола, цель после этого не нужна
+    if params.to_target == 1 then
+        local origin = self:GetParent():GetAbsOrigin()
+        local tree_pos = self.target:GetAbsOrigin()
+        self.face_point = tree_pos
+        self.point = tree_pos - (tree_pos - origin):Normalized() * 100
+        self.target = nil
+    end
+
     self.pfx =
         ParticleManager:CreateParticle(
         "particles/items_fx/harpoon_pull.vpcf",
@@ -193,10 +235,11 @@ function modifier_item_harpoon_custom_pull:OnCreated(params)
 
     self:GetParent():StartGesture(ACT_DOTA_FLAIL)
 
-    self.angle = (self.target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Normalized()
-    self.point = (self:GetParent():GetAbsOrigin() + self.target:GetAbsOrigin()) / 2
+    if self.target then
+        self.point = (self:GetParent():GetAbsOrigin() + self.target:GetAbsOrigin()) / 2
 
-    self.point = self.point - (self.target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Normalized() * 50
+        self.point = self.point - (self.target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Normalized() * 50
+    end
 
     self.speed = (self:GetParent():GetAbsOrigin() - self.point):Length2D() / self:GetRemainingTime()
 
@@ -234,7 +277,7 @@ function modifier_item_harpoon_custom_pull:UpdateHorizontalMotion(me, dt)
         return
     end
 
-    if not self.target or self.target:IsNull() or not self.target:IsAlive() then
+    if not self.face_point and (not self.target or self.target:IsNull() or not self.target:IsAlive()) then
         self:Destroy()
         return
     end
@@ -257,7 +300,7 @@ function modifier_item_harpoon_custom_pull:UpdateHorizontalMotion(me, dt)
     GridNav:DestroyTreesAroundPoint(origin, 80, false)
     local target = origin + direction * self.speed * dt
     self:GetParent():SetOrigin(target)
-    self:GetParent():FaceTowards(self.target:GetOrigin())
+    self:GetParent():FaceTowards(self.face_point or self.target:GetOrigin())
 end
 
 function modifier_item_harpoon_custom_pull:OnHorizontalMotionInterrupted()

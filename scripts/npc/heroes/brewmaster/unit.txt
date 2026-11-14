@@ -1,7 +1,12 @@
+// Юниты героя. Юниты, которые есть в актуальной доте, - ванильные определения из
+// game/dota/pak01_dir.vpk (старая копия ломала суммонов). Уровни сверх дотовских
+// и свои юниты мода - наши, наследуют ванильные через include_keys_from.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
 "DOTAUnits"
 {
 	"npc_dota_brewmaster_earth_1"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/brewmaster/brewmaster_earthspirit.vmdl"	// Model.
@@ -15,12 +20,20 @@
 		"ConsideredHero"			"1"
 		"IgnoreAddSummonedToSelection" "1"
 		"UnitLabel"					"brewmaster_earth"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
 
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_earth_hurl_boulder"		// Ability 1
-		"Ability2"					"brewmaster_earth_spell_immunity"	// Ability 2
-		"Ability3"					"brewmaster_earth_pulverize"		// Ability 3
+		"Ability2"					"brewmaster_earth_pulverize"	// Ability 2
+		"Ability3"					"brewmaster_earth_spell_immunity"		// Ability 3
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"brewmaster_primal_split_cancel"			// Ability 6	
@@ -32,8 +45,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"15"		// Damage range min.
-		"AttackDamageMax"			"25"		// Damage range max.	
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"40"		// Damage range max.	
 		"AttackRate"				"1.25"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
@@ -52,7 +65,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		// Base health.
+		"StatusHealth"				"1400"		// Base health.
 		"StatusHealthRegen"			"2"			// Health regeneration rate.
 		"StatusMana"				"400"		// Base mana.
 		"StatusManaRegen"			"2"			// Mana regeneration rate.
@@ -66,10 +79,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
+	}
 
 	"npc_dota_brewmaster_earth_2"
 	{			
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_earth_1"
 	
 		"Level"						"8"
@@ -81,8 +95,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"45"		// Damage range min.
-		"AttackDamageMax"			"55"		// Damage range max.	
+		"AttackDamageMin"			"65"		// Damage range min.
+		"AttackDamageMax"			"75"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -90,17 +104,18 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"350"		// Speed.
+		"MovementSpeed"				"355"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2400"		// Base health.
+		"StatusHealth"				"2300"		// Base health.
 		"StatusHealthRegen"			"4"		// Health regeneration rate.
 		
-	}	
+	}
 
 	"npc_dota_brewmaster_earth_3"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_earth_1"
 	
 		"Level"						"8"
@@ -112,8 +127,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"75"		// Damage range min.
-		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackDamageMin"			"100"		// Damage range min.
+		"AttackDamageMax"			"110"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -121,21 +136,23 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"370"		// Speed.
+		"MovementSpeed"				"380"		// Speed.
 
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3600"		// Base health.
+		"StatusHealth"				"3200"		// Base health.
 		"StatusHealthRegen"			"6"		// Health regeneration rate.
 		
-	}	
-"npc_dota_brewmaster_earth_4"
+	}
+
+	"npc_dota_brewmaster_earth_4"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_earth_1"
 	
 		"Level"						"8"
-		"ModelScale"				".95"
+		"ModelScale"				"1"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -143,26 +160,28 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"105"		// Damage range min.
-		"AttackDamageMax"			"115"		// Damage range max.	
+		"AttackDamageMin"			"135"		// Damage range min.
+		"AttackDamageMax"			"145"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
-		"HealthBarOffset"			"185"
+		"HealthBarOffset"			"175"
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"390"		// Speed.
+		"MovementSpeed"				"380"		// Speed.
 
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4800"		// Base health.
+		"StatusHealth"				"4100"		// Base health.
 		"StatusHealthRegen"			"8"		// Health regeneration rate.
 		
-	}	
-"npc_dota_brewmaster_earth_5"
+	}
+
+	"npc_dota_brewmaster_earth_5"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_earth_1"
 	
 		"Level"						"8"
@@ -191,9 +210,11 @@
 		"StatusHealth"				"6000"		// Base health.
 		"StatusHealthRegen"			"10"		// Health regeneration rate.
 		
-	}	
-"npc_dota_brewmaster_earth_6"
+	}
+
+	"npc_dota_brewmaster_earth_6"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_earth_1"
 	
 		"Level"						"8"
@@ -222,9 +243,11 @@
 		"StatusHealth"				"7200"		// Base health.
 		"StatusHealthRegen"			"12"		// Health regeneration rate.
 		
-	}	
-"npc_dota_brewmaster_earth_7"
+	}
+
+	"npc_dota_brewmaster_earth_7"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_earth_1"
 	
 		"Level"						"8"
@@ -253,10 +276,11 @@
 		"StatusHealth"				"8400"		// Base health.
 		"StatusHealthRegen"			"14"		// Health regeneration rate.
 		
-	}	
+	}
 
 	"npc_dota_brewmaster_storm_1"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/brewmaster/brewmaster_windspirit.vmdl"	// Model.
@@ -271,6 +295,14 @@
 		"ConsideredHero"			"1"
 		"IgnoreAddSummonedToSelection" "1"
 		"UnitLabel"					"brewmaster_storm"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -289,8 +321,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"15"		// Damage range min.
-		"AttackDamageMax"			"25"		// Damage range max.	
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"35"		// Damage range max.	
 		"AttackRate"				"1.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
@@ -311,7 +343,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"900"		// Base health.
+		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"2"			// Health regeneration rate.
 		"StatusMana"				"900"		// Base mana.
 		"StatusManaRegen"			"1.5"		// Mana regeneration rate.
@@ -325,10 +357,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
+	}
 
 	"npc_dota_brewmaster_storm_2"
 	{				
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_storm_1"
 
 		// General
@@ -338,8 +371,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"35"		// Damage range min.
-		"AttackDamageMax"			"45"		// Damage range max.	
+		"AttackDamageMin"			"45"		// Damage range min.
+		"AttackDamageMax"			"55"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -348,13 +381,14 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"4"			// Health regeneration rate.
 
-	}	
+	}
 
 	"npc_dota_brewmaster_storm_3"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_storm_1"
 
 		// General
@@ -364,8 +398,8 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"55"		// Damage range min.
-		"AttackDamageMax"			"65"		// Damage range max.	
+		"AttackDamageMin"			"65"		// Damage range min.
+		"AttackDamageMax"			"75"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -373,7 +407,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2700"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"6"			// Health regeneration rate.
 
 		// Vision
@@ -385,20 +419,22 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
+	}
+
 	"npc_dota_brewmaster_storm_4"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_storm_1"
 
 		// General
 		//----------------------------------------------------------------
 		"Level"						"8"
-		"ModelScale"				".95"
+		"ModelScale"				"1"
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"75"		// Damage range min.
-		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackDamageMin"			"85"		// Damage range min.
+		"AttackDamageMax"			"95"		// Damage range max.	
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -406,7 +442,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3600"		// Base health.
+		"StatusHealth"				"2500"		// Base health.
 		"StatusHealthRegen"			"8"			// Health regeneration rate.
 
 		// Vision
@@ -419,8 +455,10 @@
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	}
+
 	"npc_dota_brewmaster_storm_5"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_storm_1"
 
 		// General
@@ -451,9 +489,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
-"npc_dota_brewmaster_storm_6"
+	}
+
+	"npc_dota_brewmaster_storm_6"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_storm_1"
 
 		// General
@@ -484,9 +524,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
-"npc_dota_brewmaster_storm_7"
+	}
+
+	"npc_dota_brewmaster_storm_7"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_storm_1"
 
 		// General
@@ -517,10 +559,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
+	}
 
 	"npc_dota_brewmaster_fire_1"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/brewmaster/brewmaster_firespirit.vmdl"	// Model.
@@ -535,12 +578,21 @@
 		"ConsideredHero"			"1"
 		"IgnoreAddSummonedToSelection" "1"
 		"UnitLabel"					"brewmaster_fire"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"brewmaster_fire_permanent_immolation"		// Ability 1
-		"Ability2"					"brewmaster_fire_phase"		// Ability 2		
-		"Ability3"					"generic_hidden"		// Ability 3
+		"Ability1"					"brewmaster_fire_permanent_immolation"
+		"Ability2"					"brewmaster_fire_phase"		// Ability 1
+		"Ability3"					"generic_hidden"						// Ability 2		
+		"Ability4"					"generic_hidden"		// Ability 3
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"brewmaster_primal_split_cancel"			// Ability 6	
@@ -548,6 +600,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -573,7 +626,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1000"		// Base health.
+		"StatusHealth"				"1300"		// Base health.
 		"StatusHealthRegen"			"2"		// Health regeneration rate.
 		"StatusMana"				"750"		// Base mana.
 		"StatusManaRegen"			"1.5"		// Mana regeneration rate.
@@ -587,10 +640,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
+	}
 
 	"npc_dota_brewmaster_fire_2"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"include_keys_from" "npc_dota_brewmaster_fire_1"
@@ -613,12 +667,13 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
+		"StatusHealth"				"1450"		// Base health.
 		"StatusHealthRegen"			"4"		// Health regeneration rate.
-	}	
+	}
 
 	"npc_dota_brewmaster_fire_3"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"include_keys_from" "npc_dota_brewmaster_fire_1"
@@ -641,16 +696,18 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3000"		// Base health.
+		"StatusHealth"				"1600"		// Base health.
 		"StatusHealthRegen"			"6"		// Health regeneration rate.
-	}	
+	}
+
 	"npc_dota_brewmaster_fire_4"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"include_keys_from" "npc_dota_brewmaster_fire_1"
 		"Level"						"8"
-		"ModelScale"				".95"
+		"ModelScale"				"1"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -668,11 +725,13 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4000"		// Base health.
+		"StatusHealth"				"1750"		// Base health.
 		"StatusHealthRegen"			"8"		// Health regeneration rate.
-	}	
+	}
+
 	"npc_dota_brewmaster_fire_5"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"include_keys_from" "npc_dota_brewmaster_fire_1"
@@ -697,9 +756,11 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"5000"		// Base health.
 		"StatusHealthRegen"			"10"		// Health regeneration rate.
-	}	
+	}
+
 	"npc_dota_brewmaster_fire_6"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"include_keys_from" "npc_dota_brewmaster_fire_1"
@@ -724,9 +785,11 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"6000"		// Base health.
 		"StatusHealthRegen"			"12"		// Health regeneration rate.
-	}	
+	}
+
 	"npc_dota_brewmaster_fire_7"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"include_keys_from" "npc_dota_brewmaster_fire_1"
@@ -751,10 +814,11 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"7000"		// Base health.
 		"StatusHealthRegen"			"14"		// Health regeneration rate.
-	}	
-	
+	}
+
 	"npc_dota_brewmaster_void_1"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/brewmaster/brewmaster_voidspirit.vmdl"	// Model.
@@ -769,10 +833,18 @@
 		"ConsideredHero"			"1"
 		"IgnoreAddSummonedToSelection" "1"
 		"UnitLabel"					"brewmaster_void"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"generic_hidden"		// Ability 1
+		"Ability1"					"generic_hidden" 		//"brewmaster_void_astral_pull"		// Ability 1
 		"Ability2"					"generic_hidden"		// Ability 2		
 		"Ability3"					"generic_hidden"		// Ability 3
 		"Ability4"					"generic_hidden"
@@ -808,8 +880,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1000"		// Base health.
-		"StatusHealthRegen"			"10"		// Health regeneration rate.
+		"StatusHealth"				"1200"		// Base health.
+		"StatusHealthRegen"			"2"		// Health regeneration rate.
 		"StatusMana"				"750"		// Base mana.
 		"StatusManaRegen"			"1.5"		// Mana regeneration rate.
 		
@@ -822,10 +894,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
+	}
 
 	"npc_dota_brewmaster_void_2"
 	{				
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_void_1"
 	
 		// General
@@ -850,13 +923,14 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"20"		// Health regeneration rate.
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"4"		// Health regeneration rate.
 		
-	}	
+	}
 
 	"npc_dota_brewmaster_void_3"
 	{			
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_void_1"
 
 		// General
@@ -882,11 +956,13 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3000"		// Base health.
-		"StatusHealthRegen"			"30"		// Health regeneration rate.
-	}	
+		"StatusHealth"				"1800"		// Base health.
+		"StatusHealthRegen"			"6"		// Health regeneration rate.
+	}
+
 	"npc_dota_brewmaster_void_4"
 	{			
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_void_1"
 
 		// General
@@ -914,9 +990,11 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"4000"		// Base health.
 		"StatusHealthRegen"			"40"		// Health regeneration rate.
-	}	
+	}
+
 	"npc_dota_brewmaster_void_5"
 	{			
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_void_1"
 
 		// General
@@ -944,9 +1022,11 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"5000"		// Base health.
 		"StatusHealthRegen"			"50"		// Health regeneration rate.
-	}	
+	}
+
 	"npc_dota_brewmaster_void_6"
 	{			
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_void_1"
 
 		// General
@@ -974,9 +1054,11 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"6000"		// Base health.
 		"StatusHealthRegen"			"60"		// Health regeneration rate.
-	}	
+	}
+
 	"npc_dota_brewmaster_void_7"
 	{			
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_brewmaster_void_1"
 
 		// General
@@ -1004,5 +1086,6 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"7000"		// Base health.
 		"StatusHealthRegen"			"70"		// Health regeneration rate.
-	}	
+	}
+
 }

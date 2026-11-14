@@ -167,7 +167,7 @@ DOTAAbilities
             }
 			"max_treants"
             {
-                "value"                         "2 3 4 5 6 7 8"
+                "value"                         "2 2 3 3 4 4 5"
             }
             "siege_treants"
             {
@@ -181,12 +181,12 @@ DOTAAbilities
 			}
 			"treant_damage_min"
 			{
-				"value"					"25 35 46 58 71 85 100"
+				"value"					"14 23 32 41 50 59 57"
 				"special_bonus_unique_furion"			"x3"
 			}
 			"treant_damage_max"
 			{
-				"value"					"27 37 48 60 73 87 102"
+				"value"					"18 27 36 45 54 63 72"
 				"special_bonus_unique_furion"			"x3.0"
 			}
 			"treant_movespeed"
@@ -204,12 +204,12 @@ DOTAAbilities
             }
 			"AbilityCooldown"				
 			{
-				"value"				"30"
+				"value"				"60"
 				"special_bonus_unique_furion_6"		"-10"
 			}
 			"treewalking"
             {
-                "value"                     "0"
+                "value"                     "1"
             }
 			"treant_damage"
 			{
@@ -451,12 +451,12 @@ DOTAAbilities
             "multiplier"            
             {
                 "value"         "1"
-                "special_bonus_unique_furion"   "x3"
+                "special_bonus_unique_furion"   "x2"
             }
         	"radius_base"
         	{
         		"value"				"300"
-        		"hero_levelup"				"+10"
+        		"hero_levelup"				"+3"
         		"affected_by_aoe_increase"				"1"
         	}
         }

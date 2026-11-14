@@ -27,6 +27,7 @@ end
 
 -------------------------------------------------------------------------------
 function mod:OnAttacked(params)
+    if params.target ~= self:GetParent() then return end
     if self:GetParent():PassivesDisabled() then return end
     if not IsServer() then return end
 

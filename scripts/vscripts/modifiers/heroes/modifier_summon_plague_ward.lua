@@ -19,7 +19,7 @@ function modifier_summon_plague_ward:IsPurgable()
 end
 
 function modifier_summon_plague_ward:GetModifierExtraHealthBonus(params)
-    local time = GameRules:GetGameTime() / 60
+    local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
     if time > 20 then
         return 0.0714 * math.pow(time, 2) + 16.2857 * time - 240.0000
     else
@@ -28,7 +28,7 @@ function modifier_summon_plague_ward:GetModifierExtraHealthBonus(params)
 end
 
 function modifier_summon_plague_ward:GetModifierBaseAttack_BonusDamage(params)
-    local time = GameRules:GetGameTime() / 60
+    local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
     if time > 20 then
         return 0.0214 * math.pow(time, 2) + 3.1857 * time - 44.0000
     else

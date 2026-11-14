@@ -1,7 +1,12 @@
+// Юниты героя. Юниты, которые есть в актуальной доте, - ванильные определения из
+// game/dota/pak01_dir.vpk (старая копия ломала суммонов). Уровни сверх дотовских
+// и свои юниты мода - наши, наследуют ванильные через include_keys_from.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
 "DOTAUnits"
 {
-"npc_dota_lycan_wolf1"
+	"npc_dota_lycan_wolf1"
 	{										
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models/heroes/lycan/summon_wolves.vmdl"	// Model.
@@ -12,6 +17,15 @@
 		"ModelScale" 					"0.9"
 		"UnitLabel"			"lycan_wolf"
   		"UseNeutralCreepBehavior"	"0"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lycan_wolf.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lycan_wolf.vpcf"
+		}
+		"UnitToAbilityMap"			"lycan_summon_wolves"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -23,14 +37,14 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
-		"MagicalResistance"				"70"		// Magical protection.
+		"MagicalResistance"			"45"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"27"		// Damage range min.
-		"AttackDamageMax"			"29"		// Damage range max.	
-		"AttackRate"				"1.4"		// Speed of attack.
+		"AttackDamageMin"			"21"		// Damage range min.
+		"AttackDamageMax"			"23"		// Damage range max.	
+		"AttackRate"				"1.6"		// Speed of attack.
 		"AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"90"		// Range within a target can be attacked.
@@ -56,7 +70,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"300"		// Base health.
+		"StatusHealth"				"325"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -70,10 +84,11 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}	
+	}
 
 	"npc_dota_lycan_wolf2"
 	{			
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_lycan_wolf1"
 
 		// General
@@ -83,9 +98,9 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"35"		// Damage range min.
-		"AttackDamageMax"			"39"		// Damage range max.	
-		"AttackRate"				"1.3"		// Speed of attack.
+		"AttackDamageMin"			"27"		// Damage range min.
+		"AttackDamageMax"			"29"		// Damage range max.	
+		"AttackRate"				"1.6"		// Speed of attack.
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -94,17 +109,17 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"3"
-		"MovementSpeed"				"410"		// Speed.
-		"MagicalResistance"				"70"		// Magical protection.
+		"MovementSpeed"				"420"		// Speed.
+		"MagicalResistance"			"50"		// Magical protection.
 
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"375"		// Base health.
-	}	
+	}
 
 	"npc_dota_lycan_wolf3"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_lycan_wolf1"
 	
 		// General
@@ -114,31 +129,33 @@
 
 		// Abilities
 		//----------------------------------------------------------------
+		//"Ability1"					"lycan_summon_wolves_invisibility"			// Ability 1
+
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"45"		// Damage range min.
-		"AttackDamageMax"			"47"		// Damage range max.	
-		"AttackRate"				"1.2"		// Speed of attack.
+		"AttackDamageMin"			"33"		// Damage range min.
+		"AttackDamageMax"			"35"		// Damage range max.	
+		"AttackRate"				"1.6"		// Speed of attack.
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"				"31"		// Gold earned min.
-		"BountyGoldMax"				"31"		// Gold earned max.
+		"BountyGoldMin"				"36"		// Gold earned min.
+		"BountyGoldMax"				"36"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"420"		// Speed.
-		"MagicalResistance"				"70"		// Magical protection.
+		"MovementSpeed"				"440"		// Speed.
+		"MagicalResistance"			"55"		// Magical protection.
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"450"		// Base health.
-		"ArmorPhysical"				"6"
+		"StatusHealth"				"425"		// Base health.
 		
-	}	
+	}
 
 	"npc_dota_lycan_wolf4"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_lycan_wolf1"
 	
 		// General
@@ -148,45 +165,14 @@
 
 		// Abilities
 		//----------------------------------------------------------------
+		//"Ability1"					"lycan_summon_wolves_invisibility"			// Ability 1
+		//"Ability2"					"lycan_summon_wolves_critical_strike"			// Ability 2
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"53"		// Damage range min.
-		"AttackDamageMax"			"55"		// Damage range max.	
-		"AttackRate"				"1.1"		// Speed of attack.
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"				"36"		// Gold earned min.
-		"BountyGoldMax"				"36"		// Gold earned max.
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementSpeed"				"430"		// Speed.
-		"MagicalResistance"				"70"		// Magical protection.
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"525"		// Base health.
-		"ArmorPhysical"				"9"
-		
-	}	
-"npc_dota_lycan_wolf5"
-	{		
-		"include_keys_from" "npc_dota_lycan_wolf1"
-	
-		// General
-		//----------------------------------------------------------------
-		"Level"						"5"
-		"ModelScale" 					"1.05"
-
-		// Abilities
-		//----------------------------------------------------------------
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackDamageMin"			"62"		// Damage range min.
-		"AttackDamageMax"			"64"		// Damage range max.	
-		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackDamageMin"			"39"		// Damage range min.
+		"AttackDamageMax"			"41"		// Damage range max.	
+		"AttackRate"				"1.6"		// Speed of attack.
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -195,31 +181,35 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"440"		// Speed.
-		"MagicalResistance"				"70"		// Magical protection.
+		"MovementSpeed"				"460"		// Speed.
+		"MagicalResistance"			"60"		// Magical protection.
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"600"		// Base health.
-		"ArmorPhysical"				"12"
+		"StatusHealth"				"475"		// Base health.
 		
-	}	
-"npc_dota_lycan_wolf6"
+	}
+
+	"npc_dota_lycan_wolf5"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_lycan_wolf1"
 	
 		// General
 		//----------------------------------------------------------------
-		"Level"						"6"
+		"Level"						"5"
 		"ModelScale" 					"1.1"
 
 		// Abilities
 		//----------------------------------------------------------------
+		//"Ability1"					"lycan_summon_wolves_invisibility"			// Ability 1
+		//"Ability2"					"lycan_summon_wolves_critical_strike"			// Ability 2
+		//"Ability3"					"lycan_summon_wolves_hamstring"					// Ability 3
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackDamageMin"			"70"		// Damage range min.
-		"AttackDamageMax"			"72"		// Damage range max.	
-		"AttackRate"				"0.9"		// Speed of attack.
+		"AttackDamageMin"			"45"		// Damage range min.
+		"AttackDamageMax"			"47"		// Damage range max.	
+		"AttackRate"				"1.6"		// Speed of attack.
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -228,16 +218,57 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementSpeed"				"450"		// Speed.
-		"MagicalResistance"				"70"		// Magical protection.
+		"MovementSpeed"				"460"		// Speed.
+		"MagicalResistance"			"60"		// Magical protection.
+
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"675"		// Base health.
-		"ArmorPhysical"				"15"
+		"StatusHealth"				"525"		// Base health.
 		
-	}	
-"npc_dota_lycan_wolf7"
+	}
+
+	"npc_dota_lycan_wolf6"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"include_keys_from" "npc_dota_lycan_wolf1"
+	
+		// General
+		//----------------------------------------------------------------
+		"Level"						"6"
+		"ModelScale" 					"1.2"
+
+		// Abilities
+		//----------------------------------------------------------------
+		//"Ability1"					"lycan_summon_wolves_invisibility"			// Ability 1
+		//"Ability2"					"lycan_summon_wolves_critical_strike"			// Ability 2
+		//"Ability3"					"lycan_summon_wolves_hamstring"					// Ability 3
+		//"Ability4"					"lycan_summon_wolves_hightail"			// Ability 4
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"51"		// Damage range min.
+		"AttackDamageMax"			"53"		// Damage range max.	
+		"AttackRate"				"1.6"		// Speed of attack.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"51"		// Gold earned min.
+		"BountyGoldMax"				"51"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementSpeed"				"460"		// Speed.
+		"MagicalResistance"			"60"		// Magical protection.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"575"		// Base health.
+		
+	}
+
+	"npc_dota_lycan_wolf7"
+	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_lycan_wolf1"
 	
 		// General
@@ -252,7 +283,7 @@
 		//----------------------------------------------------------------
 		"AttackDamageMin"			"79"		// Damage range min.
 		"AttackDamageMax"			"81"		// Damage range max.	
-		"AttackRate"				"0.8"		// Speed of attack.
+		"AttackRate"				"1.6"		// Speed of attack.
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -268,9 +299,11 @@
 		"StatusHealth"				"750"		// Base health.
 		"ArmorPhysical"				"18"
 		
-	}	
+	}
+
 	"npc_dota_lycan_wolf8"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_lycan_wolf1"
 	
 		// General
@@ -285,7 +318,7 @@
 		//----------------------------------------------------------------
 		"AttackDamageMin"			"88"		// Damage range min.
 		"AttackDamageMax"			"90"		// Damage range max.	
-		"AttackRate"				"0.7"		// Speed of attack.
+		"AttackRate"				"1.6"		// Speed of attack.
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -301,9 +334,11 @@
 		"StatusHealth"				"825"		// Base health.
 		"ArmorPhysical"				"18"
 		
-	}	
+	}
+
 	"npc_dota_lycan_wolf9"
 	{		
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		"include_keys_from" "npc_dota_lycan_wolf1"
 	
 		// General
@@ -318,7 +353,7 @@
 		//----------------------------------------------------------------
 		"AttackDamageMin"			"98"		// Damage range min.
 		"AttackDamageMax"			"100"		// Damage range max.	
-		"AttackRate"				"0.6"		// Speed of attack.
+		"AttackRate"				"1.6"		// Speed of attack.
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -334,5 +369,6 @@
 		"StatusHealth"				"900"		// Base health.
 		"ArmorPhysical"				"18"
 		
-	}	
+	}
+
 }

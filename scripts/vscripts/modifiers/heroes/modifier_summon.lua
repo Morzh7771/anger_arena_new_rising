@@ -20,7 +20,7 @@ function modifier_summon:IsPurgable()
 end
 
 function modifier_summon:GetModifierExtraHealthBonus(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 	local delitel = (time / 60) * (time / 60) * 20
 	if time < 60 then delitel = time/2 end
@@ -33,7 +33,7 @@ function modifier_summon:GetModifierExtraHealthBonus(params)
 end
 
 function modifier_summon:GetModifierBaseAttack_BonusDamage(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 
 	--return math.abs(0.0984*math.pow(time,2) + 5.49*time - 30)
@@ -45,7 +45,7 @@ function modifier_summon:GetModifierBaseAttack_BonusDamage(params)
 end
 
 function modifier_summon:GetModifierAttackSpeedBonus_Constant(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 	local attack_speed = 0.029*math.pow(time,2) + 2.66*time - 20
 	
 	if attack_speed < 0 then attack_speed = 0 end
@@ -54,7 +54,7 @@ function modifier_summon:GetModifierAttackSpeedBonus_Constant(params)
 end
 
 function modifier_summon:GetModifierPhysicalArmorBonus(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 	local armor = math.pow(math.sqrt(time - 15), (2.718*0.88))
 	
 	if time < 15 then armor = 0 end -- caused by sqrt(-15)

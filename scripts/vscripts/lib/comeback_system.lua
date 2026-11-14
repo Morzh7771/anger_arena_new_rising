@@ -1,179 +1,164 @@
 require('lib/attentions')
 require('lib/team_helper')
 
+--[[
+	Камбэк: доплата за убийство команде, которая отстаёт.
+
+	Отставание считаем по ценности героя, как и награда за убийство
+	(HeroKillBounty:HeroValue): нетворс + запас золота + съеденные томы.
+	Раньше считалось накопленное золото команды, и герой, который всё вложил
+	в томы, выглядел бедным - камбэк шёл не тем.
+
+	Серию жертвы камбэк больше не платит: она входит в награду за убийство
+	(lib/hero_kill_bounty.lua), иначе платилась бы дважды.
+
+	Отдельной строкой в килфиде камбэк не показывается - он просто
+	прибавляется к золоту убийцы и героев рядом.
+]]
+
 ComebackSystem = ComebackSystem or class({})
 
-local BASE_ADDITIONAL_GOLD_PER_KILL = 100
-local BASE_ADDITIONAL_GOLD_PER_MINUTE = 7
-local BASE_GOLD_PER_STREAK = 200
-local BASE_GOLD_PER_STREAK_PER_MIN = 35
-local KILLS_TO_GOLD_COMEBACK = 10
+-- Порог: пока команда отстаёт меньше чем на столько ценности на героя,
+-- камбэка нет. Растёт со временем и не может быть меньше доли от ценности
+-- богатой команды - в конце игры отставание в 2000 это уже ничто.
+local MIN_GAP = 500
+local MIN_GAP_PER_MINUTE = 100
+local MIN_GAP_VALUE_PCT = 10
+
+-- сколько от отставания сверх порога уходит за одно убийство
+local GAP_PCT = 25
+
+-- надбавка просто за то, что команда беднее
+local BASE_GOLD = 100
+local BASE_GOLD_PER_MINUTE = 7
+
+-- Опыт: если команда отстаёт по уровням больше чем на LEVEL_GAP_FREE,
+-- за убийство доплачиваем долю уровня за каждый следующий уровень отставания.
+local LEVEL_GAP_FREE = 1
+local LEVEL_XP_PCT = 15
+local LEVEL_GAP_MAX = 6
+
+-- доля камбэка героям рядом (остальное убийце)
 local GOLD_TO_TEAMMATES = 40
-local TEAM_MATE_AOE = 1200
+local TEAM_MATE_AOE = 1300
 
--- [ (Time, goldDiff ), ...]
-local GoldDifferenceTable = {
-	{ 0, 250 },
-	{ 5, 750 },
-	{ 10, 1000 },
-	{ 15, 1250 },
-	{ 20, 1500 },
-	{ 25, 2000 },
-}
-
-local function GiveGoldTo( playerid, gold, isAssist )
+local function GiveGoldTo( playerid, gold, deadHero )
 	if not PlayerResource:IsValidPlayerID( playerid ) then return end
 
-	PlayerResource:ModifyGold(playerid, gold, true, DOTA_ModifyGold_HeroKill)
+	gold = math.floor( gold )
 
-	local msg = "#ANGEL_ARENA_ON_KILL"
+	if gold <= 0 then return end
 
-	if isAssist then
-		msg = "#ANGEL_ARENA_ON_ASSIST"
+	-- не упираемся в дотовские 99999: что не влезло в кошелёк, сразу уходит
+	-- в запас и видно игроку через нет-таблицу gold
+	-- камбек в командную делёжку не попадает (lib/team_gold_share.lua)
+	-- в килфид камбэк идёт строкой убийства, а не как движковое золото
+	if KillFeed then KillFeed.ourPayout = true end
+
+	if TeamGoldShare then
+		TeamGoldShare:Bypass(AngelArena.GiveGold, AngelArena, playerid, gold, true, DOTA_ModifyGold_HeroKill)
+	else
+		AngelArena:GiveGold( playerid, gold, true, DOTA_ModifyGold_HeroKill )
 	end
 
-	Attentions:SendChatMessage( msg, playerid, gold )
-end
-
-function ComebackSystem:_GetTeamGold( team )
-	return self.teamGolds[team] or 0
-end
-
-function ComebackSystem:_FindGoldDifferenceStamp( time )
-	local result
-
-	for _, data in pairs(GoldDifferenceTable) do
-		local timeStamp  = data[1]
-		local goldResult = data[2]
-
-		if timeStamp < time or result == nil then
-			result = goldResult
-		end
-
-		if time > timeStamp then
-			break
-		end
+	if KillFeed then
+		KillFeed.ourPayout = false
+		KillFeed:AddComeback(deadHero, playerid, gold)
 	end
-	
-	return result or 0
+
+	if EndGameStats then EndGameStats:OnComebackGold(playerid, gold) end
+
+	AngelArena:ShowGoldPopup(playerid, gold)
 end
 
+local function GiveXPTo( hero, xp )
+	xp = math.floor(xp)
+
+	if xp <= 0 or not hero or hero:IsNull() then return end
+
+	if HeroKillBounty then HeroKillBounty.ourPayout = true end
+
+	hero:AddExperience(xp, DOTA_ModifyXP_HeroKill, false, true)
+
+	if HeroKillBounty then HeroKillBounty.ourPayout = false end
+end
+
+-- золото команды за игру: больше в расчёте камбэка не участвует, но его
+-- собирает статистика и читы
 function ComebackSystem:OnGiveGold( playerid, gold, isReliable, reason )
 	local team = PlayerResource:GetTeam( playerid )
 
 	self.teamGolds[ team ] = (self.teamGolds[ team ] or 0) + gold
 end
 
+function ComebackSystem:_GetTeamGold( team )
+	return self.teamGolds[team] or 0
+end
+
 function ComebackSystem:OnKill( killerPlayerID, killerTeam, victimPlayerID, victimTeam )
 	if killerTeam == victimTeam then return end
-	if killerTeam ~= DOTA_TEAM_GOODGUYS and killerTeam ~= DOTA_TEAM_BADGUYS then 
-		print("invalid team", killerTeam)
-		return 
-	end
+	if killerTeam ~= DOTA_TEAM_GOODGUYS and killerTeam ~= DOTA_TEAM_BADGUYS then return end
+	if not HeroKillBounty then return end
 
 	local deadHero = PlayerResource:GetSelectedHeroEntity( victimPlayerID )
 
-	if not deadHero or deadHero:IsNull() or not IsValidEntity(deadHero)  then return end
+	if not deadHero or deadHero:IsNull() or not IsValidEntity(deadHero) then return end
 
-	local deadHeroPos = deadHero:GetAbsOrigin()
+	local minute = math.max(0, GameRules:GetDOTATime( false, false ) / 60)
 
-	local minute = GameRules:GetDOTATime( false, false ) / 60
+	local killerValue, killerCount, killerLevel = HeroKillBounty:TeamValue(killerTeam)
+	local victimValue, victimCount, victimLevel = HeroKillBounty:TeamValue(victimTeam)
 
-	local baseGold = BASE_ADDITIONAL_GOLD_PER_KILL + minute * BASE_ADDITIONAL_GOLD_PER_MINUTE
+	if killerCount == 0 or victimCount == 0 then return end
 
-	local streakGold = PlayerResource:GetStreak( victimPlayerID ) * (BASE_GOLD_PER_STREAK + minute * BASE_GOLD_PER_STREAK_PER_MIN)
+	-- отставание на одного героя: команда убийцы беднее - число больше нуля
+	local gap = victimValue / victimCount - killerValue / killerCount
 
-	local killerTeamGold = self:_GetTeamGold( killerTeam )
-	local victimTeamGold = self:_GetTeamGold( victimTeam )
+	if gap <= 0 then return end
 
-	local nHalfPlayersTotal = TeamHelper:GetPlayerCount(nil) / 2
-	local teamGoldMinDiff = self:_FindGoldDifferenceStamp( minute ) / nHalfPlayersTotal
-	
-	local teamGoldDiff = victimTeamGold - killerTeamGold
-	local teamGoldDiffNormalized = (victimTeamGold / TeamHelper:GetPlayerCount(victimTeam) - killerTeamGold / TeamHelper:GetPlayerCount(killerTeam)) * nHalfPlayersTotal
+	local minGap = math.max(MIN_GAP + MIN_GAP_PER_MINUTE * minute, (victimValue / victimCount) * MIN_GAP_VALUE_PCT / 100)
 
-	local totalGold = baseGold + streakGold
+	local totalGold = BASE_GOLD + BASE_GOLD_PER_MINUTE * minute + math.max(0, gap - minGap) * GAP_PCT / 100
 
-	if teamGoldDiffNormalized > teamGoldMinDiff then
-		totalGold = totalGold + teamGoldDiff / KILLS_TO_GOLD_COMEBACK
+	-- отставание по уровням оплачиваем опытом
+	local levelGap = math.min(LEVEL_GAP_MAX, victimLevel - killerLevel - LEVEL_GAP_FREE)
+	local totalXP = 0
+
+	if levelGap > 0 then
+		totalXP = HeroKillBounty:LevelXP(math.floor(killerLevel)) * LEVEL_XP_PCT / 100 * levelGap
 	end
 
+	-- герои рядом с местом смерти, кроме убийцы
+	local deadHeroPos = deadHero:GetAbsOrigin()
+	local mates = {}
 	local nPlayers = 0
 
-	local function Check( teammatePlayerID, hero )
-		if teammatePlayerID == killerPlayerID then return false end
-
-		if (hero:GetAbsOrigin() - deadHeroPos):Length() > TEAM_MATE_AOE then return false end
-
-		return true
-	end
-
 	TeamHelper:ApplyForHeroes(killerTeam, function( teammatePlayerID, hero )
-		if Check( teammatePlayerID, hero ) then
-			nPlayers = nPlayers + 1
-		end
+		if teammatePlayerID == killerPlayerID then return end
+		if not hero:IsAlive() then return end
+		if (hero:GetAbsOrigin() - deadHeroPos):Length2D() > TEAM_MATE_AOE then return end
+
+		mates[teammatePlayerID] = hero
+		nPlayers = nPlayers + 1
 	end)
 
-	if nPlayers ~= 0 then
-		local goldPct = GOLD_TO_TEAMMATES / 100
+	local killerGold, killerXP = totalGold, totalXP
 
-		local teamMateGold = totalGold * goldPct
+	if nPlayers > 0 then
+		local sharedGold = totalGold * GOLD_TO_TEAMMATES / 100
+		local sharedXP = totalXP * GOLD_TO_TEAMMATES / 100
 
-		totalGold = totalGold - teamMateGold
+		killerGold = totalGold - sharedGold
+		killerXP = totalXP - sharedXP
 
-		teamMateGold = teamMateGold / nPlayers
-
-		TeamHelper:ApplyForHeroes(killerTeam, function( teammatePlayerID, hero )
-			if Check( teammatePlayerID, hero ) then
-				if teamMateGold < 50000 then
-					GiveGoldTo(teammatePlayerID, teamMateGold, true)
-				else
-					local x = 1
-					local totalGoldtoMath = teamMateGold
-					while x<math.ceil(teamMateGold/50000) do
-						if totalGoldtoMath > 50000 then
-							Timers:CreateTimer(0.6, function()
-								GiveGoldTo(teammatePlayerID, 50000, true)
-								return
-							end)
-							
-						else
-							Timers:CreateTimer(0.6, function()
-								GiveGoldTo(teammatePlayerID, totalGoldtoMath, true)
-								return
-							end)
-						end
-						totalGoldtoMath = totalGoldtoMath - 50000
-						x = x + 1
-					end
-				end
-			end
-		end)
-	end
-
-	if totalGold < 50000 then
-		GiveGoldTo(killerPlayerID, totalGold, false)
-	else
-		local totalGoldtoMath = totalGold
-		local x = 1
-		while x<math.ceil(totalGold/50000) do
-			if totalGoldtoMath > 50000 then
-				Timers:CreateTimer(0.8, function()
-					GiveGoldTo(killerPlayerID, 50000, false)
-					return
-				end)
-			else
-				Timers:CreateTimer(0.8, function()
-					GiveGoldTo(killerPlayerID, totalGold, false)
-					return
-				end)
-			end
-			totalGoldtoMath = totalGoldtoMath - 50000
-			x = x + 1
+		for playerid, hero in pairs(mates) do
+			GiveGoldTo(playerid, sharedGold / nPlayers, deadHero)
+			GiveXPTo(hero, sharedXP / nPlayers)
 		end
-		
 	end
-	
+
+	GiveGoldTo(killerPlayerID, killerGold, deadHero)
+	GiveXPTo(PlayerResource:GetSelectedHeroEntity(killerPlayerID), killerXP)
 end
 
 function ComebackSystem:_Init()

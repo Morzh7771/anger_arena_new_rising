@@ -1,242 +1,76 @@
-LinkLuaModifier( "modifier_tormentor_reflect_aa", 'creeps/boss/tormentor/tormentor_reflect_aa', LUA_MODIFIER_MOTION_NONE )
+-- Отражение урона торментора, как в 1х6: каждый, кто бьёт торментора,
+-- получает damage% от нанесённого урона чистым уроном. Во время
+-- неуязвимости (порог Unyielding Shield) - в invun_damage раз больше и с
+-- тройной вспышкой.
+-- Само событие урона ловит щит (tormentor_unyielding_shielda_aa.lua) и зовёт
+-- Reflect: так отражается и урон, полностью съеденный барьером.
 
 tormentor_reflect_aa = class({
-
-    GetIntrinsicModifierName = function (self) return "modifier_tormentor_reflect_aa" end,
-    Spawn = function (self) if IsServer() then return self:SetLevel(1) end end,
+	Spawn = function (self) if IsServer() then return self:SetLevel(1) end end,
 })
 
--- Сгенерировано: ресурсы, на которые ссылается этот скрипт.
--- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
--- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
+local FX = {
+	radiant = {
+		reflect = "particles/neutral_fx/miniboss_damage_reflect.vpcf",
+		impact  = "particles/neutral_fx/miniboss_damage_impact.vpcf",
+	},
+	dire = {
+		reflect = "particles/neutral_fx/miniboss_damage_reflect_dire.vpcf",
+		impact  = "particles/neutral_fx/miniboss_dire_damage_impact.vpcf",
+	},
+}
+
+-- "Miniboss.Tormenter.Reflect" без номера в доте нет, есть Reflect0..7
+local SND_REFLECT = "Miniboss.Tormenter.Reflect0"
+
 function tormentor_reflect_aa:Precache(context)
-	PrecacheResource("particle", "particles/neutral_fx/miniboss_damage_impact.vpcf", context)
-	PrecacheResource("particle", "particles/neutral_fx/miniboss_damage_reflect.vpcf", context)
-	PrecacheResource("particle", "particles/neutral_fx/miniboss_damage_reflect_dire.vpcf", context)
-	PrecacheResource("particle", "particles/neutral_fx/miniboss_death.vpcf", context)
-	PrecacheResource("particle", "particles/neutral_fx/miniboss_death_dire.vpcf", context)
-	PrecacheResource("particle", "particles/neutral_fx/miniboss_dire_damage_impact.vpcf", context)
-	PrecacheResource("particle", "particles/neutral_fx/miniboss_shield.vpcf", context)
-	PrecacheResource("particle", "particles/neutral_fx/miniboss_shield_dire.vpcf", context)
+	for _, side in pairs(FX) do
+		for _, name in pairs(side) do
+			PrecacheResource("particle", name, context)
+		end
+	end
+	PrecacheResource("soundfile", "soundevents/game_sounds_creeps.vsndevts", context)
 end
 
-modifier_tormentor_reflect_aa = class ({
-    IsDebuff = function (self) return false end,
-    IsHidden = function (self) return true end,
-    IsPurgable = function (self) return false end,
-    OnCreated = function (self)
-        if not IsServer() then return end
-        self.parent = self:GetParent()
-        self.ability = self:GetAbility()
-    
-        self.radius = self.ability:GetSpecialValueFor("radius")
-        self.illusion_damage_pct = self.ability:GetSpecialValueFor("illusion_damage_pct")
-        self.base_reflection = self.ability:GetSpecialValueFor("passive_reflection_pct")
-        self.bonus_per_minute = self.ability:GetSpecialValueFor("passive_reflection_bonus_per_interval")
-    
-        self.reflection = self.base_reflection -- initial value
-    
-        self.pfx_name = {}
-        self.pfx_name[DOTA_TEAM_GOODGUYS] = {
-            shield = "particles/neutral_fx/miniboss_shield.vpcf",
-            reflect = "particles/neutral_fx/miniboss_damage_reflect.vpcf",
-            impact = "particles/neutral_fx/miniboss_damage_impact.vpcf",
-            death = "particles/neutral_fx/miniboss_death.vpcf",
-        }
-    
-        self.pfx_name[DOTA_TEAM_BADGUYS] = {
-            shield = "particles/neutral_fx/miniboss_shield_dire.vpcf",
-            reflect = "particles/neutral_fx/miniboss_damage_reflect_dire.vpcf",
-            impact = "particles/neutral_fx/miniboss_dire_damage_impact.vpcf",
-            death = "particles/neutral_fx/miniboss_death_dire.vpcf",
-        }
-    
-        self.shield_pfx = ParticleManager:CreateParticle(self.pfx_name[DOTA_TEAM_GOODGUYS].shield, PATTACH_ABSORIGIN_FOLLOW, self.parent)
-    
-        self:SetHasCustomTransmitterData(true)
-    
-        self:StartIntervalThink(1) -- Обновлять reflection каждую секунду
-    end,
-    OnIntervalThink = function(self)
-        local minutes = math.floor(GameRules:GetDOTATime(false, false) / 60)
-        local new_reflection = self.base_reflection + minutes * self.bonus_per_minute
-    
-        if new_reflection ~= self.reflection then
-            self.reflection = new_reflection
-            self:SendBuffRefreshToClients()
-        end
-    end,
-    DeclareFunctions = function (self)
-        return {
-            MODIFIER_EVENT_ON_TAKEDAMAGE,
-            MODIFIER_PROPERTY_TOOLTIP,
-            MODIFIER_EVENT_ON_DEATH,
-        }
-    end,
-    AddCustomTransmitterData = function (self)
-        return {
-            reflection = self.reflection,
-        }
-    end,
-    HandleCustomTransmitterData = function (self,data)
-        self.reflection = data.reflection
-    end,
+function tormentor_reflect_aa:Reflect(attacker, damage, flags, invun)
+	if not IsServer() then return end
+	if not attacker or attacker:IsNull() or not attacker:IsAlive() then return end
+	if damage <= 0 then return end
+	-- урон, который сам является отражением, обратно не возвращаем
+	if bit.band(flags or 0, DOTA_DAMAGE_FLAG_REFLECTION) ~= 0 then return end
+	-- Blade Mail, Dispersion и подобное могут вернуть урон обратно в торментора
+	-- внутри нашего же ApplyDamage: не даём цепочке раскрутиться
+	if self.reflecting then return end
 
-    OnTooltip = function (self)
-        return self.reflection
-    end,
+	local caster = self:GetCaster()
+	local name = caster.aa_boss_name
+	local fx = (name and name:find("dire")) and FX.dire or FX.radiant
 
-    OnDeath = function (self,keys)
-        if not IsServer() then return end
+	local amount = damage * self:GetSpecialValueFor("damage") / 100
+	local count = 1
+	if invun then
+		amount = amount * self:GetSpecialValueFor("invun_damage")
+		count = 3
+	end
 
-        local unit = keys.unit
+	for _ = 1, count do
+		local i = ParticleManager:CreateParticle(fx.impact, PATTACH_ABSORIGIN_FOLLOW, caster)
+		ParticleManager:ReleaseParticleIndex(i)
+		local p = ParticleManager:CreateParticle(fx.reflect, PATTACH_ABSORIGIN_FOLLOW, caster)
+		ParticleManager:SetParticleControl(p, 0, caster:GetAbsOrigin())
+		ParticleManager:SetParticleControlEnt(p, 1, attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", attacker:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(p)
+	end
+	attacker:EmitSound(SND_REFLECT)
 
-        if unit ~= self.parent then return end
-
-        ParticleManager:DestroyParticle(self.shield_pfx, true)
-        ParticleManager:ReleaseParticleIndex(self.shield_pfx)
-
-        local pfx = ParticleManager:CreateParticle(self.pfx_name[DOTA_TEAM_GOODGUYS].death, PATTACH_ABSORIGIN_FOLLOW, self.parent)
-        ParticleManager:SetParticleControl(pfx, 0, self.parent:GetAbsOrigin())
-        ParticleManager:ReleaseParticleIndex(pfx)
-    end,
-    -- Отражение реентерабельно: урон, который торм вернул герою, может тут же
-    -- прилететь обратно в торма (Dispersion спектры, Blade Mail, зеркальный щит),
-    -- снова войти в OnTakeDamage и снова отразиться. Цепочка раскручивается внутри
-    -- одного тика и убивает торма за один удар. Гейт не даёт войти повторно, пока
-    -- мы ещё внутри своего же отражения.
-    OnTakeDamage = function (self, keys)
-        if not IsServer() then return end
-        if keys.unit ~= self.parent then return end
-        if self.is_reflecting then return end
-
-        self.is_reflecting = true
-        local ok, err = pcall(self.DoReflect, self, keys)
-        self.is_reflecting = false
-
-        if not ok then
-            print("[tormentor_reflect_aa] DoReflect failed: " .. tostring(err))
-        end
-    end,
-
-    DoReflect = function (self,keys)
-        if not IsServer() then return end
-
-        local damage = keys.original_damage
-        local damageType = keys.damage_type
-        local damageFlags = keys.damage_flags
-        local attacker = keys.attacker
-
-        if keys.unit ~= self.parent then return end
-        
-        -- Ignore damage that has the no-reflect flag
-        if bit.band(damageFlags, DOTA_DAMAGE_FLAG_REFLECTION) > 0 then
-            return
-        end
-
-        -- Ignore damage that has the no-spell-lifesteal flag
-        if bit.band(damageFlags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) > 0 then
-            return
-        end
-
-        -- Ignore damage that has the no-spell-amplification flag
-        if bit.band(damageFlags, DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION) > 0 then
-            return
-        end
-
-        local enemies = FindUnitsInRadius(
-            self.parent:GetTeamNumber(),
-            self.parent:GetAbsOrigin(),
-            nil,
-            self.radius,
-            DOTA_UNIT_TARGET_TEAM_ENEMY,
-            DOTA_UNIT_TARGET_HERO,
-            DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
-            FIND_ANY_ORDER,
-            false
-        )
-
-        -- Parts of damage table that are always the same
-        local damageTable = {
-            attacker = self.parent,
-            damage_type = damageType,
-            ability = self.ability,
-        }
-
-        if #enemies == 0 then
-            -- Always affect the attacker, doesn't matter where it is even if there are no enemies around
-            damageTable.victim = attacker
-            damageTable.damage = damage * self.reflection / 100
-
-            ApplyDamage(damageTable)
-
-            local pfx = ParticleManager:CreateParticle(self.pfx_name[DOTA_TEAM_GOODGUYS].reflect, PATTACH_ABSORIGIN_FOLLOW, self.parent)
-            ParticleManager:SetParticleControl(pfx, 0, self.parent:GetAbsOrigin())
-            ParticleManager:SetParticleControlEnt(pfx, 1, attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", attacker:GetAbsOrigin(), true)
-            -- ParticleManager:SetParticleControl(pfx, 1, attacker:GetAbsOrigin())
-            ParticleManager:ReleaseParticleIndex(pfx)
-
-            -- EmitSoundOnClient("Miniboss.Tormenter.Reflect", attacker)
-            attacker:EmitSound("Miniboss.Tormenter.Reflect")
-            return
-        end
-        
-        -- Count non-illusion enemies
-        local number_of_valid_enemies = 0
-        for _, enemy in pairs(enemies) do
-            if enemy and not enemy:IsNull() and IsValidEntity(enemy) and enemy:IsAlive() and not enemy:IsIllusion() then
-                number_of_valid_enemies = number_of_valid_enemies + 1
-            end
-        end
-        
-        -- When attacker is damaging Tormentor from far away and only ilussions are around
-        -- to prevent division by 0
-        if number_of_valid_enemies == 0 then
-            number_of_valid_enemies = 1
-        end
-        
-        -- Distribute the damage among the present units
-        local reflectedDamage = (damage * self.reflection / 100) / number_of_valid_enemies
-        for _, enemy in pairs(enemies) do
-            if enemy and not enemy:IsNull() and IsValidEntity(enemy) and enemy:IsAlive() and enemy ~= attacker then
-                damageTable.victim = enemy
-                damageTable.damage = reflectedDamage
-
-                if enemy:IsIllusion() then
-                    damageTable.damage = reflectedDamage * self.illusion_damage_pct / 100
-                end
-
-                ApplyDamage(damageTable)
-
-                local pfx = ParticleManager:CreateParticle(self.pfx_name[DOTA_TEAM_GOODGUYS].reflect, PATTACH_ABSORIGIN_FOLLOW, self.parent)
-                ParticleManager:SetParticleControl(pfx, 0, self.parent:GetAbsOrigin())
-                ParticleManager:SetParticleControlEnt(pfx, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
-                -- ParticleManager:SetParticleControl(pfx, 1, enemy:GetAbsOrigin())
-                ParticleManager:ReleaseParticleIndex(pfx)
-
-                -- EmitSoundOnClient("Miniboss.Tormenter.Reflect", enemy)
-                enemy:EmitSound("Miniboss.Tormenter.Reflect")
-            end
-        end
-
-        -- Always affect the attacker, doesn't matter where it is
-        damageTable.victim = attacker
-        damageTable.damage = reflectedDamage
-
-        if attacker:IsIllusion() then
-            damageTable.damage = reflectedDamage * self.illusion_damage_pct / 100
-        end
-
-        ApplyDamage(damageTable)
-
-        local pfx = ParticleManager:CreateParticle(self.pfx_name[DOTA_TEAM_GOODGUYS].reflect, PATTACH_ABSORIGIN_FOLLOW, self.parent)
-        ParticleManager:SetParticleControl(pfx, 0, self.parent:GetAbsOrigin())
-        ParticleManager:SetParticleControlEnt(pfx, 1, attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", attacker:GetAbsOrigin(), true)
-        -- ParticleManager:SetParticleControl(pfx, 1, attacker:GetAbsOrigin())
-        ParticleManager:ReleaseParticleIndex(pfx)
-
-        -- EmitSoundOnClient("Miniboss.Tormenter.Reflect", attacker)
-        attacker:EmitSound("Miniboss.Tormenter.Reflect")
-    end,
-})
-
+	self.reflecting = true
+	pcall(ApplyDamage, {
+		victim = attacker,
+		attacker = caster,
+		ability = self,
+		damage = amount,
+		damage_type = DAMAGE_TYPE_PURE,
+		damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_REFLECTION,
+	})
+	self.reflecting = false
+end

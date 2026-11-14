@@ -22,6 +22,6 @@ function ability:OnSpellStart()
 
 	caster:EmitSound("Boss_Keymaster.Interception.Cast")
 
-	ParticleManager:CreateParticle( "particles/econ/events/fall_major_2015/teleport_start_fallmjr_2015_l_flash.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster )
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle( "particles/econ/events/fall_major_2015/teleport_start_fallmjr_2015_l_flash.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster ))
 end
 

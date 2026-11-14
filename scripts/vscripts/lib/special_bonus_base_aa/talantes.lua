@@ -53,13 +53,27 @@ modifier_talant_stat_refresher = class({
 
 		if not parent or parent:IsNull() then return end
 
+		-- CalculateStatBonus(true) - полный пересчёт статов с сетевым апдейтом.
+		-- Зовём его, только если значение какого-то таланта реально сменилось:
+		-- у героя без таких талантов и при неизменных статах он раньше всё
+		-- равно шёл 10 раз в секунду, а результат был тот же.
+		local changed = false
+
 		for _, mod in pairs(parent:FindAllModifiers()) do
 			if RECOMPUTE_MODIFIERS[mod:GetName()] then
+				local v, s, a, i = mod.value, mod.str, mod.agi, mod.int
+
 				mod:Recompute()
+
+				if mod.value ~= v or mod.str ~= s or mod.agi ~= a or mod.int ~= i then
+					changed = true
+				end
 			end
 		end
 
-		parent:CalculateStatBonus(true)
+		if changed then
+			parent:CalculateStatBonus(true)
+		end
 	end,
 })
 
@@ -462,7 +476,7 @@ function modifier_crit:LegitimateAttack(params)
       return false
   end
 end
-modifier_bat = class({
+modifier_bat_fixed_rate_aa = class({
   IsHidden = function (self) return true end,
   DeclareFunctions = function (self) return {
     MODIFIER_PROPERTY_FIXED_ATTACK_RATE,

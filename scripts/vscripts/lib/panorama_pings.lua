@@ -89,6 +89,28 @@ function PanoramaPingManager:PingLocation(team, anchor, pos)
 	ParticleManager:ReleaseParticleIndex(fx)
 end
 
+-- Пинг одной точки обеим командам со звуком - для событий карты (босса
+-- атакуют). Якорь берём с конца списка: там постройки и фонтан, а пинги рун
+-- разбирают якоря с начала (героев), так что друг друга они не затирают.
+function PanoramaPingManager:PingForAll(pos)
+	for _, team in ipairs({ DOTA_TEAM_GOODGUYS, DOTA_TEAM_BADGUYS }) do
+		local anchors = CollectAnchors(team)
+		local anchor = anchors[#anchors]
+
+		if anchor then
+			self:PingLocation(team, anchor, pos)
+		end
+
+		TeamHelper:ApplyForPlayers(team, function(pid)
+			local listener = PlayerResource:GetPlayer(pid)
+
+			if listener then
+				EmitSoundOnClient(PING_SOUND, listener)
+			end
+		end)
+	end
+end
+
 -- Alt-клик по кружку руны под таймером (panorama/scripts/custom_game/rune_timers.js):
 -- пишем команде, через сколько руна, и пингуем её точки. Баунти и мудрость падают
 -- в одни и те же места, у усиления свои спавнеры - всё это знает lib/bounty.lua.

@@ -8,6 +8,8 @@ function BaseClass:GetIntrinsicModifierName()
 end
 
 
+-- Стаки = бонус к урону атаки. Дробные части копятся в self.debt,
+-- в стаки уходит только целая часть, чтобы мелкие удары не терялись.
 satan_blood_debt_counter = class({
 	IsHidden                = function(self) return false end,
 	IsPurgable              = function(self) return false end,
@@ -20,13 +22,14 @@ satan_blood_debt_counter = class({
 	}end,
 })
 
+local THINK_INTERVAL = 0.1
+
 function satan_blood_debt_counter:CacheValues()
 	local ability = self:GetAbility()
 
 	if not ability then return end
 
 	self.debt_pct         = ability:GetSpecialValueFor("debt_pct")
-	self.debt_per_damage  = ability:GetSpecialValueFor("debt_per_damage")
 	self.max_bonus_damage = ability:GetSpecialValueFor("max_bonus_damage")
 	self.decay_per_second = ability:GetSpecialValueFor("decay_per_second")
 	self.decay_delay      = ability:GetSpecialValueFor("decay_delay")
@@ -36,9 +39,10 @@ function satan_blood_debt_counter:OnCreated()
 	self:CacheValues()
 
 	if IsServer() then
+		self.debt = 0
 		self:SetStackCount(0)
 		self.last_damage_time = GameRules:GetGameTime()
-		self:StartIntervalThink(0.1)  -- Проверяем затухание каждые 0.1 сек
+		self:StartIntervalThink(THINK_INTERVAL)
 	end
 end
 
@@ -51,56 +55,40 @@ function satan_blood_debt_counter:OnUpgrade()
 end
 
 if IsServer() then
-	function satan_blood_debt_counter:OnIntervalThink()
-		local caster = self:GetCaster()
-		local current_stack = self:GetStackCount()
+	function satan_blood_debt_counter:SetDebt(value)
+		self.debt = math.max(0, math.min(value, self.max_bonus_damage))
 
-		if not self.debt_pct then self:CacheValues() end
-		if not self.decay_per_second then return end
-
-		if caster:PassivesDisabled() or not caster:IsAlive() then
-			return
+		local stacks = math.floor(self.debt)
+		if stacks ~= self:GetStackCount() then
+			self:SetStackCount(stacks)
 		end
+	end
 
-		local time_since_damage = GameRules:GetGameTime() - (self.last_damage_time or GameRules:GetGameTime())
+	function satan_blood_debt_counter:OnIntervalThink()
+		if not self.decay_per_second then self:CacheValues() end
+		if not self.decay_per_second or self.debt <= 0 then return end
 
-		if time_since_damage >= self.decay_delay then
-			-- Долг тает
-			local decay_amount = self.decay_per_second * 0.1  -- 0.1 сек интервал
-			local new_stack = math.max(0, current_stack - decay_amount)
-
-			if math.floor(new_stack) ~= current_stack then
-				self:SetStackCount(math.floor(new_stack))
-			end
+		if GameRules:GetGameTime() - self.last_damage_time >= self.decay_delay then
+			self:SetDebt(self.debt - self.decay_per_second * THINK_INTERVAL)
 		end
 	end
 
 	function satan_blood_debt_counter:OnTakeDamage(params)
-		if params.unit ~= self:GetParent() then return end
-
-		local damage = params.damage
-		local current_time = GameRules:GetGameTime()
-		self.last_damage_time = current_time
+		local parent = self:GetParent()
+		if params.unit ~= parent then return end
+		if parent:PassivesDisabled() or parent:IsIllusion() then return end
+		if params.damage <= 0 then return end
 
 		if not self.debt_pct then self:CacheValues() end
 		if not self.debt_pct then return end
 
-		local debt_add = damage * self.debt_pct / 100
-		local new_stack = self:GetStackCount() + debt_add
-
-		self:SetStackCount(math.floor(new_stack))
+		self.last_damage_time = GameRules:GetGameTime()
+		self:SetDebt(self.debt + params.damage * self.debt_pct / 100)
 	end
 end
 
 function satan_blood_debt_counter:GetModifierPreAttack_BonusDamage()
-	local caster = self:GetCaster()
+	if self:GetParent():PassivesDisabled() then return 0 end
 
-	if caster:PassivesDisabled() then return 0 end
-	if not self.debt_per_damage or not self.max_bonus_damage then return 0 end
-
-	local debt = self:GetStackCount()
-	local bonus = (debt / self.debt_per_damage)
-	bonus = math.min(bonus, self.max_bonus_damage)
-
-	return bonus
+	return self:GetStackCount()
 end

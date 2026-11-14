@@ -50,7 +50,10 @@
 	}
 	"item_overwhelming_blink"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blinks"
+		"AbilityTextureName"			"item_overwhelming_blink"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -75,6 +78,7 @@
 		{
 			"blink_range"			"1200"
 			"blink_damage_cooldown"	"3.0"
+			"overshoot_range_pct"		"20"
 			"blink_range_clamp"		"900 1000"
 			"bonus_strength"		"25 70"
 			"radius"		
@@ -92,7 +96,9 @@
 	}
 	"item_overwhelming_blink_2"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blinks"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -102,7 +108,6 @@
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"blink"
 		"ItemBaseLevel"					"2"
-		"BaseClass"						"item_overwhelming_blink"
 		"AbilityTextureName"			"overwhelming_blink3"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -120,6 +125,9 @@
 		{
 			"blink_range"			"1200"
 			"blink_damage_cooldown"	"3.0"
+			"overshoot_range_pct"		"20"
+			"damaged_range_div"		"6"
+			"second_wave_delay"		"2"
 			"blink_range_clamp"		"900 1000"
 			"bonus_strength"		"25 70"
 			"radius"		
@@ -137,7 +145,10 @@
 	}
 	"item_swift_blink"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_swift_blink"
+		"ScriptFile"					"items/item_blinks"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -163,16 +174,20 @@
 		{
 				"blink_range"			"1200 1200"
 				"blink_damage_cooldown"	"3.0 3.0"
+				"overshoot_range_pct"		"20"
 				"blink_range_clamp"		"900 1000"
 				"bonus_agility"			"25 75"
 				"bonus_movement"		"40 60"
 				"bonus_agi_active"		"35 100"
 				"duration"				"6 7"
+				"bat_reduction"		"0"	// у обычного Swift снижения BAT нет
 		}
 	}
 	"item_swift_blink_2"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blinks"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -181,7 +196,6 @@
 		"AbilityCooldown"				"15.0"
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"blink"
-		"BaseClass"						"item_swift_blink"
 		"ItemBaseLevel"					"2"
 		"AbilityTextureName"			"swift_blink3"
 		// Item Info
@@ -199,18 +213,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"blink_range"			"1200 1200"
-				"blink_damage_cooldown"	"3.0 3.0"
+				"blink_range"			"1200"
+				"blink_damage_cooldown"	"3.0"
+				"overshoot_range_pct"		"20"
+			"damaged_range_div"		"6"
 				"blink_range_clamp"		"900 1000"
 				"bonus_agility"			"25 75"
 				"bonus_movement"		"40 60"
 				"bonus_agi_active"		"35 100"
 				"duration"				"6 7"
+				"bat_reduction"		"0 0.4"	// улучшенный Swift: -0.4 к базовому времени атаки под эффектом
 		}
 	}
 	"item_arcane_blink"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"item_arcane_blink"
+		"ScriptFile"					"items/item_blinks"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -236,6 +256,7 @@
 		{
 				"blink_range"				"1400 1600"
 				"blink_damage_cooldown"		"3.0 1.5"
+				"overshoot_range_pct"		"20"
 				"blink_range_clamp"			"1200 1400"
 				"bonus_intellect"			"25 100"
 				"duration"					"0"
@@ -246,7 +267,9 @@
 	}
 	"item_arcane_blink_2"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blinks"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -256,7 +279,6 @@
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"blink"
 		"ItemBaseLevel"					"2"
-		"BaseClass"						"item_arcane_blink"
 		"AbilityTextureName"			"arcane_blink3"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -275,12 +297,40 @@
 		{
 				"blink_range"				"1400 1600"
 				"blink_damage_cooldown"		"3.0 1.5"
+				"overshoot_range_pct"		"20"
+			"damaged_range_div"		"6"
+			"heal_pct"		"10"
+			"heal_pct_damaged"		"5"
 				"blink_range_clamp"			"1200 1400"
 				"bonus_intellect"			"25 100"
 				"duration"					"0"
 				"debuff_amp"				"0"
 				"heal_amount"			"200 500"
 				"mana_amount"			"100 250"
+		}
+	}
+	//=================================================================================================================
+	// Blink Dagger. Свой Lua (items/item_blinks): после урона от героя не
+	// блокируется, а прыгает на damaged_range_pct процентов дальности.
+	//=================================================================================================================
+	"item_blink"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blinks"
+		"AbilityTextureName"			"item_blink"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"blink"
+
+		"AbilityValues"
+		{
+			"blink_range"				"1200"
+			"blink_damage_cooldown"		"3.0"
+			"overshoot_range_pct"			"20"
 		}
 	}
 }

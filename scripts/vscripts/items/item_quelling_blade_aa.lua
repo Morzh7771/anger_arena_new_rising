@@ -19,7 +19,11 @@ function modifier_item_quelling_blade_aa:IsHidden()					return true end
 function modifier_item_quelling_blade_aa:OnCreated()
 	self.quelling_bonus_const					= self:GetAbility():GetSpecialValueFor("quelling_bonus")
 	self.quelling_bonus_ranged_coef				= self:GetAbility():GetSpecialValueFor("quelling_bonus_ranged_coef") / 100
-	self.quelling_bonus_pct						= self:GetCaster():GetAverageTrueAttackDamage(self:GetParent()) * self:GetAbility():GetSpecialValueFor("quelling_bonus_pct") / 100
+	-- GetAverageTrueAttackDamage есть только на сервере: на клиенте падало с "a nil value".
+	-- Бонус всё равно считается только на сервере (GetModifierProcAttack_BonusDamage_Physical).
+	local caster = self:GetCaster()
+	local avg = (IsServer() and caster and caster.GetAverageTrueAttackDamage) and caster:GetAverageTrueAttackDamage(self:GetParent()) or 0
+	self.quelling_bonus_pct						= avg * self:GetAbility():GetSpecialValueFor("quelling_bonus_pct") / 100
 	self.quelling_bonus_summ					= self.quelling_bonus_const + self.quelling_bonus_pct
 
 	if IsServer() then

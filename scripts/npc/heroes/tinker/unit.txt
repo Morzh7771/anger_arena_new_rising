@@ -1,0 +1,181 @@
+// Юниты героя. Юниты, которые есть в актуальной доте, - ванильные определения из
+// game/dota/pak01_dir.vpk (старая копия ломала суммонов). Уровни сверх дотовских
+// и свои юниты мода - наши, наследуют ванильные через include_keys_from.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
+"DOTAUnits"
+{
+	"npc_dota_tinker_turret1"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_tinker_turret"	// Class of entity of link to.
+		"Model"						"models/heroes/tinker/tinker_turret.vmdl"	// Model.
+		"SoundSet"					"Hero_TinkerTurret"					// Name of sound set.
+		"Level"						"1"
+		"ModelScale" 				"0.65"
+		"SelectionGroup"			"Tinker_Turrets"
+		"UnitLabel"				"tinkerturrets"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"0"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"50"			// Damage range min.
+		"AttackDamageMax"			"50"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.66"		// Speed of attack.
+		"AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
+		"AttackRange"				"1200"		// NOTE: This is overriden by the ability
+		"ProjectileModel"			"" // Particle system model for projectile.
+		"ProjectileSpeed"			"1000"		// Speed of projectile.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"170"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0.55"		// Turning rate.
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"5"		// Experience earn.
+		"BountyGoldMin"				"5"		// Gold earned min.
+		"BountyGoldMax"				"5"		// Gold earned max.
+
+			// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"100"		// NOTE: This is overriden by the ability
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"700"		// Range of vision during day light.
+		"VisionNighttimeRange"		"700"		// Range of vision at night time.
+
+		//Inventory
+		"HasInventory"				"0"
+	}
+
+	"npc_dota_tinker_turret2"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"include_keys_from" "npc_dota_tinker_turret1"
+
+		// General
+		//----------------------------------------------------------------
+		"Level"						"2"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"100"		// Damage range min.
+		"AttackDamageMax"			"100"		// Damage range max.
+
+		"BountyXP"					"10"		// Experience earn.
+		"BountyGoldMin"				"10"		// Gold earned min.
+		"BountyGoldMax"				"10"		// Gold earned max.
+	}
+
+	"npc_dota_tinker_turret3"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"include_keys_from" "npc_dota_tinker_turret1"
+
+		// General
+		//----------------------------------------------------------------
+		"Level"						"3"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"150"		// Damage range min.
+		"AttackDamageMax"			"150"		// Damage range max.
+		
+		"BountyXP"					"15"		// Experience earn.
+		"BountyGoldMin"				"15"		// Gold earned min.
+		"BountyGoldMax"				"15"		// Gold earned max.
+	}
+
+	"npc_dota_tinker_turret4"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"include_keys_from" "npc_dota_tinker_turret1"
+
+		// General
+		//----------------------------------------------------------------
+		"Level"						"4"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackDamageMin"			"200"		// Damage range min.
+		"AttackDamageMax"			"200"		// Damage range max.
+
+		
+		"BountyXP"					"20"		// Experience earn.
+		"BountyGoldMin"				"20"		// Gold earned min.
+		"BountyGoldMax"				"20"		// Gold earned max.
+	}
+
+	"npc_dota_tinker_turret5"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"include_keys_from"	"npc_dota_tinker_turret1"
+		// добавлено: продолжение шага уровней 3->4
+		"Level"		"5"
+		"AttackDamageMin"		"250"
+		"AttackDamageMax"		"250"
+		"BountyXP"		"25"
+		"BountyGoldMin"		"25"
+		"BountyGoldMax"		"25"
+	}
+
+	"npc_dota_tinker_turret6"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"include_keys_from"	"npc_dota_tinker_turret1"
+		// добавлено: продолжение шага уровней 3->4
+		"Level"		"6"
+		"AttackDamageMin"		"300"
+		"AttackDamageMax"		"300"
+		"BountyXP"		"30"
+		"BountyGoldMin"		"30"
+		"BountyGoldMax"		"30"
+	}
+
+	"npc_dota_tinker_turret7"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"include_keys_from"	"npc_dota_tinker_turret1"
+		// добавлено: продолжение шага уровней 3->4
+		"Level"		"7"
+		"AttackDamageMin"		"350"
+		"AttackDamageMax"		"350"
+		"BountyXP"		"35"
+		"BountyGoldMin"		"35"
+		"BountyGoldMax"		"35"
+	}
+
+}

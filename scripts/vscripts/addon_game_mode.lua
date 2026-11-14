@@ -16,7 +16,30 @@ if not rawget(_G, "debug") then
     }
 end
 
+-- Поиск просадки FPS: если есть scripts/vscripts/aa_safe_mode.lua (в мастерскую
+-- не заливать), перечисленные в нём модули не грузятся вовсе. Файл возвращает
+-- таблицу { ["lib/cosmetics/core"] = true, ... } или true - пропустить все новые.
+local AA_SKIP = nil
+do
+    local okSkip, skip = pcall(require, "aa_safe_mode")
+    if okSkip and skip then
+        AA_SKIP = (skip == true) and {
+            ["lib/match_tracker"] = true, ["lib/match_telemetry"] = true,
+            ["lib/lobby_leader"] = true, ["lib/admin_panel"] = true,
+            ["lib/cosmetics/core"] = true, ["lib/cosmetics/social"] = true,
+            ["lib/cosmetics/caster"] = true, ["lib/damage_log"] = true,
+            ["lib/perf_toggle"] = true, ["precache_cosmetics"] = true,
+        } or skip
+        print("[AA] SAFE MODE: новые модули отключены")
+    end
+end
+_G.AA_SKIP = AA_SKIP
+
 local function safe_require(name)
+    if AA_SKIP and AA_SKIP[name] then
+        print("[AA] safe mode, пропущен:", name)
+        return nil
+    end
     local ok, res = xpcall(function()
         return require(name)
     end, function(msg)
@@ -36,9 +59,28 @@ local function safe_require(name)
     return res
 end
 
+-- защита ивентов панорамы - первой: оборачивает RegisterListener, а слушатели,
+-- зарегистрированные раньше неё, остаются без защиты
+safe_require('lib/events_protector')
+
+-- ивент при подключении игрока (OnPlayerConnected) уходит раньше, чем его
+-- интерфейс получил ключ, и выбрасывается - повторяем после рукопожатия
+if RegisterLoadListener then
+	RegisterLoadListener(function(player)
+		CustomGameEventManager:Send_ServerToPlayer(player, "MakeNeutralItemsInShopColored", {})
+	end)
+end
+
 safe_require('tp_s')
 safe_require('lib/utils')
+-- статистика для финального экрана; хуки ниже по файлу и в системах мода
+safe_require('lib/end_game_stats')
 safe_require('lib/teleport')
+-- бесплатный свиток телепортации на смерть, как в доте
+safe_require('lib/stick_self_charge')
+safe_require('lib/summon_power')
+safe_require('lib/urn_charges')
+safe_require('lib/stats_tooltip')
 safe_require('lib/duel/duel_controller')
 safe_require('lib/gpm_lib')
 safe_require('lib/percent_damage')
@@ -63,7 +105,40 @@ safe_require('lib/game_ender')
 safe_require('lib/repick_menu')
 safe_require('lib/tip_manager')
 safe_require('lib/special_bonus_base_aa/Special_bonus_base_aa')
---safe_require('lib/events_protector')
+safe_require('lib/diag_log')
+safe_require('lib/item_precache')
+safe_require('lib/team_gold_share')
+safe_require('lib/hero_kill_bounty')
+safe_require('lib/kill_feed')
+safe_require('lib/ping_modifiers') -- alt-клик по баффу -> чат команды (lib/ping_modifiers.lua)
+safe_require('lib/channel_bar')
+safe_require('lib/match_tracker') -- телеметрия матча, только наблюдение (lib/match_tracker.lua)
+safe_require('lib/match_telemetry') -- события сверх трекера: дуэль, нейтралки, золото по источникам (lib/match_telemetry.lua)
+-- лидер лобби на выборе команд, когда хоста нет (lib/lobby_leader.lua)
+safe_require('lib/lobby_leader')
+safe_require('lib/admin_panel')
+-- премиум-косметика: состояние, экипировка, эффекты (lib/cosmetics/core.lua)
+safe_require('lib/cosmetics/core')
+-- социальная косметика: колесо фраз, смайлики, спреи, хай-файвы (SOCIAL_CATALOG в lib/cosmetics/social_catalog.lua)
+safe_require('lib/cosmetics/social')
+-- косметические умения: невидимый юнит-кастер с ванильными сезонными способностями,
+-- граффити и "Дай пять" (lib/cosmetics/caster.lua)
+safe_require('lib/cosmetics/caster')
+-- косметика на событиях: уровень, фонтан, скин героя, снаряд, мультикиллы, победа в дуэли
+safe_require('lib/cosmetics/events_fx')
+-- прогресс: пасс, осколки, сундуки, задания (бэкенд progression.py)
+safe_require('lib/progression')
+-- таблица рейтинга для меню (бэкенд leaderboard_api.py)
+safe_require('lib/leaderboard')
+-- свой выбор героя: премиум-пик -> баны -> общий пик
+safe_require('lib/pick_stages')
+-- бронь зон фарма на стадии стратегии (lib/farm_claims.lua, panorama strategy_farm.js)
+safe_require('lib/farm_claims')
+-- премиум: точное время респавна боссов по Alt
+safe_require('lib/boss_timers_premium')
+-- замер FPS: консольная команда aa_perf (lib/perf_toggle.lua)
+safe_require('lib/perf_toggle')
+safe_require('lib/damage_log') -- журнал урона премиум-игрокам (lib/damage_log.lua)
 
 function CEntityInstance:SetNetworkableEntityInfo(key, value)
     local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
@@ -130,11 +205,27 @@ function Precache(context)
         -- lib/spawners/camp_respawn_ring)
         "particles/capture_point_ring",
         "particles/capture_points",
+        "particles/camp_respawn",
     }
 
     for _, folder in ipairs(PARTICLE_FOLDERS_AT_LOAD) do
         PrecacheResource("particle_folder", folder, context)
     end
+
+    -- Отдельные партиклы у того, что выдаётся через AddAbility посреди игры:
+    -- Precache таких способностей движок не зовёт. Кольцо портала у
+    -- mid_teleport иначе было "invalid particle definition".
+    PrecacheResource("particle", "particles/portal_ring.vpcf", context)
+
+    -- Свиток телепортации. Предмет движковый, но папка particles/items2_fx в
+    -- список выше не входит (грузить её целиком нельзя - лимит ресурсов), и без
+    -- этих строк телепорт шёл вообще без эффектов: ни круга под героем, ни
+    -- силуэта на точке прибытия.
+    PrecacheResource("particle", "particles/items2_fx/teleport_start.vpcf", context)
+    PrecacheResource("particle", "particles/items2_fx/teleport_end.vpcf", context)
+    -- третий эффект свитка: имена всех трёх взяты прямо из server.dll, это
+    -- ровно то, что создаёт движковый item_tpscroll
+    PrecacheResource("particle", "particles/items2_fx/teleport_origin.vpcf", context)
 
     -- Партиклы и модели, на которые ссылается только lua: смена модели через
     -- MODIFIER_PROPERTY_MODEL_CHANGE/SetModel, econ-эффекты и партиклы чужих героев.
@@ -205,6 +296,7 @@ function Precache(context)
         npc_aa_minimap_icon_camp_mid = true,
         npc_aa_minimap_icon_camp_ancient = true,
         npc_aa_minimap_icon_death = true,
+        npc_aa_minimap_icon_boss = true,
         -- круг захвата руны, lib/capture_points
         npc_aa_capture_point = true,
     }
@@ -225,6 +317,22 @@ function Precache(context)
 
     -- Остальное
     DuelController:Precache(context)
+
+    -- партиклы и модели премиум-косметики (lib/cosmetics/catalog.lua), не через safe_require
+    -- премиум-косметика НЕ прекешится на карте: каталог грузится по запросу (lib/cosmetics/precache.lua,
+    -- юниты npc_aa_cos_<id> в npc/cosmetic_precache_units.txt). Иначе FPS падал вдвое.
+
+    -- партиклы спреев и хай-файвов (lib/cosmetics/social.lua), не через safe_require
+    local okSoc, socErr = pcall(function()
+        if AA_SKIP and AA_SKIP["precache_cosmetics"] then return end
+        -- грузятся по требованию: юниты npc_aa_cos_<id> надетых спрея и хай-файва
+        do return end
+        CosmeticsSocial:Precache(context)
+    end)
+
+    if not okSoc then print("[AA] social cosmetics precache failed:", tostring(socErr)) end
+
+    -- косметика грузится по требованию (lib/cosmetics/precache.lua)
     PrecacheResource("soundfile", "soundevents/game_sounds.vsndevts", context)
     PrecacheResource("soundfile", "soundevents/game_sounds_items.vsndevts", context)
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts", context)
@@ -232,6 +340,19 @@ function Precache(context)
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context)
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context)
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context)
+    -- звуки кругов захвата рун, lib/capture_points
+    PrecacheResource("soundfile", "soundevents/aa_capture_points.vsndevts", context)
+    -- алерты: рёв рошана на атаку босса; звуки дуэли легионки на старт и победу
+    PrecacheResource("soundfile", "soundevents/aa_alerts.vsndevts", context)
+    -- свои звуки колеса фраз (sounds/aa_wheel, build_wheel_sounds.js); пустой файл тоже ок
+    PrecacheResource("soundfile", "soundevents/aa_wheel.vsndevts", context)
+    -- фразы колеса из 1x6 (gen_wheel_x6.js): ванильный soundboard и фан-контент + свои mp3 1x6
+    PrecacheResource("soundfile", "soundevents/aa_wheel_x6.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts", context)
+    -- крики боссов "атакуют" (lib/boss/boss_class ATTACK_ALERT_SOUNDS): это
+    -- геройские звуки, без прекеша они молчат, если этих героев нет в матче
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts", context)
 	
 
 	-- PrecacheResource("particle", "particles/items2_fx/teleport_end.vpcf", context)
@@ -304,12 +425,18 @@ KILL_LIMIT = 80
 
 GOLD_FOR_COUR = 350
 
+-- Сколько золота держим в дотовском кошельке. Всё сверх уходит в запас
+-- (SaveGoldForPlayerId), иначе упрёмся в дотовский потолок 99999; игрок
+-- видит кошелёк + запас через нет-таблицу gold.
+local GOLD_WALLET_LIMIT = 50000
+
 local teleport_range = 350
 
 _G.Kills = {}
 _G.KILL_LIMIT = KILL_LIMIT
 
 RESPAWN_MODIFER = 0.135
+SUMMON_MINUTE_SCALING = false -- старый скейл суммонов от минуты (creeps/armor_table_summon)
 function Activate()
 	print("[AA] Activate() called")
 	GameRules.AngelArena = AngelArena()
@@ -397,12 +524,22 @@ function BackPlayersToMap()
 	end
 end
 function AngelArena:InitGameMode()
+	-- диагностика змеек Расты: какие юниты змеек движок знает
+	for i = 1, 7 do
+		local kv = GetUnitKeyValuesByName and GetUnitKeyValuesByName("npc_dota_shadow_shaman_ward_" .. i)
+		print("[AA.wards] npc_dota_shadow_shaman_ward_" .. i .. ": " .. (kv and "есть" or "НЕТ"))
+	end
 	for _, moduleName in pairs(postsafe_requireList) do
 		safe_require(moduleName)
 	end
 	local GameMode = GameRules:GetGameModeEntity()
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 100)
 	GameRules:SetCustomVictoryMessage("#aa_on_win_message")
+
+	-- Ванильный баннер победы (большой зелёный текст с частицами) иначе висит
+	-- поверх итогового экрана и перекрывает таблицу. Даём ему отыграть
+	-- появление и убираем - заголовок победы есть и на самом итоговом экране.
+	GameRules:SetCustomVictoryMessageDuration(3)
 
 
 	BossSpawner:Init()
@@ -418,6 +555,9 @@ function AngelArena:InitGameMode()
 
 	-- безумруды с зачищенных кемпов + гейт тиров нейтралок по дуэлям
 	MadstoneSystem:Init()
+
+	-- книги с зажатым Shift применяются сразу после покупки
+	ShiftBuy:Init()
 	if GameRules:IsCheatMode()then
 		cheat = true
 	end
@@ -433,18 +573,18 @@ function AngelArena:InitGameMode()
 	GameMode:SetStashPurchasingDisabled(false)
 	GameMode:SetLoseGoldOnDeath(true)
 	GameRules:GetGameModeEntity():SetFriendlyBuildingMoveToEnabled(true);
+	-- 2026-11-12: выбор героя ванильный (баны -> общий пик). Премиум-стадия перед банами -
+	-- lib/pick_stages.lua: если в лобби есть премиум, она удлиняет стадию банов (P:PlanBanTime).
+	GameRules:SetCustomGameBansPerTeam( 5 )
+	GameRules:SetHeroSelectionTime(90)
+	GameRules:SetPreGameTime(60)
 	if GameRules:IsCheatMode() then
-		GameRules:SetHeroSelectionTime(90)
 		GameRules:SetStrategyTime(1)
 		GameMode:SetDraftingHeroPickSelectTimeOverride(25)
 		GameMode:SetDraftingBanningTimeOverride(0)
-		GameRules:SetPreGameTime(60)
 	else
-		GameRules:SetCustomGameBansPerTeam( 5 )
-		GameMode:SetDraftingBanningTimeOverride(20)
-		GameRules:SetHeroSelectionTime(90)
+		GameMode:SetDraftingBanningTimeOverride(AAPICK_BAN_TIME or 20)
 		GameMode:SetDraftingHeroPickSelectTimeOverride(60)
-		GameRules:SetPreGameTime(60)
 	end
 	--GameRules:SetSameHeroSelectionEnabled(true)
 	GameRules:SetGoldPerTick(GOLD_PER_TICK)
@@ -463,6 +603,9 @@ function AngelArena:InitGameMode()
 	GameRules:SetStartingGold(750)
 
 	GameRules:SetUseUniversalShopMode(true)
+
+	-- свиток телепортации ванильный (item_tpscroll), поэтому слот телепорта,
+	-- прицел и выдача свитка на смерть работают движком, без наших правок
 
 
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap( AngelArena, "OnNPCSpawned" ), self )
@@ -494,9 +637,13 @@ function AngelArena:InitGameMode()
 	LinkLuaModifier('modifier_bat', 'modifiers/modifier_bat', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_dissapear", 'modifiers/modifier_dissapear', LUA_MODIFIER_MOTION_NONE)
 
+	-- телеметрия: обёртки фильтров золота и урона ставим до регистрации (lib/match_tracker.lua)
+	if MatchTracker then pcall(MatchTracker.WrapFilters, MatchTracker, AngelArena) end
+
 	GameMode:SetDamageFilter(Safe_Wrap(AngelArena, "DamageFilter"), self)
 	GameMode:SetRuneSpawnFilter(Safe_Wrap(AngelArena, "ModifierRuneSpawn"), self)
 	GameMode:SetModifyGoldFilter(Safe_Wrap(AngelArena, "GoldFilter"), self)
+	GameMode:SetModifyExperienceFilter(Safe_Wrap(AngelArena, "ExperienceFilter"), self)
 	-- AttributeDerivedStats
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT, 0)
 	--GameMode:SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT, 0)
@@ -541,6 +688,8 @@ function AngelArena:ModifierRuneSpawn(keys)
 	-- Отсюда это читает lib/bounty.lua и кладёт в нет-таблицу rune_timers,
 	-- по которой панорама рисует кружки под таймером.
 	_G.NEXT_POWER_RUNE_TIME = Dotatime + 120
+	-- сразу в нет-таблицу: раньше кружок ждал следующей публикации баунти и показывал старое время
+	if Bounty and Bounty.PublishTimers then pcall(Bounty.PublishTimers, Bounty) end
 
 	-- Заодно запоминаем сам спавнер: по нему alt-клик по кружку руны усиления
 	-- ставит пинги (lib/bounty.lua -> lib/panorama_pings.lua). До первой руны
@@ -557,15 +706,21 @@ end
 function AngelArena:OnRuneActivate(event)
 	local runeid = event.rune
 	local playerid = event.PlayerID
+
+	EndGameStats:OnRune(playerid, runeid)
 	local hero = PlayerResource:GetPlayer(playerid):GetAssignedHero()
 
 	if not hero then return end
 
 	if runeid == DOTA_RUNE_BOUNTY then
-		local cur_min = GameRules:GetGameTime() / 60
+		-- игровые часы, а не время с запуска сервера: GetGameTime включал загрузку
+		-- и пик, и руна на 2-й минуте давала по 1500
+		local cur_min = math.max(0, GameRules:GetDOTATime(false, false)) / 60
 
 		local item_mod_table = {
 			{ "item_hand_of_midas",  40 + 18 * cur_min },
+			-- мидас из нашего магазина (ванильный item_hand_of_midas выключен, бонус раньше не работал)
+			{ "item_midas_aa",       40 + 18 * cur_min },
 			{ "item_advanced_midas", 60 + 27 * cur_min }
 		}
 
@@ -593,16 +748,29 @@ function AngelArena:OnRuneActivate(event)
 
 		local team = hero:GetTeamNumber()
 
-		TeamHelper:ApplyForHeroes(team, function(playerid, unit)
-			unit:ModifyGold(CalcBountyGold( unit ), false, 0)
-			SendOverheadEventMessage(unit, OVERHEAD_ALERT_GOLD, unit, CalcBountyGold( unit ),nil)
+		TeamHelper:ApplyForHeroes(team, function(pid, unit)
+			local gold = CalcBountyGold( unit )
+			local before = unit:GetGold()
+			local _ = (AATagGold or function(_, f) f() end)("rune", function() unit:ModifyGold(gold, false, 0) end)
+			-- диагностика руны: сколько начислили и сколько реально пришло
+			print(string.format("[AA.rune] bounty %s: min=%.2f game_time=%.1f gold=%d got=%d",
+				unit:GetUnitName(), cur_min, GameRules:GetGameTime(), gold, unit:GetGold() - before))
+			SendOverheadEventMessage(unit, OVERHEAD_ALERT_GOLD, unit, gold,nil)
 		end)
+
+		-- в фиде, как в доте, только база "+N всем героям", без бонусов мидаса и алхимика
+		if KillFeed then KillFeed:Rune("bounty", playerid, team, gold_without_mods) end
 	end
 	if runeid == DOTA_RUNE_XP then
-		local cur_min = GameRules:GetGameTime() / 60
+		-- игровые часы, а не время с запуска сервера: GetGameTime включал загрузку
+		-- и пик, и руна на 2-й минуте давала по 1500
+		local cur_min = math.max(0, GameRules:GetDOTATime(false, false)) / 60
 
 		local item_mod_table = {
 			{"item_talisman_of_mastery", 20 * cur_min },
+			-- и всё, что из него собирается (talisman_of_heal.txt): раньше бонус терялся после апгрейда
+			{"item_talisman_of_heal", 20 * cur_min },
+			{"item_talisman_of_heal_2", 20 * cur_min },
 		}
 		local xp_without_mods = 70 + 18 * cur_min
 
@@ -622,10 +790,13 @@ function AngelArena:OnRuneActivate(event)
 
 		local team = hero:GetTeamNumber()
 
-		TeamHelper:ApplyForHeroes(team, function(playerid, unit)
-			unit:AddExperience(CalcWisdomXp( unit ), 0, true,true)
-			SendOverheadEventMessage(unit, OVERHEAD_ALERT_XP, unit, CalcWisdomXp( unit ),nil)
+		TeamHelper:ApplyForHeroes(team, function(pid, unit)
+			local xp = CalcWisdomXp( unit )
+			unit:AddExperience(xp, 0, true,true)
+			SendOverheadEventMessage(unit, OVERHEAD_ALERT_XP, unit, xp,nil)
 		end)
+
+		if KillFeed then KillFeed:Rune("wisdom", playerid, team, xp_without_mods) end
 	end
 	local item
 	for i = 0, 5 do
@@ -650,6 +821,8 @@ function AngelArena:OnPlayerDisconnect(event)
 end
 function AngelArena:OnAbandoned(arg)
 	local playerid = arg.playerid
+
+	if KillFeed then KillFeed:Abandon(playerid) end
 
 	local abaddonTeam = PlayerResource:GetTeam(playerid)
 	local heroTeam = nil
@@ -686,6 +859,7 @@ function AngelArena:OnAbandoned(arg)
 
 	GameMode:SetCustomDireScore( _G.Kills[DOTA_TEAM_BADGUYS] )
 	GameMode:SetCustomRadiantScore( _G.Kills[DOTA_TEAM_GOODGUYS] )
+	Attentions:SetTeamKills( _G.Kills[DOTA_TEAM_GOODGUYS], _G.Kills[DOTA_TEAM_BADGUYS] )
 end
 -- Evaluate the state of the game
 function AngelArena:OnThink()
@@ -698,25 +872,93 @@ function AngelArena:OnThink()
 end
 
 function AngelArena:OnConnectFull(event)
-	local entIndex = event.index + 1
-	local player = EntIndexToHScript(entIndex)
-	local playerID = player:GetPlayerID()
+	-- в player_connect_full есть PlayerID; сущность игрока по index+1 на этот
+	-- момент бывает ещё не создана (player = nil), тогда userid не запоминался
+	local playerID = event.PlayerID
+	if playerID == nil and event.index then
+		local player = EntIndexToHScript(event.index + 1)
+		if player and player.GetPlayerID then playerID = player:GetPlayerID() end
+	end
+	if playerID == nil or playerID < 0 then return end
 
 	CustomGameEventManager:Send_ServerToAllClients("MakeNeutralItemsInShopColored", {})
 	PlayerResource:OnPlayerConnected(playerID, event.userid)
 end
 function AngelArena:GoldFilter(event)
+	-- доля, которую богатый герой отдал тимейту: в золото команды она уже
+	-- попала один раз, когда её получил сам герой
+	if TeamGoldShare and TeamGoldShare._paying then
+		AngelArena:SaveGoldForPlayerId(event.player_id_const, event.gold)
+		return true
+	end
+
+	-- Золото за убийство героя платит только lib/hero_kill_bounty.lua по своим
+	-- формулам. Движковое (база героя, копейки ассистам, первая кровь)
+	-- выбрасываем; наши выплаты и камбэк идут под флагами.
+	if event.reason_const == DOTA_ModifyGold_HeroKill
+		and not (KillFeed and KillFeed.ourPayout)
+		and not (HeroKillBounty and HeroKillBounty.ourPayout)
+		and not (TeamGoldShare and TeamGoldShare._bypass)
+	then
+		return false
+	end
+
+	-- золото за убийство героя для своего килфида (lib/kill_feed.lua), до
+	-- командной делёжки: в фиде - сколько герой заработал убийством
+	if KillFeed then
+		KillFeed:OnGold(event.player_id_const, event.gold, event.reason_const, TeamGoldShare and TeamGoldShare._bypass)
+	end
+
 	ComebackSystem:OnGiveGold( event.player_id_const, event.gold, event.reliable, event.reason_const )
+
+	-- командная делёжка (lib/team_gold_share.lua); камбек и внутренние
+	-- переносы мода идут под TeamGoldShare._bypass и не делятся
+	if TeamGoldShare and not TeamGoldShare._bypass then
+		event.gold = TeamGoldShare:OnGold(event.player_id_const, event.gold, event.reason_const)
+	end
 	-- фильтр дёргается на каждый голд-тик и каждое убийство, так что обрабатываем
 	-- только того игрока, чьё золото изменилось, а не всех сразу
 	AngelArena:SaveGoldForPlayerId(event.player_id_const, event.gold)
 	return true
 end
+function AngelArena:ExperienceFilter(event)
+	-- опыт движковой руны мудрости для своего килфида (lib/kill_feed.lua)
+	if KillFeed then KillFeed:OnXp(event.player_id_const, event.experience, event.reason_const) end
+
+	-- опыт за убийство героя тоже только наш (lib/hero_kill_bounty.lua)
+	if event.reason_const == DOTA_ModifyXP_HeroKill and not (HeroKillBounty and HeroKillBounty.ourPayout) then
+		return false
+	end
+
+	return true
+end
 function AngelArena:OnPlayerBuyItem(event)
 	local playerid = event.PlayerID
 
+	EndGameStats:OnItemPurchased(playerid, event.itemname, event.itemcost)
+
 	AngelArena:SaveGoldForPlayerId(playerid,0)
 end
+-- Счётчик золота (нет-таблица gold = кошелёк + запас) сверяем по таймеру. Раньше его писали
+-- только из GoldFilter и покупки: фильтр срабатывает ДО зачисления (в таблице оставалась старая
+-- сумма), а продажа не писала совсем - в начале игры показывало 250, после покупки/продажи
+-- не то. SaveGoldForPlayerId пишет таблицу только при изменении, так что тик дешёвый.
+local GOLD_SYNC_PERIOD = 0.2
+
+Timers:CreateTimer({ endTime = GOLD_SYNC_PERIOD, useGameTime = false, callback = function()
+	if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION and GameRules:State_Get() <= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		for pid = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:IsValidPlayerID(pid) then
+				local ok, err = pcall(AngelArena.SaveGoldForPlayerId, AngelArena, pid, 0)
+
+				if not ok then print("[AA.gold] sync: " .. tostring(err)) end
+			end
+		end
+	end
+
+	return GOLD_SYNC_PERIOD
+end })
+
 function AngelArena:SaveGold(gold)
 	TeamHelper:ApplyForPlayers( nil, function(pid)
 		AngelArena:SaveGoldForPlayerId(pid,gold)
@@ -738,20 +980,21 @@ function AngelArena:SaveGoldForPlayerId(playerid,gold)
 	  	tPlayers[playerid] = tPlayers[playerid] or {} -- nil error exception
 	  	tPlayers[playerid].gold = tPlayers[playerid].gold or 0 -- nil error exception
 
-	  	if player_gold > 50000 then
-			local gold_to_save = player_gold - 50000
+	  	if player_gold > GOLD_WALLET_LIMIT then
+			local gold_to_save = player_gold - GOLD_WALLET_LIMIT
 			tPlayers[playerid].gold = tPlayers[playerid].gold + gold_to_save
 			PlayerResource:SpendGold(playerid, gold_to_save, 0)
 	  	end
 
-	  	if player_gold < 50000 then
-			local free_gold = 50000 - player_gold
+	  	if player_gold < GOLD_WALLET_LIMIT then
+			local free_gold = GOLD_WALLET_LIMIT - player_gold
 			local total_saved_gold = tPlayers[playerid].gold
 			if total_saved_gold > free_gold then
 			  tPlayers[playerid].gold = tPlayers[playerid].gold - free_gold
-			  PlayerResource:ModifyGold(playerid, free_gold, true, 0)
+			  -- перенос из копилки - не доход, не делим
+			  local _ = (AATagGold or function(_, f) f() end)("stash_move", function() if TeamGoldShare then TeamGoldShare:Bypass(PlayerResource.ModifyGold, PlayerResource, playerid, free_gold, true, 0) else PlayerResource:ModifyGold(playerid, free_gold, true, 0) end end)
 			else
-			  PlayerResource:ModifyGold(playerid, total_saved_gold, true, 0)
+			  local _ = (AATagGold or function(_, f) f() end)("stash_move", function() if TeamGoldShare then TeamGoldShare:Bypass(PlayerResource.ModifyGold, PlayerResource, playerid, total_saved_gold, true, 0) else PlayerResource:ModifyGold(playerid, total_saved_gold, true, 0) end end)
 			  tPlayers[playerid].gold = 0
 			end
 	  	end
@@ -764,6 +1007,77 @@ function AngelArena:SaveGoldForPlayerId(playerid,gold)
 			CustomNetTables:SetTableValue("gold", "player_id_" .. playerid, { gold = total_gold })
 		end
 	end
+end
+
+-- Выдать крупную сумму так, чтобы она не упёрлась в дотовские 99999. В
+-- кошелёк через ModifyGold кладём только то, что влезает до
+-- GOLD_WALLET_LIMIT, остальное сразу в запас: SaveGoldForPlayerId докладывает
+-- его в кошелёк по мере трат, а нет-таблица gold показывает кошелёк + запас.
+-- Запас идёт мимо GoldFilter, поэтому в золото команды для камбэка его
+-- записываем сами - как и обычный доход сверх лимита, который GoldFilter
+-- видит целиком до того, как излишек уедет в запас.
+-- Монетки над героем и звук при наградах мода (дуэль, боссы, башни и т.д.),
+-- без цифр - надписи над героем выглядят плохо. Видит только сам игрок.
+function AngelArena:ShowGoldPopup(playerid, gold)
+	if math.floor(gold or 0) <= 0 then return end
+
+	local hero = PlayerResource:GetSelectedHeroEntity(playerid)
+	if not hero or hero:IsNull() or not IsValidEntity(hero) then return end
+
+	local player = PlayerResource:GetPlayer(playerid)
+	if not player then return end
+
+	-- монетки летят от CP0 к CP1: без CP1 они уходят в начало карты и их не
+	-- видно, поэтому обе точки на самом герое
+	local fx = ParticleManager:CreateParticleForPlayer("particles/generic_gameplay/lasthit_coins.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero, player)
+	ParticleManager:SetParticleControlEnt(fx, 1, hero, PATTACH_POINT_FOLLOW, "attach_hitloc", hero:GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(fx)
+
+	-- летящая цифра, как при подборе баунти-руны
+	SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, hero, math.floor(gold), nil)
+
+	EmitSoundOnClient("General.Coins", player)
+end
+
+function AngelArena:GiveGold(playerid, gold, reliable, reason)
+	if not PlayerResource:IsValidPlayerID(playerid) then return end
+
+	gold = math.floor(gold)
+
+	if gold <= 0 then return end
+
+	-- у вышедшего запаса нет, его кошелёк раздаёт ShareGold
+	if IsAbadonedPlayerID(playerid) then
+		local room = math.max(0, 99999 - PlayerResource:GetGold(playerid))
+
+		PlayerResource:ModifyGold(playerid, math.min(gold, room), reliable, reason)
+		return
+	end
+
+	local room = math.max(0, GOLD_WALLET_LIMIT - PlayerResource:GetGold(playerid))
+	local now = math.min(gold, room)
+
+	if now > 0 then
+		PlayerResource:ModifyGold(playerid, now, reliable, reason)
+	end
+
+	local rest = gold - now
+
+	if rest > 0 then
+		self.tPlayers = self.tPlayers or {}
+		self.tPlayers[playerid] = self.tPlayers[playerid] or {}
+		self.tPlayers[playerid].gold = (self.tPlayers[playerid].gold or 0) + rest
+
+		ComebackSystem:OnGiveGold(playerid, rest)
+
+		-- запас идёт мимо GoldFilter, килфиду докладываем сами
+		if KillFeed then
+			KillFeed:OnGold(playerid, rest, reason, TeamGoldShare and TeamGoldShare._bypass)
+		end
+	end
+
+	-- пересчитать и разослать кошелёк + запас
+	self:SaveGoldForPlayerId(playerid, 0)
 end
 
 function AngelArena:ShareGold()
@@ -799,9 +1113,22 @@ function AngelArena:ShareGold()
 
 		local newGold = teamData.freeGold / teamData.nPlayers
 
-		PlayerResource:ModifyGold(playerID, newGold, true, 0)
+		local _ = (AATagGold or function(_, f) f() end)("abandon", function() PlayerResource:ModifyGold(playerID, newGold, true, 0) end)
 	end)
 end
+-- Запуск контроллера дуэлей ровно один раз (из PRE_GAME, а при необходимости -
+-- из GAME_IN_PROGRESS). firstInterval - секунды до первой дуэли, nil = 30.
+function AngelArena:_StartDuelController(firstInterval)
+	if duel_inited then return end
+	duel_inited = true
+
+	DuelController:OnGameStart(function(winnerTeam)
+		is_game_end = true
+		DuelController:SetFreezeTimer(true)
+		GameEnder:ForceEnd(winnerTeam)
+	end, firstInterval)
+end
+
 function AngelArena:OnGameStateChange()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		print('DOTA_GAMERULES_STATE_PRE_GAME')
@@ -827,7 +1154,18 @@ function AngelArena:OnGameStateChange()
 		-- юнит показывает отдельный modifier_minimap_icon_fow.
 		local icons = 0
 
-		for _, unit in pairs(Entities:FindAllByClassname("npc_dota_building")) do
+		-- часть иконок стоит не зданиями, а существами (npc_aa_minimap_icon_camp*),
+		-- и раньше цикл их не видел: модификатор не вешался, и эти невидимые
+		-- юниты на кемпах можно было выделить мышкой
+		local icon_units = {}
+
+		for _, classname in pairs({"npc_dota_building", "npc_dota_creature", "npc_dota_creep"}) do
+			for _, unit in pairs(Entities:FindAllByClassname(classname)) do
+				table.insert(icon_units, unit)
+			end
+		end
+
+		for _, unit in pairs(icon_units) do
 			local unitname = unit.GetUnitName and unit:GetUnitName() or ""
 
 			if unitname:sub(1, 15) == "npc_aa_minimap_" then
@@ -873,6 +1211,18 @@ function AngelArena:OnGameStateChange()
 		Attentions:SetKillLimit( KILL_LIMIT )
 		Bounty:Init()
 		MinimapSpots:Init()
+
+		-- Дуэльный таймер стартуем уже в PRE_GAME, чтобы отсчёт был виден сразу.
+		-- Первая дуэль всё равно в 0:30 игрового времени: первый интервал =
+		-- (секунд до горна) + 30. Время до горна - отрицательное DOTA-время;
+		-- если его не удалось прочитать - берём 60 с пре-игры + 30.
+		local dotaTime = GameRules:GetDOTATime(false, true)
+		local toHorn = 60
+		if dotaTime < 0 then
+			toHorn = math.ceil(-dotaTime)
+		end
+		AngelArena:_StartDuelController(toHorn + 30)
+
 		PauseGame(true)
 		local towers = Entities:FindAllByClassname("npc_dota_tower")
 		for _, tower in pairs(towers) do
@@ -916,21 +1266,13 @@ function AngelArena:OnGameStateChange()
 				return 0.5
 			end)
 
-			-- Контроллер дуэлей запускаем всегда и первым делом. Раньше он
-			-- поднимался только если обе стороны заняты ровно в момент перехода
-			-- в GAME_IN_PROGRESS, а блок выполняется один раз - поэтому при игре
-			-- одному таймер дуэлей не шёл вообще, и вместе с ним не работали ни
-			-- сброс кулдаунов, ни репик-меню (оно смотрит GetTimeToDuel).
-			-- Нехватку противников разруливает сам _StartDuel: пишет
-			-- "недостаточно игроков" и тикает дальше.
-			if not duel_inited then
-				duel_inited = true
-				DuelController:OnGameStart(function(winnerTeam)
-					is_game_end = true
-					DuelController:SetFreezeTimer(true)
-					GameEnder:ForceEnd(winnerTeam)
-				end)
-			end
+			-- Двери арены открываем здесь, как и раньше (не в PRE_GAME).
+			DuelController:SetDoorsState(true)
+
+			-- Таймер дуэлей обычно уже запущен в PRE_GAME (см. выше). Этот вызов -
+			-- страховка на случай, если PRE_GAME не прошёл; внутри стоит тот же
+			-- guard duel_inited, поэтому дважды таймер не поднимется.
+			AngelArena:_StartDuelController(nil)
 
 			local ok, rad, dire = pcall(GetActivePlayersPerTeam)
 
@@ -959,6 +1301,42 @@ function AngelArena:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	local spawnedUnit = EntIndexToHScript(keys.entindex)
 	if not npc then return end
+	-- Змейки Расты - и из ульты, и шардовые от Shackles (их создаёт ванильная
+	-- способность): сплэш суммонов и бафф от статов хозяина. Хозяин
+	-- ставится кадром позже - ждём, как у медведя.
+	if npc.GetUnitName and (string.find(npc:GetUnitName(), "shadow_shaman_ward", 1, true)
+		or npc:GetClassname() == "npc_dota_shadowshaman_serpentward") then
+		print("[AA.wards] заспавнилась " .. npc:GetUnitName() .. " hp=" .. tostring(npc:GetMaxHealth()))
+
+		local ward = npc
+		local tries = 0
+		Timers:CreateTimer(FrameTime(), function()
+			if not ward or ward:IsNull() or not ward:IsAlive() then return nil end
+
+			local cleave = ward:FindAbilityByName("summon_cleave") or ward:AddAbility("summon_cleave")
+			if cleave and cleave:GetLevel() < 1 then cleave:SetLevel(1) end
+
+			local hero = SummonUtils and SummonUtils:GetOwnerHero(ward)
+
+			if hero and not hero:IsNull() and hero ~= ward then
+				local mod = ward:FindModifierByName("modifier_summon_power")
+				if mod and mod:GetCaster() ~= hero then mod:Destroy() mod = nil end
+				if not mod then ward:AddNewModifier(hero, nil, "modifier_summon_power", {}) end
+				return nil
+			end
+
+			tries = tries + 1
+			if tries >= 30 then
+				print("[AA.wards] не нашёл хозяина у " .. ward:GetUnitName())
+				return nil
+			end
+			return FrameTime()
+		end)
+	end
+	-- солдаты Wukong's Command из пула - герои-юниты MK, но не игроки:
+	-- никакой героической логики (heroes/monkey_king/monkey_king_wukongs_command_aa)
+	if AA_SPAWNING_MK_SOLDIER or npc.aa_mk_soldier then return end
+	EndGameStats:OnHeroSpawned(npc)
 	local unitname = npc:GetUnitName()
 	local unit_owner = npc:GetOwnerEntity()
 	if npc.bFirstSpawned == nil then
@@ -1060,13 +1438,45 @@ function AngelArena:OnNPCSpawned(keys)
 				ability:SetLevel(1)
 			end
 		end
+
+		-- бафф суммонов от статов друида. Через summon_power_passive медведь его
+		-- не получал: он "как герой" (ConsideredHero), проверка суммона его
+		-- отсеивала и модификатор удалял сам себя. Кастер - герой, тогда
+		-- хозяин берётся сразу. Владелец ставится кадром позже - ждём.
+		local bear = spawnedUnit
+		local tries = 0
+		Timers:CreateTimer(FrameTime(), function()
+			if not bear or bear:IsNull() or not bear:IsAlive() then return nil end
+
+			local hero = SummonUtils and SummonUtils:GetOwnerHero(bear)
+
+			if hero and not hero:IsNull() and hero ~= bear then
+				local mod = bear:FindModifierByName("modifier_summon_power")
+				if mod and mod:GetCaster() ~= hero then mod:Destroy() mod = nil end
+				if not mod then bear:AddNewModifier(hero, nil, "modifier_summon_power", {}) end
+				return nil
+			end
+
+			tries = tries + 1
+			if tries >= 30 then return nil end
+			return FrameTime()
+		end)
 	end
 
-	if armor_table[unitname] then -- see file creeps/armor_table_summon.lua for details
-		spawnedUnit:AddNewModifier(spawnedUnit, nil, armor_table[unitname], {})
-		spawnedUnit:AddAbility("summon_cleave")
-		local ability = spawnedUnit:FindAbilityByName("summon_cleave")
-		ability:SetLevel(1)
+	if armor_table[unitname] ~= nil then -- see file creeps/armor_table_summon.lua for details
+		-- npc_spawned приходит и на каждое возрождение суммона (медведь и т.п.):
+		-- раньше каждый раз добавлялась ещё одна копия сплэша и модификатора
+		-- false в таблице - суммон без модификатора скейла, только сплэш
+		-- скейл суммонов от минуты выключен: суммоны теперь растут от статов
+		-- хозяина (summon_power). Модификаторы не удалены, чтобы вернуть -
+		-- поставить SUMMON_MINUTE_SCALING = true
+		if SUMMON_MINUTE_SCALING and armor_table[unitname] and not spawnedUnit:HasModifier(armor_table[unitname]) then
+			spawnedUnit:AddNewModifier(spawnedUnit, nil, armor_table[unitname], {})
+		end
+
+		local ability = spawnedUnit:FindAbilityByName("summon_cleave") or spawnedUnit:AddAbility("summon_cleave")
+
+		if ability then ability:SetLevel(1) end
 	end
 
 	if spawnedUnit:IsRealHero() then --print(spawnedUnit:GetUnitName())
@@ -1151,6 +1561,8 @@ function AngelArena:OnEntityKilled(event)
 
 	if not killedUnit or not IsValidEntity(killedUnit) then return end
 
+	EndGameStats:OnEntityKilled(killedUnit, hero)
+
 	if killedUnit:GetUnitName() == 'npc_aa_creep_centaur_big'then
 		BearSpawner:InitDeath()
 	end
@@ -1161,9 +1573,21 @@ function AngelArena:OnEntityKilled(event)
 
 	if IsValidEntity(killedUnit) and not killedUnit:IsAlive() and killedUnit:IsRealHero() then
 		local timeLeft = killedUnit:GetLevel() * 3.8 + 5
-		timeLeft = timeLeft * RESPAWN_MODIFER
+		timeLeft = timeLeft * RESPAWN_MODIFER - 12
 		if timeLeft < 5.0 then
 			timeLeft = 5.0
+		end
+
+		-- +3 секунды за каждого тиммейта, который не ливнул и сейчас в игре:
+		-- в неполной команде умирать дешевле
+		local team = killedUnit:GetTeamNumber()
+		local ownerID = killedUnit:GetPlayerOwnerID()
+		for pid = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if pid ~= ownerID and PlayerResource:IsValidPlayerID(pid)
+				and PlayerResource:GetTeam(pid) == team
+				and PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+				timeLeft = timeLeft + 3
+			end
 		end
 
 		if killedUnit:IsReincarnating() == false then
@@ -1204,16 +1628,19 @@ function AngelArena:OnEntityKilled(event)
 	for _, teamNumber in pairs(allowedTeams) do
 		if _G.Kills[teamNumber] >= KILL_LIMIT and not DuelController:IsLastDuelTeam(teamNumber) then
 			DuelController:AddLastDuelTeam( teamNumber )
-			Attentions:SendAttentionText("#aa_last_duel_coming", 10, 2)
-			Attentions:SendChatMessage("#aa_last_duel_coming")
+			Attentions:SendAttentionText("#aa_last_duel_coming", 10, 3)
+			if KillFeed then KillFeed:LastDuel() end
 		end
 	end
 
 	GameMode:SetCustomDireScore( _G.Kills[DOTA_TEAM_BADGUYS] )
 	GameMode:SetCustomRadiantScore( _G.Kills[DOTA_TEAM_GOODGUYS] )
+	Attentions:SetTeamKills( _G.Kills[DOTA_TEAM_GOODGUYS], _G.Kills[DOTA_TEAM_BADGUYS] )
 
 	if hero and hero:GetPlayerOwnerID() ~= nil and killedUnit:IsCourier() then
-		PlayerResource:ModifyGold(hero:GetPlayerOwnerID(), GOLD_FOR_COUR, false, 0)
+		local _ = (AATagGold or function(_, f) f() end)("courier", function() PlayerResource:ModifyGold(hero:GetPlayerOwnerID(), GOLD_FOR_COUR, false, 0) end)
+		AngelArena:ShowGoldPopup(hero:GetPlayerOwnerID(), GOLD_FOR_COUR)
+		if KillFeed then KillFeed:Courier(hero:GetPlayerOwnerID(), GOLD_FOR_COUR) end
 	end
 end
 function AngelArena:OnHeroDeath(dead_hero, killer)
@@ -1233,6 +1660,17 @@ function AngelArena:OnHeroDeath(dead_hero, killer)
 		end
 	end
 end
+-- Ключ способности для журнала урона и статистики: доп. урон колбэков идёт от
+-- divine_intervention, вместо него пишем "<настоящий скилл или предмет>#bonus".
+function AA_DamageKey(name)
+	if name == "divine_intervention" and type(_G.AA_DMG_ORIGIN) == "string" and _G.AA_DMG_ORIGIN ~= ""
+		and _G.AA_DMG_ORIGIN ~= "divine_intervention" then
+		return _G.AA_DMG_ORIGIN .. "#bonus"
+	end
+
+	return name
+end
+
 function AngelArena:DamageFilter(event)
 	local damage = event.damage
 	local entindex_inflictor_const = event.entindex_inflictor_const
@@ -1247,6 +1685,7 @@ function AngelArena:DamageFilter(event)
 	if (entindex_victim_const) then victim = EntIndexToHScript(entindex_victim_const) end
 	if (entindex_attacker_const) then attacker = EntIndexToHScript(entindex_attacker_const) end
 
+
 	-----------------------------------------------------------------------------------------------------
 	------------------------------ Костыль для ланаи ----------------------------------------------------
 	-----------------------------------------------------------------------------------------------------
@@ -1258,12 +1697,26 @@ function AngelArena:DamageFilter(event)
 		end
 	end
 
+	-- Инвиз Трента (Nature's Guise) в ванили уроном не сбивается - у нас
+	-- сбивается любым уроном от врага
+	if attacker and victim and damage > 0 and victim:HasModifier("modifier_treant_natures_guise_invis")
+		and attacker:GetTeamNumber() ~= victim:GetTeamNumber() then
+		victim:RemoveModifierByName("modifier_treant_natures_guise_invis")
+	end
+
 	-----------------------------------------------------------------------------------------------------
 	--------------------------------- Procent damage enable for some skills -----------------------------
 	-----------------------------------------------------------------------------------------------------
 
 	if attacker and skill_name and _G.skill_callback and _G.skill_callback[skill_name] then
 		if victim and (victim:IsHero() or victim:IsCreep() or victim:IsAncient()) then
+
+			-- Доп. урон колбэков наносится от имени divine_intervention. Пока колбэк работает,
+			-- помним настоящий источник: журнал урона и статистика пишут его (AA_DamageKey).
+			-- ApplyDamage синхронный, вложенный фильтр и запись урона идут внутри этого окна.
+			local prevOrigin = _G.AA_DMG_ORIGIN
+
+			_G.AA_DMG_ORIGIN = skill_name
 
 			for callback_id, callback in pairs(_G.skill_callback[skill_name]) do
 				local ability = attacker:FindAbilityByName(skill_name)
@@ -1275,6 +1728,8 @@ function AngelArena:DamageFilter(event)
 				local divine_intervention = attacker:FindAbilityByName("divine_intervention")
 
 				if attacker and (skill_name == "batrider_sticky_napalm") then
+					_G.AA_DMG_ORIGIN = prevOrigin
+
 					return
 				end
 
@@ -1301,9 +1756,122 @@ function AngelArena:DamageFilter(event)
 					end
 				end
 			end
+
+			_G.AA_DMG_ORIGIN = prevOrigin
 		end
 	end
+
+	-- урон по героям и боссам и втанченное для финального экрана
+	EndGameStats:OnDamage(attacker, victim, event.damage)
+
 	return true
+end
+
+-- Портал в центр: способность mid_teleport даётся герою на один каст.
+function AngelArena:_StartPortalCast(hero)
+	hero:Interrupt()
+	hero:Stop()
+	hero:AddAbility("mid_teleport")
+	local ability = hero:FindAbilityByName("mid_teleport")
+	ability:SetLevel(1)
+	hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID())
+end
+
+-- есть ли юнит среди тех, кому отдан приказ
+function AngelArena:_OrderHasUnit(ord, unit)
+	local index = unit:entindex()
+
+	for _, entindex in pairs(ord.units or {}) do
+		if entindex == index then return true end
+	end
+
+	return false
+end
+
+-- Клик по далёкому порталу - как в доте: герой бежит к нему и, добежав,
+-- входит сам. Любой следующий приказ герою пробежку отменяет (см. фильтр).
+local PORTAL_WALK_TIMEOUT = 30
+
+-- Приказы, после которых герой к порталу уже не идёт: новое движение, атака,
+-- каст в точку или цель, стоп. Мгновенное (палка, фазы, тоггл) героя с пути
+-- не сбивает - если отменять пробежку и на нём, герой добегал до портала и
+-- просто вставал.
+local PORTAL_WALK_BREAKERS = {
+	[DOTA_UNIT_ORDER_MOVE_TO_POSITION] = true,
+	[DOTA_UNIT_ORDER_MOVE_TO_TARGET]   = true,
+	[DOTA_UNIT_ORDER_ATTACK_MOVE]      = true,
+	[DOTA_UNIT_ORDER_ATTACK_TARGET]    = true,
+	[DOTA_UNIT_ORDER_CAST_POSITION]    = true,
+	[DOTA_UNIT_ORDER_CAST_TARGET]      = true,
+	[DOTA_UNIT_ORDER_CAST_TARGET_TREE] = true,
+	[DOTA_UNIT_ORDER_HOLD_POSITION]    = true,
+	[DOTA_UNIT_ORDER_STOP]             = true,
+	[DOTA_UNIT_ORDER_PICKUP_ITEM]      = true,
+	[DOTA_UNIT_ORDER_PICKUP_RUNE]      = true,
+}
+
+function AngelArena:_WalkToPortal(hero, portal, player)
+	local walk = {}
+	local started = GameRules:GetGameTime()
+
+	hero._portalWalk = walk
+
+	Timers:CreateTimer(0.1, function()
+		if hero:IsNull() or hero._portalWalk ~= walk then return nil end
+
+		if not hero:IsAlive() or portal:IsNull() or GameRules:GetGameTime() - started > PORTAL_WALK_TIMEOUT then
+			hero._portalWalk = nil
+			return nil
+		end
+
+		if ( hero:GetOrigin() - portal:GetOrigin() ):Length2D() > teleport_range then return 0.1 end
+
+		hero._portalWalk = nil
+
+		if hero:HasModifier("modifier_mid_teleport_cd") then
+			if player and not player:IsNull() then
+				CustomGameEventManager:Send_ServerToPlayer(player, "CreateIngameErrorMessage", {message = "#midteleport_cd"})
+			end
+
+			return nil
+		end
+
+		AngelArena:_StartPortalCast(hero)
+
+		return nil
+	end)
+end
+
+-- предметы на Lua с каналом, который не сбивается движением (как в доте)
+local NO_MOVE_BREAK_CHANNEL = {
+	item_meteor_hammer_aa   = true,
+	item_meteor_hammer_aa_2 = true,
+	item_meteor_hammer_aa_3 = true,
+}
+
+local CHANNEL_BREAK_ALLOWED_ORDERS = {
+	[DOTA_UNIT_ORDER_STOP] = true,
+	[DOTA_UNIT_ORDER_HOLD_POSITION] = true,
+}
+
+function AngelArena:_BlocksChannelBreak(ord)
+	if CHANNEL_BREAK_ALLOWED_ORDERS[ord.order_type] then return false end
+	if ord.queue == 1 or ord.queue == true then return false end
+	if not ord.units then return false end
+
+	for _, entindex in pairs(ord.units) do
+		local u = EntIndexToHScript(entindex)
+
+		if u and not u:IsNull() and u.IsChanneling and u:IsChanneling() then
+			local ability = u:GetCurrentActiveAbility()
+
+			if ability and not ability:IsNull() and NO_MOVE_BREAK_CHANNEL[ability:GetAbilityName()] then
+				return true
+			end
+		end
+	end
+
+	return false
 end
 
 function AngelArena:ExecuteOrderFilterCustom( ord )
@@ -1317,28 +1885,41 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
         unit = EntIndexToHScript(ord.units["0"])
     end
 
+	-- Meteor Hammer (item_lua) сбивался любым приказом движения. Как в доте:
+	-- канал прерывает только Stop / Hold, приказы с Shift встают в очередь.
+	if AngelArena:_BlocksChannelBreak(ord) then return false end
+
 	if not player then return true end
 
     local hero = player:GetAssignedHero()
 
     if not hero then return true end
+
+	-- приказ, сбивающий героя с пути, отменяет пробежку к порталу
+	-- (_WalkToPortal); если это снова клик по порталу, пробежка ниже начнётся
+	-- заново. Приказы с Shift встают в очередь и путь не сбивают.
+	local queued = ord.queue == 1 or ord.queue == true
+
+	if hero._portalWalk and not queued and PORTAL_WALK_BREAKERS[ord.order_type] and AngelArena:_OrderHasUnit(ord, hero) then
+		hero._portalWalk = nil
+	end
+
 		if ord.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or ord.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET  then
 			if target and not target:IsNull() and  target:IsBaseNPC() and target:GetUnitName() == "npc_teleport" and unit:IsRealHero() then
 				if teleport_range >= ( hero:GetOrigin() - target:GetOrigin() ):Length2D() then
 					if not hero:HasModifier("modifier_mid_teleport_cd") then
-						hero:Interrupt()
-						hero:Stop()
-						hero:AddAbility("mid_teleport")
-						local ability = hero:FindAbilityByName("mid_teleport")
-						ability:SetLevel(1)
-						hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID())
+						AngelArena:_StartPortalCast(hero)
 					else
 						print('cd')
 						CustomGameEventManager:Send_ServerToPlayer(player, "CreateIngameErrorMessage", {message = "#midteleport_cd"})
 					end
 				else
-					print("range")
-					CustomGameEventManager:Send_ServerToPlayer(player, "CreateIngameErrorMessage", {message = "#midteleport_distance"})
+					-- Далеко - как в доте: герой бежит к порталу и, добежав, входит
+					-- сам. Раньше тут был отказ "слишком далеко", и герой вставал.
+					AngelArena:_WalkToPortal(hero, target, player)
+					ord.order_type = DOTA_UNIT_ORDER_MOVE_TO_TARGET
+
+					return true
 				end
 				return false
 			end

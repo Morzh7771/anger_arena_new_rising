@@ -1,4 +1,4 @@
-DOTAAbilities
+﻿DOTAAbilities
 {
 	"tiny_avalanche"
 	{
@@ -178,6 +178,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"tiny_tree_grab"
 		"MaxLevel"		"7"
+		"HasShardUpgrade"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"

@@ -21,6 +21,7 @@ end
 --------------------------------------------------------------------------------
 function modifier_zombie_walking_heal_for_death:OnDeath(params)
     if not IsServer() then return end
+    if not params.unit or params.unit:IsNull() or not params.unit:IsHero() then return end
     if self:GetCaster():PassivesDisabled() then return 0 end
     if not params.unit:IsHero() then return end
     local caster = self:GetCaster()

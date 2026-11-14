@@ -136,7 +136,9 @@ function ItemDestroyer:start()
 	end)
 end
 
-function DropBox:DropAtPos(pos, radius, manualLifetime)
+-- receiver - герой, которому книги из дропа достаются сразу, не падая на
+-- землю (ShiftBuy:GiveTome). Передают его только крипы: это тот, кто убил.
+function DropBox:DropAtPos(pos, radius, manualLifetime, receiver)
 	--print("[DropBox] Starting drop", self.identifier)
 
 	local items = self:GetItemNames()
@@ -171,7 +173,11 @@ function DropBox:DropAtPos(pos, radius, manualLifetime)
 		local itemCount = itemData[2]
 
 		
-		local item = MakeItem( itemName )
+		local item = nil
+
+		if not (receiver and ShiftBuy and ShiftBuy:GiveTome(receiver, itemName, itemCount)) then
+			item = MakeItem( itemName )
+		end
 
 		if item then
 			if item:IsStackable() then
@@ -185,7 +191,7 @@ function DropBox:DropAtPos(pos, radius, manualLifetime)
 	end
 
 	for _, child in pairs( self.childs ) do
-		child:DropAtPos(pos, radius)
+		child:DropAtPos(pos, radius, nil, receiver)
 	end
 
 	--print("[DropBox] Stop dropping items")

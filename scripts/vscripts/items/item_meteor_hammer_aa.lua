@@ -40,48 +40,76 @@ function item_meteor_hammer:OnSpellStart()
   local vision_duration = math.max(self:GetChannelTime() + self:GetSpecialValueFor("land_time") + self:GetSpecialValueFor("stun_duration"), 3.8)
   local radius = self:GetSpecialValueFor("impact_radius")
 
+  -- Как у ванильного молота: своя анимация канала (не поза телепорта), без
+  -- лишнего бафа на панели, эффект вокруг героя едет вместе с ним.
   caster:EmitSound("DOTA_Item.MeteorHammer.Channel")
+  caster:StartGesture(ACT_DOTA_GENERIC_CHANNEL_1)
 
-  caster:StartGesture(ACT_DOTA_TELEPORT)
-  self:GetCaster():AddNewModifier(self:GetCaster(),self,"modifier_item_meteor_hammer_oaa_channel",{duration = self:GetSpecialValueFor( "max_duration" )})
   self:CreateVisibilityNode(target_location, radius, vision_duration)
 
-  --Particle that surrounds caster
-  self.channel_particle_caster = ParticleManager:CreateParticle("particles/items4_fx/meteor_hammer_cast.vpcf", PATTACH_ABSORIGIN, caster)
-  --Particle that surrounds meteor_hammer's aoe.
+  self.meteor_target = target_location
+
+  -- полоска канала как ванильная: у item_lua ванильная не появляется (lib/channel_bar.lua)
+  if ChannelBar then ChannelBar:Start(caster, self, self:GetChannelTime()) end
+
+  self.channel_particle_caster = ParticleManager:CreateParticle("particles/items4_fx/meteor_hammer_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+
+  -- круг области: видит только своя команда, как в доте
   self.channel_particle = ParticleManager:CreateParticleForTeam("particles/items4_fx/meteor_hammer_aoe.vpcf", PATTACH_CUSTOMORIGIN, caster, caster:GetTeam())
   ParticleManager:SetParticleControl(self.channel_particle, 0, target_location)
   ParticleManager:SetParticleControl(self.channel_particle, 1, Vector(radius, 0, 0))
 end
-function item_meteor_hammer:OnChannelThink(fInterval)
-  if not IsServer() then return end
 
+function item_meteor_hammer:OnChannelThink(fInterval)
 end
+
 function item_meteor_hammer:OnChannelFinish(bInterrupted)
   local caster = self:GetCaster()
+  local caster_particle = self.channel_particle_caster
+  local aoe_particle = self.channel_particle
 
-  caster:FadeGesture(ACT_DOTA_TELEPORT)
+  self.channel_particle_caster = nil
+  self.channel_particle = nil
 
-  if not bInterrupted then
-    caster:EmitSound("DOTA_Item.MeteorHammer.Cast")
-    CreateModifierThinker(
-      caster,
-      self,
-      "modifier_item_meteor_hammer_oaa_thinker",
-      {duration = self:GetSpecialValueFor("land_time") + self:GetSpecialValueFor("stun_duration")},
-      self:GetCursorPosition(),
-      caster:GetTeamNumber(),
-      false
-    )
-  else
-    caster:RemoveModifierByName("modifier_item_meteor_hammer_oaa_channel")
-    caster:StopSound("DOTA_Item.MeteorHammer.Channel")
-    ParticleManager:DestroyParticle(self.channel_particle_caster, true)
-    ParticleManager:DestroyParticle(self.channel_particle, true)
+  caster:FadeGesture(ACT_DOTA_GENERIC_CHANNEL_1)
+  if ChannelBar then ChannelBar:Stop(caster) end
+  caster:StopSound("DOTA_Item.MeteorHammer.Channel")
+
+  if caster_particle then
+    ParticleManager:DestroyParticle(caster_particle, bInterrupted)
+    ParticleManager:ReleaseParticleIndex(caster_particle)
   end
 
-  ParticleManager:ReleaseParticleIndex(self.channel_particle_caster)
-  ParticleManager:ReleaseParticleIndex(self.channel_particle)
+  if bInterrupted then
+    if aoe_particle then
+      ParticleManager:DestroyParticle(aoe_particle, true)
+      ParticleManager:ReleaseParticleIndex(aoe_particle)
+    end
+
+    return
+  end
+
+  caster:EmitSound("DOTA_Item.MeteorHammer.Cast")
+
+  local land_time = self:GetSpecialValueFor("land_time")
+
+  CreateModifierThinker(
+    caster,
+    self,
+    "modifier_item_meteor_hammer_oaa_thinker",
+    {duration = land_time + self:GetSpecialValueFor("stun_duration")},
+    self.meteor_target or self:GetCursorPosition(),
+    caster:GetTeamNumber(),
+    false
+  )
+
+  -- круг области держим до падения метеорита и гасим в момент удара
+  if aoe_particle then
+    Timers:CreateTimer(land_time, function()
+      ParticleManager:DestroyParticle(aoe_particle, false)
+      ParticleManager:ReleaseParticleIndex(aoe_particle)
+    end)
+  end
 end
 
 ---------------------------------------------------------------------------------------------------
@@ -262,6 +290,32 @@ function modifier_item_meteor_hammer_oaa_thinker:OnIntervalThink()
     end
   end
 
+  -- Вышки: обычный урон они блокируют (lib/tower/tower_base.lua), поэтому
+  -- снимаем процент максимального здоровья через их модификатор.
+  local tower_pct = ability:GetSpecialValueFor("tower_damage_pct")
+
+  if tower_pct > 0 then
+    local towers = FindUnitsInRadius(
+      caster:GetTeamNumber(),
+      parent_loc,
+      nil,
+      self.impact_radius,
+      DOTA_UNIT_TARGET_TEAM_ENEMY,
+      DOTA_UNIT_TARGET_BUILDING,
+      DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+      FIND_ANY_ORDER,
+      false
+    )
+
+    for _, tower in pairs(towers) do
+      local controller = tower and not tower:IsNull() and tower:FindModifierByName("tower_controller")
+
+      if controller and controller.TakeScriptDamage then
+        controller:TakeScriptDamage(tower:GetMaxHealth() * tower_pct / 100)
+      end
+    end
+  end
+
   self:StartIntervalThink(-1)
   self:Destroy()
 end
@@ -342,7 +396,7 @@ function modifier_item_meteor_hammer_oaa_dot:DeclareFunctions()
 end
 
 function modifier_item_meteor_hammer_oaa_dot:GetModifierMoveSpeedBonus_Percentage()
-  return 0 - math.abs(self.slow)
+  return 0 - math.abs(self.slow or 0)
 end
 
 function modifier_item_meteor_hammer_oaa_dot:GetEffectName()

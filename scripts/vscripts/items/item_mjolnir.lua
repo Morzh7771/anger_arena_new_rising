@@ -6,7 +6,7 @@ item_mjolnir_aa_1 = class({
 
     Precache = function (self, context) 
         PrecacheResource("particle", "particles/items2_fx/mjollnir_shield.vpcf", context)
-        PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", context)
+        PrecacheResource("particle", "particles/items_fx/chain_lightning.vpcf", context)
     end,
     GetIntrinsicModifierName = function (self) return "item_mjolnir_modifier" end
 })
@@ -16,7 +16,7 @@ item_mjolnir_aa_1 = class({
 -- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
 function item_mjolnir_aa_1:Precache(context)
 	PrecacheResource("particle", "particles/items2_fx/mjollnir_shield.vpcf", context)
-	PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", context)
+	PrecacheResource("particle", "particles/items_fx/chain_lightning.vpcf", context)
 end
 item_mjolnir_aa_2 = item_mjolnir_aa_1
 item_mjolnir_aa_3 = item_mjolnir_aa_1
@@ -68,7 +68,12 @@ modifier_item_mjolnir_shield = class({
     GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
 })
 function modifier_item_mjolnir_shield:OnCreated()
-	self.shield_particle = ParticleManager:CreateParticle("particles/items2_fx/mjollnir_shield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	-- косметика премиума (слот mjollnir_effect): 1-й партикл - щит, 2-й - разряд
+	local shield = "particles/items2_fx/mjollnir_shield.vpcf"
+	if IsServer() and AACosmeticPath then
+		shield = AACosmeticPath(self:GetCaster() or self:GetParent(), "mjollnir_effect", 1, shield)
+	end
+	self.shield_particle = ParticleManager:CreateParticle(shield, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 	self:AddParticle(self.shield_particle, false, false, -1, false, false)
 end
 function modifier_item_mjolnir_shield:OnAttackLanded(keys)
@@ -122,8 +127,9 @@ function item_mjolnir_modifier_tinkerer:OnCreated(keys)
 		self.current_unit						= EntIndexToHScript(self.starting_unit_entindex)
 		self.units_affected[self.current_unit]	= 1
     
-		self.lightning_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.current_unit)
-			ParticleManager:SetParticleControlEnt(self.lightning_particle, 0, self.current_unit, PATTACH_POINT_FOLLOW, "attach_hitloc", self.current_unit:GetAbsOrigin(), true)
+		self.lightning_particle = ParticleManager:CreateParticle((AACosmeticPath and AACosmeticPath(self:GetCaster(), "mjollnir_effect", 2, nil)) or "particles/items_fx/chain_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.current_unit)
+			-- первый разряд - от владельца к цели (раньше обе точки стояли на цели, и дуги не было видно)
+			ParticleManager:SetParticleControlEnt(self.lightning_particle, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(self.lightning_particle, 1, self.current_unit, PATTACH_POINT_FOLLOW, "attach_hitloc", self.current_unit:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControl(self.lightning_particle, 62, Vector(2, 0, 2))
 			ParticleManager:ReleaseParticleIndex(self.lightning_particle)
@@ -160,7 +166,7 @@ function item_mjolnir_modifier_tinkerer:OnIntervalThink()
 		if not self.units_affected[enemy] then
 			enemy:EmitSound("Hero_Zuus.ArcLightning.Target")
 			
-			self.lightning_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.current_unit)
+			self.lightning_particle = ParticleManager:CreateParticle((AACosmeticPath and AACosmeticPath(self:GetCaster(), "mjollnir_effect", 2, nil)) or "particles/items_fx/chain_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.current_unit)
 			ParticleManager:SetParticleControlEnt(self.lightning_particle, 0, self.current_unit, PATTACH_POINT_FOLLOW, "attach_hitloc", self.current_unit:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(self.lightning_particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControl(self.lightning_particle, 62, Vector(2, 0, 2))

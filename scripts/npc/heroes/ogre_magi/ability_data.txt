@@ -67,7 +67,7 @@ DOTAAbilities
 		{
 			"AbilityCooldown"
 			{
-				"value"										"11 10.5 10 9.5 9 8.5 8"
+				"value"										"11 11 10.5 10.5 10 9.5 9"
 				"special_bonus_unique_ogre_magi_5"			"-1"
 				"special_bonus_scepter"			"-1"
 			}
@@ -180,7 +180,7 @@ DOTAAbilities
 		{
 			"AbilityCooldown"
 			{
-				"value"										"6"
+				"value"										"9"
 				"special_bonus_unique_ogre_magi_5"			"-1"
 			}			
 
@@ -302,55 +302,46 @@ DOTAAbilities
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
     }
-	"ogre_magi_multicast"
+	// Свой мультикаст (heroes/ogre_magi/ogre_magi_multicast_aa.lua): до x6,
+	// бонус от силы с убывающей отдачей. Ванильный ogre_magi_multicast у героя
+	// не стоит, чтобы не было двойных повторов.
+	"ogre_magi_multicast_aa"
     {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/ogre_magi/ogre_magi_multicast_aa"
+        "AbilityTextureName"            "ogre_magi_multicast"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
-        "AbilityCastAnimation"          "ACT_INVALID"
-        "LevelsBetweenUpgrades"			"18"
+        "MaxLevel"                      "7"
         "IsBreakable"                   "1"
 
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
         {
-            "multicast_2_times"
-            {
-                "value"     "75"
-                // Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
-                "dynamic_value"     "true"
-            	"special_bonus_unique_ogre_magi_multicast_chance"				"+10"
-            }
+            // Шанс "сработать N раз". Бросается от x6 вниз, как в доте.
+            // К каждому прибавляется бонус от силы и талант.
+            "multicast_2_times"         "70 75 80 85 90 95 100"
+            "multicast_3_times"         "0 30 30 35 40 40 40"
+            "multicast_4_times"         "0 0 15 15 20 20 20"
+            "multicast_5_times"         "0 0 0 0 10 15 15"
+            "multicast_6_times"         "0 0 0 0 0 0 10"
 
-            "multicast_3_times"
-            {
-                "value"     "0 30 30"
-                // Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
-                "dynamic_value"     "true"
-            	"special_bonus_unique_ogre_magi_multicast_chance"				"+10"
-            }
+            // Сила умножает отношение шанс/промах: x(1 + сила / str_odds_double).
+            // 1500 силы: 75->86, 30->46, 15->26, 8->15, 4->8.
+            // 3000 силы: 75->90, 30->56, 15->35, 8->21, 4->11. 100% недостижимо.
+            "str_odds_double"           "1500"
 
-            "multicast_4_times"
-            {
-                "value"     "0 0 15"
-                // Have the bonus listed here so the value shows as modified, actual modification is done by strenght_mult
-                "dynamic_value"     "true"
-            	"special_bonus_unique_ogre_magi_multicast_chance"				"+10"
-            }
+            // Талант special_bonus_unique_ogre_magi_multicast_chance
+            "talent_chance"             "10"
 
-            "strength_mult"
+            // Предметы: повторы по случайным целям в этом радиусе вокруг Огра
+            "item_multicast_aoe"
             {
-                "value"                     "0"
+                "value"                     "1200"
+                "affected_by_aoe_increase"  "1"
             }
+            "item_multicast_delay"      "0.05"
 
-            "required_level"
-            {
-                "value"                     "6"
-            }
-        	"strength_for_one_pct"				"16"
-        	"one_tooltip"				"1"
+            "required_level"            "6"
         }
     }
     "ogre_magi_frost_armor"

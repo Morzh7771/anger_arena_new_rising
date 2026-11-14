@@ -33,6 +33,9 @@ end
 -------------------------------------------------------------------------------
 
 function modifier_creep_mage_healing_aura_lua:OnAttacked(params)
+	-- дешёвая проверка первой: событие приходит на КАЖДУЮ атаку на карте, а ниже
+	-- поиск юнитов в радиусе
+	if params.target ~= self:GetParent() then return end
 	if self:GetParent():PassivesDisabled() then return end
 	if not IsServer() then return end
 

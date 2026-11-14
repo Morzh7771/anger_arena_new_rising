@@ -9,7 +9,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "600"   
+        "ItemCost"                      "400"   
         "ItemShopTags"                  ""
         
         // Recipe
@@ -61,7 +61,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
 
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_meteor_hammer_aa.lua"
@@ -75,6 +75,7 @@
         
         // Casting
         //-------------------------------------------------------------------------------------------------------------
+        "AbilityChannelTime"            "2 1.5 0.5"
         "AbilityCastRange"              "600"
         "AbilityCooldown"               "24"
         "AbilityManaCost"               "100"
@@ -106,13 +107,14 @@
             "burn_duration"             "6 6 6"
             "stun_duration"             "0.5 0.7 1"
             "burn_interval"             "1.0"
-            "land_time"                 ".5"
+            "land_time"                 "0.5 0.5 0.3"
             "impact_radius"     
             {
                 "value"                 "400 500 600"
                 "affected_by_aoe_increase"  "1"
             }
-            "max_duration"              "2 1.5 1"
+            "max_duration"              "2 1.5 0.5"
+            "tower_damage_pct"          "50 75 100"
             "impact_damage_buildings"   "100 200 300"
             "impact_damage_units"       "150 300 500"
             "enemy_particles_visible"   "0"
@@ -122,7 +124,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
 
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_meteor_hammer_aa.lua"
@@ -136,7 +138,7 @@
         
         // Time     
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityChannelTime"            "2 1.5 1"
+        "AbilityChannelTime"            "2 1.5 0.5"
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -171,13 +173,14 @@
             "burn_duration"             "6 6 6"
             "stun_duration"             "0.5 0.7 1"
             "burn_interval"             "1.0"
-            "land_time"                 ".5"
+            "land_time"                 "0.5 0.5 0.3"
             "impact_radius"     
             {
                 "value"                 "400 500 600"
                 "affected_by_aoe_increase"  "1"
             }
-            "max_duration"              "2 1.5 1"
+            "max_duration"              "2 1.5 0.5"
+            "tower_damage_pct"          "50 75 100"
             "impact_damage_buildings"   "100 200 300"
             "impact_damage_units"       "150 300 500"
             "enemy_particles_visible"   "0"
@@ -187,7 +190,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
 
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_meteor_hammer_aa.lua"
@@ -201,7 +204,7 @@
         
         // Time     
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityChannelTime"            "2 1.5 1"
+        "AbilityChannelTime"            "2 1.5 0.5"
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -236,13 +239,14 @@
             "burn_duration"             "6 6 6"
             "stun_duration"             "0.5 0.7 1"
             "burn_interval"             "1.0"
-            "land_time"                 ".5"
+            "land_time"                 "0.5 0.5 0.3"
             "impact_radius"     
             {
                 "value"                 "400 500 600"
                 "affected_by_aoe_increase"  "1"
             }
-            "max_duration"              "2 1.5 1"
+            "max_duration"              "2 1.5 0.5"
+            "tower_damage_pct"          "50 75 100"
             "impact_damage_buildings"   "100 200 300"
             "impact_damage_units"       "150 300 500"
             "enemy_particles_visible"   "0"

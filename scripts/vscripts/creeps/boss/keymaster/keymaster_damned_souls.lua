@@ -17,7 +17,7 @@ function ability:OnSpellStart()
 
 	caster:EmitSound("Boss_Keymaster.DamnedSouls.Cast")
 
-	ParticleManager:CreateParticle("particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_prison_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/items/outworld_devourer/od_shards_exile/od_shards_exile_prison_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster))
 end
 
 function ability:OnProjectileHit(hTarget)

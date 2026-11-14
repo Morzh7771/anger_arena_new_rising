@@ -10,3 +10,12 @@ tools_asset_info.bin
 tools_thumbnail_cache.bin
 tools_asset_info.bin
 tools_thumbnail_cache.bin
+scripts/vscripts/aa_dev_key.lua
+scripts/vscripts/aa_safe_mode.lua
+
+# Документация и заметки живут в content-репо (content/dota_addons/anger_arena_new_rising/doc):
+# всё из game-папки уезжает в мастерскую, а там не должно быть адресов сервера и внутренних заметок.
+/doc/
+*.mdmp
+/*.log
+/log.txt

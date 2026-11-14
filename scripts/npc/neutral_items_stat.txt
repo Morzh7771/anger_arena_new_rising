@@ -142,8 +142,8 @@
 		"AbilityValues"
 		{
 				"hp_regen"			"0"
-				"damage_return_hero"			"200"
-				"damage_return_creep"			"100"
+				"damage_return_hero"			"50"
+				"damage_return_creep"			"30"
 		}
 	}
 
@@ -251,7 +251,7 @@
 		"AbilityValues"
 		{
 			"roll_count"				"3"
-			"bonus_max_damage"			"120"
+			"bonus_max_damage"			"40"
 		}
 	}
 
@@ -309,7 +309,7 @@
 		"AbilityValues"
 		{
 			"aspd"							"0"
-			"bonus_damage"					"250"
+			"bonus_damage"					"65"
 			"duration"						"10"
 			"health_sacrifice"				"0"
 		}
@@ -1411,7 +1411,7 @@
 		"AbilityValues"
 		{
 			"duration"						"6"
-			"damage_threshold"				"200"
+			"damage_threshold"				"500"
 			"damage_aoe"
 			{
 				"value"						"350"

@@ -43,23 +43,14 @@ DOTAAbilities
 			"duration_night"		"2.75 3 3.25 3.5 3.75 4 4.25"
 			"movespeed_slow"		"-50"
 			"attackspeed_slow"		"-50"
-			"vision_penalty"
-            {
-                "value"         "200 300 400 500 600 700 800"
-                "affected_by_aoe_increase"  "1"
-            }
             "invisible_damage_pers"
             {
                 "value"     "0"
             }
             "invisible_damage_tickrate" ".1"
-            "disable_vision"
-            {
-                "value"         "0"
-            }
 			"damage_pct"
 			{
-				"value"	"35"
+				"value"	"77"
 			}
 			"AbilityCooldown"
 			{
@@ -152,7 +143,7 @@ DOTAAbilities
             {
                 "value"         "0"
             }
-			"damage_pct"			"3"
+			"damage_pct"			"6.5"
 		}
 		
 	}

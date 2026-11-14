@@ -39,9 +39,29 @@ modifier_item_unknown_amulet_stats = class({
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_PROPERTY_TOOLTIP2,
     } end,
-    OnTooltip = function(self) return self.def end,
-    GetAbilityTextureName = function (self) return "unknown_amulet4" end,
+    -- режим амулета: на сервере берём из предмета, клиенту он приходит через transmitter
+    GetMode = function (self)
+        if IsServer() then return self:GetAbility():GetSecondaryCharges() end
+        return self.client_mode or 0
+    end,
+    GetTexture = function (self)
+        local mode = self:GetMode()
+        if mode == 0 then mode = 4 end
+        return "item_unknown_amulet" .. mode
+    end,
+    -- Ловкость для тултипа: плоская часть и процентная часть снятия брони
+    OnTooltip = function (self)
+        if self:GetMode() ~= 2 then return 0 end
+        return self.charge_disarmor_const * self:GetAbility():GetCurrentCharges()
+    end,
+    OnTooltip2 = function (self)
+        if self:GetMode() ~= 2 then return 0 end
+        return (1 - ((100 - self.charge_disarmor) / 100) ^ self:GetAbility():GetCurrentCharges()) * 100
+    end,
+    AddCustomTransmitterData = function (self) return { mode = self.mode or 0 } end,
+    HandleCustomTransmitterData = function (self, data) self.client_mode = data.mode end,
     OnCreated = function (self,kv)
         self.ef_hp = 0
         self.def = 0
@@ -49,12 +69,20 @@ modifier_item_unknown_amulet_stats = class({
         self.hand_damage_per_charge = self:GetAbility():GetSpecialValueFor("hand_damage_per_charge")
         self.spell_amp_pre_charge = self:GetAbility():GetSpecialValueFor("spell_amp_pre_charge")
         self.stat_damage =  self:GetAbility():GetSpecialValueFor("stat_damage") / 100
+        self.charge_disarmor_const = self:GetAbility():GetSpecialValueFor("charge_disarmor_const")
+        self.charge_disarmor = self:GetAbility():GetSpecialValueFor("charge_disarmor")
+        if not IsServer() then return end
+        self:SetHasCustomTransmitterData(true)
     	self:StartIntervalThink(0.3)
 	end,
 	OnIntervalThink = function (self)
         self.item_stats = self:GetAbility():GetSpecialValueFor("stats")
 		self.primary_attribute_pct = self:GetAbility():GetSpecialValueFor("charge_primary_attribute") * self:GetAbility():GetCurrentCharges()
-        self.mode = self:GetAbility():GetSecondaryCharges()
+        local mode = self:GetAbility():GetSecondaryCharges()
+        if mode ~= self.mode then
+            self.mode = mode
+            self:SendBuffRefreshToClients()
+        end
     	self:GetParent():CalculateStatBonus(true)
 	end,
 
@@ -86,14 +114,14 @@ modifier_item_unknown_amulet_stats = class({
     	end
 	end,
     GetModifierIncomingDamage_Percentage = function (self)
-        if self:GetAbility():GetSecondaryCharges() == 1 then
+        if self:GetMode() == 1 then
             self.ef_hp = (self:GetAbility():GetCurrentCharges() * self.all_damage_def_per_charge * self:GetParent():GetMaxHealth()) + self:GetParent():GetMaxHealth()
             self.def = ((self:GetParent():GetMaxHealth() / self.ef_hp) - 1) * 100
             return self.def
         end
     end,  
     OnAttackLanded = function (self, kv)
-        if self:GetAbility():GetSecondaryCharges() == 2 then
+        if self:GetMode() == 2 then
         if self:GetParent() ~= kv.attacker then return end
         local polus = 1
         local charge_disarmor_const = self:GetAbility():GetSpecialValueFor("charge_disarmor_const") * self:GetAbility():GetCurrentCharges()
@@ -115,12 +143,12 @@ modifier_item_unknown_amulet_stats = class({
         end
     end,
     GetModifierSpellAmplify_Percentage = function (self)
-        if self:GetAbility():GetSecondaryCharges() == 3 then
+        if self:GetMode() == 3 then
             return self:GetAbility():GetCurrentCharges() * self.spell_amp_pre_charge
          end 
     end,
     GetModifierBaseAttack_BonusDamage = function (self)
-        if self:GetAbility():GetSecondaryCharges() == 4 then
+        if self:GetMode() == 4 then
             return (self:GetParent():GetStrength() + self:GetParent():GetAgility() + self:GetParent():GetIntellect(false)) * self.stat_damage * self:GetAbility():GetCurrentCharges()
         end
     end,

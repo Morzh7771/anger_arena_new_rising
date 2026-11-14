@@ -6,7 +6,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1100"	
+		"ItemCost"						"300"
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -56,7 +56,10 @@
 	}
 	"item_spirit_vessel"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_urn_aa"
+		"AbilityTextureName"			"item_spirit_vessel"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"ItemBaseLevel"					"1"
@@ -100,6 +103,10 @@
 			"soul_heal_amount"			"40 100 200"
 			"soul_damage_amount"		"35 80 160"
 			"duration"					"8.0"
+			"charge_interval"			"120"	// +1 заряд раз в столько секунд (lib/urn_charges.lua)
+			"soul_keeper_pct"			"6"		// Soul Keeper: % урона и лечения за стак
+			"soul_keeper_max"			"15"		// максимум стаков
+			"soul_keeper_radius"		"700"	// смерть врага в этом радиусе даёт стак
 			"enemy_hp_drain"			"4 5 6"
 			"restoration_reduction_enemy"				"40 45 50"
 			"enemy_slow_pct"				"0"
@@ -107,11 +114,12 @@
 	}
 	"item_spirit_vessel_2"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_urn_aa"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"ItemBaseLevel"					"2"
-		"BaseClass"						"item_spirit_vessel"
 		"AbilityTextureName"			"spirit_vessel2"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -152,6 +160,10 @@
 			"soul_heal_amount"			"40 100 200"
 			"soul_damage_amount"		"35 80 160"
 			"duration"					"8.0"
+			"charge_interval"			"40"	// +1 заряд раз в столько секунд (lib/urn_charges.lua)
+			"soul_keeper_pct"			"6"		// Soul Keeper: % урона и лечения за стак
+			"soul_keeper_max"			"15"		// максимум стаков
+			"soul_keeper_radius"		"700"	// смерть врага в этом радиусе даёт стак
 			"enemy_hp_drain"			"4 5 6"
 			"restoration_reduction_enemy"				"40 45 50"
 			"enemy_slow_pct"				"0"
@@ -159,11 +171,12 @@
 	}
 	"item_spirit_vessel_3"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_urn_aa"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"ItemBaseLevel"					"3"
-		"BaseClass"						"item_spirit_vessel"
 		"AbilityTextureName"			"spirit_vessel3"
     	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		// Stats
@@ -204,9 +217,67 @@
 			"soul_heal_amount"			"40 100 200"
 			"soul_damage_amount"		"35 80 160"
 			"duration"					"8.0"
+			"charge_interval"			"40"	// +1 заряд раз в столько секунд (lib/urn_charges.lua)
+			"soul_keeper_pct"			"6"		// Soul Keeper: % урона и лечения за стак
+			"soul_keeper_max"			"15"		// максимум стаков
+			"soul_keeper_radius"		"700"	// смерть врага в этом радиусе даёт стак
 			"enemy_hp_drain"			"4 5 6"
 			"restoration_reduction_enemy"				"40 45 50"
 			"enemy_slow_pct"				"0"
+		}
+	}
+
+	//=================================================================================================================
+	// Urn of Shadows на Lua (items/item_urn_aa.lua), значения ванильные.
+	// Рецепт ванильный (item_recipe_urn_of_shadows).
+	//=================================================================================================================
+	"item_urn_of_shadows"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_urn_aa"
+		"AbilityTextureName"			"item_urn_of_shadows"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"10.0"
+		"AbilitySharedCooldown"			"urn"
+
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ShowGiveIndicatorOnTargetCast"	"1"
+
+		"ItemCost"						"825"
+		"ItemShopTags"					"regen_mana;str;boost_health;teamfight"
+		"ItemQuality"					"rare"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+
+		"AbilityValues"
+		{
+			"mana_regen"				"1.0"
+			"bonus_all_stats"			"2"
+			"bonus_armor"				"2"
+			"soul_radius"
+			{
+				"value"						"1500"
+				"affected_by_aoe_increase"	"1"
+			}
+			"soul_initial_charge"		"2"
+			"soul_additional_charges"	"1"
+			"soul_heal_amount"			"30"
+			"soul_damage_amount"		"25"
+			"duration"					"8.0"
+			"charge_interval"			"40"	// +1 заряд раз в столько секунд (lib/urn_charges.lua)
+			"soul_keeper_pct"			"6"		// Soul Keeper: % урона и лечения за стак
+			"soul_keeper_max"			"15"		// максимум стаков
+			"soul_keeper_radius"		"700"	// смерть врага в этом радиусе даёт стак
 		}
 	}
 }

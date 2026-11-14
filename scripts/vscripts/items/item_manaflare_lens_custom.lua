@@ -18,7 +18,10 @@ function item_manaflare_lens_custom:GetIntrinsicModifierName()
 	return "modifier_item_manaflare_lens_custom"
 end
 function item_manaflare_lens_custom:GetManaCost()
-	return self:GetCaster():GetMana()*self:GetSpecialValueFor("bonus_spell_damage_mana") / 100
+	local caster = self:GetCaster()
+	-- в магазине и в подсказке владельца нет
+	if not caster then return 0 end
+	return caster:GetMana()*self:GetSpecialValueFor("bonus_spell_damage_mana") / 100
 end
 
 modifier_item_manaflare_lens_custom = class({})

@@ -17,7 +17,7 @@
         "ItemResult"                    "item_bfury_aa"
         "ItemRequirements"
         {
-            "01"                        "item_broadsword;item_claymore;item_pers;item_quelling_blade_aa"
+            "01"                        "item_claymore;item_pers;item_bfury_mini"
         }
     }
     "item_recipe_bfury_aa_2"
@@ -71,8 +71,9 @@
         "AbilityValues"
         {
             "bonus_damage"                      "60 80"
-            "bonus_str"                         "0 15"
-            "bonus_agi"                         "0 15"
+            "bonus_str"                         "10 20"
+            "bonus_agi"                         "6 16"
+            "bonus_int"                         "4 8"
             "bonus_health_regen"                "7.5 11"
             "bonus_mana_regen"                  "2.75 3.0"
 
@@ -119,8 +120,9 @@
         "AbilityValues"
         {
             "bonus_damage"                      "60 80"
-            "bonus_str"                         "0 15"
-            "bonus_agi"                         "0 15"
+            "bonus_str"                         "10 20"
+            "bonus_agi"                         "6 16"
+            "bonus_int"                         "4 8"
             "bonus_health_regen"                "7.5 11"
             "bonus_mana_regen"                  "2.75 3.0"
 
@@ -171,6 +173,64 @@
             "quelling_bonus"                "24"
             "quelling_bonus_pct"            "10"
             "quelling_bonus_ranged_coef"    "50"
+        }
+    }
+
+    // Мини-сплеш для ближнего боя: топорик + корона + перчатки силы, до 1000 золота.
+    // Работает как Battle Fury, только слабее; дальше собирается в Battle Fury.
+    "item_recipe_bfury_mini"
+    {
+        "BaseClass"                     "item_recipe_arcane_boots"
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "recipe"
+        "ItemCost"                      "200"
+        "ItemShopTags"                  ""
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_bfury_mini"
+        "ItemRequirements"
+        {
+            "01"                        "item_quelling_blade_aa;item_crown;item_gauntlets"
+        }
+    }
+    "item_bfury_mini"
+    {
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_bfury_aa"
+        "AbilityTextureName"            "iron_talon"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+        "AbilityCastRange"              "350"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "4.0"
+
+        "ItemCost"                      "890"
+        "ItemShopTags"                  "damage;str;agi"
+        "ItemQuality"                   "component"
+        "ItemAliases"                   "cleave;mini;cleaver"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ShouldBeSuggested"             "1"
+
+        "AbilityValues"
+        {
+            "bonus_damage"                      "10"
+            "bonus_str"                         "7"
+            "bonus_agi"                         "4"
+            "bonus_int"                         "4"
+            "bonus_health_regen"                "0"
+            "bonus_mana_regen"                  "0"
+
+            "quelling_bonus"                    "24"
+            "quelling_bonus_pct"                "10"
+            "quelling_bonus_ranged_coef"        "50"
+
+            "cleave_range"                      "250"
+            "cleave_physical_pierce"            "0"
+            "cleave_damage_hero"                "5"
+            "cleave_damage_creep"               "20"
+            "cleave_damage_illusion"            "30"
+            "cleave_illusion_pure"              "0"
         }
     }
 }

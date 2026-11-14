@@ -120,6 +120,7 @@ PrecacheList.particles = {
 	"particles/items2_fx/pipe_of_insight_v2.vpcf",
 	"particles/items2_fx/skadi_projectile.vpcf",
 	"particles/items2_fx/teleport_end.vpcf",
+	"particles/items2_fx/teleport_start.vpcf",
 	"particles/items2_fx/tranquil_boots.vpcf",
 	"particles/items2_fx/veil_of_discord_debuff_c.vpcf",
 	"particles/items3_fx/iron_talon_active.vpcf",
@@ -171,6 +172,10 @@ PrecacheList.particles = {
 	"particles/neutral_fx/miniboss_death.vpcf",
 	"particles/neutral_fx/miniboss_death_dire.vpcf",
 	"particles/neutral_fx/miniboss_dire_damage_impact.vpcf",
+	-- лужа захваченной вышки (lib/tower/tower_capture_pool.lua)
+	"particles/neutral_fx/miniboss_spawner_effect_ground_decal.vpcf",
+	"particles/neutral_fx/miniboss_pit_sparkle.vpcf",
+	"particles/items2_fx/tranquil_boots_heal.vpcf",
 	"particles/neutral_fx/miniboss_shield.vpcf",
 	"particles/neutral_fx/miniboss_shield_dire.vpcf",
 	"particles/neutral_fx/mud_golem_hurl_boulder.vpcf",
@@ -340,6 +345,7 @@ PrecacheList.models = {
 	"models/items/invoker/arsenal_magus_cape_white/arsenal_magus_cape_white.vmdl",
 	"models/items/invoker/sempiternal_revelations_hat/sempiternal_revelations_hat.vmdl",
 	"models/items/invoker/ti8_invoker_prism_crystal_spellcaster_shoulder/ti8_invoker_prism_crystal_spellcaster_shoulder.vmdl",
+	"models/props_gameplay/divine_sentinel/divine_sentinel.vmdl", -- ворота торментора (lib/boss/tormentor_gates.lua)
 	"models/props_gameplay/donkey.vmdl",
 	"models/props_gameplay/dummy/dummy.vmdl",
 	"models/props_gameplay/dummy/dummy_large.vmdl",

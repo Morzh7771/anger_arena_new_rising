@@ -1,3 +1,28 @@
+﻿--[[
+	Бонусы героя от характеристик (плавные формулы, без порогов и капов).
+
+	Интеллект -> усиление заклинаний, линейно:
+	  spell_amp% = INT_SPELL_AMP_PER_POINT * интеллект
+	  1000 -> 20%   2500 -> 50%   5000 -> 100%   10000 -> 200%
+
+	Сила -> снижение входящего урона, убывающая отдача:
+	  снижение% = STR_RESIST_LIMIT * сила / (сила + STR_RESIST_HALF)
+	  к STR_RESIST_LIMIT только стремится и никогда его не достигает (и тем более 100%)
+	  1000 -> 8.6%   2500 -> 15%   5000 -> 20%   10000 -> 24%
+]]
+AA_HERO_INT_SPELL_AMP_PER_POINT = 0.04 -- было 0.02, усилено в 2 раза
+AA_HERO_STR_RESIST_LIMIT = 30
+AA_HERO_STR_RESIST_HALF = 2500
+
+function AAHeroStatSpellAmp(int)
+	return AA_HERO_INT_SPELL_AMP_PER_POINT * math.max(0, int or 0)
+end
+
+function AAHeroStatDamageReduction(str)
+	str = math.max(0, str or 0)
+	return AA_HERO_STR_RESIST_LIMIT * str / (str + AA_HERO_STR_RESIST_HALF)
+end
+
 modifier_aa_hero = class({})
 LinkLuaModifier("bonus_str_tome", "modifiers/modifier_aa_hero", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("bonus_agi_tome", "modifiers/modifier_aa_hero", LUA_MODIFIER_MOTION_NONE)
@@ -48,6 +73,8 @@ function modifier_aa_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_EVENT_ON_DEATH,
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
 	}
 	return funcs
 end
@@ -82,6 +109,14 @@ function modifier_aa_hero:GetModifierBonusStats_Agility() if self:GetParent():Ha
 function modifier_aa_hero:GetModifierBonusStats_Intellect() if self:GetParent():HasModifier("bonus_int_tome") and self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() > 1 then return self:GetParent():FindModifierByName('bonus_int_tome'):GetStackCount() end end
 
 function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
+	-- FindAllModifiers есть только на сервере; на клиенте модификатор тоже живёт
+	local parent = self:GetParent()
+	for _, mod in ipairs(parent.FindAllModifiers and parent:FindAllModifiers() or {}) do
+		if string.find(string.lower(mod:GetName()), "tailwind", 1, true) then
+			local ability = mod:GetAbility() or self:GetParent():FindAbilityByName("windrunner_tailwind")
+			if ability then return ability:GetSpecialValueFor("max_movespeed") end
+		end
+	end
 	if     self:GetParent():HasModifier("modifier_rune_haste") then 
 		return 700
 	elseif self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness") 
@@ -93,9 +128,7 @@ function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
     	return 10000
     elseif self:GetParent():HasModifier("modifier_centaur_horsepower") then 
     	return 800
-	elseif self:GetParent():HasModifier("modifier_windrunner_easy_breezy") then
-		return 750
-	else 
+	else
 		return 700
 	end
 end
@@ -108,10 +141,36 @@ function modifier_aa_hero:GetModifierMoveSpeedBonus_Percentage()
 end
 function modifier_aa_hero:OnIntervalThink()
 	if not IsServer() then return end
+	-- раз в минуту в console.log: что сейчас дают сила и интеллект
+	self.aa_log_tick = (self.aa_log_tick or 0) + 1
+	if self.aa_log_tick % 60 == 1 and not self:GetParent():IsIllusion() then
+		local parent = self:GetParent()
+		print(string.format("[AA.stats] %s str=%d int=%d -> damage_reduction=%.1f%% spell_amp=%.1f%%",
+			parent:GetUnitName(), parent:GetStrength(), parent:GetIntellect(false),
+			AAHeroStatDamageReduction(parent:GetStrength()), AAHeroStatSpellAmp(parent:GetIntellect(false))))
+	end
+	-- снижение урона от силы - в net table юнита: его показывает панель
+	-- статов при наведении на портрет (panorama stats_tooltip.js), без
+	-- запроса к серверу
+	local reduction = math.floor(AAHeroStatDamageReduction(self:GetParent():GetStrength()) * 10 + 0.5) / 10
+	if reduction ~= self.net_reduction then
+		self.net_reduction = reduction
+		self:GetParent():SetNetworkableEntityInfo("aa_damage_reduction", reduction)
+	end
+
     local int = self:GetParent():GetIntellect(false)
 	if int ~= self.int then
 		self.int = int
 		local resist = 0.1 * int
 		self:GetParent():SetBaseMagicalResistanceValue(25 - resist)
 	end
+end
+-- интеллект -> усиление заклинаний (формула в начале файла)
+function modifier_aa_hero:GetModifierSpellAmplify_Percentage()
+	return AAHeroStatSpellAmp(self:GetParent():GetIntellect(false))
+end
+
+-- сила -> снижение входящего урона (формула в начале файла)
+function modifier_aa_hero:GetModifierIncomingDamage_Percentage()
+	return -AAHeroStatDamageReduction(self:GetParent():GetStrength())
 end

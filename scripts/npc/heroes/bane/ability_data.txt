@@ -57,7 +57,7 @@ DOTAAbilities
 				"value"					"0"
 			}
 			"damage_tick_rate"				"1.0"
-			"damage_pct"				"20"
+			"damage_pct"				"50"
 		}
 	}
 	"bane_brain_sap"
@@ -70,7 +70,7 @@ DOTAAbilities
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"		
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Bane.BrainSap"
         "HasShardUpgrade"               "1"
@@ -107,12 +107,13 @@ DOTAAbilities
 			{
 				"special_bonus_shard"				"+25"
 			}
-			"damage_pct"						"50"
+			"damage_pct"						"125"
 			"AbilityCastRange"
 			{
 				"value"				"625"
 				"special_bonus_unique_bane_8"				"+125"
 			}
+			"heal_int_pct"		"50"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -186,7 +187,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"bane_nightmare"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
@@ -217,7 +218,6 @@ DOTAAbilities
 		{
 
 			"nightmare_invuln_time"		"1.0"
-			"duration"					"2.25 2.60 2.95 3.3 3.65 4.0 4.35"
 			"animation_rate"			"0.2"
 			"AbilityCooldown"
 			{
@@ -228,11 +228,6 @@ DOTAAbilities
 			{
 				"value"						"0"
 			}
-			"is_vector_targeted"
-			{
-				"value"						"0"
-			}
-			"vector_render_distance"		"600"
 			"vector_render_radius"			"120"
 			"walk_speed"
 			{

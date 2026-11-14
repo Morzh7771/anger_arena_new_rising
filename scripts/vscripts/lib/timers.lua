@@ -45,6 +45,28 @@ local function timer_err(err)
   return timer_traceback(tostring(err))
 end
 
+-- Где создан таймер: "lib/x.lua:123". Без библиотеки debug место берём из
+-- error(msg, level) - он дописывает к сообщению файл и строку нужного уровня.
+-- Уровни: 1 - error_at, 2 - pcall, 3 - timer_source, 4 и дальше - вызывающие;
+-- пропускаем сам timers.lua и C-функции (у них места нет).
+local function error_at(level)
+  error("", level)
+end
+
+local function timer_source()
+  for level = 4, 8 do
+    local _, msg = pcall(error_at, level)
+
+    msg = tostring(msg):gsub(":%s*$", "")
+
+    if msg ~= "" and not msg:find("timers%.lua") then
+      return (msg:gsub("^scripts/vscripts/", ""))
+    end
+  end
+
+  return "?"
+end
+
 -- Раньше на каждый сработавший таймер аллоцировалось новое замыкание для xpcall.
 -- Здесь одна функция на весь модуль, а таймер передаётся через переменную:
 -- xpcall в Lua 5.1 не умеет прокидывать аргументы. Вложенных вызовов быть не
@@ -108,6 +130,13 @@ function Timers:_Think()
   local callbackTime = 0
   local callbackCount = 0
 
+  local stats = Timers._stats
+
+  if not stats then
+    stats = {}
+    Timers._stats = stats
+  end
+
   for k, v in pairs(Timers.timers) do
     local useGameTime = (v.useGameTime ~= false)
     local oldStyle = (v.useOldStyle == true)
@@ -131,9 +160,23 @@ function Timers:_Think()
       callbackTime = callbackTime + elapsed
       callbackCount = callbackCount + 1
 
+      -- копим по месту создания, сводку раз в минуту печатает lib/diag_log
+      local src = v._src or "?"
+      local st = stats[src]
+
+      if not st then
+        st = { ms = 0, n = 0, max = 0 }
+        stats[src] = st
+      end
+
+      st.ms = st.ms + elapsed
+      st.n = st.n + 1
+
+      if elapsed > st.max then st.max = elapsed end
+
       if elapsed > worstTime then
         worstTime = elapsed
-        worstFunc = v.callback
+        worstFunc = v
       end
 
       if status then
@@ -154,6 +197,9 @@ function Timers:_Think()
   local profileTime = GetSystemTimeMS() - profileStart
 
   if profileTime > Timers._timeLimit then
+    Timers._slowFrames = (Timers._slowFrames or 0) + 1
+    Timers._slowMs = (Timers._slowMs or 0) + profileTime
+
     print(string.format(
       "[Warning.Timers] slow frame: %.2f ms | колбэков: %d, в них %.2f ms (%.0f%%), вне них %.2f ms",
       profileTime,
@@ -163,8 +209,13 @@ function Timers:_Think()
       profileTime - callbackTime))
 
     if worstFunc then
-      print(string.format("[Warning.Timers] худший колбэк: %s - %.2f ms",
-        timer_func_location(worstFunc), worstTime))
+      local where = worstFunc._src
+
+      if not where or where == "?" then
+        where = timer_func_location(worstFunc.callback)
+      end
+
+      print(string.format("[Warning.Timers] худший колбэк: %s - %.2f ms", where, worstTime))
     end
 
     -- "вне них" близко к общему времени = наш Lua ни при чём, тормозит сервер
@@ -251,6 +302,10 @@ function Timers:CreateTimer(name, args, context)
   end
 
   args.context = context
+
+  if args._src == nil then
+    args._src = timer_source()
+  end
 
   Timers.timers[name] = args
   return name

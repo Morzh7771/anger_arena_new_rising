@@ -3,6 +3,17 @@ LinkLuaModifier("modifier_explosive_mantle_of_intelligence", 'items/item_explosi
 LinkLuaModifier("modifier_explosive_mantle_of_intelligence_active_channel", 'items/item_explosive_mantle_of_intelligence', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_explosive_mantle_of_intelligence_active_finish", 'items/item_explosive_mantle_of_intelligence', LUA_MODIFIER_MOTION_NONE)
 
+local EXPLOSIVE_MANTLE_PRIME_SOUND = "Hero_Techies.StickyBomb.Priming"
+
+-- Гасит звук предвзрыва и останавливает таймер, который его повторяет.
+-- Вызывается из OnDestroy модификаторов, при смерти владельца и из самого таймера.
+-- Timers живёт только на сервере, поэтому проверка IsServer обязательна.
+local function StopExplosiveMantlePriming(unit)
+    if not IsServer() or unit == nil or unit:IsNull() then return end
+    Timers:RemoveTimer("time_until_happiness_" .. tostring(unit:entindex()))
+    unit:StopSound(EXPLOSIVE_MANTLE_PRIME_SOUND)
+end
+
 
 function item_explosive_mantle_of_intelligence:GetIntrinsicModifierName()
     return "modifier_explosive_mantle_of_intelligence"
@@ -25,7 +36,12 @@ function item_explosive_mantle_of_intelligence:OnSpellStart()
             useGameTime = true,
             endTime = 0,
             callback = function()
-               EmitSoundOn("Hero_Techies.StickyBomb.Priming", self:GetCaster())
+               local owner = self:GetCaster()
+               if owner == nil or owner:IsNull() or not owner:IsAlive() then
+                  StopExplosiveMantlePriming(owner)
+                  return nil
+               end
+               EmitSoundOn(EXPLOSIVE_MANTLE_PRIME_SOUND, owner)
                return 1
             end
          })
@@ -43,11 +59,26 @@ modifier_explosive_mantle_of_intelligence = class({
     DeclareFunctions = function(self)
         local funcs = {
             MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+            MODIFIER_EVENT_ON_DEATH,
         }
         return funcs
     end,
 
     GetModifierBonusStats_Intellect = function(self) return self:GetAbility():GetSpecialValueFor("bonus_int") end,
+
+    -- смерть владельца: звук предвзрыва должен замолчать сразу
+    OnDeath = function(self, params)
+        if IsServer() and params.unit == self:GetParent() then
+            StopExplosiveMantlePriming(self:GetParent())
+        end
+    end,
+
+    -- снятие/продажа/выброс предмета
+    OnDestroy = function(self)
+        if IsServer() then
+            StopExplosiveMantlePriming(self:GetParent())
+        end
+    end,
 })
 
 modifier_explosive_mantle_of_intelligence_active_channel = class({
@@ -74,13 +105,14 @@ modifier_explosive_mantle_of_intelligence_active_channel = class({
         self.base_speed = 700
         if IsServer() then
             -- play effects
-            self:PlayEffects( true )
+            if self.PlayEffects then self:PlayEffects( true ) end
         end
     end,
     OnDestroy = function(self)
         if IsServer() then
             -- play effects
-         self:PlayEffects( false )
+            StopExplosiveMantlePriming(self:GetParent())
+         if self.PlayEffects then self:PlayEffects( false ) end
         end
     end,
      GetModifierMoveSpeed_Absolute = function(self) return self.base_speed end,
@@ -140,7 +172,14 @@ modifier_explosive_mantle_of_intelligence_active_finish = class({
         self:StartIntervalThink(3)
         self.item = self:GetParent():FindItemInInventory("item_explosive_mantle_of_intelligence")
         self.pre_explode_duration = self:GetSpecialValueFor("pre_explode_duration")
-    end
+    end,
+
+    -- взрыв, истечение модификатора или смерть - звук должен остановиться
+    OnDestroy = function(self)
+        if IsServer() then
+            StopExplosiveMantlePriming(self:GetParent())
+        end
+    end,
 })
 
 function modifier_explosive_mantle_of_intelligence_active_finish:OnIntervalThink()
@@ -165,17 +204,7 @@ function modifier_explosive_mantle_of_intelligence_active_finish:OnIntervalThink
         ParticleManager:SetParticleControl( effect_cast, 1, Vector( radius, radius, radius ) )
         ParticleManager:ReleaseParticleIndex( effect_cast )
 
-        local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_TEAM_NEUTRALS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-        for _, enemy in pairs(enemies) do
-            ApplyDamage({
-                victim = enemy,
-                attacker = caster,
-                damage_type = DAMAGE_TYPE_MAGICAL ,
-                damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
-                ability = self:GetAbility(), --Optional.
-                damage = final_explode
-            })
-        end
+        local explode_pos = caster:GetAbsOrigin()
         local MANTLE_PURGE_MODIFIERS = {
             "modifier_dazzle_shallow_grave",
             "modifier_troll_warlord_battle_trance",
@@ -193,12 +222,33 @@ function modifier_explosive_mantle_of_intelligence_active_finish:OnIntervalThink
                EmitSoundOn("Hero_Gyrocopter.CallDown.Damage", caster)
             end
          })
-        if self.item:GetCurrentCharges() > 1 then 
-            self.item:SetCurrentCharges(self.item:GetCurrentCharges() - 1)
-        else
-            caster:RemoveItem(self.item)
-        end
+        -- Сначала владелец умирает, потом взрыв бьёт врагов: убийства взрывом делает уже
+        -- мёртвый герой, и опыта за них он не получает (lib/hero_kill_bounty.lua платит
+        -- опыт только живым). Позицию, способность и предмет берём до смерти; заряд
+        -- списываем ПОСЛЕ взрыва, иначе урон шёл бы от уже удалённого предмета.
+        local ability = self:GetAbility()
+        local item = self.item
+
         caster:Kill(caster, caster)
+
+        local enemies = FindUnitsInRadius(caster:GetTeamNumber(), explode_pos, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_TEAM_NEUTRALS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+        for _, enemy in pairs(enemies) do
+            ApplyDamage({
+                victim = enemy,
+                attacker = caster,
+                damage_type = DAMAGE_TYPE_MAGICAL ,
+                damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
+                ability = ability, --Optional.
+                damage = final_explode
+            })
+        end
+        if item and not item:IsNull() then
+            if item:GetCurrentCharges() > 1 then
+                item:SetCurrentCharges(item:GetCurrentCharges() - 1)
+            else
+                caster:RemoveItem(item)
+            end
+        end
         ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN, caster)
         ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN, caster)
         ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_ABSORIGIN, caster)

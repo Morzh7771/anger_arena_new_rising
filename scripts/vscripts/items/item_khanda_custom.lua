@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_item_khanda_custom", "items/item_khanda_custom", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_khanda_custom_debuff", "items/item_khanda_custom", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_khanda_custom_break", "items/item_khanda_custom", LUA_MODIFIER_MOTION_NONE)
 
 item_khanda = class({
 
@@ -100,6 +101,7 @@ function modifier_item_khanda_custom:DealDamage(params)
     self:GetAbility():UseResources(true, false, false, true)
     ApplyDamage({attacker = self:GetCaster(), victim = target, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
     target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_khanda_custom_debuff", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
+    target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_khanda_custom_break", {duration = self:GetAbility():GetSpecialValueFor("break_duration") * (1 - target:GetStatusResistance())})
 
     local particle = ParticleManager:CreateParticle("particles/items_fx/khanda_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.unit)
     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
@@ -114,12 +116,28 @@ function modifier_item_khanda_custom:DealDamage(params)
 end
 
 modifier_item_khanda_custom_debuff = class({
+    IsDebuff = function (self) return true end,
+    IsPurgable = function (self) return true end,
     GetTexture = function (self) return "buffs/manaflare" end,
-    GetModifierMoveSpeedBonus_Percentage = function (self) return self:GetAbility():GetSpecialValueFor("slow") end,
+    GetModifierMoveSpeedBonus_Percentage = function (self)
+        local ability = self:GetAbility()
+        return ability and -math.abs(ability:GetSpecialValueFor("slow")) or 0
+    end,
     DeclareFunctions = function (self)
         return
         {
             MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
         }
     end
+})
+
+
+-- Отдельный Break от срабатывания Канды, длительность как у Silver Edge (break_duration).
+modifier_item_khanda_custom_break = class({
+    IsDebuff = function (self) return true end,
+    IsPurgable = function (self) return true end,
+    GetTexture = function (self) return "item_silver_edge" end,
+    GetEffectName = function (self) return "particles/items3_fx/silver_edge.vpcf" end,
+    GetEffectAttachType = function (self) return PATTACH_ABSORIGIN_FOLLOW end,
+    CheckState = function (self) return { [MODIFIER_STATE_PASSIVES_DISABLED] = true } end,
 })

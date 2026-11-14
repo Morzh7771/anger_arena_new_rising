@@ -168,9 +168,11 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"visage_summon_familiars"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"			"heroes/visage/visage_familiars"
+		"AbilityTextureName"	"visage_summon_familiars"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 
@@ -337,7 +339,9 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"visage_stone_form_self_cast"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"			"heroes/visage/visage_familiars"
+		"AbilityTextureName"	"visage_stone_form_self_cast"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -372,9 +376,11 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"visage_summon_familiars_stone_form"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"			"heroes/visage/visage_familiars"
+		"AbilityTextureName"	"visage_summon_familiars_stone_form"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
@@ -398,5 +404,21 @@ DOTAAbilities
 			"hp_regen"				"150 175 200 225 250 275 300"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+	}
+	"visage_summon_familiars_recall"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"heroes/visage/visage_familiars"
+		"AbilityTextureName"	"visage_summon_familiars"
+		"MaxLevel"				"1"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityCastPoint"		"0.0"
+		"AbilityCooldown"		"10.0"
+		"AbilitySound"			"Visage_Familiar.StoneForm.Cast"
+		"AbilityValues"
+		{
+			"recall_duration"	"4"
+		}
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_5"
 	}
 }

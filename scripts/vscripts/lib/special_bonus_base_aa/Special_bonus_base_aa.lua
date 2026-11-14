@@ -17,7 +17,7 @@ LinkLuaModifier("modifier_intSpell", "lib/special_bonus_base_aa/talantes", LUA_M
 LinkLuaModifier("modifier_attackSpeed", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bash", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_crit", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_bat", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bat_fixed_rate_aa", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_talant_stat_refresher", "lib/special_bonus_base_aa/talantes", LUA_MODIFIER_MOTION_NONE)
 
 if Special_bonus_base_aa == nil then
@@ -27,6 +27,18 @@ if Special_bonus_base_aa == nil then
 end
 
 function Special_bonus_base_aa:OnAbilityLearned(event)
+	-- После изучения ЛЮБОГО таланта сразу пересылаем героя клиенту. Раньше это
+	-- невольно делал рефрешер статов (полный пересчёт каждые 0.1 с); когда
+	-- лишние пересчёты убрали, окно выбора таланта перестало закрываться само
+	-- и ждало следующего клика.
+	if event.abilityname and string.match(event.abilityname, "^special_bonus") then
+		local learner = PlayerResource:GetSelectedHeroEntity(event.PlayerID)
+
+		if learner and not learner:IsNull() then
+			learner:CalculateStatBonus(true)
+		end
+	end
+
 	if string.match(event.abilityname, "^special_bonus_base_aa")then
         local hero = PlayerResource:GetSelectedHeroEntity( event.PlayerID )
         local modifierName = "modifier_"..string.match(event.abilityname, "^special_bonus_base_aa_(.-)_")

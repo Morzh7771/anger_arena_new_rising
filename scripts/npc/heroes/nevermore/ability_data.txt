@@ -248,55 +248,51 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"                      "8"
-        "DependentOnAbility"            "nevermore_requiem"
         "Innate"                        "1"
         "IsBreakable"                   "1"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
-        {
-           "necromastery_damage_per_soul"  
-           {
-               "value"                 "1 2 3 4 5 6 7 8"
-               "CalculateSpellDamageTooltip"   "0"
-               "special_bonus_unique_nevermore_1"          "+2"
-           }
-           "necromastery_max_souls"        
-           {
-               "value"                     "20"
-               "special_bonus_scepter"     "+5"
-           }
-           "souls_per_kill"                "1"
-           "necromastery_soul_release"     "0.7"
-           "attack_range_bonus" "0"
-           "shard_souls_per_kill" 
-           {
-               "value"             "0"
-               "special_bonus_shard"			"2"
-           }
-           "shard_crit_pct"         
-           {
-               "value"             "0"
-               "special_bonus_shard"			"220"
-           }   
-           "shard_fear_duration"        
-           {
-               "value"             "0"
-               "special_bonus_shard"			"0.2"
-           }
-           "soul_release_tooltip"          "30.0"
-           "max_soul_increase_on_hero_kill"
-           {
-               "value"                                             "0"
-           }
-                	"souls_per_hero_kill"			"4"
-        	"current_max_souls_tooltip"
-        	{
-        		"value"			"0"
-        	}
-}
+		{
+				"necromastery_damage_per_soul"	
+				{
+					"value"					"1.35"
+					"hero_levelup"			"+0.17"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"necromastery_max_souls"		
+				{
+					"value"						"25"
+					"special_bonus_unique_nevermore_1"		"+10"
+				}
+				"souls_per_kill"					"1"
+				"souls_per_hero_kill"				"4"
+				"necromastery_soul_release"		"0.7"
+				"attack_range_bonus" "0"
+				"shard_souls_per_kill" 
+				{
+					"special_bonus_shard"		"2"
+				}
+				"shard_crit_pct"		 
+				{
+					"special_bonus_shard"		"190"
+				}	
+				"shard_fear_duration"		 
+				{
+					"special_bonus_shard"		"0.4"
+				}
+				"soul_release_tooltip"			"30.0"
+				"max_soul_increase_on_hero_kill"
+				{
+					"value"						"0"
+				}
+				"current_max_souls_tooltip"
+				{
+					"dynamic_value"						"true"
+				}
+			
+		}
     }
 	"nevermore_dark_lord"
 	{
@@ -391,42 +387,42 @@ DOTAAbilities
         // Special  
         //-------------------------------------------------------------------------------------------------------------
         "AbilityValues"
-        {
-            "bonus_attack_speed"    
-            {
-                "value"         "30 50 70 90 110 130 150"
-                "special_bonus_unique_nevermore_4"  "+50"
-            }
-            "cast_speed_pct"        
-            {
-                "value"                                                 "100"
-                "special_bonus_unique_nevermore_frenzy_castspeed"       "+30"
-            }
-            "cast_speed_pct_tooltip"
-            {
-                "value"                                                 "0"
-                "special_bonus_unique_nevermore_frenzy_castspeed"       "=140"
-            }
-            "duration"              "8"
-            "soul_cost"             "5"
-                	"bonus_move_speed"
-        	{
-        		"value"			"4 6 8 10 12 14 16"
-        	}
-        	"max_collection_count"
-        	{
-        		"value"			"4 6 8 10 12 14 16"
-        	}
-        	"soul_collection_per_interval"			"2"
-        	"soul_collection_radius"			"600"
-        	"soul_collection_interval"			"0.5"
-        	"soul_collection_per_hero"
-        	{
-        		"value"			"3"
-        	}
-        	"soul_collection_per_creep"			"1"
-        	"linger_duration"			"8"
-}
+		{
+			"bonus_attack_speed"	
+			{
+				"value"			"30 50 70 90 110 130 150"
+				"special_bonus_unique_nevermore_4"	"+50"
+			}
+			"bonus_move_speed"	
+			{
+				"value"			"4 6 8 10 12 14 16"
+			}
+			"cast_speed_pct"		
+			{
+				"value"													"100"
+				"special_bonus_unique_nevermore_frenzy_castspeed"		"+30"
+			}
+			"cast_speed_pct_tooltip"
+			{
+				"value"													"0"
+				"special_bonus_unique_nevermore_frenzy_castspeed"		"=140"
+			}
+			"duration"				"8"
+			"max_collection_count"				
+			{
+				"value"					"4 6 8 10 12 14 16 18"
+			}	
+			"soul_collection_per_interval"		"2 2 2 3 3 3 4"
+			"soul_collection_radius"			"600 600 700 700 800 800 900"
+			"soul_collection_interval"			"0.3"
+			"soul_collection_per_hero"			
+			{
+				"value"						"3"
+				"special_bonus_unique_nevermore_frenzy_max_collection_count"				"+2"
+			}
+			"soul_collection_per_creep"			"1"
+			"linger_duration"					"8"
+		}
     }
 	"nevermore_requiem"
 	{

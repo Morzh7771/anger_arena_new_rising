@@ -14,13 +14,13 @@
 #base items/boots_of_bearing.txt
 #base items/BRUSKI.txt
 #base items/butterfly.txt
+#base items/consecrated_wraps.txt
 #base items/crimson_guard.txt
 #base items/daedalus.txt
 #base items/dagon.txt
 #base items/desolator.txt
 #base items/dimensional_predictor.txt
 #base items/disperser.txt
-#base items/eternal_shroud.txt
 #base items/ethereal_blade.txt
 #base items/glimmer_cape.txt
 #base items/guardian_greaves.txt
@@ -62,6 +62,7 @@
 #base items/talisman_of_ambition.txt
 #base items/talisman_of_heal.txt
 #base items/third_eye.txt
+#base items/tranquil_boots.txt
 #base items/void_stick.txt
 #base items/unknown_amulet.txt
 #base items/necronomicon.txt
@@ -527,6 +528,9 @@
             "cleave_illusion_pure"              "20"
             "bonus_range"                       "150"
             "chop_tree_radius"                  "150"
+            "quelling_bonus"                    "64"
+            "quelling_bonus_pct"                "40"
+            "quelling_bonus_ranged_coef"        "50"
     	}
     }
 
@@ -956,7 +960,7 @@
         "AbilityTextureName"            "recipe"
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "240"
+        "ItemCost"                      "360"
         "ItemShopTags"                  ""
 
         // Recipe
@@ -981,7 +985,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"               "45.0"
         "AbilityCastPoint"              "0.5"
-        "ItemCost"                      "400"
+        "ItemCost"                      "500"
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
         "ItemKillable"                  "1"
@@ -1012,7 +1016,7 @@
         "AbilityTextureName"            "recipe"
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"
+        "ItemCost"						"1000"
         "ItemShopTags"					""
 
         // Recipe
@@ -1042,10 +1046,10 @@
             "int"			        "45 60 75"
 
             "splash_aoe"	        "300"
-            "splash_pct_creep"      "10 20 30"
-            "splash_pct_hero"       "10 20 30"
-            "splash_pct_illusion"   "10 20 30"
-            "magic_pierce"          "20 25 30"
+            "splash_pct_creep"      "5 10 15"
+            "splash_pct_hero"       "5 10 15"
+            "splash_pct_illusion"   "5 10 15"
+            "magic_pierce"          "10 15 20"
             "item_damage_pct"       "50"    // splash from item damage is halved
         }
     }

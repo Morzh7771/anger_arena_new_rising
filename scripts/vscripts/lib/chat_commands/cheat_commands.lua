@@ -13,6 +13,8 @@ Cheat lobby commands
  -perf                  -- счётчики нагрузки: крипы, лагеря, таймеры
  -wipeCreeps, -wc       -- убить всех крипов лагерей (A/B тест по фпс)
  -campsleep 0|1         -- вкл/выкл сон лагерей
+ -endgame [radiant|dire] -- закончить игру сейчас (проверка финального экрана)
+ -kl [r|d] 50            -- поставить команде счёт убийств (без r/d - своей команде)
 ]]
 
 Commands = Commands or class({})
@@ -277,9 +279,79 @@ function Commands:switchhero(player, arg)
 	_SwitchHeroPrecached( player, "npc_dota_hero_" .. arg[1] )
 end
 
+-- Закончить игру сразу, без 30-секундного отсчёта: финальный экран и
+-- статистику иначе не проверить, не доиграв матч. По умолчанию побеждает
+-- команда того, кто ввёл команду.
+function Commands:endgame(player, arg)
+	local team = player and PlayerResource:GetTeam(player:GetPlayerID()) or DOTA_TEAM_GOODGUYS
+
+	if arg and arg[1] == "radiant" then
+		team = DOTA_TEAM_GOODGUYS
+	elseif arg and arg[1] == "dire" then
+		team = DOTA_TEAM_BADGUYS
+	end
+
+	GameEnder:ForceEnd(team)
+end
+
+-- -kl r 50 / -kl d 80 / -kl 50: счёт убийств команды, как на верхней панели.
+-- Дошли до кил-лимита - объявляется последняя дуэль, ровно как при обычном
+-- убийстве в AngelArena:OnEntityKilled.
+local KL_TEAMS = {
+	r = DOTA_TEAM_GOODGUYS, radiant = DOTA_TEAM_GOODGUYS,
+	d = DOTA_TEAM_BADGUYS,  dire    = DOTA_TEAM_BADGUYS,
+}
+
+function Commands:kl(player, arg)
+	arg = arg or {}
+
+	local team = KL_TEAMS[tostring(arg[1] or ""):lower()]
+	local count = tonumber(team and arg[2] or arg[1])
+
+	if not team and player then
+		team = PlayerResource:GetTeam(player:GetPlayerID())
+	end
+
+	if not team or not count then
+		Attentions:SendChatMessage("-kl [r|d] <count>, kill limit: " .. tostring(_G.KILL_LIMIT))
+		return
+	end
+
+	count = math.max(0, math.floor(count))
+
+	_G.Kills[team] = count
+
+	local GameMode = GameRules:GetGameModeEntity()
+
+	GameMode:SetCustomRadiantScore(_G.Kills[DOTA_TEAM_GOODGUYS] or 0)
+	GameMode:SetCustomDireScore(_G.Kills[DOTA_TEAM_BADGUYS] or 0)
+
+	if count >= (_G.KILL_LIMIT or KILL_LIMIT) and not DuelController:IsLastDuelTeam(team) then
+		DuelController:AddLastDuelTeam(team)
+		Attentions:SendAttentionText("#aa_last_duel_coming", 10, 2)
+		if KillFeed then KillFeed:LastDuel() end
+	end
+end
+
 function Commands:fog(player, arg)
 	local GameMode = GameRules:GetGameModeEntity()
 	GameMode:SetFogOfWarDisabled(false)
+end
+
+-- Читовое золото ставится через SetGold, мимо GoldFilter, и камбэк его не
+-- видел: на тестах богатый герой считался бедным и получал камбэк-золото.
+-- Прибавку записываем в золото команды сами.
+local function CheatSetGold(hero, gold)
+	local playerid = hero:GetPlayerOwnerID()
+	local before = PlayerResource:GetGold(playerid)
+
+	hero:SetGold(gold, false)
+
+	local delta = PlayerResource:GetGold(playerid) - before
+
+	if delta > 0 and ComebackSystem then
+		ComebackSystem:OnGiveGold(playerid, delta)
+	end
 end
 
 function Commands:q(player, arg)
@@ -292,7 +364,7 @@ function Commands:q(player, arg)
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
 	hero:AddItemByName("item_boss_soul")
-	hero:SetGold(99999,false)
+	CheatSetGold(hero, 99999)
 end
 
 function Commands:cb(player, arg)
@@ -302,7 +374,7 @@ function Commands:cb(player, arg)
 		if not player then return end
 		local hero = player:GetAssignedHero()
 		hero:AddExperience(999999,0,true,true)
-		hero:SetGold(9999999,false)
+		CheatSetGold(hero, 9999999)
 		local target = CreateUnitByName( "npc_dota_hero_axe", position, true, nil, nil, hero:GetOpposingTeamNumber() )
 		target:SetControllableByPlayer( hero:GetPlayerOwnerID(), false )
 		target:AddExperience(999999,0,true,true)

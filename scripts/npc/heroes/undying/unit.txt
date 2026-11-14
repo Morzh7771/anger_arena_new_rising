@@ -1,7 +1,12 @@
+// Юниты героя. Юниты, которые есть в актуальной доте, - ванильные определения из
+// game/dota/pak01_dir.vpk (старая копия ломала суммонов). Уровни сверх дотовских
+// и свои юниты мода - наши, наследуют ванильные через include_keys_from.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
 "DOTAUnits"
 {
-  "npc_dota_unit_tombstone1"
+	"npc_dota_unit_tombstone1"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//
 		"BaseClass"					"npc_dota_unit_undying_tombstone"	// Class of entity of link to.
@@ -12,7 +17,17 @@
 		"IsSummoned"				"1"
 		"IsAncient"					"1"
 		"IsOther"					"1"
+		"IgnoreAddSummonedToSelection" "1"
+
 		"wearable"				"8630"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_tombstone.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_tombstone.vpcf"
+		}
 				
 		// Abilities
 		//----------------------------------------------------------------
@@ -66,12 +81,13 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 	"npc_dota_unit_tombstone2"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//
 		"BaseClass"					"npc_dota_unit_undying_tombstone"	// Class of entity of link to.
@@ -82,6 +98,7 @@
 		"IsSummoned"				"1"
 		"IsAncient"					"1"
 		"IsOther"					"1"
+		"IgnoreAddSummonedToSelection" "1"
 		"wearable"				"8630"
 				
 		// Abilities
@@ -136,12 +153,13 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 	"npc_dota_unit_tombstone3"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//
 		"BaseClass"					"npc_dota_unit_undying_tombstone"	// Class of entity of link to.
@@ -152,6 +170,7 @@
 		"IsSummoned"				"1"
 		"IsAncient"					"1"
 		"IsOther"					"1"
+		"IgnoreAddSummonedToSelection" "1"
 		"wearable"				"8630"
 				
 		// Abilities
@@ -206,12 +225,13 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 	"npc_dota_unit_tombstone4"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//
 		"BaseClass"					"npc_dota_unit_undying_tombstone"	// Class of entity of link to.
@@ -222,6 +242,7 @@
 		"IsSummoned"				"1"
 		"IsAncient"					"1"
 		"IsOther"					"1"
+		"IgnoreAddSummonedToSelection" "1"
 		"wearable"				"8630"
 				
 		// Abilities
@@ -276,11 +297,13 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
+
 	"npc_dota_unit_tombstone5"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//
 		"BaseClass"					"npc_dota_unit_undying_tombstone"	// Class of entity of link to.
@@ -291,6 +314,7 @@
 		"IsSummoned"				"1"
 		"IsAncient"					"1"
 		"IsOther"					"1"
+		"IgnoreAddSummonedToSelection" "1"
 		"wearable"				"8630"
 				
 		// Abilities
@@ -317,8 +341,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"0"		// Experience earn.
-		"BountyGoldMin"				"225"		// Gold earned min.
-		"BountyGoldMax"				"225"		// Gold earned max.
+		"BountyGoldMin"				"200"		// Gold earned min.
+		"BountyGoldMax"				"200"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -345,11 +369,13 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
+
 	"npc_dota_unit_tombstone6"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//
 		"BaseClass"					"npc_dota_unit_undying_tombstone"	// Class of entity of link to.
@@ -417,8 +443,10 @@
 		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
 		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
 	}
+
 	"npc_dota_unit_tombstone7"
 	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
 		// General
 		//
 		"BaseClass"					"npc_dota_unit_undying_tombstone"	// Class of entity of link to.
@@ -486,4 +514,180 @@
 		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
 		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
 	}
+
+	"npc_dota_unit_undying_zombie"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		// General
+		//
+		"BaseClass"					"npc_dota_unit_undying_zombie"	// Class of entity of link to.
+		"Model"						"models/heroes/undying/undying_minion.vmdl"	// Model.
+		"SoundSet"					"Undying_Zombie"					// Name of sound set.
+		"ModelScale"				"1.05"
+		"Level"						"1"
+		"CanBeDominated"			"0"
+		"wearable"				"8630"
+		"precache"
+		{
+		"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_zombie.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_zombie.vpcf"
+		}
+		"UnitToAbilityMap"			"undying_tombstone"
+				
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"undying_tombstone_zombie_deathstrike"			// Ability 1.
+		"Ability2"					"neutral_spell_immunity"			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"				"33"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"33"		// Damage range min.
+		"AttackDamageMax"			"36"		// Damage range max.
+		"AttackRate"				"1.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"128"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			""			// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"160"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALLEST"	
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"375"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+	}
+
+	"npc_dota_unit_undying_zombie_torso"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		// General
+		//
+		"BaseClass"					"npc_dota_unit_undying_zombie"	// Class of entity of link to.
+		"Model"						"models/heroes/undying/undying_minion_torso.vmdl"	// Model.
+		"SoundSet"					"Undying_Zombie"					// Name of sound set.
+		"ModelScale"				"1.05"
+		"Level"						"1"
+		"CanBeDominated"			"0"
+		"wearable"				"8630"
+		"precache"
+		{
+		"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_zombie.vpcf"
+		}
+		"party_hat_effects"
+		{
+			"party_hat_effect_0"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_zombie.vpcf"
+		}
+		"UnitToAbilityMap"			"undying_tombstone"
+
+				
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"undying_tombstone_zombie_deathstrike"			// Ability 1.
+		"Ability2"					"neutral_spell_immunity"			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"				"33"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"33"		// Damage range min.
+		"AttackDamageMax"			"36"		// Damage range max.
+		"AttackRate"				"1.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"128"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			""			// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"100"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALLEST"	
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"375"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+	}
+
 }

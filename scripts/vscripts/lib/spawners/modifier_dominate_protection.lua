@@ -26,5 +26,8 @@ function mod:OnDominated(params)
 
 	CreepSpawner:_OnDominated( unit )
 
+	-- приручённый крип становится суммоном героя: бафф от его статов
+	if SummonPower then SummonPower:ApplyWhenReady( unit ) end
+
 	self:Destroy()
 end

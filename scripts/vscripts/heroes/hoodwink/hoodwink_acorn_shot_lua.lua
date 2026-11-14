@@ -1,8 +1,14 @@
-local mainTree = 0
 hoodwink_acorn_shot_lua = class({})
 LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua", "heroes/hoodwink/hoodwink_acorn_shot_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua_thinker", "heroes/hoodwink/hoodwink_acorn_shot_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua_debuff", "heroes/hoodwink/hoodwink_acorn_shot_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua_tree_target", "heroes/hoodwink/hoodwink_acorn_shot_lua", LUA_MODIFIER_MOTION_NONE )
+
+-- Hardcoded as it has no kv value
+local TREE_DURATION = 20
+local TREE_VISION = 300
+-- высота мишени над деревом: жёлудь летит в крону, а не в корни
+local TREE_TARGET_HEIGHT = 100
 
 --------------------------------------------------------------------------------
 -- Init Abilities
@@ -14,10 +20,6 @@ function hoodwink_acorn_shot_lua:Precache( context )
 	PrecacheResource( "particle", "particles/tree_fx/tree_simple_explosion.vpcf", context )
 end
 
-function hoodwink_acorn_shot_lua:Spawn()
-	if not IsServer() then return end
-end
-
 --------------------------------------------------------------------------------
 -- Custom KV
 function hoodwink_acorn_shot_lua:GetCastRange( vLocation, hTarget )
@@ -27,24 +29,13 @@ end
 --------------------------------------------------------------------------------
 -- Ability Start
 function hoodwink_acorn_shot_lua:OnSpellStart()
-	-- unit identifier
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local point = self:GetCursorPosition()
 
-	-- Hardcoded as it has no kv value
-	self.tree_duration = 20
-	self.tree_vision = 300
-
-	-- create thinker
 	local thinker = CreateModifierThinker(
-		caster, -- player source
-		self, -- ability source
-		"modifier_hoodwink_acorn_shot_lua_thinker", -- modifier name
-		{  }, -- kv
-		caster:GetOrigin(),
-		caster:GetTeamNumber(),
-		false
+		caster, self, "modifier_hoodwink_acorn_shot_lua_thinker", {},
+		caster:GetOrigin(), caster:GetTeamNumber(), false
 	)
 	local mod = thinker:FindModifierByName( "modifier_hoodwink_acorn_shot_lua_thinker" )
 
@@ -55,147 +46,117 @@ function hoodwink_acorn_shot_lua:OnSpellStart()
 	mod.source = caster
 	mod.target = target
 
-	-- play effects
-	local sound_cast = "Hero_Hoodwink.AcornShot.Cast"
-	EmitSoundOn( sound_cast, caster )
+	EmitSoundOn( "Hero_Hoodwink.AcornShot.Cast", caster )
 end
 
 --------------------------------------------------------------------------------
 -- Projectile
 function hoodwink_acorn_shot_lua:OnProjectileHit_ExtraData( target, location, ExtraData )
-	--print(location)
 	local caster = self:GetCaster()
 	local thinker = EntIndexToHScript( ExtraData.thinker )
+	if not thinker or thinker:IsNull() then return end
 	local mod = thinker:FindModifierByName( "modifier_hoodwink_acorn_shot_lua_thinker" )
 	if not mod then return end
 
-	-- bounce
+	-- следующий отскок считается от точки попадания
 	thinker:SetOrigin( location )
 	mod:Bounce()
 
+	-- попали в дерево: урона нет, просто летим дальше
+	if ExtraData.tree==1 then
+		return
+	end
+
 	-- only on first shot, if target dodges or no target, create tree
 	if ExtraData.first==1 then
-		if self:GetAutoCastState() ~= true then
-			if target==thinker then
-				self:CreateTree( location )
-				return
-			end
-		else
-			self:CreateTree( location )
+		if self:GetAutoCastState() or not target or target==thinker then
+			mod.last_tree = self:CreateTree( location )
 			mod.target = thinker
 			return
 		end
-		-- if no enemy
-		if not target then
-			self:CreateTree( location )
-			mod.target = thinker
-			return
-		end
-		
+
 		if target:TriggerSpellAbsorb( self ) then
 			mod:Destroy()
 			return
 		end
 	end
 
-	-- check target
 	if not target then
 		mod:Destroy()
 		return
 	end
 
-	local duration = self:GetSpecialValueFor( "debuff_duration" )
-
 	-- attack enemy
-	--if self:GetCaster():GetTeamNumber() ~= caster:GetTeamNumber() then
-		local mod = caster:AddNewModifier(
-			caster, -- player source
-			self, -- ability source
-			"modifier_hoodwink_acorn_shot_lua", -- modifier name
-			{} -- kv
-		)
-	--end
-	caster:PerformAttack(
-		target,
-		true,
-		true,
-		true,
-		true,
-		false,
-		false,
-		true
-	)
-	mod:Destroy()
-	--print(caster)
+	local bonus = caster:AddNewModifier( caster, self, "modifier_hoodwink_acorn_shot_lua", {} )
+	caster:PerformAttack( target, true, true, true, true, false, false, true )
+	if bonus and not bonus:IsNull() then bonus:Destroy() end
+
 	-- debuff
-	if target ~= mainTree then
-		if target:IsMagicImmune() then
-			target:AddNewModifier(
-				caster, -- player source
-				self, -- ability source
-				"modifier_hoodwink_acorn_shot_lua_debuff", -- modifier name
-				{ duration = duration } -- kv
-			)
-
-			-- play effects
-			local sound_slow = "Hero_Hoodwink.AcornShot.Slow"
-			EmitSoundOn( sound_slow, target )
-		end
-	end
-
-	-- play effects
-	local sound_target = "Hero_Hoodwink.AcornShot.Target"
-	EmitSoundOn( sound_target, target )
+	target:AddNewModifier( caster, self, "modifier_hoodwink_acorn_shot_lua_debuff", { duration = self:GetSpecialValueFor( "debuff_duration" ) } )
+	EmitSoundOn( "Hero_Hoodwink.AcornShot.Slow", target )
+	EmitSoundOn( "Hero_Hoodwink.AcornShot.Target", target )
 end
 
 function hoodwink_acorn_shot_lua:CreateTree( location )
-	-- vision
-	AddFOWViewer( self:GetCaster():GetTeamNumber(), location, self.tree_vision, self.tree_duration, false )
+	AddFOWViewer( self:GetCaster():GetTeamNumber(), location, TREE_VISION, TREE_DURATION, false )
 
-	-- tree
-	mainTree = CreateTempTreeWithModel( location, self.tree_duration, "models/heroes/hoodwink/hoodwink_tree_model.vmdl" )
+	local tree = CreateTempTreeWithModel( location, TREE_DURATION, "models/heroes/hoodwink/hoodwink_tree_model.vmdl" )
 
 	-- move everyone on tree collision so they don't get stuck
 	local units = FindUnitsInRadius(
-		self:GetCaster():GetTeamNumber(),	-- int, your team number
-		location,	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		100,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_BOTH,	-- int, team filter
-		DOTA_UNIT_TARGET_ALL,	-- int, type filter
-		DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-		0,	-- int, order filter
-		false	-- bool, can grow cache
+		self:GetCaster():GetTeamNumber(), location, nil, 100,
+		DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL,
+		DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false
 	)
 	for _,unit in pairs(units) do
 		FindClearSpaceForUnit( unit, unit:GetOrigin(), true )
 	end
 
-	self:PlayEffects1( mainTree, location )
-	self:PlayEffects2( mainTree, location )
+	if tree then
+		self:PlayEffects1( tree )
+		self:PlayEffects2( tree )
+	end
+	return tree
+end
+
+--------------------------------------------------------------------------------
+-- Ближайшее стоящее дерево в радиусе: деревья карты и любые временные
+-- (Hoodwink, Furion, Monkey King, Ironwood Tree и т.п.).
+function hoodwink_acorn_shot_lua:FindNearestTree( point, radius, exclude )
+	local best, best_dist = nil, radius + 1
+
+	local function consider( tree )
+		if not tree or tree:IsNull() or tree == exclude then return end
+		-- срубленное дерево карты остаётся сущностью - пропускаем
+		if tree.IsStanding and not tree:IsStanding() then return end
+		local dist = ( tree:GetAbsOrigin() - point ):Length2D()
+		if dist < best_dist then
+			best, best_dist = tree, dist
+		end
+	end
+
+	for _,tree in pairs( GridNav:GetAllTreesAroundPoint( point, radius, false ) ) do
+		consider( tree )
+	end
+	-- временные деревья добираем по классу, если GridNav их не отдал
+	for _,tree in pairs( Entities:FindAllByClassnameWithin( "dota_temp_tree", point, radius ) ) do
+		consider( tree )
+	end
+
+	return best
 end
 
 --------------------------------------------------------------------------------
 -- Effects
-function hoodwink_acorn_shot_lua:PlayEffects1( tree, location )
-	print('PlayEffects1')
-	-- Get Resources
-	local particle_cast = "particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree.vpcf"
-
-	-- Create Particle
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, tree )
+function hoodwink_acorn_shot_lua:PlayEffects1( tree )
+	local effect_cast = ParticleManager:CreateParticle( "particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree.vpcf", PATTACH_ABSORIGIN_FOLLOW, tree )
 	ParticleManager:SetParticleControl( effect_cast, 0, tree:GetOrigin() )
 	ParticleManager:SetParticleControl( effect_cast, 1, Vector( 1, 1, 1 ) )
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 end
 
-function hoodwink_acorn_shot_lua:PlayEffects2( tree, location )
-	print('PlayEffects2')
-	-- Get Resources
-	local particle_cast = "particles/tree_fx/tree_simple_explosion.vpcf"
-
-	-- Create Particle
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
+function hoodwink_acorn_shot_lua:PlayEffects2( tree )
+	local effect_cast = ParticleManager:CreateParticle( "particles/tree_fx/tree_simple_explosion.vpcf", PATTACH_WORLDORIGIN, nil )
 	ParticleManager:SetParticleControl( effect_cast, 0, tree:GetOrigin()+Vector(1,0,0) )
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 end
@@ -316,10 +277,17 @@ end
 function modifier_hoodwink_acorn_shot_lua_debuff:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
 end
-modifier_hoodwink_acorn_shot_lua_thinker = class({})
+modifier_hoodwink_acorn_shot_lua_tree_target = class({})
+-- Невидимая мишень в кроне дерева: самонаводящемуся снаряду нужен юнит-цель.
+-- Живёт по duration и удаляет своего тинкера.
+function modifier_hoodwink_acorn_shot_lua_tree_target:IsHidden() return true end
+function modifier_hoodwink_acorn_shot_lua_tree_target:IsPurgable() return false end
+function modifier_hoodwink_acorn_shot_lua_tree_target:OnDestroy()
+	if not IsServer() then return end
+	UTIL_Remove( self:GetParent() )
+end
 
---------------------------------------------------------------------------------
--- Classifications
+modifier_hoodwink_acorn_shot_lua_thinker = class({})
 
 --------------------------------------------------------------------------------
 -- Initializations
@@ -328,52 +296,30 @@ function modifier_hoodwink_acorn_shot_lua_thinker:OnCreated( kv )
 	self.parent = self:GetParent()
 	self.ability = self:GetAbility()
 
-	-- references
-	self.projectile_name = "particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tracking.vpcf"
-
-	self.projectile_speed = self:GetAbility():GetSpecialValueFor( "projectile_speed" )
-	self.bounces = self:GetAbility():GetSpecialValueFor( "bounce_count" )+1
-	self.damage = self:GetAbility():GetSpecialValueFor( "bonus_damage" )
-	self.delay = self:GetAbility():GetSpecialValueFor( "bounce_delay" )
-	self.range = self:GetAbility():GetSpecialValueFor( "bounce_range" )
+	self.projectile_speed = self.ability:GetSpecialValueFor( "projectile_speed" )
+	self.bounces = self.ability:GetSpecialValueFor( "bounce_count" )+1
+	self.delay = self.ability:GetSpecialValueFor( "bounce_delay" )
+	self.range = self.ability:GetSpecialValueFor( "bounce_range" )
+	self.bounce_speed = self.ability:GetSpecialValueFor( "bounce_speed" )
 
 	if not IsServer() then return end
-	-- ability properties
-	self.abilityDamageType = self:GetAbility():GetAbilityDamageType()
-	self.abilityTargetTeam = self:GetAbility():GetAbilityTargetTeam()
-	self.abilityTargetType = self:GetAbility():GetAbilityTargetType()
-	self.abilityTargetFlags = self:GetAbility():GetAbilityTargetFlags()
 
-	-- precache projectile
 	self.info = {
-		-- Target = self.target,
-		-- Source = self.parent,
-		Ability = self.ability,	
-		
-		EffectName = self.projectile_name,
+		Ability = self.ability,
+		EffectName = "particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tracking.vpcf",
 		iMoveSpeed = self.projectile_speed,
-		bDodgeable = true,                           -- Optional
-	
+		bDodgeable = true,
 		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
-
-		bVisibleToEnemies = true,                         -- Optional
-		bProvidesVision = true,                           -- Optional
-		iVisionRadius = 200,                              -- Optional
-		iVisionTeamNumber = self.caster:GetTeamNumber(),        -- Optional
+		bVisibleToEnemies = true,
+		bProvidesVision = true,
+		iVisionRadius = 200,
+		iVisionTeamNumber = self.caster:GetTeamNumber(),
 		ExtraData = {
 			thinker = self.parent:entindex()
 		}
 	}
-	self.unit = nil
 	-- Start bounce in next frame
 	self:StartIntervalThink( 0 )
-end
-
-function modifier_hoodwink_acorn_shot_lua_thinker:OnRefresh( kv )
-	
-end
-
-function modifier_hoodwink_acorn_shot_lua_thinker:OnRemoved()
 end
 
 function modifier_hoodwink_acorn_shot_lua_thinker:OnDestroy()
@@ -384,78 +330,77 @@ end
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_hoodwink_acorn_shot_lua_thinker:OnIntervalThink()
-	
+	self:StartIntervalThink(-1)
+
 	self.bounces = self.bounces-1
 	if self.bounces<0 then
 		self:Destroy()
 		return
 	end
 
-	self:StartIntervalThink(-1)
-
 	local first = 0
+	local is_tree = 0
 	if not self.first then
 		self.first = true
 		first = 1
-		self.info.iMoveSpeed = self.projectile_speed
 	else
-		self.source = self.target
-
-		-- Find enemies
-		local enemies = FindUnitsInRadius(
-			self.caster:GetTeamNumber(),	-- int, your team number
-			self.target:GetOrigin(),	-- point, center point
-			nil,	-- handle, cacheUnit. (not known)
-			self.range,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-			DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-			0,	-- int, order filter
-			false	-- bool, can grow cache
-		)
-		if #enemies<1 then
+		if not self.target or self.target:IsNull() then
 			self:Destroy()
 			return
 		end
+		self.source = self.target
+		-- точка отскока: тинкер стоит там, где жёлудь попал в прошлую цель
+		local origin = self.parent:GetAbsOrigin()
 
+		-- 1) ближайший враг, кроме того, в кого только что попали
 		local next_target
+		local enemies = FindUnitsInRadius(
+			self.caster:GetTeamNumber(), origin, nil, self.range,
+			DOTA_UNIT_TARGET_TEAM_ENEMY,
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+			DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+			FIND_CLOSEST, false
+		)
 		for _,enemy in pairs(enemies) do
 			if enemy ~= self.target then
 				next_target = enemy
 				break
 			end
 		end
+
+		-- 2) врагов нет - отскок в ближайшее дерево (кроме того, от которого отлетели)
 		if not next_target then
-			local trees = GridNav:GetAllTreesAroundPoint( self.target:GetAbsOrigin(), self.range, false )
-			local bestTree = mainTree
-			for _,tree in pairs(trees) do
-				-- отладочный print убран: горячий путь (каждый удар/лечение)
-				if (tree:GetAbsOrigin() - self.target:GetAbsOrigin()):Length2D() < (bestTree:GetAbsOrigin() - self.target:GetAbsOrigin()):Length2D() then
-					bestTree = tree
-				end
+			local tree = self.ability:FindNearestTree( origin, self.range, self.last_tree )
+			if tree then
+				local pos = GetGroundPosition( tree:GetAbsOrigin(), nil ) + Vector( 0, 0, TREE_TARGET_HEIGHT )
+				next_target = CreateModifierThinker(
+					self.caster, self.ability, "modifier_hoodwink_acorn_shot_lua_tree_target",
+					{ duration = 10 }, pos, self.caster:GetTeamNumber(), false
+				)
+				self.last_tree = tree
+				is_tree = 1
 			end
-			self.unit = CreateUnitByName("npc_tree_thinker",bestTree:GetAbsOrigin(),false,nil,nil,DOTA_TEAM_NEUTRALS )
-			next_target = self.unit
-			mainTree = bestTree
-			self.bounces = self.bounces+1
 		end
+
 		if not next_target then
 			self:Destroy()
 			return
 		end
+		-- попали во врага - дерево снова можно выбрать
+		if is_tree==0 then
+			self.last_tree = nil
+		end
 		self.target = next_target
-
-		self.info.iMoveSpeed = self.caster:GetProjectileSpeed()
+		self.info.iMoveSpeed = self.bounce_speed
 	end
+
 	self.info.Source = self.source
 	self.info.Target = self.target
 	self.info.ExtraData.first = first
+	self.info.ExtraData.tree = is_tree
 	ProjectileManager:CreateTrackingProjectile( self.info )
 
-	-- play effects
-	local sound_cast = "Hero_Hoodwink.AcornShot.Bounce"
-	EmitSoundOn( sound_cast, self.source )
-	
+	EmitSoundOn( "Hero_Hoodwink.AcornShot.Bounce", self.source )
 end
 
 --------------------------------------------------------------------------------

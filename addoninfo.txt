@@ -1,13 +1,31 @@
-"AddonInfo"
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-	maps			"new"
-	"IsPlayable"	"1"
-	"HeroGuidesSupported" "1"
-	"CheckAFKPlayers" "0"
-	"PenaltiesEnabled" "0"
-	"EnablePickRules" "1"
-	"new"
-	{
-					"MaxPlayers"                    "10"
-	}
+    maps =
+    [
+        "new",
+    ]
+    IsPlayable = 1
+    HeroGuidesSupported = 1
+    PenaltiesEnabled = false
+    EnablePickRules = 1
+    CheckAFKPlayers = 0
+    map_options =
+    [
+        {
+            MaxPlayers = 10
+            map = "new"
+        },
+    ]
+    HideInTools = false
+    IsTemplate = false
+    DefaultMap = "new"
+    DisableIK = false
+    EventGame = false
+    hero_picker =
+    {
+    }
+    ForceDefaultGuide = false
+    MinimalPrecache = false
+    MinPlayers = 1
+    MaxPlayers = 24
 }

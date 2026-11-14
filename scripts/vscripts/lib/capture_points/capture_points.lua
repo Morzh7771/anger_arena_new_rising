@@ -18,7 +18,8 @@ if not IsServer() then return end
 require('lib/timers')
 require('lib/capture_points/capture_points_declarations')
 
-LinkLuaModifier("capture_point_area", "lib/capture_points/capture_point_area", LUA_MODIFIER_MOTION_NONE)
+-- модификатор круга capture_point_area линкуется в addon_init.lua: он нужен и
+-- клиенту, а этот файл грузится только на сервере
 
 CapturePoints = CapturePoints or {}
 CapturePoints.zones = CapturePoints.zones or {}
@@ -65,6 +66,10 @@ function CapturePoints:OnCaptured(zone, units)
 	local def = CAPTURE_POINT_TYPES[zone.capture_type]
 	local activator = self:_PickActivator(units)
 
+	-- участие в захвате для финального экрана; саму руну статистика
+	-- засчитает активатору через OnRuneActivate
+	if EndGameStats then EndGameStats:OnCapture(units) end
+
 	if def and activator then
 		local ok, err = pcall(self._ActivateRune, self, def.rune, activator)
 
@@ -105,12 +110,11 @@ function CapturePoints:RemoveZone(zone, captured)
 
 	self.zones[zone:GetEntityIndex()] = nil
 
+	-- модификатор не снимаем: его состояния (без полоски здоровья, не
+	-- выделяется) нужны, пока юнит доживает свои секунды до удаления
 	local mod = zone:FindModifierByName("capture_point_area")
 
-	if mod then
-		mod.captured = captured
-		mod:Destroy()
-	end
+	if mod then mod:Finish(captured) end
 
 	if zone.rune_fx then
 		ParticleManager:DestroyParticle(zone.rune_fx, true)

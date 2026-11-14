@@ -95,6 +95,9 @@ function CreepLeveling:OnSpawnCallback( event )
 
 	local spawner_type 	= spawner_info.spawner_type 
 
+	-- тип кемпа для телеметрии золота по кемпам (lib/match_telemetry.lua, camp_gold)
+	creep._aa_camp = spawner_type
+
 	local seek_spawn_info = nil
 	local seek_creep_level = -1000
 
@@ -125,9 +128,12 @@ function CreepLeveling:OnSpawnCallback( event )
 		AMPLIFY_STAT_ELITE_DAMAGE = 0.8
 		creep:AddNewModifier(nil,nil,"modifier_creep_elite",{duration = -1})
 	end
-	creep:SetDeathXP( seek_spawn_info.exp * AMPLIFY_BOUNTY_ELITE )
-	creep:SetMinimumGoldBounty( seek_spawn_info.gold_min * AMPLIFY_BOUNTY_ELITE )
-	creep:SetMaximumGoldBounty( seek_spawn_info.gold_max * AMPLIFY_BOUNTY_ELITE)
+	-- поздняя игра: вместо двойных паков (см. CreepSpawner:_GetPackMultiplier) крип даёт больше
+	local timeMult = CreepLeveling:BountyTimeMult()
+
+	creep:SetDeathXP( seek_spawn_info.exp * AMPLIFY_BOUNTY_ELITE * timeMult )
+	creep:SetMinimumGoldBounty( seek_spawn_info.gold_min * AMPLIFY_BOUNTY_ELITE * timeMult )
+	creep:SetMaximumGoldBounty( seek_spawn_info.gold_max * AMPLIFY_BOUNTY_ELITE * timeMult )
 
 	creep:SetBaseMaxHealth( seek_spawn_info.hp * AMPLIFY_STAT_ELITE * AMPLIFY_STAT_ELITE_HEALTH)
 	creep:SetMaxHealth( seek_spawn_info.hp * AMPLIFY_STAT_ELITE * AMPLIFY_STAT_ELITE_HEALTH)
@@ -144,6 +150,23 @@ function CreepLeveling:OnSpawnCallback( event )
 	--creep:AddNewModifier(nil,nil,"modifier_creep_level",{duration = -1}):SetStackCount(level)
 end
 
+-- Множитель награды (золото и опыт) по игровому времени на момент спавна крипа.
+-- Замена двойных паков с 25-й минуты; стартовые значения - на пробу, потом смотрим по логам.
+local BOUNTY_TIME_STEPS = {
+	{ min = 50, mult = 1.6 },
+	{ min = 25, mult = 1.3 },
+}
+
+function CreepLeveling:BountyTimeMult()
+	local time_min = GameRules:GetDOTATime(false, false) / 60
+
+	for _, s in ipairs(BOUNTY_TIME_STEPS) do
+		if time_min >= s.min then return s.mult end
+	end
+
+	return 1
+end
+
 function CreepLeveling:OnDeathCallback( event )
 	local creep = event.creep
 
@@ -155,7 +178,19 @@ function CreepLeveling:OnDeathCallback( event )
 
 	local dropbox = dropList:Get()
 
-	dropbox:DropAtPos(creep:GetAbsOrigin(), LOOT_RADIUS)
+	-- книги из дропа сразу достаются тому, кто убил (см. DropBox:DropAtPos)
+	dropbox:DropAtPos(creep:GetAbsOrigin(), LOOT_RADIUS, nil, self:_KillerHero(event.attacker))
+end
+
+-- Герой того, кто убил крипа: сам герой, его иллюзия, суммон и т.п. У вышек
+-- и нейтралов героя нет - тогда nil, и дроп падает на землю, как раньше.
+function CreepLeveling:_KillerHero(attacker)
+	if not attacker or attacker:IsNull() or not attacker.GetPlayerOwnerID then return nil end
+
+	local playerId = attacker:GetPlayerOwnerID()
+	if not playerId or playerId < 0 then return nil end
+
+	return PlayerResource:GetSelectedHeroEntity(playerId)
 end
 
 function CreepLeveling:_calculateHeroesAverageLevel()

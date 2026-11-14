@@ -6,7 +6,9 @@
 --
 -- Контракт событий взят из реализации IONTC, чтобы клиентский код совпадал:
 --   клиент -> сервер : player_tip   { target_playerID }
---   сервер -> всем   : player_tipped { source_playerID, target_playerID, amount }
+--   сервер -> всем   : player_tipped { source_playerID, target_playerID, image }
+--     image - картинка похвалы отправителя (слот "tip" косметики, tip_0 - палец вверх по умолчанию),
+--     панорама: file://{images}/custom_game/tips/<image>.png. Раньше тут было число 322 с монеткой.
 --   сервер -> одному : tip_cooldown  { cooldown }
 
 if TipManager == nil then
@@ -16,7 +18,18 @@ end
 TipManager.COOLDOWN = 30.0
 TipManager.PARTICLE = "particles/custom_tips/tip_player_shards.vpcf"
 TipManager.SOUND = "General.Coins"
-TipManager.AMOUNT = 322
+TipManager.DEFAULT_IMAGE = "tip_0"
+
+-- Картинка похвалы игрока: выбранная в хабе (только премиум) или палец вверх
+function TipManager:ImageOf(playerID)
+	if CosmeticsCore ~= nil and CosmeticsCore.GetEquipped ~= nil then
+		local ok, item = pcall(CosmeticsCore.GetEquipped, CosmeticsCore, playerID, "tip")
+
+		if ok and item and item.image then return item.image end
+	end
+
+	return self.DEFAULT_IMAGE
+end
 
 -- playerID -> время игры, когда снова можно типать
 TipManager.next_tip = TipManager.next_tip or {}
@@ -99,7 +112,7 @@ function TipManager.OnPlayerTip(_, data)
 	CustomGameEventManager:Send_ServerToAllClients("player_tipped", {
 		source_playerID = source,
 		target_playerID = target,
-		amount = TipManager.AMOUNT,
+		image = TipManager:ImageOf(source),
 	})
 
 	TipManager:PushCooldown(source, true)

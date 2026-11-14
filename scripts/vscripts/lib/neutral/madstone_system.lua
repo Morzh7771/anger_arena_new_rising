@@ -46,6 +46,23 @@ local BAUBLE_MODIFIER  = "modifier_aa_enchanters_bauble"
 local SLOT_ITEM        = DOTA_ITEM_NEUTRAL_ACTIVE_SLOT or 16
 local SLOT_ENHANCEMENT = DOTA_ITEM_NEUTRAL_PASSIVE_SLOT or 17
 
+-- группа чар по основному атрибуту героя. Числами, а не константами:
+-- DOTA_ATTRIBUTE_ALL есть не во всех сборках
+local ATTRIBUTE_GROUPS = {
+	[0] = "strength",
+	[1] = "agility",
+	[2] = "intelligence",
+	[3] = "universal",
+}
+
+-- Какие прошлые разряды чар листаются в меню на текущем. Только 4 <-> 5:
+-- до 4-го это одни и те же чары, растущие в уровне, а на 5-м свои,
+-- уникальные - пусть игрок сам решает, что ему нужнее. Артефакты
+-- листаются по всем открытым разрядам.
+local ENHANCEMENT_PAGES = {
+	[5] = { 4 },
+}
+
 MadstoneSystem = MadstoneSystem or class({})
 
 --------------------------------------------------------------------------------
@@ -135,11 +152,29 @@ function MadstoneSystem:_OnEntityKilled(event)
 
 	-- Смерть последнего крипа обрабатываем через кадр: на момент события
 	-- он ещё числится живым, да и остальные могли умереть в тот же тик.
+	--
+	-- Одна проверка на лагерь, а не на каждого умершего крипа: при аое по
+	-- стаку было по поиску юнитов на каждого. Убийцу берём последнего.
+	self._pendingCampChecks = self._pendingCampChecks or {}
+
+	local key = math.floor(pos.x / 300) .. ":" .. math.floor(pos.y / 300)
+	local pending = self._pendingCampChecks[key]
+
+	if pending then
+		pending.attacker = attacker or pending.attacker
+		return
+	end
+
+	pending = { attacker = attacker }
+	self._pendingCampChecks[key] = pending
+
 	Timers:CreateTimer(0.1, function()
+		self._pendingCampChecks[key] = nil
+
 		if self:_CampHasAliveCreeps(pos) then return end
 		if self:_AlreadyPaid(pos) then return end
 
-		self:OnCampClear({ pos = pos, attacker = attacker })
+		self:OnCampClear({ pos = pos, attacker = pending.attacker })
 	end)
 end
 
@@ -347,7 +382,7 @@ function MadstoneSystem:OnDuelEnd(duelCount)
 	local newTier = self:GetAllowedTier()
 
 	if newTier > oldTier then
-		Attentions:SendChatMessage("#aa_madstone_tier_" .. newTier)
+		if KillFeed then KillFeed:NeutralTier(newTier) end
 
 		-- разряд сменился: старые предложения больше не годятся
 		self.offers = {}
@@ -481,6 +516,8 @@ function MadstoneSystem:_Grant(playerID, amount)
 
 	self.madstones[playerID] = (self.madstones[playerID] or 0) + amount
 
+	if EndGameStats then EndGameStats:OnMadstonesGranted(playerID, amount) end
+
 	self:_TryMakeOffer(playerID)
 	self:_Push(playerID)
 end
@@ -595,10 +632,27 @@ function MadstoneSystem:_TryMakeOffer(playerID)
 		table.insert(enhancements, 1, { ownedEnhName, ownedEnhLevel })
 	end
 
+	-- Прошлые разряды листаются в меню стрелками, и на их страницах весь
+	-- список разряда: нужна нейтралка 2-го на 4-м - пролистал и взял. Текущий
+	-- разряд, как в доте, - случайные варианты.
+	local itemPages = { [tier] = items }
+
+	for t = 1, tier - 1 do
+		itemPages[t] = self:_AllItems(t)
+	end
+
+	local enhPages = { [tier] = enhancements }
+
+	for _, t in pairs(ENHANCEMENT_PAGES[tier] or {}) do
+		enhPages[t] = self:_AllEnhancements(hero, t)
+	end
+
 	self.offers[playerID] = {
 		tier          = tier,
 		items         = items,
 		enhancements  = enhancements,
+		itemPages     = itemPages,
+		enhPages      = enhPages,
 		ownedItem     = ownedItemName,
 		ownedEnh      = ownedEnhName,
 	}
@@ -681,6 +735,48 @@ function MadstoneSystem:_RollItems(tier, count, exclude)
 	return result
 end
 
+-- весь список артефактов разряда, по алфавиту - чтобы страница меню не
+-- перемешивалась от крафта к крафту
+function MadstoneSystem:_AllItems(tier)
+	local list = {}
+
+	for _, name in pairs(self.tierItems[tier] or {}) do
+		table.insert(list, name)
+	end
+
+	table.sort(list)
+
+	return list
+end
+
+-- все чары разряда, какие герою вообще положены: общие и его атрибута
+function MadstoneSystem:_AllEnhancements(hero, tier)
+	local groups = self.tierEnhancements[tier] or {}
+	local result = {}
+	local taken = {}
+
+	local function add(list)
+		for _, entry in pairs(list or {}) do
+			if not taken[entry[1]] then
+				taken[entry[1]] = true
+				table.insert(result, { entry[1], entry[2] })
+			end
+		end
+	end
+
+	add(groups["global"])
+
+	local attributeGroup = hero and hero.GetPrimaryAttribute and ATTRIBUTE_GROUPS[hero:GetPrimaryAttribute()]
+
+	if attributeGroup then
+		add(groups[attributeGroup])
+	end
+
+	table.sort(result, function(a, b) return a[1] < b[1] end)
+
+	return result
+end
+
 -- Врождёнка Chaos Knight: его чары катятся из всего разряда, а не только из
 -- своей группы, и выбирает их не игрок, а рандом.
 function MadstoneSystem:_HasFundamentalForging(hero)
@@ -718,14 +814,6 @@ function MadstoneSystem:_RollEnhancements(hero, tier, count, exclude, allGroups)
 		return result
 	end
 
-	-- числами, а не константами: DOTA_ATTRIBUTE_ALL есть не во всех сборках
-	local attributeGroups = {
-		[0] = "strength",
-		[1] = "agility",
-		[2] = "intelligence",
-		[3] = "universal",
-	}
-
 	local pool = {}
 
 	for _, entry in pairs(groups["global"] or {}) do
@@ -734,7 +822,7 @@ function MadstoneSystem:_RollEnhancements(hero, tier, count, exclude, allGroups)
 		end
 	end
 
-	local attributeGroup = hero and hero.GetPrimaryAttribute and attributeGroups[hero:GetPrimaryAttribute()]
+	local attributeGroup = hero and hero.GetPrimaryAttribute and ATTRIBUTE_GROUPS[hero:GetPrimaryAttribute()]
 
 	if attributeGroup then
 		for _, entry in pairs(groups[attributeGroup] or {}) do
@@ -814,10 +902,14 @@ function MadstoneSystem:OnCraftRequest(event)
 	local wantedItem = tostring(event.item or "")
 	local wantedEnh  = tostring(event.enhancement or "")
 
+	-- с какой страницы меню взято: прошлые разряды листаются стрелками
+	local itemTier = tonumber(event.item_tier) or tier
+	local enhTier  = tonumber(event.enh_tier) or tier
+
 	-- выбранное должно быть из своего же предложения, иначе это не наш клиент
 	local itemOk = false
 
-	for _, name in pairs(offer.items) do
+	for _, name in pairs(offer.itemPages[itemTier] or {}) do
 		if name == wantedItem then
 			itemOk = true
 			break
@@ -826,7 +918,7 @@ function MadstoneSystem:OnCraftRequest(event)
 
 	local enhLevel = nil
 
-	for _, entry in pairs(offer.enhancements) do
+	for _, entry in pairs(offer.enhPages[enhTier] or {}) do
 		if entry[1] == wantedEnh then
 			enhLevel = entry[2]
 			break
@@ -840,6 +932,9 @@ function MadstoneSystem:OnCraftRequest(event)
 
 	if not itemOk then return end
 	if enhRequired and not enhLevel and not forging then return end
+
+	-- реролл ли это, видно только до записи craftedTier ниже
+	if EndGameStats then EndGameStats:OnMadstoneCraft(playerID, cost, self:IsReroll(playerID, tier)) end
 
 	self.madstones[playerID] = self:GetMadstones(playerID) - cost
 	self.offers[playerID] = nil
@@ -964,12 +1059,18 @@ function MadstoneSystem:_EquipNeutral(hero, itemName, level, slot)
 
 	-- Оставил своё - не пересоздаём: иначе сбрасывались бы кулдаун, заряды и
 	-- усиление от курио. Чару того же имени только поднимаем до уровня разряда.
+	-- Чара (не артефакт) того же имени, но выше уровнем, пересоздаётся ниже:
+	-- SetLevel на надетой чаре не обновляет её пассивный модификатор, и бонус
+	-- пропадал совсем.
 	if old and old:GetAbilityName() == itemName then
-		if level and level > old:GetLevel() then
-			old:SetLevel(level)
-		end
+		local higher = level and level > old:GetLevel()
 
-		return
+		if not higher then return end
+
+		if slot == SLOT_ITEM then
+			old:SetLevel(level)
+			return
+		end
 	end
 
 	-- усиления от курио и безделушки жили на старом артефакте - уходят с ним
@@ -1013,26 +1114,23 @@ end
 -- НЕТ-ТАБЛИЦА ДЛЯ ИНТЕРФЕЙСА
 --------------------------------------------------------------------------------
 
+-- "имя:уровень:ключ=число;ключ=число" через "|" - числа для строки статов в меню
+function MadstoneSystem:_EncodeEnhancements(list)
+	local out = {}
+
+	for _, entry in pairs(list or {}) do
+		table.insert(out, entry[1] .. ":" .. tostring(entry[2]) .. ":"
+			.. self:_EnhancementStats(entry[1], entry[2]))
+	end
+
+	return table.concat(out, "|")
+end
+
 function MadstoneSystem:_Push(playerID)
 	local tier  = self:GetAllowedTier()
 	local offer = self.offers[playerID]
 
-	local items = {}
-	local enhancements = {}
-
-	if offer then
-		for _, name in pairs(offer.items) do
-			table.insert(items, name)
-		end
-
-		-- "имя:уровень:ключ=число;ключ=число" - числа для строки статов в меню
-		for _, entry in pairs(offer.enhancements) do
-			table.insert(enhancements, entry[1] .. ":" .. tostring(entry[2]) .. ":"
-				.. self:_EnhancementStats(entry[1], entry[2]))
-		end
-	end
-
-	CustomNetTables:SetTableValue(NET_TABLE, tostring(playerID), {
+	local data = {
 		madstones    = self:GetMadstones(playerID),
 		tier         = tier,
 		cost         = tier > 0 and self:GetPlayerCraftCost(playerID, tier) or 0,
@@ -1040,12 +1138,37 @@ function MadstoneSystem:_Push(playerID)
 		reroll_cost  = tier > 0 and self:GetRerollCost(tier) or 0,
 		reroll       = (tier > 0 and self:IsReroll(playerID, tier)) and 1 or 0,
 		can_craft    = offer and 1 or 0,
-		items        = table.concat(items, "|"),
-		enhancements = table.concat(enhancements, "|"),
+		items        = offer and table.concat(offer.items, "|") or "",
+		enhancements = offer and self:_EncodeEnhancements(offer.enhancements) or "",
 		owned_item   = offer and offer.ownedItem or "",
 		owned_enh    = offer and offer.ownedEnh or "",
 		duels        = self.duelsFinished,
-	})
+	}
+
+	-- Страницы меню: список разрядов - "1|2|3" в item_pages и enh_pages,
+	-- содержимое страницы - в items_N и enhancements_N.
+	if offer then
+		local itemTiers = {}
+		local enhTiers = {}
+
+		for t, list in pairs(offer.itemPages or {}) do
+			table.insert(itemTiers, t)
+			data["items_" .. t] = table.concat(list, "|")
+		end
+
+		for t, list in pairs(offer.enhPages or {}) do
+			table.insert(enhTiers, t)
+			data["enhancements_" .. t] = self:_EncodeEnhancements(list)
+		end
+
+		table.sort(itemTiers)
+		table.sort(enhTiers)
+
+		data.item_pages = table.concat(itemTiers, "|")
+		data.enh_pages  = table.concat(enhTiers, "|")
+	end
+
+	CustomNetTables:SetTableValue(NET_TABLE, tostring(playerID), data)
 end
 
 function MadstoneSystem:_PushAll()

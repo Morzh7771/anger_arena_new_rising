@@ -6,16 +6,19 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"700"	
+		"ItemCost"						"300"
 		"ItemShopTags"					""
-		
+
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_gungir"
 		"ItemRequirements"
 		{
-			"01"						"item_maelstorm_aa*;item_rod_of_atos*"
+			// как в актуальной доте: Rod of Atos + Point Booster + Chasm Stone.
+			// Maelstrom из рецепта убран: у Глейпнира нет его молний, и его
+			// эффект просто терялся при сборке.
+			"01"						"item_rod_of_atos;item_point_booster;item_chasm_stone"
 		}
 	}
 	"item_recipe_gungir_2"
@@ -74,21 +77,21 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"6150"
+		"ItemCost"						"4650"
 		"ItemShopTags"					"damage;attack_speed;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"gleipnir;gliepnir;glaypnir"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
-		// Special	
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"bonus_intellect"		"24 48 100"
 			"bonus_hp"              "275 550 1500"
 			"duration"				"2.0 2.5 3"
-			"radius"				
+			"radius"
 			{
 				"value"				"350 400 450"
 				"affected_by_aoe_increase"  "1"
@@ -97,7 +100,7 @@
 			"bonus_aoe"				"75"
 			"radius_tooltip"
 			{
-				"value"				"400"
+				"value"				"425 475 525"
 				"affected_by_aoe_increase"				"1"
 			}
 		}
@@ -147,7 +150,7 @@
 			"bonus_aoe"				"75"
 			"radius_tooltip"
 			{
-				"value"				"400"
+				"value"				"425 475 525"
 				"affected_by_aoe_increase"				"1"
 			}
 		}
@@ -198,7 +201,7 @@
 			"bonus_aoe"				"75"
 			"radius_tooltip"
 			{
-				"value"				"400"
+				"value"				"425 475 525"
 				"affected_by_aoe_increase"				"1"
 			}
 		}

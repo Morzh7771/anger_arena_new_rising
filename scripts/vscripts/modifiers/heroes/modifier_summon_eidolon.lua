@@ -19,7 +19,7 @@ function modifier_summon_eidolon:IsPurgable()
 end
 
 function modifier_summon_eidolon:GetModifierExtraHealthBonus(params)
-    local time = GameRules:GetGameTime() / 60
+    local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
     if time > 20 then
         return max(1.7143 * math.pow(time, 2) - 37.1429 * time, 0)
     else
@@ -28,7 +28,7 @@ function modifier_summon_eidolon:GetModifierExtraHealthBonus(params)
 end
 
 function modifier_summon_eidolon:GetModifierBaseAttack_BonusDamage(params)
-    local time = GameRules:GetGameTime() / 60
+    local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
     if time > 20 then
         return -0.0250*math.pow(time, 2)+10.5500*(time) - 167.0000
     else
@@ -37,7 +37,7 @@ function modifier_summon_eidolon:GetModifierBaseAttack_BonusDamage(params)
 end
 
 function modifier_summon_eidolon:GetModifierPhysicalArmorBonus(params)
-    local time = GameRules:GetGameTime() / 60
+    local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
     local armor = math.pow(math.sqrt(time - 15), (2.718*0.88))
 
     if time < 15 then armor = 0 end -- caused by sqrt(-15)

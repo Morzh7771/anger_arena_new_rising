@@ -13,7 +13,8 @@
 	Monkey King и призрака WK после аганима. Meepo со всеми клонами и
 	Brewmaster с пандами идут за одного.
 
-	Заполнилось - CapturePoints:OnCaptured отдаёт руну команде и убирает круг.
+	Заполнилось - CapturePoints:OnCaptured отдаёт руну тому из команды, кто
+	зашёл в круг первым и так из него и не вышел, и убирает круг.
 ]]
 
 require("lib/capture_points/capture_points_declarations")
@@ -30,6 +31,9 @@ local RATE_DECAY = 0.5
 function capture_point_area:IsHidden() return true end
 function capture_point_area:IsPurgable() return false end
 
+-- Состояния держатся до самого удаления юнита: после захвата он живёт ещё
+-- пару секунд, пока доигрывает кольцо, и без них у него вылезала полоска
+-- здоровья.
 function capture_point_area:CheckState()
 	return {
 		[MODIFIER_STATE_UNSELECTABLE] = true,
@@ -56,6 +60,8 @@ function capture_point_area:OnCreated(kv)
 	self.progress = 0
 	self.current_team = DOTA_TEAM_NEUTRALS
 	self.heroes_in_radius = {}
+	-- { [герой] = когда зашёл в круг }; вышел - запись стирается
+	self.entered = {}
 
 	self.ring_fx = ParticleManager:CreateParticle(CAPTURE_POINT_RING, PATTACH_ABSORIGIN_FOLLOW, parent)
 	ParticleManager:SetParticleControlEnt(self.ring_fx, 0, parent, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", GetGroundPosition(self.center, parent), true)
@@ -137,7 +143,45 @@ function capture_point_area:_Capture(team)
 	self.done = true
 	self:StartIntervalThink(-1)
 
-	CapturePoints:OnCaptured(self:GetParent(), self.heroes_in_radius[team])
+	-- первым в списке - тот, кто раньше всех зашёл и не выходил
+	local units = self.heroes_in_radius[team] or {}
+	local entered = self.entered
+
+	table.sort(units, function(a, b)
+		return (entered[a] or math.huge) < (entered[b] or math.huge)
+	end)
+
+	CapturePoints:OnCaptured(self:GetParent(), units)
+end
+
+-- Круг захвачен или сменён новым: гасим эффекты и звук. Сам модификатор
+-- остаётся до удаления юнита - ради состояний, см. CheckState.
+function capture_point_area:Finish(captured)
+	self.done = true
+	self:StartIntervalThink(-1)
+	self:_StopFx()
+
+	local parent = self:GetParent()
+
+	if captured and self.def and IsValidEntity(parent) then
+		EmitSoundOnLocationWithCaster(parent:GetAbsOrigin(), self.def.finish_sound, parent)
+	end
+end
+
+function capture_point_area:_StopFx()
+	for _, key in pairs({ "clock_fx", "capturing_fx", "ring_fx" }) do
+		if self[key] then
+			ParticleManager:DestroyParticle(self[key], false)
+			ParticleManager:ReleaseParticleIndex(self[key])
+			self[key] = nil
+		end
+	end
+
+	local parent = self:GetParent()
+
+	if IsValidEntity(parent) then
+		parent:StopSound(CAPTURE_POINT_START_SOUND)
+	end
 end
 
 function capture_point_area:_UpdateRingColor()
@@ -179,7 +223,8 @@ function capture_point_area:_UpdateClock(capturing)
 	end
 end
 
--- { [команда] = { герои } }, всего героев
+-- { [команда] = { герои } }, всего героев. Заодно ведём self.entered: кто
+-- из засчитанных героев когда зашёл в круг.
 function capture_point_area:_FindCapturers()
 	local found = FindUnitsInRadius(
 		DOTA_TEAM_NEUTRALS,
@@ -193,7 +238,8 @@ function capture_point_area:_FindCapturers()
 		false
 	)
 
-	local byTeam, total = {}, 0
+	local now = GameRules:GetGameTime()
+	local byTeam, total, inside = {}, 0, {}
 	local meepoCounted, brewCounted = false, false
 
 	for _, unit in pairs(found) do
@@ -207,11 +253,19 @@ function capture_point_area:_FindCapturers()
 				byTeam[team] = byTeam[team] or {}
 				table.insert(byTeam[team], unit)
 				total = total + 1
+
+				inside[unit] = true
+				if not self.entered[unit] then self.entered[unit] = now end
 			end
 
 			if isMeepo then meepoCounted = true end
 			if isBrew then brewCounted = true end
 		end
+	end
+
+	-- вышел из круга - очередь теряет
+	for unit, _ in pairs(self.entered) do
+		if not inside[unit] then self.entered[unit] = nil end
 	end
 
 	return byTeam, total
@@ -237,17 +291,5 @@ end
 function capture_point_area:OnDestroy()
 	if not IsServer() then return end
 
-	for _, fx in pairs({ self.clock_fx, self.capturing_fx, self.ring_fx }) do
-		ParticleManager:DestroyParticle(fx, false)
-		ParticleManager:ReleaseParticleIndex(fx)
-	end
-
-	local parent = self:GetParent()
-	if not IsValidEntity(parent) then return end
-
-	parent:StopSound(CAPTURE_POINT_START_SOUND)
-
-	if self.captured and self.def then
-		EmitSoundOnLocationWithCaster(parent:GetAbsOrigin(), self.def.finish_sound, parent)
-	end
+	self:_StopFx()
 end

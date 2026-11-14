@@ -292,6 +292,9 @@ end
 
 -- крипы лагеря стоят дома. Если нет - значит их отвели, и стак гарантирован
 function CreepSpawner:_HasOwnCreepsInBox(spawnerName)
+	-- лагерь спит без юнитов - крипы "дома", просто их сейчас нет на карте
+	if self._hibernatedCamps and self._hibernatedCamps[spawnerName] then return true end
+
 	local t = self._spawnerCounts[spawnerName]
 	if not t then return false end
 
@@ -305,10 +308,69 @@ function CreepSpawner:_HasOwnCreepsInBox(spawnerName)
 	return false
 end
 
--- time multiplier: +1 pack each 25 minutes (kept from your old idea)
+-- ---------------------------------------------------------------- спячка лагерей
+-- Лагерь, рядом с которым долго никого нет, lib/spawners/camp_sleep.lua
+-- убирает с карты: юниты удаляются, а учёт лагеря (живые, волны, стак)
+-- остаётся как был. Когда кто-то подходит - крипы создаются заново.
+
+-- лагерь сейчас без юнитов, но живой: для стака это "крипы стоят дома"
+function CreepSpawner:SetCampHibernated(spawnerName, bVal)
+	self._hibernatedCamps = self._hibernatedCamps or {}
+	self._hibernatedCamps[spawnerName] = bVal and true or nil
+end
+
+-- снять юнита с учёта БЕЗ смерти: запоминаем всё нужное для возврата
+function CreepSpawner:HibernateUnit(unit)
+	if not unit or unit:IsNull() then return nil end
+
+	local entindex = unit:GetEntityIndex()
+	local meta = self._unitMetaByEntindex[entindex]
+	if not meta then return nil end
+
+	self._unitMetaByEntindex[entindex] = nil
+
+	return {
+		name        = unit:GetUnitName(),
+		pos         = unit:GetAbsOrigin(),
+		forward     = unit:GetForwardVector(),
+		elite       = unit:HasModifier("modifier_creep_elite"),
+		meta        = meta,
+		spawner_info = unit.spawner_info,
+	}
+end
+
+-- вернуть юнита из записи: тот же путь, что при обычном спавне, но счётчик
+-- живых не трогаем - юнит из него и не уходил
+function CreepSpawner:RestoreHibernatedUnit(rec)
+	local spawner_info = rec.spawner_info or self._spawnerInfoByName[rec.meta.spawnerName]
+	if not spawner_info then return nil end
+
+	-- волну за время сна могли выбить (не должно, но на всякий случай)
+	local waves = self._spawnerWaves[rec.meta.spawnerName]
+	if not waves or not waves[rec.meta.waveId] then return nil end
+
+	local creep = CreateUnitByName(rec.name, rec.pos, false, nil, nil, DOTA_TEAM_NEUTRALS)
+	if not creep then return nil end
+
+	creep:SetForwardVector(rec.forward)
+	creep:Stop()
+
+	self._unitMetaByEntindex[creep:GetEntityIndex()] = { spawnerName = rec.meta.spawnerName, waveId = rec.meta.waveId }
+
+	creep:AddNewModifier(creep, nil, "modifier_dominate_protection", { duration = -1 })
+
+	creep.spawner_info = spawner_info
+	self:_notifyCallbackList(self.onSpawnCallbacks, { creep = creep, spawner_info = spawner_info, elite = rec.elite })
+
+	return creep
+end
+
+-- Раньше с 25-й минуты кемп спавнился двойным паком, с 50-й тройным (+1 пак каждые 25 мин) -
+-- к концу игры крипов на карте было в 2-3 раза больше, отсюда лаги. С 2026-11-14 пак всегда
+-- один, а позднюю игру догоняет множитель награды: CreepLeveling.BountyTimeMult
+-- (lib/spawners/creep_leveling.lua). Функцию оставили, на неё завязан учёт волн.
 function CreepSpawner:_GetPackMultiplier()
-	local time_min = GameRules:GetDOTATime(false, false) / 60
-	return math.floor(time_min / 25) + 1
+	return 1
 end
 
 -- живые + те, что вот-вот появятся
@@ -525,6 +587,9 @@ end
 function CreepSpawner:_SpawnFreshCamp(spawner_info)
 	local name = spawner_info.name
 
+	-- круг респавна своё отработал
+	CampRespawnRing:Stop(name)
+
 	-- reset camp state
 	self:_ResetCampState(name)
 
@@ -612,7 +677,7 @@ function CreepSpawner:_OnCreepKilled(entindex, spawnerName, waveId, unit, attack
 
 	-- callbacks
 	if unit then
-		self:_notifyCallbackList(self.onDeathCallbacks, { creep = unit, spawner_info = unit.spawner_info })
+		self:_notifyCallbackList(self.onDeathCallbacks, { creep = unit, spawner_info = unit.spawner_info, attacker = attacker })
 		unit.spawner_info = nil
 	end
 

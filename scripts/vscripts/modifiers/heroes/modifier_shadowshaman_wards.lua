@@ -18,7 +18,7 @@ function modifier_shadowshaman_wards:IsPurgable()
 end
 
 function modifier_shadowshaman_wards:GetModifierExtraHealthBonus(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 	if time < 15 then return 0 end
 
@@ -26,7 +26,7 @@ function modifier_shadowshaman_wards:GetModifierExtraHealthBonus(params)
 end
 
 function modifier_shadowshaman_wards:GetModifierBaseAttack_BonusDamage(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 	if time < 15 then return 0 end
 

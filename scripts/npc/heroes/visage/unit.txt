@@ -1,0 +1,74 @@
+// Юниты героя. Подключается через #base в scripts/npc/npc_units_custom.txt.
+// Фамильяры Визажа - свои, на Lua (scripts/vscripts/heroes/visage/visage_familiars.lua):
+// движковый призыв на уровнях 4-7 юнитов не собирал. Один юнит на все уровни,
+// ХП/броню/урон/скорость/награду ставит способность из своих AbilityValues.
+"DOTAUnits"
+{
+	"npc_dota_visage_familiar1"
+	{
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/visage/visage_familiar.vmdl"
+		"SoundSet"					"Visage_Familiar"
+		"ModelScale"				"0.66"
+		"Level"						"2"
+		"IsSummoned"				"1"
+		"IsAncient"					"1"
+		"UnitLabel"					"visage_familiars"
+		"AutoAttacksByDefault"		"0"
+		"ConsideredHero"			"1"
+		"wearable"					"600"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_visage_familiar.vpcf"
+			"particle"			"particles/units/heroes/hero_visage/visage_summon_familiars.vpcf"
+			"particle"			"particles/units/heroes/hero_visage/visage_stone_form.vpcf"
+			"particle"			"particles/units/heroes/hero_visage/visage_familiar_base_attack.vpcf"
+			"particle"			"particles/status_fx/status_effect_earth_spirit_petrify.vpcf"
+			"particle"			"particles/units/heroes/hero_alchemist/alchemist_unstable_concoction_timer.vpcf"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_recall.vpcf"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_recall_poof.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+			"model"				"models/heroes/visage/visage_familiar.vmdl"
+		}
+
+		"Ability1"					"visage_summon_familiars_stone_form"
+		"Ability2"					"visage_summon_familiars_recall"
+
+		"ArmorPhysical"				"2"
+		"MagicalResistance"			"35"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"25"
+		"AttackDamageMax"			"25"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.2"
+		"AttackAnimationPoint"		"0.33"
+		"AttackAcquisitionRange"	"400"
+		"AttackRange"				"180"
+		"ProjectileModel"			"particles/units/heroes/hero_visage/visage_familiar_base_attack.vpcf"
+		"ProjectileSpeed"			"900"
+
+		"BountyXP"					"41"
+		"BountyGoldMin"				"100"
+		"BountyGoldMax"				"100"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+		"HealthBarOffset"			"130"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"430"
+		"MovementTurnRate"			"0.9"
+
+		"StatusHealth"				"500"
+		"StatusHealthRegen"			"0.0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0.0"
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"		"400"
+		"VisionNighttimeRange"		"400"
+	}
+}

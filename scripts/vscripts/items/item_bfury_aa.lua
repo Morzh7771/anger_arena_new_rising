@@ -12,6 +12,7 @@ LinkLuaModifier("modifier_item_bfury_aa", "items/item_bfury_aa", LUA_MODIFIER_MO
 
 item_bfury_aa = class({})
 item_bfury_aa_2 = item_bfury_aa
+item_bfury_mini = item_bfury_aa
 
 function item_bfury_aa:Precache(context)
 	PrecacheResource("particle", "particles/units/heroes/hero_magnataur/magnataur_empower_cleave_effect.vpcf", context)
@@ -45,6 +46,7 @@ function modifier_item_bfury_aa:OnCreated()
 	self.mp_regen								= self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 	self.bonus_str 								= self:GetAbility():GetSpecialValueFor("bonus_str")
 	self.bonus_agi 								= self:GetAbility():GetSpecialValueFor("bonus_agi")
+	self.bonus_int								= self:GetAbility():GetSpecialValueFor("bonus_int")
 
 	self.cleave_damage_creep 					= self:GetAbility():GetSpecialValueFor("cleave_damage_creep")
 	self.cleave_damage_hero 					= self:GetAbility():GetSpecialValueFor("cleave_damage_hero")
@@ -54,7 +56,10 @@ function modifier_item_bfury_aa:OnCreated()
 
 	self.quelling_bonus_const					= self:GetAbility():GetSpecialValueFor("quelling_bonus")
 	self.quelling_bonus_ranged_coef				= self:GetAbility():GetSpecialValueFor("quelling_bonus_ranged_coef") / 100
-	self.quelling_bonus_pct						= self:GetCaster():GetAverageTrueAttackDamage(self:GetParent()) * self:GetAbility():GetSpecialValueFor("quelling_bonus_pct") / 100
+	-- GetAverageTrueAttackDamage есть только на сервере (как в item_quelling_blade_aa.lua)
+	local caster = self:GetCaster()
+	local avg = (IsServer() and caster and caster.GetAverageTrueAttackDamage) and caster:GetAverageTrueAttackDamage(self:GetParent()) or 0
+	self.quelling_bonus_pct						= avg * self:GetAbility():GetSpecialValueFor("quelling_bonus_pct") / 100
 	self.quelling_bonus_summ					= self.quelling_bonus_const + self.quelling_bonus_pct
 
 	if IsServer() then
@@ -80,6 +85,7 @@ function modifier_item_bfury_aa:DeclareFunctions()
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 	}
 	return funcs
 end
@@ -107,6 +113,9 @@ function modifier_item_bfury_aa:GetModifierConstantHealthRegen()
 end
 function modifier_item_bfury_aa:GetModifierBonusStats_Strength()
 	return	self.bonus_str
+end
+function modifier_item_bfury_aa:GetModifierBonusStats_Intellect()
+	return	self.bonus_int
 end
 function modifier_item_bfury_aa:GetModifierBonusStats_Agility()
 	return	self.bonus_agi

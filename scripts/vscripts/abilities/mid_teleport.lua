@@ -80,6 +80,8 @@ function mid_teleport:OnChannelFinish(bInterrupted)
 		end
 	end
 
+	if CampSleep and CampSleep.WakeNear then CampSleep:WakeNear(teleporttarget:GetAbsOrigin()) end
+
 	hero:SetAbsOrigin(teleporttarget:GetAbsOrigin())
 	FindClearSpaceForUnit(hero, teleporttarget:GetAbsOrigin(), true)
 	hero:Stop()

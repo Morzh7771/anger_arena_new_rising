@@ -6,7 +6,10 @@ function item_static_amulet:GetIntrinsicModifierName()
     return "modifier_item_static_amulet"
 end
 function item_static_amulet:GetManaCost()
-	return self:GetCaster():GetMaxMana()*self:GetSpecialValueFor("mana_cost_pct")/100
+	local caster = self:GetCaster()
+	-- в магазине и в подсказке владельца нет
+	if not caster then return 0 end
+	return caster:GetMaxMana()*self:GetSpecialValueFor("mana_cost_pct")/100
 end
 
 
@@ -14,7 +17,10 @@ function item_slice_amulet:GetIntrinsicModifierName()
     return "modifier_item_static_amulet"
 end
 function item_slice_amulet:GetManaCost()
-	return self:GetCaster():GetMaxMana()*self:GetSpecialValueFor("mana_cost_pct")/100
+	local caster = self:GetCaster()
+	-- в магазине и в подсказке владельца нет
+	if not caster then return 0 end
+	return caster:GetMaxMana()*self:GetSpecialValueFor("mana_cost_pct")/100
 end
 
 

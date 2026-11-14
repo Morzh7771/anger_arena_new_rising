@@ -19,7 +19,7 @@ function modifier_broodmother_spiders:IsPurgable()
 end
 
 function modifier_broodmother_spiders:GetModifierExtraHealthBonus(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 	if time < 15 then return 0 end
 
@@ -27,7 +27,7 @@ function modifier_broodmother_spiders:GetModifierExtraHealthBonus(params)
 end
 
 function modifier_broodmother_spiders:GetModifierBaseAttack_BonusDamage(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 	
 	if time < 10 then
 		return 0
@@ -47,7 +47,7 @@ function modifier_broodmother_spiders:GetModifierBaseAttack_BonusDamage(params)
 end
 
 function modifier_broodmother_spiders:GetModifierPhysicalArmorBonus(params)
-	local time = GameRules:GetGameTime() / 60
+	local time = (math.max(0, GameRules:GetDOTATime(false, false)) / 60)
 
 	if time < 5 then return end 
 

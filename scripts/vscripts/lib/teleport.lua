@@ -12,6 +12,8 @@
 local private = {};
 
 function private:TeleportUnit(unit, vec)
+	-- спрятанные лагеря у точки прибытия возвращаем ДО телепорта (lib/spawners/camp_sleep)
+	if CampSleep and CampSleep.WakeNear then CampSleep:WakeNear(vec) end
 	FindClearSpaceForUnit(unit, vec, false)
 end
 

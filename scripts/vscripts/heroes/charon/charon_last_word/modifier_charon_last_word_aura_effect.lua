@@ -16,12 +16,17 @@ function modifier_charon_last_word_aura_effect:IsPurgable()
 end
 
 --------------------------------------------------------------------------------
+function modifier_charon_last_word_aura_effect:SyncSlowStacks()
+    self:SetStackCount(math.floor(self.slow_for_mana_pct * 100 + 0.5))
+end
+
 function modifier_charon_last_word_aura_effect:OnCreated(kv)
     if not IsServer() then return end
     self.slow_for_mana_pct = self:GetAbility():GetSpecialValueFor("slow_for_mana_pct")
     if self:GetAbility():GetCaster():HasTalent("charon_last_word_bonus_slow_per_mana_tallent") then
         self.slow_for_mana_pct = self.slow_for_mana_pct + self:GetAbility():GetCaster():GetTalentSpecialValueFor("charon_last_word_bonus_slow_per_mana_tallent")
     end
+    self:SyncSlowStacks()
     if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
         self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("tick_per_sec")/60)
     end
@@ -34,6 +39,7 @@ function modifier_charon_last_word_aura_effect:OnRefresh(kv)
     if self:GetAbility():GetCaster():HasTalent("charon_last_word_bonus_slow_per_mana_tallent") then
         self.slow_for_mana_pct = self.slow_for_mana_pct + self:GetAbility():GetCaster():GetTalentSpecialValueFor("charon_last_word_bonus_slow_per_mana_tallent")
     end
+    self:SyncSlowStacks()
     if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
         self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("tick_per_sec")/60)
     end
@@ -67,17 +73,13 @@ end
 function modifier_charon_last_word_aura_effect:GetModifierMoveSpeedBonus_Percentage(params)
     if self:GetCaster():PassivesDisabled() then return end
 
-    local net_table = CustomNetTables:GetTableValue("heroes", "anti_valve_perks") or {}
-    local unicalUnitString = tostring("modifier_charon_last_word_aura_effect_movespeed" .. self:GetParent():entindex())
-    local bonusMoveSpeed
-    if IsServer() then
-        bonusMoveSpeed = -((100 - self:GetParent():GetManaPercent()) * self.slow_for_mana_pct)
-        net_table[unicalUnitString .. "modifier_charon_last_word_aura_effect_movespeed"] = bonusMoveSpeed
-        CustomNetTables:SetTableValue("heroes", "anti_valve_perks", net_table)
-    else
-        bonusMoveSpeed = net_table[unicalUnitString .. "modifier_charon_last_word_aura_effect_movespeed"]
-    end
-    return bonusMoveSpeed
+    -- Раньше значение ехало на клиент через общую нет-таблицу, которую сервер
+    -- переписывал и рассылал на каждый пересчёт скорости. Ману клиент знает
+    -- сам, а коэффициент (с талантом он есть только на сервере) лежит в
+    -- стаках, умноженный на 100 - см. SyncSlowStacks.
+    local slowPct = self:GetStackCount() / 100
+
+    return -((100 - self:GetParent():GetManaPercent()) * slowPct)
 end
 
 -------------------------------------------------------------------------------

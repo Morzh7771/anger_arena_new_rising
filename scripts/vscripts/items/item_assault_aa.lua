@@ -82,7 +82,6 @@ modifier_assault_aa_aura_friend = class({
         if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then return end
         if keys.attacker == self:GetParent() then
             local dmg_ref = keys.original_damage * Util:ArmorDamageReductionByNumber(keys.target:GetPhysicalArmorValue(false))
-            print(dmg_ref)
             local vampirism_pct = self:GetAbility():GetSpecialValueFor("lifesteal_aura")
             local damage = dmg_ref * vampirism_pct / 100
             self:GetParent():Heal(damage, self:GetAbility())

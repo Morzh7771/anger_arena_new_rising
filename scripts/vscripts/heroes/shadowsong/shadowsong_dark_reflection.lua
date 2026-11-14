@@ -40,8 +40,8 @@ function ability:OnAbilityPhaseStart()
 	local target = self:GetCursorTarget()
 
 
-	ParticleManager:CreateParticle("particles/econ/events/nexon_hero_compendium_2014/blink_dagger_end_sparkles_end_nexon_hero_cp_2014.vpcf", PATTACH_ABSORIGIN, caster)
-	ParticleManager:CreateParticle("particles/econ/events/nexon_hero_compendium_2014/blink_dagger_end_sparkles_end_nexon_hero_cp_2014.vpcf", PATTACH_ABSORIGIN, target)
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/events/nexon_hero_compendium_2014/blink_dagger_end_sparkles_end_nexon_hero_cp_2014.vpcf", PATTACH_ABSORIGIN, caster))
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/events/nexon_hero_compendium_2014/blink_dagger_end_sparkles_end_nexon_hero_cp_2014.vpcf", PATTACH_ABSORIGIN, target))
 
 	return true
 end
@@ -67,8 +67,8 @@ function ability:OnSpellStart( kv )
 	FindClearSpaceForUnit(caster, targetPos, false)
 	FindClearSpaceForUnit(target, casterPos, false)
 
-	ParticleManager:CreateParticle("particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, caster)
-	ParticleManager:CreateParticle("particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, target)
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, caster))
+	ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, target))
 
 
 	if isEnemy then
@@ -102,8 +102,8 @@ function ability:OnSpellStart( kv )
 				FindClearSpaceForUnit(target, enemyPos, false)
 				target = enemy
 
-				ParticleManager:CreateParticle("particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, enemy)
-				ParticleManager:CreateParticle("particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, target)
+				ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, enemy))
+				ParticleManager:ReleaseParticleIndex(ParticleManager:CreateParticle("particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, target))
 
 				enemy:AddNewModifier(caster, self, "modifier_shadowsong_dark_reflection_stun", { duration = scepterStunDuration })
 			end

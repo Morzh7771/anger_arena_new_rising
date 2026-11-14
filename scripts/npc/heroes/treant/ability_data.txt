@@ -56,7 +56,7 @@ DOTAAbilities
 			"AbilityCooldown"
 			{
 				"value"				"36"
-				"hero_levelup"				"-1"
+				"hero_levelup"				"-0.3"
 				"levelup_interval"				"1"
 			}
 		}
@@ -331,7 +331,7 @@ DOTAAbilities
 			}
 			"strength_bonus"
 			{
-				"special_bonus_scepter"				"100"
+				"special_bonus_scepter"				"60"
 			}
 			"splash_pct"
 			{
@@ -440,7 +440,7 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"					"15"
-			"strength_bonus"			"120"
+			"strength_bonus"			"60"
 			"splash_pct"				"60"
 			"splash_radius"				"300"
 			"movement_speed"			"310"

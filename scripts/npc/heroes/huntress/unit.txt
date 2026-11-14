@@ -1,7 +1,10 @@
+// Юниты героя (суммоны и т.п.). Все уровни прописаны здесь.
+// Подключается через #base в scripts/npc/npc_units_custom.txt.
 "DOTAUnits"
 {
-    "npc_aa_huntess_owl_unit"
+	"npc_aa_huntess_owl_unit"
     {
+		"Ability20"			"summon_power_passive"	// бафф от статов хозяина
         // General
         //----------------------------------------------------------------
         "Model"						"models/items/beastmaster/hawk/legacy_of_the_nords_legacy_of_the_nords_owl/legacy_of_the_nords_legacy_of_the_nords_owl.vmdl"	// Model.
@@ -74,4 +77,5 @@
         "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
         "HasInventory"				"0"
     }
+
 }

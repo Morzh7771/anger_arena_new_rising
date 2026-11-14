@@ -242,11 +242,11 @@ DOTAAbilities
             }
 			"leash_duration"		
 			{
-				"value"			"0"
+				"value"			"2.5 2.75 3 3.25 3.5 3.75 4"
 			}
 			"leash_radius"
 			{
-				"value"			"0"
+				"value"			"400"
 			}
 			"max_charges"			
 			{
@@ -332,14 +332,14 @@ DOTAAbilities
         {
             "agi_gain"
             {
-                "value"                 "3"
-                "special_bonus_unique_slark_5" "+1"
+                "value"                 "2"
+                "special_bonus_unique_slark_5" "+2"
             }
             "stat_loss"                 "1"
             "duration"
             {
                 "value"                 "15"
-                "hero_levelup"          "+2.5"
+                "hero_levelup"          "+1"
                 "special_bonus_unique_slark_4"  "+35"
             }
             "steal_radius"          
@@ -354,6 +354,26 @@ DOTAAbilities
         }
         "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
     }
+	"slark_essence_shift_creeps"
+	{
+		// Дополнение к врождёнке slark_essence_shift: кража ловкости с крипов и вечная кража в % ловкости
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/slark/slark_essence_shift_creeps"
+		"AbilityTextureName"			"slark_essence_shift"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"					"ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"agi_gain"					"3"		// запасное значение, берётся agi_gain ванильной slark_essence_shift
+			"duration_creeps"			"15"
+			"permanent_agi_pct"			"1"
+		}
+	}
 	"slark_barracuda"
     {
         // General
@@ -444,7 +464,7 @@ DOTAAbilities
 
         // Time     
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "4"
+        "AbilityCooldown"               "4 3.8 3.6 3.4 3.2 3 3"
         "AbilityManaCost"               "20"
         "AbilityCastRange"              "150"
         "AbilityCastPoint"              "0.0"
@@ -455,9 +475,9 @@ DOTAAbilities
             "duration"                      "12"
             "agi_bonus_damage_factor"       "0"
             "base_health_rest_steal"        "0"
-            "health_rest_steal"             "2 3 4 5 6 7 8"
-            "regen_steal"                   "2 3 4 5 6 7 8"
-            "ms_steal"                      "2 3 4 5 6 7 8"
+            "health_rest_steal"             "4 6 8 10 12 14 16"
+            "regen_steal"                   "4 6 8 10 12 14 16"
+            "ms_steal"                      "4 6 8 10 12 14 16"
             "melee_range_buffer"            "50"
         }
     }
