@@ -41,11 +41,19 @@ function item_explosive_mantle_of_intelligence:OnSpellStart()
 		explosive_damage_per_hp = self:GetSpecialValueFor("explosive_damage_per_hp"),
 	}
 
-	-- списать до запуска звука: OnDestroy встроенного модификатора гасит предвзрывной звук
+	-- списываем сразу, но удаляем предмет только на следующем кадре: RemoveItem(self)
+	-- внутри своего же OnSpellStart валил игру (access violation - движок после каста
+	-- ещё ставит предмету кулдаун). Звук не гаснет: OnDestroy встроенного модификатора
+	-- пропускает остановку, пока висит active_finish.
 	if self:GetCurrentCharges() > 1 then
 		self:SetCurrentCharges(self:GetCurrentCharges() - 1)
 	else
-		owner:RemoveItem(self)
+		local item = self
+		Timers:CreateTimer(0, function()
+			if item and not item:IsNull() and owner and not owner:IsNull() then
+				owner:RemoveItem(item)
+			end
+		end)
 	end
 
 	owner:AddNewModifier(owner, nil, "modifier_explosive_mantle_of_intelligence_active_channel", kv)

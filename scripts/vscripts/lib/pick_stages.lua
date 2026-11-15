@@ -35,6 +35,18 @@ AAPick = {
 local P = AAPick
 
 local T_PREMIUM = 20
+
+-- DEV-ТЕСТ премиум-стадии (только в тулзах, IsInToolsMode). true - с реальных игроков премиум
+-- в пике снимается, вместо них в игре "фантомный" премиум DEV_FAKE_PID: он ничего не пикает,
+-- поэтому видно все 20 с ожидания, а после - вернулись ли бан и пик. Ещё в dev-режиме обычные
+-- баны (AAPICK_BAN_TIME) идут и в чит-режиме, чтобы было что проверять после ожидания.
+-- В обычном состоянии - false. Включить: поставить true и перезапустить карту.
+local DEV_FAKE_PREMIUM = true -- !!! ВКЛЮЧЁН ДЛЯ ТЕСТА, перед заливкой вернуть false
+local DEV_FAKE_PID = 23
+
+local function DevFake()
+	return DEV_FAKE_PREMIUM and IsInToolsMode()
+end
 local START_DELAY = 1.0     -- даём клиентам прогрузить экран выбора
 
 -- Ванильные тайминги ставит addon_game_mode.lua, отсюда - только длина банов.
@@ -61,6 +73,8 @@ local function Players()
 end
 
 local function IsPremium(pid)
+	if DevFake() then return false end
+
 	return CosmeticsCore ~= nil and CosmeticsCore.IsPremium ~= nil and CosmeticsCore:IsPremium(pid) == true
 end
 
@@ -237,6 +251,12 @@ function P:Start()
 		end
 	end
 
+	if DevFake() then
+		self.premium[DEV_FAKE_PID] = true
+		any = true
+		print("[AAPick] DEV: фантомный премиум pid " .. DEV_FAKE_PID .. ", реальные игроки без премиума")
+	end
+
 	CustomNetTables:SetTableValue("aa_pick", "heroes", self.heroes)
 
 	-- премиум-стадия живёт внутри удлинённой стадии банов: если баны не удлиняли
@@ -273,7 +293,9 @@ function P:PlanBanTime()
 		end
 	end
 
-	local base = GameRules:IsCheatMode() and 0 or AAPICK_BAN_TIME
+	if DevFake() then any = true end
+
+	local base = (GameRules:IsCheatMode() and not DevFake()) and 0 or AAPICK_BAN_TIME
 
 	self.planned = any
 

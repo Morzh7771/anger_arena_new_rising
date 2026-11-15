@@ -1163,3 +1163,29 @@ local function JobsPoll()
 end
 
 if TryJobs() then Timers:CreateTimer(GOLD_FLUSH, JobsPoll) end
+
+-- UI-статистика: открытие меню "Коллекция" (донат-меню) и окна "Премиум".
+-- клиент -> сервер  aa_ui_open { what = "hub" | "premium", tab? }  ->  событие ui_open { what, tab }
+local UI_WHAT = { hub = true, premium = true }
+local uiLast = {}
+
+CustomGameEventManager:RegisterListener("aa_ui_open", function(_, data)
+	pcall(function()
+		local pid = data and data.PlayerID
+		local what = data and tostring(data.what or "")
+
+		if not PidOk(pid) or not UI_WHAT[what] then return end
+
+		-- не чаще раза в 2 с на игрока и тип: спам кликами не забивает телеметрию
+		local key = pid .. ":" .. what
+		local now = GameRules:GetGameTime()
+
+		if uiLast[key] and now - uiLast[key] < 2 then return end
+
+		uiLast[key] = now
+
+		local tab = data.tab and tostring(data.tab):sub(1, 24) or nil
+
+		MatchTracker:Push("ui_open", pid, { what = what, tab = tab })
+	end)
+end)
