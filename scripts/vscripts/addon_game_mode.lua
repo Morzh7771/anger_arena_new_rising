@@ -930,6 +930,14 @@ function AngelArena:ExperienceFilter(event)
 		return false
 	end
 
+	-- мёртвым опыт не даём ни за что (как в доте): взрывная мантия сначала убивает владельца,
+	-- а движок иначе начислял ему опыт за крипов/нейтралов, убитых взрывом
+	local pid = event.player_id_const
+	local hero = pid and PlayerResource:IsValidPlayerID(pid) and PlayerResource:GetSelectedHeroEntity(pid)
+	if hero and not hero:IsNull() and not hero:IsAlive() then
+		return false
+	end
+
 	return true
 end
 function AngelArena:OnPlayerBuyItem(event)
