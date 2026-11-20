@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 LinkLuaModifier( "modifier_curruption_armor_debuff_1", "items/desolator_blood.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_curruption_armor_debuff_2", "items/desolator_blood.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_curruption_armor_debuff_3", "items/desolator_blood.lua", LUA_MODIFIER_MOTION_NONE )
@@ -38,7 +39,7 @@ modifier_item_desolator_lua_1 = class({
 		MODIFIER_PROPERTY_PROJECTILE_NAME,
 		MODIFIER_PROPERTY_PROCATTACK_FEEDBACK
     }
-    if self:GetAbility():GetName() == "item_desolator_aa_3" then table.insert(funcs, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT ) end
+    if self:GetAbility():GetName() == "item_desolator_aa_3" then table.insert(funcs, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT ) table.insert(funcs, MODIFIER_EVENT_ON_ATTACK_LANDED) end
         return funcs
     end,
     CheckState = function (self)
@@ -66,26 +67,46 @@ modifier_item_desolator_lua_3 = modifier_item_desolator_lua_1
 
 function modifier_item_desolator_lua_1:GetModifierProcAttack_Feedback(data)
     if data.target:HasModifier("modifier_curruption_armor_debuff_2") or data.target:HasModifier("modifier_curruption_armor_debuff_3") then return end
-	data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_curruption_armor_debuff_1", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration"),})
+    local potency = AttackPotency:Get(self:GetParent(), data)
+	data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_curruption_armor_debuff_1", AttackPotency:Kv(potency, {duration = self:GetAbility():GetSpecialValueFor("corruption_duration"),}))
 end
 
 function modifier_item_desolator_lua_2:GetModifierProcAttack_Feedback(data)
     if data.target:HasModifier("modifier_curruption_armor_debuff_3") then return end
     if data.target:HasModifier("modifier_curruption_armor_debuff_1") then data.target:RemoveModifierByName("modifier_curruption_armor_debuff_1") end
-    data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_curruption_armor_debuff_2", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration"),})
+    local potency = AttackPotency:Get(self:GetParent(), data)
+    data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_curruption_armor_debuff_2", AttackPotency:Kv(potency, {duration = self:GetAbility():GetSpecialValueFor("corruption_duration"),}))
 end
 
 function modifier_item_desolator_lua_3:GetModifierProcAttack_Feedback(data)
-    local chance = self:GetAbility():GetSpecialValueFor("chance")
-    local illusion_reduction_chance = self:GetAbility():GetSpecialValueFor("illusion_reduction_chance")
-    if self:GetParent():IsIllusion() then chance = chance / illusion_reduction_chance end
+    -- действенность атаки вместо старого деления шанса иллюзий на illusion_reduction_chance
+    local potency = AttackPotency:Get(self:GetParent(), data)
+    local chance = AttackPotency:Chance(self:GetAbility():GetSpecialValueFor("chance"), potency)
     if data.target:HasModifier("modifier_curruption_armor_debuff_1") then data.target:RemoveModifierByName("modifier_curruption_armor_debuff_1") end
     if data.target:HasModifier("modifier_curruption_armor_debuff_2") then data.target:RemoveModifierByName("modifier_curruption_armor_debuff_2") end
     if RollPseudoRandomPercentage(chance,12,self:GetParent()) then
         data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_blood_count", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration")})
         data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_blood", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration")})
     end
-    data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_curruption_armor_debuff_3", {duration = self:GetAbility():GetSpecialValueFor("corruption_duration"),})
+    data.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_curruption_armor_debuff_3", AttackPotency:Kv(potency, {duration = self:GetAbility():GetSpecialValueFor("corruption_duration"),}))
+end
+
+-- Pierce (как у MKB): шанс нанести дополнительный магический урон. Только у aa_3.
+function modifier_item_desolator_lua_3:OnAttackLanded(data)
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    local target = data.target
+    if data.attacker ~= parent then return end
+    if not target or target:IsBuilding() then return end
+
+    -- пирсинг: шанс как есть, действенность атаки масштабирует доп. урон
+    local potency = AttackPotency:Get(parent, data)
+    local chance = self:GetAbility():GetSpecialValueFor("bonus_chance")
+    if not RollPseudoRandomPercentage(chance, DOTA_PSEUDO_RANDOM_CUSTOM_GAME_1, parent) then return end
+
+    local damage = self:GetAbility():GetSpecialValueFor("bonus_chance_damage") * potency
+    ApplyDamage({victim = target, attacker = parent, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility(), damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
+    SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, damage, nil)
 end
 
 modifier_curruption_armor_debuff_1 = class({
@@ -95,16 +116,18 @@ modifier_curruption_armor_debuff_1 = class({
     DeclareFunctions= function (self) return {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
 	}end,
-    OnCreated = function (self) self:CacheValues() end,
-    OnRefresh = function (self) self:CacheValues() end,
+    OnCreated = function (self, kv) AttackPotency:Attach(self, kv) self:CacheValues() end,
+    OnRefresh = function (self, kv) AttackPotency:Attach(self, kv) self:CacheValues() end,
     CacheValues = function (self)
         local ability = self:GetAbility()
 
         if ability then self.corruption_armor = ability:GetSpecialValueFor("corruption_armor") end
     end,
-    GetModifierPhysicalArmorBonus = function (self) return -(self.corruption_armor or 0) end,
+    -- corruption_armor с действенностью атаки (apply_effectiveness)
+    GetModifierPhysicalArmorBonus = function (self) return -(self.corruption_armor or 0) * self:Potency() end,
     GetTexture = function (self) return "item_desolator" end
 })
+AttackPotency:Transmitter(modifier_curruption_armor_debuff_1)
 modifier_curruption_armor_debuff_2 = modifier_curruption_armor_debuff_1
 modifier_curruption_armor_debuff_3 = modifier_curruption_armor_debuff_1
 

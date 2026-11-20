@@ -1105,7 +1105,20 @@ MatchTracker.HeartbeatExtra = function(pid)
 		pcall(function() respawn = hero:GetRespawnTime() or 0 end)
 	end
 
+	-- боевые статы для баланса; каждое в pcall, чтобы кривой герой не ломал снимок
+	local function Stat(fn)
+		if not hero then return 0 end
+		local ok, v = pcall(fn)
+		if ok and type(v) == "number" then return v end
+		return 0
+	end
+
 	return {
+		max_hp     = math.floor(Stat(function() return hero:GetMaxHealth() end)),
+		attack_dmg = math.floor(Stat(function() return hero:GetAverageTrueAttackDamage(nil) end)),
+		max_mana   = math.floor(Stat(function() return hero:GetMaxMana() end)),
+		armor      = math.floor(Stat(function() return hero:GetPhysicalArmorValue(false) end) * 10 + 0.5) / 10,
+		magic_res  = math.floor(Stat(function() return hero:GetMagicalArmorValue() end) * 1000 + 0.5) / 1000,
 		str       = hero and hero:GetStrength() or 0,
 		agi       = hero and hero:GetAgility() or 0,
 		int       = hero and hero:GetIntellect(false) or 0,

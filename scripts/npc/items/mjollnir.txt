@@ -108,7 +108,11 @@
             "active_radius"                 "800"
             "active_damage_per_base_damage"  "40 50 60"
 
-            "chance"                        "20 25 30"
+            "chance"
+            {
+            	"value"				"20 25 30"
+            	"apply_effectiveness"	"1"
+            }
             "arc_damage"			        "150 250 500"
 	        "radius"			            "650"
 	        "jump_count"			        "6 8 10"
@@ -163,7 +167,11 @@
             "active_radius"                 "800"
             "active_damage_per_base_damage"  "40 50 60"
 
-            "chance"                        "20 25 30"
+            "chance"
+            {
+            	"value"				"20 25 30"
+            	"apply_effectiveness"	"1"
+            }
             "arc_damage"			        "150 250 500"
 	        "radius"			            "650"
 	        "jump_count"			        "6 8 10"
@@ -219,7 +227,11 @@
             "active_radius"                 "800"
             "active_damage_per_base_damage"  "40 50 60"
 
-            "chance"                        "20 25 30"
+            "chance"
+            {
+            	"value"				"20 25 30"
+            	"apply_effectiveness"	"1"
+            }
             "arc_damage"			        "150 250 500"
 	        "radius"			            "650"
 	        "jump_count"			        "6 8 10"
@@ -234,7 +246,7 @@
 		"BaseClass"                     "item_datadriven"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -243,7 +255,7 @@
 		"ItemResult"					"item_maelstorm_aa"
 		"ItemRequirements"
 		{
-			"01"						"item_mithril_hammer;item_javelin;item_gloves"
+			"01"						"item_mithril_hammer;item_gloves"
 		}
 	}
     "item_maelstorm_aa"
@@ -271,7 +283,11 @@
             "bonus_damage"                  "25"
             "bonus_attack_speed"            "25"
 
-            "chance"                        "20"
+            "chance"
+            {
+            	"value"				"20"
+            	"apply_effectiveness"	"1"
+            }
             "arc_damage"			        "100"
 	        "radius"			            "650"
 	        "jump_count"			        "4"

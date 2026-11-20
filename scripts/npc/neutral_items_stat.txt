@@ -30,7 +30,7 @@
 	"item_madstone_aa"
 	{
 		"BaseClass"						"item_lua"
-		"ID"							"1900"
+		"ID"							"15300"
 		"ScriptFile"					"items/item_madstone_aa"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -58,7 +58,7 @@
 	}
 
 	// =================================================================
-	// ТИР 1 - предметы (крафт стоит 6 безумрудов)
+	// ТИР 1 - предметы (состав тиров - neutral_items.txt)
 	// =================================================================
 	"item_occult_bracelet"
 	{
@@ -437,8 +437,9 @@
 		}
 	}
 
+
 	// =================================================================
-	// ТИР 2 - предметы (крафт стоит 10 безумрудов)
+	// ТИР 2 - предметы (состав тиров - neutral_items.txt)
 	// =================================================================
 	"item_essence_ring"
 	{
@@ -468,7 +469,7 @@
 			"mp_regen"		"0"
 			"health_gain"		
 			{
-				"value"				"400"
+				"value"				"600"
 				"apply_curio_bonus"	"1"
 			}
 			"health_gain_duration"	"10"
@@ -719,7 +720,7 @@
 		"AbilityValues"
 		{
 			"ally_armor"			"14"
-			"enemy_armor"			"-8"
+			"enemy_armor"			"-10"
 			"duration"
 			{
 				"value"				"8"
@@ -775,9 +776,115 @@
 			"duration"					"8"
 		}
 	}
+	"item_brick"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"		"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityCastRange"				"600"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"barrier_damage"
+			{
+				"value"					"400"
+				"apply_curio_bonus"		"1"
+			}
+
+			"damage"
+			{
+				"value"					"300"
+				"apply_curio_bonus"		"1"
+			}
+
+			"projectile_speed"			"1400"
+		}
+	}
+
+	"item_imp_claw"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"crit_multiplier"
+				{
+					"value"			"130"
+					"apply_curio_bonus" "1"
+				}
+				"bonus_damage"		"0"
+		}
+	}
+
+	"item_safety_bubble"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"shield"
+			{
+				"value"				"300"
+				"apply_curio_bonus"	"1"
+			}
+
+
+			"restore_time"			"8"
+			"bonus_hp_regen"		"0"
+		}
+	}
+
 
 	// =================================================================
-	// ТИР 3 - предметы (крафт стоит 10 безумрудов)
+	// ТИР 3 - предметы (состав тиров - neutral_items.txt)
 	// =================================================================
 	"item_serrated_shiv"
 	{
@@ -803,7 +910,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"proc_chance"			"25"
+			"proc_chance"
+			{
+				"value"				"25"
+				"apply_effectiveness"	"1"
+			}
 			"hp_dmg"				
 			{
 				"value"				"10"
@@ -954,10 +1065,10 @@
 		{
 			"max_slow_res"				
 			{
-				"value"					"60"
+				"value"					"75"
 				"apply_curio_bonus"		"1"
 			}
-			"hero_reduction"			"7"
+			"hero_reduction"			"5"
 			"status_res_pct_increase_per_hero"	"0"			
 		}
 	}
@@ -1098,9 +1209,162 @@
 			}			
 		}
 	}
+	"item_balmhook"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"		"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_health_regen"
+			{
+				"value"					"40"
+				"apply_curio_bonus"		"1"
+			}
+
+			"buff_duration"				"12"
+		}
+	}
+
+	"item_ceremonial_robe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_mana"			"0"
+			"aura_radius"
+			{
+				"value"			"850"
+				"affected_by_aoe_increase"	"1"
+			}
+
+			"status_resistance"
+			{
+				"value"					"10"
+				"apply_curio_bonus"		"1"
+			}
+
+			"magic_resistance"
+			{
+				"value"					"10"
+				"apply_curio_bonus"		"1"
+			}
+		}
+	}
+
+	"item_revenants_brooch"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"		"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"crit_chance"
+			{
+				"value"				"30"
+			}
+
+			"crit_multiplier"
+			{
+				"value"				"100"
+				"apply_curio_bonus"	"1"
+			}
+		}
+	}
+
+	"item_vile_phial"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_vile_phial"
+		"AbilityTextureName"			"item_vile_phial"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"		"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"required_hits"				"4"
+
+			// How long the running tally on a victim survives without a new hit.
+			"counter_duration"			"10"
+
+			"poison_duration"			"5"
+
+			"poison_max_hp_pct"				"2"
+
+			"damage_per_second"
+			{
+				"value"					"50"
+				"apply_curio_bonus"		"1"
+			}
+
+			"heal_reduce"
+			{
+				"value"					"50"
+				"apply_curio_bonus"		"1"
+				"apply_effectiveness"	"1"
+			}
+		}
+	}
+
+
 
 	// =================================================================
-	// ТИР 4 - предметы (крафт стоит 10 безумрудов)
+	// ТИР 4 - предметы (состав тиров - neutral_items.txt)
 	// =================================================================
 	"item_giant_maul"
 	{
@@ -1139,6 +1403,10 @@
 
 	"item_rattlecage"
 	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_rattlecage"
+		"AbilityTextureName"			"item_rattlecage"
+
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1165,11 +1433,8 @@
 			"damage_threshold"			"350"
 			"slow"			"100"
 			"projectile_speed"				"1000"
-			"projectile_damage"
-			{
-				"value"						"320"
-				"apply_curio_bonus"			"1"
-			}
+			"projectile_attack_pct"			"40"
+			"projectile_max_hp_pct"			"1"
 			"target_count"					"2"
 			"bonus_armor"					"0"
 		}
@@ -1238,7 +1503,7 @@
 
 			"base_damage"
 			{
-				"value"					"15"
+				"value"					"30"
 				"apply_curio_bonus"		"1"
 			}
 
@@ -1432,50 +1697,171 @@
 			"cooldown"		"0.1"
 		}
 	}
-
-	// =================================================================
-	// ТИР 5 - предметы (крафт стоит 10 безумрудов)
-	// =================================================================
-	"item_desolator_2"
+	"item_flicker"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8"
+
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralActiveDrop"				"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"				"0"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		
-		// Special	
+
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"0"
-				"corruption_armor"		
-				{
-					"value"				"-55"
-					"apply_curio_bonus"		"1"
-				}
-				"corruption_duration"	"6.0"
+			"max_range"
+			{
+				"value"						"600"
+				"apply_curio_bonus"			"1"
+			}
+
+			"min_range"
+			{
+				"value"						"200"
+				"apply_curio_bonus"			"1"
+			}
+
+			"bonus_movement_speed"			"0"
 		}
 	}
 
-	"item_fallen_sky"
+	"item_giants_ring"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_strength"			"0"
+				"movement_speed"			"0"
+				"model_scale"			"60"
+				"pct_str_damage_per_second"
+				{
+					"value"					"200"
+					"apply_curio_bonus"		"1"
+				}
+
+				"damage_radius"
+				{
+					"value"		"100"
+					"affected_by_aoe_increase"	"1"
+				}
+		}
+	}
+
+	"item_helm_of_the_hivemind"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"		"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_cast_range"
+			{
+				"value"					"80"
+				"apply_curio_bonus"		"1"
+			}
+
+			"cast_range"
+			{
+				"value"					"120"
+				"apply_curio_bonus"		"1"
+			}
+
+			"hp_loss_pct"				"8"
+		}
+	}
+
+	"item_mind_breaker"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralActiveDrop"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityCooldown"				"14.0"
+		"ItemSellable"				"0"
+
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"magic_damage"			"0"
+			"attack_speed"			"0"
+			"duration"
+			{
+				"value"				"2"
+				"apply_effectiveness"	"1"
+				"apply_curio_bonus"		"1"
+			}
+		}
+	}
+
+
+	// =================================================================
+	// ТИР 5 - предметы (состав тиров - neutral_items.txt)
+	// =================================================================
+
+	"item_fallen_sky"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_fallen_sky"
+		"AbilityTextureName"			"item_fallen_sky"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
+		"AbilityAOERadius"				"315"
 		"AbilityCooldown"				"25.0"
 					
 		// Item Info
@@ -1506,6 +1892,8 @@
 				"apply_curio_bonus"		"1"
 			}
 			"burn_duration"		"6"
+			"impact_max_hp_pct"			"8"
+			"burn_max_hp_pct"			"1"
 			"stun_duration"		"1.6"
 			"burn_interval"				"1.0"
 			"land_time"				"1"
@@ -1553,8 +1941,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"			"0"
-				"bonus_intellect"		"0"
+				"bonus_strength"			"40"
+				"bonus_intellect"		"40"
 				"summon_duration"				
 				{
 					"value"				"75"
@@ -1742,13 +2130,13 @@
 		{
 			"manacost_reduction"
 			{
-				"value"					"15"
+				"value"					"25"
 				"apply_curio_bonus"		"1"
 			}
 
 			"spell_amp"
 			{
-				"value"					"30"
+				"value"					"45"
 				"apply_curio_bonus"		"1"
 			}
 		}
@@ -1808,79 +2196,106 @@
 	}
 
 	// =================================================================
-	// ЧАРЫ
-	//
-	// Одна и та же чара встречается в нескольких тирах на разных уровнях,
-	// поэтому описание тут одно, а уровни расписаны в neutral_items.txt.
+	// DESOLATOR 2 - наш, возвращён из старой версии (Valve удалила).
+	// Старое: процент от брони цели (item_stygian_aa, git 1145b423).
+	// Добавлено базовое плоское снижение брони (corruption_armor).
+	// Логика - scripts/vscripts/items/item_desolator_2.lua
 	// =================================================================
-	// item_enhancement_quickened: global тир 1 (ур. 1), global тир 2 (ур. 2), global тир 3 (ур. 3), global тир 4 (ур. 4)
-	"item_enhancement_quickened"
+	"item_desolator_2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralPassiveDrop"		"1"
-		"ItemPurchasable"				"0"
-		"ItemSellable"					"0"
-		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		"MaxLevel"						"4"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"movement_speed"			"15 30 45 70"
-			"max_mana"					"120 300 600 1200"
-			"evasion"					"0 0 0 15"		
-		}
-	}
+		// Пассивка, 5 разряд. Состав тиров - в neutral_items.txt.
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_desolator_2"
+		"AbilityTextureName"			"desolator_2"
 
-	// item_enhancement_vital: global тир 1 (ур. 1)
-	"item_enhancement_vital"
-	{
 		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
+
 		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
 		"AbilityValues"
-		{			
-			"health_regen"			"14"
+		{
+			"bonus_dmg"				"250"
+			"corruption_armor"
+			{
+				"value"				"35"
+				"apply_effectiveness"	"1"
+			}
+			"disarmor_pct"
+			{
+				"value"				"20"
+				"apply_effectiveness"	"1"
+			}
+			"duration"				"7"
 		}
 	}
 
-	// item_enhancement_brawny: strength тир 1 (ур. 1), agility тир 1 (ур. 1), strength тир 2 (ур. 2), agility тир 2 (ур. 2), strength тир 3 (ур. 3), agility тир 3 (ур. 3), strength тир 4 (ур. 4), agility тир 4 (ур. 4)
-	"item_enhancement_brawny"
+
+	// =================================================================
+	// ЧАРЫ (свои, item_aa_enhancement_*)
+	//
+	// Ванильные item_enhancement_* больше не используются: у нас свои
+	// предметы без наследования ванили, только строки статов. Все статы
+	// считает один модификатор items/item_aa_enhancement.lua по ключам.
+	// Уровни чары по разрядам - в neutral_items.txt (enhancements).
+	// =================================================================
+	"item_aa_enhancement_quickened"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_quickened"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"4"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"movement_speed"			"15 30 45 70"
+			"bonus_mana"			"120 300 600 1200"
+			"evasion"			"0 0 0 15"
+		}
+	}
+
+	"item_aa_enhancement_vital"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_vital"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						"0"
+		"ItemIsNeutralPassiveDrop"		"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"health_regen"			"14"
+		}
+	}
+
+	"item_aa_enhancement_brawny"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_brawny"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						"0"
+		"ItemIsNeutralPassiveDrop"		"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"MaxLevel"						"4"
 		"AbilityValues"
 		{
 			"health_bonus"			"125 350 1000 3500"
@@ -1889,425 +2304,321 @@
 		}
 	}
 
-	// item_enhancement_tough: strength тир 1 (ур. 1), intelligence тир 1 (ур. 1), strength тир 2 (ур. 2), intelligence тир 2 (ур. 2), strength тир 3 (ур. 3), intelligence тир 3 (ур. 3), strength тир 4 (ур. 4), intelligence тир 4 (ур. 4)
-	"item_enhancement_tough"
+	"item_aa_enhancement_tough"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_tough"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"4"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_damage"				"10 35 100 250"
-			"armor"						"3 6 10 25"
+			"bonus_damage"			"10 35 100 250"
+			"armor"			"3 6 10 25"
 			"knockback_resist"			"0 0 0 40"
 		}
 	}
 
-	// item_enhancement_alert: agility тир 1 (ур. 1), universal тир 1 (ур. 1), agility тир 2 (ур. 2), universal тир 2 (ур. 2), agility тир 3 (ур. 3), universal тир 3 (ур. 3), agility тир 4 (ур. 4), universal тир 4 (ур. 4)
-	"item_enhancement_alert"
+	"item_aa_enhancement_alert"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_alert"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"4"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_attack_speed"	"25 50 100 250"
-			"bonus_night_vision"	"50 150 225 300"
-			"bonus_attack_range"	"0 0 0 80"
+			"bonus_attack_speed"			"25 50 100 250"
+			"bonus_night_vision"			"50 150 225 300"
+			"bonus_attack_range"			"0 0 0 80"
+			"bonus_attack_range_melee"			"0 0 0 40"
 		}
 	}
 
-	// item_enhancement_mystical: intelligence тир 1 (ур. 1), universal тир 1 (ур. 1), intelligence тир 2 (ур. 2), universal тир 2 (ур. 2), intelligence тир 3 (ур. 3), universal тир 3 (ур. 3), intelligence тир 4 (ур. 4), universal тир 4 (ур. 4)
-	"item_enhancement_mystical"
+	"item_aa_enhancement_mystical"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_mystical"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"4"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"mana_regen"				"2 4 10 30"
-			"magic_res"					"5 10 16 22"
-			"manacost_reduction"		"0 0 0 15"
+			"mana_regen"			"3 6 15 40"
+			"magic_res"			"8 14 20 28"
+			"manacost_reduction"			"0 0 0 15"
 		}
 	}
 
-	// item_enhancement_greedy: global тир 2 (ур. 1), global тир 3 (ур. 2)
-	"item_enhancement_greedy"
+	"item_aa_enhancement_greedy"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_greedy"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
-		"DisplayOverheadAlertOnReceived" "0"
+		"DisplayOverheadAlertOnReceived"	"0"
 		"ItemPurchasable"				"0"
-		"ItemSellable"				"0"
-		"ItemInitialCharges"			"750"
-		"ItemPermanent"					"0"
+		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"2"
-		
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"bonus_gpm"			"250 600"
-			"bonus_mana"		"300 600"
-			"bonus_damage"		"-100 -300"
+			"bonus_mana"			"300 600"
+			"bonus_damage"			"-100 -300"
 		}
 	}
 
-	// item_enhancement_crude: strength тир 2 (ур. 1), strength тир 3 (ур. 2), strength тир 4 (ур. 3)
-	"item_enhancement_crude"
+	"item_aa_enhancement_crude"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_crude"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"3"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"health_restoration"		"9 12 15"
-			"bat_reduce"				"6 9 12"
+			"health_restoration"			"9 12 15"
+			"bat_reduce"			"8 12 16"
 			"intelligence_pct"			"-9 -12 -20"
 		}
 	}
 
-	// item_enhancement_nimble: agility тир 2 (ур. 1), agility тир 3 (ур. 2), agility тир 4 (ур. 3)
-	"item_enhancement_nimble"
+	"item_aa_enhancement_nimble"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_nimble"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"3"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"movespeed_pct"						"12 15 25"
-			"bonus_damage"						"55 145 350"
-			"hp_regen_reduce"					"15 45 120"
+			"movespeed_pct"			"12 15 25"
+			"bonus_damage"			"55 145 350"
+			"health_regen"			"-15 -45 -120"
 		}
 	}
 
-	// item_enhancement_keen_eyed: intelligence тир 2 (ур. 1), intelligence тир 3 (ур. 2), intelligence тир 4 (ур. 3)
-	"item_enhancement_keen_eyed"
+	"item_aa_enhancement_keen_eyed"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_keen_eyed"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
-		"MaxLevel"						"3"
-
-
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"3"
 		"AbilityValues"
 		{
-			"cast_range_bonus"					"125 135 145"
-			"bonus_mana_regen"					"3 10 20"
-			"mana_reduction_pct"				"15"
+			"cast_range_bonus"			"125 135 145"
+			"mana_regen"			"5 15 30"
+			"max_mana_pct"			"-15 -20 -25"
 		}
 	}
 
-	// item_enhancement_titanic: universal тир 2 (ур. 1), universal тир 3 (ур. 2), universal тир 4 (ур. 3)
-	"item_enhancement_titanic"
+	"item_aa_enhancement_titanic"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_titanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
-		"MaxLevel"						"3"
-
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"3"
 		"AbilityValues"
 		{
-			"base_attack_damage"		"15 30 55"
-			//"magic_resistance"		"12 16"
+			"base_attack_damage"			"25 45 80"
 			"status_resistance"			"10 20 30"
-			"attack_speed"				"-10 -20 -40"
+			"attack_speed_pct"			"-10 -15 -25"
 		}
 	}
 
-	// item_enhancement_timeless: global тир 4 (ур. 1), global тир 5 (ур. 2)
-	"item_enhancement_timeless"
+	"item_aa_enhancement_timeless"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_timeless"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
-		"MaxLevel"						"2"
-
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"2"
 		"AbilityValues"
 		{
-			"debuff_amp"		"10 20"
+			"debuff_amp"			"10 20"
 			"spell_amp"			"40 80"
 		}
 	}
 
-	// item_enhancement_evolved: global тир 5 (ур. 1)
-	"item_enhancement_evolved"
+	"item_aa_enhancement_evolved"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_evolved"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralPassiveDrop"		"1"
-		"ItemPurchasable"				"0"
-		"ItemSellable"				"0"
-
-
-		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"primary_stat"			 	"300"
-			"primary_stat_universal"	"180"
-		}
-	}
-
-	// item_enhancement_fleetfooted: global тир 5 (ур. 1)
-	"item_enhancement_fleetfooted"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"movespeed"					"250"
+			"primary_stat"			"300"
+			"primary_stat_pct"			"15"
 		}
 	}
 
-	// item_enhancement_vampiric: global тир 5 (ур. 1)
-	"item_enhancement_vampiric"
+	"item_aa_enhancement_fleetfooted"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_fleetfooted"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
-		"MaxLevel"						"1"
-
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
 		"AbilityValues"
 		{
-			"attack_lifesteal"				"45"
-			"spell_lifesteal"				"35"
+			"movespeed_unique"			"250"
+			"movespeed_limit_bonus"			"100"
+		}
+	}
+
+	"item_aa_enhancement_vampiric"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_vampiric"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						"0"
+		"ItemIsNeutralPassiveDrop"		"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"attack_lifesteal"			"45"
+			"spell_lifesteal"			"35"
 			"bonus_night_vision"			"300"
 		}
 	}
 
-	// item_enhancement_hulking: strength тир 5 (ур. 1)
-	"item_enhancement_hulking"
+	"item_aa_enhancement_hulking"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_hulking"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"max_health"				"15"
-			"max_health_regen"			"3.5"
-			"attack_speed"				"-40"
+			"max_health_pct"			"20"
+			"max_health_to_damage_pct"			"4"
+			"max_health_regen_pct"			"4"
 		}
 	}
 
-	// item_enhancement_audacious: agility тир 5 (ур. 1)
-	"item_enhancement_audacious"
+	"item_aa_enhancement_audacious"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_audacious"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"attack_speed"				"1000"
-			"magic_damage"				"1200"
+			"bonus_attack_speed"			"1000"
+			"magic_damage_pct"			"25"
 			"incoming_damage"			"20"
 		}
 	}
 
-	// item_enhancement_feverish: intelligence тир 5 (ур. 1)
-	"item_enhancement_feverish"
+	"item_aa_enhancement_feverish"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_feverish"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"2"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"cooldown_reduction"		"30"
-			"max_mana"				"40"
+			"cooldown_reduction"			"35"
+			"max_mana_pct"			"-40"
 		}
 	}
 
-	// item_enhancement_manic: universal тир 5 (ур. 1)
-	"item_enhancement_manic"
+	"item_aa_enhancement_manic"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aa_enhancement"
+		"AbilityTextureName"			"item_enhancement_manic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
 		"ItemIsNeutralPassiveDrop"		"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxLevel"						"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bat_reduce"				"25"
-			"cast_speed"				"40"
-			"vision_reduce"				"20"
+			"bat_reduce"			"35"
+			"cast_speed"			"60"
+			"vision_pct"			"-20"
 		}
 	}
 

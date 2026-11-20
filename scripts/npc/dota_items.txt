@@ -25,7 +25,6 @@
 	"item_harpoon"					"suck"
 	"item_infused_raindrop"			"bitch"
 	"item_angels_demise"            "huita"
-	"item_meteor_hammer"			"reworked"
 	"item_bfury"					"reworked"
 	"item_mask_of_madness"			"TI VED ZNAESH CHTO V SUBOTU VOR NE HODIT NA RABOTY"
 	"item_quelling_blade"			"reworked"
@@ -633,7 +632,7 @@
         "bonus_intellect"   "35"
         "cyclone_duration"    "3"
         "tooltip_drop_damage" "50"
-        "tornado_speed" "700"
+        "tornado_speed" "500"
     }
   }
   "item_broadsword"
@@ -699,7 +698,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"corruption_armor"		"-3"
+			"corruption_armor"
+			{
+				"value"				"-3"
+				"apply_effectiveness"	"1"
+			}
 			"corruption_duration"	"8.0"
 		}
 	}
@@ -920,7 +923,6 @@
 		"AbilityValues"
 		{
 			"bonus_strength"		"6 12 18"
-			"bonus_mana_regen"		"2 3 4"
 			"summon_duration"		"60"
 			"warrior_health_tooltip"	"800 1200 1600"
 			"warrior_damage_tooltip"	"25 45 65"
@@ -933,6 +935,7 @@
 			"archer_mana_burn"		"125 175 225"
 			"archer_aura_radius_tooltip"	"1200"
 			"archer_move_speed"	"5 7 9"
+			"bonus_intellect"			"15 20 25"
 		}
 	}
 
@@ -972,7 +975,6 @@
 		"AbilityValues"
 		{
 			"bonus_strength"		"6 12 18"
-			"bonus_mana_regen"		"2 3 4"
 			"summon_duration"		"60"
 			"warrior_health_tooltip"	"800 1200 1600"
 			"warrior_damage_tooltip"	"25 45 65"
@@ -985,6 +987,7 @@
 			"archer_mana_burn"		"125 175 225"
 			"archer_aura_radius_tooltip"	"1200"
 			"archer_move_speed"	"5 7 9"
+			"bonus_intellect"			"15 20 25"
 		}
 	}
 
@@ -1021,7 +1024,6 @@
 		"AbilityValues"
 		{
 			"bonus_strength"		"6 12 18"
-			"bonus_mana_regen"		"2 3 4"
 			"summon_duration"		"60"
 			"warrior_health_tooltip"	"800 1200 1600"
 			"warrior_damage_tooltip"	"25 45 65"
@@ -1034,6 +1036,7 @@
 			"archer_mana_burn"		"125 175 225"
 			"archer_aura_radius_tooltip"	"1200"
 			"archer_move_speed"	"5 7 9"
+			"bonus_intellect"			"15 20 25"
 		}
 	}
 }

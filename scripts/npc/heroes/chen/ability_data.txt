@@ -108,7 +108,9 @@ DOTAAbilities
         // General
         //-------------------------------------------------------------------------------------------------------------
 
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityCooldown"				"20 19 18 17 16 15 14"
+        "AbilityManaCost"				"75"
         "SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -228,7 +230,6 @@ DOTAAbilities
             "is_martyr"
             {
                 "value"			"0"
-                "special_bonus_scepter"			"+1"
             }
             "creep_ability_level"
             {

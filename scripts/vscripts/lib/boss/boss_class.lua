@@ -110,6 +110,15 @@ function BossClass:Create( name, description, allTables )
 
 	PrecacheUnitByNameAsync(unitName, function(...) end)
 
+	-- Лут босса создаётся предметами в его инвентаре в момент спавна. Без
+	-- прекеша первый CreateItem каждого предмета синхронно грузил ресурсы,
+	-- и первый спавн минибоссов в 05:00 давал фриз ~0.5 с.
+	if boss.dropbox and boss.dropbox.GetItemNames then
+		for _, data in pairs(boss.dropbox:GetItemNames()) do
+			if data[1] then PrecacheItemByNameAsync(data[1], function() end) end
+		end
+	end
+
 	return boss
 end
 

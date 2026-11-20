@@ -28,7 +28,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 HEROES = os.path.join(ROOT, 'scripts', 'npc', 'heroes')
-PATCH_HEROES = r"C:\Users\admin\Desktop\dota 2 patch\scripts\npc\heroes"
+PATCH_HEROES = r"C:\Users\admin\Desktop\Dota 2 7.42\scripts\npc\heroes"
 
 _p = {'__file__': os.path.join(HERE, 'port.py')}
 _src = open(os.path.join(HERE, 'port.py'), encoding='utf-8').read().split('def port_hero(')[0]

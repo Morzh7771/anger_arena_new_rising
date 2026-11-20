@@ -1947,7 +1947,7 @@ function MatchTracker:OnDamageApplied(ev)
 	end
 
 	-- доп. урон от divine_intervention -> "<настоящий источник>#bonus" (addon_game_mode.lua)
-	if AA_DamageKey then skill = AA_DamageKey(skill) end
+	if AA_DamageKey then skill = AA_DamageKey(skill, ev) end
 
 	-- журнал урона премиум-игрокам (lib/damage_log.lua), только наблюдение
 	if DamageLog then pcall(DamageLog.OnApplied, DamageLog, ev) end

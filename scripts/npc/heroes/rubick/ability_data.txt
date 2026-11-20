@@ -88,7 +88,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"rubick_telekinesis_land"
 		"MaxLevel"		"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		// Special	
@@ -188,6 +188,7 @@ DOTAAbilities
 				"value"				"6 12 18 24 30 36 42"
 				"CalculateSpellDamageTooltip"				"0"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+				"special_bonus_unique_rubick_fade_bolt_spell_reduction"				"+12"
 			}
 			"AbilityCooldown"
 			{
@@ -195,6 +196,7 @@ DOTAAbilities
 				"special_bonus_unique_rubick_3"				"-4"
 			}
 			"steals_damage"				"0"
+			"damage_pct"				"120"
 		}
 	}	
 	"rubick_null_field"

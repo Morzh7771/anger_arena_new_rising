@@ -23,9 +23,6 @@ end
 function modifier_charon_last_word_aura_effect:OnCreated(kv)
     if not IsServer() then return end
     self.slow_for_mana_pct = self:GetAbility():GetSpecialValueFor("slow_for_mana_pct")
-    if self:GetAbility():GetCaster():HasTalent("charon_last_word_bonus_slow_per_mana_tallent") then
-        self.slow_for_mana_pct = self.slow_for_mana_pct + self:GetAbility():GetCaster():GetTalentSpecialValueFor("charon_last_word_bonus_slow_per_mana_tallent")
-    end
     self:SyncSlowStacks()
     if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
         self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("tick_per_sec")/60)
@@ -36,9 +33,6 @@ end
 function modifier_charon_last_word_aura_effect:OnRefresh(kv)
     if not IsServer() then return end
     self.slow_for_mana_pct = self:GetAbility():GetSpecialValueFor("slow_for_mana_pct")
-    if self:GetAbility():GetCaster():HasTalent("charon_last_word_bonus_slow_per_mana_tallent") then
-        self.slow_for_mana_pct = self.slow_for_mana_pct + self:GetAbility():GetCaster():GetTalentSpecialValueFor("charon_last_word_bonus_slow_per_mana_tallent")
-    end
     self:SyncSlowStacks()
     if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
         self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("tick_per_sec")/60)
@@ -64,6 +58,7 @@ function modifier_charon_last_word_aura_effect:OnIntervalThink()
         attacker = self:GetCaster(),
         damage = damage,
         damage_type = DAMAGE_TYPE_MAGICAL,
+        ability = self:GetAbility(), -- без него урон шёл без источника и журнал считал его атакой с руки
     }
     if damage <= 0 then return end
     ApplyDamage(info)
@@ -79,7 +74,10 @@ function modifier_charon_last_word_aura_effect:GetModifierMoveSpeedBonus_Percent
     -- стаках, умноженный на 100 - см. SyncSlowStacks.
     local slowPct = self:GetStackCount() / 100
 
-    return -((100 - self:GetParent():GetManaPercent()) * slowPct)
+    local parent = self:GetParent()
+    if not parent or parent:IsNull() or not parent.GetManaPercent then return 0 end
+
+    return -((100 - parent:GetManaPercent()) * slowPct)
 end
 
 -------------------------------------------------------------------------------

@@ -253,6 +253,21 @@ DOTAAbilities
                 "value"                         "1.5 1.75 2 2.25 2.5 2.75 3"
                 "special_bonus_unique_venomancer" "x2.5"
             }
+        	"poison_sting_potency"				"50"
+        	"ward_base_damage"
+        	{
+        		"value"				"16 24 32 40 48 56 64"
+        		"special_bonus_unique_venomancer"				"x2.5"
+        	}
+        	"ward_damage_spread"				"2"
+        	"ward_max_health"
+        	{
+        		"value"				"150 250 350 450 550 650 750"
+        		"special_bonus_unique_venomancer"				"x2.5"
+        	}
+        	"ward_gold_bounty_min"				"10 14 18 22 26 30 34"
+        	"ward_gold_bounty_max"				"10 14 18 22 26 30 34"
+        	"magic_immune"				"1"
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}

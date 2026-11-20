@@ -13,6 +13,7 @@ item_assault_3 = class({
 -- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
 function item_assault_3:Precache(context)
 	PrecacheResource("particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context)
+	PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
 end
 
 
@@ -70,14 +71,39 @@ modifier_assault_aa_aura_friend = class({
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_EVENT_ON_TAKEDAMAGE,
         MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_TOOLTIP,
     }end,
     GetModifierPhysicalArmorBonus = function (self) return self:GetAbility():GetSpecialValueFor("aura_positive_armor") end,
     GetModifierAttackSpeedBonus_Constant = function (self) return self:GetAbility():GetSpecialValueFor("aura_attack_speed") end,
     GetModifierConstantManaRegen = function (self) return self:GetAbility():GetSpecialValueFor("mana_regen_aura") end,
     GetModifierBaseDamageOutgoing_Percentage = function (self) return self:GetAbility():GetSpecialValueFor("damage_aura") end,
+    GetModifierSpellAmplify_Percentage = function (self) return self:GetAbility():GetSpecialValueFor("aura_spell_amp") end,
     GetTexture = function (self) return "../items/" .. (self:GetAbility():GetAbilityTextureName() or "") end,
+    -- Магический вампиризм: урон способностями (не предметов) союзника лечит его самого.
+    -- Не героям (крипы, юниты) - 20% от процента, как и физический вампиризм на крипах.
+    OnTakeDamage = function (self, params)
+        if not IsServer() then return end
+        local parent = self:GetParent()
+        if params.attacker ~= parent then return end
+        if params.inflictor == nil or params.inflictor:IsItem() then return end
+        if not params.damage or params.damage <= 0 or parent:IsIllusion() then return end
+        local target = params.unit
+        if not target or target:IsNull() or target:IsBuilding() then return end
+        if target:GetTeamNumber() == parent:GetTeamNumber() then return end
+
+        local pct = self:GetAbility():GetSpecialValueFor("aura_spell_lifesteal")
+        if not target:IsHero() then pct = pct * 0.2 end
+        local heal = params.damage * pct / 100
+        if heal <= 0 then return end
+        parent:HealWithParams(heal, self:GetAbility(), false, true, parent, true)
+
+        local particle = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+        ParticleManager:SetParticleControl(particle, 0, parent:GetAbsOrigin())
+        ParticleManager:ReleaseParticleIndex(particle)
+    end,
     OnAttackLanded = function (self,keys) 
         if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then return end
         if keys.attacker == self:GetParent() then

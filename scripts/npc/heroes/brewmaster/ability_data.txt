@@ -263,7 +263,7 @@ DOTAAbilities
 		"AbilitySound"					"Hero_Brewmaster.PrimalSplit.Spawn"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"HasScepterUpgrade"			"0"	// аганим у Brewmaster отключён
+		"HasScepterUpgrade"			"1"	// аганим у Brewmaster отключён
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -344,8 +344,13 @@ DOTAAbilities
 			"primal_split_cancel"
 			{
 				"value"				"0"
+				"special_bonus_scepter"			"+1"
 			}
-			"AbilityCooldown"				"140 137 133 130 127 123 120"
+			"AbilityCooldown"
+			{
+				"value"				"140 137 133 130 127 123 120"
+				"special_bonus_unique_brewmaster_primal_split_cooldown"				"-12"
+			}
 			"hp_per_attribute"
 			{
 				"value"				"0"
@@ -359,6 +364,7 @@ DOTAAbilities
 				"value"				"0"
 			}
 			"scepter_bonus_levels"				"1"
+			"scepter_brewling_items"				"0"
 		}
 	}
 	"brewmaster_primal_split_cancel"
@@ -370,7 +376,7 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"0"
-		"HasScepterUpgrade"				"0"
+		"HasScepterUpgrade"				"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		// Time		
@@ -684,7 +690,11 @@ DOTAAbilities
 				"hero_levelup"				"+0.5"
 			}
 			"min_speed"				"10"
-			"max_speed"				"30"
+			"max_speed"
+			{
+				"value"				"30"
+				"special_bonus_shard"			"+20"
+			}
 			"speed_toggle_time"				"1"
 			"drink_duration"
 			{
@@ -721,6 +731,10 @@ DOTAAbilities
 				"value"				"0"
 				"special_bonus_shard"				"+3.0"
 			}
+			"damage_threshold"				"400"
+			"trigger_duration"				"5"
+			"damage_reset_interval"				"7.0"
+			"trigger_cooldown"				"15"
 		}
 	}
 }

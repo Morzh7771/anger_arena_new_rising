@@ -70,7 +70,13 @@ function Bounty:Init()
     self:PublishTimers()
 
     Timers:CreateTimer(0.1, function()
+        -- До горна не спавним и расписание не двигаем. На новом патче
+        -- GetDOTATime(false,false) вне GAME_IN_PROGRESS отдавал мусор (~1.6 млн с),
+        -- цикл догонял его по +2/+10 мин за тик, и под Alt висело 13738:33 / 26775:33.
+        if GameRules:State_Get() < DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then return 0.1 end
         local time = GameRules:GetDOTATime(false,false) / 60
+        -- больше суток игры не бывает: такое время - мусор движка, пропускаем тик
+        if time < 0 or time > 1440 then return 0.1 end
         --print(time)
         if time > needTimeBounty then
             --print("Руну спавним")
@@ -100,6 +106,9 @@ function Bounty:SpawnBounty()
     end
     if MinimapSpots then MinimapSpots:OnRuneSpawn("bounty") end
     needTimeBounty = needTimeBounty + BOUNTY_INTERVAL
+    -- пропущенные слоты (лаг, пауза сервера) не догоняем пачкой спавнов, а прыгаем к следующему
+    local now = GameRules:GetDOTATime(false,false) / 60
+    while needTimeBounty <= now do needTimeBounty = needTimeBounty + BOUNTY_INTERVAL end
     Bounty:PublishTimers()
 end
 function Bounty:SpawnWisdom()
@@ -112,6 +121,8 @@ function Bounty:SpawnWisdom()
     end
     if MinimapSpots then MinimapSpots:OnRuneSpawn("wisdom") end
     needTimeWisdom = needTimeWisdom + WISDOM_INTERVAL
+    local now = GameRules:GetDOTATime(false,false) / 60
+    while needTimeWisdom <= now do needTimeWisdom = needTimeWisdom + WISDOM_INTERVAL end
     Bounty:PublishTimers()
 end
 

@@ -78,6 +78,10 @@ DOTAAbilities
             "damage_buff_from_eclipse_pct"				"0"
 			"damage_pct"				"60"
 
+			"lucent_beam_additional_targets"
+			{
+				"special_bonus_unique_luna_5"				"+2"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -192,6 +196,7 @@ DOTAAbilities
 				"value"							"39 35 31 27 23 19 15"
 				"special_bonus_unique_luna_7"	"-5"
 			}
+			"effectiveness_reduction_percent"				"40"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

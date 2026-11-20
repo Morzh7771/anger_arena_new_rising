@@ -62,6 +62,11 @@ function modifier_aa_hero:OnCreated()
 		self:GetParent():AddNewModifier(self:GetParent(),nil,'bonus_agi_tome',{duration = -1})
 		self:GetParent():AddNewModifier(self:GetParent(),nil,'bonus_int_tome',{duration = -1})
 	end
+	-- единый BAT героя (modifiers/modifier_bat.lua): вешаем тут, чтобы был у всех героев,
+	-- в том числе созданных мимо первого спавна (боты, -createhero, репик)
+	if not self:GetParent():HasModifier("modifier_bat") then
+		self:GetParent():AddNewModifier(self:GetParent(), nil, "modifier_bat", {duration = -1})
+	end
 end
 
 function modifier_aa_hero:DeclareFunctions()
@@ -117,20 +122,26 @@ function modifier_aa_hero:GetModifierMoveSpeed_Limit( params )
 			if ability then return ability:GetSpecialValueFor("max_movespeed") end
 		end
 	end
-	if     self:GetParent():HasModifier("modifier_rune_haste") then 
-		return 700
-	elseif self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness") 
-	or 	   self:GetParent():HasModifier("modifier_bloodseeker_thirst") 
+	-- Обычный лимит: 700, Fleetfooted (чара в нейтральном пассивном слоте) +movespeed_limit_bonus.
+	-- Руна Haste даёт этот же текущий лимит. Скиллы, снимающие лимит, - без изменений.
+	local limit = 700
+	local enh = parent.GetItemInSlot and parent:GetItemInSlot(DOTA_ITEM_NEUTRAL_PASSIVE_SLOT or 17)
+	if enh and not enh:IsNull() and enh:GetAbilityName() == "item_aa_enhancement_fleetfooted" then
+		limit = limit + enh:GetSpecialValueFor("movespeed_limit_bonus")
+	end
+	if     self:GetParent():HasModifier("modifier_rune_haste") then
+		return limit
+	elseif self:GetParent():HasModifier("modifier_spirit_breaker_charge_of_darkness")
+	or 	   self:GetParent():HasModifier("modifier_bloodseeker_thirst")
 	or 	   self:GetParent():HasModifier("modifier_primal_beast_trample")
-	or 	   self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze") 
+	or 	   self:GetParent():HasModifier("modifier_spirit_breaker_bulldoze")
 	or 	   self:GetParent():HasModifier("modifier_weaver_shukuchi")
 	or 	   self:GetParent():HasModifier("modifier_dark_seer_surge") then
-    	return 10000
-    elseif self:GetParent():HasModifier("modifier_centaur_horsepower") then 
-    	return 800
-	else
-		return 700
+		return 10000
+	elseif self:GetParent():HasModifier("modifier_centaur_horsepower") then
+		return math.max(800, limit)
 	end
+	return limit
 end
 function modifier_aa_hero:GetModifierMoveSpeedBonus_Percentage()
 	if(0.05 * self:GetParent():GetAgility()>35) then

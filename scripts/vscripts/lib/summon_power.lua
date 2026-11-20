@@ -84,7 +84,7 @@ SummonPower.SWEEP_INTERVAL = 1
 function SummonPower:SweepDominated()
 	for _, team in ipairs({ DOTA_TEAM_GOODGUYS, DOTA_TEAM_BADGUYS, DOTA_TEAM_NEUTRALS }) do
 		local units = FindUnitsInRadius(team, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE,
-			DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL,
+			DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, -- свои у каждой команды: без тройного прохода по всем юнитам
 			DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_ANY_ORDER, false)
 
 		for _, unit in ipairs(units) do

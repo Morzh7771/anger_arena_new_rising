@@ -1,255 +1,225 @@
 "DOTAAbilities"
-{    
-    "item_recipe_meteor_hammer_aa"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "400"   
-        "ItemShopTags"                  ""
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_meteor_hammer_aa"
-        "ItemRequirements"
-        {
-            "01"                        "item_crown;item_kaya"
-        }
-    }
-    "item_recipe_meteor_hammer_aa_2"
-    {
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "0" 
-        "ItemShopTags"                  ""
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_meteor_hammer_aa_2"
-        "ItemRequirements"
-        {
-            "01"                        "item_meteor_hammer_aa;item_meteor_hammer_aa"
-        }
-    }
-    "item_recipe_meteor_hammer_aa_3"
-    {
-        "Model"                         "models/props_gameplay/recipe.vmdl"
-        "BaseClass"                     "item_recipe_arcane_boots"
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "0" 
-        "ItemShopTags"                  ""
-        
-        // Recipe
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_meteor_hammer_aa_3"
-        "ItemRequirements"
-        {
-            "01"                        "item_meteor_hammer_aa_2;item_meteor_hammer_aa_2;item_boss_soul"
-        }
-    }
-    "item_meteor_hammer_aa"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
+{
+	//=================================================================================================================
+	// Starforge (1-й уровень цепочки, ванильный предмет; массивы - для тултипа уровней)
+	//=================================================================================================================
+	"item_starforge"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"AbilityChannelTime"			"2"
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"175"
+		"AbilitySharedCooldown"			"meteor"
+		"ItemCost"						"6000"
+		"ItemShopTags"					"farming;magic_dmg;disable"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		"AbilityValues"
+		{
+			"bonus_strength"			"24 48 96"
+			"bonus_agility"				"24 48 96"
+			"bonus_intellect"			"40 80 160"
+			"spell_amp"					"6 9 12"
+			"mana_regen_multiplier"		"20 27 33"
+			"burn_dps_units"			"60 80 120"
+			"burn_slow"					"15 22 30"
+			"burn_duration"				"6"
+			"stun_duration"				"0.8 1.1 1.5"
+			"burn_interval"				"1"
+			"land_time"					"0.5"
+			"impact_radius"
+			{
+				"value"					"400 500 600"
+				"affected_by_aoe_increase"	"1"
+			}
+			"max_duration"				"2 1.5 1"
+			"impact_damage_units"		"150 300 500"
+			"impact_damage_units_pct_health"		"15"
+			"building_damage_pct"		"75"
+			"enemy_particles_visible"	"0"
+			"passive_debuff_duration"	"3"
+			"slow_pct"					"15"
+			"burn_per_second"			"60"
+			"passive_burn_interval"		"1"
+		}
+	}
 
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_meteor_hammer_aa.lua"
-        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
-        "AbilityTextureName"            "meteor_hammer"
-        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
-        "FightRecapLevel"               "1"
-        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
-        "AbilitySharedCooldown"         "meteor"
-        "ItemBaseLevel"                 "1"
-        
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityChannelTime"            "2 1.5 0.5"
-        "AbilityCastRange"              "600"
-        "AbilityCooldown"               "24"
-        "AbilityManaCost"               "100"
+	// Starforge: тиры 2 и 3 строятся из предыдущего тира (ваниль item_starforge - базовый предмет)
+	//=================================================================================================================
+	// Recipe: Starforge 2 (2x Starforge)
+	//=================================================================================================================
+	"item_recipe_starforge_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
 
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_starforge_2"
+		"ItemRequirements"
+		{
+			"01"						"item_starforge;item_starforge"
+		}
+	}
 
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "3100"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "mh;meteor hammer"
-        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "ShouldBeSuggested"             "1"
-        
-        // Special  
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityValues"
-        {
-            "bonus_strength"            "6 12 60"
-            "bonus_agility"             "6 12 60"
-            "bonus_intellect"           "24 48 150"
-            "spell_amp"                 "10 15 20"
-            "mana_regen_multiplier"     "75 100 125"
-            "spell_lifesteal_amp"       "24 30 45"
-            "damage_to_the_boss"        "35"
-            "burn_dps_units"            "60 80 120"
-            "max_hp_impact_damage"      "3 6 12"
-            "max_hp_burn_damage"        "1 1.5 3.5"
-            "burn_slow"                 "20 30 40"
-            "burn_duration"             "6 6 6"
-            "stun_duration"             "0.5 0.7 1"
-            "burn_interval"             "1.0"
-            "land_time"                 "0.5 0.5 0.3"
-            "impact_radius"     
-            {
-                "value"                 "400 500 600"
-                "affected_by_aoe_increase"  "1"
-            }
-            "max_duration"              "2 1.5 0.5"
-            "tower_damage_pct"          "50 75 100"
-            "impact_damage_buildings"   "100 200 300"
-            "impact_damage_units"       "150 300 500"
-            "enemy_particles_visible"   "0"
-        }
-    }
-    "item_meteor_hammer_aa_2"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
+	//=================================================================================================================
+	// Recipe: Starforge 3 (2x Starforge 2 + Boss Soul)
+	//=================================================================================================================
+	"item_recipe_starforge_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
 
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_meteor_hammer_aa.lua"
-        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
-        "AbilityTextureName"            "meteor_2"
-        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
-        "FightRecapLevel"               "1"
-        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
-        "AbilitySharedCooldown"         "meteor"
-        "ItemBaseLevel"                 "2"
-        
-        // Time     
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityChannelTime"            "2 1.5 0.5"
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_starforge_3"
+		"ItemRequirements"
+		{
+			"01"						"item_starforge_2;item_starforge_2;item_boss_soul"
+		}
+	}
 
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastRange"              "600"
-        "AbilityCooldown"               "24"
-        "AbilityManaCost"               "100"
+	//=================================================================================================================
+	// Starforge 2
+	//=================================================================================================================
+	"item_starforge_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_starforge"
+		"AbilityTextureName"			"starforge_2"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"1.5"
 
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "3100"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "mh;meteor hammer"
-        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "ShouldBeSuggested"             "1"
-        
-        // Special  
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityValues"
-        {
-            "bonus_strength"            "6 12 60"
-            "bonus_agility"             "6 12 60"
-            "bonus_intellect"           "24 48 150"
-            "spell_amp"                 "10 15 20"
-            "mana_regen_multiplier"     "75 100 125"
-            "spell_lifesteal_amp"       "24 30 45"
-            "damage_to_the_boss"        "35"
-            "burn_dps_units"            "60 80 120"
-            "max_hp_impact_damage"      "3 6 12"
-            "max_hp_burn_damage"        "1 1.5 3.5"
-            "burn_slow"                 "20 30 40"
-            "burn_duration"             "6 6 6"
-            "stun_duration"             "0.5 0.7 1"
-            "burn_interval"             "1.0"
-            "land_time"                 "0.5 0.5 0.3"
-            "impact_radius"     
-            {
-                "value"                 "400 500 600"
-                "affected_by_aoe_increase"  "1"
-            }
-            "max_duration"              "2 1.5 0.5"
-            "tower_damage_pct"          "50 75 100"
-            "impact_damage_buildings"   "100 200 300"
-            "impact_damage_units"       "150 300 500"
-            "enemy_particles_visible"   "0"
-        }
-    }
-    "item_meteor_hammer_aa_3"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"175"
 
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_meteor_hammer_aa.lua"
-        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
-        "AbilityTextureName"            "meteor_3"
-        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
-        "FightRecapLevel"               "1"
-        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
-        "AbilitySharedCooldown"         "meteor"
-        "ItemBaseLevel"                 "3"
-        
-        // Time     
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityChannelTime"            "2 1.5 0.5"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"12000"
+		"ItemShopTags"					"farming;magic_dmg;disable"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
 
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastRange"              "600"
-        "AbilityCooldown"               "24"
-        "AbilityManaCost"               "100"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"			"24 48 96"
+			"bonus_agility"				"24 48 96"
+			"bonus_intellect"			"40 80 160"
+			"spell_amp"					"6 9 12"
+			"mana_regen_multiplier"		"20 27 33"
 
+			"burn_dps_units"			"60 80 120"
+			"burn_slow"					"15 22 30"
+			"burn_duration"				"6"
+			"stun_duration"				"0.8 1.1 1.5"
+			"burn_interval"				"1"
+			"land_time"					"0.5"
+			"impact_radius"
+			{
+				"value"					"400 500 600"
+				"affected_by_aoe_increase"	"1"
+			}
+			"max_duration"				"2 1.5 1"
+			"impact_damage_units"		"150 300 500"
+			"impact_damage_units_pct_health"		"15"
+			"building_damage_pct"		"75"
+			"enemy_particles_visible"	"0"
 
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "3100"
-        "ItemQuality"                   "epic"
-        "ItemAliases"                   "mh;meteor hammer"
-        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "ShouldBeSuggested"             "1"
-        
-        // Special  
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityValues"
-        {
-            "bonus_strength"            "6 12 60"
-            "bonus_agility"             "6 12 60"
-            "bonus_intellect"           "24 48 150"
-            "spell_amp"                 "10 15 20"
-            "mana_regen_multiplier"     "75 100 125"
-            "spell_lifesteal_amp"       "24 30 45"
-            "damage_to_the_boss"        "35"
-            "burn_dps_units"            "60 80 120"
-            "max_hp_impact_damage"      "3 6 12"
-            "max_hp_burn_damage"        "1 1.5 3.5"
-            "burn_slow"                 "20 30 40"
-            "burn_duration"             "6 6 6"
-            "stun_duration"             "0.5 0.7 1"
-            "burn_interval"             "1.0"
-            "land_time"                 "0.5 0.5 0.3"
-            "impact_radius"     
-            {
-                "value"                 "400 500 600"
-                "affected_by_aoe_increase"  "1"
-            }
-            "max_duration"              "2 1.5 0.5"
-            "tower_damage_pct"          "50 75 100"
-            "impact_damage_buildings"   "100 200 300"
-            "impact_damage_units"       "150 300 500"
-            "enemy_particles_visible"   "0"
-        }
-    }
+			"passive_debuff_duration"	"3"
+			"slow_pct"					"15"
+			"burn_per_second"			"60"
+			"passive_burn_interval"		"1"
+		}
+	}
+
+	//=================================================================================================================
+	// Starforge 3
+	//=================================================================================================================
+	"item_starforge_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_starforge"
+		"AbilityTextureName"			"starforge_3"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"3"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"175"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"24000"
+		"ItemShopTags"					"farming;magic_dmg;disable"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_strength"			"24 48 96"
+			"bonus_agility"				"24 48 96"
+			"bonus_intellect"			"40 80 160"
+			"spell_amp"					"6 9 12"
+			"mana_regen_multiplier"		"20 27 33"
+
+			"burn_dps_units"			"60 80 120"
+			"burn_slow"					"15 22 30"
+			"burn_duration"				"6"
+			"stun_duration"				"0.8 1.1 1.5"
+			"burn_interval"				"1"
+			"land_time"					"0.5"
+			"impact_radius"
+			{
+				"value"					"400 500 600"
+				"affected_by_aoe_increase"	"1"
+			}
+			"max_duration"				"2 1.5 1"
+			"impact_damage_units"		"150 300 500"
+			"impact_damage_units_pct_health"		"15"
+			"building_damage_pct"		"75"
+			"enemy_particles_visible"	"0"
+
+			"passive_debuff_duration"	"3"
+			"slow_pct"					"15"
+			"burn_per_second"			"60"
+			"passive_burn_interval"		"1"
+		}
+	}
 }

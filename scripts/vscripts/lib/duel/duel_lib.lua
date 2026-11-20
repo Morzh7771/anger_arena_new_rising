@@ -94,8 +94,14 @@ local PURGE_MODIFIERS = {
 	"modifier_fountain_invulnerability",
 }
 
+-- медведь друида движок считает настоящим героем: в дуэли его не учитываем, иначе его смерть
+-- закрывала дуэль как смерть героя
+local function _IsSpiritBear(unit)
+	return string.find(unit:GetUnitName() or "", "npc_dota_lone_druid_bear", 1, true) == 1
+end
+
 local function _IsHeroCheck(hero)
-	return hero and not hero:IsNull() and IsValidEntity(hero) and hero:IsRealHero() and not hero:IsTempestDouble() and not hero:HasModifier("modifier_banned_custom")
+	return hero and not hero:IsNull() and IsValidEntity(hero) and hero:IsRealHero() and not _IsSpiritBear(hero) and not hero:IsTempestDouble() and not hero:HasModifier("modifier_banned_custom")
 end
 
 function ClearDuelFromHeroes(heroes_table) 
@@ -489,7 +495,7 @@ function DuelLibrary:DeathListener( event )
 	local hero = EntIndexToHScript( event.entindex_attacker )
 	local heroTeam = hero:GetTeam()
 	
-	if not killedUnit or not IsValidEntity(killedUnit) or not killedUnit:IsRealHero() then return end
+	if not killedUnit or not IsValidEntity(killedUnit) or not killedUnit:IsRealHero() or _IsSpiritBear(killedUnit) then return end
 
 	if DuelLibrary:IsDuelActive() and not killedUnit:IsReincarnating() then
 		print("on hero death on duel")
@@ -507,7 +513,7 @@ function DuelLibrary:SpawnListener(event)
 
 	local spawnedUnit = EntIndexToHScript( event.entindex )
 
-	if not spawnedUnit or spawnedUnit:IsNull() or not IsValidEntity(spawnedUnit) or not spawnedUnit:IsRealHero() then
+	if not spawnedUnit or spawnedUnit:IsNull() or not IsValidEntity(spawnedUnit) or not spawnedUnit:IsRealHero() or _IsSpiritBear(spawnedUnit) then
 		return
 	end
 

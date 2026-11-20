@@ -48,7 +48,7 @@ DOTAAbilities
 			"duration"	"8"
 			"enfeeble_tick_damage"
 			{
-				"value"			"12 17 22 27 32 37 42"
+				"value"			"12 18 24 30 36 42 48"
 				"special_bonus_unique_bane_10"				"+18"
 				"CalculateSpellDamageTooltip" "1"
 			}
@@ -57,7 +57,7 @@ DOTAAbilities
 				"value"					"0"
 			}
 			"damage_tick_rate"				"1.0"
-			"damage_pct"				"50"
+			"damage_pct"				"110"			// урон от интеллекта, lib/percent_damage.lua
 		}
 	}
 	"bane_brain_sap"
@@ -163,9 +163,10 @@ DOTAAbilities
 			}
 			"fiend_grip_damage"
 			{
-				"value"			"50"
+				"value"			"70 110 150 190 230 270 310"
 				"CalculateSpellDamageTooltip" "1"
 			}
+			"damage_pct"					"27.5"			// урон от интеллекта, lib/percent_damage.lua
 			"AbilityCooldown"				
 			{
 				"value"	"115 111 107 102 98 94 90"
@@ -229,9 +230,9 @@ DOTAAbilities
 				"value"						"0"
 			}
 			"vector_render_radius"			"120"
-			"walk_speed"
+			"walk_speed"									// альт-применение: спящий идёт по вектору, как в доте
 			{
-				"value"						"0"
+				"value"						"110"
 			}
 			"turn_rate"						"200"
 

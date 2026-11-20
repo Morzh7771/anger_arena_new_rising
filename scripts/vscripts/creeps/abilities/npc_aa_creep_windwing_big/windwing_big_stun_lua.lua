@@ -21,6 +21,7 @@ function windwing_big_stun_lua:OnProjectileHit(hTarget, vLocation)
         hTarget:AddNewModifier(self:GetCaster(), self, "modifier_stunned", { duration = self.duration })
         local info = {
             victim = hTarget,
+            ability = self, -- источник урона (журнал урона и сайт)
             attacker = self:GetCaster(),
             damage = self.damage,
             damage_type = DAMAGE_TYPE_MAGICAL,

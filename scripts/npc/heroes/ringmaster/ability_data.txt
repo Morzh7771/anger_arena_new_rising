@@ -76,6 +76,7 @@ DOTAAbilities
 			}
 			"fear_duration_min"				"0.1 0.2 0.3 0.4 0.5 0.6 0.7"
 			"fear_duration_max"				"0.6 0.8 1.0 1.2 1.4 1.6 1.8"
+			"damage_pct"				"120"
 		}
 	}
 
@@ -271,6 +272,7 @@ DOTAAbilities
 				"value"													"3"
 				"special_bonus_unique_ringmaster_dagger_charge"		    "+1"
 			}
+			"damage_pct"				"30"
 		}
 	}
 
@@ -337,6 +339,7 @@ DOTAAbilities
 			"knockback_duration"		"0.35"
 			"knockback_distance"		"100"
 			"knockback_height"			"100"
+			"damage_pct"				"20"
 		}
 	}
 
@@ -469,6 +472,7 @@ DOTAAbilities
 			"health_bar_offset_1"				"180"
 			"health_bar_offset_2"				"220"
 			"health_bar_offset_3"				"280"
+			"illusion_effectiveness"				"25"
 		}
 	}
 

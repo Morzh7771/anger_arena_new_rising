@@ -63,6 +63,9 @@ local TIMER_NAME = "CampSleepTick"
 -- заново на тех же местах, с актуальными статами (CreepLeveling).
 local HIBERNATE_DELAY = 10
 
+-- сколько спрятанных крипов возвращать за один кадр (см. _Restore)
+local RESTORE_PER_FRAME = 2
+
 CampSleep._enabled = true
 
 function CampSleep:Init()
@@ -294,8 +297,25 @@ function CampSleep:_Restore(camp)
 	camp.hibernated = nil
 	CreepSpawner:SetCampHibernated(camp.name, false)
 
-	for _, rec in ipairs(list) do
-		CreepSpawner:RestoreHibernatedUnit(rec)
+	-- Не больше RESTORE_PER_FRAME крипов за кадр: CreateUnitByName дорогой,
+	-- и лагерь целиком в одном кадре давал фризы до 40 мс. Крипы создаются
+	-- бодрыми (camp.asleep уже false), так что поздних будить не надо.
+	local i = 0
+
+	local function step()
+		for _ = 1, RESTORE_PER_FRAME do
+			i = i + 1
+			local rec = list[i]
+			if not rec then return nil end
+			CreepSpawner:RestoreHibernatedUnit(rec)
+		end
+
+		if list[i + 1] then return FrameTime() end
+		return nil
+	end
+
+	if step() then
+		Timers:CreateTimer(FrameTime(), step)
 	end
 end
 

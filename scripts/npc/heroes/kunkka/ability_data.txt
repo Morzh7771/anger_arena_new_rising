@@ -427,6 +427,10 @@ DOTAAbilities
             "initial_cannon_offset"     "-150"
             "distance_between_cannons"  "75"
         	"rum_factor"				"2"
+        	"forward_cannon_count"
+        	{
+        		"special_bonus_scepter"				"2"
+        	}
         }
 	}
 	"kunkka_admirals_rum"

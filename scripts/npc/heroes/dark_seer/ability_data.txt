@@ -29,6 +29,7 @@ DOTAAbilities
 				"illusion_duration"				"8.0"
 				"max_damage"					"900"
 				"normal_punch_illusion_delay"   "0.25"
+			"replica_effectiveness"				"60"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -71,6 +72,11 @@ DOTAAbilities
 			"duration"				"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
 			"damage"				"150 200 250 300 350 400 450"
 			"radius_tree"				"150"
+			"AbilityCooldown"
+			{
+				"value"				"50 46 42 38 34 30 26"
+				"special_bonus_unique_dark_seer_2"				"-4"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -288,6 +294,7 @@ DOTAAbilities
 			{
 				"special_bonus_unique_dark_seer_13"				"40"
 			}
+			"replica_effectiveness"				"60"
 		}
 	}
 	"dark_seer_quick_wit"

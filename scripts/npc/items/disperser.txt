@@ -110,9 +110,11 @@
     	{
 			"bonus_agility"     "15"
 			"bonus_intellect"   "10"
-			"feedback_mana_burn"  "40"
-			"feedback_mana_burn_illusion_melee" "8"
-			"feedback_mana_burn_illusion_ranged"  "8"
+			"feedback_mana_burn"
+			{
+				"value"				"40"
+				"apply_effectiveness"	"1"
+			}
 			"purge_rate"      "5"
 			"purge_root_duration" "3.0"
 			"purge_slow_duration" "4.0"
@@ -169,9 +171,21 @@
 			"ally_effect_duration"					"4.0 4.5 5.0"
 
             "damage_per_burn"						"1.0 1.5 2"
-            "mana_burn_pct"						    "1.0 1.5 2"
-            "mana_burn"						        "40 80 120"
-			"ilusion_mana_burn"					    "40 60 100"
+            "mana_burn_pct"
+            {
+            	"value"				"1.0 1.5 2"
+            	"apply_effectiveness"	"1"
+            }
+            "mana_burn"
+            {
+            	"value"				"40 80 120"
+            	"apply_effectiveness"	"1"
+            }
+			"ilusion_mana_burn"
+			{
+				"value"				"40 60 100"
+				"apply_effectiveness"	"1"
+			}
 		
 			"phase_movement_speed"					"100 150 200"
 			"movement_speed_buff_rate"				"5 6 7"
@@ -227,9 +241,21 @@
 			"ally_effect_duration"					"4.0 4.5 5.0"
 
             "damage_per_burn"						"1.0 1.5 2"
-            "mana_burn_pct"						    "1.0 1.5 2"
-            "mana_burn"						        "40 80 120"
-			"ilusion_mana_burn"					    "40 60 100"
+            "mana_burn_pct"
+            {
+            	"value"				"1.0 1.5 2"
+            	"apply_effectiveness"	"1"
+            }
+            "mana_burn"
+            {
+            	"value"				"40 80 120"
+            	"apply_effectiveness"	"1"
+            }
+			"ilusion_mana_burn"
+			{
+				"value"				"40 60 100"
+				"apply_effectiveness"	"1"
+			}
 		
 			"phase_movement_speed"					"100 150 200"
 			"movement_speed_buff_rate"				"5 6 7"
@@ -286,9 +312,21 @@
 			"ally_effect_duration"					"4.0 4.5 5.0"
 
             "damage_per_burn"						"1.0 1.5 2"
-            "mana_burn_pct"						    "1.0 1.5 2"
-            "mana_burn"						        "40 80 120"
-			"ilusion_mana_burn"					    "40 60 100"
+            "mana_burn_pct"
+            {
+            	"value"				"1.0 1.5 2"
+            	"apply_effectiveness"	"1"
+            }
+            "mana_burn"
+            {
+            	"value"				"40 80 120"
+            	"apply_effectiveness"	"1"
+            }
+			"ilusion_mana_burn"
+			{
+				"value"				"40 60 100"
+				"apply_effectiveness"	"1"
+			}
 		
 			"phase_movement_speed"					"100 150 200"
 			"movement_speed_buff_rate"				"5 6 7"

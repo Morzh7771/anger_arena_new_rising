@@ -132,6 +132,7 @@ local function WheelPool()
 			if ph.id and not POOL_BY_ID[ph.id] then
 				ph.scope = ph.scope or set.scope or "all"
 				ph.cat = ph.cat or set.name_ru
+				ph.rarity = ph.rarity or set.rarity or "common"   -- редкость фразы = редкость набора (как в catalog.json бэкенда)
 				POOL[#POOL + 1] = ph
 				POOL_BY_ID[ph.id] = ph
 			end
@@ -242,6 +243,7 @@ function S:SendCatalog(pid)
 		data["pn" .. i] = ph.sound or ""   -- имя звука: прослушать фразу у себя (ПКМ в настройках колеса)
 		data["pa" .. i] = ph.scope == "team" and 1 or 0
 		data["po" .. i] = OwnsPhrase(pid, ph.id) and 1 or 0
+		data["pr" .. i] = ph.rarity or "common"   -- цена штучно - по редкости из профиля (prices.audio)
 	end
 
 	local emo = Equipped(pid, "emote_set")

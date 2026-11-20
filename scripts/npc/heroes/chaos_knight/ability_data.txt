@@ -70,6 +70,11 @@ DOTAAbilities
 				"special_bonus_shard"			"=30"
 			}
 			"bounce_range_pct"				"0"
+			"illusion_effectiveness"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"=25"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -230,6 +235,7 @@ DOTAAbilities
 				"value"				"0"
 				"special_bonus_scepter"				"1"
 			}
+			"illusion_effectiveness"				"100"
 		}
 	}
 	"chaos_knight_phantasmagoria"
@@ -286,5 +292,68 @@ DOTAAbilities
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
 		"Innate"				"1"
 		"AbilityValues"				"0"
+	}
+
+	"chaos_knight_armageddon"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"Innate"				"1"
+		"IsBreakable"				"1"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"				"chaos_knight_armageddons_flank"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"				"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"50"
+		"AbilityValues"
+		{
+			"speed_per_second"				"5"
+			"drain_rate_multiplier"				"4"
+			"think_interval"				"0.1"
+			"max_bonus_speed"
+			{
+				"value"				"20"
+				"hero_levelup"				"+2"
+			}
+			"charge_speed_multiplier"				"2"
+			"current_max_charge_speed"
+			{
+				"value"				"0"
+				"dynamic_value"				"true"
+			}
+			"charge_accel_time"				"0.5"
+			"charge_decel_time"				"0.5"
+			"illusion_radius"				"1300"
+			"turn_rate"				"25"
+			"hit_radius"
+			{
+				"value"				"150"
+				"affected_by_aoe_increase"				"1"
+			}
+			"formation_spacing"				"130"
+			"formation_jitter"				"60"
+			"formation_width"				"100"
+			"run_animation_rate"				"1.8"
+			"max_charge_time"				"1.0"
+			"windup_turn_rate"				"120"
+			"attack_while_charging"				"1"
+			"jump_distance"				"500"
+			"jump_height"				"160"
+		}
+	}
+	"chaos_knight_armageddons_flank_end"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"999999"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"				"DEFAULT"
+		"Innate"				"1"
+		"AbilityCooldown"				"0.3"
 	}
 }

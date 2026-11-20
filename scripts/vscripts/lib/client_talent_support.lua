@@ -166,11 +166,19 @@ if IsClient() then
 
 	    local values = {}
 
-	    for _, subdata in pairs(data) do
-	    	for keyname, value in pairs(subdata) do
-	    		if keyname ~= "var_type" then
-	    			values[keyname] = value
-	    			break
+	    -- старый формат: { { var_type, ключ = значение }, ... };
+	    -- новый (AbilityValues): ключ = значение или ключ = { value = ... }
+	    for key, subdata in pairs(data or {}) do
+	    	if type(subdata) ~= "table" then
+	    		values[key] = subdata
+	    	elseif subdata.value ~= nil then
+	    		values[key] = subdata.value
+	    	else
+	    		for keyname, value in pairs(subdata) do
+	    			if keyname ~= "var_type" then
+	    				values[keyname] = value
+	    				break
+	    			end
 	    		end
 	    	end
 	    end

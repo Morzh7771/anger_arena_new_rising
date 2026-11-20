@@ -6388,7 +6388,7 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"14"		// Experience earn.
+		"BountyXP"					"18"		// Experience earn.
 		"BountyGoldMin"				"5"			// Gold earned min.
 		"BountyGoldMax"				"7"			// Gold earned max.
 
@@ -6400,7 +6400,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"240"		// Base health.
+		"StatusHealth"				"280"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
@@ -6414,6 +6414,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}
 
 //=================================================================================
@@ -6487,6 +6488,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -6560,6 +6562,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================
@@ -6580,7 +6583,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"mudgolem_cloak_aura"			// Ability 1
 		"Ability2"					"neutral_upgrade"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"neutral_centaur_stun_active"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
@@ -6633,6 +6636,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}
 
 //=================================================================================
@@ -6706,6 +6710,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}
 
 //=================================================================================
@@ -6779,6 +6784,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -6852,6 +6858,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -6925,6 +6932,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 
@@ -6999,6 +7007,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 	
@@ -7018,7 +7027,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"mud_golem_hurl_boulder"			// Ability 1
+		"Ability1"					"mud_golem_hurl_big_boulder"			// Ability 1
 		"Ability2"					"mud_golem_rock_destroy"			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -7073,6 +7082,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 
@@ -7147,6 +7157,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================
@@ -7220,6 +7231,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================
@@ -7294,6 +7306,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================
@@ -7314,7 +7327,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"ogre_magi_frost_armor"			// Ability 1
 		"Ability2"					"neutral_upgrade"	// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"neutral_ogre_armor_active"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
@@ -7367,6 +7380,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================
@@ -7440,6 +7454,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -7513,6 +7528,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -7586,6 +7602,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -7659,6 +7676,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -7680,7 +7698,7 @@
 		"Ability1"					"satyr_soulstealer_mana_burn"			// Ability 1
 		"Ability2"					"forest_troll_high_priest_mana_aura"			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"neutral_satyr_purge_active"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -7706,7 +7724,7 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"46"		// Experience earn.
+		"BountyXP"					"40"		// Experience earn.
 		"BountyGoldMin"				"22"		// Gold earned min.
 		"BountyGoldMax"				"26"		// Gold earned max.
 
@@ -7720,7 +7738,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"600"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"600"		// Base mana.
+		"StatusMana"				"300"		// Base mana.
 		"StatusManaRegen"			"1"			// Mana regeneration rate.		 
 		
 		// Vision
@@ -7732,6 +7750,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}			
 
 //=================================================================================
@@ -7805,6 +7824,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -7878,6 +7898,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================
@@ -7951,6 +7972,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================
@@ -8023,6 +8045,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================
@@ -8095,6 +8118,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}
 
 //=================================================================================
@@ -8169,6 +8193,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}								  
 
 //=================================================================================
@@ -8243,6 +8268,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 	//=================================================================================
@@ -8318,6 +8344,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 	
 //=================================================================================
@@ -8392,6 +8419,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}								
 //=================================================================================
 // Neutral: Ancient - Big Thunder Lizard
@@ -8466,6 +8494,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================
@@ -8539,6 +8568,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}		
 
 //=================================================================================	
@@ -8612,6 +8642,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================	
@@ -8650,7 +8681,7 @@
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
 		"AttackRange"				"400"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/neutral_fx/ghost_base_attack.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			"900"		// Speed of projectile.		     
+		"ProjectileSpeed"			"1200"		// Speed of projectile.		     
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -8685,6 +8716,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================	
@@ -8829,6 +8861,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================	
@@ -8902,6 +8935,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================	
@@ -8949,7 +8983,7 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"24"		// Experience earn.
+		"BountyXP"					"30"		// Experience earn.
 		"BountyGoldMin"				"14"		// Gold earned min.
 		"BountyGoldMax"				"16"		// Gold earned max.
 
@@ -8975,6 +9009,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================	
@@ -8993,9 +9028,9 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"berserker_troll_break"			// Ability 1
-		"Ability2"					"creep_piercing"			// Ability 2
-		"Ability3"					"neutral_upgrade"			// Ability 3
+		"Ability1"					"creep_piercing"			// Ability 1
+		"Ability2"					"neutral_upgrade"			// Ability 2
+		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
@@ -9011,9 +9046,9 @@
 		"BaseAttackSpeed"			"125"
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
-		"AttackRange"				"500"		// Range within a target can be attacked.
+		"AttackRange"				"450"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			"1200"		// Speed of projectile.		     
+		"ProjectileSpeed"			"1500"		// Speed of projectile.		     
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -9048,6 +9083,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================	
@@ -9084,9 +9120,9 @@
 		"BaseAttackSpeed"			"125"
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
-		"AttackRange"				"600"		// Range within a target can be attacked.
+		"AttackRange"				"500"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_badguy.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			"900"		// Speed of projectile.		     
+		"ProjectileSpeed"			"1500"		// Speed of projectile.		     
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -9121,6 +9157,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}
 
 //=================================================================================	
@@ -9142,7 +9179,7 @@
 		"Ability1"					"harpy_scout_take_off"			// Ability 1
 		"Ability2"					"creep_piercing"			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"neutral_bird_tornado_active"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -9194,6 +9231,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}
 
 //=================================================================================	
@@ -9267,6 +9305,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 
 //=================================================================================	
@@ -9342,6 +9381,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 //=================================================================================	
 // Neutral: Ancient - Black Dragon
@@ -9416,6 +9456,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline"		"1"
 	}	
 	
 //=================================================================================
@@ -14964,4 +15005,360 @@
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
+	"npc_dota_neutral_odobenus_footman"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/ice_biome/undeadtusk/undead_tuskskeleton01.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"3"
+		"ModelScale" 					"0.8"
+		"IsNeutralUnitType"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"odobenus_blight"			// Ability 1
+		"Ability2"					"neutral_upgrade"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"16"		// Damage range min.
+		"AttackDamageMax"			"18"		// Damage range max.	
+		"AttackRate"				"2"		// Speed of attack.
+		"BaseAttackSpeed"			"125"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"200"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"40"		// Experience earn.
+		"BountyGoldMin"				"18"		// Gold earned min.
+		"BountyGoldMax"				"22"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"350"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"200"		// Base mana.
+		"StatusManaRegen"			"1"			// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline" "1"
+	}
+
+	"npc_dota_neutral_odobenus_frostmage"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/ice_biome/undeadtusk/undead_tuskskeleton02.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"5"
+		"ModelScale" 					"1.0"
+		"IsNeutralUnitType"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"warpine_raider_seed_shot"			// Ability 1
+		"Ability2"					"neutral_upgrade"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"26"		// Damage range min.
+		"AttackDamageMax"			"30"		// Damage range max.	
+		"AttackRate"				"2"			// Speed of attack.
+		"BaseAttackSpeed"			"150"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"80"
+		"HealthBarOffset"			"220"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"60"		// Experience earn.
+		"BountyGoldMin"				"32"		// Gold earned min.
+		"BountyGoldMax"				"34"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"350"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"600"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"300"		// Base mana.
+		"StatusManaRegen"			"1"			// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline" "1"
+	}
+
+	"npc_dota_neutral_radigull"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/ice_biome/diregull/diregull.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Ranged"
+		"Level"						"4"
+		"ModelScale" 					"0.6"
+		"IsNeutralUnitType"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"radigull_eggstremism"			// Ability 1
+		"Ability2"					"neutral_upgrade"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"30"		// Magical protection.  
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"32"		// Damage range max.	
+		"AttackRate"				"2"			// Speed of attack.
+		"BaseAttackSpeed"			"150"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"400"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/neutral_fx/ghost_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"900"		// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"60"
+		"HealthBarOffset"			"190"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"62"		// Experience earn.
+		"BountyGoldMin"				"34"		// Gold earned min.
+		"BountyGoldMax"				"36"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"310"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"800"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"400"		// Base mana.
+		"StatusManaRegen"			"1"			// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline" "1"
+	}
+
+	"npc_dota_neutral_ogre_seal"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/ice_biome/ogreseal/ogreseal.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"6"
+		"IsAncient"					"1"
+		"ModelScale" 					".70"
+		"IsNeutralUnitType"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"ogre_seal_flop"			// Ability 1
+		"Ability2"					"neutral_upgrade"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"			// Physical protection.
+		"MagicalResistance"				"30"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"60"		// Damage range min.
+		"AttackDamageMax"			"65"		// Damage range max.	
+		"AttackRate"				"2"			// Speed of attack.
+		"BaseAttackSpeed"			"120"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5714"	// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"300"		// Range within a target can be acquired.
+		"AttackRange"				"150"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"80"
+		"HealthBarOffset"			"260"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"124"		// Experience earn.
+		"BountyGoldMin"				"68"		// Gold earned min.
+		"BountyGoldMax"				"72"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1700"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"400"		// Base mana.
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline" "1"
+	}
+
+	"npc_dota_neutral_ogre_seal_pup"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/ice_biome/ogreseal/ogreseal.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"5"
+		"IsAncient"					"1"
+		"ModelScale" 					".5"
+		"IsNeutralUnitType"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"ogre_seal_pup_disapproval_aura"			// Ability 1
+		"Ability2"					"neutral_upgrade"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"			// Physical protection.
+		"MagicalResistance"				"50"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"32"		// Damage range min.
+		"AttackDamageMax"			"34"		// Damage range max.	
+		"AttackRate"				"1.8"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5714"	// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"128"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"140"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"95"		// Experience earn.
+		"BountyGoldMin"				"38"		// Gold earned min.
+		"BountyGoldMax"				"44"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"800"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"400"		// Base mana.
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline" "1"
+	}
 }

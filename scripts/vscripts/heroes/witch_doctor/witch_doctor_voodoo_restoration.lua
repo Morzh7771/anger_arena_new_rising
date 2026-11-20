@@ -74,8 +74,8 @@ function modifier_witch_doctor_voodoo_restoration_lua:OnIntervalThink()
 	local heal_flat = ability:GetSpecialValueFor("heal")
 	local heal_caster_pct = ability:GetSpecialValueFor("heal_caster_hp_pct") / 100
 	local damage_caster_pct = ability:GetSpecialValueFor("damage_caster_hp_pct") / 100
-	-- урон врагам: процент от макс. ХП кастера (damage_caster_hp_pct), без плоского хила
-	local damage = caster_hp * damage_caster_pct * interval
+	-- урон врагам: база (heal) + процент от макс. ХП кастера (damage_caster_hp_pct)
+	local damage = (heal_flat + caster_hp * damage_caster_pct) * interval
 	local origin = parent:GetAbsOrigin()
 
 	local allies = FindUnitsInRadius(parent:GetTeamNumber(), origin, nil, radius,

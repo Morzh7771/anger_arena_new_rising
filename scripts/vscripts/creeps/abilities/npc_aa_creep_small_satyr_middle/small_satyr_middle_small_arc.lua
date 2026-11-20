@@ -38,6 +38,7 @@ function small_satyr_middle_small_arc:OnProjectileHit(hTarget, vLocation)
     if self.bounces > self.bounces-1 then return end
     local info = {
         victim = hTarget,
+        ability = self, -- источник урона (журнал урона и сайт)
         attacker = self:GetCaster(),
         damage = self:GetSpecialValueFor("damage"),
         damage_type = DAMAGE_TYPE_MAGICAL,

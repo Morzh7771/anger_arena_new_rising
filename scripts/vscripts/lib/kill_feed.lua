@@ -158,6 +158,12 @@ function KillFeed:OnEntityKilled(event)
 
 	if not victim or victim:IsNull() or not victim:IsRealHero() then return end
 	if victim:IsReincarnating() then return end
+	-- солдаты Wukong's Command / клоны - не убийство героя
+	if victim:IsClone() or victim:IsTempestDouble() then return end
+	if victim:HasModifier("modifier_monkey_king_fur_army_soldier")
+		or victim:HasModifier("modifier_monkey_king_fur_army_soldier_hidden") then return end
+	local victimMain = PlayerResource:GetSelectedHeroEntity(victim:GetPlayerOwnerID())
+	if victimMain and victimMain ~= victim then return end
 
 	local row = self:_Row(victim)
 

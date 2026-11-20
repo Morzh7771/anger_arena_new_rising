@@ -121,9 +121,19 @@ local function AbilityKey(ev)
 		local inf = EntIndexToHScript(ev.entindex_inflictor_const)
 		local name = inf and inf:GetName() or ""
 
-		-- доп. урон от divine_intervention -> "<настоящий источник>#bonus" (addon_game_mode.lua)
-		if name ~= "" then return AA_DamageKey and AA_DamageKey(name) or name end
+		-- доп. урон от divine_intervention (урон от статов) в игре показываем ВМЕСТЕ со скиллом:
+		-- "<скилл>#bonus" -> "<скилл>". На сайт он идёт отдельно (lib/match_tracker.lua).
+		if name ~= "" then
+			local key = AA_DamageKey and AA_DamageKey(name, ev) or name
+
+			return (key:gsub("#bonus$", ""))
+		end
 	end
+
+	-- Без источника. Атака с руки бывает только физической: магический/чистый урон без
+	-- источника - это способность, которой забыли передать ability (так было у Харона) -
+	-- не "атака" и без проверки на крит.
+	if ev.damagetype_const == 2 or ev.damagetype_const == 4 then return "@spell" end
 
 	return "@attack"
 end
@@ -249,6 +259,7 @@ end
 -- Вызывается из MatchTracker:OnDamageApplied для урона, прошедшего фильтр
 function D:OnApplied(ev)
 	local dmg = ev.damage
+
 
 	if not dmg or dmg <= 0 or not ev.entindex_victim_const or not ev.entindex_attacker_const then return end
 

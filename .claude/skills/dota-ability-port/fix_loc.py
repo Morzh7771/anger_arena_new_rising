@@ -24,9 +24,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 LOC = {
     'en': (os.path.join(ROOT, 'resource', 'addon_english.txt'),
-           r"C:\Users\admin\Desktop\dota 2 patch\resource\localization\abilities_english.txt"),
+           r"C:\Users\admin\Desktop\Dota 2 7.42\resource\localization\abilities_english.txt"),
     'ru': (os.path.join(ROOT, 'resource', 'addon_russian.txt'),
-           r"C:\Users\admin\Desktop\dota 2 patch\resource\localization\abilities_russian.txt"),
+           r"C:\Users\admin\Desktop\Dota 2 7.42\resource\localization\abilities_russian.txt"),
 }
 
 # placeholder rewrites for keys this port renamed

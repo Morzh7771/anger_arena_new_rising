@@ -317,6 +317,7 @@ DOTAAbilities
 			"presence_armor_reduction"
 			{
 				"value"		"-4 -5 -6 -7 -8 -9 -10"
+				"special_bonus_unique_nevermore_3"				"-1"
 			}
 			"presence_radius"               
             {
@@ -331,6 +332,11 @@ DOTAAbilities
             {
                 "value"                     "0"
             }
+			"presence_magic_resistance_reduction"
+			{
+				"value"				"-4 -5 -6 -7 -8 -9 -10"
+				"special_bonus_unique_nevermore_3"				"-2"
+			}
 		}
 	}
 	"shadow_fiend_presence_of_the_dark_lord"
@@ -410,7 +416,7 @@ DOTAAbilities
 			"duration"				"8"
 			"max_collection_count"				
 			{
-				"value"					"4 6 8 10 12 14 16 18"
+				"value"					"4 6 8 10 12 14 16"
 			}	
 			"soul_collection_per_interval"		"2 2 2 3 3 3 4"
 			"soul_collection_radius"			"600 600 700 700 800 800 900"
@@ -422,6 +428,7 @@ DOTAAbilities
 			}
 			"soul_collection_per_creep"			"1"
 			"linger_duration"					"8"
+			"heal_per_soul"				"0"
 		}
     }
 	"nevermore_requiem"
@@ -480,6 +487,7 @@ DOTAAbilities
 				{
 					"value"		"0.25"
 					"LinkedSpecialBonus"		"special_bonus_unique_nevermore_6"
+					"special_bonus_unique_nevermore_6"				"+0.5"
 				}
 				"requiem_slow_duration_max"	
 				{
@@ -494,7 +502,11 @@ DOTAAbilities
                     "value"     "125"
                     "affected_by_aoe_increase"  "1"
                 }
-				"requiem_line_speed"	"700"
+				"requiem_line_speed"
+				{
+					"value"				"700"
+					"special_bonus_scepter"			"+30%"
+				}
 				"soul_death_release"	"0.5"
 				"requiem_heal_pct_scepter"	
 				{
@@ -518,6 +530,12 @@ DOTAAbilities
 				"value"			"20"
 				"special_bonus_scepter"	"+5"
 			}
+	"requiem_fear_duration"
+	{
+		"value"				"1.2 1.5 1.8 2.1 2.4 2.7 3"
+		"special_bonus_unique_nevermore_6"				"+0.5"
+	}
+	"requiem_duration_per_soul"				"0.1"
 }
 	}
 	"special_bonus_unique_nevermore_1"

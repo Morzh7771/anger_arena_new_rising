@@ -9,6 +9,7 @@ function skelet_1_blue_heal:OnSpellStart()
     local caster = self:GetCaster()
     local damageTable = {
         victim = caster,
+        ability = self, -- источник урона (журнал урона и сайт)
         attacker = caster,
         damage = caster:GetMaxHealth(),
         damage_type = DAMAGE_TYPE_PURE,

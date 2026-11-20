@@ -66,6 +66,11 @@ local RESPAWN_MAX = 60
 -- stacking config
 local STACK_INTERVAL = 60
 local STACK_CHANCE = 25
+-- шанс автостака растёт: каждые STACK_CHANCE_STEP_MIN минут матча +STACK_CHANCE_STEP
+-- (25% -> на 25-й мин 45%, на 50-й 65%, на 75-й 85%, дальше 100%)
+local STACK_CHANCE_STEP_MIN = 25
+local STACK_CHANCE_STEP = 20
+local STACK_CHANCE_MAX = 100
 local STACK_MAX = 3
 local STACK_TICK_TIMER = "CreepSpawnerStackTick"
 
@@ -438,7 +443,16 @@ function CreepSpawner:_StartStackTicker()
 	})
 end
 
+function CreepSpawner:_StackChance()
+	local minutes = math.max(0, GameRules:GetDOTATime(false, false)) / 60
+	local steps = math.floor(minutes / STACK_CHANCE_STEP_MIN)
+
+	return math.min(STACK_CHANCE_MAX, STACK_CHANCE + steps * STACK_CHANCE_STEP)
+end
+
 function CreepSpawner:_StackTick()
+	local chance = self:_StackChance()
+
 	for spawner_info, _ in pairs(self.spawners) do
 		local name = spawner_info.name
 
@@ -452,7 +466,7 @@ function CreepSpawner:_StackTick()
 			-- стоят дома -> обычный шанс автостака
 			local pulled = self._spawnerBoxSeen[name] and not self:_HasOwnCreepsInBox(name)
 
-			if pulled or RandomInt(1, 100) <= STACK_CHANCE then
+			if pulled or RandomInt(1, 100) <= chance then
 				self:_SpawnExtraWave(spawner_info)
 			end
 		end

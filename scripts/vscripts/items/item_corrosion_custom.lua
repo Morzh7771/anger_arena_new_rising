@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 LinkLuaModifier("modifier_item_corrosion_custom", "items/item_corrosion_custom", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_corrosion_custom_active_slow", "items/item_corrosion_custom", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_corrosion_custom_passive_slow", "items/item_corrosion_custom", LUA_MODIFIER_MOTION_NONE)
@@ -86,10 +87,12 @@ modifier_item_corrosion_custom_passive_slow = class({
         MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE,
     }
     end,
-    GetModifierMoveSpeedBonus_Percentage = function (self) return self.slow end,
-    GetModifierLifestealRegenAmplify_Percentage = function (self) return self:GetAbility():GetSpecialValueFor("heal_reduction") end,
-    GetModifierHealAmplify_PercentageTarget = function (self) return self:GetAbility():GetSpecialValueFor("heal_reduction") end,
-    OnCreated = function (self)
+    -- замедление и срез лечения с действенностью атаки (apply_effectiveness, как Orb of Corrosion)
+    GetModifierMoveSpeedBonus_Percentage = function (self) return self.slow * self:Potency() end,
+    GetModifierLifestealRegenAmplify_Percentage = function (self) return self:GetAbility():GetSpecialValueFor("heal_reduction") * self:Potency() end,
+    GetModifierHealAmplify_PercentageTarget = function (self) return self:GetAbility():GetSpecialValueFor("heal_reduction") * self:Potency() end,
+    OnCreated = function (self, kv)
+        AttackPotency:Attach(self, kv)
         self.slow = self:GetAbility():GetSpecialValueFor("melee_slow")
         if self:GetCaster():IsRangedAttacker() then 
         self.slow = self:GetAbility():GetSpecialValueFor("ranged_slow")
@@ -98,7 +101,8 @@ modifier_item_corrosion_custom_passive_slow = class({
         if not IsServer() then return end
         self:StartIntervalThink(1)
     end,
-    OnRefresh = function (self)
+    OnRefresh = function (self, kv)
+        AttackPotency:Attach(self, kv)
         self.slow = self:GetAbility():GetSpecialValueFor("melee_slow")
         if self:GetCaster():IsRangedAttacker() then 
         self.slow = self:GetAbility():GetSpecialValueFor("ranged_slow")
@@ -111,6 +115,8 @@ modifier_item_corrosion_custom_passive_slow = class({
     end,
 })
 
+
+AttackPotency:Transmitter(modifier_item_corrosion_custom_passive_slow)
 
 modifier_item_corrosion_custom = class({
     IsHidden = function (self) return true end,
@@ -133,7 +139,8 @@ function modifier_item_corrosion_custom:OnAttackLanded(params)
     if params.target:IsMagicImmune() then return end
     if self:GetParent():HasModifier("modifier_item_orb_of_venom") then return end
 
-    params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_item_corrosion_custom_passive_slow", {duration = self:GetAbility():GetSpecialValueFor("duration_passive")})
+    local potency = AttackPotency:Get(self:GetParent(), params)
+    params.target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_item_corrosion_custom_passive_slow", AttackPotency:Kv(potency, {duration = self:GetAbility():GetSpecialValueFor("duration_passive")}))
 end
 
 

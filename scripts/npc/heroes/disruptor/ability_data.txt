@@ -170,6 +170,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"AbilityCooldown"				
@@ -200,6 +201,11 @@ DOTAAbilities
 			{
 				"value"				"0"
 				"special_bonus_shard"				"0"
+			}
+			"strike_knockback_pct_tooltip_only"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+50"
 			}
 		}
 	}	
@@ -270,6 +276,11 @@ DOTAAbilities
 			{
 				"value"				"0"
 				"special_bonus_shard"				"0"
+			}
+			"strike_knockback_pct_tooltip_only"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+50"
 			}
 		}
 
@@ -365,6 +376,8 @@ DOTAAbilities
 			"damage_reset_interval"		"7"
 			"distance_per_int"				"0"
 			"damage_per_int"				"1.5"
+			"shard_touch_interval"				"3.0"
+			"shard_touch_knockback_pct"				"50"
 		}
 	}
 	"special_bonus_unique_disruptor_7"

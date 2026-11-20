@@ -26,7 +26,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"825"	
+		"ItemCost"						"1350"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -35,7 +35,7 @@
 		"ItemResult"					"item_bloodthorn"
 		"ItemRequirements"
 		{
-			"01"					"item_orchid*;item_oblivion_staff;item_javelin"
+			"01"					"item_orchid*;item_oblivion_staff"
 		}
 	}
 	"item_recipe_bloodthorn_2"
@@ -109,7 +109,6 @@
                 "bonus_intellect"       "10"
                 "bonus_attack_speed"    "40"
                 "bonus_mana_regen"      "3.25"
-                "bonus_health_regen"    "6.0"
                 "silence_duration"      "5"
                 "silence_damage_percent"    "30"
                 "bonus_damage"          "10"
@@ -150,15 +149,12 @@
 				"bonus_intellect"			"15 45 120"
 				"bonus_attack_speed"		"100 200 300"
 				"bonus_mana_regen"			"3.5 6 16"
-				"bonus_health_regen"		"6.5 15 35"	
 				"silence_duration"			"5 5 5"
 				"silence_damage_percent"	"30 35 40"
 				"bonus_damage"				"10 15 20"	
 				"spell_amp_debuff"			"10 15 20"
 				"proc_damage_heroes"        "50 100 200"
                 "proc_damage_creeps"        "25 50 100"
-				"passive_proc_damage"		"60 110 160"
-				"proc_chance"				"30 40 50"
 			"duration"				"6"
 		}
 	}
@@ -197,15 +193,12 @@
 				"bonus_intellect"			"15 45 120"
 				"bonus_attack_speed"		"100 200 300"
 				"bonus_mana_regen"			"3.5 6 16"
-				"bonus_health_regen"		"6.5 15 35"	
 				"silence_duration"			"5 5 5"
 				"silence_damage_percent"	"30 35 40"
 				"bonus_damage"				"10 15 20"	
 				"spell_amp_debuff"			"10 15 20"
 				"proc_damage_heroes"        "50 100 200"
                 "proc_damage_creeps"        "25 50 100"
-				"passive_proc_damage"		"60 110 160"
-				"proc_chance"				"30 40 50"
 			"duration"				"6"
 		}
 	}
@@ -245,15 +238,12 @@
 				"bonus_intellect"			"15 45 120"
 				"bonus_attack_speed"		"100 200 300"
 				"bonus_mana_regen"			"3.5 6 16"
-				"bonus_health_regen"		"6.5 15 35"	
 				"silence_duration"			"5 5 5"
 				"silence_damage_percent"	"30 35 40"
 				"bonus_damage"				"10 15 20"	
 				"spell_amp_debuff"			"10 15 20"
 				"proc_damage_heroes"        "50 100 200"
                 "proc_damage_creeps"        "25 50 100"
-				"passive_proc_damage"		"60 110 160"
-				"proc_chance"				"30 40 50"
 			"duration"				"6"
 		}
 	}

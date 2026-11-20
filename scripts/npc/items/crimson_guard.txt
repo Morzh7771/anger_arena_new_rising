@@ -6,7 +6,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"625"	
 		"ItemShopTags"					""
 		
 		
@@ -17,7 +17,7 @@
 		"ItemResult"					"item_crimson_guard"
 		"ItemRequirements"
 		{
-			"01"						"item_vanguard;item_helm_of_iron_will"
+			"01"						"item_vanguard;item_buckler;item_helm_of_iron_will"
 		}
 	}
     "item_recipe_crimson_guard_2"
@@ -101,6 +101,8 @@
 			"block_chance_active"	"100"
 			"max_hp_pct"			"3.0 3.5 4.5"
 			"block_penalty_ranged"				"25"
+			"bonus_aoe_armor"			"2 4 8"
+			"aura_radius"			"1200"
 		}
 	}
 
@@ -151,6 +153,8 @@
 			"block_chance_active"	"100"
 			"max_hp_pct"			"3.0 3.5 4.5"
 			"block_penalty_ranged"				"25"
+			"bonus_aoe_armor"			"2 4 8"
+			"aura_radius"			"1200"
 		}
 	}
     "item_crimson_guard_3"
@@ -200,6 +204,8 @@
 			"block_chance_active"	"100"
 			"max_hp_pct"			"3.0 3.5 4.5"
 			"block_penalty_ranged"				"25"
+			"bonus_aoe_armor"			"2 4 8"
+			"aura_radius"			"1200"
 		}
 	}
 }

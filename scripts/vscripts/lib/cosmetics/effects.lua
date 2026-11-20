@@ -446,12 +446,28 @@ function FX.ClearTp(pid)
 
 	tp_state[pid] = nil
 	FreeList(st.start)
+	if st.dest then FreeList(st.dest) end
 end
 
 -- Старт в точке каста. Вызывать из dota_player_used_ability с именем предмета из TP_ITEMS.
 -- Наблюдение: если позиция скакнула - прибытие (старт гасим, в новой точке - end на TP_END_LIFE);
 -- если канал закончился без скачка - отмена (старт гасим сразу, без хвоста).
-function FX.BeginTp(item, hero, pid)
+-- Точка назначения телепорта (2026-11-16): эффект прибытия ставим туда СРАЗУ при касте и держим
+-- весь канал, как Snake Boots и как в доте. Раньше он появлялся только после прыжка героя и висел
+-- ещё TP_END_LIFE с - некрасиво. Точку берём у предмета (GetCursorPosition); не вышло - по-старому.
+local function TpDestination(hero, itemName)
+	local it = itemName and hero:FindItemInInventory(itemName)
+
+	if not it or it:IsNull() then return nil end
+
+	local ok, pos = pcall(function() return it:GetCursorPosition() end)
+
+	if not ok or not pos or (pos - hero:GetAbsOrigin()):Length2D() < TP_JUMP then return nil end
+
+	return pos
+end
+
+function FX.BeginTp(item, hero, pid, itemName)
 	if not item or not hero or hero:IsNull() or pid == nil or pid < 0 then return end
 
 	if CosmeticsLoader and not CosmeticsLoader.IsReady(item) then
@@ -470,6 +486,18 @@ function FX.BeginTp(item, hero, pid)
 		local idx = Spawn(p.path, PATTACH_WORLDORIGIN, nil, hero:GetAbsOrigin(), p.cps)
 
 		if idx then st.start[#st.start + 1] = idx end
+	end
+
+	local dest = TpDestination(hero, itemName)
+
+	if dest then
+		st.dest = {}
+
+		for _, p in ipairs(item.end_particles or {}) do
+			local idx = Spawn(p.path, PATTACH_WORLDORIGIN, nil, dest, p.cps)
+
+			if idx then st.dest[#st.dest + 1] = idx end
+		end
 	end
 
 	local last = hero:GetAbsOrigin()
@@ -491,10 +519,16 @@ function FX.BeginTp(item, hero, pid)
 		elapsed = elapsed + TP_TICK
 
 		if jump >= TP_JUMP then
+			-- эффект назначения уже стоял весь канал (st.dest) - гасим вместе со стартом;
+			-- точку получить не вышло - по-старому, эффект в точке прибытия
+			local hadDest = st.dest ~= nil
+
 			FX.ClearTp(pid)
 
-			for _, p in ipairs(item.end_particles or {}) do
-				FreeAfter(Spawn(p.path, PATTACH_WORLDORIGIN, nil, pos, p.cps), TP_END_LIFE)
+			if not hadDest then
+				for _, p in ipairs(item.end_particles or {}) do
+					FreeAfter(Spawn(p.path, PATTACH_WORLDORIGIN, nil, pos, p.cps), TP_END_LIFE)
+				end
 			end
 
 			return nil

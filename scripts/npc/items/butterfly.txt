@@ -16,7 +16,7 @@
         "ItemResult"                    "item_butterfly"
         "ItemRequirements"
         {
-        	"01"					"item_eagle;item_claymore;item_talisman_of_evasion"
+        	"01"					"item_eagle;item_talisman_of_evasion;item_quarterstaff"
         }
     }
     "item_recipe_sacred_butterfly"
@@ -82,7 +82,7 @@
 		{
             "bonus_agility"			    "45 90 200"
 			"bonus_evasion"			    "35 40 45"
-			"bonus_attack_speed_pct"	"20 25 30"
+			"bonus_attack_speed"	"30 60 120"
 			"bonus_damage"	            "25 60 170"
 		}
 	}

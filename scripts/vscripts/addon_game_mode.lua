@@ -88,6 +88,8 @@ safe_require('lib/boss/boss_spawner')
 safe_require('lib/panorama_pings')
 safe_require('lib/spawners/creep_spawner')
 safe_require('lib/spawners/creep_leveling')
+safe_require('lib/spawners/creep_ability_level')
+safe_require('lib/spawners/creep_active_ai')
 safe_require('lib/spawners/camp_sleep')
 safe_require('lib/neutral/madstone_system')
 safe_require('lib/timers')
@@ -101,6 +103,7 @@ safe_require('lib/bounty')
 safe_require('lib/capture_points/capture_points')
 safe_require('lib/minimap_spots')
 safe_require('lib/shift_buy')
+safe_require('lib/dev_neutral_give')
 safe_require('lib/game_ender')
 safe_require('lib/repick_menu')
 safe_require('lib/tip_manager')
@@ -134,6 +137,10 @@ safe_require('lib/leaderboard')
 safe_require('lib/pick_stages')
 -- бронь зон фарма на стадии стратегии (lib/farm_claims.lua, panorama strategy_farm.js)
 safe_require('lib/farm_claims')
+-- покупка из блока "Рекомендуем" на стадии стратегии (lib/strategy_buy.lua)
+safe_require('lib/strategy_buy')
+-- "Отстающая команда": бафф отстающей по нетворсу команде до 30-й минуты (lib/underdog.lua)
+safe_require('lib/underdog')
 -- премиум: точное время респавна боссов по Alt
 safe_require('lib/boss_timers_premium')
 -- замер FPS: консольная команда aa_perf (lib/perf_toggle.lua)
@@ -400,6 +407,87 @@ local crash_abilities = {
 	["disruptor_thunder_strike"] = 1,
 }
 
+-- Иллюзии героев: статы оригинала и % здоровья как в ванили.
+-- Оригинал - тот, кого копирует иллюзия (GetReplicatingOtherHero), иначе герой
+-- игрока, если иллюзия того же героя. Dark Portrait и т.п. копируют чужого героя:
+-- раньше им клались книги и трактаты владельца (HP больше, чем у оригинала).
+local function AAIllusionSource(illusion)
+	local src = illusion.GetReplicatingOtherHero and illusion:GetReplicatingOtherHero()
+	if src and not src:IsNull() and src ~= illusion then return src end
+	local pid = illusion:GetPlayerOwnerID()
+	if pid == nil or pid == -1 then return nil end
+	local hero = PlayerResource:GetSelectedHeroEntity(pid)
+	if hero and not hero:IsNull() and hero ~= illusion and hero:GetUnitName() == illusion:GetUnitName() then
+		return hero
+	end
+	return nil
+end
+
+local function AASetIllusionTome(illusion, source, name)
+	local src_mod = source and source:FindModifierByName(name)
+	local stacks = src_mod and src_mod:GetStackCount() or 0
+	local mod = illusion:FindModifierByName(name) or illusion:AddNewModifier(illusion, nil, name, {duration = -1})
+	if mod then mod:SetStackCount(stacks) end
+end
+
+function AAFixIllusionHealth(illusion)
+	if not illusion or illusion:IsNull() or not illusion.aa_illusion_hp_pct then return end
+	illusion:CalculateStatBonus(true)
+	local max = illusion:GetMaxHealth()
+	if max > 0 then
+		illusion:SetHealth(math.max(1, math.min(max, math.floor(max * illusion.aa_illusion_hp_pct + 0.5))))
+	end
+end
+
+function AASetupIllusionStats(illusion)
+	if not illusion or illusion:IsNull() or illusion.aa_illusion_setup then return end
+	illusion.aa_illusion_setup = true
+	local source = AAIllusionSource(illusion)
+
+	-- % здоровья: ванильные иллюзии берут текущий % HP оригинала. Наши статы
+	-- меняют макс. HP уже после спавна, поэтому % запоминаем до правок
+	local pct
+	if source and source:GetMaxHealth() > 0 then
+		pct = source:GetHealth() / source:GetMaxHealth()
+	elseif illusion:GetMaxHealth() > 0 then
+		pct = illusion:GetHealth() / illusion:GetMaxHealth()
+	end
+	illusion.aa_illusion_hp_pct = math.max(0.01, math.min(1, pct or 1))
+
+	if not illusion:HasModifier("modifier_aa_hero") then
+		illusion:AddNewModifier(illusion, nil, "modifier_aa_hero", {duration = -1})
+	end
+	-- книги: половина - в базе (ModifyStrength), половина - стаки bonus_*_tome
+	AASetIllusionTome(illusion, source, "bonus_str_tome")
+	AASetIllusionTome(illusion, source, "bonus_agi_tome")
+	AASetIllusionTome(illusion, source, "bonus_int_tome")
+
+	if source then
+		-- раньше вычитался прирост за уровни (атрибуты героя 1 уровня). Копируем базу как есть
+		illusion:SetBaseStrength(source:GetBaseStrength())
+		illusion:SetBaseIntellect(source:GetBaseIntellect())
+		illusion:SetBaseAgility(source:GetBaseAgility())
+		-- трактаты: модификатор берёт число из поля кастера, на иллюзии его нет
+		illusion.medical_tractates = source.medical_tractates
+		illusion.medical_tractates2 = source.medical_tractates2
+		illusion:RemoveModifierByName("modifier_medical_tractate")
+		illusion:RemoveModifierByName("modifier_medical_tractate_2")
+		if source.medical_tractates then
+			illusion:AddNewModifier(illusion, nil, "modifier_medical_tractate", {duration = -1})
+		end
+		if source.medical_tractates2 then
+			illusion:AddNewModifier(illusion, nil, "modifier_medical_tractate_2", {duration = -1})
+		end
+	end
+
+	AAFixIllusionHealth(illusion)
+	-- часть бонусов (предметы, пересчёт атрибутов движком) доезжает кадром позже
+	Timers:CreateTimer(FrameTime(), function()
+		if illusion and not illusion:IsNull() and illusion:IsAlive() then AAFixIllusionHealth(illusion) end
+		return nil
+	end)
+end
+
 local illusion_bug_crash =
 {
 	["npc_dota_hero_dawnbreaker"] = 1,
@@ -547,6 +635,10 @@ function AngelArena:InitGameMode()
 
 	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepLeveling:OnSpawnCallback(arg); end)
 	CreepSpawner:RegisterOnDeathCallback(function(arg) CreepLeveling:OnDeathCallback(arg); end)
+	-- прокачка способностей крипов по времени игры (MaxLevel > 1) и ИИ кастомных активок
+	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepAbilityLevel:ApplyOnSpawn(arg.creep); end)
+	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepActiveAI:OnSpawn(arg); end)
+	CreepActiveAI:Start()
 
 	-- лагеря, рядом с которыми никого нет, перестают сканировать карту в
 	-- поисках цели: к 10 минуте таких почти все, а крипов на карте под 480
@@ -903,6 +995,14 @@ function AngelArena:GoldFilter(event)
 		return false
 	end
 
+	-- "Отстающая команда" (lib/underdog.lua): +N% к доходу. Внутренние переносы (делёжка,
+	-- запас, камбэк - под TeamGoldShare._bypass) не трогаем, только настоящий доход.
+	if Underdog and event.gold > 0 and not (TeamGoldShare and TeamGoldShare._bypass) then
+		local mult = Underdog:GoldMult(event.player_id_const)
+
+		if mult > 1 then event.gold = math.floor(event.gold * mult) end
+	end
+
 	-- золото за убийство героя для своего килфида (lib/kill_feed.lua), до
 	-- командной делёжки: в фиде - сколько герой заработал убийством
 	if KillFeed then
@@ -1204,8 +1304,11 @@ function AngelArena:OnGameStateChange()
 				self.creep = CreateUnitByName("npc_teleport", spawnpoint:GetAbsOrigin(), false, nil, nil, DOTA_TEAM_BADGUYS)
 				self.creep:SetMaterialGroup("1")
 			end
-			AddFOWViewer(DOTA_TEAM_GOODGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
-			AddFOWViewer(DOTA_TEAM_BADGUYS, self.creep:GetAbsOrigin(), 8, -1, true)
+			-- Видимость порталов обеим командам. С BaseClass twin_gate движок сам держал их видимыми;
+			-- у npc_dota_creature видимость только по туману, а радиус 8 меньше клетки сетки тумана (64),
+			-- поэтому точка не открывалась. 150 - чуть больше клетки, вокруг почти ничего не светит.
+			AddFOWViewer(DOTA_TEAM_GOODGUYS, self.creep:GetAbsOrigin(), 150, -1, false)
+			AddFOWViewer(DOTA_TEAM_BADGUYS, self.creep:GetAbsOrigin(), 150, -1, false)
 			self.creep:AddNewModifier(self.creep, nil,'modifier_mid_teleport', {duration = -1} )
 		end
 		print('initrotal')
@@ -1359,14 +1462,13 @@ function AngelArena:OnNPCSpawned(keys)
                 npc:RemoveAbility("twin_gate_portal_warp");
             end
 			--npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
+			-- единый BAT героя: все "задать" и "снизить" BAT считает modifier_bat
+			if not npc:HasModifier("modifier_bat") then
+				npc:AddNewModifier(npc, nil, "modifier_bat", {duration = -1})
+			end
 		end
-		if npc:IsIllusion() then
-			local player = PlayerResource:GetSelectedHeroEntity( npc:GetPlayerOwnerID() )
-			npc:AddNewModifier(npc, nil, "modifier_aa_hero", {duration = -1})
-			npc:AddNewModifier(npc, nil, "bonus_str_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_str_tome'):GetStackCount())
-			npc:AddNewModifier(npc, nil, "bonus_agi_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_agi_tome'):GetStackCount())
-			npc:AddNewModifier(npc, nil, "bonus_int_tome", {duration = -1}):SetStackCount(player:FindModifierByName('bonus_int_tome'):GetStackCount())
-
+		if npc:IsIllusion() and npc:IsHero() then
+			AASetupIllusionStats(npc)
 		end
 	end
 	if npc:IsRealHero() then
@@ -1402,18 +1504,12 @@ function AngelArena:OnNPCSpawned(keys)
 					end
 				end
 
-				-- Раньше отсюда вычитался прирост за уровни, из-за чего иллюзия
-				-- получала атрибуты героя 1 уровня. Копируем базу как есть.
-				spawnedUnit:SetBaseStrength(original_hero:GetBaseStrength())
-				spawnedUnit:SetBaseIntellect(original_hero:GetBaseIntellect())
-				spawnedUnit:SetBaseAgility(original_hero:GetBaseAgility())
 				spawnedUnit:AddNewModifier(npc, nil, "modifier_intelect", {duration = -1})
-				if original_hero.medical_tractates then
-					spawnedUnit.medical_tractates = original_hero.medical_tractates
-					spawnedUnit:AddNewModifier(spawnedUnit, nil, "modifier_medical_tractate", { duration = -1})
-				end
 			end
 		end
+		-- статы (база, книги, трактаты) и % HP иллюзии - AASetupIllusionStats выше;
+		-- после всех правок этого обработчика ещё раз выравниваем HP
+		AAFixIllusionHealth(spawnedUnit)
 	end
 
 	for i = 1, 7 do
@@ -1670,10 +1766,32 @@ function AngelArena:OnHeroDeath(dead_hero, killer)
 end
 -- Ключ способности для журнала урона и статистики: доп. урон колбэков идёт от
 -- divine_intervention, вместо него пишем "<настоящий скилл или предмет>#bonus".
-function AA_DamageKey(name)
-	if name == "divine_intervention" and type(_G.AA_DMG_ORIGIN) == "string" and _G.AA_DMG_ORIGIN ~= ""
-		and _G.AA_DMG_ORIGIN ~= "divine_intervention" then
-		return _G.AA_DMG_ORIGIN .. "#bonus"
+-- ev (событие фильтра) нужен для запасного пути: движок применяет урон, нанесённый ВНУТРИ
+-- DamageFilter, уже после выхода из него - окно AA_DMG_ORIGIN к тому моменту закрыто, и на сайт
+-- шёл голый divine_intervention (2026-11-16). Поэтому перед ApplyDamage запоминаем источник для
+-- пары "атакующий:жертва" (AA_DMG_LAST) и берём его оттуда.
+_G.AA_DMG_LAST = _G.AA_DMG_LAST or {}
+
+-- источник нужен лишь на пару кадров (урон применяется сразу после фильтра), а пары
+-- "атакующий:жертва" копятся всю игру - чистим таблицу целиком раз в 30 с
+Timers:CreateTimer({ endTime = 30, useGameTime = false, callback = function()
+	_G.AA_DMG_LAST = {}
+
+	return 30
+end })
+
+function AA_DamageKey(name, ev)
+	if name ~= "divine_intervention" then return name end
+
+	local origin = _G.AA_DMG_ORIGIN
+
+	if (type(origin) ~= "string" or origin == "" or origin == "divine_intervention") and ev
+		and ev.entindex_attacker_const and ev.entindex_victim_const then
+		origin = _G.AA_DMG_LAST[ev.entindex_attacker_const .. ":" .. ev.entindex_victim_const]
+	end
+
+	if type(origin) == "string" and origin ~= "" and origin ~= "divine_intervention" then
+		return origin .. "#bonus"
 	end
 
 	return name
@@ -1754,6 +1872,9 @@ function AngelArena:DamageFilter(event)
 				local status, res = pcall(callback, callback_data)
 				if victim ~= attacker then
 					if status and res then
+						-- источник для AA_DamageKey, если движок применит урон уже после фильтра
+						_G.AA_DMG_LAST[attacker:entindex() .. ":" .. victim:entindex()] = skill_name
+
 						ApplyDamage({
                             victim = victim,
                             attacker = attacker,
@@ -1852,9 +1973,9 @@ end
 
 -- предметы на Lua с каналом, который не сбивается движением (как в доте)
 local NO_MOVE_BREAK_CHANNEL = {
-	item_meteor_hammer_aa   = true,
-	item_meteor_hammer_aa_2 = true,
-	item_meteor_hammer_aa_3 = true,
+	item_meteor_hammer      = true,
+	item_starforge_2        = true,
+	item_starforge_3        = true,
 }
 
 local CHANNEL_BREAK_ALLOWED_ORDERS = {

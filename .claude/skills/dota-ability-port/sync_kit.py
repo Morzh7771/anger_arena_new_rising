@@ -28,7 +28,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 HEROES = os.path.join(ROOT, 'scripts', 'npc', 'heroes')
-PATCH = r"C:\Users\admin\Desktop\dota 2 patch\scripts\npc"
+PATCH = r"C:\Users\admin\Desktop\Dota 2 7.42\scripts\npc"
 PATCH_HERO_DIR = os.path.join(PATCH, 'heroes')
 
 _p = {'__file__': os.path.join(HERE, 'port.py')}
@@ -100,11 +100,28 @@ def render_block(name, body, ml, indent='\t'):
     return '\n'.join(out) + '\n'
 
 
+
+def load_patch_heroes(path):
+    """npc_heroes.txt now only #base-includes heroes/npc_dota_hero_*.txt - merge them."""
+    base = os.path.dirname(path)
+    txt = read(path)
+    out = {}
+    files = re.findall(r'#base\s+"([^"]+)"', txt)
+    for f in files:
+        p = os.path.join(base, f.replace('/', os.sep))
+        if os.path.isfile(p):
+            kv, _ = parse(read(p))
+            out.update({k: v for k, v in kv.items() if isinstance(v, dict)})
+    if not files:
+        out, _ = parse(txt)
+    return out, None
+
+
 def main():
     dry = '--dry-run' in sys.argv
     only = [a for a in sys.argv[1:] if not a.startswith('--')]
 
-    pher, _ = parse(read(os.path.join(PATCH, 'npc_heroes.txt')))
+    pher, _ = load_patch_heroes(os.path.join(PATCH, 'npc_heroes.txt'))
     heroes = only or sorted(os.listdir(HEROES))
 
     tot_slots = tot_defs = 0

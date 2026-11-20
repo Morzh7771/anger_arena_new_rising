@@ -217,7 +217,6 @@ DOTAAbilities
 			"attack_slow_tooltip_only"
 			{
 				"value"				"4 5 6 7 8 9 10"
-				"special_bonus_shard"				"+5"
 			}
 			"self_movespeed_tooltip"
 			{
@@ -232,6 +231,11 @@ DOTAAbilities
 			"self_buff"
 			{
 				"special_bonus_shard"				"+1"
+			}
+			"attack_slow"
+			{
+				"value"				"4 5 6 7 8 9 10"
+				"special_bonus_shard"				"+13"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"

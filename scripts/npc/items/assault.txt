@@ -20,26 +20,6 @@
 			"01"						"item_buckler;item_ring_of_basilius;item_lifesteal;item_blades_of_attack"
 		}
 	}
-	"item_recipe_vladmir_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"                     "item_recipe_arcane_boots"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_vladmir_2"
-		"ItemRequirements"
-		{
-			"01"						"item_vladmir;item_vladmir"
-		}
-	}
 	"item_vladmir"
 	{
 		// General
@@ -69,47 +49,9 @@
 			"lifesteal_aura"					"20 22 24"
 			"damage_aura"						"18 20 22"
 			"aura_radius"						"1200"
-			"lifesteal_self"				"0"
-			"damage_self"				"0"
 			"lifesteal_creeps_tooltip"				"12"
 		}
 	}
-	"item_vladmir_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCastRange"				"1200"
-		"ItemBaseLevel"					"2"
-		"AbilityTextureName"            "vladmir_2"
-		"BaseClass"						"item_vladmir"
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2200"
-		"ItemShopTags"					"damage;armor;regen_mana"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"vladmir's offering;vlads"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"armor"								"2 4 40"
-			"mana_regen"						"0.75 1.5"
-			"armor_aura"						"4 8 30"
-			"mana_regen_aura"					"2 4 12"
-			"lifesteal_aura"					"20 22 24"
-			"damage_aura"						"18 20 22"
-			"aura_radius"						"1200"
-			"lifesteal_self"				"0"
-			"damage_self"				"0"
-			"lifesteal_creeps_tooltip"				"12"
-		}
-	}
-
 //====================================================================================================================
 
 	"item_recipe_assault"
@@ -163,7 +105,7 @@
 		"ItemResult"					"item_assault_3"
 		"ItemRequirements"
 		{
-			"01"						"item_assault_2;item_vladmir_2;item_boss_soul"
+			"01"						"item_assault_2;item_ristuls_devotion;item_boss_soul"
 		}
 	}
 	"item_assault"
@@ -256,6 +198,8 @@
 			"mana_regen_aura"		"2 4 12"
 			"lifesteal_aura"		"20 22 24"
 			"damage_aura"			"18 20 22"
+			"aura_spell_lifesteal"		"18"
+			"aura_spell_amp"		"23"
 		}
 	}
 }

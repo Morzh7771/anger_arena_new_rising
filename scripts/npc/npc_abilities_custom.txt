@@ -132,7 +132,7 @@
 #base heroes/zuus/ability_data.txt
 
 #base heroes/guardian_of_the_ancients/ability_data.txt
-#base heroes/сharon/ability_data.txt
+#base heroes/charon/ability_data.txt
 #base heroes/satan/ability_data.txt
 #base heroes/shadowsong/ability_data.txt
 #base heroes/fireblade/ability_data.txt
@@ -1205,7 +1205,7 @@
 	// в момент захвата, скрипт - lib/tower/tower_capture_pool.lua
 	"tower_capture_pool"
 	{
-		"ID"							"15152"
+		"ID"							"15301"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"lib/tower/tower_capture_pool"
 		"AbilityTextureName"			"custom/possessed_hellshield"

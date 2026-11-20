@@ -1,17 +1,73 @@
+require("lib/attack_potency")
 -- One-file, strict "new format":
 -- - ВСЕ методы/поля внутри class({ ... }) где это возможно
 -- - OnCreated/OnDestroy и т.д. тоже внутри таблицы (как в твоём примере)
--- - Precache: только реально используемые ресурсы (тут нет particles/models) => Precache не нужен
+-- Активка: выстрел в цель-врага (трекинг-снаряд), на цель вешается привязка (механика Celestial Spear из 1x6).
+-- Партиклы: celestial_spear_* и huskar_disarm_* взяты скомпилированными из VPK 1x6 (particles/items, particles/huskar).
 
 LinkLuaModifier('modifier_rebels_sword_passive', 'items/rebels_sword/rebels_sword', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_rebels_sword_disarmor', 'items/rebels_sword/rebels_sword', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_rebels_sword_disarmor_cd', 'items/rebels_sword/rebels_sword', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_rebels_sword_leash', 'items/rebels_sword/rebels_sword', LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
 -- Item
 --------------------------------------------------------------------------------
 item_rebels_sword = class({
-	GetIntrinsicModifierName = function(self) return 'modifier_rebels_sword_passive' end
+	GetIntrinsicModifierName = function(self) return 'modifier_rebels_sword_passive' end,
+
+	Precache = function(self, context)
+		if self:GetCaster() and self:GetCaster():IsIllusion() then return end
+
+		PrecacheResource("particle", "particles/items/celestial_spear_proj.vpcf", context)
+		PrecacheResource("particle", "particles/items/celestial_spear_leash.vpcf", context)
+		PrecacheResource("particle", "particles/huskar/huskar_disarm_coil.vpcf", context)
+		PrecacheResource("particle", "particles/econ/items/dragon_knight/dk_persona/dk_persona_dragon_tail_dragon_form_proj_impact.vpcf", context)
+		PrecacheResource("particle", "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_hit.vpcf", context)
+	end,
+
+	OnSpellStart = function(self)
+		if not IsServer() then return end
+
+		local caster = self:GetCaster()
+		local target = self:GetCursorTarget()
+		if not target then return end
+
+		ProjectileManager:CreateTrackingProjectile({
+			Target = target,
+			Source = caster,
+			Ability = self,
+			EffectName = "particles/items/celestial_spear_proj.vpcf",
+			iMoveSpeed = self:GetSpecialValueFor("projectile_speed"),
+			vSourceLoc = caster:GetAbsOrigin(),
+			bDodgeable = true,
+			bProvidesVision = false,
+		})
+
+		caster:EmitSound("Item_Desolator.Target")
+	end,
+
+	OnProjectileHit = function(self, target, location)
+		if not IsServer() then return end
+		if not target then return end
+		if target:TriggerSpellAbsorb(self) then return end
+
+		local impact_fx = ParticleManager:CreateParticle("particles/econ/items/dragon_knight/dk_persona/dk_persona_dragon_tail_dragon_form_proj_impact.vpcf", PATTACH_CUSTOMORIGIN, target)
+		for _, cp in ipairs({0, 1, 3}) do
+			ParticleManager:SetParticleControlEnt(impact_fx, cp, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), false)
+		end
+		ParticleManager:ReleaseParticleIndex(impact_fx)
+
+		local hit_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_hit.vpcf", PATTACH_CUSTOMORIGIN, target)
+		ParticleManager:SetParticleControlEnt(hit_fx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), false)
+		ParticleManager:SetParticleControlEnt(hit_fx, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), false)
+		ParticleManager:ReleaseParticleIndex(hit_fx)
+
+		target:EmitSound("Item.StarEmblem.Enemy")
+
+		local duration = self:GetSpecialValueFor("leash_duration") * (1 - target:GetStatusResistance())
+		target:AddNewModifier(self:GetCaster(), self, 'modifier_rebels_sword_leash', { duration = duration })
+	end,
 })
 
 item_rebels_sword_dummy = item_rebels_sword
@@ -21,6 +77,7 @@ item_rebels_sword_dummy = item_rebels_sword
 --------------------------------------------------------------------------------
 local DISARMOR_MNAME = "modifier_rebels_sword_disarmor"
 local DISARMOR_CD_MNAME = "modifier_rebels_sword_disarmor_cd"
+local LEASH_MNAME = "modifier_rebels_sword_leash"
 
 --------------------------------------------------------------------------------
 -- CD marker
@@ -51,6 +108,74 @@ modifier_rebels_sword_disarmor = class({
 })
 
 --------------------------------------------------------------------------------
+-- Leash (привязка): центр - точка, где стояла цель при попадании. Золотой луч
+-- от центра к цели; цель не уходит дальше break_radius от центра.
+-- Выход за радиус => цель притягивает обратно к центру и привязка снимается.
+--------------------------------------------------------------------------------
+modifier_rebels_sword_leash = class({
+	IsHidden = function(self) return false end,
+	IsDebuff = function(self) return true end,
+	IsPurgable = function(self) return true end,
+	DestroyOnExpire = function(self) return true end,
+	GetTexture = function(self) return "../items/rebels_sword" end,
+
+	OnCreated = function(self)
+		self.parent = self:GetParent()
+		self.caster = self:GetCaster()
+
+		if not IsServer() then return end
+
+		local ability = self:GetAbility()
+		self.break_radius = ability and ability:GetSpecialValueFor("break_radius") or 500
+
+		-- центр привязки: 60 у цели в сторону владельца (как в 1x6)
+		self.center = self.parent:GetAbsOrigin() - (self.caster:GetAbsOrigin() - self.parent:GetAbsOrigin()):Normalized() * 60
+
+		local coil_fx = ParticleManager:CreateParticle("particles/huskar/huskar_disarm_coil.vpcf", PATTACH_WORLDORIGIN, self.parent)
+		ParticleManager:SetParticleControl(coil_fx, 0, self.center)
+		self:AddParticle(coil_fx, false, false, -1, false, false)
+
+		local tether_fx = ParticleManager:CreateParticle("particles/items/celestial_spear_leash.vpcf", PATTACH_ABSORIGIN, self.parent)
+		ParticleManager:SetParticleControl(tether_fx, 0, self.center)
+		ParticleManager:SetParticleControlEnt(tether_fx, 1, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+		self:AddParticle(tether_fx, false, false, -1, false, false)
+
+		self:StartIntervalThink(FrameTime())
+	end,
+
+	CheckState = function(self)
+		return { [MODIFIER_STATE_TETHERED] = true }
+	end,
+
+	OnIntervalThink = function(self)
+		if not IsServer() then return end
+		if not self.center then return end
+		if (self.parent:GetAbsOrigin() - self.center):Length2D() <= self.break_radius then return end
+		if self.parent:IsInvulnerable() then return end
+
+		local direction = self.parent:GetOrigin() - self.center
+		direction.z = 0
+		direction = direction:Normalized()
+
+		local pos = self.parent:GetAbsOrigin() + direction * 10
+
+		self.parent:AddNewModifier(self.caster, self:GetAbility(), "modifier_knockback", {
+			center_x = pos.x,
+			center_y = pos.y,
+			center_z = pos.z,
+			duration = 0.2,
+			knockback_duration = 0.2,
+			knockback_distance = (self.parent:GetOrigin() - self.center):Length2D(),
+			knockback_height = 0,
+			isStun = true,
+		})
+
+		self.parent:EmitSound("Item.StarEmblem.Enemy")
+		self:Destroy()
+	end,
+})
+
+--------------------------------------------------------------------------------
 -- Passive stats + on-hit stacking logic
 --------------------------------------------------------------------------------
 modifier_rebels_sword_passive = class({
@@ -74,7 +199,11 @@ modifier_rebels_sword_passive = class({
 		self.disarmor_const   = ability:GetSpecialValueFor("disarmor_const")
 		self.max_disarmor_pct = ability:GetSpecialValueFor("max_disarmor_pct") / 100
 		self.duration         = ability:GetSpecialValueFor("duration")
-		self.cooldown         = ability:GetCooldown(1)
+		-- внутренний кд пассивки на одну цель (раньше был AbilityCooldown = 0.4)
+		self.cooldown         = ability:GetSpecialValueFor("disarmor_cd")
+		self.cooldown_leash   = ability:GetSpecialValueFor("disarmor_cd_leash")
+		if self.cooldown <= 0 then self.cooldown = 0.4 end
+		if self.cooldown_leash <= 0 then self.cooldown_leash = 0.2 end
 	end,
 
 	DeclareFunctions = function(self)
@@ -112,16 +241,24 @@ modifier_rebels_sword_passive = class({
 		local stygianStacks = target:GetModifierStackCount("modifier_item_stygian_aa_disarmor", kv.attacker)
 		local armor = target:GetPhysicalArmorValue(false) + stack_count + stygianStacks
 
-		local total_stack_count = stack_count + (self.disarmor * armor) + self.disarmor_const
+		-- прибавка за удар - с действенностью атаки (снижение брони, apply_effectiveness)
+		local potency = AttackPotency:Get(self:GetParent(), kv)
+		local total_stack_count = stack_count + ((self.disarmor * armor) + self.disarmor_const) * potency
 
 		if total_stack_count > (self.max_disarmor_pct * armor) then
-			total_stack_count = stack_count + self.disarmor_const
+			total_stack_count = stack_count + self.disarmor_const * potency
 		end
 
 		local ability = self:GetAbility()
 		if not ability then return end
 
-		target:AddNewModifier(target, ability, DISARMOR_CD_MNAME, { duration = self.cooldown })
+		-- цель в привязке владельца => внутренний кд 0.2
+		local cd = self.cooldown
+		if target:FindModifierByNameAndCaster(LEASH_MNAME, self:GetParent()) then
+			cd = self.cooldown_leash
+		end
+
+		target:AddNewModifier(target, ability, DISARMOR_CD_MNAME, { duration = cd })
 		target:AddNewModifier(target, ability, DISARMOR_MNAME, { duration = self.duration })
 		target:SetModifierStackCount(DISARMOR_MNAME, target, total_stack_count)
 	end,

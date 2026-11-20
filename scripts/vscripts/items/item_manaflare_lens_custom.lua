@@ -1,3 +1,4 @@
+require("items/spell_block_check")
 LinkLuaModifier("modifier_item_manaflare_lens_custom", "items/item_manaflare_lens_custom", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_manaflare_lens_custom_debuff", "items/item_manaflare_lens_custom", LUA_MODIFIER_MOTION_NONE)
 
@@ -58,27 +59,33 @@ end
 function modifier_item_manaflare_lens_custom:OnSpellTargetReady(params)
 	if not IsServer() then return end
 	if params.unit ~= self:GetParent() then return end
+	if IsProcIgnoredSpell(params) then return end -- захват вотчера и т.п.
 	if params.unit:GetTeamNumber() == params.target:GetTeamNumber() then return end
 	if not self:GetParent():IsRealHero() then return end
 	if self:GetAbility():IsCooldownReady() == false then return end
 
-	local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana") / 100 * self:GetAbility():GetSpecialValueFor("damage_per_mana")
-	SendOverheadEventMessage(params.target, 4, params.target, damage, nil)
+	-- урон только если спелл не поглощён Линкой и т.п. (проверка через кадр)
+	SpellBlockCheck(params.target, function()
+		if self:IsNull() or not self:GetAbility() or self:GetAbility():IsNull() then return end
+		if not self:GetAbility():IsCooldownReady() then return end
+		local damage = self:GetAbility():GetSpecialValueFor("bonus_spell_damage") + self:GetCaster():GetMana()*self:GetAbility():GetSpecialValueFor("bonus_spell_damage_mana") / 100 * self:GetAbility():GetSpecialValueFor("damage_per_mana")
+		SendOverheadEventMessage(params.target, 4, params.target, damage, nil)
 
-	self:GetAbility():UseResources(true, false, false, true)
-	ApplyDamage({attacker = self:GetCaster(), victim = params.target, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
-	params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_manaflare_lens_custom_debuff", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
+		self:GetAbility():UseResources(true, false, false, true)
+		ApplyDamage({attacker = self:GetCaster(), victim = params.target, ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
+		params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_manaflare_lens_custom_debuff", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
 	
-	local particle = ParticleManager:CreateParticle("particles/items_fx/phylactery_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.unit)
-	ParticleManager:SetParticleControlEnt(particle, 0, params.target, PATTACH_POINT_FOLLOW, "attach_hitloc", params.target:GetAbsOrigin(), true)
-	ParticleManager:ReleaseParticleIndex(particle)
+		local particle = ParticleManager:CreateParticle("particles/items_fx/phylactery_target.vpcf", PATTACH_ABSORIGIN_FOLLOW, params.unit)
+		ParticleManager:SetParticleControlEnt(particle, 0, params.target, PATTACH_POINT_FOLLOW, "attach_hitloc", params.target:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(particle)
 
-	local particle_2 = ParticleManager:CreateParticle("particles/items_fx/phylactery.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-	ParticleManager:SetParticleControlEnt(particle_2, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
-	ParticleManager:SetParticleControlEnt(particle_2, 1, params.target, PATTACH_POINT_FOLLOW, "attach_hitloc", params.target:GetAbsOrigin(), true)
-	ParticleManager:ReleaseParticleIndex(particle_2)
+		local particle_2 = ParticleManager:CreateParticle("particles/items_fx/phylactery.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+		ParticleManager:SetParticleControlEnt(particle_2, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(particle_2, 1, params.target, PATTACH_POINT_FOLLOW, "attach_hitloc", params.target:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(particle_2)
 
-	params.unit:EmitSound("Item.Phylactery.Target")
+		params.unit:EmitSound("Item.Phylactery.Target")
+	end)
 end
 
 

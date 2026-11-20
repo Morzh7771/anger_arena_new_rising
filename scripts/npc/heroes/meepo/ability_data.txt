@@ -128,7 +128,6 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"AbilityCastPoint"		"1.5"
@@ -152,7 +151,6 @@
 			}
 			"megameepo_poof_scaling"
 			{
-				"special_bonus_scepter"				"50"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -248,6 +246,7 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"tooltip_clones"		
@@ -272,6 +271,24 @@
 			"max_level"				"4"
 			"dps_penalty_pct"				"50 66 75 80"
 			"attribute_penalty_pct"				"0"
+			"xp_penalty_pct"				"50 66 75 80"
+			"xp_penalty_time"				"5.0"
+			"AbilityCastRange"
+			{
+				"special_bonus_shard"				"250"
+			}
+			"AbilityCooldown"
+			{
+				"special_bonus_shard"				"25 20 15 10"
+			}
+			"AbilityManaCost"
+			{
+				"special_bonus_shard"				"40"
+			}
+			"radius_tooltip"
+			{
+				"special_bonus_shard"				"+200"
+			}
 		}
 	}
 			
@@ -530,6 +547,46 @@
 			"dirt_move_speed"				"2"
 			"water_move_slow"				"2"
 			"water_slow_duration"				"2"
+		}
+	}
+
+	"meepo_fling_release"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_YES"
+		"IsGrantedByShard"				"1"
+		"DependentOnAbility"				"meepo_divided_we_stand"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"				"Hero_Sven.StormBoltImpact"
+		"LinkedAbility"				"meepo_divided_we_stand"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_7"
+		"AbilityCastGestureSlot"				"DEFAULT"
+		"AbilityValues"
+		{
+			"fling_damage"
+			{
+				"value"				"100 150 200 250"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
+			}
+			"impact_radius"
+			{
+				"value"				"200"
+				"affected_by_aoe_increase"				"1"
+			}
+			"movement_slow"				"-30 -40 -50 -60"
+			"fling_slow_duration"				"1.5 2.0 2.5 3"
+			"range"				"600 700 800 900"
+			"hold_duration"				"5"
+			"fling_movespeed"				"1000"
+			"vision_radius"				"300"
 		}
 	}
 }

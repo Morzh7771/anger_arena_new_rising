@@ -143,7 +143,6 @@ DOTAAbilities
 		"FightRecapLevel"				"1"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Undying.Tombstone"
-		"HasShardUpgrade"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -590,4 +589,40 @@ DOTAAbilities
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"                     "special_bonus_base"
     }
+
+	"undying_bite"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"IsGrantedByShard"				"1"
+		"AbilitySound"				"Hero_Undying.Bite"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"400"
+		"AbilityCooldown"				"18"
+		"AbilityManaCost"				"70"
+		"AbilityValues"
+		{
+			"bonus_attack_range"				"250"
+			"miss_distance"				"150"
+			"lunge_distance"				"250"
+			"lunge_duration"				"0.2"
+			"damage"				"250"
+			"zombie_duration"				"3"
+			"zombie_damage_reduction"				"40"
+			"zombie_slow"				"25"
+			"creep_zombie_duration"				"20"
+			"zombie_health"				"3"
+			"zombie_bonus_damage"
+			{
+				"special_bonus_unique_undying"				"+20"
+			}
+		}
+	}
 }

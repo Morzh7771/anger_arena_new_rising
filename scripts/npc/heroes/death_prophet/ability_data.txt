@@ -25,6 +25,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasShardUpgrade"			"1"
 		"AbilityValues"
 		{
 			"damage"
@@ -36,6 +37,7 @@ DOTAAbilities
 			{
 				"value"									"9 8.5 8 7.5 7 6.5 6"
 				"special_bonus_unique_death_prophet_2"	"-2"
+				"special_bonus_shard"			"=1.0"
 			}
 			"start_radius"				
 			{
@@ -56,8 +58,29 @@ DOTAAbilities
 			"slow_duration"
 			{
 				"value"				"0"
+				"special_bonus_shard"			"+0.5"
 			}
 			"damage_pct"				"30"
+			"apply_debuff"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+1"
+			}
+			"slow_movement_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+100"
+			}
+			"AbilityCharges"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"+2"
+			}
+			"AbilityChargeRestoreTime"
+			{
+				"value"				"0"
+				"special_bonus_shard"				"=10 =9 =8 =7"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -149,6 +172,31 @@ DOTAAbilities
         	{
         		"hero_levelup"				"+0.75"
         	}
+        	"spirits"
+        	{
+        		"value"				"1"
+        		"special_bonus_unique_death_prophet_2"				"+1"
+        	}
+        	"radius"
+        	{
+        		"value"				"700"
+        		"affected_by_aoe_increase"				"1"
+        	}
+        	"spirit_speed"				"650"
+        	"max_distance"				"2000"
+        	"give_up_distance"				"1200"
+        	"attack_damage_pct"
+        	{
+        		"value"				"15"
+        		"hero_levelup"				"1"
+        	}
+        	"current_damage_tooltip"
+        	{
+        		"dynamic_value"				"true"
+        	}
+        	"building_damage_pct"				"50"
+        	"spirit_duration"				"20"
+        	"heal_percent"				"50"
         }
 	}
 	"death_prophet_spirit_siphon"
@@ -166,7 +214,6 @@ DOTAAbilities
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_DeathProphet.SpiritSiphon.Cast"
 
-        "HasShardUpgrade"               "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -186,6 +233,7 @@ DOTAAbilities
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"damage"					
@@ -203,15 +251,25 @@ DOTAAbilities
 			}
 			"shard_bonus_charges"
 			{
-				"special_bonus_shard"				"1"
 			}
 			"shard_fear_duration"
 			{
-				"special_bonus_shard"				"1.0"
 			}
 			"shard_consecutive_siphon_duration"
 			{
-				"special_bonus_shard"				"3"
+			}
+			"bonus_charges"				"+0"
+			"max_health_damage_pct"
+			{
+				"special_bonus_scepter"				"+2.0"
+			}
+			"attack_slow"
+			{
+				"special_bonus_scepter"				"+120"
+			}
+			"movement_slow"
+			{
+				"special_bonus_scepter"				"+0"
 			}
 		}
 	}
@@ -228,7 +286,6 @@ DOTAAbilities
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_DeathProphet.Exorcism.Cast"
-        "HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -287,17 +344,16 @@ DOTAAbilities
 			"scepter_spirit_life_duration"	
 			{
 				"value"				"0"
-				"special_bonus_scepter"			"20"
 			}
 			"scepter_spirit_bonus_damage"	
 			{	
 				"value"					"0"
 				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_scepter"			"50"
 			}	
 			"movement_bonus"				"8 10 12 14 16 18 20"
 			"damage_pct"			"20"
 			"duration_increase_per_kill"				"0"
+			"unslowable"				"0"
 		}
 	}
 	"special_bonus_unique_death_prophet"

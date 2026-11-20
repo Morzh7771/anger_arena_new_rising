@@ -1,3 +1,4 @@
+require("items/spell_block_check")
 LinkLuaModifier("modifier_item_khanda_custom", "items/item_khanda_custom", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_khanda_custom_debuff", "items/item_khanda_custom", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_khanda_custom_break", "items/item_khanda_custom", LUA_MODIFIER_MOTION_NONE)
@@ -53,12 +54,18 @@ modifier_item_khanda_custom = class({
 function modifier_item_khanda_custom:OnSpellTargetReady(params)
 	if not IsServer() then return end
 	if params.unit ~= self:GetParent() then return end
+	if IsProcIgnoredSpell(params) then return end -- захват вотчера и т.п.
 	if params.unit:GetTeamNumber() == params.target:GetTeamNumber() then return end
 	if not self:GetParent():IsRealHero() then return end
 	if self:GetAbility():IsCooldownReady() == false then return end
 	if self:GetParent():HasModifier("modifier_item_manaflare_lens_custom") then return end
 
-    self:DealDamage(params)
+    -- урон только если спелл не поглощён Линкой и т.п. (проверка через кадр)
+    SpellBlockCheck(params.target, function()
+        if self:IsNull() or not self:GetAbility() or self:GetAbility():IsNull() then return end
+        if not self:GetAbility():IsCooldownReady() then return end
+        self:DealDamage(params)
+    end)
 end
 
 function modifier_item_khanda_custom:OnTakeDamage(params)

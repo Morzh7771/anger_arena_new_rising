@@ -26,7 +26,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 ITEMS_DIR = os.path.join(ROOT, 'scripts', 'npc', 'items')
 DOTA_ITEMS = os.path.join(ROOT, 'scripts', 'npc', 'dota_items.txt')
-PATCH_ITEMS = r"C:\Users\admin\Desktop\dota 2 patch\scripts\npc\items.txt"
+PATCH_ITEMS = r"C:\Users\admin\Desktop\Dota 2 7.42\scripts\npc\items.txt"
 
 # addon key -> Valve key. Only entries where the two mean the same thing.
 # Keyed by item family so a name collision across items stays safe.

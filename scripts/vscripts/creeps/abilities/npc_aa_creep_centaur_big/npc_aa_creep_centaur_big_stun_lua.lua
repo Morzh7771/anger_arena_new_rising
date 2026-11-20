@@ -16,6 +16,7 @@ function npc_aa_creep_centaur_big_stun_lua:OnSpellStart()
                 enemy:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration } )
                 local info = {
                     victim = enemy,
+                    ability = self, -- источник урона (журнал урона и сайт)
                     attacker = self:GetCaster(),
                     damage = damage,
                     damage_type = DAMAGE_TYPE_MAGICAL,

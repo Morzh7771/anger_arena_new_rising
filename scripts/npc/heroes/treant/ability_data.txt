@@ -240,7 +240,11 @@ DOTAAbilities
 				"value"		"2.0 4.5 7.0 9.5 12.0 14.5 17.0"
 				"special_bonus_unique_treant_13"			"+13"
 			}
-			"duration"			"12.0 15.0 18.0 21.0 24.0 27.0 30.0"
+			"duration"
+			{
+				"value"				"12.0 15.0 18.0 21.0 24.0 27.0 30.0"
+				"special_bonus_unique_treant_8"				"+3"
+			}
 
 			"aoe_radius"
 			{
@@ -353,7 +357,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"treant_eyes_in_the_forest"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"

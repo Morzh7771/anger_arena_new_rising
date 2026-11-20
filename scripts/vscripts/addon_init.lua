@@ -33,6 +33,8 @@ end
 
 safe_require('lib/talent_support')
 safe_require('lib/base_lua_helpers')
+-- действенность атаки (Item Potency) для наших проков, нужна и клиенту (тултипы дебафов)
+safe_require('lib/attack_potency')
 safe_require('lib/special_bonus_base_aa/Special_bonus_base_aa')
 
 -- Усиления нейтралок от Dormant Curio и Enchanter's Bauble (их вешает
@@ -40,8 +42,12 @@ safe_require('lib/special_bonus_base_aa/Special_bonus_base_aa')
 -- файл грузится и на клиенте, иначе клиент пишет "unknown modifier type" и
 -- тултипы предметов показывают старые числа.
 LinkLuaModifier("modifier_boss_slayer_fatigue", "modifiers/modifier_boss_slayer_fatigue", LUA_MODIFIER_MOTION_NONE)
+-- "Отстающая команда" - механика камбэка (lib/underdog.lua)
+LinkLuaModifier("modifier_aa_underdog", "modifiers/modifier_aa_underdog", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aa_neutral_potency", "modifiers/modifier_aa_neutral_potency", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aa_enchanters_bauble", "modifiers/modifier_aa_neutral_potency", LUA_MODIFIER_MOTION_NONE)
+-- Общий модификатор статов всех чар (item_aa_enhancement_*)
+LinkLuaModifier("modifier_item_aa_enhancement", "items/item_aa_enhancement", LUA_MODIFIER_MOTION_NONE)
 
 -- Модификатор круга захвата рун (lib/capture_points). Линкуем здесь, а не в
 -- самом lib-файле: тот серверный, и клиент без этого модификатор не знает -
@@ -53,12 +59,30 @@ LinkLuaModifier("capture_point_area", "lib/capture_points/capture_point_area", L
 -- линк только в серверном lib-файле, и клиент спамил "Attempted to create
 -- unknown modifier type modifier_dominate_protection" на каждый спавн крипа.
 LinkLuaModifier("modifier_dominate_protection", "lib/spawners/modifier_dominate_protection", LUA_MODIFIER_MOTION_NONE)
+-- активки нейтралов (abilities/creeps_neutral_active): замедление/броня, клиенту для тултипа
+LinkLuaModifier("modifier_neutral_creep_active", "abilities/creeps_neutral_active/modifier_neutral_creep_active", LUA_MODIFIER_MOTION_NONE)
 -- то же у медведей (lib/spawners/bear_spawner): иконка счётчика смертей
 LinkLuaModifier("modifier_stuck_count", "lib/spawners/modifier_stuck_count", LUA_MODIFIER_MOTION_NONE)
 
 -- брейк Silver Edge 3 (items/item_dark_edge): клиенту для тултипа и иконки
 LinkLuaModifier("modifier_item_dark_edge_debuff", "items/item_dark_edge", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_dark_edge_cold", "items/item_dark_edge", LUA_MODIFIER_MOTION_NONE)
+
+-- Fallen Sky, Vile Phial, Rattlecage (items/item_*): клиенту для тултипов и иконок статусов
+LinkLuaModifier("modifier_item_fallen_sky_land", "items/item_fallen_sky", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_fallen_sky_stun", "items/item_fallen_sky", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_fallen_sky_burn", "items/item_fallen_sky", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_vile_phial_counter", "items/item_vile_phial", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_vile_phial_poison", "items/item_vile_phial", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_rattlecage_slow", "items/item_rattlecage", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_desolator_2_disarmor", "items/item_desolator_2", LUA_MODIFIER_MOTION_NONE)
+
+-- Void Shackles, Rebels Sword: клиенту для тултипов, иконок и партиклов дебафов
+LinkLuaModifier("modifier_item_void_shackles_passive", "items/item_void_shackles", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_void_shackles_root", "items/item_void_shackles", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_void_shackles_nullify", "items/item_void_shackles", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_rebels_sword_disarmor", "items/rebels_sword/rebels_sword", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_rebels_sword_leash", "items/rebels_sword/rebels_sword", LUA_MODIFIER_MOTION_NONE)
 
 -- Модификаторы суммонов по имени юнита (creeps/armor_table_summon): линк был
 -- только на сервере, клиент спамил "unknown modifier type" и не видел их статы
@@ -114,3 +138,5 @@ function CEntityInstance:GetNetworkableEntityInfo(key)
     local t = CustomNetTables:GetTableValue("custom_entity_values", tostring(self:GetEntityIndex())) or {}
     return t[key]
 end
+LinkLuaModifier("modifier_tiny_insurmountable_lua", "heroes/tiny/tiny_insurmountable", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bat", "modifiers/modifier_bat", LUA_MODIFIER_MOTION_NONE)

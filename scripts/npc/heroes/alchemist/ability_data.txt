@@ -217,42 +217,46 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"duration"				"30"
-			"bonus_gold"			"5"
-			"bonus_bonus_gold"		"5"
-			"bonus_gold_cap"		"250"
+			
+			"bonus_gold"		"3"			
+			"bonus_gold_tooltip"			
+			{
+				"value"								"3"
+				"special_bonus_scepter"		"+0"
+				"dynamic_value"				"true"
+			}
+			
+			"bonus_bonus_gold"		"3"
+			"bonus_gold_per_scepter"		"5"
 			"bounty_multiplier"		"2"
 			"damage"
 			{
-				"value"		"0"
-				"special_bonus_unique_alchemist_7" "+3"
+			"special_bonus_unique_alchemist_7"	"+3"
 			}
-			"starting_gold_bonus"
-            {
-                "value"             "0"
-            }
-			"bonus_gold_tooltip"
-			{
-				"value"				"2"
-				"special_bonus_scepter"				"+0"
-				"dynamic_value"				"true"
-			}
-			"bonus_gold_per_scepter"				"3"
+
+			"bonus_gold_cap"		"120"
 			"bonus_gold_cap_tooltip"
 			{
-				"value"				"16"
+				"value"								"129"
 				"special_bonus_scepter"				"+0"
 				"dynamic_value"				"true"
 			}
-			"scepter_bonus_damage"				"15"
+
+			"scepter_bonus_damage"
+			{
+				"value"						"50"
+			}
+
+			//tooltip doesn't always update properly when you give it away because of how special_bonus_scepter works; just keep a different tooltip value for this
 			"scepter_bonus_damage_tooltip"
 			{
-				"special_bonus_scepter"				"+0"
+				"special_bonus_scepter"		"+0"
 				"dynamic_value"				"true"
 			}
 			"scepter_spell_amp"
-			{
-				"special_bonus_scepter"				"0"
-			}
+				{
+					"special_bonus_scepter"		"0"
+				}
 		}
 	}
 	"alchemist_chemical_rage"

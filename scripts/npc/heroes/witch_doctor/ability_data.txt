@@ -141,12 +141,12 @@
 				}
 				"heal_caster_hp_pct"
 				{
-					"value"	"0.5 1.1 1.7 2.3 2.8 3.4 4"
+					"value"	"0.5 0.9 1.3 1.7 2.1 2.5 3"
 					"special_bonus_unique_witch_doctor_2" "+1"
 				}
-				"damage_caster_hp_pct"		// ровно половина heal_caster_hp_pct
+				"damage_caster_hp_pct"		// урон = heal (база) + этот % от макс. ХП кастера
 				{
-					"value"	"0.25 0.55 0.85 1.15 1.4 1.7 2"
+					"value"	"0.25 0.45 0.65 0.85 1.05 1.25 1.5"
 					"special_bonus_unique_witch_doctor_2" "+0.5"
 				}
 		}
@@ -381,13 +381,13 @@
 	}
 	"special_bonus_unique_witch_doctor_ticks"
 	{
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
 	"special_bonus_unique_witch_doctor_damage_pct"
 	{
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}

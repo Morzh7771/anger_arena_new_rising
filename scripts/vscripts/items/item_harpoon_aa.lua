@@ -138,6 +138,7 @@ modifier_item_harpoon_custom = class({
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
 
     } end,
     GetModifierPreAttack_BonusDamage = function(self)return self:GetAbility():GetSpecialValueFor("bonus_damage") end,
@@ -146,6 +147,10 @@ modifier_item_harpoon_custom = class({
     GetModifierBonusStats_Intellect = function(self)return self:GetAbility():GetSpecialValueFor("bonus_intellect") end,
     GetModifierBonusStats_Strength = function(self)return self:GetAbility():GetSpecialValueFor("bonus_strength") end,
     GetModifierBonusStats_Agility = function(self)return self:GetAbility():GetSpecialValueFor("bonus_agility") end,
+    GetModifierAttackRangeBonus = function(self)
+        if self:GetParent():IsRangedAttacker() then return 0 end
+        return self:GetAbility():GetSpecialValueFor("base_attack_range_melee")
+    end,
 })
 
 -- Сгенерировано: ресурсы, на которые ссылается этот скрипт.

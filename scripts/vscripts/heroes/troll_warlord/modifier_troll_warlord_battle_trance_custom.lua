@@ -43,6 +43,7 @@ function modifier_troll_warlord_battle_trance_custom:OnAttackLanded(params)
             if target ~= nil then
                 local info = {
                     victim = target,
+                    ability = self:GetAbility(), -- источник урона (журнал урона и сайт)
                     attacker = self:GetParent(),
                     damage = self.damage,
                     damage_type = DAMAGE_TYPE_PURE,

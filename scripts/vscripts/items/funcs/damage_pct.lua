@@ -6,7 +6,7 @@ function DealDamageOfMaxHealth(event)
 
 	local damage_total = target:GetMaxHealth()*damage_pct 
 	--print('damage = ', damage_total)
-	ApplyDamage({ victim = target, attacker = caster, damage = damage_total,	damage_type = DAMAGE_TYPE_MAGICAL }) 
+	ApplyDamage({ ability = event.ability, victim = target, attacker = caster, damage = damage_total,	damage_type = DAMAGE_TYPE_MAGICAL }) 
 end
 
 function DealDamageOfCurrentHealth(event)
@@ -17,6 +17,6 @@ function DealDamageOfCurrentHealth(event)
 
 	local damage_total = target:GetHealth()*damage_pct 
 	--print('damage = ', damage_total)
-	ApplyDamage({ victim = target, attacker = caster, damage = damage_total,	damage_type = DAMAGE_TYPE_MAGICAL }) 
+	ApplyDamage({ ability = event.ability, victim = target, attacker = caster, damage = damage_total,	damage_type = DAMAGE_TYPE_MAGICAL }) 
 end
 

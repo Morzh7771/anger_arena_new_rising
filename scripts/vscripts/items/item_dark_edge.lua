@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 LinkLuaModifier("modifier_item_dark_edge", "items/item_dark_edge", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_dark_edge_debuff", "items/item_dark_edge", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_dark_edge_cold", "items/item_dark_edge", LUA_MODIFIER_MOTION_NONE)
@@ -70,15 +71,16 @@ modifier_item_dark_edge = class({
         if keys.attacker == self:GetParent() then
             local ability = self:GetAbility()
             local target = keys.target
+            local potency = IsServer() and AttackPotency:Get(self:GetParent(), keys) or 1
             -- свой холод: ванильный modifier_item_skadi_slow от Lua-предмета значений не берёт
             if IsServer() and target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and not target:IsBuilding() and not target:IsMagicImmune() then
-                target:AddNewModifier(self:GetParent(), ability, "modifier_item_dark_edge_cold", {duration = ability:GetSpecialValueFor("cold_duration")})
+                target:AddNewModifier(self:GetParent(), ability, "modifier_item_dark_edge_cold", AttackPotency:Kv(potency, {duration = ability:GetSpecialValueFor("cold_duration")}))
             end
 
             if IsServer() and self.backstab_records and self.backstab_records[keys.record] then
                 self.backstab_records[keys.record] = nil
                 if target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and not target:IsBuilding() and not target:IsMagicImmune() then
-                    target:AddNewModifier(self:GetParent(), ability, "modifier_item_dark_edge_debuff", {duration = ability:GetSpecialValueFor("backstab_duration")})
+                    target:AddNewModifier(self:GetParent(), ability, "modifier_item_dark_edge_debuff", {duration = ability:GetSpecialValueFor("backstab_duration") * potency})
                     print("[AA.silver] брейк на " .. target:GetUnitName() .. " на " .. tostring(ability:GetSpecialValueFor("backstab_duration")) .. " с")
                 end
             end
@@ -107,11 +109,13 @@ modifier_item_dark_edge_cold = class({
     StatusEffectPriority = function(self) return 10 end,
 })
 
-function modifier_item_dark_edge_cold:OnCreated()
-    self:OnRefresh()
+function modifier_item_dark_edge_cold:OnCreated(kv)
+    self:OnRefresh(kv)
 end
 
-function modifier_item_dark_edge_cold:OnRefresh()
+-- замедления и срез лечения с действенностью атаки (apply_effectiveness, как у Skadi)
+function modifier_item_dark_edge_cold:OnRefresh(kv)
+    AttackPotency:Attach(self, kv)
     local ability = self:GetAbility()
     self.move, self.attack, self.heal = 0, 0, 0
     if not ability or ability:IsNull() then return end
@@ -133,9 +137,11 @@ function modifier_item_dark_edge_cold:DeclareFunctions()
     }
 end
 
-function modifier_item_dark_edge_cold:GetModifierMoveSpeedBonus_Percentage() return self.move end
-function modifier_item_dark_edge_cold:GetModifierAttackSpeedBonus_Constant() return self.attack end
-function modifier_item_dark_edge_cold:GetModifierHealAmplify_PercentageTarget() return self.heal end
-function modifier_item_dark_edge_cold:GetModifierHPRegenAmplify_Percentage() return self.heal end
-function modifier_item_dark_edge_cold:GetModifierLifestealRegenAmplify_Percentage() return self.heal end
-function modifier_item_dark_edge_cold:GetModifierSpellLifestealRegenAmplify_Percentage() return self.heal end
+AttackPotency:Transmitter(modifier_item_dark_edge_cold)
+
+function modifier_item_dark_edge_cold:GetModifierMoveSpeedBonus_Percentage() return self.move * self:Potency() end
+function modifier_item_dark_edge_cold:GetModifierAttackSpeedBonus_Constant() return self.attack * self:Potency() end
+function modifier_item_dark_edge_cold:GetModifierHealAmplify_PercentageTarget() return self.heal * self:Potency() end
+function modifier_item_dark_edge_cold:GetModifierHPRegenAmplify_Percentage() return self.heal * self:Potency() end
+function modifier_item_dark_edge_cold:GetModifierLifestealRegenAmplify_Percentage() return self.heal * self:Potency() end
+function modifier_item_dark_edge_cold:GetModifierSpellLifestealRegenAmplify_Percentage() return self.heal * self:Potency() end

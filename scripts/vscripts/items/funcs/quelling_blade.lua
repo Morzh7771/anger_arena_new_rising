@@ -6,9 +6,9 @@ function BonusDamageCreeps(event)
 	local bonus_pct_range = (event.damage_pct_range - 100) / 100
 	if not target:IsHero() then
 		if caster:IsRangedAttacker() then
-			ApplyDamage({ victim = target, attacker = caster, damage = damage*bonus_pct_range,	damage_type = DAMAGE_TYPE_PHYSICAL }) --deal damage
+			ApplyDamage({ ability = event.ability, victim = target, attacker = caster, damage = damage*bonus_pct_range,	damage_type = DAMAGE_TYPE_PHYSICAL }) --deal damage
 		else
-			ApplyDamage({ victim = target, attacker = caster, damage = damage*bonus_pct,	damage_type = DAMAGE_TYPE_PHYSICAL }) --deal damage
+			ApplyDamage({ ability = event.ability, victim = target, attacker = caster, damage = damage*bonus_pct,	damage_type = DAMAGE_TYPE_PHYSICAL }) --deal damage
 		end
 	end
 end

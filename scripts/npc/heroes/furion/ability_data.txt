@@ -164,10 +164,12 @@ DOTAAbilities
             {
                 "value"     "150 225 300 375 450 525 600"
                 "affected_by_aoe_increase"  "1"
+            	"special_bonus_unique_furion_force_of_nature_treants"				"+50"
             }
 			"max_treants"
             {
                 "value"                         "2 2 3 3 4 4 5"
+            	"special_bonus_unique_furion_force_of_nature_treants"				"+2"
             }
             "siege_treants"
             {
@@ -224,6 +226,7 @@ DOTAAbilities
 			"treant_gold_bounty_min"				"18"
 			"treant_gold_bounty_max"				"24"
 			"treant_xp_bounty"				"30"
+			"treant_armor"				"1 2 3 4 5 6 7"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -311,7 +314,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"furion_curse_of_the_forest"
 		"MaxLevel"		"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -329,8 +332,6 @@ DOTAAbilities
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"18"
-		"AbilityManaCost"				"80"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -349,6 +350,10 @@ DOTAAbilities
                 "value"                     "1200"
                 "affected_by_aoe_increase"  "1"
             }
+        	"damage_per_second"				"24"
+        	"slow"				"10"
+        	"treant_damage_per_second"				"12"
+        	"treant_slow"				"5"
         }
 	}
 	"furion_hedgerow"

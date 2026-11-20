@@ -55,6 +55,7 @@ function modifier_demon_warrior_invisible:OnAttackLanded(params)
         local target = params.target
         local info = {
             victim = target,
+            ability = self:GetAbility(), -- источник урона (журнал урона и сайт)
             attacker = caster,
             damage = self.bonus_damage,
             damage_type = DAMAGE_TYPE_PHYSICAL,

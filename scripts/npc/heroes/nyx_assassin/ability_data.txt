@@ -73,23 +73,36 @@ DOTAAbilities
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
-		
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.4"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 17.5 15 12.5 10 7.5 5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"70 80 90 100 110 120 130"
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"			"20 17.5 15 12.5 10 7.5 5"
+				"special_bonus_unique_nyx_jolt_cooldown"			"-3"
+			}
+			"max_mana_as_damage_pct"		"25 30 35 40 45 50 55"
+			"mana_burn_pct"					"12 15 18 21 24 27 30"
+			"aoe"
+			{
+				"value"		"0"
+				"affected_by_aoe_increase"	"1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
 	}
 	"nyx_assassin_jolt"
 	{
@@ -298,6 +311,7 @@ DOTAAbilities
                 "affected_by_aoe_increase"  "1"
             }
 			"cast_range"				"500"
+			"scarab_metabolism_multiplier"				"3"
 		}
 	}
 	"nyx_assassin_unburrow"
@@ -490,6 +504,36 @@ DOTAAbilities
 		"AbilityValues"
 		{
 			"mana_burn_pct"				"12"
+		}
+	}
+
+	"nyx_assassin_scarab_metabolism"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_NO"
+		"IsBreakable"				"1"
+		"Innate"				"1"
+		"AbilityValues"
+		{
+			"out_of_combat_time"				"3.0"
+			"health_regen_pct"				"0.35"
+			"mana_regen_pct"				"0.35"
+			"bonus_movement_speed"
+			{
+				"value"				"5"
+				"hero_levelup"				"+1"
+			}
+			"breaks_on_damage"
+			{
+				"value"				"1"
+				"special_bonus_unique_nyx_assassin_scarab_metabolism"				"=0"
+			}
+			"multiplier"
+			{
+				"value"				"1"
+				"special_bonus_unique_nyx_assassin_scarab_metabolism"				"=2"
+			}
 		}
 	}
 }

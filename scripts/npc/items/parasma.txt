@@ -97,9 +97,17 @@
 			"bonus_mana_regen"			"2 6 18"
 			"projectile_speed"			"300 350 400"
 			"int_damage_multiplier" 	"1 1.25 1.5"
-			"slow"						"25 30 35"
+			"slow"
+			{
+				"value"				"25 30 35"
+				"apply_effectiveness"	"1"
+			}
 			"slow_duration"				"3 4 5"
-			"active_mres_reduction"		"10 15 20"
+			"active_mres_reduction"
+			{
+				"value"				"10 15 20"
+				"apply_effectiveness"	"1"
+			}
 			"passive_cooldown"			"4"
 		}
 	}
@@ -140,9 +148,17 @@
 			"bonus_mana_regen"			"2 6 18"
 			"projectile_speed"			"300 350 400"
 			"int_damage_multiplier" 	"1 1.25 1.5"
-			"slow"						"25 30 35"
+			"slow"
+			{
+				"value"				"25 30 35"
+				"apply_effectiveness"	"1"
+			}
 			"slow_duration"				"3 4 5"
-			"active_mres_reduction"		"10 15 20"
+			"active_mres_reduction"
+			{
+				"value"				"10 15 20"
+				"apply_effectiveness"	"1"
+			}
 			"passive_cooldown"			"4"
 		}
 	}
@@ -184,9 +200,17 @@
 			"bonus_mana_regen"			"2 6 18"
 			"projectile_speed"			"300 350 400"
 			"int_damage_multiplier" 	"1 1.25 1.5"
-			"slow"						"25 30 35"
+			"slow"
+			{
+				"value"				"25 30 35"
+				"apply_effectiveness"	"1"
+			}
 			"slow_duration"				"3 4 5"
-			"active_mres_reduction"		"10 15 20"
+			"active_mres_reduction"
+			{
+				"value"				"10 15 20"
+				"apply_effectiveness"	"1"
+			}
 			"passive_cooldown"			"4"
 		}
 	}

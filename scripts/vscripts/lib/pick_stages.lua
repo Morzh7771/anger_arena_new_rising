@@ -41,7 +41,7 @@ local T_PREMIUM = 20
 -- поэтому видно все 20 с ожидания, а после - вернулись ли бан и пик. Ещё в dev-режиме обычные
 -- баны (AAPICK_BAN_TIME) идут и в чит-режиме, чтобы было что проверять после ожидания.
 -- В обычном состоянии - false. Включить: поставить true и перезапустить карту.
-local DEV_FAKE_PREMIUM = true -- !!! ВКЛЮЧЁН ДЛЯ ТЕСТА, перед заливкой вернуть false
+local DEV_FAKE_PREMIUM = false
 local DEV_FAKE_PID = 23
 
 local function DevFake()
@@ -192,11 +192,28 @@ function P:ApplyThink()
 		if not self.applied[pid] then pending[#pending + 1] = pid end
 	end
 
+	self.tries = self.tries or {}
+
 	for _, pid in ipairs(pending) do
 		if PlayerResource:HasSelectedHero(pid) then
 			self.applied[pid] = true
+			self.tries[pid] = nil
 		elseif not banning then
 			self:Apply(pid)
+
+			-- Движок молча не принимает героя (например, его забанили в ванильных банах - так
+			-- было с Линой 2026-11-15: меню закрылось, а героя не дали). После ~2 с попыток
+			-- снимаем бронь и говорим игроку - пусть выберет другого, а не остаётся ни с чем.
+			self.tries[pid] = (self.tries[pid] or 0) + 1
+
+			if self.tries[pid] >= 8 and self.picks[pid] and not PlayerResource:HasSelectedHero(pid) then
+				print("[AAPick] движок не принял " .. tostring(self.picks[pid]) .. " для pid " .. pid .. " - бронь снята")
+				self.picks[pid] = nil
+				self.applied[pid] = nil
+				self.tries[pid] = nil
+				Error(pid, "taken")
+				self:Publish()
+			end
 		end
 	end
 

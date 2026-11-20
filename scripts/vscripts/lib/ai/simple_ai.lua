@@ -4,6 +4,9 @@ require('lib/ai/ai_actions')
 
 SimpleAI = SimpleAI or class({})
 
+-- тик простоя: никого в зоне и босс стоит на точке спавна
+local IDLE_TICK = 0.3
+
 function SimpleAI:OnTick()
 	if not self:IsValid() then return nil end
 	
@@ -20,6 +23,16 @@ function SimpleAI:OnTick()
 	local baseAoi = self.baseAoi
 
 	local enemies = AIHelpers:GetEnemiesNear(caster, caster:GetAbsOrigin(), caster:GetTeamNumber(), baseAoi)
+
+	-- Босс один дома и рядом никого: все действия свелись бы к Back, который
+	-- у точки спавна ничего не делает. Такой простой опрашиваем реже, чем бой
+	-- (0.1 с x все боссы весь матч были главной статьёй Lua в [AA.perf]).
+	-- Полное здоровье и без стана: часть способностей (Interception, Heal)
+	-- срабатывает по здоровью и без врагов, их тик не трогаем.
+	if #enemies == 0 and caster:GetHealth() >= caster:GetMaxHealth() and not caster:IsStunned()
+		and (caster:GetAbsOrigin() - spawnPos):Length() <= 50 then
+		return math.max(self.tickTime, IDLE_TICK)
+	end
 
 	for _, action in pairs(self.actions) do
 

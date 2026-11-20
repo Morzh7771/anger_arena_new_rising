@@ -536,7 +536,7 @@ ListenToGameEvent("dota_player_used_ability", function(event)
 
 		if not hero then return end
 
-		CosmeticsEffects.BeginTp(item, hero, pid)
+		CosmeticsEffects.BeginTp(item, hero, pid, name)
 	end)
 end, nil)
 
@@ -600,7 +600,7 @@ end)
 -- ------------------------------------------------------------------ эффекты предметов (2026-11-12)
 -- Надетый предмет слота у владельца юнита (блинк, фазы, мьёльнир, хекс, снаряд...). nil - нет премиума,
 -- ничего не надето или ресурсы ещё не загружены (тогда грузим и в этот раз даём ванильный эффект).
--- Зовут предметы: items/item_blinks.lua, item_phase_boots_aa.lua, item_mjolnir.lua, item_sheepstick_aa.lua.
+-- Зовут предметы: items/item_blinks.lua, item_mjolnir.lua, item_sheepstick_aa.lua.
 function AACosmeticItem(unit, slot)
 	if not unit or unit:IsNull() or not unit.GetPlayerOwnerID then return nil end
 

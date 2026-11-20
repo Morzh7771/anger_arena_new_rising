@@ -42,6 +42,7 @@
 #base items/midas.txt
 #base items/mjollnir.txt
 #base items/nullifier.txt
+#base items/void_shackles.txt
 #base items/octarine_core.txt
 #base items/parasma.txt
 #base items/phase_boots.txt
@@ -415,13 +416,25 @@
             "duration"         "5"
             "max_slow"         "-60"
             "duration_passive"         "3"
-            "ranged_slow"         "-4"
-            "melee_slow"         "-13"
+            "ranged_slow"
+            {
+            	"value"				"-4"
+            	"apply_effectiveness"	"1"
+            }
+            "melee_slow"
+            {
+            	"value"				"-13"
+            	"apply_effectiveness"	"1"
+            }
             "damage"                 "5"
             "total_damage"                 "150"
             "attack_speed"      "25"
             "armor"         "3"
-            "heal_reduction"    "-20"
+            "heal_reduction"
+            {
+            	"value"				"-20"
+            	"apply_effectiveness"	"1"
+            }
 
         }
     }
@@ -797,9 +810,14 @@
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_lua"
         "ID"							"15014"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityTextureName"	        "rebels_sword"
         "ScriptFile"					"items/rebels_sword/rebels_sword.lua"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+        "AbilityCastRange"				"1100"
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -811,17 +829,35 @@
         "ItemDroppable"                 "1"
         "ItemPurchasable"				"1"
         
-        "AbilityCooldown"				"0.4"
-        
+        "AbilityCooldown"				"15"
+        "AbilityManaCost"				"0"
+        "AbilitySharedCooldown"			"rebels_sword"
+
         "AbilityValues"
         {
             "bonus_damage"			"50"
             "bonus_all_stats"		"25"
             "bonus_attack_speed"	"20"
-            "disarmor"				"5"
-            "disarmor_const"		"8"
+            "disarmor"
+            {
+            	"value"				"5"
+            	"apply_effectiveness"	"1"
+            }
+            "disarmor_const"
+            {
+            	"value"				"8"
+            	"apply_effectiveness"	"1"
+            }
             "max_disarmor_pct"		"70"
             "duration"				"3"
+            "disarmor_cd"			"0.4"
+            "disarmor_cd_leash"		"0.2"
+            "cooldown"				"15"
+            "mana"					"0"
+            "cast_range"			"1100"
+            "projectile_speed"		"1800"
+            "leash_duration"		"3.5"
+            "break_radius"			"500"
         }
     }
     

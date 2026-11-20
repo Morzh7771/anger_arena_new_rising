@@ -74,6 +74,8 @@ function P:OnAction(data)
 	if action == "open_chest" then
 		body.kind = tostring(data.kind or "")
 		body.buy = tonumber(data.buy) == 1
+		-- цена, которую видел игрок: если остаток коллекции изменил цену - бэкенд вернёт price_changed
+		if tonumber(data.expect_price) then body.expect_price = tonumber(data.expect_price) end
 	elseif action == "buy_token" or action == "use_token" then
 		body.kind = tostring(data.kind or "")
 
@@ -107,6 +109,11 @@ function P:OnAction(data)
 		end
 
 		if type(resp.progress) == "table" then self:Set(pid, resp.progress) end
+
+		-- купленная/выбитая/проданная фраза: сразу обновить замки в колесе и настройках
+		if (action == "buy_item" or action == "sell_item" or action == "open_chest") and CosmeticsSocial and CosmeticsSocial.SendCatalog then
+			pcall(CosmeticsSocial.SendCatalog, CosmeticsSocial, pid)
+		end
 
 		local out = { ok = 1, action = action }
 		local res = type(resp.result) == "table" and resp.result or {}

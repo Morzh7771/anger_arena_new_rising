@@ -28,6 +28,7 @@ function modifier_creep_bear_big_passive_anticreep_lua:OnAttackLanded(params)
                 local allDamage = params.damage * self.damage_creep_pct / 100
                 local info = {
                     victim = target,
+                    ability = self:GetAbility(), -- источник урона (журнал урона и сайт)
                     attacker = self:GetCaster(),
                     damage = allDamage,
                     damage_type = DAMAGE_TYPE_PHYSICAL,

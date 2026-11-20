@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 LinkLuaModifier('item_mjolnir_modifier', 'items/item_mjolnir', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('item_mjolnir_modifier_tinkerer', 'items/item_mjolnir', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_item_mjolnir_shield', 'items/item_mjolnir', LUA_MODIFIER_MOTION_NONE)
@@ -53,7 +54,8 @@ function item_mjolnir_modifier:OnAttackRecord(keys)
             self.pierce_proc = false
         end
         
-        if RollPseudoRandomPercentage(self:GetAbility():GetSpecialValueFor('chance'),99,self:GetParent()) then
+        -- шанс разряда с действенностью атаки (apply_effectiveness, как chain_chance)
+        if RollPseudoRandomPercentage(AttackPotency:Chance(self:GetAbility():GetSpecialValueFor('chance'), AttackPotency:Get(self:GetParent(), keys)),99,self:GetParent()) then
             self.pierce_proc = true
         end
     end

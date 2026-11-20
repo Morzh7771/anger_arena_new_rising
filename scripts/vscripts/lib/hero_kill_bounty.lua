@@ -229,6 +229,13 @@ function HeroKillBounty:OnEntityKilled(event)
 
 	if not victim or not IsValidEntity(victim) or not victim:IsRealHero() then return end
 	if victim:IsReincarnating() then return end
+	-- только основной герой игрока: солдаты Wukong's Command у Monkey King движок
+	-- считает реальными героями, и каждый их "труп" платил полную награду
+	if victim:IsClone() or victim:IsTempestDouble() then return end
+	if victim:HasModifier("modifier_monkey_king_fur_army_soldier")
+		or victim:HasModifier("modifier_monkey_king_fur_army_soldier_hidden") then return end
+	local victimMain = PlayerResource:GetSelectedHeroEntity(victim:GetPlayerOwnerID())
+	if victimMain and victimMain ~= victim then return end
 	if not killer or not IsValidEntity(killer) then return end
 
 	local killerTeam = killer:GetTeamNumber()

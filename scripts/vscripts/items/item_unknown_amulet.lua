@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 LinkLuaModifier("modifier_item_unknown_amulet_stats", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_unknown_amulet_abilites", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_unknown_amulet_disarmor", "items/item_unknown_amulet.lua", LUA_MODIFIER_MOTION_NONE)
@@ -138,7 +139,8 @@ modifier_item_unknown_amulet_stats = class({
                 modifier:ForceRefresh() 
             else  
                 kv.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_unknown_amulet_disarmor", {duration = self:GetAbility():GetSpecialValueFor("duration")})
-                kv.target:SetModifierStackCount("modifier_item_unknown_amulet_disarmor",kv.attacker,final*polus)
+                -- снижение брони с действенностью атаки (apply_effectiveness)
+                kv.target:SetModifierStackCount("modifier_item_unknown_amulet_disarmor",kv.attacker,final*polus*AttackPotency:Get(kv.attacker, kv))
                end
         end
     end,

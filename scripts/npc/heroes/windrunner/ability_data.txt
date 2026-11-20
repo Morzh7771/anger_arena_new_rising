@@ -1,4 +1,4 @@
-﻿DOTAAbilities
+DOTAAbilities
 {
 	"windrunner_gale_force"
     {
@@ -139,6 +139,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			// урон от всех атрибутов (lib/percent_damage.lua, MagicalDamageFromAll), за каждое попадание
+			"damage_pct"				"70"
 				"powershot_damage"
 				{
 					"value"				"175 275 375 475 575 675 775"
@@ -204,6 +206,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"ability_lua"
 		"ScriptFile"					"heroes/windrunner/windrunner_windrun"
+		// у ability_lua без текстуры в пике и на панели был чёрный квадрат
+		"AbilityTextureName"			"windrunner_windrun"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -228,12 +232,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"universal_evasion"
-			{
-				"value"		"10 12 14 16 18 20 22"
-			}
 			"movespeed_bonus_pct"	"60"		
 			"evasion_pct_tooltip"	"100"
+			// только пока активен Windrun: шанс полностью проигнорировать любой урон (как у Бабочки)
+			"universal_evasion"		"20"
 			"enemy_movespeed_bonus_pct"	
 			{
 				"value"		"0"
@@ -323,13 +325,18 @@
             "attacks_per_second"				"0"
 			"focusfire_damage_reduction"	
 			{
-				"value"						"-24 -20 -16 -12 -8 -4 0"
+				// 2026-11-17: с 1 по 3 уровень урон атак ниже, на 4-м 0, с 5-го - бонус (было -24..0)
+				"value"						"-24 -16 -8 0 8 16 24"
 				"special_bonus_unique_windranger_8"     "+10"
 
 				// "damage" in attribute name but it's a percentage-based effect
                 "CalculateSpellDamageTooltip"   "0"
                 "DamageTypeTooltip" "DAMAGE_TYPE_NONE"
 			}
+			// только для подсказки: дота показывает модуль числа без знака, поэтому две строки
+			// (само значение focusfire_damage_reduction в подсказке спрятано пустой подписью)
+			"damage_reduction_tooltip"		"24 16 8 0 0 0 0"
+			"damage_bonus_tooltip"			"0 0 0 0 8 16 24"
 			"focusfire_fire_on_the_move"	"1"
 			"process_procs"
             {
@@ -348,13 +355,15 @@
             "cooldown_reduction_per_kill"
             {
                 "value"     "0"
-                "special_bonus_unique_windranger_2"     "+15"
+                // убийство под Focus Fire сразу сбрасывает КД ульты (КД 30)
+                "special_bonus_unique_windranger_2"     "+30"
             }
             "bonus_range"
             {
                 "value"             "0"
             }
             "unfocused_cancel_initial_cooldown"     "0.5"
+			"focusfire_attack_effectiveness"				"75"
 		}
 	}
 	"windrunner_focusfire_cancel"

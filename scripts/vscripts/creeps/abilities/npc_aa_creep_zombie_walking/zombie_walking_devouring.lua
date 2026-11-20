@@ -15,6 +15,7 @@ end
 function zombie_walking_devouring:DealDamage()
     local info = {
         victim = self.target,
+        ability = self, -- источник урона (журнал урона и сайт)
         attacker = self:GetCaster(),
         damage = self.damage,
         damage_type = DAMAGE_TYPE_MAGICAL,

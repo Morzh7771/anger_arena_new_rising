@@ -308,8 +308,25 @@ function MadstoneSystem:_LoadTiers()
 
 			local items = {}
 
-			for itemName, _ in pairs(tierData["items"] or {}) do
-				table.insert(items, itemName)
+			-- старый формат: плоский "items"; новый (движок после патча):
+			-- "item_pools" { pool_x { "items" {...} } }. Поддерживаем оба.
+			local seenItem = {}
+
+			local function addItems(list)
+				for itemName, _ in pairs(list or {}) do
+					if not seenItem[itemName] then
+						seenItem[itemName] = true
+						table.insert(items, itemName)
+					end
+				end
+			end
+
+			addItems(tierData["items"])
+
+			for _, poolData in pairs(tierData["item_pools"] or {}) do
+				if type(poolData) == "table" then
+					addItems(poolData["items"])
+				end
 			end
 
 			self.tierItems[tier] = items

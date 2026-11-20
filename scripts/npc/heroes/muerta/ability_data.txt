@@ -207,13 +207,13 @@ DOTAAbilities
 		{
 			"duration"
 			{
-				"value"				"5"
+				"value"				"3"
 				"special_bonus_unique_muerta_pierce_the_veil_duration"				"+2"
 			}
 			"transform_duration"		"0.35"
 			"base_damage_pct"			"100"
 			"modelscale"				"30"
-			"bonus_damage"				"50 75 100 125 150 175 200"
+			"bonus_damage"				"80 95 110 125 140 155 170"
 			"spell_lifesteal"
 			{
 				"value"				"30"
@@ -423,6 +423,9 @@ DOTAAbilities
 				"value"				"-20"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
 			}
+			"AbilityCharges"				"2"
+			"AbilityCooldown"				"0"
+			"AbilityChargeRestoreTime"				"12"
 		}
 	}
 }

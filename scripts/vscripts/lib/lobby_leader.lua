@@ -49,7 +49,7 @@ local ACTION_COOLDOWN = 0.25 -- было 1 с: "Отмена" -> "Начать" 
 local COUNTDOWN_SECONDS = 5   -- лидер успевает нажать "Отмена"
 -- Общий таймер стадии: идёт всегда, кто вышел или не выбрал команду - не останавливает.
 -- По нулю неопределившиеся раскидываются по командам, где есть место, и игра стартует.
-local SETUP_SECONDS = 15
+local SETUP_SECONDS = 15 -- обязательные 15 с после раскидки, "Начать" - 5 с (владелец 2026-11-16)
 -- Раскидка по рейтингу: рейтинг запрашивается ещё на загрузке (lib/match_tracker.lua,
 -- LobbyLookupTick), поэтому обычно раскидываем в первый же тик стадии. Если бэкенд
 -- тормозит - ждём не дольше BALANCE_AT секунд и раскидываем с тем, что есть.
@@ -423,7 +423,15 @@ local function LobbyLeaderTick()
 	end
 
 	if state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
-		LobbyLeader.setup_elapsed = LobbyLeader.setup_elapsed + POLL_INTERVAL
+		-- Время стадии - по настоящим часам, а не "+0.5 за вызов". lib/timers.lua после подвисания
+		-- сервера (загрузка игроков, прекеш на выделенном сервере) догоняет пропущенное -
+		-- вызывает таймер каждый кадр подряд, и "+0.5" за вызов съедало все 15 с за доли
+		-- секунды: в настоящем лобби игра стартовала моментально, в тулзах - нет (2026-11-16).
+		local now = Time()
+
+		if not LobbyLeader.setup_started then LobbyLeader.setup_started = now end
+
+		LobbyLeader.setup_elapsed = now - LobbyLeader.setup_started
 		LobbyLeader.ticks = LobbyLeader.ticks + 1
 		LobbyLeader:Refresh()
 		pcall(LobbyLeader.TimerTick, LobbyLeader)
@@ -711,11 +719,16 @@ end
 
 function LobbyLeader:TryBalance()
 	if self.finished or self.team_locked then return end
+	-- таймер стадии ещё не выставлен движку - рано (см. TimerTick)
+	if self.pushed == nil then return end
 
 	if not self.balanced then
 		if self.setup_elapsed >= BALANCE_AT or self:RatingsKnown() then
 			self.balanced = true
 			self:BalanceByRating()
+
+			-- обязательные SETUP_SECONDS считаем от раскидки, а не от входа в стадию
+			if self.deadline ~= false then self.deadline = self.setup_elapsed + SETUP_SECONDS end
 		end
 
 		return
@@ -740,7 +753,10 @@ function LobbyLeader:TimerTick()
 
 	if self.deadline == nil then self.deadline = SETUP_SECONDS end
 
-	self:TryBalance()
+	-- раскидка - ПОСЛЕ того, как движку выставлен таймер (ниже): иначе при полном лобби
+	-- все сразу оказывались в командах, а своего срока у движка ещё не было - он стартовал
+	-- игру за секунду (2026-11-15)
+	if self.pushed ~= nil then self:TryBalance() end
 
 	-- Таймер ведёт ТОЛЬКО сервер, движку время отдаём лишь когда наш срок поменялся
 	-- (старт стадии, "Начать", "Отмена"). Раньше писали каждые 0.5 с, а ванильные кнопки
@@ -858,6 +874,14 @@ end
 ---------------------------------------------------------------------
 
 -- Таймер на реальном времени: игровое время в стадии выбора команд может не идти
+-- Свой автостарт движка - заведомо позже нашего срока: стадию заканчивает TimerTick
+-- (FinishCustomGameSetup). Без этого при полном лобби (все сразу в командах) движок
+-- запускал игру через секунду, не дав хосту ни перемешать, ни отменить.
+pcall(function()
+	GameRules:SetCustomGameSetupAutoLaunchDelay(SETUP_SECONDS + 30)
+	GameRules:SetCustomGameSetupRemainingTime(SETUP_SECONDS + 30)
+end)
+
 Timers:CreateTimer({
 	endTime = POLL_INTERVAL,
 	useGameTime = false,

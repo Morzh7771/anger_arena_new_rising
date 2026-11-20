@@ -165,6 +165,10 @@ DOTAAbilities
 			"strength_gain_tooltip"		"4.5"
 			"agility_gain_tooltip"		"4.5"
 			"intelligence_gain_tooltip"	"0.5"
+			"bear_attack_leash_range_tooltip"
+			{
+				"dynamic_value"				"true"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -498,7 +502,6 @@ DOTAAbilities
 		"BaseClass"			"lone_druid_spirit_bear_return"
 		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------

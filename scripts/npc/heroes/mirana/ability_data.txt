@@ -174,6 +174,8 @@ DOTAAbilities
                 "value"         "20"
                 "special_bonus_unique_mirana_5"     "+20"
             }
+        	"max_attack_speed_increase"				"70 110 150 190 230 270 310"
+        	"max_damage_increase"				"70 110 150 190 230 270 310"
         }
     }
 	"mirana_leap"
@@ -413,6 +415,7 @@ DOTAAbilities
 				"value"				"0"
 				"special_bonus_shard"				"+3"
 			}
+			"bonus_potency"				"20"
 		}
 	}
 	"mirana_nightveil"

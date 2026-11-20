@@ -79,7 +79,7 @@ function modifier_ghost_big_dash:UpdateHorizontalMotion( me, dt )
 					if not self.units[ units[i] ] then
 						self.units[units[i]] = 1
 
-						ApplyDamage({ victim = units[i], attacker = self:GetParent(), damage = self.damage, damage_type = self.damage_type })
+						ApplyDamage({ ability = self:GetAbility(), victim = units[i], attacker = self:GetParent(), damage = self.damage, damage_type = self.damage_type })
 					end
 				end
 			end

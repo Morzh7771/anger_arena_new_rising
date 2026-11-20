@@ -16,15 +16,15 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"300 300 300 300"
+		"AbilityCastRange"				"300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70"
+		"AbilityManaCost"				"40 50 60 70 80 90 100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -116,11 +116,11 @@ DOTAAbilities
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"666 666 666 666"
+		"AbilityCastRange"				"666"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -144,6 +144,7 @@ DOTAAbilities
 			"damage_per_second"		
 			{
 				"value"			"20 35 50 65 80 95 105"
+				"special_bonus_unique_doom_11"				"=66"
 			}
 			"bonus_health_regen"				
 			{ 
@@ -151,7 +152,7 @@ DOTAAbilities
 			}
 			"radius"				
 			{
-				"value"			"666 666 666 666 666 666 666"
+				"value"			"666"
 				"affected_by_aoe_increase"	"1"
 			}
 			"bonus_movement_speed_pct"	
@@ -166,6 +167,10 @@ DOTAAbilities
 				"special_bonus_unique_doom_11"				"+1"
 			}
 			"damage_pct"		"30"
+			"damage_per_second_talent_tooltip"
+			{
+				"special_bonus_unique_doom_11"				"=66"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -271,7 +276,7 @@ DOTAAbilities
 			{
 				"value"												"30 45 60 75 90 105 120"
 			}				
-			"deniable_pct"			"25 25 25"
+			"deniable_pct"			"25"
 			"AbilityCooldown"
 			{
 				"value"								"120"

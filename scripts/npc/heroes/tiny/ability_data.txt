@@ -20,7 +20,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18.0 17.0 16.0 15.0 14.0 13.0 12.0"
 
 
 		// Cost
@@ -46,7 +45,11 @@
 				"total_duration"			"1.4"
 				"tick_count"				"5"
 				"stun_duration"				"0.3"
-				"projectile_speed"			"1200"
+				"projectile_speed"
+				{
+					"value"				"1200"
+					"special_bonus_unique_tiny_4"				"+250"
+				}
 				"avalanche_damage"
 				{
 					"value"				"100.0 175.0 250.0 325.0 400.0 475.0 550.0"
@@ -178,7 +181,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"tiny_tree_grab"
 		"MaxLevel"		"7"
-		"HasShardUpgrade"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
@@ -236,7 +238,11 @@
 				"affected_by_aoe_increase"	"1"
 			}
 			"splash_pct"				"40 50 60 70 80 90 100"
-			"bat_increase"			"-0.5"
+			"bat_increase"			"0"
+			"bat_reduction_aa"		// снижение BAT с деревом, только с аганимом; считает modifier_bat
+			{
+				"value"				"0"
+			}
 			"speed_reduction"			"0"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -454,6 +460,9 @@
     //=================================================================================================================
     "tiny_insurmountable"
     {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/tiny/tiny_insurmountable"
+        "AbilityTextureName"            "tiny_insurmountable"
         // General
         //-------------------------------------------------------------------------------------------------------------
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
@@ -468,6 +477,7 @@
         {
             "str_to_slow_resist_pct"            "20"
             "str_to_status_resist_pct"          "10"
+            "max_status_resist"                 "50"
         }
     }
     //=================================================================================================================
@@ -480,14 +490,6 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityValues"
-        {
-            "value"
-            {
-                "value" "8"
-                "ad_linked_abilities" "tiny_avalanche"
-            }
-        }
     }
 
     //=================================================================================================================

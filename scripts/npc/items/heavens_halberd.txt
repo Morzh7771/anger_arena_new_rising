@@ -1,166 +1,170 @@
 "DOTAAbilities"
-{	
-	"item_recipe_heavens_halberd"
-    {
-        "ItemCost"                      "450"   
-        "ItemShopTags"                  ""
-        "ItemRecipe"                    "1"
-        "ItemResult"                    "item_heavens_halberd"
-        "ItemRequirements"
-        {
-        	"01"					"item_talisman_of_evasion;item_splintmail;item_ring_of_health"
-        }
-    }
-	"item_recipe_heavens_halberd_2"
+{
+	//=================================================================================================================
+	// Skypiercer (1-й уровень цепочки, ванильный предмет; массивы - для тултипа уровней)
+	//=================================================================================================================
+	"item_skypiercer"
 	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heavens_halberd_2"
-		"ItemRequirements"
-		{
-			"01"						"item_heavens_halberd;item_heavens_halberd"
-		}
-	}
-	"item_recipe_heavens_halberd_3"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"BaseClass"						"item_recipe_arcane_boots"
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heavens_halberd_3"
-		"ItemRequirements"
-		{
-			"01"						"item_heavens_halberd_2;item_heavens_halberd_2;item_boss_soul"
-		}
-	}
-	"item_heavens_halberd"
-	{
-		"BaseClass"						"item_heavens_halberd"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"ItemBaseLevel"					"1"
-		"AbilitySharedCooldown"			"heavens_halberd"
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18"
-		"AbilityCastRange"				"650"
+		"AbilityCooldown"				"15"
+		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.0"
+		"AbilitySharedCooldown"			"halberd"
+		"AbilityManaCost"				"50"
+		"ItemCost"						"6000"
+		"ItemShopTags"					"regen_health;save;teamfight;tank"
+		"ItemQuality"					"artifact"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
+		"AbilityValues"
+		{
+			"bonus_strength"			"35 70 140"
+			"bonus_armor"				"5 10 20"
+			"bonus_health_regen"		"5 10 20"
+			"slow_resistance"			"25 30 35"
+			"hp_regen_amp"				"20 25 30"
+			"bonus_evasion"				"25 30 35"
+			"disarm_duration"			"3 3.5 4"
+			"close_radius"						"500"
+			"buff_cooldown_acceleration_pct"	"125 150 200"
+		}
+	}
 
+	// Skypiercer: тиры 2 и 3 строятся из предыдущего тира (ваниль item_skypiercer - базовый предмет)
+	//=================================================================================================================
+	// Recipe: Skypiercer 2 (2x Skypiercer)
+	//=================================================================================================================
+	"item_recipe_skypiercer_2"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skypiercer_2"
+		"ItemRequirements"
+		{
+			"01"						"item_skypiercer;item_skypiercer"
+		}
+	}
+
+	//=================================================================================================================
+	// Recipe: Skypiercer 3 (2x Skypiercer 2 + Boss Soul)
+	//=================================================================================================================
+	"item_recipe_skypiercer_3"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skypiercer_3"
+		"ItemRequirements"
+		{
+			"01"						"item_skypiercer_2;item_skypiercer_2;item_boss_soul"
+		}
+	}
+
+	//=================================================================================================================
+	// Skypiercer 2
+	//=================================================================================================================
+	"item_skypiercer_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_skypiercer"
+		"AbilityTextureName"			"skypiercer_2"
+		"FightRecapLevel"				"1"
+		"ItemBaseLevel"					"2"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"50"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-		"ItemCost"						"2600"
-		"ItemShopTags"					"regen_health;block;health_pool;save;teamfight;tank"
+		"ItemCost"						"12000"
+		"ItemShopTags"					"regen_health;save;teamfight;tank"
 		"ItemQuality"					"artifact"
-		"ItemAliases"					"heaven's halberd"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
+		"SuggestLategame"				"1"
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			// у каждого уровня свой предмет, поэтому значения скалярные
-			// (раньше были массивы "6 12 30" и все три брали первое число)
-			"bonus_armor"				"9"
-			"bonus_health_regen"		"6.5"
-			"bonus_evasion"				"25"
-			"disarm_range"				"3.5"
-			"disarm_melee"				"3.5"
+			"bonus_strength"			"35 70 140"
+			"bonus_armor"				"5 10 20"
+			"bonus_health_regen"		"5 10 20"
+			"slow_resistance"			"25 30 35"
+			"hp_regen_amp"				"20 25 30"
+			"bonus_evasion"				"25 30 35"
+
+			"disarm_duration"			"3 3.5 4"
+
+			"close_radius"						"500"
+			"buff_cooldown_acceleration_pct"	"125 150 200"
 		}
 	}
-	"item_heavens_halberd_2"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"FightRecapLevel"				"1"
-		"ItemBaseLevel"					"2"
-		"AbilitySharedCooldown"			"heavens_halberd"
-		"AbilityTextureName"			"heavens_halberd2"
-		"BaseClass"						"item_heavens_halberd"
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18"
-		"AbilityCastRange"				"650"
-		"AbilityCastPoint"				"0.0"
 
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-		"ItemCost"						"3550"
-		"ItemShopTags"					"str;damage;evasion"
-		"ItemQuality"					"artifact"
-		"ItemAliases"					"heaven's halberd"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-    	{
-			// у каждого уровня свой предмет, поэтому значения скалярные
-			// (раньше были массивы "6 12 30" и все три брали первое число)
-			"bonus_armor"				"12"
-			"bonus_health_regen"		"12"
-			"bonus_evasion"				"30"
-			"disarm_range"				"4.5"
-			"disarm_melee"				"4"
-		}
-	}
-	"item_heavens_halberd_3"
+	//=================================================================================================================
+	// Skypiercer 3
+	//=================================================================================================================
+	"item_skypiercer_3"
 	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_skypiercer"
+		"AbilityTextureName"			"skypiercer_3"
 		"FightRecapLevel"				"1"
 		"ItemBaseLevel"					"3"
-		"AbilitySharedCooldown"			"heavens_halberd"
-		"AbilityTextureName"			"heavens_halberd3"
-		"BaseClass"						"item_heavens_halberd"
-    	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18"
-		"AbilityCastRange"				"650"
-		"AbilityCastPoint"				"0.0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"50"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-		"ItemCost"						"3550"
-		"ItemShopTags"					"str;damage;evasion"
+		"ItemCost"						"24000"
+		"ItemShopTags"					"regen_health;save;teamfight;tank"
 		"ItemQuality"					"artifact"
-		"ItemAliases"					"heaven's halberd"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
+		"SuggestLategame"				"1"
+
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-    	{
-			// у каждого уровня свой предмет, поэтому значения скалярные
-			// (раньше были массивы "6 12 30" и все три брали первое число)
-			"bonus_armor"				"15"
-			"bonus_health_regen"		"30"
-			"bonus_evasion"				"35"
-			"disarm_range"				"5.5"
-			"disarm_melee"				"4.5"
+		{
+			"bonus_strength"			"35 70 140"
+			"bonus_armor"				"5 10 20"
+			"bonus_health_regen"		"5 10 20"
+			"slow_resistance"			"25 30 35"
+			"hp_regen_amp"				"20 25 30"
+			"bonus_evasion"				"25 30 35"
+
+			"disarm_duration"			"3 3.5 4"
+
+			"close_radius"						"500"
+			"buff_cooldown_acceleration_pct"	"125 150 200"
 		}
 	}
 }

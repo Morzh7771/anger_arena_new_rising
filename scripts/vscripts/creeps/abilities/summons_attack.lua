@@ -10,5 +10,5 @@ function DamageMagical( keys )
 
 	-- отладочный print убран: горячий путь (каждый удар/лечение)
 
-	ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
+	ApplyDamage({ability = keys.ability, victim = target, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
 end

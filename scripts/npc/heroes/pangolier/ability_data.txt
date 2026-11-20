@@ -61,13 +61,14 @@ DOTAAbilities
             }
 			"strikes"               
             {
-                "value"         "4"             
+                "value"         "4 4 5 5 6 6 7"             
             }
             "procs_onhit_effects"           "1"
 			//"damage_pct"			"30"
 			"slow_duration"				"0.6"
 			"slow_percent"				"100"
 			"damage_penalty"				"25"
+			"potency"				"60"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

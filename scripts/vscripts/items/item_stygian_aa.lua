@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 item_stygian_aa = class({})
 LinkLuaModifier("modifier_item_stygian_aa", "items/item_stygian_aa", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_stygian_aa_disarmor", "items/item_stygian_aa", LUA_MODIFIER_MOTION_NONE)
@@ -20,6 +21,11 @@ function modifier_item_stygian_aa:OnAttackLanded(kv)
     if self:GetParent() ~= kv.attacker then return end 
 
     local disarmor = (kv.target:GetPhysicalArmorValue( false ) + kv.target:GetModifierStackCount("modifier_item_stygian_aa_disarmor",kv.attacker) + kv.target:GetModifierStackCount("modifier_rebels_sword_disarmor",kv.attacker)) * (self:GetAbility():GetSpecialValueFor("disarmor_pct")/100) 
+    -- действенность атаки; слабый удар не перезаписывает сильный стак
+    local potency = AttackPotency:Get(kv.attacker, kv)
+    local own = kv.target:GetModifierStackCount("modifier_item_stygian_aa_disarmor",kv.attacker)
+    disarmor = disarmor * potency
+    if potency < 1 and own > disarmor then disarmor = own end
 
     if kv.target:HasModifier("modifier_item_stygian_aa_disarmor") then 
         local modifier = kv.target:FindModifierByName("modifier_item_stygian_aa_disarmor")

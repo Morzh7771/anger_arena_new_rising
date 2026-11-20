@@ -12,6 +12,7 @@ function npc_aa_creep_wolf_big_bite_lua:OnSpellStart()
 
         local info = {
                 victim = target,
+                ability = self, -- источник урона (журнал урона и сайт)
                 attacker = self:GetCaster(),
                 damage = self.damage,
                 damage_type = DAMAGE_TYPE_PHYSICAL,

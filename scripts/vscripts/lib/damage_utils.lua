@@ -33,12 +33,13 @@ function Util:HealUnitOfCurrentHealth(target, caster, heal_const, heal_pct)
 	Util:_HealUnit(target, caster, heal_const, heal_pct, false)
 end
 
-function Util:DealPercentDamage(victim, attacker, damage_type, damage_const, damage_pct)
-	return Util:_DealDamage(victim, attacker, damage_type, damage_const, damage_pct, false)
+-- ability (необязательно, последним) - источник урона для журнала урона и сайта
+function Util:DealPercentDamage(victim, attacker, damage_type, damage_const, damage_pct, ability)
+	return Util:_DealDamage(victim, attacker, damage_type, damage_const, damage_pct, false, ability)
 end
 
-function Util:DealPercentDamageOfMaxHealth(victim, attacker, damage_type, damage_const, damage_pct)
-	return Util:_DealDamage(victim, attacker, damage_type, damage_const, damage_pct, true)
+function Util:DealPercentDamageOfMaxHealth(victim, attacker, damage_type, damage_const, damage_pct, ability)
+	return Util:_DealDamage(victim, attacker, damage_type, damage_const, damage_pct, true, ability)
 end
 
 function Util:PrintName( keys )
@@ -106,7 +107,8 @@ function Util:GetReallyCooldown(caster, ability)
 end
 
 ------------------------------------- Unsafe functions -------------------------------------
-function Util:DealDamageFromStats(victim, attacker, damage_type, str_damage, agi_damage, int_damage, spell_amp)
+-- ability (необязательно, последним) - источник урона для журнала урона и сайта
+function Util:DealDamageFromStats(victim, attacker, damage_type, str_damage, agi_damage, int_damage, spell_amp, ability)
 	if not victim or not IsValidEntity(victim) then 
 		print("[UTIL] DealDamageFromStats error, <victim> is invalid")
 		return
@@ -139,13 +141,14 @@ function Util:DealDamageFromStats(victim, attacker, damage_type, str_damage, agi
 		attacker 	= attacker,
 		damage 		= damage,
 		damage_type = damage_type,
+		ability 	= ability,
 	}
 	
 	ApplyDamage(damage_table)
 
 end
 
-function Util:_DealDamage(victim, attacker, damage_type, damage_const, damage_pct, from_max_health)
+function Util:_DealDamage(victim, attacker, damage_type, damage_const, damage_pct, from_max_health, ability)
 	if not victim or not IsValidEntity(victim) then 
 		print("[UTIL] _DealDamage error, <victim> is invalid")
 		return
@@ -190,6 +193,7 @@ function Util:_DealDamage(victim, attacker, damage_type, damage_const, damage_pc
 		attacker 	= attacker,
 		damage 		= damage,
 		damage_type = damage_type,
+		ability 	= ability,
 	}
 	ApplyDamage(damage_table)
 

@@ -71,7 +71,7 @@ DOTAAbilities
             {
                 "special_bonus_unique_oracle_7"     "=1"
             }
-			"damage_pct"								"100"
+			"damage_pct"								"150"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -156,7 +156,7 @@ DOTAAbilities
 			"total_heal_tooltip"	"150 250 350 450 550 650 750"
 			"duration"				"10"
 			"tick_rate"				"0.1"
-			"damage_pct"			"65"
+			"damage_pct"			"80"
 			"damage_modifier"
 			{
 				"value"				"1"

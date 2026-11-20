@@ -169,7 +169,11 @@
 			"windwalk_movement_speed"	"25 30 40"
 			"windwalk_fade_time"		"0.3 0.3 0.2"
 			"windwalk_bonus_damage"		"300 450 700"
-			"backstab_duration"			"5 6 7"
+			"backstab_duration"
+			{
+				"value"				"5 6 7"
+				"apply_effectiveness"	"1"
+			}
 			"max_movement_speed"    	"200"
 			"visibility_radius"     	"1025"
 		}
@@ -211,7 +215,11 @@
 			"windwalk_movement_speed"	"25 30 40"
 			"windwalk_fade_time"		"0.3 0.3 0.2"
 			"windwalk_bonus_damage"		"300 450 700"
-			"backstab_duration"			"5 6 7"
+			"backstab_duration"
+			{
+				"value"				"5 6 7"
+				"apply_effectiveness"	"1"
+			}
 			"max_movement_speed"    	"200"
 			"visibility_radius"     	"1025"
 		}
@@ -236,12 +244,32 @@
 			"bonus_all_stats"			"30 70 150"
 			"bonus_health"				"220 500 1000"
 			"bonus_mana"				"220 500 1000"
-			"cold_slow_melee"			"-20 -30 -40"
-			"cold_attack_slow_melee"	"-25 -35 -45"
-			"cold_slow_ranged"			"-40 -50 -60"
-			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_slow_melee"
+			{
+				"value"				"-20 -30 -40"
+				"apply_effectiveness"	"1"
+			}
+			"cold_attack_slow_melee"
+			{
+				"value"				"-25 -35 -45"
+				"apply_effectiveness"	"1"
+			}
+			"cold_slow_ranged"
+			{
+				"value"				"-40 -50 -60"
+				"apply_effectiveness"	"1"
+			}
+			"cold_attack_slow_ranged"
+			{
+				"value"				"-35 -45 -55"
+				"apply_effectiveness"	"1"
+			}
 			"cold_duration"				"3.0"
-			"restoration_reduction" 	"40 45"
+			"restoration_reduction"
+			{
+				"value"				"40 45"
+				"apply_effectiveness"	"1"
+			}
 		}
 	}
 	"item_skadi_2"
@@ -266,12 +294,32 @@
 			"bonus_all_stats"			"30 70 150"
 			"bonus_health"				"220 500 1000"
 			"bonus_mana"				"220 500 1000"
-			"cold_slow_melee"			"-20 -30 -40"
-			"cold_attack_slow_melee"	"-25 -35 -45"
-			"cold_slow_ranged"			"-40 -50 -60"
-			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_slow_melee"
+			{
+				"value"				"-20 -30 -40"
+				"apply_effectiveness"	"1"
+			}
+			"cold_attack_slow_melee"
+			{
+				"value"				"-25 -35 -45"
+				"apply_effectiveness"	"1"
+			}
+			"cold_slow_ranged"
+			{
+				"value"				"-40 -50 -60"
+				"apply_effectiveness"	"1"
+			}
+			"cold_attack_slow_ranged"
+			{
+				"value"				"-35 -45 -55"
+				"apply_effectiveness"	"1"
+			}
 			"cold_duration"				"3.0"
-			"restoration_reduction"				"40 45"
+			"restoration_reduction"
+			{
+				"value"				"40 45"
+				"apply_effectiveness"	"1"
+			}
 		}
 	}
 	"item_dark_edge"
@@ -315,16 +363,40 @@
 			"windwalk_fade_time"		"0.3 0.3 0.2"
 			"windwalk_bonus_damage"		"300 450 700"
 
-			"backstab_duration"			"5 6 7"
+			"backstab_duration"
+			{
+				"value"				"5 6 7"
+				"apply_effectiveness"	"1"
+			}
 			"max_movement_speed"    	"200"
 			"visibility_radius"     	"1025"
 
-			"cold_slow_melee"			"-20 -30 -40"
-			"cold_attack_slow_melee"	"-25 -35 -45"
-			"cold_slow_ranged"			"-40 -50 -60"
-			"cold_attack_slow_ranged"	"-35 -45 -55"
+			"cold_slow_melee"
+			{
+				"value"				"-20 -30 -40"
+				"apply_effectiveness"	"1"
+			}
+			"cold_attack_slow_melee"
+			{
+				"value"				"-25 -35 -45"
+				"apply_effectiveness"	"1"
+			}
+			"cold_slow_ranged"
+			{
+				"value"				"-40 -50 -60"
+				"apply_effectiveness"	"1"
+			}
+			"cold_attack_slow_ranged"
+			{
+				"value"				"-35 -45 -55"
+				"apply_effectiveness"	"1"
+			}
 			"cold_duration"				"3.0"
-			"heal_reduction"			"30 40 50"
+			"heal_reduction"
+			{
+				"value"				"30 40 50"
+				"apply_effectiveness"	"1"
+			}
 		}
     }
 }

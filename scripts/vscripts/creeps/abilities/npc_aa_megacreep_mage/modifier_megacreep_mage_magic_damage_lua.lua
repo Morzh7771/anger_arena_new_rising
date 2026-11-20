@@ -34,6 +34,7 @@ function modifier_megacreep_mage_magic_damage_lua:OnAttackLanded(params)
         if target ~= nil and RollPercentage(self.chance) then
             local info = {
                 victim = target,
+                ability = self:GetAbility(), -- источник урона (журнал урона и сайт)
                 attacker = self:GetCaster(),
                 damage = self.bonus_magic_damage,
                 damage_type = DAMAGE_TYPE_MAGICAL,

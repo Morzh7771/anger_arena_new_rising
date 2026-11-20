@@ -138,21 +138,8 @@ function modifier_item_urn_aa_passive:OnCreated()
 	end
 end
 
--- убрали последнюю урну/вессел - убираем и стаки. Проверяем через кадр:
--- при сборке урна -> вессел старый предмет исчезает раньше, чем появится новый
-function modifier_item_urn_aa_passive:OnDestroy()
-	if not IsServer() then return end
-
-	local parent = self:GetParent()
-
-	Timers:CreateTimer(FrameTime(), function()
-		if not parent or parent:IsNull() then return nil end
-		if not parent:HasModifier("modifier_item_urn_aa_passive") then
-			parent:RemoveModifierByName("modifier_urn_soul_stacks")
-		end
-		return nil
-	end)
-end
+-- стаки Soul Keeper общие для урны и всех весселов и не пропадают никогда:
+-- ни при смерти, ни при продаже/разборке. Без урны в инвентаре модификатор просто скрыт.
 
 function modifier_item_urn_aa_passive:OnRefresh()
 	local ability = self:GetAbility()

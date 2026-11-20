@@ -12,7 +12,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 ADDON = os.path.join(ROOT, 'scripts', 'npc', 'heroes')
-PATCH = r"C:\Users\admin\Desktop\dota 2 patch\scripts\npc\heroes"
+PATCH = r"C:\Users\admin\Desktop\Dota 2 7.42\scripts\npc\heroes"
 
 
 # ---------------------------------------------------------------- KV parsing
@@ -101,7 +101,15 @@ def parse(text):
             root[key] = toks[pos][1]; pos += 1
     for wrap in ('DOTAAbilities', 'DOTAHeroes'):
         if isinstance(root.get(wrap), dict):
-            return root[wrap], dup
+            root = root[wrap]
+            break
+    # Patch 7.4x: a hero file nests its abilities in npc_dota_hero_X/AbilityDefinitions.
+    # Lift them to the top level so every tool sees them as before.
+    for _k, _v in list(root.items()):
+        if isinstance(_v, dict) and isinstance(_v.get('AbilityDefinitions'), dict):
+            for an, ab in _v['AbilityDefinitions'].items():
+                if isinstance(ab, dict) and an not in root:
+                    root[an] = ab
     return root, dup
 
 

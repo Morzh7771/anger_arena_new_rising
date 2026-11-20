@@ -62,6 +62,8 @@ DOTAAbilities
 				"placement_radius"			"350"
 				"mres_reduction"			"12.5 15 17.5 20 22.5 25 27.5"
 				"burn_duration"				"3"
+			"AbilityCharges"				"3"
+			"tooltip_health_pips"				"1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -305,6 +307,16 @@ DOTAAbilities
 				"acceleration"			"2000"
 				"pre_chase_time"		"0.1"
 				"max_chase_time"		"4"
+			"stun_on_explosion"
+			{
+				"value"				"0"
+				"special_bonus_unique_techies_4"				"=1"
+			}
+			"explosion_stun_duration"
+			{
+				"value"				"0"
+				"special_bonus_unique_techies_4"				"+1.5"
+			}
 		}
 	}
 	"techies_reactive_tazer"
@@ -474,7 +486,7 @@ DOTAAbilities
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
         "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
         
         "AbilityCastRange"              "0"
@@ -731,6 +743,10 @@ DOTAAbilities
 			{
 				"value"						"0"
 				"special_bonus_shard"		"450"
+			}
+			"tooltip_health_pips"
+			{
+				"special_bonus_shard"				"3"
 			}
 		}
 	}

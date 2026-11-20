@@ -25,8 +25,8 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 HEROES = os.path.join(ROOT, 'scripts', 'npc', 'heroes')
-PATCH_HEROES = r"C:\Users\admin\Desktop\dota 2 patch\scripts\npc\npc_heroes.txt"
-PATCH_ABILS = r"C:\Users\admin\Desktop\dota 2 patch\scripts\npc\heroes"
+PATCH_HEROES = r"C:\Users\admin\Desktop\Dota 2 7.42\scripts\npc\npc_heroes.txt"
+PATCH_ABILS = r"C:\Users\admin\Desktop\Dota 2 7.42\scripts\npc\heroes"
 
 _v = {'__file__': os.path.join(HERE, 'validate.py')}
 _src = open(os.path.join(HERE, 'validate.py'), encoding='utf-8').read().split('def check_hero(')[0]
@@ -38,9 +38,25 @@ SLOT = re.compile(r'^Ability([1-9])$')          # 1..9 only, never talents
 EMPTY = ('generic_hidden', '')
 
 
+def load_patch_heroes(path):
+    """npc_heroes.txt now only #base-includes heroes/npc_dota_hero_*.txt - merge them."""
+    base = os.path.dirname(path)
+    txt = read(path)
+    out = {}
+    files = re.findall(r'#base\s+"([^"]+)"', txt)
+    for f in files:
+        p = os.path.join(base, f.replace('/', os.sep))
+        if os.path.isfile(p):
+            kv, _ = parse(read(p))
+            out.update({k: v for k, v in kv.items() if isinstance(v, dict)})
+    if not files:
+        out, _ = parse(txt)
+    return out, None
+
+
 def main():
     dry = '--dry-run' in sys.argv
-    pheroes, _ = parse(read(PATCH_HEROES))
+    pheroes, _ = load_patch_heroes(PATCH_HEROES)
 
     filled = 0
     for hero in sorted(os.listdir(HEROES)):

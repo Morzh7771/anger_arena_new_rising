@@ -3,7 +3,7 @@
 	"item_recipe_abyssal_blade"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"1675"	
+		"ItemCost"						"1275"	
 		"ItemShopTags"					""
 
 		
@@ -13,7 +13,7 @@
 		"ItemResult"					"item_abyssal_blade"
 		"ItemRequirements"
 		{
-			"01"						"item_basher;item_sange"
+			"01"						"item_basher;item_dragon_lance"
 		}
 	}
 	"item_recipe_abyssal_blade_2"
@@ -66,15 +66,23 @@
 		"AbilityValues"
 		{
 			"bonus_damage"			"30 100"
-			"hp_regen_amp"          "20 35"
-			"slow_resistance"       "20 45"
 			"bonus_strength"		"20 60"
-			"bash_chance_melee"		"20 25"
-			"bash_chance_ranged"	"10 15"
+			"bash_chance_melee"
+			{
+				"value"				"20 25"
+				"apply_effectiveness"	"1"
+			}
+			"bash_chance_ranged"
+			{
+				"value"				"10 15"
+				"apply_effectiveness"	"1"
+			}
 			"bash_duration"			"1.2 1.5"
 			"bash_cooldown"			"3 3"
 			"bonus_chance_damage"	"120 250"
 			"stun_duration"			"1.6 2"
+			"base_attack_range_melee"			"25 75"
+			"bonus_agility"			"15 30"
 		}
 	}
 	"item_abyssal_blade_2"
@@ -113,15 +121,23 @@
 		"AbilityValues"
     	{
         	"bonus_damage"			"30 100"
-        	"hp_regen_amp"          "20 35"
-        	"slow_resistance"       "20 45"
 			"bonus_strength"		"20 60"
-			"bash_chance_melee"		"20 25"
-			"bash_chance_ranged"	"10 15"
+			"bash_chance_melee"
+			{
+				"value"				"20 25"
+				"apply_effectiveness"	"1"
+			}
+			"bash_chance_ranged"
+			{
+				"value"				"10 15"
+				"apply_effectiveness"	"1"
+			}
 			"bash_duration"			"1.2 1.5"
 			"bash_cooldown"			"3 3"
 			"bonus_chance_damage"	"120 250"
 			"stun_duration"			"1.6 2"
+        	"base_attack_range_melee"			"25 75"
+        	"bonus_agility"			"15 30"
     	}
 	}
 }

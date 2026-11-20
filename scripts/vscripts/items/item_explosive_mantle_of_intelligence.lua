@@ -173,6 +173,7 @@ function modifier_explosive_mantle_of_intelligence_active_channel:OnIntervalThin
 	    for _, enemy in pairs(enemies) do
             ApplyDamage({
                 victim = enemy,
+                ability = self:GetAbility(), -- источник урона (журнал урона и сайт)
                 attacker = caster,
                 damage_type = DAMAGE_TYPE_MAGICAL ,
                 damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
@@ -181,6 +182,7 @@ function modifier_explosive_mantle_of_intelligence_active_channel:OnIntervalThin
         end
         ApplyDamage({
             victim = caster,
+            ability = self:GetAbility(), -- источник урона (журнал урона и сайт)
             attacker = caster,
             damage_type = DAMAGE_TYPE_MAGICAL ,
             damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
@@ -253,12 +255,19 @@ function modifier_explosive_mantle_of_intelligence_active_finish:OnIntervalThink
         -- Сначала владелец умирает, потом взрыв бьёт врагов: убийства взрывом делает уже
         -- мёртвый герой, и опыта за них он не получает (lib/hero_kill_bounty.lua платит
         -- опыт только живым). Предмет уже списан при нажатии (OnSpellStart).
+        -- способность для источника урона берём ДО смерти: потом модификатор может быть уже снят,
+        -- а предмет списан при нажатии - тогда урон просто без источника, взрыв не ломается
+        local mantleAbility = self:GetAbility()
+
+        if mantleAbility and mantleAbility:IsNull() then mantleAbility = nil end
+
         caster:Kill(nil, caster)
 
         local enemies = FindUnitsInRadius(caster:GetTeamNumber(), explode_pos, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_TEAM_NEUTRALS, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
         for _, enemy in pairs(enemies) do
             ApplyDamage({
                 victim = enemy,
+                ability = mantleAbility, -- источник урона (журнал урона и сайт)
                 attacker = caster,
                 damage_type = DAMAGE_TYPE_MAGICAL ,
                 damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.

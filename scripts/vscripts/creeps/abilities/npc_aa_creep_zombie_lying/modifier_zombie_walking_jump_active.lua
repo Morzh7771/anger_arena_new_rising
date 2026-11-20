@@ -78,6 +78,7 @@ function modifier_zombie_walking_jump_active:OnDestroy()
         if vP - vT <= 160 then
             local info = {
                 victim = self.target,
+                ability = self:GetAbility(), -- источник урона (журнал урона и сайт)
                 attacker = self:GetParent(),
                 damage = self.damage,
                 damage_type = DAMAGE_TYPE_MAGICAL,

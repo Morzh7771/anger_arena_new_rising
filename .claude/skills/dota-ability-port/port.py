@@ -25,7 +25,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 ADDON = os.path.join(ROOT, 'scripts', 'npc', 'heroes')
-PATCH = r"C:\Users\admin\Desktop\dota 2 patch\scripts\npc\heroes"
+PATCH = r"C:\Users\admin\Desktop\Dota 2 7.42\scripts\npc\heroes"
 
 _v = {'__file__': os.path.join(HERE, 'validate.py')}
 _src = open(os.path.join(HERE, 'validate.py'), encoding='utf-8').read().split('def check_hero(')[0]

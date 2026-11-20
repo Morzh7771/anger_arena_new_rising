@@ -68,15 +68,6 @@ function mod:OnCreated(kv)
 	self.damage_per_mana_burn = ability:GetSpecialValueFor("damage_per_mana_burn")
 	self.caster_position = caster:GetAbsOrigin()
 	local duration_full = ability:GetSpecialValueFor("duration_inside")
-
-	if caster:HasTalent("charon_collapse_bonus_radius_tallent") then
-		self.radius = self.radius + caster:GetTalentSpecialValueFor("charon_collapse_bonus_radius_tallent")
-	end
-
-	if caster:HasTalent("charon_collapse_bonus_duration_tallent") then
-		duration_full = duration_full + caster:GetTalentSpecialValueFor("charon_collapse_bonus_duration_tallent")
-	end
-
 	local duration = duration_full
 
 	self.timer1 = Timers:CreateTimer( 0.1, function()

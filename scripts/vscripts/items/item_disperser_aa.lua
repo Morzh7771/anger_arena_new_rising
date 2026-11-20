@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 LinkLuaModifier("modifier_item_disperser_aa", "items/item_disperser_aa", LUA_MODIFIER_MOTION_NONE)
 
 item_disperser_aa_1 = class({
@@ -64,6 +65,15 @@ function modifier_item_disperser_aa:OnAttackLanded(params)
 			local mana_burn_illusion = self:GetAbility():GetSpecialValueFor("ilusion_mana_burn")
             local mana_burn_pct = params.target:GetMaxMana() * self:GetAbility():GetSpecialValueFor("mana_burn_pct") / 100
             local mana_burn = self:GetAbility():GetSpecialValueFor("mana_burn") + mana_burn_pct
+            -- сжигание маны с действенностью атаки (apply_effectiveness, как feedback_mana_burn).
+            -- У иллюзий своя база ilusion_mana_burn, она тоже умножается на потенцию
+            -- (Focus Fire, Backstab и т.п.), но без двойного учёта действенности иллюзии.
+            local potency = AttackPotency:Get(self:GetParent(), params)
+            if self:GetParent():IsIllusion() then
+                potency = potency * 100 / AttackPotency:IllusionPct(self:GetParent())
+            end
+            mana_burn = mana_burn * potency
+            mana_burn_illusion = mana_burn_illusion * potency
 			local damageTable = { 
                 attacker = self:GetParent(),
                 victim = params.target,

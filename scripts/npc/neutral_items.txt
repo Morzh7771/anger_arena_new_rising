@@ -42,51 +42,131 @@
 			"craft_cost"			"6"
 			"xp_bonus"				"0"
 
-			"items"
+			// Каждый предмет - свой пул с options 1: вкладка "Нейтральные" в шопе
+			// показывает по options из каждого пула, так видны ВСЕ предметы разряда.
+			// Что предложить при крафте, решает madstone_system.lua (trinket_options).
+			"item_pools"
 			{
-				"item_occult_bracelet"				"1"
-				"item_kobold_cup"					"1"
-				"item_chipped_vest"					"1"
-				"item_polliwog_charm"			  	"1"
-				"item_duelist_gloves"				"1"
-				"item_weighted_dice"				"1"
-				"item_ash_legion_shield"			"1"
-				"item_dagger_of_ristul"				"1"
-				"item_stonefeather_satchel"			"1"
-				"item_possessed_mask"				"1"
-				"item_foragers_kit"					"1"
+				"pool_foragers_kit"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_foragers_kit"		"1"
+					}
+				}
+				"pool_ash_legion_shield"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_ash_legion_shield"		"1"
+					}
+				}
+				"pool_occult_bracelet"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_occult_bracelet"		"1"
+					}
+				}
+				"pool_kobold_cup"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_kobold_cup"		"1"
+					}
+				}
+				"pool_chipped_vest"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_chipped_vest"		"1"
+					}
+				}
+				"pool_polliwog_charm"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_polliwog_charm"		"1"
+					}
+				}
+				"pool_duelist_gloves"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_duelist_gloves"		"1"
+					}
+				}
+				"pool_weighted_dice"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_weighted_dice"		"1"
+					}
+				}
+				"pool_dagger_of_ristul"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_dagger_of_ristul"		"1"
+					}
+				}
+				"pool_stonefeather_satchel"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_stonefeather_satchel"		"1"
+					}
+				}
+				"pool_possessed_mask"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_possessed_mask"		"1"
+					}
+				}
 			}
 
 			"enhancements"
 			{
 				"global"
 				{
-					"item_enhancement_quickened"	"1"
-					"item_enhancement_vital"		"1"
+					"item_aa_enhancement_quickened"	"1"
+					"item_aa_enhancement_vital"		"1"
 				}
 
 				"strength"
 				{
-					"item_enhancement_brawny"		"1"
-					"item_enhancement_tough"		"1"
+					"item_aa_enhancement_brawny"		"1"
+					"item_aa_enhancement_tough"		"1"
 				}
 
 				"agility"
 				{
-					"item_enhancement_alert"		"1"
-					"item_enhancement_brawny"		"1"
+					"item_aa_enhancement_alert"		"1"
+					"item_aa_enhancement_brawny"		"1"
 				}
 
 				"intelligence"
 				{
-					"item_enhancement_mystical"		"1"
-					"item_enhancement_tough"		"1"
+					"item_aa_enhancement_mystical"		"1"
+					"item_aa_enhancement_tough"		"1"
 				}
 
 				"universal"
 				{
-					"item_enhancement_alert"		"1"
-					"item_enhancement_mystical"		"1"
+					"item_aa_enhancement_alert"		"1"
+					"item_aa_enhancement_mystical"		"1"
 				}
 			}
 		}
@@ -102,53 +182,143 @@
 			"craft_cost"			"10"
 			"xp_bonus"				"0"
 
-			"items"
+			// Каждый предмет - свой пул с options 1: вкладка "Нейтральные" в шопе
+			// показывает по options из каждого пула, так видны ВСЕ предметы разряда.
+			// Что предложить при крафте, решает madstone_system.lua (trinket_options).
+			"item_pools"
 			{
-				"item_essence_ring"					"1"
-				"item_mana_draught"					"1"
-				"item_poor_mans_shield"				"1"
-				"item_searing_signet"				"1"
-				"item_pogo_stick"					"1"
-				"item_defiant_shell"				"1"
-				"item_crippling_crossbow"			"1"
-				"item_medallion_of_courage"			"1"
-				"item_seeds_of_serenity"			"1"
+				"pool_pogo_stick"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_pogo_stick"		"1"
+					}
+				}
+				"pool_seeds_of_serenity"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_seeds_of_serenity"		"1"
+					}
+				}
+				"pool_essence_ring"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_essence_ring"		"1"
+					}
+				}
+				"pool_mana_draught"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_mana_draught"		"1"
+					}
+				}
+				"pool_poor_mans_shield"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_poor_mans_shield"		"1"
+					}
+				}
+				"pool_searing_signet"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_searing_signet"		"1"
+					}
+				}
+				"pool_defiant_shell"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_defiant_shell"		"1"
+					}
+				}
+				"pool_safety_bubble"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_safety_bubble"		"1"
+					}
+				}
+				"pool_imp_claw"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_imp_claw"		"1"
+					}
+				}
+				"pool_crippling_crossbow"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_crippling_crossbow"		"1"
+					}
+				}
+				"pool_medallion_of_courage"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_medallion_of_courage"		"1"
+					}
+				}
+				"pool_brick"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_brick"		"1"
+					}
+				}
 			}
 
 			"enhancements"
 			{
 				"global"
 				{
-					"item_enhancement_quickened"	"2"
-					"item_enhancement_greedy"		"1"
+					"item_aa_enhancement_quickened"	"2"
+					"item_aa_enhancement_greedy"		"1"
 				}
 
 				"strength"
 				{
-					"item_enhancement_brawny"		"2"
-					"item_enhancement_tough"		"2"
-					"item_enhancement_crude"		"1"
+					"item_aa_enhancement_brawny"		"2"
+					"item_aa_enhancement_tough"		"2"
+					"item_aa_enhancement_crude"		"1"
 				}
 
 				"agility"
 				{
-					"item_enhancement_alert"		"2"
-					"item_enhancement_brawny"		"2"
-					"item_enhancement_nimble"		"1"
+					"item_aa_enhancement_alert"		"2"
+					"item_aa_enhancement_brawny"		"2"
+					"item_aa_enhancement_nimble"		"1"
 				}
 
 				"intelligence"
 				{
-					"item_enhancement_mystical"		"2"
-					"item_enhancement_tough"		"2"
-					"item_enhancement_keen_eyed"	"1"
+					"item_aa_enhancement_mystical"		"2"
+					"item_aa_enhancement_tough"		"2"
+					"item_aa_enhancement_keen_eyed"	"1"
 				}
 
 				"universal"
 				{
-					"item_enhancement_alert"		"2"
-					"item_enhancement_mystical"		"2"
-					"item_enhancement_titanic"		"1"
+					"item_aa_enhancement_alert"		"2"
+					"item_aa_enhancement_mystical"		"2"
+					"item_aa_enhancement_titanic"		"1"
 				}
 			}
 		}
@@ -164,53 +334,127 @@
 			"craft_cost"			"10"
 			"xp_bonus"				"0"
 
-			"items"
+			// Каждый предмет - свой пул с options 1: вкладка "Нейтральные" в шопе
+			// показывает по options из каждого пула, так видны ВСЕ предметы разряда.
+			// Что предложить при крафте, решает madstone_system.lua (trinket_options).
+			"item_pools"
 			{
-				"item_serrated_shiv"				"1"
-				"item_gunpowder_gauntlets"			"1"
-				"item_jidi_pollen_bag"				"1"
-				"item_psychic_headband"				"1"
-				"item_unrelenting_eye"				"1"
-				"item_cloak_of_flames"				"1"
-				"item_spellslinger"					"1"
-				"item_stormcrafter"					"1"
-				"item_partisans_brand"				"1"
+				"pool_gunpowder_gauntlets"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_gunpowder_gauntlets"		"1"
+					}
+				}
+				"pool_psychic_headband"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_psychic_headband"		"1"
+					}
+				}
+				"pool_jidi_pollen_bag"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_jidi_pollen_bag"		"1"
+					}
+				}
+				"pool_unrelenting_eye"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_unrelenting_eye"		"1"
+					}
+				}
+				"pool_cloak_of_flames"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_cloak_of_flames"		"1"
+					}
+				}
+				"pool_partisans_brand"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_partisans_brand"		"1"
+					}
+				}
+				"pool_spellslinger"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_spellslinger"		"1"
+					}
+				}
+				"pool_balmhook"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_balmhook"		"1"
+					}
+				}
+				"pool_ceremonial_robe"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_ceremonial_robe"		"1"
+					}
+				}
+				"pool_stormcrafter"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_stormcrafter"		"1"
+					}
+				}
 			}
 
 			"enhancements"
 			{
 				"global"
 				{
-					"item_enhancement_quickened"	"3"
-					"item_enhancement_greedy"		"2"
+					"item_aa_enhancement_quickened"	"3"
+					"item_aa_enhancement_greedy"		"2"
 				}
 
 				"strength"
 				{
-					"item_enhancement_brawny"		"3"
-					"item_enhancement_tough"		"3"
-					"item_enhancement_crude"		"2"
+					"item_aa_enhancement_brawny"		"3"
+					"item_aa_enhancement_tough"		"3"
+					"item_aa_enhancement_crude"		"2"
 				}
 
 				"agility"
 				{
-					"item_enhancement_alert"		"3"
-					"item_enhancement_brawny"		"3"
-					"item_enhancement_nimble"		"2"
+					"item_aa_enhancement_alert"		"3"
+					"item_aa_enhancement_brawny"		"3"
+					"item_aa_enhancement_nimble"		"2"
 				}
 
 				"intelligence"
 				{
-					"item_enhancement_mystical"		"3"
-					"item_enhancement_tough"		"3"
-					"item_enhancement_keen_eyed"	"2"
+					"item_aa_enhancement_mystical"		"3"
+					"item_aa_enhancement_tough"		"3"
+					"item_aa_enhancement_keen_eyed"	"2"
 				}
 
 				"universal"
 				{
-					"item_enhancement_alert"		"3"
-					"item_enhancement_mystical"		"3"
-					"item_enhancement_titanic"		"2"
+					"item_aa_enhancement_alert"		"3"
+					"item_aa_enhancement_mystical"		"3"
+					"item_aa_enhancement_titanic"		"2"
 				}
 			}
 		}
@@ -226,58 +470,149 @@
 			"craft_cost"			"10"
 			"xp_bonus"				"0"
 
-			"items"
+			// Каждый предмет - свой пул с options 1: вкладка "Нейтральные" в шопе
+			// показывает по options из каждого пула, так видны ВСЕ предметы разряда.
+			// Что предложить при крафте, решает madstone_system.lua (trinket_options).
+			"item_pools"
 			{
-				"item_giant_maul"					"1"
-				"item_rattlecage"					"1"
-				"item_idol_of_screeauk"				"1"
-				"item_flayers_bota"					"1"
-				"item_metamorphic_mandible"			"1"
-				"item_dandelion_amulet"				"1"
-				"item_prophets_pendulum"			"1"
-				"item_conjurers_catalyst"			"1"
+				"pool_metamorphic_mandible"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_metamorphic_mandible"		"1"
+					}
+				}
+				"pool_dandelion_amulet"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_dandelion_amulet"		"1"
+					}
+				}
+				"pool_idol_of_screeauk"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_idol_of_screeauk"		"1"
+					}
+				}
+				"pool_giant_maul"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_giant_maul"		"1"
+					}
+				}
+				"pool_flayers_bota"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_flayers_bota"		"1"
+					}
+				}
+				"pool_spider_legs"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_spider_legs"		"1"
+					}
+				}
+				"pool_dezun_bloodrite"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_dezun_bloodrite"		"1"
+					}
+				}
+				"pool_flicker"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_flicker"		"1"
+					}
+				}
+				"pool_giants_ring"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_giants_ring"		"1"
+					}
+				}
+				"pool_helm_of_the_hivemind"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_helm_of_the_hivemind"		"1"
+					}
+				}
+				"pool_mind_breaker"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_mind_breaker"		"1"
+					}
+				}
+				"pool_rattlecage"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_rattlecage"		"1"
+					}
+				}
 			}
 
 			"enhancements"
 			{
 				"global"
 				{
-					"item_enhancement_quickened"	"4"
-					"item_enhancement_timeless"		"1"
+					"item_aa_enhancement_quickened"	"4"
+					"item_aa_enhancement_timeless"		"1"
 				}
 
 				"strength"
 				{
-					"item_enhancement_brawny"		"4"
-					"item_enhancement_tough"		"4"
-					"item_enhancement_crude"		"3"
+					"item_aa_enhancement_brawny"		"4"
+					"item_aa_enhancement_tough"		"4"
+					"item_aa_enhancement_crude"		"3"
 				}
 
 				"agility"
 				{
-					"item_enhancement_alert"		"4"
-					"item_enhancement_brawny"		"4"
-					"item_enhancement_nimble"		"3"
+					"item_aa_enhancement_alert"		"4"
+					"item_aa_enhancement_brawny"		"4"
+					"item_aa_enhancement_nimble"		"3"
 				}
 
 				"intelligence"
 				{
-					"item_enhancement_mystical"		"4"
-					"item_enhancement_tough"		"4"
-					"item_enhancement_keen_eyed"	"3"
+					"item_aa_enhancement_mystical"		"4"
+					"item_aa_enhancement_tough"		"4"
+					"item_aa_enhancement_keen_eyed"	"3"
 				}
 
 				"universal"
 				{
-					"item_enhancement_alert"		"4"
-					"item_enhancement_mystical"		"4"
-					"item_enhancement_titanic"		"3"
+					"item_aa_enhancement_alert"		"4"
+					"item_aa_enhancement_mystical"		"4"
+					"item_aa_enhancement_titanic"		"3"
 				}
 			}
 		}
 
 		// -------------------------------------------------------------
-		// ТИР 5 - открывается после 5-й дуэли
+		// ТИР 5 - открывается после 5-й дуэли. Самые сильные предметы
 		// -------------------------------------------------------------
 		"5"
 		{
@@ -288,48 +623,145 @@
 			"recraft_cost"			"10"
 			"xp_bonus"				"0"
 
-			"items"
+			// Каждый предмет - свой пул с options 1: вкладка "Нейтральные" в шопе
+			// показывает по options из каждого пула, так видны ВСЕ предметы разряда.
+			// Что предложить при крафте, решает madstone_system.lua (trinket_options).
+			"item_pools"
 			{
-				"item_desolator_2"					"1"
-				"item_fallen_sky"					"1"
-				"item_demonicon"					"1"
-				"item_minotaur_horn"				"1"
-				"item_spider_legs"					"1"
-				"item_riftshadow_prism"				"1"
-				"item_dezun_bloodrite"				"1"
-				"item_divine_regalia"				"1"
-				"item_harmonizer"					"1"
-				"item_heavy_blade"					"1"
+				"pool_conjurers_catalyst"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_conjurers_catalyst"		"1"
+					}
+				}
+				"pool_desolator_2"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_desolator_2"		"1"
+					}
+				}
+				"pool_demonicon"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_demonicon"		"1"
+					}
+				}
+				"pool_divine_regalia"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_divine_regalia"		"1"
+					}
+				}
+				"pool_fallen_sky"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_fallen_sky"		"1"
+					}
+				}
+				"pool_riftshadow_prism"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_riftshadow_prism"		"1"
+					}
+				}
+				"pool_prophets_pendulum"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_prophets_pendulum"		"1"
+					}
+				}
+				"pool_revenants_brooch"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_revenants_brooch"		"1"
+					}
+				}
+				"pool_serrated_shiv"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_serrated_shiv"		"1"
+					}
+				}
+				"pool_harmonizer"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_harmonizer"		"1"
+					}
+				}
+				"pool_vile_phial"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_vile_phial"		"1"
+					}
+				}
+				"pool_minotaur_horn"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_minotaur_horn"		"1"
+					}
+				}
+				"pool_heavy_blade"
+				{
+					"options"		"1"
+					"items"
+					{
+						"item_heavy_blade"		"1"
+					}
+				}
 			}
 
 			"enhancements"
 			{
 				"global"
 				{
-					"item_enhancement_timeless"		"2"
-					"item_enhancement_evolved"		"1"
-					"item_enhancement_fleetfooted"	"1"
-					"item_enhancement_vampiric"		"1"
+					"item_aa_enhancement_timeless"		"2"
+					"item_aa_enhancement_evolved"		"1"
+					"item_aa_enhancement_fleetfooted"	"1"
+					"item_aa_enhancement_vampiric"		"1"
 				}
 
 				"strength"
 				{
-					"item_enhancement_hulking"		"1"
+					"item_aa_enhancement_hulking"		"1"
 				}
 
 				"agility"
 				{
-					"item_enhancement_audacious"	"1"
+					"item_aa_enhancement_audacious"	"1"
 				}
 
 				"intelligence"
 				{
-					"item_enhancement_feverish"		"1"
+					"item_aa_enhancement_feverish"		"1"
 				}
 
 				"universal"
 				{
-					"item_enhancement_manic"		"1"
+					"item_aa_enhancement_manic"		"1"
 				}
 			}
 		}

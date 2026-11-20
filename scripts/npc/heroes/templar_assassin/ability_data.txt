@@ -210,7 +210,7 @@ DOTAAbilities
 					"special_bonus_shard"		"+4"
 					"special_bonus_unique_templar_assassin_6"		"+3"
 				}
-				"trap_fade_time"			"2.0 2.0 2.0 2.0 2.0 2.0 2.0"
+				"trap_fade_time"			"2.0"
 				"movement_speed_min"            
                 {
                     "value"     "20"
@@ -246,6 +246,7 @@ DOTAAbilities
 					"special_bonus_scepter"						"+125"
 					"affected_by_aoe_increase"	"1"
 				}
+			"trap_health"				"2"
 		}
 	}
 	"templar_assassin_trap"

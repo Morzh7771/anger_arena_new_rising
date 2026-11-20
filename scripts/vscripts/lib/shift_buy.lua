@@ -131,13 +131,26 @@ function ShiftBuy:_OnShiftState(event)
 	local playerId = event and event.PlayerID
 	if playerId == nil then return end
 
-	self._shift[playerId] = tonumber(event.down) == 1
+	local down = tonumber(event.down) == 1
+
+	-- ВРЕМЕННАЯ диагностика (2026-11-16, книги с Shift перестали применяться) - убрать после проверки в игре.
+	-- Только смена состояния: клиент повторяет его раз в 2 с.
+	if self._shift[playerId] ~= down then
+		print(string.format("[AA.shift] сервер получил pid=%s shift=%s", tostring(playerId), tostring(down)))
+	end
+
+	self._shift[playerId] = down
 end
 
 function ShiftBuy:_OnPurchased(event)
 	local playerId = event and event.PlayerID
 	local itemName = event and event.itemname
 	local tome = itemName and self:_GetTomes()[itemName]
+
+	-- ВРЕМЕННАЯ диагностика (2026-11-16, книги с Shift перестали применяться) - убрать после проверки в игре
+	if tome then
+		print(string.format("[AA.shift] покупка %s pid=%s shift=%s", tostring(itemName), tostring(playerId), tostring(self._shift[playerId])))
+	end
 
 	if playerId == nil or not tome or not self._shift[playerId] then return end
 
@@ -152,12 +165,21 @@ function ShiftBuy:_UseBought(playerId, itemName, tome)
 	if not hero or hero:IsNull() or not hero:IsAlive() then return end
 
 	local item = self:_FindBought(hero, itemName)
-	if not item then return end
+	if not item then
+		-- ВРЕМЕННАЯ диагностика (2026-11-16) - убрать после проверки в игре
+		print("[AA.shift] купленная книга не найдена у героя: " .. tostring(itemName))
+		return
+	end
 
 	-- не вышло - книга остаётся у героя, её можно нажать руками
 	if not self:_Apply(hero, itemName, tome, item) then return end
 
-	-- то же, что SpendCharge в KV: минус заряд, последний - вместе с предметом
+	-- ВРЕМЕННАЯ диагностика (2026-11-16) - убрать после проверки в игре
+	print("[AA.shift] книга применена сразу: " .. tostring(itemName) .. " pid=" .. tostring(playerId))
+
+	-- То же, что SpendCharge в KV: минус заряд, последний - вместе с предметом.
+	-- Функции tome.lua съедают стак целиком и оставляют один заряд, так что
+	-- обычно предмет уходит весь.
 	local charges = item:GetCurrentCharges()
 
 	if charges > 1 then
@@ -168,9 +190,9 @@ function ShiftBuy:_UseBought(playerId, itemName, tome)
 end
 
 -- Купленная книга лежит в инвентаре (у лавки) или в тайнике (вдали от неё).
--- Если такие книги у героя уже были, покупка легла к ним в стак, и какой из
--- стаков уменьшить - без разницы: книг останется столько же, сколько было до
--- покупки. Книги, купленные союзником, не трогаем.
+-- Если такие книги у героя уже были, покупка легла к ним в стак - он
+-- применится весь, как при нажатии руками (tome.lua съедает стак целиком).
+-- Книги, купленные союзником, не трогаем.
 function ShiftBuy:_FindBought(hero, itemName)
 	for slot = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
 		local item = hero:GetItemInSlot(slot)

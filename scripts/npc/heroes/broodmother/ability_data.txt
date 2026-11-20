@@ -60,6 +60,12 @@ DOTAAbilities
 					"value"		"4"
 				}
 				"movement_speed" "25 30 35 40 45 50 55"
+			"tooltip_spiderling_damage"
+			{
+				"value"				"18.5 24.5 30.5 36.5 42.5 48.5 54.5"
+				"CalculateSpellDamageTooltip"				"0"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

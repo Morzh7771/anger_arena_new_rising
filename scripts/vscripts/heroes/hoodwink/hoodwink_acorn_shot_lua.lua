@@ -3,6 +3,7 @@ LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua", "heroes/hoodwink/hoodwink_a
 LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua_thinker", "heroes/hoodwink/hoodwink_acorn_shot_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua_debuff", "heroes/hoodwink/hoodwink_acorn_shot_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua_tree_target", "heroes/hoodwink/hoodwink_acorn_shot_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_hoodwink_acorn_shot_lua_proc", "heroes/hoodwink/hoodwink_acorn_shot_lua", LUA_MODIFIER_MOTION_NONE )
 
 -- Hardcoded as it has no kv value
 local TREE_DURATION = 20
@@ -18,6 +19,29 @@ function hoodwink_acorn_shot_lua:Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_slow.vpcf", context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree.vpcf", context )
 	PrecacheResource( "particle", "particles/tree_fx/tree_simple_explosion.vpcf", context )
+end
+
+function hoodwink_acorn_shot_lua:GetIntrinsicModifierName()
+	return "modifier_hoodwink_acorn_shot_lua_proc"
+end
+
+--------------------------------------------------------------------------------
+-- Талант: жёлудь при атаке. Летит в цель атаки, отскоков - proc_bounce_pct%
+-- от обычного, без дерева/Линки, без траты маны и КД.
+function hoodwink_acorn_shot_lua:LaunchProcAcorn( target )
+	local caster = self:GetCaster()
+	local bounces = math.floor( self:GetSpecialValueFor( "bounce_count" ) * self:GetSpecialValueFor( "proc_bounce_pct" ) / 100 )
+
+	local thinker = CreateModifierThinker(
+		caster, self, "modifier_hoodwink_acorn_shot_lua_thinker", { bounces = bounces, proc = 1 },
+		caster:GetOrigin(), caster:GetTeamNumber(), false
+	)
+	local mod = thinker:FindModifierByName( "modifier_hoodwink_acorn_shot_lua_thinker" )
+	if not mod then return end
+	mod.source = caster
+	mod.target = target
+
+	EmitSoundOn( "Hero_Hoodwink.AcornShot.Cast", caster )
 end
 
 --------------------------------------------------------------------------------
@@ -68,7 +92,7 @@ function hoodwink_acorn_shot_lua:OnProjectileHit_ExtraData( target, location, Ex
 	end
 
 	-- only on first shot, if target dodges or no target, create tree
-	if ExtraData.first==1 then
+	if ExtraData.first==1 and ExtraData.proc~=1 then
 		if self:GetAutoCastState() or not target or target==thinker then
 			mod.last_tree = self:CreateTree( location )
 			mod.target = thinker
@@ -88,7 +112,9 @@ function hoodwink_acorn_shot_lua:OnProjectileHit_ExtraData( target, location, Ex
 
 	-- attack enemy
 	local bonus = caster:AddNewModifier( caster, self, "modifier_hoodwink_acorn_shot_lua", {} )
+	self.acorn_attacking = true
 	caster:PerformAttack( target, true, true, true, true, false, false, true )
+	self.acorn_attacking = false
 	if bonus and not bonus:IsNull() then bonus:Destroy() end
 
 	-- debuff
@@ -297,7 +323,8 @@ function modifier_hoodwink_acorn_shot_lua_thinker:OnCreated( kv )
 	self.ability = self:GetAbility()
 
 	self.projectile_speed = self.ability:GetSpecialValueFor( "projectile_speed" )
-	self.bounces = self.ability:GetSpecialValueFor( "bounce_count" )+1
+	self.bounces = ( kv.bounces and tonumber( kv.bounces ) or self.ability:GetSpecialValueFor( "bounce_count" ) )+1
+	self.proc = kv.proc and tonumber( kv.proc ) == 1 and 1 or 0
 	self.delay = self.ability:GetSpecialValueFor( "bounce_delay" )
 	self.range = self.ability:GetSpecialValueFor( "bounce_range" )
 	self.bounce_speed = self.ability:GetSpecialValueFor( "bounce_speed" )
@@ -315,7 +342,8 @@ function modifier_hoodwink_acorn_shot_lua_thinker:OnCreated( kv )
 		iVisionRadius = 200,
 		iVisionTeamNumber = self.caster:GetTeamNumber(),
 		ExtraData = {
-			thinker = self.parent:entindex()
+			thinker = self.parent:entindex(),
+			proc = self.proc,
 		}
 	}
 	-- Start bounce in next frame
@@ -407,4 +435,38 @@ end
 -- Helper
 function modifier_hoodwink_acorn_shot_lua_thinker:Bounce()
 	self:StartIntervalThink( self.delay )
+end
+
+--------------------------------------------------------------------------------
+-- Талант special_bonus_unique_hoodwink_acorn_shot_proc: proc_chance% при атаке
+modifier_hoodwink_acorn_shot_lua_proc = class({})
+
+function modifier_hoodwink_acorn_shot_lua_proc:IsHidden() return true end
+function modifier_hoodwink_acorn_shot_lua_proc:IsPurgable() return false end
+function modifier_hoodwink_acorn_shot_lua_proc:RemoveOnDeath() return false end
+
+function modifier_hoodwink_acorn_shot_lua_proc:DeclareFunctions()
+	return { MODIFIER_EVENT_ON_ATTACK }
+end
+
+function modifier_hoodwink_acorn_shot_lua_proc:OnAttack( params )
+	if not IsServer() then return end
+
+	local parent = self:GetParent()
+	local ability = self:GetAbility()
+
+	if params.attacker ~= parent then return end
+	if not ability or ability:IsNull() or ability:GetLevel() < 1 then return end
+	-- атака самого жёлудя не прокает новый
+	if ability.acorn_attacking then return end
+	if not parent:IsRealHero() or parent:PassivesDisabled() then return end
+
+	local target = params.target
+	if not target or target:IsNull() or target:IsBuilding() then return end
+	if target:GetTeamNumber() == parent:GetTeamNumber() then return end
+
+	local chance = ability:GetSpecialValueFor( "proc_chance" )
+	if chance <= 0 or not RollPseudoRandomPercentage( chance, DOTA_PSEUDO_RANDOM_CUSTOM_GAME_1, parent ) then return end
+
+	ability:LaunchProcAcorn( target )
 end

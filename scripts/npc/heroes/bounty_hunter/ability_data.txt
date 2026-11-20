@@ -82,7 +82,7 @@ DOTAAbilities
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"			"bounty_hunter_jinada"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		//"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
 		"AbilitySound"					"Hero_BountyHunter.Jinada"
@@ -93,10 +93,6 @@ DOTAAbilities
 
 		"AbilityCastRange"				"150"
 		"AbilityCastPoint"				"0.0"		
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -114,7 +110,7 @@ DOTAAbilities
 			}
 			"AbilityCooldown"				
 			{
-				"value"			"3"
+				"value"			"6 6 5 4 4 4 3"
 				"special_bonus_unique_bounty_hunter_jinada_no_cooldown"			"-2"
 			}
 		}

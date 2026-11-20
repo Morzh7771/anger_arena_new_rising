@@ -19,6 +19,7 @@ function npc_aa_creep_salamander_big_fireball_lua:OnProjectileHit(hTarget, vLoca
     if hTarget ~= nil and (not hTarget:IsInvulnerable()) and (not hTarget:TriggerSpellAbsorb(self)) then
         local info = {
             victim = hTarget,
+            ability = self, -- источник урона (журнал урона и сайт)
             attacker = self:GetCaster(),
             damage = self.damage,
             damage_type = DAMAGE_TYPE_MAGICAL,

@@ -192,7 +192,6 @@ DOTAAbilities
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 		"HasShardUpgrade"			"1"
-		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -275,6 +274,14 @@ DOTAAbilities
 			{
 				"value"						"7"		
 				"special_bonus_scepter"		"-50%"
+				"special_bonus_unique_pugna_6"				"-3"
+			}
+			"life_drain"
+			{
+				"value"				"150 250 350 450 550 650 750"
+				"CalculateSpellDamageTooltip"				"1"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
+				"special_bonus_unique_pugna_1"				"+50"
 			}
 		}
 	}
@@ -284,6 +291,7 @@ DOTAAbilities
         "Innate"                "1"
         "MaxLevel"              "1"
 
+        "HasScepterUpgrade"			"1"
         "AbilityValues"
         {
             "tower_scale"
@@ -293,6 +301,18 @@ DOTAAbilities
         	"spell_amp_tooltip"
         	{
         		"dynamic_value"				"true"
+        	}
+        	"AbilityCharges"
+        	{
+        		"special_bonus_scepter"				"2"
+        	}
+        	"AbilityChargeRestoreTime"
+        	{
+        		"special_bonus_scepter"				"20"
+        	}
+        	"recast_min_cooldown"
+        	{
+        		"special_bonus_scepter"				"0.25"
         	}
         }
     }

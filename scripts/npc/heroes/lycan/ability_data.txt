@@ -80,7 +80,7 @@ DOTAAbilities
 			"bash_duration"				"2.0"
 			"wolf_count"
             {
-                "value"         "2 2 2 2 2 2 2"
+                "value"         "2"
                 "special_bonus_unique_lycan_2" "+2"
                 "special_bonus_shard"			"+1"
             }
@@ -581,4 +581,31 @@ DOTAAbilities
 		}
 	}
 }
+
+	"lycan_pack_hunter"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
+		"SpellDispellableType"				"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"Innate"				"1"
+		"IsBreakable"				"1"
+		"AbilityValues"
+		{
+			"mark_duration"				"6"
+			"bonus_damage"
+			{
+				"value"				"5"
+				"special_bonus_unique_lycan_4"				"+2"
+				"CalculateSpellDamageTooltip"				"0"
+			}
+			"lifesteal"
+			{
+				"value"				"3"
+				"hero_levelup"				"+1"
+				"levelup_interval"				"3"
+			}
+		}
+	}
 }

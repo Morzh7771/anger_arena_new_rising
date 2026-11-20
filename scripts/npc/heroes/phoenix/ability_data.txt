@@ -58,7 +58,7 @@ DOTAAbilities
 				"special_bonus_unique_phoenix_6" "+25"
 			}
 			"dive_duration"			"2.0"
-			"max_health_damage_pct"		"0.3"
+			"max_health_damage_pct"		"0.2"	// % макс. ХП Феникса за тик (тик 0.2 сек)
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -123,7 +123,7 @@ DOTAAbilities
 			}
 			"spirit_count"		"5"
 			"tick_interval"		"0.2"
-			"max_health_damage_pct"		"0.3"
+			"max_health_damage_pct"		"0.2"	// % макс. ХП Феникса за тик (тик 0.2 сек)
 		}
 	}
 	"phoenix_sun_ray"

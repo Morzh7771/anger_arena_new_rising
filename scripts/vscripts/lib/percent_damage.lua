@@ -16,6 +16,7 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("beastmaster_drums_of_slom",						beastmaster_drums_of_slom )
 	PercentDamage:ListenAbilityCallback("ancient_apparition_death_rime",						ancient_apparition_death_rime )
 	PercentDamage:ListenAbilityCallback("shadow_shaman_shackles",					shadow_shaman_shackles )
+	PercentDamage:ListenAbilityCallback("oracle_purifying_flames",					oracle_purifying_flames )
 
 
 	local MagicalDamageFromStr = {
@@ -99,6 +100,7 @@ function PercentDamage:_init()
 		"hoodwink_sharpshooter",
 		"meepo_poof",
 		"meepo_ransack",
+		"monkey_king_primal_spring",
 	}
 	local MagicalDamageFromInt = {
 		-- перенесены из урона от всех атрибутов / добавлены
@@ -107,6 +109,7 @@ function PercentDamage:_init()
 		"lina_laguna_blade",
 		"bane_enfeeble",
 		"bane_brain_sap",
+		"bane_fiends_grip",
 		"dark_willow_bramble_maze",
 		"dark_willow_shadow_realm",
 		"dark_willow_bedlam",
@@ -168,6 +171,10 @@ function PercentDamage:_init()
 		"lich_frost_nova",
 		"silencer_last_word",
 		"silencer_curse_of_the_silent",
+		"rubick_fade_bolt",
+		"ringmaster_impalement",
+		"ringmaster_tame_the_beasts",
+		"ringmaster_wheel",
 	}
 	--"ancient_apparition_chilling_touch",
 	--"ancient_apparition_ice_vortex",
@@ -211,6 +218,7 @@ function PercentDamage:_init()
 		"magnataur_shockwave",
 		"abaddon_frostmourne",
 		"wisp_spirits"
+		
 	}
 
 	-- урон от максимального здоровья кастера, ключ max_health_damage_pct
@@ -251,12 +259,26 @@ function shadow_shaman_shackles( keys )
 
 	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
 
-	Util:DealPercentDamageOfMaxHealth(target, caster, DAMAGE_TYPE_MAGICAL, caster:GetIntellect(false) * percent_damage, 0)
+	Util:DealPercentDamage(target, caster, DAMAGE_TYPE_MAGICAL, caster:GetIntellect(false) * percent_damage, 0)
 
 	local heal = caster:GetIntellect(false) * percent_damage
 
 	caster:Heal(heal, caster)
 end
+
+function oracle_purifying_flames( keys )
+	local ability 			= keys.ability
+	local caster 			= keys.caster
+	local target 			= keys.target
+	local damage 			= keys.damage
+
+	local percent_damage 	= ability:GetSpecialValueFor("damage_pct") / 100
+	if caster:GetTeamNumber() == target:GetTeamNumber() then return end
+	Util:DealPercentDamage(target, caster, DAMAGE_TYPE_MAGICAL, caster:GetIntellect(false) * percent_damage, 0)
+
+end
+
+
 
 function LifeDrain( keys )
 	local ability 			= keys.ability
@@ -435,7 +457,13 @@ function Radiance( keys )
 		caster = caster:GetAssignedHero()
 	end
 
-	Util:DealDamageFromStats(target, caster, DAMAGE_TYPE_MAGICAL, pct, pct, pct, false)
+	-- урон от статов - от лица divine_intervention (keys.inflictor), как у остальных колбэков:
+	-- на сайт уходит "<radiance>#bonus" отдельно от самой Radiance (AA_DamageKey в addon_game_mode.lua)
+	if _G.AA_DMG_LAST and keys.skill_name then
+		_G.AA_DMG_LAST[caster:entindex() .. ":" .. target:entindex()] = keys.skill_name
+	end
+
+	Util:DealDamageFromStats(target, caster, DAMAGE_TYPE_MAGICAL, pct, pct, pct, false, keys.inflictor)
 end
 
 function PercentDamage:ListenAbilityCallback(ability_name, func) -- return callback id

@@ -8,7 +8,7 @@ DOTAAbilities
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5102"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
 		"MaxLevel"						"7"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -34,6 +34,7 @@ DOTAAbilities
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"HasScepterUpgrade"			"1"
 		"AbilityValues"
 		{
 			"AbilityCooldown"
@@ -51,12 +52,17 @@ DOTAAbilities
 				"value"			"1.2 1.3 1.4 1.5 1.6 1.7 1.8"
 				"special_bonus_unique_sand_king_burrowstrike_stun"				"+0.4"
 			}
-			"burrow_speed"		"2000"
+			"burrow_speed"
+			{
+				"value"				"2000"
+				"special_bonus_scepter"			"+1000"
+			}
 			"burrow_anim_time"	"0.52"
 			"AbilityCastRange"
             {
                 "value"                             "900"
                 "special_bonus_unique_sand_king_8"  "+250"
+                "special_bonus_scepter"			"+494"
             }
 			"burrow_speed_scepter"
 			{
@@ -66,6 +72,20 @@ DOTAAbilities
 			"scepter_channel_time"			"2"
 			"scepter_max_power"				"2"
 
+			"spine_radius"
+			{
+				"value"				"0"
+				"special_bonus_scepter"				"=175"
+				"affected_by_aoe_increase"				"1"
+			}
+			"spine_duration"
+			{
+				"special_bonus_scepter"				"=0.8"
+			}
+			"spine_damage_pct"
+			{
+				"special_bonus_scepter"				"75"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -219,7 +239,6 @@ DOTAAbilities
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Ability.SandKing_Epicenter"
         "HasShardUpgrade"               "1"
-        "HasScepterUpgrade"             "1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -243,6 +262,7 @@ DOTAAbilities
 			"AbilityCooldown"               
             {
                 "value"     "60"
+            	"special_bonus_unique_sand_king_8"				"-15"
             }
 			"epicenter_pulses"	
 			{
@@ -290,30 +310,24 @@ DOTAAbilities
             "scepter_explosion_radius_pct"
             {
                 "value"                 "0"
-                "special_bonus_scepter"     "+15"
             }
             "scepter_explosion_min_dist"
             {
                 "value"                 "0"
-                "special_bonus_scepter"     "+120"
             }
             "scepter_explosions_per_pulse"
             {
                 "value"                 "0"
-                "special_bonus_scepter"     "+3"
             }   
             "spine_tick_rate"
             {
-                "special_bonus_scepter"     "=0.5"
             }
             "spine_damage_pct"
             {
-                "special_bonus_scepter"     "=50"
             }
             "shard_explosions_per_pulse"
             {
                 "value"                 "0"
-                "special_bonus_scepter"     "+1"
             }
 			"damage_pct"			"90"
 			"proc_passively"
@@ -375,6 +389,7 @@ DOTAAbilities
             }
         	"inner_radius_procs_caustic"				"0"
         	"caustic_damage_pct"				"0"
+        	"potency"				"60"
         }
     }
     "special_bonus_unique_sand_king"

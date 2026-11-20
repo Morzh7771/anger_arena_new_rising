@@ -428,7 +428,7 @@
 	{
 		// General
 		
-		"BaseClass"					"npc_dota_unit_twin_gate"	
+		"BaseClass"					"npc_dota_creature"		// НЕ twin gate: предположительно класс twin gate несёт командную проверку движка (после патча клик отвечает "ворота другой команды"), не проверено. Портал работает через свой order filter (addon_game_mode.lua) и abilities/mid_teleport.lua, движковый класс ему не нужен	
 		"Model"						"models/props_gameplay/team_portal/team_portal.vmdl"
 		"SoundSet"                   "Creep_Good_Melee"                    
         "MinimapIcon"                "minimap_miscbuilding"
@@ -1726,8 +1726,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necrowarrior"
 		
 		// Abilities
@@ -1815,8 +1815,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necroarcher"
 		
 		// Abilities
@@ -1904,8 +1904,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necrowarrior"
 		
 		// Abilities
@@ -1993,8 +1993,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necroarcher"
 		
 		// Abilities
@@ -2082,8 +2082,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necrowarrior"
 		
 		// Abilities
@@ -2171,8 +2171,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necroarcher"
 		
 		// Abilities
@@ -2260,8 +2260,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necrowarrior"
 		
 		// Abilities
@@ -2349,8 +2349,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necroarcher"
 		
 		// Abilities
@@ -2438,8 +2438,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necrowarrior"
 		
 		// Abilities
@@ -2527,8 +2527,8 @@
 		"Level"						"5"
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
-		"CanBeDominated"			"0"
-		"IsAncient"				"1"
+		"CanBeDominated"			"1"
+		"IsAncient"				"0"
 		"UnitLabel"					"necroarcher"
 		
 		// Abilities

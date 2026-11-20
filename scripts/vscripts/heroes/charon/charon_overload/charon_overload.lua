@@ -15,7 +15,6 @@ function charon_overload:OnSpellStart()
 	self:ShotArcTarget(self:GetCaster(), self.target)
 
 	EmitSoundOn(CAST_SOUND, self:GetCaster())
-	if self:GetCursorTarget():TriggerSpellAbsorb(self) then return end
 end
 
 ------------------------------------------------------------------------------
@@ -47,6 +46,7 @@ function charon_overload:OnProjectileHit(hTarget, vLocation)
 			attacker = self:GetCaster(),
 			damage = self.damage_constant + self:GetCaster():GetMaxMana() / 100 * self.damage_for_mana_pct,
 			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = self, -- без него урон шёл без источника и журнал считал его атакой с руки
 		}
 		ApplyDamage(info)
 
@@ -55,12 +55,10 @@ function charon_overload:OnProjectileHit(hTarget, vLocation)
 end
 
 ------------------------------------------------------------------------------
-function charon_overload:GetManaCost()
+function charon_overload:GetManaCost(level)
 	local caster = self:GetCaster()
-	local pct_cost = self:GetSpecialValueFor("damage_for_mana_pct")
-	local mana_cost = caster:GetMaxMana() / 100 * pct_cost
-	mana_cost = mana_cost - (mana_cost * caster:GetTalentSpecialValueFor("charon_overload_manacost_reduction_percent_tallent"))
-	return mana_cost
+	if not caster or caster:IsNull() then return 0 end
+	-- % от макс. маны по mana_cost_pct (талант в KV: x0.5)
+	local pct = level and level >= 0 and self:GetLevelSpecialValueFor("mana_cost_pct", level) or self:GetSpecialValueFor("mana_cost_pct")
+	return caster:GetMaxMana() / 100 * pct
 end
-
---------------------------------------------------------------------------------

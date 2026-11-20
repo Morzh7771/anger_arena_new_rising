@@ -13,7 +13,7 @@ You update **one hero** per run. Do not touch other heroes.
 |---|---|
 | Target (edit this) | `scripts/npc/heroes/<hero>/ability_data.txt` |
 | Target (edit this) | `scripts/npc/heroes/<hero>/hero_data.txt` |
-| Reference (read only, never edit) | `C:\Users\admin\Desktop\dota 2 patch\scripts\npc\heroes\npc_dota_hero_<hero>.txt` |
+| Reference (read only, never edit) | `C:\Users\admin\Desktop\Dota 2\scripts\npc\heroes\npc_dota_hero_<hero>.txt` |
 
 `<hero>` is the addon folder name. If no reference file matches the folder name, look up the
 `npc_dota_hero_*` key inside `hero_data.txt` and use that name instead. If there is still no

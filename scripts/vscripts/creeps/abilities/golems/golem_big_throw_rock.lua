@@ -22,6 +22,7 @@ function golem_big_throw_rock:OnProjectileHit(hTarget, vLocation)
 
         local info = {
             victim = hTarget,
+            ability = self, -- источник урона (журнал урона и сайт)
             attacker = self:GetCaster(),
             damage = self.damage,
             damage_type = self.dmg_type,
