@@ -114,6 +114,9 @@ function modifier_item_hurricane_pike_aa:OnAttackFinished( params )
 
 	self.attacks[ myAttackID ] = nil
 
+	-- удары пронзающей стрелы Huntress Aim Shot - не атаки героя, двойной выстрел от них не идёт
+	if parent.aa_aim_shot_arrow then return end
+
 	-- but apply any options if parent or target is dead is not our choice
 	if not parent:IsAlive() or not target:IsAlive() then return end
 

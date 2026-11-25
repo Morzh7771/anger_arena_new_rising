@@ -1306,7 +1306,7 @@
 
 			"crit_multiplier"
 			{
-				"value"				"100"
+				"value"				"120"
 				"apply_curio_bonus"	"1"
 			}
 		}
@@ -1741,6 +1741,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		// Lua-копия ванильного: без беспрепятственного передвижения и бонуса дальности
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_giants_ring_aa"
+		"AbilityTextureName"			"item_giants_ring"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"

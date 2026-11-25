@@ -89,6 +89,8 @@ safe_require('lib/panorama_pings')
 safe_require('lib/spawners/creep_spawner')
 safe_require('lib/spawners/creep_leveling')
 safe_require('lib/spawners/creep_ability_level')
+safe_require('lib/afk_tracker')
+safe_require('lib/creep_pickups')
 safe_require('lib/spawners/creep_active_ai')
 safe_require('lib/spawners/camp_sleep')
 safe_require('lib/neutral/madstone_system')
@@ -107,6 +109,8 @@ safe_require('lib/dev_neutral_give')
 safe_require('lib/game_ender')
 safe_require('lib/repick_menu')
 safe_require('lib/tip_manager')
+safe_require('lib/custom_hero_wearables')
+safe_require('lib/alt_heroes')
 safe_require('lib/special_bonus_base_aa/Special_bonus_base_aa')
 safe_require('lib/diag_log')
 safe_require('lib/item_precache')
@@ -141,10 +145,14 @@ safe_require('lib/farm_claims')
 safe_require('lib/strategy_buy')
 -- "Отстающая команда": бафф отстающей по нетворсу команде до 30-й минуты (lib/underdog.lua)
 safe_require('lib/underdog')
+-- Фарм героев: эффекты способностей против крипов (lib/hero_farm.lua)
+safe_require('lib/hero_farm')
 -- премиум: точное время респавна боссов по Alt
 safe_require('lib/boss_timers_premium')
 -- замер FPS: консольная команда aa_perf (lib/perf_toggle.lua)
 safe_require('lib/perf_toggle')
+-- тест боссов с механиками: консольные aa_boss / aa_boss_clear (lib/boss_test.lua)
+safe_require('lib/boss_test')
 safe_require('lib/damage_log') -- журнал урона премиум-игрокам (lib/damage_log.lua)
 
 function CEntityInstance:SetNetworkableEntityInfo(key, value)
@@ -183,6 +191,9 @@ function Precache(context)
         print("[AA] PRECACHE_MINIMAL: прекеш пропущен целиком")
         return
     end
+
+    -- Сеты на своих героях с ванильной моделью (lib/custom_hero_wearables.lua)
+    if CustomHeroWearables then CustomHeroWearables.Precache(context) end
 
     -- Партиклы.
     --
@@ -223,6 +234,9 @@ function Precache(context)
     -- Precache таких способностей движок не зовёт. Кольцо портала у
     -- mid_teleport иначе было "invalid particle definition".
     PrecacheResource("particle", "particles/portal_ring.vpcf", context)
+
+    -- склянки здоровья/маны с крипов (lib/creep_pickups.lua)
+    if CreepPickups then CreepPickups:Precache(context) end
 
     -- Свиток телепортации. Предмет движковый, но папка particles/items2_fx в
     -- список выше не входит (грузить её целиком нельзя - лимит ресурсов), и без
@@ -635,9 +649,18 @@ function AngelArena:InitGameMode()
 
 	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepLeveling:OnSpawnCallback(arg); end)
 	CreepSpawner:RegisterOnDeathCallback(function(arg) CreepLeveling:OnDeathCallback(arg); end)
+	-- хилки/манахилки с крипов
+	CreepSpawner:RegisterOnDeathCallback(function(arg) CreepPickups:OnCreepDeath(arg); end)
 	-- прокачка способностей крипов по времени игры (MaxLevel > 1) и ИИ кастомных активок
 	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepAbilityLevel:ApplyOnSpawn(arg.creep); end)
 	CreepSpawner:RegisterOnSpawnCallback(function(arg) CreepActiveAI:OnSpawn(arg); end)
+	-- замах с "!" и зоной перед каждым скиллом крипа (modifiers/modifier_aa_creep_telegraph.lua)
+	CreepSpawner:RegisterOnSpawnCallback(function(arg)
+		local c = arg and arg.creep
+		if c and not c:IsNull() and not c.IsAngelArenaBoss then
+			c:AddNewModifier(c, nil, "modifier_aa_creep_telegraph", {})
+		end
+	end)
 	CreepActiveAI:Start()
 
 	-- лагеря, рядом с которыми никого нет, перестают сканировать карту в
@@ -1811,6 +1834,12 @@ function AngelArena:DamageFilter(event)
 	if (entindex_victim_const) then victim = EntIndexToHScript(entindex_victim_const) end
 	if (entindex_attacker_const) then attacker = EntIndexToHScript(entindex_attacker_const) end
 
+	-- Huntress Aim Shot: настоящая атака урон не наносит, урон несёт пронзающая стрела
+	if attacker and victim and not entindex_inflictor_const and attacker.aa_aim_shot_null_victim == entindex_victim_const then
+		attacker.aa_aim_shot_null_victim = nil
+		return false
+	end
+
 
 	-----------------------------------------------------------------------------------------------------
 	------------------------------ Костыль для ланаи ----------------------------------------------------
@@ -2010,6 +2039,9 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 	local player_id = ord.issuer_player_id_const
 	local unit
 
+	-- любой приказ = игрок не АФК (lib/afk_tracker.lua)
+	if AfkTracker then AfkTracker:Touch(player_id) end
+
 	if ord.units and ord.units["0"] then
         unit = EntIndexToHScript(ord.units["0"])
     end
@@ -2017,6 +2049,19 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 	-- Meteor Hammer (item_lua) сбивался любым приказом движения. Как в доте:
 	-- канал прерывает только Stop / Hold, приказы с Shift встают в очередь.
 	if AngelArena:_BlocksChannelBreak(ord) then return false end
+
+	-- Подборы с крипов (lib/creep_pickups.lua) кликом не поднимаются:
+	-- клик = просто идти к ним, срабатывают, только когда герой подошёл в упор.
+	if ord.order_type == DOTA_UNIT_ORDER_PICKUP_ITEM and target and target.GetContainedItem then
+		local item = target:GetContainedItem()
+		if item and string.find(item:GetAbilityName(), "^item_creep_pickup_") then
+			local pos = target:GetAbsOrigin()
+			ord.order_type = DOTA_UNIT_ORDER_MOVE_TO_POSITION
+			ord.entindex_target = 0
+			ord.position_x, ord.position_y, ord.position_z = pos.x, pos.y, pos.z
+			return true
+		end
+	end
 
 	if not player then return true end
 

@@ -1,31 +1,36 @@
 huntress_curse_arrow = huntress_curse_arrow or class({})
+
 local debuffModifier = "modifier_huntress_curse_arrow"
-local scepterMuteModifier = "modifier_huntress_curse_arrow_scepter_mute"
 LinkLuaModifier(debuffModifier, "heroes/huntress/huntress_curse_arrow/" .. debuffModifier, LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier(scepterMuteModifier, "heroes/huntress/huntress_curse_arrow/" .. scepterMuteModifier, LUA_MODIFIER_MOTION_NONE)
+
+function huntress_curse_arrow:Precache(context)
+	PrecacheResource("particle", "particles/huntress/huntress_curse_arrow/huntress_curse_arrow.vpcf", context)
+	PrecacheResource("particle", "particles/huntress/huntress_hunting_spirit/huntress_hunting_spirit.vpcf", context)
+end
 
 function huntress_curse_arrow:OnSpellStart()
 	if not IsServer() then return end
 	self.target = self:GetCursorTarget()
-	
-	if self.target:TriggerSpellAbsorb(self) or self.target:TriggerSpellReflect(self) then return end
-	
 	self.channelTime = 0
-	self.min_duration = self:GetSpecialValueFor("min_duration")
-	self.max_duration = self:GetSpecialValueFor("max_duration")
 end
 
 function huntress_curse_arrow:OnChannelThink(intervalTime)
-	self.channelTime = self.channelTime + intervalTime
+	self.channelTime = (self.channelTime or 0) + intervalTime
 end
 
+-- стрела летит и при прерванном чтении, длительность - по прочитанному времени
 function huntress_curse_arrow:OnChannelFinish()
-	if not self.target:IsAlive() then return end
+	local target = self.target
+	self.target = nil
+	if not target or target:IsNull() or not target:IsAlive() then return end
 	local caster = self:GetCaster()
 
-	local info =
-	{
-		Target = self.target,
+	local min_d = self:GetSpecialValueFor("min_duration")
+	local max_d = self:GetSpecialValueFor("max_duration")
+	local frac = math.min(1, (self.channelTime or 0) / math.max(0.01, self:GetChannelTime()))
+
+	ProjectileManager:CreateTrackingProjectile({
+		Target = target,
 		Source = caster,
 		Ability = self,
 		EffectName = "particles/huntress/huntress_curse_arrow/huntress_curse_arrow.vpcf",
@@ -38,44 +43,24 @@ function huntress_curse_arrow:OnChannelFinish()
 		bReplaceExisting = false,
 		flExpireTime = GameRules:GetGameTime() + 10,
 		bProvidesVision = false,
-	}
-	ProjectileManager:CreateTrackingProjectile(info)
+		ExtraData = { duration = min_d + (max_d - min_d) * frac },
+	})
 end
 
-function huntress_curse_arrow:OnProjectileHit(target)
-	if not self then return end
+function huntress_curse_arrow:OnProjectileHit_ExtraData(target, location, data)
+	if not target or target:IsNull() or not target:IsAlive() then return true end
+	if target:TriggerSpellAbsorb(self) then return true end
+
 	local caster = self:GetCaster()
-	local duration = self.channelTime / self:GetChannelTime() * (self.max_duration - self.min_duration) + self.min_duration
-	target:AddNewModifier(caster, self, debuffModifier, { duration = duration })
-
-	-- Scepter upgrade: area effect with mute
-	if caster:HasScepter() then
-		local scepter_radius = self:GetSpecialValueFor("scepter_radius")
-		local scepter_mute_duration = self:GetSpecialValueFor("scepter_mute_duration")
-
-		if scepter_radius > 0 then
-			local nearby_enemies = FindUnitsInRadius(
-				caster:GetTeamNumber(),
-				target:GetAbsOrigin(),
-				nil,
-				scepter_radius,
-				DOTA_UNIT_TARGET_TEAM_ENEMY,
-				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-				DOTA_UNIT_TARGET_FLAG_NONE,
-				FIND_ANY_ORDER,
-				false
-			)
-
-			for _, enemy in pairs(nearby_enemies) do
-				if enemy ~= target then
-					enemy:AddNewModifier(caster, self, scepterMuteModifier, { duration = scepter_mute_duration })
-				end
-			end
-		end
+	ApplyDamage({
+		victim = target,
+		attacker = caster,
+		damage = self:GetSpecialValueFor("damage"),
+		damage_type = DAMAGE_TYPE_MAGICAL,
+		ability = self,
+	})
+	if target:IsAlive() then
+		target:AddNewModifier(caster, self, debuffModifier, { duration = (data and data.duration) or self:GetSpecialValueFor("min_duration") })
 	end
-end
-
-function huntress_curse_arrow:OnInventoryContentsChanged()
-	self:SetLevel(1)
-	self:SetHidden(not self:GetCaster():HasModifier("modifier_item_hurricane_pike_aa"))
+	return true
 end

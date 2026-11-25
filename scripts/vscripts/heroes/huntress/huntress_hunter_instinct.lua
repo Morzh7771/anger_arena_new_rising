@@ -71,8 +71,17 @@ function huntress_hunter_instinct_modifier:GetModifierTotalDamageOutgoing_Percen
 
     -- If only target or no enemies in radius, apply bonus
     -- This means the target is isolated from their team
+    -- бонус растёт с уровнем героя
+    local ability = self:GetAbility()
+    local level = caster:GetLevel()
+
     if #nearby_enemies <= 1 then
-        return self.alone_damage_pct
+        return (self.alone_damage_pct + ability:GetSpecialValueFor("alone_per_level") * level)
+    end
+
+    -- рядом с целью не больше двух её союзников - тоже "отставшая"
+    if #nearby_enemies <= 3 then
+        return (self.isolated_damage_pct + ability:GetSpecialValueFor("isolated_per_level") * level)
     end
 
     return 0

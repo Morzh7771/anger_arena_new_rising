@@ -37,14 +37,14 @@ function huntress_owl:CreateOwl()
         owl:AddNewModifier(self:GetCaster(), self, "modifier_huntress_owl_aura_true_strike", { duration = -1 })
 
         -- Shard upgrade: add true sight aura
-        if self:GetCaster():HasShard() then
+        if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
             owl:AddNewModifier(self:GetCaster(), self, "modifier_huntress_owl_shard_true_sight", { duration = -1 })
         end
 
         return nil
     end)
 
-    if self:GetCaster():HasTalent("huntress_huntress_owl_invisible_tallent") then
+    if self:GetSpecialValueFor("owl_invisible") > 0 then
         owl:AddNewModifier(self:GetCaster(), self, "modifier_invisible", { duration = -1 })
         return
     end

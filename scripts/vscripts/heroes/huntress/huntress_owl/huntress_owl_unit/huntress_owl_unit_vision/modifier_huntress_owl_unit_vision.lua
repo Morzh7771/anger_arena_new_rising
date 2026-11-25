@@ -27,7 +27,7 @@ function modifier_huntress_owl_unit_vision:AllowIllusionDuplicate()
 end
 
 function modifier_huntress_owl_unit_vision:GetAuraRadius()
-    return self:GetAbility():GetSpecialValueFor("radius") + self:GetAbility():GetCaster():GetTalentSpecialValueFor("huntress_huntress_owl_radius_aura_tallent")
+    return self:GetAbility():GetSpecialValueFor("radius")
 end
 
 function modifier_huntress_owl_unit_vision:DeclareFunctions()
@@ -43,11 +43,11 @@ function modifier_huntress_owl_unit_vision:GetAuraSearchType()
 end
 
 function modifier_huntress_owl_unit_vision:GetBonusDayVision()
-    return self:GetAbility():GetCaster():GetTalentSpecialValueFor("huntress_huntress_owl_radius_aura_tallent")
+    return self:GetAbility():GetSpecialValueFor("talent_vision")
 end
 
 function modifier_huntress_owl_unit_vision:GetBonusNightVision()
-    return self:GetAbility():GetCaster():GetTalentSpecialValueFor("huntress_huntress_owl_radius_aura_tallent")
+    return self:GetAbility():GetSpecialValueFor("talent_vision")
 end
 
 function modifier_huntress_owl_unit_vision:GetAuraSearchFlags()
@@ -78,7 +78,7 @@ function modifier_huntress_owl_unit_vision:OnIntervalThink()
     local enemyUnits = FindUnitsInRadius(hero:GetOpposingTeamNumber(),
         hero:GetAbsOrigin(),
         nil,
-        self:GetAbility():GetSpecialValueFor("radius") + self:GetAbility():GetCaster():GetTalentSpecialValueFor("huntress_huntress_owl_radius_aura_tallent"),
+        self:GetAbility():GetSpecialValueFor("radius"),
         DOTA_UNIT_TARGET_TEAM_BOTH,
         DOTA_UNIT_TARGET_OTHER,
         DOTA_UNIT_TARGET_FLAG_NONE + DOTA_UNIT_TARGET_FLAG_INVULNERABLE,

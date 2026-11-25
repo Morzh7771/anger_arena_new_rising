@@ -3,7 +3,7 @@ modifier_huntress_owl_aura_true_strike_effect_lua = modifier_huntress_owl_aura_t
 --------------------------------------------------------------------------------
 function modifier_huntress_owl_aura_true_strike_effect_lua:IsHidden()
     local parent = self:GetParent()
-    if parent:GetUnitName() == "npc_hero_huntress" or parent:GetUnitName() == "npc_dota_hero_windrunner" then
+    if parent:GetUnitName() == "npc_dota_hero_huntress" or parent:GetUnitName() == "npc_dota_hero_windrunner" then
         return false
     end
     return true
@@ -30,7 +30,7 @@ function modifier_huntress_owl_aura_true_strike_effect_lua:CheckState()
     local state = {
         [MODIFIER_STATE_CANNOT_MISS] = true,
     }
-    if parent:GetUnitName() == "npc_hero_huntress" or parent:GetUnitName() == "npc_dota_hero_windrunner" then
+    if parent:GetUnitName() == "npc_dota_hero_huntress" or parent:GetUnitName() == "npc_dota_hero_windrunner" then
         return state
     end
     state = {}

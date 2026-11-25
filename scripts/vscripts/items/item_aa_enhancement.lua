@@ -196,7 +196,7 @@ function M:GetModifierBonusStats_Intellect()
 	return self:PrimaryBonus(DOTA_ATTRIBUTE_INTELLECT, self:GetParent():GetBaseIntellect())
 end
 
--- magic_damage_pct: % урона атаки магическим уроном по цели (не от иллюзий, не по зданиям)
+-- magic_damage_pct: % урона удара (с критом) магическим уроном по цели (не от иллюзий, не по зданиям)
 function M:OnAttackLanded(kv)
 	if not IsServer() then return end
 
@@ -210,7 +210,12 @@ function M:OnAttackLanded(kv)
 	local target = kv.target
 	if not target or target:IsNull() or target:IsBuilding() then return end
 
-	local damage = parent:GetAverageTrueAttackDamage(target) * pct / 100
+	-- настоящая атака Huntress в стойке Aim Shot урон не наносит - урон несёт стрела
+	if HuntressAimShotIsNullAttack and HuntressAimShotIsNullAttack(parent, kv.record) then return end
+
+	-- от урона удара с критом (kv.damage), а не от среднего: у критовиков чара почти не работала
+	local base = (kv.damage and kv.damage > 0) and kv.damage or parent:GetAverageTrueAttackDamage(target)
+	local damage = base * pct / 100
 	if damage <= 0 then return end
 
 	ApplyDamage({

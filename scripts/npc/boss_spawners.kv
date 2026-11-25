@@ -71,13 +71,13 @@
 		
 		"stats"
 		{
-			"base_health"		"30000"
+			"base_health"		"60000"
 			"base_armor"		"50"
-			"base_damage"		"1250"
+			"base_damage"		"2500"
 			
-			"health_per_death"	"10000"
+			"health_per_death"	"20000"
 			"armor_per_death"	"15"
-			"damage_per_death"	"400"
+			"damage_per_death"	"800"
 		}
 		
 		"on_death"
@@ -92,9 +92,11 @@
 			"dropbox"			"box_boss_possessed"
 		}
 	}
+	// Хранитель Часов вместо Soul Guardian. Имя слота не менять: по нему
+	// открывается репик (lib/repick_menu.lua, BOSS_FOR_REPICK)
 	"boss_mid_bott"
 	{
-		"unit_name" 			"npc_aa_soul_guardian"
+		"unit_name" 			"npc_aa_chronokeeper"
 		"point_name"			"boss_mid_bott"
 		
 		"spawn_delay"			"300"
@@ -103,18 +105,18 @@
 		
 		"stats"
 		{
-			"base_health"		"20000"
+			"base_health"		"40000"
 			"base_armor"		"50"
-			"base_damage"		"750"
+			"base_damage"		"1500"
 			
-			"health_per_death"	"10000"
+			"health_per_death"	"20000"
 			"armor_per_death"	"15"
-			"damage_per_death"	"250"
+			"damage_per_death"	"500"
 		}
 		
 		"on_death"
 		{
-			"message"			"#on_boss_die_soul_guardian"
+			"message"			"#on_boss_die_chronokeeper"
 			
 			"base_gold"			"6000"
 			"base_exp"			"6000"
@@ -124,133 +126,151 @@
 			"dropbox"			"box_boss_soul_guradian"
 		}
 	}
-	"boss_radiant_bott"
+	// Боссы с ротацией: каждые rotation_interval секунд от первого спавна
+	// пара меняется спотами (канал телепорта 5 с). Пока любого из пары бьют,
+	// переход ждёт rotation_quiet секунд без урона; следующий всё равно по
+	// сетке 5:00 / 10:00 / 15:00 (lib/boss/boss_spawner.lua, _RotationTick).
+	"boss_leoric"
 	{
 		"point_name"			"boss_radiant_bott"
-		"unit_name" 			"npc_aa_abyss_warrior"
-	
-		
+		"unit_name" 			"npc_aa_leoric"
+		"rotation_points"		"boss_radiant_bott boss_dire_bott"
+		"rotation_interval"		"300"
+		"rotation_quiet"		"30"
+
 		"spawn_delay"			"300"
 		"spawn_interval"		"150"
 		"spawn_interval_random"	"50"
-		
+
 		"stats"
 		{
-			"base_health"		"15000"
+			"base_health"		"30000"
 			"base_armor"		"50"
-			"base_damage"		"1000"
-			
-			"health_per_death"	"10000"
+			"base_damage"		"2000"
+
+			"health_per_death"	"20000"
 			"armor_per_death"	"15"
-			"damage_per_death"	"350"
+			"damage_per_death"	"700"
 		}
-		
+
 		"on_death"
 		{
-			"message"			"#on_boss_die_abyss_warrior"
-			
+			"message"			"#on_boss_die_leoric"
+
 			"base_gold"			"6000"
 			"base_exp"			"6000"
 			"gold_per_death"	"4000"
 			"exp_per_death"		"4000"
-			
+
 			"dropbox"			"box_boss_abyss_warrior"
 		}
 	}
-	"boss_dire_bott"
+	"boss_plague_reaper"
 	{
 		"point_name"			"boss_dire_bott"
-		"unit_name" 			"npc_aa_abyss_warrior"
-	
-		
+		"unit_name" 			"npc_aa_plague_reaper"
+		"rotation_points"		"boss_dire_bott boss_radiant_bott"
+		"rotation_interval"		"300"
+		"rotation_quiet"		"30"
+
 		"spawn_delay"			"300"
 		"spawn_interval"		"150"
 		"spawn_interval_random"	"50"
-		
+
 		"stats"
 		{
-			"base_health"		"15000"
+			"base_health"		"30000"
 			"base_armor"		"50"
-			"base_damage"		"1000"
-			
-			"health_per_death"	"10000"
+			"base_damage"		"2000"
+
+			"health_per_death"	"20000"
 			"armor_per_death"	"15"
-			"damage_per_death"	"350"
+			"damage_per_death"	"700"
 		}
-		
+
 		"on_death"
 		{
-			"message"			"#on_boss_die_abyss_warrior"
-			
+			"message"			"#on_boss_die_plague_reaper"
+
 			"base_gold"			"6000"
 			"base_exp"			"6000"
 			"gold_per_death"	"4000"
 			"exp_per_death"		"4000"
-			
+
 			"dropbox"			"box_boss_abyss_warrior"
 		}
 	}
-	"boss_radiant_top"
+	// Верх: на каждом спавне слота встаёт случайный из unit_pool (не тот, что
+	// у напарника), пара ротируется спотами как низ
+	"boss_top_a"
 	{
 		"point_name"			"boss_radiant_top"
-		"unit_name" 			"npc_aa_keymaster_radiant"
-		
+		"unit_name" 			"npc_aa_pudge_boss"
+		"unit_pool"			"npc_aa_pudge_boss npc_aa_huskar_boss npc_aa_ursa_boss npc_aa_lycan_boss"
+		"rotation_points"		"boss_radiant_top boss_dire_top"
+		"rotation_interval"		"300"
+		"rotation_quiet"		"30"
+
 		"spawn_delay"			"300"
 		"spawn_interval"		"150"
 		"spawn_interval_random"	"50"
-		
+
 		"stats"
 		{
-			"base_health"		"20000"
+			"base_health"		"40000"
 			"base_armor"		"35"
-			"base_damage"		"700"
-			
-			"health_per_death"	"2500"
+			"base_damage"		"1400"
+
+			"health_per_death"	"5000"
 			"armor_per_death"	"5"
-			"damage_per_death"	"250"
+			"damage_per_death"	"500"
 		}
-		
+
 		"on_death"
 		{
-			"message"			"#on_boss_die_keymaster"
-			
+			"message"			"#on_boss_die_top"
+
 			"base_gold"			"6000"
 			"base_exp"			"6000"
 			"gold_per_death"	"4000"
 			"exp_per_death"		"4000"
-					
+
 			"dropbox"			"box_boss_keymaster"
 		}
 	}
-	"boss_dire_top"
+	"boss_top_b"
 	{
 		"point_name"			"boss_dire_top"
-		"unit_name" 			"npc_aa_keymaster_dire"
-		
+		"unit_name" 			"npc_aa_huskar_boss"
+		"unit_pool"			"npc_aa_pudge_boss npc_aa_huskar_boss npc_aa_ursa_boss npc_aa_lycan_boss"
+		"rotation_points"		"boss_dire_top boss_radiant_top"
+		"rotation_interval"		"300"
+		"rotation_quiet"		"30"
+
 		"spawn_delay"			"300"
 		"spawn_interval"		"150"
 		"spawn_interval_random"	"50"
-		
+
 		"stats"
 		{
-			"base_health"		"20000"
+			"base_health"		"40000"
 			"base_armor"		"35"
-			"base_damage"		"700"
-			
-			"health_per_death"	"2500"
+			"base_damage"		"1400"
+
+			"health_per_death"	"5000"
 			"armor_per_death"	"5"
-			"damage_per_death"	"250"
+			"damage_per_death"	"500"
 		}
-		
+
 		"on_death"
 		{
-			"message"			"#on_boss_die_keymaster"
-			
+			"message"			"#on_boss_die_top"
+
 			"base_gold"			"6000"
 			"base_exp"			"6000"
 			"gold_per_death"	"4000"
 			"exp_per_death"		"4000"
-					
+
 			"dropbox"			"box_boss_keymaster"
 		}
 	}

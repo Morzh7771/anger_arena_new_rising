@@ -2,40 +2,45 @@
 {
 	"huntress_aim_shot"
 	{
-		"ID"					"15185"
-	    // General
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	    "BaseClass"					    "ability_lua"
-	    "AbilityTextureName"			"custom/huntress_aim_shot"
-	    "ScriptFile"					"heroes/huntress/huntress_aim_shot/huntress_aim_shot"
-	    "MaxLevel"                      "7"
-	    "AbilityCooldown"				"10"
-	    "AbilityManaCost"				"25 40 65 80 95 105 120"
+		"ID"							"15185"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/huntress_aim_shot"
+		"ScriptFile"					"heroes/huntress/huntress_aim_shot/huntress_aim_shot"
+		"MaxLevel"						"7"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"2"
 
 		"precache"
 		{
 			"particle"					"particles/huntress/huntress_aim_shot/huntress_aim_shot.vpcf"
+			"particle"					"particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
 			"soundfile"					"soundevents/heroes/huntress.vsndevts"
 		}
 
-	    // Special
-	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityValues"
-	    {
-	        "crit_damage_pct"
-	        {
-	            "value"	    			"125 140 155 170 185 200 215"
-	            "LinkedSpecialBonus"	"huntress_aim_shot_bonus_crit_tallent"
-	        }
-	        "bonus_attack_range"    	"50 75 100 125 150 175 200"
-			"set_bat_value"
-	        {
-	            "value"	        		"3.0 3.1 3.2 3.3 3.4 3.5 3.6"
-	            "LinkedSpecialBonus"	"huntress_aim_shot_bonus_bat_tallent"
-	        }
-	        "bat_value_tooltip"	    "-1.3 -1.4 -1.5 -1.6 -1.7 -1.8 -1.9"
-	    }
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"crit_damage_pct"
+			{
+				"value"									"200 235 270 300 335 370 400"
+				"special_bonus_unique_huntress_aim_shot_crit"	"+25"
+			}
+			"bonus_attack_range"		"50 75 100 125 150 175 200"
+			// прибавляется к BAT героя
+			"bat_penalty"
+			{
+				"value"									"2.1"
+				"special_bonus_unique_huntress_aim_shot_bat"	"-0.2"
+			}
+			"pierce_damage_reduction"	"25"	// % урона стрелы за каждую пробитую цель, от остатка
+			"arrow_width"				"110"
+		}
 	}
 
 	"huntress_owl"
@@ -44,6 +49,7 @@
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	    "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	    "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
 	    "BaseClass"					    "ability_lua"
 	    "AbilityTextureName"			"custom/angel_arena_huntress_owl"
@@ -76,9 +82,19 @@
 	        "radius"
 	        {
 	            "value"            		"350 375 400 425 450 475 500"
-	            "LinkedSpecialBonus"	"huntress_huntress_owl_radius_aura_tallent"
+	            "special_bonus_unique_huntress_owl_radius"	"+100"
 	        }
 	        "shard_true_sight_radius"	"600"
+	        "talent_vision"
+	        {
+	            "value"            		"0"
+	            "special_bonus_unique_huntress_owl_radius"	"+100"
+	        }
+	        "owl_invisible"
+	        {
+	            "value"            		"0"
+	            "special_bonus_unique_huntress_owl_invisible"	"+1"
+	        }
 	    }
 	}
 
@@ -109,203 +125,138 @@
 			"chance_root" 
 			{
 				"value"         		"10 11 12 14 16 18 20"
-				"LinkedSpecialBonus"	"huntress_crippling_arrow_chance_tallent"
+				"special_bonus_unique_huntress_crippling_arrow_chance"	"+5"
 			}
 			"duration_root"
 			{
 				"value"         		"0.75"
-				"LinkedSpecialBonus"	"huntress_crippling_arrow_duration_tallent"
+				"special_bonus_unique_huntress_crippling_arrow_duration"	"+0.5"
 			}
+			"damage_agi_pct"				"10 15 20 25 30 35 40"	// % ловкости к атаке
+			// талант: оглушение вместо корней, длительность в % от корней
+			"stun_instead"
+			{
+				"value"					"0"
+				"special_bonus_unique_huntress_crippling_arrow_stun"	"+1"
+			}
+			"stun_duration_pct"				"50"
 		}
 	 }
 	
-	"huntress_hunting_spirit"
-	{
-		"ID"					"15182"
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"						"ability_lua"
-		"AbilityTextureName"			"custom/huntress_hunting_spirit"
-		"ScriptFile"					"heroes/huntress/huntress_hunting_spirit/huntress_hunting_spirit"
-		"MaxLevel"                     	"7"
-		"AbilityCooldown"				"60"
-		"AbilityManaCost"				"100 125 150 175 200 225 250"
-		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
-
-		"precache"
-		{
-			"particle"					"particles/huntress/huntress_hunting_spirit/huntress_hunting_spirit.vpcf"
-			"particle"					"particles/huntress/huntress_hunting_spirit/huntress_hunting_spirit_reincarnation.vpcf"
-			"soundfile"					"soundevents/heroes/huntress.vsndevts"
-		}
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"duration"		        "5 5.5 6 6.5 7 7.5 8"
-			"bonus_movespeed_pct"   "20"
-		}
-	}
+	// Huntress: Curse Arrow (ульта)
 	"huntress_curse_arrow"
 	{
-		"ID"					"15181"
+		"ID"							"15181"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"custom/huntress_curse_arrow"
 		"ScriptFile"					"heroes/huntress/huntress_curse_arrow/huntress_curse_arrow"
-		"MaxLevel"                     	"1"
-		"RequiredLevel"					"1"
-		"AbilityCooldown"				"25"
-		"AbilityManaCost"				"170"
-		"AbilityChannelTime"			"2.0"
-		"AbilityCastRange"				"1000"
+		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityChannelTime"			"2.0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40 37 34 31 28 25 22"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 175 200 225 250 275 300"
+
+		"precache"
+		{
+			"particle"					"particles/huntress/huntress_curse_arrow/huntress_curse_arrow.vpcf"
+			"particle"					"particles/huntress/huntress_hunting_spirit/huntress_hunting_spirit.vpcf"
+		}
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"min_duration"		    "1.5"
-			"max_duration"   		"4.5"
-			"projectile_speed"   	"1500"
-			"scepter_radius"
+			"damage"				"200 300 400 500 600 700 800"
+			"min_duration"			"1.5"
+			"max_duration"
+			{
+				"value"										"3 3.5 4 4.5 5 5.5 6"
+				"special_bonus_unique_huntress_curse_arrow_duration"	"+1.5"
+			}
+			"projectile_speed"		"1500"
+			"scepter_break"
 			{
 				"value"					"0"
-				"special_bonus_scepter"	"400"
-			}
-			"scepter_mute_duration"
-			{
-				"value"					"0"
-				"special_bonus_scepter"	"3"
+				"special_bonus_scepter"	"+1"
 			}
 		}
-		"AbilityCastAnimation" 		"ACT_DOTA_CAST_ABILITY_2"
 	}
-	"huntress_aim_shot_bonus_crit_tallent"
+
+	// Huntress: Talents
+	"special_bonus_unique_huntress_aim_shot_crit"
 	{
-		"ID"					"15180"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"						"25"
-		}
 	}
 
-	"huntress_aim_shot_bonus_bat_tallent"
+	"special_bonus_unique_huntress_aim_shot_bat"
 	{
-		"ID"					"15179"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"						"-0.2"
-		}
 	}
 
-	"huntress_huntress_owl_radius_aura_tallent"
+	"special_bonus_unique_huntress_owl_radius"
 	{
-		"ID"					"15178"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"						"100"
-		}
 	}
 
-	"huntress_huntress_owl_invisible_tallent"
+	"special_bonus_unique_huntress_owl_invisible"
 	{
-		"ID"					"15177"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"						"1"
-		}
 	}
 
-	"huntress_crippling_arrow_chance_tallent"
+	"special_bonus_unique_huntress_crippling_arrow_chance"
 	{
-		"ID"					"15176"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"						"5"
-		}
 	}
 
-	"huntress_crippling_arrow_duration_tallent"
+	"special_bonus_unique_huntress_crippling_arrow_duration"
 	{
-		"ID"					"15175"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"						"0.5"
-		}
 	}
 
-	"huntress_hunting_spirit_heavy_arrow_tallent"
+	"special_bonus_unique_huntress_crippling_arrow_stun"
 	{
-		"ID"					"15174"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"						"50"
-		}
 	}
 
-	"huntress_hunting_spirit_status_resist_tallent"
+	"special_bonus_unique_huntress_curse_arrow_duration"
 	{
-		"ID"					"15173"
 		"BaseClass"						"special_bonus_base"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"value"						"10"
-		}
 	}
 
 	"huntress_hunter_instinct"
@@ -328,6 +279,8 @@
 			"isolation_radius"			"400"
 			"isolated_damage_pct"		"20"
 			"alone_damage_pct"			"40"
+			"isolated_per_level"			"0.3"	// за уровень героя
+			"alone_per_level"			"0.5"	// за уровень героя
 		}
 	}
 }
