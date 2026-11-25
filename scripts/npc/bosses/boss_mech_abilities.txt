@@ -15,7 +15,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.9"
-		"AbilityCooldown"				"7"
+		"AbilityCooldown"				"5"
 		"precache"
 		{
 			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
@@ -33,7 +33,7 @@
 			"speed"				"900"
 			"range"				"1000"
 			"width"				"110"
-			"damage_pct"		"15"
+			"damage_pct"		"22.5"
 			"stun"				"1.2"
 		}
 	}
@@ -47,7 +47,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"0.8"
-		"AbilityCooldown"				"18"
+		"AbilityCooldown"				"13.5"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_undying/undying_tombstone_spawn.vpcf"
@@ -62,7 +62,7 @@
 			"hits"					"2"
 			"heal_pct"				"3"
 			"explode_radius"		"90"
-			"explode_damage_pct"	"8"
+			"explode_damage_pct"	"12"
 			"slow_duration"			"1.5"
 			"slow"					"40"
 		}
@@ -77,7 +77,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		"AbilityCastPoint"				"1.0"
-		"AbilityCooldown"				"6"
+		"AbilityCooldown"				"4.5"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_calldown.vpcf"
@@ -87,7 +87,7 @@
 		{
 			"offset"			"200"
 			"radius"			"300"
-			"damage_pct"		"25"
+			"damage_pct"		"37.5"
 			"stun"				"0.8"
 		}
 	}
@@ -127,7 +127,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"7.5"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
@@ -153,7 +153,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"12"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
@@ -176,7 +176,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.7"
-		"AbilityCooldown"				"8"
+		"AbilityCooldown"				"6"
 		"precache"
 		{
 			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
@@ -187,7 +187,7 @@
 		{
 			"range"				"700"
 			"width"				"175"
-			"damage_pct"		"12"
+			"damage_pct"		"18"
 			"slow_duration"		"2"
 			"slow_ms"			"70"
 			"slow_as"			"100"
@@ -205,7 +205,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"9"
+		"AbilityCooldown"				"7"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_start.vpcf"
@@ -219,7 +219,7 @@
 			"delay"				"3"
 			"delay_per_death"	"0.5"
 			"delay_min"			"2"
-			"damage_pct"		"55"
+			"damage_pct"		"70"
 		}
 	}
 	"plague_reaper_wave"
@@ -232,7 +232,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"14"
+		"AbilityCooldown"				"10.5"
 		"precache"
 		{
 			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
@@ -246,7 +246,7 @@
 			"speed"				"900"
 			"range"				"700"
 			"width"				"90"
-			"damage_pct"		"6"
+			"damage_pct"		"9"
 			"heal_pct"			"1"
 			"double_from_death"	"1"
 		}
@@ -262,7 +262,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastPoint"				"0.4"
-		"AbilityCooldown"				"11"
+		"AbilityCooldown"				"8"
 		"precache"
 		{
 			"particle"	"particles/econ/items/lina/lina_ti7/light_strike_array_pre_ti7.vpcf"
@@ -278,7 +278,7 @@
 			"segment_offset"	"250"
 			"segment_radius"	"150"
 			"delay"				"1.0"
-			"damage_pct"		"20"
+			"damage_pct"		"30"
 			"stun"				"1"
 		}
 	}
@@ -292,7 +292,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"0.8"
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"9"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_mars/mars_shield_bash.vpcf"
@@ -300,7 +300,7 @@
 		"AbilityValues"
 		{
 			"radius"			"400"
-			"damage_pct"		"20"
+			"damage_pct"		"30"
 			"push_duration"		"0.4"
 			"stun"				"1"
 		}
@@ -316,7 +316,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"1.0"
-		"AbilityCooldown"				"14"
+		"AbilityCooldown"				"10.5"
 		"precache"
 		{
 			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
@@ -327,7 +327,7 @@
 			"distance"			"800"
 			"speed"				"1100"
 			"hit_radius"		"200"
-			"damage_pct"		"30"
+			"damage_pct"		"45"
 			"push_duration"		"0.5"
 		}
 	}
@@ -384,12 +384,12 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"15"
 		"AbilityValues"
 		{
 			"count"				"2"
 			"hp_pct"			"6"
-			"damage_pct"		"25"
+			"damage_pct"		"37.5"
 		}
 	}
 	"lycan_boss_howl"
@@ -402,7 +402,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"0.7"
-		"AbilityCooldown"				"14"
+		"AbilityCooldown"				"10.5"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_lycan/lycan_howl_cast.vpcf"
@@ -430,7 +430,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"8"
+		"AbilityCooldown"				"6"
 		"precache"
 		{
 			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
@@ -439,8 +439,8 @@
 		}
 		"AbilityValues"
 		{
-			"damage_pct"		"12"
-			"bleed_pct"			"2"
+			"damage_pct"		"18"
+			"bleed_pct"			"3"
 			"bleed_duration"	"4"
 			"bleed_slow"		"30"
 		}
@@ -466,7 +466,7 @@
 			"move_speed"		"40"
 			"crit_chance"		"30"
 			"crit_damage"		"200"
-			"crit_pct_hp"		"6"
+			"crit_pct_hp"		"9"
 		}
 	}
 
@@ -482,7 +482,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_1"
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.6"
-		"AbilityCooldown"				"9"
+		"AbilityCooldown"				"7"
 		"precache"
 		{
 			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
@@ -494,7 +494,7 @@
 			"range"				"1000"
 			"speed"				"1450"
 			"width"				"100"
-			"damage_pct"		"20"
+			"damage_pct"		"30"
 		}
 	}
 	"pudge_boss_rot"
@@ -513,7 +513,7 @@
 		"AbilityValues"
 		{
 			"radius"				"250"
-			"damage_pct_per_sec"	"6"
+			"damage_pct_per_sec"	"9"
 			"slow"					"20"
 		}
 	}
@@ -531,7 +531,7 @@
 		"AbilityCastRange"				"200"
 		"AbilityCastPoint"				"0.6"
 		"AbilityChannelTime"			"2.5"
-		"AbilityCooldown"				"14"
+		"AbilityCooldown"				"10.5"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_pudge/pudge_dismember.vpcf"
@@ -541,7 +541,7 @@
 		"AbilityValues"
 		{
 			"duration"				"2.5"
-			"damage_pct_per_sec"	"8"
+			"damage_pct_per_sec"	"12"
 			"heal_pct_per_sec"		"2"
 			"finish_heal_pct"		"15"
 		}
@@ -558,7 +558,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastPoint"				"0.8"
-		"AbilityCooldown"				"9"
+		"AbilityCooldown"				"7"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
@@ -568,7 +568,7 @@
 		"AbilityValues"
 		{
 			"radius"			"385"
-			"damage_pct"		"10"
+			"damage_pct"		"15"
 			"slow_duration"		"3"
 			"slow"				"50"
 		}
@@ -587,7 +587,7 @@
 		}
 		"AbilityValues"
 		{
-			"pct_per_stack"		"2"
+			"pct_per_stack"		"3"
 			"stack_duration"	"8"
 		}
 	}
@@ -600,7 +600,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"MaxLevel"						"1"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"18"
+		"AbilityCooldown"				"13.5"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
@@ -630,7 +630,7 @@
 		}
 		"AbilityValues"
 		{
-			"pct_per_stack"		"0.7"
+			"pct_per_stack"		"1"
 			"max_stacks"		"8"
 			"duration"			"6"
 		}
@@ -645,7 +645,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastPoint"				"0.8"
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"7.5"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_fire.vpcf"
@@ -653,7 +653,7 @@
 		"AbilityValues"
 		{
 			"radius"			"450"
-			"damage_pct"		"12"
+			"damage_pct"		"18"
 			"knockback"			"300"
 			"disarm"			"2"
 		}
@@ -681,7 +681,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"1.0"
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"12"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_vitality_cast.vpcf"
@@ -708,7 +708,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"9"
 		"precache"
 		{
 			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
@@ -716,7 +716,7 @@
 		}
 		"AbilityValues"
 		{
-			"damage_pct"		"25"
+			"damage_pct"		"37.5"
 			"slow_duration"		"3"
 			"slow"				"50"
 		}
@@ -738,7 +738,7 @@
 		"AbilityValues"
 		{
 			"hits"				"4"
-			"damage_pct"		"12"
+			"damage_pct"		"18"
 			"stun"				"0.5"
 		}
 	}
@@ -759,7 +759,7 @@
 		{
 			"chance"			"20"
 			"stun"				"0.6"
-			"damage_pct"		"6"
+			"damage_pct"		"9"
 		}
 	}
 	// Призрачный покров: замах, снимает дебафы, на время бесплотен
@@ -773,7 +773,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"1.0"
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"11"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_spirit.vpcf"
