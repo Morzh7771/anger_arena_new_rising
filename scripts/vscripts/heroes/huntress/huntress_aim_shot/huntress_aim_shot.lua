@@ -1,6 +1,7 @@
 huntress_aim_shot = huntress_aim_shot or class({})
 
 LinkLuaModifier("modifier_huntress_aim_shot", "heroes/huntress/huntress_aim_shot/modifier_huntress_aim_shot", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_huntress_aim_shot_busy", "heroes/huntress/huntress_aim_shot/modifier_huntress_aim_shot", LUA_MODIFIER_MOTION_NONE)
 
 function huntress_aim_shot:OnToggle()
 	if not IsServer() then return end
@@ -13,6 +14,10 @@ function huntress_aim_shot:OnToggle()
 		caster:RemoveModifierByName("modifier_huntress_aim_shot")
 		caster:EmitSound("Hero_Huntress.AimShot.Disable")
 	end
+end
+
+-- стойку включают и выключают на ходу: каст не должен сбивать стрельбу и бег
+function huntress_aim_shot:IsStealable() return false
 end
 
 
@@ -47,7 +52,8 @@ function huntress_aim_shot:FireArrow(target)
 		Source				= caster,
 		iUnitTargetTeam		= DOTA_UNIT_TARGET_TEAM_ENEMY,
 		iUnitTargetType		= DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		iUnitTargetFlags	= DOTA_UNIT_TARGET_FLAG_NONE,
+		-- атака: бьёт и тех, кто под иммунитетом к магии (BKB)
+		iUnitTargetFlags	= DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
 		vVelocity			= dir * speed,
 		bProvidesVision		= true,
 		iVisionRadius		= 150,
@@ -69,6 +75,9 @@ function huntress_aim_shot:OnProjectileHit_ExtraData(target, location, data)
 
 	local hits = (key and self.arrow_hits[key]) or 0
 	local reduction = self:GetSpecialValueFor("pierce_damage_reduction") / 100
+
+	-- бесплотный / неуязвимый: стрела пролетает насквозь без урона и не тратит пробитие
+	if target:IsAttackImmune() or target:IsInvulnerable() then return false end
 
 	caster.aa_aim_shot_arrow = true
 	caster.aa_aim_shot_arrow_mult = (1 - reduction) ^ hits

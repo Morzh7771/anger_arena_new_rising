@@ -32,14 +32,14 @@
 				"special_bonus_unique_huntress_aim_shot_crit"	"+25"
 			}
 			"bonus_attack_range"		"50 75 100 125 150 175 200"
-			// прибавляется к BAT героя
+			"pierce_damage_reduction"	"40"	// % урона стрелы за каждую пробитую цель, от остатка
+			"arrow_width"				"110"
+			// прибавляется к BAT героя; последним - в тултипе внизу
 			"bat_penalty"
 			{
 				"value"									"2.1"
 				"special_bonus_unique_huntress_aim_shot_bat"	"-0.2"
 			}
-			"pierce_damage_reduction"	"25"	// % урона стрелы за каждую пробитую цель, от остатка
-			"arrow_width"				"110"
 		}
 	}
 

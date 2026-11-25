@@ -172,7 +172,7 @@ function modifier_aa_hero:OnIntervalThink()
     local int = self:GetParent():GetIntellect(false)
 	if int ~= self.int then
 		self.int = int
-		local resist = 0.1 * int
+		local resist = 0.125 * int -- как в доте 7.42: 0.125% сопротивления магии за интеллект
 		self:GetParent():SetBaseMagicalResistanceValue(25 - resist)
 	end
 end

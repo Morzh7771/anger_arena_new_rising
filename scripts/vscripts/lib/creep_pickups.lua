@@ -4,7 +4,6 @@ if not IsServer() then return end
 -- С шансом DROP_CHANCE убитый крип роняет бонус (вид - по весам KINDS):
 --   склянка здоровья / маны, мешочек золота, осколок руны (короткий бафф),
 --   книга опыта (отстающим падает чаще).
--- Со стакнутого лагеря (2+ живые волны на момент смерти) склянки большие.
 -- Кому:
 --  * убийца-герой в пределах GIVE_RANGE и вражеских героев рядом нет -> сразу ему;
 --  * иначе бонус падает на землю вокруг крипа, забирает первый герой, подошедший
@@ -14,7 +13,6 @@ if not IsServer() then return end
 CreepPickups = CreepPickups or {}
 
 local DROP_CHANCE   = 20
-local STACKED_DROP_CHANCE = 35 -- с лагеря, где 2+ живые волны
 local GIVE_RANGE    = 1000
 local SCATTER_MIN   = 100
 local SCATTER_MAX   = 300
@@ -152,8 +150,8 @@ end
 function CreepPickups:OnCreepDeath(event)
 	local creep = event and event.creep
 	if not creep or creep:IsNull() then return end
-	local stacked = CampStacked(creep)
-	if RandomInt(1, 100) > (stacked and STACKED_DROP_CHANCE or DROP_CHANCE) then return end
+	-- шанс и размер всегда одинаковые: стак лагеря их больше не поднимает (владелец, 2026-11-25)
+	if RandomInt(1, 100) > DROP_CHANCE then return end
 
 	local pos = creep:GetAbsOrigin()
 	local hero = KillerHero(event.attacker)
@@ -161,7 +159,7 @@ function CreepPickups:OnCreepDeath(event)
 
 	local data = { kind = kind, visual = kind }
 	if kind == "heal" or kind == "mana" then
-		data.pct = stacked and BIG_VIAL_PCT or VIAL_PCT
+		data.pct = VIAL_PCT
 	elseif kind == "gold" then
 		data.gold = math.max(1, math.floor(creep:GetMaximumGoldBounty() * GOLD_MULT))
 	elseif kind == "xp" then

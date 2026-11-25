@@ -146,6 +146,12 @@ function BossSpawner:CheckSpawn(boss, firstTime)
 	-- случайное, поэтому часы идут до максимального, а жёлтая дуга - от
 	-- минимального: заливка дошла до дуги - босс может встать в любой момент,
 	-- круг полный - он точно стоит. До первого спавна круга нет.
+	-- запоминаем окно респавна: после переезда напарника круг и Alt-таймер
+	-- переставляются на новую точку (_RefreshPendingMarker)
+	local nowGame = GameRules:GetGameTime()
+	boss.pendingMarker = { spawnAt = nowGame + spawnDelay, minAt = nowGame + minDelay,
+		maxAt = nowGame + maxDelay, ring = not firstTime }
+
 	if not firstTime then
 		local windowFrom = maxDelay > 0 and minDelay / maxDelay or nil
 
@@ -193,6 +199,7 @@ end
 
 function BossSpawner:SpawnBoss(boss)
 	self:_RemoveTimer(boss, true)
+	boss.pendingMarker = nil
 
 	-- круг вспыхивает и уходит ровно на появлении босса
 	CampRespawnRing:Stop(RingName(boss))
@@ -299,6 +306,9 @@ function BossSpawner:HandleUnitKill(unit, killer)
 	end
 
 	self.bossCurrent[unit] = nil
+
+	-- телеметрия боя (lib/boss/boss_fight_stats.lua)
+	if BossFightStats then pcall(BossFightStats.OnKilled, BossFightStats, unit, killer) end
 
 	if IsTormentor(boss) then
 		TormentorGates:Close(boss.name)
@@ -421,6 +431,37 @@ function BossSpawner:_TeleportBoss(boss, index, from)
 
 	if MinimapSpots and MinimapSpots.OnBossMoved then
 		pcall(MinimapSpots.OnBossMoved, MinimapSpots, from, boss.point)
+	end
+
+	-- живой занял точку, куда должен был встать мёртвый напарник: его круг
+	-- и Alt-таймер едут туда, где он реально появится
+	local group = boss.rotation and self.rotationGroups and self.rotationGroups[boss.rotation.group]
+	for _, other in pairs(group and group.bosses or {}) do
+		if other ~= boss and not Alive(other) then self:_RefreshPendingMarker(other) end
+	end
+end
+
+-- Мёртвый босс ждёт респавна: если его точку занял живой, переносим её на
+-- свободную (так же решит SpawnBoss) и ставим туда круг и таймер с остатком времени.
+function BossSpawner:_RefreshPendingMarker(boss)
+	local pm = boss.pendingMarker
+	if not pm or not boss.rotation or not self.currentSpawning[boss] then return end
+
+	local oldName = boss.pointName
+	self:_FreeRotationSpot(boss)
+	if boss.pointName == oldName then return end
+
+	local now = GameRules:GetGameTime()
+	local maxLeft = pm.maxAt - now
+
+	if pm.ring and maxLeft > 0 then
+		local minLeft = pm.minAt - now
+		local windowFrom = minLeft > 0 and minLeft / maxLeft or nil
+		CampRespawnRing:Start(RingName(boss), boss.point, maxLeft, RESPAWN_RING_RADIUS, windowFrom)
+	end
+
+	if AABossTimers then
+		pcall(AABossTimers.Scheduled, AABossTimers, boss.name, boss.point, math.max(0, pm.spawnAt - now))
 	end
 end
 

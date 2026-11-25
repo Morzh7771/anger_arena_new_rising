@@ -205,7 +205,7 @@
 		"MaxLevel"						"1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"7"
+		"AbilityCooldown"				"9"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_start.vpcf"
@@ -219,7 +219,7 @@
 			"delay"				"3"
 			"delay_per_death"	"0.5"
 			"delay_min"			"2"
-			"damage_pct"		"70"
+			"damage_pct"		"60"
 		}
 	}
 	"plague_reaper_wave"
@@ -246,7 +246,7 @@
 			"speed"				"900"
 			"range"				"700"
 			"width"				"90"
-			"damage_pct"		"9"
+			"damage_pct"		"5"
 			"heal_pct"			"1"
 			"double_from_death"	"1"
 		}
@@ -778,6 +778,7 @@
 		{
 			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_spirit.vpcf"
 			"particle"	"particles/status_fx/status_effect_necrolyte_spirit.vpcf"
+			"particle"	"particles/status_fx/status_effect_ghost.vpcf"
 		}
 		"AbilityValues"
 		{

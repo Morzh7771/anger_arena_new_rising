@@ -69,19 +69,32 @@ function mm:OnCreated()
 	ParticleManager:SetParticleControlEnt(self.scythe, 0, p, PATTACH_ABSORIGIN_FOLLOW, nil, p:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(self.scythe, 1, p, PATTACH_ABSORIGIN_FOLLOW, nil, p:GetAbsOrigin(), true)
 	p:EmitSound("Hero_Necrolyte.ReapersScythe.Target")
+
+	-- удар по своему таймеру: проверка остатка времени в OnDestroy на
+	-- естественном истечении срабатывала не всегда, и коса не била
+	self:StartIntervalThink(math.max(0.03, self:GetDuration() - 0.03))
+end
+
+function mm:OnIntervalThink()
+	self:StartIntervalThink(-1)
+	self:Strike()
+	self:Destroy()
 end
 
 function mm:OnDestroy()
 	if not IsServer() then return end
 	BossKit:StopParticle(self.ring)
 	BossKit:StopParticle(self.scythe)
+end
+
+function mm:Strike()
+	if self.struck then return end
+	self.struck = true
 
 	local p = self:GetParent()
 	local caster = self:GetCaster()
 	local ab = self:GetAbility()
 
-	-- снят раньше времени (смерть цели, смерть босса) - удара нет
-	if self:GetRemainingTime() > 0.05 then return end
 	if not p:IsAlive() or not caster or caster:IsNull() or not caster:IsAlive() or not ab or ab:IsNull() then return end
 
 	local radius = ab:GetSpecialValueFor("share_radius")
@@ -270,8 +283,12 @@ local sh = modifier_plague_reaper_shroud
 
 function sh:IsPurgable() return false end
 function sh:GetTexture() return "necrolyte_sadist" end
-function sh:GetStatusEffectName() return "particles/status_fx/status_effect_necrolyte_spirit.vpcf" end
+-- бесплотность должна читаться сразу: призрачный статус-эффект как у Ghost Scepter
+-- и свечение духа на всё время покрова
+function sh:GetStatusEffectName() return "particles/status_fx/status_effect_ghost.vpcf" end
 function sh:StatusEffectPriority() return 20 end
+function sh:GetEffectName() return "particles/units/heroes/hero_necrolyte/necrolyte_spirit.vpcf" end
+function sh:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function sh:CheckState()
 	return { [MODIFIER_STATE_ATTACK_IMMUNE] = true, [MODIFIER_STATE_DISARMED] = true }
 end

@@ -128,6 +128,9 @@ function CreepLeveling:OnSpawnCallback( event )
 			if tonumber(info["hero_avg_level"]) <= seek_creep_level then tier = tier + 1 end
 		end
 		creep._aa_creep_tier = tier
+		-- для телеметрии creep_kill: по какому уровню героев выбран тир и когда встал
+		creep._aa_camp_level = level
+		creep._aa_spawned_at = GameRules:GetGameTime()
 		creep._aa_creep_tier_count = total
 		-- уровень способностей (1..7) задан прямо в тире, base_stats creep_stats.kv
 		creep._aa_creep_ability_level = tonumber(seek_spawn_info["ability_level"])

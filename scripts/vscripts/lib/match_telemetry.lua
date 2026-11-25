@@ -124,19 +124,86 @@ end
 -- там это золото уже есть как "creep"/"neutral". Сумма - баунти крипа до делёжки и множителей.
 local campAgg = {}
 
-local function CampGold(pid, camp, gold)
+local function CampGold(pid, camp, gold, xp, elite)
 	if not PidOk(pid) or not camp then return end
 
 	local key = pid .. "|" .. camp
 	local g = campAgg[key]
 
 	if not g then
-		g = { pid = pid, camp = camp, amount = 0, kills = 0 }
+		g = { pid = pid, camp = camp, amount = 0, kills = 0, xp = 0, elite = 0 }
 		campAgg[key] = g
 	end
 
 	g.amount = g.amount + math.floor(tonumber(gold) or 0)
 	g.kills = g.kills + 1
+	-- опыт крипа (до делёжки) и число элиток - для баланса экономики кемпов
+	g.xp = g.xp + math.floor(tonumber(xp) or 0)
+	if elite then g.elite = g.elite + 1 end
+end
+
+-- Опыт по источникам (AngelArena:ExperienceFilter -> MatchTelemetry.OnXp): reason - DOTA_ModifyXP_*
+-- (0 unspecified, 1 hero kill, 2 creep kill, 3 roshan, 4 tome, 5 outpost...). Сводка "xp_src".
+local xpAgg = {}
+
+function MatchTelemetry.OnXp(pid, xp, reason)
+	if not PidOk(pid) then return end
+	local key = pid .. "|" .. tostring(reason)
+	local g = xpAgg[key]
+	if not g then
+		g = { pid = pid, reason = reason, amount = 0, n = 0 }
+		xpAgg[key] = g
+	end
+	g.amount = g.amount + math.floor(tonumber(xp) or 0)
+	g.n = g.n + 1
+end
+
+local function TeamAvgLevel(team)
+	local sum, n = 0, 0
+	for pid = 0, 23 do
+		if PlayerResource:IsValidPlayerID(pid) and (team == nil or PlayerResource:GetTeam(pid) == team) then
+			local h = Hero(pid)
+			if h then sum = sum + h:GetLevel(); n = n + 1 end
+		end
+	end
+	return n > 0 and math.floor(sum / n * 10 + 0.5) / 10 or 0
+end
+
+-- Каждое убийство крипа кемпа с контекстом - сырьё для разбора экономики:
+-- что за кемп и тир, сколько дал, как быстро его сняли, кто и на каком уровне.
+local function CreepKill(apid, killed)
+	local hero = PidOk(apid) and Hero(apid) or nil
+	local now = GameRules:GetGameTime()
+	local info = killed.spawner_info
+	local stack = 0
+	if info and CreepSpawner and CreepSpawner._GetActiveWaveCount then
+		pcall(function() stack = CreepSpawner:_GetActiveWaveCount(info.name) end)
+	end
+	local nw = 0
+	if PidOk(apid) then
+		pcall(function()
+			nw = (MatchTracker and MatchTracker.NetWorthOf) and MatchTracker.NetWorthOf(apid) or PlayerResource:GetNetWorth(apid)
+		end)
+	end
+
+	Push("creep_kill", PidOk(apid) and apid or -1, {
+		camp     = killed._aa_camp,
+		spawner  = info and info.name or nil,
+		tier     = killed._aa_creep_tier,
+		camp_lvl = killed._aa_camp_level,
+		elite    = killed:HasModifier("modifier_creep_elite") and 1 or 0,
+		gold     = killed:GetGoldBounty(),
+		xp       = killed:GetDeathXP(),
+		life     = killed._aa_spawned_at and math.floor(now - killed._aa_spawned_at) or nil,
+		stack    = stack,
+		time_mult = CreepLeveling and CreepLeveling.BountyTimeMult and CreepLeveling:BountyTimeMult() or nil,
+		unit     = killed:GetUnitName(),
+		klvl     = hero and hero:GetLevel() or nil,
+		khero    = hero and hero:GetUnitName() or nil,
+		nw       = math.floor(nw or 0),
+		team_avg = hero and TeamAvgLevel(hero:GetTeamNumber()) or nil,
+		all_avg  = TeamAvgLevel(nil),
+	})
 end
 
 local function FlushGoldSrc()
@@ -147,10 +214,16 @@ local function FlushGoldSrc()
 	goldAgg = {}
 
 	for _, g in pairs(campAgg) do
-		Push("camp_gold", g.pid, { camp = g.camp, amount = g.amount, kills = g.kills })
+		Push("camp_gold", g.pid, { camp = g.camp, amount = g.amount, kills = g.kills, xp = g.xp, elite = g.elite })
 	end
 
 	campAgg = {}
+
+	for _, g in pairs(xpAgg) do
+		Push("xp_src", g.pid, { reason = g.reason, amount = g.amount, n = g.n })
+	end
+
+	xpAgg = {}
 end
 
 -- ------------------------------------------------------------------ урон, полученный героями
@@ -770,7 +843,9 @@ ListenToGameEvent("entity_killed", function(event)
 		end
 
 		if killed._aa_camp then
-			pcall(CampGold, apid, killed._aa_camp, killed:GetGoldBounty())
+			pcall(CampGold, apid, killed._aa_camp, killed:GetGoldBounty(), killed:GetDeathXP(),
+				killed:HasModifier("modifier_creep_elite"))
+			pcall(CreepKill, apid, killed)
 		elseif killed:IsBuilding() then
 			Push("building_kill", PidOk(apid) and apid or -1, {
 				building = killed:GetUnitName(),

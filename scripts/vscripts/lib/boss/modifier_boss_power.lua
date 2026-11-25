@@ -57,6 +57,9 @@ function mod:OnTakeDamage(params)
 		-- событие приходит от любого урона на карте; свой босс - только parent
 		if caster == self:GetParent() then
 			BossSpawner:OnBossDamaged(caster, attacker)
+			if BossFightStats then
+				pcall(BossFightStats.OnDamaged, BossFightStats, caster, attacker, params.damage, params.damage_type, params.inflictor)
+			end
 		end
 
 		if BossSpawner:IsBoss(caster) then 

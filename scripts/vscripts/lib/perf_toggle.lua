@@ -45,3 +45,19 @@ Convars:RegisterCommand("aa_perf", function(_, part, value)
 
 	Apply(part, tostring(value) == "0")
 end, "Замер FPS: aa_perf <telemetry|ui|all> <0|1>", 0)
+
+-- Сводки фризов клиента (panorama perf_monitor.js) -> событие матча "client_perf"
+if not AA_PERF_LISTENER then
+	AA_PERF_LISTENER = CustomGameEventManager:RegisterListener("aa_client_perf", function(_, data)
+		local pid = data and data.PlayerID
+		if pid == nil or not MatchTracker or not MatchTracker.Push then return end
+		local d = {}
+		for _, k in ipairs({ "span", "frames", "fps", "h33", "h50", "h100", "worst" }) do
+			d[k] = tonumber(data[k])
+		end
+		for _, k in ipairs({ "hitches", "nt", "nt_near" }) do
+			if type(data[k]) == "string" then d[k] = string.sub(data[k], 1, 2000) end
+		end
+		pcall(MatchTracker.Push, MatchTracker, "client_perf", pid, d)
+	end)
+end

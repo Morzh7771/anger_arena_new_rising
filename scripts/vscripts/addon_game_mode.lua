@@ -149,6 +149,7 @@ safe_require('lib/underdog')
 safe_require('lib/hero_farm')
 -- премиум: точное время респавна боссов по Alt
 safe_require('lib/boss_timers_premium')
+safe_require('lib/boss/boss_fight_stats')
 -- замер FPS: консольная команда aa_perf (lib/perf_toggle.lua)
 safe_require('lib/perf_toggle')
 -- тест боссов с механиками: консольные aa_boss / aa_boss_clear (lib/boss_test.lua)
@@ -1061,6 +1062,11 @@ function AngelArena:ExperienceFilter(event)
 		return false
 	end
 
+	-- телеметрия: опыт по источникам, только реально выданный (lib/match_telemetry.lua, xp_src)
+	if MatchTelemetry and MatchTelemetry.OnXp then
+		pcall(MatchTelemetry.OnXp, pid, event.experience, event.reason_const)
+	end
+
 	return true
 end
 function AngelArena:OnPlayerBuyItem(event)
@@ -1834,11 +1840,6 @@ function AngelArena:DamageFilter(event)
 	if (entindex_victim_const) then victim = EntIndexToHScript(entindex_victim_const) end
 	if (entindex_attacker_const) then attacker = EntIndexToHScript(entindex_attacker_const) end
 
-	-- Huntress Aim Shot: настоящая атака урон не наносит, урон несёт пронзающая стрела
-	if attacker and victim and not entindex_inflictor_const and attacker.aa_aim_shot_null_victim == entindex_victim_const then
-		attacker.aa_aim_shot_null_victim = nil
-		return false
-	end
 
 
 	-----------------------------------------------------------------------------------------------------
@@ -2049,6 +2050,19 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 	-- Meteor Hammer (item_lua) сбивался любым приказом движения. Как в доте:
 	-- канал прерывает только Stop / Hold, приказы с Shift встают в очередь.
 	if AngelArena:_BlocksChannelBreak(ord) then return false end
+
+	-- Huntress в стойке Aim Shot: приказы атаки забирает её свой цикл выстрелов
+	-- (heroes/huntress/huntress_aim_shot/modifier_huntress_aim_shot.lua)
+	-- проверяем каждого юнита приказа: Huntress может быть не первой в выделении (совы и т.п.)
+	if HuntressAimShotOrder and ord.units then
+		local consumed, total = false, 0
+		for _, idx in pairs(ord.units) do
+			total = total + 1
+			local u = EntIndexToHScript(idx)
+			if u and HuntressAimShotOrder(u, ord, target) == false then consumed = true end
+		end
+		if consumed and total == 1 then return false end
+	end
 
 	-- Подборы с крипов (lib/creep_pickups.lua) кликом не поднимаются:
 	-- клик = просто идти к ним, срабатывают, только когда герой подошёл в упор.
