@@ -109,11 +109,15 @@ function modifier_shadow_shaman_serpent_ward_aa:DeclareFunctions()
 		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
 		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
 		MODIFIER_EVENT_ON_ATTACK,
+		MODIFIER_PROPERTY_HEALTHBAR_PIPS,
 	}
 end
 
 function modifier_shadow_shaman_serpent_ward_aa:GetModifierBaseAttack_BonusDamage() return self.damage end
 function modifier_shadow_shaman_serpent_ward_aa:GetModifierAttackRangeBonus() return self.range end
+
+-- здоровье змейки = число ударов, показываем делениями
+function modifier_shadow_shaman_serpent_ward_aa:GetModifierHealthBarPips() return self:GetParent():GetMaxHealth() end
 
 -- доп. цели: выпускаем ещё атаки по ближайшим врагам в радиусе атаки
 function modifier_shadow_shaman_serpent_ward_aa:OnAttack(keys)

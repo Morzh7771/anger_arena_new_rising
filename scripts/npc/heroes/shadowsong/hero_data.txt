@@ -3,10 +3,10 @@
 {
 	"npc_dota_hero_shadowsong"
 	{
-		"MinimapIcon"				"minimap_icon_shadowsong"
-		"MinimapIconSize"			"600"
-		"Model"						"models/creeps/ice_biome/undeadtusk/undead_tuskskeleton02.vmdl"
-		"BaseClass" 				"npc_dota_hero"
+		"Model"						"models/heroes/antimage/antimage.vmdl"
+		"SoundSet"					"Hero_Antimage"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		"BaseClass" 				"npc_dota_hero_antimage"
 		"HeroID"					"205"
 		"IsCustom"					"1"
 		"Team"						"Bad"
@@ -40,21 +40,26 @@
 		"AttackDamageMax"			"34"									// Damage range max.	
 
 		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.3"										// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"0.300000"										// Normalized time in animation cycle to attack.
 
 		"AttackAcquisitionRange"	"620"									// Range within a target can be acquired.
 		"AttackRange"				"150"									// Range within a target can be attacked.
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"180"
+			"faster"	"300"
+		}
 
 		"ProjectileModel"			""										// Particle system model for projectile.
 		"ProjectileSpeed"			"1200"										// Speed of projectile.
 
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"25"									// Base strength
-		"AttributeStrengthGain"		"3.0"									// Strength bonus per level.
-		"AttributeBaseAgility"		"24"									// Base agility
-		"AttributeAgilityGain"		"2.8"									// Agility bonus per level.
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"24"									// Base strength
+		"AttributeStrengthGain"		"2.8"									// Strength bonus per level.
+		"AttributeBaseAgility"		"25"									// Base agility
+		"AttributeAgilityGain"		"3.0"									// Agility bonus per level.
 		"AttributeBaseIntelligence"	"15"									// Base intelligence
 		"AttributeIntelligenceGain"	"2.0"									// Intelligence bonus per level.
 

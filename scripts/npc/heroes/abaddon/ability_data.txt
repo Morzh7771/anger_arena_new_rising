@@ -8,7 +8,7 @@ DOTAAbilities
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"7"
 
-		// "HasShardUpgrade"				"1"
+		"HasShardUpgrade"				"1"
 		// "HasScepterUpgrade"				"1"
 		// "IsGrantedByScepter"				"1"
 		// "IsGrantedByShard"				"1"
@@ -64,6 +64,20 @@ DOTAAbilities
 			{
 				"value"			"0"
 				"special_bonus_unique_abaddon_7"		"+15"
+			}
+			// шард как в доте: % поглощённого урона - врагам рядом с целью
+			"absorb_to_damage"
+			{
+				"value"			"0"
+				"special_bonus_shard"	"75"
+			}
+			"absorb_damage_aoe"
+			{
+				"value"			"0"
+				"special_bonus_shard"				"675"
+				"affected_by_aoe_increase"			"1"
+				"CalculateSpellDamageTooltip"		"0"
+				"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
 			}
 		}
 	}

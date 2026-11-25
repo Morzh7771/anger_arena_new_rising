@@ -101,6 +101,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/satan/satan_bloody_trade/satan_trade.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"				   
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"custom/satan_trade"
@@ -143,6 +144,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/satan/satan_overpain/satan_overpain.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"				   
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"custom/satan_overpain"
@@ -175,6 +177,7 @@
 		"MaxLevel"						"7"
 		"BaseClass"						"ability_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -313,10 +316,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"debt_pct"					"10"
-			"max_bonus_damage"			"150"
-			"decay_per_second"			"15"
+			"debt_pct"				"15"
+			"max_bonus_damage"				"50"
+			"decay_per_second"				"20"	// % от потолка в секунду
 			"decay_delay"				"3.0"
+			"max_damage_per_level"				"5"	// за уровень героя
 		}
 	}
 }

@@ -9,7 +9,7 @@ function ability:OnProjectileHit(target, targetPos)
 
 	local caster = self:GetCaster()
 
-	local damage = self:GetSpecialValueFor("damage")
+	local damage = self:GetSpecialValueFor("damage") + caster:GetAgility() * self:GetSpecialValueFor("damage_pct") / 100
 
 	if caster:HasTalent("fireblade_talent_burn_offering_attack_dmg") then
 		damage = damage + caster:GetAverageTrueAttackDamage(nil)
@@ -62,10 +62,14 @@ function ability:OnSpellStart( ... )
 	local caster = self:GetCaster()
 	local casterPos = caster:GetAbsOrigin()
 
+	-- NO_TARGET: GetCastRange может вернуть 0, радиус берём явно
+	local radius = self:GetSpecialValueFor("abilitycastrange")
+	if radius <= 0 then radius = 600 end
+
 	local units = FindUnitsInRadius( caster:GetTeamNumber(),
 									 casterPos,
 									 caster,
-									 self:GetCastRange(casterPos, nil) + caster:GetCastRangeBonus(),
+									 radius + caster:GetCastRangeBonus(),
 									 self:GetAbilityTargetTeam(),
 									 self:GetAbilityTargetType(),
 									 self:GetAbilityTargetFlags(),

@@ -4,7 +4,10 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"terrorblade_reflection"
+		// Lua-версия (по крипам - отражения самого Террорблейда): vscripts/heroes/terrorblade/terrorblade_reflection.lua
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/terrorblade/terrorblade_reflection"
+		"AbilityTextureName"	"terrorblade_reflection"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -72,6 +75,7 @@ DOTAAbilities
             }
         	"AbilityManaCost"				"60 65 70 75 80 85 90"
         	"illusion_effectiveness"				"25"
+			"creep_max_illusions"		"3"	// фарм: отражений Террорблейда на крипов
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

@@ -25,8 +25,13 @@ return {
   MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
   MODIFIER_PROPERTY_MIN_HEALTH,
   MODIFIER_PROPERTY_STATUS_RESISTANCE,
+  MODIFIER_PROPERTY_PROVIDES_FOW_POSITION,
 }
 end
+
+-- Портал виден врагам и сквозь туман войны. Одних AddFOWViewer (addon_game_mode)
+-- не хватало: точку открывало не всегда, и чужой портал пропадал в тумане.
+function modifier_mid_teleport:GetModifierProvidesFOWVision() return 1 end
 
 
 function modifier_mid_teleport:GetAbsoluteNoDamagePhysical() return 1 end

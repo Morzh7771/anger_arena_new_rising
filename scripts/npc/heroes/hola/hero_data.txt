@@ -1,0 +1,79 @@
+"DOTAHeroes"
+{
+	// Hola: порт из Angel Arena Frontier (механика) + Global (цифры). Модель: Omniknight + сет Blinding Bastion (сет вешает lib/custom_hero_wearables.lua)
+	"npc_dota_hero_hola"
+	{
+		"Model"						"models/heroes/omniknight/omniknight.vmdl"
+		"ModelScale"				"1.0"
+		"BaseClass"					"npc_dota_hero_omniknight"
+		"HeroID"					"210"
+		"IsCustom"					"1"
+		"SoundSet"					"Hero_Omniknight"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"Team"						"Good"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					"hola_stunhammer"
+		"Ability2"					"hola_grace"
+		"Ability3"					"hola_stomp"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"hola_divine_retribution"
+		"Ability6"					"hola_rescue"
+
+		//10 LEVEL
+		"Ability10"					"special_bonus_movement_speed_20"
+		"Ability11"					"special_bonus_cast_range_200"
+
+		//15 LEVEL
+		"Ability12"					"special_bonus_unique_hola_grace_heal_amplify"
+		"Ability13"					"special_bonus_unique_hola_stunhammer_bounces"
+
+		//20 LEVEL
+		"Ability14"					"special_bonus_unique_hola_stomp_heals_from_damage"
+		"Ability15"					"special_bonus_magic_resistance_40"
+
+		//25 LEVEL
+		"Ability16"					"special_bonus_unique_hola_rescue_applies_grace"
+		"Ability17"					"special_bonus_cooldown_reduction_30"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"2"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"33"
+		"AttackDamageMax"			"41"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.433000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"900"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"3.3"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"1.6"
+		"AttributeBaseIntelligence"	"22"
+		"AttributeIntelligenceGain"	"2.8"
+
+		"StatusHealthRegen"			"0.25"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"310"
+		"MovementTurnRate"			"0.7"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"200"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+}

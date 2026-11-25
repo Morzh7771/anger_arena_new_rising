@@ -55,8 +55,14 @@ function satan_blood_debt_counter:OnUpgrade()
 end
 
 if IsServer() then
+	-- потолок долга растёт с уровнем героя
+	function satan_blood_debt_counter:MaxDebt()
+		local ability = self:GetAbility()
+		return self.max_bonus_damage + (ability and ability:GetSpecialValueFor("max_damage_per_level") or 0) * self:GetParent():GetLevel()
+	end
+
 	function satan_blood_debt_counter:SetDebt(value)
-		self.debt = math.max(0, math.min(value, self.max_bonus_damage))
+		self.debt = math.max(0, math.min(value, self:MaxDebt()))
 
 		local stacks = math.floor(self.debt)
 		if stacks ~= self:GetStackCount() then
@@ -69,7 +75,8 @@ if IsServer() then
 		if not self.decay_per_second or self.debt <= 0 then return end
 
 		if GameRules:GetGameTime() - self.last_damage_time >= self.decay_delay then
-			self:SetDebt(self.debt - self.decay_per_second * THINK_INTERVAL)
+			-- тает на decay_per_second% от потолка в секунду
+			self:SetDebt(self.debt - self:MaxDebt() * self.decay_per_second / 100 * THINK_INTERVAL)
 		end
 	end
 

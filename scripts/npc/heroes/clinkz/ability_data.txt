@@ -118,9 +118,12 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"clinkz_searing_arrows"
+		// Lua-версия (сплэш по крипам): vscripts/heroes/clinkz/clinkz_searing_arrows.lua
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/clinkz/clinkz_searing_arrows"
+		"AbilityTextureName"	"clinkz_searing_arrows"
 		"MaxLevel"		"7"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -159,6 +162,7 @@ DOTAAbilities
 				"value"				"600"
 				"special_bonus_attack_range_50"				"+50"
 			}
+			"creep_splash_radius"			"250"	// фарм: против крипов
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}

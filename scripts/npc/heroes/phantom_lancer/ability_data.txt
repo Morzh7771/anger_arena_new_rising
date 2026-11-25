@@ -4,7 +4,10 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phantom_lancer_spirit_lance"
+		// Lua-версия (отскоки по крипам): vscripts/heroes/phantom_lancer/phantom_lancer_spirit_lance.lua
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phantom_lancer/phantom_lancer_spirit_lance"
+		"AbilityTextureName"	"phantom_lancer_spirit_lance"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -64,27 +67,13 @@ DOTAAbilities
 			"illusion_damage_in_pct"	"300"
 			"tooltip_illusion_total_damage_in_pct"	"400"
 			"fake_lance_distance"		"675"
-			"scepter_bounce_radius"
-			{
-				"value"						"0"
-				"affected_by_aoe_increase"  "1"
-				"special_bonus_scepter"			"750"
-			}
-			"scepter_bonus_illusion_damage"
-			{
-				"value"						"0"
-				"special_bonus_scepter"			"30"
-			}
-			"scepter_total_hits"
-			{
-				"value"						"0"
-				"special_bonus_scepter"			"2"
-			}
 			"AbilityCooldown"
 			{
 				"value"				"10 10 9 8 8 8 7"
 				"special_bonus_unique_phantom_lancer_5"				"-1"
 			}
+			"creep_bounce_count"			"2"	// фарм: против крипов
+			"creep_bounce_radius"			"500"	// фарм: против крипов
 		}	
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

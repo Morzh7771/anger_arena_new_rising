@@ -48,7 +48,7 @@ function ability:OnProjectileHit(target, targetPos)
 
 	local stackCount = mod:GetStackCount()
 
-	local burnAmmount = self:GetSpecialValueFor("manaburn") * stackCount
+	local burnAmmount = (self:GetSpecialValueFor("manaburn") + target:GetMaxMana() * self:GetSpecialValueFor("manaburn_pct") / 100) * stackCount
 
 	target:Script_ReduceMana(burnAmmount,self)
 
@@ -68,7 +68,7 @@ function ability:OnProjectileHit(target, targetPos)
 	ApplyDamage({
 		victim 		= target,
 		attacker 	= caster,
-		damage 		= burnAmmount,
+		damage 		= burnAmmount + caster:GetAgility() * self:GetSpecialValueFor("damage_pct") / 100,
 		damage_type = self:GetAbilityDamageType(),
 		ability 	= self,
 	})

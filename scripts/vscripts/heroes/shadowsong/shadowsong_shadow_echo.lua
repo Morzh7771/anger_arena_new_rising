@@ -48,7 +48,10 @@ if IsServer() then
 		if params.damage_type ~= DAMAGE_TYPE_MAGICAL then return end
 
 		local parent = self:GetParent()
-		local heal_amount = params.original_damage * self.spell_lifesteal_pct / 100
+		-- вампиризм с магии растёт с уровнем героя
+		local ability = self:GetAbility()
+		local pct = self.spell_lifesteal_pct + (ability and ability:GetSpecialValueFor("spell_lifesteal_per_level") or 0) * parent:GetLevel()
+		local heal_amount = params.original_damage * pct / 100
 
 		if heal_amount > 0 then
 			parent:Heal(heal_amount, parent)

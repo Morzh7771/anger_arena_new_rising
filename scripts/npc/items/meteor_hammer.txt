@@ -42,7 +42,7 @@
 			}
 			"max_duration"				"2 1.5 1"
 			"impact_damage_units"		"150 300 500"
-			"impact_damage_units_pct_health"		"15"
+			"impact_damage_units_pct_health"		"10 15 20"
 			"building_damage_pct"		"75"
 			"enemy_particles_visible"	"0"
 			"passive_debuff_duration"	"3"
@@ -102,9 +102,23 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_starforge"
 		"AbilityTextureName"			"starforge_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"ItemBaseLevel"					"2"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"AbilityChannelTime"			"2"
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"175"
+		"AbilitySharedCooldown"			"meteor"
+		"ItemCost"						"12000"
+		"ItemShopTags"					"farming;magic_dmg;disable"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -147,7 +161,7 @@
 			}
 			"max_duration"				"2 1.5 1"
 			"impact_damage_units"		"150 300 500"
-			"impact_damage_units_pct_health"		"15"
+			"impact_damage_units_pct_health"		"10 15 20"
 			"building_damage_pct"		"75"
 			"enemy_particles_visible"	"0"
 
@@ -167,10 +181,23 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_starforge"
 		"AbilityTextureName"			"starforge_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"ItemBaseLevel"					"3"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"AbilityChannelTime"			"2"
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"175"
+		"AbilitySharedCooldown"			"meteor"
+		"ItemCost"						"28000"
+		"ItemShopTags"					"farming;magic_dmg;disable"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SuggestLategame"				"1"
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"1"
@@ -212,7 +239,7 @@
 			}
 			"max_duration"				"2 1.5 1"
 			"impact_damage_units"		"150 300 500"
-			"impact_damage_units_pct_health"		"15"
+			"impact_damage_units_pct_health"		"10 15 20"
 			"building_damage_pct"		"75"
 			"enemy_particles_visible"	"0"
 

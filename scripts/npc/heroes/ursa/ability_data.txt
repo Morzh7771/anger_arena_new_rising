@@ -25,7 +25,7 @@ DOTAAbilities
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"75 125 175 225 275 325 375"
+		"AbilityDamage"					"80 140 200 260 320 380 440"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -69,6 +69,7 @@ DOTAAbilities
             {
                 "value"             "9"
             }
+			"damage_pct"			"100"	// урон от ловкости (lib/percent_damage.lua)
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"

@@ -61,7 +61,8 @@ function modifier_demon_warrior_invisible:OnAttackLanded(params)
             damage_type = DAMAGE_TYPE_PHYSICAL,
         }
         ApplyDamage(info)
-        target:ReduceMana(self.bonus_manaburn)
+        -- ReduceMana в 7.42 нет: падало и мана не жглась
+        target:Script_ReduceMana(self.bonus_manaburn, self:GetAbility())
     end
 end
 

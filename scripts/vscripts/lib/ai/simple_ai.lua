@@ -12,6 +12,11 @@ function SimpleAI:OnTick()
 	
 	if not self:CanThink() then return self.tickTime end
 
+	-- Свой канал (Dismember, еда Пуджа) не трогаем: Attack делает Stop() и
+	-- сбивал его на первом же тике. Канал телепорта ротации - тоже.
+	local unit = self.unit
+	if unit:IsChanneling() or unit:HasModifier("modifier_boss_rotation") then return self.tickTime end
+
 	local spawnPos = self.spawnPos
 	local caster = self.unit
 
@@ -67,6 +72,9 @@ function SimpleAI:Make( unit, tickTime, aoi, actions)
 	ai.tickTime = tickTime
 	ai.unit 	= unit
 	ai.actions  = actions
+
+	-- спавнер боссов двигает точку возврата при ротации (lib/boss/boss_spawner.lua)
+	unit.aa_simple_ai = ai
 
 	Timers:CreateTimer(ai.tickTime, function() return ai:OnTick() end )
 end

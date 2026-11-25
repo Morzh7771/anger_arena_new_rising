@@ -169,6 +169,7 @@ DOTAAbilities
 			{
 				"dynamic_value"				"true"
 			}
+			"creep_cleave_pct"			"30"	// фарм: против крипов
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -339,6 +340,7 @@ DOTAAbilities
 				"value"				"29 28 26 24 23 22 20"
 				"special_bonus_unique_lone_druid_4"				"-4"
 			}
+			"creep_damage"			"60 100 140 180 220 260 300"	// фарм: против крипов
 		}
 	}
 	"lone_druid_savage_roar_bear"

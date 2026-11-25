@@ -7,6 +7,13 @@
 PrecacheList = PrecacheList or {}
 
 PrecacheList.particles = {
+	-- замах крипов (modifiers/modifier_aa_creep_telegraph.lua) и фарм героев (modifier_aa_hero_farm)
+	"particles/generic_gameplay/generic_has_quest.vpcf",
+	"particles/generic/red_zone.vpcf",
+	"particles/items_fx/battlefury_cleave.vpcf",
+	"particles/generic_gameplay/generic_manaburn.vpcf",
+	"particles/generic_gameplay/generic_lifesteal.vpcf",
+	"particles/dev/empty_particle.vpcf",
 	"particles/abyss_warrior/abyss_warrior_status_effect.vpcf",
 	"particles/armor/armor.vpcf",
 	"particles/blood_impact/blood_advisor_pierce_spray_c.vpcf",

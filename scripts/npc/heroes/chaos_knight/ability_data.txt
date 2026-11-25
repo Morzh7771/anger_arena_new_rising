@@ -134,7 +134,10 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"chaos_knight_chaos_strike"
+		// Lua-версия (точное определение крита для сплэша по крипам): vscripts/heroes/chaos_knight/chaos_knight_chaos_strike.lua
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/chaos_knight/chaos_knight_chaos_strike"
+		"AbilityTextureName"	"chaos_knight_chaos_strike"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"					"Hero_ChaosKnight.ChaosStrike"
@@ -148,7 +151,6 @@ DOTAAbilities
 				"chance"				
 				{
 						"value"				"33.33"
-						"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_5"
 					"special_bonus_unique_chaos_knight_5"				"+10"
 				}
 				"crit_min"				"125"
@@ -161,6 +163,8 @@ DOTAAbilities
 
 				"creep_multiplier"					"1.7"
 				"creep_lifesteal_reduction_pct"		"25"
+			"creep_splash_radius"			"300"	// фарм: против крипов
+			"creep_splash_pct"			"50"	// фарм: против крипов
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}

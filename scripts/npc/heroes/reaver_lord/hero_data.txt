@@ -1,0 +1,79 @@
+"DOTAHeroes"
+{
+	// Reaver Lord: порт из Angel Arena Global. Модель: Terrorblade + сет Rictus Ripper (сет вешает lib/custom_hero_wearables.lua)
+	"npc_dota_hero_reaver_lord"
+	{
+		"Model"						"models/heroes/terrorblade/terrorblade.vmdl"
+		"ModelScale"				"1.0"
+		"BaseClass"					"npc_dota_hero_terrorblade"
+		"HeroID"					"212"
+		"IsCustom"					"1"
+		"SoundSet"					"Hero_Terrorblade"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		"Team"						"Bad"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"5"
+		"Ability1"					"reaver_lord_soul_devour"
+		"Ability2"					"reaver_lord_twink"
+		"Ability3"					"reaver_lord_superiority_instinct"
+		"Ability4"					"reaver_lord_soul_burn"
+		"Ability5"					"reaver_lord_soul_collector"
+		"Ability6"					"reaver_lord_attract"
+
+		//10 LEVEL
+		"Ability10"					"special_bonus_movement_speed_15"
+		"Ability11"					"special_bonus_attack_damage_20"
+
+		//15 LEVEL
+		"Ability12"					"special_bonus_agility_20"
+		"Ability13"					"special_bonus_hp_450"
+
+		//20 LEVEL
+		"Ability14"					"special_bonus_evasion_15"
+		"Ability15"					"special_bonus_all_stats_12"
+
+		//25 LEVEL
+		"Ability16"					"special_bonus_unique_reaver_lord_attract_no_souls"
+		"Ability17"					"special_bonus_unique_reaver_lord_twink_range"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"6"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"38"
+		"AttackDamageMax"			"42"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"900"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"2.5"
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"3.2"
+		"AttributeBaseIntelligence"	"15"
+		"AttributeIntelligenceGain"	"2.1"
+
+		"StatusHealthRegen"			"0.5"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.8"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"280"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+}

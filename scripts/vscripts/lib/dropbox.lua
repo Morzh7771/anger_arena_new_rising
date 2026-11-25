@@ -136,6 +136,54 @@ function ItemDestroyer:start()
 	end)
 end
 
+-- Книга на земле (рядом был враг): кольцо радиуса подбора, и кто из героев
+-- первым зайдёт в кольцо - тому книга и применяется, кликать не надо.
+-- Поднятая кликом в инвентарь тоже работает: тогда просто гасим кольцо.
+local TOME_PICKUP_RADIUS = 150
+local TOME_RING_PARTICLE = "particles/ui_mouseactions/range_display.vpcf"
+
+function DropBox:_WatchTomePickup(item, drop, pos)
+	local itemName = item:GetAbilityName()
+
+	local fx = ParticleManager:CreateParticle(TOME_RING_PARTICLE, PATTACH_WORLDORIGIN, nil)
+	ParticleManager:SetParticleControl(fx, 0, pos)
+	ParticleManager:SetParticleControl(fx, 1, Vector(TOME_PICKUP_RADIUS, 0, 0))
+
+	local function Stop()
+		ParticleManager:DestroyParticle(fx, false)
+		ParticleManager:ReleaseParticleIndex(fx)
+	end
+
+	-- даём книге долететь, потом проверяем раз в 0.1 с
+	Timers:CreateTimer(0.6, function()
+		if not item or item:IsNull() or not drop or drop:IsNull() or item:GetOwnerEntity() then
+			Stop()
+			return
+		end
+
+		local heroes = FindUnitsInRadius(DOTA_TEAM_NEUTRALS, pos, nil, TOME_PICKUP_RADIUS,
+			DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO,
+			DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+			FIND_CLOSEST, false)
+
+		for _, hero in pairs(heroes) do
+			if hero:IsRealHero() and hero:IsAlive() and not hero:IsIllusion() then
+				local count = math.max(1, item:GetCurrentCharges())
+
+				if ShiftBuy:GiveTome(hero, itemName, count) then
+					EmitSoundOnLocationWithCaster(pos, "Item.TomeOfKnowledge", hero)
+					Stop()
+					UTIL_Remove(drop)
+					UTIL_Remove(item)
+					return
+				end
+			end
+		end
+
+		return 0.1
+	end)
+end
+
 -- receiver - герой, которому книги из дропа достаются сразу, не падая на
 -- землю (ShiftBuy:GiveTome). Передают его только крипы: это тот, кто убил.
 function DropBox:DropAtPos(pos, radius, manualLifetime, receiver)
@@ -158,11 +206,17 @@ function DropBox:DropAtPos(pos, radius, manualLifetime, receiver)
 
 			item:SetPurchaseTime(0)
 
-			local drop = CreateItemOnPositionSync( itemPos, item )
+			local isTome = ShiftBuy and ShiftBuy:_GetTomes()[itemName]
+
+			-- книгу подбрасываем из точки смерти, остальное как раньше
+			local drop = CreateItemOnPositionSync( isTome and pos or itemPos, item )
 
 			if not drop then return end
 
-			--item:LaunchLoot(false, 300, 0.75, itemPos)
+			if isTome then
+				if CreepPickups then CreepPickups:Toss(drop, pos, itemPos, 250, 0.6) end
+				DropBox:_WatchTomePickup(item, drop, itemPos)
+			end
 
 			table.insert( result, {item, drop} )
 
@@ -175,7 +229,14 @@ function DropBox:DropAtPos(pos, radius, manualLifetime, receiver)
 		
 		local item = nil
 
-		if not (receiver and ShiftBuy and ShiftBuy:GiveTome(receiver, itemName, itemCount)) then
+		local isTome = ShiftBuy and ShiftBuy:_GetTomes()[itemName]
+
+		if receiver and isTome and IsValidEntity(receiver) and receiver:IsRealHero() and CreepPickups then
+			-- книга видимо летит к убийце и применяется по прилёту
+			CreepPickups:FlyTo(itemName, pos, receiver, function(hero)
+				ShiftBuy:GiveTome(hero, itemName, itemCount)
+			end)
+		elseif not (receiver and ShiftBuy and ShiftBuy:GiveTome(receiver, itemName, itemCount)) then
 			item = MakeItem( itemName )
 		end
 

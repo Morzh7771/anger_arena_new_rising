@@ -6,6 +6,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -40,11 +41,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"manaburn"				"100 150 200 250 300 350 400"
+			"manaburn"				"60 90 120 150 180 210 240"
 			"status_resist_debuff"	"7.5"
 			"heal_decrease_debuff"	"15"
 			"debuff_duration"		"10"
 			"projectile_speed"		"800"
+			"damage_pct"				"80 105 130 160 190 220 250"	// % силы
+			"manaburn_pct"				"1 1.5 2 2.5 3 3.5 4"	// % макс. маны цели за стак
 		}
 	}
 
@@ -88,7 +91,7 @@
 		{
 			"damage"
 			{
-				"value"				"35 45 55 65 75 85 95"
+				"value"				"25 33 41 50 58 66 75"
 				"LinkedSpecialBonus"	"shadowsong_special_bonus_absorbtion"
 			}
 			"duration"				"6"
@@ -105,6 +108,7 @@
 				"value"				"0"
 				"special_bonus_shard"	"3"
 			}
+			"damage_str_pct"				"8 10 12 14 16 18 20"	// % силы в секунду
 		}
 	}
 
@@ -317,7 +321,8 @@
 		"AbilityValues"
 		{
 			"heal_per_mana"				"15"
-			"spell_lifesteal_pct"		"5"
+			"spell_lifesteal_pct"				"3"
+			"spell_lifesteal_per_level"				"0.25"	// за уровень героя
 		}
 	}
 }

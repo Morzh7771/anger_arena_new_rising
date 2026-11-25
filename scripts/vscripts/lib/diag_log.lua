@@ -135,6 +135,14 @@ function DiagLog:Summary()
 		self:Print("perf", "спрятано лагерей %d, крипов в них %d", hibCamps, hibUnits)
 	end
 
+	-- проверка общего слушателя замахов (modifiers/modifier_aa_creep_telegraph.lua):
+	-- хабов должно быть 1, замахи и докасты растут вместе
+	if TelegraphHub and TelegraphHub.stats then
+		local t = TelegraphHub.stats
+		self:Print("perf", "замахи крипов: хабов %d, событий %d, замахов %d, докастов %d, сорвано %d",
+			t.hubs, t.events, t.windups, t.recasts, t.cancels)
+	end
+
 	self:Print("perf", "колбэки таймеров за минуту: %.0f ms | медленных кадров (>%.0f ms): %d, в сумме %.0f ms",
 		total, Timers._timeLimit or 0, slowFrames, slowMs)
 

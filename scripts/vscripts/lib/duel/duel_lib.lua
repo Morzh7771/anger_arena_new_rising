@@ -71,6 +71,7 @@ local PURGE_MODIFIERS = {
 	"modifier_item_invisibility_edge",
 	"modifier_life_stealer_assimilate",
 	"modifier_huskar_burning_spear_debuff",
+	"modifier_huskar_burning_spear_aa_debuff",
 	"modifier_kings_bar_magic_immune_active",
 	"modifier_black_king_bar_immune",
 	"modifier_venomancer_poison_nova",
@@ -300,6 +301,10 @@ function DuelLibrary:RemoveHeroesFromDuel(heroesTable)
 			end
 
 			x:RemoveModifierByName("modifier_huskar_burning_spear_debuff")
+			-- Lua-версия копий (heroes/huskar/huskar_burning_spear.lua), по одной на каждого Хускара
+			while x:HasModifier("modifier_huskar_burning_spear_aa_debuff") do
+				x:RemoveModifierByName("modifier_huskar_burning_spear_aa_debuff")
+			end
 
 			local point = self:_PopRecordedPos(x)
 
@@ -331,6 +336,9 @@ function DuelLibrary:Precache( context )
 	DuelDoors:Precache( context )
 	PrecacheResource("particle", DUEL_RING_PARTICLE, context)
 	PrecacheResource("particle", DUEL_VICTORY_PARTICLE, context)
+	PrecacheResource("particle", "particles/units/heroes/hero_chen/chen_teleport.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_chen/chen_teleport_flash.vpcf", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context)
 end
 
 function DuelLibrary:IsDuelActive()

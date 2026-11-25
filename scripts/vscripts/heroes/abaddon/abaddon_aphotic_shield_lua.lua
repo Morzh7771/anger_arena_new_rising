@@ -8,6 +8,7 @@ function abaddon_aphotic_shield_lua:Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts", context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_abaddon/abaddon_aphotic_shield.vpcf", context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_hit.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", context )
 end
 
 --------------------------------------------------------------------------------
@@ -96,6 +97,11 @@ function modifier_abaddon_aphotic_shield_lua:OnDestroy()
 		ApplyDamage( self.damageTable )
 	end
 
+	-- взрыв щита (2026-11-22): урон был, а партикла не было - взрыв не читался
+	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+	ParticleManager:SetParticleControl(fx, 0, self.parent:GetAbsOrigin())
+	ParticleManager:ReleaseParticleIndex(fx)
+
 	-- Play effects
 	StopSoundOn("Hero_Abaddon.AphoticShield.Loop", self.parent)
 	EmitSoundOn("Hero_Abaddon.AphoticShield.Destroy", self.parent)
@@ -144,6 +150,9 @@ function modifier_abaddon_aphotic_shield_lua:GetModifierIncomingDamageConstant( 
 	self:PlayEffects2()
 
 	-- block based on damage
+	local absorbed = math.min(params.damage, self.current_shield)
+	self:ShardDamage(absorbed)
+
 	if params.damage>self.current_shield then
 		self:Destroy()
 		return -self.current_shield
@@ -154,6 +163,22 @@ function modifier_abaddon_aphotic_shield_lua:GetModifierIncomingDamageConstant( 
 		self:SendBuffRefreshToClients()
 
 		return -params.damage
+	end
+end
+
+--------------------------------------------------------------------------------
+-- Шард (как в доте): absorb_to_damage% поглощённого урона - врагам в absorb_damage_aoe вокруг цели
+function modifier_abaddon_aphotic_shield_lua:ShardDamage(absorbed)
+	local ability = self:GetAbility()
+	if not ability or absorbed <= 0 then return end
+	local pct = ability:GetSpecialValueFor("absorb_to_damage")
+	local radius = ability:GetSpecialValueFor("absorb_damage_aoe")
+	if pct <= 0 or radius <= 0 then return end
+	local enemies = FindUnitsInRadius(self.caster:GetTeamNumber(), self.parent:GetOrigin(), nil, radius,
+		DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
+	for _, enemy in pairs(enemies) do
+		ApplyDamage({ victim = enemy, attacker = self.caster, damage = absorbed * pct / 100,
+			damage_type = ability:GetAbilityDamageType(), ability = ability })
 	end
 end
 

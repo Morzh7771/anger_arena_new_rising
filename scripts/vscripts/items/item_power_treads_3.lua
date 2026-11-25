@@ -9,6 +9,8 @@ item_power_treads_3 = class({
 		end
 		self:GetCaster():FindModifierByName("modifier_power_treads_3"):SetStackCount(stat + 1)
 		self:SetCurrentCharges(stat + 1)
+		-- статы переключаются сразу, не дожидаясь планового пересчёта (раз в 0.5 с)
+		self:GetCaster():CalculateStatBonus(true)
 	end,
 	GetAbilityTextureName = function (self)
 		return "pt" ..  self:GetCurrentCharges()
@@ -18,17 +20,27 @@ item_power_treads_3 = class({
 
 modifier_power_treads_3 = class({
 	IsHidden = function (self) return true end,
-	OnCreated = function (self) 
-		if self:GetParent():IsIllusion() then
-			self:SetStackCount(PlayerResource:GetSelectedHeroEntity( self:GetParent():GetPlayerOwnerID() ):FindModifierByName("modifier_power_treads_3"):GetStackCount())
+	OnCreated = function (self)
+		-- GetPrimaryAttribute, заряды и CalculateStatBonus - серверные; стак и
+		-- заряды клиенту приезжают сами. На клиенте тут падало при покупке.
+		if not IsServer() then return end
+
+		local parent = self:GetParent()
+		-- у курьера и прочих не-героев (тред в сумке курьера) атрибута нет
+		local primary = parent.GetPrimaryAttribute and parent:GetPrimaryAttribute() or nil
+		local ownerHero = parent:IsIllusion() and PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID()) or nil
+		local ownerMod = ownerHero and ownerHero:FindModifierByName("modifier_power_treads_3") or nil
+
+		if ownerMod then
+			self:SetStackCount(ownerMod:GetStackCount())
 		else
-			if self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH  then
+			if primary == DOTA_ATTRIBUTE_STRENGTH  then
 				self:SetStackCount(1) 
 				self:GetAbility():SetCurrentCharges(1)
-			elseif self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
-				self:SetStackCount(3) 
+			elseif primary == DOTA_ATTRIBUTE_AGILITY then
+				self:SetStackCount(3)
 				self:GetAbility():SetCurrentCharges(3)
-			elseif self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT  then
+			elseif primary == DOTA_ATTRIBUTE_INTELLECT  then
 				self:SetStackCount(2) 
 				self:GetAbility():SetCurrentCharges(2)
 			else
@@ -36,10 +48,14 @@ modifier_power_treads_3 = class({
 				self:GetAbility():SetCurrentCharges(1)
 			end
 		end
-		self:StartIntervalThink(0.1)
+		-- CalculateStatBonus - полный пересчёт статов героя, он дёргает все
+		-- модификаторы героя. 10 раз в секунду у Gyrocopter в логе 2026-11-24
+		-- совпало с "thinking for 15-70 ms". При переключении зовём сразу (OnSpellStart).
+		self:StartIntervalThink(0.5)
 	end,
 	OnIntervalThink = function (self)
-		self:GetCaster():CalculateStatBonus(true)
+		local caster = self:GetCaster()
+		if caster and caster.CalculateStatBonus then caster:CalculateStatBonus(true) end
 	end,
 	DeclareFunctions =	function (self) return
 	{

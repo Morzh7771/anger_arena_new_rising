@@ -1,60 +1,66 @@
+-- Hola: Holy Rage. Порт из Angel Arena Frontier, цифры Angel Arena Global.
+-- Бьёт врагов вокруг и лечит союзников (база + % интеллекта). Талант: Холу лечит на весь нанесённый урон.
+
+require("heroes/hola/hola_divine_retribution")
+
 hola_stomp = class({})
 
-local talent_name = "hola_special_bonus_heal"
+function hola_stomp:Precache(context)
+	PrecacheResource("particle", "particles/econ/items/centaur/centaur_ti6/centaur_ti6_warstomp.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_c.vpcf", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts", context)
+end
 
-function hola_stomp:IsHiddenWhenStolen() 		return false end
+function hola_stomp:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
 
-function hola_stomp:OnSpellStart( ... )
-	if not IsServer() then return end
-
+function hola_stomp:OnSpellStart()
 	local caster = self:GetCaster()
-	local caster_origin = caster:GetOrigin()
-	caster:EmitSound("Hero_EarthShaker.EchoSlam")
+	local origin = caster:GetAbsOrigin()
+	local radius = self:GetSpecialValueFor("radius")
 
-	local radius 		= self:GetSpecialValueFor("radius")
-	local heal 			= self:GetSpecialValueFor("heal")
-	local damage 		= self:GetSpecialValueFor("damage")
-	local heal_percent 	= self:GetSpecialValueFor("heal_percent") / 100
+	local heal_amount = self:GetSpecialValueFor("heal") + caster:GetStrength() * self:GetSpecialValueFor("heal_percent") / 100
 
-	local part = ParticleManager:CreateParticle("particles/econ/items/centaur/centaur_ti6/centaur_ti6_warstomp.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-	ParticleManager:SetParticleControl( part, 0, caster_origin )
-	ParticleManager:SetParticleControl( part, 1, Vector( radius, 1, 1 ) )
-	ParticleManager:ReleaseParticleIndex( part )
+	local allies = FindUnitsInRadius(caster:GetTeamNumber(), origin, nil, radius,
+		DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
-	local part = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_c.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-	ParticleManager:SetParticleControl( part, 0, caster_origin )
-	ParticleManager:SetParticleControl( part, 1, Vector( radius, 1, 1 ) )
-	ParticleManager:ReleaseParticleIndex( part )
-
-	local allies = FindUnitsInRadius( caster:GetTeamNumber(), caster:GetOrigin(), caster, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-	for _,ally in pairs(allies) do
-		local hola_int = caster:GetIntellect(false)
-		ally:Heal(hola_int*heal_percent, caster)
-		SendOverheadEventMessage(caster, OVERHEAD_ALERT_HEAL, caster, hola_int*heal_percent, nil)
+	for _, ally in pairs(allies) do
+		ally:Heal(heal_amount, self)
+		HolaRetribution(caster, ally, heal_amount)
+		SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, ally, heal_amount, nil)
 	end
+
+	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), origin, nil, radius,
+		DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
 	local damage_info = {
-		victim = nil,
-		attacker = caster,
-		damage = damage,
-		damage_type = DAMAGE_TYPE_MAGICAL,
-		ability = self
+		attacker	= caster,
+		damage		= self:GetSpecialValueFor("damage") + caster:GetStrength() * self:GetSpecialValueFor("damage_pct") / 100,
+		damage_type	= self:GetAbilityDamageType(),
+		ability		= self,
 	}
 
-	local enemies = FindUnitsInRadius( caster:GetTeamNumber(), caster:GetOrigin(), caster, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-	
-	for _,enemy in pairs(enemies) do
-		
-		if not enemy:IsMagicImmune() and not enemy:IsInvulnerable() then
-			damage_info.victim = enemy
-			ApplyDamage(damage_info)
+	local heal_from_damage = self:GetSpecialValueFor("heal_from_damage") > 0
+	local dealt_total = 0
 
-			if caster:HasAbility(talent_name) and caster:FindAbilityByName(talent_name):GetLevel() ~= 0 then
-				local heal_from_damage = damage * (100 - enemy:GetMagicalArmorValue())/100
-				caster:Heal(heal_from_damage, self)
-				SendOverheadEventMessage(caster, OVERHEAD_ALERT_HEAL, caster, heal_from_damage, nil)
-			end
-		end
+	for _, enemy in pairs(enemies) do
+		damage_info.victim = enemy
+		dealt_total = dealt_total + ApplyDamage(damage_info)
 	end
 
+	if heal_from_damage and dealt_total > 0 then
+		caster:Heal(dealt_total, self)
+		SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, caster, dealt_total, nil)
+	end
+
+	caster:EmitSound("Hero_EarthShaker.EchoSlam")
+
+	local pfx = ParticleManager:CreateParticle("particles/econ/items/centaur/centaur_ti6/centaur_ti6_warstomp.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 1, 1))
+	ParticleManager:ReleaseParticleIndex(pfx)
+
+	pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_c.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:SetParticleControl(pfx, 1, Vector(radius, 1, 1))
+	ParticleManager:ReleaseParticleIndex(pfx)
 end

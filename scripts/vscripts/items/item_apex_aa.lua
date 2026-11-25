@@ -23,13 +23,15 @@ end
 
 function modifier_item_apex_aa:OnIntervalThink()
     if not IsServer() then return end
-    self.str_bonus = 0
+    local s, a, i = self.str_bonus, self.agi_bonus, self.int_bonus
     self.str_bonus = self:GetParent():GetStrength() / 100 * self.primary_attribute_pct
-    self.agi_bonus = 0
     self.agi_bonus = self:GetParent():GetAgility() / 100 * self.primary_attribute_pct
-    self.int_bonus = 0
     self.int_bonus = self:GetParent():GetIntellect(false) / 100 * self.primary_attribute_pct
-    self:GetParent():CalculateStatBonus(true)
+    -- полный пересчёт статов героя (дёргает все его модификаторы) - только если
+    -- бонус сдвинулся; раньше шёл 10 раз в секунду при неизменных статах
+    if math.abs(self.str_bonus - s) + math.abs(self.agi_bonus - a) + math.abs(self.int_bonus - i) >= 0.001 then
+        self:GetParent():CalculateStatBonus(true)
+    end
 end
 
 function modifier_item_apex_aa:GetModifierBonusStats_Strength(params)

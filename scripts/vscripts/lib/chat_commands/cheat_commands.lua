@@ -15,6 +15,8 @@ Cheat lobby commands
  -campsleep 0|1         -- вкл/выкл сон лагерей
  -endgame [radiant|dire] -- закончить игру сейчас (проверка финального экрана)
  -kl [r|d] 50            -- поставить команде счёт убийств (без r/d - своей команде)
+ -aa_boss pudge [2]      -- тестовый босс перед героем (2 = как после 2 смертей), -aa_boss_clear, -aa_boss_list
+ -bf                     -- снять с себя (и своих самонов) усталость после убийства боссов
 ]]
 
 Commands = Commands or class({})
@@ -123,6 +125,59 @@ function Commands:spawn_bosses( player, arg )
 end
 
 Commands.sb = Commands.spawn_bosses
+
+-- тест боссов с механиками (lib/boss_test.lua):
+--   -aa_boss pudge [смертей], -aa_boss_clear, -aa_boss_list
+require('lib/boss_test')
+
+function Commands:aa_boss(player, arg)
+	local name = arg and arg[1]
+	if not name then
+		Attentions:SendChatMessage("-aa_boss <" .. BossTest:Names() .. "> [смертей]")
+		return
+	end
+	local hero = player and player:GetAssignedHero()
+	BossTest:Spawn(hero, name, arg[2])
+end
+
+function Commands:aa_boss_clear(player, arg)
+	BossTest:Clear()
+end
+
+-- снять усталость после убийства боссов (modifier_boss_slayer_fatigue) со
+-- своего героя и его юнитов - чтобы бить боссов подряд на тесте
+function Commands:bf(player, arg)
+	local hero = player and player:GetAssignedHero()
+	if not hero then return end
+	local pid = hero:GetPlayerOwnerID()
+	local n = 0
+	for _, u in pairs(FindUnitsInRadius(hero:GetTeamNumber(), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE,
+		DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD, FIND_ANY_ORDER, false)) do
+		if u == hero or u:GetPlayerOwnerID() == pid then
+			if u:HasModifier("modifier_boss_slayer_fatigue") then
+				u:RemoveModifierByName("modifier_boss_slayer_fatigue")
+				n = n + 1
+			end
+		end
+	end
+	Attentions:SendChatMessage("Усталость снята: " .. n)
+end
+
+Commands.boss_fatigue = Commands.bf
+
+-- ротация боссов спавнера: шаг сетки сейчас / состояние пар
+function Commands:aa_boss_rotate(player, arg)
+	BossSpawner:ShiftRotation()
+	for _, l in pairs(BossSpawner:RotationInfo()) do Attentions:SendChatMessage(l) end
+end
+
+function Commands:aa_boss_rotation(player, arg)
+	for _, l in pairs(BossSpawner:RotationInfo()) do Attentions:SendChatMessage(l) end
+end
+
+function Commands:aa_boss_list(player, arg)
+	Attentions:SendChatMessage(BossTest:Names())
+end
 
 function Commands:enable_creeps_spawn(player, arg)
 	CreepSpawner:SetEnable(true) 
@@ -243,7 +298,7 @@ end
 function Commands:rmana(player, arg)
 	if not player then return end
 	MouseCursor:OnNearestUnit(player, function(unit)
-		unit:ReduceMana( tonumber(arg[1]) )
+		unit:Script_ReduceMana( tonumber(arg[1]), nil )
 	end) 	
 end
 

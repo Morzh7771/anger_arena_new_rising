@@ -1,3 +1,4 @@
+#base bosses/boss_mech_units.txt
 #base cosmetic_precache_units.txt
 #base heroes/bounty_hunter/unit.txt
 #base heroes/broodmother/unit.txt
@@ -1315,12 +1316,12 @@
 		
 		"AbilityLayout"				"7"
 		"Ability1" 					"possessed_magma_trails"
-		"Ability2" 					"possessed_devil_stomp"
-		"Ability3" 					"possessed_hellshield"
-		"Ability4" 					"possessed_fallen_sword"
-		"Ability5" 					"possessed_rebel"
+		"Ability2" 					"possessed_flame_wall"
+		"Ability3" 					"possessed_sweep"
+		"Ability4" 					"possessed_charge"
+		"Ability5" 					"possessed_awaken"
 		"Ability6" 					"possessed_curse"
-		"Ability7" 					"keymaster_dodge_mastery"
+		"Ability7" 					""
 		"Ability8" 					""
 		
 		"ArmorPhysical" 			"0" 
@@ -1727,7 +1728,7 @@
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
 		"CanBeDominated"			"1"
-		"IsAncient"				"0"
+		"IsAncient"				"1"
 		"UnitLabel"					"necrowarrior"
 		
 		// Abilities
@@ -1745,7 +1746,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"4"		// Physical protection.
-		"MagicalResistance"				"40"		// Magical protection.
+		"MagicalResistance"				"15"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -1790,7 +1791,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"900"		// Base health.
+		"StatusHealth"				"800"		// Base health.
 		"StatusHealthRegen"			"5"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -1816,7 +1817,7 @@
 		"ModelScale"				"0.6"
 		"IsSummoned"				"1"
 		"CanBeDominated"			"1"
-		"IsAncient"				"0"
+		"IsAncient"				"1"
 		"UnitLabel"					"necroarcher"
 		
 		// Abilities
@@ -1834,7 +1835,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"4"		// Physical protection.
-		"MagicalResistance"				"40"		// Magical protection.
+		"MagicalResistance"				"15"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -1879,7 +1880,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"900"		// Base health.
+		"StatusHealth"				"650"		// Base health.
 		"StatusHealthRegen"			"5"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.

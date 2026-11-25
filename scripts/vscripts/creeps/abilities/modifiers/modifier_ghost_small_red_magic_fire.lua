@@ -21,18 +21,19 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_ghost_small_red_magic_fire:OnCreated(kv)
-	self.damage = kv.damage 
-	self.duration = kv.duration
-	
-	ApplyDamage( {
-				victim = self:GetParent(),
-				attacker = self:GetCaster(),
-				damage = self.damage,
-				damage_type = DAMAGE_TYPE_MAGICAL,
-				ability = self:GetAbility()
-				} )
+	-- ApplyDamage есть только на сервере: на клиенте OnCreated падал с ошибкой
+	if IsServer() then
+		self.damage = kv.damage
+		self.duration = kv.duration
 
-	if IsServer() then 
+		ApplyDamage( {
+					victim = self:GetParent(),
+					attacker = self:GetCaster(),
+					damage = self.damage,
+					damage_type = DAMAGE_TYPE_MAGICAL,
+					ability = self:GetAbility()
+					} )
+
 		self.count = 2;
 		Timers:CreateTimer(1, function() 
 			if not self or not self.count or not self.duration or not self.damage then return nil end 

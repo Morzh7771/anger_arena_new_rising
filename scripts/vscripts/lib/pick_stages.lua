@@ -332,6 +332,9 @@ function P:OnSelect(data)
 	if self.picks[pid] or PlayerResource:HasSelectedHero(pid) then return Error(pid, "already") end
 	if not self.enabled[hero] then return Error(pid, "bad_hero") end
 	if self:IsTaken(hero) or self:HeroTakenInEngine(hero, pid) then return Error(pid, "taken") end
+	-- версии героев AA (lib/alt_heroes.lua): взят партнёр по паре - этот тоже недоступен
+	local partner = AltHeroes and AltHeroes:Partner(hero)
+	if partner and (self:IsTaken(partner) or self:HeroTakenInEngine(partner, pid)) then return Error(pid, "taken") end
 
 	self:Assign(pid, hero)
 	self:Publish()
@@ -363,7 +366,7 @@ CustomGameEventManager:RegisterListener("aa_pick_hero_info", function(_, data)
 
 		CustomGameEventManager:Send_ServerToPlayer(player, "aa_pick_hero_info", {
 			hero_name = info.hero_name, abilities = info.abilities, innate = info.innate,
-			scepter = info.scepter, shard = info.shard, talents = info.talents,
+			scepter = info.scepter, shard = info.shard, talents = info.talents, values = info.values,
 		})
 	end)
 

@@ -80,11 +80,18 @@ modifier_item_unknown_amulet_stats = class({
         self.item_stats = self:GetAbility():GetSpecialValueFor("stats")
 		self.primary_attribute_pct = self:GetAbility():GetSpecialValueFor("charge_primary_attribute") * self:GetAbility():GetCurrentCharges()
         local mode = self:GetAbility():GetSecondaryCharges()
-        if mode ~= self.mode then
+        local modeChanged = mode ~= self.mode
+        if modeChanged then
             self.mode = mode
             self:SendBuffRefreshToClients()
         end
-    	self:GetParent():CalculateStatBonus(true)
+        -- статы амулета зависят только от режима, зарядов и уровня предмета:
+        -- полный пересчёт статов героя - только когда что-то из этого сменилось
+        if modeChanged or self.item_stats ~= self._last_stats or self.primary_attribute_pct ~= self._last_pct then
+            self._last_stats = self.item_stats
+            self._last_pct = self.primary_attribute_pct
+    	    self:GetParent():CalculateStatBonus(true)
+        end
 	end,
 
 	GetModifierBonusStats_Strength = function (self)

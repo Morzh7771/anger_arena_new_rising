@@ -50,10 +50,12 @@ function guardian_of_the_ancients_ficle_ground_thinker:OnCreated( kv )
 	self.caster = self:GetCaster()
     self.interval = self:GetAbility():GetSpecialValueFor( "interval" ) 
     self.range = self:GetAbility():GetSpecialValueFor("aoe_range") 
-    self.damage = self:GetAbility():GetSpecialValueFor("damage") 
+    -- база + % силы Стража за каждый импульс
     self.impuls_max = self:GetAbility():GetSpecialValueFor("impuls_max") 
     self.parent = self:GetParent()
     if not IsServer() then return end
+    -- база + % урона атаки Стража за каждый импульс (GetAverageTrueAttackDamage есть только на сервере)
+    self.damage = self:GetAbility():GetSpecialValueFor("damage") + self:GetCaster():GetAverageTrueAttackDamage(nil) * self:GetAbility():GetSpecialValueFor("damage_pct") / 100
     self.impuls_now = 0
     self:StartIntervalThink(self.interval)
     self:OnIntervalThink()

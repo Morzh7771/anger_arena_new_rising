@@ -20,7 +20,26 @@ local ATTACK_ALERT_SOUNDS = {
 	possessed     = "Boss_Possessed.Curse.Cast",
 	soul_guardian = "Hero_Omniknight.Purification",
 	abyss_warrior = "Hero_Warlock.FatalBonds",
+	leoric        = "Hero_SkeletonKing.Reincarnate",
+	chronokeeper  = "Hero_FacelessVoid.Chronosphere",
+	pudge         = "Hero_Pudge.Dismember.Cast",
+	huskar        = "Hero_Huskar.Life_Break",
 	keymaster     = "Boss_Keymaster.Howl.Cast",
+	plague_reaper = "Hero_Necrolyte.ReapersScythe.Cast",
+	ursa          = "Hero_Ursa.Enrage",
+	lycan         = "Hero_Lycan.Howl",
+}
+
+-- вид босса для пула (unit_pool): от него крик "атакуют", строка в чате
+-- и килфид (#aa_boss_attacked_<вид>, #aa_feed_boss_<вид>)
+local POOL_KIND = {
+	npc_aa_leoric        = "leoric",
+	npc_aa_chronokeeper  = "chronokeeper",
+	npc_aa_plague_reaper = "plague_reaper",
+	npc_aa_pudge_boss    = "pudge",
+	npc_aa_huskar_boss   = "huskar",
+	npc_aa_ursa_boss     = "ursa",
+	npc_aa_lycan_boss    = "lycan",
 }
 
 function BossClass:Create( name, description, allTables )
@@ -66,6 +85,38 @@ function BossClass:Create( name, description, allTables )
 
 	boss.point 	 = pointEnt:GetAbsOrigin()
 	boss.forward = pointEnt:GetForwardVector()
+	boss.pointName = point
+
+	-- Ротация: босс ходит по rotation_points (первая - point_name), меняя
+	-- точку каждые rotation_interval секунд от первого спавна. Пока его бьют,
+	-- переход ждёт rotation_quiet секунд без урона (BossSpawner:_RotationTick).
+	local rotation = GetField("rotation_points")
+	if rotation then
+		local r = {
+			points   = {},
+			interval = tonumber(GetField("rotation_interval")) or 300,
+			quiet    = tonumber(GetField("rotation_quiet")) or 30,
+		}
+		local names = {}
+
+		for pname in tostring(rotation):gmatch("%S+") do
+			local ent = Entities:FindByName(nil, pname)
+			if ent then
+				table.insert(r.points, { name = pname, pos = ent:GetAbsOrigin(), forward = ent:GetForwardVector() })
+				table.insert(names, pname)
+			else
+				print("[BossClass] rotation point not found", pname, "boss", name)
+			end
+		end
+
+		if #r.points >= 2 and r.interval > 0 then
+			-- боссы с одинаковым набором точек меняются местами вместе
+			table.sort(names)
+			r.group = table.concat(names, " ")
+			boss.rotation = r
+			boss.rotationIndex = 1
+		end
+	end
 
 	boss.spawnDelay 	= GetField("spawn_delay") or 0
 	boss.spawnInterval 	= GetField("spawn_interval") or 0
@@ -101,7 +152,7 @@ function BossClass:Create( name, description, allTables )
 	-- берём из имени в boss_spawners.kv: *radiant*, *dire*, остальные стоят
 	-- по центру
 	boss.kind = (tostring(boss.onDeath["message"] or ""):gsub("^#on_boss_die_", ""))
-	boss.side = (name:find("radiant", 1, true) and "radiant") or (name:find("dire", 1, true) and "dire") or "mid"
+	boss.side = (point:find("radiant", 1, true) and "radiant") or (point:find("dire", 1, true) and "dire") or "mid"
 
 	boss.deathCount = -1
 
@@ -109,6 +160,18 @@ function BossClass:Create( name, description, allTables )
 	boss.teamKills = {}
 
 	PrecacheUnitByNameAsync(unitName, function(...) end)
+
+	-- Пул: на каждом спавне на слот встаёт случайный юнит из unit_pool
+	-- (BossSpawner:_PickPoolUnit). Статы и награда у слота общие.
+	local pool = GetField("unit_pool")
+	if pool then
+		boss.unitPool = {}
+		for u in tostring(pool):gmatch("%S+") do
+			table.insert(boss.unitPool, u)
+			if u ~= unitName then PrecacheUnitByNameAsync(u, function() end) end
+		end
+		if #boss.unitPool == 0 then boss.unitPool = nil end
+	end
 
 	-- Лут босса создаётся предметами в его инвентаре в момент спавна. Без
 	-- прекеша первый CreateItem каждого предмета синхронно грузил ресурсы,
@@ -145,6 +208,30 @@ function BossClass:Spawn()
 	self.lastAttackAlert = nil
 
 	return unit
+end
+
+-- индекс точки ротации, где босс должен стоять в момент now (время доты)
+function BossClass:RotationTarget(now)
+	local r = self.rotation
+	if not r then return nil end
+	local slot = math.max(0, math.floor((now - self.spawnDelay) / r.interval))
+	slot = slot + (BossSpawner and BossSpawner.rotationShift or 0)
+	return (slot % #r.points) + 1
+end
+
+function BossClass:SetRotationIndex(index)
+	local pt = self.rotation and self.rotation.points[index]
+	if not pt then return end
+	self.rotationIndex = index
+	self.point = pt.pos
+	self.forward = pt.forward
+	self.pointName = pt.name
+	self.side = (pt.name:find("radiant", 1, true) and "radiant") or (pt.name:find("dire", 1, true) and "dire") or "mid"
+end
+
+function BossClass:SetUnitName(unitName)
+	self.unitName = unitName
+	self.kind = POOL_KIND[unitName] or self.kind
 end
 
 function BossClass:GetInitialSpawnDelay()

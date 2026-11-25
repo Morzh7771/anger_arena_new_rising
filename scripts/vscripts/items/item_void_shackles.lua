@@ -14,6 +14,19 @@ local PFX_NULLIFY    = "particles/items4_fx/nullifier_mute_debuff.vpcf"
 local PFX_NULL_STATUS = "particles/status_fx/status_effect_nullifier.vpcf"
 local PROJECTILE_SPEED = 1900
 
+-- Вихри предметов, которые Цепи снимают (астралы и скиллы не трогаем)
+local ESCAPE_MODIFIERS = {
+    "modifier_eul_cyclone",
+    "modifier_wind_waker",
+}
+
+local function HasEscapeModifier(unit)
+    for _, mod_name in ipairs(ESCAPE_MODIFIERS) do
+        if unit:HasModifier(mod_name) then return true end
+    end
+    return false
+end
+
 item_void_shackles = class({
     GetIntrinsicModifierName = function (self) return "modifier_item_void_shackles_passive" end,
 })
@@ -64,9 +77,17 @@ function item_void_shackles:OnProjectileHit(target, location)
 
     AddFOWViewer(caster:GetTeamNumber(), point, radius, root_duration, false)
 
-    local enemies = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, radius,
+    -- Ищем и неуязвимых: того, кто в вихре Эула/Вин Вейкера, выбиваем оттуда
+    local found = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, radius,
         DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-        DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+        DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
+    local enemies = {}
+    for _, enemy in pairs(found) do
+        if enemy:IsAlive() and not enemy:IsMagicImmune()
+            and (HasEscapeModifier(enemy) or (not enemy:IsInvulnerable() and not enemy:IsOutOfGame())) then
+            table.insert(enemies, enemy)
+        end
+    end
 
     if #enemies == 0 then
         local pfx = ParticleManager:CreateParticle(PFX_FIZZLE, PATTACH_WORLDORIGIN, nil)
@@ -77,7 +98,11 @@ function item_void_shackles:OnProjectileHit(target, location)
     end
 
     for _, enemy in pairs(enemies) do
+        -- Линка блокирует всё: ни снятия вихря, ни рута, ни Nullify
         if not enemy:TriggerSpellAbsorb(self) then
+            for _, mod_name in ipairs(ESCAPE_MODIFIERS) do
+                if enemy:HasModifier(mod_name) then enemy:RemoveModifierByName(mod_name) end
+            end
             enemy:EmitSound("Item.Gleipnir.Target")
             enemy:AddNewModifier(caster, self, "modifier_item_void_shackles_root", {duration = root_duration})
             enemy:AddNewModifier(caster, self, "modifier_item_void_shackles_nullify", {duration = nullify_duration})

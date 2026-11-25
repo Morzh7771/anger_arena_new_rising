@@ -6,6 +6,18 @@ LinkLuaModifier( "modifier_fireblade_fiery_stream_buff",   'heroes/fireblade/mod
 LinkLuaModifier( "modifier_fireblade_fiery_stream_debuff", 'heroes/fireblade/modifiers/modifier_fireblade_fiery_stream_debuff', LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_fireblade_fiery_stream_talent", 'heroes/fireblade/modifiers/modifier_fireblade_fiery_stream_talent', LUA_MODIFIER_MOTION_HORIZONTAL )
 
+-- талант 15-го уровня (рывок за потоком) даёт автокаст: включён - поток без рывка
+local function HasBlinkTalent(caster)
+	local talent = caster:FindAbilityByName("fireblade_talent_fire_stream_blink")
+	return talent and talent:GetLevel() > 0
+end
+
+function ability:GetBehavior()
+	local b = DOTA_ABILITY_BEHAVIOR_POINT
+	if HasBlinkTalent(self:GetCaster()) then b = b + DOTA_ABILITY_BEHAVIOR_AUTOCAST end
+	return b
+end
+
 function ability:OnSpellStart( kv )
 	if not IsServer() then return end
 
@@ -36,7 +48,7 @@ function ability:OnSpellStart( kv )
 
 	EmitSoundOn( "Hero_Lina.DragonSlave", caster )
 
-	if caster:HasTalent("fireblade_talent_fire_stream_blink") then
+	if HasBlinkTalent(caster) and not self:GetAutoCastState() then
 		caster:AddNewModifier(caster, self, "modifier_fireblade_fiery_stream_talent", { duration = -1, speed = speed, posx = vPos.x, posy = vPos.y, posz = vPos.z, offset = width })
 	end
 end
@@ -53,7 +65,7 @@ function ability:OnProjectileHit( hTarget, vLocation )
 	{
 		victim 	 	= hTarget,
 		attacker 	= caster,
-		damage 		= self:GetSpecialValueFor("damage"),
+		damage 		= self:GetSpecialValueFor("damage") + self:GetCaster():GetAgility() * self:GetSpecialValueFor("damage_pct") / 100,
 		damage_type = self:GetAbilityDamageType(),
 		ability 	= self,
 	}

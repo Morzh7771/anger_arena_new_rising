@@ -40,6 +40,7 @@ DOTAAbilities
                 "value"                     "0"
                 "special_bonus_scepter"     "+6.0"              // NOTE: Update blink empowered_mana_break_debuff_duration_tooltip values
             }
+			"creep_splash_radius"			"250"	// фарм: против крипов
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

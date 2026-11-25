@@ -3,10 +3,10 @@
 {
 	"npc_dota_hero_charon"
 	{
-		"MinimapIcon"				"minimap_icon_charon"
-		"MinimapIconSize"			"600"
-		"Model"						"models/items/visage/ti9_cache_visage_pit_guard_familiar/ti9_cache_visage_pit_guard_familiar.vmdl"
-		"BaseClass" 				"npc_dota_hero"
+		"Model"						"models/heroes/visage/visage.vmdl"
+		"SoundSet"					"Hero_Visage"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+		"BaseClass" 				"npc_dota_hero_visage"
 		"HeroID"					"203"
 		"IsCustom"					"1"
 
@@ -52,6 +52,6 @@
 		"AttributeAgilityGain"		"2.300000"
 		"AttributeBaseIntelligence"		"24"
 		"AttributeIntelligenceGain"		"2.500000"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
 	}
 }

@@ -1,0 +1,641 @@
+// Боссы с механиками: Король-Мертвец, Хранитель Часов, Чумной Жнец.
+// Подключается #base из npc_units_custom.txt. В спавнер (boss_spawners.kv) пока не добавлены.
+"DOTAUnits"
+{
+	"npc_aa_leoric"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/wraith_king/wraith_king.vmdl"
+		"SoundSet"						"Hero_SkeletonKing"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+		"vscripts"						"creeps/boss/leoric/leoric_ai.lua"
+		"ConsideredHero"				"1"
+		"ModelScale"					"1.6"
+		"Level"							"100"
+		"IsNeutralUnitType"				"1"
+		"IsAncient"						"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+
+		"AbilityLayout"					"5"
+		"Ability1"					"leoric_hellfire_fan"
+		"Ability2"					"leoric_bone_ring"
+		"Ability3"					"leoric_grave_slam"
+		"Ability4"					"leoric_reincarnation"
+		"Ability5"					"leoric_mortal_strike"
+
+		"HasInventory"					"1"
+
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"35"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.5"
+		"AttackAcquisitionRange"		"300"
+		"AttackRange"					"200"
+		"HealthBarOffset"				"300"
+		"RingRadius"					"110"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"340"
+		"MovementTurnRate"				"0.5"
+
+		"StatusHealth"					"15000"
+		"StatusHealthRegen"				"0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0"
+
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"			"1200"
+		"VisionNighttimeRange"			"1200"
+
+		"precache"
+		{
+			"model"		"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+			"model"		"models/heroes/undying/undying_tower.vmdl"
+		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "148" }
+				"Wearable2"	{ "ItemDef" "149" }
+				"Wearable3"	{ "ItemDef" "150" }
+				"Wearable4"	{ "ItemDef" "151" }
+				"Wearable5"	{ "ItemDef" "152" }
+				"Wearable6"	{ "ItemDef" "483" }
+				"Wearable7"	{ "ItemDef" "500" }
+			}
+		}
+	}
+	"npc_aa_chronokeeper"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/faceless_void/faceless_void.vmdl"
+		"SoundSet"						"Hero_FacelessVoid"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		"vscripts"						"creeps/boss/chronokeeper/chronokeeper_ai.lua"
+		"ConsideredHero"				"1"
+		"ModelScale"					"1.6"
+		"Level"							"100"
+		"IsNeutralUnitType"				"1"
+		"IsAncient"						"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+
+		"AbilityLayout"					"4"
+		"Ability1"					"chronokeeper_shadow"
+		"Ability2"					"chronokeeper_sphere"
+		"Ability3"					"chronokeeper_walk"
+		"Ability4"					"chronokeeper_time_lock"
+
+		"HasInventory"					"1"
+
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"35"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"0.75"
+		"AttackAnimationPoint"			"0.5"
+		"AttackAcquisitionRange"		"300"
+		"AttackRange"					"200"
+		"HealthBarOffset"				"300"
+		"RingRadius"					"110"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"340"
+		"MovementTurnRate"				"0.5"
+
+		"StatusHealth"					"15000"
+		"StatusHealthRegen"				"0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0"
+
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"			"1200"
+		"VisionNighttimeRange"			"1200"
+
+		"precache"
+		{
+			"model"		"models/heroes/faceless_void/faceless_void.vmdl"
+		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "15" }
+				"Wearable2"	{ "ItemDef" "90" }
+				"Wearable3"	{ "ItemDef" "91" }
+				"Wearable4"	{ "ItemDef" "92" }
+				"Wearable5"	{ "ItemDef" "93" }
+			}
+		}
+	}
+	"npc_aa_plague_reaper"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/necrolyte/necrolyte.vmdl"
+		"SoundSet"						"Hero_Necrolyte"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+		"vscripts"						"creeps/boss/plague_reaper/plague_reaper_ai.lua"
+		"ConsideredHero"				"1"
+		"ModelScale"					"1.6"
+		"Level"							"100"
+		"IsNeutralUnitType"				"1"
+		"IsAncient"						"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+
+		"AbilityLayout"					"4"
+		"Ability1"					"plague_reaper_mark"
+		"Ability2"					"plague_reaper_wave"
+		"Ability3"					"plague_reaper_decay"
+		"Ability4"					"plague_reaper_shroud"
+
+		"HasInventory"					"1"
+
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"35"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.5"
+		"AttackAcquisitionRange"		"300"
+		"AttackRange"					"200"
+		"HealthBarOffset"				"300"
+		"RingRadius"					"110"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"340"
+		"MovementTurnRate"				"0.5"
+
+		"StatusHealth"					"15000"
+		"StatusHealthRegen"				"0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0"
+
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"			"1200"
+		"VisionNighttimeRange"			"1200"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "211" }
+				"Wearable2"	{ "ItemDef" "212" }
+				"Wearable3"	{ "ItemDef" "213" }
+				"Wearable4"	{ "ItemDef" "214" }
+				"Wearable5"	{ "ItemDef" "508" }
+				"Wearable6"	{ "ItemDef" "659" }
+			}
+		}
+	}
+	"npc_aa_leoric_skeleton"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+		"ModelScale"					"1.0"
+		"Level"							"1"
+		"IsNeutralUnitType"				"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"200"
+		"StatusHealth"					"100"
+		"StatusHealthRegen"				"0"
+		"HealthBarOffset"				"150"
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"					"50"
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"VisionDaytimeRange"			"300"
+		"VisionNighttimeRange"			"300"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+	"npc_aa_leoric_tombstone"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/undying/undying_tower.vmdl"
+		"ModelScale"					"1.0"
+		"Level"							"1"
+		"IsNeutralUnitType"				"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"StatusHealth"					"100"
+		"StatusHealthRegen"				"0"
+		"HealthBarOffset"				"250"
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"					"50"
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"VisionDaytimeRange"			"300"
+		"VisionNighttimeRange"			"300"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+	"npc_aa_chronokeeper_shadow"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/faceless_void/faceless_void.vmdl"
+		"ModelScale"					"1.4"
+		"Level"							"1"
+		"IsNeutralUnitType"				"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"StatusHealth"					"100"
+		"StatusHealthRegen"				"0"
+		"HealthBarOffset"				"250"
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"					"50"
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"VisionDaytimeRange"			"300"
+		"VisionNighttimeRange"			"300"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+	"npc_aa_lycan_boss"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/lycan/lycan.vmdl"
+		"SoundSet"						"Hero_Lycan"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts"
+		"vscripts"						"creeps/boss/lycan/lycan_ai.lua"
+		"ConsideredHero"				"1"
+		"ModelScale"					"1.5"
+		"Level"							"100"
+		"IsNeutralUnitType"				"1"
+		"IsAncient"						"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+
+		"AbilityLayout"					"4"
+		"Ability1"					"lycan_boss_wolves"
+		"Ability2"					"lycan_boss_howl"
+		"Ability3"					"lycan_boss_pounce"
+		"Ability4"					"lycan_boss_shapeshift"
+
+		"HasInventory"					"1"
+
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"35"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.4"
+		"AttackAcquisitionRange"		"300"
+		"AttackRange"					"200"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"1400"
+		"HealthBarOffset"				"300"
+		"RingRadius"					"110"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"340"
+		"MovementTurnRate"				"0.6"
+
+		"StatusHealth"					"15000"
+		"StatusHealthRegen"				"0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0"
+
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"			"1200"
+		"VisionNighttimeRange"			"1200"
+
+		"precache"
+		{
+			"model"		"models/heroes/lycan/summon_wolves.vmdl"
+			"model"		"models/heroes/lycan/lycan_wolf.vmdl"
+		}
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "206" }
+				"Wearable2"	{ "ItemDef" "207" }
+				"Wearable3"	{ "ItemDef" "208" }
+				"Wearable4"	{ "ItemDef" "209" }
+				"Wearable5"	{ "ItemDef" "210" }
+			}
+		}
+	}
+	"npc_aa_pudge_boss"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/pudge/pudge.vmdl"
+		"SoundSet"						"Hero_Pudge"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		"vscripts"						"creeps/boss/pudge/pudge_ai.lua"
+		"ConsideredHero"				"1"
+		"ModelScale"					"1.4"
+		"Level"							"100"
+		"IsNeutralUnitType"				"1"
+		"IsAncient"						"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+
+		"AbilityLayout"					"4"
+		"Ability1"					"pudge_boss_hook"
+		"Ability2"					"pudge_boss_rot"
+		"Ability3"					"pudge_boss_dismember"
+
+		"HasInventory"					"1"
+
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"35"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.4"
+		"AttackAcquisitionRange"		"300"
+		"AttackRange"					"200"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"1400"
+		"HealthBarOffset"				"300"
+		"RingRadius"					"110"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"340"
+		"MovementTurnRate"				"0.6"
+
+		"StatusHealth"					"15000"
+		"StatusHealthRegen"				"0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0"
+
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"			"1200"
+		"VisionNighttimeRange"			"1200"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "47" }
+				"Wearable2"	{ "ItemDef" "258" }
+				"Wearable3"	{ "ItemDef" "259" }
+				"Wearable4"	{ "ItemDef" "260" }
+				"Wearable5"	{ "ItemDef" "261" }
+				"Wearable6"	{ "ItemDef" "262" }
+				"Wearable7"	{ "ItemDef" "391" }
+				"Wearable8"	{ "ItemDef" "470" }
+			}
+		}
+	}
+	"npc_aa_ursa_boss"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/ursa/ursa.vmdl"
+		"SoundSet"						"Hero_Ursa"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+		"vscripts"						"creeps/boss/ursa/ursa_ai.lua"
+		"ConsideredHero"				"1"
+		"ModelScale"					"1.5"
+		"Level"							"100"
+		"IsNeutralUnitType"				"1"
+		"IsAncient"						"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+
+		"AbilityLayout"					"4"
+		"Ability1"					"ursa_boss_earthshock"
+		"Ability2"					"ursa_boss_fury_swipes"
+		"Ability3"					"ursa_boss_enrage"
+
+		"HasInventory"					"1"
+
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"35"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.4"
+		"AttackAcquisitionRange"		"300"
+		"AttackRange"					"200"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"1400"
+		"HealthBarOffset"				"300"
+		"RingRadius"					"110"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"340"
+		"MovementTurnRate"				"0.6"
+
+		"StatusHealth"					"15000"
+		"StatusHealthRegen"				"0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0"
+
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"			"1200"
+		"VisionNighttimeRange"			"1200"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "85" }
+				"Wearable2"	{ "ItemDef" "86" }
+				"Wearable3"	{ "ItemDef" "87" }
+				"Wearable4"	{ "ItemDef" "88" }
+				"Wearable5"	{ "ItemDef" "584" }
+			}
+		}
+	}
+	"npc_aa_huskar_boss"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/huskar/huskar.vmdl"
+		"SoundSet"						"Hero_Huskar"
+		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+		"vscripts"						"creeps/boss/huskar/huskar_ai.lua"
+		"ConsideredHero"				"1"
+		"ModelScale"					"1.5"
+		"Level"							"100"
+		"IsNeutralUnitType"				"1"
+		"IsAncient"						"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+
+		"AbilityLayout"					"5"
+		"Ability1"					"huskar_boss_spears"
+		"Ability2"					"huskar_boss_inner_fire"
+		"Ability3"					"huskar_boss_berserkers_blood"
+		"Ability4"					"huskar_boss_inner_vitality"
+		"Ability5"					"huskar_boss_life_break"
+
+		"HasInventory"					"1"
+
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"35"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"1.2"
+		"AttackAnimationPoint"			"0.4"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"					"450"
+		"ProjectileModel"				"particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+		"ProjectileSpeed"				"1400"
+		"HealthBarOffset"				"300"
+		"RingRadius"					"110"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"340"
+		"MovementTurnRate"				"0.6"
+
+		"StatusHealth"					"15000"
+		"StatusHealthRegen"				"0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0"
+
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"			"1200"
+		"VisionNighttimeRange"			"1200"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "268" }
+				"Wearable2"	{ "ItemDef" "269" }
+				"Wearable3"	{ "ItemDef" "270" }
+				"Wearable4"	{ "ItemDef" "271" }
+				"Wearable5"	{ "ItemDef" "272" }
+			}
+		}
+	}
+	"npc_aa_lycan_boss_wolf"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/heroes/lycan/summon_wolves.vmdl"
+		"SoundSet"						"Lycan_Wolf"
+		"ModelScale"					"1.2"
+		"Level"							"30"
+		"IsNeutralUnitType"				"1"
+		"CanBeDominated"				"0"
+		"UseNeutralCreepBehavior"		"0"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"100"
+		"AttackDamageMax"				"100"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.33"
+		"AttackAcquisitionRange"		"500"
+		"AttackRange"					"100"
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		"ArmorPhysical"					"10"
+		"MagicalResistance"				"25"
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"400"
+		"StatusHealth"					"1000"
+		"StatusHealthRegen"				"0"
+		"HealthBarOffset"				"140"
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"					"50"
+		"TeamName"						"DOTA_TEAM_NEUTRALS"
+		"VisionDaytimeRange"			"800"
+		"VisionNighttimeRange"			"800"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+}

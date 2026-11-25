@@ -113,6 +113,11 @@ function Timers:_Think()
 
   local profileStart = GetSystemTimeMS()
 
+  -- номер и начало текущего кадра: по ним SpawnBudget (lib/spawners/spawn_budget.lua)
+  -- считает, сколько кадра уже съели колбэки
+  Timers._frameId = (Timers._frameId or 0) + 1
+  Timers._frameStart = profileStart
+
   -- время одинаково для всех таймеров в рамках одного тика, а вызовов тут
   -- получалось по одному на каждый живой таймер 100 раз в секунду
   local gameTime = GameRules:GetGameTime()

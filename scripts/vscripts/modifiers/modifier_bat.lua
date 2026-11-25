@@ -130,12 +130,22 @@ function modifier_bat:Recalc()
 	end
 
 	-- наши Lua-"задать": любой чужой модификатор с GetModifierBaseAttackTimeConstant
+	local forced
 	for _, modifier in pairs(parent:FindAllModifiers()) do
 		if modifier ~= self and type(modifier.GetModifierBaseAttackTimeConstant) == "function" then
 			local ok, value = pcall(modifier.GetModifierBaseAttackTimeConstant, modifier, {})
-			if ok and type(value) == "number" and value > 0 and value < constant then constant = value end
+			if ok and type(value) == "number" and value > 0 then
+				-- AA_BAT_FORCE: стойка, которая ЗАМЕДЛЯЕТ атаку (Huntress Aim Shot, BAT 3.0
+				-- больше базового 1.7) - берётся как есть, иначе min() её отбрасывал
+				if modifier.AA_BAT_FORCE then
+					forced = math.max(forced or 0, value)
+				elseif value < constant then
+					constant = value
+				end
+			end
 		end
 	end
+	if forced then constant = forced end
 
 	-- снижения: коэффициенты (1 - X / (REF_BAT - SOFT_FLOOR)) перемножаются и
 	-- применяются к промежутку над SOFT_FLOOR (см. константы вверху). Примеры при

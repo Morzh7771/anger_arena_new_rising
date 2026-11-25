@@ -1,0 +1,287 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Joe Black: Reaper's Toll (врождённая)
+	//=================================================================================================================
+	"joe_black_reapers_toll"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/joe_black/joe_black_reapers_toll"
+		"AbilityTextureName"			"custom/joe_black/joe_black_reapers_toll"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityType"					"ABILITY_TYPE_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"health_threshold"			"50"
+			"damage_per_level"			"0.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Joe Black: Face of Death
+	//=================================================================================================================
+	"joe_black_face_of_death"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/joe_black/joe_black_face_of_death"
+		"AbilityTextureName"			"custom/joe_black/joe_black_face_of_death"
+		"MaxLevel"						"7"
+		"HasShardUpgrade"			"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 200 300 400 500 600 700"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityChargeRestoreTime"
+			{
+				"value"													"12"
+				"special_bonus_unique_joe_black_face_of_death_cooldown"	"-7"
+			}
+			"projectile_speed"			"2500"
+			"damage"					"150 250 350 450 550 650 750"
+			"int_percent"				"200"			// % интеллекта к урону и лечению
+			"radius"
+			{
+				"value"												"250"
+				"special_bonus_unique_joe_black_face_of_death_aoe"	"+500"
+			}
+			"cast_on_song_targets"
+			{
+				"value"													"0"
+				"special_bonus_unique_joe_black_face_of_death_song"	"+1"
+			}
+			"AbilityCharges"
+			{
+				"value"				"1"
+				"special_bonus_shard"	"+1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Joe Black: Unholy Protection
+	//=================================================================================================================
+	"joe_black_protection"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/joe_black/joe_black_protection"
+		"AbilityTextureName"			"custom/joe_black/joe_black_protection"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage_reduction"			"25 30 34 37 40 42 45"
+			"duration"					"7"
+			"debuff_immunity"
+			{
+				"value"													"0"
+				"special_bonus_unique_joe_black_protection_debuff_immune"	"+1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Joe Black: Terrible Nightmare
+	//=================================================================================================================
+	"joe_black_sleep"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/joe_black/joe_black_sleep"
+		"AbilityTextureName"			"custom/joe_black/joe_black_sleep"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"165 165 165 165 200 250 300"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					"2 2.2 2.5 3 3.5 3.7 4"
+			"health_drain_const"		"50 70 90 110 130 150 170"		// в секунду
+			"health_drain_pct"			"8"								// % текущего HP в секунду
+			"mana_drain_const"			"50 70 90 110 130 150 170"		// в секунду
+			"mana_drain_pct"			"6"								// % текущей маны в секунду
+			"interval"					"0.5"
+			"spread_radius"
+			{
+				"value"											"0"
+				"special_bonus_unique_joe_black_sleep_spread"	"+350"
+			}
+			"spread_speed"
+			{
+				"value"											"0"
+				"special_bonus_unique_joe_black_sleep_spread"	"+500"
+			}
+			"drain_int_pct"				"10 15 20 25 30 35 40"	// % интеллекта к потере HP в секунду
+		}
+	}
+
+	//=================================================================================================================
+	// Joe Black: Song
+	//=================================================================================================================
+	"joe_black_song"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/joe_black/joe_black_song"
+		"AbilityTextureName"			"custom/joe_black/joe_black_song"
+		"MaxLevel"						"7"
+		"HasScepterUpgrade"			"1"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100 90 80 70 60 50 40"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200 250 300 350 400"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"					"650"
+			"duration"					"6"
+			"miss_chance"				"100"
+			"fixed_vision"				"300"
+			"status_resistance"			"20"
+			"finish_damage"
+			{
+				"value"				"600 700 800 900 1000 1100 1200"
+				"special_bonus_scepter"	"+50%"
+			}
+			"ally_health_regen_pct"
+			{
+				"value"										"0"
+				"special_bonus_unique_joe_black_song_heals"	"+10"
+			}
+			"scepter_silence"
+			{
+				"value"				"0"
+				"special_bonus_scepter"	"+2"
+			}
+			"damage_pct"				"150 175 200 225 250 275 300"	// % интеллекта к финальному урону
+		}
+	}
+
+	//=================================================================================================================
+	// Joe Black: таланты
+	//=================================================================================================================
+	"special_bonus_unique_joe_black_face_of_death_cooldown"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_joe_black_face_of_death_aoe"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_joe_black_face_of_death_song"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_joe_black_protection_debuff_immune"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_joe_black_sleep_spread"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_joe_black_song_heals"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+}

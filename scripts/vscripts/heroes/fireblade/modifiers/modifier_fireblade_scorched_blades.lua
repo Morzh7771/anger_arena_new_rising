@@ -55,7 +55,7 @@ function mod:OnAttackLanded( kv )
 	if not target:IsAlive() then return end
 	if target:IsMagicImmune() and not parent:HasTalent("fireblade_talent_scorched_blades_spellimmune") then return end
 
-	local damage = self.damage
+	local damage = self.damage + parent:GetAgility() * self:GetAbility():GetSpecialValueFor("damage_pct") / 100
 
 	for _, modName in pairs(itemModNames) do
 		if parent:HasModifier(modName) then

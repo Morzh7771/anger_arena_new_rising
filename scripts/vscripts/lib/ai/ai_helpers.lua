@@ -5,20 +5,33 @@ function AIHelpers:CanBeSeen(unit, target)
 end
 
 function AIHelpers:GetEnemiesNear(caster, pos, teamNumber, radius)
+	-- босс с истинным зрением (lib/boss/modifier_boss_true_sight.lua) видит
+	-- невидимых: им хватает того, что команда их видит
+	local trueSight = caster and caster.aa_true_sight
+	local flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+	if not trueSight then flags = flags + DOTA_UNIT_TARGET_FLAG_NO_INVIS end
+
 	local enemies = FindUnitsInRadius( 	teamNumber,
 										pos,
 										nil,
 										radius,
 										DOTA_UNIT_TARGET_TEAM_ENEMY,
 										DOTA_UNIT_TARGET_ALL,
-										DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS,
+										flags,
 										FIND_CLOSEST,
 										false )
 
 	local res = {}
 
 	for _, x in pairs(enemies) do
-		if x and self:CanBeSeen(caster, x) and not x:IsCourier() then
+		local seen
+		if trueSight then
+			seen = caster:CanEntityBeSeenByMyTeam(x) and not x:IsInvulnerable()
+		else
+			seen = self:CanBeSeen(caster, x)
+		end
+
+		if x and seen and not x:IsCourier() then
 			table.insert(res, x)
 		end
 	end

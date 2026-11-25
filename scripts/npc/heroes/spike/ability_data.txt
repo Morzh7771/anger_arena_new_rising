@@ -1,0 +1,240 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Spike: Thorn Armor (врождённая)
+	//=================================================================================================================
+	"spike_thorn_armor"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/spike/spike_thorn_armor"
+		"AbilityTextureName"			"custom/spike/spike_shell"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityType"					"ABILITY_TYPE_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_armor"			"2"
+			"armor_per_level"			"0.2"
+			"armor_damage_mult"			"5"
+		}
+	}
+
+	//=================================================================================================================
+	// Spike: Spiked Dash
+	//=================================================================================================================
+	"spike_dash"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/spike/spike_dash"
+		"AbilityTextureName"			"custom/spike/spike_dash"
+		"MaxLevel"						"7"
+		"HasShardUpgrade"			"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"20 30 40 50 60 70 80"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"					"100 120 140 160 180 200 220"
+			"attack_multiplier"
+			{
+				"value"										"1"
+				"special_bonus_unique_spike_dash_double"	"+1"
+			}
+			"dash_range"				"700"
+			"dash_speed"				"1600"
+			"hit_radius"				"200"
+			"AbilityCharges"
+			{
+				"value"				"1"
+				"special_bonus_shard"	"+1"
+			}
+			"AbilityChargeRestoreTime"	"8 7.5 7 6.5 6 5.5 5"
+			"damage_pct"				"60 80 100 120 140 160 180"	// % силы
+		}
+	}
+
+	//=================================================================================================================
+	// Spike: Resurrection Power
+	//=================================================================================================================
+	"spike_heal"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/spike/spike_heal"
+		"AbilityTextureName"			"custom/spike/spike_heal"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"26 25 24 23 22 21 20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 110 120 130 140 150 160"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"heal_per_sec"				"1"				// % макс. HP в секунду
+			"status_resist"				"10 12 14 16 18 20 22"
+			"multiplier"				"200"
+			"active_duration"			"3"
+			"thresshold_pct"			"25"
+			"passive_duration"			"0.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Spike: Thorn Shell
+	//=================================================================================================================
+	"spike_shell"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/spike/spike_shell"
+		"AbilityTextureName"			"custom/spike/spike_shell"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"return_damage"
+			{
+				"value"										"10 12 14 16 18 19 20"
+				"special_bonus_unique_spike_shell_return"	"+10"
+			}
+			"heal_returned"
+			{
+				"value"										"0"
+				"special_bonus_unique_spike_shell_heal"		"+1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spike: Conclusion
+	//=================================================================================================================
+	"spike_conclusion"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/spike/spike_conclusion"
+		"AbilityTextureName"			"custom/spike/spike_conclusion"
+		"MaxLevel"						"7"
+		"HasScepterUpgrade"			"1"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"75"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 200 250 300 350 400 450"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"				"4"
+				"special_bonus_scepter"	"+2"
+			}
+			"total_cooldown"
+			{
+				"value"				"200 175 150 125 100 85 75"
+				"special_bonus_scepter"	"-25"
+			}
+			"kill_damage_enabled"
+			{
+				"value"												"0"
+				"special_bonus_unique_spike_conclusion_kill_damage"	"+1"
+			}
+			"damage_by_creep"			"2"
+			"damage_by_hero"			"15"
+			"scepter_status_resist"
+			{
+				"value"				"0"
+				"special_bonus_scepter"	"+30"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spike: таланты
+	//=================================================================================================================
+	"special_bonus_unique_spike_dash_double"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_spike_shell_return"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_spike_shell_heal"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_spike_conclusion_kill_damage"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+}

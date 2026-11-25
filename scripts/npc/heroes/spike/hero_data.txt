@@ -1,0 +1,83 @@
+"DOTAHeroes"
+{
+	// Spike: порт из Angel Arena Global. Модель: Bristleback + сет Heavy Barbed Armor (сет вешает lib/custom_hero_wearables.lua)
+	"npc_dota_hero_spike"
+	{
+		"Model"						"models/heroes/bristleback/bristleback.vmdl"
+		"ModelScale"				"1.0"
+		"BaseClass"					"npc_dota_hero_bristleback"
+		"HeroID"					"213"
+		"IsCustom"					"1"
+		"SoundSet"					"Hero_Bristleback"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
+		"Team"						"Good"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					"spike_dash"
+		"Ability2"					"spike_heal"
+		"Ability3"					"spike_shell"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"spike_thorn_armor"
+		"Ability6"					"spike_conclusion"
+
+		//10 LEVEL
+		"Ability10"					"special_bonus_strength_6"
+		"Ability11"					"special_bonus_attack_damage_20"
+
+		//15 LEVEL
+		"Ability12"					"special_bonus_unique_spike_conclusion_kill_damage"
+		"Ability13"					"special_bonus_unique_spike_dash_double"
+
+		//20 LEVEL
+		"Ability14"					"special_bonus_attack_speed_20"
+		"Ability15"					"special_bonus_hp_250"
+
+		//25 LEVEL
+		"Ability16"					"special_bonus_unique_spike_shell_return"
+		"Ability17"					"special_bonus_unique_spike_shell_heal"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"32"
+		"AttackDamageMax"			"36"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"	"400"
+		"AttackRange"				"150"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"180"		
+		}
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"3.2"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"2.2"
+		"AttributeBaseIntelligence"	"12"
+		"AttributeIntelligenceGain"	"2.1"
+
+		"StatusHealthRegen"			"0.5"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.5"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"180"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+}

@@ -3,10 +3,10 @@
 {
 	"npc_dota_hero_satan"
 	{
-		"MinimapIcon"				"minimap_icon_satan"
-		"MinimapIconSize"			"600"
-		"Model"						"models/items/warlock/golem/doom_of_ithogoaki/doom_of_ithogoaki.vmdl"
-		"BaseClass" 				"npc_dota_hero"
+		"Model"						"models/heroes/doom/doom.vmdl"
+		"SoundSet"					"Hero_DoomBringer"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		"BaseClass" 				"npc_dota_hero_doom_bringer"
 		"HeroID"					"204"
 		"IsCustom"					"1"
 		
@@ -43,7 +43,7 @@
 		"AttackDamageMax"			"25"									// Damage range max.	
 		
 		"AttackRate"				"2.0"									// Speed of attack.
-		"AttackAnimationPoint"		"0.3"										// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"0.500000"										// Normalized time in animation cycle to attack.
 		
 		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
 		"AttackRange"				"150"									// Range within a target can be attacked.

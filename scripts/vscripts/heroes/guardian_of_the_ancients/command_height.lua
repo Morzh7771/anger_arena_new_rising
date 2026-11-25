@@ -4,7 +4,9 @@ BaseClass = class({})
 -- Движок зовёт этот метод при прекеше юнита со способностью, поэтому
 -- партиклы приезжают вместе с героем (пик/репик), а не на старте карты.
 function BaseClass:Precache(context)
-	PrecacheResource("model", "models/props_structures/tower_good.vmdl", context)
+	PrecacheResource("model", "models/props_structures/rock_golem/tower_radiant_rock_golem.vmdl", context)
+	PrecacheResource("particle", "particles/econ/world/towers/ti10_radiant_tower/ti10_radiant_tower_destruction_debris.vpcf", context)
+	PrecacheResource("particle", "particles/econ/world/towers/ti10_radiant_tower/ti10_radiant_tower_destruction_sparkle.vpcf", context)
 end
 
 guardian_of_the_ancients_command_height = BaseClass
@@ -38,10 +40,23 @@ modifier_guardian_of_the_ancients_command_height = class({
         MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
         MODIFIER_PROPERTY_MODEL_CHANGE,
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
+        MODIFIER_EVENT_ON_ATTACK_START,
     } end,
+    -- у модели башни свои активности: в покое TOWER_IDLE, замах - TOWER_ATTACK
+    -- (обычные ACT_DOTA_ATTACK у неё нет, поэтому замаха не было)
+    GetOverrideAnimation = function (self) return ACT_DOTA_CUSTOM_TOWER_IDLE end,
+    OnAttackStart = function (self, params)
+        if not IsServer() or params.attacker ~= self:GetParent() then return end
+        local parent = self:GetParent()
+        parent:RemoveGesture(ACT_DOTA_CUSTOM_TOWER_ATTACK)
+        parent:StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_ATTACK, math.max(1, 1 / math.max(0.1, parent:GetSecondsPerAttack(false))))
+    end,
+    GetModifierBaseDamageOutgoing_Percentage = function (self) return self:GetAbility():GetSpecialValueFor('bonus_damage_pct') end,
     GetModifierMoveSpeed_Absolute = function (self) return self:GetAbility():GetSpecialValueFor('ms') end,
     GetModifierAttackRangeBonus = function (self) return self:GetAbility():GetSpecialValueFor('attack_range') end,
-    GetModifierModelChange = function (self) return "models/props_structures/tower_good.vmdl" end,
+    GetModifierModelChange = function (self) return "models/props_structures/rock_golem/tower_radiant_rock_golem.vmdl" end,
     GetModifierIncomingDamage_Percentage = function (self)
         if self:GetAbility():GetSpecialValueFor('invul') == 1 then
             return self:GetAbility():GetSpecialValueFor('damage_reduction') 
@@ -49,12 +64,14 @@ modifier_guardian_of_the_ancients_command_height = class({
     end,
 })
 function modifier_guardian_of_the_ancients_command_height:OnCreated()
+    if not IsServer() then return end
     self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_RANGED_ATTACK)
     self:PlayEffects()
     self:GetParent():SwapAbilities( "guardian_of_the_ancients_command_height", "guardian_of_the_ancients_command_height_stop", false, true )
 
 end
 function modifier_guardian_of_the_ancients_command_height:OnDestroy()
+    if not IsServer() then return end
     self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_MELEE_ATTACK)
     self:PlayEffects()
     self:GetParent():SwapAbilities( "guardian_of_the_ancients_command_height", "guardian_of_the_ancients_command_height_stop", true, false )

@@ -1,0 +1,96 @@
+"DOTAHeroes"
+{
+	// Forgotten Hero: порт из Angel Arena Global. Модель: Monkey King + сет Sins of the Simian Sovereign (сет вешает lib/custom_hero_wearables.lua)
+	"npc_dota_hero_forgotten_hero"
+	{
+		"Model"						"models/heroes/monkey_king/monkey_king.vmdl"
+		"ModelScale"				"1.0"
+		"BaseClass"					"npc_dota_hero_monkey_king"
+		"HeroID"					"208"
+		"IsCustom"					"1"
+		"SoundSet"					"Hero_MonkeyKing"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
+		"Team"						"Good"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"5"
+		"Ability1"					"forgotten_hero_herofall"
+		"Ability2"					"forgotten_hero_breach"
+		"Ability3"					"forgotten_hero_meditation"
+		"Ability4"					"forgotten_hero_combat_mastery"
+		"Ability5"					"forgotten_hero_echo_strike"
+		"Ability6"					"forgotten_hero_spirit_releash"
+
+		//10 LEVEL
+		"Ability10"					"special_bonus_unique_forgotten_hero_herofall_range"
+		"Ability11"					"special_bonus_unique_forgotten_hero_herofall_attack"
+
+		//15 LEVEL
+		"Ability12"					"special_bonus_unique_forgotten_hero_meditation_invisible"
+		"Ability13"					"special_bonus_unique_forgotten_hero_meditation_damage"
+
+		//20 LEVEL
+		"Ability14"					"special_bonus_unique_forgotten_hero_breach_duration"
+		"Ability15"					"special_bonus_unique_forgotten_hero_breach_crit"
+
+		//25 LEVEL
+		"Ability16"					"special_bonus_unique_forgotten_hero_spirit_releash_stun"
+		"Ability17"					"special_bonus_unique_forgotten_hero_spirit_releash_cooldown"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"
+		"AttackDamageMax"			"36"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.45"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"300"
+		"AttackRangeActivityModifiers"
+		{
+			"attack_normal_range"	"0"
+			"attack_long_range"		"200"
+		}
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"900"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.2"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"3.0"
+		"AttributeBaseIntelligence"	"20"
+		"AttributeIntelligenceGain"	"1.8"
+
+		"StatusHealthRegen"			"0.75"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"305"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"390"
+			"run_fast"	"440"
+		}
+		"MovementTurnRate"			"0.6"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"200"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+}

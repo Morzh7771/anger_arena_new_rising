@@ -32,6 +32,7 @@ LinkLuaModifier("modifier_dominate_protection", 'lib/spawners/modifier_dominate_
 
 require("lib/timers")
 require("lib/spawners/camp_respawn_ring")
+require("lib/spawners/spawn_budget")
 
 local DEBUG = IsInToolsMode()
 local FORCE_DEBUG = false
@@ -40,6 +41,8 @@ local CHANCE_ELITE = 10
 
 local CREEP_SPAWN_TIME = 60 -- kept for compatibility
 local CREEP_RANDOM_OFFSET = 50
+-- радиус круга, по которому расставляются крипы одной волны
+local CREEP_SPAWN_RING = 120
 
 -- Раньше шаг был 0.005, а тик Timers - 0.01, то есть задержки 0.005/0.010/0.015
 -- схлопывались в один-два кадра и весь пак создавался разом.
@@ -73,6 +76,81 @@ local STACK_CHANCE_STEP = 20
 local STACK_CHANCE_MAX = 100
 local STACK_MAX = 3
 local STACK_TICK_TIMER = "CreepSpawnerStackTick"
+
+-------------------------------------------- СОСТАВ ЛАГЕРЕЙ --------------------------------------------------------
+-- Состав пака катится заново на каждой волне. Число крипов = число строк в
+-- creep_spawners.kv у лагеря (сами имена оттуда больше не используются).
+-- Есть командиры - один из них всегда первый и всегда в одиночку, остальные
+-- места - случайные помощники. Без командиров (малые лагеря) все места случайные.
+local P = "npc_dota_neutral_"
+local CAMP_POOLS = {
+	easy = {
+		leaders = {},
+		helpers = {
+			P.."gnoll_assassin", P.."ghost", P.."harpy_scout", P.."harpy_storm",
+			P.."kobold", P.."kobold_tunneler", P.."kobold_taskmaster", P.."fel_beast",
+			P.."forest_troll_berserker", P.."forest_troll_high_priest",
+		},
+	},
+	normal = {
+		leaders = {
+			P.."ogre_mauler", P.."polar_furbolg_champion", P.."dark_troll_warlord",
+			P.."odobenus_frostmage", P.."eimermole_foreman",
+		},
+		helpers = {
+			P.."ogre_magi", P.."polar_furbolg_ursa_warrior", P.."dark_troll",
+			P.."odobenus_footman", P.."satyr_soulstealer", P.."satyr_trickster",
+			P.."radigull",
+			P.."eimermole",
+		},
+	},
+	hard = {
+		leaders = {
+			P.."alpha_wolf", P.."centaur_khan", P.."warpine_raider",
+			P.."enraged_wildkin", P.."satyr_hellcaller",
+		},
+		helpers = {
+			P.."giant_wolf", P.."centaur_outrunner", P.."wildkin", P.."mud_golem",
+			P.."satyr_soulstealer", P.."ogre_magi", P.."eimermole",
+		},
+	},
+	ancient = {
+		leaders = {
+			P.."black_dragon", P.."ice_shaman", P.."granite_golem",
+			P.."big_thunder_lizard", P.."prowler_shaman",
+			P.."ogre_seal",
+		},
+		helpers = {
+			P.."black_drake", P.."frostbitten_golem", P.."rock_golem",
+			P.."small_thunder_lizard", P.."prowler_acolyte",
+			P.."ogre_seal_pup",
+		},
+	},
+	necro = {
+		leaders = { "npc_aa_creep_ghost_big", "npc_necronomicon_warrior_3" },
+		helpers = {
+			"npc_aa_creep_ghost_small_blue", "npc_aa_creep_ghost_small_red",
+			"npc_aa_creep_ghost_small_green", "npc_necronomicon_archer_3",
+		},
+	},
+}
+
+-- случайный состав волны на count мест
+local function RollCampCreeps(spawnerType, count, fallback)
+	local pool = CAMP_POOLS[spawnerType]
+	if not pool or #pool.helpers == 0 then return fallback end
+
+	local list = {}
+	local first = 1
+	if #pool.leaders > 0 then
+		list[1] = pool.leaders[RandomInt(1, #pool.leaders)]
+		first = 2
+	end
+	for i = first, count do
+		list[i] = pool.helpers[RandomInt(1, #pool.helpers)]
+	end
+	return list
+end
 
 -------------------------------------------- HELPERS ----------------------------------------------------------------
 
@@ -133,16 +211,23 @@ function CreepSpawner:Init()
 
 	self:StopSpawning()
 
+	-- прекеш всех юнитов из пулов (каждый один раз)
+	local precached = {}
+	for _, pool in pairs(CAMP_POOLS) do
+		for _, list in pairs({ pool.leaders, pool.helpers }) do
+			for _, creepname in ipairs(list) do
+				if not precached[creepname] then
+					precached[creepname] = true
+					PrecacheUnitByNameAsync(creepname, emptyFunc)
+				end
+			end
+		end
+	end
+
 	for spawner_info, creeps in pairs(self.spawners) do
 		for _, creepname in pairs(creeps) do
-			if DEBUG then
-				PrecacheUnitByNameAsync(creepname, function(...)
-					self.preacachedCount = self.preacachedCount + 1
-					if FORCE_DEBUG then
-						print("Precached unit ", creepname, tostring(self.preacachedCount) .. "/" .. tostring(self.creepCount))
-					end
-				end)
-			else
+			if not precached[creepname] then
+				precached[creepname] = true
 				PrecacheUnitByNameAsync(creepname, emptyFunc)
 			end
 		end
@@ -354,8 +439,10 @@ function CreepSpawner:RestoreHibernatedUnit(rec)
 	local waves = self._spawnerWaves[rec.meta.spawnerName]
 	if not waves or not waves[rec.meta.waveId] then return nil end
 
-	local creep = CreateUnitByName(rec.name, rec.pos, false, nil, nil, DOTA_TEAM_NEUTRALS)
+	local creep = CreateUnitByName(rec.name, rec.pos, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	if not creep then return nil end
+	FindClearSpaceForUnit(creep, creep:GetAbsOrigin(), true)
+	ResolveNPCPositions(creep:GetAbsOrigin(), creep:GetHullRadius() * 2)
 
 	creep:SetForwardVector(rec.forward)
 	creep:Stop()
@@ -536,8 +623,12 @@ function CreepSpawner:_SpawnWaveUnits(spawner_info, waveId)
 	local base_spawner_pos = spawner_info.pos
 	local spawner_dir = spawner_info.direction
 
-	local creep_names = self.spawners[spawner_info]
-	if not creep_names then return end
+	local kv_names = self.spawners[spawner_info]
+	if not kv_names then return end
+
+	local kv_list = {}
+	for _, n in pairs(kv_names) do kv_list[#kv_list + 1] = n end
+	local creep_names = RollCampCreeps(spawner_info.spawner_type, #kv_list, kv_list)
 
 	local mult = self:_GetPackMultiplier()
 
@@ -545,9 +636,18 @@ function CreepSpawner:_SpawnWaveUnits(spawner_info, waveId)
 	-- в один и тот же кадр
 	local spawnDelay = RandomFloat(0.0, SPAWN_CAMP_SPREAD)
 
-	for _, creep_name in pairs(creep_names) do
-		local offset = RandomVector(CREEP_RANDOM_OFFSET)
-		local spawner_pos = base_spawner_pos + offset
+	-- Крипы встают по кругу вокруг точки лагеря, каждый на свой угол. Раньше
+	-- брался случайный сдвиг до 50, и крипы появлялись друг в друге: застревали
+	-- и не могли сдвинуться с места.
+	local count = #creep_names
+	local startAngle = RandomFloat(0, 2 * math.pi)
+
+	for idx, creep_name in ipairs(creep_names) do
+		local spawner_pos = base_spawner_pos
+		if count > 1 then
+			local angle = startAngle + (idx - 1) * 2 * math.pi / count
+			spawner_pos = base_spawner_pos + Vector(math.cos(angle), math.sin(angle), 0) * CREEP_SPAWN_RING
+		end
 
 		spawnDelay = spawnDelay + SPAWN_DELAY_PER_UNIT
 		if spawnDelay > SPAWN_CAMP_SPREAD + SPAWN_DELAY_LIMIT then
@@ -556,7 +656,9 @@ function CreepSpawner:_SpawnWaveUnits(spawner_info, waveId)
 
 		self._spawnerPending[name] = (self._spawnerPending[name] or 0) + mult
 
-		Timers:CreateTimer(spawnDelay, function()
+		-- кадр уже забит спавном других лагерей - встаём в общую очередь
+		-- (lib/spawners/spawn_budget.lua); юнит пока числится в pending
+		Timers:CreateTimer(spawnDelay, function() SpawnBudget:Run(function()
 			self._spawnerPending[name] = math.max(0, (self._spawnerPending[name] or 0) - mult)
 
 			if not self.spawnEnabled then return nil end
@@ -578,6 +680,10 @@ function CreepSpawner:_SpawnWaveUnits(spawner_info, waveId)
 					return nil
 				end
 
+				-- вытолкнуть из других юнитов (соседи по лагерю, стак-волны)
+				FindClearSpaceForUnit(creep, creep:GetAbsOrigin(), true)
+				ResolveNPCPositions(creep:GetAbsOrigin(), creep:GetHullRadius() * 2)
+
 				creep:SetForwardVector(spawner_dir)
 				creep:Stop()
 
@@ -594,7 +700,7 @@ function CreepSpawner:_SpawnWaveUnits(spawner_info, waveId)
 			end
 
 			return nil
-		end)
+		end) end)
 	end
 end
 

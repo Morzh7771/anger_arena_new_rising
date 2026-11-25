@@ -1,0 +1,789 @@
+// Способности боссов с механиками: Король-Мертвец, Хранитель Часов, Чумной Жнец.
+// Lua: scripts/vscripts/creeps/boss/<босс>/<босс>_abilities.lua. Урон в % от макс. HP цели (чистый).
+"DOTAAbilities"
+{
+	//=========================================================== Король-Мертвец
+	"leoric_hellfire_fan"
+	{
+		"ID"							"15400"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/leoric/leoric_abilities"
+		"AbilityTextureName"			"skeleton_king_hellfire_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.9"
+		"AbilityCooldown"				"7"
+		"precache"
+		{
+			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_warmup.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_explosion.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+		}
+		"AbilityValues"
+		{
+			"count"				"3"
+			"count_low_hp"		"5"
+			"low_hp_pct"		"50"
+			"spread"			"22"
+			"speed"				"900"
+			"range"				"1000"
+			"width"				"110"
+			"damage_pct"		"15"
+			"stun"				"1.2"
+		}
+	}
+	"leoric_bone_ring"
+	{
+		"ID"							"15401"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/leoric/leoric_abilities"
+		"AbilityTextureName"			"skeleton_king_bone_guard"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCooldown"				"18"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_undying/undying_tombstone_spawn.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeleton_king_death_bits.vpcf"
+			"particle"	"particles/generic_gameplay/generic_slowed_cold.vpcf"
+		}
+		"AbilityValues"
+		{
+			"count"					"8"
+			"count_per_death"		"2"
+			"radius"				"550"
+			"hits"					"2"
+			"heal_pct"				"3"
+			"explode_radius"		"90"
+			"explode_damage_pct"	"8"
+			"slow_duration"			"1.5"
+			"slow"					"40"
+		}
+	}
+	"leoric_grave_slam"
+	{
+		"ID"							"15402"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/leoric/leoric_abilities"
+		"AbilityTextureName"			"skeleton_king_mortal_strike"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"6"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_calldown.vpcf"
+			"particle"	"particles/econ/items/centaur/centaur_ti6/centaur_ti6_warstomp.vpcf"
+		}
+		"AbilityValues"
+		{
+			"offset"			"200"
+			"radius"			"300"
+			"damage_pct"		"25"
+			"stun"				"0.8"
+		}
+	}
+	"leoric_reincarnation"
+	{
+		"ID"							"15403"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/leoric/leoric_abilities"
+		"AbilityTextureName"			"skeleton_king_reincarnation"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_skeletonking/skeleton_king_reincarnate.vpcf"
+			"particle"	"particles/units/heroes/hero_undying/undying_tombstone_destruction.vpcf"
+			"particle"	"particles/generic_gameplay/generic_has_quest.vpcf"
+		}
+		"AbilityValues"
+		{
+			"window"					"7"
+			"stones"					"3"
+			"stone_hits"				"4"
+			"stone_radius"				"350"
+			"stone_radius_per_death"	"100"
+			"revive_pct"				"50"
+		}
+	}
+
+	//=========================================================== Хранитель Часов
+	"chronokeeper_shadow"
+	{
+		"ID"							"15404"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/chronokeeper/chronokeeper_abilities"
+		"AbilityTextureName"			"faceless_void_time_dilation"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"10"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
+			"particle"	"particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		}
+		"AbilityValues"
+		{
+			"rewind_delay"			"5"
+			"hits"					"3"
+			"double_from_death"		"1"
+			"second_offset"			"300"
+		}
+	}
+	"chronokeeper_sphere"
+	{
+		"ID"							"15405"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/chronokeeper/chronokeeper_abilities"
+		"AbilityTextureName"			"faceless_void_chronosphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"16"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+		}
+		"AbilityValues"
+		{
+			"radius"			"300"
+			"delay"				"1.0"
+			"duration"			"2.5"
+		}
+	}
+	"chronokeeper_walk"
+	{
+		"ID"							"15406"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/chronokeeper/chronokeeper_abilities"
+		"AbilityTextureName"			"faceless_void_time_walk"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.7"
+		"AbilityCooldown"				"8"
+		"precache"
+		{
+			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
+			"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_time_walk_preimage.vpcf"
+			"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_time_walk.vpcf"
+		}
+		"AbilityValues"
+		{
+			"range"				"700"
+			"width"				"175"
+			"damage_pct"		"12"
+			"slow_duration"		"2"
+			"slow_ms"			"70"
+			"slow_as"			"100"
+		}
+	}
+
+	//=========================================================== Чумной Жнец
+	"plague_reaper_mark"
+	{
+		"ID"							"15407"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/plague_reaper/plague_reaper_abilities"
+		"AbilityTextureName"			"necrolyte_reapers_scythe"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"9"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_start.vpcf"
+			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+		}
+		"AbilityValues"
+		{
+			"search_radius"		"900"
+			"share_radius"		"300"
+			"delay"				"3"
+			"delay_per_death"	"0.5"
+			"delay_min"			"2"
+			"damage_pct"		"55"
+		}
+	}
+	"plague_reaper_wave"
+	{
+		"ID"							"15408"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/plague_reaper/plague_reaper_abilities"
+		"AbilityTextureName"			"necrolyte_death_pulse"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"14"
+		"precache"
+		{
+			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
+			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_death_seeker_linear_enemy.vpcf"
+		}
+		"AbilityValues"
+		{
+			"duration"			"5"
+			"interval"			"0.2"
+			"turn_degrees"		"360"
+			"speed"				"900"
+			"range"				"700"
+			"width"				"90"
+			"damage_pct"		"6"
+			"heal_pct"			"1"
+			"double_from_death"	"1"
+		}
+	}
+	//=========================================================== Possessed (Дум), новые скиллы
+	"possessed_flame_wall"
+	{
+		"ID"							"15410"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/possessed/possessed_inferno"
+		"AbilityTextureName"			"doom_bringer_scorched_earth"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"11"
+		"precache"
+		{
+			"particle"	"particles/econ/items/lina/lina_ti7/light_strike_array_pre_ti7.vpcf"
+			"particle"	"particles/econ/items/lina/lina_ti7/lina_spell_light_strike_array_ti7.vpcf"
+		}
+		"AbilityValues"
+		{
+			"waves"				"3"
+			"waves_awaken"		"5"
+			"step"				"250"
+			"interval"			"0.6"
+			"side_segments"		"2"
+			"segment_offset"	"250"
+			"segment_radius"	"150"
+			"delay"				"1.0"
+			"damage_pct"		"20"
+			"stun"				"1"
+		}
+	}
+	"possessed_sweep"
+	{
+		"ID"							"15411"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/possessed/possessed_inferno"
+		"AbilityTextureName"			"doom_bringer_infernal_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCooldown"				"12"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_mars/mars_shield_bash.vpcf"
+		}
+		"AbilityValues"
+		{
+			"radius"			"400"
+			"damage_pct"		"20"
+			"push_duration"		"0.4"
+			"stun"				"1"
+		}
+	}
+	"possessed_charge"
+	{
+		"ID"							"15412"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/possessed/possessed_inferno"
+		"AbilityTextureName"			"doom_bringer_devour"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"14"
+		"precache"
+		{
+			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
+			"particle"	"particles/units/heroes/hero_primal_beast/primal_beast_onslaught_charge_active.vpcf"
+		}
+		"AbilityValues"
+		{
+			"distance"			"800"
+			"speed"				"1100"
+			"hit_radius"		"200"
+			"damage_pct"		"30"
+			"push_duration"		"0.5"
+		}
+	}
+	"possessed_awaken"
+	{
+		"ID"							"15413"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/possessed/possessed_inferno"
+		"AbilityTextureName"			"doom_bringer_doom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_doom_bringer/doom_bringer_doom_aura.vpcf"
+			"particle"	"particles/units/heroes/hero_doom_bringer/doom_scorched_earth.vpcf"
+			"particle"	"particles/generic_gameplay/generic_silenced.vpcf"
+		}
+		"AbilityValues"
+		{
+			"hp_pct"			"50"
+			"aura_radius"		"300"
+			"attack_speed"		"100"
+		}
+	}
+
+	//=========================================================== Чумной Жнец (аура)
+	"plague_reaper_decay"
+	{
+		"ID"							"15409"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/plague_reaper/plague_reaper_abilities"
+		"AbilityTextureName"			"necrolyte_heartstopper_aura"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_ambient_glow.vpcf"
+		}
+		"AbilityValues"
+		{
+			"radius"			"450"
+			"heal_reduction"	"40"
+		}
+	}
+
+	//=========================================================== Ликан
+	"lycan_boss_wolves"
+	{
+		"ID"							"15414"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/lycan/lycan_abilities"
+		"AbilityTextureName"			"lycan_summon_wolves"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"20"
+		"AbilityValues"
+		{
+			"count"				"2"
+			"hp_pct"			"6"
+			"damage_pct"		"25"
+		}
+	}
+	"lycan_boss_howl"
+	{
+		"ID"							"15415"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/lycan/lycan_abilities"
+		"AbilityTextureName"			"lycan_howl"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.7"
+		"AbilityCooldown"				"14"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_lycan/lycan_howl_cast.vpcf"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_howl_buff.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts"
+		}
+		"AbilityValues"
+		{
+			"radius"			"700"
+			"duration"			"8"
+			"armor"				"8"
+			"armor_per_wolf"	"4"
+		}
+	}
+	"lycan_boss_pounce"
+	{
+		"ID"							"15416"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/lycan/lycan_abilities"
+		"AbilityTextureName"			"lycan_feral_impulse"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"8"
+		"precache"
+		{
+			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_shapeshift_cast_transition.vpcf"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_wolfbite_ambient.vpcf"
+		}
+		"AbilityValues"
+		{
+			"damage_pct"		"12"
+			"bleed_pct"			"2"
+			"bleed_duration"	"4"
+			"bleed_slow"		"30"
+		}
+	}
+	"lycan_boss_shapeshift"
+	{
+		"ID"							"15417"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/lycan/lycan_abilities"
+		"AbilityTextureName"			"lycan_shapeshift"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"model"		"models/heroes/lycan/lycan_wolf.vmdl"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_shapeshift_cast.vpcf"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_shapeshift_buff.vpcf"
+			"particle"	"particles/generic_gameplay/generic_purge.vpcf"
+		}
+		"AbilityValues"
+		{
+			"hp_pct"			"50"
+			"move_speed"		"40"
+			"crit_chance"		"30"
+			"crit_damage"		"200"
+			"crit_pct_hp"		"6"
+		}
+	}
+
+	//=========================================================== Пудж
+	"pudge_boss_hook"
+	{
+		"ID"							"15418"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/pudge/pudge_abilities"
+		"AbilityTextureName"			"pudge_meat_hook"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_1"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.6"
+		"AbilityCooldown"				"9"
+		"precache"
+		{
+			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
+			"particle"	"particles/units/heroes/hero_pudge/pudge_meathook.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		}
+		"AbilityValues"
+		{
+			"range"				"1000"
+			"speed"				"1450"
+			"width"				"100"
+			"damage_pct"		"20"
+		}
+	}
+	"pudge_boss_rot"
+	{
+		"ID"							"15419"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/pudge/pudge_abilities"
+		"AbilityTextureName"			"pudge_rot"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+			"particle"	"particles/units/heroes/hero_pudge/pudge_rot_recipient.vpcf"
+		}
+		"AbilityValues"
+		{
+			"radius"				"250"
+			"damage_pct_per_sec"	"6"
+			"slow"					"20"
+		}
+	}
+	"pudge_boss_dismember"
+	{
+		"ID"							"15421"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/pudge/pudge_abilities"
+		"AbilityTextureName"			"pudge_dismember"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CHANNEL_ABILITY_4"
+		"AbilityCastRange"				"200"
+		"AbilityCastPoint"				"0.6"
+		"AbilityChannelTime"			"2.5"
+		"AbilityCooldown"				"14"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_pudge/pudge_dismember.vpcf"
+			"particle"	"particles/units/heroes/hero_pudge/pudge_fleshheap_block_activation.vpcf"
+			"particle"	"particles/generic_gameplay/generic_purge.vpcf"
+		}
+		"AbilityValues"
+		{
+			"duration"				"2.5"
+			"damage_pct_per_sec"	"8"
+			"heal_pct_per_sec"		"2"
+			"finish_heal_pct"		"15"
+		}
+	}
+
+	//=========================================================== Урса
+	"ursa_boss_earthshock"
+	{
+		"ID"							"15422"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/ursa/ursa_abilities"
+		"AbilityTextureName"			"ursa_earthshock"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCooldown"				"9"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+			"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock_modifier.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+		}
+		"AbilityValues"
+		{
+			"radius"			"385"
+			"damage_pct"		"10"
+			"slow_duration"		"3"
+			"slow"				"50"
+		}
+	}
+	"ursa_boss_fury_swipes"
+	{
+		"ID"							"15423"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/ursa/ursa_abilities"
+		"AbilityTextureName"			"ursa_fury_swipes"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+		}
+		"AbilityValues"
+		{
+			"pct_per_stack"		"2"
+			"stack_duration"	"8"
+		}
+	}
+	"ursa_boss_enrage"
+	{
+		"ID"							"15424"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/ursa/ursa_abilities"
+		"AbilityTextureName"			"ursa_enrage"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"18"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+			"particle"	"particles/generic_gameplay/generic_purge.vpcf"
+		}
+		"AbilityValues"
+		{
+			"duration"			"4"
+			"damage_reduction"	"80"
+		}
+	}
+
+	//=========================================================== Хускар
+	"huskar_boss_spears"
+	{
+		"ID"							"15425"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/huskar/huskar_abilities"
+		"AbilityTextureName"			"huskar_burning_spear"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+			"particle"	"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+		}
+		"AbilityValues"
+		{
+			"pct_per_stack"		"0.7"
+			"max_stacks"		"8"
+			"duration"			"6"
+		}
+	}
+	"huskar_boss_inner_fire"
+	{
+		"ID"							"15426"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/huskar/huskar_abilities"
+		"AbilityTextureName"			"huskar_inner_fire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCooldown"				"10"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_fire.vpcf"
+		}
+		"AbilityValues"
+		{
+			"radius"			"450"
+			"damage_pct"		"12"
+			"knockback"			"300"
+			"disarm"			"2"
+		}
+	}
+	"huskar_boss_berserkers_blood"
+	{
+		"ID"							"15427"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/huskar/huskar_abilities"
+		"AbilityTextureName"			"huskar_berserkers_blood"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"as_per_pct"		"4"
+		}
+	}
+	"huskar_boss_inner_vitality"
+	{
+		"ID"							"15428"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/huskar/huskar_abilities"
+		"AbilityTextureName"			"huskar_inner_vitality"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"16"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_vitality_cast.vpcf"
+			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+			"particle"	"particles/generic_gameplay/generic_purge.vpcf"
+		}
+		"AbilityValues"
+		{
+			"heal_pct"			"10"
+			"regen_pct"			"2"
+			"duration"			"5"
+		}
+	}
+	"huskar_boss_life_break"
+	{
+		"ID"							"15429"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/huskar/huskar_abilities"
+		"AbilityTextureName"			"huskar_life_break"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"12"
+		"precache"
+		{
+			"particle"	"particles/ui_mouseactions/range_finder_cone.vpcf"
+			"particle"	"particles/status_fx/status_effect_huskar_lifebreak.vpcf"
+		}
+		"AbilityValues"
+		{
+			"damage_pct"		"25"
+			"slow_duration"		"3"
+			"slow"				"50"
+		}
+	}
+	// Смертельный удар: каждый N-й удар - крит от макс. HP цели
+	"leoric_mortal_strike"
+	{
+		"ID"							"15430"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/leoric/leoric_abilities"
+		"AbilityTextureName"			"skeleton_king_mortal_strike"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/msg_fx/msg_aggro.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
+		}
+		"AbilityValues"
+		{
+			"hits"				"4"
+			"damage_pct"		"12"
+			"stun"				"0.5"
+		}
+	}
+	// Блокировка времени: баш с уроном от макс. HP, по застывшим в хроносфере - всегда
+	"chronokeeper_time_lock"
+	{
+		"ID"							"15431"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/chronokeeper/chronokeeper_abilities"
+		"AbilityTextureName"			"faceless_void_time_lock"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_time_lock_bash.vpcf"
+		}
+		"AbilityValues"
+		{
+			"chance"			"20"
+			"stun"				"0.6"
+			"damage_pct"		"6"
+		}
+	}
+	// Призрачный покров: замах, снимает дебафы, на время бесплотен
+	"plague_reaper_shroud"
+	{
+		"ID"							"15432"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"creeps/boss/plague_reaper/plague_reaper_abilities"
+		"AbilityTextureName"			"necrolyte_sadist"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"15"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_spirit.vpcf"
+			"particle"	"particles/status_fx/status_effect_necrolyte_spirit.vpcf"
+		}
+		"AbilityValues"
+		{
+			"duration"			"3"
+			"slow_radius"		"450"
+			"slow"				"30"
+		}
+	}
+}

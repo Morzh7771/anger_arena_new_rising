@@ -304,23 +304,24 @@ DOTAAbilities
 	"fervor_aa"
 	{
 		"BaseClass"						"ability_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"Innate"						"1"
 		"AbilityTextureName"			"troll_warlord_fervor"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"ScriptFile"	                "heroes/troll_warlord/fervor/fervor_aa"
 		
-		"MaxLevel"						"7"
+		"MaxLevel"						"1"
 		"HasShardUpgrade"				"1"
 		"AbilityValues"
 		{
 			"attack_speed"
 			{
-				"value"											"6 8 10 12 14 16 18"
+				"value"											"6"
 				"special_bonus_unique_troll_warlord_5"			"+5"
 			}
 			"damage"
 			{
-				"value"				"2 5 8 11 14 17 20"
+				"value"				"2"
 			}
 			"duration"
 			{
@@ -329,6 +330,14 @@ DOTAAbilities
 			"chance" 				"20"
 			"chance_per_stack" 				"2"
 			"bonus_range" 				"175"
+			// рост от уровня героя: с 1-го до knee_level - до *_knee (старый 7-й уровень скилла),
+			// дальше медленнее до *_max к hero_level_cap
+			"attack_speed_knee"			"18"
+			"damage_knee"				"20"
+			"knee_level"				"14"
+			"attack_speed_max"			"45"
+			"damage_max"				"50"
+			"hero_level_cap"			"100"
 			"armor"
 			{
 				"value"				"0"

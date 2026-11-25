@@ -191,7 +191,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"creep_piercing"			// Ability 1.
+		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -282,7 +282,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"creep_piercing"			// Ability 1.
+		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -373,7 +373,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"creep_piercing"			// Ability 1.
+		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -464,7 +464,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"creep_piercing"			// Ability 1.
+		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -555,7 +555,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"creep_piercing"			// Ability 1.
+		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -646,7 +646,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"creep_piercing"			// Ability 1.
+		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -6367,6 +6367,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -6441,6 +6442,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -6515,6 +6517,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -6583,12 +6586,13 @@
 		//----------------------------------------------------------------
 		"Ability1"					"mudgolem_cloak_aura"			// Ability 1
 		"Ability2"					"neutral_upgrade"			// Ability 2
-		"Ability3"					"neutral_centaur_stun_active"			// Ability 3
+		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -6663,6 +6667,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -6737,6 +6742,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -6811,6 +6817,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"3"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -6885,6 +6892,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -6960,7 +6968,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"6"			// Physical protection.
-		"MagicalResistance"			"30"		// Magical protection.  
+		"MagicalResistance"			"15"		// Magical protection.  
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7035,7 +7043,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
-		"MagicalResistance"			"30"		// Magical protection.  
+		"MagicalResistance"			"15"		// Magical protection.  
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7258,6 +7266,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7327,12 +7336,13 @@
 		//----------------------------------------------------------------
 		"Ability1"					"ogre_magi_frost_armor"			// Ability 1
 		"Ability2"					"neutral_upgrade"	// Ability 2
-		"Ability3"					"neutral_ogre_armor_active"			// Ability 3
+		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7407,6 +7417,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7481,6 +7492,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"3"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7555,6 +7567,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7629,6 +7642,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7698,11 +7712,12 @@
 		"Ability1"					"satyr_soulstealer_mana_burn"			// Ability 1
 		"Ability2"					"forest_troll_high_priest_mana_aura"			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
-		"Ability4"					"neutral_satyr_purge_active"			// Ability 4
+		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -7777,6 +7792,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -8000,6 +8016,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"11"			// Physical protection.
+		"MagicalResistance"		"30"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -8073,6 +8090,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"12"			// Physical protection.
+		"MagicalResistance"		"30"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -8522,7 +8540,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"3"			// Physical protection.
-		"MagicalResistance"				"50"		// Magical protection.
+		"MagicalResistance"				"30"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -8588,13 +8606,14 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"gnoll_assassin_envenomed_weapon"			// Ability 1
-		"Ability2"					"creep_piercing"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -8662,13 +8681,14 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"ghost_frost_attack"			// Ability 1
-		"Ability2"					"creep_piercing"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -8736,7 +8756,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"ghost_frost_attack"			// Ability 1
-		"Ability2"					"creep_piercing"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -8807,13 +8827,14 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"dark_troll_warlord_ensnare"			// Ability 1
-		"Ability2"					"creep_piercing"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -8888,6 +8909,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -8962,6 +8984,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -9028,7 +9051,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creep_piercing"			// Ability 1
+		"Ability1"					""			// Ability 1
 		"Ability2"					"neutral_upgrade"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -9036,6 +9059,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -9104,12 +9128,13 @@
 		//----------------------------------------------------------------
 		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1
 		"Ability2"					"forest_troll_high_priest_heal_amp_aura"			// Ability 2
-		"Ability3"					"creep_piercing"			// Ability 3
+		"Ability3"					""			// Ability 3
 		"Ability4"					"neutral_upgrade"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -9177,13 +9202,14 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"harpy_scout_take_off"			// Ability 1
-		"Ability2"					"creep_piercing"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
-		"Ability4"					"neutral_bird_tornado_active"			// Ability 4
+		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -9251,13 +9277,14 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
-		"Ability2"					"creep_piercing"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"neutral_upgrade"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -9333,7 +9360,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"2"			// Physical protection.
-		"MagicalResistance"			"25"		// Magical protection.
+		"MagicalResistance"			"30"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -10039,7 +10066,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"100"		// Base health.
+		"StatusHealth"				"8"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -10086,7 +10113,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"100"		// Base health.
+		"StatusHealth"				"8"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -15005,6 +15032,149 @@
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
+	"npc_dota_neutral_eimermole"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"4"
+		"ModelScale" 					"1.0"
+		"IsNeutralUnitType"			"1"
+		"MaterialGroup"				"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"eimermole_miners_aura"			// Ability 1
+		"Ability2"					"neutral_upgrade"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"39"		// Damage range min.
+		"AttackDamageMax"			"44"		// Damage range max.	
+		"AttackRate"				"2"		// Speed of attack.
+		"BaseAttackSpeed"			"135"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"200"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"66"		// Experience earn.
+		"BountyGoldMin"				"30"		// Gold earned min.
+		"BountyGoldMax"				"38"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"320"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"700"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"0"		// Base mana.
+		"StatusManaRegen"			"1.0"			// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline" "1"
+	}
+	"npc_dota_neutral_eimermole_foreman"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole_lamp.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creep_neutral"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"5"
+		"ModelScale" 					"1.3"
+		"IsNeutralUnitType"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"eimermole_miners_slam"			// Ability 1
+		"Ability2"					"neutral_upgrade"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"49"		// Damage range min.
+		"AttackDamageMax"			"55"		// Damage range max.	
+		"AttackRate"				"2"			// Speed of attack.
+		"BaseAttackSpeed"			"135"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"80"
+		"HealthBarOffset"			"220"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"90"		// Experience earn.
+		"BountyGoldMin"				"62"		// Gold earned min.
+		"BountyGoldMax"				"66"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"320"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"950"		// Base health.
+		"StatusHealthRegen"			"1"		// Health regeneration rate.
+		"StatusMana"				"300"		// Base mana.
+		"StatusManaRegen"			"1.0"			// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"show_occluded_outline" "1"
+	}	
 	"npc_dota_neutral_odobenus_footman"
 	{										
 		// General
@@ -15026,6 +15196,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"1"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -15097,6 +15268,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"3"			// Physical protection.
+		"MagicalResistance"		"15"	// creep_tune.py
 
 		// Attack
 		//----------------------------------------------------------------
@@ -15168,7 +15340,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
-		"MagicalResistance"			"30"		// Magical protection.  
+		"MagicalResistance"			"15"		// Magical protection.  
 
 		// Attack
 		//----------------------------------------------------------------
@@ -15313,7 +15485,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"3"			// Physical protection.
-		"MagicalResistance"				"50"		// Magical protection.
+		"MagicalResistance"				"30"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------

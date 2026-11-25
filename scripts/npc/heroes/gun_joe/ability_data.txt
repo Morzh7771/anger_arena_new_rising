@@ -1,0 +1,281 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Gun Joe: Machine Gun
+	//=================================================================================================================
+	"gun_joe_machine_gun"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/gun_joe/gun_joe_guns"
+		"AbilityTextureName"			"custom/gun_joe/gun_joe_machine_gun"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"attack_range"				"-180 -170 -160 -150 -140 -130 -120"
+			"bat"						"0.7"
+			"damage_decrease_pct"		"-45 -43 -40 -38 -35 -33 -30"
+		}
+	}
+
+	//=================================================================================================================
+	// Gun Joe: Rifle
+	//=================================================================================================================
+	"gun_joe_rifle"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/gun_joe/gun_joe_guns"
+		"AbilityTextureName"			"custom/gun_joe/gun_joe_rifle"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"attack_range"				"75 100 125 150 200 250 300"
+			"bat"						"1.85"
+			"damage_increase_pct"		"60 70 80 90 100 110 120"
+		}
+	}
+
+	//=================================================================================================================
+	// Gun Joe: Explosive Bullets
+	//=================================================================================================================
+	"gun_joe_explosive"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/gun_joe/gun_joe_explosive"
+		"AbilityTextureName"			"custom/gun_joe/gun_joe_explosive"
+		"MaxLevel"						"7"
+		"HasShardUpgrade"			"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 70 90 110 130 150 170"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"												"16"
+				"special_bonus_unique_gun_joe_explosive_cooldown"	"-8"
+			}
+			"stack_count"
+			{
+				"value"											"6"
+				"special_bonus_unique_gun_joe_explosive_stacks"	"+4"
+			}
+			"bonus_damage"				"30 40 50 60 70 80 90"
+			"radius"
+			{
+				"value"											"230"
+				"special_bonus_unique_gun_joe_explosive_radius"	"+200"
+			}
+			"duration"					"16"
+			"shard_slow"
+			{
+				"value"				"0"
+				"special_bonus_shard"	"+20"
+			}
+			"shard_slow_duration"
+			{
+				"value"				"0"
+				"special_bonus_shard"	"+1.5"
+			}
+			"damage_pct"				"25 30 35 40 45 50 55"	// % ловкости
+		}
+	}
+
+	//=================================================================================================================
+	// Gun Joe: Rapid (врождённая)
+	//=================================================================================================================
+	"gun_joe_rapid"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/gun_joe/gun_joe_rapid"
+		"AbilityTextureName"			"custom/gun_joe/gun_joe_rapid"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityType"					"ABILITY_TYPE_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"cooldown"
+			{
+				"value"										"3"
+				"special_bonus_unique_gun_joe_rapid_cooldown"	"-2"
+			}
+			"bonus_attackspeed"			"30"
+			"attackspeed_per_level"		"1.5"
+			"bonus_movespeed"			"10"
+			"movespeed_per_level"		"0.2"
+		}
+	}
+
+	//=================================================================================================================
+	// Gun Joe: Calibrated Shot
+	//=================================================================================================================
+	"gun_joe_calibrated_shot"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/gun_joe/gun_joe_calibrated_shot"
+		"AbilityTextureName"			"custom/gun_joe/gun_joe_calibrated_shot"
+		"MaxLevel"						"7"
+		"HasScepterUpgrade"			"1"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 70 80 90 100 110 120"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"stun_duration"				"1.5"
+			"damage_from_attack"		"200 225 250 275 300 325 350"	// % урона атаки
+			"bonus_attack_range"		"600"
+			"projectile_speed"			"2200"
+			"AbilityCooldown"
+			{
+				"value"				"25"
+				"special_bonus_scepter"	"-5"
+			}
+			"scepter_pierce_length"
+			{
+				"value"				"0"
+				"special_bonus_scepter"	"+1200"
+			}
+			"scepter_pierce_width"
+			{
+				"value"				"0"
+				"special_bonus_scepter"	"+150"
+			}
+			"cast_point"
+			{
+				"value"				"0.4"
+				"special_bonus_unique_gun_joe_calibrated_cast_point"	"-0.3"
+			}
+			"armor_ignore_pct"			"50"
+		}
+	}
+
+	//=================================================================================================================
+	// Gun Joe: таланты
+	//=================================================================================================================
+	"special_bonus_unique_gun_joe_rapid_cooldown"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_gun_joe_explosive_cooldown"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_gun_joe_explosive_stacks"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_gun_joe_explosive_radius"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	//=================================================================================================================
+	// Gun Joe: Frag Grenade
+	//=================================================================================================================
+	"gun_joe_frag_grenade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/gun_joe/gun_joe_frag_grenade"
+		"AbilityTextureName"			"custom/gun_joe/gun_joe_explosive"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.2"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 13 12 11 10 9 8"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110 120 130 140"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"					"80 150 220 290 360 430 500"
+			"damage_pct"				"50 60 70 80 90 100 110"	// % ловкости
+			"radius"					"300"
+			"slow"						"30"
+			"slow_duration"				"2"
+			"speed"						"1200"
+		}
+	}
+
+	"special_bonus_unique_gun_joe_calibrated_cast_point"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+}

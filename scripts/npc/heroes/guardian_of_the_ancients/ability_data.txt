@@ -5,7 +5,7 @@
 		"ID"					"15171"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/ficle_ground"
-		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityTextureName"			"custom/guardian_of_the_ancients/guardian_of_the_ancients_ficle_ground"
 		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
@@ -17,6 +17,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate"			"1.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,15 +35,16 @@
 		{
 				"interval"				"1 0.9 0.8 0.7 0.6 0.5 0.4"
 				"aoe_range"				"300"
-				"damage"				"100 150 200 250 300 350 400"
+				"damage"					"150 225 300 375 450 525 600"
 				"impuls_max"			"4 5 6 7 8 9 10"
 				"duration"				"2"
-				"slow_pct"				"10 15 20 25 30 35 40"
+				"slow_pct"				"15 20 25 30 35 40 45"
 				"talant_caster_damage"
 				{
 					"value"				"0"
 					"special_bonus_unique_guardian_of_the_ancients_ficle_ground_add_dmg"			"1"
 				}
+			"damage_pct"				"15 20 25 30 35 40 45"	// % урона атаки за импульс
 		}
 	}
 	"guardian_of_the_ancients_guardians_step"
@@ -49,7 +52,7 @@
 		"ID"					"15170"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/guardians_step"
-		"AbilityTextureName"			"crystal_maiden_crystal_clone"
+		"AbilityTextureName"			"custom/guardian_of_the_ancients/guardian_of_the_ancients_guardians_step"
 		"MaxLevel"						"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
@@ -89,25 +92,32 @@
 					"value"				"0"
 					"special_bonus_unique_guardian_of_the_ancients_guardians_step_no_dmg"			"1"
 				}
+			"damage"				"80 130 180 230 280 330 380"	// физический урон по пути
+			"damage_pct"				"60 80 100 120 140 160 180"	// % урона атаки
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
-	"guardian_of_the_ancients_ancient_charge"
+	"guardian_of_the_ancients_ancient_roots"
 	{
-		"ID"					"15169"
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/guardian_of_the_ancients/ancient_charge"
-		"AbilityTextureName"			"custom/hola_stunhammer"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
-		"AbilityCastAnimation"			"ACT_INVALID"
+		"ScriptFile"					"heroes/guardian_of_the_ancients/ancient_roots"
+		"AbilityTextureName"			"custom/guardian_of_the_ancients/guardian_of_the_ancients_ancient_roots"
 		"MaxLevel"						"1"
 		"Innate"						"1"
 		"IsBreakable"					"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityType"					"ABILITY_TYPE_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"charge_interval"			"5"
-			"max_charges"				"5"
-			"damage_pct"				"12"
+			"root_delay"			"1"
+			"damage_reduction"				"12"
+			"reduction_per_level"				"0.25"	// за уровень героя
 		}
 	}
 	"guardian_of_the_ancients_confident_stance"
@@ -115,7 +125,7 @@
 		"ID"					"15168"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/confident_stance"
-		"AbilityTextureName"			"custom/hola_stunhammer"
+		"AbilityTextureName"			"custom/guardian_of_the_ancients/guardian_of_the_ancients_confident_stance"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
  		"AbilityCastAnimation"			"ACT_INVALID"
 		"AbilityCooldown"				"2"
@@ -124,7 +134,7 @@
 		"HasScepterUpgrade"				"1"
 		"AbilityValues"
 		{					
-			"damage_const_bonus"	"1"
+			"damage_const_bonus"				"1.5"
 			"damage_amp_bonus"	
 			{	
 				"value"									"0"
@@ -144,7 +154,7 @@
 		"ID"					"15167"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/command_height"
-		"AbilityTextureName"			"lone_druid_spirit_bear_demolish"
+		"AbilityTextureName"			"custom/guardian_of_the_ancients/guardian_of_the_ancients_command_height"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown"				"140 130 120 110 100 90 80"
@@ -153,7 +163,8 @@
 
 		"AbilityManaCost"				"200 250 300 350 400 450 500"
 
-		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate"			"1.2"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastPoint"				"0.3"
 
@@ -183,6 +194,7 @@
 				"value"	"0"
 				"special_bonus_scepter" "-50"
 			}
+			"bonus_damage_pct"				"30 40 50 60 70 80 90"	// % базового урона
 		}
 	}
 
@@ -191,14 +203,14 @@
 		"ID"					"15166"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/one_against_many"
-		"AbilityTextureName"			"custom/reaver_lord_attract"
+		"AbilityTextureName"			"custom/guardian_of_the_ancients/guardian_of_the_ancients_one_against_many"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"						"7"
 		"AbilityValues"
 		{					
 			"radius"					"1200"
-			"hero_bonus"				"10 20 30 40 50 60 70"
-			"creep_bonus"				"5 10 15 20 25 30 35"
+			"hero_bonus"				"20 40 60 80 100 120 140"
+			"creep_bonus"				"10 18 26 34 42 50 60"
 		}
 	}
 	"guardian_of_the_ancients_command_height_stop"
@@ -206,7 +218,7 @@
 		"ID"					"15165"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/guardian_of_the_ancients/command_height"
-		"AbilityTextureName"			"lone_druid_spirit_bear_demolish"
+		"AbilityTextureName"			"custom/guardian_of_the_ancients/guardian_of_the_ancients_command_height_stop"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"MaxLevel"						"1"
 	}

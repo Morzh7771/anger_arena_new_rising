@@ -4,7 +4,9 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phoenix_icarus_dive"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phoenix/phoenix_icarus_dive_aa"
+		"AbilityTextureName"	"phoenix_icarus_dive"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -19,7 +21,7 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"40 38 35 33 30 28 25"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -58,7 +60,7 @@ DOTAAbilities
 				"special_bonus_unique_phoenix_6" "+25"
 			}
 			"dive_duration"			"2.0"
-			"max_health_damage_pct"		"0.2"	// % макс. ХП Феникса за тик (тик 0.2 сек)
+			"max_health_damage_pct"		"1"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -66,7 +68,9 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phoenix_icarus_dive_stop"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phoenix/phoenix_icarus_dive_aa"
+		"AbilityTextureName"	"phoenix_icarus_dive_stop"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		
@@ -79,7 +83,9 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phoenix_fire_spirits"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phoenix/phoenix_fire_spirits_aa"
+		"AbilityTextureName"	"phoenix_fire_spirits"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -96,7 +102,7 @@ DOTAAbilities
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -123,14 +129,16 @@ DOTAAbilities
 			}
 			"spirit_count"		"5"
 			"tick_interval"		"0.2"
-			"max_health_damage_pct"		"0.2"	// % макс. ХП Феникса за тик (тик 0.2 сек)
+			"max_health_damage_pct"		"1.5"	// % макс. здоровья Феникса в секунду
 		}
 	}
 	"phoenix_sun_ray"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phoenix_sun_ray"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phoenix/phoenix_sun_ray_aa"
+		"AbilityTextureName"	"phoenix_sun_ray"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -193,7 +201,7 @@ DOTAAbilities
             {
                 "value"                                     "0"
             }
-			"max_health_damage_pct"		"0.4"
+			"max_health_damage_pct"		"2"	// % макс. здоровья Феникса в секунду
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -201,7 +209,9 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phoenix_sun_ray_stop"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phoenix/phoenix_sun_ray_aa"
+		"AbilityTextureName"	"phoenix_sun_ray_stop"
 		"MaxLevel"		"7"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		
@@ -214,7 +224,9 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phoenix_sun_ray_toggle_move"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phoenix/phoenix_sun_ray_aa"
+		"AbilityTextureName"	"phoenix_sun_ray_toggle_move"
 		"MaxLevel"		"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		
@@ -227,7 +239,10 @@ DOTAAbilities
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phoenix_supernova"
+		// своя Lua-версия: с аганимом сломанное яйцо выплёвывает, удары от здоровья, Sun Ray из яйца с шардом
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phoenix/phoenix_supernova_aa"
+		"AbilityTextureName"	"phoenix_supernova"
 		"MaxLevel"		"7"
 		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -276,25 +291,30 @@ DOTAAbilities
 			{
 				"value"	"9 10 11 12 13 14 15"
 				"special_bonus_unique_phoenix_1" "+2"
+				"special_bonus_scepter"	"+3"
 			}
-			"max_hero_attacks_scepter"
-			{
-				"value"	"12 13 14 15 16 17 18"
-				"special_bonus_unique_phoenix_1" "+2"
-			}
+			"hp_per_extra_attack"		"1250"	// +1 сегмент за каждые N макс. здоровья Феникса
 			"cast_range_tooltip_scepter"
 			{
 				"value"	"0"
 				"special_bonus_scepter"			"500"
 			}
-			"max_health_damage_pct"		"2"
+			"max_health_damage_pct"		"10"	// % макс. здоровья Феникса в секунду
+			"spit_invuln_duration"
+			{
+				"value"	"0"
+				"special_bonus_scepter"	"+0.5"
+				"RequiresScepter"	"1"
+			}
 		}
 	}
 	"phoenix_launch_fire_spirit"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"			"phoenix_launch_fire_spirit"
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"heroes/phoenix/phoenix_fire_spirits_aa"
+		"AbilityTextureName"	"phoenix_launch_fire_spirit"
 		"MaxLevel"		"7"
 
 		"AbilityType"					"ABILITY_TYPE_BASIC"
@@ -337,7 +357,7 @@ DOTAAbilities
 			}
 			"spirit_count"		"5"
 			"tick_interval"		"0.2"
-			"max_health_damage_pct"		"0.3"
+			"max_health_damage_pct"		"1.5"	// % макс. здоровья Феникса в секунду
 		}
 	}
 	"phoenix_dying_light"

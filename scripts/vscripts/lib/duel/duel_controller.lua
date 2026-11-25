@@ -337,6 +337,10 @@ function DuelController:_OnTick( isEnd )
 			VisionHero(direHeroes)
 		end
 	end
+	-- аура телепорта на всех живых героях за 3 с до переноса на дуэль
+	if nCountdown == 3 and not self.freeze and not isEnd and not DuelLibrary:IsDuelActive() then
+		self:_StartTeleportFx()
+	end
 	--print(nCountdown)
 	if nCountdown <= 10 then
 		if nCountdown == 0 then
@@ -348,7 +352,7 @@ function DuelController:_OnTick( isEnd )
 		end
     end
 	if nCountdown == -1 then
-		
+		self:_StopTeleportFx()
 		if DuelLibrary:IsDuelActive() or isEnd then
 			self:_CancelDuels()
 			self:_StartDuelTimer( true )
@@ -394,6 +398,43 @@ function DuelController:_GetFinalTeams()
 	if dire then return "dire" end
 
 	return nil
+end
+
+local TELEPORT_FX       = "particles/units/heroes/hero_chen/chen_teleport.vpcf"
+local TELEPORT_FX_FLASH = "particles/units/heroes/hero_chen/chen_teleport_flash.vpcf"
+
+function DuelController:_StartTeleportFx()
+	self:_StopTeleportFx(true)
+	self.teleportFx = {}
+	for _, team in ipairs({ DOTA_TEAM_GOODGUYS, DOTA_TEAM_BADGUYS }) do
+		for _, hero in pairs(TeamHelper:GetHeroes(team)) do
+			if IsValidEntity(hero) and hero:IsAlive() then
+				local fx = ParticleManager:CreateParticle(TELEPORT_FX, PATTACH_ABSORIGIN_FOLLOW, hero)
+				table.insert(self.teleportFx, { hero = hero, fx = fx })
+				hero:EmitSound("Hero_Chen.TeleportLoop")
+			end
+		end
+	end
+end
+
+-- silent = снять без вспышки
+function DuelController:_StopTeleportFx(silent)
+	if not self.teleportFx then return end
+	for _, t in ipairs(self.teleportFx) do
+		ParticleManager:DestroyParticle(t.fx, false)
+		ParticleManager:ReleaseParticleIndex(t.fx)
+		if IsValidEntity(t.hero) then
+			t.hero:StopSound("Hero_Chen.TeleportLoop")
+			if not silent and t.hero:IsAlive() then
+				local pos = t.hero:GetAbsOrigin()
+				local flash = ParticleManager:CreateParticle(TELEPORT_FX_FLASH, PATTACH_WORLDORIGIN, nil)
+				ParticleManager:SetParticleControl(flash, 0, pos)
+				ParticleManager:ReleaseParticleIndex(flash)
+				EmitSoundOnLocationWithCaster(pos, "Hero_Chen.TeleportOut", t.hero)
+			end
+		end
+	end
+	self.teleportFx = nil
 end
 
 function DuelController:_UpdateCountdownUI()

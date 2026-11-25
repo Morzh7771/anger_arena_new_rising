@@ -45,7 +45,7 @@ BaseClass_dash = class({
     }end,
 })
 function BaseClass_dash:OnCreated()
-    self.targets = {}
+    self.hit = {}
    
 end
 function BaseClass_dash:Start( vTarget, nSpeed, nTreeBreak )
@@ -101,31 +101,21 @@ function BaseClass_dash:UpdateHorizontalMotion( hUnit, nTimeDelta )
 
     hParent:SetAbsOrigin( self.vPos )
 
-    if self:GetAbility():GetSpecialValueFor("talant_caster_damage") == 1 then
-        local enemies = FindUnitsInRadius(
-                self:GetParent():GetTeamNumber(),	-- int, your team number
-                self:GetParent():GetOrigin(),	-- point, center point
-                nil,	-- handle, cacheUnit. (not known)
-                150,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-                DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-                DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-                0,	-- int, flag filter
-                0,	-- int, order filter
-                false	-- bool, can grow cache
-            )
-        for _,enemy in pairs(enemies) do 
-            local attack = true
-            for _,target in pairs(self.targets) do 
-                if target == enemy then 
-                    attack = false 
-                end
-            end
-            if attack then 
-                self.targets[#self.targets + 1] = enemy
-                
-                for _,enemy in pairs(enemies) do
-                    self:GetParent():PerformAttack(enemy, true, true, true, true, false, false, true)
-                end
+    local ability = self:GetAbility()
+    local enemies = FindUnitsInRadius(hParent:GetTeamNumber(), hParent:GetOrigin(), nil, 150,
+        DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
+    for _, enemy in pairs(enemies) do
+        if not self.hit[enemy] then
+            self.hit[enemy] = true
+            ApplyDamage({
+                victim      = enemy,
+                attacker    = hParent,
+                damage      = ability:GetSpecialValueFor("damage") + hParent:GetAverageTrueAttackDamage(nil) * ability:GetSpecialValueFor("damage_pct") / 100,
+                damage_type = DAMAGE_TYPE_PHYSICAL,
+                ability     = ability,
+            })
+            if ability:GetSpecialValueFor("talant_caster_damage") == 1 then
+                hParent:PerformAttack(enemy, true, true, true, true, false, false, true)
             end
         end
     end

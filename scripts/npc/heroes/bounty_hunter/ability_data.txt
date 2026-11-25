@@ -73,6 +73,8 @@ DOTAAbilities
 				"value"				"375 425 475 525 575 625 675"
 				"special_bonus_scepter"				"=600"
 			}
+			"creep_bounce_count"			"3"	// фарм: против крипов
+			"creep_bounce_radius"			"600"	// фарм: против крипов
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}

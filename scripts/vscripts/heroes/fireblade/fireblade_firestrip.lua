@@ -11,7 +11,7 @@ function ability:OnSpellStart( keys )
 	local casterPos 		= caster:GetAbsOrigin()
 
 	local radius 			= self:GetCastRange(casterPos, nil) + caster:GetCastRangeBonus()
-	local magicalDamage 	= self:GetSpecialValueFor("damage")
+	local magicalDamage 	= self:GetSpecialValueFor("damage") + caster:GetAgility() * self:GetSpecialValueFor("damage_pct") / 100
 
 	local particle = ParticleManager:CreateParticle( "particles/units/heroes/hero_ember_spirit/ember_spirit_fire_remnant.vpcf", PATTACH_ABSORIGIN, caster )
 

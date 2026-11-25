@@ -13,7 +13,8 @@ function ghost_small_red_manaburn:OnSpellStart( keys )
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
-	target:ReduceMana( self:GetSpecialValueFor("mana_burn") )
+	-- ReduceMana в 7.42 нет, только Script_ReduceMana(кол-во, способность)
+	target:Script_ReduceMana( self:GetSpecialValueFor("mana_burn"), self )
 	
 	target:EmitSound("Hero_Antimage.ManaBreak")
 

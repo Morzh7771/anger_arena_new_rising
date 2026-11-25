@@ -3,10 +3,10 @@
 {
 	"npc_dota_hero_fireblade"
 	{
-		"MinimapIcon"				"minimap_icon_fireblade"
-		"MinimapIconSize"			"600"
-		"Model"						"models/heroes/ember_spirit/ember_spirit_sfm.vmdl"
-		"BaseClass" 				"npc_dota_hero"
+		"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"
+		"SoundSet"					"Hero_EmberSpirit"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		"BaseClass" 				"npc_dota_hero_ember_spirit"
 		"HeroID"					"206"
 		"IsCustom"					"1"
 
@@ -45,7 +45,7 @@
 		"AttackDamageMax"			"40"									// Damage range max.	
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackRange"				"150"
-		"AttackAnimationPoint"		"0.3"
+		"AttackAnimationPoint"		"0.400000"
 		"AttackAcquisitionRange"	"400"
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------

@@ -60,6 +60,7 @@ function PercentDamage:_init()
 		"primal_beast_uproar",
 		"kunkka_torrent",
 		"satan_breath",
+		"doom_bringer_scorched_earth",	-- 2026-11-24: Дум снова силовик, x3
 		"primal_beast_rock_throw",
 		"primal_beast_pulverize",
 		"primal_beast_onslaught",
@@ -68,6 +69,7 @@ function PercentDamage:_init()
 		"tidehunter_gush",
 	}
 	local MagicalDamageFromAgi = {
+		"ursa_earthshock",	-- 2026-11-22: фарм
 		-- перенесены из урона от всех атрибутов
 		"mirana_arrow",
 		"mirana_starfall",
@@ -186,7 +188,6 @@ function PercentDamage:_init()
 		"enigma_black_hole",
 		"pangolier_swashbuckle",
 		"pangolier_gyroshell",
-		"doom_bringer_scorched_earth",
 		"batrider_flamebreak",
 		"batrider_firefly",
 		"muerta_dead_shot",
@@ -222,12 +223,8 @@ function PercentDamage:_init()
 	}
 
 	-- урон от максимального здоровья кастера, ключ max_health_damage_pct
+	-- Феникс считает % от своего макс. здоровья сам, внутри тиков (heroes/phoenix/*_aa.lua)
 	local MagicalDamageFromMaxHealth = {
-		"phoenix_icarus_dive",
-		"phoenix_fire_spirits",
-		"phoenix_launch_fire_spirit",
-		"phoenix_sun_ray",
-		"phoenix_supernova",
 	}
 
 	for _, skillname in pairs(MagicalDamageFromStr) do 

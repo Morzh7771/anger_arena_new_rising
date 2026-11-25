@@ -1,0 +1,266 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Hola: Divine Retribution (врождённая)
+	//=================================================================================================================
+	"hola_divine_retribution"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hola/hola_divine_retribution"
+		"AbilityTextureName"			"custom/hola/hola_divine_retribution"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityType"					"ABILITY_TYPE_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"			"700"
+			"damage_pct"			"20"
+			"damage_per_level"			"0.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Hola: Stunhammer
+	//=================================================================================================================
+	"hola_stunhammer"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hola/hola_stunhammer"
+		"AbilityTextureName"			"custom/hola/hola_stunhammer"
+		"MaxLevel"						"7"
+		"HasShardUpgrade"			"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bolt_damage"				"200 300 400 500 600 680 750"
+			"bolt_aoe"					"275"
+			"bolt_speed"				"1400"
+			"bolt_stun_duration"		"1.5"
+			"bounce_count"
+			{
+				"value"										"0"
+				"special_bonus_unique_hola_stunhammer_bounces"	"+2"
+			}
+			"bounce_radius"
+			{
+				"value"										"0"
+				"special_bonus_unique_hola_stunhammer_bounces"	"+650"
+			}
+			"shard_heal_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"	"+50"
+			}
+			"damage_pct"				"60 70 80 90 100 110 120"	// % интеллекта
+		}
+	}
+
+	//=================================================================================================================
+	// Hola: Grace
+	//=================================================================================================================
+	"hola_grace"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hola/hola_grace"
+		"AbilityTextureName"			"custom/hola/hola_grace"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.2"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 120 140 160 180 200 220"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"heal"						"400 600 800 1000 1200 1400 1600"
+			"hp_regen"					"120"
+			"heal_duration"				"2.5"
+			"heal_amp"
+			{
+				"value"										"0"
+				"special_bonus_unique_hola_grace_heal_amplify"	"+50"
+			}
+			"heal_int_pct"				"150 175 200 225 250 275 300"	// % интеллекта к лечению
+		}
+	}
+
+	//=================================================================================================================
+	// Hola: Holy Rage
+	//=================================================================================================================
+	"hola_stomp"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hola/hola_stomp"
+		"AbilityTextureName"			"custom/hola/hola_stomp"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400 500 600 700 800 900 1000"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"					"700"
+			"heal"						"400 500 600 700 800 900 1000"
+			"damage"					"200 300 400 500 600 700 800"
+			"heal_percent"				"350"			// % интеллекта Холы к лечению
+			"heal_from_damage"
+			{
+				"value"											"0"
+				"special_bonus_unique_hola_stomp_heals_from_damage"	"+1"
+			}
+			"damage_pct"				"80 95 110 125 140 155 170"	// % интеллекта
+		}
+	}
+
+	//=================================================================================================================
+	// Hola: Rescue
+	//=================================================================================================================
+	"hola_rescue"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hola/hola_rescue"
+		"AbilityTextureName"			"custom/hola/hola_rescue"
+		"MaxLevel"						"7"
+		"HasScepterUpgrade"			"1"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40 38 34 30 28 24 20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400 500 600 700 800 900 1000"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"				"0.8"
+				"special_bonus_scepter"	"+0.7"
+			}
+			"radius"					"1000"
+			"apply_grace"
+			{
+				"value"											"0"
+				"special_bonus_unique_hola_rescue_applies_grace"	"+1"
+			}
+			"scepter_heal_pct"
+			{
+				"value"				"0"
+				"special_bonus_scepter"	"+20"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hola: таланты
+	//=================================================================================================================
+	"special_bonus_unique_hola_stunhammer_bounces"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_hola_grace_heal_amplify"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_hola_stomp_heals_from_damage"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_hola_rescue_applies_grace"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+}

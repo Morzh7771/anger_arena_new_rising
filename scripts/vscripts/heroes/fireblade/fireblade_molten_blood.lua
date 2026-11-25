@@ -25,8 +25,10 @@ function fireblade_molten_blood_stacks:CacheValues()
 
     if not ability then return end
 
-    self.max_bonus_damage_pct   = ability:GetSpecialValueFor("max_bonus_damage_pct")
-    self.max_spell_amp          = ability:GetSpecialValueFor("max_spell_amp")
+    -- потолки растут с уровнем героя
+    local level = self:GetParent():GetLevel()
+    self.max_bonus_damage_pct   = ability:GetSpecialValueFor("max_bonus_damage_pct") + ability:GetSpecialValueFor("damage_per_level") * level
+    self.max_spell_amp          = ability:GetSpecialValueFor("max_spell_amp") + ability:GetSpecialValueFor("spell_amp_per_level") * level
     self.check_interval         = ability:GetSpecialValueFor("check_interval")
 end
 
@@ -92,6 +94,7 @@ function fireblade_molten_blood_stacks:GetModifierBaseDamageOutgoing_Percentage(
     local caster = self:GetCaster()
 
     if caster:PassivesDisabled() then return 0 end
+    self:CacheValues()
     if not self.max_bonus_damage_pct or not self.max_spell_amp then return 0 end
 
     local max_hp = caster:GetMaxHealth()
@@ -107,6 +110,7 @@ function fireblade_molten_blood_stacks:GetModifierSpellAmplify_Percentage()
     local caster = self:GetCaster()
 
     if caster:PassivesDisabled() then return 0 end
+    self:CacheValues()
     if not self.max_bonus_damage_pct or not self.max_spell_amp then return 0 end
 
     local max_hp = caster:GetMaxHealth()

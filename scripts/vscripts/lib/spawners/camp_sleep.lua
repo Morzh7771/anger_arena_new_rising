@@ -63,8 +63,12 @@ local TIMER_NAME = "CampSleepTick"
 -- заново на тех же местах, с актуальными статами (CreepLeveling).
 local HIBERNATE_DELAY = 10
 
--- сколько спрятанных крипов возвращать за один кадр (см. _Restore)
-local RESTORE_PER_FRAME = 2
+-- Сколько лагерей прятать за один тик. Без лимита после смерти героя или
+-- ухода всех с половины карты через 10 с прятались десятки лагерей в одном
+-- кадре (RemoveSelf на каждого крипа). Остальные дождутся следующих тиков.
+local HIBERNATE_PER_TICK = 2
+
+require('lib/spawners/spawn_budget')
 
 CampSleep._enabled = true
 
@@ -166,11 +170,15 @@ function CampSleep:WakeNear(pos)
 	local now = GameRules:GetGameTime()
 
 	for _, camp in pairs(self._camps) do
+		if camp.restoring and camp.pos and (camp.pos - pos):Length2D() <= WAKE_RADIUS then
+			self:_Promote(camp)
+		end
+
 		if camp.hibernated and camp.pos and (camp.pos - pos):Length2D() <= WAKE_RADIUS then
 			camp.asleep = false
 			camp.sleepSince = now
 
-			self:_Restore(camp)
+			self:_Restore(camp, true)
 
 			for _, unit in pairs(camp.units) do
 				self:_Wake(unit)
@@ -220,10 +228,15 @@ function CampSleep:_Tick()
 	-- кто сейчас на карте может разбудить лагерь - один поиск на весь тик
 	local wakers = self:_CollectWakers()
 
+	local hibernatedNow = 0
+	local toRestore = nil
+
 	for name, camp in pairs(self._camps) do
 		local alive = self:_Prune(camp)
 
-		if alive == 0 and not camp.hibernated then
+		-- camp.restoring: крипы лагеря ещё стоят в очереди на возврат, юнитов
+		-- на карте может не быть, но лагерь живой
+		if alive == 0 and not camp.hibernated and not camp.restoring then
 			self._camps[name] = nil
 		else
 			local shouldSleep = not self:_HasOutsidersNear(camp, wakers) and not self:_IsCampVisible(camp)
@@ -232,9 +245,10 @@ function CampSleep:_Tick()
 				camp.asleep = shouldSleep
 				camp.sleepSince = now
 
-				-- просыпаемся - сначала возвращаем спрятанных крипов
-				if not shouldSleep then
-					self:_Restore(camp)
+				-- просыпаемся - возвращаем спрятанных крипов (ниже, ближние первыми)
+				if not shouldSleep and camp.hibernated then
+					toRestore = toRestore or {}
+					toRestore[#toRestore + 1] = camp
 				end
 
 				for _, unit in pairs(camp.units) do
@@ -246,12 +260,44 @@ function CampSleep:_Tick()
 				end
 			end
 
-			if camp.asleep and alive > 0 and now - (camp.sleepSince or now) >= HIBERNATE_DELAY
+			if camp.asleep and alive > 0 and not camp.restoring and hibernatedNow < HIBERNATE_PER_TICK
+				and now - (camp.sleepSince or now) >= HIBERNATE_DELAY
 				and self:_CanHibernate(camp) then
 				self:_Hibernate(camp)
+				hibernatedNow = hibernatedNow + 1
 			end
 		end
 	end
+
+	if toRestore then
+		-- проснулось сразу много лагерей: первыми встают те, к кому ближе всего подошли
+		for _, camp in ipairs(toRestore) do
+			camp._wakeDist = self:_NearestWakerDist2(camp, wakers)
+		end
+
+		table.sort(toRestore, function(a, b) return a._wakeDist < b._wakeDist end)
+
+		for _, camp in ipairs(toRestore) do
+			self:_Restore(camp)
+		end
+	end
+end
+
+-- квадрат расстояния от лагеря до ближайшего, кто может его разбудить
+function CampSleep:_NearestWakerDist2(camp, wakers)
+	if not camp.pos then return 0 end
+
+	local best = math.huge
+	local cx, cy = camp.pos.x, camp.pos.y
+
+	for i = 1, #wakers do
+		local dx = wakers[i].x - cx
+		local dy = wakers[i].y - cy
+		local d = dx * dx + dy * dy
+		if d < best then best = d end
+	end
+
+	return best
 end
 
 -- лагерь видит хоть одна из команд (варды, обзор издалека)
@@ -289,33 +335,91 @@ function CampSleep:_Hibernate(camp)
 	CreepSpawner:SetCampHibernated(camp.name, true)
 end
 
-function CampSleep:_Restore(camp)
+-- Вернуть спрятанных крипов лагеря. Сами юниты создаются из ОБЩЕЙ очереди
+-- всех лагерей с бюджетом на кадр (SpawnBudget). Раньше у каждого лагеря был
+-- свой таймер по 2 крипа за кадр, и когда просыпалось 20-25 лагерей разом
+-- (респавн героя, телепорт, дуэль), в один кадр создавалось 40-50 юнитов:
+-- фризы 180-510 мс в [AA.perf] 2026-11-24.
+-- urgent - лагерь у точки блинка/телепорта, он встаёт раньше остальных.
+function CampSleep:_Restore(camp, urgent)
 	local list = camp.hibernated
 	if not list then return end
 
-	-- флаги снимаем до создания: OnCreepSpawned не должен снова усыплять
+	-- флаг снимаем до создания: OnCreepSpawned не должен снова прятать лагерь.
+	-- Для стака (CreepSpawner:_HasOwnCreepsInBox) лагерь остаётся "дома", пока
+	-- не вернётся последний крип - см. _RestoreNext.
 	camp.hibernated = nil
-	CreepSpawner:SetCampHibernated(camp.name, false)
+	camp.restoring = (camp.restoring or 0) + #list
 
-	-- Не больше RESTORE_PER_FRAME крипов за кадр: CreateUnitByName дорогой,
-	-- и лагерь целиком в одном кадре давал фризы до 40 мс. Крипы создаются
-	-- бодрыми (camp.asleep уже false), так что поздних будить не надо.
-	local i = 0
+	local queue = urgent and self:_UrgentQueue() or self:_Queue()
 
-	local function step()
-		for _ = 1, RESTORE_PER_FRAME do
-			i = i + 1
-			local rec = list[i]
-			if not rec then return nil end
-			CreepSpawner:RestoreHibernatedUnit(rec)
-		end
-
-		if list[i + 1] then return FrameTime() end
-		return nil
+	for _, rec in ipairs(list) do
+		queue[#queue + 1] = { camp = camp, rec = rec }
 	end
 
-	if step() then
-		Timers:CreateTimer(FrameTime(), step)
+	self:_StartRestoreTimer()
+end
+
+function CampSleep:_Queue()
+	self._restoreQueue = self._restoreQueue or {}
+	return self._restoreQueue
+end
+
+function CampSleep:_UrgentQueue()
+	self._restoreUrgent = self._restoreUrgent or {}
+	return self._restoreUrgent
+end
+
+function CampSleep:_StartRestoreTimer()
+	if self._restoreTimer then return end
+	self._restoreTimer = true
+
+	Timers:CreateTimer(function()
+		while true do
+			local queue = self:_UrgentQueue()
+			if #queue == 0 then queue = self:_Queue() end
+
+			if #queue == 0 then
+				self._restoreTimer = nil
+				return nil
+			end
+
+			if not SpawnBudget:TryTake() then return FrameTime() end
+
+			self:_RestoreNext(table.remove(queue, 1))
+		end
+	end)
+end
+
+-- лагерь уже в общей очереди, а к нему блинканули/телепортировались - вперёд
+function CampSleep:_Promote(camp)
+	local queue = self._restoreQueue
+	if not queue then return end
+
+	local urgent = self:_UrgentQueue()
+	local i = 1
+
+	while i <= #queue do
+		if queue[i].camp == camp then
+			urgent[#urgent + 1] = table.remove(queue, i)
+		else
+			i = i + 1
+		end
+	end
+end
+
+function CampSleep:_RestoreNext(job)
+	local camp = job.camp
+
+	-- ошибка одного крипа не должна заклинить очередь и учёт лагеря
+	local ok, err = pcall(CreepSpawner.RestoreHibernatedUnit, CreepSpawner, job.rec)
+	if not ok then print("[CampSleep] restore: " .. tostring(err)) end
+
+	camp.restoring = (camp.restoring or 1) - 1
+
+	if camp.restoring <= 0 then
+		camp.restoring = nil
+		CreepSpawner:SetCampHibernated(camp.name, camp.hibernated ~= nil)
 	end
 end
 

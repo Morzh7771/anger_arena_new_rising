@@ -630,6 +630,13 @@ function RepickMenu:PickHero(player, newHeroName)
 		return true
 	end
 
+	-- версии героев AA (lib/alt_heroes.lua): пару может держать только один игрок.
+	-- Своего же партнёра (Sniper -> Gun Joe) взять можно - старый герой освободится.
+	local partner = AltHeroes and AltHeroes:Partner(newHeroName)
+	if partner and partner ~= hero:GetUnitName() and self.gods_data[partner] and self.gods_data[partner]['picked'] ~= 0 then
+		return true
+	end
+
 	local checkFunction = function()
 		-- админ-панель открыла меню в обход запретов: один выбор без проверок
 		local pid = player:GetPlayerID()

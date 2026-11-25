@@ -1,0 +1,85 @@
+"DOTAHeroes"
+{
+	// Gun Joe: порт из Angel Arena Global. Модель: Sniper + сет The Silver Fox (сет вешает lib/custom_hero_wearables.lua)
+	"npc_dota_hero_gun_joe"
+	{
+		"Model"						"models/heroes/sniper/sniper.vmdl"
+		"ModelScale"				"1.0"
+		"BaseClass"					"npc_dota_hero_sniper"
+		"HeroID"					"209"
+		"IsCustom"					"1"
+		"SoundSet"					"Hero_Sniper"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+		"Team"						"Good"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"5"
+		"Ability1"					"gun_joe_machine_gun"
+		"Ability2"					"gun_joe_rifle"
+		"Ability3"					"gun_joe_explosive"
+		"Ability4"					"gun_joe_frag_grenade"
+		"Ability5"					"gun_joe_rapid"
+		"Ability6"					"gun_joe_calibrated_shot"
+
+		//10 LEVEL
+		"Ability10"					"special_bonus_unique_gun_joe_rapid_cooldown"
+		"Ability11"					"special_bonus_unique_gun_joe_explosive_cooldown"
+
+		//15 LEVEL
+		"Ability12"					"special_bonus_attack_speed_20"
+		"Ability13"					"special_bonus_hp_250"
+
+		//20 LEVEL
+		"Ability14"					"special_bonus_unique_gun_joe_explosive_radius"
+		"Ability15"					"special_bonus_unique_gun_joe_explosive_stacks"
+
+		//25 LEVEL
+		"Ability16"					"special_bonus_unique_gun_joe_calibrated_cast_point"
+		"Ability17"					"special_bonus_armor_15"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"35"
+		"AttackDamageMax"			"37"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.170000"
+		"AttackAcquisitionRange"	"950"
+		"AttackRange"				"500"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"266"
+			"faster"	"376"
+			"fastest"	"487"
+		}
+		"ProjectileModel"			"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+		"ProjectileSpeed"			"3000"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"2.6"
+		"AttributeBaseAgility"		"25"
+		"AttributeAgilityGain"		"2.9"
+		"AttributeBaseIntelligence"	"15"
+		"AttributeIntelligenceGain"	"2.2"
+
+		"StatusHealthRegen"			"0.25"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.7"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"180"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+}

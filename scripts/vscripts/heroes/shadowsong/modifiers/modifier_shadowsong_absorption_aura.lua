@@ -83,7 +83,7 @@ function mod:OnIntervalThink()
 		local damage = ApplyDamage({
 			victim 		= unit,
 			attacker 	= parent,
-			damage 		= self.damage,
+			damage 		= self.damage + parent:GetAgility() * self:GetAbility():GetSpecialValueFor("damage_str_pct") / 100,
 			damage_type = damageType,
 			ability 	= ability,
 		})

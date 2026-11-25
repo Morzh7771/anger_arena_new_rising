@@ -1,0 +1,319 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Forgotten Hero: Echo Strike (врождённая)
+	//=================================================================================================================
+	"forgotten_hero_echo_strike"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/forgotten_hero/forgotten_hero_echo_strike"
+		"AbilityTextureName"			"custom/forgotten_hero/forgotten_hero_combat_mastery"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityType"					"ABILITY_TYPE_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"attacks_needed"			"4"
+			"bonus_damage_pct"			"20"
+			"damage_per_level"			"1.5"
+		}
+	}
+
+	//=================================================================================================================
+	// Forgotten Hero: Herofall
+	//=================================================================================================================
+	"forgotten_hero_herofall"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/forgotten_hero/forgotten_hero_herofall"
+		"AbilityTextureName"			"custom/forgotten_hero/forgotten_hero_herofall"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 120 140 160 180 200 220"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCastRange"
+			{
+				"value"												"800"
+				"special_bonus_unique_forgotten_hero_herofall_range"	"+600"
+			}
+			"damage"					"125 200 250 300 350 475 625"
+			"aoe_radius"				"300"
+			"stun_duration"				"1"
+			"speed"						"600"
+			"height"					"250"
+			"performs_attack"
+			{
+				"value"												"0"
+				"special_bonus_unique_forgotten_hero_herofall_attack"	"+1"
+			}
+			"damage_pct"				"40 55 70 85 100 115 130"	// % ловкости
+		}
+	}
+
+	//=================================================================================================================
+	// Forgotten Hero: Breach
+	//=================================================================================================================
+	"forgotten_hero_breach"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/forgotten_hero/forgotten_hero_breach"
+		"AbilityTextureName"			"custom/forgotten_hero/forgotten_hero_breach"
+		"MaxLevel"						"7"
+		"HasShardUpgrade"			"1"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"													"2.5"
+				"special_bonus_unique_forgotten_hero_breach_duration"	"+3"
+			}
+			"bonus_ms"					"15 20 25 30 35 45 50"
+			"fade_time"					"0.3"
+			"crit_damage"
+			{
+				"value"												"0"
+				"special_bonus_unique_forgotten_hero_breach_crit"	"+300"
+			}
+			"shard_spirit_pct"
+			{
+				"value"				"0"
+				"special_bonus_shard"	"+40"
+			}
+			"shard_spirit_range"
+			{
+				"value"				"0"
+				"special_bonus_shard"	"+900"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Forgotten Hero: Meditation
+	//=================================================================================================================
+	"forgotten_hero_meditation"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/forgotten_hero/forgotten_hero_meditation"
+		"AbilityTextureName"			"custom/forgotten_hero/forgotten_hero_meditation"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"21 20 19 18 17 16 15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					"5"
+			"hp_regen"					"5"			// % макс. HP в секунду
+			"invisible"
+			{
+				"value"														"0"
+				"special_bonus_unique_forgotten_hero_meditation_invisible"	"+1"
+			}
+			"bonus_damage"
+			{
+				"value"													"0"
+				"special_bonus_unique_forgotten_hero_meditation_damage"	"+250"
+			}
+			"buff_duration"				"10"
+		}
+	}
+
+	//=================================================================================================================
+	// Forgotten Hero: Combat Mastery
+	//=================================================================================================================
+	"forgotten_hero_combat_mastery"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/forgotten_hero/forgotten_hero_combat_mastery"
+		"AbilityTextureName"			"custom/forgotten_hero/forgotten_hero_combat_mastery"
+		"MaxLevel"						"7"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"disarmor"					"0.5 0.5 1 1 1.5 2 2"
+			"disarmor_duration"			"3 3.2 3.5 3.7 4 4.2 4.5"
+			"bonus_damage_per_hero"		"5 10 15 20 25 30 35"
+			"bonus_damage_duration"		"5 5.5 6 6.5 7 7.5 8"
+			"damage_per_level"			"0.3"	// за уровень героя к урону за стак
+		}
+	}
+
+	//=================================================================================================================
+	// Forgotten Hero: Spirit Release
+	//=================================================================================================================
+	"forgotten_hero_spirit_releash"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/forgotten_hero/forgotten_hero_spirit_releash"
+		"AbilityTextureName"			"custom/forgotten_hero/forgotten_hero_spirit_releash"
+		"MaxLevel"						"7"
+		"HasScepterUpgrade"			"1"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"
+		"AbilityCastPoint"				"0.5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 200 250 300 350 400 450"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"														"45"
+				"special_bonus_unique_forgotten_hero_spirit_releash_cooldown"	"-15"
+			}
+			"damage"					"300 400 500 600 700 800 900"
+			"projectile_speed"			"1600"
+			"projectile_width"			"300"
+			"stun_duration"
+			{
+				"value"													"0"
+				"special_bonus_unique_forgotten_hero_spirit_releash_stun"	"+1.5"
+			}
+			"scepter_return"
+			{
+				"value"				"0"
+				"special_bonus_scepter"	"+1"
+			}
+			"damage_pct"				"100 125 150 175 200 225 250"	// % ловкости
+		}
+	}
+
+	//=================================================================================================================
+	// Forgotten Hero: таланты
+	//=================================================================================================================
+	"special_bonus_unique_forgotten_hero_herofall_range"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_forgotten_hero_herofall_attack"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_forgotten_hero_meditation_invisible"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_forgotten_hero_meditation_damage"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_forgotten_hero_breach_duration"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_forgotten_hero_breach_crit"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_forgotten_hero_spirit_releash_stun"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"special_bonus_unique_forgotten_hero_spirit_releash_cooldown"
+	{
+		"BaseClass"						"special_bonus_base"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+}

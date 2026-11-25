@@ -6,7 +6,7 @@ if not IsServer() then return end
 -- Ванильные активки (в т.ч. древних) - общий каст по типу цели, плюс движковый neutral_chance_to_cast.
 CreepActiveAI = CreepActiveAI or {}
 
-local THINK = 0.5
+local THINK = 1.0
 local MODIFIER = "modifier_neutral_creep_active"
 
 -- порядок проверки: одна попытка за тик
@@ -94,6 +94,15 @@ end
 local function ThinkUnit(unit)
 	if not unit or unit:IsNull() or not unit:IsAlive() then return false end
 	if unit:IsDominated() or unit:IsIllusion() or unit:IsChanneling() then return false end
+
+	-- Крип уже кастует - не трогаем. Во время каст поинта способность ещё
+	-- IsFullyCastable (КД не пошёл), и повторный приказ на каждом тике перезапускал
+	-- каст: Ogre Smash (2.8 с), Miner's Slam, Hurl Boulder (1 с) не доходили
+	-- до удара никогда. С замахом modifier_aa_creep_telegraph стало хуже: каждый
+	-- перезапуск давал новый замах, и крип зацикливался вообще у всех скиллов.
+	if unit:HasModifier("modifier_aa_creep_windup") then return false end
+	local active = unit:GetCurrentActiveAbility()
+	if active and not active:IsNull() then return false end
 
 	-- вне боя не кастуем вообще
 	local aggro = unit:GetAggroTarget()

@@ -1,0 +1,79 @@
+"DOTAHeroes"
+{
+	// Joe Black: порт из Angel Arena Frontier (механика) + Global (цифры). Модель: Necrophos + сет Rot-Iron Ripper (сет вешает lib/custom_hero_wearables.lua)
+	"npc_dota_hero_joe_black"
+	{
+		"Model"						"models/heroes/necrolyte/necrolyte.vmdl"
+		"ModelScale"				"1.0"
+		"BaseClass"					"npc_dota_hero_necrolyte"
+		"HeroID"					"211"
+		"IsCustom"					"1"
+		"SoundSet"					"Hero_Necrolyte"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+		"Team"						"Bad"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1"					"joe_black_face_of_death"
+		"Ability2"					"joe_black_protection"
+		"Ability3"					"joe_black_sleep"
+		"Ability4"					"generic_hidden"
+		"Ability5"					"joe_black_reapers_toll"
+		"Ability6"					"joe_black_song"
+
+		//10 LEVEL
+		"Ability10"					"special_bonus_cooldown_reduction_15"
+		"Ability11"					"special_bonus_unique_joe_black_protection_debuff_immune"
+
+		//15 LEVEL
+		"Ability12"					"special_bonus_unique_joe_black_song_heals"
+		"Ability13"					"special_bonus_unique_joe_black_face_of_death_aoe"
+
+		//20 LEVEL
+		"Ability14"					"special_bonus_unique_joe_black_face_of_death_cooldown"
+		"Ability15"					"special_bonus_unique_joe_black_sleep_spread"
+
+		//25 LEVEL
+		"Ability16"					"special_bonus_unique_joe_black_face_of_death_song"
+		"Ability17"					"special_bonus_armor_15"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"0"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"28"
+		"AttackDamageMax"			"34"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.30000"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"600"
+		"ProjectileModel"			"particles/units/heroes/hero_necrolyte/necrolyte_base_attack.vpcf"
+		"ProjectileSpeed"			"1500"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"21"
+		"AttributeStrengthGain"		"2.6"
+		"AttributeBaseAgility"		"19"
+		"AttributeAgilityGain"		"1.8"
+		"AttributeBaseIntelligence"	"23"
+		"AttributeIntelligenceGain"	"3.0"
+
+		"StatusHealthRegen"			"0.75"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.6"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"			"200"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+}

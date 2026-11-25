@@ -220,24 +220,45 @@ function MinimapSpots:_CollectBosses()
 		end
 	end
 
+	-- Спот - это точка, а не босс: боссы с ротацией ходят между точками,
+	-- иконка горит на той, где босс стоит сейчас.
 	for name, boss in pairs(BossSpawner.bossClasses) do
-		if boss.point then
-			for i = #originals, 1, -1 do
-				local unit = originals[i]
+		local points = {}
+		if boss.rotation then
+			for _, pt in pairs(boss.rotation.points) do table.insert(points, pt.pos) end
+		elseif boss.point then
+			table.insert(points, boss.point)
+		end
 
-				if IsValidEntity(unit) and (unit:GetAbsOrigin() - boss.point):Length2D() <= BOSS_LINK_RADIUS then
-					UTIL_Remove(unit)
-					table.remove(originals, i)
+		for _, pos in pairs(points) do
+			local spot = self:_BossSpotAt(pos)
+
+			if not spot then
+				for i = #originals, 1, -1 do
+					local unit = originals[i]
+
+					if IsValidEntity(unit) and (unit:GetAbsOrigin() - pos):Length2D() <= BOSS_LINK_RADIUS then
+						UTIL_Remove(unit)
+						table.remove(originals, i)
+					end
 				end
+
+				-- до первого спавна босса нет - и иконки тоже
+				spot = NewSpot("boss", "boss", pos, false, { boss = BOSS_ICON_UNIT })
+				spot.bossNames = {}
+
+				table.insert(self.spots, spot)
+				table.insert(self.bossSpots, spot)
 			end
 
-			-- до первого спавна босса нет - и иконки тоже
-			local spot = NewSpot("boss", "boss", boss.point, false, { boss = BOSS_ICON_UNIT })
-			spot.bossName = name
-
-			table.insert(self.spots, spot)
-			self.bossSpots[name] = spot
+			table.insert(spot.bossNames, name)
 		end
+	end
+end
+
+function MinimapSpots:_BossSpotAt(pos)
+	for _, spot in pairs(self.bossSpots or {}) do
+		if (spot.pos - pos):Length2D() < 50 then return spot end
 	end
 end
 
@@ -281,9 +302,19 @@ end
 
 -- вышло максимальное время респавна босса (BossSpawner:_ScheduleGuaranteed)
 function MinimapSpots:OnBossGuaranteed(bossName)
-	local spot = self.bossSpots and self.bossSpots[bossName]
+	local boss = BossSpawner and BossSpawner.bossClasses and BossSpawner.bossClasses[bossName]
+	local spot = boss and boss.point and self:_BossSpotAt(boss.point)
 
 	if spot then Reset(spot) end
+end
+
+-- босс ушёл телепортом ротации: обе точки показываем всем заново, правду
+-- каждая команда узнает, когда посмотрит
+function MinimapSpots:OnBossMoved(from, to)
+	for _, pos in pairs({ from, to }) do
+		local spot = pos and self:_BossSpotAt(pos)
+		if spot then Reset(spot) end
+	end
 end
 
 -- Бесконечные крипы в центре ("медведи", lib/spawners/bear_spawner.lua): стоят всегда,
@@ -303,7 +334,13 @@ function MinimapSpots:_HasContent(spot)
 	if spot.kind == "bears" then return true end
 
 	if spot.kind == "boss" then
-		return BossSpawner:IsBossAlive(spot.bossName)
+		for _, name in pairs(spot.bossNames or {}) do
+			local boss = BossSpawner.bossClasses[name]
+			if boss and boss.point and (boss.point - spot.pos):Length2D() < 50 and BossSpawner:IsBossAlive(name) then
+				return true
+			end
+		end
+		return false
 	end
 
 	if spot.kind == "camp" then
