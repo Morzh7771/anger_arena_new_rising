@@ -8,6 +8,8 @@ function modifier_mid_teleport:CheckState()
 return 
 {
   [MODIFIER_STATE_NO_HEALTH_BAR] = true,
+  -- портал - обычный крип (не twin gate), без этого его можно было бить
+  [MODIFIER_STATE_ATTACK_IMMUNE] = true,
   [MODIFIER_STATE_MAGIC_IMMUNE] = true,
   [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
   [MODIFIER_STATE_DEBUFF_IMMUNE] = true,

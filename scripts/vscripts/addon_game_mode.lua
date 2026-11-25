@@ -736,6 +736,8 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent('dota_item_purchased', Safe_Wrap(AngelArena, 'OnPlayerBuyItem'), self)
 	ListenToGameEvent( "dota_player_learned_ability", Dynamic_Wrap( Special_bonus_base_aa, "OnAbilityLearned" ), self )
 
+	-- профайлер aa_prof (lib/perf_toggle.lua): обёртки фильтров до регистрации
+	if AAProf then pcall(AAProf.WrapFilters, AAProf, AngelArena) end
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
 	PlayerResource:ClearOnAbandonedCallbacks()
 	PlayerResource:RegisterOnAbandonedCallback(function(arg) AngelArena:OnAbandoned(arg) end)

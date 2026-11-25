@@ -72,6 +72,7 @@ function BossTest:Spawn(hero, name, deaths)
 		unit.aa_boss_deaths = deaths
 		unit:AddNewModifier(unit, nil, "modifier_boss_cast_alert", { duration = -1 })
 		unit:AddNewModifier(unit, nil, "modifier_boss_true_sight", { duration = -1 })
+		unit:AddNewModifier(unit, nil, "modifier_boss_leash", { duration = -1 })
 		unit:FaceTowards(hero:GetAbsOrigin())
 
 		local hp    = 15000 + 10000 * deaths

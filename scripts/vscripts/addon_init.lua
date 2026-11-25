@@ -54,6 +54,7 @@ LinkLuaModifier("modifier_aa_creep_telegraph_hub", "modifiers/modifier_aa_creep_
 LinkLuaModifier("modifier_boss_cast_alert", "lib/boss/modifier_boss_cast_alert", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_rotation", "lib/boss/modifier_boss_rotation", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_true_sight", "lib/boss/modifier_boss_true_sight", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_boss_leash", "lib/boss/modifier_boss_leash", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aa_farm_burn", "modifiers/modifier_aa_hero_farm", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aa_farm_jingu", "modifiers/modifier_aa_hero_farm", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aa_farm_flux", "modifiers/modifier_aa_hero_farm", LUA_MODIFIER_MOTION_NONE)

@@ -59,6 +59,7 @@ function BossSpawner:Init()
 	LinkLuaModifier("modifier_boss_cast_alert", 'lib/boss/modifier_boss_cast_alert', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_boss_rotation", 'lib/boss/modifier_boss_rotation', LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_boss_true_sight", 'lib/boss/modifier_boss_true_sight', LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_boss_leash", 'lib/boss/modifier_boss_leash', LUA_MODIFIER_MOTION_NONE)
 
 	-- группы ротации: боссы с одним набором точек
 	self.rotationGroups = {}
@@ -248,6 +249,9 @@ function BossSpawner:SpawnBoss(boss)
 
 	-- видит невидимых, как с гемом
 	unit:AddNewModifier(unit, nil, "modifier_boss_true_sight", { duration = -1 })
+
+	-- далеко от пита: бежит домой и не получает урона
+	unit:AddNewModifier(unit, nil, "modifier_boss_leash", { duration = -1 })
 
 	-- сколько раз уже убили этот слот: от этого растут скиллы (BossKit:Deaths)
 	unit.aa_boss_deaths = boss.deathCount + 1

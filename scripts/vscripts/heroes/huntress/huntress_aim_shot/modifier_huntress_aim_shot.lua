@@ -92,7 +92,12 @@ function modifier_huntress_aim_shot:GetModifierPreAttack_CriticalStrike(params)
     if not IsServer() then return end
     local parent = self:GetParent()
     if params.target and params.attacker == parent and parent.aa_aim_shot_arrow then
-        return self:GetAbility():GetSpecialValueFor("crit_damage_pct")
+        -- падение урона за пробитые цели - прямо в крите: свойство исходящего урона
+        -- на удар стрелы не срабатывало (урон по всем целям был одинаковый), а так
+        -- сниженная цифра ещё и видна над целью. Ниже 100% крит движок не берёт.
+        local crit = self:GetAbility():GetSpecialValueFor("crit_damage_pct")
+        local mult = parent.aa_aim_shot_arrow_mult or 1
+        return math.max(100, crit * mult)
     end
 end
 
@@ -101,8 +106,12 @@ function modifier_huntress_aim_shot:GetModifierTotalDamageOutgoing_Percentage(pa
     if not IsServer() then return 0 end
     local parent = self:GetParent()
     if params.attacker ~= parent or params.inflictor then return 0 end
+    -- остаток снижения, который не влез в крит (крит не ниже 100%)
     local mult = parent.aa_aim_shot_arrow_mult
-    if mult and mult < 1 then return (mult - 1) * 100 end
+    if mult and mult < 1 then
+        local crit = self:GetAbility():GetSpecialValueFor("crit_damage_pct")
+        if crit * mult < 100 then return (crit * mult / 100 - 1) * 100 end
+    end
     return 0
 end
 
@@ -158,6 +167,8 @@ function modifier_huntress_aim_shot:SetAttackTarget(t)
     if self.target ~= t then self:CancelWindup() end
     self.target = t
     self.attackMove = nil
+    self.moveTo = nil
+    self.engineMove = nil
     self.hold = false
     self:SyncBusy()
 end
@@ -166,17 +177,68 @@ function modifier_huntress_aim_shot:SetAttackMove(pos)
     self:CancelWindup()
     self.target = nil
     self.attackMove = pos
+    self.moveTo = nil
+    self.engineMove = nil
     self.hold = false
     self:SyncBusy()
     local parent = self:GetParent()
     self:Internal(function() parent:MoveToPosition(pos) end)
 end
 
-function modifier_huntress_aim_shot:ClearOrders(hold)
+-- шаг очереди с Shift: просто дойти до точки
+function modifier_huntress_aim_shot:SetMoveTo(pos)
     self:CancelWindup()
     self.target = nil
     self.attackMove = nil
+    self.moveTo = pos
+    self.engineMove = nil
+    self:SyncBusy()
+    local parent = self:GetParent()
+    self:Internal(function() parent:MoveToPosition(pos) end)
+end
+
+-- hold - Hold Position; engineMovePos - обычный приказ движения ушёл движку
+-- (за ним может встать очередь с Shift, ждём, пока дойдёт)
+function modifier_huntress_aim_shot:ClearOrders(hold, engineMovePos)
+    self:CancelWindup()
+    self.target = nil
+    self.attackMove = nil
+    self.moveTo = nil
+    self.queue = {}
+    self.aggro = false
+    self.engineMove = engineMovePos
+    self.engineMoveAt = GameRules:GetGameTime()
     self.hold = hold == true
+    self:SyncBusy()
+end
+
+function modifier_huntress_aim_shot:HasTask()
+    return self.target ~= nil or self.attackMove ~= nil or self.moveTo ~= nil or self.engineMove ~= nil
+        or (self.queue ~= nil and #self.queue > 0)
+end
+
+-- очередь с Shift: { kind = "target"|"amove"|"move", target, pos }
+function modifier_huntress_aim_shot:Enqueue(e)
+    self.queue = self.queue or {}
+    table.insert(self.queue, e)
+end
+
+-- текущий шаг кончился: следующий из очереди. Очередь пуста после атаки -
+-- режим «бить всё, что подошло» (как стоять после A-клика), до приказа движения/стопа
+function modifier_huntress_aim_shot:NextTask(wasAttack)
+    self.target = nil
+    self.attackMove = nil
+    self.moveTo = nil
+    self.engineMove = nil
+    local e = self.queue and table.remove(self.queue, 1)
+    if e then
+        if e.kind == "target" then
+            if self:IsTargetOk(e.target) then self:SetAttackTarget(e.target) else return self:NextTask(wasAttack) end
+        elseif e.kind == "amove" then self:SetAttackMove(e.pos)
+        else self:SetMoveTo(e.pos) end
+        return
+    end
+    if wasAttack then self.aggro = true end
     self:SyncBusy()
 end
 
@@ -195,6 +257,30 @@ function modifier_huntress_aim_shot:Acquire(radius)
             + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
         FIND_CLOSEST, false)
     return list[1]
+end
+
+-- Hurricane Pike: двойной выстрел пики срабатывает на конце обычной атаки, а в стойке
+-- её нет - поэтому вторую стрелу выпускаем здесь, по той же перезарядке пики
+local PIKE_DELAY = 0.15
+
+function modifier_huntress_aim_shot:PikeDoubleShot(target)
+    local parent = self:GetParent()
+    if parent:HasModifier("modifier_item_hurricane_pike_aa_cd") then return end
+    local pike = parent:FindModifierByName("modifier_item_hurricane_pike_aa")
+    local item = pike and pike:GetAbility()
+    if not item or item:IsNull() then return end
+
+    parent:AddNewModifier(parent, item, "modifier_item_hurricane_pike_aa_cd",
+        { duration = item:GetSpecialValueFor("double_attack_cd") * parent:GetCooldownReduction() })
+
+    local ability = self:GetAbility()
+    Timers:CreateTimer(PIKE_DELAY, function()
+        if parent:IsNull() or not parent:IsAlive() or not ability or ability:IsNull() then return end
+        if not parent:HasModifier("modifier_huntress_aim_shot") then return end
+        if not target or target:IsNull() or not target:IsAlive() then return end
+        parent:EmitSound("Hero_Mirana.Attack")
+        ability:FireArrow(target)
+    end)
 end
 
 function modifier_huntress_aim_shot:AttackRange()
@@ -225,20 +311,41 @@ function modifier_huntress_aim_shot:OnIntervalThink()
             self.windupEnd = nil
             parent:EmitSound("Hero_Mirana.Attack")
             ability:FireArrow(self.target)
+            self:PikeDoubleShot(self.target)
         end
         return
     end
 
     local range = self:AttackRange()
 
+    -- обычный приказ движения у движка: ждём, пока дойдёт, потом очередь
+    if self.engineMove then
+        -- движок мог ещё не начать движение в первый тик - ждём 0.3 с простоя
+        local arrived = (parent:GetAbsOrigin() - self.engineMove):Length2D() < 50
+        if arrived or (parent:IsIdle() and now - (self.engineMoveAt or 0) > 0.3) then self:NextTask(false) end
+        return
+    end
+
+    -- шаг очереди «дойти до точки»
+    if self.moveTo then
+        if (parent:GetAbsOrigin() - self.moveTo):Length2D() < 50 then
+            self:NextTask(false)
+        elseif parent:IsIdle() then
+            local pos = self.moveTo
+            self:Internal(function() parent:MoveToPosition(pos) end)
+        end
+        return
+    end
+
     if not self:IsTargetOk(self.target) then
+        local hadTarget = self.target ~= nil and not self.attackMove
         self.target = nil
 
         if self.attackMove then
             self.target = self:Acquire(range + ACQUIRE_BONUS)
             if not self.target then
                 if (parent:GetAbsOrigin() - self.attackMove):Length2D() < 50 then
-                    self.attackMove = nil
+                    self:NextTask(true)
                 elseif parent:IsIdle() then
                     -- цель умерла - идём дальше к точке атаки с движением
                     local pos = self.attackMove
@@ -246,6 +353,16 @@ function modifier_huntress_aim_shot:OnIntervalThink()
                 end
                 return
             end
+        elseif hadTarget then
+            -- явная цель умерла - следующий шаг очереди или «бить всё рядом»
+            self:NextTask(true)
+            if self.target or self.attackMove or self.moveTo then return end
+        end
+
+        -- после атаки стоим и бьём всё, что подошло (с Hold - только в дальности)
+        if not self.target and self.aggro then
+            self.target = self:Acquire(self.hold and range or (range + ACQUIRE_BONUS))
+            if self.target then self:SyncBusy() end
         end
 
         -- цели нет - свободны, автоатаку решает движок
@@ -298,8 +415,28 @@ function _G.HuntressAimShotOrder(unit, ord, target)
     if not mod or not mod.SetAttackTarget then return nil end
 
     local t = ord.order_type
+    local queued = ord.queue == 1 or ord.queue == true
+    local pos = Vector(ord.position_x or 0, ord.position_y or 0, ord.position_z or 0)
+
+    -- Shift: пока стойка чем-то занята, приказ встаёт в её очередь
+    if queued and mod:HasTask() then
+        if t == DOTA_UNIT_ORDER_ATTACK_TARGET and target and target.GetTeamNumber
+            and target:GetTeamNumber() ~= unit:GetTeamNumber() and target:GetUnitName() ~= "npc_teleport" then
+            mod:Enqueue({ kind = "target", target = target })
+            return false
+        elseif t == DOTA_UNIT_ORDER_ATTACK_MOVE then
+            mod:Enqueue({ kind = "amove", pos = pos })
+            return false
+        elseif t == DOTA_UNIT_ORDER_MOVE_TO_POSITION then
+            mod:Enqueue({ kind = "move", pos = pos })
+            return false
+        end
+        return nil
+    end
 
     if t == DOTA_UNIT_ORDER_ATTACK_TARGET then
+        -- клик по порталу - вход в портал (фильтр приказов дальше), не выстрел
+        if target and target.GetUnitName and target:GetUnitName() == "npc_teleport" then return nil end
         if target and target.GetTeamNumber and target:GetTeamNumber() ~= unit:GetTeamNumber() then
             mod:SetAttackTarget(target)
             return false
@@ -308,13 +445,16 @@ function _G.HuntressAimShotOrder(unit, ord, target)
     end
 
     if t == DOTA_UNIT_ORDER_ATTACK_MOVE then
-        mod:SetAttackMove(Vector(ord.position_x, ord.position_y, ord.position_z))
+        mod:SetAttackMove(pos)
         return false
     end
 
     if t == DOTA_UNIT_ORDER_HOLD_POSITION then
         mod:ClearOrders(true)
-    elseif t == DOTA_UNIT_ORDER_MOVE_TO_POSITION or t == DOTA_UNIT_ORDER_MOVE_TO_TARGET
+    elseif t == DOTA_UNIT_ORDER_MOVE_TO_POSITION then
+        -- обычный клик в землю ведёт движок; Shift-приказы после него ждут в очереди стойки
+        mod:ClearOrders(false, pos)
+    elseif t == DOTA_UNIT_ORDER_MOVE_TO_TARGET
         or t == DOTA_UNIT_ORDER_STOP or t == DOTA_UNIT_ORDER_MOVE_TO_DIRECTION
         or t == DOTA_UNIT_ORDER_PATROL or t == DOTA_UNIT_ORDER_PICKUP_ITEM
         or t == DOTA_UNIT_ORDER_PICKUP_RUNE then

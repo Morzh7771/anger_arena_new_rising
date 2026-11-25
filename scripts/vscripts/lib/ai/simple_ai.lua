@@ -17,6 +17,9 @@ function SimpleAI:OnTick()
 	local unit = self.unit
 	if unit:IsChanneling() or unit:HasModifier("modifier_boss_rotation") then return self.tickTime end
 
+	-- поводок ведёт босса домой (lib/boss/modifier_boss_leash.lua)
+	if unit.aa_leash_returning then return self.tickTime end
+
 	local spawnPos = self.spawnPos
 	local caster = self.unit
 
