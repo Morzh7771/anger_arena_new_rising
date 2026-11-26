@@ -18,6 +18,7 @@ function item_dagon_custom:Precache(context)
 	PrecacheResource("particle", "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
 end
 
+-- 2026-11-26: крипов больше не убивает мгновенно (как в доте), только урон
 function item_dagon_custom:OnSpellStart()
     if not IsServer() then return end
     local point = self:GetCursorTarget():GetAbsOrigin()
@@ -27,7 +28,6 @@ function item_dagon_custom:OnSpellStart()
 
     if self:GetCursorTarget():TriggerSpellAbsorb(self) then return end
 
-    print(self:GetCaster():GetStrength())
     local radius = self:GetSpecialValueFor("aoe_radius")
     local damage_kv = self:GetSpecialValueFor("damage")
     --local max_dif_multiplier = self:GetSpecialValueFor("max_dif_multiplier") / 100
@@ -41,7 +41,6 @@ function item_dagon_custom:OnSpellStart()
     --    if difference_lvl >= max_dif_multiplier then difference_lvl = max_dif_multiplier end
     --end
     
-    if self:GetCursorTarget():IsCreep() and not self:GetCursorTarget():IsAncient() and not self:GetCursorTarget():IsBoss() then self:GetCursorTarget():Kill(self, self:GetCaster()) end
 
     if self:GetCaster():GetPrimaryAttribute() == DOTA_ATTRIBUTE_ALL then
         damage = ((self:GetCaster():GetStrength() + self:GetCaster():GetAgility() + self:GetCaster():GetIntellect(false))/3 * int)
@@ -73,7 +72,6 @@ function item_dagon_custom:OnSpellStart()
             self:GetCaster():Heal(damage*self:GetSpecialValueFor("active_heal")/100, self)
         end
 
-        if enemy:IsCreep() and not enemy:IsAncient() and not enemy:IsBoss() then enemy:Kill(self, self:GetCaster()) end
 
         if enemy:IsIllusion() and not enemy:HasModifier("modifier_chaos_knight_phantasm_illusion") then
             enemy:Kill(self, self:GetCaster())

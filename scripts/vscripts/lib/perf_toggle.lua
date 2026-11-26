@@ -114,26 +114,6 @@ function AAProf:WrapFilters(mt)
 	end
 end
 
--- ListenToGameEvent: имя события в статистике
-if not AAProf._origListen and ListenToGameEvent then
-	AAProf._origListen = ListenToGameEvent
-	ListenToGameEvent = function(event, fn, ctx)
-		return AAProf._origListen(event, AAProf.Wrap("event " .. tostring(event), fn), ctx)
-	end
-end
-
--- клиентские custom events
-if not AAProf._origCustom and CustomGameEventManager then
-	pcall(function()
-		local orig = CustomGameEventManager.RegisterListener
-		if type(orig) ~= "function" then return end
-		AAProf._origCustom = orig
-		CustomGameEventManager.RegisterListener = function(mgr, event, fn)
-			return orig(mgr, event, AAProf.Wrap("custom " .. tostring(event), fn))
-		end
-	end)
-end
-
 -- модификаторы: обходим глобальные классы (только при включении)
 function AAProf:WrapModifiers()
 	local count = 0

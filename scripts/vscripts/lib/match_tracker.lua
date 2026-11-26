@@ -526,6 +526,8 @@ end
 
 -- нетворс с копилкой золота сверх 50000 (AngelArena.tPlayers[pid].gold, addon_game_mode.lua)
 local function NetWorthOf(pid)
+	if AANetWorth then return AANetWorth:Get(pid) end
+
 	local nw = 0
 
 	pcall(function() nw = PlayerResource:GetNetWorth(pid) or 0 end)
@@ -1421,7 +1423,7 @@ end
 
 -- Поиск MMR в стадии выбора команд: подписанный POST /api/players/lookup
 -- с match_id "lobby-<matchid>". Бэкенд для таких id не проверяет seq.
-local lobby = { key = nil, match_id = nil, seq = 0, inflight = false, cache = {}, provider_set = false }
+local lobby = { key = nil, match_id = nil, seq = 0, inflight = false, cache = {}, pending = {}, provider_set = false }
 
 -- основной канал перешёл на запасной ключ - лобби-запросы тоже
 function AATrackerLobbyFallback(key)
@@ -1435,6 +1437,52 @@ local function LobbyPrepare()
 
 	lobby.key = (ok and key) and tostring(key) or ""
 	lobby.match_id = "lobby-" .. ReadMatchId()
+end
+
+-- Синхронизация времени для подписи: один GET /api/time на всех ждущих, callback(ok).
+-- Зовём сразу при загрузке модуля, чтобы к первому лобби-запросу время уже было.
+local time_waiters = nil
+
+local function LobbyEnsureTime(cb)
+	if st.offset ~= nil then
+		if cb then pcall(cb, true) end
+
+		return
+	end
+
+	if time_waiters then
+		if cb then table.insert(time_waiters, cb) end
+
+		return
+	end
+
+	time_waiters = {}
+
+	if cb then table.insert(time_waiters, cb) end
+
+	local function Done(ok)
+		local list = time_waiters or {}
+
+		time_waiters = nil
+
+		for _, f in ipairs(list) do pcall(f, ok) end
+	end
+
+	local req = CreateHTTPRequestScriptVM("GET", BASE_URL .. "/api/time")
+
+	if not req then return Done(false) end
+
+	pcall(function() req:SetHTTPRequestAbsoluteTimeoutMS(3000) end)
+	req:Send(function(res)
+		local ok, data = ParseResponse(res)
+
+		if ok and data and type(data.server_time) == "number" then
+			SyncTime(data.server_time)
+			Done(true)
+		else
+			Done(false)
+		end
+	end)
 end
 
 -- onDone(ok, data) вызывается после ответа; время синхронизируем при необходимости
@@ -1497,19 +1545,9 @@ local function LobbySend(path, body, onDone)
 
 	if st.offset ~= nil then return Post() end
 
-	local req = CreateHTTPRequestScriptVM("GET", BASE_URL .. "/api/time")
-
-	if not req then return Fail() end
-
-	req:Send(function(res)
-		local ok, data = ParseResponse(res)
-
-		if ok and data and type(data.server_time) == "number" then
-			SyncTime(data.server_time)
-			Post()
-		else
-			Fail()
-		end
+	-- 2026-11-25: один общий запрос времени на всех ждущих (его шлём ещё при загрузке модуля)
+	LobbyEnsureTime(function(ok)
+		if ok then Post() else Fail() end
 	end)
 end
 
@@ -1528,7 +1566,9 @@ function AATrackerLobbyPost(path, tbl, onDone)
 end
 
 local function LobbyLookupTick()
-	if st.started or lobby.inflight then return end
+	-- 2026-11-25: без общей блокировки "один запрос за раз": новые игроки уходят отдельным
+	-- запросом сразу, а не ждут ответа по прошлым. Повтор по игроку - если ответа нет 2.5 с.
+	if st.started then return end
 	-- 2026-11-14: ищем уже на загрузке (steam id игроков лобби известны до подключения),
 	-- чтобы к началу выбора команд рейтинг и премиум были на руках и раскидка шла сразу
 	if GameRules:State_Get() > DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then return end
@@ -1546,14 +1586,25 @@ local function LobbyLookupTick()
 
 			st.steam_to_pid[sid] = pid
 
-			if lobby.cache[pid] == nil then sids[#sids + 1] = sid end
+			local asked = lobby.pending[sid]
+
+			if lobby.cache[pid] == nil and (asked == nil or Time() - asked > 2.5) then sids[#sids + 1] = sid end
 		end
 	end
 
 	if #sids == 0 then return end
 
+	local now = Time()
+
+	for _, sid in ipairs(sids) do lobby.pending[sid] = now end
+
 	LobbySend("/api/players/lookup", JsonEncode({ steam_ids = sids }), function(ok, data)
-		if not ok or not data or type(data.players) ~= "table" then return end
+		if not ok or not data or type(data.players) ~= "table" then
+			-- ошибка - сразу можно спрашивать снова
+			for _, sid in ipairs(sids) do lobby.pending[sid] = nil end
+
+			return
+		end
 
 		for _, p in ipairs(data.players) do
 			local pid = type(p) == "table" and st.steam_to_pid[tostring(p.steam_id)] or nil
@@ -2090,8 +2141,12 @@ Timers:CreateTimer({ endTime = 0.1, useGameTime = false, callback = function()
 
 	pcall(LobbyLookupTick)
 
-	return 1
+	-- 2026-11-25: шаг 0.25 с - игрок появился в лобби, запрос уходит почти сразу
+	return 0.25
 end })
+
+-- время для подписи - заранее, ещё до первого лобби-запроса (минус один круг до сервера)
+pcall(LobbyEnsureTime)
 
 pcall(MatchTracker.SelfTest)
 

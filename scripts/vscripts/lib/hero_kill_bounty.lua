@@ -104,12 +104,7 @@ end
 -- нетворс + запас сверх лимита кошелька (AngelArena:GiveGold) + томы;
 -- hero - если известен (у героев из -createhero playerid чужой)
 function HeroKillBounty:HeroValue(playerid, hero)
-	local value = PlayerResource:GetNetWorth(playerid) or 0
-	local stash = AngelArena and AngelArena.tPlayers and AngelArena.tPlayers[playerid]
-
-	if stash and stash.gold then value = value + stash.gold end
-
-	return value + self:TomeValue(hero or PlayerResource:GetSelectedHeroEntity(playerid))
+	return AANetWorth:Get(playerid) + self:TomeValue(hero or PlayerResource:GetSelectedHeroEntity(playerid))
 end
 
 -- сумма, число героев и средний уровень команды

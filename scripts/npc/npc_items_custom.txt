@@ -69,6 +69,7 @@
 #base items/unknown_amulet.txt
 #base items/necronomicon.txt
 #base items/secret_shop_unlock.txt
+#base items/chainmail.txt
 
 
 "DOTAAbilities"
@@ -537,9 +538,21 @@
 
             "cleave_range"                      "300"
             "cleave_physical_pierce"            "50"
-            "cleave_damage_hero"                "20"
-            "cleave_damage_creep"               "50"
-            "cleave_damage_illusion"            "50"
+            "cleave_damage_hero"
+            {
+            	"value"				"20"
+            	"apply_effectiveness"	"1"
+            }
+            "cleave_damage_creep"
+            {
+            	"value"				"50"
+            	"apply_effectiveness"	"1"
+            }
+            "cleave_damage_illusion"
+            {
+            	"value"				"50"
+            	"apply_effectiveness"	"1"
+            }
             "cleave_illusion_pure"              "20"
             "bonus_range"                       "150"
             "chop_tree_radius"                  "150"

@@ -62,41 +62,19 @@ function modifier_item_disperser_aa:OnAttackLanded(params)
         -- отладочный print убран: горячий путь (каждый удар/лечение)
     	if self:GetParent():FindAllModifiersByName("modifier_item_disperser_aa")[1] ~= self then return end
 			local damage_per_burn = self:GetAbility():GetSpecialValueFor("damage_per_burn")
-			local mana_burn_illusion = self:GetAbility():GetSpecialValueFor("ilusion_mana_burn")
             local mana_burn_pct = params.target:GetMaxMana() * self:GetAbility():GetSpecialValueFor("mana_burn_pct") / 100
-            local mana_burn = self:GetAbility():GetSpecialValueFor("mana_burn") + mana_burn_pct
             -- сжигание маны с действенностью атаки (apply_effectiveness, как feedback_mana_burn).
-            -- У иллюзий своя база ilusion_mana_burn, она тоже умножается на потенцию
-            -- (Focus Fire, Backstab и т.п.), но без двойного учёта действенности иллюзии.
-            local potency = AttackPotency:Get(self:GetParent(), params)
-            if self:GetParent():IsIllusion() then
-                potency = potency * 100 / AttackPotency:IllusionPct(self:GetParent())
-            end
-            mana_burn = mana_burn * potency
-            mana_burn_illusion = mana_burn_illusion * potency
-			local damageTable = { 
+            -- Иллюзии как в доте: те же цифры x их действенность (Manta 35% и т.п.)
+            local mana_burn = (self:GetAbility():GetSpecialValueFor("mana_burn") + mana_burn_pct) * AttackPotency:Get(self:GetParent(), params)
+			local damageTable = {
                 attacker = self:GetParent(),
                 victim = params.target,
                 ability = self:GetAbility(),
-                damage_type = DAMAGE_TYPE_MAGICAL 
+                damage_type = DAMAGE_TYPE_MAGICAL
             }
 			if not params.target:IsMagicImmune() then
-				if(params.target:GetMana() >= mana_burn) then
-					damageTable.damage = mana_burn * damage_per_burn
-					if not self:GetParent():IsIllusion() then
-						params.target:Script_ReduceMana(mana_burn, self:GetAbility())
-					else
-						params.target:Script_ReduceMana(mana_burn_illusion, self:GetAbility())
-						damageTable.damage = mana_burn_illusion * damage_per_burn
-					end
-				else
-					damageTable.damage = params.target:GetMana() * damage_per_burn
-					if not self:GetParent():IsIllusion() then
-						params.target:Script_ReduceMana(mana_burn, self:GetAbility())
-					else
-						params.target:Script_ReduceMana(mana_burn_illusion, self:GetAbility())
-					end
-				end
+				damageTable.damage = math.min(mana_burn, params.target:GetMana()) * damage_per_burn
+				params.target:Script_ReduceMana(mana_burn, self:GetAbility())
 			ApplyDamage(damageTable)
 		end
     end

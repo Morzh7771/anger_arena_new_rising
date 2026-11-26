@@ -10,6 +10,8 @@
 	  к STR_RESIST_LIMIT только стремится и никогда его не достигает (и тем более 100%)
 	  1000 -> 8.6%   2500 -> 15%   5000 -> 20%   10000 -> 24%
 ]]
+require("lib/damage_reduction_stack")
+
 AA_HERO_INT_SPELL_AMP_PER_POINT = 0.04 -- было 0.02, усилено в 2 раза
 AA_HERO_STR_RESIST_LIMIT = 30
 AA_HERO_STR_RESIST_HALF = 2500
@@ -182,6 +184,9 @@ function modifier_aa_hero:GetModifierSpellAmplify_Percentage()
 end
 
 -- сила -> снижение входящего урона (формула в начале файла)
-function modifier_aa_hero:GetModifierIncomingDamage_Percentage()
-	return -AAHeroStatDamageReduction(self:GetParent():GetStrength())
+-- + поправка: все снижения урона на герое стакаются перемножением, а не суммой
+-- (lib/damage_reduction_stack.lua)
+function modifier_aa_hero:GetModifierIncomingDamage_Percentage(params)
+	local own = AAHeroStatDamageReduction(self:GetParent():GetStrength())
+	return -own + AADamageReductionStack:Correction(self:GetParent(), params, own, self)
 end

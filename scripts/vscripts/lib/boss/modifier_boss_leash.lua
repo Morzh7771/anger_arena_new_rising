@@ -1,16 +1,19 @@
 -- Поводок босса. Вешает BossSpawner:SpawnBoss и тест aa_boss.
---   Дальше LEASH от точки спавна - босс бросает бой и бежит домой: проходит
---   сквозь юнитов, +SPEED_PCT% скорости, урона не получает, ИИ молчит
---   (SimpleAI:OnTick смотрит aa_leash_returning). Возврат кончается у точки.
---   Дальше NO_DAMAGE_RANGE урона не получает в любом случае: босса нельзя
---   вытащить с пита и убить в стороне.
+--   Пит - круг LEASH вокруг точки спавна. Вышел за него - бросает бой и бежит
+--   обратно: проходит сквозь юнитов, +SPEED_PCT% скорости, урона не получает,
+--   не кастует и не бьёт, ИИ молчит (SimpleAI:OnTick смотрит aa_leash_returning).
+--   Вернулся в пит (RESUME_RANGE) и в пите есть враждебный герой - снова дерётся
+--   с ближайшим. Героев нет - идёт до точки спавна.
+--   За пределами пита урона не получает в любом случае: босса нельзя
+--   вытащить и убить в стороне.
 -- Точка берётся из слота босса (ротация её двигает), иначе - место спавна.
 
 modifier_boss_leash = modifier_boss_leash or class({})
 local mod = modifier_boss_leash
 
-local LEASH           = 1300
-local NO_DAMAGE_RANGE = 1100
+local LEASH           = 1000
+local NO_DAMAGE_RANGE = LEASH
+local RESUME_RANGE    = 900  -- запас, чтобы не дёргался на границе пита
 local HOME_RANGE      = 100
 local SPEED_PCT       = 100
 local TICK            = 0.2
@@ -61,7 +64,12 @@ function mod:OnIntervalThink()
 	end
 
 	if self.returning then
-		if dist <= HOME_RANGE then
+		local hero = dist <= RESUME_RANGE and self:HeroInPit()
+
+		if hero then
+			self:SetReturning(false)
+			parent:MoveToTargetToAttack(hero)
+		elseif dist <= HOME_RANGE then
 			self:SetReturning(false)
 			parent:Stop()
 			local boss = BossSpawner and BossSpawner.bossCurrent and BossSpawner.bossCurrent[parent]
@@ -73,6 +81,21 @@ function mod:OnIntervalThink()
 	end
 end
 
+-- ближайший к боссу живой видимый враждебный герой внутри пита
+function mod:HeroInPit()
+	local parent = self:GetParent()
+	local list = FindUnitsInRadius(parent:GetTeamNumber(), self:Home(), nil, LEASH,
+		DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO,
+		DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
+		FIND_CLOSEST, false)
+
+	for _, u in ipairs(list) do
+		if u:IsAlive() and not u:IsIllusion() and parent:CanEntityBeSeenByMyTeam(u) then
+			return u
+		end
+	end
+end
+
 function mod:OnDestroy()
 	if not IsServer() then return end
 	self:GetParent().aa_leash_returning = nil
@@ -80,7 +103,12 @@ end
 
 function mod:CheckState()
 	if self:GetStackCount() == 1 then
-		return { [MODIFIER_STATE_NO_UNIT_COLLISION] = true }
+		return {
+			[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+			[MODIFIER_STATE_SILENCED]          = true,
+			[MODIFIER_STATE_MUTED]             = true,
+			[MODIFIER_STATE_DISARMED]          = true,
+		}
 	end
 	return {}
 end

@@ -1,3 +1,9 @@
+-- дальний бой по ТЕКУЩЕМУ типу атаки: Guardian of the Ancients в форме башни стреляет
+-- через SetAttackCapability, а IsRangedAttacker смотрит на тип героя из KV
+function AAIsRangedNow(unit)
+	return unit:GetAttackCapability() == DOTA_UNIT_CAP_RANGED_ATTACK or unit:IsRangedAttacker()
+end
+
 LinkLuaModifier("modifier_item_hurricane_pike_aa", "items/item_hurricane_pike_aa", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_hurricane_pike_aa_caster", "items/item_hurricane_pike_aa", LUA_MODIFIER_MOTION_HORIZONTAL)
 LinkLuaModifier("modifier_item_hurricane_pike_aa_enemy", "items/item_hurricane_pike_aa", LUA_MODIFIER_MOTION_HORIZONTAL)
@@ -69,7 +75,7 @@ modifier_item_hurricane_pike_aa = class({
     GetModifierBonusStats_Strength = function(self)return self:GetAbility():GetSpecialValueFor("bonus_strength") end,
     GetModifierBonusStats_Agility = function(self)return self:GetAbility():GetSpecialValueFor("bonus_agility") end,
     GetModifierAttackRangeBonus = function(self)
-        if self:GetParent():IsRangedAttacker() then
+        if AAIsRangedNow(self:GetParent()) then
             return self:GetAbility():GetSpecialValueFor("base_attack_range")
         else
             return 0
@@ -130,7 +136,7 @@ function modifier_item_hurricane_pike_aa:OnAttackFinished( params )
 		end
 	end	
 
-	if not parent:IsRangedAttacker() then return end
+	if not AAIsRangedNow(parent) then return end
     if parent:IsIllusion() then return end
 	if not isSecondaryAttack then
 		if parent:HasModifier("modifier_item_hurricane_pike_aa_cd") then return end
@@ -168,7 +174,7 @@ modifier_item_hurricane_pike_aa_active_caster = class({
     GetModifierProjectileSpeedBonus = function(self)return self:GetAbility():GetSpecialValueFor("bonus_projectile_speed") end,
     GetModifierAttackRangeBonus = function(self)return self.attack_range end,
     OnOrder = function(self,ord)
-        if not self:GetParent():IsRangedAttacker() then return end
+        if not AAIsRangedNow(self:GetParent()) then return end
         if ord.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET then
             if ord.target == self.target then
                 self.attack_range = 99999999

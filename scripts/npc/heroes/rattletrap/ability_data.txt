@@ -390,30 +390,25 @@ DOTAAbilities
 			}
 		}
 	}
-	"rattletrap_armor_power"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
+	// Armor Power: своя Lua-версия (heroes/rattletrap/rattletrap_armor_power_aa.lua) вместо ванильной.
+	// Поедание Chainmail - через предмет item_chainmail_aa (items/item_chainmail_aa.lua).
+	"rattletrap_armor_power_aa"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/rattletrap/rattletrap_armor_power_aa"
+		"AbilityTextureName"			"rattletrap_armor_power"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "MaxLevel"                      "1"
-        "Innate"                        "1"
-        "IsBreakable"                   "1"
-
-        "AbilityValues"
-        {
-            "damage_per_armor"          "0.25"
-        	"damage_tooltip"
-        	{
-        		"dynamic_value"				"true"
-        	}
-        	"can_consume_chainmail"				"1"
-        	"armor_per_chainmail"				"4"
-        	"model_scale_per_chainmail"				"5"
-        	"model_scale_maximum"				"125"
-        	"health_bar_offset_per_stack"				"6"
-        }
-    }
+		"AbilityValues"
+		{
+			"damage_per_armor"			"0.25"	// % исходящего урона за очко брони
+			"armor_per_chainmail"		"4"		// только для тултипа, константа в item_chainmail_aa.lua
+			"consume_gold_step"			"500"	// только для тултипа = ItemCost item_chainmail_aa
+		}
+	}
     //=================================================================================================================
     // Ability: Special Bonus
     //=================================================================================================================

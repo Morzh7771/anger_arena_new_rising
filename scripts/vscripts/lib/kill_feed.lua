@@ -25,11 +25,50 @@ local BUCKET_MAX_AGE = 0.5
 -- через сколько отправить строку убийства / руны
 local FLUSH_DELAY = 0.1
 
+-- Диагностика пропадающих строк: у каждой строки номер seq, клиент по дыре в
+-- номерах видит потерю. Раз в минуту сводка "[KillFeed] stats": сколько ушло и
+-- кому не ушло из-за отсутствия ключа защиты (lib/events_protector.lua) -
+-- такой игрок не получает ни одного ивента сервера, пока клиент не переспросит ключ.
+KillFeed.seq = KillFeed.seq or 0
+KillFeed.stat = KillFeed.stat or { sent = 0, nokey = {}, kinds = {} }
+
 function KillFeed:Send(kind, data)
 	data = data or {}
 	data.kind = kind
 
+	self.seq = self.seq + 1
+	data.seq = self.seq
+
+	local st = self.stat
+	st.sent = st.sent + 1
+	st.kinds[kind] = (st.kinds[kind] or 0) + 1
+
+	local keys = EventsProtector and EventsProtector.server_keys
+
+	if keys then
+		for pid = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:IsValidPlayerID(pid) and PlayerResource:GetPlayer(pid) and keys[pid] == nil then
+				st.nokey[pid] = (st.nokey[pid] or 0) + 1
+			end
+		end
+	end
+
 	CustomGameEventManager:Send_ServerToAllClients(EVENT, data)
+end
+
+function KillFeed:ReportStats()
+	local st = self.stat
+	local kinds, nokey = {}, {}
+
+	for k, n in pairs(st.kinds) do kinds[#kinds + 1] = k .. "=" .. n end
+	for pid, n in pairs(st.nokey) do nokey[#nokey + 1] = pid .. ":" .. n end
+
+	if st.sent > 0 or #nokey > 0 then
+		print(string.format("[KillFeed] stats t=%.0f seq=%d sent=%d kinds={%s} nokey={%s}",
+			GameRules:GetGameTime(), self.seq, st.sent, table.concat(kinds, ","), table.concat(nokey, ",")))
+	end
+
+	self.stat = { sent = 0, nokey = {}, kinds = {} }
 end
 
 local function HeroName(playerid)
@@ -342,6 +381,13 @@ function KillFeed:Init()
 
 	ListenToGameEvent("entity_killed", Wrap(KillFeed.OnEntityKilled), nil)
 	ListenToGameEvent("dota_buyback", Wrap(KillFeed.OnBuyback), nil)
+
+	if Timers then
+		Timers:CreateTimer(60, function()
+			pcall(KillFeed.ReportStats, KillFeed)
+			return 60
+		end)
+	end
 end
 
 KillFeed:Init()

@@ -81,7 +81,6 @@ DOTAAbilities
 			"wolf_count"
             {
                 "value"         "2"
-                "special_bonus_unique_lycan_2" "+2"
                 "special_bonus_shard"			"+1"
             }
             "is_lone_wolf"  
@@ -299,7 +298,7 @@ DOTAAbilities
 			"health_bonus"		"300 350 450 600 800 1050 1350"
 			"is_wolfpack"
             {
-                "value"             "0"
+                "value"             "1"		// как в 7.42: ульта действует и на волков/саммонов
             }
             "kill_duration_extension"
             {

@@ -128,8 +128,6 @@ DOTAAbilities
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.1"
-		"AbilityCharges"				"2 2 2 3 3 3 4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -144,12 +142,7 @@ DOTAAbilities
 				"value"					"40 55 70 85 100 115 130"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"damage_pct"				"10"
-			"AbilityChargeRestoreTime"
-			{
-				"value"							"12"
-				"special_bonus_unique_riki_9" "-4"				
-			}
+			"damage_pct"				"100"
 			"slow"						"0.5"
 			"AbilityCastRange"
 			{
@@ -306,8 +299,8 @@ DOTAAbilities
 			"damage_pct"	"30 35 40 45 50 55 60"
 			"agility_pct"
 			{
-				"value" 				"70 100 130 160 190 220 250"
-				"special_bonus_unique_riki_2" "+50"
+				"value" 				"25 35 45 55 65 75 85"
+				"special_bonus_unique_riki_2" "+25"
 			}
 			"scepter_duration"				
 			{

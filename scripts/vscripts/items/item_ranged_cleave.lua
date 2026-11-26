@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 LinkLuaModifier("modifier_item_ranged_cleave", "items/item_ranged_cleave", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_ranged_cleave_reduced_damage", "items/item_ranged_cleave", LUA_MODIFIER_MOTION_NONE)
 
@@ -67,7 +68,10 @@ function modifier_item_ranged_cleave:OnAttack(keys)
     
 	if keys.attacker == self:GetParent() and self:GetParent():IsRangedAttacker() and keys.target and keys.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and not keys.no_attack_cooldown then	
 		
-		if not self:GetParent():IsIllusion() then
+		-- сплит-выстрел с действенностью атаки (иллюзии тоже, со своей действенностью)
+		local potency = AttackPotency:Get(self:GetParent(), keys)
+		if potency > 0 then
+			self:GetParent().__aa_split_potency = potency
 			local enemies = FindUnitsInRadius(
 			self:GetParent():GetTeamNumber(),
 			keys.target:GetAbsOrigin(), 
@@ -110,5 +114,5 @@ modifier_item_ranged_cleave_reduced_damage = class({
 	OnAttackLanded = function (self) return{
 		self:GetParent():RemoveModifierByName("modifier_item_ranged_cleave_reduced_damage")
 	}end,
-	GetModifierDamageOutgoing_Percentage = function (self) return -1*(100 - self:GetAbility():GetSpecialValueFor("split_shot_damage")) end,
+	GetModifierDamageOutgoing_Percentage = function (self) return self:GetAbility():GetSpecialValueFor("split_shot_damage") * (self:GetParent().__aa_split_potency or 1) - 100 end,
 })

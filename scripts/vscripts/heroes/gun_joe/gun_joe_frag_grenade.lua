@@ -2,6 +2,8 @@
 
 gun_joe_frag_grenade = class({})
 
+local GRENADE_PFX = "particles/units/heroes/hero_sniper/sniper_shard_concussive_grenade_model.vpcf"
+
 LinkLuaModifier("modifier_gun_joe_frag_grenade_slow", "heroes/gun_joe/gun_joe_frag_grenade", LUA_MODIFIER_MOTION_NONE)
 
 function gun_joe_frag_grenade:Precache(context)
@@ -20,27 +22,38 @@ function gun_joe_frag_grenade:OnSpellStart()
 
 	caster:EmitSound("Hero_Sniper.ConcussiveGrenade.Cast")
 
-	-- снаряд летит в "болванку" в точке, как ванильная Concussive Grenade снайпера
-	local thinker = CreateModifierThinker(caster, self, nil, { duration = 5 }, point, caster:GetTeamNumber(), false)
+	-- Ванильный партикл гранаты снайпера дугу строит к CP5 (точке падения). Снаряд
+	-- ProjectileManager его не задаёт - CP5 оставался в (0,0,0) и модель улетала в
+	-- центр карты. Поэтому полёт ведём сами: CP0 - текущая точка, CP1/CP5 - цель.
+	local start = caster:GetAttachmentOrigin(caster:ScriptLookupAttachment("attach_attack1"))
+	if not start or start == Vector(0, 0, 0) then start = caster:GetAbsOrigin() end
 
-	ProjectileManager:CreateTrackingProjectile({
-		Target				= thinker,
-		Source				= caster,
-		Ability				= self,
-		EffectName			= "particles/units/heroes/hero_sniper/sniper_shard_concussive_grenade_model.vpcf",
-		iMoveSpeed			= self:GetSpecialValueFor("speed"),
-		bDodgeable			= false,
-		iSourceAttachment	= DOTA_PROJECTILE_ATTACHMENT_ATTACK_1,
-	})
-end
+	point = GetGroundPosition(point, nil)
 
-function gun_joe_frag_grenade:OnProjectileHit(target, location)
-	if target and not target:IsNull() then
-		local point = target:GetAbsOrigin()
-		UTIL_Remove(target)
-		self:Explode(point)
-	end
-	return true
+	local speed = math.max(100, self:GetSpecialValueFor("speed"))
+	local flight = math.max(0.1, (point - start):Length2D() / speed)
+	local pfx = ParticleManager:CreateParticle(GRENADE_PFX, PATTACH_CUSTOMORIGIN, nil)
+
+	ParticleManager:SetParticleControl(pfx, 0, start)
+	ParticleManager:SetParticleControl(pfx, 1, point)
+	ParticleManager:SetParticleControl(pfx, 5, point)
+
+	local t0 = GameRules:GetGameTime()
+
+	Timers:CreateTimer(FrameTime(), function()
+		local k = (GameRules:GetGameTime() - t0) / flight
+
+		if k >= 1 or self:IsNull() then
+			ParticleManager:DestroyParticle(pfx, false)
+			ParticleManager:ReleaseParticleIndex(pfx)
+			if not self:IsNull() then self:Explode(point) end
+			return nil
+		end
+
+		ParticleManager:SetParticleControl(pfx, 0, start + (point - start) * k)
+
+		return FrameTime()
+	end)
 end
 
 function gun_joe_frag_grenade:Explode(point)

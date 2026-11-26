@@ -479,7 +479,7 @@ function EndGameStats:_FillEngineStats(id, s, now)
 	-- движок про него не знает
 	local bank = AngelArena and AngelArena.tPlayers and AngelArena.tPlayers[id]
 
-	s.networth = Engine("GetNetWorth", id) + (bank and bank.gold or 0)
+	s.networth = AANetWorth and AANetWorth:Get(id) or (Engine("GetNetWorth", id) + (bank and bank.gold or 0))
 
 	s.abandoned = PlayerResource:GetConnectionState(id) == DOTA_CONNECTION_STATE_ABANDONED and 1 or 0
 

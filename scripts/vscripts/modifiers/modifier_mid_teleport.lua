@@ -8,8 +8,9 @@ function modifier_mid_teleport:CheckState()
 return 
 {
   [MODIFIER_STATE_NO_HEALTH_BAR] = true,
-  -- портал - обычный крип (не twin gate), без этого его можно было бить
-  [MODIFIER_STATE_ATTACK_IMMUNE] = true,
+  -- ATTACK_IMMUNE не ставить: клиент тогда отбрасывает клик по порталу
+  -- ("цель невосприимчива к атакам") ещё до order filter, и вход не работает.
+  -- Атаки по порталу режет фильтр приказов (addon_game_mode.lua), урона нет и так.
   [MODIFIER_STATE_MAGIC_IMMUNE] = true,
   [MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
   [MODIFIER_STATE_DEBUFF_IMMUNE] = true,

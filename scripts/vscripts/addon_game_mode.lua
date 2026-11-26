@@ -114,6 +114,7 @@ safe_require('lib/alt_heroes')
 safe_require('lib/special_bonus_base_aa/Special_bonus_base_aa')
 safe_require('lib/diag_log')
 safe_require('lib/item_precache')
+safe_require('lib/networth') -- нетворс без солдат MK/клонов (lib/networth.lua)
 safe_require('lib/team_gold_share')
 safe_require('lib/hero_kill_bounty')
 safe_require('lib/kill_feed')
@@ -145,6 +146,8 @@ safe_require('lib/farm_claims')
 safe_require('lib/strategy_buy')
 -- "Отстающая команда": бафф отстающей по нетворсу команде до 30-й минуты (lib/underdog.lua)
 safe_require('lib/underdog')
+-- тип атаки героя не застревает после чужих форм (Wolf Bite через Morphling и т.п.)
+safe_require('lib/attack_capability_guard')
 -- Фарм героев: эффекты способностей против крипов (lib/hero_farm.lua)
 safe_require('lib/hero_farm')
 -- премиум: точное время респавна боссов по Alt
@@ -428,7 +431,12 @@ local crash_abilities = {
 -- раньше им клались книги и трактаты владельца (HP больше, чем у оригинала).
 local function AAIllusionSource(illusion)
 	local src = illusion.GetReplicatingOtherHero and illusion:GetReplicatingOtherHero()
-	if src and not src:IsNull() and src ~= illusion then return src end
+	-- иллюзия с иллюзии (Manta/Phantasm при живых копиях): книги и база - у настоящего героя
+	if src and not src:IsNull() and src ~= illusion and src:IsIllusion() then
+		local real = PlayerResource:GetSelectedHeroEntity(src:GetPlayerOwnerID())
+		if real and not real:IsNull() and real:GetUnitName() == src:GetUnitName() then src = real end
+	end
+	if src and not src:IsNull() and src ~= illusion and not src:IsIllusion() then return src end
 	local pid = illusion:GetPlayerOwnerID()
 	if pid == nil or pid == -1 then return nil end
 	local hero = PlayerResource:GetSelectedHeroEntity(pid)
@@ -443,6 +451,22 @@ local function AASetIllusionTome(illusion, source, name)
 	local stacks = src_mod and src_mod:GetStackCount() or 0
 	local mod = illusion:FindModifierByName(name) or illusion:AddNewModifier(illusion, nil, name, {duration = -1})
 	if mod then mod:SetStackCount(stacks) end
+end
+
+-- книги: половина - в базе (ModifyStrength), половина - стаки bonus_*_tome.
+-- Зовётся при спавне и ещё раз кадром позже: движок докладывает статы иллюзии
+-- после OnNPCSpawned и мог затереть базу - тогда у копии не было книг
+function AACopyIllusionTomes(illusion, source)
+	AASetIllusionTome(illusion, source, "bonus_str_tome")
+	AASetIllusionTome(illusion, source, "bonus_agi_tome")
+	AASetIllusionTome(illusion, source, "bonus_int_tome")
+
+	if source then
+		-- раньше вычитался прирост за уровни (атрибуты героя 1 уровня). Копируем базу как есть
+		illusion:SetBaseStrength(source:GetBaseStrength())
+		illusion:SetBaseIntellect(source:GetBaseIntellect())
+		illusion:SetBaseAgility(source:GetBaseAgility())
+	end
 end
 
 function AAFixIllusionHealth(illusion)
@@ -472,16 +496,9 @@ function AASetupIllusionStats(illusion)
 	if not illusion:HasModifier("modifier_aa_hero") then
 		illusion:AddNewModifier(illusion, nil, "modifier_aa_hero", {duration = -1})
 	end
-	-- книги: половина - в базе (ModifyStrength), половина - стаки bonus_*_tome
-	AASetIllusionTome(illusion, source, "bonus_str_tome")
-	AASetIllusionTome(illusion, source, "bonus_agi_tome")
-	AASetIllusionTome(illusion, source, "bonus_int_tome")
+	AACopyIllusionTomes(illusion, source)
 
 	if source then
-		-- раньше вычитался прирост за уровни (атрибуты героя 1 уровня). Копируем базу как есть
-		illusion:SetBaseStrength(source:GetBaseStrength())
-		illusion:SetBaseIntellect(source:GetBaseIntellect())
-		illusion:SetBaseAgility(source:GetBaseAgility())
 		-- трактаты: модификатор берёт число из поля кастера, на иллюзии его нет
 		illusion.medical_tractates = source.medical_tractates
 		illusion.medical_tractates2 = source.medical_tractates2
@@ -498,7 +515,11 @@ function AASetupIllusionStats(illusion)
 	AAFixIllusionHealth(illusion)
 	-- часть бонусов (предметы, пересчёт атрибутов движком) доезжает кадром позже
 	Timers:CreateTimer(FrameTime(), function()
-		if illusion and not illusion:IsNull() and illusion:IsAlive() then AAFixIllusionHealth(illusion) end
+		if illusion and not illusion:IsNull() and illusion:IsAlive() then
+			local src = AAIllusionSource(illusion) or source
+			if src and not src:IsNull() then AACopyIllusionTomes(illusion, src) end
+			AAFixIllusionHealth(illusion)
+		end
 		return nil
 	end)
 end
@@ -736,8 +757,6 @@ function AngelArena:InitGameMode()
 	ListenToGameEvent('dota_item_purchased', Safe_Wrap(AngelArena, 'OnPlayerBuyItem'), self)
 	ListenToGameEvent( "dota_player_learned_ability", Dynamic_Wrap( Special_bonus_base_aa, "OnAbilityLearned" ), self )
 
-	-- профайлер aa_prof (lib/perf_toggle.lua): обёртки фильтров до регистрации
-	if AAProf then pcall(AAProf.WrapFilters, AAProf, AngelArena) end
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( AngelArena, "ExecuteOrderFilterCustom" ), self )
 	PlayerResource:ClearOnAbandonedCallbacks()
 	PlayerResource:RegisterOnAbandonedCallback(function(arg) AngelArena:OnAbandoned(arg) end)
@@ -1500,6 +1519,11 @@ function AngelArena:OnNPCSpawned(keys)
 		end
 		if npc:IsIllusion() and npc:IsHero() then
 			AASetupIllusionStats(npc)
+		elseif npc:IsHero() and not npc:IsRealHero() then
+			Timers:CreateTimer(FrameTime(), function()
+				if npc and not npc:IsNull() and npc:IsIllusion() then AASetupIllusionStats(npc) end
+				return nil
+			end)
 		end
 	end
 	if npc:IsRealHero() then
@@ -2111,6 +2135,12 @@ function AngelArena:ExecuteOrderFilterCustom( ord )
 
 					return true
 				end
+				return false
+			end
+
+			-- остальные (иллюзии, суммоны) портал не бьют
+			if ord.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET and target and not target:IsNull()
+				and target:IsBaseNPC() and target:GetUnitName() == "npc_teleport" then
 				return false
 			end
 

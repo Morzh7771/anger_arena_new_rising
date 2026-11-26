@@ -17,6 +17,10 @@ function PercentDamage:_init()
 	PercentDamage:ListenAbilityCallback("ancient_apparition_death_rime",						ancient_apparition_death_rime )
 	PercentDamage:ListenAbilityCallback("shadow_shaman_shackles",					shadow_shaman_shackles )
 	PercentDamage:ListenAbilityCallback("oracle_purifying_flames",					oracle_purifying_flames )
+	-- Ethereal Blade: урон от суммы атрибутов ЦЕЛИ, а не кастера (движковый множитель в KV = 0)
+	PercentDamage:ListenAbilityCallback("item_ethereal_blade",					EtherealBlast )
+	PercentDamage:ListenAbilityCallback("item_ethereal_blade_2",				EtherealBlast )
+	PercentDamage:ListenAbilityCallback("item_ethereal_blade_3",				EtherealBlast )
 
 
 	local MagicalDamageFromStr = {
@@ -372,6 +376,17 @@ function axe_culling_blade(keys)
 	local percent_damage = ability:GetSpecialValueFor("damage_pct")
 	return (percent_damage * caster:GetPhysicalArmorValue(false))
 end
+function EtherealBlast(keys)
+	local ability = keys.ability
+	local target = keys.target
+
+	if not ability or not target or not target:IsHero() then return end
+
+	local mult = ability:GetSpecialValueFor("victim_stat_multiplier")
+
+	return mult * (target:GetStrength() + target:GetAgility() + target:GetIntellect(false))
+end
+
 function DamageFromAll(keys)
 	local ability 			= keys.ability
 	local caster 			= keys.caster

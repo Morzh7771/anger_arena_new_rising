@@ -15,7 +15,7 @@
         "ItemResult"                    "item_phase_boots"
         "ItemRequirements"
         {
-            "01"                        "item_boots*;item_chainmail;item_blades_of_attack"
+            "01"                        "item_boots*;item_chainmail_aa;item_blades_of_attack"
         }
     }
 
@@ -80,8 +80,8 @@
 
 		"AbilityValues"
 		{
-			"bonus_movement_speed_ranged"         "60 120 200"
-			"bonus_movement_speed_melee"          "60 120 200"
+			"bonus_movement_speed_ranged"         "60 90 120"
+			"bonus_movement_speed_melee"          "60 90 120"
 			"bonus_damage"                        "35 70 140"
 			"bonus_attack_speed"                  "25 50 100"
 			"bonus_armor"                         "11 22 44"
@@ -125,8 +125,8 @@
 
 		"AbilityValues"
 		{
-			"bonus_movement_speed_ranged"         "60 120 200"
-			"bonus_movement_speed_melee"          "60 120 200"
+			"bonus_movement_speed_ranged"         "60 90 120"
+			"bonus_movement_speed_melee"          "60 90 120"
 			"bonus_damage"                        "35 70 140"
 			"bonus_attack_speed"                  "25 50 100"
 			"bonus_armor"                         "11 22 44"
@@ -170,8 +170,8 @@
 
 		"AbilityValues"
 		{
-			"bonus_movement_speed_ranged"         "60 120 200"
-			"bonus_movement_speed_melee"          "60 120 200"
+			"bonus_movement_speed_ranged"         "60 90 120"
+			"bonus_movement_speed_melee"          "60 90 120"
 			"bonus_damage"                        "35 70 140"
 			"bonus_attack_speed"                  "25 50 100"
 			"bonus_armor"                         "11 22 44"

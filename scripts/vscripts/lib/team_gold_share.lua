@@ -35,10 +35,7 @@ function TeamGoldShare:Bypass(fn, ...)
 end
 
 local function NetWorth(playerid)
-	local nw = PlayerResource:GetNetWorth(playerid) or 0
-	local bank = AngelArena and AngelArena.tPlayers and AngelArena.tPlayers[playerid]
-
-	return nw + (bank and bank.gold or 0)
+	return AANetWorth:Get(playerid)
 end
 
 -- Пока делится ТОЛЬКО золото за убийство крипов (линейных и нейтральных).

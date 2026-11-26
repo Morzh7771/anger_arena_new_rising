@@ -1,10 +1,10 @@
 -- Riki: Tricks of the Trade на Lua (2026-11-22). Ванильный бил по 2 случайным
 -- целям за удар, и это нельзя было поменять для крипов.
 -- Как в доте: канал AbilityChannelTime, Рики пропадает из мира, attack_count раз за
--- канал атакует в спину врагов в radius (урон атаки фиксированный: attack_damage +
--- base_attack_damage_pct% базового урона + agility_pct% ловкости), Backstab проходит
+-- канал атакует в спину врагов в radius (обычная атака + attack_damage, на время канала
+-- +agility_pct% ловкости), Backstab проходит
 -- по всем целям. Героев - до interval_targets за удар, как в доте.
--- Против крипов: каждый удар бьёт ВСЕХ крипов в зоне.
+-- Против крипов: каждый удар бьёт ВСЕХ крипов в зоне, но без проков атаки (орбы, Backstab и т.п.).
 -- Аганим: можно спрятаться в союзника (зона едет с ним, +scepter_bonus_duration сек,
 -- +scepter_bonus_attacks ударов, союзнику +scepter_movespeed% скорости).
 
@@ -107,18 +107,17 @@ function modifier_riki_tricks_of_the_trade_aa:CheckState()
 end
 
 function modifier_riki_tricks_of_the_trade_aa:DeclareFunctions()
-	return { MODIFIER_PROPERTY_OVERRIDE_ATTACK_DAMAGE }
+	return { MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE }
 end
 
--- урон атаки во время Tricks фиксированный
-function modifier_riki_tricks_of_the_trade_aa:GetModifierOverrideAttackDamage()
-	local ab, parent = self:GetAbility(), self:GetParent()
-	if not ab then return end
-	local base = (parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) / 2
-	local agi = parent.GetAgility and parent:GetAgility() or 0
-	return ab:GetSpecialValueFor("attack_damage")
-		+ base * ab:GetSpecialValueFor("base_attack_damage_pct") / 100
-		+ agi * ab:GetSpecialValueFor("agility_pct") / 100
+-- 2026-11-25: доп. ловкость = agility_pct% ловкости на старте канала (в стаках - чтобы видел клиент)
+function modifier_riki_tricks_of_the_trade_aa:GetModifierBonusStats_Agility()
+	return self:GetStackCount()
+end
+
+function modifier_riki_tricks_of_the_trade_aa:GetModifierPreAttack_BonusDamage()
+	local ab = self:GetAbility()
+	return ab and ab:GetSpecialValueFor("attack_damage") or 0
 end
 
 function modifier_riki_tricks_of_the_trade_aa:OnCreated(kv)
@@ -127,6 +126,9 @@ function modifier_riki_tricks_of_the_trade_aa:OnCreated(kv)
 	self.center = Vector(kv.x, kv.y, kv.z)
 	self.start = parent:GetAbsOrigin()
 	self.radius = self:GetAbility():GetSpecialValueFor("radius")
+	local agi = parent.GetAgility and parent:GetAgility() or 0
+	self:SetStackCount(math.floor(agi * self:GetAbility():GetSpecialValueFor("agility_pct") / 100))
+	if parent.CalculateStatBonus then parent:CalculateStatBonus(true) end
 	parent:AddNoDraw()
 
 	self.fx = ParticleManager:CreateParticle(FX_AREA, PATTACH_WORLDORIGIN, nil)
@@ -176,7 +178,9 @@ function modifier_riki_tricks_of_the_trade_aa:OnIntervalThink()
 		local behind = target:GetAbsOrigin() - target:GetForwardVector() * 50
 		parent:SetAbsOrigin(behind)
 		parent:SetForwardVector((target:GetAbsOrigin() - behind):Normalized())
-		parent:PerformAttack(target, true, true, true, true, false, false, true)
+		-- по крипам (бьём всех в зоне) - голая атака: без орбов и проков модификаторов атаки
+		local full = not (target:GetTeamNumber() == DOTA_TEAM_NEUTRALS and not target:IsHero() and not target.IsAngelArenaBoss)
+		parent:PerformAttack(target, full, full, true, true, false, false, true)
 	end
 	parent:SetAbsOrigin(self.center)
 end

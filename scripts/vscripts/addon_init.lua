@@ -83,6 +83,7 @@ LinkLuaModifier("modifier_stuck_count", "lib/spawners/modifier_stuck_count", LUA
 
 -- брейк Silver Edge 3 (items/item_dark_edge): клиенту для тултипа и иконки
 LinkLuaModifier("modifier_item_dark_edge_debuff", "items/item_dark_edge", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_chainmail_eaten", "items/item_chainmail_aa", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_dark_edge_cold", "items/item_dark_edge", LUA_MODIFIER_MOTION_NONE)
 
 -- Fallen Sky, Vile Phial, Rattlecage (items/item_*): клиенту для тултипов и иконок статусов

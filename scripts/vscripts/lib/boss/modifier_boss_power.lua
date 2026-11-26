@@ -11,7 +11,35 @@ function mod:DeclareFunctions() return
 {
 	MODIFIER_EVENT_ON_TAKEDAMAGE,
 	MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+	MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 }
+end
+
+-- Снижение брони по боссам работает на ARMOR_REDUCTION_EFFECT (50%): раз в
+-- ARMOR_TICK сек смотрим, насколько броня ниже базовой (без нашей поправки),
+-- и возвращаем половину. Поправка в стаках - чтобы броню видел и клиент.
+local ARMOR_REDUCTION_EFFECT = 0.5
+local ARMOR_TICK = 0.1
+
+function mod:OnCreated()
+	if not IsServer() then return end
+	self:StartIntervalThink(ARMOR_TICK)
+end
+
+function mod:OnIntervalThink()
+	local parent = self:GetParent()
+	if not parent or parent:IsNull() then return end
+
+	local base = parent:GetPhysicalArmorBaseValue()
+	local current = parent:GetPhysicalArmorValue(false) - self:GetStackCount()
+	local cut = base - current
+	local comp = cut > 0 and math.floor(cut * (1 - ARMOR_REDUCTION_EFFECT) + 0.5) or 0
+
+	if comp ~= self:GetStackCount() then self:SetStackCount(comp) end
+end
+
+function mod:GetModifierPhysicalArmorBonus()
+	return self:GetStackCount()
 end
 
 if IsServer() then require('lib/summon_utils') end

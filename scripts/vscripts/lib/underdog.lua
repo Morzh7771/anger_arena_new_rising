@@ -28,10 +28,7 @@ U.pct = U.pct or {} -- [team] = текущая сила баффа, %
 
 -- нетворс игрока с запасом сверх кошелька (AngelArena:GiveGold копит его в tPlayers[pid].gold)
 local function NetWorth(pid)
-	local nw = PlayerResource:GetNetWorth(pid) or 0
-	local tp = AngelArena and AngelArena.tPlayers and AngelArena.tPlayers[pid]
-
-	return nw + (tp and tp.gold or 0)
+	return AANetWorth:Get(pid)
 end
 
 local function TeamStats(team)

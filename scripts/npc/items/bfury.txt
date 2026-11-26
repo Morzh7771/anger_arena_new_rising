@@ -83,9 +83,21 @@
 
             "cleave_range"                      "300"
             "cleave_physical_pierce"            "20 35"
-            "cleave_damage_hero"                "10 15"
-            "cleave_damage_creep"               "30 50"
-            "cleave_damage_illusion"            "50"
+            "cleave_damage_hero"
+            {
+            	"value"				"10 15"
+            	"apply_effectiveness"	"1"
+            }
+            "cleave_damage_creep"
+            {
+            	"value"				"30 50"
+            	"apply_effectiveness"	"1"
+            }
+            "cleave_damage_illusion"
+            {
+            	"value"				"50"
+            	"apply_effectiveness"	"1"
+            }
             "cleave_illusion_pure"              "20"
         }
     }
@@ -132,9 +144,21 @@
 
             "cleave_range"                      "300"
             "cleave_physical_pierce"            "20 35"
-            "cleave_damage_hero"                "10 15"
-            "cleave_damage_creep"               "30 50"
-            "cleave_damage_illusion"            "50"
+            "cleave_damage_hero"
+            {
+            	"value"				"10 15"
+            	"apply_effectiveness"	"1"
+            }
+            "cleave_damage_creep"
+            {
+            	"value"				"30 50"
+            	"apply_effectiveness"	"1"
+            }
+            "cleave_damage_illusion"
+            {
+            	"value"				"50"
+            	"apply_effectiveness"	"1"
+            }
             "cleave_illusion_pure"              "20"
         }
     }
@@ -227,9 +251,21 @@
 
             "cleave_range"                      "250"
             "cleave_physical_pierce"            "0"
-            "cleave_damage_hero"                "5"
-            "cleave_damage_creep"               "20"
-            "cleave_damage_illusion"            "30"
+            "cleave_damage_hero"
+            {
+            	"value"				"5"
+            	"apply_effectiveness"	"1"
+            }
+            "cleave_damage_creep"
+            {
+            	"value"				"20"
+            	"apply_effectiveness"	"1"
+            }
+            "cleave_damage_illusion"
+            {
+            	"value"				"30"
+            	"apply_effectiveness"	"1"
+            }
             "cleave_illusion_pure"              "0"
         }
     }

@@ -1,0 +1,64 @@
+"DOTAAbilities"
+{
+	// Chainmail: свой предмет вместо ванильного item_chainmail (тот удалён в dota_items.txt).
+	// Всем +4 брони. Clockwerk (врождённая rattletrap_armor_power_aa) может его съесть нажатием:
+	// навсегда +4 брони, цена поедания = цена Chainmail * номер: 500, 1000, 1500...
+	// (items/item_chainmail_aa.lua). Во всех рецептах и в магазине - item_chainmail_aa.
+	"item_chainmail_aa"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_chainmail_aa"
+		"AbilityTextureName"			"chainmail"
+		// пассивный для всех; у Clockwerk Lua (GetBehavior) делает его нажимаемым
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastPoint"				"0.0"
+
+		"ItemCost"						"500"
+		"ItemShopTags"					"armor"
+		"ItemQuality"					"component"
+		"ItemAliases"					"chainmail;чейнмейл;чейнмэйл"
+
+		"AbilityValues"
+		{
+			"bonus_armor"				"4"
+		}
+	}
+
+	// ванильные рецепты, где был item_chainmail (цены и состав как в 7.42)
+	"item_recipe_witch_blade"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"650"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_witch_blade"
+		"ItemRequirements"
+		{
+			"01"						"item_oblivion_staff;item_chainmail_aa"
+		}
+	}
+	"item_recipe_mekansm"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"850"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mekansm"
+		"ItemRequirements"
+		{
+			"01"						"item_headdress;item_chainmail_aa"
+		}
+	}
+	"item_recipe_essence_distiller"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"150"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_essence_distiller"
+		"ItemRequirements"
+		{
+			"01"						"item_urn_of_shadows*;item_chainmail_aa;item_wizard_hat"
+		}
+	}
+}

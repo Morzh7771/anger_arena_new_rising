@@ -28,6 +28,13 @@
 	"item_bfury"					"reworked"
 	"item_mask_of_madness"			"TI VED ZNAESH CHTO V SUBOTU VOR NE HODIT NA RABOTY"
 	"item_quelling_blade"			"reworked"
+	// ванильный Chainmail заменён на item_chainmail_aa (items/item_chainmail_aa.lua, поедание Clockwerk за золото)
+	"item_chainmail"				"REMOVE"
+	// ванильные Specialist's Array / Hydra's Breath из 7.42: у нас свои item_ranged_cleave / item_ranged_cleave2
+	"item_specialists_array"		"REMOVE"
+	"item_recipe_specialists_array"	"REMOVE"
+	"item_hydras_breath"			"REMOVE"
+	"item_recipe_hydras_breath"		"REMOVE"
 
 	
 	"item_lifesteal"

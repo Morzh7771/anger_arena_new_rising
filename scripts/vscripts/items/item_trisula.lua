@@ -1,3 +1,4 @@
+require("lib/attack_potency")
 require('items.funcs.cleave')
 DOTA_DAMAGE_FLAG_TRISULA = 524288
 
@@ -82,7 +83,7 @@ function modifier_item_trisula:OnAttackLanded(params)
 
 	if not caster or not target then return end
 	if not params.ranged_attack and caster:IsRangedAttacker() then return end
-	if caster and caster:IsIllusion() then return end
+	-- иллюзии сплэшат с действенностью атаки (Manta 35% и т.п.), см. AttackPotency
 
 	if not IsValidEntity(caster) or not IsValidEntity(target) then return end
 	if not target:IsCreep() and not target:IsHero() then return end
@@ -91,6 +92,8 @@ function modifier_item_trisula:OnAttackLanded(params)
 		if caster:HasModifier(modifier_name) then return end
 	end
 
+	local potency = AttackPotency:Get(caster, params)
+	if potency <= 0 then return end
 	local team = caster:GetTeamNumber()
 	local position = target:GetAbsOrigin()
 
@@ -116,7 +119,7 @@ function modifier_item_trisula:OnAttackLanded(params)
 		    local dmg = 0
 		    local cleave_physical_pierce = self:GetAbility():GetSpecialValueFor('cleave_physical_pierce')
 		    local result_armor = x:GetPhysicalArmorValue(false) / 100 * (100 - cleave_physical_pierce)
-		    local dmg_ref = params.original_damage * Util:ArmorDamageReductionByNumber(result_armor)
+		    local dmg_ref = params.original_damage * Util:ArmorDamageReductionByNumber(result_armor) * potency
 
 			if x:IsCreep() then
 				dmg = dmg_ref / 100 * self.cleave_damage_creep
