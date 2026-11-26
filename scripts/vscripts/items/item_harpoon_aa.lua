@@ -7,6 +7,14 @@ require('lib/second_attacks')
 
 MeleeSecondAttack:RegisterSecondAttack("modifier_item_harpoon_custom_cd")
 
+-- Гарпун - предмет ближнего боя. Guardian of the Ancients в форме башни стреляет издалека,
+-- но двойная атака и скорость гарпуна у него должны работать (без покупки Hurricane Pike)
+local function HarpoonMeleeLike(unit)
+	return not unit:IsRangedAttacker() or unit:HasModifier("modifier_guardian_of_the_ancients_command_height")
+end
+
+
+
 item_harpoon_aa_1 = item_harpoon_aa_1 or class({})
 item_harpoon_aa_3 = item_harpoon_aa_1
 item_harpoon_aa_2 = item_harpoon_aa_1
@@ -176,7 +184,7 @@ function modifier_item_harpoon_custom:OnAttackLanded(params)
 
 	if not target:IsAlive() or not parent:IsAlive() then return end
 
-	if not parent:IsIllusion() and not parent:IsRangedAttacker() and MeleeSecondAttack:CanSecondAttack(parent) then
+	if not parent:IsIllusion() and HarpoonMeleeLike(parent) and MeleeSecondAttack:CanSecondAttack(parent) then
 		local cd = self:GetAbility():GetSpecialValueFor("passive_cooldown") * parent:GetCooldownReduction()
 
 		parent:AddNewModifier(parent, ability, "modifier_item_harpoon_custom_cd", { duration = cd })
@@ -357,7 +365,7 @@ function modifier_item_harpoon_custom_speed:OnCreated(table)
 end
 
 function modifier_item_harpoon_custom_speed:OnIntervalThink()
-    if self:GetParent():IsRangedAttacker() or not self:GetAbility() then
+    if not HarpoonMeleeLike(self:GetParent()) or not self:GetAbility() then
         self:Destroy()
     end
 end
@@ -369,7 +377,7 @@ function modifier_item_harpoon_custom_speed:OnAttackLanded(params)
     if self:GetParent() ~= params.attacker then
         return
     end
-    if self:GetParent():IsRangedAttacker() then
+    if not HarpoonMeleeLike(self:GetParent()) then
         return
     end
 
@@ -392,7 +400,7 @@ function modifier_item_harpoon_custom_speed:OnAttackFail(params)
     if self:GetParent() ~= params.attacker then
         return
     end
-    if self:GetParent():IsRangedAttacker() then
+    if not HarpoonMeleeLike(self:GetParent()) then
         return
     end
 
