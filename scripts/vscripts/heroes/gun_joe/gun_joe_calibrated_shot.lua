@@ -64,19 +64,12 @@ function gun_joe_calibrated_shot:OnProjectileHit(target, location)
 		end
 	end
 
-	-- Выстрел не критует: урон считаем сами от среднего урона атаки (без крита),
-	-- а PerformAttack делаем фейковым - только ради эффектов атаки (проки, орбы).
-	local mult = self:GetSpecialValueFor("damage_from_attack") / 100
+	local mod = caster:AddNewModifier(caster, self, "modifier_gun_joe_calibrated_shot_buff", { duration = 1 })
 	for _, v in ipairs(victims) do
 		if not v:IsNull() and v:IsAlive() then
 			-- выстрел игнорирует часть брони цели
 			local pierce = v:AddNewModifier(caster, self, "modifier_gun_joe_calibrated_shot_pierce", { duration = 0.1 })
-			caster:PerformAttack(v, true, true, true, true, false, true, true)
-			ApplyDamage({
-				victim = v, attacker = caster, ability = self,
-				damage = caster:GetAverageTrueAttackDamage(v) * mult,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			})
+			caster:PerformAttack(v, true, true, true, true, false, false, true)
 			if pierce and not pierce:IsNull() then pierce:Destroy() end
 			v:EmitSound("Hero_Sniper.AssassinateDamage")
 			if v:IsAlive() and not v:IsMagicImmune() then
@@ -84,6 +77,7 @@ function gun_joe_calibrated_shot:OnProjectileHit(target, location)
 			end
 		end
 	end
+	if mod and not mod:IsNull() then mod:Destroy() end
 end
 
 --------------------------------------------------------------------------------
